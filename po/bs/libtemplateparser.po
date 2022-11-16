@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2013-11-15 13:52+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bs <bs@kde.org>\n"
@@ -44,7 +44,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Proslijedi"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:74
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Kako ovo radi?</a>"
@@ -527,7 +527,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:51
+#: templatesconfiguration.cpp:50
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -540,7 +540,7 @@ msgstr ""
 "poruka podržavaju izmjenu kontrola, ili jednostavno ih upišite ili odaberite "
 "iz <i>Ubaci naredbu</i> menija.</p>"
 
-#: templatesconfiguration.cpp:59
+#: templatesconfiguration.cpp:58
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -549,7 +549,7 @@ msgstr ""
 "<p>Navedeni predlošci ovdje su specifični za direktorij. Oni nadjačavaju i "
 "globalne predloške i predloške po identitetu.</p>"
 
-#: templatesconfiguration.cpp:64
+#: templatesconfiguration.cpp:63
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -560,7 +560,7 @@ msgstr ""
 "globalne predloške, ali mogu biti nadjačani od  predložaka po direktoriju "
 "ako su oni navedeni.</p>"
 
-#: templatesconfiguration.cpp:69
+#: templatesconfiguration.cpp:68
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -569,29 +569,29 @@ msgstr ""
 "<p>Ovo su globalni (podrazumijevani) predlošci. Oni mogu biti nadjačani od "
 "po-direktorij ili po-identitetu predložaka ako su navedeni.</p>"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Da li želite da resetujete trenutni predložak ili sve predloške na "
 "podrazumijevano?"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
 msgstr "Reset na podrazumijevano"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Reset trenutnog predloška"
 
-#: templatesconfiguration.cpp:108
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Reset svih predložaka"
 
-#: templatesconfiguration.cpp:370
+#: templatesconfiguration.cpp:361
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

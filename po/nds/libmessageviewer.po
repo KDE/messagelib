@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -306,61 +306,61 @@ msgstr "Ünnerschrift-Status nich begäng"
 msgid "End of signed message"
 msgstr "Enn vun den ünnerschreven Naricht"
 
-#: dkim-verify/dkimcheckfulljob.cpp:123
+#: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:124
+#: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgid "Key Changed"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:125
+#: dkim-verify/dkimcheckfulljob.cpp:120
 #, fuzzy, kde-format
 #| msgid "stored: "
 msgctxt "@action:button"
 msgid "Store"
 msgstr "sekert: "
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "Orner utsöken"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Insert Command"
 msgid "Inserted"
 msgstr "Befehl infögen"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Last Week"
 msgid "Last Used"
 msgstr "verleden Week"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:65
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&Koperen na"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:71
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
@@ -368,7 +368,7 @@ msgid_plural "Remove Keys"
 msgstr[0] "Wegmaken"
 msgstr[1] "Wegmaken"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:81
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this key?"
@@ -376,7 +376,7 @@ msgid_plural "Do you want to delete these keys?"
 msgstr[0] "Wullt Du de List \"%1\" redig wegdoon?"
 msgstr[1] "Wullt Du de List \"%1\" redig wegdoon?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:82
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -385,20 +385,20 @@ msgid_plural "Delete Keys"
 msgstr[0] "Wegdoon"
 msgstr[1] "Wegdoon"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:99
-#: dkim-verify/dkimmanageruleswidget.cpp:230
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "Wegdoon"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:105
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all keys?"
 msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:106
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -472,83 +472,83 @@ msgstr "Filtern importeren"
 msgid "No rules imported."
 msgstr "Keen Ünnerschrift funnen"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "From"
 msgstr "Vun"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Folder type:"
 msgid "Rule type"
 msgstr "Ornertyp:"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:195
-#: remote-content/remotecontentconfigurewidget.cpp:79
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
 #, kde-format
 msgid "Add..."
 msgstr "Tofögen..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:200
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
 #, kde-format
 msgid "Modify..."
 msgstr "Ännern..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:204
+#: dkim-verify/dkimmanageruleswidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Duplicate Rule"
 msgstr "Filterregeln"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:208
-#: remote-content/remotecontentconfigurewidget.cpp:86
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Rule"
 msgstr "Wegmaken"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: dkim-verify/dkimmanageruleswidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this rule?"
 msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:215
-#: remote-content/remotecontentconfigurewidget.cpp:93
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rule"
 msgstr "Filterregeln"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:236
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all the rules?"
 msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:237
+#: dkim-verify/dkimmanageruleswidget.cpp:224
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rules"
@@ -1191,37 +1191,37 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Vörlaag-Inholt"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Status"
 msgstr "Status"
 
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:114
+#: remote-content/remotecontentconfigurewidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "Vörlaag-Inholt"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Vörlaag-Inholt"
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgid "Add new Url"
@@ -1859,7 +1859,7 @@ msgstr "Evene automaatsch infoolden:"
 msgid "&Minimum font size:"
 msgstr "Lüttst Schriftgrött:"
 
-#: utils/messageviewerutil.cpp:157
+#: utils/messageviewerutil.cpp:156
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -1867,34 +1867,34 @@ msgstr ""
 "Dat gifft al en Datei mit den Naam \"%1\". Büst Du seker, dat Du ehr "
 "överschrieven wullt?"
 
-#: utils/messageviewerutil.cpp:160
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Overwrite File?"
 msgstr "Datei överschrieven?"
 
-#: utils/messageviewerutil.cpp:210
+#: utils/messageviewerutil.cpp:209
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Bilagen sekern as"
 
-#: utils/messageviewerutil.cpp:227
+#: utils/messageviewerutil.cpp:226
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "bilaag.1"
 
-#: utils/messageviewerutil.cpp:233
+#: utils/messageviewerutil.cpp:232
 #, kde-format
 msgid "Save Attachment"
 msgstr "Bilaag sekern"
 
-#: utils/messageviewerutil.cpp:257
+#: utils/messageviewerutil.cpp:256
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "bilaag.%1"
 
-#: utils/messageviewerutil.cpp:360
+#: utils/messageviewerutil.cpp:354
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1903,22 +1903,22 @@ msgstr ""
 "De Deel %1 vun de Naricht is verslötelt. Wullt Du de Verslöteln bi't Sekern "
 "wohren?"
 
-#: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail-Fraag"
 
-#: utils/messageviewerutil.cpp:362
+#: utils/messageviewerutil.cpp:356
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Verslöteln wohren"
 
-#: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Nich wohren"
 
-#: utils/messageviewerutil.cpp:382
+#: utils/messageviewerutil.cpp:367
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1927,13 +1927,13 @@ msgstr ""
 "De Deel %1 vun de Naricht is ünnerschreven. Wullt Du de Ünnerschrift bi't "
 "Sekern wohren?"
 
-#: utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "Keep Signature"
 msgstr "Ünnerschrift wohren"
 
-#: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
-#: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1943,23 +1943,23 @@ msgid ""
 "qt>"
 msgstr "<qt>De Datei<br><b>%1</b><br>lett sik nich schrieven.<br><br>%2"
 
-#: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
-#: utils/messageviewerutil.cpp:487
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Fehler bi't Sekern vun de Bilaag"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:485
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Keen Bilagen för't Sekern funnen."
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "message"
 msgstr "Naricht"
 
-#: utils/messageviewerutil.cpp:537
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.mbox|email messages (*.mbox)\n"
@@ -1969,45 +1969,45 @@ msgstr ""
 "*.mbox|Nettbreven (*.mbox)\n"
 "*|All Dateien (*)"
 
-#: utils/messageviewerutil.cpp:548
+#: utils/messageviewerutil.cpp:533
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Naricht sekern"
 msgstr[1] "Narichten sekern"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "De Datei \"%1\" lett sik nich laden."
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, kde-format
 msgid "Error loading message"
 msgstr "Fehler bi't Laden vun en Naricht"
 
-#: utils/messageviewerutil.cpp:575
+#: utils/messageviewerutil.cpp:560
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Datei \"%1\" lett sik nich opstellen."
 
-#: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
-#: utils/messageviewerutil.cpp:606
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
 #, kde-format
 msgid "Error saving message"
 msgstr "Fehler bi't Sekern vun en Naricht"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:571
 #, kde-format
 msgid "We cannot save message."
 msgstr "Naricht lett sik nich sekern."
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:612
 #, kde-format
 msgid "Open &with %1"
 msgstr "&Mit %1 opmaken"
 
-#: utils/messageviewerutil.cpp:629
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -2052,142 +2052,142 @@ msgstr "Typ"
 msgid "Size"
 msgstr "Grött"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:405
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML-Dorstellen för disse Naricht anmaken"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1631
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1631
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "För disse Naricht extern Dateien ut dat Nett daallaaden."
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Work online."
 msgstr "Tokoppelt arbeiden"
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Make account online."
 msgstr "Konto tokoppeln"
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Decrypt message."
 msgstr "Naricht opslöteln"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Show signature details."
 msgstr "Ünnerschrift-Enkelheiten wiesen"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Hide signature details."
 msgstr "Ünnerschrift-Enkelheiten versteken."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "Ünnerschrift-Enkelheiten wiesen"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "Ünnerschrift-Enkelheiten versteken."
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:426
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Dokmentatschoon"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:460
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Heel ziteert Text wiesen"
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Ziteert Text tosamenfoolden"
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Zertifikatenpleger lett sik nich starten. Prööv bitte Dien Installatschoon."
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:526
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Fehler"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:541
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Zertifikaat 0x%1 wiesen"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:600
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "In Adressbook &opmaken"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:602
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Nettpostadress &koperen"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2721
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adress na Twischenaflaag kopeert."
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:626
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "In KAdressbook na Kontakt kieken"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Bilaag: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:805
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Inbett Naricht (Bedraap: %1)"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:807
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Inbett Naricht"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:810
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Bilaag ahn Naam"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:845
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "GnuPG-Pröövlogbook för disse Akschoon wiesen"
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:885
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL warrt opmaakt..."
 
-#: viewer/urlhandlermanager.cpp:900
+#: viewer/urlhandlermanager.cpp:894
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Wullt Du <filename>%1</filename> redig utföhren?"
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:896
 #, kde-format
 msgid "Execute"
 msgstr "Utföhren"
@@ -2391,7 +2391,7 @@ msgstr "&Koperen na"
 msgid "Select All Text"
 msgstr "Heel Text utsöken"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2033
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Linkadress koperen"
@@ -2519,46 +2519,46 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Grantlee-Muster \"%1\" gellt nich."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1977
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2036
+#: viewer/viewer_p.cpp:2031
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Nettpostadress koperen"
 
-#: viewer/viewer_p.cpp:2117
+#: viewer/viewer_p.cpp:2112
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Naricht as Eenfachtext"
 
-#: viewer/viewer_p.cpp:2318
+#: viewer/viewer_p.cpp:2313
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Dokmentatschoon"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2727
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL na Twischenaflaag kopeert."
 
-#: viewer/viewer_p.cpp:2884
+#: viewer/viewer_p.cpp:2879
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Naricht lett sik nich laden: %1."
 
-#: viewer/viewer_p.cpp:2889
+#: viewer/viewer_p.cpp:2884
 #, kde-format
 msgid "Message not found."
 msgstr "Naricht lett sik nich finnen."

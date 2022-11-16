@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2021-04-27 18:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1065,7 +1065,7 @@ msgid "Theme"
 msgstr "Gaia"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:75
+#: core/widgets/configurefilterswidget.cpp:74
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
@@ -1109,18 +1109,18 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Konfiguratu &iragazkiak..."
 
-#: core/widgets/configurefilterswidget.cpp:79
+#: core/widgets/configurefilterswidget.cpp:78
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "&Kendu"
 
-#: core/widgets/configurefilterswidget.cpp:86
+#: core/widgets/configurefilterswidget.cpp:81
 #, fuzzy, kde-format
 #| msgid "Do you want to delete \"%1\"?"
 msgid "Do you want to delete this filter?"
 msgstr "«%1» ezabatu nahi duzu?"
 
-#: core/widgets/configurefilterswidget.cpp:87
+#: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgid "Remove Filter"
@@ -1520,74 +1520,74 @@ msgid "Export Aggregation"
 msgstr "Esportatu multzokatzea"
 
 #: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:475
+#: utils/configurethemesdialog.cpp:466
 #, kde-format
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
 
-#: utils/configurethemesdialog.cpp:97
+#: utils/configurethemesdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Gaiak norbere erara egokitu"
 
-#: utils/configurethemesdialog.cpp:115 utils/configurethemesdialog.cpp:351
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
 #, kde-format
 msgid "New Theme"
 msgstr "Gai berria"
 
-#: utils/configurethemesdialog.cpp:123
+#: utils/configurethemesdialog.cpp:122
 #, kde-format
 msgid "Clone Theme"
 msgstr "Klonatu gaia"
 
-#: utils/configurethemesdialog.cpp:136
+#: utils/configurethemesdialog.cpp:135
 #, kde-format
 msgid "Export Theme..."
 msgstr "Esportatu gaia..."
 
-#: utils/configurethemesdialog.cpp:143
+#: utils/configurethemesdialog.cpp:142
 #, kde-format
 msgid "Import Theme..."
 msgstr "Inportatu gaia..."
 
-#: utils/configurethemesdialog.cpp:154
+#: utils/configurethemesdialog.cpp:153
 #, kde-format
 msgid "Delete Theme"
 msgstr "Ezabatu gaia"
 
-#: utils/configurethemesdialog.cpp:333
+#: utils/configurethemesdialog.cpp:332
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Gai izengabea"
 
-#: utils/configurethemesdialog.cpp:353 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "Zutabe berria"
 
-#: utils/configurethemesdialog.cpp:405
+#: utils/configurethemesdialog.cpp:404
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "Hautatutako gaiak ezabatu nahi dituzu?"
 
-#: utils/configurethemesdialog.cpp:405
+#: utils/configurethemesdialog.cpp:404
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "«%1» ezabatu nahi duzu?"
 
-#: utils/configurethemesdialog.cpp:408 utils/configurethemesdialog.cpp:410
+#: utils/configurethemesdialog.cpp:406
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Ezabatu gaia"
 
-#: utils/configurethemesdialog.cpp:441
+#: utils/configurethemesdialog.cpp:432
 #, kde-format
 msgid "Import Theme"
 msgstr "Inportatu gaia"
 
-#: utils/configurethemesdialog.cpp:475
+#: utils/configurethemesdialog.cpp:466
 #, kde-format
 msgid "Export Theme"
 msgstr "Esportatu gaia"

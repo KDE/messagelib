@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2019-09-29 12:28+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -338,92 +338,92 @@ msgstr "Имзо ёфт нашуд"
 msgid "End of signed message"
 msgstr "Поёни иттилооти имзошуда"
 
-#: dkim-verify/dkimcheckfulljob.cpp:123
+#: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:124
+#: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgid "Key Changed"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:125
+#: dkim-verify/dkimcheckfulljob.cpp:120
 #, fuzzy, kde-format
 #| msgid "stored: "
 msgctxt "@action:button"
 msgid "Store"
 msgstr "захира шудааст: "
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 msgid "Selector"
 msgstr "Ҳузфи феҳрист"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 msgid "Inserted"
 msgstr "Гузоштани файл"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Used"
 msgstr "Ҷустуҷӯи охирин"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:65
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&Копӣ кардан ба"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:71
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
 #, fuzzy, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "Ҳу&зф кардан"
 msgstr[1] "Ҳу&зф кардан"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:81
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:82
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
 #, fuzzy, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "ҳузфшуда"
 msgstr[1] "ҳузфшуда"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:99
-#: dkim-verify/dkimmanageruleswidget.cpp:230
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
 #, fuzzy, kde-format
 msgid "Delete All"
 msgstr "ҳузфшуда"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:105
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all keys?"
 msgstr "Оё мехоҳед аз тамоми иттилоотҳои кӯҳнашуда озод кунед?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:106
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
 #, fuzzy, kde-format
 msgid "Delete Keys"
 msgstr "ҳузфшуда"
@@ -495,83 +495,83 @@ msgstr "Нуқсони содири калид"
 msgid "No rules imported."
 msgstr "Имзо ёфт нашуд"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&Фиристанда"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Folder List"
 msgid "Rule type"
 msgstr "Рӯйхати папкаҳо"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:195
-#: remote-content/remotecontentconfigurewidget.cpp:79
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
 #, kde-format
 msgid "Add..."
 msgstr "Афзудан..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:200
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
 #, kde-format
 msgid "Modify..."
 msgstr "Таъғир додан..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:204
+#: dkim-verify/dkimmanageruleswidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Duplicate Rule"
 msgstr "Дастури филтратсия"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:208
-#: remote-content/remotecontentconfigurewidget.cpp:86
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, fuzzy, kde-format
 msgid "Remove Rule"
 msgstr "Ҳу&зф кардан"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: dkim-verify/dkimmanageruleswidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule?"
 msgstr "Оё мехоҳед аз тамоми иттилоотҳои кӯҳнашуда озод кунед?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:215
-#: remote-content/remotecontentconfigurewidget.cpp:93
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rule"
 msgstr "Дастури филтратсия"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:236
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all the rules?"
 msgstr "Оё мехоҳед аз тамоми иттилоотҳои кӯҳнашуда озод кунед?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:237
+#: dkim-verify/dkimmanageruleswidget.cpp:224
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rules"
@@ -1206,35 +1206,35 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "&Папка дорои:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, fuzzy, kde-format
 msgid "Status"
 msgstr "Вазъият: "
 
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Оё мехоҳед аз тамоми иттилоотҳои кӯҳнашуда озод кунед?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:114
+#: remote-content/remotecontentconfigurewidget.cpp:105
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "&Папка дорои:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:121
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "&Папка дорои:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add new Url"
@@ -1845,41 +1845,41 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:157
+#: utils/messageviewerutil.cpp:156
 #, fuzzy, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл бо номи %1 аллакай мавҷуд аст. Оё мехоҳед онро тағйир диҳед?"
 
-#: utils/messageviewerutil.cpp:160
+#: utils/messageviewerutil.cpp:159
 #, fuzzy, kde-format
 msgid "Overwrite File?"
 msgstr "Тағйир додан"
 
-#: utils/messageviewerutil.cpp:210
+#: utils/messageviewerutil.cpp:209
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Захира кардани замимот ба"
 
-#: utils/messageviewerutil.cpp:227
+#: utils/messageviewerutil.cpp:226
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "Часпонидан.1"
 
-#: utils/messageviewerutil.cpp:233
+#: utils/messageviewerutil.cpp:232
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "Захира намудани замимот ҳамчун"
 
-#: utils/messageviewerutil.cpp:257
+#: utils/messageviewerutil.cpp:256
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "Часпонидан.%1"
 
-#: utils/messageviewerutil.cpp:360
+#: utils/messageviewerutil.cpp:354
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1888,22 +1888,22 @@ msgstr ""
 "Қисми иттилооти %1 рамзгузорӣ шудааст. Иттилоотро ба тарзи рамзгузоришуда "
 "захира кунам?"
 
-#: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "KMail Question"
 msgstr "Саволи KMail"
 
-#: utils/messageviewerutil.cpp:362
+#: utils/messageviewerutil.cpp:356
 #, fuzzy, kde-format
 msgid "Keep Encryption"
 msgstr "Рамзгузорӣ"
 
-#: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
 #, fuzzy, kde-format
 msgid "Do Not Keep"
 msgstr "&Рамзгузорӣ накардан"
 
-#: utils/messageviewerutil.cpp:382
+#: utils/messageviewerutil.cpp:367
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1911,13 +1911,13 @@ msgid ""
 msgstr ""
 "Қисми иттилооти %1 имзо шудааст. Иттилоотро ба тарзи имзошуда захира кунам?"
 
-#: utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:369
 #, fuzzy, kde-format
 msgid "Keep Signature"
 msgstr "Имзоот"
 
-#: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
-#: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1931,73 +1931,73 @@ msgstr ""
 "Натавонистам файли %1-ро захира кунам:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
-#: utils/messageviewerutil.cpp:487
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "бо замимот"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:485
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Замимот барои захира ёфт нашуд."
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 msgid "message"
 msgstr "<message>"
 
-#: utils/messageviewerutil.cpp:537
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:548
+#: utils/messageviewerutil.cpp:533
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "%1 иттилоот, %2."
 msgstr[1] "%1 иттилоот, %2."
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be loaded."
 msgstr "Иттилоотҳои фиристодашударо ба тарзи &рамзгузошташуда захира кардан"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error loading message"
 msgstr "Хатогӣ ҳангоми диҳиши иттилоот ба сервер"
 
-#: utils/messageviewerutil.cpp:575
+#: utils/messageviewerutil.cpp:560
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be created."
 msgstr "Иттилоотҳои фиристодашударо ба тарзи &рамзгузошташуда захира кардан"
 
-#: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
-#: utils/messageviewerutil.cpp:606
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Гузаронидани иттилоот"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:571
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Поёни иттилооти имзошуда"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:612
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&Кушодан бо ёрии '%1'"
 
-#: utils/messageviewerutil.cpp:629
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -2041,154 +2041,154 @@ msgstr "Навъ"
 msgid "Size"
 msgstr "Андоза"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:405
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Инъикоси HTML- ро барои ин ахборот фаъол гардонед."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1631
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1631
 #, fuzzy, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "&Иҷозаи пурбор кардани истинодотҳои зоҳирӣ аз шабақа"
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Work online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Make account online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, fuzzy, kde-format
 #| msgid "&Encrypt Message"
 msgid "Decrypt message."
 msgstr "&Рамзгузории иттилоот"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show signature details."
 msgstr "&Афзудани имзо"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide signature details."
 msgstr "&Афзудани имзо"
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show encryption details."
 msgstr "&Афзудани имзо"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide encryption details."
 msgstr "&Афзудани имзо"
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:426
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Санадот"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:460
 #, kde-format
 msgid "Expand all quoted text."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:462
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Collapse Thread"
 msgid "Collapse quoted text."
 msgstr "&Пинҳон кардани мунозирот"
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Мудири сертификатҳоро ба кор андохта нашуд. Дурустии гузориши барномаро "
 "санҷед."
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:526
 #, kde-format
 msgid "KMail Error"
 msgstr "Хатои KMail"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:541
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Сертификати 0x%1-ро нишон додан"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:600
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "Дар китоби адресӣ боз кардан"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:602
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "Адреси e-mail"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2721
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес дар буфери тағйирот копӣ карда шудааст."
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:626
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "Дар китоби адресӣ боз кардан"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Замимот: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:805
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Иттилооти сохташуда"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:807
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "Иттилооти сохташуда"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:810
 #, fuzzy, kde-format
 msgid "Unnamed attachment"
 msgstr "ғайри замимот"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:845
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:885
 #, kde-format
 msgid "Opening URL..."
 msgstr "Боз кардани URL..."
 
-#: viewer/urlhandlermanager.cpp:900
+#: viewer/urlhandlermanager.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Оё дар ҳақиқат мехоҳед <b>%1</b>-ро иҷро кунед?</qt>"
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:896
 #, fuzzy, kde-format
 msgid "Execute"
 msgstr "Иҷрои дастур"
@@ -2399,7 +2399,7 @@ msgstr "&Копӣ кардан ба"
 msgid "Select All Text"
 msgstr "Ҷудо кардани &тамоми иттилоот"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2033
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Копӣ кардани адрес"
@@ -2532,48 +2532,48 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Имзо таъхир карда шудааст."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1977
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2036
+#: viewer/viewer_p.cpp:2031
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Адреси e-mail"
 
-#: viewer/viewer_p.cpp:2117
+#: viewer/viewer_p.cpp:2112
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Иттилоот ба намуди матни оддӣ"
 
-#: viewer/viewer_p.cpp:2318
+#: viewer/viewer_p.cpp:2313
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Санадот"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2727
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL дар буфери тағйирот копӣ карда шудааст."
 
-#: viewer/viewer_p.cpp:2884
+#: viewer/viewer_p.cpp:2879
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Иттилоот бо %1 имзо шудааст."
 
-#: viewer/viewer_p.cpp:2889
+#: viewer/viewer_p.cpp:2884
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

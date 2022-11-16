@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2014-06-18 00:35+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Wiederledden"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:74
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Wodennig funkscheneert dat?</a>"
@@ -533,7 +533,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:51
+#: templatesconfiguration.cpp:50
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -546,7 +546,7 @@ msgstr ""
 "Utwesselbefehlen bruken, de Du eenfach ingeven oder binnen dat Menü "
 "<i>Befehl infögen</i> utsöken kannst.</p>"
 
-#: templatesconfiguration.cpp:59
+#: templatesconfiguration.cpp:58
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -555,7 +555,7 @@ msgstr ""
 "<p>Hier angeven Vörlagen gellt för den Orner, se warrt ansteed vun all "
 "globale oder Identiteet-Vörlagen bruukt.</p>"
 
-#: templatesconfiguration.cpp:64
+#: templatesconfiguration.cpp:63
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -566,7 +566,7 @@ msgstr ""
 "ansteed vun globale Vörlagen bruukt, wenn nich ok Orner-Vörlagen angeven "
 "sünd.</p>"
 
-#: templatesconfiguration.cpp:69
+#: templatesconfiguration.cpp:68
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -575,28 +575,28 @@ msgstr ""
 "<p>Dit sünd globaal (Standard-)Vörlagen; se warrt bruukt, wenn keen "
 "Identiteet- oder Orner-Vörlagen angeven sünd.</p>"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Wullt Du de aktuelle oder all Vörlagen op de Standardweerten torüchsetten?"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
 msgstr "Op Standardweerten torüchsetten"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Aktuell Vörlaag"
 
-#: templatesconfiguration.cpp:108
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
 msgstr "All Vörlagen"
 
-#: templatesconfiguration.cpp:370
+#: templatesconfiguration.cpp:361
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -331,94 +331,94 @@ msgstr "امضایی یافت نشد"
 msgid "End of signed message"
 msgstr "پایان پیام امضا‌شده"
 
-#: dkim-verify/dkimcheckfulljob.cpp:123
+#: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:124
+#: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgid "Key Changed"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:125
+#: dkim-verify/dkimcheckfulljob.cpp:120
 #, fuzzy, kde-format
 #| msgid "stored: "
 msgctxt "@action:button"
 msgid "Store"
 msgstr "ذخیره‌شده:"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "برگزیدن پوشه"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "&Insert"
 msgid "Inserted"
 msgstr "&درج‌"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Used"
 msgstr "آخرین جستجو"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:65
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&رونوشت در‌"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:71
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "حذف"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:81
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:82
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "حذف"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:99
-#: dkim-verify/dkimmanageruleswidget.cpp:230
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "حذف"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:105
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all keys?"
 msgstr "مطمئن هستید که می‌خواهید تمام پیامهای قدیمی انقضا یابد؟"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:106
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Keys"
@@ -493,84 +493,84 @@ msgstr "خرابی در واردات vCard"
 msgid "No rules imported."
 msgstr "امضایی یافت نشد"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&از‌"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Folder List"
 msgid "Rule type"
 msgstr "فهرست پوشه"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:195
-#: remote-content/remotecontentconfigurewidget.cpp:79
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
 #, kde-format
 msgid "Add..."
 msgstr "افزودن..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:200
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
 #, kde-format
 msgid "Modify..."
 msgstr "تغییر..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:204
+#: dkim-verify/dkimmanageruleswidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Duplicate Rule"
 msgstr "قواعد پالایه"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:208
-#: remote-content/remotecontentconfigurewidget.cpp:86
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Rule"
 msgstr "حذف"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: dkim-verify/dkimmanageruleswidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule?"
 msgstr "مطمئن هستید که می‌خواهید تمام پیامهای قدیمی انقضا یابد؟"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:215
-#: remote-content/remotecontentconfigurewidget.cpp:93
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rule"
 msgstr "قواعد پالایه"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:236
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all the rules?"
 msgstr "مطمئن هستید که می‌خواهید تمام پیامهای قدیمی انقضا یابد؟"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:237
+#: dkim-verify/dkimmanageruleswidget.cpp:224
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rules"
@@ -1228,37 +1228,37 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "محتوای قالب"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Status"
 msgstr "وضعیت"
 
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "مطمئن هستید که می‌خواهید تمام پیامهای قدیمی انقضا یابد؟"
 
-#: remote-content/remotecontentconfigurewidget.cpp:114
+#: remote-content/remotecontentconfigurewidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "محتوای قالب"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "محتوای قالب"
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add new Url"
@@ -1888,7 +1888,7 @@ msgstr "سطح فشرده‌سازی خودکار:"
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:157
+#: utils/messageviewerutil.cpp:156
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -1896,35 +1896,35 @@ msgstr ""
 "پرونده‌ای با نام »%1« در حال حاضر موجود است. مطمئن هستید می‌خواهید آن را "
 "جای‌نوشت کنید؟"
 
-#: utils/messageviewerutil.cpp:160
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Overwrite File?"
 msgstr "پرونده جای‌نوشت شود؟"
 
-#: utils/messageviewerutil.cpp:210
+#: utils/messageviewerutil.cpp:209
 #, kde-format
 msgid "Save Attachments To"
 msgstr "ذخیره پیوستها در"
 
-#: utils/messageviewerutil.cpp:227
+#: utils/messageviewerutil.cpp:226
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "پیوست۱"
 
-#: utils/messageviewerutil.cpp:233
+#: utils/messageviewerutil.cpp:232
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "ذخیره پیوست به عنوان"
 
-#: utils/messageviewerutil.cpp:257
+#: utils/messageviewerutil.cpp:256
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "پیوست%1"
 
-#: utils/messageviewerutil.cpp:360
+#: utils/messageviewerutil.cpp:354
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1932,35 +1932,35 @@ msgid ""
 msgstr ""
 "جزء %1 پیام رمزبندی می‌شود. می‌خواهید هنگام ذخیره‌سازی، رمزبندی را نگه دارید؟"
 
-#: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "KMail Question"
 msgstr "پرسش KMail"
 
-#: utils/messageviewerutil.cpp:362
+#: utils/messageviewerutil.cpp:356
 #, kde-format
 msgid "Keep Encryption"
 msgstr "نگه داشتن رمزبندی"
 
-#: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
 #, kde-format
 msgid "Do Not Keep"
 msgstr "نگه داشته نشود"
 
-#: utils/messageviewerutil.cpp:382
+#: utils/messageviewerutil.cpp:367
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "جزء %1 پیام امضا می‌شود. می‌خواهید هنگام ذخیره‌سازی، امضا را نگه دارید؟"
 
-#: utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "Keep Signature"
 msgstr "حفظ امضا"
 
-#: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
-#: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1974,30 +1974,30 @@ msgstr ""
 "نتوانست پرونده %1 را بنویسد:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
-#: utils/messageviewerutil.cpp:487
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "یک پیوست دارد"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:485
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "برای ذخیره، پیوستی یافت نشد."
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "۰ پیام"
 
-#: utils/messageviewerutil.cpp:537
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:548
+#: utils/messageviewerutil.cpp:533
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -2005,44 +2005,44 @@ msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] " پیام"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be loaded."
 msgstr "ذخیره پیامهای &رمزبندی‌شده ارسالی‌"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error loading message"
 msgstr "خطا هنگام بارگذاری پیام"
 
-#: utils/messageviewerutil.cpp:575
+#: utils/messageviewerutil.cpp:560
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be created."
 msgstr "ذخیره پیامهای &رمزبندی‌شده ارسالی‌"
 
-#: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
-#: utils/messageviewerutil.cpp:606
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "حرکت دادن پیامها"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:571
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "پایان پیام امضا‌شده"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:612
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&باز کردن با »%1«‌"
 
-#: utils/messageviewerutil.cpp:629
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -2085,153 +2085,153 @@ msgstr "نوع"
 msgid "Size"
 msgstr "اندازه"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:405
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "روشن کردن پرداخت زنگام برای این پیام."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1631
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1631
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "بار کردن مرجعهای خارجی از اینترنت برای این پیام."
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, fuzzy, kde-format
 #| msgid "Work online"
 msgid "Work online."
 msgstr "کار کردن برخط"
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:411
 #, fuzzy, kde-format
 #| msgid "from checked accounts only"
 msgid "Make account online."
 msgstr "فقط از حسابهای بررسی‌شده"
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, fuzzy, kde-format
 #| msgid "&Encrypt Message"
 msgid "Decrypt message."
 msgstr "&رمزبندی پیام‌"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show signature details."
 msgstr "&فعال‌سازی امضا‌"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide signature details."
 msgstr "&فعال‌سازی امضا‌"
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show encryption details."
 msgstr "&فعال‌سازی امضا‌"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide encryption details."
 msgstr "&فعال‌سازی امضا‌"
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:426
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "مستندات"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:460
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "گسترش کل متن نقل قول‌شده."
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "فشرده‌سازی متن نقل قول‌شده."
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "مدیر گواهی‌نامه را نمی‌توان آغاز کرد. لطفاً، نصب خود را بررسی کنید."
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:526
 #, kde-format
 msgid "KMail Error"
 msgstr "خطای KMail"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:541
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "نمایش گواهی‌نامه 0x%1"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:600
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "باز کردن در کتاب نشانی"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:602
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "نشانی رایانامه"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2721
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "نشانی رونوشت‌شده در تخته یادداشت."
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:626
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "باز کردن در کتاب نشانی"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
 msgstr "پیوست: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:805
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "پیام کپسوله‌شده"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:807
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "پیام کپسوله‌شده"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:810
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "قادر به ویرایش پیوست نیست"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:845
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:885
 #, kde-format
 msgid "Opening URL..."
 msgstr "در حال باز کردن نشانی وب..."
 
-#: viewer/urlhandlermanager.cpp:900
+#: viewer/urlhandlermanager.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>واقعاً می‌خواهید <b>%1</b> را اجرا کنید؟</qt>"
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:896
 #, kde-format
 msgid "Execute"
 msgstr "اجرا کردن"
@@ -2436,7 +2436,7 @@ msgstr "&رونوشت در‌"
 msgid "Select All Text"
 msgstr "برگزیدن کل متن"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2033
 #, kde-format
 msgid "Copy Link Address"
 msgstr "رونوشت نشانی پیوند"
@@ -2574,48 +2574,48 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "پرونده امضا معتبر نیست"
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1977
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2036
+#: viewer/viewer_p.cpp:2031
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "نشانی رایانامه"
 
-#: viewer/viewer_p.cpp:2117
+#: viewer/viewer_p.cpp:2112
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "پیام به عنوان متن ساده"
 
-#: viewer/viewer_p.cpp:2318
+#: viewer/viewer_p.cpp:2313
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "مستندات"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2727
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "نشانی وب رونوشت‌شده در تخته یادداشت."
 
-#: viewer/viewer_p.cpp:2884
+#: viewer/viewer_p.cpp:2879
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "پیام، توسط %1 امضا شد."
 
-#: viewer/viewer_p.cpp:2889
+#: viewer/viewer_p.cpp:2884
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

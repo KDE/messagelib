@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2021-08-08 15:54+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -46,7 +46,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Inoltra"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:74
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Come funziona?</a>"
@@ -542,7 +542,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Debug"
 
-#: templatesconfiguration.cpp:51
+#: templatesconfiguration.cpp:50
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -555,7 +555,7 @@ msgstr ""
 "supportano i comandi di sostituzione semplicemente digitandoli o "
 "selezionandoli dal menu <i>inserisci comando</i>.</p>"
 
-#: templatesconfiguration.cpp:59
+#: templatesconfiguration.cpp:58
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -564,7 +564,7 @@ msgstr ""
 "<p>I modelli indicati qui sono specifici per le singole cartelle. Prendono "
 "il posto sia dei modelli globali che di quelli per identità.</p>"
 
-#: templatesconfiguration.cpp:64
+#: templatesconfiguration.cpp:63
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -575,7 +575,7 @@ msgstr ""
 "sui modelli globali, ma possono essere rimpiazzati da modelli specifici per "
 "ogni cartella, se presenti.</p>"
 
-#: templatesconfiguration.cpp:69
+#: templatesconfiguration.cpp:68
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -584,29 +584,29 @@ msgstr ""
 "<p>Questi sono i modelli globali (predefiniti). Sono rimpiazzati sia dai "
 "modelli per identità che da quelli per cartella, se specificati.</p>"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Vuoi reimpostare alle versioni predefinite il modello attuale o tutti i "
 "modelli?"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
 msgstr "Ritorna al valore predefinito"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Reimposta il modello attuale"
 
-#: templatesconfiguration.cpp:108
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Reimposta tutti i modelli"
 
-#: templatesconfiguration.cpp:370
+#: templatesconfiguration.cpp:361
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

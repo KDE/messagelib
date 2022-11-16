@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -302,74 +302,74 @@ msgstr "ไม่ทราบสถานะลายเซ็น"
 msgid "End of signed message"
 msgstr "จบจดหมายที่มีลายเซ็น"
 
-#: dkim-verify/dkimcheckfulljob.cpp:123
+#: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:124
+#: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgid "Key Changed"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:125
+#: dkim-verify/dkimcheckfulljob.cpp:120
 #, fuzzy, kde-format
 #| msgid "stored: "
 msgctxt "@action:button"
 msgid "Store"
 msgstr "ที่เก็บไว้: "
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "เลือกโฟลเดอร์"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Insert Command..."
 msgid "Inserted"
 msgstr "แทรกคำสั่ง..."
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Used"
 msgstr "ค้นหาล่าสุด"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:65
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "ทำสำเนาไปยัง"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:71
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "ลบ"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:81
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:82
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -377,20 +377,20 @@ msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "ลบ"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:99
-#: dkim-verify/dkimmanageruleswidget.cpp:230
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "ลบ"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:105
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all keys?"
 msgstr "คุณแน่ใจหรือไม่ ที่จะให้จดหมายเก่าทั้งหมด หมดอายุ ?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:106
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -464,84 +464,84 @@ msgstr "นำเข้าการกรอง"
 msgid "No rules imported."
 msgstr "ไม่พบลายเซ็น"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "จาก"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Folder List"
 msgid "Rule type"
 msgstr "รายการโฟลเดอร์"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:195
-#: remote-content/remotecontentconfigurewidget.cpp:79
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
 #, kde-format
 msgid "Add..."
 msgstr "เพิ่ม..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:200
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
 #, kde-format
 msgid "Modify..."
 msgstr "แก้ไข..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:204
+#: dkim-verify/dkimmanageruleswidget.cpp:203
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Duplicate Rule"
 msgstr "กฎการกรอง"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:208
-#: remote-content/remotecontentconfigurewidget.cpp:86
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Rule"
 msgstr "ลบ"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: dkim-verify/dkimmanageruleswidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule?"
 msgstr "คุณแน่ใจหรือไม่ ที่จะให้จดหมายเก่าทั้งหมด หมดอายุ ?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:215
-#: remote-content/remotecontentconfigurewidget.cpp:93
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rule"
 msgstr "กฎการกรอง"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:236
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all the rules?"
 msgstr "คุณแน่ใจหรือไม่ ที่จะให้จดหมายเก่าทั้งหมด หมดอายุ ?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:237
+#: dkim-verify/dkimmanageruleswidget.cpp:224
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rules"
@@ -1181,37 +1181,37 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "เนื้อหาต้นแบบ"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Status"
 msgstr "สถานะ"
 
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "คุณแน่ใจหรือไม่ ที่จะให้จดหมายเก่าทั้งหมด หมดอายุ ?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:114
+#: remote-content/remotecontentconfigurewidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "เนื้อหาต้นแบบ"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "เนื้อหาต้นแบบ"
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:139
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgid "Add new Url"
@@ -1820,75 +1820,75 @@ msgstr "ระดับการยุบอัตโนมัติ:"
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:157
+#: utils/messageviewerutil.cpp:156
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "มีแฟ้มชื่อ \"%1\" นี้อยู่แล้ว คุณต้องการเขียนทับมันหรือไม่ ?"
 
-#: utils/messageviewerutil.cpp:160
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Overwrite File?"
 msgstr "เขียนทับแฟ้มหรือไม่ ?"
 
-#: utils/messageviewerutil.cpp:210
+#: utils/messageviewerutil.cpp:209
 #, kde-format
 msgid "Save Attachments To"
 msgstr "บันทึกสิ่งที่แนบมาด้วยเป็น"
 
-#: utils/messageviewerutil.cpp:227
+#: utils/messageviewerutil.cpp:226
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "สิ่งที่แนบมาด้วย.1"
 
-#: utils/messageviewerutil.cpp:233
+#: utils/messageviewerutil.cpp:232
 #, kde-format
 msgid "Save Attachment"
 msgstr "บันทึกสิ่งที่แนบมาด้วย"
 
-#: utils/messageviewerutil.cpp:257
+#: utils/messageviewerutil.cpp:256
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "สิ่งที่แนบมาด้วย.%1"
 
-#: utils/messageviewerutil.cpp:360
+#: utils/messageviewerutil.cpp:354
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr "ส่วน %1 ของข้อความถูกเข้ารหัสไว้ คุณต้องการรักษาการเข้ารหัสนี้ เมื่อมีการบันทึกหรือไม่ ?"
 
-#: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "KMail Question"
 msgstr "คำถามของ จัดการจดหมาย K"
 
-#: utils/messageviewerutil.cpp:362
+#: utils/messageviewerutil.cpp:356
 #, kde-format
 msgid "Keep Encryption"
 msgstr "เก็บการเข้ารหัส"
 
-#: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
 #, kde-format
 msgid "Do Not Keep"
 msgstr "ไม่ต้องเก็บ"
 
-#: utils/messageviewerutil.cpp:382
+#: utils/messageviewerutil.cpp:367
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "ส่วน %1 นี้ของจดหมายมีการเซ็นตไว้ คุณต้องการรักษาลายเซ็นนี้ไว้ เมื่อมีการบันทึกหรือไม่ ?"
 
-#: utils/messageviewerutil.cpp:384
+#: utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "Keep Signature"
 msgstr "คงลายเซ็นไว้"
 
-#: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
-#: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1898,73 +1898,73 @@ msgid ""
 "qt>"
 msgstr "<qt>ไม่สามารถเขียนแฟ้ม<br><filename>%1</filename><br>ได้<br>%2"
 
-#: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
-#: utils/messageviewerutil.cpp:487
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "Error saving attachment"
 msgstr "เกิดข้อผิดพลาดในการบันทึกสิ่งที่แนบมาด้วย"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:485
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "ไม่พบสิ่งที่แนบมาด้วยที่จะทำการบันทึก"
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 #| msgid " messages"
 msgid "message"
 msgstr " ฉบับ"
 
-#: utils/messageviewerutil.cpp:537
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:548
+#: utils/messageviewerutil.cpp:533
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "&บันทึกจดหมาย"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Message will not be encrypted"
 msgid "File %1 could not be loaded."
 msgstr "จดหมายจะไม่ถูกเข้ารหัส"
 
-#: utils/messageviewerutil.cpp:573
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error loading message"
 msgstr "เกิดข้อผิดพลาดขึ้น ระหว่างอัพโหลดจดหมาย"
 
-#: utils/messageviewerutil.cpp:575
+#: utils/messageviewerutil.cpp:560
 #, fuzzy, kde-format
 #| msgid "Message will not be encrypted"
 msgid "File %1 could not be created."
 msgstr "จดหมายจะไม่ถูกเข้ารหัส"
 
-#: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
-#: utils/messageviewerutil.cpp:606
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "กำลังย้ายจดหมาย"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:571
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "จบจดหมายที่มีลายเซ็น"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:612
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "เปิดด้วย '%1'"
 
-#: utils/messageviewerutil.cpp:629
+#: utils/messageviewerutil.cpp:614
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"
@@ -2008,142 +2008,142 @@ msgstr "ประเภท"
 msgid "Size"
 msgstr "ขนาด"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:405
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "เปิดใช้การแสดงผล HTML สำหรับจดหมายฉบับนี้"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1631
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1631
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "อนุญาตให้จดหมายนี้โหลดส่วนที่อ้างถึงภายนอกจากอินเทอร์เน็ตได้"
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Work online."
 msgstr "ทำงานออนไลน์"
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:411
 #, fuzzy, kde-format
 #| msgid "from checked accounts only"
 msgid "Make account online."
 msgstr "จากบัญชีผู้ใช้ที่กาเลือกไว้เท่านั้น"
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Decrypt message."
 msgstr "ถอดรหัสจดหมาย"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Show signature details."
 msgstr "แสดงรายละเอียดของลายเซ็น"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Hide signature details."
 msgstr "ซ่อนรายละเอียดของลายเซ็น"
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "แสดงรายละเอียดของลายเซ็น"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "ซ่อนรายละเอียดของลายเซ็น"
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:426
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "ระบบเอกสาร"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:460
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "ขยายส่วนที่อ้างถึงทั้งหมด"
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "ยุบส่วนที่อ้างถึง"
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "ไม่สามารถเริ่มตัวจัดการใบรับรองได้ โปรดตรวจสอบการติดตั้งของคุณ"
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:526
 #, kde-format
 msgid "KMail Error"
 msgstr "ข้อผิดพลาดของ Kmail"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:541
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "แสดงใบรับรอง 0x%1"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:600
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "เปิดในสมุดที่อยู่"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:602
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "ที่อยู่อีเมล"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2721
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "คัดลอกที่อยู่ไปยังคลิปบอร์ดแล้ว"
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:626
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "เปิดในสมุดที่อยู่"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
 msgstr "สิ่งที่แนบมาด้วย: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:805
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "เนื้อหาจดหมายที่มีการปกปิด"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:807
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "เนื้อหาจดหมายที่มีการปกปิด"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:810
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "ไม่สามารถแก้ไขสิ่งที่แนบมาด้วยได้"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:845
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:885
 #, kde-format
 msgid "Opening URL..."
 msgstr "กำลังเปิดที่อยู่ URL..."
 
-#: viewer/urlhandlermanager.cpp:900
+#: viewer/urlhandlermanager.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Do you really want to execute <filename>%1</<filename>?"
@@ -2151,7 +2151,7 @@ msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "คุณต้องการประมวลผล <filename>%1</<filename> จริงหรือไม่ ?"
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:896
 #, kde-format
 msgid "Execute"
 msgstr "ประมวลผล"
@@ -2355,7 +2355,7 @@ msgstr "ทำสำเนาไปยัง"
 msgid "Select All Text"
 msgstr "เลือกข้อความทั้งหมด"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2033
 #, kde-format
 msgid "Copy Link Address"
 msgstr "คัดลอกตำแหน่งเชื่อมโยง"
@@ -2487,48 +2487,48 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "แฟ้มลายเซ็นใช้งานไม่ได้"
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1977
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2036
+#: viewer/viewer_p.cpp:2031
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "ที่อยู่อีเมล"
 
-#: viewer/viewer_p.cpp:2117
+#: viewer/viewer_p.cpp:2112
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "จดหมายเป็นข้อความธรรมดา"
 
-#: viewer/viewer_p.cpp:2318
+#: viewer/viewer_p.cpp:2313
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "ระบบเอกสาร"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2727
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "คัดลอก URL ไปยังคลิปบอร์ดแล้ว"
 
-#: viewer/viewer_p.cpp:2884
+#: viewer/viewer_p.cpp:2879
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "จดหมายถูกเซ็นกำกับโดย %1"
 
-#: viewer/viewer_p.cpp:2889
+#: viewer/viewer_p.cpp:2884
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

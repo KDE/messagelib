@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2019-04-06 11:51+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Reenviar"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:74
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Como funciona isto?</a>"
@@ -530,7 +530,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Depuración"
 
-#: templatesconfiguration.cpp:51
+#: templatesconfiguration.cpp:50
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -543,7 +543,7 @@ msgstr ""
 "permiten ordes de substitución; simplemente escríbaas ou escóllaas no menú "
 "<i>Inserir unha orde</i>.</p>"
 
-#: templatesconfiguration.cpp:59
+#: templatesconfiguration.cpp:58
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -552,7 +552,7 @@ msgstr ""
 "<p>Os modelos especificados son específicos do cartafol. Ignoran tanto os "
 "modelos globais como os modelos para cada identidade.</p>"
 
-#: templatesconfiguration.cpp:64
+#: templatesconfiguration.cpp:63
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -563,7 +563,7 @@ msgstr ""
 "modelos globais pero pódennos ignorar os modelos por cartafol, de se "
 "especificaren.</p>"
 
-#: templatesconfiguration.cpp:69
+#: templatesconfiguration.cpp:68
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -572,27 +572,27 @@ msgstr ""
 "<p>Estes son modelos globais (predeterminados). Pódense ignorar con modelos "
 "para cada identidade ou para cada cartafol, de se especificaren.</p>"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "Quere reiniciar este modelo, ou todos os modelos, ao predeterminado?"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
 msgstr "Reiniciar ao predeterminado"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Reiniciar este modelo"
 
-#: templatesconfiguration.cpp:108
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Reiniciar todos os modelos"
 
-#: templatesconfiguration.cpp:370
+#: templatesconfiguration.cpp:361
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
