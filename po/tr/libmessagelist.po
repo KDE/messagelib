@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-11-14 14:24+0300\n"
+"PO-Revision-Date: 2022-11-15 05:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1528,7 +1528,7 @@ msgstr "Temayı Kopyala"
 #: utils/configurethemesdialog.cpp:136
 #, kde-format
 msgid "Export Theme..."
-msgstr "Temayı Çıkart..."
+msgstr "Temayı Dışa Aktar..."
 
 #: utils/configurethemesdialog.cpp:143
 #, kde-format
