@@ -33,7 +33,6 @@ QTEST_MAIN(MainTextJobTest)
 
 void MainTextJobTest::initTestCase()
 {
-    qputenv("KDE_FORK_SLAVES", "yes"); // To avoid a runtime dependency on klauncher
     QStandardPaths::setTestModeEnabled(true);
 }
 

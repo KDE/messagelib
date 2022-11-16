@@ -12,7 +12,6 @@ class AttachmentFromUrlJobTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
-    void initTestCase();
     void testAttachments_data();
     void testAttachments();
     void testAttachmentTooBig();
