@@ -13,7 +13,7 @@
 using namespace std::chrono_literals;
 
 QTEST_MAIN(DKIMCheckSignatureJobTest)
-//#define USE_EXTRA_CHECK 1
+// #define USE_EXTRA_CHECK 1
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
     : QObject(parent)
 {
@@ -84,9 +84,9 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
 
     // Used for testing some private emails. Disable by default
 #ifdef USE_EXTRA_CHECK
-//#if __has_include("dkimchecksignaturejobtest-extra.cpp")
+// #if __has_include("dkimchecksignaturejobtest-extra.cpp")
 #include "dkimchecksignaturejobtest-extra.cpp"
-//#endif
+// #endif
 #endif
 }
 

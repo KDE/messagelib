@@ -570,7 +570,6 @@ inline int encryptKeyNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-
 inline int encryptRootCertNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {

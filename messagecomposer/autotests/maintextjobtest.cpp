@@ -25,7 +25,7 @@ using namespace KMime;
 
 #include <KActionCollection>
 
-//#include <kpimtextedit/textedit.h>
+// #include <kpimtextedit/textedit.h>
 
 using namespace MessageComposer;
 

@@ -20,7 +20,7 @@
 #include <qca_publickey.h>
 
 // see https://tools.ietf.org/html/rfc6376
-//#define DEBUG_SIGNATURE_DKIM 1
+// #define DEBUG_SIGNATURE_DKIM 1
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)

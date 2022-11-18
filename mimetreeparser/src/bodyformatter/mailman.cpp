@@ -54,7 +54,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     // Latin1 or utf8 ?
     const QString str = QString::fromLatin1(curNode->decodedContent());
 
-    //###
+    // ###
     const QLatin1String delim1("--__--__--\n\nMessage:");
     const QLatin1String delim2("--__--__--\r\n\r\nMessage:");
     const QLatin1String delimZ2("--__--__--\n\n_____________");

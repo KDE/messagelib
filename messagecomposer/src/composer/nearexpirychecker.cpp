@@ -312,10 +312,8 @@ void NearExpiryChecker::checkKeyNearExpiry(const GpgME::Key &key, bool isOwnKey,
         Q_EMIT expiryMessage(key, msg, isOwnKey ? OwnKeyExpired : OtherKeyExpired, newMessage);
     } else {
         const int daysTillExpiry = 1 + int(secsTillExpiry / secsPerDay);
-        const int threshold = ca
-            ? (key.isRoot() ? encryptRootCertNearExpiryWarningThresholdInDays()
-                            : encryptChainCertNearExpiryWarningThresholdInDays())
-            : (isOwnKey ? encryptOwnKeyNearExpiryWarningThresholdInDays() : encryptKeyNearExpiryWarningThresholdInDays());
+        const int threshold = ca ? (key.isRoot() ? encryptRootCertNearExpiryWarningThresholdInDays() : encryptChainCertNearExpiryWarningThresholdInDays())
+                                 : (isOwnKey ? encryptOwnKeyNearExpiryWarningThresholdInDays() : encryptKeyNearExpiryWarningThresholdInDays());
         if (threshold > -1 && daysTillExpiry <= threshold) {
             const QString msg = key.protocol() == GpgME::OpenPGP ? formatOpenPGPMessage(key, secsTillExpiry, isOwnKey, isSigningKey)
                                                                  : formatSMIMEMessage(key, orig_key, secsTillExpiry, isOwnKey, isSigningKey, ca);

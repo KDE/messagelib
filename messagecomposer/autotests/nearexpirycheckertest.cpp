@@ -226,7 +226,7 @@ private Q_SLOTS:
             checker.d->testMode = true;
             checker.d->difftime = 5 * 24 * 3600; // 5 days
             QSignalSpy spy(&checker, &NearExpiryChecker::expiryMessage);
-            //Test if the correct treshold is taken
+            // Test if the correct treshold is taken
             checker.checkKey(key);
             checker.checkOwnKey(key);
             checker.checkOwnSigningKey(key);
