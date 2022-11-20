@@ -134,7 +134,7 @@
 #include <Akonadi/CollectionFetchScope>
 
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <Akonadi/MDNStateAttribute>
 #include <QApplication>
@@ -1420,7 +1420,7 @@ void ViewerPrivate::createWidgets()
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
     readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(readerBox);
+    mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechWidget(readerBox);
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     readerBoxVBoxLayout->addWidget(mTextToSpeechWidget);
 #endif

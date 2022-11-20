@@ -14,8 +14,8 @@
 #include "messageviewer_debug.h"
 #include <KPIMTextEdit/SlideContainer>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechInterface>
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechInterface>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <PimCommon/PimUtil>
 
@@ -41,7 +41,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     : QWidget(parent)
     , mSliderContainer(new KPIMTextEdit::SlideContainer(this))
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    , mTextToSpeechWidget(new KPIMTextEdit::TextToSpeechWidget(this))
+    , mTextToSpeechWidget(new KPIMTextEditTextToSpeech::TextToSpeechWidget(this))
 #endif
 {
     auto lay = new QVBoxLayout(this);
@@ -49,7 +49,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     lay->setContentsMargins({});
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
-    auto textToSpeechInterface = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
+    auto textToSpeechInterface = new KPIMTextEditTextToSpeech::TextToSpeechInterface(mTextToSpeechWidget, this);
     mTextBrowser = new MailSourceViewTextBrowser(textToSpeechInterface);
 #else
     mTextBrowser = new MailSourceViewTextBrowser(this);
@@ -111,7 +111,7 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
     return mTextBrowser;
 }
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
+MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
     : QPlainTextEdit(parent)
     , mTextToSpeechInterface(textToSpeechInterface)
 {

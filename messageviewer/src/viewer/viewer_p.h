@@ -54,6 +54,9 @@ class IdentityManager;
 namespace KPIMTextEdit
 {
 class SlideContainer;
+}
+namespace KPIMTextEditTextToSpeech
+{
 class TextToSpeechWidget;
 }
 
@@ -701,7 +704,7 @@ public:
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEditTextToSpeech::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
 #endif
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;

@@ -8,7 +8,7 @@
 #include "../src/findbar/findbarsourceview.h"
 #include "../src/widgets/mailsourceviewtextbrowserwidget.h"
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <QTest>
 
@@ -31,7 +31,7 @@ void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
     QVERIFY(findbar->isHidden());
 
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    auto texttospeechwidget = widget.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeech"));
+    auto texttospeechwidget = widget.findChild<KPIMTextEditTextToSpeech::TextToSpeechWidget *>(QStringLiteral("texttospeech"));
     QVERIFY(texttospeechwidget);
     QVERIFY(texttospeechwidget->isHidden());
 #endif
