@@ -621,8 +621,12 @@ const QTextCodec *NodeHelper::codecForName(const QByteArray &_str)
     if (_str.isEmpty()) {
         return nullptr;
     }
-    QByteArray codec = _str.toLower();
-    return KCharsets::charsets()->codecForName(QLatin1String(codec));
+    const QByteArray codecBy = _str.toLower();
+    auto codec = QTextCodec::codecForName(codecBy);
+    if (!codec) {
+        codec = QTextCodec::codecForLocale();
+    }
+    return codec;
 }
 
 QString NodeHelper::fileName(const KMime::Content *node)
@@ -841,7 +845,7 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
     QMap<QString, bool> mimeNames;
     QStringList::ConstIterator constEnd(encodingNames.constEnd());
     for (QStringList::ConstIterator it = encodingNames.constBegin(); it != constEnd; ++it) {
-        QTextCodec *codec = KCharsets::charsets()->codecForName(*it);
+        QTextCodec *codec = QTextCodec::codecForName((*it).toLatin1());
         const QString mimeName = (codec) ? QString::fromLatin1(codec->name()).toLower() : (*it);
         if (!mimeNames.contains(mimeName)) {
             encodings.append(KCharsets::charsets()->descriptionForEncoding(*it));

@@ -25,7 +25,6 @@
 #include <KIdentityManagement/IdentityManager>
 
 #include "templateparser_debug.h"
-#include <KCharsets>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KProcess>
@@ -55,7 +54,7 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
         if (name == QLatin1String("locale")) {
             codec = QTextCodec::codecForLocale();
         } else {
-            codec = KCharsets::charsets()->codecForName(name, ok);
+            codec = QTextCodec::codecForName(name.toLatin1());
         }
         if (!ok || !codec) {
             qCWarning(TEMPLATEPARSER_LOG) << "Could not get text codec for charset" << name;
@@ -73,7 +72,7 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
     if (!charsets.isEmpty()) {
         qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
     }
-    return KCharsets::charsets()->codecForName(QStringLiteral("utf-8"));
+    return QTextCodec::codecForName("UTF-8");
 }
 }
 

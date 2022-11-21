@@ -32,7 +32,6 @@
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>
 
-#include <KCharsets>
 #include <cstdlib>
 
 #include <QTest>

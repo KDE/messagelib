@@ -15,7 +15,6 @@
 #include <QUrl>
 
 #include "messagecomposer_debug.h"
-#include <KCharsets>
 
 #include <KEmailAddress>
 #include <KMime/KMimeMessage>

@@ -25,7 +25,6 @@
 #include <gpgme++/keylistresult.h>
 #include <gpgme++/verificationresult.h>
 
-#include <KCharsets>
 #include <cstdlib>
 
 #include <MessageComposer/TransparentJob>

@@ -16,7 +16,6 @@
 #include <QTextCodec>
 
 #include "messagecomposer_debug.h"
-#include <KCharsets>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -136,7 +135,7 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
 bool MainTextJobPrivate::encodeTexts()
 {
     Q_Q(MainTextJob);
-    QTextCodec *codec = KCharsets::charsets()->codecForName(QString::fromLatin1(chosenCharset));
+    QTextCodec *codec = QTextCodec::codecForName(chosenCharset);
     if (!codec) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << chosenCharset;
         q->setError(JobBase::BugError);

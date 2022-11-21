@@ -35,7 +35,6 @@
 // KDE includes
 #include <KActionCollection>
 #include <KActionMenu>
-#include <KCharsets>
 #include <QAction>
 #include <QHBoxLayout>
 #include <QPrintPreviewDialog>

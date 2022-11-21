@@ -50,7 +50,6 @@
 
 #include <KMbox/MBox>
 
-#include <KCharsets>
 #include <KFileWidget>
 #include <KIO/FileCopyJob>
 #include <KIO/StatJob>
@@ -650,7 +649,11 @@ const QTextCodec *Util::codecForName(const QByteArray &_str)
         return nullptr;
     }
     const QByteArray codec = _str.toLower();
-    return KCharsets::charsets()->codecForName(QLatin1String(codec));
+    auto codecFromName = QTextCodec::codecForName(codec);
+    if (!codecFromName) {
+        codecFromName = QTextCodec::codecForLocale();
+    }
+    return codecFromName;
 }
 
 void Util::readGravatarConfig()

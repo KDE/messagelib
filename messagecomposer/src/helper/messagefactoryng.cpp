@@ -21,7 +21,6 @@
 
 #include "helper/messagehelper.h"
 #include "messagecomposer_debug.h"
-#include <KCharsets>
 #include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMime/DateFormatter>
@@ -928,17 +927,19 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
 {
     if (MessageComposer::MessageComposerSettings::forceReplyCharset()) {
         // first convert the body from its current encoding to unicode representation
-        QTextCodec *bodyCodec = KCharsets::charsets()->codecForName(QString::fromLatin1(msg->contentType()->charset()));
+        QTextCodec *bodyCodec = QTextCodec::codecForName(msg->contentType()->charset());
         if (!bodyCodec) {
-            bodyCodec = KCharsets::charsets()->codecForName(QStringLiteral("UTF-8"));
+            bodyCodec = QTextCodec::codecForName("UTF-8");
+            if (!bodyCodec) {
+                bodyCodec = QTextCodec::codecForLocale();
+            }
         }
-
         const QString body = bodyCodec->toUnicode(msg->body());
 
         // then apply the encoding of the original message
         msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
 
-        QTextCodec *codec = KCharsets::charsets()->codecForName(QString::fromLatin1(msg->contentType()->charset()));
+        QTextCodec *codec = QTextCodec::codecForName(msg->contentType()->charset());
         if (!codec) {
             qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << msg->contentType()->charset();
         } else if (!codec->canEncode(body)) { // charset can't encode body, fall back to preferred
@@ -955,7 +956,10 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
                 fallbackCharset = "UTF-8";
             }
 
-            codec = KCharsets::charsets()->codecForName(QString::fromLatin1(fallbackCharset));
+            codec = QTextCodec::codecForName(fallbackCharset);
+            if (!codec) {
+                codec = QTextCodec::codecForLocale();
+            }
             msg->setBody(codec->fromUnicode(body));
         } else {
             msg->setBody(codec->fromUnicode(body));

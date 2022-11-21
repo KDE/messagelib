@@ -20,7 +20,6 @@
 #include <QTextDocument>
 
 #include "messagecomposer_debug.h"
-#include <KCharsets>
 #include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -234,7 +233,7 @@ QByteArray MessageComposer::Util::selectCharset(const QVector<QByteArray> &chars
     for (const QByteArray &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
-        QTextCodec *codec = KCharsets::charsets()->codecForName(QString::fromLatin1(name));
+        QTextCodec *codec = QTextCodec::codecForName(name);
         if (!codec) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << name;
             continue;

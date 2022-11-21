@@ -8,7 +8,6 @@
 #include <QTextEdit>
 
 #include "messagecomposer_debug.h"
-#include <KCharsets>
 #include <KIO/Job>
 
 #include <QPointer>
@@ -56,7 +55,7 @@ void InsertTextFileJob::slotGetJobFinished(KJob *job)
 
     if (d->mEditor) {
         if (!d->mEncoding.isEmpty()) {
-            const QTextCodec *fileCodec = KCharsets::charsets()->codecForName(d->mEncoding);
+            const QTextCodec *fileCodec = QTextCodec::codecForName(d->mEncoding.toLatin1());
             if (fileCodec) {
                 d->mEditor->textCursor().insertText(fileCodec->toUnicode(d->mFileData.data()));
             } else {
