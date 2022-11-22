@@ -479,10 +479,11 @@ void Pane::focusQuickSearch(const QString &selectedText)
 
 void Pane::setQuickSearchClickMessage(const QString &msg)
 {
-    auto w = static_cast<Widget *>(currentWidget());
-
-    if (w) {
-        w->setQuickSearchClickMessage(msg);
+    for (int i = 0; i < count(); ++i) {
+        auto w = qobject_cast<Widget *>(widget(i));
+        if (w) {
+            w->setQuickSearchClickMessage(msg);
+        }
     }
 }
 
