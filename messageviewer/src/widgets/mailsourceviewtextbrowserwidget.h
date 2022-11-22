@@ -18,12 +18,13 @@ namespace KPIMTextEdit
 {
 class SlideContainer;
 }
-
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechWidget;
 class TextToSpeechInterface;
 }
+#endif
 
 namespace MessageViewer
 {

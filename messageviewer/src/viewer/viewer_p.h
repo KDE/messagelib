@@ -55,10 +55,12 @@ namespace KPIMTextEdit
 {
 class SlideContainer;
 }
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechWidget;
 }
+#endif
 
 namespace MimeTreeParser
 {
