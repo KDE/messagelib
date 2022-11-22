@@ -82,6 +82,7 @@ public:
     QAction *mActivatePreviousTabAction = nullptr;
     QAction *mMoveTabLeftAction = nullptr;
     QAction *mMoveTabRightAction = nullptr;
+    QString mQuickSearchPlaceHolderMessage;
     bool mPreferEmptyTab = false;
     int mMaxTabCreated = 0;
 };
@@ -479,10 +480,11 @@ void Pane::focusQuickSearch(const QString &selectedText)
 
 void Pane::setQuickSearchClickMessage(const QString &msg)
 {
+    d->mQuickSearchPlaceHolderMessage = msg;
     for (int i = 0; i < count(); ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
-            w->setQuickSearchClickMessage(msg);
+            w->setQuickSearchClickMessage(d->mQuickSearchPlaceHolderMessage);
         }
     }
 }
@@ -797,7 +799,9 @@ QItemSelectionModel *Pane::createNewTab()
     w->setXmlGuiClient(d->mXmlGuiClient);
 
     addTab(w, i18nc("@title:tab Empty messagelist", "Empty"));
-
+    if (!d->mQuickSearchPlaceHolderMessage.isEmpty()) {
+        w->setQuickSearchClickMessage(d->mQuickSearchPlaceHolderMessage);
+    }
     if (d->mXmlGuiClient && count() < 10) {
         if (d->mMaxTabCreated < count()) {
             d->mMaxTabCreated = count();
