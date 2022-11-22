@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2022-10-24 10:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1547,17 +1547,17 @@ msgstr "La carpeta seleccionada no és vàlida"
 msgid "Invalid folder"
 msgstr "Carpeta no vàlida"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "missatge reenviat"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Comprovant: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1888,21 +1888,21 @@ msgstr ""
 "<p>S'ha produït un error en intentar exportar la clau des del dorsal:</"
 "p><p><b>No s'ha trobat cap clau vàlida per a l'usuari %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Heu sol·licitat utilitzar l'ajustament de paraules, però no heu proporcionat "
 "text pla."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "No heu sol·licitat utilitzar l'ajustament de paraules, però heu proporcionat "
 "text pla."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1912,7 +1912,7 @@ msgstr ""
 "configuració i assegureu-vos que conté com a mínim un joc de caràcters per a "
 "l'enviament."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1921,33 +1921,33 @@ msgstr ""
 "Codificant el missatge amb %1 es perdran alguns caràcters.\n"
 "Voleu continuar?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Es perdran alguns caràcters"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Perd caràcters"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Canvia la codificació"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "L'usuari ha decidit canviar la codificació."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr ""
 "La codificació seleccionada (%1) no pot codificar completament el missatge."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "No s'ha pogut obtindre el còdec de text del joc de caràcters «%1»."
@@ -2788,7 +2788,7 @@ msgstr "Miscel·lània"
 msgid "Subject"
 msgstr "Assumpte"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2796,7 +2796,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "adjunt,adjuntat,annex,annexat"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2805,18 +2805,18 @@ msgstr ""
 "El distribuïdor de correu està sense configurar, i no pot enviar els "
 "correus. Voleu crear ara un distribuïdor de correu?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Sense distribuïdor de correu."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crea un distribuïdor de correu"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2825,12 +2825,12 @@ msgstr ""
 "El distribuïdor de correu està fora de línia, i no pot enviar els correus. "
 "Voleu posar-lo en línia?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "El distribuïdor de correu està fora de línia."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

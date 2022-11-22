@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2022-06-05 20:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1535,17 +1535,17 @@ msgstr "Valittu kansio ei ole kelvollinen."
 msgid "Invalid folder"
 msgstr "Virheellinen kansio"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "välitetty viesti"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Kuittaus: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1874,17 +1874,17 @@ msgstr ""
 "<p>Sattui virhe yritettäessä viedä avainta taustaosasta:</p><p><b>Ei "
 "kelvollista avainta käyttäjälle %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr "Pyydetty rivittämään, muttei annettu rivitettyä paljasta tekstiä."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "Pyydetty rivittämään, muttei annettu paljasta tekstiä."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1893,7 +1893,7 @@ msgstr ""
 "Käytettävää merkistökoodausta ei ole saatavilla. Tarkista asetus ja "
 "varmista, että lähetykselle on asetettu vähintään yksi merkistökoodaus."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1902,32 +1902,32 @@ msgstr ""
 "Viestin koodaaminen merkistöön %1 hukkaa joitakin merkkejä.\n"
 "Haluatko jatkaa?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Joitakin merkkejä menetetään"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Hukkaa merkkejä"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Vaihda merkistöä"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Käyttäjä päätti vaihtaa merkistöä."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Valittu merkistö (%1) ei kykene täysin koodaamaan viestiä."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Ei saatu tekstikoodekkia merkistölle ”%1”."
@@ -2756,7 +2756,7 @@ msgstr "Sekalaista"
 msgid "Subject"
 msgstr "Aihe"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2764,7 +2764,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "liite,liitetty"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2773,18 +2773,18 @@ msgstr ""
 "Viestinvälitystä ei ole asetettu, joten postia ei voi lähettää. Haluatko "
 "määrittää viestinvälityksen?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Ei viestinvälitystä."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Luo viestinvälitys"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2793,12 +2793,12 @@ msgstr ""
 "Viestinvälitys ei ole verkossa, joten postia ei voi lähettää. Haluatko "
 "yhdistää viestinvälityksen verkkoon?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Viestinvälitys ei toiminnassa."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2020-10-10 10:00+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1810,17 +1810,17 @@ msgstr "Выбранная папка некорректна."
 msgid "Invalid folder"
 msgstr "Недопустимая папка"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "Пересланное письмо"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Получено: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -2149,21 +2149,21 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr "<p>При попытке экспорта ключа произошла ошибка:</p><p><b>%1</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Предложено использовать перенос текста, но не задан простой текст с "
 "переносами."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Предложено не использовать перенос текста, но не задан текст без "
 "форматирования."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -2172,7 +2172,7 @@ msgstr ""
 "Нет доступных кодировок шифрования. Убедитесь, что в параметрах содержится "
 "хотя бы одна кодировка для передачи."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -2181,32 +2181,32 @@ msgstr ""
 "Преобразование письма в кодировку %1 приведёт к потере некоторых символов.\n"
 "Продолжить?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Некоторые символы будут утеряны"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Потерянные символы"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Изменить кодировку"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Пользователь решил изменить кодировку."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Выбранная кодировка (%1) не может полностью кодировать это письмо."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Не удалось получить текстовый кодек для кодировки «%1»."
@@ -3043,7 +3043,7 @@ msgid "Subject"
 msgstr "Тема"
 
 # BUGME: добавить больше? --aspotashev
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -3053,7 +3053,7 @@ msgstr ""
 "attachment,attached,вложение,вложении,вложенный,вложенном,прикрепляю,"
 "прикреплённом,прикрепленном,прикрепил,приложенном,приложенный"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -3062,19 +3062,19 @@ msgstr ""
 "Диспетчер писем не настроен, отправка писем невозможна. Создать диспетчер "
 "писем?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Диспетчер писем отсутствует"
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Диспетчер писем отсутствует"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -3084,12 +3084,12 @@ msgstr ""
 "Подключиться к сети?"
 
 # BUGME: needs @title:window --aspotashev
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Диспетчер писем работает в автономном режиме"
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2022-10-25 00:15+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1541,17 +1541,17 @@ msgstr "La carpeta seleccionada no es válida."
 msgid "Invalid folder"
 msgstr "Carpeta no válida"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "mensaje reenviado"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Acuse de recibo: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1883,21 +1883,21 @@ msgstr ""
 "<p>Ha ocurrido un error al intentar exportar la clave desde el motor:</"
 "p><p><b>No se ha encontrado una clave válida para el usuario %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Preguntado para utilizar ajuste de palabras, pero no se ha proporcionado "
 "texto sin formato."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Preguntado para no usar ajuste de palabras, pero no se ha proporcionado "
 "texto sin formato limpio."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1907,7 +1907,7 @@ msgstr ""
 "compruebe su configuración y asegúrese de que contiene al menos un juego de "
 "caracteres para envíos."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1916,34 +1916,34 @@ msgstr ""
 "La codificación del mensaje con %1 perderá algunos caracteres.\n"
 "¿Quiere continuar?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Se perderán algunos caracteres"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Pérdida de caracteres"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Cambio de codificación"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "El usuario decidió cambiar la codificación."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr ""
 "La codificación seleccionada (%1) no puede codificar completamente el "
 "mensaje."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr ""
@@ -2786,7 +2786,7 @@ msgstr "Varios"
 msgid "Subject"
 msgstr "Asunto"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2794,7 +2794,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "adjunto,adjuntado"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2803,18 +2803,18 @@ msgstr ""
 "El distribuidor de correo no está configurado, por lo que no se pueden "
 "enviar correos. ¿Quiere usted crear un distribuidor de correo?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Sin distribuidor de correo."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crear distribuidor de correo"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2823,12 +2823,12 @@ msgstr ""
 "El distribuidor de correo está desconectado, por lo que no se pueden enviar "
 "correos. ¿Quiere usted activarlo?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Distribuidor de correo desconectado."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

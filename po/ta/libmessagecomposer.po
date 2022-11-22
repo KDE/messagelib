@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2022-10-25 19:51+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1476,17 +1476,17 @@ msgstr "தேர்ந்தெடுக்கப்பட்ட அடைவ�
 msgid "Invalid folder"
 msgstr "செல்லுபடியாகாத அடைவு"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "முன்னனுப்பப்பட்ட அஞ்சல்"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr ""
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1818,24 +1818,24 @@ msgstr ""
 "<p>பின்நிலையிலிருந்து சாவியை ஏற்றுமதி செய்வதில் சிக்கல் நேர்ந்த‍து:</p><p><b>%1 (%2) "
 "என்ற பயனருக்கான செல்லுபடியாகும் சாவி ஏதுமில்லை</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
 "make sure it contains at least one charset for sending."
 msgstr ""
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1844,32 +1844,32 @@ msgstr ""
 "%1-இல் அஞ்சலை குறியாக்குவதால் சில எழுத்துகள் காணாமல் போகலாம்.\n"
 "தொடர விரும்புகிறீர்களா?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "சில எழுத்தகள் காணாமல் போகலாம்"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "எழுத்துகளை இழ"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "குறிமுறையை மாற்று"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "குறிமுறையை மாற்ற பயனர் முடிவு செய்துள்ளார்."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "தேர்ந்தெடுத்த குறிமுறையில் (%1-இல்) அஞ்சலை முழுதாக குறியாக்க முடியாது."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr ""
@@ -2667,7 +2667,7 @@ msgstr "மற்றவை"
 msgid "Subject"
 msgstr "தலைப்பு"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2675,7 +2675,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,உடனிணைப்பு,இணைப்பு,இணை,இணைத்துள்ளேன்,இணைக்கிறேன்"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2684,18 +2684,18 @@ msgstr ""
 "அஞ்சலனுப்புவதற்கான பின்னணி சேவை அமைக்கப்படாத‍தால், அஞ்சலனுப்ப முடியாது. அஞ்சலனுப்பும் "
 "பின்னணி சேவையை உருவாக்க விரும்புகிறீர்களா?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "அஞ்சனுப்பும் பின்னணி சேவை இல்லை."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "அஞ்சனுப்பும் சேவையை உருவாக்கு"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2704,12 +2704,12 @@ msgstr ""
 "அஞ்சலனுப்புவதற்கான பின்னணி சேவை தொடர்பற்று உள்ளதால், அஞ்சலனுப்ப முடியாது. அஞ்சலனுப்பும் "
 "பின்னணி சேவையை தொடர்புள்ள நிலைக்கு மாற்ற விரும்புகிறீர்களா?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "அஞ்சலனுப்பும் சேவை தொடர்பற்று உள்ளது."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

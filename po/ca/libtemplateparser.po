@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2021-10-22 20:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -273,31 +273,31 @@ msgstr "Plantilla de missatge per als reenviaments"
 msgid "Quote characters"
 msgstr "Caràcters de citació"
 
-#: templateparserjob.cpp:350
+#: templateparserjob.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "No es pot inserir el contingut del fitxer %1: %2"
 
-#: templateparserjob.cpp:520
+#: templateparserjob.cpp:519
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "A:"
 
-#: templateparserjob.cpp:531
+#: templateparserjob.cpp:530
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1186
+#: templateparserjob.cpp:1185
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Adjunt %1"
 
-#: templateparserjob.cpp:1395
+#: templateparserjob.cpp:1394
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1638,7 +1638,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Eni oʻzgarmaydigan &shriftni qoʻllash"
@@ -1800,77 +1800,77 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:156
+#: utils/messageviewerutil.cpp:155
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "\"%1\" nomli fayl allaqachon mavjud. Uni almashtirishni istaysizmi?"
 
-#: utils/messageviewerutil.cpp:159
+#: utils/messageviewerutil.cpp:158
 #, kde-format
 msgid "Overwrite File?"
 msgstr "Faylni almashtirishni istaysizmi?"
 
-#: utils/messageviewerutil.cpp:209
+#: utils/messageviewerutil.cpp:208
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Ilovani saqlash"
 
-#: utils/messageviewerutil.cpp:226
+#: utils/messageviewerutil.cpp:225
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "ilova.1"
 
-#: utils/messageviewerutil.cpp:232
+#: utils/messageviewerutil.cpp:231
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "Ilovani saqlash"
 
-#: utils/messageviewerutil.cpp:256
+#: utils/messageviewerutil.cpp:255
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "ilova.%1"
 
-#: utils/messageviewerutil.cpp:354
+#: utils/messageviewerutil.cpp:353
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:355 utils/messageviewerutil.cpp:368
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail savoli"
 
-#: utils/messageviewerutil.cpp:356
+#: utils/messageviewerutil.cpp:355
 #, fuzzy, kde-format
 #| msgid "Encryption"
 msgid "Keep Encryption"
 msgstr "Kodlash"
 
-#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Qoldirilmasin"
 
-#: utils/messageviewerutil.cpp:367
+#: utils/messageviewerutil.cpp:366
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:368
 #, kde-format
 msgid "Keep Signature"
 msgstr "Imzoni qoldirish"
 
-#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
-#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#: utils/messageviewerutil.cpp:432 utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:468 utils/messageviewerutil.cpp:587
 #, fuzzy, kde-kuit-format
 #| msgid "Could not write the file %1."
 msgctxt "1 = file name, 2 = error string"
@@ -1879,71 +1879,71 @@ msgid ""
 "qt>"
 msgstr "%1 faylini yozib boʻlmadi."
 
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:435 utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:471
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "ilovali"
 
-#: utils/messageviewerutil.cpp:485
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Saqlash uchun ilova topilmadi."
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:499
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 xat"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:533
+#: utils/messageviewerutil.cpp:532
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "1 xat, %2."
 
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:557
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:557
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error loading message"
 msgstr "Xabarni yozib qoʻyishda xato roʻy berdi"
 
-#: utils/messageviewerutil.cpp:560
+#: utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
-#: utils/messageviewerutil.cpp:591
+#: utils/messageviewerutil.cpp:559 utils/messageviewerutil.cpp:570
+#: utils/messageviewerutil.cpp:590
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Xabarlarni koʻchirish"
 
-#: utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:570
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Imzolangan xabarning oxiri"
 
-#: utils/messageviewerutil.cpp:612
+#: utils/messageviewerutil.cpp:611
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' bilan &ochish"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:613
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1993,7 +1993,7 @@ msgstr "Hajmi"
 msgid "Turn on HTML rendering for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1631
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
@@ -2084,7 +2084,7 @@ msgstr "Manzillar daftarida ochish"
 msgid "&Copy Email Address"
 msgstr "Elektron pochta"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2721
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Elektron pochta manzilidan xotiraga nusxa olindi."
@@ -2146,153 +2146,153 @@ msgstr "Ishga tushirish"
 msgid "Loading message..."
 msgstr "Xabarlarni koʻchirish"
 
-#: viewer/viewer_p.cpp:362
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:363 viewer/viewer_p.cpp:370 viewer/viewer_p.cpp:592
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
+#: viewer/viewer_p.cpp:1733
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
 msgstr "Ilovani &olib tashlash"
 
-#: viewer/viewer_p.cpp:369
+#: viewer/viewer_p.cpp:368
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:451
+#: viewer/viewer_p.cpp:450
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "...bi&lan ochish"
 
-#: viewer/viewer_p.cpp:469
+#: viewer/viewer_p.cpp:468
 #, fuzzy, kde-format
 #| msgid "Other Actio&ns"
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Boshqa amallar"
 
-#: viewer/viewer_p.cpp:471 viewer/viewer_p.cpp:484
+#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "...bi&lan ochish"
 
-#: viewer/viewer_p.cpp:548 viewer/viewer_p.cpp:1712
+#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Ochish"
 
-#: viewer/viewer_p.cpp:562 viewer/viewer_p.cpp:1719
+#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Koʻrish"
 
-#: viewer/viewer_p.cpp:570
+#: viewer/viewer_p.cpp:569
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:575
+#: viewer/viewer_p.cpp:574
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "...sifatida s&aqlash"
 
-#: viewer/viewer_p.cpp:581 viewer/viewer_p.cpp:1729
+#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Nusxa olish"
 
-#: viewer/viewer_p.cpp:603
+#: viewer/viewer_p.cpp:602
 #, fuzzy, kde-format
 #| msgid "Reply to A&uthor..."
 msgid "Reply To Author"
 msgstr "Muallifga j&avob berish"
 
-#: viewer/viewer_p.cpp:611
+#: viewer/viewer_p.cpp:610
 #, fuzzy, kde-format
 msgid "Reply To All"
 msgstr "&Javob berish"
 
-#: viewer/viewer_p.cpp:617 viewer/viewer_p.cpp:1739
+#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&Xossalari"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:753
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:755
+#: viewer/viewer_p.cpp:754
 #, fuzzy, kde-format
 #| msgid "KDE Email Client"
 msgid "The KDE Mail Client"
 msgstr "KDE uchun xat-xabar dasturi"
 
-#: viewer/viewer_p.cpp:1291
+#: viewer/viewer_p.cpp:1290
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Ilovani koʻrish: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Ilovalar"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Ilovalarni koʻrsatish uslubini tanlash"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Nishoncha sifatida"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Hamma ilovalarni nishoncha sifatida koʻrsatish. Koʻrish uchun ularni bosish "
 "kerak."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Ixcham"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1493
 #, fuzzy, kde-format
 #| msgid "Show attachment icon"
 msgid "Show attachments as suggested by sender."
 msgstr "Ilovaning nishonchasini koʻrsatish"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1497
 #, fuzzy, kde-format
 #| msgid "&Insert File..."
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Fayldan qoʻyish"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1500
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show all attachments inline (if possible)"
@@ -2300,24 +2300,24 @@ msgstr ""
 "Hamma ilovalarni nishoncha sifatida koʻrsatish. Koʻrish uchun ularni bosish "
 "kerak."
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Bekitish"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ilovalarni xabar koʻruvchida bekitish"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1514
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
@@ -2325,203 +2325,203 @@ msgstr ""
 "Hamma ilovalarni nishoncha sifatida koʻrsatish. Koʻrish uchun ularni bosish "
 "kerak."
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Kodlash usulini tanlash"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Avto"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1534
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Nusxa olish"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Select All Text"
 msgstr "Hamma matnni tanlash"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2033
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Bogʻ manzilidan nusxa olish"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
 msgstr "URL'ni ochish"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1563
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Show Message Structure"
 msgstr "&Xabar"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
 msgstr "Manbani &koʻrish"
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1577
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "1 xat, %2."
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1583
 #, fuzzy, kde-format
 #| msgid "Date Display"
 msgid "&Save Display Format"
 msgstr "Sanani koʻrsatish"
 
-#: viewer/viewer_p.cpp:1588
+#: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 #| msgid "Date Display"
 msgid "&Reset Display Format"
 msgstr "Sanani koʻrsatish"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "Hamma xabarlarni &tanlash"
 
-#: viewer/viewer_p.cpp:1600
+#: viewer/viewer_p.cpp:1599
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "Hamma xabarlarni &tanlash"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1604
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "Hamma xabarlarni &tanlash"
 
-#: viewer/viewer_p.cpp:1610
+#: viewer/viewer_p.cpp:1609
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "Hamma xabarlarni &tanlash"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1627
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1633 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:136
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1639
+#: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "&Tanlash"
 
-#: viewer/viewer_p.cpp:1645
+#: viewer/viewer_p.cpp:1644
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Manzilni tanlang"
 
-#: viewer/viewer_p.cpp:1651
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Xabarlarda &qidirish"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1709
+#: viewer/viewer_p.cpp:1708
 #, kde-format
 msgid "Save &As..."
 msgstr "...sifatida s&aqlash"
 
-#: viewer/viewer_p.cpp:1717
+#: viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Open With..."
 msgstr "...bilan ochish"
 
-#: viewer/viewer_p.cpp:1724
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Hamma ilovalarni saqlash"
 
-#: viewer/viewer_p.cpp:1953
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1953 viewer/viewer_p.cpp:1956
+#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1956
+#: viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1977
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2031
+#: viewer/viewer_p.cpp:2030
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Elektron pochta"
 
-#: viewer/viewer_p.cpp:2112
+#: viewer/viewer_p.cpp:2111
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Xabarlar roʻyxati"
 
-#: viewer/viewer_p.cpp:2313
+#: viewer/viewer_p.cpp:2312
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Qoʻllanmalar"
 
-#: viewer/viewer_p.cpp:2727
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL'dan xotiraga nusxa olindi."
 
-#: viewer/viewer_p.cpp:2879
+#: viewer/viewer_p.cpp:2878
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Xabar %1 tomonidan imzolangan."
 
-#: viewer/viewer_p.cpp:2884
+#: viewer/viewer_p.cpp:2883
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

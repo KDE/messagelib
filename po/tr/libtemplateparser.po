@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2022-05-15 11:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -270,31 +270,31 @@ msgstr "İletme iletisi şablonu"
 msgid "Quote characters"
 msgstr "Karakterleri alıntıla"
 
-#: templateparserjob.cpp:350
+#: templateparserjob.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "%1 dosyasından içerik eklenemiyor: %2"
 
-#: templateparserjob.cpp:520
+#: templateparserjob.cpp:519
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Kime:"
 
-#: templateparserjob.cpp:531
+#: templateparserjob.cpp:530
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Kopya:"
 
-#: templateparserjob.cpp:1186
+#: templateparserjob.cpp:1185
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Eklenti %1"
 
-#: templateparserjob.cpp:1395
+#: templateparserjob.cpp:1394
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

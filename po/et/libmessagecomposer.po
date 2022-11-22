@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1620,17 +1620,17 @@ msgstr "Valitud kataloog ei ole korrektne."
 msgid "Invalid folder"
 msgstr "Sobimatu kataloog"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "edasi saadetud kiri"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Vastuvõtmine: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1962,17 +1962,17 @@ msgid ""
 msgstr ""
 "<p>Tekkis viga võtme eksportimisel taustaprogrammist:</p><p><b>%1</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr "Paluti kasutada reamurdmist, kuid vastavat lihtteksti pole."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "Paluti mitte kasutada reamurdmist, kuid vastavat lihtteksti pole."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1981,7 +1981,7 @@ msgstr ""
 "Kodeeringuks pole ühtegi märgistikku. Palun kontrolli oma seadistust ja "
 "taga, et see sisaldaks saatmiseks vähemalt üht märgistikku."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1990,32 +1990,32 @@ msgstr ""
 "Kirja kodeerimisel märgistikuga %1 lähevad mõned märgid kaotsi.\n"
 "Kas jätkata?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Mõned märgid lähevad kaduma"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Las lähevad"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Muuda kodeeringut"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Kasutaja otsustas muuta kodeeringut."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Valitud kodeeringuga (%1) ei saa kirja täielikult kodeerida."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Märgistiku \"%1\" tekstikoodeki hankimine nurjus."
@@ -2854,7 +2854,7 @@ msgstr "Muu"
 msgid "Subject"
 msgstr "Teema"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2862,7 +2862,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "manus,manusena,kaasatud,manustatud"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2871,19 +2871,19 @@ msgstr ""
 "Kirjade edastamise agent ei ole seadistatud, kirju ei saa saata. Kas luua "
 "agent?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Kirjade edastamise agent puudub."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Kirjade edastamise agent puudub."
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2892,12 +2892,12 @@ msgstr ""
 "Kirjade edastamise agent ei ole võrgus, kirju ei saa saata. Kas ühendada "
 "agent võrku?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Kirjade edastamise agent ei ole võrgus."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

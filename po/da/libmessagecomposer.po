@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:47+0000\n"
+"POT-Creation-Date: 2022-11-22 00:47+0000\n"
 "PO-Revision-Date: 2020-11-17 19:45+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1621,17 +1621,17 @@ msgstr "Den valgte mappe er ikke gyldig."
 msgid "Invalid folder"
 msgstr "Ugyldig mappe"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "videresendt brev"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Læsekvittering: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1964,18 +1964,18 @@ msgstr ""
 "<p>En fejl opstod under forsøg på at eksportere nøglen fra backenden:</"
 "p><p><b>%1</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Blev bedt om at bruge ordombrydning, men modtog ikke ombrudt klartekst."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "Bedt om ikke at bruge ordombrydning, men modtog ikke ren klartekst."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:81
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1984,7 +1984,7 @@ msgstr ""
 "Ingen tegnsæt var tilgængelige til indkodning. Kontrollér din konfiguration "
 "og sørg for at den indeholder mindst ét tegnsæt til afsendelse."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:99
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1993,32 +1993,32 @@ msgstr ""
 "Indkodning af brevet med %1 vil medføre tab af nogle tegn.\n"
 "Vil du fortsætte?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:102
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Nogle tegn vil gå tabt"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
 msgstr "Mist tegn"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
 msgstr "Skift tegnsæt"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Brugeren valgte at skifte tegnsæt."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Det valgte tegnsæt (%1) kan ikke indkode brevet fuldt ud."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Kunne ikke få tekst-codec for tegnsættet \"%1\"."
@@ -2839,7 +2839,7 @@ msgstr "Diverse"
 msgid "Subject"
 msgstr "Emne"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:259
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2847,7 +2847,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "bilag,vedlagt,vedlægger,vedhæfter,vedhæftning,vedhæftet"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2856,19 +2856,19 @@ msgstr ""
 "Mail-afsenderen er ikke sat op, så der kan ikke afsendes e-mails. Vil du "
 "oprette en mail-afsender?"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Ingen mail-afsender."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:295
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Ingen mail-afsender."
 
-#: utils/util.cpp:311
+#: utils/util.cpp:310
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2877,12 +2877,12 @@ msgstr ""
 "Mail-afsenderen er offline, så der kan ikke afsendes e-mails. Vil du bringe "
 "den online?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Mail-afsender offline."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
