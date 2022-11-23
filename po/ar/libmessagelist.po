@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 02:43+0000\n"
 "PO-Revision-Date: 2021-12-19 19:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1329,98 +1329,98 @@ msgstr "آخر بحث"
 msgid "Sorting"
 msgstr "الفرز"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "افتح لسانًا جديدًا"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "لسان جديد"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "أغلق اللسان الحاليّ"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "أغلق اللسان"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "فعّل اللسان %1"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "اعرض شريط البحث السّريع"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "قائمة الرّسائل"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
 msgstr "أنشئ لسانًا جديدًا"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "فعّل اللسان التّالي"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "فعّل اللسان السّابق"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, fuzzy, kde-format
 msgid "Move Tab Left"
 msgstr "انقل اللسان لليسار"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, fuzzy, kde-format
 msgid "Move Tab Right"
 msgstr "انقل اللسان لليمين"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
 msgstr "أغلق اللسان"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, fuzzy, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "فارغ"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "أغلق اللسان"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "أغلق كلّ الألسنة الأخرى"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "آخر بحث"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

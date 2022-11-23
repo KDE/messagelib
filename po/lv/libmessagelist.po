@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 02:43+0000\n"
 "PO-Revision-Date: 2010-01-13 21:21+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -1371,113 +1371,113 @@ msgstr "Pēdējā meklēšana"
 msgid "Sorting"
 msgstr "Kārtošana"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Atvērt jaunā cilnē"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, fuzzy, kde-format
 #| msgid "New Value"
 msgid "New tab"
 msgstr "Jauna vērtība"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Aizvērt aktīvo cilni"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Aizvērt cilni"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Next Tab"
 msgid "Activate Tab %1"
 msgstr "Pārslēgties uz nākamo cilni"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, fuzzy, kde-format
 #| msgid "Show Quick Search"
 msgid "Show Quick Search Bar"
 msgstr "Rādīt ātro meklēšanu"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Vēstuļu saraksts"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open a new tab"
 msgid "Create New Tab"
 msgstr "Atvērt jaunā cilnē"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Next Tab"
 msgid "Activate Next Tab"
 msgstr "Pārslēgties uz nākamo cilni"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Previous Tab"
 msgid "Activate Previous Tab"
 msgstr "Pārslēgties uz iepriekšējo cilni"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr ""
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr ""
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
 msgid "Close Tab"
 msgstr "Aizvērt cilni"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tukšs"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Aizvērt cilni"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Aizvērt visas pārējās cilnes"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Pēdējā meklēšana"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"

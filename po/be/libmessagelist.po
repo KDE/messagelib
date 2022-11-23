@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 02:43+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1440,26 +1440,26 @@ msgstr "Апошні пошук"
 msgid "Sorting"
 msgstr "Нічога"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr ""
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, fuzzy, kde-format
 #| msgid "New Value"
 msgid "New tab"
 msgstr "Новае значэнне"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, fuzzy, kde-format
 #| msgid "Collapse the current thread"
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Згарнуць цякучую тэму"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -1467,48 +1467,48 @@ msgstr "Згарнуць цякучую тэму"
 msgid "Close tab"
 msgstr "Згар&нуць усе тэмы"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr ""
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, fuzzy, kde-format
 #| msgid "Show Quick Search"
 msgid "Show Quick Search Bar"
 msgstr "Паказваць хуткі пошук"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Спіс паведамленняў"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, fuzzy, kde-format
 msgid "Create New Tab"
 msgstr "Новае ўвасабленне"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr ""
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr ""
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr ""
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr ""
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -1516,20 +1516,20 @@ msgstr ""
 msgid "Close Tab"
 msgstr "Згар&нуць усе тэмы"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Пустая"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -1538,14 +1538,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Згар&нуць усе тэмы"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Апошні пошук"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
