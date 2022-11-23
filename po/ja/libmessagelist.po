@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 00:49+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1325,95 +1325,95 @@ msgstr "タブを閉じる"
 msgid "Sorting"
 msgstr "ソート"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "新しいタブを開きます"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "新しいタブ"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "現在のタブを閉じます"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr ""
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr ""
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "メッセージリスト"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "Create new tab"
 msgid "Create New Tab"
 msgstr "新しいタブを作成"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr ""
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr ""
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr "タブを左へ移動"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr "タブを右へ移動"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "空"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "他のすべてのタブを閉じる"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1421,7 +1421,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

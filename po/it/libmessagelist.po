@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 00:49+0000\n"
 "PO-Revision-Date: 2021-09-14 23:32+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1312,98 +1312,98 @@ msgstr "(sbloccala)"
 msgid "Sorting"
 msgstr "Ordinamento"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Apri una nuova scheda"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "Nuova scheda"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Chiudi la scheda corrente"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "Chiudi scheda"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Attiva la scheda %1"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Mostra la barra di ricerca rapida"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Elenco dei messaggi"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
 msgstr "Crea una nuova scheda"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Attiva scheda successiva"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Attiva scheda precedente"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Sposta la scheda a sinistra"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Sposta la scheda a destra"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
 msgstr "Chiudi scheda"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Vuota"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Chiudi scheda"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Chiudi tutte le altre schede"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Sblocca scheda"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

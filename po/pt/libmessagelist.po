@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 00:49+0000\n"
 "PO-Revision-Date: 2021-10-14 16:03+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1337,98 +1337,98 @@ msgstr "(Desbloqueá-la)"
 msgid "Sorting"
 msgstr "Ordenação"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Abrir uma página nova"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "Nova página"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Fechar a página actual"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "Fechar a página"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Activar a Página %1"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Mostrar uma Barra de Pesquisa Rápida"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Lista de Mensagens"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
 msgstr "Criar uma Página Nova"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Activar a Página Seguinte"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Activar a Página Anterior"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Mover a Página para a Esquerda"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Mover a Página para a Direita"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
 msgstr "Fechar a Página"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Vazia"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fechar a Página"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fechar Todas as Outras Páginas"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Desbloquear a Página"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

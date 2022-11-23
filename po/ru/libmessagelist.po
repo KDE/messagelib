@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 00:49+0000\n"
 "PO-Revision-Date: 2021-02-08 10:14+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1345,98 +1345,98 @@ msgstr "(Разблокировать)"
 msgid "Sorting"
 msgstr "Сортировка"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Открыть новую вкладку"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "Новая вкладка"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Закрыть вкладку"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "Закрыть вкладку"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Перейти на вкладку %1"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Показать панель быстрого поиска"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Список писем"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
 msgstr "Создать новую вкладку"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Перейти на следующую вкладку"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Перейти на предыдущую вкладку"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Переместить вкладку влево"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Переместить вкладку вправо"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Нет писем"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Закрыть другие вкладки"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Разблокировать вкладку"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2022-09-27 08:46+0200\n"
+"PO-Revision-Date: 2022-11-22 07:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -124,7 +124,7 @@ msgstr "დეტალების ჩვენება"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:41
 msgid "Encrypted message (decryption not possible)"
-msgstr ""
+msgstr "დაშიფრული შეტყობინება (გაშიფვრა შეუძლებელია)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:44
 msgid "Reason: "
@@ -293,7 +293,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr ""
+msgstr "მაღაზია"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #: dkim-verify/dkimmanageruleswidget.cpp:72
@@ -571,7 +571,7 @@ msgstr "წესები..."
 #: dkim-verify/dkimwidgetinfo.cpp:97
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: dkim-verify/dkimwidgetinfo.cpp:103
 #, kde-format
@@ -581,12 +581,12 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: არასწორი"
 
 #: dkim-verify/dkimwidgetinfo.cpp:113
 #, kde-format
 msgid "DKIM: Not signed"
-msgstr ""
+msgstr "DKIM: ხელმოუწერელი"
 
 #: dkim-verify/dkimwidgetinfo.cpp:118
 #, kde-format
@@ -696,7 +696,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature expired"
-msgstr ""
+msgstr "ვადაგასული ხელმოწერა"
 
 #: dkim-verify/dkimwidgetinfo.cpp:203
 #, kde-format
@@ -793,7 +793,7 @@ msgstr ""
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
-msgstr ""
+msgstr "სათაურის გარეშე"
 
 #: header/grantleeheaderformatter.cpp:500
 #, kde-format
@@ -808,7 +808,7 @@ msgstr "ბეჭდვის რეჟიმი"
 #: header/grantleeheaderformatter.cpp:554
 #, kde-format
 msgid "[vcard]"
-msgstr ""
+msgstr "[vcard]"
 
 #: header/grantleeheaderformatter.cpp:561
 #, kde-format
@@ -824,7 +824,7 @@ msgstr "უსაფრთხოება:"
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: header/headerstyle_util.cpp:146
 #, kde-format
@@ -888,7 +888,7 @@ msgstr ""
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
-msgstr ""
+msgstr "&თავსართები"
 
 #: header/headerstylemenumanager.cpp:109
 #, kde-format
@@ -898,7 +898,7 @@ msgstr ""
 #: header/plainheaderstyle.cpp:103
 #, kde-format
 msgid "Date: "
-msgstr ""
+msgstr "თარიღი: "
 
 #: header/plainheaderstyle.cpp:107
 #, kde-format
@@ -929,7 +929,7 @@ msgstr "ფარულიასლი: "
 #: header/plainheaderstyle.cpp:138
 #, kde-format
 msgid "Reply to: "
-msgstr ""
+msgstr "უპასუხეთ: "
 
 #: mdn/mdnwarningwidget.cpp:14
 #, kde-format
@@ -952,17 +952,17 @@ msgstr ""
 #: messagepartthemes/default/defaultrenderer.cpp:76
 #, kde-format
 msgid "Error: Signature not verified"
-msgstr ""
+msgstr "შეცდომა: ხელმოწერა შემოწმებული არაა"
 
 #: messagepartthemes/default/defaultrenderer.cpp:80
 #, kde-format
 msgid "Good signature"
-msgstr ""
+msgstr "კარგი ხელმოწერა"
 
 #: messagepartthemes/default/defaultrenderer.cpp:84
 #, kde-format
 msgid "Bad signature"
-msgstr ""
+msgstr "არასწორი ხელმოწერა"
 
 #: messagepartthemes/default/defaultrenderer.cpp:88
 #, kde-format
@@ -1044,7 +1044,7 @@ msgstr ""
 #: messagepartthemes/default/defaultrenderer.cpp:600
 #, kde-format
 msgid "certificate"
-msgstr ""
+msgstr "სერტიფიკატი"
 
 #: messagepartthemes/default/defaultrenderer.cpp:605
 #: messagepartthemes/default/defaultrenderer.cpp:624
@@ -1061,12 +1061,12 @@ msgstr ""
 #: messagepartthemes/default/defaultrenderer.cpp:606
 #, kde-format
 msgid "sender: "
-msgstr ""
+msgstr "გამომგზავნი: "
 
 #: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "stored: "
-msgstr ""
+msgstr "დამახსოვრებული: "
 
 #: messagepartthemes/default/defaultrenderer.cpp:625
 #, kde-format
@@ -2058,7 +2058,7 @@ msgstr ""
 #: viewer/viewer_p.cpp:574
 #, kde-format
 msgid "Save As..."
-msgstr ""
+msgstr "შენახვა, როგორც..."
 
 #: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
 #, kde-format
@@ -2176,7 +2176,7 @@ msgstr "ავტომატური"
 #: viewer/viewer_p.cpp:1534
 #, kde-format
 msgid "Copy Text"
-msgstr ""
+msgstr "ტექსტის კოპირება"
 
 #: viewer/viewer_p.cpp:1541
 #, kde-format
@@ -2261,7 +2261,7 @@ msgstr "ტექსტის წაკითხვა"
 #: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "Share Text..."
-msgstr ""
+msgstr "ტექსტის გაზიარება..."
 
 #: viewer/viewer_p.cpp:1644
 #, kde-format
@@ -2348,7 +2348,7 @@ msgstr ""
 #: viewer/viewer_p.cpp:2883
 #, kde-format
 msgid "Message not found."
-msgstr ""
+msgstr "შეტყობინება ვერ ვიპოვე."
 
 #: widgets/attachmentdialog.cpp:27
 #, kde-kuit-format
@@ -2362,7 +2362,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "გავხსნა მიმაგრებული ფაილი?"
 
 #: widgets/attachmentdialog.cpp:39
 #, kde-format

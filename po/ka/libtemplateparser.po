@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2022-09-27 08:51+0200\n"
+"PO-Revision-Date: 2022-11-22 07:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -176,13 +176,13 @@ msgstr ""
 #: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template content"
-msgstr ""
+msgstr "შაბლონის შემცველობა"
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template shortcut"
-msgstr ""
+msgstr "შაბლონის მალსახმობი"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:21
@@ -312,27 +312,27 @@ msgstr "დრო ლოკალში C"
 
 #: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
 msgid "To Field Address"
-msgstr ""
+msgstr "მისამართის ველზე"
 
 #: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
 msgid "To Field Name"
-msgstr ""
+msgstr "სახელის ველზე"
 
 #: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
 msgid "To Field First Name"
-msgstr ""
+msgstr "სახელის ველზე"
 
 #: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
 msgid "To Field Last Name"
-msgstr ""
+msgstr "გვარის ველზე"
 
 #: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
 msgid "CC Field Address"
-msgstr ""
+msgstr "მისამართის ველზე"
 
 #: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
 msgid "CC Field Name"
-msgstr ""
+msgstr "სახელის"
 
 #: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
 msgid "CC Field First Name"
@@ -423,7 +423,7 @@ msgstr "ხელმოწერა"
 
 #: templatescommandmenu.cpp:144
 msgid "Insert File Content"
-msgstr ""
+msgstr "ფაილის შემცველობის ჩასმა"
 
 #: templatescommandmenu.cpp:148
 msgctxt ""
@@ -434,23 +434,23 @@ msgstr ""
 
 #: templatescommandmenu.cpp:151
 msgid "Template Comment"
-msgstr ""
+msgstr "შაბლონის კომენტარი"
 
 #: templatescommandmenu.cpp:153
 msgid "No Operation"
-msgstr ""
+msgstr "ოპერაციის გარეშე"
 
 #: templatescommandmenu.cpp:155
 msgid "Clear Generated Message"
-msgstr ""
+msgstr "გენერირებული შეტყობინების გასუფთავება"
 
 #: templatescommandmenu.cpp:156
 msgid "Cursor position"
-msgstr ""
+msgstr "კურსორის პოზიცია"
 
 #: templatescommandmenu.cpp:158
 msgid "Blank text"
-msgstr ""
+msgstr "ცარიელი ტექსტი"
 
 #: templatescommandmenu.cpp:160
 msgid "Dictionary Language"
@@ -462,26 +462,26 @@ msgstr "ენა"
 
 #: templatescommandmenu.cpp:166
 msgid "Turn Debug On"
-msgstr ""
+msgstr "გამართვის ჩართვა"
 
 #: templatescommandmenu.cpp:168
 msgid "Turn Debug Off"
-msgstr ""
+msgstr "გამართვის გამორთვა"
 
 #: templatescommandmenu.cpp:201
 #, kde-format
 msgid "Insert Command"
-msgstr ""
+msgstr "ბრძანების ჩასმა"
 
 #: templatescommandmenu.cpp:214
 #, kde-format
 msgid "Original Message"
-msgstr ""
+msgstr "საწყისი შეტყობინება"
 
 #: templatescommandmenu.cpp:228
 #, kde-format
 msgid "Current Message"
-msgstr ""
+msgstr "მიმდინარე შეტყობინება"
 
 #: templatescommandmenu.cpp:241
 #, kde-format
@@ -766,21 +766,21 @@ msgstr "წინ"
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr ""
+msgstr "&მალსახმობი:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
 #, kde-format
 msgctxt "@label"
 msgid "&Template type:"
-msgstr ""
+msgstr "&შაბლონის ტიპი:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
 #: ui/templatesconfiguration_base.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Template Configuration"
-msgstr ""
+msgstr "შაბლონის მორგება"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_new)
 #: ui/templatesconfiguration_base.ui:77
