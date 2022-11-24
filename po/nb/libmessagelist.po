@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-23 00:49+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1300,98 +1300,98 @@ msgstr ""
 msgid "Sorting"
 msgstr "Sortering"
 
-#: pane.cpp:123
+#: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Åpne en ny fane"
 
-#: pane.cpp:125
+#: pane.cpp:126
 #, kde-format
 msgid "New tab"
 msgstr "Ny fane"
 
-#: pane.cpp:135
+#: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Lukk gjeldende fane"
 
-#: pane.cpp:137
+#: pane.cpp:138
 #, kde-format
 msgid "Close tab"
 msgstr "Lukk fane"
 
-#: pane.cpp:179
+#: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
 msgstr "Gå til fane %1"
 
-#: pane.cpp:199
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Vis hurtigsøk-linje"
 
-#: pane.cpp:220
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Meldingsliste"
 
-#: pane.cpp:226
+#: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
 msgstr "Opprett et nytt faneblad"
 
-#: pane.cpp:257
+#: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
 msgstr "Gå til neste fane"
 
-#: pane.cpp:267
+#: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
 msgstr "Gå til forrige fane"
 
-#: pane.cpp:279
+#: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
 msgstr "Flytt fane til venstre"
 
-#: pane.cpp:287
+#: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
 msgstr "Flytt fane til høyre"
 
-#: pane.cpp:297
+#: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
 msgstr "Lukk fane"
 
-#: pane.cpp:517 pane.cpp:798
+#: pane.cpp:520 pane.cpp:801
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tom"
 
-#: pane.cpp:702
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Lukk fane"
 
-#: pane.cpp:705
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Lukk alle andre faner"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr ""
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

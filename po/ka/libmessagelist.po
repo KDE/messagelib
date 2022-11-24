@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 00:49+0000\n"
-"PO-Revision-Date: 2022-09-27 08:41+0200\n"
+"PO-Revision-Date: 2022-11-23 06:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -37,7 +37,7 @@ msgstr ""
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
-msgstr ""
+msgstr "ჭკვიანი გამგზავნი/მიმღებით"
 
 #: core/aggregation.cpp:182 core/sortorder.cpp:68
 #, kde-format
@@ -52,17 +52,17 @@ msgstr "მიმღებით"
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr ""
+msgstr "არასდროს ამოკეცო ჯგუფები"
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr ""
+msgstr "უახლესი ჯგუფების ამოკეცვა"
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr ""
+msgstr "ყოველთვის ამოკეცე ჯგუფები"
 
 #: core/aggregation.cpp:202
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "არაფერი"
 #: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect Only"
-msgstr ""
+msgstr "მხოლოდ საუკეთესოები"
 
 #: core/aggregation.cpp:204
 #, kde-format
@@ -325,7 +325,7 @@ msgstr "თემა"
 #: core/manager.cpp:607 core/theme.cpp:113
 #, kde-format
 msgid "Sender/Receiver"
-msgstr ""
+msgstr "გამგზავნი/მიმღები"
 
 #: core/manager.cpp:614
 #, kde-format
@@ -365,7 +365,7 @@ msgstr "დანართი"
 #: core/manager.cpp:638
 #, kde-format
 msgid "Read/Unread"
-msgstr ""
+msgstr "წაკითხული/წაუკითხავი"
 
 #: core/manager.cpp:643
 #, kde-format
@@ -466,12 +466,12 @@ msgstr "სამი კვირის წინ"
 #: core/model.cpp:336
 #, kde-format
 msgid "Four Weeks Ago"
-msgstr ""
+msgstr "ოთხი კვირის წინ"
 
 #: core/model.cpp:337
 #, kde-format
 msgid "Five Weeks Ago"
-msgstr ""
+msgstr "ხუთი კვირის წინ"
 
 #: core/model.cpp:550 utils/themeeditor.cpp:185
 #, kde-format
@@ -749,7 +749,7 @@ msgstr ""
 #: core/theme.cpp:170
 #, kde-format
 msgid "Message Tags"
-msgstr ""
+msgstr "შეტყობინების ჭდეები"
 
 #: core/theme.cpp:173
 #, kde-format
@@ -831,7 +831,7 @@ msgstr ""
 #: core/view.cpp:682
 #, kde-format
 msgid "No result found"
-msgstr ""
+msgstr "შედეგი ვერ მოიძებნა"
 
 #: core/view.cpp:766
 #, kde-format
@@ -1309,7 +1309,7 @@ msgstr ""
 #: pane.cpp:221
 #, kde-format
 msgid "Message List"
-msgstr ""
+msgstr "შეტყობინებების სია"
 
 #: pane.cpp:227
 #, kde-format
@@ -1475,7 +1475,7 @@ msgstr ""
 #: utils/configurethemesdialog.cpp:466
 #, kde-format
 msgid "All Files (*)"
-msgstr ""
+msgstr "ყველა ფაილი (*)"
 
 #: utils/configurethemesdialog.cpp:96
 #, kde-format
