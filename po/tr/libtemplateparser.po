@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-05-15 11:21+0300\n"
+"PO-Revision-Date: 2022-11-24 16:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.08.3\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -828,7 +828,7 @@ msgstr "İlet"
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr "Kı&sayol:"
+msgstr "&Kısayol:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
