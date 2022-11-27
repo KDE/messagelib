@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-07-22 15:51+0100\n"
+"PO-Revision-Date: 2022-11-26 15:16+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:169
 #, kde-format
@@ -2457,18 +2457,13 @@ msgstr "Improve plain text version of HTML message"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Sign all messages, if possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Valid trusted encryption keys were found for all recipients.\n"
-"Encrypt this message?"
+msgstr "Enable encryption, if we found keys for all recipients"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
