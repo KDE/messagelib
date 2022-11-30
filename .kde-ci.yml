@@ -20,5 +20,12 @@ Dependencies:
     'pim/libkdepim' : '@same'
     'pim/libkleo' : '@same'
     'pim/pimcommon' : '@same'
-    'third-party/grantlee' : '@stable'
     'kdesupport/qca' : '@latest'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'libraries/ktexttemplate': '@stable'
+
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
+  'require':
+    'third-party/grantlee' : '@stable'
