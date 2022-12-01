@@ -9,9 +9,11 @@
 #include <KLocalizedString>
 #include <KPIMTextEdit/RichTextEditorWidget>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace WebEngineViewer;
 namespace
@@ -48,18 +50,17 @@ TrackingDetailsDialog::~TrackingDetailsDialog()
 
 void TrackingDetailsDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
     KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void TrackingDetailsDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
-    group.writeEntry("Size", size());
-    group.sync();
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 void TrackingDetailsDialog::setDetails(const QString &details)

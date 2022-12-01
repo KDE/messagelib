@@ -21,8 +21,10 @@ using namespace MessageViewer;
 #include <QTabWidget>
 
 #include <KConfigGroup>
+#include <KWindowConfig>
 #include <QShortcut>
 #include <QVBoxLayout>
+#include <QWindow>
 
 #include <KSharedConfig>
 #include <QDialogButtonBox>
@@ -84,18 +86,17 @@ MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
 
 void MailSourceWebEngineViewer::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
     KConfigGroup group(KSharedConfig::openStateConfig(), myMailSourceWebEngineViewerConfigGroupName);
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void MailSourceWebEngineViewer::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myMailSourceWebEngineViewerConfigGroupName);
-    group.writeEntry("Size", size());
-    group.sync();
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 void MailSourceWebEngineViewer::setRawSource(const QString &source)
