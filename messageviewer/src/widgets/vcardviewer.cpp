@@ -19,9 +19,11 @@ using KContacts::VCardConverter;
 #include <Akonadi/AddContactJob>
 #include <KConfigGroup>
 #include <KGuiItem>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace MessageViewer;
 namespace
@@ -85,18 +87,17 @@ VCardViewer::~VCardViewer()
 
 void VCardViewer::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(300, 400));
     KConfigGroup group(KSharedConfig::openStateConfig(), myVCardViewerConfigGroupName);
-    const QSize size = group.readEntry("Size", QSize(300, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void VCardViewer::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myVCardViewerConfigGroupName);
-    group.writeEntry("Size", size());
-    group.sync();
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 void VCardViewer::slotUser1()

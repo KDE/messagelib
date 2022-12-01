@@ -18,8 +18,10 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KWindowConfig>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QWindow>
 
 #include <KSharedConfig>
 #include <QDialogButtonBox>
@@ -201,19 +203,17 @@ void RecipientsPicker::keyPressEvent(QKeyEvent *event)
 
 void RecipientsPicker::readConfig()
 {
-    KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    const KConfigGroup group(cfg, myRecipientsPickerConfigGroupName);
-    const QSize size = group.readEntry("Size", QSize());
-    if (!size.isEmpty()) {
-        resize(size);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(300, 200));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myRecipientsPickerConfigGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void RecipientsPicker::writeConfig()
 {
-    KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, myRecipientsPickerConfigGroupName);
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), myRecipientsPickerConfigGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 void RecipientsPicker::slotSearchLDAP()

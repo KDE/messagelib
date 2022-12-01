@@ -20,10 +20,12 @@
 
 #include <KConfigGroup>
 #include <KGuiItem>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QTextStream>
 #include <QVBoxLayout>
+#include <QWindow>
 #include <memory>
 
 using namespace MessageViewer;
@@ -93,16 +95,15 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 
 void ScamDetectionDetailsDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 200));
     KConfigGroup group(KSharedConfig::openStateConfig(), myScamDetectionDetailsDialogConfigGroupName);
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void ScamDetectionDetailsDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myScamDetectionDetailsDialogConfigGroupName);
-    group.writeEntry("Size", size());
-    group.sync();
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
