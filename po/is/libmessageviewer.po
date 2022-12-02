@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1216,7 +1216,7 @@ msgstr ""
 "Ekkert netfang er geymt í %1 sem er notað til undirritunnar, svo við getum "
 "ekki borið það við netfang sendanda %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -1286,7 +1286,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Show alway&s"
 msgctxt "@title:window"
@@ -2725,26 +2725,26 @@ msgstr ""
 "póstforrit sem skilur þau. <br>Fólk með samhæfð póstforrit munu eftir sem "
 "áður geta unnið eðlilega með þau.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "S&koða frumtexta"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "S&koða frumtexta"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2792,25 +2792,25 @@ msgstr "&Næsta bréf"
 msgid "Previous Message"
 msgstr "Fy&rra ólesið bréf"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "VCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "vCard skoðari"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Flytja inn"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Next Card"
 msgid "&Next Card"
 msgstr "&Næsta kort"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "&Previous Card"

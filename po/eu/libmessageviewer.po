@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2022-11-27 09:51+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1117,7 +1117,7 @@ msgstr ""
 "Ezin da helbide elektronikoa bidaltzailearen %2 helbidearekin konparatu, ez "
 "baita sinatzeko erabiltzen den %1(a)n gorde."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -1185,7 +1185,7 @@ msgstr "Baimendua"
 msgid "Blocked"
 msgstr "Blokeatuta"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2563,26 +2563,26 @@ msgstr ""
 "dituzten posta-programak erabiltzen dituzten pertsonak honekin lan egin ahal "
 "izango dute.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Sorburu gordina"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Pota gordina, aldatu gabe, fitxategi-sisteman edo zerbitzarian gordeta "
 "dagoen bezala"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML sorburua"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Erabiltzaileari mezua azaltzeko HTML kodea"
@@ -2628,23 +2628,23 @@ msgstr "Hurrengo mezua"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "VCard erakuslea"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Inportatu"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "&Hurrengo txartela"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "&Aurreko txartela"

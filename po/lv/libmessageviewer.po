@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2010-01-13 18:44+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -1202,7 +1202,7 @@ msgstr ""
 "Parakstīšanai izmantotajā %1 nav saglabāts e-pasta adrese, tāpēc nevar "
 "salīdzināt to ar sūtītāja adresi %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
@@ -1277,7 +1277,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgctxt "@title:window"
@@ -2698,26 +2698,26 @@ msgstr ""
 "nesaprot šādus ielūgumus, saņems visai dīvainus ielūgumus.<br />Cilvēki, "
 "kuru programmas saprot šādus ielūgumus, joprojām spēs ar tiem strādāt.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Skatīt pirm&kodu"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Skatīt pirm&kodu"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2766,25 +2766,25 @@ msgstr "&Nākamā vēstule"
 msgid "Previous Message"
 msgstr "&Iepriekšējā nelasītā vēstule"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "VCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "VCard skatītājs"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Importēt"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Next Card"
 msgid "&Next Card"
 msgstr "&Nākamā karte"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "&Previous Card"

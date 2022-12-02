@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-06 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2018-01-31 19:35+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: developertool/developertooldialog.cpp:24
+#: developertool/developertooldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -92,7 +92,7 @@ msgstr "احفظ صفحة HTML"
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 
-#: widgets/tracking/trackingdetailsdialog.cpp:25
+#: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

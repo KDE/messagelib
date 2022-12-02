@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1117,7 +1117,7 @@ msgstr ""
 "Ingen e-mailadresse er gemt i den %1, der bruges til at signere, så vi kan "
 "ikke sammenligne den med afsenderens adresse %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
@@ -1193,7 +1193,7 @@ msgstr ""
 msgid "Blocked"
 msgstr "Blokér billede"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2566,24 +2566,24 @@ msgstr ""
 "invitationerne, vil brevene se meget mærkelige ud.<br />Folk der har e-mail-"
 "programmer, der forstår invitationer, vil stadig kunne virke med dette.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Rå kildetekst"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "Rå, uændret e-mail som den lagres på filsystemet eller serveren"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-kildetekst"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-kode til at vise brevet til brugeren"
@@ -2631,23 +2631,23 @@ msgstr "Næste brev"
 msgid "Previous Message"
 msgstr "Forrige brev"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "vCard-fremviser"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Importér"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "&Næste kort"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "&Forrige kort"

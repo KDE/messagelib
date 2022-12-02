@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2022-07-14 09:36-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1117,7 +1117,7 @@ msgstr ""
 "Nenhum endereço de e-mail está armazenado na %1 usada para assinatura e, "
 "sendo assim, não é possível compará-lo com o endereço do remetente %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -1185,7 +1185,7 @@ msgstr "Autorizado"
 msgid "Blocked"
 msgstr "Bloqueado"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2567,26 +2567,26 @@ msgstr ""
 "mensagens parecerão muito estranhas.<br />As pessoas que possuem programas "
 "de e-mail que compreendem convites serão capazes de trabalhar com isto.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Código bruto"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "A mensagem em forma bruta, sem modificações, como se encontra armazenada no "
 "sistema de arquivos ou no servidor"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Código HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Código HTML para mostrar a mensagem ao usuário"
@@ -2630,23 +2630,23 @@ msgstr "Próxima mensagem"
 msgid "Previous Message"
 msgstr "Mensagem anterior"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "Visualizador de vCard"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Importar"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "&Próximo cartão"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "Cartão &anterior"

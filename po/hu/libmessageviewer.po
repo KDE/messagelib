@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2014-10-03 12:55+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1189,7 +1189,7 @@ msgstr ""
 "ezért nem lehet ellenőrizni, hogy az üzenet valóban a feladó e-mail címéről "
 "(%2) jött-e."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
@@ -1265,7 +1265,7 @@ msgstr ""
 msgid "Blocked"
 msgstr "Kép blokkolása"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@title:window"
@@ -2681,26 +2681,26 @@ msgstr ""
 "üzeneteket fognak kapni.<br />A szabványos meghívókat kezelni tudó programok "
 "az opció bejelölésekor is használhatók maradnak.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Nyers forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Nyers, nem módosított levelezés, ahogyan azt a fájlrendszer vagy a "
 "kiszolgáló tárolja"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"
@@ -2751,24 +2751,24 @@ msgstr "&Következő üzenet"
 msgid "Previous Message"
 msgstr "Elő&ző olvasatlan üzenet"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "vCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "vCard-megjelenítő"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Importálás"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "&Következő kártya"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "&Előző kártya"

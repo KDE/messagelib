@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1166,7 +1166,7 @@ msgstr ""
 "គ្មាន​​អាសយដ្ឋាន​សំបុត្រ​​​បាន​ទុក​នៅក្នុង %1 ដែលបានប្រើ​សម្រាប់​ការចុះហត្ថលេខាឡើយ ដូច្នេះ​យើង​មិនអាច​"
 "ប្រៀបធៀប​វា​ទៅកាន់​អាសយដ្ឋាន​របស់​អ្នក​ផ្ញើ​ %2 ទេ ។"
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "View->headers->"
 #| msgid "&Long Headers"
@@ -1241,7 +1241,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgctxt "@title:window"
@@ -2606,24 +2606,24 @@ msgstr ""
 "ដូច្នេះ ទៅ​អ្នក​ដែលមាន​កម្មវិធី​អ៊ីមែល ដែល​មិន​យល់​ការ​អញ្ជើញ សារ​លទ្ធផល​មើល​ទៅប្លែក​ណាស ។<br />អ្នក​ដែល​"
 "មាន​កម្មវិធី​អ៊ីមែល​ដែល​យល់​កា​រអញ្ជើញ​នឹង​នៅ​តែអាច​ដំណើរការ​ជា​មួយ​វា​បាន ។</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "ប្រភព​មិន​ទាន់​ច្នៃ​"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "ដើម ​សំបុត្រ​ដែល​មិន​បាន​កែប្រែ​ វា​ត្រូវ​បាន​​ទុក​លើ​​ប្រព័ន្ធ​ឯកសារ​ ឬ​លើ​ម៉ាស៊ីន​បម្រើ​​"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "ប្រភព​របស់​ HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "កូដ HTML សម្រាប់​បង្ហាញ​សារ​ទៅកាន់​អ្នក​ប្រើ​"
@@ -2672,25 +2672,25 @@ msgstr "រក្សា​ទុក​សារ​"
 msgid "Previous Message"
 msgstr "ឌិគ្រីប​សារ"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "VCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "កម្មវិធីមើល VCard"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "នាំចូល"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Next Card"
 msgid "&Next Card"
 msgstr "កាត​បន្ទាប់"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "&Previous Card"

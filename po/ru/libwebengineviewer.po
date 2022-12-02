@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-06 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2018-08-14 10:05+0300\n"
 "Last-Translator: Александр Яворский <yavorsky.a@t-rosta.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: developertool/developertooldialog.cpp:24
+#: developertool/developertooldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -103,7 +103,7 @@ msgstr "Сохранить HTML-страницу"
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 
-#: widgets/tracking/trackingdetailsdialog.cpp:25
+#: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

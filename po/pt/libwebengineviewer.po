@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-06 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2022-08-30 03:54+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: developertool/developertooldialog.cpp:24
+#: developertool/developertooldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -88,7 +88,7 @@ msgstr ""
 "O envio de formulários não é permitido no cliente de e-mail. Por favor, abra "
 "o URL num navegador."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:25
+#: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

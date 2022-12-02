@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1174,7 +1174,7 @@ msgstr ""
 "ไม่มีที่อยู่อีเมลที่ถูกเก็บไว้ใน %1 ซึ่งใช้สำหรับการเซ็น ดังนั้น "
 "เราจึงไม่สามารถเปรียบเทียบมันกับที่อยู่ผู้ส่ง &lt;%2&gt; ได้"
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
@@ -1249,7 +1249,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "[Details]"
 msgctxt "@title:window"
@@ -2643,26 +2643,26 @@ msgid ""
 "be able to work with this.</qt>"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "แสดงต้นฉบับ"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "แสดงต้นฉบับ"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2709,25 +2709,25 @@ msgstr "ฉบับถัดไป"
 msgid "Previous Message"
 msgstr "ฉบับที่ยังไม่ได้อ่านก่อนหน้านี้"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "VCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "ตัวแสดงนามบัตรเสมือน"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "นำเข้า"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Next Card"
 msgid "&Next Card"
 msgstr "นามบัตรถัดไป"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "&Previous Card"

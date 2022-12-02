@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2022-07-15 12:08+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2234,45 +2234,45 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Responde a:%1"
 
-#: recipient/recipientspicker.cpp:42
+#: recipient/recipientspicker.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Selige destinatario"
 
-#: recipient/recipientspicker.cpp:54
+#: recipient/recipientspicker.cpp:56
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Cerca servicio de &directorio"
 
-#: recipient/recipientspicker.cpp:77
+#: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Adde como &Responde-A"
 
-#: recipient/recipientspicker.cpp:78
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
 msgstr "Adde como &A"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
 msgstr "Adde como &CC"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Adde como &BCC"
 
-#: recipient/recipientspicker.cpp:103
+#: recipient/recipientspicker.cpp:105
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 e-posta selectionate"
 msgstr[1] "%1 e-postas selectionate"
 
-#: recipient/recipientspicker.cpp:170
+#: recipient/recipientspicker.cpp:172
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -2289,7 +2289,7 @@ msgstr[1] ""
 "Tu selectionava %1 destinatarios. Le maxime numero de destinatarios "
 "supportate es %2. Per favor tu adapta le selection."
 
-#: recipient/recipientspicker.cpp:187
+#: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Nulle datos de clave trovate per destinatarios."

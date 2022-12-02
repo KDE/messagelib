@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2022-07-13 12:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2105,44 +2105,44 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "답장 주소: %1"
 
-#: recipient/recipientspicker.cpp:42
+#: recipient/recipientspicker.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "받는 사람 선택"
 
-#: recipient/recipientspicker.cpp:54
+#: recipient/recipientspicker.cpp:56
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "디렉터리 서비스 검색(&D)"
 
-#: recipient/recipientspicker.cpp:77
+#: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "답장 받을 주소로 추가(&R)"
 
-#: recipient/recipientspicker.cpp:78
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
 msgstr "받는 사람으로 추가(&T)"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
 msgstr "참조로 추가"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
 msgstr "숨은 참조로 추가(&B)"
 
-#: recipient/recipientspicker.cpp:103
+#: recipient/recipientspicker.cpp:105
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "선택한 이메일 %1개"
 
-#: recipient/recipientspicker.cpp:170
+#: recipient/recipientspicker.cpp:172
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -2155,7 +2155,7 @@ msgstr[0] ""
 "받는 사람 %1명을 선택했습니다. 최대로 지원하는 받는 사람 수는 %2명입니다.\n"
 "선택을 조정하십시오."
 
-#: recipient/recipientspicker.cpp:187
+#: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "받는 사람을 추가할 수 없습니다."

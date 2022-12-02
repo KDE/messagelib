@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2010-03-18 00:57-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2273,40 +2273,40 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:42
+#: recipient/recipientspicker.cpp:44
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Roghnaigh Faighteoir"
 
-#: recipient/recipientspicker.cpp:54
+#: recipient/recipientspicker.cpp:56
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Cuardaigh Seirbhís &Eolaire"
 
-#: recipient/recipientspicker.cpp:77
+#: recipient/recipientspicker.cpp:79
 #, fuzzy, kde-format
 #| msgid "Add as &To"
 msgid "Add as &Reply-To"
 msgstr "Cuir Leis mar &Chuig"
 
-#: recipient/recipientspicker.cpp:78
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
 msgstr "Cuir Leis mar &Chuig"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
 msgstr "Cuir Leis mar CC"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Cuir Leis mar &BCC"
 
-#: recipient/recipientspicker.cpp:103
+#: recipient/recipientspicker.cpp:105
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -2316,7 +2316,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: recipient/recipientspicker.cpp:170
+#: recipient/recipientspicker.cpp:172
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -2331,7 +2331,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: recipient/recipientspicker.cpp:187
+#: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
 msgstr ""

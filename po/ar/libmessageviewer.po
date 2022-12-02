@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -1179,7 +1179,7 @@ msgstr ""
 "لم يُخزّن عنوان بريد إلكترونيّ في %1 المستخدمة للتّوقيع، لذا لا يمكننا مقارنتها "
 "بعنوان المرسل %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -1248,7 +1248,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@title:window"
@@ -2614,24 +2614,24 @@ msgstr ""
 "تفهم الدّعوات، ستكون غريبة جدًّا.<br />الأشخاص الذين لديهم برامج بريد تفهم "
 "الدّعوات سيمكنهم العمل معها.</html>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "المصدر الخامّ"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "خامّ، البريد دون تعديل كما هو مخزّن في نظام الملفّات أو في الخادوم"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "مصدر HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "كود HTML لعرض الرّسالة على المستخدم"
@@ -2686,24 +2686,24 @@ msgstr "الرسالة ال&تالية"
 msgid "Previous Message"
 msgstr "ال&رسالة السابقة غير المقروءة"
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, fuzzy, kde-format
 #| msgid "vCard Viewer"
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr "عارض vCard"
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "ا&ستورد"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "البطاقة ال&تّالية"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "البطاقة ال&سّابقة"
