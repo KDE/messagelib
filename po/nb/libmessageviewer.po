@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:48+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1092,7 +1092,7 @@ msgstr ""
 "Ingen e-postadresse er lagret i %1 som blir brukt til signering. Kan derfor "
 "ikke sammenlikne med avsenderadressen %2."
 
-#: remote-content/remotecontentconfiguredialog.cpp:25
+#: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -1160,7 +1160,7 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2520,24 +2520,24 @@ msgstr ""
 "rare ut.<br />Folk som har e-postprogrammer som forstår invitasjoner, vil "
 "fremdeles kunne bruke dette.</qt>"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Rå kildetekst"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "Rå, uendret e-post slik den er lagret på filsystemet eller på tjeneren"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-kildekode"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-kode for å vise brukeren meldinga"
@@ -2581,23 +2581,23 @@ msgstr ""
 msgid "Previous Message"
 msgstr ""
 
-#: widgets/vcardviewer.cpp:37
+#: widgets/vcardviewer.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "vCard Viewer"
 msgstr ""
 
-#: widgets/vcardviewer.cpp:48
+#: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Import"
 msgstr "&Importer"
 
-#: widgets/vcardviewer.cpp:49
+#: widgets/vcardviewer.cpp:51
 #, kde-format
 msgid "&Next Card"
 msgstr "&Neste kort"
 
-#: widgets/vcardviewer.cpp:50
+#: widgets/vcardviewer.cpp:52
 #, kde-format
 msgid "&Previous Card"
 msgstr "&Forrige kort"
