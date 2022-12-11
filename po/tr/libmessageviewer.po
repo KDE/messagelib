@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-02 00:48+0000\n"
-"PO-Revision-Date: 2022-11-24 17:07+0300\n"
+"PO-Revision-Date: 2022-12-10 18:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1331,7 +1331,7 @@ msgstr "İleti yazdırılırken her zaman şifreleme/imza ayrıntılarını gös
 #: settings/messageviewer.kcfg.cmake:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr "HTML derlerken, asgari boyuttan küçük yazıtipi boyutu kullanma."
+msgstr "HTML sunarken, asgari boyuttan küçük yazıtipi boyutu kullanma."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:38
@@ -1968,7 +1968,7 @@ msgstr "Boyut"
 #: viewer/urlhandlermanager.cpp:405
 #, kde-format
 msgid "Turn on HTML rendering for this message."
-msgstr "Bu iletiyi HTML biçiminde göster."
+msgstr "Bu ileti için HTML sunumunu aç."
 
 #: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
 #, kde-format
