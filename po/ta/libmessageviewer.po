@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-05-10 19:48+0530\n"
+"PO-Revision-Date: 2022-12-13 21:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -392,22 +392,19 @@ msgid "Delete Keys"
 msgstr "சாவிகளை நீக்குவது"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Must be signed"
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "கையொப்பம் கட்டாயம்"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Can be signed"
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "கையொப்பம் இருக்கலாம்"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
-#, fuzzy, kde-format
-#| msgid "Message List - Date Field"
+#, kde-format
 msgid "Ignore if not signed"
-msgstr "செய்தி பட்டியல் - தேதிப் புலம் "
+msgstr "கையொப்பமில்லையேல் பொருட்படுத்தாதே"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
@@ -813,13 +810,12 @@ msgstr "அனுப்புநர்:"
 #: header/grantleeheaderformatter.cpp:286
 #, kde-format
 msgid "resent from:"
-msgstr ""
+msgstr "மீளனுப்பியவர்:"
 
 #: header/grantleeheaderformatter.cpp:288
-#, fuzzy, kde-format
-#| msgid "sender: "
+#, kde-format
 msgid "resent to:"
-msgstr "அனுப்புனர்:"
+msgstr "மீளனுப்பிபோதான பெறுநர்:"
 
 #: header/grantleeheaderformatter.cpp:388
 #, kde-format
@@ -910,17 +906,17 @@ msgstr "மாறுநிலை செல்லுபடியாகும் �
 #: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
-msgstr ""
+msgstr "ஸ்பேம் வடிகட்டி இட்ட மதிப்பெண்ணை தலைப்புப்புலங்களிலிருந்து கண்டறிய முடியவில்லை"
 
 #: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr ""
+msgstr "மாறுநிலையை தலைப்புப்புலங்களிலிருந்து கண்டறிய முடியவில்லை"
 
 #: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Error evaluating spam score"
-msgstr "ஸ்பேம் மதிப்பெண்ணை இடுவதில் சிக்கல்"
+msgstr "ஸ்பேம் மதிப்பெண்ணை கண்டறிவதில் சிக்கல்"
 
 #: header/headerstyle_util.cpp:184
 #, kde-format
@@ -983,18 +979,16 @@ msgid "Reply to: "
 msgstr "பதில் பெறுபவர்: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr "புறக்கணி "
+msgstr "பொருட்படுத்தாதே"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "&அனுப்பு"
+msgstr "அனுப்பு"
 
 #: mdn/mdnwarningwidget.cpp:16
 #, fuzzy, kde-format
@@ -1050,9 +1044,9 @@ msgid "Good signature."
 msgstr "செல்லுபடியாகும் கையொப்பம்."
 
 #: messagepartthemes/default/defaultrenderer.cpp:148
-#, fuzzy, kde-format
+#, kde-format
 msgid "One key has expired."
-msgstr "ஒரு விசை காலாவதியானது."
+msgstr "ஒரு சாவி காலாவதியாகியுள்ளது."
 
 #: messagepartthemes/default/defaultrenderer.cpp:152
 #, kde-format
@@ -1060,9 +1054,9 @@ msgid "The signature has expired."
 msgstr "கையொப்பம் காலாவதியாகிவிட்டது."
 
 #: messagepartthemes/default/defaultrenderer.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unable to verify: key missing."
-msgstr "சரிபார்க்க முடியவில்லை: விசை காணவில்லை."
+msgstr "சரிபார்க்க முடியவில்லை: சாவியைக் காணவில்லை."
 
 #: messagepartthemes/default/defaultrenderer.cpp:164
 #, kde-format
@@ -1085,9 +1079,9 @@ msgid "A system error occurred."
 msgstr "கணினி சிக்கல் நேர்ந்தது."
 
 #: messagepartthemes/default/defaultrenderer.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgid "One key has been revoked."
-msgstr "ஒரு விசை ஏற்கனவே பெறப்பட்டுள்ளது"
+msgstr "ஒரு விசை திரும்பப்பெறப்பட்டுள்ளது"
 
 #: messagepartthemes/default/defaultrenderer.cpp:214
 #, kde-format
@@ -1162,7 +1156,7 @@ msgstr "தொலை உள்ளடக்கங்களை சேர்த்�
 #: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "இம்முகவிரிக்கு ஏற்கனவே ஓர் பதிவுள்ளது. அப்பதிவையே மாற்றுங்கள்."
 
 #: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
@@ -1312,7 +1306,7 @@ msgstr "'%1' என்ற சுருக்கப்பட்ட முகவ�
 #: settings/messageviewer.kcfg.cmake:11
 #, kde-format
 msgid "Only print selected text in viewer"
-msgstr ""
+msgstr "காட்டியில் தேர்ந்தெடுக்கப்பட்டுள்ள உரையையே அச்சிடு"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.cmake:15
@@ -1828,14 +1822,14 @@ msgid "KMail Question"
 msgstr "கேமெயில் கேள்வி"
 
 #: utils/messageviewerutil.cpp:362
-#, fuzzy, kde-format
+#, kde-format
 msgid "Keep Encryption"
-msgstr "மறையாக்கம்"
+msgstr "மறையாக்கத்தை வைத்திரு"
 
 #: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do Not Keep"
-msgstr "மொழிபெயர்க்க வேண்டாம்"
+msgstr "வைத்திருக்காதே"
 
 #: utils/messageviewerutil.cpp:382
 #, kde-format
@@ -1847,103 +1841,90 @@ msgstr ""
 "வைத்து கொள்ள விரும்புகிறீர்களா?."
 
 #: utils/messageviewerutil.cpp:384
-#, fuzzy, kde-format
+#, kde-format
 msgid "Keep Signature"
-msgstr "கையொப்பம்"
+msgstr "கையொப்பதை வைத்திரு"
 
 #: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
 #: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
-#, fuzzy, kde-kuit-format
-#| msgctxt "%2 is detailed error description"
-#| msgid ""
-#| "Could not write the file %1:\n"
-#| "%2"
+#, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
-"கோப்பினை எழுதழுடியாது%1:\n"
-"%2"
+"<qt>பின்வரும் கோப்புக்கு எழுத முடியவில்லை<br /><filename>%1</filename><br /><br />"
+"%2</qt>"
 
 #: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
 #: utils/messageviewerutil.cpp:487
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Error saving attachment"
-msgstr "ஒரு இணைப்பு உள்ளது"
+msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
 
 #: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "சேமிக்க இணைப்புகளெதுவும் கண்டுப்பிடிக்கப்படவில்லை"
+msgstr "சேமிப்பதற்கு உடனிணைப்புகளேதும் கண்டுப்பிடிக்கப்படவில்லை"
 
 #: utils/messageviewerutil.cpp:515
-#, fuzzy, kde-format
-#| msgid "0 messages"
+#, kde-format
 msgid "message"
-msgstr "0 செய்திகள்"
+msgstr "அஞ்சல்"
 
 #: utils/messageviewerutil.cpp:537
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
-msgstr ""
+msgstr "மின்னஞ்சல்கள் (*.mbox);;அனைத்து கோப்புகள் (*)"
 
 #: utils/messageviewerutil.cpp:548
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] "1 அஞ்சல், %2."
-msgstr[1] "1 அஞ்சல், %2."
+msgstr[0] "அஞ்சலை சேமி"
+msgstr[1] "அஞ்சல்களை சேமி"
 
 #: utils/messageviewerutil.cpp:573
-#, fuzzy, kde-format
-#| msgid "Store sent messages encry&pted"
+#, kde-format
 msgid "File %1 could not be loaded."
-msgstr "&அனுப்பிய செய்திகளை மறைத்து சேமி"
+msgstr "%1 எனும் கோப்பை ஏற்ற முடியவில்லை."
 
 #: utils/messageviewerutil.cpp:573
-#, fuzzy, kde-format
-#| msgid "Error while uploading message"
+#, kde-format
 msgid "Error loading message"
-msgstr "செய்தியை மேலேற்றும் போது பிழை"
+msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
 
 #: utils/messageviewerutil.cpp:575
-#, fuzzy, kde-format
-#| msgid "Store sent messages encry&pted"
+#, kde-format
 msgid "File %1 could not be created."
-msgstr "&அனுப்பிய செய்திகளை மறைத்து சேமி"
+msgstr "%1 எனும் கோப்பை உருவாக்க முடியவில்லை."
 
 #: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
 #: utils/messageviewerutil.cpp:606
-#, fuzzy, kde-format
-#| msgid "Moving messages"
+#, kde-format
 msgid "Error saving message"
-msgstr "Moving messages failed."
+msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
 #: utils/messageviewerutil.cpp:586
-#, fuzzy, kde-format
-#| msgid "End of signed message"
+#, kde-format
 msgid "We cannot save message."
-msgstr "கையெழுத்திட்ட தகவலின் முடிவு"
+msgstr "அஞ்சலை சேமிக்க முடியாது."
 
 #: utils/messageviewerutil.cpp:627
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "Open &with %1"
-msgstr "&'%1'ல் திற"
+msgstr "%1 &என்பதால திற"
 
 #: utils/messageviewerutil.cpp:629
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: viewer/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit Identity"
+#, kde-format
 msgid "Edit with:"
-msgstr "அடையாளத்தை மாற்று"
+msgstr "இதனால் திருத்து:"
 
 #: viewer/editorwatcher.cpp:194
 #, kde-format
@@ -1953,10 +1934,9 @@ msgid ""
 msgstr ""
 
 #: viewer/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Name of the attachment:"
+#, kde-format
 msgid "Unable to edit attachment"
-msgstr "இணைப்பின் பெயர்:"
+msgstr "உடனிணைப்பை திருத்த முடியவில்லை"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
@@ -1991,92 +1971,83 @@ msgstr "இணையத்திலிருந்து வெளி இணை�
 #: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
-msgstr ""
+msgstr "தொடர்புள்ள நிலையில் இயங்கு."
 
 #: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
-msgstr ""
+msgstr "கணக்கை தொடர்புள்ள நிலைக்கு மாற்று."
 
 #: viewer/urlhandlermanager.cpp:414
-#, fuzzy, kde-format
-#| msgid "&Encrypt Message"
+#, kde-format
 msgid "Decrypt message."
-msgstr "குறியாக்கப்பட்ட அஞ்சல்"
+msgstr "அஞ்சலை மறைநீக்கு."
 
 #: viewer/urlhandlermanager.cpp:416
-#, fuzzy, kde-format
-#| msgid "&Enable signature"
+#, kde-format
 msgid "Show signature details."
-msgstr "கையெழுத்தை &செயல்படுத்து"
+msgstr "கையொப்ப விவரங்களைக் காட்டு."
 
 #: viewer/urlhandlermanager.cpp:418
-#, fuzzy, kde-format
-#| msgid "&Enable signature"
+#, kde-format
 msgid "Hide signature details."
-msgstr "கையெழுத்தை &செயல்படுத்து"
+msgstr "கையொப்ப விவரங்களை மறை."
 
 #: viewer/urlhandlermanager.cpp:420
-#, fuzzy, kde-format
-#| msgid "&Enable signature"
+#, kde-format
 msgid "Show encryption details."
-msgstr "கையெழுத்தை &செயல்படுத்து"
+msgstr "மறையாக்க விவரங்களைக் காட்டு."
 
 #: viewer/urlhandlermanager.cpp:422
-#, fuzzy, kde-format
-#| msgid "&Enable signature"
+#, kde-format
 msgid "Hide encryption details."
-msgstr "கையெழுத்தை &செயல்படுத்து"
+msgstr "மறையாக்க விவரங்களை மறை"
 
 #: viewer/urlhandlermanager.cpp:427
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Open Documentation"
-msgstr "ஆவணமாக்கம்"
+msgstr "கையேட்டைத் திற"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
-msgstr ""
+msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் விரி"
 
 #: viewer/urlhandlermanager.cpp:463
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "&Collapse Thread"
+#, kde-format
 msgid "Collapse quoted text."
-msgstr "&Collapse Thread"
+msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் சுருக்கு"
 
 #: viewer/urlhandlermanager.cpp:525
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr "சான்றிதழ் மேலாளரை துவக்கமுடியவில்லை. உங்கள் நிறுவுதலை சரிபார்க்கவும்."
+msgstr ""
+"சான்றிதழ் மேலாளியைத் திறக்க முடியவில்லை. அது சரியாக நிறுவப்பட்டுள்ளதா என பாருங்கள்."
 
 #: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
-msgstr "Kஅஞ்சல் பிழை"
+msgstr "கேமெயில் சிக்கல்"
 
 #: viewer/urlhandlermanager.cpp:542
 #, kde-format
 msgid "Show certificate 0x%1"
-msgstr "0x%1 சான்றிதழ் காண்பி"
+msgstr "0x%1 சான்றிதழைக் காட்டு"
 
 #: viewer/urlhandlermanager.cpp:601
-#, fuzzy, kde-format
-#| msgid "Open in Address Book"
+#, kde-format
 msgid "&Open in Address Book"
-msgstr "&முகவரிபுத்தகத்தில் திற"
+msgstr "&முகவரிப்புத்தகத்தில் திற"
 
 #: viewer/urlhandlermanager.cpp:603
-#, fuzzy, kde-format
-#| msgid "Email Address"
+#, kde-format
 msgid "&Copy Email Address"
-msgstr "மின்னஞ்சல் முகவரி"
+msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
 #: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
-msgstr "பிடிப்புபலகையில் முகவரி நகலெடுக்கப்பட்டது."
+msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
 #: viewer/urlhandlermanager.cpp:627
 #, fuzzy, kde-format
@@ -2087,25 +2058,22 @@ msgstr "&முகவரிபுத்தகத்தில் திற"
 #: viewer/urlhandlermanager.cpp:803
 #, kde-format
 msgid "Attachment: %1"
-msgstr "இணைப்பு: %1"
+msgstr "உடனிணைப்பு: %1"
 
 #: viewer/urlhandlermanager.cpp:806
-#, fuzzy, kde-format
-#| msgid "Encapsulated message"
+#, kde-format
 msgid "Encapsulated Message (Subject: %1)"
-msgstr "உறைபொதிக்கப்பட்ட செய்தி"
+msgstr "உட்பொதிந்த அஞ்சல்: (தலைப்பு: %1)"
 
 #: viewer/urlhandlermanager.cpp:808
-#, fuzzy, kde-format
-#| msgid "Encapsulated message"
+#, kde-format
 msgid "Encapsulated Message"
-msgstr "உறைபொதிக்கப்பட்ட செய்தி"
+msgstr "உட்பொதிந்த அஞ்சல்"
 
 #: viewer/urlhandlermanager.cpp:811
-#, fuzzy, kde-format
-#| msgid "Name of the attachment:"
+#, kde-format
 msgid "Unnamed attachment"
-msgstr "இணைப்பின் பெயர்:"
+msgstr "பெயரிடப்படாத உடனிணைப்பு"
 
 #: viewer/urlhandlermanager.cpp:846
 #, kde-format
@@ -2115,25 +2083,23 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
-msgstr "URL திறக்கப்படுகிறது"
+msgstr "முகவரி திறக்கப்படுகிறது..."
 
 #: viewer/urlhandlermanager.cpp:900
-#, fuzzy, kde-kuit-format
-#| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
-msgstr "<qt><b>%1</b>ஐ இயக்குவதை உறுதி செய்யவும்?</qt>தியை நீக்க தயாரா?"
+msgstr "<filename>%1</filename> தனை உறுதியாக இயக்க வேண்டுமா?"
 
 #: viewer/urlhandlermanager.cpp:902
-#, fuzzy, kde-format
+#, kde-format
 msgid "Execute"
-msgstr "கட்டளையை இயக்கு"
+msgstr "இயக்கு"
 
 #: viewer/viewer.cpp:138
-#, fuzzy, kde-format
-#| msgid "Moving messages"
+#, kde-format
 msgid "Loading message..."
-msgstr "Moving messages failed."
+msgstr "அஞ்சல் ஏற்றப்படுகிறது"
 
 #: viewer/viewer_p.cpp:362
 #, kde-format
@@ -2144,10 +2110,9 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:363 viewer/viewer_p.cpp:370 viewer/viewer_p.cpp:592
 #: viewer/viewer_p.cpp:1734
-#, fuzzy, kde-format
-#| msgid "&Remove Attachment"
+#, kde-format
 msgid "Delete Attachment"
-msgstr "இணைப்பை நீக்கு"
+msgstr "உடனிணைப்பை நீக்கு"
 
 #: viewer/viewer_p.cpp:369
 #, kde-format
@@ -2155,134 +2120,129 @@ msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
+"இவ்வஞ்சலுக்கு எண்ம கையொப்பமிருந்தால், உடனிணைப்பை நீக்குவதன் மூலம் அது செல்லுபடியாகாத‍"
+"தாகலாம்."
 
 #: viewer/viewer_p.cpp:451
-#, fuzzy, kde-format
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "இதனால் திற"
+msgstr "&இதனால் திற"
 
 #: viewer/viewer_p.cpp:469
-#, fuzzy, kde-format
-#| msgid "Other Actio&ns"
+#, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "மற்ற செயல்கள்"
+msgstr "&மற்றவை..."
 
 #: viewer/viewer_p.cpp:471 viewer/viewer_p.cpp:484
-#, fuzzy, kde-format
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "இதனால் திற"
+msgstr "&இதனால் திற..."
 
 #: viewer/viewer_p.cpp:548 viewer/viewer_p.cpp:1712
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
-"_: to open\n"
-"திற"
+msgstr "திற"
 
 #: viewer/viewer_p.cpp:562 viewer/viewer_p.cpp:1719
 #, kde-format
 msgctxt "to view something"
 msgid "View"
-msgstr "பார்."
+msgstr "பார்"
 
 #: viewer/viewer_p.cpp:570
 #, kde-format
 msgid "Scroll To"
-msgstr ""
+msgstr "ஓர் இடத்திற்கு உருள்"
 
 #: viewer/viewer_p.cpp:575
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save As..."
-msgstr "&இப்படி சேமிக்கவும்..."
+msgstr "இவ்வாறு சேமி..."
 
 #: viewer/viewer_p.cpp:581 viewer/viewer_p.cpp:1729
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy"
-msgstr "&இதற்கு நகலெடுக்கவும்"
+msgstr "நகலெடு"
 
 #: viewer/viewer_p.cpp:603
-#, fuzzy, kde-format
-#| msgid "Reply to A&uthor..."
+#, kde-format
 msgid "Reply To Author"
-msgstr "&அனுப்புநருக்கும் பதிலளி..."
+msgstr "அனுப்புநருக்கு பதிலளி"
 
 #: viewer/viewer_p.cpp:611
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reply To All"
-msgstr "பதிலளி"
+msgstr "அனைவருக்கும் பதிலளி"
 
 #: viewer/viewer_p.cpp:617 viewer/viewer_p.cpp:1739
-#, fuzzy, kde-format
+#, kde-format
 msgid "Properties"
-msgstr "&பண்புகள்"
+msgstr "பண்புகள்"
 
 #: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "KMail"
-msgstr "Kஅஞ்சல்"
+msgstr "கேமெயில்"
 
 #: viewer/viewer_p.cpp:755
-#, fuzzy, kde-format
-#| msgid "KDE Email Client"
+#, kde-format
 msgid "The KDE Mail Client"
-msgstr "KDE  மின்அஞ்சல் பயனர்"
+msgstr "கே.டீ.யீ.யின் மின்னஞ்சல் செயலி"
 
 #: viewer/viewer_p.cpp:1291
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr "இணைப்பை பார்: %1"
+msgstr "உடனிணைப்பைப் பார்: %1"
 
 #: viewer/viewer_p.cpp:1479
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
-msgstr "&இணைப்புகள்"
+msgstr "&உடனிணைப்புகள்"
 
 #: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Choose display style of attachments"
-msgstr "Choose display style of attachments"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
-msgstr "சின்னங்களாக"
+msgstr "&சின்னங்களாக"
 
 #: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
-msgstr "அனைத்து இணைப்பு சின்னத்தை காட்டு. அதை பார்க்க சொடுக்கவும்."
+msgstr "உடனிணைப்புகளை சின்னங்களாக காட்டும். அவற்றைக் காண கிளிக் செய்யலாம்."
 
 #: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
-msgstr "சூட்டிகை"
+msgstr "சூ&ழமைவாக"
 
 #: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show attachments as suggested by sender."
-msgstr "இணைப்புகளை அனுப்புநர் விரும்புவது போல் காண்பி"
+msgstr "இணைப்புகளை அனுப்புநர் விரும்புவது போல் காண்பிக்கும்."
 
 #: viewer/viewer_p.cpp:1498
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
-msgstr "&உள்ளமை"
+msgstr "&உள்ளமைவாக"
 
 #: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Show all attachments inline (if possible)"
-msgstr "Show all attachments inline (if possible)்."
+msgstr "முடிந்தால் உடனிணைப்புகளை அஞ்சல்காட்டிக்குள்ளேயே காட்டும்"
 
 #: viewer/viewer_p.cpp:1505
 #, kde-format
@@ -2293,13 +2253,13 @@ msgstr "&மறை"
 #: viewer/viewer_p.cpp:1508
 #, kde-format
 msgid "Do not show attachments in the message viewer"
-msgstr "செய்தி பார்வையாளரில் இணைப்புகளை காண்பிக்காதே."
+msgstr "அஞ்சல்காட்டியில் உடனிணைப்புகளைக் காட்ட வேண்டாம்"
 
 #: viewer/viewer_p.cpp:1512
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
-msgstr ""
+msgstr "தலைப்புப்பகுதியில் மட்டும்"
 
 #: viewer/viewer_p.cpp:1515
 #, fuzzy, kde-format
