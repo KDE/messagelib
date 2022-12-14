@@ -9,7 +9,6 @@
 #include "messagelist_private_export.h"
 #include <QListWidget>
 #include <QWidget>
-class QListWidget;
 namespace MessageList
 {
 namespace Core
