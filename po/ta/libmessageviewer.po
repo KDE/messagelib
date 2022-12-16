@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 21:45+0530\n"
+"PO-Revision-Date: 2022-12-15 21:17+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -2262,21 +2262,20 @@ msgid "In Header Only"
 msgstr "தலைப்புப்பகுதியில் மட்டும்"
 
 #: viewer/viewer_p.cpp:1515
-#, fuzzy, kde-format
-#| msgid "Show all attachments as icons. Click to see them."
+#, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "அனைத்து இணைப்பு சின்னத்தை காட்டு. அதை பார்க்க சொடுக்கவும்."
+msgstr "உடனிணைப்புகளை அஞ்சலின் தலைப்புப்பகுதியில் மட்டும் காட்டு"
 
 #: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "&Set Encoding"
-msgstr "தொகுதி குறிமுறையாக்கம்"
+msgstr "குறியாக்கத்தை அமைப்பது"
 
 #: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
-msgstr "தானே"
+msgstr "தானியக்கம்"
 
 #: viewer/viewer_p.cpp:1535
 #, kde-format
@@ -2286,7 +2285,7 @@ msgstr "உரையை நகலெடு"
 #: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Select All Text"
-msgstr "முழு உரையை தேர்ந்தெடு"
+msgstr "எல்லா உரையையும் தேர்ந்தெடு"
 
 #: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
 #, kde-format
