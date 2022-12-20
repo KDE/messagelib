@@ -222,7 +222,6 @@ void MessageFactoryNG::createReplyAsync()
                 // Doesn't seem to be a mailing list.
                 auto originalFromList = mOrigMsg->from()->mailboxes();
                 auto originalToList = mOrigMsg->to()->mailboxes();
-
                 if (mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalFromList))
                     && !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))) {
                     // Sender seems to be one of our own identities and recipient is not,
@@ -232,7 +231,10 @@ void MessageFactoryNG::createReplyAsync()
                 } else {
                     // "Normal" case:  reply to sender.
                     toList = stripMyAddressesFromAddressList(mOrigMsg->to()->mailboxes(), mIdentityManager);
-                    toList += authorMailboxes(mOrigMsg, mMailingListAddresses);
+                    const auto authors = authorMailboxes(mOrigMsg, mMailingListAddresses);
+                    if (!mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(authors))) {
+                        toList += authors;
+                    }
                 }
             }
 
