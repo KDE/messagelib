@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:48+0000\n"
+"POT-Creation-Date: 2022-12-21 00:47+0000\n"
 "PO-Revision-Date: 2022-10-25 08:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1534,17 +1534,17 @@ msgstr "Избраната папка не е валидна."
 msgid "Invalid folder"
 msgstr "Невалидна папка"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
 #, kde-format
 msgid "forwarded message"
 msgstr "препратено съобщение"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:576
 #, kde-format
 msgid "Receipt: "
 msgstr "Получено: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:703
 #, kde-format
 msgid ""
 "\n"

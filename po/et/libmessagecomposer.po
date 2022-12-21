@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:48+0000\n"
+"POT-Creation-Date: 2022-12-21 00:47+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1620,17 +1620,17 @@ msgstr "Valitud kataloog ei ole korrektne."
 msgid "Invalid folder"
 msgstr "Sobimatu kataloog"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
 #, kde-format
 msgid "forwarded message"
 msgstr "edasi saadetud kiri"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:576
 #, kde-format
 msgid "Receipt: "
 msgstr "Vastuvõtmine: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:703
 #, kde-format
 msgid ""
 "\n"

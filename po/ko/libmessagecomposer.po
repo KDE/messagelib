@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:48+0000\n"
+"POT-Creation-Date: 2022-12-21 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 12:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1429,17 +1429,17 @@ msgstr "선택한 폴더가 올바르지 않습니다."
 msgid "Invalid folder"
 msgstr "잘못된 폴더"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
 #, kde-format
 msgid "forwarded message"
 msgstr "전달된 메시지"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:576
 #, kde-format
 msgid "Receipt: "
 msgstr "영수증: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:703
 #, kde-format
 msgid ""
 "\n"
