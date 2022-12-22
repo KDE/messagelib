@@ -357,7 +357,8 @@ bool MailWebEngineView::execPrintPreviewPage(QPrinter *printer, int timeout)
 void MailWebEngineView::initializeCustomScheme()
 {
     QWebEngineUrlScheme cidScheme("cid");
-    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored);
+    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored | QWebEngineUrlScheme::LocalScheme
+                       | QWebEngineUrlScheme::LocalAccessAllowed);
     cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
     QWebEngineUrlScheme::registerScheme(cidScheme);
 }
