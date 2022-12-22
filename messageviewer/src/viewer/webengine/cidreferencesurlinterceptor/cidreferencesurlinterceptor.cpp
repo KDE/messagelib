@@ -8,12 +8,13 @@
 #include "htmlwriter/webengineembedpart.h"
 
 #include <QBuffer>
+#include <QDebug>
 #include <QImage>
 #include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 
 using namespace MessageViewer;
-#define LOAD_FROM_FILE 1
+// #define LOAD_FROM_FILE 1
 CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
@@ -32,7 +33,10 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
                 QImage image(newUrl.path());
                 QByteArray ba;
                 QBuffer buf(&ba);
+                // Reduce image.
+                image = image.scaled(800, 600);
                 image.save(&buf, "png");
+
                 const QByteArray hexed = ba.toBase64();
                 buf.close();
                 const QUrl r = QUrl(QString::fromUtf8(QByteArray("data:image/png;base64,") + hexed));
