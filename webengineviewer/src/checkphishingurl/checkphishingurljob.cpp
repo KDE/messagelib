@@ -17,17 +17,19 @@ WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;
 class WebEngineViewer::CheckPhishingUrlJobPrivate
 {
 public:
-    CheckPhishingUrlJobPrivate() = default;
+    explicit CheckPhishingUrlJobPrivate(CheckPhishingUrlJob *q)
+        : mNetworkAccessManager(new QNetworkAccessManager(q))
+    {
+    }
 
     QUrl mUrl;
-    QNetworkAccessManager *mNetworkAccessManager = nullptr;
+    QNetworkAccessManager *const mNetworkAccessManager;
 };
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     : QObject(parent)
-    , d(new WebEngineViewer::CheckPhishingUrlJobPrivate)
+    , d(new WebEngineViewer::CheckPhishingUrlJobPrivate(this))
 {
-    d->mNetworkAccessManager = new QNetworkAccessManager(this);
     d->mNetworkAccessManager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
     d->mNetworkAccessManager->setStrictTransportSecurityEnabled(true);
     d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);

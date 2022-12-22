@@ -25,6 +25,6 @@ Q_SIGNALS:
 
 private:
     QWebEngineView *const mWebEngineView;
-    QWebEnginePage *mEnginePage = nullptr;
+    QWebEnginePage *const mEnginePage;
 };
 }

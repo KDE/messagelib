@@ -13,6 +13,7 @@ using namespace WebEngineViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
     , mWebEngineView(new QWebEngineView(this))
+    , mEnginePage(new QWebEnginePage(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -20,7 +21,6 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
 
     mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
-    mEnginePage = new QWebEnginePage(this);
     mEnginePage->setObjectName(QStringLiteral("mEnginePage"));
     mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 
