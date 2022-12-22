@@ -813,8 +813,8 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         const QByteArray cid = msgPart->content()->contentID()->identifier();
         auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
         if (!cid.isEmpty() && mp) {
-            QString fileName = mp->temporaryFilePath();
-            QString href = QUrl::fromLocalFile(fileName).url();
+            const QString fileName = mp->temporaryFilePath();
+            const QString href = QUrl::fromLocalFile(fileName).url();
             htmlWriter->embedPart(cid, href);
         }
     }
