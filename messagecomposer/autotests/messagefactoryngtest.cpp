@@ -30,7 +30,6 @@
 
 #include "globalsettings_templateparser.h"
 
-#include <KCharsets>
 #include <QDateTime>
 #include <QDir>
 #include <QLocale>
