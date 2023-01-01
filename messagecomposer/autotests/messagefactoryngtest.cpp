@@ -1,7 +1,7 @@
 /*
   SPDX-FileCopyrightText: 2010 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.com
   SPDX-FileCopyrightText: 2010 Leo Franchi <lfranchi@kde.org>
-  SPDX-FileCopyrightText: 2017-2022 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2017-2023 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
