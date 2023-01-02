@@ -1483,7 +1483,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:147
 #, kde-format
 msgid "List of emails in scam white list"
-msgstr "Llista de correus a la llista blanca de frau"
+msgstr "Llista de correus en la llista blanca de frau"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
 #: settings/messageviewer.kcfg.cmake:151

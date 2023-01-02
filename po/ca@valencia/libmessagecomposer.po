@@ -1049,7 +1049,7 @@ msgid ""
 msgstr ""
 "<qt>No s'ha trobat cap certificat d'encriptació vàlid i de confiança per a "
 "«%1».<br/> <br/>Seleccioneu els certificats que s'hauria d'utilitzar per a "
-"este destinatari. Si no hi ha cap certificat adequat a la llista, també "
+"este destinatari. Si no hi ha cap certificat adequat en la llista, també "
 "podreu buscar certificats externs clicant en el botó: busca certificats "
 "externs.</qt>"
 
@@ -1483,7 +1483,7 @@ msgstr "Seleccioneu el nom"
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr "Quin nom tindrà el contacte «%1» a la llibreta d'adreces?"
+msgstr "Quin nom tindrà el contacte «%1» en la llibreta d'adreces?"
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
@@ -2093,7 +2093,7 @@ msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
 msgstr ""
-"No hi ha cap destinatari a la llista. Primer seleccioneu alguns "
+"No hi ha cap destinatari en la llista. Primer seleccioneu alguns "
 "destinataris, després torneu-ho a intentar."
 
 #: recipient/distributionlistdialog.cpp:251
