@@ -3,7 +3,7 @@
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2020.
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
 #
 msgid ""
 msgstr ""
@@ -2739,8 +2739,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgid ""
-#~ "When encrypting emails, always also encrypt to the certificate of my own "
-#~ "identity"
-#~ msgstr "Když se šifrují zprávy, zašifrovat i certifikát mé identity"
