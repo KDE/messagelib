@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-24 00:49+0000\n"
+"POT-Creation-Date: 2022-12-21 02:34+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1062,11 +1062,11 @@ msgid_plural ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>expired %1 days ago.</p>"
 msgstr[0] ""
-"<p>Din signeringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID 0x"
-"%3)</p><p>utløp for mindre enn en dag siden.</p>"
+"<p>Din signeringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID "
+"0x%3)</p><p>utløp for mindre enn en dag siden.</p>"
 msgstr[1] ""
-"<p>Din signeringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID 0x"
-"%3)</p><p>utløp for %1 dager siden.</p>"
+"<p>Din signeringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID "
+"0x%3)</p><p>utløp for %1 dager siden.</p>"
 
 #: composer/nearexpirychecker.cpp:74
 #, kde-format
@@ -1469,17 +1469,17 @@ msgstr ""
 msgid "Invalid folder"
 msgstr ""
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
 #, kde-format
 msgid "forwarded message"
 msgstr "videresendt melding"
 
-#: helper/messagefactoryng.cpp:575
+#: helper/messagefactoryng.cpp:577
 #, kde-format
 msgid "Receipt: "
 msgstr "Kvittering: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:704
 #, kde-format
 msgid ""
 "\n"
