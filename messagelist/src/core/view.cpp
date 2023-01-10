@@ -2489,6 +2489,16 @@ bool View::event(QEvent *e)
     return true;
 }
 
+void View::slotExpandAllThreads()
+{
+    setAllThreadsExpanded(true);
+}
+
+void View::slotCollapseAllThreads()
+{
+    setAllThreadsExpanded(false);
+}
+
 void View::slotCollapseAllGroups()
 {
     setAllGroupsExpanded(false);

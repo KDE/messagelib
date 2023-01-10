@@ -357,6 +357,12 @@ void MessageList::Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::
     act = menu.addAction(i18n("Collapse All Groups"));
     connect(act, &QAction::triggered, view(), &Core::View::slotCollapseAllGroups);
 
+    menu.addSeparator();
+    act = menu.addAction(i18n("Expand All Threads"));
+    connect(act, &QAction::triggered, view(), &Core::View::slotExpandAllThreads);
+    act = menu.addAction(i18n("Collapse All Threads"));
+    connect(act, &QAction::triggered, view(), &Core::View::slotCollapseAllThreads);
+
     menu.exec(globalPos);
 }
 

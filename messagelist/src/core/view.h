@@ -576,6 +576,10 @@ public Q_SLOTS:
      */
     void slotCollapseCurrentItem();
 
+    void slotExpandAllThreads();
+
+    void slotCollapseAllThreads();
+
 protected Q_SLOTS:
 
     /**
