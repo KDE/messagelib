@@ -728,6 +728,17 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
             messageInfo.extraHead.clear();
         }
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
+        // qDebug() << "BEFORE messageInfo.extraHead**********" << messageInfo.extraHead;
+        static QRegularExpression styleBodyRegularExpression =
+            QRegularExpression(QStringLiteral("<style>\\s*body\\s*{"), QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption);
+        QRegularExpressionMatch matchBodyStyle;
+        const int bodyStyleStartIndex = messageInfo.extraHead.indexOf(styleBodyRegularExpression, 0, &matchBodyStyle);
+        if (bodyStyleStartIndex > 0) {
+            const auto endIndex = messageInfo.extraHead.indexOf(QLatin1String("</style>"), bodyStyleStartIndex, Qt::CaseInsensitive);
+            // qDebug() << " endIndex " << endIndex;
+            messageInfo.extraHead = messageInfo.extraHead.remove(bodyStyleStartIndex, endIndex - bodyStyleStartIndex + 8);
+        }
+        // qDebug() << "AFTER messageInfo.extraHead**********" << messageInfo.extraHead;
     }
     // body
     static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
