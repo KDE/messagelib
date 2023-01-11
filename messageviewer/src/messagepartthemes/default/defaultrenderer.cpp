@@ -348,7 +348,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     block.setProperty("isPrinting", isPrinting());
     {
         // laurent: FIXME port to async method webengine
-        Util::HtmlMessageInfo messageInfo = Util::processHtml(mp->bodyHtml());
+        const Util::HtmlMessageInfo messageInfo = Util::processHtml(mp->bodyHtml());
 
         if (isHtmlPreferred) {
             mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
