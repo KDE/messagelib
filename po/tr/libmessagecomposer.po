@@ -4,13 +4,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 02:34+0000\n"
-"PO-Revision-Date: 2022-12-11 20:29+0300\n"
+"PO-Revision-Date: 2023-01-10 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -217,7 +217,7 @@ msgstr "Yeniden Yükle"
 #: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr "KMail eklentiyi geçici bir dosyaya yazamadı."
+msgstr "K Posta eklentiyi geçici bir dosyaya yazamadı."
 
 #: attachment/attachmentcontrollerbase.cpp:687
 #: attachment/attachmentcontrollerbase.cpp:711
@@ -228,7 +228,7 @@ msgstr "Eklenti açılamadı"
 #: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "KMail eklentiyi açamadı."
+msgstr "K Posta eklentiyi açamadı."
 
 #: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format

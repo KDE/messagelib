@@ -10,13 +10,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010, 2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-12-11 20:31+0300\n"
+"PO-Revision-Date: 2023-01-10 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1471,7 +1471,7 @@ msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
 "techniques used to deceive you"
 msgstr ""
-"KMail, sizi aldatmaya yönelik ortak yöntemleri arayarak kuşkulu e-posta "
+"K Posta, sizi aldatmaya yönelik ortak yöntemleri arayarak kuşkulu e-posta "
 "dolandırıcılarına karşı iletileri inceleyebilir"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
@@ -1825,7 +1825,7 @@ msgstr ""
 #: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
 #, kde-format
 msgid "KMail Question"
-msgstr "KMail Sorusu"
+msgstr "K Posta Sorusu"
 
 #: utils/messageviewerutil.cpp:362
 #, kde-format
@@ -1937,7 +1937,7 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
-"KMail seçilen düzenleyicinin kapatılıp kapatılmadığını anlayamadı. Veri "
+"K Posta seçilen düzenleyicinin kapatılıp kapatılmadığını anlayamadı. Veri "
 "kaybını önlemek için eklentinin düzenlenmesi işlemi iptal edilecek."
 
 #: viewer/editorwatcher.cpp:196
@@ -2033,7 +2033,7 @@ msgstr "Sertifika yöneticisi başlatılamıyor. Kurulumunuzu kontrol edin."
 #: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
-msgstr "KMail Hatası"
+msgstr "K Posta Hatası"
 
 #: viewer/urlhandlermanager.cpp:542
 #, kde-format
@@ -2192,7 +2192,7 @@ msgstr "Özellikler"
 #: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "KMail"
-msgstr "KMail"
+msgstr "K Posta"
 
 #: viewer/viewer_p.cpp:755
 #, kde-format
@@ -2608,7 +2608,7 @@ msgstr "PDF dosyasının kaydedildiği klasörü aç"
 #: widgets/opensavedfilefolderwidget.cpp:77
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "KMail, eklentiyi açamadı."
+msgstr "K Posta, eklentiyi açamadı."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
