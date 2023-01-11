@@ -675,11 +675,13 @@ QString Util::parseBodyStyle(const QString &style)
             const auto lstStyle = styleStr.split(QLatin1Char(';'), Qt::SkipEmptyParts);
             QStringList lst;
             for (const auto &style : lstStyle) {
-                if (!style.trimmed().contains(QLatin1String("white-space"))) {
+                // qDebug() << " style : " << style;
+                if (!style.trimmed().contains(QLatin1String("white-space")) && !style.trimmed().contains(QLatin1String("text-align"))) {
                     lst.append(style.toString().trimmed());
                 }
             }
             if (!lst.isEmpty()) {
+                // qDebug() << " lst " << lst;
                 return QStringLiteral(" style=\"%1").arg(lst.join(QLatin1Char(';'))) + QStringLiteral(";\"");
             }
         }
