@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -2075,17 +2075,31 @@ msgstr "Б&оз кардани тамоми мунозирот"
 msgid "Collapse All Groups"
 msgstr "П&инҳон кардани тамоми мунозирот"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Б&оз кардани тамоми мунозирот"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "П&инҳон кардани тамоми мунозирот"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Ба ин ҷо ҷойгир кардан"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Ба ин ҷо копӣ кардан"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Барҳам додан"
@@ -4936,16 +4950,8 @@ msgstr "&Барҳам додан"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Пинҳон кардани мунозирот"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Б&оз кардани тамоми мунозирот"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Боз кардани тамоми мунозирот дар папкаи ҷорӣ"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "П&инҳон кардани тамоми мунозирот"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Пинҳон кардани мунозирот дар папкаи ҷорӣ"

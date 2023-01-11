@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-12-27 22:24+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -1922,17 +1922,31 @@ msgstr "Déplier tous les groupes"
 msgid "Collapse All Groups"
 msgstr "Réduire tous les groupes"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Déplier tous les f&ils de discussion"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Réduire t&ous les fils de discussion"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "Dé&placer ici"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copier ici"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuler"
@@ -5074,16 +5088,8 @@ msgstr "&Annuler"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Réduire le fil de discussion courant"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Déplier tous les f&ils de discussion"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Déployer tous les fils du dossier courant"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Réduire t&ous les fils de discussion"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Refermer tous les fils du dossier courant"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2015-12-29 18:21+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -1895,17 +1895,29 @@ msgstr "Išskleisti visas grupes"
 msgid "Collapse All Groups"
 msgstr "Sutraukti visas grupes"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgid "Expand All Groups"
+msgid "Expand All Threads"
+msgstr "Išskleisti visas grupes"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgid "Collapse All Groups"
+msgid "Collapse All Threads"
+msgstr "Sutraukti visas grupes"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Perkelti čia"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopijuoti čia"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Atšaukti"

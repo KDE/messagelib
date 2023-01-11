@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2022-06-26 12:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1886,17 +1886,31 @@ msgstr "அனைத்து தொகுப்புகளையும் வ�
 msgid "Collapse All Groups"
 msgstr "அனைத்து தொகுப்புகளையும் சுருக்கு"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Ex&pand All Threads"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "தலைப்புச் சேர்"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "இங்கு &நகர்த்தவும்"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&இதற்கு நகலெடுக்கவும்"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "நிறுத்தப்பட்டது"
@@ -4640,16 +4654,8 @@ msgstr "நிறுத்தப்பட்டது"
 #~ msgid "Collapse the current thread"
 #~ msgstr "இப்போதைய புரியை வீழ்த்து"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Ex&pand All Threads"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "நடப்பில் உள்ள அடைவில் உள்ள எல்லா புரியையும் விரிவாக்கு"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "தலைப்புச் சேர்"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Collapse all threads in the current folder"

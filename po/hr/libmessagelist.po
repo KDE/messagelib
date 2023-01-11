@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1941,17 +1941,27 @@ msgstr "Proširi sve grupe"
 msgid "Collapse All Groups"
 msgstr "Sklopi sve grupe"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+msgid "Expand All Threads"
+msgstr "R&aširi sve lance"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+msgid "Collapse All Threads"
+msgstr "S&ažmi sve lance"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Premjesti ovdje"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiraj ovdje"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "P&rekini"
@@ -3809,18 +3819,8 @@ msgstr "P&rekini"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Sažima trenutnu nit"
 
-#, fuzzy
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "R&aširi sve lance"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Razgranava se niti u trenutnoj mapi"
-
-#, fuzzy
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "S&ažmi sve lance"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Sažima sve niti u trenutnoj mapi"

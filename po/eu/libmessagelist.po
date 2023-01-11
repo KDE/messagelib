@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-04-27 18:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1905,17 +1905,31 @@ msgstr "Zabaldu talde guztiak"
 msgid "Collapse All Groups"
 msgstr "Tolestu talde guztiak"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Z&abaldu hari guztiak"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "T&olestu hari guztiak"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "Era&man hona"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiatu hemen"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Utzi"
@@ -5007,16 +5021,8 @@ msgstr "&Utzi"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Tolestu uneko haria"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Z&abaldu hari guztiak"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Zabaldu uneko karpetako hari guztiak"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "T&olestu hari guztiak"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Tolestu uneko karpetako hari guztiak"

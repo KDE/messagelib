@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2010-01-13 21:21+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -1987,17 +1987,31 @@ msgstr "Izvērst visas grupas"
 msgid "Collapse All Groups"
 msgstr "Sakļaut visas grupas"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Izvērst visus &pavedienus"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Sa&kļaut visus pavedienus"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Pārvietot šeit"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopēt šeit"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Atcelt"
@@ -5133,16 +5147,8 @@ msgstr "&Atcelt"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Sakļaut aktīvo pavedienu"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Izvērst visus &pavedienus"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Izvēst visus aktīvās mapes pavedienus"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Sa&kļaut visus pavedienus"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Sakļaut visus aktīvās mapes pavedienus"

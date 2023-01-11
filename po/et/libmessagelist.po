@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2019-12-18 19:57+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1898,17 +1898,31 @@ msgstr "Ava kõik rühmad"
 msgid "Collapse All Groups"
 msgstr "Sulge kõik rühmad"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "A&va kõik lõimed"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Sul&ge kõik lõimed"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Liiguta siia"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopeeri siia"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "Ka&tkesta"
@@ -4878,16 +4892,8 @@ msgstr "Ka&tkesta"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Sulgeb aktiivse lõime"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "A&va kõik lõimed"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Avab kõik aktiivse kausta lõimed"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Sul&ge kõik lõimed"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Sulgeb kõik aktiivse kausta lõimed"

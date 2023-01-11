@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-09-11 07:49+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1878,17 +1878,29 @@ msgstr "Expandera alla grupper"
 msgid "Collapse All Groups"
 msgstr "Dra ihop alla grupper"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgid "Expand All Groups"
+msgid "Expand All Threads"
+msgstr "Expandera alla grupper"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgid "Collapse All Groups"
+msgid "Collapse All Threads"
+msgstr "Dra ihop alla grupper"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flytta hit"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiera hit"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"

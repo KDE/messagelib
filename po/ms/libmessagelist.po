@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -2108,17 +2108,31 @@ msgstr "&Kembangkan Semua Rantaian"
 msgid "Collapse All Groups"
 msgstr "Run&tuhkan Semua Rantaian"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "&Kembangkan Semua Rantaian"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Run&tuhkan Semua Rantaian"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Alihkan ke Sini"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Salin di Sini"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "B&atalkan"
@@ -5029,16 +5043,8 @@ msgstr "B&atalkan"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Runtuhkan rantaian semasa"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "&Kembangkan Semua Rantaian"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Kembangkan semua rantaian di dalam folder semasa"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Run&tuhkan Semua Rantaian"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Runtuhkan semua rantaian di dalam folder semasa"

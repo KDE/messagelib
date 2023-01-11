@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2007-11-17 19:41+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -2048,17 +2048,31 @@ msgstr "Malfal&du ĉiujn fadenojn"
 msgid "Collapse All Groups"
 msgstr "Fald&u ĉiujn fadenojn"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Malfal&du ĉiujn fadenojn"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Fald&u ĉiujn fadenojn"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Movi ĉi tien"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopii ĉi tien"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "Re&zigni"
@@ -4841,16 +4855,8 @@ msgstr "Re&zigni"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Faldi nunan fadenon"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Malfal&du ĉiujn fadenojn"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Malfaldi ĉiujn fadenojn en la nuna leterujo"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Fald&u ĉiujn fadenojn"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Faldi ĉiujn fadenojn en la nuna leterujo"

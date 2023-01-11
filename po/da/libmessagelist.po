@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1903,17 +1903,31 @@ msgstr "Fold alle grupper ud"
 msgid "Collapse All Groups"
 msgstr "Fold alle grupper sammen"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Eks&pandér alle tråde"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "K&ollaps alle tråde"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flyt hertil"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiér hertil"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annullér"
@@ -4852,16 +4866,8 @@ msgstr "&Annullér"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Kollaps denne tråd"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Eks&pandér alle tråde"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Ekspandér alle tråde i denne mappe"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "K&ollaps alle tråde"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Kollaps alle tråde i denne mappe"

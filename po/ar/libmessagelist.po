@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-12-19 19:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1910,17 +1910,27 @@ msgstr "وسّع كلّ المجموعات"
 msgid "Collapse All Groups"
 msgstr "اطوِ كلّ المجموعات"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+msgid "Expand All Threads"
+msgstr "توسيع الكل الخيوط"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+msgid "Collapse All Threads"
+msgstr "طيّ الكل الخيوط"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "ان&قل هنا"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "ان&سخ هنا"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "أ&لغِ"
@@ -5084,18 +5094,8 @@ msgstr "أ&لغِ"
 #~ msgid "Collapse the current thread"
 #~ msgstr "اطوي الخيط الحالي"
 
-#, fuzzy
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "توسيع الكل الخيوط"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "توسيع كل الخيوط في المجلد الحالي"
-
-#, fuzzy
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "طيّ الكل الخيوط"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "طوي كل الخيوط في المجلد الحالي"

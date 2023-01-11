@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-09-11 09:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1905,17 +1905,31 @@ msgstr "Alle groepen uitvouwen"
 msgid "Collapse All Groups"
 msgstr "Alle groepen invouwen"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Alle &discussies uitvouwen"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "A&lle discussies inklappen"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "Hierheen &verplaatsen"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "Hierheen &kopiëren"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuleren"
@@ -4891,16 +4905,8 @@ msgstr "&Annuleren"
 #~ msgid "Collapse the current thread"
 #~ msgstr "De huidige discussie inklappen"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Alle &discussies uitvouwen"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Alle discussies in de huidige map uitvouwen"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "A&lle discussies inklappen"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Alle discussies in de huidige map inklappen"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-02-08 10:14+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1930,17 +1930,29 @@ msgstr "Развернуть все группы"
 msgid "Collapse All Groups"
 msgstr "Свернуть все группы"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgid "Expand All Groups"
+msgid "Expand All Threads"
+msgstr "Развернуть все группы"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgid "Collapse All Groups"
+msgid "Collapse All Threads"
+msgstr "Свернуть все группы"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "Переместить &сюда"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "Копировать с&юда"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "О&тменить"

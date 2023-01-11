@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2014-09-04 12:28+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1914,17 +1914,31 @@ msgstr "Az összes csoport kibontása"
 msgid "Collapse All Groups"
 msgstr "Az összes csoport összecsukása"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Az összes szál k&ibontása"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Az összes szál összecs&ukása"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "Át&helyezés ide"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "Más&olás ide"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Mégsem"
@@ -5036,16 +5050,8 @@ msgstr "&Mégsem"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Az aktuális szál összecsukása"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Az összes szál k&ibontása"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Az összes szál kibontása az aktuális mappában"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Az összes szál összecs&ukása"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Az összes üzenetszál összecsukása az aktuális mappában"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1991,17 +1991,31 @@ msgstr "ਸਭ ਗਰੁੱਪ ਫੈਲਾਓ"
 msgid "Collapse All Groups"
 msgstr "ਸਭ ਗਰੁੱਪ ਸਮੇਟੋ"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "ਸਭ ਮਾਮਲੇ ਫੈਲਾਓ(&p)"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "ਸਭ ਮਾਮਲੇ ਸਮੇਟੋ(&o)"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "ਇੱਥੇ ਭੇਜੋ(&M)"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "ਇੱਥੇ ਕਾਪੀ ਕਰੋ(&C)"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "ਰੱਦ ਕਰੋ(&a)"
@@ -3863,16 +3877,8 @@ msgstr "ਰੱਦ ਕਰੋ(&a)"
 #~ msgid "Collapse the current thread"
 #~ msgstr "ਮੌਜੂਦਾ ਮਾਮਲਾ ਸਮੇਟੋ"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "ਸਭ ਮਾਮਲੇ ਫੈਲਾਓ(&p)"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "ਮੌਜੂਦਾ ਫੋਲਡਰ ਵਿੱਚਲੇ ਮਾਮਲੇ ਫੈਲਾਓ"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "ਸਭ ਮਾਮਲੇ ਸਮੇਟੋ(&o)"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "ਮੌਜੂਦਾ ਫੋਲਡਰ ਵਿੱਚ ਸਭ ਮਸਲੇ ਸਮੇਟੋ"

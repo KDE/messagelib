@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2017-05-16 06:42-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: <he@li.org>\n"
@@ -1859,17 +1859,27 @@ msgstr "ה&רחב את כל האשכולות"
 msgid "Collapse All Groups"
 msgstr "צמצם את כ&ל האשכולות"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+msgid "Expand All Threads"
+msgstr "ה&רחב את כל האשכולות"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+msgid "Collapse All Threads"
+msgstr "צמצם את כ&ל האשכולות"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "הע&בר לכאן"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "הע&תק לכאן"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&בטל"

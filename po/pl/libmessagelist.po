@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2022-01-08 09:19+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2147,17 +2147,31 @@ msgstr "Rozwiń wszystkie grupy"
 msgid "Collapse All Groups"
 msgstr "Zwiń wszystkie grupy"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "Rozwiń &wszystkie wątki"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "Zw&iń wszystkie wątki"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Przenieś tutaj"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "S&kopiuj tutaj"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Anuluj"
@@ -5330,16 +5344,8 @@ msgstr "&Anuluj"
 #~ msgid "Collapse the current thread"
 #~ msgstr "Zwiń aktualny wątek"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "Rozwiń &wszystkie wątki"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "Rozwiń wszystkie wątki w aktualnym folderze"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "Zw&iń wszystkie wątki"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "Zwiń wszystkie wątki w aktualnym folderze"

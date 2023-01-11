@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -2125,17 +2125,31 @@ msgstr "&گسترش همه رشته‌ها‌"
 msgid "Collapse All Groups"
 msgstr "&فشردن همه رشته‌ها‌"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Threads"
+msgstr "&گسترش همه رشته‌ها‌"
+
+#: widget.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Threads"
+msgstr "&فشردن همه رشته‌ها‌"
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&حرکت به اینجا‌"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&رونوشت در اینجا‌"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&لغو‌"
@@ -5246,16 +5260,8 @@ msgstr "&لغو‌"
 #~ msgid "Collapse the current thread"
 #~ msgstr "فشردن رشته جاری"
 
-#~ msgctxt "View->"
-#~ msgid "Ex&pand All Threads"
-#~ msgstr "&گسترش همه رشته‌ها‌"
-
 #~ msgid "Expand all threads in the current folder"
 #~ msgstr "گسترش همه رشته‌های پوشه جاری"
-
-#~ msgctxt "View->"
-#~ msgid "C&ollapse All Threads"
-#~ msgstr "&فشردن همه رشته‌ها‌"
 
 #~ msgid "Collapse all threads in the current folder"
 #~ msgstr "فشردن همه رشته‌های پوشه جاری"
