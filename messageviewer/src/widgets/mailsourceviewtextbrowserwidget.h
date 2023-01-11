@@ -22,7 +22,6 @@ class SlideContainer;
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechWidget;
-class TextToSpeechInterface;
 }
 #endif
 
@@ -67,7 +66,7 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
     Q_OBJECT
 public:
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    explicit MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
+    explicit MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechWidget *textToSpeechWidget, QWidget *parent = nullptr);
 #endif
     explicit MailSourceViewTextBrowser(QWidget *parent);
 
@@ -80,7 +79,7 @@ private:
     void slotSpeakText();
     void slotSaveAs();
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechInterface *mTextToSpeechInterface = nullptr;
+    KPIMTextEditTextToSpeech::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
 #endif
 };
 }

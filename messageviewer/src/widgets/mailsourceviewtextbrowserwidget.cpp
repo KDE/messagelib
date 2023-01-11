@@ -14,7 +14,6 @@
 #include "messageviewer_debug.h"
 #include <KPIMTextEdit/SlideContainer>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEditTextToSpeech/TextToSpeechInterface>
 #include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <PimCommon/PimUtil>
@@ -49,8 +48,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     lay->setContentsMargins({});
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
-    auto textToSpeechInterface = new KPIMTextEditTextToSpeech::TextToSpeechInterface(mTextToSpeechWidget, this);
-    mTextBrowser = new MailSourceViewTextBrowser(textToSpeechInterface);
+    mTextBrowser = new MailSourceViewTextBrowser(mTextToSpeechWidget);
 #else
     mTextBrowser = new MailSourceViewTextBrowser(this);
 #endif
@@ -111,9 +109,9 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
     return mTextBrowser;
 }
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
+MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechWidget *textToSpeechWidget, QWidget *parent)
     : QPlainTextEdit(parent)
-    , mTextToSpeechInterface(textToSpeechInterface)
+    , mTextToSpeechWidget(textToSpeechWidget)
 {
 }
 #endif
@@ -130,7 +128,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
         popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
         // Code from KTextBrowser
-        if (mTextToSpeechInterface->isReady()) {
+        if (mTextToSpeechWidget->isReady()) {
             popup->addSeparator();
             popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
                              i18n("Speak Text"),
@@ -160,6 +158,6 @@ void MailSourceViewTextBrowser::slotSpeakText()
     } else {
         text = toPlainText();
     }
-    mTextToSpeechInterface->say(text);
+    mTextToSpeechWidget->say(text);
 #endif
 }
