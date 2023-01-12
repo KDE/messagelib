@@ -4,13 +4,13 @@
 #
 # Javier Vinal <fjvinal@gmail.com>, 2009, 2010, 2011, 2012, 2017.
 # Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2018, 2019.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-11 00:59+0000\n"
-"PO-Revision-Date: 2021-10-07 15:57+0200\n"
+"PO-Revision-Date: 2023-01-11 17:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1895,16 +1895,14 @@ msgid "Collapse All Groups"
 msgstr "Contraer todos los grupos"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Expandir todos los grupos"
+msgstr "Expandir todos los hilos"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Contraer todos los grupos"
+msgstr "Contraer todos los hilos"
 
 #: widget.cpp:419
 #, kde-format

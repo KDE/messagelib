@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2009,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-11 00:59+0000\n"
-"PO-Revision-Date: 2022-12-11 20:37+0300\n"
+"PO-Revision-Date: 2023-01-11 18:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -33,12 +33,12 @@ msgstr "Hiçbiri"
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr "Tam Tarihe Göre (Tartışma Başlatıcılar)"
+msgstr "Tam Tarihe Göre (Konu Başlatıcıların)"
 
 #: core/aggregation.cpp:180
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
-msgstr "(Konu Başlıklarıyla) Akıllı Tarih Aralıklarına Göre"
+msgstr "Akıllı Tarih Aralıklarına Göre (Konu Başlatıcıların)"
 
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
@@ -104,22 +104,22 @@ msgstr "En Yeni İleti"
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr "Tartışmayı Asla Genişletme"
+msgstr "Konuları Asla Genişletme"
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "Tartışmaları Okunmamış İleti Varsa Genişlet"
+msgstr "Okunmamış İletiler Olan Konuları Genişlet"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr "Tartışmaları Okunmamış ya da Önemli İleti Varsa Genişlet"
+msgstr "Okunmamış veya Önemli İletiler Olan Konuları Genişlet"
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr "Tartışmaları Her Zaman Genişlet"
+msgstr "Konuları Her Zaman Genişlet"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -217,7 +217,7 @@ msgstr "Bilinmeyen"
 #: core/manager.cpp:206
 #, kde-format
 msgid "Current Activity, Threaded"
-msgstr "Geçerli Etkinlik, Tartışma Şeklinde"
+msgstr "Geçerli Etkinlik, Konu Biçiminde"
 
 #: core/manager.cpp:207
 #, kde-format
@@ -226,9 +226,9 @@ msgid ""
 "example, in \"Today\" you will find all the messages arrived today and all "
 "the threads that have been active today."
 msgstr ""
-"Bu görünüm akıllı tarih aralıklı grupları kullanır. İletiler konu "
-"başlıklarına ayrılır. Örneğin, \"Bugün\" başlığı altında bugün ulaşan bütün "
-"iletileri ve bugün aktif olan bütün başlıkları bulabilirsiniz."
+"Bu görünüm, akıllı tarih aralıklı grupları kullanır. İletiler konulara "
+"ayrılır. Örneğin, \"Bugün\" başlığı altında bugün ulaşan bütün iletileri ve "
+"bugün etkin olan tüm ilmekleri bulabilirsiniz."
 
 #: core/manager.cpp:219
 #, kde-format
@@ -241,14 +241,14 @@ msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
-"Bu görünüm akıllı tarih aralıklı grupları kullanır. İletiler konu "
-"başlıklarına ayrılmaz. Örneğin, \"Bugün\" içinde, bugün ulaşan bütün "
-"iletileri bulacaksınız."
+"Bu görünüm, akıllı tarih aralıklı grupları kullanır. İletiler konulara "
+"ayrılmaz. Örneğin, \"Bugün\" içinde, bugün ulaşan bütün iletileri "
+"bulacaksınız."
 
 #: core/manager.cpp:231
 #, kde-format
 msgid "Activity by Date, Threaded"
-msgstr "Tarihe göre Etkinlik, Tartışma Şeklinde"
+msgstr "Tarihe göre Etkinlik, Konulara Ayrılmış"
 
 #: core/manager.cpp:232
 #, kde-format
@@ -257,7 +257,7 @@ msgid ""
 "\"Today\" you will find all the messages arrived today and all the threads "
 "that have been active today."
 msgstr ""
-"Bu görünüm grupları günbegün gösterir. İletiler konu başlıklarına ayrılır. "
+"Bu görünüm, grupları günbegün gösterir. İletiler konu başlıklarına ayrılır. "
 "Örneğin, \"Bugün\" başlığı altında bugün ulaşan bütün iletileri ve bugün "
 "aktif olan bütün başlıkları bulabilirsiniz."
 
@@ -272,8 +272,8 @@ msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
-"Bu görünüm grupları günbegün gösterir. İletiler konu başlıklarına ayrılmaz. "
-"Örneğin, \"Bugün\" içinde, bugün ulaşan bütün iletileri bulacaksınız."
+"Bu görünüm, grupları günbegün gösterir. İletiler konulara ayrılmaz. Örneğin, "
+"\"Bugün\" içinde, bugün ulaşan bütün iletileri bulacaksınız."
 
 #: core/manager.cpp:256
 #, kde-format
@@ -286,7 +286,7 @@ msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 "Bu düz ve eski bir posta listesi görünümüdür; gruplar kullanılmaz ve yoğun "
-"konu başlığı kullanımı vardır."
+"konulara ayırma vardır."
 
 #: core/manager.cpp:266
 #, kde-format
@@ -299,8 +299,8 @@ msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
-"Bu düz ve tarihe göre sıralanmış eski bir ileti listesidir; gruplar ve konu "
-"başlıkları kullanılmaz."
+"Bu düz ve tarihe göre sıralanmış eski bir ileti listesidir; gruplar ve "
+"konulara ayırma kullanılmaz."
 
 #: core/manager.cpp:278
 #, kde-format
@@ -314,12 +314,12 @@ msgid ""
 "folder type). Messages are not threaded."
 msgstr ""
 "Bu görünüm, iletileri gönderenlere veya alıcılara göre gruplar (dizin tipine "
-"bağlı olarak). İletiler konu başlıklarına ayrılmaz."
+"bağlı olarak). İletiler konulara ayrılmaz."
 
 #: core/manager.cpp:290
 #, kde-format
 msgid "Thread Starters"
-msgstr "Tartışma Başlatıcılar"
+msgstr "Konu Başlatıcılar"
 
 #: core/manager.cpp:291
 #, kde-format
@@ -327,8 +327,8 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
-"Bu görünüm, iletileri konu başlıklarına ayırır ve bunları başlangıç kişisine "
-"göre gruplandırır."
+"Bu görünüm, iletileri konulara ayırır ve bunları başlangıç kişisine göre "
+"gruplandırır."
 
 #: core/manager.cpp:567
 #, kde-format
@@ -526,15 +526,15 @@ msgstr[1] "%2 İletinin %1 Tanesi İşlendi"
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "%2 İletinin 1 Tanesi Tartışma Şeklinde Toplandı"
-msgstr[1] "%2 İletinin %1 Tanesi Tartışma Şeklinde Toplandı"
+msgstr[0] "1/%2 İleti Konulara Ayrıldı"
+msgstr[1] "%1/%2 İleti Konulara Ayrıldı"
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "%2 Tartışmanın 1 Tanesi Gruplandı"
-msgstr[1] "%2 Tartışmanın %1 Tanesi Gruplandı"
+msgstr[0] "1/%2 Konu Gruplandı"
+msgstr[1] "%1/%2 Konu Gruplandı"
 
 #: core/model.cpp:3811
 #, kde-format
@@ -931,18 +931,18 @@ msgstr[1] "<b>%1</b> mesaj (<b>%2</b> okunmamış)"
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
-msgstr "Tartışmanın başlama zamanı %1"
+msgstr "Konular %1 tarihinde başlatıldı"
 
 #: core/view.cpp:2344
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
-msgstr "Tartışmaların başlama zamanı %1"
+msgstr "Konular %1 başladı"
 
 #: core/view.cpp:2348
 #, kde-format
 msgid "Threads with messages dated %1"
-msgstr "%1 tarihli iletileri barındıran tartışmalar"
+msgstr "%1 tarihli iletileri içeren konular"
 
 #: core/view.cpp:2358
 #, kde-format
@@ -972,12 +972,12 @@ msgstr "İletiler alındı %1"
 #: core/view.cpp:2376
 #, kde-format
 msgid "Threads started within %1"
-msgstr "%1 içinde başlatılan konu başlıkları"
+msgstr "%1 içinde başlatılan konular"
 
 #: core/view.cpp:2379
 #, kde-format
 msgid "Threads containing messages with dates within %1"
-msgstr "%1 içindeki tarihleri içeren iletilerin bulunduğu konu başlıkları"
+msgstr "%1 içindeki tarihleri içeren iletilerin bulunduğu konular"
 
 #: core/view.cpp:2387
 #, kde-format
@@ -992,12 +992,12 @@ msgstr "İletiler %1 ile alındı"
 #: core/view.cpp:2398
 #, kde-format
 msgid "Threads started by %1"
-msgstr "%1 tarafından başlatılan konu başlıkları"
+msgstr "%1 tarafından başlatılan konular"
 
 #: core/view.cpp:2401
 #, kde-format
 msgid "Threads with most recent message by %1"
-msgstr "%1 tarafından gönderilen en yeni iletiye sahip konu başlıkları"
+msgstr "%1 tarafından gönderilen en yeni iletiye sahip konular"
 
 #: core/view.cpp:2410 core/view.cpp:2434
 #, kde-format
@@ -1017,12 +1017,12 @@ msgstr "İletiler %1 konumundan alındı"
 #: core/view.cpp:2423
 #, kde-format
 msgid "Threads directed to %1"
-msgstr "%1 kişisine yöneltilen konu başlıkları"
+msgstr "%1 kişisine yöneltilen konular"
 
 #: core/view.cpp:2426
 #, kde-format
 msgid "Threads with most recent message directed to %1"
-msgstr "%1 kişisine yöneltilen en yeni iletiye sahip konu başlıkları"
+msgstr "%1 kişisine yöneltilen en yeni iletiye sahip konular"
 
 #: core/view.cpp:2436
 #, kde-format
@@ -1033,8 +1033,8 @@ msgstr "İletiler %1 ile alındı"
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
-msgstr[0] "<b>%1</b> tartışma"
-msgstr[1] "<b>%1</b> tartışma"
+msgstr[0] "<b>%1</b> konu"
+msgstr[1] "<b>%1</b> konu"
 
 #: core/view.cpp:2467
 #, kde-format
@@ -1418,7 +1418,7 @@ msgstr "Bilinmeyen"
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
-msgstr "Gruplar ve Tartışmalar"
+msgstr "Gruplar ve Konular"
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
@@ -1433,17 +1433,17 @@ msgstr "Grup genişletme politikası:"
 #: utils/aggregationeditor.cpp:45
 #, kde-format
 msgid "Threading:"
-msgstr "Tartışma Şekli:"
+msgstr "Konulara ayırma:"
 
 #: utils/aggregationeditor.cpp:51
 #, kde-format
 msgid "Thread leader:"
-msgstr "Tartışmayı başlatan:"
+msgstr "Konuyu başlatan:"
 
 #: utils/aggregationeditor.cpp:55
 #, kde-format
 msgid "Thread expand policy:"
-msgstr "Tartışma genişletme politikası:"
+msgstr "Konuyu genişletme politikası:"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1891,16 +1891,14 @@ msgid "Collapse All Groups"
 msgstr "Tüm Grupları Topla"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Tüm Grupları Genişlet"
+msgstr "Tüm Konuları Genişlet"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Tüm Grupları Topla"
+msgstr "Tüm Konuları Daralt"
 
 #: widget.cpp:419
 #, kde-format
