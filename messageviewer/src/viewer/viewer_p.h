@@ -58,7 +58,7 @@ class SlideContainer;
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
 {
-class TextToSpeechWidget;
+class TextToSpeechContainerWidget;
 }
 #endif
 
@@ -706,7 +706,7 @@ public:
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;

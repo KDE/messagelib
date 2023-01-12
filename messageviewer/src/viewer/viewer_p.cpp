@@ -133,7 +133,7 @@
 #include <Akonadi/CollectionFetchScope>
 
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <Akonadi/MDNStateAttribute>
 #include <QApplication>
@@ -1419,9 +1419,9 @@ void ViewerPrivate::createWidgets()
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
     readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechWidget(readerBox);
-    mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
-    readerBoxVBoxLayout->addWidget(mTextToSpeechWidget);
+    mTextToSpeechContainerWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
+    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
+    readerBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
 #endif
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
     mViewer->setViewer(this);
@@ -2670,7 +2670,7 @@ void ViewerPrivate::slotSpeakText()
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
-        mTextToSpeechWidget->say(text);
+        mTextToSpeechContainerWidget->say(text);
     }
 #endif
 }
