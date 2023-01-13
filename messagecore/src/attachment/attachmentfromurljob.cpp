@@ -9,7 +9,6 @@
 #include "attachmentfromurljob.h"
 
 #include "messagecore_debug.h"
-#include <KIO/Scheduler>
 #include <KIO/TransferJob>
 #include <KLocalizedString>
 
