@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 02:43+0000\n"
-"PO-Revision-Date: 2022-09-27 08:41+0200\n"
+"PO-Revision-Date: 2023-01-12 08:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -27,7 +27,7 @@ msgstr "არაფერი"
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr ""
+msgstr "ზუსტ თარიღამდე (ნაკადის ლიდერების)"
 
 #: core/aggregation.cpp:180
 #, kde-format
@@ -37,7 +37,7 @@ msgstr ""
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
-msgstr ""
+msgstr "ჭკვიანი გამგზავნი/მიმღებით"
 
 #: core/aggregation.cpp:182 core/sortorder.cpp:68
 #, kde-format
@@ -52,17 +52,17 @@ msgstr "მიმღებით"
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr ""
+msgstr "არასდროს ამოკეცო ჯგუფები"
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr ""
+msgstr "უახლესი ჯგუფების ამოკეცვა"
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr ""
+msgstr "ყოველთვის ამოკეცე ჯგუფები"
 
 #: core/aggregation.cpp:202
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "არაფერი"
 #: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect Only"
-msgstr ""
+msgstr "მხოლოდ საუკეთესოები"
 
 #: core/aggregation.cpp:204
 #, kde-format
@@ -88,42 +88,42 @@ msgstr ""
 #: core/aggregation.cpp:214
 #, kde-format
 msgid "Topmost Message"
-msgstr ""
+msgstr "ყველაზე ზედა შეტყობინება"
 
 #: core/aggregation.cpp:218
 #, kde-format
 msgid "Most Recent Message"
-msgstr ""
+msgstr "უახლესი შეტყობინება"
 
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr ""
+msgstr "არასდროს ამოკეცო ნაკადები"
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr ""
+msgstr "წაუკითხავი შეტყობინებების მქონე ნაკადების ამოკეცვა"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr ""
+msgstr "მნიშვნელოვანი შეტყობინებების მქონე ნაკადების ამოკეცვა"
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr ""
+msgstr "ნაკადები ყოველთვის ამოიკეცება"
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Interactivity"
-msgstr ""
+msgstr "მირჩევნია ინტერაქტიურობა"
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Speed"
-msgstr ""
+msgstr "მირჩევნია სიჩქარე"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -325,7 +325,7 @@ msgstr "თემა"
 #: core/manager.cpp:607 core/theme.cpp:113
 #, kde-format
 msgid "Sender/Receiver"
-msgstr ""
+msgstr "გამგზავნი/მიმღები"
 
 #: core/manager.cpp:614
 #, kde-format
@@ -365,7 +365,7 @@ msgstr "დანართი"
 #: core/manager.cpp:638
 #, kde-format
 msgid "Read/Unread"
-msgstr ""
+msgstr "წაკითხული/წაუკითხავი"
 
 #: core/manager.cpp:643
 #, kde-format
@@ -466,12 +466,12 @@ msgstr "სამი კვირის წინ"
 #: core/model.cpp:336
 #, kde-format
 msgid "Four Weeks Ago"
-msgstr ""
+msgstr "ოთხი კვირის წინ"
 
 #: core/model.cpp:337
 #, kde-format
 msgid "Five Weeks Ago"
-msgstr ""
+msgstr "ხუთი კვირის წინ"
 
 #: core/model.cpp:550 utils/themeeditor.cpp:185
 #, kde-format
@@ -699,7 +699,7 @@ msgstr ""
 #: core/theme.cpp:140
 #, kde-format
 msgid "Important Icon"
-msgstr ""
+msgstr "მნიშვნელოვანი ხატულა"
 
 #: core/theme.cpp:143
 #, kde-format
@@ -749,7 +749,7 @@ msgstr ""
 #: core/theme.cpp:170
 #, kde-format
 msgid "Message Tags"
-msgstr ""
+msgstr "შეტყობინების ჭდეები"
 
 #: core/theme.cpp:173
 #, kde-format
@@ -831,7 +831,7 @@ msgstr ""
 #: core/view.cpp:682
 #, kde-format
 msgid "No result found"
-msgstr ""
+msgstr "შედეგი ვერ მოიძებნა"
 
 #: core/view.cpp:766
 #, kde-format
@@ -846,7 +846,7 @@ msgstr ""
 #: core/view.cpp:775
 #, kde-format
 msgid "Display Tooltips"
-msgstr ""
+msgstr "მინიშნებების ჩვენება"
 
 #: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -1005,15 +1005,15 @@ msgstr ""
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> ნაკადი"
+msgstr[1] "<b>%1</b> ნაკადი"
 
 #: core/view.cpp:2467
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> შეტყობინება (<b>%2</b> წაუკითხავი)"
+msgstr[1] "<b>%1</b> შეტყობინება (<b>%2</b> წაუკითხავი)"
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1156,12 +1156,12 @@ msgstr ""
 #: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgid "Saved Filter"
-msgstr ""
+msgstr "შენახული ფილტრი"
 
 #: core/widgets/searchlinestatus.cpp:215
 #, kde-format
 msgid "Clear Filter"
-msgstr ""
+msgstr "ფილტრის გასუფთავება"
 
 #: core/widgets/searchlinestatus.cpp:221
 #, kde-format
@@ -1309,7 +1309,7 @@ msgstr ""
 #: pane.cpp:221
 #, kde-format
 msgid "Message List"
-msgstr ""
+msgstr "შეტყობინებების სია"
 
 #: pane.cpp:227
 #, kde-format
@@ -1481,7 +1481,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
-msgstr ""
+msgstr "თემების მორგება"
 
 #: utils/configurethemesdialog.cpp:115 utils/configurethemesdialog.cpp:351
 #, kde-format
@@ -1526,7 +1526,7 @@ msgstr ""
 #: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr ""
+msgstr "გსურთ წაშალოთ \"%1\"?"
 
 #: utils/configurethemesdialog.cpp:408 utils/configurethemesdialog.cpp:410
 #, kde-format
@@ -1697,7 +1697,7 @@ msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
 "Important mark on a non important mail"
 msgid "Keep Empty Space"
-msgstr ""
+msgstr "ცარიელი სივრცის შენარჩუნება"
 
 #: utils/themeeditor.cpp:913
 #, kde-format
@@ -1710,12 +1710,12 @@ msgstr ""
 #: utils/themeeditor.cpp:921
 #, kde-format
 msgid "When Disabled"
-msgstr ""
+msgstr "როცა გათიშულია"
 
 #: utils/themeeditor.cpp:927
 #, kde-format
 msgid "Group Header"
-msgstr ""
+msgstr "ჯგუფის თავსართი"
 
 #: utils/themeeditor.cpp:934
 #, kde-format
@@ -1743,17 +1743,17 @@ msgstr "ფონის ფერი"
 #: utils/themeeditor.cpp:972
 #, kde-format
 msgid "Background Style"
-msgstr ""
+msgstr "ფონის სტილი"
 
 #: utils/themeeditor.cpp:1158
 #, kde-format
 msgid "Column Properties..."
-msgstr ""
+msgstr "სვეტის თვისებები..."
 
 #: utils/themeeditor.cpp:1161
 #, kde-format
 msgid "Add Column..."
-msgstr ""
+msgstr "სვეტის დამატება..."
 
 #: utils/themeeditor.cpp:1164
 #, kde-format
@@ -1763,22 +1763,22 @@ msgstr "სვეტის წაშლა"
 #: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Move Column to Left"
-msgstr ""
+msgstr "სვეტის მარცხნივ გაწევა"
 
 #: utils/themeeditor.cpp:1174
 #, kde-format
 msgid "Move Column to Right"
-msgstr ""
+msgstr "სვეტის მარჯვენივ გაწევა"
 
 #: utils/themeeditor.cpp:1223
 #, kde-format
 msgid "Add New Column"
-msgstr ""
+msgstr "ახალი სვეტის დამატება"
 
 #: utils/themeeditor.cpp:1247
 #, kde-format
 msgid "Column Properties"
-msgstr ""
+msgstr "სვეტის თვისებები"
 
 #: utils/themeeditor.cpp:1289
 #, kde-format
@@ -1788,7 +1788,7 @@ msgstr "გარემოს იერსახე"
 #: utils/themeeditor.cpp:1293
 #, kde-format
 msgid "Content Items"
-msgstr ""
+msgstr "შემცველობის ელემენტები"
 
 #: utils/themeeditor.cpp:1425
 #, kde-format
