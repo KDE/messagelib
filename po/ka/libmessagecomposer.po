@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:47+0000\n"
-"PO-Revision-Date: 2022-11-22 07:45+0100\n"
+"PO-Revision-Date: 2023-01-12 07:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -238,7 +238,7 @@ msgstr "უსახელო"
 #: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "მიმაგრებული ფაილის შენახვა, როგორც"
 
 #: attachment/attachmentcontrollerbase.cpp:818
 #, kde-format
@@ -246,6 +246,8 @@ msgid ""
 "File %1 exists.\n"
 "Do you want to replace it?"
 msgstr ""
+"ფაილი %1 არსებობს.\n"
+"გნებავთ, ჩაანაცვლოთ?"
 
 #: attachment/attachmentcontrollerbase.cpp:819
 #, kde-format
@@ -540,7 +542,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid "&Send as Is"
-msgstr ""
+msgstr "&გაგზავნა, როგორც არის"
 
 #: composer/composerviewbase.cpp:1952
 #, kde-format
@@ -614,7 +616,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "&Sign"
-msgstr ""
+msgstr "&ხელმოწერა"
 
 #: composer/composerviewbase.cpp:2035
 #, kde-format
@@ -1234,7 +1236,7 @@ msgstr[1] ""
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgid "Name Selection"
-msgstr ""
+msgstr "სახელის არჩევანი"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1297,12 +1299,12 @@ msgstr ""
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "Invalid folder"
-msgstr ""
+msgstr "არასწორი საქაღალდე"
 
 #: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
 #, kde-format
 msgid "forwarded message"
-msgstr ""
+msgstr "გადაგზავნილი შეტყობინება"
 
 #: helper/messagefactoryng.cpp:576
 #, kde-format
@@ -1362,7 +1364,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr ""
+msgstr "სურათების ზომის ავტომატური შეცვლა"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1380,7 +1382,7 @@ msgstr "ფარდობის შენარჩუნება"
 #: imagescaling/ui/imagescalingwidget.ui:41
 #, kde-format
 msgid "Ask before resizing"
-msgstr ""
+msgstr "კითხვა ზომის შეცვლამდე"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: imagescaling/ui/imagescalingwidget.ui:50
@@ -1606,12 +1608,12 @@ msgstr ""
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr ""
+msgstr "კონტაქტის უცნობი ტიპი"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:86
 #, kde-format
 msgid "Invalid Contact"
-msgstr ""
+msgstr "არასწორი კონტაქტი"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
@@ -1761,13 +1763,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List"
-msgstr ""
+msgstr "სიის შენახვა"
 
 #: recipient/distributionlistdialog.cpp:121
 #, kde-format
 msgctxt "@label:textbox Name of the distribution list."
 msgid "&Name:"
-msgstr ""
+msgstr "&სახელი:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
@@ -1804,7 +1806,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr ""
+msgstr "შეიყვანეთ სახელი:"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -2333,7 +2335,7 @@ msgstr "დანართი"
 #: snippet/convertsnippetvariablemenu.cpp:90
 #, kde-format
 msgid "Number Of Attachments"
-msgstr ""
+msgstr "მიმაგრებული ფაილების რაოდენობა"
 
 #: snippet/convertsnippetvariablemenu.cpp:93
 #, kde-format
@@ -2348,7 +2350,7 @@ msgstr "ფაილის სახელები"
 #: snippet/convertsnippetvariablemenu.cpp:99
 #, kde-format
 msgid "Names and Sizes"
-msgstr ""
+msgstr "სახელები და ზომები"
 
 #: snippet/convertsnippetvariablemenu.cpp:103
 #: snippet/convertsnippetvariablemenu.cpp:123
@@ -2360,22 +2362,22 @@ msgstr "თარიღი / დრო"
 #: snippet/convertsnippetvariablemenu.cpp:151
 #, kde-format
 msgid "Day Of Week (%1)"
-msgstr ""
+msgstr "კვირის დღე (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:107
 #, kde-format
 msgid "Date (%1)"
-msgstr ""
+msgstr "თარიღი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:110
 #, kde-format
 msgid "Long Date (%1)"
-msgstr ""
+msgstr "გრძელი თარიღი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
 #, kde-format
 msgid "Short Time (%1)"
-msgstr ""
+msgstr "მოკლე დრო (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2405,42 +2407,42 @@ msgstr "თვის ნომერი (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:136
 #, kde-format
 msgid "Day Of Month (%1)"
-msgstr ""
+msgstr "თვის დღე (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
 #, kde-format
 msgid "Week Number (%1)"
-msgstr ""
+msgstr "კვირის ნომერი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
 msgid "Month Name Short (%1)"
-msgstr ""
+msgstr "თვის მოკლე სახელი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:145
 #, kde-format
 msgid "Month Name Long (%1)"
-msgstr ""
+msgstr "თვის გრძელი სახელი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:148
 #, kde-format
 msgid "Last Month Name Long (%1)"
-msgstr ""
+msgstr "ბოლო თვის გრძელი სახელი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:154
 #, kde-format
 msgid "Day Of Week Name Short (%1)"
-msgstr ""
+msgstr "კვირის დღის მოკლე სახელი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week Name Long (%1)"
-msgstr ""
+msgstr "კვირის დღის გრძელი სახელი (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "წელი გასული თვე (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:165
 #, kde-format

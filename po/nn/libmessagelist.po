@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2021-02-28 20:11+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1882,17 +1882,27 @@ msgstr "Utvid alle"
 msgid "Collapse All Groups"
 msgstr "Fald saman alle"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, kde-format
+msgid "Expand All Threads"
+msgstr ""
+
+#: widget.cpp:363
+#, kde-format
+msgid "Collapse All Threads"
+msgstr ""
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flytt hit"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopier hit"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"

@@ -1860,16 +1860,14 @@ msgid "Collapse All Groups"
 msgstr "Sbalit všechny skupiny"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Rozvinout všechny skupiny"
+msgstr ""
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Sbalit všechny skupiny"
+msgstr ""
 
 #: widget.cpp:419
 #, kde-format

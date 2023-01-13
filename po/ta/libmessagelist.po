@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# Kishore G <kishore96@gmail.com>, 2022.
+# Kishore G <kishore96@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-11 00:59+0000\n"
-"PO-Revision-Date: 2022-06-26 12:59+0530\n"
+"PO-Revision-Date: 2023-01-12 19:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -438,10 +438,9 @@ msgid "A smart multiline and multi item theme"
 msgstr ""
 
 #: core/manager.cpp:692
-#, fuzzy, kde-format
-#| msgid "&Message"
+#, kde-format
 msgid "Message"
-msgstr "&செய்தி"
+msgstr "அஞ்சல்"
 
 #: core/manager.cpp:776
 #, kde-format
@@ -545,10 +544,9 @@ msgstr "தயார்"
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:11
-#, fuzzy, kde-format
-#| msgid "Choose display style of message headers"
+#, kde-format
 msgid "Display tooltips for messages and group headers"
-msgstr "அஞ்சல் தலைப்புகளின் தோற்றத்தை தேர்ந்தெடு"
+msgstr "அஞ்சல்களுக்கும் தொகுப்புத்தலைப்புகளுக்கும் கருவித்துப்புகளைக் காட்டு"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:12
@@ -584,10 +582,9 @@ msgid "By Size"
 msgstr "அளவு வாரியாக"
 
 #: core/sortorder.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove &Important Message Mark"
+#, kde-format
 msgid "By Action Item Status"
-msgstr "முக்கியசெய்தி மூடியை நீக்கு"
+msgstr "செயலுக்குள்ளதாய் குறித்த‍தைப் பொறுத்து"
 
 #: core/sortorder.cpp:74
 #, kde-format
@@ -632,10 +629,9 @@ msgid "by Date/Time"
 msgstr "தேதி/நேரம் வாரியாக"
 
 #: core/sortorder.cpp:108
-#, fuzzy, kde-format
-#| msgid "Redirect Message"
+#, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
-msgstr "தொடரிலுள்ளவற்றில் புதிதானதன் தேதி/நேரம் படி"
+msgstr "தொடரிலுள்ள மிகப்புதிய அஞ்சலின் தேதி/நேரத்தைப் பொறுத்து"
 
 #: core/sortorder.cpp:112
 #, kde-format
@@ -716,10 +712,9 @@ msgstr ""
 "புதிய/படிக்காத/படித்த/பதிலளித்த/முன்ன‍னுப்பிய நிலையை குறிக்கும் ஒருங்கிணைந்த சின்னம்"
 
 #: core/theme.cpp:137
-#, fuzzy, kde-format
-#| msgid "Remove &Important Message Mark"
+#, kde-format
 msgid "Action Item Icon"
-msgstr "முக்கியசெய்தி மூடியை நீக்கு"
+msgstr "செயலுக்கானவற்றைக் குறிக்கும் சின்னம்"
 
 #: core/theme.cpp:140
 #, kde-format
@@ -809,8 +804,7 @@ msgid "Never Show"
 msgstr "ஒருபோதும் காட்டாதே"
 
 #: core/theme.cpp:1047
-#, fuzzy, kde-format
-#| msgid "Always"
+#, kde-format
 msgid "Always Show"
 msgstr "எப்போதும் காட்டு"
 
@@ -968,33 +962,29 @@ msgid "Messages received %1"
 msgstr "%1 பெற்ற அஞ்சல்கள்"
 
 #: core/view.cpp:2376
-#, fuzzy, kde-format
-#| msgid "Threads default to o&pen"
+#, kde-format
 msgid "Threads started within %1"
-msgstr "%1 "
+msgstr "%1-க்குள் துவக்கிய தொடர்கள்"
 
 #: core/view.cpp:2379
-#, fuzzy, kde-format
-#| msgid "&Threaded message list"
+#, kde-format
 msgid "Threads containing messages with dates within %1"
-msgstr "&இணைக்கப்பட்ட செய்தி பட்டியல்"
+msgstr "%1-க்குள் உட்பட்ட தேதிகளிலான அஞ்சல்களைக் கொண்ட தொடர்கள்"
 
 #: core/view.cpp:2387
-#, fuzzy, kde-format
-#| msgid "Message was signed with key %1."
+#, kde-format
 msgid "Messages sent within %1"
-msgstr "தகவல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "%1-க்குள் அனுப்பிய அஞ்சல்கள்"
 
 #: core/view.cpp:2389
-#, fuzzy, kde-format
-#| msgid "Message was signed with key %1."
+#, kde-format
 msgid "Messages received within %1"
-msgstr "தகவல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "%1-க்குள் பெற்ற அஞ்சல்கள்"
 
 #: core/view.cpp:2398
 #, kde-format
 msgid "Threads started by %1"
-msgstr "%1 தொடங்கிய தொடர்கள்"
+msgstr "%1 தொடக்கிய தொடர்கள்"
 
 #: core/view.cpp:2401
 #, kde-format
@@ -1002,34 +992,29 @@ msgid "Threads with most recent message by %1"
 msgstr "எத்தொடர்களின் மிகச்சமீபமான அஞ்சலை %1 எழுதினார்"
 
 #: core/view.cpp:2410 core/view.cpp:2434
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Messages sent to %1"
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "%1-க்கு அனுப்பிய அஞ்சல்கள்"
 
 #: core/view.cpp:2412
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Messages sent by %1"
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "%1 அனுப்பிய அஞ்சல்கள்"
 
 #: core/view.cpp:2415
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Messages received from %1"
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "%1-இலிருந்து பெறப்பட்ட அஞ்சல்கள்"
 
 #: core/view.cpp:2423
-#, fuzzy, kde-format
-#| msgid "Threads default to o&pen"
+#, kde-format
 msgid "Threads directed to %1"
-msgstr "இழைகளை முன்னிருப்பாக - &திறந்திரு"
+msgstr "%1 பெறவேண்டிய தொடர்கள்"
 
 #: core/view.cpp:2426
-#, fuzzy, kde-format
-#| msgid "&Threaded message list"
+#, kde-format
 msgid "Threads with most recent message directed to %1"
-msgstr "&இணைக்கப்பட்ட செய்தி பட்டியல்"
+msgstr "%1 பெற வேண்டிய அஞ்சலை மிகச்சமீபமானதாக‍க் கொண்ட தொடர்கள்"
 
 #: core/view.cpp:2436
 #, kde-format
@@ -1167,13 +1152,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
-msgstr ""
+msgstr "வேறு அடைவுக்கு மாறும்போது, விரைதேடல் பட்டை காலியாக்கப்படுவதைத் தடுக்கும்"
 
 #: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr ""
+msgstr "வேறு அடைவுக்கு மாறும்போது, விரைதேடல் பட்டையைக் காலியாக்கு"
 
 #: core/widgets/searchlinestatus.cpp:101
 #, kde-format
@@ -1335,7 +1320,7 @@ msgstr "கீற்றை மூடு"
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr ""
+msgstr "%1 கீற்றை செயல்படுத்து"
 
 #: pane.cpp:200
 #, kde-format
@@ -1617,7 +1602,7 @@ msgstr "தலைப்புவரியில் கிளிக் செய�
 #: utils/themeeditor.cpp:80
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr ""
+msgstr "இத்தலைப்பை கிளிக் செய்தால் எந்த வரிசைமுறை பயன்படுத்தப்படும்."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1657,6 +1642,8 @@ msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
+"மிக நீளமான தலைப்பு மிக நீளமான தலைப்பு மிக நீளமான தலைப்பு மிக நீளமான தலைப்பு மிக "
+"நீளமான தலைப்பு"
 
 #: utils/themeeditor.cpp:192
 #, kde-format

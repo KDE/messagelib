@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-12 00:56+0000\n"
-"PO-Revision-Date: 2022-12-15 21:17+0530\n"
+"PO-Revision-Date: 2023-01-12 21:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -2298,103 +2298,94 @@ msgid "Open URL"
 msgstr "முகவரியை திற"
 
 #: viewer/viewer_p.cpp:1563
-#, fuzzy, kde-format
-#| msgid "Message Structure Viewer"
+#, kde-format
 msgid "Show Message Structure"
-msgstr "செய்தி அமைப்பு காட்சியகம்"
+msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
 
 #: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
-msgstr "&மூலத்தை பார்"
+msgstr "&மூலத்தைக் காட்டு"
 
 #: viewer/viewer_p.cpp:1577
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Save Message..."
-msgstr "1 அஞ்சல், %2."
+msgstr "&அஞ்சலை சேமி..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save as Draft"
+#, kde-format
 msgid "&Save Display Format"
-msgstr "&வரைவாக சேமி"
+msgstr "&காட்சி முறையை சேமி"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Save as Draft"
+#, kde-format
 msgid "&Reset Display Format"
-msgstr "&வரைவாக சேமி"
+msgstr "கா&ட்சி முறையை மீட்டமை"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Select &All Messages"
+#, kde-format
 msgid "Scroll Message Up"
-msgstr "&அனைத்து செய்திகளையும் தேர்வுசெய்"
+msgstr "அஞ்சலில் மேலே உருள்"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Select &All Messages"
+#, kde-format
 msgid "Scroll Message Down"
-msgstr "&அனைத்து செய்திகளையும் தேர்வுசெய்"
+msgstr "அஞ்சலில் கீழே உருள்"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Select &All Messages"
+#, kde-format
 msgid "Scroll Message Up (More)"
-msgstr "&அனைத்து செய்திகளையும் தேர்வுசெய்"
+msgstr "அஞ்சலில் மேலே உருள் (அதிகமாக)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Select &All Messages"
+#, kde-format
 msgid "Scroll Message Down (More)"
-msgstr "&அனைத்து செய்திகளையும் தேர்வுசெய்"
+msgstr "அஞ்சலில் கீழே உருள் (அதிகமாக)"
 
 #: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr ""
+msgstr "HTML காட்சிமுறையை இயக்கு/முடக்கு"
 
 #: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr ""
+msgstr "HTML முற்றும் சாதாரண உரை காட்சிமுறைகளுக்கிடையே மாறும்"
 
 #: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
-msgstr ""
+msgstr "வெளி இணைப்புகளை ஏற்று"
 
 #: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:134
 #, kde-format
 msgid "Speak Text"
-msgstr ""
+msgstr "உரையைப் பேச்சாக்கு"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Se&lect..."
+#, kde-format
 msgid "Share Text..."
-msgstr "தேர்ந்தெடு..."
+msgstr "உரையைப் பகிர்..."
 
 #: viewer/viewer_p.cpp:1644
-#, fuzzy, kde-format
-#| msgid "Choose Location"
+#, kde-format
 msgid "Copy Image Location"
-msgstr "இடத்தை தேர்வு செய்"
+msgstr "படத்தின் முகவரியை நகலெடு"
 
 #: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
-msgstr "செய்தியில் தேடவும்."
+msgstr "&அஞ்சலில் கண்டுபிடி..."
 
 #: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
-msgstr ""
+msgstr "முகவடியை முடக்கு"
 
 #: viewer/viewer_p.cpp:1708
 #, kde-format
 msgid "Save &As..."
-msgstr "&இப்படி சேமிக்கவும்..."
+msgstr "&இப்படி சேமி..."
 
 #: viewer/viewer_p.cpp:1716
 #, kde-format
@@ -2404,17 +2395,17 @@ msgstr "இதனால் திற..."
 #: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "எல்லா இணைப்புகளை சேமி..."
+msgstr "அனைத்து உடனிணைப்புகளையும் சேமி..."
 
 #: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The network is broken."
-msgstr ""
+msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
 #: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
 #: viewer/viewer_p.cpp:1955
 #, kde-format
@@ -2424,12 +2415,12 @@ msgstr "%1 என்ற முகவரி செல்லுபடியாக�
 #: viewer/viewer_p.cpp:1975
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
-msgstr ""
+msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
 #: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "Malware"
-msgstr ""
+msgstr "தீங்குநிரல்"
 
 #: viewer/viewer_p.cpp:2030
 #, kde-format
@@ -2437,123 +2428,95 @@ msgid "Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை நகலெடு"
 
 #: viewer/viewer_p.cpp:2111
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
-msgstr "செய்தி சாதாரண உரையாக"
+msgstr "அஞ்சல், சாதாரண உரையாக"
 
 #: viewer/viewer_p.cpp:2312
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "ஆவணமாக்கம்"
+msgstr "அஞ்சலை அச்சிடுவது"
 
 #: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
-msgstr "பிடிபலகைக்கு URL நகலாக்கப்பட்டுவிட்டது"
+msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
 #: viewer/viewer_p.cpp:2878
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Message loading failed: %1."
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
 #: viewer/viewer_p.cpp:2883
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Message not found."
-msgstr "தகவல் %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"'%1' இணைப்பை திறக்கவா?\n"
-"இணைப்பை திறப்பதால் உங்கள் அமைப்பின் பாதுகாப்புக்கு குந்தகம் விளையலாம்"
+"<filename>%1</filename> எனும் இணைப்பைத் திறக்கலாமா?<nl/> நம்பகமற்ற உடனிணைப்புகள், "
+"உங்கள் கணினிக்கு தீங்கு விளைவிக்கலாம்."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "இணைப்பை திறக்கவா?"
+msgstr "உடனிணைப்பைத் திறக்கலாமா?"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
-msgstr "'%1'ல் திற"
+msgstr "'%1' என்பதால் &திற"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "இதனால் திற..."
+msgstr "&இதனால் திற..."
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
 msgid "Do not ask again"
-msgstr ""
+msgstr "மீண்டும் கேட்காதே"
 
 #: widgets/htmlstatusbar.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
-#| "qt>"
+#, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
-msgstr ""
-"<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></qt>"
+msgstr "<qt><b><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
-#| "<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+#, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
-msgstr ""
-"<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
-"<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+msgstr "<qt><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br>இ<br>ல்<br>லை</qt>"
 
 #: widgets/htmlstatusbar.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
-#| "qt>"
+#, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
-msgstr ""
-"<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></qt>"
+msgstr "<qt><br />சா<br />தா<br />ர<br />ண<br />உ<br /><br />ரை<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
-#| "<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
-msgstr ""
-"<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
-"<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+msgstr "<qt><br>நா<br>ள்<br><br>கா<br>ட்<br>டி<br>அ<br> <br>ஞ்<br>ச<br>ல்<br></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
