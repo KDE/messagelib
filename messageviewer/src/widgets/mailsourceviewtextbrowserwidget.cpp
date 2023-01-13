@@ -127,14 +127,11 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
         popup->addSeparator();
         popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-        // Code from KTextBrowser
-        if (mTextToSpeechContainerWidget->isReady()) {
-            popup->addSeparator();
-            popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
-                             i18n("Speak Text"),
-                             this,
-                             &MailSourceViewTextBrowser::slotSpeakText);
-        }
+        popup->addSeparator();
+        popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
+                         i18n("Speak Text"),
+                         this,
+                         &MailSourceViewTextBrowser::slotSpeakText);
 #endif
         popup->addSeparator();
         popup->addAction(KStandardAction::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
