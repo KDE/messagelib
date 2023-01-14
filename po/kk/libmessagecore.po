@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2013-07-10 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -61,24 +61,24 @@ msgstr "%1 архивке қосылмады"
 msgid "Could not open %1 for reading."
 msgstr "%1 оқу үшін ашылмады."
 
-#: attachment/attachmentfromurljob.cpp:69
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "беймәлім%1"
 
-#: attachment/attachmentfromurljob.cpp:71
+#: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "беймәлім"
 
-#: attachment/attachmentfromurljob.cpp:103
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "\"%1\" табылмады. Толық жолымен келтіріңіз."
 
-#: attachment/attachmentfromurljob.cpp:112
+#: attachment/attachmentfromurljob.cpp:111
 #, fuzzy, kde-format
 #| msgid "You may not attach files bigger than %1."
 msgid "You may not attach files bigger than %1. Share it with storage service."

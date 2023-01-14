@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2021-08-15 15:47+0200\n"
 "Last-Translator: Jürgen Jäckle <divmails1@gmx.net>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -65,25 +65,25 @@ msgstr "%1 kann nicht zum Archiv hinzugefügt werden."
 msgid "Could not open %1 for reading."
 msgstr "%1 kann nicht zum Lesen geöffnet werden."
 
-#: attachment/attachmentfromurljob.cpp:69
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "Unbekannt%1"
 
-#: attachment/attachmentfromurljob.cpp:71
+#: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "unbekannt"
 
-#: attachment/attachmentfromurljob.cpp:103
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr ""
 "„%1“ kann nicht gefunden werden; bitte geben Sie den vollständigen Pfad an."
 
-#: attachment/attachmentfromurljob.cpp:112
+#: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""

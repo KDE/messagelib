@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2019-03-22 00:36+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -62,24 +62,24 @@ msgstr "無法將 %1 新增到歸檔。"
 msgid "Could not open %1 for reading."
 msgstr "無法開啟讀取 %1。"
 
-#: attachment/attachmentfromurljob.cpp:69
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "不明的%1"
 
-#: attachment/attachmentfromurljob.cpp:71
+#: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "未知"
 
-#: attachment/attachmentfromurljob.cpp:103
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "找不到 %1。請指定完整路徑。"
 
-#: attachment/attachmentfromurljob.cpp:112
+#: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "您可能不能附加大於 %1 的檔案。請使用儲存服務分享。"

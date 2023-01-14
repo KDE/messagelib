@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2010-02-28 11:07+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -63,13 +63,13 @@ msgstr "ไม่สามารถบีบข้อมูลสิ่งที
 msgid "Could not open %1 for reading."
 msgstr ""
 
-#: attachment/attachmentfromurljob.cpp:69
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "ไม่รู้จัก%1"
 
-#: attachment/attachmentfromurljob.cpp:71
+#: attachment/attachmentfromurljob.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown.ext'"
 #| msgid "unknown%1"
@@ -77,12 +77,12 @@ msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "ไม่รู้จัก%1"
 
-#: attachment/attachmentfromurljob.cpp:103
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "ไม่พบ \"%1\" โปรดระบุพาธแบบสมบูรณ์"
 
-#: attachment/attachmentfromurljob.cpp:112
+#: attachment/attachmentfromurljob.cpp:111
 #, fuzzy, kde-format
 #| msgid "You may not attach files bigger than %1."
 msgid "You may not attach files bigger than %1. Share it with storage service."

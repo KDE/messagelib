@@ -6,20 +6,21 @@
 # Vincent Pinon <vpinon@kde.org>, 2017, 2018.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 #
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
-"PO-Revision-Date: 2019-11-11 07:43+0800\n"
-"Last-Translator: Simon Depiets <sdepiets@gmail.com>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"PO-Revision-Date: 2023-01-12 18:14+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 19.07.70\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -69,24 +70,24 @@ msgstr "Impossible d'ajouter %1 à l'archive"
 msgid "Could not open %1 for reading."
 msgstr "Impossible d'ouvrir %1 en lecture."
 
-#: attachment/attachmentfromurljob.cpp:69
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "inconnu%1"
 
-#: attachment/attachmentfromurljob.cpp:71
+#: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "inconnu"
 
-#: attachment/attachmentfromurljob.cpp:103
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "Impossible de trouver « %1 ». Veuillez indiquer l'emplacement complet."
 
-#: attachment/attachmentfromurljob.cpp:112
+#: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
@@ -157,12 +158,12 @@ msgid ""
 msgstr ""
 "<p>L'encodage de transport de cette section :</p><p>Habituellement, vous "
 "n'avez pas besoin de modifier ceci, puisque %1 utilisera un encodage par "
-"défaut correct dépendant du type MIME. Cependant, quelquefois, vous pouvez "
-"réduire de façon significative la taille du message résultant, par exemple, "
-"si un fichier PostScript ne contient aucune donnée binaire mais que du texte "
-"brute -- dans ce cas, la sélection de « quoted-printable » au lieu de "
-"« base64 » par défaut, permettra d'économiser jusqu'à 25 % de la taille du "
-"message résultant.</p>"
+"défaut correct dépendant du type « MIME ». Cependant, quelquefois, vous "
+"pouvez réduire de façon significative la taille du message résultant, par "
+"exemple, si un fichier « PostScript » ne contient aucune donnée binaire mais "
+"que du texte brut -- dans ce cas, la sélection de « quoted-printable » au "
+"lieu de « base64 » par défaut, permettra d'économiser jusqu'à 25 % de la "
+"taille du message résultant.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
