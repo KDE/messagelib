@@ -21,6 +21,7 @@ Dependencies:
     'pim/libkleo' : '@same'
     'pim/pimcommon' : '@same'
     'libraries/qca' : '@latest'
+    'libraries/ktextaddons': '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
