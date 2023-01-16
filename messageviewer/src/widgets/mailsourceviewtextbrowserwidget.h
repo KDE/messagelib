@@ -12,14 +12,22 @@
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
+#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
-
+#endif
 namespace KPIMTextEdit
 {
 class SlideContainer;
 }
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
+{
+class TextToSpeechContainerWidget;
+}
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+namespace TextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
 }
@@ -56,8 +64,11 @@ private:
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     KPIMTextEdit::SlideContainer *const mSliderContainer;
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
 #endif
 };
 
@@ -65,8 +76,11 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     explicit MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent = nullptr);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    explicit MailSourceViewTextBrowser(TextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent = nullptr);
 #endif
     explicit MailSourceViewTextBrowser(QWidget *parent);
 
@@ -78,8 +92,11 @@ Q_SIGNALS:
 private:
     void slotSpeakText();
     void slotSaveAs();
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif
 };
 }

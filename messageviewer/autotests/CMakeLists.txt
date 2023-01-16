@@ -37,10 +37,15 @@ add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
+    set(TEXTADDONS_LIBS )
+    if (USE_KTEXTADDONS_LIB)
+        set (TEXTADDONS_LIBS KF5::TextEditTextToSpeech)
+    endif()
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes
+        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit
+        KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes ${TEXTADDONS_LIBS}
     )
 endmacro ()
 

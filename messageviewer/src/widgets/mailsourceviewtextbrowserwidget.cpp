@@ -13,8 +13,11 @@
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include <KPIMTextEdit/SlideContainer>
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <PimCommon/PimUtil>
 
@@ -39,18 +42,28 @@ using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
     , mSliderContainer(new KPIMTextEdit::SlideContainer(this))
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     , mTextToSpeechContainerWidget(new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this))
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    , mTextToSpeechContainerWidget(new TextEditTextToSpeech::TextToSpeechContainerWidget(this))
 #endif
 {
     auto lay = new QVBoxLayout(this);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
+    lay->setContentsMargins({});
+    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("texttospeech"));
+    lay->addWidget(mTextToSpeechContainerWidget);
+    mTextBrowser = new MailSourceViewTextBrowser(mTextToSpeechContainerWidget);
+#else
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     lay->setContentsMargins({});
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechContainerWidget);
     mTextBrowser = new MailSourceViewTextBrowser(mTextToSpeechContainerWidget);
 #else
     mTextBrowser = new MailSourceViewTextBrowser(this);
+#endif
 #endif
     mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
     mTextBrowser->setLineWrapMode(QPlainTextEdit::NoWrap);
@@ -108,8 +121,15 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
 {
     return mTextBrowser;
 }
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent)
+    : QPlainTextEdit(parent)
+    , mTextToSpeechContainerWidget(TextToSpeechContainerWidget)
+{
+}
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+MailSourceViewTextBrowser::MailSourceViewTextBrowser(TextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent)
     : QPlainTextEdit(parent)
     , mTextToSpeechContainerWidget(TextToSpeechContainerWidget)
 {
@@ -126,7 +146,14 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     if (popup) {
         popup->addSeparator();
         popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
+        popup->addSeparator();
+        popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
+                         i18n("Speak Text"),
+                         this,
+                         &MailSourceViewTextBrowser::slotSpeakText);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         popup->addSeparator();
         popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
                          i18n("Speak Text"),
@@ -148,13 +175,16 @@ void MailSourceViewTextBrowser::slotSaveAs()
 
 void MailSourceViewTextBrowser::slotSpeakText()
 {
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     QString text;
     if (textCursor().hasSelection()) {
         text = textCursor().selectedText();
     } else {
         text = toPlainText();
     }
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
+    mTextToSpeechContainerWidget->say(text);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget->say(text);
 #endif
 }

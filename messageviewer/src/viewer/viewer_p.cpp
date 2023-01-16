@@ -1421,7 +1421,7 @@ void ViewerPrivate::createWidgets()
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(readerBox);
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
     readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechContainerWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
 #endif
@@ -1635,7 +1635,13 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
+    mSpeakTextAction = new QAction(i18n("Speak Text"), this);
+    mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+    ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
+    connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mSpeakTextAction = new QAction(i18n("Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
@@ -2674,12 +2680,15 @@ void ViewerPrivate::replyMessage(KMime::Content *atmNode, bool replyToAll)
 
 void ViewerPrivate::slotSpeakText()
 {
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
         mTextToSpeechContainerWidget->say(text);
-    }
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+        mTextToSpeechContainerWidget->say(text);
+#endif
+    }
 }
 
 QUrl ViewerPrivate::imageUrl() const
