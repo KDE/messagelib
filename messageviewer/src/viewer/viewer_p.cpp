@@ -132,8 +132,11 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <Akonadi/MDNStateAttribute>
 #include <QApplication>
@@ -1421,8 +1424,12 @@ void ViewerPrivate::createWidgets()
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechContainerWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
-    readerBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
+    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
+#endif
+    readerBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
     mViewer->setViewer(this);
     readerBoxVBoxLayout->addWidget(mViewer);
