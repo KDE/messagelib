@@ -430,6 +430,7 @@ target_link_libraries(KF5MessageViewer
     KF5::KIOFileWidgets
     KF5::KIOWidgets
     KF5::XmlGui
+    KF5::Codecs
     KF5::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport

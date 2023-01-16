@@ -293,6 +293,7 @@ target_link_libraries(KF5MessageComposer
     KF5::Contacts
     KF5::SonnetCore
     KF5::GuiAddons
+    KF5::Codecs
     )
 
 if (TARGET Qt6::Core5Compat)
