@@ -269,7 +269,6 @@ target_link_libraries(KF5MessageComposer
     KF5::Mime
     KF5::MessageCore
     KF5::PimCommonAkonadi
-    KF5::PimCommonAutoCorrection
     KF5::AkonadiCore
     KF5::IdentityManagementWidgets
     KF5::PimTextEdit
@@ -295,7 +294,11 @@ target_link_libraries(KF5MessageComposer
     KF5::GuiAddons
     KF5::Codecs
     )
-
+if (USE_KTEXTADDONS_LIB)
+    target_link_libraries(KF5MessageComposer PUBLIC KF5::TextAutoCorrection)
+else()
+    target_link_libraries(KF5MessageComposer PUBLIC KF5::PimCommonAutoCorrection)
+endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KF5MessageComposer PRIVATE Qt6::Core5Compat)
 endif()
