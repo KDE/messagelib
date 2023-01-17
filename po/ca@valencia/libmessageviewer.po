@@ -406,7 +406,7 @@ msgstr "Exporta..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr "Configuració de la regla"
+msgstr "Configureu la regla"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
@@ -525,7 +525,7 @@ msgstr "Afig una regla"
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr "Modificació de la regla"
+msgstr "Modifiqueu la regla"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
@@ -692,7 +692,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:179
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr "El domini de signatura només està provant el DKIM."
+msgstr "El domini de signatura només està provant DKIM."
 
 #: dkim-verify/dkimwidgetinfo.cpp:182
 #, kde-format
@@ -1752,7 +1752,7 @@ msgstr "Mostra sempre els detalls de l'encriptació/signatura"
 #: ui/settings.ui:31
 #, kde-format
 msgid "Viewer settings"
-msgstr "Configuració del visor"
+msgstr "Configureu el visor"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:59
@@ -1881,7 +1881,7 @@ msgstr "S'ha produït un error en guardar l'adjunt"
 #: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "No s'ha trobat cap adjunt per a guardar."
+msgstr "No s'ha trobat cap adjunt per que es guardarà."
 
 #: utils/messageviewerutil.cpp:515
 #, kde-format

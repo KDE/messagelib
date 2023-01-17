@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2023-01-12 08:14+0100\n"
+"PO-Revision-Date: 2023-01-17 00:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -29,47 +29,47 @@ msgstr "მიზეზი: %1"
 
 #: messagepartthemes/default/templates/certmessagepart.html:7
 msgid "Sorry, no certificates were found in this message."
-msgstr ""
+msgstr "ამ შეტყობინებაში სერტიფიკატი ვერ ვიპოვე."
 
 #: messagepartthemes/default/templates/certmessagepart.html:9
 msgid "Certificate import status:"
-msgstr ""
+msgstr "სერტიფიკატის შემოტანის სტატუსი:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:13
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "შემოტანილია 1 ახალი სერტიფიკატი."
+msgstr[1] "შემოტანილია %1 ახალი სერტიფიკატი."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 სერტიფიკატი არ შეცვლილა."
+msgstr[1] "%1 სერტიფიკატი არ შეცვლილა."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "შემოტანილია 1 საიდუმლო გასაღები."
+msgstr[1] "შემოტანილია %1 საიდუმლო გასაღები."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 საიდუმლო გასაღები არ შეცვლილა."
+msgstr[1] "%1 საიდუმლო გასაღები არ შეცვლილა."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
-msgstr ""
+msgstr "უკაცრავად, სერტიფიკატის შემოტანის დეტალები ხელმისაწვდომი არაა."
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
 msgid "Certificate import details:"
-msgstr ""
+msgstr "სერტიფიკატის შემოტანის დეტალები:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:34
 #, kde-format
@@ -88,19 +88,19 @@ msgstr ""
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:3
 msgid "This message is encrypted."
-msgstr ""
+msgstr "ეს შეტყობინება დაშიფრულია."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
 msgid "Decrypt Message"
-msgstr ""
+msgstr "შეტყობინების გაშიფვრა"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr ""
+msgstr "მიმდინარეობს შეტყობინების გაშიფვრა. მოითმინეთ..."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
-msgstr ""
+msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
@@ -138,11 +138,11 @@ msgstr ""
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:67
 msgid "Could not decrypt the data."
-msgstr ""
+msgstr "მონაცემების გაშიფვრის შეცდომა."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "End of encrypted message"
-msgstr ""
+msgstr "დაშიფრული შეტყობინების დასასრული"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
 msgid ""
@@ -174,34 +174,34 @@ msgstr ""
 #: messagepartthemes/default/templates/signedmessagepart.html:127
 #, kde-format
 msgid "Message was signed by %1."
-msgstr ""
+msgstr "შეტყობინების ხელმომწერია %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
 #: messagepartthemes/default/templates/signedmessagepart.html:92
 msgid "Message was signed with unknown key."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:28
 #: messagepartthemes/default/templates/signedmessagepart.html:36
 #: messagepartthemes/default/templates/signedmessagepart.html:48
 #, kde-format
 msgid "Message was signed with key %1."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია გასაღებით  %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:31
 #, kde-format
 msgid "Message was signed by %3 on %1 with key %2"
-msgstr ""
+msgstr "შეტყობინებაზე ხელი მოაწერა %3-მა %1-ზე გასაღებით %2"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:39
 #, kde-format
 msgid "Message was signed on %1 with key %2."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია %1-ზე გასაღებით %2."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:45
 #, kde-format
 msgid "Message was signed by %2 with key %1."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ გასაღებით %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
 #: messagepartthemes/default/templates/signedmessagepart.html:98
@@ -211,46 +211,46 @@ msgstr "სტატუსი: "
 #: messagepartthemes/default/templates/signedmessagepart.html:85
 #, kde-format
 msgid "Message was signed on %1 with unknown key %2."
-msgstr ""
+msgstr "შეტყობინებ ხელმოწერილია %1-ზე უცნობი გასაღებით %2."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:88
 #, kde-format
 msgid "Message was signed with unknown key %1."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:95
 msgid "The validity of the signature cannot be verified."
-msgstr ""
+msgstr "ხელმოწერილის სინამდვილის გადამოწმება შეუძლებელია."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:105
 #: messagepartthemes/default/templates/signedmessagepart.html:124
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
-msgstr ""
+msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ (გასაღების ID: %1)."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:112
 msgid "The signature is valid, but the key's validity is unknown."
-msgstr ""
+msgstr "ხელმოწერია სწორია, მაგრამ გასაღების სისწორე უცნობია."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:114
 msgid "The signature is valid and the key is marginally trusted."
-msgstr ""
+msgstr "ხელმოწერა სწორია, გასაღები კი ოდნავ საეჭვო."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:116
 msgid "The signature is valid and the key is fully trusted."
-msgstr ""
+msgstr "ხელმოწერა სწორია, გასაღები კი სრულად სანდო."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:118
 msgid "The signature is valid and the key is ultimately trusted."
-msgstr ""
+msgstr "ხელმოწერა სწორია და გასაღები ყოველთვის სანდოა."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:120
 msgid "The signature is valid, but the key is untrusted."
-msgstr ""
+msgstr "ხელმოწერა სწორია, მაგრამ გასაღები სანდო არაა."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:130
 msgid "Warning: The signature is bad."
-msgstr ""
+msgstr "გაფრთხილება: ხელმოწერა არასწორია."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:143
 msgid "Invalid signature."
@@ -267,15 +267,15 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:151
 msgid "Signature is valid."
-msgstr ""
+msgstr "ხელმოწერა სწორია."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Unknown signature state"
-msgstr ""
+msgstr "ხელმოწერის უცნობი მდგომარეობა"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:170
 msgid "End of signed message"
-msgstr ""
+msgstr "ხელმოწერილი შეტყობინების დასასრული"
 
 #: dkim-verify/dkimcheckfulljob.cpp:123
 #, kde-format
@@ -287,7 +287,7 @@ msgstr ""
 #: dkim-verify/dkimcheckfulljob.cpp:124
 #, kde-format
 msgid "Key Changed"
-msgstr ""
+msgstr "გასაღები შეიცვალა"
 
 #: dkim-verify/dkimcheckfulljob.cpp:125
 #, kde-format
@@ -337,8 +337,8 @@ msgstr[1] "გასაღებების წაშლა"
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "გნებავთ, წაშალოთ ეს გასაღები?"
+msgstr[1] "გნებავთ, წაშალოთ ეს გასაღებები?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:82
 #, kde-format
@@ -356,7 +356,7 @@ msgstr "ყველას წაშლა"
 #: dkim-verify/dkimmanagerkeywidget.cpp:105
 #, kde-format
 msgid "Do you want to delete all keys?"
-msgstr ""
+msgstr "გნებავთ, წაშალოთ ყველა გასაღები?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:106
 #, kde-format
@@ -366,17 +366,17 @@ msgstr "გასაღების წაშლა"
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
-msgstr ""
+msgstr "უნდა იყოს ხელმოწერილი"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
 #, kde-format
 msgid "Can be signed"
-msgstr ""
+msgstr "შეიძლება იყოს ხელმოწერილი"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
 #, kde-format
 msgid "Ignore if not signed"
-msgstr ""
+msgstr "გამოტოვება, თუ ხელმოწერილი არაა"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
@@ -402,7 +402,7 @@ msgstr "შემოტანა..."
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
 msgid "No rules found"
-msgstr ""
+msgstr "წესები ვერ ვიპოვე."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
@@ -419,7 +419,7 @@ msgstr "წესების შემოტანა"
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "No rules imported."
-msgstr ""
+msgstr "წესები შემოტანილი არაა."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -435,7 +435,7 @@ msgstr "აქტიური"
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
-msgstr ""
+msgstr "სიის ID"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -445,7 +445,7 @@ msgstr "ვისგან"
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
-msgstr ""
+msgstr "წესის ტიპი"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -478,7 +478,7 @@ msgstr "წესის წაშლა"
 #: dkim-verify/dkimmanageruleswidget.cpp:214
 #, kde-format
 msgid "Do you want to delete this rule?"
-msgstr ""
+msgstr "გნებავთ, წაშალოთ ეს წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:215
 #: remote-content/remotecontentconfigurewidget.cpp:93
@@ -489,7 +489,7 @@ msgstr "წესის წაშლა"
 #: dkim-verify/dkimmanageruleswidget.cpp:236
 #, kde-format
 msgid "Do you want to delete all the rules?"
-msgstr ""
+msgstr "გნებავთ, წაშალოთ ყველა წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:237
 #, kde-format
@@ -521,7 +521,7 @@ msgstr "დომენი:"
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
 #, kde-format
 msgid "List-Id:"
-msgstr ""
+msgstr "სიის-ID:"
 
 #: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
 #, kde-format
@@ -571,7 +571,7 @@ msgstr "წესები..."
 #: dkim-verify/dkimwidgetinfo.cpp:97
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: dkim-verify/dkimwidgetinfo.cpp:103
 #, kde-format
@@ -596,72 +596,72 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "სხეულის ჰეში დაზიანებულია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "დომენი არ არსებობს."
 
 #: dkim-verify/dkimwidgetinfo.cpp:140
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "აკლია თავსართი From."
 
 #: dkim-verify/dkimwidgetinfo.cpp:143
 #, kde-format
 msgid "Missing signature."
-msgstr ""
+msgstr "ნაკლული ხელმოწერა."
 
 #: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid query method."
-msgstr ""
+msgstr "მოთხოვნის არასწორი მეთოდი."
 
 #: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "თავსართის არასწორი კანონიკალიზაცია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "სხეულის არასწორი კანონიკალიზაცია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "სხეულის უცნობი ჰეშის ალგორითმი."
 
 #: dkim-verify/dkimwidgetinfo.cpp:158
 #, kde-format
 msgid "Signature algorithm is invalid."
-msgstr ""
+msgstr "ხელმოწერის ალგორითმი არასწორია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
 #, kde-format
 msgid "The public key was revoked."
-msgstr ""
+msgstr "საჯარო გასაღები გაუქმებულია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Signature is too large."
-msgstr ""
+msgstr "ხელმოწერა მეტისმეტად დიდია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr ""
+msgstr "ჰეშის ალგორითმი მხარდაუჭერელია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "საჯარო გასაღები მეტისმეტად პატარაა."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "Impossible to verify signature."
-msgstr ""
+msgstr "ხელმოწერის გადამოწმება შეუძლებელია."
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
@@ -676,7 +676,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:182
 #, kde-format
 msgid "Impossible to download key."
-msgstr ""
+msgstr "გასაღების გადმოწერის შეცდომა."
 
 #: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
 #, kde-format
@@ -706,12 +706,12 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Signature too small"
-msgstr ""
+msgstr "ხელმოწერა ძალიან პატარაა"
 
 #: dkim-verify/dkimwidgetinfo.cpp:212
 #, kde-format
 msgid "Public Key too small"
-msgstr ""
+msgstr "საჯარო გასაღები მეტისმეტად პატარაა"
 
 #: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
 #, kde-format
@@ -727,7 +727,7 @@ msgstr "%1: არა"
 #: dkim-verify/dkimwidgetinfo.cpp:271
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr ""
+msgstr "%1: სწორია (ხელმომწერი: %2)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
@@ -737,7 +737,7 @@ msgstr "%1: სწორია"
 #: dkim-verify/dkimwidgetinfo.cpp:306
 #, kde-format
 msgid "Not Signed"
-msgstr ""
+msgstr "ხელმოწერილი არაა"
 
 #: header/grantleeheaderformatter.cpp:232
 #, kde-format
@@ -947,7 +947,7 @@ msgstr "გაგზავნა"
 #, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr ""
+msgstr "უარყოფის გაგზავნა"
 
 #: messagepartthemes/default/defaultrenderer.cpp:76
 #, kde-format
@@ -972,12 +972,12 @@ msgstr ""
 #: messagepartthemes/default/defaultrenderer.cpp:92
 #, kde-format
 msgid "No signature found"
-msgstr ""
+msgstr "ხელმოწერა ვერ ვიპოვე"
 
 #: messagepartthemes/default/defaultrenderer.cpp:96
 #, kde-format
 msgid "Error verifying the signature"
-msgstr ""
+msgstr "შეცდომა ხელმოწერის გადამოწმებისას"
 
 #: messagepartthemes/default/defaultrenderer.cpp:100
 #, kde-format
@@ -993,52 +993,52 @@ msgstr ""
 #: messagepartthemes/default/defaultrenderer.cpp:212
 #, kde-format
 msgid "Good signature."
-msgstr ""
+msgstr "კარგი ხელმოწერა."
 
 #: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
 msgid "One key has expired."
-msgstr ""
+msgstr "ერთი გასაღების ვადა ამოწურულია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:152
 #, kde-format
 msgid "The signature has expired."
-msgstr ""
+msgstr "ხელმოწერის ვადა ამოწურულია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "Unable to verify: key missing."
-msgstr ""
+msgstr "გადამოწმების შეცდომა: გასაღები აკლია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:164
 #, kde-format
 msgid "CRL not available."
-msgstr ""
+msgstr "CRL მიუწვდომელია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:168
 #, kde-format
 msgid "Available CRL is too old."
-msgstr ""
+msgstr "ხელმისაწვდომი CRL ძალიან ძველია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:172
 #, kde-format
 msgid "A policy was not met."
-msgstr ""
+msgstr "წესები დაცული არაა."
 
 #: messagepartthemes/default/defaultrenderer.cpp:176
 #, kde-format
 msgid "A system error occurred."
-msgstr ""
+msgstr "დაშვებულის სიტემური შეცდომა."
 
 #: messagepartthemes/default/defaultrenderer.cpp:187
 #, kde-format
 msgid "One key has been revoked."
-msgstr ""
+msgstr "ერთი გასაღები გაუქმებულია."
 
 #: messagepartthemes/default/defaultrenderer.cpp:214
 #, kde-format
 msgid "Bad signature."
-msgstr ""
+msgstr "არასწორი ხელმოწერა."
 
 #: messagepartthemes/default/defaultrenderer.cpp:598
 #: messagepartthemes/default/defaultrenderer.cpp:600
@@ -1121,17 +1121,17 @@ msgstr "მორგება"
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "შემცველობის წაშლა"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "%1-ის ავტორიზაცია"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "ყველა URL-ის ავტორიზაცია"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
@@ -1147,7 +1147,7 @@ msgstr "დაბლოკილია"
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:33
 #, kde-format
@@ -1619,7 +1619,7 @@ msgstr "გამართვა"
 #: ui/printingsettings.ui:17
 #, kde-format
 msgid "Print only selected text"
-msgstr ""
+msgstr "მხოლოდ მონიშნული ტექსტის დაბეჭდვა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
 #: ui/printingsettings.ui:24
@@ -1729,12 +1729,12 @@ msgstr ""
 #: utils/messageviewerutil.cpp:362
 #, kde-format
 msgid "Keep Encryption"
-msgstr ""
+msgstr "დაშიფვრის შენარჩუნება"
 
 #: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
 #, kde-format
 msgid "Do Not Keep"
-msgstr ""
+msgstr "არ შეინარჩუნო"
 
 #: utils/messageviewerutil.cpp:382
 #, kde-format
@@ -1746,7 +1746,7 @@ msgstr ""
 #: utils/messageviewerutil.cpp:384
 #, kde-format
 msgid "Keep Signature"
-msgstr ""
+msgstr "ხელმოწერის შენარჩუნება"
 
 #: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
 #: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
@@ -1761,12 +1761,12 @@ msgstr ""
 #: utils/messageviewerutil.cpp:487
 #, kde-format
 msgid "Error saving attachment"
-msgstr ""
+msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
 
 #: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Found no attachments to save."
-msgstr ""
+msgstr "შესანახი მიმაგრებული ფაილი არ არსებობს."
 
 #: utils/messageviewerutil.cpp:515
 #, kde-format
@@ -1788,12 +1788,12 @@ msgstr[1] "შეტყობინების შენახვა"
 #: utils/messageviewerutil.cpp:573
 #, kde-format
 msgid "File %1 could not be loaded."
-msgstr ""
+msgstr "ფაილის (%1) ჩატვირთვის შეცდომა."
 
 #: utils/messageviewerutil.cpp:573
 #, kde-format
 msgid "Error loading message"
-msgstr ""
+msgstr "შეტყობინების ჩატვირთვის შეცდომა"
 
 #: utils/messageviewerutil.cpp:575
 #, kde-format
@@ -1804,7 +1804,7 @@ msgstr ""
 #: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid "Error saving message"
-msgstr ""
+msgstr "შეტყობინების შენახვის შეცდომა"
 
 #: utils/messageviewerutil.cpp:586
 #, kde-format
@@ -1837,7 +1837,7 @@ msgstr ""
 #: viewer/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
-msgstr ""
+msgstr "მიმაგრებული ფაილის ჩასწორების შეცდომა"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
@@ -1882,32 +1882,32 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Decrypt message."
-msgstr ""
+msgstr "შეტყობინების გაშიფვრა."
 
 #: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
-msgstr ""
+msgstr "ხელმოწერის დეტალების ჩვენება."
 
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
-msgstr ""
+msgstr "ხელმოწერის დეტალების დამალვა."
 
 #: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show encryption details."
-msgstr ""
+msgstr "დაშიფვრის დეტალების ჩვენება."
 
 #: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide encryption details."
-msgstr ""
+msgstr "დაშიფვრის დეტალების დამალვა."
 
 #: viewer/urlhandlermanager.cpp:427
 #, kde-format
 msgid "Open Documentation"
-msgstr ""
+msgstr "დოკუმენტაციის გახსნა"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
@@ -1957,7 +1957,7 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:803
 #, kde-format
 msgid "Attachment: %1"
-msgstr ""
+msgstr "მიმაგრებული ფაილები: %1"
 
 #: viewer/urlhandlermanager.cpp:806
 #, kde-format
@@ -1972,7 +1972,7 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:811
 #, kde-format
 msgid "Unnamed attachment"
-msgstr ""
+msgstr "უსახელო მიმაგრებული ფაილი"
 
 #: viewer/urlhandlermanager.cpp:846
 #, kde-format
@@ -1982,7 +1982,7 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
-msgstr ""
+msgstr "URL-ის გახსნა..."
 
 #: viewer/urlhandlermanager.cpp:900
 #, kde-kuit-format
@@ -1998,7 +1998,7 @@ msgstr "გაშვება"
 #: viewer/viewer.cpp:138
 #, kde-format
 msgid "Loading message..."
-msgstr ""
+msgstr "შეტყობინების ჩატვირთვა..."
 
 #: viewer/viewer_p.cpp:362
 #, kde-format
@@ -2181,7 +2181,7 @@ msgstr "ტექსტის კოპირება"
 #: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Select All Text"
-msgstr ""
+msgstr "ტექსტის სრულად მონიშვნა"
 
 #: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
 #, kde-format
@@ -2201,12 +2201,12 @@ msgstr ""
 #: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&View Source"
-msgstr ""
+msgstr "&წყაროს ნახვა"
 
 #: viewer/viewer_p.cpp:1578
 #, kde-format
 msgid "&Save Message..."
-msgstr ""
+msgstr "&შეტყობინების შენახვა..."
 
 #: viewer/viewer_p.cpp:1584
 #, kde-format
@@ -2480,7 +2480,7 @@ msgstr ""
 #: widgets/opensavedfilefolderwidget.cpp:77
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr ""
+msgstr "KMail-ის შეცდომა მიმაგრებული ფაილის გახსნისას."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format

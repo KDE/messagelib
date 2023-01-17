@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 02:34+0000\n"
-"PO-Revision-Date: 2023-01-12 08:14+0100\n"
+"PO-Revision-Date: 2023-01-17 00:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -29,6 +29,7 @@ msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr ""
+"შეკუმშული მიმაგრებული ფაილი ორიგინალზე დიდია. გნებავთ, ორიგინალი დავტოვო?"
 
 #: attachment/attachmentcontrollerbase.cpp:187
 #, kde-format
@@ -83,7 +84,7 @@ msgstr "შეცდომა vCard-ის მიაგრებისას"
 #: attachment/attachmentcontrollerbase.cpp:414
 #, kde-format
 msgid "Failed to attach text from clipboard"
-msgstr ""
+msgstr "ბუფერიდან ტექსტის მიმაგრების შეცდომა"
 
 #: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
@@ -137,12 +138,12 @@ msgstr "&vCard-ების მიმაგრება..."
 #: attachment/attachmentcontrollerbase.cpp:491
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr ""
+msgstr "&ბუფერიდან ტექსტის მიმაგრება..."
 
 #: attachment/attachmentcontrollerbase.cpp:492
 #, kde-format
 msgid "Attach Text From Clipboard"
-msgstr ""
+msgstr "ბუფერიდან ტექსტის მიმაგრება"
 
 #: attachment/attachmentcontrollerbase.cpp:504
 #, kde-format
@@ -190,7 +191,7 @@ msgstr "შენახვა, როგორც..."
 #: attachment/attachmentcontrollerbase.cpp:542
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr ""
+msgstr "მიმაგრებული ფაილის &თვისებები..."
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
@@ -212,7 +213,7 @@ msgstr "თავიდან ჩატვირთვა"
 #: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr ""
+msgstr "KMail-ის შეცდომა მიმაგრებული ფაილის დროებითში ჩაწერისას."
 
 #: attachment/attachmentcontrollerbase.cpp:687
 #: attachment/attachmentcontrollerbase.cpp:711
@@ -223,12 +224,12 @@ msgstr "შეუძლებელია დანართის გახს�
 #: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr ""
+msgstr "KMail-ის შეცდომა მიმაგრებული ფაილის გახსნისას."
 
 #: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "Unable to edit attachment"
-msgstr ""
+msgstr "მიმაგრებული ფაილის ჩასწორების შეცდომა"
 
 #: attachment/attachmentcontrollerbase.cpp:801
 #, kde-format
@@ -257,13 +258,13 @@ msgstr "ფაილში შენახვა"
 #: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
 msgid "&Replace"
-msgstr ""
+msgstr "&ჩანაცვლება"
 
 #: attachment/attachmentcontrollerbase.cpp:860
 #: attachment/attachmentcontrollerbase.cpp:926
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr ""
+msgstr "მართლა გნებავთ საქაღალდის \"%1\" მიმაგრება?"
 
 #: attachment/attachmentcontrollerbase.cpp:861
 #: attachment/attachmentcontrollerbase.cpp:927
@@ -300,7 +301,7 @@ msgstr "ფაილის მიმაგრების შეცდომა"
 #: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
-msgstr ""
+msgstr "საჯარო OpenPGP გასაღების მიმაგრება"
 
 #: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
@@ -310,7 +311,7 @@ msgstr ""
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
 msgid "unnamed attachment"
-msgstr ""
+msgstr "უსახელო მიმაგრებული ფაილი"
 
 #: attachment/attachmentmodel.cpp:256
 #, kde-format
@@ -364,7 +365,7 @@ msgstr "ხელმოწერა"
 #, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
-msgstr ""
+msgstr "ავტომატური გამოტანის შეთავაზება"
 
 #: composer/composer.cpp:276
 #, kde-format
@@ -411,7 +412,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:338
 #, kde-format
 msgid "Sign/Encrypt Message?"
-msgstr ""
+msgstr "დავშიფრო/ხელი მოვაწერო შეტყობინებას?"
 
 #: composer/composerviewbase.cpp:523
 #, kde-format
@@ -421,7 +422,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:537
 #, kde-format
 msgid "Do you want to resize images?"
-msgstr ""
+msgstr "გნებავთ გამოსახულებების ზომა შევცვალო?"
 
 #: composer/composerviewbase.cpp:538
 #, kde-format
@@ -464,12 +465,12 @@ msgstr "S/MIME სერტიფიკატს ვადა მალე გ�
 #: composer/composerviewbase.cpp:868
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr ""
+msgstr "გასაღებების ამოხსნის შეცდომა. გთხოვთ, მოგვწეროთ ამის შესახებ."
 
 #: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1339
 #, kde-format
 msgid "Job cancelled by the user"
-msgstr ""
+msgstr "დავალება შეწყვეტილია მომხმარებლის მიერ"
 
 #: composer/composerviewbase.cpp:1079
 #, kde-format
@@ -481,7 +482,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr ""
+msgstr "შეტყობინების შედგენის შეცდომა: %1"
 
 #: composer/composerviewbase.cpp:1178
 #, kde-format
@@ -491,17 +492,17 @@ msgstr ""
 #: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr ""
+msgstr "შეტყობინების ავტომატური შენახვის შეცდომა: %1"
 
 #: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not write all data to file."
-msgstr ""
+msgstr "მონაცემების ფაილში სრულად ჩაწერის შეცდომა."
 
 #: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid "Could not finalize the file."
-msgstr ""
+msgstr "ფაილის დასრულების შეცდომა."
 
 #: composer/composerviewbase.cpp:1368
 #, kde-format
@@ -519,12 +520,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Autosaving Message Failed"
-msgstr ""
+msgstr "შეტყობინების ავტომატური შენავის შეცდომა"
 
 #: composer/composerviewbase.cpp:1494
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr ""
+msgstr "შეტყობინების შენახვის შეცდომა: %1"
 
 #: composer/composerviewbase.cpp:1917
 #, kde-format
@@ -542,7 +543,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:1922
 #, kde-format
 msgid "&Send as Is"
-msgstr ""
+msgstr "&გაგზავნა, როგორც არის"
 
 #: composer/composerviewbase.cpp:1978
 #, kde-format
@@ -555,7 +556,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:1989 composer/composerviewbase.cpp:2030
 #, kde-format
 msgid "Sign Message?"
-msgstr ""
+msgstr "მოვაწერო ხელი შეტყობინებას?"
 
 #: composer/composerviewbase.cpp:1990 composer/composerviewbase.cpp:2031
 #, kde-format
@@ -585,12 +586,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send Unsigned?"
-msgstr ""
+msgstr "გავაგზავნო ხელმოწერის გარეშე?"
 
 #: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send &Unsigned"
-msgstr ""
+msgstr "&ხელმოწერის გარეშე გაგზავნა"
 
 #: composer/composerviewbase.cpp:2077
 #, kde-format
@@ -611,12 +612,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
-msgstr ""
+msgstr "&ყველა ნაწილის ხელმოწერა"
 
 #: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign"
-msgstr ""
+msgstr "&ხელმოწერა"
 
 #: composer/composerviewbase.cpp:2092
 #, kde-format
@@ -626,7 +627,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2094
 #, kde-format
 msgid "Send &As Is"
-msgstr ""
+msgstr "&გაგზავნა, როგორც არის"
 
 #: composer/composerviewbase.cpp:2149
 #, kde-format
@@ -646,12 +647,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2163 composer/composerviewbase.cpp:2205
 #, kde-format
 msgid "Encrypt Message?"
-msgstr ""
+msgstr "დავშიფრო შეტყობინება?"
 
 #: composer/composerviewbase.cpp:2164
 #, kde-format
 msgid "Sign && &Encrypt"
-msgstr ""
+msgstr "დაშიფვრა და ხელმოწერა"
 
 #: composer/composerviewbase.cpp:2164 composer/composerviewbase.cpp:2206
 #: composer/composerviewbase.cpp:2262 composer/keyresolver.cpp:1317
@@ -663,12 +664,12 @@ msgstr "&დაშიფვრა"
 #: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Sign Only"
-msgstr ""
+msgstr "&მხოლოდ ხელმოწერა"
 
 #: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Send As-Is"
-msgstr ""
+msgstr "&გაგზავნა, როგორც არის"
 
 #: composer/composerviewbase.cpp:2194
 #, kde-format
@@ -680,7 +681,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid "Do &Not Encrypt"
-msgstr ""
+msgstr "&არ დაშიფრო"
 
 #: composer/composerviewbase.cpp:2235
 #, kde-format
@@ -693,12 +694,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2239
 #, kde-format
 msgid "Send Unencrypted?"
-msgstr ""
+msgstr "გავაგზავნო დაუშიფრავად?"
 
 #: composer/composerviewbase.cpp:2239 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
-msgstr ""
+msgstr "&დაუშიფრავად გაგზავნა"
 
 #: composer/composerviewbase.cpp:2253
 #, kde-format
@@ -721,12 +722,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2262
 #, kde-format
 msgid "&Encrypt All Parts"
-msgstr ""
+msgstr "&ყველა ნაწილის დაშიფვრა"
 
 #: composer/composerviewbase.cpp:2269
 #, kde-format
 msgid "Unencrypted Message Warning"
-msgstr ""
+msgstr "გაფრთხილება დაუშიფრავი შეტყობინების შესახებ"
 
 #: composer/keyresolver.cpp:302
 #, kde-format
@@ -783,7 +784,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1037
 #, kde-format
 msgid "Unusable Encryption Keys"
-msgstr ""
+msgstr "არაგამოყენებადი დაშიფვრის გასაღებები"
 
 #: composer/keyresolver.cpp:687
 #, kde-format
@@ -799,7 +800,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1084
 #, kde-format
 msgid "Unusable Signing Keys"
-msgstr ""
+msgstr "არაგამოყენებადი ხელმოწერის გასაღებები"
 
 #: composer/keyresolver.cpp:998
 #, kde-format
@@ -862,7 +863,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1151
 #, kde-format
 msgid "No signing possible"
-msgstr ""
+msgstr "ხელმოწერა შეუძლებელია"
 
 #: composer/keyresolver.cpp:1314
 #, kde-format
@@ -875,7 +876,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "Missing Key Warning"
-msgstr ""
+msgstr "გაფრთხილება ნაკლული გასაღების შესახებ"
 
 #: composer/keyresolver.cpp:1332
 #, kde-format
@@ -908,7 +909,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1425
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr ""
+msgstr "დაშიფვრის გასაღების არჩევანი"
 
 #: composer/keyresolver.cpp:1469
 #, kde-format
@@ -1325,7 +1326,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr ""
+msgstr "აირჩიეთ გამოსახულების ფორმატი"
 
 #: imagescaling/imagescalingselectformat.cpp:94
 #, kde-format
@@ -1358,7 +1359,7 @@ msgstr ""
 #: imagescaling/imagescalingwidget.cpp:321
 #, kde-format
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "შეცდომა მინ/მაქს მნიშვნელობაში"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
@@ -1442,7 +1443,7 @@ msgstr "მინიმალური სიგანე:"
 #: imagescaling/ui/imagescalingwidget.ui:181
 #, kde-format
 msgid "Minimum height:"
-msgstr ""
+msgstr "მინიმალური სიმაღლე:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
 #: imagescaling/ui/imagescalingwidget.ui:230
@@ -1466,7 +1467,7 @@ msgstr "ფაილის სახელი"
 #: imagescaling/ui/imagescalingwidget.ui:269
 #, kde-format
 msgid "Source filter"
-msgstr ""
+msgstr "წყაროს ფილტრი"
 
 #. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
 #: imagescaling/ui/imagescalingwidget.ui:275
@@ -1512,7 +1513,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:326
 #, kde-format
 msgid "Image Format"
-msgstr ""
+msgstr "გამოსახულების ფორმატი"
 
 #. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
 #: imagescaling/ui/imagescalingwidget.ui:332
@@ -1524,7 +1525,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr ""
+msgstr "ფაილის სახელის ზომის შეცვლა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
@@ -1571,27 +1572,27 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
 msgid "No text found in Clipboard"
-msgstr ""
+msgstr "ბუფერში ტექსტი ვერ ვიპოვე"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "მიმაგრებული ფაილის სახელის აღწერა"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr ""
+msgstr "მიმაგრებული ფაილის სახელი:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
 msgid "Clipboard Text"
-msgstr ""
+msgstr "ბუფერის ტექსტი"
 
 #: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
-msgstr ""
+msgstr "OpenPGP გასაღები 0x%1"
 
 #: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
 #, kde-format
@@ -1603,7 +1604,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr ""
+msgstr "გასაღების გატანა..."
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1618,7 +1619,7 @@ msgstr "არასწორი კონტაქტი"
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr ""
+msgstr "შეცდომა vCard-ის გენერაციისას."
 
 #: job/autocryptheadersjob.cpp:104
 #, kde-format
@@ -1654,17 +1655,17 @@ msgstr ""
 #: job/maintextjob.cpp:108
 #, kde-format
 msgid "Some Characters Will Be Lost"
-msgstr ""
+msgstr "ზოგიერთი სიმბოლო დაიკარგება"
 
 #: job/maintextjob.cpp:109
 #, kde-format
 msgid "Lose Characters"
-msgstr ""
+msgstr "სიმბოლოების დაკარგვა"
 
 #: job/maintextjob.cpp:110
 #, kde-format
 msgid "Change Encoding"
-msgstr ""
+msgstr "კოდირების შეცვლა"
 
 #: job/maintextjob.cpp:117
 #, kde-format
@@ -1854,13 +1855,13 @@ msgstr "ფარული ასლი"
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr ""
+msgstr "უპასუხეთ"
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
 msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
-msgstr ""
+msgstr "<placeholder>მიღების აღუწერელი ტიპი</placeholder>"
 
 #: recipient/recipientline.cpp:70
 #, kde-format
@@ -1885,7 +1886,7 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr ""
+msgstr "სიის შენახვა..."
 
 #: recipient/recipientseditorsidewidget.cpp:45
 #, kde-format
@@ -1909,15 +1910,15 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
-msgstr ""
+msgstr "მიმღებების გაერშე"
 
 #: recipient/recipientseditorsidewidget.cpp:79
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 მიმღები"
+msgstr[1] "%1 მიმღები"
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
@@ -2058,7 +2059,7 @@ msgstr ""
 #: sendlater/ui/sendlaterwidget.ui:29
 #, kde-format
 msgid "Send at:"
-msgstr ""
+msgstr "გაგზავნის დრო:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -2230,7 +2231,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
-msgstr ""
+msgstr "ვის"
 
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
