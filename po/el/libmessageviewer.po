@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2014-04-19 15:12+0200\n"
 "Last-Translator: Dimitrios Glentadakis <dglent@free.fr>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1719,7 +1719,7 @@ msgstr ""
 "της απάντησης."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Χρήση γραμματοσειράς &σταθερού πλάτους"
@@ -2098,7 +2098,7 @@ msgstr "Μέγεθος"
 msgid "Turn on HTML rendering for this message."
 msgstr "Ενεργοποίηση αποτύπωσης HTML για αυτό το μήνυμα."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Φόρτωση εξωτερικών αναφορών από το διαδίκτυο για αυτό το μήνυμα."
@@ -2183,7 +2183,7 @@ msgstr "&Άνοιγμα στο βιβλίο διευθύνσεων"
 msgid "&Copy Email Address"
 msgstr "&Αντιγραφή της διεύθυνσης ηλ. αλληλογραφίας"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2736
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Η διεύθυνση αντιγράφτηκε στο πρόχειρο."
@@ -2239,7 +2239,7 @@ msgstr "Εκτέλεση"
 msgid "Loading message..."
 msgstr "Φόρτωση μηνυμάτων..."
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:364
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2248,13 +2248,13 @@ msgstr ""
 "Η διαγραφή ενός συνημμένου από ένα κρυπτογραφημένο ή παλαιού στυλ μηνύματος "
 "mailman δεν υποστηρίζεται."
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:365 viewer/viewer_p.cpp:372 viewer/viewer_p.cpp:594
+#: viewer/viewer_p.cpp:1746
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Αφαίρεση συνημμένου"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:371
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2263,344 +2263,346 @@ msgstr ""
 "Η διαγραφή ενός συνημμένου μπορεί να ακυρώσει κάποια ψηφιακή υπογραφή σε "
 "αυτό το μήνυμα."
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:453
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Άνοιγμα &με"
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:471
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Ά&λλο..."
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:473 viewer/viewer_p.cpp:486
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Ά&νοιγμα με..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:550 viewer/viewer_p.cpp:1724
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:564 viewer/viewer_p.cpp:1731
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Προβολή"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:572
 #, kde-format
 msgid "Scroll To"
 msgstr "Κύλιση στο"
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:577
 #, kde-format
 msgid "Save As..."
 msgstr "Αποθήκευση ως..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:583 viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:605
 #, fuzzy, kde-format
 #| msgid "Reply to A&uthor..."
 msgid "Reply To Author"
 msgstr "Απάντηση στο &συγγραφέα..."
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:613
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Reply to All"
 msgid "Reply To All"
 msgstr "Απάντηση σε όλους"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:619 viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:756
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:757
 #, fuzzy, kde-format
 #| msgid "The KDE email client."
 msgid "The KDE Mail Client"
 msgstr "Ο πελάτης αλληλογραφίας του KDE"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1293
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Προβολή συνημμένου: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Συνημμέν&α"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Επιλογή στυλ εμφάνισης συνημμένων"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Σ&αν εικονίδια"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Εμφάνιση όλων των συνημμένων σαν εικονίδια. Κάντε κλικ για να τα δείτε."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "Έ&ξυπνα"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Εμφάνιση συνημμένων όπως προτείνεται από τον αποστολέα."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Εμβόλιμα"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Εμφάνιση όλων των συνημμένων εμβόλιμα (αν αυτό είναι δυνατό)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Απόκρυ&ψη"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Να μην εμφανίζονται τα συνημμένα στον προβολέα μηνυμάτων"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Στην επικεφαλίδα μόνο"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Εμφάνιση των συνημμένων μόνο στην επικεφαλίδα της αλληλογραφίας"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1526
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Ορισμός κωδικοποίηση&ς"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1531 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Αυτόματα"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1541
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Αντιγραφή σε"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "Select All Text"
 msgstr "Επιλογή όλου του κειμένου"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1554 viewer/viewer_p.cpp:2045
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Αντιγραφή διεύθυνσης δεσμού"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Open URL"
 msgstr "'Άνοιγμα URL"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Εμφάνιση δομής μηνύματος"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgid "&View Source"
 msgstr "Προ&βολή πηγαίου κώδικα"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "Αποθήκευ&ση μηνύματος..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "&Save Display Format"
 msgstr "Αποθήκευ&ση της μορφής εμφάνισης"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "Επαναφο&ρά της μορφής εμφάνισης"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Κύλιση μηνύματος πάνω"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Κύλιση μηνύματος κάτω"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Κύλιση μηνύματος πάνω (επιπλέον)"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Κύλιση μηνύματος κάτω (επιπλέον)"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Εναλλαγή λειτουργίας εμφάνισης HTML"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Εναλλαγή της λειτουργίας εμφάνισης μεταξύ HTML και απλού κειμένου"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Load external references"
 msgstr "Φόρτωση εξωτερικών αναφορών"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1639 viewer/viewer_p.cpp:1645
+#: widgets/mailsourceviewtextbrowserwidget.cpp:152
+#: widgets/mailsourceviewtextbrowserwidget.cpp:159
 #, kde-format
 msgid "Speak Text"
 msgstr "Εκφώνηση κειμένου"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1651
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Share Text..."
 msgstr "Εκφώνηση κειμένου"
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1657
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Αντιγραφή τοποθεσίας εικόνας"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1663
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Αναζήτηση στο &μήνυμα..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1672
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1721
 #, kde-format
 msgid "Save &As..."
 msgstr "Αποθήκευση &ως..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1729
 #, kde-format
 msgid "Open With..."
 msgstr "Άνοιγμα με..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1736
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Αποθήκευση όλων των συνημμένων..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1965
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1965 viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1968
 #, fuzzy, kde-format
 #| msgid "Grantlee theme \"%1\" is not valid."
 msgid "The URL %1 is not valid."
 msgstr "Το θέμα Grantlee «%1» δεν είναι έγκυρο."
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1988
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1989
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2043
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Αντιγραφή διεύθυνσης Email"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2124
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Μήνυμα ως απλό κείμενο"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2325
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Τεκμηρίωση"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2742
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Το URL αντιγράφτηκε στο πρόχειρο."
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Η φόρτωση του μηνύματος απέτυχε: %1"
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "Το μήνυμα δεν βρέθηκε."

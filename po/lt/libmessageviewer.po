@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1626,7 +1626,7 @@ msgstr ""
 "perkelti į šiukšliadėžės aplanką, kai tik laiškas bus sėkmingai išsiųstas."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Naudoti ne&kintamo pločio šriftą"
@@ -1986,7 +1986,7 @@ msgstr "Dydis"
 msgid "Turn on HTML rendering for this message."
 msgstr "Įjungti laiško HTML formatavimą."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Įkelti išorines nuorodas iš Interneto šiam laiškui."
@@ -2067,7 +2067,7 @@ msgstr "&Atverti su adresų knygele"
 msgid "&Copy Email Address"
 msgstr "&Kopijuoti el. pašto adresą"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2736
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresas nukopijuotas į talpyklę."
@@ -2123,7 +2123,7 @@ msgstr "Vykdyti"
 msgid "Loading message..."
 msgstr "Įkeliamas laiškas..."
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:364
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2132,348 +2132,350 @@ msgstr ""
 "Priedo trynimas iš užšifruoto arba seno-stiliaus mailman pranešimo "
 "nepalaikomas."
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:365 viewer/viewer_p.cpp:372 viewer/viewer_p.cpp:594
+#: viewer/viewer_p.cpp:1746
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Trinti priedą"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:371
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "Priedo trynimas gali sugadinti bet kurį šio pranešimo parašą."
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:453
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Atverti su"
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:471
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Kita..."
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:473 viewer/viewer_p.cpp:486
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Atverti su..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:550 viewer/viewer_p.cpp:1724
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Atverti"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:564 viewer/viewer_p.cpp:1731
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Žiūrėti"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:572
 #, kde-format
 msgid "Scroll To"
 msgstr "Slinkti į"
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:577
 #, kde-format
 msgid "Save As..."
 msgstr "Įrašyti kaip..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:583 viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:605
 #, kde-format
 msgid "Reply To Author"
 msgstr "Atsakyti autoriui"
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:613
 #, kde-format
 msgid "Reply To All"
 msgstr "Atsakyti visiems"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:619 viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Properties"
 msgstr "Savybės"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:756
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:757
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE elektroninio pašto klientas"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1293
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Žiūrėti priedą: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Priedai"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Pasirinkite priedų rodymo stilių"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Ž&enkliukai"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Rodyti visus priedus kaip ženkliukus. Ženkliuko spragtelėjimas parodo priedą."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Išmoningai"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Rodyti priedus taip, kaip rekomenduoja siuntėjas."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Į&dėtas tekste"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Rodyti visus priedus laiško tekste (jei įmanoma)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Slėpti"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nerodyti priedų laiškų žiūriklėje"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Tik antraštėje"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Rodyti priedus tik laiško antraštėje"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1526
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Nus&tatyti koduotę"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1531 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automatiškai"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopijuoti tekstą"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "Select All Text"
 msgstr "Žymėti visą tekstą"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1554 viewer/viewer_p.cpp:2045
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopijuoti nuorodos adresą"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Open URL"
 msgstr "Atverti URL"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Rodyti laiško struktūrą"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgid "&View Source"
 msgstr "R&odyti išeities tekstą"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "&Išsaugoti laišką..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "&Save Display Format"
 msgstr "Į&rašyti rodymo formatą"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "&Atstatyti rodymo formatą"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Slinkti laišką aukštyn"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Slinkti laišką žemyn"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Slinkti laišką aukštyn (daugiau)"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Slinkti laišką žemyn (mažiau)"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Perjungti HTML ekrano veikseną"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Perjungti ekrano veikseną tarp HTML ir paprasto teksto"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Load external references"
 msgstr "Įkelti nuorodas iš išorės"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1639 viewer/viewer_p.cpp:1645
+#: widgets/mailsourceviewtextbrowserwidget.cpp:152
+#: widgets/mailsourceviewtextbrowserwidget.cpp:159
 #, kde-format
 msgid "Speak Text"
 msgstr "Kalbėti tekstą"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1651
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Share Text..."
 msgstr "Kalbėti tekstą"
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1657
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopijuoti piešinio vietą"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1663
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Ieškoti laiške..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1672
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "uždrausti jaustukus"
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1721
 #, kde-format
 msgid "Save &As..."
 msgstr "Įrašyti &kaip..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1729
 #, kde-format
 msgid "Open With..."
 msgstr "Atverti su..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1736
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Įrašyti visus priedus..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1965
 #, kde-format
 msgid "The network is broken."
 msgstr "Tinklo ryšio klaida."
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1965 viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Tikrinti, ar URL apgaulingas"
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 nėra tinkamas"
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1988
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Ši svetainė kenksminga, tikrai norite ją atverti?"
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1989
 #, kde-format
 msgid "Malware"
 msgstr "Kenkimo programinė įranga"
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2043
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopijuoti el. pašto adresą"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2124
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Laiškas įprastu tekstu"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2325
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Spausdinti dokumentą"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2742
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL nukopijuotas į talpyklę."
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nepavyko įkelti laiško: %1."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "Laiškas nerastas."

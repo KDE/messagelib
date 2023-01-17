@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2023-01-12 21:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1601,7 +1601,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "சம &அகல எழுத்துருவை பயன்படுத்து"
@@ -1963,7 +1963,7 @@ msgstr "அளவு"
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML rendering க்கான தகவலை இயக்கு."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை ஏற்ற விடவும்"
@@ -2044,7 +2044,7 @@ msgstr "&முகவரிப்புத்தகத்தில் திற"
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2736
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
@@ -2101,20 +2101,20 @@ msgstr "இயக்கு"
 msgid "Loading message..."
 msgstr "அஞ்சல் ஏற்றப்படுகிறது"
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:364
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:365 viewer/viewer_p.cpp:372 viewer/viewer_p.cpp:594
+#: viewer/viewer_p.cpp:1746
 #, kde-format
 msgid "Delete Attachment"
 msgstr "உடனிணைப்பை நீக்கு"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:371
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2123,333 +2123,335 @@ msgstr ""
 "இவ்வஞ்சலுக்கு எண்ம கையொப்பமிருந்தால், உடனிணைப்பை நீக்குவதன் மூலம் அது செல்லுபடியாகாத‍"
 "தாகலாம்."
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:453
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&இதனால் திற"
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:471
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&மற்றவை..."
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:473 viewer/viewer_p.cpp:486
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&இதனால் திற..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:550 viewer/viewer_p.cpp:1724
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "திற"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:564 viewer/viewer_p.cpp:1731
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "பார்"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:572
 #, kde-format
 msgid "Scroll To"
 msgstr "ஓர் இடத்திற்கு உருள்"
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:577
 #, kde-format
 msgid "Save As..."
 msgstr "இவ்வாறு சேமி..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:583 viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Copy"
 msgstr "நகலெடு"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:605
 #, kde-format
 msgid "Reply To Author"
 msgstr "அனுப்புநருக்கு பதிலளி"
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:613
 #, kde-format
 msgid "Reply To All"
 msgstr "அனைவருக்கும் பதிலளி"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:619 viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Properties"
 msgstr "பண்புகள்"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:756
 #, kde-format
 msgid "KMail"
 msgstr "கேமெயில்"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:757
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "கே.டீ.யீ.யின் மின்னஞ்சல் செயலி"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1293
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "உடனிணைப்பைப் பார்: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&உடனிணைப்புகள்"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&சின்னங்களாக"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "உடனிணைப்புகளை சின்னங்களாக காட்டும். அவற்றைக் காண கிளிக் செய்யலாம்."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "சூ&ழமைவாக"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "இணைப்புகளை அனுப்புநர் விரும்புவது போல் காண்பிக்கும்."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&உள்ளமைவாக"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "முடிந்தால் உடனிணைப்புகளை அஞ்சல்காட்டிக்குள்ளேயே காட்டும்"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&மறை"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "அஞ்சல்காட்டியில் உடனிணைப்புகளைக் காட்ட வேண்டாம்"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "தலைப்புப்பகுதியில் மட்டும்"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "உடனிணைப்புகளை அஞ்சலின் தலைப்புப்பகுதியில் மட்டும் காட்டு"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1526
 #, kde-format
 msgid "&Set Encoding"
 msgstr "குறியாக்கத்தை அமைப்பது"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1531 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "தானியக்கம்"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Copy Text"
 msgstr "உரையை நகலெடு"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "Select All Text"
 msgstr "எல்லா உரையையும் தேர்ந்தெடு"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1554 viewer/viewer_p.cpp:2045
 #, kde-format
 msgid "Copy Link Address"
 msgstr "இணைப்பின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Open URL"
 msgstr "முகவரியை திற"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "Show Message Structure"
 msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgid "&View Source"
 msgstr "&மூலத்தைக் காட்டு"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgid "&Save Message..."
 msgstr "&அஞ்சலை சேமி..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "&Save Display Format"
 msgstr "&காட்சி முறையை சேமி"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "கா&ட்சி முறையை மீட்டமை"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "அஞ்சலில் மேலே உருள்"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "அஞ்சலில் கீழே உருள்"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "அஞ்சலில் மேலே உருள் (அதிகமாக)"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "அஞ்சலில் கீழே உருள் (அதிகமாக)"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML காட்சிமுறையை இயக்கு/முடக்கு"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML முற்றும் சாதாரண உரை காட்சிமுறைகளுக்கிடையே மாறும்"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Load external references"
 msgstr "வெளி இணைப்புகளை ஏற்று"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1639 viewer/viewer_p.cpp:1645
+#: widgets/mailsourceviewtextbrowserwidget.cpp:152
+#: widgets/mailsourceviewtextbrowserwidget.cpp:159
 #, kde-format
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1651
 #, kde-format
 msgid "Share Text..."
 msgstr "உரையைப் பகிர்..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1657
 #, kde-format
 msgid "Copy Image Location"
 msgstr "படத்தின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1663
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&அஞ்சலில் கண்டுபிடி..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1672
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "முகவடியை முடக்கு"
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1721
 #, kde-format
 msgid "Save &As..."
 msgstr "&இப்படி சேமி..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1729
 #, kde-format
 msgid "Open With..."
 msgstr "இதனால் திற..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1736
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "அனைத்து உடனிணைப்புகளையும் சேமி..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1965
 #, kde-format
 msgid "The network is broken."
 msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1965 viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1988
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1989
 #, kde-format
 msgid "Malware"
 msgstr "தீங்குநிரல்"
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2043
 #, kde-format
 msgid "Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2124
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "அஞ்சல், சாதாரண உரையாக"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2325
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "அஞ்சலை அச்சிடுவது"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2742
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."

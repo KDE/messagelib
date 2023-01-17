@@ -854,7 +854,7 @@ msgstr "&Tipus de plantilla:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Template Configuration"
-msgstr "Configuració de la plantilla"
+msgstr "Configureu la plantilla"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_new)
 #: ui/templatesconfiguration_base.ui:77

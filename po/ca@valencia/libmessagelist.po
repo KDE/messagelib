@@ -1052,7 +1052,7 @@ msgstr "Qualsevol filtre definit."
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Create Filter"
-msgstr "Creació d'un filtre"
+msgstr "Creeu un filtre"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1497,12 +1497,12 @@ msgstr "Agregació sense nom"
 #: utils/configureaggregationsdialog.cpp:409
 #, kde-format
 msgid "Import Aggregation"
-msgstr "Importació d'una agregació"
+msgstr "Importeu una agregació"
 
 #: utils/configureaggregationsdialog.cpp:442
 #, kde-format
 msgid "Export Aggregation"
-msgstr "Exportació d'una agregació"
+msgstr "Exporteu una agregació"
 
 #: utils/configureaggregationsdialog.cpp:442
 #: utils/configurethemesdialog.cpp:466
@@ -1570,12 +1570,12 @@ msgstr "Suprimix el tema"
 #: utils/configurethemesdialog.cpp:432
 #, kde-format
 msgid "Import Theme"
-msgstr "Importació d'un tema"
+msgstr "Importeu un tema"
 
 #: utils/configurethemesdialog.cpp:466
 #, kde-format
 msgid "Export Theme"
-msgstr "Exportació d'un tema"
+msgstr "Exporteu un tema"
 
 #: utils/optionseteditor.cpp:27
 #, kde-format
