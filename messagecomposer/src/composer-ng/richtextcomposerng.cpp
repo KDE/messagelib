@@ -12,7 +12,11 @@
 #include <KPIMTextEdit/RichTextComposerControler>
 #include <KPIMTextEdit/RichTextComposerImages>
 #include <KPIMTextEdit/TextHTMLBuilder>
+#ifdef HAVE_KTEXTADDONS_SUPPORT
+#include <TextAutoCorrection/AutoCorrection>
+#else
 #include <PimCommonAutoCorrection/AutoCorrection>
+#endif
 #include <part/textpart.h>
 
 #include <KMessageBox>
@@ -34,7 +38,11 @@ public:
 
     void fixHtmlFontSize(QString &cleanHtml) const;
     Q_REQUIRED_RESULT QString toCleanHtml() const;
+#ifdef HAVE_KTEXTADDONS_SUPPORT
+    TextAutoCorrection::AutoCorrection *autoCorrection = nullptr;
+#else
     PimCommonAutoCorrection::AutoCorrection *autoCorrection = nullptr;
+#endif
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;
 };
@@ -52,12 +60,20 @@ MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignatu
     return d->richTextComposerSignatures;
 }
 
+#ifdef HAVE_KTEXTADDONS_SUPPORT
+TextAutoCorrection::AutoCorrection *RichTextComposerNg::autocorrection() const
+#else
 PimCommonAutoCorrection::AutoCorrection *RichTextComposerNg::autocorrection() const
+#endif
 {
     return d->autoCorrection;
 }
 
+#ifdef HAVE_KTEXTADDONS_SUPPORT
+void RichTextComposerNg::setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect)
+#else
 void RichTextComposerNg::setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect)
+#endif
 {
     d->autoCorrection = autocorrect;
 }
@@ -65,7 +81,11 @@ void RichTextComposerNg::setAutocorrection(PimCommonAutoCorrection::AutoCorrecti
 void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 {
     if (d->autoCorrection) {
+#ifdef HAVE_KTEXTADDONS_SUPPORT
+        TextAutoCorrection::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
+#else
         PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
+#endif
         settings->setLanguage(lang);
         d->autoCorrection->setAutoCorrectionSettings(settings);
     }
