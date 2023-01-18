@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2012, 2019, 2020, 2021.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2012, 2019, 2020, 2021, 2023.
 # Marcus Gama <marcus.gama@gmail.com>, 2012.
 # Frederico Goncalves Guimaraes <frederico@teia.bio.br>, 2019.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-11 00:59+0000\n"
-"PO-Revision-Date: 2021-09-15 08:48-0300\n"
+"PO-Revision-Date: 2023-01-16 23:03-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1898,16 +1898,14 @@ msgid "Collapse All Groups"
 msgstr "Recolher todos os grupos"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Expandir todos os grupos"
+msgstr "Expandir todas as discussões"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Recolher todos os grupos"
+msgstr "Recolher todas as discussões"
 
 #: widget.cpp:419
 #, kde-format
