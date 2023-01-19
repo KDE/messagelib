@@ -158,6 +158,7 @@ target_sources(KF5MessageViewer PRIVATE
     header/headerstyle_util.cpp
     header/grantleeheaderformatter.cpp
     header/grantleeheaderteststyle.cpp
+    header/grantleeheaderteststyle.h
     header/kxface.cpp
     header/headerstyleplugin.cpp
     header/headerstylepluginmanager.cpp

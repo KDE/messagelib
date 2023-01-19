@@ -4,6 +4,7 @@ add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 set(scrolladdattachment_test_SRCS
     testwebenginescrolladdattachment.cpp
+    testwebenginescrolladdattachment.h
     )
 
 add_executable(scrolladdattachmenttest ${scrolladdattachment_test_SRCS})
@@ -15,6 +16,7 @@ target_link_libraries(scrolladdattachmenttest
 ####
 set(testmailwebengine_test_SRCS
     testmailwebengine.cpp
+    testmailwebengine.h
     )
 
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
@@ -37,6 +39,7 @@ target_link_libraries(testmailwebengine
 ####
 set(testmailwebengineselection_test_SRCS
     testmailwebengineselection.cpp
+    testmailwebengineselection.h
     )
 
 add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
@@ -48,6 +51,7 @@ target_link_libraries(testmailwebengineselection
 
 set(testmaildndattachment_test_SRCS
     testmaildndattachment.cpp
+    testmaildndattachment.h
     )
 add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 
@@ -59,6 +63,7 @@ target_link_libraries(testmaildndattachment
 
 set(testmailmboxwebengine_test_SRCS
     testmailmboxwebengine.cpp
+    testmailmboxwebengine.h
     )
 add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
 

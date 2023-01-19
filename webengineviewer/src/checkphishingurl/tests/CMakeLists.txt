@@ -6,7 +6,7 @@ include(ECMAddTests)
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 add_definitions( -DCHECKPHISHINGURL_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
-add_executable(checkphishingurlgui checkphishingurlgui.cpp)
+add_executable(checkphishingurlgui checkphishingurlgui.cpp checkphishingurlgui.h)
 target_link_libraries(checkphishingurlgui
     KF5::KIOCore
     KF5::WebEngineViewer

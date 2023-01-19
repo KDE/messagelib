@@ -60,6 +60,8 @@ target_sources( KF5MessageComposer PRIVATE
     composer/composerviewbase.cpp
     composer/keyresolver.cpp
     composer/nearexpirychecker.cpp
+    composer/nearexpirychecker.h
+    composer/nearexpirychecker_p.h
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
     contactpreference/contactpreference.cpp
