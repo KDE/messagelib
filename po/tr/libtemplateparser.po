@@ -5,13 +5,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2022-11-24 16:52+0300\n"
+"PO-Revision-Date: 2023-01-18 22:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -603,7 +603,7 @@ msgid ""
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
 "\"Düz metin kullanarak yanıtla\" ve \"HTML metni kullanarak yanıtla\" "
-"çiftleri geçerli değil. Sadece gereksiniminize göre \"Alıntılanmış komut "
+"çiftleri geçerli değil. Yalnızca gereksiniminize göre \"Alıntılanmış komut "
 "Olarak Yanıtla\" kullanabilmek için yukarıdaki komutlardan birini seçin.\n"
 "(a)Alıntıların katı bir şekilde kullanılması için düz metin kullanılarak "
 "yanıtla\n"

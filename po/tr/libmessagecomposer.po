@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:47+0000\n"
-"PO-Revision-Date: 2023-01-10 21:39+0300\n"
+"PO-Revision-Date: 2023-01-18 22:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
@@ -798,7 +798,7 @@ msgid ""
 "The following keys are only marginally trusted: \n"
 msgstr ""
 "\n"
-"Aşağıdaki anahtarlara sadece düşük seviyede güvenilmekte: \n"
+"Aşağıdaki anahtarlara yalnızca düşük seviyede güvenilmekte: \n"
 
 #: composer/keyresolver.cpp:317
 #, kde-format
@@ -807,7 +807,7 @@ msgid ""
 "The following keys or certificates have unknown trust level: \n"
 msgstr ""
 "\n"
-"Aşağıdaki anahtar ve sertifikaların bilinmeyen güven seviyesi var: \n"
+"Aşağıdaki anahtar ve sertifikaların bilinmeyen güven düzeyi var: \n"
 
 #: composer/keyresolver.cpp:321
 #, kde-format
@@ -2396,7 +2396,7 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde sadece "
+"Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde yalnızca "
 "adres defterindeki kişileri görmek istiyorsanız bu seçeneği devre dışı "
 "bırakın."
 

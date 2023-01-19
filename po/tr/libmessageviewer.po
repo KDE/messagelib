@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-17 00:59+0000\n"
-"PO-Revision-Date: 2023-01-10 21:39+0300\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -162,7 +162,7 @@ msgid ""
 "activate formatted HTML display for this message <a href='kmail:showHTML'>by "
 "clicking here</a>."
 msgstr ""
-"<b>Not:</b> Bu bir HTML iletisidir. Güvenlik nedenleriyle sadece ham HTML "
+"<b>Not:</b> Bu bir HTML iletisidir. Güvenlik nedenleriyle yalnızca ham HTML "
 "gösterilecektir. Gönderene güveniyorsanız HTML biçimli gösterimi <a "
 "href='kmail:showHTML'>buraya</a> tıklayarak etkin hale getirebilirsiniz."
 
@@ -1299,7 +1299,7 @@ msgstr "'%1' kısa adresi '%2' yönlendirmesini yapıyor."
 #: settings/messageviewer.kcfg.cmake:11
 #, kde-format
 msgid "Only print selected text in viewer"
-msgstr "Görüntüleyicide sadece seçili metni yazdır"
+msgstr "Görüntüleyicide yalnızca seçili metni yazdır"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.cmake:15
@@ -1500,7 +1500,7 @@ msgid ""
 "Notifications (for internal use only)"
 msgstr ""
 "İleti Bırakma Bildirimleri için kullanılacak öntanımlı ilkeyi belirtir "
-"(sadece dahili kullanım)"
+"(yalnızca dahili kullanım)"
 
 #. i18n: ectx: label, entry (QuoteMessage), group (MDN)
 #: settings/messageviewer.kcfg.cmake:165
@@ -1510,7 +1510,7 @@ msgid ""
 "(for internal use only)"
 msgstr ""
 "Bir ileti yanıtlanırken alınacak öntanımlı alıntılama eylemini belirtir "
-"(sadece dahili kullanım için)"
+"(yalnızca dahili kullanım için)"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:181
@@ -1718,7 +1718,7 @@ msgstr "Seçenekler"
 #: ui/printingsettings.ui:17
 #, kde-format
 msgid "Print only selected text"
-msgstr "Sadece seçili metni yazdır"
+msgstr "Yalnızca seçili metni yazdır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
 #: ui/printingsettings.ui:24
@@ -2264,12 +2264,12 @@ msgstr "İleti göstericide eklentileri gösterme"
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
-msgstr "Sadece Başlıkta"
+msgstr "Yalnızca Başlıkta"
 
 #: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "Eklentileri sadece postanın başlığında göster"
+msgstr "Eklentileri yalnızca postanın başlığında göster"
 
 #: viewer/viewer_p.cpp:1526
 #, kde-format

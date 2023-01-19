@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2009,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2019.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-05-15 11:41+0300\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413102213.000000\n"
 
@@ -137,7 +137,7 @@ msgid ""
 "most mail agents will show this information in their message previews "
 "alongside the attachment's icon.</p>"
 msgstr ""
-"<p>Bölümün tanımı:</p><p>bu, bölümün sadece bilgi amaçlı bir tanımıdır, "
+"<p>Bölümün tanımı:</p><p>bu, bölümün yalnızca bilgi amaçlı bir tanımıdır, "
 "tıpkı Konu kısmının bütün iletiyi ilgilendirmesi gibidir; pek çok posta "
 "programı, bu bilgiyi eklenti simgesinin yanında, ileti önizlemesinde "
 "gösterir.</p>"
@@ -156,7 +156,7 @@ msgstr ""
 "<p>Bu bölümün iletim kodlaması:</p><p>normalde, bunu değiştirmeniz gerekmez, "
 "çünkü %1 MIME türüne göre iyi bir öntanımlı kodlama kullanacaktır; yine de "
 "bazen, oluşan iletinin boyutunu belirgin şekilde düşürebilirsiniz, örneğin, "
-"bir PostScript dosyasında ikilik veri yok ve sadece düz metin varsa, bu "
+"bir PostScript dosyasında ikilik veri yok ve yalnızca düz metin varsa, bu "
 "durumda öntanımlı \"base64\" yerine \"alıntılanmış-basılabilir\" seçeneğini "
 "seçtiğinizde oluşan ileti boyutu 25%'e kadar küçülür.</p>"
 
