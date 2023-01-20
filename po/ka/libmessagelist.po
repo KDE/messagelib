@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 02:43+0000\n"
-"PO-Revision-Date: 2023-01-12 08:14+0100\n"
+"PO-Revision-Date: 2023-01-19 16:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1454,7 +1454,7 @@ msgstr ""
 #: utils/configureaggregationsdialog.cpp:157
 #, kde-format
 msgid "Delete Aggregation"
-msgstr ""
+msgstr "აგრეგაციის წაშლა"
 
 #: utils/configureaggregationsdialog.cpp:340
 #, kde-format

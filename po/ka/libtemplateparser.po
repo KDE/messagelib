@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2023-01-12 08:15+0100\n"
+"PO-Revision-Date: 2023-01-19 16:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -71,7 +71,7 @@ msgstr "უცნობი"
 #: customtemplates.cpp:252
 #, kde-format
 msgid "A template with same name already exists."
-msgstr ""
+msgstr "ნიმუში ამ სახელით უკვე არსებობს."
 
 #: customtemplates.cpp:252
 #, kde-format
@@ -238,7 +238,7 @@ msgstr ""
 #: settings/templateparser.kcfg:42
 #, kde-format
 msgid "Quote characters"
-msgstr ""
+msgstr "ბრჭყალის სიმბოლოები"
 
 #: templateparserjob.cpp:350
 #, kde-format
