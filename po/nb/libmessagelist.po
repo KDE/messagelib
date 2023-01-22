@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 00:59+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1883,17 +1883,27 @@ msgstr "Fold ut alle grupper"
 msgid "Collapse All Groups"
 msgstr "Fold sammen alle grupper"
 
-#: widget.cpp:413
+#: widget.cpp:361
+#, kde-format
+msgid "Expand All Threads"
+msgstr ""
+
+#: widget.cpp:363
+#, kde-format
+msgid "Collapse All Threads"
+msgstr ""
+
+#: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flytt hit"
 
-#: widget.cpp:414
+#: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopier hit"
 
-#: widget.cpp:416
+#: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"
