@@ -6,6 +6,7 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/kcontacts' : '@latest'
+    'frameworks/kservice' : '@latest'
     'pim/akonadi' : '@same'
     'pim/akonadi-contacts' : '@same'
     'pim/akonadi-mime' : '@same'
@@ -29,6 +30,7 @@ Dependencies:
     'libraries/ktexttemplate': '@latest-kf6'
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kcontacts' : '@latest-kf6'
+    'frameworks/kservice' : '@latest-kf6'
     'pim/akonadi' : '@latest-kf6'
     'pim/akonadi-contacts' : '@latest-kf6'
     'pim/akonadi-mime' : '@latest-kf6'
