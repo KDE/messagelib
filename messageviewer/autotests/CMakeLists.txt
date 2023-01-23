@@ -19,7 +19,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo ${qgpgme_lib} Qt::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::WebEngineViewer
+        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo ${qgpgme_lib} Qt::Test KF${KF_MAJOR_VERSION}::KIOCore KF5::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KF5::WebEngineViewer
     )
 endmacro ()
 
@@ -28,7 +28,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer Qt::Test KF5::IconThemes KF5::XmlGui KF5::I18n
+        LINK_LIBRARIES KF5::MessageViewer Qt::Test KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::I18n
     )
 endmacro ()
 
@@ -44,8 +44,8 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit
-        KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes ${TEXTADDONS_LIBS}
+        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KF5::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KF5::PimTextEdit
+        KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes ${TEXTADDONS_LIBS}
     )
 endmacro ()
 
@@ -53,6 +53,6 @@ endmacro ()
 add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp )
 ########### viewertest_gui ###############
 
-add_akonadi_isolated_test_advanced(viewertest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
-add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KF5::MessageViewer;KF5::Libkleo;${qgpgme_lib};KF5::KIOCore;KF5::Mime;KF5::AkonadiCore;KF5::CalendarCore;KF5::WebEngineViewer")
+add_akonadi_isolated_test_advanced(viewertest.cpp "" "KF5::MessageViewer;KF${KF_MAJOR_VERSION}::XmlGui")
+add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KF5::MessageViewer;KF${KF_MAJOR_VERSION}::XmlGui")
+add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KF5::MessageViewer;KF5::Libkleo;${qgpgme_lib};KF${KF_MAJOR_VERSION}::KIOCore;KF5::Mime;KF5::AkonadiCore;KF${KF_MAJOR_VERSION}::CalendarCore;KF5::WebEngineViewer")

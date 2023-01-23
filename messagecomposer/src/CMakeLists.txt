@@ -284,17 +284,17 @@ target_link_libraries(KF5MessageComposer
     KF5::TemplateParser
     KF5::AkonadiWidgets
     KF5::PimCommonAkonadi
-    KF5::KIOCore
-    KF5::I18n
-    KF5::KIOFileWidgets # for KEncodingDialog
-    KF5::XmlGui         # for KActionCollection
-    KF5::SonnetUi
-    KF5::CalendarCore   # for KCalendarCore/Todo
-    KF5::Archive
-    KF5::Contacts
-    KF5::SonnetCore
-    KF5::GuiAddons
-    KF5::Codecs
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::KIOFileWidgets # for KEncodingDialog
+    KF${KF_MAJOR_VERSION}::XmlGui         # for KActionCollection
+    KF${KF_MAJOR_VERSION}::SonnetUi
+    KF${KF_MAJOR_VERSION}::CalendarCore   # for KCalendarCore/Todo
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::Contacts
+    KF${KF_MAJOR_VERSION}::SonnetCore
+    KF${KF_MAJOR_VERSION}::GuiAddons
+    KF${KF_MAJOR_VERSION}::Codecs
     )
 if (USE_KTEXTADDONS_LIB)
     target_link_libraries(KF5MessageComposer PUBLIC KF5::TextAutoCorrection)

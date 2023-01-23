@@ -156,9 +156,9 @@ generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
 
 target_link_libraries(KF5MimeTreeParser
     PRIVATE
-    KF5::Codecs
-    KF5::I18n
-    KF5::CoreAddons
+    KF${KF_MAJOR_VERSION}::Codecs
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::CoreAddons
     KF5::Libkleo
     KF5::Mime
     Qt::Gui

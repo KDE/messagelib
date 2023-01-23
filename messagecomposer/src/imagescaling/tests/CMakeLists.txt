@@ -2,9 +2,9 @@
 # SPDX-FileCopyrightText: none
 add_executable(imagescaling_gui imagescaling_gui.cpp imagescaling_gui.h)
 target_link_libraries(imagescaling_gui
-  KF5::KIOCore
+  KF${KF_MAJOR_VERSION}::KIOCore
   KF5::MessageComposer
-  KF5::I18n
+  KF${KF_MAJOR_VERSION}::I18n
 )
 
 

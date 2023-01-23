@@ -8,45 +8,45 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 add_definitions( -DCHECKPHISHINGURL_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 add_executable(checkphishingurlgui checkphishingurlgui.cpp checkphishingurlgui.h)
 target_link_libraries(checkphishingurlgui
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::WebEngineViewer
     
     Qt::WebEngineWidgets
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 add_executable(searchfullhashgui searchfullhashgui.cpp searchfullhashgui.h)
 target_link_libraries(searchfullhashgui
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::WebEngineViewer
     
     Qt::WebEngineWidgets
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 add_executable(createphishingurldatabasegui createphishingurldatabasegui.cpp createphishingurldatabasegui.h)
 target_link_libraries(createphishingurldatabasegui
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::WebEngineViewer
     
     Qt::WebEngineWidgets
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 add_executable(managelocaldatabasegui managelocaldatabasegui.cpp managelocaldatabasegui.h)
 target_link_libraries(managelocaldatabasegui
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::WebEngineViewer
     
     Qt::WebEngineWidgets
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 add_executable(webengineviewwithsafebrowsingsupport webengineviewwithsafebrowsingsupport.cpp webengineviewwithsafebrowsingsupport.h)
 target_link_libraries(webengineviewwithsafebrowsingsupport
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::WebEngineViewer
     
     Qt::WebEngineWidgets
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )

@@ -20,7 +20,7 @@ kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin
 target_link_libraries(messageviewer_defaultgrantleeheaderstyleplugin
   KF5::MessageViewer
   KF5::GrantleeTheme
-  KF5::XmlGui
+  KF${KF_MAJOR_VERSION}::XmlGui
 )
 
 install(DIRECTORY theme/5.2 DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer/defaultthemes/ )

@@ -84,12 +84,12 @@ target_link_libraries(KF5TemplateParser
     KF5::MimeTreeParser
     KF5::IdentityManagement
     KF5::MessageCore
-    KF5::XmlGui
-    KF5::Completion
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::SonnetUi
-    KF5::SyntaxHighlighting
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::Completion
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::SonnetUi
+    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     Qt::WebEngineWidgets
     KF5::Libkdepim
     KF5::PimTextEdit

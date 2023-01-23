@@ -8,7 +8,7 @@ target_link_libraries(viewertest_gui
   KF5::Mime
   KF5::MessageViewer
   KF5::GrantleeTheme
-  KF5::I18n
-  KF5::XmlGui
+  KF${KF_MAJOR_VERSION}::I18n
+  KF${KF_MAJOR_VERSION}::XmlGui
 )
 

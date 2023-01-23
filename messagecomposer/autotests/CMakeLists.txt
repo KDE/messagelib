@@ -16,7 +16,7 @@ macro( add_messagecomposer_test _source )
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
-            KF5::I18n
+            KF${KF_MAJOR_VERSION}::I18n
             KF5::MailTransport
             KF5::Mime
             KF5::MessageComposer
@@ -26,12 +26,12 @@ macro( add_messagecomposer_test _source )
             KF5::PimTextEdit
             Qt::Test
             KF5::IdentityManagementWidgets
-            KF5::Contacts
+            KF${KF_MAJOR_VERSION}::Contacts
             KF5::AkonadiCore
-            KF5::XmlGui
+            KF${KF_MAJOR_VERSION}::XmlGui
             KF5::Libkdepim
-            KF5::IconThemes
-            KF5::Completion
+            KF${KF_MAJOR_VERSION}::IconThemes
+            KF${KF_MAJOR_VERSION}::Completion
     )
 endmacro()
 
@@ -41,7 +41,7 @@ macro( add_messagecomposer_cryptotest _source )
     add_executable( ${_name} ${_test}  ${_name}.h )
     target_link_libraries(
         ${_name}
-        KF5::I18n
+        KF${KF_MAJOR_VERSION}::I18n
         KF5::Mime
         KF5::MessageComposer
         KF5::MessageViewer
@@ -51,10 +51,10 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::PimTextEdit
         KF5::AkonadiCore
         Qt::Test
-        KF5::IconThemes
-        KF5::Completion
+        KF${KF_MAJOR_VERSION}::IconThemes
+        KF${KF_MAJOR_VERSION}::Completion
         KF5::MailTransport
-        KF5::Contacts
+        KF${KF_MAJOR_VERSION}::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
     set_tests_properties(messagecomposer-${_name} PROPERTIES
@@ -120,7 +120,7 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
     LINK_LIBRARIES
         KF5::AkonadiCore
         KF5::AkonadiWidgets
-        KF5::CalendarCore
+        KF${KF_MAJOR_VERSION}::CalendarCore
         KF5::MessageComposer
         Qt::Test
 )
@@ -128,7 +128,7 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
 ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
     NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
-        KF5::Contacts
+        KF${KF_MAJOR_VERSION}::Contacts
         KF5::MessageComposer
         Qt::Test
 )

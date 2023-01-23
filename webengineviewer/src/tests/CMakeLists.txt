@@ -31,7 +31,7 @@ target_link_libraries(testdndwebenginetest
 add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp testselectionchangedwebengine.h)
 
 target_link_libraries(testselectionchangedwebengine
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer
     )
 
 ####

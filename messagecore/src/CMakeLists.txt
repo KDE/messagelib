@@ -87,13 +87,13 @@ target_link_libraries(KF5MessageCore
     PUBLIC
     KF5::Mime
     PRIVATE
-    KF5::KIOCore
-    KF5::Codecs
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::Codecs
     KF5::PimTextEdit
-    KF5::Archive
-    KF5::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
     Qt::Network
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     KF5::IdentityManagement
     KF5::MimeTreeParser
     KF5::PimCommon

@@ -62,7 +62,7 @@ ecm_add_test(riceencodingdecodertest.cpp riceencodingdecodertest.h ${testwebengi
 ecm_add_test(hashcachemanagertest.cpp hashcachemanagertest.h ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME hashcachemanagertest
     NAME_PREFIX "webengineview-"
-    LINK_LIBRARIES Qt::Test KF5::ConfigCore KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF${KF_MAJOR_VERSION}::ConfigCore KF5::WebEngineViewer
     )
 
 ecm_add_test(checkphishingurlutiltest.cpp checkphishingurlutiltest.h ${testwebengineviewer_webengine_common_SRCS}
@@ -74,13 +74,13 @@ ecm_add_test(checkphishingurlutiltest.cpp checkphishingurlutiltest.h ${testweben
 ecm_add_test(checkphishingurlcachetest.cpp checkphishingurlcachetest.h ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME checkphishingurlcachetest
     NAME_PREFIX "webengineview-"
-    LINK_LIBRARIES Qt::Test KF5::ConfigCore KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF${KF_MAJOR_VERSION}::ConfigCore KF5::WebEngineViewer
     )
 
 ecm_add_test(backoffmodemanagertest.cpp backoffmodemanagertest.h ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME backoffmodemanagertest
     NAME_PREFIX "webengineview-"
-    LINK_LIBRARIES Qt::Test KF5::ConfigCore KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF${KF_MAJOR_VERSION}::ConfigCore KF5::WebEngineViewer
     )
 
 ecm_add_test(downloadlocaldatabasethreadtest.cpp downloadlocaldatabasethreadtest.h ${testwebengineviewer_webengine_common_SRCS}

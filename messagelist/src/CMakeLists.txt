@@ -141,15 +141,15 @@ target_link_libraries(KF5MessageList
     KF5::AkonadiMime
     KF5::Mime
     PRIVATE
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::KIOCore
     KF5::MessageCore
     KF5::PimCommonAkonadi
     KF5::AkonadiSearchPIM
-    KF5::XmlGui
-    KF5::IconThemes
-    KF5::Completion
-    KF5::I18n
-    KF5::TextWidgets
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::IconThemes
+    KF${KF_MAJOR_VERSION}::Completion
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::TextWidgets
     )
 
 set_target_properties(KF5MessageList PROPERTIES

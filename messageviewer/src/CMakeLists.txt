@@ -410,13 +410,13 @@ target_link_libraries(KF5MessageViewer
     KF5::PimCommon
     KF5::AkonadiCore
     KF5::AkonadiMime
-    KF5::Contacts
+    KF${KF_MAJOR_VERSION}::Contacts
     KF5::Libkleo
     KF5::MimeTreeParser
-    KF5::Service
+    KF${KF_MAJOR_VERSION}::Service
     PRIVATE
-    KF5::SyntaxHighlighting
-    KF5::ItemViews
+    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+    KF${KF_MAJOR_VERSION}::ItemViews
     Qt::Network
     KF5::WebEngineViewer
     KF5::GrantleeTheme
@@ -426,18 +426,18 @@ target_link_libraries(KF5MessageViewer
     KF5::PimTextEdit
     KF5::Gravatar
     KF5::IdentityManagement
-    KF5::IconThemes
-    KF5::I18n
-    KF5::KIOFileWidgets
-    KF5::KIOWidgets
-    KF5::XmlGui
-    KF5::Codecs
+    KF${KF_MAJOR_VERSION}::IconThemes
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::KIOFileWidgets
+    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::Codecs
     KF5::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
-    KF5::Notifications
+    KF${KF_MAJOR_VERSION}::Notifications
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KF5MessageViewer PRIVATE QGpgmeQt6)

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/kcontacts' : '@latest'
@@ -22,11 +22,26 @@ Dependencies:
     'pim/pimcommon' : '@same'
     'libraries/qca' : '@latest'
     'libraries/ktextaddons': '@stable'
+    'third-party/grantlee' : '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
-    'libraries/ktexttemplate': '@stable'
-
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
-  'require':
-    'third-party/grantlee' : '@stable'
+    'libraries/ktexttemplate': '@latest-kf6'
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kcontacts' : '@latest-kf6'
+    'pim/akonadi' : '@latest-kf6'
+    'pim/akonadi-contacts' : '@latest-kf6'
+    'pim/akonadi-mime' : '@latest-kf6'
+    'pim/akonadi-search' : '@latest-kf6'
+    'pim/grantleetheme' : '@latest-kf6'
+    'pim/kidentitymanagement' : '@latest-kf6'
+    'pim/kmailtransport' : '@latest-kf6'
+    'pim/kmbox' : '@latest-kf6'
+    'pim/kmime' : '@latest-kf6'
+    'pim/kpimtextedit' : '@latest-kf6'
+    'pim/libgravatar' : '@latest-kf6'
+    'pim/libkdepim' : '@latest-kf6'
+    'pim/libkleo' : '@latest-kf6'
+    'pim/pimcommon' : '@latest-kf6'
+    'libraries/qca' : '@latest-kf6'
+    'libraries/ktextaddons': '@latest-kf6'

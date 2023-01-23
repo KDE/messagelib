@@ -10,7 +10,7 @@ set(scrolladdattachment_test_SRCS
 add_executable(scrolladdattachmenttest ${scrolladdattachment_test_SRCS})
 
 target_link_libraries(scrolladdattachmenttest
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer
     )
 
 ####
@@ -22,7 +22,7 @@ set(testmailwebengine_test_SRCS
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 
 target_link_libraries(testmailwebengine
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer Qt::PrintSupport KF5::I18n
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer Qt::PrintSupport KF${KF_MAJOR_VERSION}::I18n
 )
 
 #####
@@ -45,7 +45,7 @@ set(testmailwebengineselection_test_SRCS
 add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
 
 target_link_libraries(testmailwebengineselection
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer
     )
 ######
 
@@ -56,7 +56,7 @@ set(testmaildndattachment_test_SRCS
 add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 
 target_link_libraries(testmaildndattachment
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer
     )
 
 #####
@@ -68,5 +68,5 @@ set(testmailmboxwebengine_test_SRCS
 add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
 
 target_link_libraries(testmailmboxwebengine
-    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KF5::MessageViewer
     )
