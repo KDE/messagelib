@@ -1,16 +1,16 @@
 # Translation for libmessagecomposer.po to Euskara/Basque (eu).
-# Copyright (C) 2021, This file is copyright:
+# Copyright (C) 2021-2023 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:47+0000\n"
-"PO-Revision-Date: 2021-04-30 17:47+0200\n"
+"PO-Revision-Date: 2023-01-22 22:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.04.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -278,8 +278,7 @@ msgstr "Erantsi direktorioa"
 
 #: attachment/attachmentcontrollerbase.cpp:849
 #: attachment/attachmentcontrollerbase.cpp:907
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Erantsi"
@@ -374,37 +373,37 @@ msgstr "Iradoki automatikoki azaltzea"
 #: composer/composer.cpp:276
 #, kde-format
 msgid "No key data for recipients found."
-msgstr ""
+msgstr "Ez da hartzaileentzako gako-daturik aurkitu."
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr ""
+msgstr "&Mantendu markak, ez sinatu/zifratu"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr ""
+msgstr "&Mantendu markak, ez zifratu"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr ""
+msgstr "&Mantendu markak, ez sinatu"
 
 #: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr ""
+msgstr "Sinatu/Zifratu (markak ezabatu)"
 
 #: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr ""
+msgstr "Zifratu (markak ezabatu)"
 
 #: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr ""
+msgstr "Sinatu (markak ezabatu)"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
@@ -412,70 +411,71 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
+"<qt><p>HTML mezuak ezin dira lerro barruan sinatu/zifratu;</p><p>Markak "
+"ezabatu nahi dituzu?</p></qt>"
 
 #: composer/composerviewbase.cpp:333
 #, kde-format
 msgid "Sign/Encrypt Message?"
-msgstr ""
+msgstr "Mezua sinatu/zifratu?"
 
 #: composer/composerviewbase.cpp:514
 #, kde-format
 msgid "It was not possible to create a message composer."
-msgstr ""
+msgstr "Ezin izan da mezu konposatzaile bat sortu."
 
 #: composer/composerviewbase.cpp:524
 #, kde-format
 msgid "Do you want to resize images?"
-msgstr ""
+msgstr "Irudiaren neurria aldatu nahi duzu?"
 
 #: composer/composerviewbase.cpp:525
 #, kde-format
 msgid "Auto Resize Images"
-msgstr ""
+msgstr "Irudien neurria automatikoki aldatu"
 
 #: composer/composerviewbase.cpp:526
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr ""
+msgstr "Neurri aldaketa automatikoa"
 
 #: composer/composerviewbase.cpp:527
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr "E&z sinatu"
+msgstr "Neurria ez aldatu"
 
 #: composer/composerviewbase.cpp:727
 #, kde-format
 msgid "OpenPGP Key Expired"
-msgstr ""
+msgstr "OpenPGP gakoa iraungita"
 
 #: composer/composerviewbase.cpp:727
 #, kde-format
 msgid "S/MIME Certificate Expired"
-msgstr ""
+msgstr "S/MIME ziurtagiria iraungita"
 
 #: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
-msgstr ""
+msgstr "OpenPGP gakoa laster iraungiko da"
 
 #: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
-msgstr ""
+msgstr "S/MIME ziurtagiria laster iraungiko da"
 
 #: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
 #: composer/composerviewbase.cpp:850
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr ""
+msgstr "Gakoak ebaztea huts egin du. Mesedez eman akatsaren berri."
 
 #: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1321
 #, kde-format
 msgid "Job cancelled by the user"
-msgstr ""
+msgstr "Lana bertan behera utzi du erabiltzaileak"
 
 #: composer/composerviewbase.cpp:1061
 #, kde-format
@@ -483,36 +483,38 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
+"Ezin izan du mezua osatu: %1\n"
+" Mesedez, eman akats honen berri."
 
 #: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr ""
+msgstr "Ezin izan du mezua osatu: %1"
 
 #: composer/composerviewbase.cpp:1160
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
-msgstr ""
+msgstr "Mezua bidaltzeko ilaran ipintzeko arazoak egon dira: %1"
 
 #: composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr ""
+msgstr "Ezin izan du mezua automatikoki gorde: %1"
 
 #: composer/composerviewbase.cpp:1343
 #, kde-format
 msgid "Could not write all data to file."
-msgstr ""
+msgstr "Ezin izan ditu datu guztiak fitxategian idatzi."
 
 #: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not finalize the file."
-msgstr ""
+msgstr "Ezin izan du fitxategia azkendu."
 
 #: composer/composerviewbase.cpp:1350
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not open file."
-msgstr "Ezin izan da %1 fitxategia ireki"
+msgstr "Ezin izan du fitxategia ireki."
 
 #: composer/composerviewbase.cpp:1357
 #, kde-format
@@ -521,16 +523,19 @@ msgid ""
 "%2\n"
 "Reason: %3"
 msgstr ""
+"Mezua %1 bezala automatikoki gordetzea huts egin du.\n"
+"%2\n"
+"Arrazoia: %3"
 
 #: composer/composerviewbase.cpp:1363
 #, kde-format
 msgid "Autosaving Message Failed"
-msgstr ""
+msgstr "Mezua automatikoki gordetzea huts egin du"
 
 #: composer/composerviewbase.cpp:1476
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr ""
+msgstr "Mezua gordetzea huts egin du: %1"
 
 #: composer/composerviewbase.cpp:1895
 #, kde-format
@@ -539,11 +544,14 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
+"Osatu duzun mezuak erantsitako fitxategi bati aipamen egin diola dirudi, "
+"baina ez duzu ezer erantsi.\n"
+"Zure mezuari fitxategi bat erantsi nahi diozu?"
 
 #: composer/composerviewbase.cpp:1898
 #, kde-format
 msgid "File Attachment Reminder"
-msgstr ""
+msgstr "Erantsitako fitxategiaren oroigarria"
 
 #: composer/composerviewbase.cpp:1900
 #, kde-format
@@ -580,6 +588,8 @@ msgid ""
 "There are conflicting signing preferences for these recipients.\n"
 "Sign this message?"
 msgstr ""
+"Hartzaile hauentzako sinatzeko hobespen kontraesankorrak daude.\n"
+"Mezu hau sinatu?"
 
 #: composer/composerviewbase.cpp:2008
 #, kde-format
@@ -587,6 +597,8 @@ msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr ""
+"Mezu hau sinatzea eskatu duzu, baina nortasun honetarako ez da sinatzeko "
+"gako baliodunik konfiguratu."
 
 #: composer/composerviewbase.cpp:2011
 #, kde-format
@@ -605,6 +617,9 @@ msgid ""
 "Sending only partially signed messages might violate site policy.\n"
 "Sign all parts instead?"
 msgstr ""
+"Mezu honetako atal batzuk ez dira sinatuko.\n"
+"Osotasunean sinatu gabeko mezuak bidaltzea leku-gidalerroak urra ditzake.\n"
+"Horren ordez, atal guztiak sinatu?"
 
 #: composer/composerviewbase.cpp:2029
 #, kde-format
@@ -613,6 +628,9 @@ msgid ""
 "Sending unsigned message might violate site policy.\n"
 "Sign message instead?"
 msgstr ""
+"Mezu hau ez da sinatuko.\n"
+"Sinatu gabeko mezuak bidaltzea leku-gidalerroak urra ditzake.\n"
+"Horren ordez, mezua sinatu?"
 
 #: composer/composerviewbase.cpp:2032
 #, kde-format
@@ -627,7 +645,7 @@ msgstr "&Sinatu"
 #: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "Unsigned-Message Warning"
-msgstr ""
+msgstr "Sinatu gabeko mezu abisua"
 
 #: composer/composerviewbase.cpp:2037
 #, kde-format
@@ -640,6 +658,9 @@ msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"Hartzaile guztientzako zifratzeko konfiantzadun gako baliodunak aurkitu "
+"dira.\n"
+"Mezu hau zifratu?"
 
 #: composer/composerviewbase.cpp:2087
 #, kde-format
@@ -662,17 +683,17 @@ msgstr "Sinatu eta &zifratu"
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
 #: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Encrypt"
 msgstr "&Zifratu"
 
 #: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Sign Only"
-msgstr "&Sinatzeko bakarrik"
+msgstr "&Sinatu bakarrik"
 
 #: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Send As-Is"
 msgstr "&Bidali dagoen bezala"
 
@@ -682,11 +703,13 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"Hartzaile hauentzako zifratzeko hobespen kontraesankorrak daude.\n"
+"Mezu hau zifratu?"
 
 #: composer/composerviewbase.cpp:2125
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do &Not Encrypt"
-msgstr "Ez zifratu"
+msgstr "E&z zifratu"
 
 #: composer/composerviewbase.cpp:2145
 #, kde-format
@@ -697,14 +720,14 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Send Unencrypted?"
-msgstr "&Bidali zifratu gabe"
+msgstr "Bidali zifratu gabe?"
 
 #: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
-#, fuzzy, kde-format
+#, kde-format
 msgid "Send &Unencrypted"
-msgstr "&Bidali zifratu gabe"
+msgstr "Bidali zifratu &gabe"
 
 #: composer/composerviewbase.cpp:2163
 #, kde-format
@@ -714,6 +737,10 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
+"Mezu honetako atal batzuk ez dira sinatuko.\n"
+"Osotasunean sinatu gabeko mezuak bidaltzea leku-gidalerroak urra ditzake eta/"
+"edo babes bereziko informazioaren ihesa eragin.\n"
+"Horren ordez, atal guztiak sinatu?"
 
 #: composer/composerviewbase.cpp:2168
 #, kde-format
@@ -723,16 +750,20 @@ msgid ""
 "information.\n"
 "Encrypt messages instead?"
 msgstr ""
+"Mezu hau ez da zifratuko.\n"
+"Zifratu gabeko mezuak bidaltzea leku-gidalerroak urratu eta edo babes "
+"bereziko informazioaren ihesa eragin.\n"
+"Horren ordez, mezuak zifratu?"
 
 #: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid "&Encrypt All Parts"
-msgstr ""
+msgstr "&Zifratu atal guztiak"
 
 #: composer/composerviewbase.cpp:2175
 #, kde-format
 msgid "Unencrypted Message Warning"
-msgstr ""
+msgstr "Zifratu gabeko mezuaren abisua"
 
 #: composer/keyresolver.cpp:302
 #, kde-format
@@ -789,7 +820,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1037
 #, kde-format
 msgid "Unusable Encryption Keys"
-msgstr ""
+msgstr "Zifratzeko gako erabilezinak"
 
 #: composer/keyresolver.cpp:687
 #, kde-format
@@ -805,7 +836,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1084
 #, kde-format
 msgid "Unusable Signing Keys"
-msgstr ""
+msgstr "Sinatzeko gako erabilezinak"
 
 #: composer/keyresolver.cpp:998
 #, kde-format
@@ -841,7 +872,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1067
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
-msgstr ""
+msgstr "Ez sinatu OpenPGP erabiliz"
 
 #: composer/keyresolver.cpp:1077
 #, kde-format
@@ -855,7 +886,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1085
 #, kde-format
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "Ez sinatu S/MIME erabiliz"
 
 #: composer/keyresolver.cpp:1147
 #, kde-format
@@ -881,7 +912,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "Missing Key Warning"
-msgstr ""
+msgstr "Gakoa falta denaren abisua"
 
 #: composer/keyresolver.cpp:1332
 #, kde-format
@@ -889,6 +920,8 @@ msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr ""
+"Ez zenuen mezu honen hartzailearentzako zifratzeko gakorik aukeratu; hortaz, "
+"mezua ez da zifratuko."
 
 #: composer/keyresolver.cpp:1336
 #, kde-format
@@ -896,6 +929,8 @@ msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr ""
+"Ez zenuen mezu honen hartzaileentzako zifratzeko gakorik aukeratu; hortaz, "
+"mezua ez da zifratuko."
 
 #: composer/keyresolver.cpp:1345
 #, kde-format
@@ -903,6 +938,8 @@ msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"Ez zenuen mezu honen hartzaileetako batentzako zifratzeko gakorik aukeratu: "
+"zifratzen baduzu, pertsona horrek ezingo du mezua deszifratu."
 
 #: composer/keyresolver.cpp:1349
 #, kde-format
@@ -910,11 +947,13 @@ msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"Ez zenuen mezu honen hartzaileetako batzuentzako zifratzeko gakorik "
+"aukeratu: zifratzen baduzu, pertsona horiek ezingo dute mezua deszifratu."
 
 #: composer/keyresolver.cpp:1425
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr ""
+msgstr "Zifratzeko gako hautaketa"
 
 #: composer/keyresolver.cpp:1469
 #, kde-format
@@ -950,6 +989,9 @@ msgid ""
 "\n"
 "Select the certificate(s) which should be used for this recipient."
 msgstr ""
+"Ziurtagiri bat baino gehiago dator \"%1\"rekin bat.\n"
+"\n"
+"Hautatu hartzaile honetarako erabili beharreko ziurtagiria(k)."
 
 #: composer/nearexpirychecker.cpp:68
 #, kde-format
@@ -1226,7 +1268,11 @@ msgid_plural ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
 "number %3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p align=center><b>%2</b> (%3 serie zenbaki)</p><p>S/MIME zifratzeko zure "
+"ziurtagiria;</p><p>egun bat baino lehenago iraungiko da.</p>"
 msgstr[1] ""
+"<p align=center><b>%2</b> (%3 serie zenbaki)</p><p>S/MIME zifratzeko zure "
+"ziurtagiria;</p><p>%1 egun baino lehenago iraungiko da.</p>"
 
 #: composer/nearexpirychecker.cpp:274
 #, kde-format
@@ -1237,7 +1283,11 @@ msgid_plural ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
 "%3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p align=center><b>%2</b> (%3 serie zenbakia)</p><p>S/MIME ziurtagiria;</"
+"p><p>egun bat baino lehenago iraungiko da.</p>"
 msgstr[1] ""
+"<p align=center><b>%2</b> (%3 serie zenbakia)</p><p>S/MIME ziurtagiria;</"
+"p><p>%1 egun baino lehenago iraungiko da.</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -1247,12 +1297,12 @@ msgstr "Izen hautaketa"
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr ""
+msgstr "Zein izen izan beharko luke '%1' kontaktuak zure helbide-liburuan?"
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
-msgstr ""
+msgstr "Hautatu kontaktu berria gordetzeko helbide-liburu karpeta:"
 
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
@@ -1285,12 +1335,12 @@ msgstr "Data:"
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
 msgid "Store to-do in:"
-msgstr ""
+msgstr "Zeregina non gorde:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr ""
+msgstr "Hautatutako data uneko data baino handiagoa izan behar da."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -1339,7 +1389,7 @@ msgid "Select Format..."
 msgstr "Ezarri formatua..."
 
 #: imagescaling/imagescalingwidget.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Hori nola dabil?</a>"
 
@@ -1352,25 +1402,25 @@ msgid ""
 msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgid "Custom"
-msgstr "Pertsonalizatua"
+msgstr "Neurrira"
 
 #: imagescaling/imagescalingwidget.cpp:321
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr ""
+msgstr "Mesedez, egiaztatu gutxieneko eta gehieneko balioak."
 
 #: imagescaling/imagescalingwidget.cpp:321
 #, kde-format
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "Errorea gutxieneko gehieneko balioan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr ""
+msgstr "Automatikoki irudien neurria aldatu"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1394,7 +1444,7 @@ msgstr "Galdetu neurria aldatu aurretik"
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr ""
+msgstr "Atzera egin formatura:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
@@ -1436,7 +1486,7 @@ msgstr " px"
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr ""
+msgstr "Handiagotu irudia gutxieneko dimentsiora"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
@@ -1478,19 +1528,19 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr ""
+msgstr "Ez iragazi (fitxategi guztiak barneratuta daude)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr ""
+msgstr "Barneratu izenetan eredu hauetako bat duten fitxategi guztiak"
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
-msgstr ""
+msgstr "Kanpoan utzi izenetan eredu hauetako bat duten fitxategi guztiak"
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
@@ -1503,6 +1553,8 @@ msgstr "Eredua:"
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
 msgstr ""
+"Lerro honek hainbat eredu definitzeko aukera ematen du. Haiek bereizi ';' "
+"erabiliz."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1512,7 +1564,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr ""
+msgstr "Zehaztu ereduak ';' bidez bereizita"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -1524,19 +1576,19 @@ msgstr "Irudi-formatua"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr ""
+msgstr "Irudi guztien neurria aldatu formatu hauetako batekin"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr ""
+msgstr "Neurriz aldatutakoaren fitxategi-izena"
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr ""
+msgstr "Berrizendatu neurriz aldatutako irudiak ondoko ereduarekin:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1548,7 +1600,7 @@ msgstr "Hartzaileak"
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr ""
+msgstr "Ez iragazi (hartzaile guztiak baimentzen dira)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
@@ -1577,27 +1629,27 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
 msgid "No text found in Clipboard"
-msgstr ""
+msgstr "Arbelan ez da testurik aurkitu"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "Definitu eranskinaren izena"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr ""
+msgstr "Eranskinaren izena:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
 msgid "Clipboard Text"
-msgstr ""
+msgstr "Arbeleko testua"
 
 #: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
-msgstr ""
+msgstr "OpenPGP gakoa 0x%1"
 
 #: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
 #, kde-format
@@ -1605,26 +1657,28 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
 msgstr ""
+"<p>Errore bat gertatu da gakoa bizkarraldekotik esportatzen saiatzean:</"
+"p><p><b>%1</b></p>"
 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr ""
+msgstr "Gakoa esportatzen..."
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr ""
+msgstr "Kontaktu mota ezezaguna"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:86
 #, kde-format
 msgid "Invalid Contact"
-msgstr ""
+msgstr "Kontaktu baliogabea"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr ""
+msgstr "Ezinezkoa da «vCard» sortzea."
 
 #: job/autocryptheadersjob.cpp:104
 #, kde-format
@@ -1656,6 +1710,8 @@ msgid ""
 "Encoding the message with %1 will lose some characters.\n"
 "Do you want to continue?"
 msgstr ""
+"Mezua %1(e)kin kodetzea karaktere batzuk galtzea eragingo du.\n"
+"Jarraitu nahi duzu?"
 
 #: job/maintextjob.cpp:102
 #, kde-format
@@ -1675,7 +1731,7 @@ msgstr "Aldatu kodeketa"
 #: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
-msgstr ""
+msgstr "Erabiltzaileak kodeketa aldatzea erabaki du."
 
 #: job/maintextjob.cpp:117
 #, kde-format
@@ -1699,21 +1755,19 @@ msgid "Message Disposition Notification Request"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "Bidali sinatu &gabe"
+msgstr "Bidali \"&ukatua\""
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "&Ezikusi"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "&Bidali dagoen bezala"
+msgstr "&Bidali"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1780,11 +1834,9 @@ msgid "&Name:"
 msgstr "&Izena:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Distribution List"
+#, kde-format
 msgid "Name of Distribution List"
-msgstr "Gorde banaketa-zerrenda"
+msgstr "Banaketa-zerrendaren izena"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1805,18 +1857,20 @@ msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
 msgstr ""
+"Zure zerrendan ez dago hartzailerik. Aurrena hautatu hartzaile batzuk, "
+"ondoren saiatu berriz."
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr ""
+msgstr "Banaketa-zerrenda berria"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr ""
+msgstr "Mesedez, sartu izena:"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1825,9 +1879,11 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
+"<para>Emandako <resource>%1</resource> izena duen banaketa-zerrenda bat "
+"lehendik ere badago. Mesedez, aukeratu beste izen bat.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
 msgstr "Hautatu helbide-liburua"
@@ -1835,7 +1891,7 @@ msgstr "Hautatu helbide-liburua"
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
-msgstr ""
+msgstr "Hautatu kontaktu-taldea gordetzeko helbide-liburu karpeta:"
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
@@ -1960,9 +2016,9 @@ msgid "Select Recipient"
 msgstr "Hautatu hartzailea"
 
 #: recipient/recipientspicker.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgid "Search &Directory Service"
-msgstr "Bilatu "
+msgstr "Bilatu &direktorio zerbitzua"
 
 #: recipient/recipientspicker.cpp:79
 #, kde-format
@@ -2001,17 +2057,21 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
+"Hartzaile 1 hautatu duzu. Onartutako hartzaile kopuru handiena %2 da.\n"
+"Mesedez, egokitu zure hautapena."
 msgstr[1] ""
+"%1 hartzaile hautatu dituzu. Onartutako hartzaile kopuru handiena %2 da.\n"
+"Mesedez, egokitu zure hautapena."
 
 #: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
-msgstr ""
+msgstr "Ezin duzu hartzaile gehiagorik gehitu."
 
 #: sendlater/sendlatercreatejob.cpp:33
 #, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr ""
+msgstr "Mezua beranduago bidaltzeko programatzea huts egin du: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
@@ -2052,7 +2112,7 @@ msgstr "Urte"
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "«Bidali beranduago» agentea ez dago martxan."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
@@ -2072,29 +2132,29 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repeat every:"
-msgstr "&Periodoa"
+msgstr "Errepikatu hainbestero:"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:18
 #, kde-format
 msgid "Only quote selected text when replying"
-msgstr ""
+msgstr "Erantzutean hautatutako testua bakarrik aipatu"
 
 #. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:23
-#, fuzzy, kde-format
+#, kde-format
 msgid "Keep original charset when replying or forwarding if possible"
 msgstr ""
-"&Mantendu jatorrizko karaktere-multzoa erantzutean edo birbidaltzean "
-"(posiblea bada)"
+"Mantendu jatorrizko karaktere-multzoa erantzutean edo birbidaltzean, "
+"posiblea bada"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:32
 #, kde-format
 msgid "A&utomatically insert signature"
-msgstr ""
+msgstr "A&utomatikoki txertatu sinadura"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:36
@@ -2134,7 +2194,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:55
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "Erabili azken aldiko helbideak osatze automatikorako"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:56
@@ -2148,13 +2208,13 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:61
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "Gehienezko hartzaile kopurua:"
 
 #. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:66
-#, fuzzy, kde-format
+#, kde-format
 msgid "Outlook-compatible attachment naming"
-msgstr "Outlook-ekin bateragarria den eranskin izendapena"
+msgstr "«Outlook»ekin bateragarria den eranskin izendapena"
 
 #. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:67
@@ -2163,49 +2223,52 @@ msgid ""
 "Turn this option on to make Outlook &#8482; understand attachment names "
 "containing non-English characters"
 msgstr ""
+"Piztu aukera hau «Outlook»ek &#8482; ingelesekoak ez diren karaktereak "
+"dituzten eranskin-izenak uler ditzan"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:71
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "Itzul&bira zutabean:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:81
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "Hobetu HTML mezuaren testu soileko bertsioa"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Sinatu mezu guztiak, ahal bada"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
+msgstr "Gaitu zifratzea, hartzaile guztientzako gakoak aurkitzen badira"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "Abisatu zifratu gabeko mezuak bidali aurretik"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "Abisatu sinatu gabeko mezuak bidali aurretik"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
-"Abisatu ziurtagiri/gakoak iraungitzear badaude (konfiguratu beheko mugak)"
+"Abisatu ziurtagiriak/gakoak iraungitzear badaude (konfiguratu atalaseak "
+"behean)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
@@ -2481,17 +2544,19 @@ msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr ""
+"Posta bidaltzailea ezarri gabe dago, beraz, ezin da postarik bidali. Posta "
+"bidaltzaile bat sortu nahi duzu?"
 
 #: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
-msgstr ""
+msgstr "Ez dago posta bidaltzailerik."
 
 #: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr ""
+msgstr "Sortu posta bidaltzailea"
 
 #: utils/util.cpp:310
 #, kde-format
@@ -2499,17 +2564,19 @@ msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr ""
+"Posta bidaltzailea lerroz kanpo dago, beraz, postak ezin dira bidali. "
+"Lerroan ipini nahi duzu?"
 
 #: utils/util.cpp:311
 #, kde-format
 msgid "Mail dispatcher offline."
-msgstr ""
+msgstr "Posta igorlea lerroz kanpo"
 
 #: utils/util.cpp:312
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Ezarri Lerroan4"
 
 #~ msgid ""
 #~ "When encrypting emails, always also encrypt to the certificate of my own "
