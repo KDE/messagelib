@@ -60,9 +60,10 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.4.0")
     set(KF_MIN_VERSION "5.240.0")
     set(KF_MAJOR_VERSION "6")
+    set(KTEXTADDONS_MIN_VERSION "1.0.41")
 else()
-    set(KF_MIN_VERSION "5.100.0")
     set(KF_MAJOR_VERSION "5")
+    set(KTEXTADDONS_MIN_VERSION "1.0.0")
 endif()
 
 
@@ -70,7 +71,6 @@ option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, 
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 option(USE_KTEXTADDONS_LIB "Use ktextaddons lib (experimental)" ON)
-set(KTEXTADDONS_MIN_VERSION "1.0.0")
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngineWidgets)
