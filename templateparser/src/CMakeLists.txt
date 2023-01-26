@@ -170,9 +170,9 @@ if (BUILD_QCH)
         SOURCES # using only public headers, to cover only public API
         ${TemplateParser_HEADERS}
         LINK_QCHS
-            Qt5Core_QCH
-            Qt5Gui_QCH
-            Qt5Widgets_QCH
+            Qt${QT_MAJOR_VERSION}Core_QCH
+            Qt${QT_MAJOR_VERSION}Gui_QCH
+            Qt${QT_MAJOR_VERSION}Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
