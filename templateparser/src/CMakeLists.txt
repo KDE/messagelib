@@ -91,6 +91,7 @@ target_link_libraries(KF5TemplateParser
     KF${KF_MAJOR_VERSION}::SonnetUi
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     Qt::WebEngineWidgets
+    Qt::Core5Compat
     KF5::Libkdepim
     KF5::PimTextEdit
     )
