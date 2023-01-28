@@ -91,10 +91,14 @@ target_link_libraries(KF5TemplateParser
     KF${KF_MAJOR_VERSION}::SonnetUi
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     Qt::WebEngineWidgets
-    Qt::Core5Compat
     KF5::Libkdepim
     KF5::PimTextEdit
     )
+
+if (TARGET Qt::Core5Compat)
+    target_link_libraries(KF5TemplateParser PRIVATE Qt::Core5Compat)
+endif()
+
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION}
     SOVERSION ${TEMPLATEPARSER_SOVERSION}

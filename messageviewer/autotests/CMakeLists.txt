@@ -44,9 +44,13 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets Qt::Core5Compat KF${KF_MAJOR_VERSION}::KIOCore KF5::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KF5::PimTextEdit
+        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KF5::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KF5::PimTextEdit
         KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes ${TEXTADDONS_LIBS}
     )
+
+    if (TARGET Qt::Core5Compat)
+        target_link_libraries(${_name} Qt::Core5Compat)
+    endif()
 endmacro ()
 
 

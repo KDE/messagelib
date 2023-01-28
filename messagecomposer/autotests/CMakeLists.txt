@@ -25,7 +25,6 @@ macro( add_messagecomposer_test _source )
             KF5::TemplateParser
             KF5::PimTextEdit
             Qt::Test
-            Qt::Core5Compat
             KF5::IdentityManagementWidgets
             KF${KF_MAJOR_VERSION}::Contacts
             KF5::AkonadiCore
@@ -34,6 +33,10 @@ macro( add_messagecomposer_test _source )
             KF${KF_MAJOR_VERSION}::IconThemes
             KF${KF_MAJOR_VERSION}::Completion
     )
+
+    if (TARGET Qt::Core5Compat)
+        target_link_libraries(${_name} Qt::Core5Compat)
+    endif()
 endmacro()
 
 macro( add_messagecomposer_cryptotest _source )
