@@ -449,7 +449,7 @@ if (TARGET Qt6::Core5Compat)
 endif()
 if (USE_KTEXTADDONS_LIB)
     target_link_libraries(KF5MessageViewer PRIVATE
-        KF5::TextEditTextToSpeech
+        KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
 endif()
 

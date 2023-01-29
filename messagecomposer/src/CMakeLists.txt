@@ -297,7 +297,7 @@ target_link_libraries(KF5MessageComposer
     KF${KF_MAJOR_VERSION}::Codecs
     )
 if (USE_KTEXTADDONS_LIB)
-    target_link_libraries(KF5MessageComposer PUBLIC KF5::TextAutoCorrection)
+    target_link_libraries(KF5MessageComposer PUBLIC KF${KF_MAJOR_VERSION}::TextAutoCorrection)
 else()
     target_link_libraries(KF5MessageComposer PUBLIC KF5::PimCommonAutoCorrection)
 endif()

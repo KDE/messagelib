@@ -39,7 +39,7 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     set(TEXTADDONS_LIBS )
     if (USE_KTEXTADDONS_LIB)
-        set (TEXTADDONS_LIBS KF5::TextEditTextToSpeech)
+        set (TEXTADDONS_LIBS KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
     endif()
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
