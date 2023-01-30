@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: none
 macro(add_messagelist_widget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source}
+    ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messagelist-"
         LINK_LIBRARIES Qt::Test KF5::MessageCore KF5::MessageList KF5::PimCommon KF${KF_MAJOR_VERSION}::IconThemes
