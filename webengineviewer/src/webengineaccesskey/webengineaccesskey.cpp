@@ -294,7 +294,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             continue;
         }
         QChar accessKey;
-        for (int i = 0; i < accessKeyAttribute.count(); i += 2) {
+        for (int i = 0; i < accessKeyAttribute.length(); i += 2) {
             const QChar &possibleAccessKey = accessKeyAttribute[i];
             if (unusedKeys.contains(possibleAccessKey)) {
                 accessKey = possibleAccessKey;
@@ -322,7 +322,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
         QChar accessKey;
         const QString text = element.innerText().toUpper();
-        for (int i = 0, total = text.count(); i < total; ++i) {
+        for (int i = 0, total = text.length(); i < total; ++i) {
             const QChar &c = text.at(i);
             if (unusedKeys.contains(c)) {
                 accessKey = c;

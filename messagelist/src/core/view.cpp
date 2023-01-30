@@ -2767,11 +2767,21 @@ void View::ViewPrivate::tapTriggered(QTapGesture *tap)
         }
 
         // simulate a mousePressEvent, to allow QTreeView to select the items
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QMouseEvent fakeMousePress(QEvent::MouseButtonPress,
                                    tap->position(),
                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
                                    Qt::NoModifier);
+#else
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress,
+                                   tap->position(),
+                                   q->viewport()->mapToGlobal(tap->position()),
+                                   mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
+                                   mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
+                                   Qt::NoModifier);
+
+#endif
         onPressed(&fakeMousePress);
         mTapAndHoldActive = false;
     }
@@ -2809,7 +2819,11 @@ void View::ViewPrivate::tapAndHoldTriggered(QTapAndHoldGesture *tap)
 
         // simulate a mousePressEvent, to allow QTreeView to select the items
         const QPoint tapViewportPos(q->viewport()->mapFromGlobal(tap->position().toPoint()));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tapViewportPos, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#else
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tapViewportPos, tapViewportPos, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#endif
         onPressed(&fakeMousePress);
 
         const QPoint tapIndicatorSize(80, 80); // size for the tapAndHold indicator
@@ -2834,7 +2848,16 @@ void View::ViewPrivate::twoFingerTapTriggered(KTwoFingerTap *tap)
         }
 
         // simulate a mousePressEvent with Qt::ControlModifier, to allow QTreeView to select the items
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tap->pos(), Qt::LeftButton, Qt::LeftButton, Qt::ControlModifier);
+#else
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress,
+                                   tap->pos(),
+                                   q->viewport()->mapToGlobal(tap->pos()),
+                                   Qt::LeftButton,
+                                   Qt::LeftButton,
+                                   Qt::ControlModifier);
+#endif
         onPressed(&fakeMousePress);
     }
 }

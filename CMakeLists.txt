@@ -144,7 +144,7 @@ endif()
 find_package(KF5AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
-ecm_set_disabled_deprecation_versions(QT 5.15.0  KF 5.102.0)
+ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.102.0)
 
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)

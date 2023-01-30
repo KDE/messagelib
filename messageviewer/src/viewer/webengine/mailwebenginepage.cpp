@@ -43,7 +43,11 @@ void MailWebEnginePage::initialize()
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
+#else
+    const QFontInfo font(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
+#endif
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
     connect(this, &QWebEnginePage::featurePermissionRequested, this, &MailWebEnginePage::slotFeaturePermissionRequested);
