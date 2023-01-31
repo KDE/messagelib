@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 07:49+0100\n"
+"PO-Revision-Date: 2023-01-30 09:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -48,7 +48,7 @@ msgstr "შეკუმშული ფაილის შექმნის შ
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
-msgstr ""
+msgstr "მიღებული მისამაგრებელი ფაილი დაშვებულზე დიდი იქნება. გაუქმება."
 
 #: attachment/attachmentfromfolderjob.cpp:100
 #: attachment/attachmentfromfolderjob.cpp:119
@@ -272,6 +272,8 @@ msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
 "no limit)"
 msgstr ""
+"მიმაგრებული ფაილების მაქსიმალურ ჯამური ზომა ბიტებში (ლიმიტის მოსახსნელად "
+"მიუთითეთ -1)"
 
 #: utils/stringutil.cpp:418
 #, kde-format

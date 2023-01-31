@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:59+0000\n"
+"POT-Creation-Date: 2023-01-31 00:59+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1706,7 +1706,7 @@ msgstr "ҳузфшуда"
 msgid "Unnamed Theme"
 msgstr "Беном"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
@@ -1845,51 +1845,51 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr ""
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:857
 #, fuzzy, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "&Фиристодан"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:864
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "&Нимағафс"
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:868
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "&Курсивӣ"
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:875
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Font"
 msgstr "Алоқотҳо"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:883
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Ҳамчун асосӣ кардан"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:888
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:896
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Foreground Color"
 msgstr "Ранги заминаи алтернативӣ"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:905
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Hide"
@@ -1899,7 +1899,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "&Пинҳон кардан"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1907,7 +1907,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1915,99 +1915,99 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:933
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header"
 msgstr "&Кори муштарак"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:940
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "&Ғайри"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:945
 #, fuzzy, kde-format
 #| msgid "Never Automatically"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Ғайрифаъол сохтани фиристодани худкор"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:950
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:958
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Color"
 msgstr "Ранги заминаи алтернативӣ"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:978
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Style"
 msgstr "Ранги заминаи алтернативӣ"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1164
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties..."
 msgstr "Хосиятҳои папка"
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1167
 #, fuzzy, kde-format
 msgid "Add Column..."
 msgstr "Афзудани вурудот"
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1170
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Delete Column"
 msgstr "Ҳузфи феҳрист"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1229
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add New Column"
 msgstr "Намоиши сутунҳо"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1253
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties"
 msgstr "Хосиятҳои папка"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1295
 #, fuzzy, kde-format
 msgid "Appearance"
 msgstr "Ҳуқуқҳои дастрасӣ"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1299
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Content Items"
 msgstr "Алоқотҳо"
 
-#: utils/themeeditor.cpp:1425
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2015,25 +2015,25 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Advanced"
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Иловагӣ"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1445
 #, fuzzy, kde-format
 msgid "Header:"
 msgstr "Афзудани унвон"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1451
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Icon size:"
 msgstr "Андоза"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1457
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:59+0000\n"
+"POT-Creation-Date: 2023-01-31 00:59+0000\n"
 "PO-Revision-Date: 2013-10-16 04:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1560,7 +1560,7 @@ msgstr "Нқышын өшіру"
 msgid "Unnamed Theme"
 msgstr "Аталмаған нақышы"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Жаңа баған"
@@ -1695,49 +1695,49 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Көрінетін"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Күңгіртеу"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:864
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Қ&алың"
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:868
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Көлб&еу"
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:875
 #, kde-format
 msgid "Font"
 msgstr "Қаріпі"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Әдетті"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:888
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Өзге..."
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:896
 #, kde-format
 msgid "Foreground Color"
 msgstr "Мәтіннің түсі"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1745,7 +1745,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Жасыру"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1753,7 +1753,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Бос орын қалсын"
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1761,90 +1761,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Таңбшасы күнгірт болсын"
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "When Disabled"
 msgstr "Бұғатталғанда"
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgid "Group Header"
 msgstr "Топ айдары"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Жоқ"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Авто"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:950
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Өзге..."
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:958
 #, kde-format
 msgid "Background Color"
 msgstr "Аясының түсі"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:978
 #, kde-format
 msgid "Background Style"
 msgstr "Аясының стилі"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Column Properties..."
 msgstr "Бағанның қасиетері..."
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1167
 #, kde-format
 msgid "Add Column..."
 msgstr "Бағанды қосу..."
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Delete Column"
 msgstr "Бағанды өшіру"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
 msgstr "Бағанды солға жылжыту"
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
 msgstr "Бағанды оңға жылжыту"
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1229
 #, kde-format
 msgid "Add New Column"
 msgstr "Жаңа бағанды қосу"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1253
 #, kde-format
 msgid "Column Properties"
 msgstr "Бағанның қасиетері"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1295
 #, kde-format
 msgid "Appearance"
 msgstr "Көрінсі"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1299
 #, kde-format
 msgid "Content Items"
 msgstr "Мазмұндағылары"
 
-#: utils/themeeditor.cpp:1425
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1855,23 +1855,23 @@ msgstr ""
 "Керек аталымың көздеген бағанға сүйреп апарыңыз. Косымша амалдарға жету "
 "үшін, керек аталымға меңзеп тышқанның оң батырмасын басыңыз."
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1441
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Жетелеу"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgid "Header:"
 msgstr "Айдары:"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1451
 #, kde-format
 msgid "Icon size:"
 msgstr "Таңбаша өлшемі:"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1457
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:59+0000\n"
+"POT-Creation-Date: 2023-01-31 00:59+0000\n"
 "PO-Revision-Date: 2022-04-16 23:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1528,7 +1528,7 @@ msgstr "테마 삭제"
 msgid "Unnamed Theme"
 msgstr "이름 없는 테마"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "새 열"
@@ -1661,47 +1661,47 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "보임"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "부드럽게"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "굵게"
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "이탤릭"
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:875
 #, kde-format
 msgid "Font"
 msgstr "글꼴"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "기본값"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:888
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "사용자 정의..."
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:896
 #, kde-format
 msgid "Foreground Color"
 msgstr "전경색"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1709,7 +1709,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "숨기기"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1717,7 +1717,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "빈 공간 유지"
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1725,90 +1725,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "부드러운 아이콘 유지"
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "When Disabled"
 msgstr "비활성화 시"
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgid "Group Header"
 msgstr "그룹 머리글"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "없음"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "자동"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:950
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "사용자 정의..."
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:958
 #, kde-format
 msgid "Background Color"
 msgstr "배경 색상"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:978
 #, kde-format
 msgid "Background Style"
 msgstr "배경 스타일"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Column Properties..."
 msgstr "열 속성..."
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1167
 #, kde-format
 msgid "Add Column..."
 msgstr "열 추가..."
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Delete Column"
 msgstr "열 삭제"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
 msgstr "왼쪽으로 열 이동"
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
 msgstr "오른쪽으로 열 이동"
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1229
 #, kde-format
 msgid "Add New Column"
 msgstr "새 열 추가"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1253
 #, kde-format
 msgid "Column Properties"
 msgstr "열 속성"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1295
 #, kde-format
 msgid "Appearance"
 msgstr "모양"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1299
 #, kde-format
 msgid "Content Items"
 msgstr "내용 항목"
 
-#: utils/themeeditor.cpp:1425
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1819,23 +1819,23 @@ msgstr ""
 "다 열에 놓으면 테마를 사용자 정의할 수 있습니다. 보기의 항목에서 오른쪽 단추"
 "를 클릭하면 더 많은 설정을 볼 수 있습니다."
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1441
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "고급"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgid "Header:"
 msgstr "헤더:"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1451
 #, kde-format
 msgid "Icon size:"
 msgstr "아이콘 크기:"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1457
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

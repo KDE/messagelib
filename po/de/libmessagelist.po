@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:59+0000\n"
+"POT-Creation-Date: 2023-01-31 00:59+0000\n"
 "PO-Revision-Date: 2022-07-23 23:26+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1555,7 +1555,7 @@ msgstr "Design löschen"
 msgid "Unnamed Theme"
 msgstr "Unbenanntes Design"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Neue Spalte"
@@ -1693,47 +1693,47 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Sichtbar"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Abschwächen"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Fett"
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Kursiv"
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:875
 #, kde-format
 msgid "Font"
 msgstr "Schriftart"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Standard"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:888
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Benutzerdefiniert ..."
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:896
 #, kde-format
 msgid "Foreground Color"
 msgstr "Vordergrundfarbe"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1741,7 +1741,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Ausblenden"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1749,7 +1749,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Leerstelle beibehalten"
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1757,90 +1757,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Abgeschwächtes Symbol behalten"
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "When Disabled"
 msgstr "Falls deaktiviert"
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgid "Group Header"
 msgstr "Gruppenüberschrift"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Keine"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:950
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Benutzerdefiniert ..."
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:958
 #, kde-format
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:978
 #, kde-format
 msgid "Background Style"
 msgstr "Hintergrundstil"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Column Properties..."
 msgstr "Spalten-Eigenschaften ..."
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1167
 #, kde-format
 msgid "Add Column..."
 msgstr "Spalte hinzufügen"
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Delete Column"
 msgstr "Spalte löschen"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
 msgstr "Spalte nach links verschieben"
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
 msgstr "Spalte nach rechts verschieben"
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1229
 #, kde-format
 msgid "Add New Column"
 msgstr "Neue Spalte hinzufügen"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1253
 #, kde-format
 msgid "Column Properties"
 msgstr "Spalten-Eigenschaften"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1295
 #, kde-format
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1299
 #, kde-format
 msgid "Content Items"
 msgstr "Inhalts-Elemente"
 
-#: utils/themeeditor.cpp:1425
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1853,23 +1853,23 @@ msgstr ""
 "Sie mit der rechten Maustaste auf die Elemente innerhalb der Ansicht "
 "klicken, erhalten Sie weitere Optionen."
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1441
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Erweitert"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgid "Header:"
 msgstr "Vorspann:"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1451
 #, kde-format
 msgid "Icon size:"
 msgstr "Symbolgröße:"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1457
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

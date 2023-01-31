@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:59+0000\n"
+"POT-Creation-Date: 2023-01-31 00:59+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1738,7 +1738,7 @@ msgstr "Eyða &þræði"
 msgid "Unnamed Theme"
 msgstr "Nafnlaust"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
@@ -1880,49 +1880,49 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Sýnilegt"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:857
 #, fuzzy, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "&Senda"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:875
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Font"
 msgstr "Netföng"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:883
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Setja sem sjálfgefið"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:888
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Sérsniðið..."
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:896
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Foreground Color"
 msgstr "Auka bakgrunnslitur"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:905
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Hide"
@@ -1932,7 +1932,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "&Falin"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1940,7 +1940,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1948,103 +1948,103 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:933
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header"
 msgstr "&Hópvinnukerfi"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:940
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Engin"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:945
 #, fuzzy, kde-format
 #| msgid "Never Automatically"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Aldrei sjálfkrafa"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:950
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Sérsniðið..."
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:958
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Color"
 msgstr "Auka bakgrunnslitur"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:978
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Style"
 msgstr "Auka bakgrunnslitur"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1164
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties..."
 msgstr "Eiginleikar möppu"
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1167
 #, fuzzy, kde-format
 #| msgid "Add Entry..."
 msgid "Add Column..."
 msgstr "Bæta við færslu..."
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1170
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Delete Column"
 msgstr "Eyða möppu"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1229
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add New Column"
 msgstr "Sýna dálka"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1253
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties"
 msgstr "Eiginleikar möppu"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1295
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Append"
 msgid "Appearance"
 msgstr "Bæta við"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1299
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Content Items"
 msgstr "Netföng"
 
-#: utils/themeeditor.cpp:1425
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2052,26 +2052,26 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Advanced"
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Ítarlegt"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1445
 #, fuzzy, kde-format
 #| msgid "H&eaders"
 msgid "Header:"
 msgstr "H&ausar"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1451
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Icon size:"
 msgstr "Stærð"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1457
 #, fuzzy, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
