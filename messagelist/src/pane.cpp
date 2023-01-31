@@ -260,7 +260,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActivateNextTabAction->setEnabled(false);
         d->mActivateNextTabAction->setIcon(QIcon::fromTheme(nextIcon));
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivateNextTabAction, nextShortcut);
-        connect(d->mActivateNextTabAction, &QAction::triggered, [this]() {
+        connect(d->mActivateNextTabAction, &QAction::triggered, this, [this]() {
             d->activateNextTab();
         });
         d->mActionMenu->addAction(d->mActivateNextTabAction);
