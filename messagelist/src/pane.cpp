@@ -702,11 +702,16 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
 
     QMenu menu(q);
 
-    QAction *closeTabAction = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
-    closeTabAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    QAction *closeTabAction = nullptr;
+    if (!w->isLocked()) {
+        closeTabAction = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
+        closeTabAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    }
 
     QAction *allOtherAction = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
     allOtherAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+
+    menu.addSeparator();
 
     QAction *lockTabAction = menu.addAction(w->isLocked() ? i18nc("@action:inmenu", "Unlock Tab") : i18nc("@action:inmenu", "Lock Tab"));
     lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
@@ -723,7 +728,8 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
             }
 
             auto other = qobject_cast<Widget *>(q->widget(i));
-            if (other) {
+            const bool isLocked = other->isLocked();
+            if (!isLocked && other) {
                 widgets << other;
             }
         }
@@ -734,7 +740,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
         }
 
         updateTabControls();
-    } else if (action == closeTabAction) {
+    } else if (closeTabAction && (action == closeTabAction)) {
         closeTab(q->widget(indexBar));
     } else if (action == lockTabAction) {
         auto tab = qobject_cast<Widget *>(q->widget(indexBar));
