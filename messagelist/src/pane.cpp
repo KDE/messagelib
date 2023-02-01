@@ -753,7 +753,9 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
         tab->setLockTab(isLocked);
         q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
         q->tabBar()->tabButton(indexBar, QTabBar::RightSide)->setEnabled(!isLocked);
-        mCloseTabButton->setEnabled(!isLocked);
+        if (q->tabBar()->currentIndex() == indexBar) {
+            mCloseTabButton->setEnabled(!isLocked);
+        }
     }
 }
 
