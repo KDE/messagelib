@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:59+0000\n"
+"POT-Creation-Date: 2023-02-01 00:58+0000\n"
 "PO-Revision-Date: 2007-11-17 19:41+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1477,19 +1477,19 @@ msgstr ""
 msgid "Close Tab"
 msgstr "Fermi la langeton"
 
-#: pane.cpp:520 pane.cpp:801
+#: pane.cpp:520 pane.cpp:807
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Malplena"
 
-#: pane.cpp:705
+#: pane.cpp:707
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fermi la langeton"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1497,14 +1497,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fald&u ĉiujn fadenojn"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Lasta serĉo"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"

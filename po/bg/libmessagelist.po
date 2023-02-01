@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:59+0000\n"
+"POT-Creation-Date: 2023-02-01 00:58+0000\n"
 "PO-Revision-Date: 2023-01-11 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1370,31 +1370,31 @@ msgstr "Преместване раздела надясно"
 msgid "Close Tab"
 msgstr "Затваряне на раздел"
 
-#: pane.cpp:520 pane.cpp:801
+#: pane.cpp:520 pane.cpp:807
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Празно"
 
-#: pane.cpp:705
+#: pane.cpp:707
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Затваряне на раздел"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Затваряне на всички останали раздели"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Отключване на раздел"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

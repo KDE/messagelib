@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:59+0000\n"
+"POT-Creation-Date: 2023-02-01 00:58+0000\n"
 "PO-Revision-Date: 2021-12-19 19:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1396,31 +1396,31 @@ msgstr "انقل اللسان لليمين"
 msgid "Close Tab"
 msgstr "أغلق اللسان"
 
-#: pane.cpp:520 pane.cpp:801
+#: pane.cpp:520 pane.cpp:807
 #, fuzzy, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "فارغ"
 
-#: pane.cpp:705
+#: pane.cpp:707
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "أغلق اللسان"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "أغلق كلّ الألسنة الأخرى"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "آخر بحث"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

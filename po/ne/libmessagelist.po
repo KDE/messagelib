@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:59+0000\n"
+"POT-Creation-Date: 2023-02-01 00:58+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1542,20 +1542,20 @@ msgstr ""
 msgid "Close Tab"
 msgstr "सबै थ्रेड संक्षिप्त गर्नुहोस्"
 
-#: pane.cpp:520 pane.cpp:801
+#: pane.cpp:520 pane.cpp:807
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "खाली"
 
-#: pane.cpp:705
+#: pane.cpp:707
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1563,14 +1563,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "सबै थ्रेड संक्षिप्त गर्नुहोस्"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "अन्तिम खोजी"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"

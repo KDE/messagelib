@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:59+0000\n"
+"POT-Creation-Date: 2023-02-01 00:58+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -1401,25 +1401,25 @@ msgstr "Mută fila la dreapta"
 msgid "Close Tab"
 msgstr "Închide fila"
 
-#: pane.cpp:520 pane.cpp:801
+#: pane.cpp:520 pane.cpp:807
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Gol"
 
-#: pane.cpp:705
+#: pane.cpp:707
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Închide fila"
 
-#: pane.cpp:708
+#: pane.cpp:711
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Închide toate celelalte file"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
@@ -1427,7 +1427,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Blochează căutarea"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
