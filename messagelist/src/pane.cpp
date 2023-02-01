@@ -681,6 +681,7 @@ void Pane::PanePrivate::onCurrentTabChanged()
     Q_EMIT q->currentTabChanged();
 
     auto w = static_cast<Widget *>(q->currentWidget());
+    mCloseTabButton->setEnabled(!w->isLocked());
 
     QItemSelectionModel *s = mWidgetSelectionHash[w];
 
@@ -752,6 +753,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
         tab->setLockTab(isLocked);
         q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
         q->tabBar()->tabButton(indexBar, QTabBar::RightSide)->setEnabled(!isLocked);
+        mCloseTabButton->setEnabled(!isLocked);
     }
 }
 
