@@ -132,9 +132,6 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -1421,10 +1418,6 @@ void ViewerPrivate::createWidgets()
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(readerBox);
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
     readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    mTextToSpeechContainerWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
-    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
@@ -1635,12 +1628,6 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    mSpeakTextAction = new QAction(i18n("Speak Text"), this);
-    mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-    ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
-    connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mSpeakTextAction = new QAction(i18n("Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
@@ -2682,9 +2669,6 @@ void ViewerPrivate::slotSpeakText()
 {
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-        mTextToSpeechContainerWidget->say(text);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         mTextToSpeechContainerWidget->say(text);
 #endif

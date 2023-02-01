@@ -20,12 +20,6 @@ namespace KPIMTextEdit
 class SlideContainer;
 }
 
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-namespace KPIMTextEditTextToSpeech
-{
-class TextToSpeechContainerWidget;
-}
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
@@ -64,9 +58,6 @@ private:
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     KPIMTextEdit::SlideContainer *const mSliderContainer;
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
 #endif
@@ -76,9 +67,6 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    explicit MailSourceViewTextBrowser(KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent = nullptr);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     explicit MailSourceViewTextBrowser(TextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent = nullptr);
 #endif
@@ -92,9 +80,6 @@ Q_SIGNALS:
 private:
     void slotSpeakText();
     void slotSaveAs();
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif

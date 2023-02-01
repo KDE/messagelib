@@ -57,12 +57,6 @@ namespace KPIMTextEdit
 {
 class SlideContainer;
 }
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-namespace KPIMTextEditTextToSpeech
-{
-class TextToSpeechContainerWidget;
-}
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
@@ -713,9 +707,6 @@ public:
     MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif

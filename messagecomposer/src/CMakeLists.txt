@@ -277,6 +277,7 @@ target_link_libraries(KF5MessageComposer
     KF5::AkonadiMime
     KF5::Libkleo
     KF5::MessageViewer
+    KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
     KF5::MailTransportAkonadi
     KF5::MailTransport
@@ -296,11 +297,6 @@ target_link_libraries(KF5MessageComposer
     KF${KF_MAJOR_VERSION}::GuiAddons
     KF${KF_MAJOR_VERSION}::Codecs
     )
-if (USE_KTEXTADDONS_LIB)
-    target_link_libraries(KF5MessageComposer PUBLIC KF${KF_MAJOR_VERSION}::TextAutoCorrection)
-else()
-    target_link_libraries(KF5MessageComposer PUBLIC KF5::PimCommonAutoCorrection)
-endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KF5MessageComposer PRIVATE Qt6::Core5Compat)
 endif()

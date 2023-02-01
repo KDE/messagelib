@@ -37,15 +37,12 @@ add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    set(TEXTADDONS_LIBS )
-    if (USE_KTEXTADDONS_LIB)
-        set (TEXTADDONS_LIBS KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
-    endif()
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KF5::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KF5::PimTextEdit
-        KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes ${TEXTADDONS_LIBS}
+        KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+        KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
 
     if (TARGET Qt::Core5Compat)

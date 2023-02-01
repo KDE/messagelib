@@ -12,11 +12,7 @@
 #include <MessageComposer/PluginEditorConvertTextInterface>
 
 class RichTextComposerNgTest;
-#ifdef HAVE_KTEXTADDONS_SUPPORT
 namespace TextAutoCorrection
-#else
-namespace PimCommonAutoCorrection
-#endif
 {
 class AutoCorrection;
 }
@@ -36,13 +32,8 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
-#ifdef HAVE_KTEXTADDONS_SUPPORT
     Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrection *autocorrection() const;
     void setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect);
-#else
-    Q_REQUIRED_RESULT PimCommonAutoCorrection::AutoCorrection *autocorrection() const;
-    void setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect);
-#endif
 
     void setAutocorrectionLanguage(const QString &lang);
 

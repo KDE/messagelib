@@ -438,6 +438,7 @@ target_link_libraries(KF5MessageViewer
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
     KF${KF_MAJOR_VERSION}::Notifications
+    KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KF5MessageViewer PRIVATE QGpgmeQt6)
@@ -446,11 +447,6 @@ else()
 endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KF5MessageViewer PRIVATE Qt6::Core5Compat) 
-endif()
-if (USE_KTEXTADDONS_LIB)
-    target_link_libraries(KF5MessageViewer PRIVATE
-        KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
-    )
 endif()
 
 set_target_properties(KF5MessageViewer PROPERTIES
