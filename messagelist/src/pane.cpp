@@ -644,6 +644,10 @@ void Pane::PanePrivate::closeTab(QWidget *w)
 
     auto wWidget = qobject_cast<Widget *>(w);
     if (wWidget) {
+        const bool isLocked = wWidget->isLocked();
+        if (isLocked) {
+            return;
+        }
         wWidget->saveCurrentSelection();
     }
 
