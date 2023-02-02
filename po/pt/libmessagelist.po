@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:58+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-11 09:27+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1404,31 +1404,31 @@ msgstr "Mover a Página para a Direita"
 msgid "Close Tab"
 msgstr "Fechar a Página"
 
-#: pane.cpp:520 pane.cpp:807
+#: pane.cpp:520 pane.cpp:816
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Vazia"
 
-#: pane.cpp:707
+#: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fechar a Página"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fechar Todas as Outras Páginas"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Desbloquear a Página"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

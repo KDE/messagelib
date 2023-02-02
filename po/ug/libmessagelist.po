@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:58+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -1344,32 +1344,32 @@ msgstr "بەتكۈچنى ئوڭغا يۆتكە"
 msgid "Close Tab"
 msgstr "بەتكۈچ ياپ"
 
-#: pane.cpp:520 pane.cpp:807
+#: pane.cpp:520 pane.cpp:816
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "بوش"
 
-#: pane.cpp:707
+#: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "بەتكۈچ ياپ"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr ""
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "بەتكۈچ ياپ"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

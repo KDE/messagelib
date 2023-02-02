@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-07-08 11:23+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1605,7 +1605,7 @@ msgstr ""
 "преместени в папка \"Кошче\" веднага след изпращането на отговора."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1564
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Равноширок шрифт"
@@ -1969,7 +1969,7 @@ msgstr "Размер"
 msgid "Turn on HTML rendering for this message."
 msgstr "Включване на HTML рендиране за това съобщение."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1637
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Зареждане на външни препратки от Интернет за това съобщение."
@@ -2051,7 +2051,7 @@ msgstr "&Отваряне в адресника"
 msgid "&Copy Email Address"
 msgstr "&Копиране на имейл адрес"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресът е копиран в буфера."
@@ -2107,7 +2107,7 @@ msgstr "Изпълняване"
 msgid "Loading message..."
 msgstr "Зареждане на съобщение..."
 
-#: viewer/viewer_p.cpp:364
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2116,13 +2116,13 @@ msgstr ""
 "Изтриването на прикачен файл от шифровано или в стария стил съобщение на "
 "поща не се поддържа."
 
-#: viewer/viewer_p.cpp:365 viewer/viewer_p.cpp:372 viewer/viewer_p.cpp:594
-#: viewer/viewer_p.cpp:1746
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Изтриване на прикрепен файл"
 
-#: viewer/viewer_p.cpp:371
+#: viewer/viewer_p.cpp:368
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2131,336 +2131,334 @@ msgstr ""
 "Изтриването на прикрепения файл може да направи невалиден електронния подпис "
 "на съобщението."
 
-#: viewer/viewer_p.cpp:453
+#: viewer/viewer_p.cpp:450
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Отваряне с"
 
-#: viewer/viewer_p.cpp:471
+#: viewer/viewer_p.cpp:468
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Други..."
 
-#: viewer/viewer_p.cpp:473 viewer/viewer_p.cpp:486
+#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Отваряне с..."
 
-#: viewer/viewer_p.cpp:550 viewer/viewer_p.cpp:1724
+#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Отваряне"
 
-#: viewer/viewer_p.cpp:564 viewer/viewer_p.cpp:1731
+#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Изглед"
 
-#: viewer/viewer_p.cpp:572
+#: viewer/viewer_p.cpp:569
 #, kde-format
 msgid "Scroll To"
 msgstr "Превъртане до"
 
-#: viewer/viewer_p.cpp:577
+#: viewer/viewer_p.cpp:574
 #, kde-format
 msgid "Save As..."
 msgstr "Запис като..."
 
-#: viewer/viewer_p.cpp:583 viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
 #, kde-format
 msgid "Copy"
 msgstr "Копиране"
 
-#: viewer/viewer_p.cpp:605
+#: viewer/viewer_p.cpp:602
 #, kde-format
 msgid "Reply To Author"
 msgstr "Отговор на автора"
 
-#: viewer/viewer_p.cpp:613
+#: viewer/viewer_p.cpp:610
 #, kde-format
 msgid "Reply To All"
 msgstr "Отговор на всички"
 
-#: viewer/viewer_p.cpp:619 viewer/viewer_p.cpp:1751
+#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
 #, kde-format
 msgid "Properties"
 msgstr "Настройки"
 
-#: viewer/viewer_p.cpp:756
+#: viewer/viewer_p.cpp:753
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:757
+#: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "Пощенският клиент на KDE"
 
-#: viewer/viewer_p.cpp:1293
+#: viewer/viewer_p.cpp:1290
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Преглед на прикачения файл: %1"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "При&крепени файлове"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Избор на стил за показване на прикрепени файлове"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Като икони"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Показване на всички прикрепени файлове като икони. Щракнете за да ги видите."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Интелигентно"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Показване на прикрепените файлове както е предложено от подателя."
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Вградени"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Показване на всички прикрепени файлове вградени (ако е възможно)"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Скриване"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Скриване на прикрепените файлове при преглед на съобщение"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Само в заглавни части"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Показване на прикачени файлове само в заглавната част на пощата"
 
-#: viewer/viewer_p.cpp:1526
+#: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Кодова таблица"
 
-#: viewer/viewer_p.cpp:1531 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Авто"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgid "Copy Text"
 msgstr "Копиране на текст"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Select All Text"
 msgstr "Избиране на целия текст"
 
-#: viewer/viewer_p.cpp:1554 viewer/viewer_p.cpp:2045
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Копиране на адреса на нишка"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
 msgstr "Отваряне на адрес (URL)"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Показване на структурата на съобщенията"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
 msgstr "Преглед на &източника"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1577
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Запазване на съобщение..."
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "&Save Display Format"
 msgstr "Запазване на дисплей формата"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "Връщане на стандартния дисплей формат"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Превъртане нагоре"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Превъртане надолу"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1604
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Превъртане нагоре"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Превъртане на долу"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Превключване на режим на показване на HTML"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Превключване на режима на показване между HTML и обикновен текст"
 
-#: viewer/viewer_p.cpp:1633
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
 msgstr "Зареждане на външни препратки"
 
-#: viewer/viewer_p.cpp:1639 viewer/viewer_p.cpp:1645
-#: widgets/mailsourceviewtextbrowserwidget.cpp:152
-#: widgets/mailsourceviewtextbrowserwidget.cpp:159
+#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Изговаряне на текст"
 
-#: viewer/viewer_p.cpp:1651
+#: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "Share Text..."
 msgstr "Споделяне на текст ..."
 
-#: viewer/viewer_p.cpp:1657
+#: viewer/viewer_p.cpp:1644
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Копиране на местоположението на изображението"
 
-#: viewer/viewer_p.cpp:1663
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Тър&сене в съобщение..."
 
-#: viewer/viewer_p.cpp:1672
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Деактивиране на емотикони"
 
-#: viewer/viewer_p.cpp:1721
+#: viewer/viewer_p.cpp:1708
 #, kde-format
 msgid "Save &As..."
 msgstr "&Запис като..."
 
-#: viewer/viewer_p.cpp:1729
+#: viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Open With..."
 msgstr "Отваряне с..."
 
-#: viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Запис на всички прикрепени файлове..."
 
-#: viewer/viewer_p.cpp:1965
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The network is broken."
 msgstr "Мрежата е прекъсната."
 
-#: viewer/viewer_p.cpp:1965 viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Проверяване на URL адреса за фишинг"
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL адресът %1 не е валиден."
 
-#: viewer/viewer_p.cpp:1988
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Този ​​уеб сайт е злонамерен софтуер, искате ли да продължите да го показвате?"
 
-#: viewer/viewer_p.cpp:1989
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "Malware"
 msgstr "Зловреден софтуер"
 
-#: viewer/viewer_p.cpp:2043
+#: viewer/viewer_p.cpp:2030
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Копиране адреса на е-пощата"
 
-#: viewer/viewer_p.cpp:2124
+#: viewer/viewer_p.cpp:2111
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Съобщение като обикновен текст"
 
-#: viewer/viewer_p.cpp:2325
+#: viewer/viewer_p.cpp:2312
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Отпечатване на документ"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Адресът (URL) е копиран в буфера."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2878
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Зареждането на съобщението е неуспешно:%1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2883
 #, kde-format
 msgid "Message not found."
 msgstr "Съобщението не е намерено."

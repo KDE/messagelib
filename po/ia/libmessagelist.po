@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2020, 2021.
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:58+0000\n"
-"PO-Revision-Date: 2021-09-23 12:12+0200\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"PO-Revision-Date: 2023-02-01 17:59+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1369,31 +1369,31 @@ msgstr "Move scheda a dextera"
 msgid "Close Tab"
 msgstr "Claude scheda"
 
-#: pane.cpp:520 pane.cpp:807
+#: pane.cpp:520 pane.cpp:816
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Vacue"
 
-#: pane.cpp:707
+#: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Clauder scheda"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Clauder omne altere schedas"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Disbloca scheda"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -1887,16 +1887,14 @@ msgid "Collapse All Groups"
 msgstr "Plicar Omne Gruppos"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Expander Omne Gruppos"
+msgstr "Expande omne topicos"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Plicar Omne Gruppos"
+msgstr "Plica omne topicos"
 
 #: widget.cpp:419
 #, kde-format

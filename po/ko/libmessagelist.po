@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:58+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-04-16 23:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1356,31 +1356,31 @@ msgstr "탭 오른쪽으로 이동"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:520 pane.cpp:807
+#: pane.cpp:520 pane.cpp:816
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: pane.cpp:707
+#: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:711
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "모든 다른 탭 닫기"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "탭 잠금 해제"
 
-#: pane.cpp:716
+#: pane.cpp:721
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
