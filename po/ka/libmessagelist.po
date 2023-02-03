@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 07:54+0100\n"
+"PO-Revision-Date: 2023-02-02 08:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -348,7 +348,7 @@ msgstr "თარიღი"
 #: core/manager.cpp:624
 #, kde-format
 msgid "Most Recent Date"
-msgstr ""
+msgstr "უახლესი თარიღი"
 
 #: core/manager.cpp:630
 #, kde-format
@@ -744,7 +744,7 @@ msgstr ""
 #: core/theme.cpp:167
 #, kde-format
 msgid "Max Date"
-msgstr ""
+msgstr "მაქს. თარიღი"
 
 #: core/theme.cpp:170
 #, kde-format
@@ -754,12 +754,12 @@ msgstr "შეტყობინების ჭდეები"
 #: core/theme.cpp:173
 #, kde-format
 msgid "Note Icon"
-msgstr ""
+msgstr "შენიშვნის ხატულა"
 
 #: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
-msgstr ""
+msgstr "მოსაწვევის ხატულა"
 
 #: core/theme.cpp:177
 #, kde-format
@@ -1454,7 +1454,7 @@ msgstr ""
 #: utils/configureaggregationsdialog.cpp:157
 #, kde-format
 msgid "Delete Aggregation"
-msgstr ""
+msgstr "აგრეგაციის წაშლა"
 
 #: utils/configureaggregationsdialog.cpp:340
 #, kde-format
@@ -1608,12 +1608,12 @@ msgstr ""
 #: utils/themeeditor.cpp:108
 #, kde-format
 msgid "Unnamed Column"
-msgstr ""
+msgstr "უსახელო სვეტი"
 
 #: utils/themeeditor.cpp:173
 #, kde-format
 msgid "Message Group"
-msgstr ""
+msgstr "შეტყობინებების ჯგუფი"
 
 #: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
 #, kde-format
@@ -1625,17 +1625,17 @@ msgstr ""
 #: utils/themeeditor.cpp:192
 #, kde-format
 msgid "Sample Tag 1"
-msgstr ""
+msgstr "მაგალითი ჭდე 1"
 
 #: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 2"
-msgstr ""
+msgstr "მაგალითი ჭდე 2"
 
 #: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 3"
-msgstr ""
+msgstr "მაგალითი ჭდე 3"
 
 #: utils/themeeditor.cpp:409
 #, kde-format
@@ -1705,7 +1705,7 @@ msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
 "e.g. Important mark on a non important mail"
 msgid "Keep Softened Icon"
-msgstr ""
+msgstr "დარბილებული ხატულის შენარჩუნება"
 
 #: utils/themeeditor.cpp:927
 #, kde-format

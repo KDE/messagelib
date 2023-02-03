@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 21:46+0530\n"
+"PO-Revision-Date: 2023-02-02 19:38+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -2522,6 +2522,7 @@ msgstr "<qt><br>நா<br>ள்<br><br>கா<br>ட்<br>டி<br>அ<br> <b
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""
+"HTML, சாதாரண உரை, அல்லது நாள்காட்டி காட்சிகளுக்கிடையே தாவ இதை கிளிக் செய்யுங்கள்."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2537,11 +2538,10 @@ msgid ""
 msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr "&மூலத்தை பார்"
+msgstr "வடிவமைக்கப்படா மூலம்"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2549,11 +2549,10 @@ msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:57
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr "&மூலத்தை பார்"
+msgstr "HTML மூலம்"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
@@ -2564,50 +2563,46 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "உடனிணைப்பு எந்த அடைவுக்குள் சேமிக்கப்பட்டுள்ளதோ, அதைத் திறக்கும்"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "தேர்ந்தெடுக்கபட்ட பெறுநர்கள்"
+msgstr "கோப்பை திற"
 
 #: widgets/opensavedfilefolderwidget.cpp:61
 #, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "உடனிணைப்பை கொண்ட அடைவை திற"
+msgstr[1] "உடனிணைப்புகளை கொண்ட அடைவை திற"
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "PDF கோப்பைக்கொண்ட அடைவை சேமி"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
-#, fuzzy, kde-format
-#| msgid "Name of the attachment:"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "இணைப்பின் பெயர்:"
+msgstr "கேமெயிலால் உடனிணைப்பை திறக்க முடியவில்லை."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "&Next Message"
+#, kde-format
 msgid "Next Message"
-msgstr "அடுத்த செய்தி"
+msgstr "அடுத்த அஞ்சல்"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Unread &Message"
+#, kde-format
 msgid "Previous Message"
-msgstr "முந்தைய வாசிக்கப்படாத செய்தி"
+msgstr "முந்தைய அஞ்சல்"
 
 #: widgets/vcardviewer.cpp:39
-#, fuzzy, kde-format
-#| msgid "VCard Viewer"
+#, kde-format
 msgctxt "@title:window"
 msgid "vCard Viewer"
-msgstr "vஅட்டை காட்சியகம்"
+msgstr "vCard காட்டி"
 
 #: widgets/vcardviewer.cpp:50
 #, kde-format
@@ -2615,16 +2610,14 @@ msgid "&Import"
 msgstr "&இறக்குமதி செய்"
 
 #: widgets/vcardviewer.cpp:51
-#, fuzzy, kde-format
-#| msgid "&Next Card"
+#, kde-format
 msgid "&Next Card"
-msgstr "அடுத்த செய்தி."
+msgstr "&அடுத்த அட்டை"
 
 #: widgets/vcardviewer.cpp:52
-#, fuzzy, kde-format
-#| msgid "&Previous Card"
+#, kde-format
 msgid "&Previous Card"
-msgstr "முந்தைய செய்தி."
+msgstr "&முந்தைய அட்டை"
 
 #, fuzzy
 #~| msgid "Reply to: "
