@@ -1881,7 +1881,7 @@ msgstr "S'ha produït un error en guardar l'adjunt"
 #: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "No s'ha trobat cap adjunt per que es guardarà."
+msgstr "No s'ha trobat cap adjunt per a guardar."
 
 #: utils/messageviewerutil.cpp:515
 #, kde-format
