@@ -1133,16 +1133,18 @@ void Pane::writeConfig(bool restoreSession)
 
     if (restoreSession) {
         conf.writeEntry(QStringLiteral("currentIndex"), currentIndex());
-        conf.writeEntry(QStringLiteral("tabNumber"), count());
 
+        int elementTab = 0;
         for (int i = 0; i < count(); ++i) {
             auto w = qobject_cast<Widget *>(widget(i));
-            if (w) {
-                KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(i));
+            if (w && w->currentCollection().isValid()) {
+                KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(elementTab));
                 grp.writeEntry(QStringLiteral("collectionId"), w->currentCollection().id());
                 grp.writeEntry(QStringLiteral("HeaderState"), w->view()->header()->saveState());
+                elementTab++;
             }
         }
+        conf.writeEntry(QStringLiteral("tabNumber"), elementTab);
     }
     conf.sync();
 }
