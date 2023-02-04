@@ -3,21 +3,21 @@
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2020.
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 02:34+0000\n"
-"PO-Revision-Date: 2022-04-06 11:28+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-02-03 16:30+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:169
@@ -215,7 +215,7 @@ msgstr "Obnovit"
 #: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr ""
+msgstr "KMail nemohl zapsat přílohu do dočasného souboru."
 
 #: attachment/attachmentcontrollerbase.cpp:687
 #: attachment/attachmentcontrollerbase.cpp:711
@@ -266,7 +266,7 @@ msgstr "Nah&radit"
 #: attachment/attachmentcontrollerbase.cpp:926
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr ""
+msgstr "Opravdu si přejete přiložit adresář \"%1\"?"
 
 #: attachment/attachmentcontrollerbase.cpp:861
 #: attachment/attachmentcontrollerbase.cpp:927
@@ -625,7 +625,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
-msgstr ""
+msgstr "Podep&sat všechny části"
 
 #: composer/composerviewbase.cpp:2084
 #, kde-format
@@ -1082,8 +1082,14 @@ msgid_plural ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Váš podepisovací klíč OpenPGP</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+"%3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Váš podepisovací klíč OpenPGP</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+"%3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Váš podepisovací klíč OpenPGP</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+"%3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:95
 #, kde-format
@@ -1094,8 +1100,14 @@ msgid_plural ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Váš šifrovací klíč OpenPGP</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Váš šifrovací OpenPGP klíč</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Váš šifrovací OpenPGP klíč</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:101
 #, kde-format
@@ -1106,8 +1118,14 @@ msgid_plural ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Klíč OpenPGP pro</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Klíč OpenPGP pro</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Klíč OpenPGP pro</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+"p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:121
 #, kde-format
@@ -1312,8 +1330,17 @@ msgid_plural ""
 "signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:212
 #, kde-format
@@ -1326,8 +1353,17 @@ msgid_plural ""
 "encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro váš S/MIME "
+"šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:220
 #, kde-format
@@ -1340,8 +1376,17 @@ msgid_plural ""
 "certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
 "in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro S/MIME "
+"certifikát</p><p align=\"center\"><b>%2</b> (serial number %3)</p><p>vyprší "
+"za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro S/MIME "
+"certifikát</p><p align=\"center\"><b>%2</b> (serial number %3)</p><p>vyprší "
+"za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Kořenový certifikát</p><p align=\"center\"><b>%4</b></p><p>pro S/MIME "
+"certifikát</p><p align=\"center\"><b>%2</b> (serial number %3)</p><p>vyprší "
+"za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:230
 #, kde-format
@@ -1354,8 +1399,17 @@ msgid_plural ""
 "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
 "%3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:238
 #, kde-format
@@ -1368,8 +1422,17 @@ msgid_plural ""
 "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
 "number %3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:246
 #, kde-format
@@ -1382,8 +1445,17 @@ msgid_plural ""
 "MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
 "p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"S/MIME certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"S/MIME certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Certifikát zprostředkující CA</p><p align=\"center\"><b>%4</b></p><p>pro "
+"S/MIME certifikát</p><p align=\"center\"><b>%2</b> (sériové číslo %3)</"
+"p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:262
 #, kde-format
@@ -1394,8 +1466,14 @@ msgid_plural ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
 "number %3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> "
+"(sériové číslo %3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> "
+"(sériové číslo %3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Váš S/MIME podepisovací certifikát</p><p align=\"center\"><b>%2</b> "
+"(sériové číslo %3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:268
 #, kde-format
@@ -1406,8 +1484,14 @@ msgid_plural ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
 "number %3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>Váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>Váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>Váš S/MIME šifrovací certifikát</p><p align=\"center\"><b>%2</b> (sériové "
+"číslo %3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: composer/nearexpirychecker.cpp:274
 #, kde-format
@@ -1418,8 +1502,14 @@ msgid_plural ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
 "%3);</p><p>expires in less than %1 days.</p>"
 msgstr[0] ""
+"<p>S/MIME certifikát pro</p><p align=\"center\"><b>%2</b> (sériové číslo "
+"%3)</p><p>vyprší za méně než jeden den.</p>"
 msgstr[1] ""
+"<p>S/MIME certifikát pro</p><p align=\"center\"><b>%2</b> (sériové číslo "
+"%3)</p><p>vyprší za méně než %1 dny.</p>"
 msgstr[2] ""
+"<p>S/MIME certifikát pro</p><p align=\"center\"><b>%2</b> (sériové číslo "
+"%3)</p><p>vyprší za méně než %1 dnů.</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -1584,7 +1674,7 @@ msgstr "Zeptat se před změněním velikosti"
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr ""
+msgstr "Vrátit se k formátu:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
@@ -1644,7 +1734,7 @@ msgstr "Minimální výška:"
 #: imagescaling/ui/imagescalingwidget.ui:230
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
-msgstr ""
+msgstr "Přeskočit obrázek jehož velikost je menší než:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
@@ -1668,19 +1758,19 @@ msgstr "Filtr zdrojů"
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr ""
+msgstr "Nefiltrovat (Všechny soubory jsou zahrnuty)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr ""
+msgstr "Zahrnout všechny soubory jejichž název obsahuje jeden ze vzorů"
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
-msgstr ""
+msgstr "Vyjmout všechny soubory jejichž název obsahuje jeden ze vzorů"
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
@@ -1702,7 +1792,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr ""
+msgstr "Zadejte vzory oddělené pomocí ';'"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -1714,19 +1804,19 @@ msgstr "Obrazový formát"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr ""
+msgstr "Změňte velikost všech obrázků v jednom z těchto formátů"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr ""
+msgstr "Názvu souborů se změněnou velikostí"
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr ""
+msgstr "Přejmenujte soubory se změněnou velikostí podle následujícího vzoru:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1738,7 +1828,7 @@ msgstr "Příjemci"
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr ""
+msgstr "Nefiltrovat (Všichni příjemci jsou povoleni)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
@@ -1756,13 +1846,13 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "Neměnit velikost pokud každý z e-mailů obsahuje následující vzor"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "Neměnit velikost pokud jeden z e-mailů obsahuje následující vzor"
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
@@ -2410,7 +2500,7 @@ msgstr "Vylepšit prostý text HTML zprávy"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Podepsat, pokud možno, všechny zprávy"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
