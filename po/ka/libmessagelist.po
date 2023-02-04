@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2023-02-02 08:59+0100\n"
+"PO-Revision-Date: 2023-02-03 15:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1283,7 +1283,7 @@ msgstr "ახალი ჩანართის გახსნა"
 #: pane.cpp:126
 #, kde-format
 msgid "New tab"
-msgstr "ახალი _დაფა"
+msgstr "ახალი ჩანართი"
 
 #: pane.cpp:136
 #, kde-format
@@ -1294,7 +1294,7 @@ msgstr "მიმდინარე ჩანართის დახურვ�
 #: pane.cpp:138
 #, kde-format
 msgid "Close tab"
-msgstr "ჩანართის დ_ახურვა"
+msgstr "ჩანართის დახურვა"
 
 #: pane.cpp:180
 #, kde-format
