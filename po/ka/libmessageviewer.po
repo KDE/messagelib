@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2023-01-17 00:49+0100\n"
+"PO-Revision-Date: 2023-02-05 09:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -80,11 +80,11 @@ msgstr "შეცდომა: %1 (%2)"
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
 msgid "Encapsulated message"
-msgstr ""
+msgstr "ჩასმული შეტყობინება"
 
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
 msgid "End of encapsulated message"
-msgstr ""
+msgstr "ჩასმული შეტყობინების დასასრული"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:3
 msgid "This message is encrypted."
@@ -304,7 +304,7 @@ msgstr "SDID"
 #: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "ამრჩევი"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, kde-format
@@ -576,7 +576,7 @@ msgstr "უცნობი"
 #: dkim-verify/dkimwidgetinfo.cpp:103
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr ""
+msgstr "DKIM: სწორია (ხელმომწერი: %1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
@@ -591,7 +591,7 @@ msgstr "DKIM: ხელმოუწერელი"
 #: dkim-verify/dkimwidgetinfo.cpp:118
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: უნდა იყოს ხელმოწერილი %1-ის მიერ"
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
@@ -701,7 +701,7 @@ msgstr "ვადაგასული ხელმოწერა"
 #: dkim-verify/dkimwidgetinfo.cpp:203
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "ხელმოწერა მომავალში შეიქმნა"
 
 #: dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
@@ -793,7 +793,7 @@ msgstr ""
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
-msgstr ""
+msgstr "სათაურის გარეშე"
 
 #: header/grantleeheaderformatter.cpp:500
 #, kde-format
@@ -824,7 +824,7 @@ msgstr "უსაფრთხოება:"
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: header/headerstyle_util.cpp:146
 #, kde-format
@@ -848,17 +848,17 @@ msgstr ""
 #: header/headerstyle_util.cpp:164
 #, kde-format
 msgid "No Spam agent"
-msgstr ""
+msgstr "სპამის აგენტის გარეშე"
 
 #: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "Spam filter score not a number"
-msgstr ""
+msgstr "სპამის ფილტრის ქულა რიცხვი არაა"
 
 #: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Threshold not a valid number"
-msgstr ""
+msgstr "ზღვარი არასწორი რიცხვია"
 
 #: header/headerstyle_util.cpp:173
 #, kde-format
@@ -883,6 +883,10 @@ msgid ""
 "Full report:\n"
 "%2"
 msgstr ""
+"%1.\n"
+"\n"
+"სრული ანგარიში:\n"
+"%2"
 
 #: header/headerstylemenumanager.cpp:105
 #, kde-format
@@ -1079,7 +1083,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr ""
+msgstr "დაშორებული შემცველობის მორგება"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
@@ -1095,13 +1099,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "დაშორებული შემცველობის ჩასწორება"
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr ""
+msgstr "დაშორებული შემცველობის დამატება"
 
 #: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
@@ -1111,7 +1115,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
 msgid "Add new Url"
-msgstr ""
+msgstr "ახალი ბმულის დამატება"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1162,12 +1166,12 @@ msgstr "ნაგავში გადატანა"
 #: scamdetection/scamdetectionwarningwidget.cpp:43
 #, kde-format
 msgid "I confirm it's not a scam"
-msgstr ""
+msgstr "ვადასტურებ, რომ ეს სპამი არაა"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:47
 #, kde-format
 msgid "Add email to whitelist"
-msgstr ""
+msgstr "ელფოსტის თეთრ სიაში ჩამატება"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:51
 #, kde-format
@@ -1396,7 +1400,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:139
 #, kde-format
 msgid "Activate Access Key"
-msgstr ""
+msgstr "წვდომის გასაღების გააქტიურება"
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
 #: settings/messageviewer.kcfg.cmake:143
@@ -1701,7 +1705,7 @@ msgstr ""
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
-msgstr ""
+msgstr "მიბმული.1"
 
 #: utils/messageviewerutil.cpp:233
 #, kde-format
@@ -1712,7 +1716,7 @@ msgstr "მიმაგრებული ფაილის შენახვ�
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
-msgstr ""
+msgstr "მიბმული.%1"
 
 #: utils/messageviewerutil.cpp:360
 #, kde-format
@@ -1724,7 +1728,7 @@ msgstr ""
 #: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
 #, kde-format
 msgid "KMail Question"
-msgstr ""
+msgstr "KMail-ის კითხვა"
 
 #: utils/messageviewerutil.cpp:362
 #, kde-format
@@ -1842,7 +1846,7 @@ msgstr "მიმაგრებული ფაილის ჩასწორ�
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
-msgstr ""
+msgstr "სხეულის ნაწილი"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:262
 #, kde-format
@@ -2122,7 +2126,7 @@ msgstr ""
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
-msgstr ""
+msgstr "&ჭკვიანი"
 
 #: viewer/viewer_p.cpp:1494
 #, kde-format
@@ -2165,7 +2169,7 @@ msgstr ""
 #: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "&Set Encoding"
-msgstr ""
+msgstr "&კოდირების დაყენება"
 
 #: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
@@ -2196,7 +2200,7 @@ msgstr "URL-ის გახსნა"
 #: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
-msgstr ""
+msgstr "შეტყობინების სტრუქტურის ჩვენება"
 
 #: viewer/viewer_p.cpp:1573
 #, kde-format
@@ -2211,7 +2215,7 @@ msgstr "&შეტყობინების შენახვა..."
 #: viewer/viewer_p.cpp:1584
 #, kde-format
 msgid "&Save Display Format"
-msgstr ""
+msgstr "&ჩვენების ფორმატის შენახვა"
 
 #: viewer/viewer_p.cpp:1588
 #, kde-format
@@ -2435,7 +2439,7 @@ msgstr ""
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr ""
+msgstr "დაუმუშავებელი წყარო"
 
 #: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
@@ -2446,7 +2450,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr ""
+msgstr "HTML წყარო"
 
 #: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
@@ -2506,9 +2510,9 @@ msgstr "&იმპორტი"
 #: widgets/vcardviewer.cpp:49
 #, kde-format
 msgid "&Next Card"
-msgstr ""
+msgstr "&შემდეგი ბარათი"
 
 #: widgets/vcardviewer.cpp:50
 #, kde-format
 msgid "&Previous Card"
-msgstr ""
+msgstr "&წინა ბარათი"
