@@ -1456,7 +1456,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     mIconSizeSpinBox->setMaximum(64);
     mIconSizeSpinBox->setSuffix(ki18ncp("suffix in a spinbox", " pixel", " pixels"));
 
-    QObject::connect(mIconSizeSpinBox, qOverload<int>(&KPluralHandlingSpinBox::valueChanged), this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
+    QObject::connect(mIconSizeSpinBox, &KPluralHandlingSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
 
     tabg->addWidget(mIconSizeSpinBox, 1, 1);
 

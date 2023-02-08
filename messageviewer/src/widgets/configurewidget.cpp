@@ -47,7 +47,7 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     d->mSettingsUi->overrideCharacterEncoding->setWhatsThis(MessageCore::MessageCoreSettings::self()->overrideCharacterEncodingItem()->whatsThis());
     d->mSettingsUi->kcfg_ShrinkQuotes->setWhatsThis(MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
     d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
-    connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureWidget::settingsChanged);
+    connect(d->mSettingsUi->overrideCharacterEncoding, &QComboBox::currentIndexChanged, this, &ConfigureWidget::settingsChanged);
 }
 
 ConfigureWidget::~ConfigureWidget() = default;
