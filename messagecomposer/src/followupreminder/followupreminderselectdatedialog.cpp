@@ -71,7 +71,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     formLayout->addRow(i18n("Store to-do in:"), d->mCollectionCombobox);
 
     connect(d->mDateComboBox->lineEdit(), &QLineEdit::textChanged, this, &FollowUpReminderSelectDateDialog::slotDateChanged);
-    connect(d->mCollectionCombobox, qOverload<int>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+    connect(d->mCollectionCombobox, &Akonadi::CollectionComboBox::currentIndexChanged, this, &FollowUpReminderSelectDateDialog::updateOkButton);
     updateOkButton();
 }
 

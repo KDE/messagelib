@@ -87,7 +87,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     connect(mEdit, &RecipientLineEdit::clearButtonClicked, this, &RecipientLineNG::slotPropagateDeletion);
     connect(mCombo, &RecipientComboBox::rightPressed, mEdit, qOverload<>(&QWidget::setFocus));
 
-    connect(mCombo, qOverload<int>(&RecipientComboBox::activated), this, &RecipientLineNG::slotTypeModified);
+    connect(mCombo, &RecipientComboBox::activated, this, &RecipientLineNG::slotTypeModified);
 
     connect(mEdit, &RecipientLineEdit::addAddress, this, &RecipientLineNG::slotAddRecipient);
 }
