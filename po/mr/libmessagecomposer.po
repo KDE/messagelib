@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:47+0000\n"
+"POT-Creation-Date: 2023-02-09 01:03+0000\n"
 "PO-Revision-Date: 2013-03-20 15:50+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1330,12 +1330,12 @@ msgstr ""
 msgid "Select Format..."
 msgstr "स्वरूप निवडा..."
 
-#: imagescaling/imagescalingwidget.cpp:113
+#: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:123
+#: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1343,17 +1343,17 @@ msgid ""
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:193
+#: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
 msgstr "ऐच्छिक"
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Error in minimum Maximum value"
 msgstr ""

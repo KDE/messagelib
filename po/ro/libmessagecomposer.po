@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:47+0000\n"
+"POT-Creation-Date: 2023-02-09 01:03+0000\n"
 "PO-Revision-Date: 2014-04-09 11:08+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1386,12 +1386,12 @@ msgstr "Păstrează raportul imaginii"
 msgid "Select Format..."
 msgstr "Păstrează raportul imaginii"
 
-#: imagescaling/imagescalingwidget.cpp:113
+#: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:123
+#: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1399,17 +1399,17 @@ msgid ""
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:193
+#: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
 msgstr "Personalizat"
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Verificați valorile minimă și maximă."
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Error in minimum Maximum value"
 msgstr "Eroare în valoarea maximum minimă"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:47+0000\n"
+"POT-Creation-Date: 2023-02-09 01:03+0000\n"
 "PO-Revision-Date: 2012-01-28 16:26-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1361,12 +1361,12 @@ msgstr ""
 msgid "Select Format..."
 msgstr "選択(&L)..."
 
-#: imagescaling/imagescalingwidget.cpp:113
+#: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:123
+#: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1374,17 +1374,17 @@ msgid ""
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:193
+#: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr ""
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Error in minimum Maximum value"
 msgstr ""

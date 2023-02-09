@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:47+0000\n"
+"POT-Creation-Date: 2023-02-09 01:03+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1667,12 +1667,12 @@ msgstr "Bildformaat utsöken"
 msgid "Select Format..."
 msgstr "Formaat utsöken..."
 
-#: imagescaling/imagescalingwidget.cpp:113
+#: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Wodennig funkscheneert dat?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:123
+#: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1684,17 +1684,17 @@ msgstr ""
 "Datum</li><li>%n för den Orginaaldateinaam</li><li>%e för de "
 "Orginaalverwiedern</li><li>%x för en nieg Verwiedern</li></ul></qt>"
 
-#: imagescaling/imagescalingwidget.cpp:193
+#: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
 msgstr "Egen"
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Giff bitte gröttste un lüttste Weerten an"
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Error in minimum Maximum value"
 msgstr "Fehler bi lüttst Hööchstweert"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:47+0000\n"
+"POT-Creation-Date: 2023-02-09 01:03+0000\n"
 "PO-Revision-Date: 2022-07-13 12:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1464,12 +1464,12 @@ msgstr "그림 형식 선택"
 msgid "Select Format..."
 msgstr "형식 선택..."
 
-#: imagescaling/imagescalingwidget.cpp:113
+#: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">어떻게 작동하나요?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:123
+#: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1480,17 +1480,17 @@ msgstr ""
 "p><ul><li>%t 현재 시간 사용</li><li>%d 오늘 날짜 사용</li><li>%n 원래 파일 이"
 "름</li><li>%e 원래 파일 확장자</li><li>%x 새 파일 확장자</li></ul></qt>"
 
-#: imagescaling/imagescalingwidget.cpp:193
+#: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
 msgstr "사용자 정의"
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "최댓값과 최솟값을 확인하십시오."
 
-#: imagescaling/imagescalingwidget.cpp:321
+#: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Error in minimum Maximum value"
 msgstr "최대 최솟값에 오류 발생"
