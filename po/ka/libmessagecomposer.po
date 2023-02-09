@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 02:34+0000\n"
-"PO-Revision-Date: 2023-01-17 00:48+0100\n"
+"PO-Revision-Date: 2023-02-08 10:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -370,7 +370,7 @@ msgstr "ავტომატური გამოტანის შეთა�
 #: composer/composer.cpp:276
 #, kde-format
 msgid "No key data for recipients found."
-msgstr ""
+msgstr "მიმღებებისთვის საჭირო მონაცემები ვერ ვიპოვე."
 
 #: composer/composerviewbase.cpp:329
 #, kde-format
@@ -395,12 +395,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr ""
+msgstr "დაშიფვრა (მარქაფის წაშლა)"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr ""
+msgstr "ხელმოწერა (მარქაფის წაშლა)"
 
 #: composer/composerviewbase.cpp:336
 #, kde-format
@@ -507,7 +507,7 @@ msgstr "ფაილის დასრულების შეცდომა.
 #: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid "Could not open file."
-msgstr ""
+msgstr "ფაილის გახსნის შეცდომა."
 
 #: composer/composerviewbase.cpp:1375
 #, kde-format
@@ -836,7 +836,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1067
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
-msgstr ""
+msgstr "OpenPGP-ით ხელმოწერის გარეშე"
 
 #: composer/keyresolver.cpp:1077
 #, kde-format
@@ -850,7 +850,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1085
 #, kde-format
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "S/MIME ხელმოწერის გარეშე"
 
 #: composer/keyresolver.cpp:1147
 #, kde-format
@@ -1280,7 +1280,7 @@ msgstr "თარიღი:"
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
 msgid "Store to-do in:"
-msgstr ""
+msgstr "სად შევინახო გეგმა:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -2261,22 +2261,22 @@ msgstr "დასაწყისი"
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
 msgid "From Field Address"
-msgstr ""
+msgstr "მისამართის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:46
 #, kde-format
 msgid "From Field Last Name"
-msgstr ""
+msgstr "გვარის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:49
 #, kde-format
 msgid "From Field First Name"
-msgstr ""
+msgstr "სახელის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:52
 #, kde-format
 msgid "From Field Name"
-msgstr ""
+msgstr "სახელის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
@@ -2291,12 +2291,12 @@ msgstr "მისამართის ველზე"
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "ასლის გვარის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr ""
+msgstr "ასლის სახელის გვერდიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
@@ -2311,22 +2311,22 @@ msgstr "ფარულიასლი"
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr ""
+msgstr "ბრმა ასლის მისამართის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr ""
+msgstr "ბრმა ასლის გვარის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr ""
+msgstr "ბრმა ასლის პირველ სახელის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr ""
+msgstr "ბრმა ასლის სახელის ველიდან"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
@@ -2497,4 +2497,4 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "ონლაინ"
