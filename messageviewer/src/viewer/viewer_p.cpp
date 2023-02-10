@@ -1421,8 +1421,8 @@ void ViewerPrivate::createWidgets()
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
-#endif
     readerBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
+#endif
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
     mViewer->setViewer(this);
     readerBoxVBoxLayout->addWidget(mViewer);

@@ -438,8 +438,15 @@ target_link_libraries(KF5MessageViewer
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
     KF${KF_MAJOR_VERSION}::Notifications
+    )
+
+if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+target_link_libraries(KF5MessageViewer
+    PRIVATE
     KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
+endif()
+
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KF5MessageViewer PRIVATE QGpgmeQt6)
 else()
