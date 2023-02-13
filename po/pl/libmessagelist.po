@@ -6,13 +6,13 @@
 # Robert Gomulka <rgom@o2.pl>, 2006.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009, 2013.
 # Maciej Wikło <maciej.wiklo@wp.pl>, 2010.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2022-01-08 09:19+0100\n"
+"PO-Revision-Date: 2023-02-12 09:39+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -270,7 +270,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -2148,18 +2148,14 @@ msgid "Collapse All Groups"
 msgstr "Zwiń wszystkie grupy"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "Ex&pand All Threads"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Rozwiń &wszystkie wątki"
+msgstr "Rozwiń wszystkie wątki"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "C&ollapse All Threads"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Zw&iń wszystkie wątki"
+msgstr "Zwiń wszystkie wątki"
 
 #: widget.cpp:419
 #, kde-format
