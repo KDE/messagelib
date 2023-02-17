@@ -76,7 +76,7 @@ NodeHelper::~NodeHelper()
 
 void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
 {
-    if (!node) {
+    if (!node || !node->index().isValid()) {
         return;
     }
     mProcessedNodes.append(node);
@@ -592,7 +592,7 @@ void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
 
 const QTextCodec *NodeHelper::codec(KMime::Content *node)
 {
-    if (!node) {
+    if (!node || !node->contentType()) {
         return mLocalCodec;
     }
 
@@ -709,7 +709,7 @@ void NodeHelper::setNodeDisplayedHidden(KMime::Content *node, bool displayedHidd
 */
 QString NodeHelper::persistentIndex(const KMime::Content *node) const
 {
-    if (!node) {
+    if (!node || !node->index().isValid()) {
         return {};
     }
 
