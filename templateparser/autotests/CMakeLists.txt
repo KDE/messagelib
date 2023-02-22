@@ -19,7 +19,7 @@ macro(add_templateparser_unittest _source)
     Qt::Test
     KF${KF_MAJOR_VERSION}::KIOCore
     KPim${KF_MAJOR_VERSION}::Mime
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::IconThemes
     Qt::WebEngineWidgets

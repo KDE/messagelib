@@ -272,7 +272,7 @@ target_link_libraries(KF5MessageComposer
     KF5::MessageCore
     KF5::PimCommonAkonadi
     KF5::AkonadiCore
-    KF5::IdentityManagementWidgets
+    KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KF5::PimTextEdit
     KF5::AkonadiMime
     KF5::Libkleo

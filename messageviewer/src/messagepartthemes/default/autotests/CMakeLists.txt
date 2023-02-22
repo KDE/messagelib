@@ -15,7 +15,7 @@ macro(add_messageviewer_crypto_unittest _source)
         Qt::Test
         KF${KF_MAJOR_VERSION}::IconThemes
         KPim${KF_MAJOR_VERSION}::Mime
-        KF5::GrantleeTheme
+        KPim${KF_MAJOR_VERSION}::GrantleeTheme
     )
     add_gpg_crypto_test(${_name} messageviewer-messageparttheme-${_name})
     set_tests_properties(messageviewer-messageparttheme-${_name} PROPERTIES
@@ -36,7 +36,7 @@ ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
 ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
     TEST_NAME showonlymimeparttest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt::Test KF5::MessageViewer KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::Mime KF5::GrantleeTheme
+    LINK_LIBRARIES Qt::Test KF5::MessageViewer KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::GrantleeTheme
 )
 
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp

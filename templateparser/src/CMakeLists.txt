@@ -82,7 +82,7 @@ target_link_libraries(KF5TemplateParser
     PRIVATE
     KPim${KF_MAJOR_VERSION}::Mime
     KF5::MimeTreeParser
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF5::MessageCore
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::Completion

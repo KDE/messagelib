@@ -419,13 +419,13 @@ target_link_libraries(KF5MessageViewer
     KF${KF_MAJOR_VERSION}::ItemViews
     Qt::Network
     KF5::WebEngineViewer
-    KF5::GrantleeTheme
+    KPim${KF_MAJOR_VERSION}::GrantleeTheme
     KF5::MailTransportAkonadi
     KPim${KF_MAJOR_VERSION}::Mime
     KF5::Mbox
     KF5::PimTextEdit
-    KF5::Gravatar
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::Gravatar
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF${KF_MAJOR_VERSION}::IconThemes
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::KIOFileWidgets

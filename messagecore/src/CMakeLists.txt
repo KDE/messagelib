@@ -94,7 +94,7 @@ target_link_libraries(KF5MessageCore
     KF${KF_MAJOR_VERSION}::ConfigWidgets
     Qt::Network
     KF${KF_MAJOR_VERSION}::I18n
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF5::MimeTreeParser
     KF5::PimCommon
     )

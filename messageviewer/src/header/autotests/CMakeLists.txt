@@ -8,7 +8,7 @@ ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
     TEST_NAME grantleeheaderstyletest
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
-        KF5::GrantleeTheme
+        KPim${KF_MAJOR_VERSION}::GrantleeTheme
         KF${KF_MAJOR_VERSION}::IconThemes
         KF5::MessageViewer
         KPim${KF_MAJOR_VERSION}::Mime
@@ -20,7 +20,7 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
         ${TEMPLATES_LIB}
-        KF5::GrantleeTheme
+        KPim${KF_MAJOR_VERSION}::GrantleeTheme
         KF${KF_MAJOR_VERSION}::IconThemes
         KF5::MessageViewer
         KPim${KF_MAJOR_VERSION}::Mime

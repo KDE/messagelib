@@ -25,7 +25,7 @@ macro( add_messagecomposer_test _source )
             KF5::TemplateParser
             KF5::PimTextEdit
             Qt::Test
-            KF5::IdentityManagementWidgets
+            KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
             KF${KF_MAJOR_VERSION}::Contacts
             KF5::AkonadiCore
             KF${KF_MAJOR_VERSION}::XmlGui
