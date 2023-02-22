@@ -144,7 +144,7 @@ target_link_libraries(KF5MessageList
     KF${KF_MAJOR_VERSION}::KIOCore
     KF5::MessageCore
     KF5::PimCommonAkonadi
-    KF5::AkonadiSearchPIM
+    KPim${KF_MAJOR_VERSION}::AkonadiSearchPIM
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::IconThemes
     KF${KF_MAJOR_VERSION}::Completion
