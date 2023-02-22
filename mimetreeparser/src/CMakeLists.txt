@@ -160,7 +160,7 @@ target_link_libraries(KF5MimeTreeParser
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::CoreAddons
     KF5::Libkleo
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     Qt::Gui
     )
 if (QT_MAJOR_VERSION STREQUAL "6")

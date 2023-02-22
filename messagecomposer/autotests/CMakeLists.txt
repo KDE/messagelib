@@ -18,7 +18,7 @@ macro( add_messagecomposer_test _source )
         LINK_LIBRARIES
             KF${KF_MAJOR_VERSION}::I18n
             KF5::MailTransport
-            KF5::Mime
+            KPim${KF_MAJOR_VERSION}::Mime
             KF5::MessageComposer
             KF5::MessageViewer
             KF5::MessageCore
@@ -29,7 +29,7 @@ macro( add_messagecomposer_test _source )
             KF${KF_MAJOR_VERSION}::Contacts
             KF5::AkonadiCore
             KF${KF_MAJOR_VERSION}::XmlGui
-            KF5::Libkdepim
+            KPim${KF_MAJOR_VERSION}::Libkdepim
             KF${KF_MAJOR_VERSION}::IconThemes
             KF${KF_MAJOR_VERSION}::Completion
     )
@@ -46,12 +46,12 @@ macro( add_messagecomposer_cryptotest _source )
     target_link_libraries(
         ${_name}
         KF${KF_MAJOR_VERSION}::I18n
-        KF5::Mime
+        KPim${KF_MAJOR_VERSION}::Mime
         KF5::MessageComposer
         KF5::MessageViewer
         KF5::MessageCore
         KF5::Libkleo
-        KF5::Libkdepim
+        KPim${KF_MAJOR_VERSION}::Libkdepim
         KF5::PimTextEdit
         KF5::AkonadiCore
         Qt::Test

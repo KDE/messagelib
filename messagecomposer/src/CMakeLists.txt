@@ -268,7 +268,7 @@ endif()
 generate_export_header(KF5MessageComposer BASE_NAME messagecomposer)
 target_link_libraries(KF5MessageComposer
     PUBLIC
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF5::MessageCore
     KF5::PimCommonAkonadi
     KF5::AkonadiCore

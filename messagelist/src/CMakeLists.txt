@@ -139,7 +139,7 @@ target_link_libraries(KF5MessageList
     PUBLIC
     KF5::AkonadiCore
     KF5::AkonadiMime
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     PRIVATE
     KF${KF_MAJOR_VERSION}::KIOCore
     KF5::MessageCore

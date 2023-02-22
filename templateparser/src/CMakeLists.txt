@@ -80,7 +80,7 @@ generate_export_header(KF5TemplateParser BASE_NAME templateparser)
 
 target_link_libraries(KF5TemplateParser
     PRIVATE
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF5::MimeTreeParser
     KF5::IdentityManagement
     KF5::MessageCore
@@ -91,7 +91,7 @@ target_link_libraries(KF5TemplateParser
     KF${KF_MAJOR_VERSION}::SonnetUi
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     Qt::WebEngineWidgets
-    KF5::Libkdepim
+    KPim${KF_MAJOR_VERSION}::Libkdepim
     KF5::PimTextEdit
     )
 

@@ -18,7 +18,7 @@ macro(add_templateparser_unittest _source)
     KF5::MimeTreeParser
     Qt::Test
     KF${KF_MAJOR_VERSION}::KIOCore
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF5::IdentityManagement
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::IconThemes

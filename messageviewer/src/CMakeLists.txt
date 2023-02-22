@@ -421,7 +421,7 @@ target_link_libraries(KF5MessageViewer
     KF5::WebEngineViewer
     KF5::GrantleeTheme
     KF5::MailTransportAkonadi
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF5::Mbox
     KF5::PimTextEdit
     KF5::Gravatar
