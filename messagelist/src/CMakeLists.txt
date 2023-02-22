@@ -138,7 +138,7 @@ target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_I
 target_link_libraries(KF5MessageList
     PUBLIC
     KF5::AkonadiCore
-    KF5::AkonadiMime
+    KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Mime
     PRIVATE
     KF${KF_MAJOR_VERSION}::KIOCore

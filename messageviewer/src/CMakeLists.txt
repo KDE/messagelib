@@ -409,7 +409,7 @@ target_link_libraries(KF5MessageViewer
     KF5::MessageCore
     KF5::PimCommon
     KF5::AkonadiCore
-    KF5::AkonadiMime
+    KPim${KF_MAJOR_VERSION}::AkonadiMime
     KF${KF_MAJOR_VERSION}::Contacts
     KF5::Libkleo
     KF5::MimeTreeParser
@@ -420,7 +420,7 @@ target_link_libraries(KF5MessageViewer
     Qt::Network
     KF5::WebEngineViewer
     KPim${KF_MAJOR_VERSION}::GrantleeTheme
-    KF5::MailTransportAkonadi
+    KPim${KF_MAJOR_VERSION}::MailTransportAkonadi
     KPim${KF_MAJOR_VERSION}::Mime
     KF5::Mbox
     KF5::PimTextEdit

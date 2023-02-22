@@ -17,7 +17,7 @@ macro( add_messagecomposer_test _source )
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
             KF${KF_MAJOR_VERSION}::I18n
-            KF5::MailTransport
+            KPim${KF_MAJOR_VERSION}::MailTransport
             KPim${KF_MAJOR_VERSION}::Mime
             KF5::MessageComposer
             KF5::MessageViewer
@@ -57,7 +57,7 @@ macro( add_messagecomposer_cryptotest _source )
         Qt::Test
         KF${KF_MAJOR_VERSION}::IconThemes
         KF${KF_MAJOR_VERSION}::Completion
-        KF5::MailTransport
+        KPim${KF_MAJOR_VERSION}::MailTransport
         KF${KF_MAJOR_VERSION}::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})

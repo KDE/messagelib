@@ -274,13 +274,13 @@ target_link_libraries(KF5MessageComposer
     KF5::AkonadiCore
     KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KF5::PimTextEdit
-    KF5::AkonadiMime
+    KPim${KF_MAJOR_VERSION}::AkonadiMime
     KF5::Libkleo
     KF5::MessageViewer
     KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
-    KF5::MailTransportAkonadi
-    KF5::MailTransport
+    KPim${KF_MAJOR_VERSION}::MailTransportAkonadi
+    KPim${KF_MAJOR_VERSION}::MailTransport
     KF5::PimTextEdit
     KF5::TemplateParser
     KF5::AkonadiWidgets
