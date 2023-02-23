@@ -9,7 +9,7 @@ add_executable(templateeditor_gui ${templateeditor_gui_SRCS})
 target_link_libraries(templateeditor_gui
   KF${KF_MAJOR_VERSION}::KIOCore
   KF5::TemplateParser
-  KF5::PimTextEdit
+  KPim${KF_MAJOR_VERSION}::PimTextEdit
   KF${KF_MAJOR_VERSION}::I18n
   KF5::MessageViewer
 )
@@ -20,7 +20,7 @@ target_link_libraries(templateconfigurewidget_gui
   KF${KF_MAJOR_VERSION}::KIOCore
   KF5::TemplateParser
   KF${KF_MAJOR_VERSION}::I18n
-  KF5::PimTextEdit
+  KPim${KF_MAJOR_VERSION}::PimTextEdit
   KF5::MessageViewer
 )
 
@@ -30,6 +30,6 @@ target_link_libraries(templateparseremailrequester_gui
   KF5::TemplateParser
   KF${KF_MAJOR_VERSION}::I18n
   KF5::MessageViewer
-  KF5::PimTextEdit
+  KPim${KF_MAJOR_VERSION}::PimTextEdit
 )
 

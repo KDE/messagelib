@@ -141,7 +141,7 @@ target_link_libraries(KF5WebEngineViewer
     PUBLIC
     Qt::WebEngineWidgets
     KF5::PimCommon
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     PRIVATE
     KF${KF_MAJOR_VERSION}::CoreAddons
     KF${KF_MAJOR_VERSION}::XmlGui

@@ -92,7 +92,7 @@ target_link_libraries(KF5TemplateParser
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     Qt::WebEngineWidgets
     KPim${KF_MAJOR_VERSION}::Libkdepim
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     )
 
 if (TARGET Qt::Core5Compat)

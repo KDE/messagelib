@@ -23,7 +23,7 @@ macro( add_messagecomposer_test _source )
             KF5::MessageViewer
             KF5::MessageCore
             KF5::TemplateParser
-            KF5::PimTextEdit
+            KPim${KF_MAJOR_VERSION}::PimTextEdit
             Qt::Test
             KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
             KF${KF_MAJOR_VERSION}::Contacts
@@ -52,7 +52,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::MessageCore
         KF5::Libkleo
         KPim${KF_MAJOR_VERSION}::Libkdepim
-        KF5::PimTextEdit
+        KPim${KF_MAJOR_VERSION}::PimTextEdit
         KF5::AkonadiCore
         Qt::Test
         KF${KF_MAJOR_VERSION}::IconThemes

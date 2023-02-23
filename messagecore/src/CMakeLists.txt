@@ -89,7 +89,7 @@ target_link_libraries(KF5MessageCore
     PRIVATE
     KF${KF_MAJOR_VERSION}::KIOCore
     KF${KF_MAJOR_VERSION}::Codecs
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     KF${KF_MAJOR_VERSION}::Archive
     KF${KF_MAJOR_VERSION}::ConfigWidgets
     Qt::Network

@@ -422,8 +422,8 @@ target_link_libraries(KF5MessageViewer
     KPim${KF_MAJOR_VERSION}::GrantleeTheme
     KPim${KF_MAJOR_VERSION}::MailTransportAkonadi
     KPim${KF_MAJOR_VERSION}::Mime
-    KF5::Mbox
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::Mbox
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::Gravatar
     KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF${KF_MAJOR_VERSION}::IconThemes

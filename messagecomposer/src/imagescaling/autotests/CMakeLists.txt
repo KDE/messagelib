@@ -4,6 +4,6 @@ ecm_add_test(imagescalingtest.cpp imagescalingtest.h
         TEST_NAME imagescalingtest
     NAME_PREFIX "messagecomposer-imagescaling-"
     LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::Mime KF5::MessageComposer KF5::MessageViewer KF5::MessageCore KF5::TemplateParser
-                   KF5::PimTextEdit Qt::Test KPim${KF_MAJOR_VERSION}::IdentityManagement KF${KF_MAJOR_VERSION}::Contacts
+                   KPim${KF_MAJOR_VERSION}::PimTextEdit Qt::Test KPim${KF_MAJOR_VERSION}::IdentityManagement KF${KF_MAJOR_VERSION}::Contacts
                    KF5::AkonadiCore
 )
