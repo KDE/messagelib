@@ -76,7 +76,7 @@ NodeHelper::~NodeHelper()
 
 void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
 {
-    if (!node || !node->index().isValid()) {
+    if (!node) {
         return;
     }
     mProcessedNodes.append(node);
