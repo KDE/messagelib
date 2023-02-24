@@ -709,7 +709,7 @@ void NodeHelper::setNodeDisplayedHidden(KMime::Content *node, bool displayedHidd
 */
 QString NodeHelper::persistentIndex(const KMime::Content *node) const
 {
-    if (!node || !node->index().isValid()) {
+    if (!node) {
         return {};
     }
 
