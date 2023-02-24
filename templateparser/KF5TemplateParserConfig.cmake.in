@@ -5,3 +5,4 @@ find_dependency(KF5MimeTreeParser "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KF5MessageCore "@MESSAGELIB_LIB_VERSION@")
 
 include("${CMAKE_CURRENT_LIST_DIR}/KF5TemplateParserTargets.cmake")
+@PACKAGE_INCLUDE_QCHTARGETS@

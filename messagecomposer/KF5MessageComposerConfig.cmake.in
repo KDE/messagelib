@@ -11,3 +11,4 @@ find_dependency(KF5Libkleo "@LIBKLEO_LIB_VERSION@")
 find_dependency(KF5MessageViewer "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KF@KF_MAJOR_VERSION@TextAutoCorrection "@KTEXTADDONS_MIN_VERSION@")
 include("${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerTargets.cmake")
+@PACKAGE_INCLUDE_QCHTARGETS@
