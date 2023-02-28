@@ -275,7 +275,7 @@ target_link_libraries(KF5MessageComposer
     KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::AkonadiMime
-    KF5::Libkleo
+    KPim${KF_MAJOR_VERSION}::Libkleo
     KF5::MessageViewer
     KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE

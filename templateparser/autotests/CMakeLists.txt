@@ -13,7 +13,7 @@ macro(add_templateparser_unittest _source)
   add_executable( ${_name} ${_test} ${_name}.h)
   ecm_mark_as_test(templateparser-${_name})
   target_link_libraries(${_name}
-    KF5::Libkleo
+    KPim${KF_MAJOR_VERSION}::Libkleo
     KF5::TemplateParser
     KF5::MimeTreeParser
     Qt::Test

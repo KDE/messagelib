@@ -159,7 +159,7 @@ target_link_libraries(KF5MimeTreeParser
     KF${KF_MAJOR_VERSION}::Codecs
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::CoreAddons
-    KF5::Libkleo
+    KPim${KF_MAJOR_VERSION}::Libkleo
     KPim${KF_MAJOR_VERSION}::Mime
     Qt::Gui
     )

@@ -4,7 +4,7 @@
 
 add_executable(recipienteditortest)
 target_sources(recipienteditortest PRIVATE recipientseditortest.cpp recipientseditortest.h)
-target_link_libraries(recipienteditortest KF${KF_MAJOR_VERSION}::KIOCore KF5::AkonadiContact KF5::MessageComposer KPim${KF_MAJOR_VERSION}::Libkdepim KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(recipienteditortest KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::AkonadiContact KF5::MessageComposer KPim${KF_MAJOR_VERSION}::Libkdepim KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
 
 
 ########### recipientseditor test ###############

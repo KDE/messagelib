@@ -50,7 +50,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::MessageComposer
         KF5::MessageViewer
         KF5::MessageCore
-        KF5::Libkleo
+        KPim${KF_MAJOR_VERSION}::Libkleo
         KPim${KF_MAJOR_VERSION}::Libkdepim
         KPim${KF_MAJOR_VERSION}::PimTextEdit
         KF5::AkonadiCore
@@ -113,7 +113,7 @@ ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
         LINK_LIBRARIES
             KF5::MessageComposer
             Qt::Test
-            KF5::Libkleo
+            KPim${KF_MAJOR_VERSION}::Libkleo
     )
 
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)

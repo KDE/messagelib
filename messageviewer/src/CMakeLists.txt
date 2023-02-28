@@ -411,7 +411,7 @@ target_link_libraries(KF5MessageViewer
     KF5::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KF${KF_MAJOR_VERSION}::Contacts
-    KF5::Libkleo
+    KPim${KF_MAJOR_VERSION}::Libkleo
     KF5::MimeTreeParser
     KF${KF_MAJOR_VERSION}::Service
     PRIVATE
@@ -432,7 +432,7 @@ target_link_libraries(KF5MessageViewer
     KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::Codecs
-    KF5::AkonadiContact
+    KPim${KF_MAJOR_VERSION}::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport
     ${Inotify_LIBRARIES}
