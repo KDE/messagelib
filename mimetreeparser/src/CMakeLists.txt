@@ -167,6 +167,7 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KF5MimeTreeParser PRIVATE QGpgmeQt6)
     target_link_libraries(KF5MimeTreeParser PRIVATE Qt6::Core5Compat)
 else()
+    target_link_libraries(KF5MimeTreeParser PRIVATE Gpgmepp)
     target_link_libraries(KF5MimeTreeParser PRIVATE QGpgme)
 endif()
 

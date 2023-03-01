@@ -93,6 +93,7 @@ target_link_libraries(KF5TemplateParser
     Qt::WebEngineWidgets
     KPim${KF_MAJOR_VERSION}::Libkdepim
     KPim${KF_MAJOR_VERSION}::PimTextEdit
+    Gpgmepp
     )
 
 if (TARGET Qt::Core5Compat)
