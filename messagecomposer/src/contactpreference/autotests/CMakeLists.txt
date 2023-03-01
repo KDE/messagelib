@@ -6,7 +6,7 @@ macro(add_composerng_autocorrect_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-contactpreference-"
-        LINK_LIBRARIES Qt::Test KF5::MessageComposer
+        LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::MessageComposer
     )
 endmacro()
 

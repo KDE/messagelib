@@ -2,11 +2,11 @@
 # SPDX-FileCopyrightText: none
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
-add_library(KF5TemplateParser)
-add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
+add_library(KPim${KF_MAJOR_VERSION}TemplateParser)
+add_library(KPim${KF_MAJOR_VERSION}::TemplateParser ALIAS KPim${KF_MAJOR_VERSION}TemplateParser)
 
 
-target_sources(KF5TemplateParser PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}TemplateParser PRIVATE
     templateparserjob.cpp
     defaulttemplates.cpp
     templatesutil.cpp
@@ -52,7 +52,7 @@ target_sources(KF5TemplateParser PRIVATE
     templateextracthtmlelementfrommail.h
     templateparseremailaddressrequesterlineedit.h
     )
-ecm_qt_declare_logging_category(KF5TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
         DESCRIPTION "messagelib (templateparser)"
         OLD_CATEGORY_NAMES log_templateparser
         EXPORT MESSAGELIB
@@ -60,30 +60,30 @@ ecm_qt_declare_logging_category(KF5TemplateParser HEADER templateparser_debug.h 
 
 
 
-kconfig_add_kcfg_files(KF5TemplateParser settings/templatesconfiguration_kfg.kcfgc)
+kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}TemplateParser settings/templatesconfiguration_kfg.kcfgc)
 
-kconfig_add_kcfg_files(KF5TemplateParser
+kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}TemplateParser
     settings/customtemplates_kfg.kcfgc
     settings/globalsettings_templateparser.kcfgc
     )
 
-ki18n_wrap_ui(KF5TemplateParser
+ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}TemplateParser
     ui/templatesconfiguration_base.ui
     ui/customtemplates_base.ui
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5TemplateParser PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}TemplateParser PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KF5TemplateParser BASE_NAME templateparser)
+generate_export_header(KPim${KF_MAJOR_VERSION}TemplateParser BASE_NAME templateparser)
 
-target_link_libraries(KF5TemplateParser
+target_link_libraries(KPim${KF_MAJOR_VERSION}TemplateParser
     PRIVATE
     KPim${KF_MAJOR_VERSION}::Mime
-    KF5::MimeTreeParser
+    KPim${KF_MAJOR_VERSION}::MimeTreeParser
     KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KF5::MessageCore
+    KPim${KF_MAJOR_VERSION}::MessageCore
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::Completion
     KF${KF_MAJOR_VERSION}::CoreAddons
@@ -97,16 +97,16 @@ target_link_libraries(KF5TemplateParser
     )
 
 if (TARGET Qt::Core5Compat)
-    target_link_libraries(KF5TemplateParser PRIVATE Qt::Core5Compat)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}TemplateParser PRIVATE Qt::Core5Compat)
 endif()
 
-set_target_properties(KF5TemplateParser PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION}
     SOVERSION ${TEMPLATEPARSER_SOVERSION}
     EXPORT_NAME TemplateParser
     )
 
-target_include_directories(KF5TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/>")
 
 install(FILES
     settings/customtemplates_kfg.kcfg
@@ -134,18 +134,18 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME TemplateParser
-    LIB_NAME KF5TemplateParser
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser
+    LIB_NAME KPim${KF_MAJOR_VERSION}TemplateParser
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser
     )
 
 
-install(TARGETS KF5TemplateParser EXPORT KF5TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim${KF_MAJOR_VERSION}TemplateParser EXPORT KPim${KF_MAJOR_VERSION}TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 
 install(FILES
     ${TemplateParser_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser/TemplateParser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/TemplateParser
     COMPONENT Devel
     )
 
@@ -156,7 +156,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/customtemplates_kfg.h
     ${CMAKE_CURRENT_BINARY_DIR}/ui_templatesconfiguration_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/templatesconfiguration_kfg.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser/templateparser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/templateparser
     COMPONENT Devel
     )
 
@@ -168,9 +168,9 @@ install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.k
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5TemplateParser_QCH
-        NAME KF5TemplateParser
-        BASE_NAME KF5TemplateParser
+        KPim${KF_MAJOR_VERSION}TemplateParser_QCH
+        NAME KPim${KF_MAJOR_VERSION}TemplateParser
+        BASE_NAME KPim${KF_MAJOR_VERSION}TemplateParser
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -189,10 +189,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5TemplateParser_QCH
-        FILE KF5TemplateParserQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}TemplateParser_QCH
+        FILE KPim${KF_MAJOR_VERSION}TemplateParserQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TemplateParserQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}TemplateParserQchTargets.cmake\")")
 endif()

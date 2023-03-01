@@ -2,11 +2,11 @@
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
-add_library(KF5MessageCore)
-add_library(KF5::MessageCore ALIAS KF5MessageCore)
+add_library(KPim${KF_MAJOR_VERSION}MessageCore)
+add_library(KPim${KF_MAJOR_VERSION}::MessageCore ALIAS KPim${KF_MAJOR_VERSION}MessageCore)
 
 ########### next target ###############
-target_sources(KF5MessageCore PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE
     autocrypt/autocryptutils.cpp
     autocrypt/autocryptrecipient.cpp
     autocrypt/autocryptstorage.cpp
@@ -57,33 +57,33 @@ target_sources(KF5MessageCore PRIVATE
     settings/messagecoresettings.h
     )
 
-kconfig_add_kcfg_files(KF5MessageCore
+kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageCore
     settings/globalsettings_messagecore.kcfgc
     )
 
-ki18n_wrap_ui(KF5MessageCore
+ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageCore
     attachment/ui/attachmentpropertiesdialog.ui
     attachment/ui/attachmentpropertiesdialog_readonly.ui
     )
 
-ecm_qt_declare_logging_category(KF5MessageCore HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageCore HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
         DESCRIPTION "messagelib (messagecore)"
         OLD_CATEGORY_NAMES log_messagecore
         EXPORT MESSAGELIB
     )
 
-ecm_qt_declare_logging_category(KF5MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
         DESCRIPTION "messagelib (messagecore.autocrypt)"
         EXPORT MESSAGELIB
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5MessageCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KF5MessageCore BASE_NAME messagecore)
+generate_export_header(KPim${KF_MAJOR_VERSION}MessageCore BASE_NAME messagecore)
 
-target_link_libraries(KF5MessageCore
+target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore
     PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
     PRIVATE
@@ -95,26 +95,26 @@ target_link_libraries(KF5MessageCore
     Qt::Network
     KF${KF_MAJOR_VERSION}::I18n
     KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KF5::MimeTreeParser
+    KPim${KF_MAJOR_VERSION}::MimeTreeParser
     KF5::PimCommon
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KF5MessageCore PRIVATE QGpgmeQt6)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE QGpgmeQt6)
 else()
-    target_link_libraries(KF5MessageCore PRIVATE QGpgme)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE QGpgme)
 endif()
 
-target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/>")
 
-set_target_properties(KF5MessageCore PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}MessageCore PROPERTIES
     VERSION ${MESSAGECORE_VERSION}
     SOVERSION ${MESSAGECORE_SOVERSION}
     EXPORT_NAME MessageCore
     )
 
 install(TARGETS
-    KF5MessageCore
-    EXPORT KF5MessageCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim${KF_MAJOR_VERSION}MessageCore
+    EXPORT KPim${KF_MAJOR_VERSION}MessageCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
@@ -180,8 +180,8 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageCore
-    LIB_NAME KF5MessageCore
-    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore
+    LIB_NAME KPim${KF_MAJOR_VERSION}MessageCore
+    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore
     )
 
 
@@ -194,7 +194,7 @@ install(FILES
     ${MessageCore_Camelcaseattachment_HEADERS}
     ${MessageCore_Camelcasemisc_HEADERS}
     ${MessageCore_Camelcasemain_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/MessageCore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/MessageCore
     COMPONENT Devel
     )
 
@@ -209,7 +209,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
     ${MessageCore_attachment_HEADERS}
     ${MessageCore_misc_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/messagecore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/messagecore
     COMPONENT Devel
     )
 install(FILES
@@ -218,9 +218,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5MessageCore_QCH
-        NAME KF5MessageCore
-        BASE_NAME KF5MessageCore
+        KPim${KF_MAJOR_VERSION}MessageCore_QCH
+        NAME KPim${KF_MAJOR_VERSION}MessageCore
+        BASE_NAME KPim${KF_MAJOR_VERSION}MessageCore
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -244,11 +244,11 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5MessageCore_QCH
-        FILE KF5MessageCoreQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}MessageCore_QCH
+        FILE KPim${KF_MAJOR_VERSION}MessageCoreQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageCoreQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageCoreQchTargets.cmake\")")
 endif()
 

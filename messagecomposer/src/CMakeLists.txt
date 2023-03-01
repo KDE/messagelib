@@ -17,8 +17,8 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
 
-add_library( KF5MessageComposer)
-add_library(KF5::MessageComposer ALIAS KF5MessageComposer)
+add_library( KPim${KF_MAJOR_VERSION}MessageComposer)
+add_library(KPim${KF_MAJOR_VERSION}::MessageComposer ALIAS KPim${KF_MAJOR_VERSION}MessageComposer)
 
 set(messagecomposer_interface_SRCS)
 qt_add_dbus_interface(messagecomposer_interface_SRCS
@@ -31,7 +31,7 @@ qt_add_dbus_interface(messagecomposer_interface_SRCS
     followupreminderinterface
 )
 
-target_sources( KF5MessageComposer PRIVATE
+target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     ${messagecomposer_interface_SRCS}
     job/jobbase.cpp
     job/contentjobbase.cpp
@@ -237,11 +237,11 @@ target_sources( KF5MessageComposer PRIVATE
 )
 
 
-ki18n_wrap_ui(KF5MessageComposer
+ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageComposer
     imagescaling/ui/imagescalingwidget.ui
     sendlater/ui/sendlaterwidget.ui
 )
-ecm_qt_declare_logging_category(KF5MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
     DESCRIPTION "messagelib (messagecomposer)"
     OLD_CATEGORY_NAMES log_messagecomposer
     EXPORT MESSAGELIB
@@ -258,31 +258,31 @@ endif()
 
 configure_file(settings/messagecomposer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer.kcfg)
 
-kconfig_add_kcfg_files(KF5MessageComposer
+kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageComposer
     settings/messagecomposersettings_base.kcfgc
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5MessageComposer PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}MessageComposer PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5MessageComposer BASE_NAME messagecomposer)
-target_link_libraries(KF5MessageComposer
+generate_export_header(KPim${KF_MAJOR_VERSION}MessageComposer BASE_NAME messagecomposer)
+target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
-    KF5::MessageCore
+    KPim${KF_MAJOR_VERSION}::MessageCore
     KF5::PimCommonAkonadi
     KF5::AkonadiCore
     KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Libkleo
-    KF5::MessageViewer
+    KPim${KF_MAJOR_VERSION}::MessageViewer
     KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
     KPim${KF_MAJOR_VERSION}::MailTransportAkonadi
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KF5::TemplateParser
+    KPim${KF_MAJOR_VERSION}::TemplateParser
     KF5::AkonadiWidgets
     KF5::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::KIOCore
@@ -298,20 +298,20 @@ target_link_libraries(KF5MessageComposer
     KF${KF_MAJOR_VERSION}::Codecs
     )
 if (TARGET Qt6::Core5Compat)
-    target_link_libraries(KF5MessageComposer PRIVATE Qt6::Core5Compat)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE Qt6::Core5Compat)
 endif()
 
-target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/>")
 
-set_target_properties(KF5MessageComposer PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}MessageComposer PROPERTIES
     VERSION ${MESSAGECOMPOSER_VERSION}
     SOVERSION ${MESSAGECOMPOSER_SOVERSION}
     EXPORT_NAME MessageComposer
     )
 
 install(TARGETS
-    KF5MessageComposer
-    EXPORT KF5MessageComposerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim${KF_MAJOR_VERSION}MessageComposer
+    EXPORT KPim${KF_MAJOR_VERSION}MessageComposerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
@@ -571,8 +571,8 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageComposer
-    LIB_NAME KF5MessageComposer
-    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer
+    LIB_NAME KPim${KF_MAJOR_VERSION}MessageComposer
+    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer
     )
 
 install(FILES
@@ -600,7 +600,7 @@ install(FILES
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
     ${MessageComposer_Camelstatusbarwidget_HEADERS}
     ${MessageComposer_Camelcasedraftstatus_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/MessageComposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/MessageComposer
     COMPONENT Devel
     )
 
@@ -634,7 +634,7 @@ install(FILES
     ${MessageComposer_plugineditorgrammar_HEADERS}
     ${MessageComposer_draftstatus_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/messagecomposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/messagecomposer
     COMPONENT Devel
     )
 
@@ -644,9 +644,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5MessageComposer_QCH
-        NAME KF5MessageComposer
-        BASE_NAME KF5MessageComposer
+        KPim${KF_MAJOR_VERSION}MessageComposer_QCH
+        NAME KPim${KF_MAJOR_VERSION}MessageComposer
+        BASE_NAME KPim${KF_MAJOR_VERSION}MessageComposer
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -687,11 +687,11 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5MessageComposer_QCH
-        FILE KF5MessageComposerQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}MessageComposer_QCH
+        FILE KPim${KF_MAJOR_VERSION}MessageComposerQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageComposerQchTargets.cmake\")")
 
 endif()

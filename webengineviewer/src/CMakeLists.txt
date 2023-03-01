@@ -4,8 +4,8 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
 include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
 
-add_library(KF5WebEngineViewer)
-add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
+add_library(KPim${KF_MAJOR_VERSION}WebEngineViewer)
+add_library(KPim${KF_MAJOR_VERSION}::WebEngineViewer ALIAS KPim${KF_MAJOR_VERSION}WebEngineViewer)
 
 
 if(BUILD_TESTING)
@@ -22,7 +22,7 @@ endif()
 
 
 
-target_sources(KF5WebEngineViewer PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}WebEngineViewer PRIVATE
     networkmanager/interceptormanager.cpp
     webhittestresult.cpp
     webhittest.cpp
@@ -123,21 +123,21 @@ target_sources(KF5WebEngineViewer PRIVATE
     webengineaccesskey/webengineaccesskeyanchor.h
     )
 
-ecm_qt_declare_logging_category(KF5WebEngineViewer HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}WebEngineViewer HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
         DESCRIPTION "messagelib (webengineviewer)"
         EXPORT MESSAGELIB
     )
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5WebEngineViewer PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}WebEngineViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
+generate_export_header(KPim${KF_MAJOR_VERSION}WebEngineViewer BASE_NAME webengineviewer)
 
-target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/WebEngineViewer/>")
 
-target_link_libraries(KF5WebEngineViewer
+target_link_libraries(KPim${KF_MAJOR_VERSION}WebEngineViewer
     PUBLIC
     Qt::WebEngineWidgets
     KF5::PimCommon
@@ -151,18 +151,18 @@ target_link_libraries(KF5WebEngineViewer
     )
 
 if (WIN32)
-    target_link_libraries(KF5WebEngineViewer PRIVATE Ws2_32)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}WebEngineViewer PRIVATE Ws2_32)
 endif()
 
-set_target_properties(KF5WebEngineViewer PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}WebEngineViewer PROPERTIES
     VERSION ${WEBENGINEVIEWER_VERSION}
     SOVERSION ${WEBENGINEVIEWER_SOVERSION}
     EXPORT_NAME WebEngineViewer
     )
 
 install(TARGETS
-    KF5WebEngineViewer
-    EXPORT KF5WebEngineViewerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim${KF_MAJOR_VERSION}WebEngineViewer
+    EXPORT KPim${KF_MAJOR_VERSION}WebEngineViewerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
@@ -295,8 +295,8 @@ ecm_generate_headers(WebEngineViewer_Camelsubmittedformwidget_HEADERS
 
 
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
-    LIB_NAME KF5WebEngineViewer
-    DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer
+    LIB_NAME KPim${KF_MAJOR_VERSION}WebEngineViewer
+    DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/WebEngineViewer
     )
 
 
@@ -315,7 +315,7 @@ install(FILES
     ${WebEngineViewer_Camelfindbar_HEADERS}
     ${WebEngineViewer_Camelcasewidgets_HEADERS}
     ${WebEngineViewer_Camelprint_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/WebEngineViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/WebEngineViewer/WebEngineViewer
     COMPONENT Devel
     )
 
@@ -335,7 +335,7 @@ install(FILES
     ${WebEngineViewer_widgets_HEADERS}
     ${WebEngineViewer_print_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/webengineviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/WebEngineViewer/webengineviewer
     COMPONENT Devel
     )
 
@@ -345,9 +345,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5WebEngineViewer_QCH
-        NAME KF5WebEngineViewer
-        BASE_NAME KF5WebEngineViewer
+        KPim${KF_MAJOR_VERSION}WebEngineViewer_QCH
+        NAME KPim${KF_MAJOR_VERSION}WebEngineViewer
+        BASE_NAME KPim${KF_MAJOR_VERSION}WebEngineViewer
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -379,10 +379,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5WebEngineViewer_QCH
-        FILE KF5WebEngineViewerQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}WebEngineViewer_QCH
+        FILE KPim${KF_MAJOR_VERSION}WebEngineViewerQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5WebEngineViewerQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}WebEngineViewerQchTargets.cmake\")")
 endif()

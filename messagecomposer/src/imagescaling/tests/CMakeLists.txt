@@ -3,7 +3,7 @@
 add_executable(imagescaling_gui imagescaling_gui.cpp imagescaling_gui.h)
 target_link_libraries(imagescaling_gui
   KF${KF_MAJOR_VERSION}::KIOCore
-  KF5::MessageComposer
+  KPim${KF_MAJOR_VERSION}::MessageComposer
   KF${KF_MAJOR_VERSION}::I18n
 )
 

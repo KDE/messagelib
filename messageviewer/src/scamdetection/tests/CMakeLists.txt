@@ -10,7 +10,7 @@ add_executable(scamdetectionwebengine_gui)
 target_sources(scamdetectionwebengine_gui PRIVATE scamdetectionwebengine_gui.cpp scamdetectionwebengine_gui.h)
 target_link_libraries(scamdetectionwebengine_gui
     KF${KF_MAJOR_VERSION}::KIOCore
-    KF5::MessageViewer
+    KPim${KF_MAJOR_VERSION}::MessageViewer
     Qt::WebEngineWidgets
     KF${KF_MAJOR_VERSION}::I18n
     )

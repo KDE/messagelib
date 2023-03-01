@@ -5,7 +5,7 @@ macro(add_messageviewer_mdn_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer Qt::Test
+        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MessageViewer Qt::Test
     )
 endmacro ()
 

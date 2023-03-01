@@ -18,7 +18,7 @@ kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin
 )
 
 target_link_libraries(messageviewer_defaultgrantleeheaderstyleplugin
-  KF5::MessageViewer
+  KPim${KF_MAJOR_VERSION}::MessageViewer
   KPim${KF_MAJOR_VERSION}::GrantleeTheme
   KF${KF_MAJOR_VERSION}::XmlGui
 )

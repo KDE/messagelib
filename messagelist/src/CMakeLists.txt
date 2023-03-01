@@ -3,8 +3,8 @@
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)
 configure_file(config-messagelist.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h)
-add_library(KF5MessageList)
-add_library(KF5::MessageList ALIAS KF5MessageList)
+add_library(KPim${KF_MAJOR_VERSION}MessageList)
+add_library(KPim${KF_MAJOR_VERSION}::MessageList ALIAS KPim${KF_MAJOR_VERSION}MessageList)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist\")
 
@@ -12,7 +12,7 @@ add_subdirectory(pics)
 if(BUILD_TESTING)
 	add_subdirectory(core/widgets/autotests)
 endif()
-target_sources(KF5MessageList PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}MessageList PRIVATE
     core/aggregation.cpp
     core/delegate.cpp
     core/filter.cpp
@@ -117,32 +117,32 @@ target_sources(KF5MessageList PRIVATE
     core/item.h
 
     )
-ecm_qt_declare_logging_category(KF5MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
         DESCRIPTION "messagelib (messagelist)"
         OLD_CATEGORY_NAMES log_messagelist
         EXPORT MESSAGELIB
     )
 
-kconfig_add_kcfg_files(KF5MessageList
+kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageList
     core/messagelistsettings.kcfgc
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5MessageList PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KF5MessageList BASE_NAME messagelist)
+generate_export_header(KPim${KF_MAJOR_VERSION}MessageList BASE_NAME messagelist)
 
-target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/>")
 
-target_link_libraries(KF5MessageList
+target_link_libraries(KPim${KF_MAJOR_VERSION}MessageList
     PUBLIC
     KF5::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Mime
     PRIVATE
     KF${KF_MAJOR_VERSION}::KIOCore
-    KF5::MessageCore
+    KPim${KF_MAJOR_VERSION}::MessageCore
     KF5::PimCommonAkonadi
     KPim${KF_MAJOR_VERSION}::AkonadiSearchPIM
     KF${KF_MAJOR_VERSION}::XmlGui
@@ -152,15 +152,15 @@ target_link_libraries(KF5MessageList
     KF${KF_MAJOR_VERSION}::TextWidgets
     )
 
-set_target_properties(KF5MessageList PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}MessageList PROPERTIES
     VERSION ${MESSAGELIST_VERSION}
     SOVERSION ${MESSAGELIST_SOVERSION}
     EXPORT_NAME MessageList
     )
 
 install(TARGETS
-    KF5MessageList
-    EXPORT KF5MessageListTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim${KF_MAJOR_VERSION}MessageList
+    EXPORT KPim${KF_MAJOR_VERSION}MessageListTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageList_Camelcasecore_HEADERS
@@ -207,8 +207,8 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageList
-    LIB_NAME KF5MessageList
-    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList
+    LIB_NAME KPim${KF_MAJOR_VERSION}MessageList
+    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList
     )
 
 
@@ -217,7 +217,7 @@ install(FILES
     ${MessageList_CamelCase_HEADERS}
     ${MessageList_Camelcasecore_HEADERS}
     ${MessageList_Camelcaseutil_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/MessageList
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/MessageList
     COMPONENT Devel
     )
 
@@ -228,7 +228,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelistsettings.h
     ${MessageList_core_HEADERS}
     ${MessageList_util_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/messagelist
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/messagelist
     COMPONENT Devel
     )
 install(FILES
@@ -237,9 +237,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5MessageList_QCH
-        NAME KF5MessageList
-        BASE_NAME KF5MessageList
+        KPim${KF_MAJOR_VERSION}MessageList_QCH
+        NAME KPim${KF_MAJOR_VERSION}MessageList
+        BASE_NAME KPim${KF_MAJOR_VERSION}MessageList
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -261,10 +261,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5MessageList_QCH
-        FILE KF5MessageListQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}MessageList_QCH
+        FILE KPim${KF_MAJOR_VERSION}MessageListQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageListQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageListQchTargets.cmake\")")
 endif()

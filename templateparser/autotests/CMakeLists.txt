@@ -14,8 +14,8 @@ macro(add_templateparser_unittest _source)
   ecm_mark_as_test(templateparser-${_name})
   target_link_libraries(${_name}
     KPim${KF_MAJOR_VERSION}::Libkleo
-    KF5::TemplateParser
-    KF5::MimeTreeParser
+    KPim${KF_MAJOR_VERSION}::TemplateParser
+    KPim${KF_MAJOR_VERSION}::MimeTreeParser
     Qt::Test
     KF${KF_MAJOR_VERSION}::KIOCore
     KPim${KF_MAJOR_VERSION}::Mime

@@ -19,10 +19,10 @@ macro( add_messagecomposer_test _source )
             KF${KF_MAJOR_VERSION}::I18n
             KPim${KF_MAJOR_VERSION}::MailTransport
             KPim${KF_MAJOR_VERSION}::Mime
-            KF5::MessageComposer
-            KF5::MessageViewer
-            KF5::MessageCore
-            KF5::TemplateParser
+            KPim${KF_MAJOR_VERSION}::MessageComposer
+            KPim${KF_MAJOR_VERSION}::MessageViewer
+            KPim${KF_MAJOR_VERSION}::MessageCore
+            KPim${KF_MAJOR_VERSION}::TemplateParser
             KPim${KF_MAJOR_VERSION}::PimTextEdit
             Qt::Test
             KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
@@ -47,9 +47,9 @@ macro( add_messagecomposer_cryptotest _source )
         ${_name}
         KF${KF_MAJOR_VERSION}::I18n
         KPim${KF_MAJOR_VERSION}::Mime
-        KF5::MessageComposer
-        KF5::MessageViewer
-        KF5::MessageCore
+        KPim${KF_MAJOR_VERSION}::MessageComposer
+        KPim${KF_MAJOR_VERSION}::MessageViewer
+        KPim${KF_MAJOR_VERSION}::MessageCore
         KPim${KF_MAJOR_VERSION}::Libkleo
         KPim${KF_MAJOR_VERSION}::Libkdepim
         KPim${KF_MAJOR_VERSION}::PimTextEdit
@@ -111,7 +111,7 @@ ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
         TEST_NAME "nearexpirycheckertest"
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
-            KF5::MessageComposer
+            KPim${KF_MAJOR_VERSION}::MessageComposer
             Qt::Test
             KPim${KF_MAJOR_VERSION}::Libkleo
     )
@@ -125,7 +125,7 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
         KF5::AkonadiCore
         KF5::AkonadiWidgets
         KF${KF_MAJOR_VERSION}::CalendarCore
-        KF5::MessageComposer
+        KPim${KF_MAJOR_VERSION}::MessageComposer
         Qt::Test
 )
 
@@ -133,6 +133,6 @@ ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
     NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
         KF${KF_MAJOR_VERSION}::Contacts
-        KF5::MessageComposer
+        KPim${KF_MAJOR_VERSION}::MessageComposer
         Qt::Test
 )

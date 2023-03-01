@@ -6,7 +6,7 @@ target_sources(viewertest_gui PRIVATE
     ../src/messageviewer_debug.cpp)
 target_link_libraries(viewertest_gui
   KPim${KF_MAJOR_VERSION}::Mime
-  KF5::MessageViewer
+  KPim${KF_MAJOR_VERSION}::MessageViewer
   KPim${KF_MAJOR_VERSION}::GrantleeTheme
   KF${KF_MAJOR_VERSION}::I18n
   KF${KF_MAJOR_VERSION}::XmlGui

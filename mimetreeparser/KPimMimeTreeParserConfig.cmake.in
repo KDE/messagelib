@@ -1,6 +1,6 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 find_dependency(KPim@KF_MAJOR_VERSION@Mime "@KMIME_LIB_VERSION@")
-find_dependency(KF5MimeTreeParser "@MESSAGELIB_LIB_VERSION@")
-include("${CMAKE_CURRENT_LIST_DIR}/KF5MessageCoreTargets.cmake")
+
+include("${CMAKE_CURRENT_LIST_DIR}/KPim@KF_MAJOR_VERSION@MimeTreeParserTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

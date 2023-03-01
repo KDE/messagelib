@@ -10,7 +10,7 @@ ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
     LINK_LIBRARIES
         KPim${KF_MAJOR_VERSION}::GrantleeTheme
         KF${KF_MAJOR_VERSION}::IconThemes
-        KF5::MessageViewer
+        KPim${KF_MAJOR_VERSION}::MessageViewer
         KPim${KF_MAJOR_VERSION}::Mime
         Qt::Test
 )
@@ -22,7 +22,7 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
         ${TEMPLATES_LIB}
         KPim${KF_MAJOR_VERSION}::GrantleeTheme
         KF${KF_MAJOR_VERSION}::IconThemes
-        KF5::MessageViewer
+        KPim${KF_MAJOR_VERSION}::MessageViewer
         KPim${KF_MAJOR_VERSION}::Mime
         Qt::Test
 )

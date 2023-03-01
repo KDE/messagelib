@@ -6,10 +6,10 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
 
-add_library(KF5MimeTreeParser)
-add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
+add_library(KPim${KF_MAJOR_VERSION}MimeTreeParser)
+add_library(KPim${KF_MAJOR_VERSION}::MimeTreeParser ALIAS KPim${KF_MAJOR_VERSION}MimeTreeParser)
 
-target_sources(KF5MimeTreeParser PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE
     bodyformatter/applicationpgpencrypted.cpp
     bodyformatter/applicationpkcs7mime.cpp
     bodyformatter/encrypted.cpp
@@ -119,7 +119,7 @@ install(FILES
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
     ${MimeTreeParser_Camelcasemain_HEADERS}
     ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/MimeTreeParser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParser/MimeTreeParser
     COMPONENT Devel
     )
 
@@ -130,7 +130,7 @@ install(FILES
     ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/mimetreeparser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParser/mimetreeparser
     COMPONENT Devel
     )
 
@@ -139,7 +139,7 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
     )
 
-ecm_qt_declare_logging_category(KF5MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
         DESCRIPTION "messagelib (mimetreeparser)"
         OLD_CATEGORY_NAMES log_mimetreeparser
         EXPORT MESSAGELIB
@@ -147,14 +147,14 @@ ecm_qt_declare_logging_category(KF5MimeTreeParser HEADER mimetreeparser_debug.h 
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParser PROPERTIES UNITY_BUILD ON)
 endif()
 
 
-generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
+generate_export_header(KPim${KF_MAJOR_VERSION}MimeTreeParser BASE_NAME mimetreeparser)
 
 
-target_link_libraries(KF5MimeTreeParser
+target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParser
     PRIVATE
     KF${KF_MAJOR_VERSION}::Codecs
     KF${KF_MAJOR_VERSION}::I18n
@@ -164,36 +164,36 @@ target_link_libraries(KF5MimeTreeParser
     Qt::Gui
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KF5MimeTreeParser PRIVATE QGpgmeQt6)
-    target_link_libraries(KF5MimeTreeParser PRIVATE Qt6::Core5Compat)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE QGpgmeQt6)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE Qt6::Core5Compat)
 else()
-    target_link_libraries(KF5MimeTreeParser PRIVATE Gpgmepp)
-    target_link_libraries(KF5MimeTreeParser PRIVATE QGpgme)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE Gpgmepp)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MimeTreeParser PRIVATE QGpgme)
 endif()
 
 install(TARGETS
-    KF5MimeTreeParser
-    EXPORT KF5MimeTreeParserTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim${KF_MAJOR_VERSION}MimeTreeParser
+    EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
-set_target_properties(KF5MimeTreeParser PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParser PROPERTIES
     VERSION ${MIMETREEPARSER_VERSION}
     SOVERSION ${MIMETREEPARSER_SOVERSION}
     EXPORT_NAME MimeTreeParser
     )
 
-target_include_directories(KF5MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/>")
+target_include_directories(KPim${KF_MAJOR_VERSION}MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParser/>")
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParser
-    LIB_NAME KF5MimeTreeParser
-    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser
+    LIB_NAME KPim${KF_MAJOR_VERSION}MimeTreeParser
+    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MimeTreeParser
     )
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5MimeTreeParser_QCH
-        NAME KF5MimeTreeParser
-        BASE_NAME KF5MimeTreeParser
+        KPim${KF_MAJOR_VERSION}MimeTreeParser_QCH
+        NAME KPim${KF_MAJOR_VERSION}MimeTreeParser
+        BASE_NAME KPim${KF_MAJOR_VERSION}MimeTreeParser
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -215,10 +215,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KF5MimeTreeParser_QCH
-        FILE KF5MimeTreeParserQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}MimeTreeParser_QCH
+        FILE KPim${KF_MAJOR_VERSION}MimeTreeParserQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MimeTreeParserQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MimeTreeParserQchTargets.cmake\")")
 endif()

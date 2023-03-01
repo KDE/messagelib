@@ -12,7 +12,7 @@ macro(add_messageviewer_dkim_verify_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::WebEngineViewer KPim${KF_MAJOR_VERSION}::Libkleo ${qgpgme_lib} Qt::Test qca-qt${QT_MAJOR_VERSION} KF${KF_MAJOR_VERSION}::ItemViews
+        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::WebEngineViewer KPim${KF_MAJOR_VERSION}::Libkleo ${qgpgme_lib} Qt::Test qca-qt${QT_MAJOR_VERSION} KF${KF_MAJOR_VERSION}::ItemViews
     )
 endmacro ()
 
