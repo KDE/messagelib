@@ -3,14 +3,14 @@
 # LinuxKorea Co. <kde@linuxkorea.co.kr>, 2000.
 # Louis JANG <louis@mizi.com>, 2001.
 # KIM KyungHeon <tody@teoal.net>, 2002, 2003, 2004.
-# Shinjo Park <kde@peremen.name>, 2007, 2009, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2009, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 02:43+0000\n"
-"PO-Revision-Date: 2022-04-16 23:11+0200\n"
+"PO-Revision-Date: 2023-02-28 23:02+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -54,17 +54,17 @@ msgstr "받는 사람으로"
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr "그룹 확장하지 않음"
+msgstr "그룹 펴지 않음"
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr "최근 그룹 확장함"
+msgstr "최근 그룹 펴기"
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr "항상 그룹 확장함"
+msgstr "항상 그룹 펴기"
 
 #: core/aggregation.cpp:202
 #, kde-format
@@ -100,22 +100,22 @@ msgstr "가장 최근 메시지"
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr "스레드를 확장하지 않음"
+msgstr "스레드를 펴지 않음"
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "읽지 않은 메시지가 있는 스레드 확장"
+msgstr "읽지 않은 메시지가 있는 스레드 펴기"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr "읽지 않았거나 중요한 메시지가 있는 스레드 확장"
+msgstr "읽지 않았거나 중요한 메시지가 있는 스레드 펴기"
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr "항상 스레드 확장"
+msgstr "항상 스레드 펴기"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -130,7 +130,7 @@ msgstr "속도 위주"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr "배치 작업 (사용자 개입 없음)"
+msgstr "배치 작업(사용자 개입 없음)"
 
 #: core/item.cpp:252 core/messageitem.cpp:538
 #, kde-format
@@ -555,7 +555,7 @@ msgstr ""
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
 #, kde-format
 msgid "None (Storage Order)"
-msgstr "없음 (저장된 순서)"
+msgstr "없음(저장된 순서)"
 
 #: core/sortorder.cpp:64
 #, kde-format
@@ -1851,22 +1851,22 @@ msgstr "모두"
 #: widget.cpp:345
 #, kde-format
 msgid "Collapse Group"
-msgstr "그룹 축소"
+msgstr "그룹 접기"
 
 #: widget.cpp:348
 #, kde-format
 msgid "Expand Group"
-msgstr "그룹 확장"
+msgstr "그룹 펴기"
 
 #: widget.cpp:354
 #, kde-format
 msgid "Expand All Groups"
-msgstr "모든 그룹 확장"
+msgstr "모든 그룹 펴기"
 
 #: widget.cpp:357
 #, kde-format
 msgid "Collapse All Groups"
-msgstr "모든 그룹 축소"
+msgstr "모든 그룹 접기"
 
 #: widget.cpp:413
 #, kde-format
