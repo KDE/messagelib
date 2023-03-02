@@ -137,7 +137,7 @@ target_include_directories(KPim${KF_MAJOR_VERSION}MessageList INTERFACE "$<INSTA
 
 target_link_libraries(KPim${KF_MAJOR_VERSION}MessageList
     PUBLIC
-    KF5::AkonadiCore
+    KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Mime
     PRIVATE

@@ -271,7 +271,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::Mime
     KPim${KF_MAJOR_VERSION}::MessageCore
     KF5::PimCommonAkonadi
-    KF5::AkonadiCore
+    KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::AkonadiMime
@@ -283,7 +283,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::TemplateParser
-    KF5::AkonadiWidgets
+    KPim${KF_MAJOR_VERSION}::AkonadiWidgets
     KF5::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::KIOCore
     KF${KF_MAJOR_VERSION}::I18n

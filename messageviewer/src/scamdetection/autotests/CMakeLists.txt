@@ -3,7 +3,7 @@
 ecm_add_test(scamattributetest.cpp scamattributetest.h ../scamattribute.cpp
     TEST_NAME scamattributetest
     NAME_PREFIX "messageviewer-scamdetection-"
-    LINK_LIBRARIES Qt::Test KF5::AkonadiCore
+    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::AkonadiCore
     )
 
 ecm_add_test(scamdetectionwebenginetest.cpp scamdetectionwebenginetest.h

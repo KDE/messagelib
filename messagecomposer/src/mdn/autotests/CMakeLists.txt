@@ -3,5 +3,5 @@
 ecm_add_test(mdnwarningwidgetjobtest.cpp mdnwarningwidgetjobtest.h
     TEST_NAME mdnwarningwidgetjobtest
     NAME_PREFIX "messagecomposer-mdn-"
-    LINK_LIBRARIES Qt::Test KF5::AkonadiCore KPim${KF_MAJOR_VERSION}::MessageComposer
+    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::AkonadiCore KPim${KF_MAJOR_VERSION}::MessageComposer
 )

@@ -19,7 +19,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::Libkleo ${qgpgme_lib} Qt::Test KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KPim${KF_MAJOR_VERSION}::WebEngineViewer
+        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::Libkleo ${qgpgme_lib} Qt::Test KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KPim${KF_MAJOR_VERSION}::WebEngineViewer
     )
 endmacro ()
 
@@ -40,7 +40,7 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::Mime KF5::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KPim${KF_MAJOR_VERSION}::PimTextEdit
+        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KPim${KF_MAJOR_VERSION}::PimTextEdit
         KF5::PimCommon KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting
         KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
@@ -56,4 +56,4 @@ add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowse
 
 add_akonadi_isolated_test_advanced(viewertest.cpp "" "KPim${KF_MAJOR_VERSION}::MessageViewer;KF${KF_MAJOR_VERSION}::XmlGui")
 add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KPim${KF_MAJOR_VERSION}::MessageViewer;KF${KF_MAJOR_VERSION}::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim${KF_MAJOR_VERSION}::MessageViewer;KPim${KF_MAJOR_VERSION}::Libkleo;${qgpgme_lib};KF${KF_MAJOR_VERSION}::KIOCore;KPim${KF_MAJOR_VERSION}::Mime;KF5::AkonadiCore;KF${KF_MAJOR_VERSION}::CalendarCore;KPim${KF_MAJOR_VERSION}::WebEngineViewer")
+add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim${KF_MAJOR_VERSION}::MessageViewer;KPim${KF_MAJOR_VERSION}::Libkleo;${qgpgme_lib};KF${KF_MAJOR_VERSION}::KIOCore;KPim${KF_MAJOR_VERSION}::Mime;KPim${KF_MAJOR_VERSION}::AkonadiCore;KF${KF_MAJOR_VERSION}::CalendarCore;KPim${KF_MAJOR_VERSION}::WebEngineViewer")

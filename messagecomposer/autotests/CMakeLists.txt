@@ -27,7 +27,7 @@ macro( add_messagecomposer_test _source )
             Qt::Test
             KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
             KF${KF_MAJOR_VERSION}::Contacts
-            KF5::AkonadiCore
+            KPim${KF_MAJOR_VERSION}::AkonadiCore
             KF${KF_MAJOR_VERSION}::XmlGui
             KPim${KF_MAJOR_VERSION}::Libkdepim
             KF${KF_MAJOR_VERSION}::IconThemes
@@ -53,7 +53,7 @@ macro( add_messagecomposer_cryptotest _source )
         KPim${KF_MAJOR_VERSION}::Libkleo
         KPim${KF_MAJOR_VERSION}::Libkdepim
         KPim${KF_MAJOR_VERSION}::PimTextEdit
-        KF5::AkonadiCore
+        KPim${KF_MAJOR_VERSION}::AkonadiCore
         Qt::Test
         KF${KF_MAJOR_VERSION}::IconThemes
         KF${KF_MAJOR_VERSION}::Completion
@@ -122,8 +122,8 @@ set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
 ecm_add_test(followupreminderselectdatedialogtest.cpp
     NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
-        KF5::AkonadiCore
-        KF5::AkonadiWidgets
+        KPim${KF_MAJOR_VERSION}::AkonadiCore
+        KPim${KF_MAJOR_VERSION}::AkonadiWidgets
         KF${KF_MAJOR_VERSION}::CalendarCore
         KPim${KF_MAJOR_VERSION}::MessageComposer
         Qt::Test

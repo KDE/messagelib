@@ -408,7 +408,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     PUBLIC
     KPim${KF_MAJOR_VERSION}::MessageCore
     KF5::PimCommon
-    KF5::AkonadiCore
+    KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KF${KF_MAJOR_VERSION}::Contacts
     KPim${KF_MAJOR_VERSION}::Libkleo
