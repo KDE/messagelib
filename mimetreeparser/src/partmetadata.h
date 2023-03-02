@@ -24,8 +24,7 @@ class PartMetaData
 {
 public:
     PartMetaData()
-        : sigSummary(GpgME::Signature::None)
-        , isSigned(false)
+        : isSigned(false)
         , isGoodSignature(false)
         , isEncrypted(false)
         , isDecryptable(false)
@@ -35,14 +34,14 @@ public:
     {
     }
 
-    GpgME::Signature::Summary sigSummary;
+    GpgME::Signature::Summary sigSummary = GpgME::Signature::None;
     QString signClass;
     QString signer;
     QStringList signerMailAddresses;
     QByteArray keyId;
-    GpgME::Signature::Validity keyTrust;
+    GpgME::Signature::Validity keyTrust = GpgME::Signature::Validity::Unknown;
     QString status; // to be used for unknown plug-ins
-    int status_code; // to be used for i18n of OpenPGP and S/MIME CryptPlugs
+    int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;
     QDateTime creationTime;
     QString decryptionError;
