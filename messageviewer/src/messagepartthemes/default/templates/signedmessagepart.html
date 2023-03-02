@@ -70,16 +70,16 @@
                     </td>
                     {% if not block.isPrinting %}
                         <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
-		    {% endif %}
+                    {% endif %}
                 </tr>
                 <tr>
                     <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
                 {% elif block.detailHeader %}
                     <td rowspan="2">
                     {% if block.signClass == "signWarn" %}
-                            {% if block.technicalProblem %}
-                                {{block.errorText|safe}}
-                            {% else %}
+                        {% if block.technicalProblem %}
+                            {{block.errorText|safe}}
+                        {% else %}
                             {% if block.keyId %}
                                 {% if block.creationTime %}
                                     {% i18n_var "Message was signed on %1 with unknown key %2." block.creationTime block.keyWithWithoutURL as signed %}
@@ -131,9 +131,9 @@
                         {% endif %}
                     {% endif %}
                     </td>
-		    {% if not block.isPrinting %}
+                    {% if not block.isPrinting %}
                         <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
-		    {% endif %}
+                    {% endif %}
                 </tr>
                 <tr>
                     <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
