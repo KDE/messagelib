@@ -11697,7 +11697,7 @@ msgstr "أ&لغِ"
 #~ "<p>Some of the new features in this release of KMail include (compared to "
 #~ "KMail %1, which is part of KDE %2):</p>\n"
 #~ msgstr ""
-#~ "<p> بعض من جديد بوصة إصدار من KMail تضمين إلى KMail هو جزء من كدي</p> n"
+#~ "<p> بعض من جديد بوصة إصدار من KMail تضمين إلى KMail هو جزء من كِيدِي</p> n"
 
 #~ msgid ""
 #~ "<p>Please take a moment to fill in the KMail configuration panel at "

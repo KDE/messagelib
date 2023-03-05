@@ -2245,7 +2245,7 @@ msgstr "بريدك"
 #: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "The KDE Mail Client"
-msgstr "عميل البريد لِ‍«كدي»"
+msgstr "عميل البريد لِ‍«كِيدِي»"
 
 #: viewer/viewer_p.cpp:1290
 #, fuzzy, kde-format
@@ -12116,7 +12116,7 @@ msgstr "البطاقة ال&سّابقة"
 #~ "<p>Some of the new features in this release of KMail include (compared to "
 #~ "KMail %1, which is part of KDE %2):</p>\n"
 #~ msgstr ""
-#~ "<p> بعض من جديد بوصة إصدار من KMail تضمين إلى KMail هو جزء من كدي</p> n"
+#~ "<p> بعض من جديد بوصة إصدار من KMail تضمين إلى KMail هو جزء من كِيدِي</p> n"
 
 #~ msgid ""
 #~ "<p>Please take a moment to fill in the KMail configuration panel at "
