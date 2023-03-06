@@ -211,7 +211,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::okButtonCl
         Manager::instance()->aggregationsConfigurationCompleted();
     }
     Q_EMIT q->okClicked();
-    q->close(); // this will delete too
+    q->accept(); // this will delete too
 }
 
 void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::commitEditor()
