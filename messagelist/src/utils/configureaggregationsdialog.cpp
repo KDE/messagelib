@@ -357,6 +357,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::newAggrega
     emptyAggregation.setName(uniqueNameForAggregation(i18n("New Aggregation")));
     auto item = new AggregationListWidgetItem(mAggregationList, emptyAggregation);
 
+    mAggregationList->clearSelection();
     mAggregationList->setCurrentItem(item);
     mDeleteAggregationButton->setEnabled(item && !item->aggregation()->readOnly());
 }

@@ -356,6 +356,7 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::newThemeButtonClicked(
     emptyTheme.addColumn(col);
     auto item = new ThemeListWidgetItem(mThemeList, emptyTheme);
 
+    mThemeList->clearSelection();
     mThemeList->setCurrentItem(item);
     Core::Theme *theme = item->theme();
     if (theme) {
