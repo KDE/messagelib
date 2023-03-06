@@ -151,23 +151,23 @@
                 {% else %}
                     <td>
                     {% if block.signClass == "signErr" %}
-                        {% i18n "Invalid signature." %}
+                        {% i18n_var "Invalid signature" as sign_status %}
                     {% elif block.signClass == "signOkKeyBad" or block.signClass == "signWarn" %}
-                        {% i18n "Not enough information to check signature validity." %}
+                        {% i18n_var "Not enough information to check signature validity" as sign_status %}
                     {% elif block.signClass == "signOkKeyOk" %}
                         {% if block.addr %}
-                            {% i18n_var "Signed by <a href='mailto:%1'>%1</a>." block.addr as signed %}
-                            {{ signed|safe }}
+                            {% i18n_var "Signed by <a href='mailto:%1'>%1</a>" block.addr as sign_status %}
                         {% else %}
-                            {% i18n "Signature is valid." %}
+                            {% i18n_var "Signature is valid" as sign_status %}
                         {% endif %}
                     {% else %}
-                        {% i18n "Unknown signature state." %}
+                        {% i18n_var "Unknown signature state" as sign_status %}
                     {% endif %}
                     {% if block.compliance %}
-                        {% with space as " " %}
-                            {{ space }}{% i18n "Compliance: %1" block.compliance %}
-                        {% endwith %}
+                        {% i18nc_var "Status of signature (status/type of compliance)" "%1 (%2)" sign_status block.compliance as sign_status_with_compliance %}
+                        {{ sign_status_with_compliance|safe }}
+                    {% else %}
+                        {{ sign_status|safe }}.
                     {% endif %}
                     </td>
                     {% if not block.isPrinting %}
