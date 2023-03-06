@@ -28,10 +28,17 @@
                             {% endif %}
                         {% endfor %}
                         </ul>
+                        {% if block.compliance %}
+                            {% i18nc "Compliance: status/type of compliance" "Compliance: %1" block.compliance %}
+                        {% endif %}
                     </div>
                 {% else %}
                     <div class="enc-simple">
-                    {% i18n "Encrypted message" %}
+                    {% if block.compliance %}
+                        {% i18nc "Encrypted message (status/type of compliance)" "Encrypted message (%1)" block.compliance %}
+                    {% else %}
+                        {% i18n "Encrypted message" %}
+                    {% endif %}
                     {% if not block.isPrinting %}
                         <a href="kmail:showEncryptionDetails" style="display:block;float:right;">{% i18n "Show Details" %}</a>
                     {% endif %}

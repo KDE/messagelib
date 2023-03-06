@@ -1217,6 +1217,12 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             }
 
             partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
+            if (Kleo::DeVSCompliance::isActive()) {
+                partMetaData()->isCompliant = decryptResult.isDeVs();
+                partMetaData()->compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
+            } else {
+                partMetaData()->isCompliant = true;
+            }
             if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
                 partMetaData()->keyId = decryptResult.recipient(0).keyID();
             }

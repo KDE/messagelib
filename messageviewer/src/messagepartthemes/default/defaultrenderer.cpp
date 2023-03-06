@@ -438,6 +438,8 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url());
     block.setProperty("errorText", metaData.errorText);
     block.setProperty("noSecKey", mp->isNoSecKey());
+    block.setProperty("isCompliant", metaData.isCompliant);
+    block.setProperty("compliance", metaData.compliance);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::OutputStream s(htmlWriter->stream());
 #else
