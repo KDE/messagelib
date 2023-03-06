@@ -80,7 +80,14 @@
                         {% if block.technicalProblem %}
                             {{block.errorText|safe}}
                         {% else %}
-                            {% if block.keyId %}
+                            {% if block.signer %}
+                                {% if block.keyId %}
+                                    {% i18n_var "Message was signed by %2 (Key ID: %1)." block.keyWithWithoutURL block.signer as signed %}
+                                    {{signed|safe}}
+                                {% else %}
+                                    {% i18n "Message was signed by %1." block.signer %}
+                                {% endif %}
+                            {% elif block.keyId %}
                                 {% if block.creationTime %}
                                     {% i18n_var "Message was signed on %1 with unknown key %2." block.creationTime block.keyWithWithoutURL as signed %}
                                     {{signed|safe}}
@@ -130,6 +137,10 @@
                             {% i18n "Warning: The signature is bad." %}
                         {% endif %}
                     {% endif %}
+                    {% if block.compliance %}
+                        <br />
+                        {% i18n "Compliance: %1" block.compliance %}
+                    {% endif %}
                     </td>
                     {% if not block.isPrinting %}
                         <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
@@ -151,7 +162,12 @@
                             {% i18n "Signature is valid." %}
                         {% endif %}
                     {% else %}
-                        {% i18n "Unknown signature state" %}
+                        {% i18n "Unknown signature state." %}
+                    {% endif %}
+                    {% if block.compliance %}
+                        {% with space as " " %}
+                            {{ space }}{% i18n "Compliance: %1" block.compliance %}
+                        {% endwith %}
                     {% endif %}
                     </td>
                     {% if not block.isPrinting %}

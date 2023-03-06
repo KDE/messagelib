@@ -31,6 +31,7 @@ public:
         , inProgress(false)
         , technicalProblem(false)
         , isEncapsulatedRfc822Message(false)
+        , isCompliant(false)
     {
     }
 
@@ -46,6 +47,7 @@ public:
     QDateTime creationTime;
     QString decryptionError;
     QString auditLog;
+    QString compliance; // textual representation of compliance status; empty if compliance isn't enforced
     GpgME::Error auditLogError;
     bool isSigned : 1;
     bool isGoodSignature : 1;
@@ -54,5 +56,6 @@ public:
     bool inProgress : 1;
     bool technicalProblem : 1;
     bool isEncapsulatedRfc822Message : 1;
+    bool isCompliant : 1; // corresponds to the isDeVS flag of signature or decryption result
 };
 }

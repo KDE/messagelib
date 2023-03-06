@@ -17,6 +17,7 @@
 #include "bodyformatter/utils.h"
 
 #include <KMime/Content>
+#include <Libkleo/Compliance>
 #include <Libkleo/KeyCache>
 
 #include <QGpgME/DN>
@@ -889,6 +890,12 @@ void SignedMessagePart::sigStatusToMetaData()
                     partMetaData()->signer += QLatin1String(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
                 }
             }
+        }
+        if (Kleo::DeVSCompliance::isActive()) {
+            partMetaData()->isCompliant = signature.isDeVs();
+            partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
+        } else {
+            partMetaData()->isCompliant = true;
         }
     }
 }
