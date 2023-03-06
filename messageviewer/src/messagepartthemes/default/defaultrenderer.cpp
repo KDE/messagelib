@@ -507,6 +507,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     }
     block.setProperty("isGoodSignature", metaData.isGoodSignature);
     block.setProperty("isCompliant", metaData.isCompliant);
+    block.setProperty("compliance", metaData.compliance);
     block.setProperty("isSMIME", isSMIME);
 
     if (metaData.keyTrust == GpgME::Signature::Unknown) {
@@ -669,8 +670,6 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("statusStr", statusStr);
     block.setProperty("signClass", mClass);
     block.setProperty("greenCaseWarning", greenCaseWarning);
-    block.setProperty("isCompliant", metaData.isCompliant);
-    block.setProperty("compliance", metaData.compliance);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::OutputStream s(htmlWriter->stream());
 #else
