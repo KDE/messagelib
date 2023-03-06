@@ -107,6 +107,9 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mThemeList->setSortingEnabled(true);
     g->addWidget(d->mThemeList, 0, 0, 7, 1);
 
+    connect(d->mThemeList, &ThemeListWidget::currentItemChanged, this, [this](QListWidgetItem *item) {
+        d->themeListItemClicked(item);
+    });
     connect(d->mThemeList, &ThemeListWidget::itemClicked, this, [this](QListWidgetItem *item) {
         d->themeListItemClicked(item);
     });

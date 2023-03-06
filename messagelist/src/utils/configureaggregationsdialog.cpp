@@ -114,6 +114,9 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     connect(d->mAggregationList, &AggregationListWidget::itemClicked, this, [this](QListWidgetItem *item) {
         d->aggregationListItemClicked(item);
     });
+    connect(d->mAggregationList, &AggregationListWidget::currentItemChanged, this, [this](QListWidgetItem *item) {
+        d->aggregationListItemClicked(item);
+    });
 
     d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
