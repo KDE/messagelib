@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -13,52 +13,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Onbenoem"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr ""

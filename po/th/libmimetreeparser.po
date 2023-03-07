@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -20,51 +20,51 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "ยังไม่มีชื่อ"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ปลั๊กอินเข้ารหัสไม่ถูกต้อง !"
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "ไม่พบส่วนเสริมเข้ารหัสที่เหมาะสม"
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "ไม่พบส่วนเสริม %1"
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "ปลั๊กอินเข้ารหัส %1 ไม่สามารถใช้ถอดรหัสจดหมายบางฉบับได้"
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, fuzzy, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr "ไม่สามารถตรวจสอบลายเซ็นได้"
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "ส่วนเสริมเข้ารหัส \"%1\" ไม่สามารถถอดรหัสจดหมายได้"
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "ส่วนเสิรมเข้ารหัส \"%1\" ไม่สามารถถอดรหัสข้อมูลได้"
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "ผิดพลาด: %1"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -124,7 +124,7 @@ msgstr "Vista send bréf &dulrituð"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 #, fuzzy
 #| msgid "Logging Details"
 msgid "Hide Details"
@@ -143,7 +143,7 @@ msgid "Encrypted message"
 msgstr "Dulritað bréf"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "Show alway&s"
 msgid "Show Details"
@@ -223,14 +223,15 @@ msgid "Not enough information to check signature. %1"
 msgstr "Ekki nægar upplýsingar til að sannreyna undirritun. %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
 msgstr "Bréf var undirritað af %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "Bréf var undirritað með óþekktum lykli."
 
@@ -257,84 +258,92 @@ msgid "Message was signed by %2 with key %1."
 msgstr "Bréf var undirritað af %2 með lykli %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "Staða: "
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Bréf var undirritað þann %1 með óþekktum lykli %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Bréf var undirritað með óþekktum lykli %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-msgid "The validity of the signature cannot be verified."
-msgstr "Ekki er hægt að staðfesta lögmæti undirritunarinnar."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
 msgstr "Bréf var undirritað af %2 (Númer lykils: %1)."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Bréf var undirritað þann %1 með óþekktum lykli %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Bréf var undirritað með óþekktum lykli %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:102
+msgid "The validity of the signature cannot be verified."
+msgstr "Ekki er hægt að staðfesta lögmæti undirritunarinnar."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr "Undirritunin er gild, en lögmæti lyklisins er óþekkt."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr "Undirritunin er gild og lyklinum er varla treyst."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr "Undirritunin er gild og lyklinum er treyst til fulls."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr "Undirritunin er gild og lyklinum er treyst fullkomlega."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr "Undirritunin er gild, en lyklinum er ekki treyst."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
 msgstr "Varúð: Undirritunin er ógild."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgid "Compliance: %1"
+msgstr " Dálkur: %1 "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "&Enable signature"
 msgid "Invalid signature."
 msgstr "Setja &undirskrift"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 #, fuzzy
 #| msgid "Not enough information to check signature. %1"
 msgid "Not enough information to check signature validity."
 msgstr "Ekki nægar upplýsingar til að sannreyna undirritun. %1"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 #, fuzzy
 #| msgid "Signatures"
 msgid "Signature is valid."
 msgstr "Undirritun"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
+#: messagepartthemes/default/templates/signedmessagepart.html:165
 #, fuzzy
 #| msgid "No signature found"
-msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "Enginn undirritun fannst"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
 msgstr "Lok undirritaðs bréfs"
 
@@ -1177,37 +1186,37 @@ msgstr "Einn lykill hefur verið settur ógildur."
 msgid "Bad signature."
 msgstr "Gild undirritun."
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, fuzzy, kde-format
 #| msgid "Certificates"
 msgid "certificate"
 msgstr "Skírteini"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Aðvörun:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr "Netfang sendanda er ekki geymt í %1 sem er notað til undirskriftar."
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "sendandi: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "geymt: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -12360,9 +12369,6 @@ msgstr "&Fyrra kort"
 #, fuzzy
 #~ msgid " Spellcheck: %1 "
 #~ msgstr "Stafsetningarráðgjafi"
-
-#~ msgid " Column: %1 "
-#~ msgstr " Dálkur: %1 "
 
 #, fuzzy
 #~| msgid " Line: %1 "

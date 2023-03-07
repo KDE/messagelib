@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1635,54 +1635,54 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr ""
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
 msgid "New Aggregation"
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
 msgid "Clone Aggregation"
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Export Aggregation..."
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Import Aggregation..."
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgid "Delete Aggregation"
 msgstr "Hapuskan &Rantaian"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, fuzzy, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Import Aggregation"
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Export Aggregation"
 msgstr "Cadangan"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
@@ -1694,72 +1694,72 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "&Gantikan"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "New Theme"
 msgstr "Mesej Baru"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "Clone Theme"
 msgstr "Mesej Baru"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Expire"
 msgid "Export Theme..."
 msgstr "Luputkan"
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Theme..."
 msgstr "&Import"
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgid "Delete Theme"
 msgstr "Hapuskan &Rantaian"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgid "Unnamed Theme"
 msgstr "Tidak dinamakan"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
 msgstr "Paparkan Lajur"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Hapuskan &Rantaian"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
 msgid "Import Theme"
 msgstr "&Import Mesej..."
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgid "Export Theme"

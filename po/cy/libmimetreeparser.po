@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -21,35 +21,35 @@ msgstr ""
 "\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Heb ei enwi"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Rhaglennig Celu Anghywir!"
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Ni chanfuwyd rhaglennig celu addas."
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Ni chanfuwyd rhaglennig %1."
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Ni all y rhaglennig celu \"%1\" wirio llofnodion."
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, fuzzy, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -57,17 +57,17 @@ msgid ""
 msgstr ""
 "Llofnodir y neges, ond ni ellir gwirio dilysrwydd y llofnod.<br />Rheswm: %1"
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Ni all y rhaglennig celu \"%1\" ddatgelu negeseuon."
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Methodd y rhaglennig celu \"%1\" ddatgelu'r data."
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "Gwall: %1"

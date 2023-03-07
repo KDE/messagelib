@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2022-05-18 21:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -104,7 +104,7 @@ msgstr "Iste message es cryptate per le sequente claves:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Celar detalios"
 
@@ -118,7 +118,7 @@ msgid "Encrypted message"
 msgstr "Message Cryptate"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Monstrar Detalios"
 
@@ -181,14 +181,15 @@ msgid "Not enough information to check signature. %1"
 msgstr "Information insufficiente pro verificar signatura. %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
 msgstr "Message esseva signate per %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "Message esseva signate con clave incognite."
 
@@ -215,76 +216,85 @@ msgid "Message was signed by %2 with key %1."
 msgstr "Message esseva signate per %2 con clave %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "Stato: "
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Message esseva signate sur %1 con clave incognite %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Message esseva signate con clave incognite %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-msgid "The validity of the signature cannot be verified."
-msgstr "Le validitate del signature non pote esser verificate."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
 msgstr "Message esseva signate per %2 (ID de clave: %1)."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Message esseva signate sur %1 con clave incognite %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Message esseva signate con clave incognite %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:102
+msgid "The validity of the signature cannot be verified."
+msgstr "Le validitate del signature non pote esser verificate."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr "Le signatura es valide, ma le validitate del clave es incognite."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr "Le signatura es valide e le clave es marginalmente credibile."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr "Le signatura es valide e le clave es completemente credibile."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr "Le signatura es valide e le clave es in fin credibile."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr "Le signatura es valide, ma le clave non es credibile."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
 msgstr "Aviso: Le signatura es mal."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, kde-format
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Invalid signature."
 msgstr "Signatura invalide."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity."
 msgstr "Information insufficiente pro verificar validitate de signatura."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr "Signate per <a href='mailto:%1'>%1</a>."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 msgid "Signature is valid."
 msgstr "Signatura es valide."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Unknown signature state"
+#: messagepartthemes/default/templates/signedmessagepart.html:165
+#, fuzzy
+#| msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "Stato de signatura incognite"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
 msgstr "Fin de message signate"
 
@@ -1068,37 +1078,37 @@ msgstr "Un clave ha essite revocate."
 msgid "Bad signature."
 msgstr "Mal signatura."
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, kde-format
 msgid "certificate"
 msgstr "Certificato"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Aviso:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Le adresse de mittente de e-posta non es immagazinate in le %1 usate per "
 "signar."
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "Mittente: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "immagazinate: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

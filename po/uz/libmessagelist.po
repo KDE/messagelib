@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1585,54 +1585,54 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr ""
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
 msgid "New Aggregation"
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
 msgid "Clone Aggregation"
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Export Aggregation..."
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Import Aggregation..."
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgid "Delete Aggregation"
 msgstr "Ketma-ketlikni oʻch&irish"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, fuzzy, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Import Aggregation"
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Export Aggregation"
 msgstr "Takliflar"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
@@ -1644,72 +1644,72 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "&Almashtirish"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "New Theme"
 msgstr "Yangi xabar"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "Clone Theme"
 msgstr "Yangi xabar"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Export Theme..."
 msgstr "&Import qilish"
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Theme..."
 msgstr "&Import qilish"
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgid "Delete Theme"
 msgstr "Ketma-ketlikni oʻch&irish"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgid "Unnamed Theme"
 msgstr "Nomsiz"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
 msgstr "Koʻrinadigan ustunlar"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Ketma-ketlikni oʻch&irish"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
 msgid "Import Theme"
 msgstr "Xabarlarni &import qilish"
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Export Theme"

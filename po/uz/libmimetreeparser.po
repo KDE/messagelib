@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nomsiz"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, fuzzy, kde-format
 #| msgid "The validity of the signature cannot be verified."
 msgid ""
@@ -54,17 +54,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Imzoning haqiqiyligini tekshirib boʻlmadi."
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "Xato: %1"

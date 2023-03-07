@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -136,7 +136,7 @@ msgstr "Tá an teachtaireacht seo criptithe."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Folaigh Mionsonraí"
 
@@ -152,7 +152,7 @@ msgid "Encrypted message"
 msgstr "Teachtaireacht chriptithe"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Taispeáin Mionsonraí"
 
@@ -213,15 +213,16 @@ msgid "Not enough information to check signature. %1"
 msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Message was signed by %1."
 msgstr "Bhí an teachtaireacht sínithe le heochair %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "Bhí an teachtaireacht sínithe le heochair anaithnid."
 
@@ -248,83 +249,91 @@ msgid "Message was signed by %2 with key %1."
 msgstr "Bhí an teachtaireacht sínithe ag %2 le heochair %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "Stádas:"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
+#, fuzzy, kde-format
+#| msgid "Message was signed by %2 with key %1."
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Bhí an teachtaireacht sínithe ag %2 le heochair %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:92
 #, kde-format
 msgid "Message was signed on %1 with unknown key %2."
 msgstr "Bhí an teachtaireacht sínithe ar %1 le heochair anaithnid %2."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:95
 #, kde-format
 msgid "Message was signed with unknown key %1."
 msgstr "Bhí an teachtaireacht sínithe le heochair anaithnid %1."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:95
+#: messagepartthemes/default/templates/signedmessagepart.html:102
 #, fuzzy
 #| msgid "Please wait while the message is transferred"
 #| msgid_plural "Please wait while the %1 messages are transferred"
 msgid "The validity of the signature cannot be verified."
 msgstr "Fan go fóill; %1 teachtaireacht á aistriú"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
-#, fuzzy, kde-format
-#| msgid "Message was signed by %2 with key %1."
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Bhí an teachtaireacht sínithe ag %2 le heochair %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
 msgstr "Rabhadh: Drochshíniú."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgid "Compliance: %1"
+msgstr " Colún: %1 "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Invalid signature."
 msgstr "Síniú neamhbhailí."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, fuzzy, kde-format
 #| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr "Sínithe ag <a href=\"mailto:%1\">%2</a>."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 msgid "Signature is valid."
 msgstr "Síniú bailí."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
+#: messagepartthemes/default/templates/signedmessagepart.html:165
 #, fuzzy
 #| msgid "Show signature details."
-msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "Taispeáin mionsonraí an tsínithe."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 #, fuzzy
 #| msgid "Error saving message"
 msgid "End of signed message"
@@ -1181,35 +1190,35 @@ msgstr "Cealaíodh eochair amháin."
 msgid "Bad signature."
 msgstr "Síniú maith."
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, kde-format
 msgid "certificate"
 msgstr "teastas"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Rabhadh:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "seoltóir: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "stóráilte: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -6283,9 +6292,6 @@ msgstr "An Cárta &Roimhe Seo"
 
 #~ msgid "Configure KMail..."
 #~ msgstr "Cumraigh KMail..."
-
-#~ msgid " Column: %1 "
-#~ msgstr " Colún: %1 "
 
 #~ msgctxt "Shows the linenumber of the cursor position."
 #~ msgid " Line: %1 "

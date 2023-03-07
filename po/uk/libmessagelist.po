@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-11 08:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1484,49 +1484,49 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Налаштовування режимів складання повідомлень"
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
 msgstr "Створити складання"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, kde-format
 msgid "Clone Aggregation"
 msgstr "Клонувати складання"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
 msgstr "Експортувати складання…"
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
 msgstr "Імпортувати складання…"
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, kde-format
 msgid "Delete Aggregation"
 msgstr "Вилучити складання"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Складання без назви"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, kde-format
 msgid "Import Aggregation"
 msgstr "Імпортувати складання"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
 msgstr "Експортувати складання"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"
@@ -1537,63 +1537,63 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Налаштовування тем"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
 msgstr "Створити тему"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, kde-format
 msgid "Clone Theme"
 msgstr "Клонувати тему"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
 msgstr "Експортувати тему…"
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
 msgstr "Імпортувати тему…"
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, kde-format
 msgid "Delete Theme"
 msgstr "Вилучити тему"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Тема без назви"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Новий стовпчик"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "Ви хочете вилучити позначені теми?"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "Хочете вилучити «%1»?"
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Вилучення теми"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, kde-format
 msgid "Import Theme"
 msgstr "Імпортувати тему"
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "Export Theme"
 msgstr "Клонувати тему"

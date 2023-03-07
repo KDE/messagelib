@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -123,7 +123,7 @@ msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট �
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 #, fuzzy
 #| msgid "[Details]"
 msgid "Hide Details"
@@ -141,7 +141,7 @@ msgid "Encrypted message"
 msgstr "এনক্রিপ্ট করা বার্তা"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "Show alway&s"
 msgid "Show Details"
@@ -215,14 +215,15 @@ msgid "Not enough information to check signature. %1"
 msgstr "স্বাক্ষর %1 যাচাই করার জন্য যথেষ্ট তথ্য নেই।"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "বার্তা অজানা কী (key) ব্যবহার করে স্বাক্ষর করা হয়েছে। "
 
@@ -251,91 +252,99 @@ msgid "Message was signed by %2 with key %1."
 msgstr "বার্তা স্বাক্ষর করেছেন %2, কী (Key) %1 ব্যবহার করে।"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "স্ট্যাটাস:"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "বার্তাটি %2 দ্বারা স্বাক্ষরিত (কী আই.ডি.: %1)।"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:92
 #, fuzzy, kde-format
 #| msgid "Message was signed with unknown key %1."
 msgid "Message was signed on %1 with unknown key %2."
 msgstr "বার্তাটি অজানা কী %1 দ্বারা স্বাক্ষরিত।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:95
 #, kde-format
 msgid "Message was signed with unknown key %1."
 msgstr "বার্তাটি অজানা কী %1 দ্বারা স্বাক্ষরিত।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:95
+#: messagepartthemes/default/templates/signedmessagepart.html:102
 #, fuzzy
 #| msgid "The validity of the signature cannot be verified."
 msgid "The validity of the signature cannot be verified."
 msgstr "স্বাক্ষরটির বৈধতা যাচাই করা যায়নি।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "বার্তাটি %2 দ্বারা স্বাক্ষরিত (কী আই.ডি.: %1)।"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr "স্বাক্ষরটি বৈধ, কিন্তু কী(Key)-টির বৈধতা সম্বন্ধে কিছু জানা নেই।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr "স্বাক্ষরটি বৈধ, এবং কী(Key)-টি সম্ভবত বিশ্বস্ত।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr "স্বাক্ষরটি বৈধ, এবং কী(Key)-টি পুরোপুরি বিশ্বস্ত।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 #, fuzzy
 #| msgid "The signature is valid and the key is fully trusted."
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr "স্বাক্ষরটি বৈধ, এবং কী(Key)-টি পুরোপুরি বিশ্বস্ত।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr "স্বাক্ষরটি বৈধ, কিন্তু কী (Key) বিশ্বস্ত নয়।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 #, fuzzy
 #| msgid "Warning: The signature is bad."
 msgid "Warning: The signature is bad."
 msgstr "সাবধান: স্বাক্ষর ত্রুটিপূর্ণ।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgid "Compliance: %1"
+msgstr " কলাম: %1"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "&Enable signature"
 msgid "Invalid signature."
 msgstr "স্বাক্ষর ব্যবস্থা সক্রি&য় করো "
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 #, fuzzy
 #| msgid "Not enough information to check signature. %1"
 msgid "Not enough information to check signature validity."
 msgstr "স্বাক্ষর %1 যাচাই করার জন্য যথেষ্ট তথ্য নেই।"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 #, fuzzy
 #| msgid "Signatures"
 msgid "Signature is valid."
 msgstr "স্বাক্ষর"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
+#: messagepartthemes/default/templates/signedmessagepart.html:165
 #, fuzzy
 #| msgid "No signature found"
-msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
 msgstr "স্বাক্ষর করা বার্তার শেষ"
 
@@ -1169,37 +1178,37 @@ msgstr "ওপেন-পি.জি.পি. কী (key) 0x%1"
 msgid "Bad signature."
 msgstr "ত্রুটিমুক্ত স্বাক্ষর।"
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, fuzzy, kde-format
 #| msgid "Certificates"
 msgid "certificate"
 msgstr "সার্টিফিকেট"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "সাবধানবাণী:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "প্রেরক:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "সঞ্চিত :"
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -7874,9 +7883,6 @@ msgstr "পূর্ব&বর্তী কার্ড"
 #, fuzzy
 #~ msgid " Spellcheck: %1 "
 #~ msgstr "বানান পরীক্ষক"
-
-#~ msgid " Column: %1 "
-#~ msgstr " কলাম: %1"
 
 #, fuzzy
 #~| msgid " Line: %1 "

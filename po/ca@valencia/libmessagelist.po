@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-11 09:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1463,49 +1463,49 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Personalització dels modes d'agregació dels missatges"
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
 msgstr "Agregació nova"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, kde-format
 msgid "Clone Aggregation"
 msgstr "Clona l'agregació"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
 msgstr "Exporta l'agregació..."
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
 msgstr "Importa l'agregació..."
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, kde-format
 msgid "Delete Aggregation"
 msgstr "Suprimix l'agregació"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Agregació sense nom"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, kde-format
 msgid "Import Aggregation"
 msgstr "Importeu una agregació"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
 msgstr "Exporteu una agregació"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
@@ -1516,63 +1516,63 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Temes personalitzats"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
 msgstr "Tema nou"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, kde-format
 msgid "Clone Theme"
 msgstr "Clona el tema"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
 msgstr "Exporta el tema..."
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
 msgstr "Importa un tema..."
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, kde-format
 msgid "Delete Theme"
 msgstr "Suprimix el tema"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Tema sense nom"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Columna nova"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "Voleu suprimir els temes seleccionats?"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "Voleu suprimir la llista «%1»?"
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Suprimix el tema"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, kde-format
 msgid "Import Theme"
 msgstr "Importeu un tema"
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "Export Theme"
 msgstr "Exporteu un tema"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2017-02-22 17:01+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -19,34 +19,34 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nepojmenovaný"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Chybný modul šifrování."
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nebyl nalezen vhodný zásuvný modul šifrování."
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Zásuvný modul %1 nebyl nalezen."
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Šifrovací modul \"%1\" nemůže ověřovat podpisy."
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -54,17 +54,17 @@ msgid ""
 msgstr ""
 "Zpráva je podepsána, ale platnost podpisu nemůže být ověřena.<br />Důvod: %1"
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat zprávy."
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Zásuvný modul šifrování \"%1\" nemůže dešifrovat data."
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"

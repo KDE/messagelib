@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -132,7 +132,7 @@ msgstr "Kontrolearje of berjochten ek fersifere binne mei jo eigen kaai."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 #, fuzzy
 #| msgid "Logging Details"
 msgid "Hide Details"
@@ -150,7 +150,7 @@ msgid "Encrypted message"
 msgstr "Fersifere berjocht"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "Show alway&s"
 msgid "Show Details"
@@ -235,14 +235,15 @@ msgid "Not enough information to check signature. %1"
 msgstr "Net genôch ynformaasje om de hântekening te kontrolearjen. %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
 msgstr "Berjocht is ûndertekene troch %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "Berjocht wie ûndertekene mei in ûnbekende kaai."
 
@@ -269,84 +270,92 @@ msgid "Message was signed by %2 with key %1."
 msgstr "Berjocht is ûndertekene troch %2, mei kaai %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "Tastân:"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Berjocht is ûndertekene op %1, mei ûnbekende kaai %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Berjocht wie ûndertekene mei ûnbekende kaai %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-msgid "The validity of the signature cannot be verified."
-msgstr "De jildigens fan de ûndertekening kin net kontrolearre wurde."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
 msgstr "Berjocht is ûndertekene troch %1 (kaai-id: %2)."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Berjocht is ûndertekene op %1, mei ûnbekende kaai %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Berjocht wie ûndertekene mei ûnbekende kaai %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:102
+msgid "The validity of the signature cannot be verified."
+msgstr "De jildigens fan de ûndertekening kin net kontrolearre wurde."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr "De ûndertekening is jildich, mar de kontrôle fan de kaai is ûnbekend."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr "De ûndertekening is jildich en de kaai is foar in diel te betrouwen."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr "De ûndertekening is jildich en de kaai is folslein te betrouwen."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr "De ûndertekening is jildich en de kaai is ultym te betrouwen."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr "De ûndertekening is jildich, mar de kaai is ûnbetrouwber."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
 msgstr "Warskôging: De ûndertekening is slecht."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgid "Compliance: %1"
+msgstr " Kolom: %1 "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "&Enable signature"
 msgid "Invalid signature."
 msgstr "Hântekening &oansette"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 #, fuzzy
 #| msgid "Not enough information to check signature. %1"
 msgid "Not enough information to check signature validity."
 msgstr "Net genôch ynformaasje om de hântekening te kontrolearjen. %1"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 #, fuzzy
 #| msgid "Signatures"
 msgid "Signature is valid."
 msgstr "Hântekenings"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
+#: messagepartthemes/default/templates/signedmessagepart.html:165
 #, fuzzy
 #| msgid "No signature found"
-msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "Gjin hântekening fûn."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
 msgstr "Ein fan tekene berjocht"
 
@@ -1210,39 +1219,39 @@ msgstr "Ien kaai is ynlútsen."
 msgid "Bad signature."
 msgstr "Juste hântekening."
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, fuzzy, kde-format
 #| msgid "Certificates"
 msgid "certificate"
 msgstr "Sertifikaten"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Warskôging:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "It e-postadres fan de stjoerder is net bewarre yn de %1, hokker brûkt wurdt "
 "foar ûndertekenjen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "stjoerder:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "bewarre: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -13120,9 +13129,6 @@ msgstr "&Kaart earder"
 
 #~ msgid " Spellcheck: %1 "
 #~ msgstr " Staveringshifker: %1"
-
-#~ msgid " Column: %1 "
-#~ msgstr " Kolom: %1 "
 
 #, fuzzy
 #~| msgid " Line: %1 "

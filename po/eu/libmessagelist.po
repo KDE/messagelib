@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2021-04-27 18:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1478,49 +1478,49 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "mezuak multzokatzeko moduak norbere erara egokitu"
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
 msgstr "Multzokatze berria"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, kde-format
 msgid "Clone Aggregation"
 msgstr "Klonatu multzokatzea"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
 msgstr "Esportatu multzokatzea..."
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
 msgstr "Inportatu multzokatzea..."
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, kde-format
 msgid "Delete Aggregation"
 msgstr "Ezabatu multzokatzea"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Izengabeko multzokatzea"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, kde-format
 msgid "Import Aggregation"
 msgstr "Inportatu multzokatzea"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
 msgstr "Esportatu multzokatzea"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
@@ -1531,63 +1531,63 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Gaiak norbere erara egokitu"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
 msgstr "Gai berria"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, kde-format
 msgid "Clone Theme"
 msgstr "Klonatu gaia"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
 msgstr "Esportatu gaia..."
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
 msgstr "Inportatu gaia..."
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, kde-format
 msgid "Delete Theme"
 msgstr "Ezabatu gaia"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Gai izengabea"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Zutabe berria"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "Hautatutako gaiak ezabatu nahi dituzu?"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "«%1» ezabatu nahi duzu?"
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Ezabatu gaia"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, kde-format
 msgid "Import Theme"
 msgstr "Inportatu gaia"
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "Export Theme"
 msgstr "Esportatu gaia"

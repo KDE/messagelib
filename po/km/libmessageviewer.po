@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -105,7 +105,7 @@ msgstr "សារ​នេះ​ត្រូវ​បាន​អ៊ិនគ្
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:135
+#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "លាក់​សេចក្តី​លម្អិត"
 
@@ -122,7 +122,7 @@ msgid "Encrypted message"
 msgstr "សារ​ដែល​បាន​អ៊ិនគ្រីប"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:158
+#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
 
@@ -196,14 +196,15 @@ msgid "Not enough information to check signature. %1"
 msgstr "គ្មាន​ព័ត៌មាន​គ្រប់គ្រាន់​ដើម្បី​ពិនិត្យ​ហត្ថលេខាទេ ។ %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:108
-#: messagepartthemes/default/templates/signedmessagepart.html:127
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
 msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %1 ។"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:92
+#: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
 msgstr "សារត្រូវបាន​ចុះហត្ថលេខា​ដោយ​ប្រើ​សោ​មិនស្គាល់ ។"
 
@@ -230,77 +231,86 @@ msgid "Message was signed by %2 with key %1."
 msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %2 ដោយ​ប្រើ %1 ។"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:98
+#: messagepartthemes/default/templates/signedmessagepart.html:105
 msgid "Status: "
 msgstr "ស្ថានភាព ៖ "
 
 #: messagepartthemes/default/templates/signedmessagepart.html:85
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​នៅ​លើ %1 ដោយ​ប្រើ​សោ​មិន​ស្គាល់ %2 ។"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ​សោ​មិន​ស្គាល់ %1 ។"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-msgid "The validity of the signature cannot be verified."
-msgstr "មិនអាច​ផ្ទៀងផ្ទាត់​សុពលភាព​របស់​ហត្ថលេខា​បានឡើយ ។"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-#: messagepartthemes/default/templates/signedmessagepart.html:124
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
 msgstr "ហត្ថលេខា​ត្រូវ​បាន​ចុះ​ហត្ថលេខា​ដោយ %2 (លេខ​សម្គាល់​សោ ៖ %1) ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​នៅ​លើ %1 ដោយ​ប្រើ​សោ​មិន​ស្គាល់ %2 ។"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ​សោ​មិន​ស្គាល់ %1 ។"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:102
+msgid "The validity of the signature cannot be verified."
+msgstr "មិនអាច​ផ្ទៀងផ្ទាត់​សុពលភាព​របស់​ហត្ថលេខា​បានឡើយ ។"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ប៉ុន្តែ​មិនស្គាល់​សុពលភាព​របស់​សោទេ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:114
+#: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ហើយ សោ​មិនទាន់​បាន​ទុកចិត្ត​គ្របគ្រាន់ទេ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:116
+#: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ​ ហើយ សោ​គឺ​ត្រូវ​បាន​ទុក​ចិត្ត​យ៉ាងពេញលេញ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:118
+#: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ហើយ​ សោ​គឺ​ត្រូវ​បាន​ទុក​ចិត្ត​ជាទីបំផុត ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:120
+#: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ប៉ុន្តែ​សារ​មិនត្រូវបាន​ទុក​ចិត្តឡើយ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:130
+#: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
 msgstr "ព្រមាន ៖ ហត្ថលេខា​គឺអាក្រក់ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:143
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#: messagepartthemes/default/templates/signedmessagepart.html:169
+#, kde-format
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Invalid signature."
 msgstr "ហត្ថលេខា​មិន​ត្រឹមត្រូវ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:145
+#: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity."
 msgstr "មិន​មាន​ព័ត៌មាន​គ្រប់គ្រាន់​ដើម្បី​ពិនិត្យ​មើល​សុពលភាព​របស់​ហត្ថលេខា​ឡើយ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:148
+#: messagepartthemes/default/templates/signedmessagepart.html:159
 #, fuzzy, kde-format
 #| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
 msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgstr "បាន​ចុះហត្ថលេខា​ដោយ <a href=\"mailto:%1\">%2</a> ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:151
+#: messagepartthemes/default/templates/signedmessagepart.html:162
 msgid "Signature is valid."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Unknown signature state"
+#: messagepartthemes/default/templates/signedmessagepart.html:165
+#, fuzzy
+#| msgid "Unknown signature state"
+msgid "Unknown signature state."
 msgstr "មិន​ស្គាល់​ស្ថានភាព​ហត្ថលេខា"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:170
+#: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
 msgstr "ខាងចុង​សារ​ដែលបាន​ចុះហត្ថលេខា"
 
@@ -1128,36 +1138,36 @@ msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ
 msgid "Bad signature."
 msgstr "ហត្ថលេខា​ល្អ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:598
-#: messagepartthemes/default/defaultrenderer.cpp:600
+#: messagepartthemes/default/defaultrenderer.cpp:599
+#: messagepartthemes/default/defaultrenderer.cpp:601
 #, kde-format
 msgid "certificate"
 msgstr "​វិញ្ញាបនបត្រ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:624
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:625
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "​ការព្រមាន ៖"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "អាសយដ្ឋាន​សំបុត្រ​របស់អ្នកផ្ញើ គឺ​​មិនត្រូវបាន​ទុក​នៅក្នុង​ %1 ដែលត្រូវបាន​ប្រើសម្រាប់​ការចុះហត្ថលេខាឡើយ​ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "sender: "
 msgstr "អ្នកផ្ញើ ៖ "
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:608
 #, kde-format
 msgid "stored: "
 msgstr "បានទុក ៖ "
 
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:626
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

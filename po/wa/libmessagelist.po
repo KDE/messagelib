@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -1572,50 +1572,50 @@ msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr ""
 
-#: utils/configureaggregationsdialog.cpp:118
-#: utils/configureaggregationsdialog.cpp:357
+#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
 msgid "New Aggregation"
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:126
+#: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
 msgid "Clone Aggregation"
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:139
+#: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 msgid "Export Aggregation..."
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:146
+#: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 msgid "Import Aggregation..."
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:157
+#: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
 msgid "Delete Aggregation"
 msgstr "Disfacer li f&yis di messaedjes"
 
-#: utils/configureaggregationsdialog.cpp:340
+#: utils/configureaggregationsdialog.cpp:343
 #, fuzzy, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:409
+#: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 msgid "Import Aggregation"
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:442
+#: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 msgid "Export Aggregation"
 msgstr "Novea"
 
-#: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:466
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
@@ -1628,66 +1628,66 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Tinmes a vosse môde"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
 msgstr "Novea tinme"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:125
 #, kde-format
 msgid "Clone Theme"
 msgstr "Clôner tinme"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Theme..."
 msgstr "Eberweter..."
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import Theme..."
 msgstr "Aberweter..."
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:156
 #, kde-format
 msgid "Delete Theme"
 msgstr "Disfacer tinme"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Tinme sins no"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
 #, kde-format
 msgid "New Column"
 msgstr "Novele colone"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:406
+#: utils/configurethemesdialog.cpp:410
 #, fuzzy, kde-format
 #| msgid "Delete Theme"
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Disfacer tinme"
 
-#: utils/configurethemesdialog.cpp:432
+#: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 msgid "Import Theme"
 msgstr "&Trover les Messaedjes..."
 
-#: utils/configurethemesdialog.cpp:466
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgid "Export Theme"

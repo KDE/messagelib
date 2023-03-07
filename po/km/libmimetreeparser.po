@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -19,35 +19,35 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "គ្មានឈ្មោះ"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ខុស​កម្មវិធី​ជំនួយ Crypto ។"
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "គ្មាន​រកឃើញ​កម្មវិធី​ជំនួយ​​ដែល​សមរម្យ​ឡើយ ។"
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "រក​មិនឃើញ​​កម្មវិធី​ជំនួយ​ %1 ឡើយ ។"
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិនអាច​ផ្ទៀងផ្ទាត់​ហត្ថលេខា​បានឡើយ ។"
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -56,17 +56,17 @@ msgstr ""
 "សារ​ត្រូវបាន​ចុះហត្ថលេខា​ ប៉ុន្តែ​សុពលភាព​របស់​ហត្ថលេខា​​មិនអាច​ត្រូវបាន​ផ្ទៀងផ្ទាត់​បានទេ ។<br /"
 ">មូលហេតុ ៖ %1"
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិនអាច​ឌិគ្រីប​សារ​បានឡើយ ។"
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិន​អាច​ឌិគ្រីប​ទិន្នន័យ​បាន​ឡើយ ។"
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "​កំហុស ៖ %1"

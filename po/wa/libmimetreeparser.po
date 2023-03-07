@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2023-03-07 00:48+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -26,34 +26,34 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:432
+#: src/messagepart.cpp:433
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Co nou no"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Mwais tchôke-divins di criptografeye."
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1239
+#: src/messagepart.cpp:794 src/messagepart.cpp:1246
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nol apontiaedje di tchôke-divins di criptografeye di trové."
 
-#: src/messagepart.cpp:795
+#: src/messagepart.cpp:796
 #, fuzzy, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nol apontiaedje di tchôke-divins di criptografeye di trové."
 
-#: src/messagepart.cpp:798
+#: src/messagepart.cpp:799
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Li tchôke-divins di discriptaedje %1 èn sait discripter nou messaedje."
 
-#: src/messagepart.cpp:801
+#: src/messagepart.cpp:802
 #, fuzzy, kde-format
 #| msgid "Please wait while the message is transferred"
 #| msgid_plural "Please wait while the %1 messages are transferred"
@@ -62,17 +62,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Tårdjîz s' i vs plait tins kel messaedje est berweté"
 
-#: src/messagepart.cpp:1241
+#: src/messagepart.cpp:1248
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Li tchôke-divins di discriptaedje %1 èn sait discripter nou messaedje."
 
-#: src/messagepart.cpp:1243
+#: src/messagepart.cpp:1250
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Li tchôke-divins di discriptaedje %1 èn sait discripter nou messaedje."
 
-#: src/messagepart.cpp:1244
+#: src/messagepart.cpp:1251
 #, kde-format
 msgid "Error: %1"
 msgstr "Aroke: %1"
