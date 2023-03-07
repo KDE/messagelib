@@ -939,11 +939,10 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
         const QString body = bodyCodec->toUnicode(msg->body());
 
         // then apply the encoding of the original message
-        msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
-
-        QTextCodec *codec = QTextCodec::codecForName(msg->contentType()->charset());
+        QTextCodec *codec = QTextCodec::codecForName(mOrigMsg->contentType()->charset());
         if (!codec) {
-            qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << msg->contentType()->charset();
+            qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << mOrigMsg->contentType()->charset();
+            // Don't touch the message
         } else if (!codec->canEncode(body)) { // charset can't encode body, fall back to preferred
             const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
 
@@ -962,8 +961,10 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
             if (!codec) {
                 codec = QTextCodec::codecForLocale();
             }
+            msg->contentType()->setCharset(codec->name());
             msg->setBody(codec->fromUnicode(body));
         } else {
+            msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
             msg->setBody(codec->fromUnicode(body));
         }
     }

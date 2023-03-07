@@ -946,3 +946,67 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
     origMsg.clear();
 }
+
+KMime::Message::Ptr MessageFactoryTest::createReplyAllForMessage(KMime::Message::Ptr origMsg)
+{
+    MessageFactoryNG factory(origMsg, 0);
+    factory.setIdentityManager(mIdentMan);
+    factory.setQuote(true);
+    factory.setReplyStrategy(ReplyAll);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+    factory.createReplyAsync();
+    spy.wait();
+    return spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>().msg;
+}
+
+void MessageFactoryTest::testCreateReplyWithForcedCharset()
+{
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    QByteArray origMail =
+        "From: from@example.com\n"
+        "To: to@example.com\n"
+        "Sender: from@example.com\n"
+        "Subject: Test\n"
+        "Content-Type: text/plain; charset=iso-8859-1\n"
+        "\n"
+        "Test \xC4\n";
+    origMsg->setContent(origMail);
+    origMsg->parse();
+
+    QCOMPARE(origMsg->contentType()->charset(), QByteArray("iso-8859-1"));
+    QCOMPARE(origMsg->body(), QByteArray("Test \xC4\n"));
+
+    MessageComposerSettings::self()->setPreferredCharsets(QStringList() << QStringLiteral("utf-8"));
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QString::fromUtf8("%QUOTE"));
+
+    {
+        // The reply should use the same charset as the original mail
+        MessageComposerSettings::self()->setForceReplyCharset(true);
+
+        auto msg = createReplyAllForMessage(origMsg);
+        QCOMPARE(msg->contentType()->charset(), QByteArray("iso-8859-1"));
+        QCOMPARE(msg->body(), QByteArray("> Test \xC4"));
+    }
+
+    // The Euro symbol can't be encoded in ISO-8859-1, so it has to choose UTF-8 instead
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QString::fromUtf8("\xE2\x82\xAC%QUOTE"));
+
+    {
+        // Use the preferred charset, UTF-8
+        MessageComposerSettings::self()->setForceReplyCharset(false);
+
+        auto msg = createReplyAllForMessage(origMsg);
+        QCOMPARE(msg->contentType()->charset(), QByteArray("UTF-8"));
+        QCOMPARE(msg->body(), QByteArray("\xE2\x82\xAC> Test \xC3\x84"));
+    }
+
+    {
+        // It should try to keep ISO-8859-1 but fall back to UTF-8
+        MessageComposerSettings::self()->setForceReplyCharset(true);
+
+        auto msg = createReplyAllForMessage(origMsg);
+        QCOMPARE(msg->contentType()->charset(), QByteArray("UTF-8"));
+        QCOMPARE(msg->body(), QByteArray("\xE2\x82\xAC> Test \xC3\x84"));
+    }
+}

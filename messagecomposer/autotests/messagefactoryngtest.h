@@ -53,10 +53,13 @@ private Q_SLOTS:
     void testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsync();
     void testCreateReplyToAllWithUseSenderAndIdentityInCCAsync();
 
+    void testCreateReplyWithForcedCharset();
+
     void cleanupTestCase();
 
 private:
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
+    Q_REQUIRED_RESULT KMime::Message::Ptr createReplyAllForMessage(KMime::Message::Ptr origMsg);
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
