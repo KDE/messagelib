@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -122,19 +122,31 @@ msgid "Hide Details"
 msgstr "frix@expertron.co.za"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
-#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
 #, fuzzy
 #| msgctxt "name used for a virgin filter"
 #| msgid "unknown"
 msgid "unknown key"
 msgstr "onbekend"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, kde-format
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, fuzzy, kde-format
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr "Vee boodskappe uit"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
 #, fuzzy
 msgid "Encrypted message"
 msgstr "Vee boodskappe uit"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgctxt "EMAIL OF TRANSLATORS"
@@ -142,26 +154,26 @@ msgstr "Vee boodskappe uit"
 msgid "Show Details"
 msgstr "frix@expertron.co.za"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
 #, fuzzy
 msgid "Could not decrypt the data."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
 #, fuzzy
 msgid "End of encrypted message"
 msgstr "Vee boodskappe uit"
@@ -283,7 +295,6 @@ msgid "Warning: The signature is bad."
 msgstr "Heg Handtekening Aan"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#: messagepartthemes/default/templates/signedmessagepart.html:169
 #, kde-format
 msgid "Compliance: %1"
 msgstr ""
@@ -291,27 +302,34 @@ msgstr ""
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "Append S&ignature"
-msgid "Invalid signature."
+msgid "Invalid signature"
 msgstr "Heg Handtekening Aan"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity."
+msgid "Not enough information to check signature validity"
 msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:162
+#: messagepartthemes/default/templates/signedmessagepart.html:161
 #, fuzzy
-msgid "Signature is valid."
+msgid "Signature is valid"
 msgstr "Heg Handtekening Aan"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:165
+#: messagepartthemes/default/templates/signedmessagepart.html:164
 #, fuzzy
-msgid "Unknown signature state."
+msgid "Unknown signature state"
 msgstr "Heg Handtekening Aan"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr "Pos"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 #, fuzzy
@@ -1119,36 +1137,36 @@ msgstr ""
 msgid "Bad signature."
 msgstr "Heg Handtekening Aan"
 
-#: messagepartthemes/default/defaultrenderer.cpp:599
-#: messagepartthemes/default/defaultrenderer.cpp:601
+#: messagepartthemes/default/defaultrenderer.cpp:602
+#: messagepartthemes/default/defaultrenderer.cpp:604
 #, fuzzy, kde-format
 msgid "certificate"
 msgstr "Sertifikaat Bestuurder..."
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:609
+#: messagepartthemes/default/defaultrenderer.cpp:628
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "sender: "
 msgstr "Stuurder"
 
-#: messagepartthemes/default/defaultrenderer.cpp:608
+#: messagepartthemes/default/defaultrenderer.cpp:611
 #, kde-format
 msgid "stored: "
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:626
+#: messagepartthemes/default/defaultrenderer.cpp:629
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -4825,11 +4843,6 @@ msgstr "Volgende boodskap"
 #, fuzzy
 #~ msgid "Compact Now"
 #~ msgstr "Kompakteer Alle Gidse"
-
-#, fuzzy
-#~| msgid "Mail"
-#~ msgid "%1 (%2)"
-#~ msgstr "Pos"
 
 #, fuzzy
 #~ msgctxt "@title"

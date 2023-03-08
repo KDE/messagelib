@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2014-10-03 12:55+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -112,43 +112,57 @@ msgid "Hide Details"
 msgstr "A részletek elrejtése"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
-#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
 #, fuzzy
 #| msgctxt "name used for a virgin filter"
 #| msgid "unknown"
 msgid "unknown key"
 msgstr "új szűrő"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr " Oszlop: %1 "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, fuzzy, kde-format
+#| msgid "Encrypted message"
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr "Titkosított üzenet"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
 msgstr "Titkosított üzenet"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Részletek"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr "Titkosított üzenet (nem lehet dekódolni)"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
 #, fuzzy
 #| msgid "Reason: %1"
 msgid "Reason: "
 msgstr "Ok: %1"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
 msgstr "Nem sikerült visszafejteni az adatokat."
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
 msgstr "A titkosított üzenet vége"
 
@@ -288,35 +302,47 @@ msgid "Warning: The signature is bad."
 msgstr "Figyelem! Az elektronikus aláírás hibás."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#: messagepartthemes/default/templates/signedmessagepart.html:169
 #, fuzzy, kde-format
 #| msgid " Column: %1 "
 msgid "Compliance: %1"
 msgstr " Oszlop: %1 "
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature."
+#, fuzzy
+#| msgid "Invalid signature."
+msgid "Invalid signature"
 msgstr "Érvénytelen aláírás."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity."
+#, fuzzy
+#| msgid "Not enough information to check signature validity."
+msgid "Not enough information to check signature validity"
 msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, fuzzy, kde-format
 #| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr "Aláíró: <a href=\"mailto:%1\">%2</a>"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:162
-msgid "Signature is valid."
+#: messagepartthemes/default/templates/signedmessagepart.html:161
+#, fuzzy
+#| msgid "Signature is valid."
+msgid "Signature is valid"
 msgstr "Az aláírás érvényes."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:165
+#: messagepartthemes/default/templates/signedmessagepart.html:164
 #, fuzzy
 #| msgid "Unknown signature state"
-msgid "Unknown signature state."
+msgid "Unknown signature state"
 msgstr "Ismeretlen aláírási dátum"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, fuzzy, kde-format
+#| msgid "My %1 (%2)"
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr "Saját %1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -1160,37 +1186,37 @@ msgstr "Az egyik kulcsot visszavonták."
 msgid "Bad signature."
 msgstr "Az aláírás hiteles."
 
-#: messagepartthemes/default/defaultrenderer.cpp:599
-#: messagepartthemes/default/defaultrenderer.cpp:601
+#: messagepartthemes/default/defaultrenderer.cpp:602
+#: messagepartthemes/default/defaultrenderer.cpp:604
 #, kde-format
 msgid "certificate"
 msgstr "tanúsítvány"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:609
+#: messagepartthemes/default/defaultrenderer.cpp:628
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Figyelmeztetés:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "A feladó e-mail-címe nem szerepel a(z) %1 mezőben, amely az elektronikus "
 "aláírást tartalmazza."
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "sender: "
 msgstr "feladó: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:608
+#: messagepartthemes/default/defaultrenderer.cpp:611
 #, kde-format
 msgid "stored: "
 msgstr "eltárolva: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:626
+#: messagepartthemes/default/defaultrenderer.cpp:629
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -9181,11 +9207,6 @@ msgstr "&Előző kártya"
 #~| msgid "&Compact Folder"
 #~ msgid "Compact Now"
 #~ msgstr "A ma&ppa tömörítése"
-
-#, fuzzy
-#~| msgid "My %1 (%2)"
-#~ msgid "%1 (%2)"
-#~ msgstr "Saját %1 (%2)"
 
 #, fuzzy
 #~| msgctxt "Indicates whether or not a header label is visible"

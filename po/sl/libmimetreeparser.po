@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2020-06-04 10:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -35,7 +35,7 @@ msgstr "Neimenovana"
 msgid "Wrong Crypto Plug-In."
 msgstr "Napačen šifrirni vtičnik."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Ustreznega šifrirnega vstavka ni bilo mogoče najti."
@@ -60,17 +60,17 @@ msgstr ""
 "Sporočilo je podpisano, vendar veljavnosti podpisa ni mogoče preveriti. <br /"
 ">Razlog: %1"
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Šifrirni vtičnik \"%1\" ne more dešifrirati sporočil."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifrirni vtičnik \"%1\" ni mogel dešifrirati podatkov."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"

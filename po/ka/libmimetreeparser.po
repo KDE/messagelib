@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2022-09-27 08:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr "უსახელო"
 msgid "Wrong Crypto Plug-In."
 msgstr "კრიპტოს არასწორი დამატება."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "კრიპტოს შესაბამისი დამატება ვერ ვიპოვე."
@@ -52,17 +52,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "კრიპტოს დამატებას \"%1\" შეტყობინებების გაშიფვრა არ შეუძლია."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "კრიპტოს დამატებას \"%1\" მონაცემების გაშიფვრა არ შეუძლია."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "შეცდომა: %1"

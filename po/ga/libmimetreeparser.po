@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -28,7 +28,7 @@ msgstr "Gan ainm"
 msgid "Wrong Crypto Plug-In."
 msgstr "Breiseán Mícheart Criptithe."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Níor aimsíodh breiseán criptiúcháin."
@@ -53,19 +53,19 @@ msgid ""
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "Earráid: %1"

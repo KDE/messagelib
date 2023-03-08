@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
-"PO-Revision-Date: 2023-02-01 13:00+0300\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"PO-Revision-Date: 2023-03-07 20:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -118,28 +118,42 @@ msgid "Hide Details"
 msgstr "Ayrıntıları Gizle"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
-#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
 msgid "unknown key"
 msgstr "bilinmeyen anahtar"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, fuzzy, kde-format
+#| msgid "Compliance: %1"
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr "Uygunluk: %1"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, fuzzy, kde-format
+#| msgid "Encrypted message"
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr "Şifreli ileti"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
 msgstr "Şifreli ileti"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Ayrıntıları Göster"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr "Şifrelenmiş ileti (yeniden açma mümkün değil)"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
 msgstr "Sebep: "
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
@@ -147,11 +161,11 @@ msgstr ""
 "İletiyi şifrelemek için hiçbir gizli anahtar bulunamadı. Aşağıdaki "
 "anahtarlar için şifrelendi:"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
 msgstr "Verinin şifrelemesi açılamadı."
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
 msgstr "Şifrelenmiş iletinin sonu"
 
@@ -273,33 +287,47 @@ msgid "Warning: The signature is bad."
 msgstr "Uyarı: Bozuk imza."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#: messagepartthemes/default/templates/signedmessagepart.html:169
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Uygunluk: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature."
+#, fuzzy
+#| msgid "Invalid signature."
+msgid "Invalid signature"
 msgstr "Geçersiz imza."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity."
+#, fuzzy
+#| msgid "Not enough information to check signature validity."
+msgid "Not enough information to check signature validity"
 msgstr "İmzanın geçerliliğini denetlemek için yeterli bilgi yok."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, fuzzy, kde-format
+#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr "İmzalayan <a href='mailto:%1'>%1</a>."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:162
-msgid "Signature is valid."
+#: messagepartthemes/default/templates/signedmessagepart.html:161
+#, fuzzy
+#| msgid "Signature is valid."
+msgid "Signature is valid"
 msgstr "İmza geçerli."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:165
+#: messagepartthemes/default/templates/signedmessagepart.html:164
 #, fuzzy
-#| msgid "Unknown signature state"
-msgid "Unknown signature state."
-msgstr "Bilinmeyen imzalama ifadesi"
+#| msgid "Unknown signature state."
+msgid "Unknown signature state"
+msgstr "Bilinmeyen imza durumu."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, fuzzy, kde-format
+#| msgctxt "Certificate import failed."
+#| msgid "Failed: %1 (%2)"
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr "Başarısız oldu: %1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -1085,35 +1113,35 @@ msgstr "Bir anahtar yürürlükten kaldırıldı."
 msgid "Bad signature."
 msgstr "Bozuk imza."
 
-#: messagepartthemes/default/defaultrenderer.cpp:599
-#: messagepartthemes/default/defaultrenderer.cpp:601
+#: messagepartthemes/default/defaultrenderer.cpp:602
+#: messagepartthemes/default/defaultrenderer.cpp:604
 #, kde-format
 msgid "certificate"
 msgstr "sertifika"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:609
+#: messagepartthemes/default/defaultrenderer.cpp:628
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Uyarı:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr "Gönderenin adresi imzama için kullanılan %1 içinde saklanmıyor."
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "sender: "
 msgstr "gönderen: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:608
+#: messagepartthemes/default/defaultrenderer.cpp:611
 #, kde-format
 msgid "stored: "
 msgstr "kayıtlı: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:626
+#: messagepartthemes/default/defaultrenderer.cpp:629
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -1276,7 +1304,7 @@ msgstr ""
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
-"BU e-posta bir kısa adres (%1) içeriyor. Farklı bir sunucuya yönlendirebilir."
+"BU e-posta bir kısa URL (%1) içeriyor. Farklı bir sunucuya yönlendirebilir."
 
 #: scamdetection/scamdetectionwebengine.cpp:220
 #, kde-format
@@ -1293,7 +1321,7 @@ msgstr "Ayrıntılar:"
 #: scamdetection/scamexpandurljob.cpp:47
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
-msgstr "Ağ bağlantısı tespit edilemedi, adresi açamıyoruz."
+msgstr "Ağ bağlantısı tespit edilemedi, URL'yi açamıyoruz."
 
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
@@ -1303,7 +1331,7 @@ msgstr "'%1' genişletmesi olanaklı değil."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "'%1' kısa adresi '%2' yönlendirmesini yapıyor."
+msgstr "'%1' kısa URL'si '%2' yönlendirmesini yapıyor."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.cmake:11
@@ -2310,7 +2338,7 @@ msgstr "Bağlantı Adresini Kopyala"
 #: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
-msgstr "Adres Aç"
+msgstr "URL Aç"
 
 #: viewer/viewer_p.cpp:1563
 #, kde-format
@@ -2425,7 +2453,7 @@ msgstr "Kimlik Avı URL'sini kontrol et"
 #: viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr "Adres %1 geçerli değil."
+msgstr "%1 URL'si geçerli değil."
 
 #: viewer/viewer_p.cpp:1975
 #, kde-format

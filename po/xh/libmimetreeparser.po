@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -36,7 +36,7 @@ msgstr "Ayithiywanga gama"
 msgid "Wrong Crypto Plug-In."
 msgstr "Plug-In Engalunganga ye Crypto!"
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Akukho Crypto Plug-in yezicwangciso zifunyenweyo."
@@ -59,17 +59,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Usebenzo lotyikityo alunakuqinisekiswa."
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Crypto Plug-In %1 ayikwazi ukukupha ufihlo lwawo nowuphi na imiyalezo."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Crypto Plug-In %1 ayikwazanga ukukhupha ufihlo lwe data."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "Imposiso: %1"

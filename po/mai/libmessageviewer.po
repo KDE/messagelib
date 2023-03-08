@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -118,45 +118,58 @@ msgid "Hide Details"
 msgstr "विवरण देखाबू"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
-#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
 #, fuzzy
 #| msgctxt "Status of message unknown."
 #| msgid "(unknown)"
 msgid "unknown key"
 msgstr "(अज्ञात)"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, kde-format
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr "एहन सहेजू..."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
 #, fuzzy
 #| msgid "Save As..."
 msgid "Encrypted message"
 msgstr "एहन सहेजू..."
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "Show Details"
 msgid "Show Details"
 msgstr "विवरण देखाबू"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
 msgstr ""
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
 #, fuzzy
 #| msgid "Save As..."
 msgid "End of encrypted message"
@@ -275,7 +288,6 @@ msgid "Warning: The signature is bad."
 msgstr "विवरणसभ नुकाबू"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#: messagepartthemes/default/templates/signedmessagepart.html:169
 #, kde-format
 msgid "Compliance: %1"
 msgstr ""
@@ -283,29 +295,35 @@ msgstr ""
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "Hide Details"
-msgid "Invalid signature."
+msgid "Invalid signature"
 msgstr "विवरणसभ नुकाबू"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity."
+msgid "Not enough information to check signature validity"
 msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:162
+#: messagepartthemes/default/templates/signedmessagepart.html:161
 #, fuzzy
 #| msgid "Show Details"
-msgid "Signature is valid."
+msgid "Signature is valid"
 msgstr "विवरण देखाबू"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:165
+#: messagepartthemes/default/templates/signedmessagepart.html:164
 #, fuzzy
 #| msgid "Show Details"
-msgid "Unknown signature state."
+msgid "Unknown signature state"
 msgstr "विवरण देखाबू"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, kde-format
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 #, fuzzy
@@ -1102,35 +1120,35 @@ msgstr ""
 msgid "Bad signature."
 msgstr "विवरण देखाबू"
 
-#: messagepartthemes/default/defaultrenderer.cpp:599
-#: messagepartthemes/default/defaultrenderer.cpp:601
+#: messagepartthemes/default/defaultrenderer.cpp:602
+#: messagepartthemes/default/defaultrenderer.cpp:604
 #, kde-format
 msgid "certificate"
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:609
+#: messagepartthemes/default/defaultrenderer.cpp:628
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "चेतावनी:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "sender: "
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:608
+#: messagepartthemes/default/defaultrenderer.cpp:611
 #, kde-format
 msgid "stored: "
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:626
+#: messagepartthemes/default/defaultrenderer.cpp:629
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

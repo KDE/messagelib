@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -118,34 +118,48 @@ msgid "Hide Details"
 msgstr "Perincian Pengelogan"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
-#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
 #, fuzzy
 #| msgid "unknown"
 msgid "unknown key"
 msgstr "Tidak diketahui"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, fuzzy, kde-format
+#| msgid " Column: %1 "
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr "Lajur: %1 "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, fuzzy, kde-format
+#| msgid "Encrypted message"
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr "Mesej Disulitkan"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
 msgstr "Mesej Disulitkan"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "Show alway&s"
 msgid "Show Details"
 msgstr "Paparkan &sentiasa"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr "Mesej disulitkan (tidak boleh dinyahsulit)"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
 #, fuzzy
 #| msgid "Reason: %1"
 msgid "Reason: "
 msgstr "Sebab: %1"
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
 #, fuzzy
 #| msgid "Check to have encrypted messages also encrypted using your own key."
 msgid ""
@@ -153,13 +167,13 @@ msgid ""
 "following keys:"
 msgstr "Semak supaya mesej sulit disulitkan menggunakan kekunci anda sendiri."
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
 #, fuzzy
 #| msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgid "Could not decrypt the data."
 msgstr "Plugin kripto \"%1\" tidak dapat menyahsulit data."
 
-#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
 msgstr "Penghujung mesej yang disulitkan"
 
@@ -296,7 +310,6 @@ msgid "Warning: The signature is bad."
 msgstr "Amaran: Tandatangan rosak."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#: messagepartthemes/default/templates/signedmessagepart.html:169
 #, fuzzy, kde-format
 #| msgid " Column: %1 "
 msgid "Compliance: %1"
@@ -305,31 +318,38 @@ msgstr "Lajur: %1 "
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
 #| msgid "&Enable signature"
-msgid "Invalid signature."
+msgid "Invalid signature"
 msgstr "&Aktifkan tandatangan"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
 #, fuzzy
 #| msgid "Not enough information to check signature. %1"
-msgid "Not enough information to check signature validity."
+msgid "Not enough information to check signature validity"
 msgstr "Tidak cukup maklumat untuk menyemak tanda tangan. %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr ""
 
-#: messagepartthemes/default/templates/signedmessagepart.html:162
+#: messagepartthemes/default/templates/signedmessagepart.html:161
 #, fuzzy
 #| msgid "Signatures"
-msgid "Signature is valid."
+msgid "Signature is valid"
 msgstr "Tandatangan"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:165
+#: messagepartthemes/default/templates/signedmessagepart.html:164
 #, fuzzy
 #| msgid "No signature found"
-msgid "Unknown signature state."
+msgid "Unknown signature state"
 msgstr "Tanda tangan tidak ditemui"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr "Mel"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -1171,38 +1191,38 @@ msgstr "Satu kekunci telah dibatalkan."
 msgid "Bad signature."
 msgstr "Tandatangan elok."
 
-#: messagepartthemes/default/defaultrenderer.cpp:599
-#: messagepartthemes/default/defaultrenderer.cpp:601
+#: messagepartthemes/default/defaultrenderer.cpp:602
+#: messagepartthemes/default/defaultrenderer.cpp:604
 #, fuzzy, kde-format
 #| msgid "Certificates"
 msgid "certificate"
 msgstr "Sijil"
 
-#: messagepartthemes/default/defaultrenderer.cpp:606
-#: messagepartthemes/default/defaultrenderer.cpp:625
+#: messagepartthemes/default/defaultrenderer.cpp:609
+#: messagepartthemes/default/defaultrenderer.cpp:628
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Amaran:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Alamat penghantar mel tidak distor dalam %1 yang digunakan untuk tandatangan."
 
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:610
 #, kde-format
 msgid "sender: "
 msgstr "Pengirim:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:608
+#: messagepartthemes/default/defaultrenderer.cpp:611
 #, kde-format
 msgid "stored: "
 msgstr "distor:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:626
+#: messagepartthemes/default/defaultrenderer.cpp:629
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -8718,11 +8738,6 @@ msgstr "Kad &Sebelumnya"
 #~| msgid "&Compact Folder"
 #~ msgid "Compact Now"
 #~ msgstr "&Padatkan Folder"
-
-#, fuzzy
-#~| msgid "Mail"
-#~ msgid "%1 (%2)"
-#~ msgstr "Mel"
 
 #, fuzzy
 #~| msgid "&Compact Folder"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2017-05-16 06:42-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Wrong Crypto Plug-In."
 msgstr "תוסף הצפנה שגוי."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "לא נמצאו הגדרות לתוסף הצפנה."
@@ -63,17 +63,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "אין אפשרות לוודא את תוקף החתימה."
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "תוסף ההצפנה %1 לא יכול לפענח אף הודעות."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "תוסף ההצפנה %1 לא יכול היה לפענח את הנתונים."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "שגיאה: %1"

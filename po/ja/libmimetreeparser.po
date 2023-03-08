@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Wrong Crypto Plug-In."
 msgstr "暗号化プラグインが不正です。"
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "適切な暗号化プラグインが見つかりません。"
@@ -58,17 +58,17 @@ msgstr ""
 "<qt>このメッセージは署名されていますが、署名の有効性は検証できませんでした。"
 "<br />理由: %1</qt>"
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "暗号化プラグイン “%1” はメッセージを復号できません。"
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "暗号化プラグイン “%1” はデータを復号できませんでした。"
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "エラー: %1"

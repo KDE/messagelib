@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-08 00:48+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr "Аталмаған"
 msgid "Wrong Crypto Plug-In."
 msgstr "Крипто плагин модулі дұрыс емес."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1246
+#: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Лайықты шифрлау плагин модулі табылмады."
@@ -55,17 +55,17 @@ msgstr ""
 "Хат қолтаңбаланған, бірақ қолтаңбасының шындылығы тексерілмеді.<br />Себебі: "
 "%1"
 
-#: src/messagepart.cpp:1248
+#: src/messagepart.cpp:1254
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "%1 шифрлау плагині хаттардың шифрын шеше алмайды."
 
-#: src/messagepart.cpp:1250
+#: src/messagepart.cpp:1256
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "\"%1\" шифрлау плагині бұл деректердің шифрын шеше алмады."
 
-#: src/messagepart.cpp:1251
+#: src/messagepart.cpp:1257
 #, kde-format
 msgid "Error: %1"
 msgstr "Қате: %1"
