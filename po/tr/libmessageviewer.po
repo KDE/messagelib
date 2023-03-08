@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2023-02-01 12:58+0300\n"
+"PO-Revision-Date: 2023-03-07 20:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1266,7 +1266,7 @@ msgstr ""
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
-"BU e-posta bir kısa adres (%1) içeriyor. Farklı bir sunucuya yönlendirebilir."
+"BU e-posta bir kısa URL (%1) içeriyor. Farklı bir sunucuya yönlendirebilir."
 
 #: scamdetection/scamdetectionwebengine.cpp:220
 #, kde-format
@@ -1283,7 +1283,7 @@ msgstr "Ayrıntılar:"
 #: scamdetection/scamexpandurljob.cpp:47
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
-msgstr "Ağ bağlantısı tespit edilemedi, adresi açamıyoruz."
+msgstr "Ağ bağlantısı tespit edilemedi, URL'yi açamıyoruz."
 
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
@@ -1293,7 +1293,7 @@ msgstr "'%1' genişletmesi olanaklı değil."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "'%1' kısa adresi '%2' yönlendirmesini yapıyor."
+msgstr "'%1' kısa URL'si '%2' yönlendirmesini yapıyor."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.cmake:11
@@ -2300,7 +2300,7 @@ msgstr "Bağlantı Adresini Kopyala"
 #: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
-msgstr "Adres Aç"
+msgstr "URL Aç"
 
 #: viewer/viewer_p.cpp:1564
 #, kde-format
@@ -2415,7 +2415,7 @@ msgstr "Kimlik Avı URL'sini kontrol et"
 #: viewer/viewer_p.cpp:1956
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr "Adres %1 geçerli değil."
+msgstr "%1 URL'si geçerli değil."
 
 #: viewer/viewer_p.cpp:1981
 #, kde-format
