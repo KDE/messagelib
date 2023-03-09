@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2023-03-07 09:16+0100\n"
+"PO-Revision-Date: 2023-03-08 15:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -120,18 +120,16 @@ msgid "unknown key"
 msgstr "clau desconeguda"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
-#, fuzzy, kde-format
-#| msgid "Compliance: %1"
+#, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
 msgstr "Conformitat: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Missatge encriptat"
+msgstr "Missatge encriptat (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -291,42 +289,31 @@ msgid "Compliance: %1"
 msgstr "Conformitat: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Signatura no vàlida."
+msgstr "Signatura no vàlida"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "No hi ha prou informació per a comprovar la validesa de la signatura."
+msgstr "No hi ha prou informació per a comprovar la validesa de la signatura"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Signat per <a href='mailto:%1'>%1</a>."
+msgstr "Signat per <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "La signatura és vàlida."
+msgstr "La signatura és vàlida"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state."
 msgid "Unknown signature state"
-msgstr "Estat desconegut de la signatura."
+msgstr "Estat desconegut de la signatura"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "No s'ha pogut: %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"

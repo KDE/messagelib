@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2023-02-17 18:25+0100\n"
+"PO-Revision-Date: 2023-03-08 14:31+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -307,10 +307,9 @@ msgid "Warning: The signature is bad."
 msgstr "Attention : la signature n'est pas valable."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgid "Compliance: %1"
-msgstr " Colonne : %1 "
+msgstr "Conformité : %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 #, fuzzy
@@ -337,8 +336,6 @@ msgid "Signature is valid"
 msgstr "La signature est valable."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "État inconnu de la signature"
 
