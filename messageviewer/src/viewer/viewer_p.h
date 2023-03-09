@@ -24,9 +24,6 @@
 #include <QUrl>
 #include <QVector>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
-#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#include <kpimtextedit/kpimtextedit-texttospeech.h>
-#endif
 
 #include <QObject>
 #include <QTimer>
