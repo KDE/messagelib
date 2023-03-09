@@ -42,9 +42,11 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::AkonadiCore KF${KF_MAJOR_VERSION}::CalendarCore KPim${KF_MAJOR_VERSION}::PimTextEdit
         KF5::PimCommon KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::WebEngineViewer KF${KF_MAJOR_VERSION}::SyntaxHighlighting
-        KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
+        KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::IconThemes
     )
-
+    if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+        target_link_libraries(${_name} KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+    endif()
     if (TARGET Qt::Core5Compat)
         target_link_libraries(${_name} Qt::Core5Compat)
     endif()
