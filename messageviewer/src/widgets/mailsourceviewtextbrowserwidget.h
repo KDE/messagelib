@@ -12,9 +12,6 @@
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
-#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#include <kpimtextedit/kpimtextedit-texttospeech.h>
-#endif
 namespace KPIMTextEdit
 {
 class SlideContainer;
