@@ -891,7 +891,7 @@ void SignedMessagePart::sigStatusToMetaData()
                 }
             }
         }
-        if (Kleo::DeVSCompliance::isActive()) {
+        if (Kleo::DeVSCompliance::isCompliant()) {
             partMetaData()->isCompliant = signature.isDeVs();
             partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
         } else {
@@ -1217,7 +1217,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             }
 
             partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
-            if (Kleo::DeVSCompliance::isActive()) {
+            if (Kleo::DeVSCompliance::isCompliant()) {
                 partMetaData()->isCompliant = decryptResult.isDeVs();
                 partMetaData()->compliance = Kleo::DeVSCompliance::name(decryptResult.isDeVs());
             } else {
