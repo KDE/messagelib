@@ -323,7 +323,7 @@ msgstr "Conformidade: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Invalid signature"
-msgstr "Assinatura inválida"
+msgstr "A assinatura é inválida"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity"
