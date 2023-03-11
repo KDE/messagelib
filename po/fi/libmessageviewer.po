@@ -316,8 +316,6 @@ msgid "Signature is valid"
 msgstr "Allekirjoitus on kelvollinen."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "Tuntematon allekirjoituksen tila"
 

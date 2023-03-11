@@ -71,14 +71,14 @@ msgstr "&Ouvrir avec"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "A&utre..."
+msgstr "A&utre…"
 
 #: attachment/attachmentcontrollerbase.cpp:344
 #: attachment/attachmentcontrollerbase.cpp:352
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Ouvrir avec..."
+msgstr "&Ouvrir avec…"
 
 #: attachment/attachmentcontrollerbase.cpp:378
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "Impossible de joindre le texte du presse-papiers"
 #: attachment/attachmentcontrollerbase.cpp:453
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "Joindre une clé &publique..."
+msgstr "Joindre une clé &publique…"
 
 #: attachment/attachmentcontrollerbase.cpp:456
 #, kde-format
@@ -117,12 +117,12 @@ msgstr "Joindre"
 #: composer/composerviewbase.cpp:1899
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Joindre un fichier..."
+msgstr "&Joindre un fichier…"
 
 #: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Ajouter une pièce jointe"
+msgstr "Ajouter une pièce jointe…"
 
 #: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
@@ -185,22 +185,22 @@ msgstr "Éditer"
 #: attachment/attachmentcontrollerbase.cpp:519
 #, kde-format
 msgid "Edit With..."
-msgstr "Éditer avec..."
+msgstr "Éditer avec…"
 
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Enregistrer la pièce jointe &sous..."
+msgstr "Enregistrer la pièce jointe &sous…"
 
 #: attachment/attachmentcontrollerbase.cpp:525
 #, kde-format
 msgid "Save As..."
-msgstr "Enregistrer sous..."
+msgstr "Enregistrer sous…"
 
 #: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "Pr&opriétés de la la pièce jointe..."
+msgstr "Pr&opriétés de la la pièce jointe…"
 
 #: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
@@ -1589,7 +1589,7 @@ msgstr "Sélectionner le format de l'image"
 #: imagescaling/imagescalingselectformat.cpp:94
 #, kde-format
 msgid "Select Format..."
-msgstr "Sélectionner le format..."
+msgstr "Sélectionner le format…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1783,7 +1783,7 @@ msgstr "Format de l'image"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr "Redimensionner toute les images avec l'un de ces formats"
+msgstr "Redimensionner toutes les images avec l'un de ces formats"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
@@ -1872,7 +1872,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Exportation de la clé..."
+msgstr "Exportation de la clé…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -2200,7 +2200,7 @@ msgstr[1] "Troncature de la liste des destinataires à %2 de %1 entrées."
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Enregistrer la liste..."
+msgstr "Enregistrer la liste…"
 
 #: recipient/recipientseditorsidewidget.cpp:45
 #, kde-format
@@ -2212,7 +2212,7 @@ msgstr "Enregistrer les destinataires comme liste de distribution"
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "Sé&lectionner..."
+msgstr "Sé&lectionner…"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
