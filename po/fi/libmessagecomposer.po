@@ -1,6 +1,6 @@
 # Copyright © 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kdepim package.
-# Tommi Nieminen <translator@legisign.org>, 2011, 2012, 2013, 2017, 2018, 2020, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2011, 2012, 2013, 2017, 2018, 2020, 2021, 2022, 2023.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
 #
 # KDE Finnish translation sprint participants:
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
-"PO-Revision-Date: 2022-06-05 20:14+0300\n"
+"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"PO-Revision-Date: 2023-02-22 11:21+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2013-01-13 20:43:22+0000\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -690,8 +690,8 @@ msgid "Sign && &Encrypt"
 msgstr "Allekirjoita ja salaa"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Salaa"
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Send Unencrypted?"
 msgstr "Lähetetäänkö salaamattomana?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Lähetä salaamatt&omana"
@@ -776,7 +776,7 @@ msgstr "&Salaa kaikki osat"
 msgid "Unencrypted Message Warning"
 msgstr "Varoitus salaamattomasta viestistä"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -785,7 +785,7 @@ msgstr ""
 "Yhtä tai useampaa asettamistasi OpenPGP-salausavaimista tai S/MIME-"
 "varmenteista ei pidetä täysin luotettavana salaukseen."
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -794,7 +794,7 @@ msgstr ""
 "Yhtä tai useampaa asettamistasi OpenPGP-salausavaimista tai S/MIME-"
 "varmenteista vastaanottajalle ”%1” ei pidetä täysin luotettavana salaukseen."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -803,7 +803,7 @@ msgstr ""
 "\n"
 "Seuraaviin avaimiin luotetaan vain marginaalisesti:\n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -812,7 +812,7 @@ msgstr ""
 "\n"
 "Seuraavien avainten tai varmenteiden luotettavuutta ei tiedetä:\n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -821,12 +821,12 @@ msgstr ""
 "\n"
 "Seuraavat avaimet tai varmenteet on <b>peruttu</b>: \n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Salausavaimia, joihin ei luoteta täysin"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -842,13 +842,13 @@ msgstr ""
 "Jos kuitenkin jatkat ja avaimia tuonnempana tarvitaan, sinulta kysytään "
 "käytettäviä avaimia."
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Käyttökelvottomia salausavaimia"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -864,13 +864,13 @@ msgstr ""
 "Jos kuitenkin jatkat ja avaimia tarvitaan tuonnempana, sinulta kysytään "
 "käytettävät avaimet."
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Käyttökelvottomia allekirjoitusavaimia"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -887,7 +887,7 @@ msgstr ""
 "Voit jatkaa salaamatta viestiä itsellesi, mutta muista, ettet enää voi lukea "
 "omaa viestiäsi siinä tapauksessa."
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -904,7 +904,7 @@ msgstr ""
 "Voit jatkaa salaamatta viestiä itsellesi, mutta muista, ettet enää voi lukea "
 "omaa viestiäsi siinä tapauksessa."
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -917,12 +917,12 @@ msgstr ""
 "Et kuitenkaan ole asettanut kelvollista OpenPGP-allekirjoitusvarmennetta "
 "tälle henkilöydelle."
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Älä OpenPGP-allekirjoita"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -935,12 +935,12 @@ msgstr ""
 "Et kuitenkaan ole asettanut kelvollista S/MIME-allekirjoitusvarmennetta "
 "tälle henkilöydelle."
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Älä S/MIME-allekirjoita"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -951,12 +951,12 @@ msgstr ""
 "olevia allekirjoitusavaimiasi vastaavaa allekirjoitustyyppiä.\n"
 "Lähetetäänkö viesti allekirjoittamatta?"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "Allekirjoittaminen ei mahdollista"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -965,13 +965,13 @@ msgstr ""
 "Et valinnut omaa salausavaintasi. Et voi enää purkaa viestisi salausta, jos "
 "salaat sen."
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Varoitus puuttuvasta avaimesta"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -979,7 +979,7 @@ msgid ""
 msgstr ""
 "Et valinnut viestin vastaanottajan salausavainta, joten viestiä ei salata."
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -988,7 +988,7 @@ msgstr ""
 "Et valinnut yhdenkään viestisi vastaanottajan salausavainta, joten viestiä "
 "ei salata."
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -997,7 +997,7 @@ msgstr ""
 "Et valinnut salausavainta yhdelle vastaanottajistasi: hän ei voi purkaa "
 "viestiäsi, jos salaat sen."
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1006,12 +1006,12 @@ msgstr ""
 "Et valinnut salausavaimia kaikille vastaanottajistasi: kaikki eivät voi "
 "purkaa viestiäsi, jos salaat sen."
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Salausavaimen valinta"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1026,7 +1026,7 @@ msgstr ""
 "Valitse uudelleen varmenne tai varmenteet, joita tälle vastaanottajalle "
 "tulisi käyttää."
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1044,7 +1044,7 @@ msgstr ""
 "ulkoisia varmenteita napsauttamalla painiketta ”Etsi ulkoisia varmenteita”.</"
 "qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -2457,18 +2457,13 @@ msgstr "Kohenna HTML-viestin tekstiversiota"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Allekirjoita kaikki viestit, jos mahdollista"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
-"Salataanko viesti?"
+msgstr "Käytä salausta, jos jokaiselle vastaanottajille löytyy avain"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93

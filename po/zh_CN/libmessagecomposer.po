@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
+"POT-Creation-Date: 2023-03-11 00:50+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -676,8 +676,8 @@ msgid "Sign && &Encrypt"
 msgstr "签名 && 加密(&E)"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "加密(&E)"
@@ -719,7 +719,7 @@ msgstr "您请求加密此信件，但是没有为此身份设置有效且信任
 msgid "Send Unencrypted?"
 msgstr "不加密发送吗？"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "不加密发送(&U)"
@@ -758,14 +758,14 @@ msgstr "加密所有部分(&E)"
 msgid "Unencrypted Message Warning"
 msgstr "未加密信件警告"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr "有一个和多个已配置的 OpenPGP 加密密钥或 S/MIME 证书不是受完全信任的。"
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -773,7 +773,7 @@ msgid ""
 msgstr ""
 "有一个和多个收件人“%1”的 OpenPGP 加密密钥或 S/MIME 证书不是受完全信任的。"
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -782,7 +782,7 @@ msgstr ""
 "\n"
 "以下密钥是勉强信任状态：\n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -791,7 +791,7 @@ msgstr ""
 "\n"
 "以下密钥或证书的信任等级未知：\n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -800,12 +800,12 @@ msgstr ""
 "\n"
 "以下密钥或证书已被<b>吊销</b>：\n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "不完全信任的加密密钥"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -819,13 +819,13 @@ msgstr ""
 "中重新配置您为此身份指定的加密密钥以及证书。\n"
 "如果您选择继续的话，而稍后会用到密钥，您将需要指定要使用哪个密钥。"
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "不可用的加密密钥"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -838,13 +838,13 @@ msgstr ""
 "话框中重新配置您为此身份指定的签名密钥以及证书。\n"
 "如果您选择继续的话，而稍后会用到密钥，您将需要指定要使用哪个密钥。"
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "不可用的签名密钥"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -859,7 +859,7 @@ msgstr ""
 "但是，您没有为此身份配置有效的可信 OpenPGP 加密密钥。\n"
 "您仍然可以继续，而不对自己加密。但请注意，您以后将无法阅读您自己的信件。"
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -874,7 +874,7 @@ msgstr ""
 "但是，您没有为此身份配置有效的可信 S/MIME 加密证书。\n"
 "您仍然可以继续，而不对自己加密。但请注意，您以后将无法阅读您自己的信件。"
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -886,12 +886,12 @@ msgstr ""
 "的；\n"
 "但是，您没有为此身份配置有效的可信 OpenPGP 签名密钥。"
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "不使用 OpenPGP 签名"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -903,12 +903,12 @@ msgstr ""
 "的；\n"
 "但是，您没有为此身份配置有效的可信 S/MIME 签名证书。"
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "不使用 S/MIME 签名"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -918,12 +918,12 @@ msgstr ""
 "对收件人签名首选项的检查显示没有与您可用的签名密钥相匹配的公共类型。\n"
 "不签名而发送信件吗？"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "没有可用的签名"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -932,27 +932,27 @@ msgstr ""
 "您没有为您自己选择加密密钥(对自己加密)。如果您对信件加密的话，您自己将无法解"
 "密信件。"
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "缺少密钥警告"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr "您没有为此信件的收件人选择加密密钥；因此，无法加密此信件。"
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr "您没有为此信件的任何一个收件人选择加密密钥；因此，无法加密此信件。"
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -961,7 +961,7 @@ msgstr ""
 "您没有为此信件的收件人之一选择加密密钥；因此，如果您加密的话，该收件人将无法"
 "解密此信件。"
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -970,12 +970,12 @@ msgstr ""
 "您没有为此信件的某些收件人选择加密密钥；因此，如果您加密的话，这些收件人将无"
 "法解密此信件。"
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "加密密钥选择"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -989,7 +989,7 @@ msgstr ""
 "\n"
 "请重新选择应为此收件人使用的证书。"
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1004,7 +1004,7 @@ msgstr ""
 "<qt>未找到“%1”的有效且可信任的加密密钥。<br/><br/>请选择应为此收件人使用的密"
 "钥。如果列表中没有合适的密钥，您还可以点击按钮：搜索外部密钥。</qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
