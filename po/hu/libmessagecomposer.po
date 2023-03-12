@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
+"POT-Creation-Date: 2023-03-12 04:57+0000\n"
 "PO-Revision-Date: 2021-01-05 20:41+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -687,8 +687,8 @@ msgid "Sign && &Encrypt"
 msgstr "Aláírás és titkosítás"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Titkosítás"
@@ -733,7 +733,7 @@ msgstr ""
 msgid "Send Unencrypted?"
 msgstr "Elküldés titkosítás nélkül?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Küldés titkosítatlan&ul"
@@ -774,7 +774,7 @@ msgstr "Az összes üzenetrész &titkosítása"
 msgid "Unencrypted Message Warning"
 msgstr "Figyelmeztetés nem titkosított üzenetre"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -783,7 +783,7 @@ msgstr ""
 "Egy vagy több beállított OpenPGP kulcsa vagy S/MIME tanúsítványa nem "
 "teljesen megbízható titkosításra."
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -792,7 +792,7 @@ msgstr ""
 "Legalább egy a titkosítási OpenPGP kulcsok vagy S/MIME tanúsítványok közül "
 "nem teljesen megbízható titkosításra a következő címzett esetében: „%1”."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -801,7 +801,7 @@ msgstr ""
 "\n"
 "A következő kulcsok megbízhatósága igen alacsony: \n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -810,7 +810,7 @@ msgstr ""
 "\n"
 "A következő kulcsok vagy tanúsítványok megbízhatósági foka ismeretlen: \n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -819,12 +819,12 @@ msgstr ""
 "\n"
 "A következő kulcsokat és tanúsítványokat <b>visszavonták</b>: \n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Nem teljesen megbízható titkosítási kulcsok"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -841,13 +841,13 @@ msgstr ""
 "használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
 "kiválasztani."
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Nem használható titkosítási kulcsok"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -863,13 +863,13 @@ msgstr ""
 "használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
 "kiválasztani."
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Nem használható aláírási kulcsok"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -886,7 +886,7 @@ msgstr ""
 "Nem kötelező saját kulccsal titkosított másolatot készíteni az üzenetből, de "
 "ebben az esetben Ön nem fogja tudni elolvasni a saját elküldött üzeneteit."
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -904,7 +904,7 @@ msgstr ""
 "üzenetből, de ebben az esetben Ön nem fogja tudni elolvasni a saját "
 "elküldött üzeneteit."
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -917,12 +917,12 @@ msgstr ""
 "azonban nincs beállítva megbízható OpenPGP aláírási tanúsítvány ehhez az "
 "azonosítóhoz."
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nem kell OpenPGP aláírás"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -935,12 +935,12 @@ msgstr ""
 "azonban nincs beállítva érvényes S/MIME aláírási tanúsítvány ehhez az "
 "azonosítóhoz."
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Nem kell S/MIME aláírás"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -951,12 +951,12 @@ msgstr ""
 "megfelelne a rendelkezésre álló kulcsoknak.\n"
 "Elküldi az üzenetet aláírás nélkül?"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "Nem lehet aláírni"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -965,13 +965,13 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot a saját célra való titkosításhoz. A "
 "saját titkosított üzeneteinek másolatát nem fogja tudni dekódolni."
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Figyelmeztetés – hiányzik egy kulcs"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -980,7 +980,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot a címzetthez, ezért az üzenet nem lesz "
 "titkosítva."
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -989,7 +989,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért az üzenet "
 "nem lesz titkosítva."
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -998,7 +998,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért ha az "
 "üzenetet titkosítva küldi el, a címzett nem fogja tudni elolvasni."
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1007,12 +1007,12 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot néhány címzetthez: ezek a személyek "
 "nem fogják tudni elolvasni az üzenetet, ha azt titkosítva küldi el."
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Titkosítási kulcs kiválasztása"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1026,7 +1026,7 @@ msgstr ""
 "\n"
 "Válassz ki újra a tanúsítványokat ehhez a címzetthez."
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1043,7 +1043,7 @@ msgstr ""
 "tanúsítvány a listában, a Külső tanúsítványok keresése gombra kattintva "
 "külső tanúsítványokat is kereshet.</qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
+"POT-Creation-Date: 2023-03-12 04:57+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -697,8 +697,8 @@ msgid "Sign && &Encrypt"
 msgstr "Қолтаңбалау және шифрлау"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Шифрлау"
@@ -742,7 +742,7 @@ msgstr ""
 msgid "Send Unencrypted?"
 msgstr "Шифрламай жіберілсін бе?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Шифрла&май жіберу"
@@ -781,7 +781,7 @@ msgstr "Бүкіл бөліктерін &шифрлау"
 msgid "Unencrypted Message Warning"
 msgstr "Шифрламаған туралы ескерту"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -790,7 +790,7 @@ msgstr ""
 "Бір не бірнеше бапталған OpenPGP кілттеріңіз не S/MIME куәліктеріңіз шифрлау "
 "үшін әбден сенімді емес."
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -799,7 +799,7 @@ msgstr ""
 "Бір не бірнеше OpenPGP кілт не S/MIME куәлік \"%1\" алушыға шифрлау үшін "
 "әбден сенімді емес."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -808,7 +808,7 @@ msgstr ""
 "\n"
 "Келесі кілттер шала сенімді: \n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -817,7 +817,7 @@ msgstr ""
 "\n"
 "Келесі кілттер не куәліктерінің сенімділігі беймәлім: \n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -826,12 +826,12 @@ msgstr ""
 "\n"
 "Келесі кілттер не куәліктерінің күші жойылған: \n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Толық сенім артылмаған шифрлау кіттер"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -846,13 +846,13 @@ msgstr ""
 "кілттер мен куәліктерді дұрыстап алыңыз.\n"
 "Жәй жалғастырсаңыз, онда кілттер керек болғанда олар бәрібір сұралады."
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Жарамсыз шифрлау кілттері"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -866,13 +866,13 @@ msgstr ""
 "әлпетіңіздің кілттер мен куәліктерді дұрыстап алыңыз.\n"
 "Жәй жалғастырсаңыз, онда кілттер керек болғанда олар бәрібір сұралады."
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Жарамсыз қолтаңбалау кілттері"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -888,7 +888,7 @@ msgstr ""
 "Өзіңіз үшін шифрламай жалғастыра беруге болады, бірақ, байқаңыз, онда "
 "өзіңіздің хатттарын оқи алмай қаласыз."
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -904,7 +904,7 @@ msgstr ""
 "Өзіңіз үшін шифрламай жалғастыра беруге болады, бірақ, байқаңыз, онда "
 "өзіңіздің хатттарын оқи алмай қаласыз."
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -916,12 +916,12 @@ msgstr ""
 "қолтаңбалаған хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде дұрыс "
 "OpenPGP қолтаңбалау куәліктер бапталмаған."
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "OpenPGP-қолтаңбаламау"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -933,12 +933,12 @@ msgstr ""
 "қолтаңбалаған хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде дұрыс S/"
 "MIME қолтаңбалау куәліктер бапталмаған."
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "S/MIME-қолтаңбаламау"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -949,12 +949,12 @@ msgstr ""
 "екенді көрсетеді.\n"
 "Қолтаңбаламай жібермексіз бе?"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "Қолтаңбалау мүмкін емес"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -963,13 +963,13 @@ msgstr ""
 "Сіз өзіңіз үшін шифрлау кілтін таңдап алмадыңыз, Хатты шифрлансаңыз, "
 "өзіңіздің хаттын шифрын шеше алмайсыз."
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Кілт жетіспеу туралы ескерту"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -977,7 +977,7 @@ msgid ""
 msgstr ""
 "Сіз осы хатты алу үшін шифрлау кілтін таңдап алмадыңыз, хат шифрланбайды."
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -986,7 +986,7 @@ msgstr ""
 "Сіз осы хатты алушылар үшін шифрлау кілтін таңдап алмадыңыз, хат "
 "шифрланбайды."
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -995,7 +995,7 @@ msgstr ""
 "Сіз осы хатты алушылардың біреуі үшін шифрлау кілтін таңдап алмадыңыз, ол "
 "хат шифрланса оның шифрын шеше алмайды."
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1004,12 +1004,12 @@ msgstr ""
 "Сіз осы хатты алушылардың кейбіреуі үшін шифрлау кілтін таңдап алмадыңыз, "
 "олар хат шифрланса оның шифрын шеше алмайды."
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Шифрлау кілтін таңдау"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1023,7 +1023,7 @@ msgstr ""
 "\n"
 "Осы алушы үшін қолданатын кілтт(ерд)і қайта таңдаңыз."
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1040,7 +1040,7 @@ msgstr ""
 "табылмаса, оларды, тиісті батырмасын басып, сырт көздерден іздеп көруге "
 "болады.</qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
+"POT-Creation-Date: 2023-03-12 04:57+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -701,8 +701,8 @@ msgid "Sign && &Encrypt"
 msgstr "Ünnerschrieven && &verslöteln"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Verslöteln"
@@ -746,7 +746,7 @@ msgstr ""
 msgid "Send Unencrypted?"
 msgstr "Ahn Verslöteln loosstüern?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "&Ahn Verslöteln loosstüern"
@@ -787,7 +787,7 @@ msgstr "All Delen &verslöteln"
 msgid "Unencrypted Message Warning"
 msgstr "Wohrschoen: Keen Verslöteln"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -796,7 +796,7 @@ msgstr ""
 "Een oder mehr vun Dien instellten OpenPGP-Verslötelslötels oder S/MIME-"
 "Zertifikaten warrt för't verslöteln nich heel troot."
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -805,7 +805,7 @@ msgstr ""
 "Een oder mehr vun de OpenPGP-Verslötelslötels oder S/MIME-Zertifikaten för "
 "den Adressaat \"%1\" warrt för't Verslöteln nich heel troot."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -814,7 +814,7 @@ msgstr ""
 "\n"
 "Disse Slötels warrt bloots deelwies troot:\n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -823,7 +823,7 @@ msgstr ""
 "\n"
 "Bi disse Slötels oder Zertifikaten is dat Totroon nich begäng:\n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -832,12 +832,12 @@ msgstr ""
 "\n"
 "Disse Slötels oder Zertifikaten wöörn <b>torüchropen</b>:\n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Verslötelslötels warrt bloots deelwies troot"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -853,13 +853,13 @@ msgstr ""
 "Wenn Du liekers wiedermaakst, warrst Du na de Slötels fraagt, de bruukt "
 "warrn schöölt, wenn dat nödig deit."
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Verslötelslötels nich to bruken"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -874,13 +874,13 @@ msgstr ""
 "Wenn Du liekers wiedermaakst, warrst Du na de Slötels fraagt, de bruukt "
 "warrn schöölt, wenn dat nödig deit."
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Ünnerschriftslötels nich to bruken"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -897,7 +897,7 @@ msgstr ""
 "Du kannst wiedermaken, ahn de Naricht för Di sülven to verslöteln, man denn "
 "kannst Du Dien egen Naricht nich lesen."
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -914,7 +914,7 @@ msgstr ""
 "Du kannst wiedermaken, ahn de Naricht för Di sülven to verslöteln, man denn "
 "kannst Du Dien egen Naricht nich lesen."
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -926,12 +926,12 @@ msgstr ""
 "OpenPGP to ünnerschrieven, tominnst för en poor Adressaten.\n"
 "För disse Identiteet is aver keen gellen OpenPGP-Ünnerschriftslötel instellt."
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nich mit OpenPGP ünnerschrieven"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -944,12 +944,12 @@ msgstr ""
 "För disse Identiteet is aver keen gellen S/MIME-Ünnerschriftzertifikaat "
 "instellt."
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Nich mit S/MIME ünnerschrieven"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -960,12 +960,12 @@ msgstr ""
 "den Adressaat instellt is.\n"
 "Naricht ahn Ünnerschrift loosstüern?"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "Ünnerschrieven nich mööglich"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -974,13 +974,13 @@ msgstr ""
 "Du hest keen Slötel för't Verslöteln för Di sülven utsöcht. Du kannst so "
 "Dien egen Naricht nich wedder opslöteln, wenn Du ehr verslötelst."
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Wohrschoen: Slötel fehlt"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -989,7 +989,7 @@ msgstr ""
 "Du hest för den Adressaat vun disse Naricht keen Verslötelslötel utsöcht, "
 "dorför warrt de Naricht nich verslötelt."
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -998,7 +998,7 @@ msgstr ""
 "Du hest för keeneen vun de Adressaten vun disse Naricht en Verslötelslötel "
 "utsöcht, dorför warrt de Naricht nich verslötelt."
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1008,7 +1008,7 @@ msgstr ""
 "utsöcht. Disse Adressaat kann de Naricht nich opslöteln, wenn Du ehr "
 "verslötelst."
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1018,12 +1018,12 @@ msgstr ""
 "utsöcht. Disse Adressaten köönt de Naricht nich opslöteln, wenn Du ehr "
 "verslötelst."
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Slötel för't Verslöteln utsöken"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1037,7 +1037,7 @@ msgstr ""
 "\n"
 "Söök bitte de Zertifikaten för dissen Adressaat nochmaal ut."
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1054,7 +1054,7 @@ msgstr ""
 "de List keen passen Zertifikaat, kannst Du ok na extern Zertifikaten söken.</"
 "qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "

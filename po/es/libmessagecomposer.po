@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-09 01:03+0000\n"
+"POT-Creation-Date: 2023-03-12 04:57+0000\n"
 "PO-Revision-Date: 2022-10-25 00:15+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -687,8 +687,8 @@ msgid "Sign && &Encrypt"
 msgstr "Firmar y &cifrar"
 
 #: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1317
-#: composer/keyresolver.cpp:1353
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Cifrar"
@@ -732,7 +732,7 @@ msgstr ""
 msgid "Send Unencrypted?"
 msgstr "¿Enviar sin cifrar?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Enviar s&in cifrar"
@@ -773,7 +773,7 @@ msgstr "&Cifrar todos los componentes"
 msgid "Unencrypted Message Warning"
 msgstr "Aviso de mensajes sin cifrar"
 
-#: composer/keyresolver.cpp:302
+#: composer/keyresolver.cpp:317
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -782,7 +782,7 @@ msgstr ""
 "Una o más de las claves de cifrado OpenPGP o certificados S/MIME no son "
 "totalmente confiables para el cifrado."
 
-#: composer/keyresolver.cpp:306
+#: composer/keyresolver.cpp:321
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -791,7 +791,7 @@ msgstr ""
 "Una o más de las claves de cifrado OpenPGP o certificados S/MIME para el "
 "destinatario «%1» no son de total confianza para el cifrado."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -800,7 +800,7 @@ msgstr ""
 "\n"
 "Las siguientes claves son fiables solo marginalmente: \n"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:332
 #, kde-format
 msgid ""
 "\n"
@@ -810,7 +810,7 @@ msgstr ""
 "Las siguientes claves o certificados tienen un nivel de confianza "
 "desconocido: \n"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgid ""
 "\n"
@@ -819,12 +819,12 @@ msgstr ""
 "\n"
 "Las siguientes claves o certificados están <b>revocados</b>: \n"
 
-#: composer/keyresolver.cpp:327
+#: composer/keyresolver.cpp:342
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Claves de cifrado no totalmente confiables"
 
-#: composer/keyresolver.cpp:645
+#: composer/keyresolver.cpp:660
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -841,13 +841,13 @@ msgstr ""
 "Si elige continuar y las claves se van a necesitar más adelante, se le "
 "pedirá que indique las claves que va a usar."
 
-#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
-#: composer/keyresolver.cpp:1037
+#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
+#: composer/keyresolver.cpp:1052
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Claves de cifrado no utilizables"
 
-#: composer/keyresolver.cpp:687
+#: composer/keyresolver.cpp:702
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -863,13 +863,13 @@ msgstr ""
 "Si elige continuar y las claves se van a necesitar más adelante, se le "
 "pedirá que indique las claves que va a usar."
 
-#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
-#: composer/keyresolver.cpp:1084
+#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
+#: composer/keyresolver.cpp:1099
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Claves de cifrado no utilizables"
 
-#: composer/keyresolver.cpp:998
+#: composer/keyresolver.cpp:1013
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -887,7 +887,7 @@ msgstr ""
 "Puede continuar sin cifrar para usted mismo, pero tenga en cuenta que no "
 "podrá leer sus propios mensajes si así lo hace."
 
-#: composer/keyresolver.cpp:1027
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -905,7 +905,7 @@ msgstr ""
 "Puede continuar sin cifrar para usted mismo, pero tenga en cuenta que no "
 "podrá leer sus propios mensajes si así lo hace."
 
-#: composer/keyresolver.cpp:1059
+#: composer/keyresolver.cpp:1074
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -919,12 +919,12 @@ msgstr ""
 "sin embargo, no ha configurado claves de firmado OpenPGP fiables válidas "
 "para esta identidad."
 
-#: composer/keyresolver.cpp:1067
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "No firmar con OpenPGP"
 
-#: composer/keyresolver.cpp:1077
+#: composer/keyresolver.cpp:1092
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -938,12 +938,12 @@ msgstr ""
 "sin embargo, no ha configurado claves de firmado S/MIME fiables válidas para "
 "esta identidad."
 
-#: composer/keyresolver.cpp:1085
+#: composer/keyresolver.cpp:1100
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "No firmar con S/MIME"
 
-#: composer/keyresolver.cpp:1147
+#: composer/keyresolver.cpp:1162
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -954,12 +954,12 @@ msgstr ""
 "tipo de firma entre las claves de firmado que tiene a su disposición.\n"
 "¿Enviar el mensaje sin firmar?"
 
-#: composer/keyresolver.cpp:1151
+#: composer/keyresolver.cpp:1166
 #, kde-format
 msgid "No signing possible"
 msgstr "No es posible firmar"
 
-#: composer/keyresolver.cpp:1314
+#: composer/keyresolver.cpp:1329
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -968,13 +968,13 @@ msgstr ""
 "No seleccionó una clave de cifrado para usted mismo (cifrar para uno mismo). "
 "No podrá descifrar sus propios mensajes si los cifra."
 
-#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
-#: composer/keyresolver.cpp:1353
+#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1368
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Aviso de clave no encontrada"
 
-#: composer/keyresolver.cpp:1332
+#: composer/keyresolver.cpp:1347
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -983,7 +983,7 @@ msgstr ""
 "No seleccionó una clave de cifrado para el destinatario de este mensaje. Por "
 "lo tanto, el mensaje no se cifrará."
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1351
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -992,7 +992,7 @@ msgstr ""
 "No seleccionó una clave de cifrado para alguno de los destinatarios de este "
 "mensaje. Por lo tanto, el mensaje no se cifrará."
 
-#: composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1001,7 +1001,7 @@ msgstr ""
 "No seleccionó una clave de cifrado para alguno de los destinatarios. Esta "
 "persona no podrá descifrar el mensaje si lo cifra."
 
-#: composer/keyresolver.cpp:1349
+#: composer/keyresolver.cpp:1364
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1010,12 +1010,12 @@ msgstr ""
 "No seleccionó una clave de cifrado para algunos de los destinatarios. Estas "
 "personas no podrán descifrar el mensaje si lo cifra."
 
-#: composer/keyresolver.cpp:1425
+#: composer/keyresolver.cpp:1440
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Selección de clave de cifrado"
 
-#: composer/keyresolver.cpp:1469
+#: composer/keyresolver.cpp:1484
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1030,7 +1030,7 @@ msgstr ""
 "Por favor, vuelva a seleccionar los certificados que se deben usar para este "
 "destinatario."
 
-#: composer/keyresolver.cpp:1541
+#: composer/keyresolver.cpp:1556
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1046,7 +1046,7 @@ msgstr ""
 "«%1». <br/><br/> Seleccione los certificados que se deben usar para este "
 "destinatario pulsando el botón. Buscar certificados externos:</qt>"
 
-#: composer/keyresolver.cpp:1551
+#: composer/keyresolver.cpp:1566
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
