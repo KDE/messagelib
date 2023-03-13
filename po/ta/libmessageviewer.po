@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2023-02-02 19:38+0530\n"
+"PO-Revision-Date: 2023-03-12 17:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -137,11 +137,10 @@ msgid "Compliance: %1"
 msgstr "நிரல்:%1 "
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "மறையாக்கம் செய்யப்பட்ட அஞ்சல்"
+msgstr "மறையாக்கம் செய்யப்பட்ட அஞ்சல் (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -301,41 +300,31 @@ msgid "Compliance: %1"
 msgstr "நிரல்:%1 "
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "செல்லுபடியாகாத கையொப்பம்."
+msgstr "செல்லுபடியாகாத கையொப்பம்"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "கையொப்பம் செல்லுபடியாகுமா என்பதை சரிபார்க்க போதுமான விவரங்கள் இல்லை."
+msgstr "கையொப்பம் செல்லுபடியாகுமா என்பதை சரிபார்க்க போதுமான விவரங்கள் இல்லை"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "கையொப்பமிட்டவர் <a href='mailto:%1'>%1</a>."
+msgstr "கையொப்பமிட்டவர் <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "கையொப்பம் செல்லுபடியாகும்."
+msgstr "கையொப்பம் செல்லுபடியாகும்"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "தெரியாத கையொப்ப நிலை"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "அஞ்சல்"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -347,40 +336,39 @@ msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
+"சேமித்துள்ள DKIM சாவி, தற்போதையதிலிருந்து மாறுபடுகிறது. இதையும் செமிக்க வேண்டுமா?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgid "Key Changed"
-msgstr ""
+msgstr "சாவி மாறியுள்ளது"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "குறிப்பிடப்பட்டது: "
+msgstr "சேமி"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Select Folder"
+#, kde-format
 msgid "Selector"
-msgstr "அடைவை தேர்ந்தெடு"
+msgstr "தேர்வி"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM சாவி"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Inserted"
-msgstr "கோப்பினை செருகு"
+msgstr "சேர்க்கப்பட்டது"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
@@ -496,7 +484,7 @@ msgstr "ஆள்களம்"
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "செயலிலுள்ளதா"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
@@ -705,10 +693,9 @@ msgid "Signature algorithm is invalid."
 msgstr "கையொப்பத்தின் படிமுறை செல்லுபடியாகாதது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
-#, fuzzy, kde-format
-#| msgid "One key has been revoked."
+#, kde-format
 msgid "The public key was revoked."
-msgstr "ஒரு விசை ஏற்கனவே பெறப்பட்டுள்ளது"
+msgstr "பொது சாவி திரும்பபெறப்பட்டுள்ளது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
@@ -716,15 +703,14 @@ msgid "Signature is too large."
 msgstr "கையொப்பம் அதிகபட்ச அளவைவிட பெரியது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr "இந்த எழுத்துக்கோவைக்கு ஆதரவில்லை"
+msgstr "ஆதரிக்கப்படா சரிகாண்தொகை முறை"
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "பொது சாவி, தேவையானதைவிட சிறியது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
@@ -742,16 +728,14 @@ msgid "The signing domain is only testing DKIM."
 msgstr "கையொப்பமிட்ட ஆள்கலம், DKIM-ஐ சோதனை மட்டும் செய்கிறது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:182
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to download key."
-msgstr "கையொப்பம் சரிபார்க்க பொது விசை இல்லை"
+msgstr "சாவியைப் பதிவிறக்க முடியவில்லை."
 
 #: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr "இந்த எழுத்துக்கோவைக்கு ஆதரவில்லை"
+msgstr "பாதுகாப்பற்ற சரிகாண்தொகை முறை (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
@@ -759,9 +743,9 @@ msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:191
-#, kde-format
+#, fuzzy, kde-format
 msgid "Problem during converting public key"
-msgstr ""
+msgstr "பொது சாவியை வடிவமாற்றுவதில் சிக்கல்"
 
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
@@ -779,10 +763,9 @@ msgid "Signature too small"
 msgstr "கையொப்பம் குறைந்தபட்ச அளவைவிட சிறியது"
 
 #: dkim-verify/dkimwidgetinfo.cpp:212
-#, fuzzy, kde-format
-#| msgid "Signatures"
+#, kde-format
 msgid "Public Key too small"
-msgstr "கையொப்பங்கள்"
+msgstr "பொது சாவி, தேவையானதைவிட சிறியது"
 
 #: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
 #, kde-format
@@ -1029,11 +1012,10 @@ msgid "Send"
 msgstr "அனுப்பு"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Send Now"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "இப்போது அனுப்பு"
+msgstr "மறுத்த‍தாக பதிலளி"
 
 #: messagepartthemes/default/defaultrenderer.cpp:76
 #, kde-format
@@ -1051,9 +1033,9 @@ msgid "Bad signature"
 msgstr "செல்லுபடியாகாத கையொப்பம்"
 
 #: messagepartthemes/default/defaultrenderer.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "No public key to verify the signature"
-msgstr "கையொப்பம் சரிபார்க்க பொது விசை இல்லை"
+msgstr "கையொப்பத்தை சரிபார்க்க எந்த பொது சாவியும் இல்லை"
 
 #: messagepartthemes/default/defaultrenderer.cpp:92
 #, kde-format
@@ -1390,19 +1372,19 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "முகவரி மோசடியாக இருக்கலாமா என்பதை சரிபார்"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.cmake:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "பதிலளித்த பின்னோ முன்னனுப்பி பின்னோ அஞ்சல்காட்டி சாளரத்தை மூடு"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr ""
+msgstr "மேற்கோள்களை விரிக்கும்/சுருக்கும் பட்டன்களை காட்டு"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:73
@@ -1416,13 +1398,13 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:76
 #, kde-format
 msgid "Automatic collapse level:"
-msgstr ""
+msgstr "தானாக சுருக்க வேண்டிய மட்டம்:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.cmake:83
 #, kde-format
 msgid "Reduce font size for quoted text"
-msgstr ""
+msgstr "மேற்கோளிட்ட உரைக்கான எழுத்துரு அளவை குறை"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.cmake:84
@@ -1469,24 +1451,21 @@ msgstr ""
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg.cmake:123
-#, fuzzy, kde-format
-#| msgid "Prefer H&TML to plain text"
+#, kde-format
 msgid "Prefer HTML to plain text"
-msgstr "வெறும் உரையை விட HTML இனை விரும்பு"
+msgstr "வெறும் உரையை காட்டிலும் HTML-ஐ விரும்பு"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.cmake:127
-#, fuzzy, kde-format
-#| msgid "Allow messages to load e&xternal references from the Internet"
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை ஏற்ற விடவும்"
+msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை அஞ்சல்களில் ஏற்ற விடு"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.cmake:131
-#, fuzzy, kde-format
-#| msgid "Show attachment icon"
+#, kde-format
 msgid "How attachments are shown"
-msgstr "இணைப்பு சின்னத்தைக் காட்டு"
+msgstr "உடனிணைப்புகள் காட்டப்படும் முறை"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg.cmake:135
@@ -1507,18 +1486,20 @@ msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
 "techniques used to deceive you"
 msgstr ""
+"மோசடி அஞ்சல்களில் படிப்பவர்களை ஏமாற்ற அடிக்கடி பயன்படுத்தப்படும் நுட்பங்களை கேமெயிலால் "
+"கண்டறிய முடியும்"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.cmake:147
 #, kde-format
 msgid "List of emails in scam white list"
-msgstr ""
+msgstr "மோசடியில்லை என்று குறித்த மின்னஞ்சல் முகவரிகளின் பட்டியல்"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
 #: settings/messageviewer.kcfg.cmake:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr ""
+msgstr "தடமறியும் முகவரிகளை அஞ்சல்களில் கண்டறி"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.cmake:157
@@ -1970,6 +1951,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"தேரந்தெடுத்துள்ள உரைதிருத்தி மூடப்படுவதை கேமெயிலால் கண்டறிய முடியாது. தரவிழப்பைத் "
+"தவிர்க்க, உடனிணைப்பைத் திருத்துவது கைவிடப்படும்."
 
 #: viewer/editorwatcher.cpp:196
 #, kde-format
@@ -2232,11 +2215,10 @@ msgid "The KDE Mail Client"
 msgstr "கே.டீ.யீ.யின் மின்னஞ்சல் செயலி"
 
 #: viewer/viewer_p.cpp:1290
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr "உடனிணைப்பைப் பார்: %1"
+msgstr "உடனிணைப்பைப் பார்ப்பது: %1"
 
 #: viewer/viewer_p.cpp:1478
 #, kde-format
@@ -2247,7 +2229,7 @@ msgstr "&உடனிணைப்புகள்"
 #: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Choose display style of attachments"
-msgstr ""
+msgstr "உடனிணைப்புகளின் காட்சிமுறையை தேர்ந்தெடுங்கள்"
 
 #: viewer/viewer_p.cpp:1483
 #, kde-format
@@ -2538,7 +2520,9 @@ msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
-msgstr "<qt><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br>இ<br>ல்<br>லை</qt>"
+msgstr ""
+"<qt><br />H<br />T<br />M<br />L<br /> <br />அ<br />ஞ்<br />ச<br />ல்<br /"
+">இ<br />ல்<br />லை</qt>"
 
 #: widgets/htmlstatusbar.cpp:117
 #, kde-format
@@ -2546,7 +2530,7 @@ msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
-msgstr "<qt><br />சா<br />தா<br />ர<br />ண<br />உ<br /><br />ரை<br /></qt>"
+msgstr "<qt><br />சா<br />தா<br />ர<br />ண<br /><br />உ<br />ரை<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
 #, kde-format
