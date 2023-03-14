@@ -42,10 +42,8 @@ public:
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 
-private Q_SLOTS:
-    void handleSearchAccessKey(const QVariant &res);
-
 private:
+    void handleSearchAccessKey(const QVariant &res);
     std::unique_ptr<WebEngineAccessKeyPrivate> const d;
 };
 }
