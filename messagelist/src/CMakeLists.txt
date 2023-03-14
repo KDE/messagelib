@@ -160,7 +160,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}MessageList PROPERTIES
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}MessageList
-    EXPORT KPim${KF_MAJOR_VERSION}MessageListTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}MessageListTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageList_Camelcasecore_HEADERS
