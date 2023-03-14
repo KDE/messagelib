@@ -37,9 +37,6 @@ class LocalDataBaseManagerPrivate
 public:
     LocalDataBaseManagerPrivate()
         : mFile(databaseFullPath())
-        , mSecondToStartRefreshing(0)
-        , mDataBaseOk(false)
-        , mDownloadProgress(false)
     {
         QDir().mkpath(localDataBasePath());
         readConfig();
@@ -133,9 +130,9 @@ public:
     LocalDataBaseFile mFile;
     QString mNewClientState;
     QString mMinimumWaitDuration;
-    uint mSecondToStartRefreshing;
-    bool mDataBaseOk;
-    bool mDownloadProgress;
+    uint mSecondToStartRefreshing = 0;
+    bool mDataBaseOk = false;
+    bool mDownloadProgress = false;
     QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
 };
 }
