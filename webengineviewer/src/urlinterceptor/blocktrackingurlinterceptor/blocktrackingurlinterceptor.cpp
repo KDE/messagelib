@@ -5,7 +5,7 @@
 */
 
 #include "blocktrackingurlinterceptor.h"
-
+#include "webengineviewer_block_tracking_url_interceptor_debug.h"
 #include <QWebEngineUrlRequestInfo>
 
 using namespace WebEngineViewer;
@@ -24,9 +24,13 @@ bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
         return false;
     }
     const QUrl urlRequestUrl(info.requestUrl());
+    if (urlRequestUrl.scheme() != QLatin1String("data")) {
+        qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " Tracking url " << urlRequestUrl;
+    }
     for (int i = 0, total = mBackList.size(); i < total; ++i) {
         const auto blackListinfo{mBackList.at(i)};
         if (urlRequestUrl.url().startsWith(blackListinfo.mCompanyUrl)) {
+            qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " found tracker " << blackListinfo;
             Q_EMIT trackingFound(blackListinfo);
             return true;
         }
@@ -70,4 +74,12 @@ bool BlockTrackingUrlInterceptor::enabledMailTrackingInterceptor() const
 void BlockTrackingUrlInterceptor::setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor)
 {
     mEnabledMailTrackingInterceptor = enabledMailTrackingInterceptor;
+}
+
+QDebug operator<<(QDebug d, const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &t)
+{
+    d << "CompanyName : " << t.mCompanyName;
+    d << "mCompanyUrl : " << t.mCompanyUrl;
+    d << "mPattern : " << t.mPattern;
+    return d;
 }

@@ -7,6 +7,7 @@
 #pragma once
 
 #include "webengineviewer_export.h"
+#include <QDebug>
 #include <QVector>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace WebEngineViewer
@@ -51,3 +52,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList, Q_MOVABLE_TYPE);
 Q_DECLARE_METATYPE(WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList)
+WEBENGINEVIEWER_EXPORT QDebug operator<<(QDebug d, const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &t);

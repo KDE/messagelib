@@ -127,6 +127,11 @@ ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}WebEngineViewer HEADER we
         DESCRIPTION "messagelib (webengineviewer)"
         EXPORT MESSAGELIB
     )
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}WebEngineViewer HEADER webengineviewer_block_tracking_url_interceptor_debug.h
+    IDENTIFIER WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG CATEGORY_NAME org.kde.pim.webengineviewer_block_tracking_url
+        DESCRIPTION "messagelib (webengineviewer block tracking url)"
+        EXPORT MESSAGELIB
+    )
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
