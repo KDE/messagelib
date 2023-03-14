@@ -24,11 +24,11 @@ public:
     ~BackOffModeManager() override;
 
     static BackOffModeManager *self();
-    bool isInBackOffMode() const;
+    Q_REQUIRED_RESULT bool isInBackOffMode() const;
 
     void startOffMode();
 
-    int numberOfHttpFailed() const;
+    Q_REQUIRED_RESULT int numberOfHttpFailed() const;
 
 public Q_SLOTS:
     void slotTimerFinished();

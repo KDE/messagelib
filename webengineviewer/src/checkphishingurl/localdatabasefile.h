@@ -33,7 +33,7 @@ public:
     void close();
     Q_REQUIRED_RESULT bool fileExists() const;
 
-    bool reload();
+    Q_REQUIRED_RESULT bool reload();
 
     Q_REQUIRED_RESULT bool isValid() const;
     Q_REQUIRED_RESULT quint16 getUint16(int offset) const;
