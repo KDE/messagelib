@@ -292,7 +292,8 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
             KMessageBox::warningTwoActions(parent,
                                            i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
                                            i18n("No mail dispatcher."),
-                                           KGuiItem(i18nc("@action:button", "Create Mail Dispatcher")),
+
+                                           KGuiItem(i18nc("@action:button", "Create Mail Dispatcher"), QIcon::fromTheme(QStringLiteral("mail-folder-outbox"))),
                                            KStandardGuiItem::cancel(),
                                            QStringLiteral("no_maildispatcher"));
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
@@ -309,7 +310,7 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         const int rc = KMessageBox::warningTwoActions(parent,
                                                       i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
                                                       i18n("Mail dispatcher offline."),
-                                                      KGuiItem(i18nc("@action:button", "Set Online")),
+                                                      KGuiItem(i18nc("@action:button", "Set Online"), QIcon::fromTheme(QStringLiteral("user-online"))),
                                                       KStandardGuiItem::cancel(),
                                                       QStringLiteral("maildispatcher_put_online"));
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
