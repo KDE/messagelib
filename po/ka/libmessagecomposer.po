@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 04:57+0000\n"
-"PO-Revision-Date: 2023-02-08 07:14+0100\n"
+"PO-Revision-Date: 2023-03-14 04:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -622,7 +622,7 @@ msgstr "&ხელმოწერა"
 #: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "Unsigned-Message Warning"
-msgstr ""
+msgstr "გაფრთხილება ხელმოუწერელი შეტყობინების შესახებ"
 
 #: composer/composerviewbase.cpp:2037
 #, kde-format
@@ -1696,7 +1696,7 @@ msgstr ""
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
 msgid "Send \"&denied\""
-msgstr ""
+msgstr "\"&უარყოფილიას\" გაგზავნა"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1867,12 +1867,12 @@ msgstr "<placeholder>მიღების აღუწერელი ტიპ
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
-msgstr ""
+msgstr "აირჩიეთ მიმღების ტიპი"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
 msgid "Set the list of email addresses to receive this message"
-msgstr ""
+msgstr "შეიყვანეთ ელფოსტის მისამართების სია, რომელიც ამ შეტყობინებას მიიღებს"
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
@@ -1958,29 +1958,29 @@ msgstr "&Directory -ის სერვისში ძებნა"
 #: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as &Reply-To"
-msgstr ""
+msgstr "&Reply-To თავსართში დამატება"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
-msgstr ""
+msgstr "&To თავსართში დამატება"
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
-msgstr ""
+msgstr "&CC თავსართში დამატება"
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
-msgstr ""
+msgstr "&BCC თავსართში დამატება"
 
 #: recipient/recipientspicker.cpp:105
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 მონიშნული ელფოსტა"
+msgstr[1] "%1 მონიშნული ელფოსტა"
 
 #: recipient/recipientspicker.cpp:172
 #, kde-format
@@ -1997,7 +1997,7 @@ msgstr[1] ""
 #: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
-msgstr ""
+msgstr "მეტ მიმღებს ვეღარ დაამატებთ."
 
 #: sendlater/sendlatercreatejob.cpp:33
 #, kde-format
@@ -2083,13 +2083,13 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:32
 #, kde-format
 msgid "A&utomatically insert signature"
-msgstr ""
+msgstr "&ხელმოწერის ავტომატური ჩასმა"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:36
 #, kde-format
 msgid "Insert signature above quoted text"
-msgstr ""
+msgstr "ხელმოწერის ციტირებული ტექსტის ზემოთ ჩასმა"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:40
@@ -2169,25 +2169,25 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "ყველა შეტყობინების ხელმოწერა, თუ შესაძლებელია"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
+msgstr "შეტყობინების დაშიფვრა, თუ გასაღები ყველა მიმღებისთვის არსებობს"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "გაფრთხილება დაუშიფრავი შეტყობინების გაგზავნამდე"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "გაფრთხილება ხელმოუწერელი შეტყობინების გაგზავნამდე"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:101
@@ -2473,13 +2473,13 @@ msgstr ""
 #: utils/util.cpp:294
 #, kde-format
 msgid "No mail dispatcher."
-msgstr ""
+msgstr "ელფოსტის დისპეტჩერი გარეშე."
 
 #: utils/util.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr ""
+msgstr "ელფოსტის დისპეტჩერის შექმნა"
 
 #: utils/util.cpp:310
 #, kde-format
