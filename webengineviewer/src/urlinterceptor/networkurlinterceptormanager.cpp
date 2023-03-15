@@ -37,7 +37,8 @@ QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(cons
 
 void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEngine, KActionCollection *ac)
 {
-    for (NetworkPluginUrlInterceptor *plugin : NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+    const auto pluginsList = NetworkUrlInterceptorPluginManager::self()->pluginsList();
+    for (NetworkPluginUrlInterceptor *plugin : pluginsList) {
         if (plugin->isEnabled()) {
             WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(webEngine, q);
             interface->createActions(ac);
