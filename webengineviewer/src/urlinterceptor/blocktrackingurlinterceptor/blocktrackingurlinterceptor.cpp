@@ -64,6 +64,7 @@ void BlockTrackingUrlInterceptor::initializeList()
                  {QStringLiteral("Mailtrack.io"), QStringLiteral("mailtrack.io/trace"), QStringLiteral("http://mailtrack.io")},
                  {QStringLiteral("ToutApp"), QStringLiteral("go.toutapp.com"), QStringLiteral("http://toutapp.com")},
                  {QStringLiteral("Outreach"), QStringLiteral("app.outreach.io"), QStringLiteral("http://outreach.io")}};
+    // https://github.com/JannikArndt/EMailTrackerBlocker
 }
 
 bool BlockTrackingUrlInterceptor::enabledMailTrackingInterceptor() const

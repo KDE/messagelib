@@ -7,6 +7,7 @@
 #include "networkurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
 
+#include <QDebug>
 #include <QVector>
 
 using namespace WebEngineViewer;
@@ -40,6 +41,7 @@ void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &in
 {
     for (NetworkPluginUrlInterceptorInterface *inter : std::as_const(listInterceptor)) {
         if (inter->interceptRequest(info)) {
+            // qDebug() << " intercep " << info.requestUrl() << " inter " << inter;
             info.block(true);
             break;
         }
