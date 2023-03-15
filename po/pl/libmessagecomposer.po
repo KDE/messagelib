@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2022-11-23 19:37+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2881,13 +2881,13 @@ msgstr ""
 msgid "No mail dispatcher."
 msgstr "Brak programu wysyłającego pocztę."
 
-#: utils/util.cpp:295
+#: utils/util.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Stwórz program wysyłający pocztę"
 
-#: utils/util.cpp:310
+#: utils/util.cpp:311
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2896,12 +2896,12 @@ msgstr ""
 "Program wysyłający pocztę został odłączony od sieci i nie może wysyłać "
 "poczty. Czy chcesz podłączyć go do sieci?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:312
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Program wysyłający odłączony od sieci."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:313
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2022-05-16 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2785,13 +2785,13 @@ msgstr ""
 msgid "No mail dispatcher."
 msgstr "Ingen e-postsändningsmodul"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Skapa e-postsändningsmodul"
 
-#: utils/util.cpp:310
+#: utils/util.cpp:311
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2800,12 +2800,12 @@ msgstr ""
 "E-postsändningsmodulen är nerkopplad, och e-post kan inte skickas. Vill du "
 "koppla upp den?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:312
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "E-postsändningsmodulen nerkopplad."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:313
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

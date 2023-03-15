@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2022-10-24 10:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2806,13 +2806,13 @@ msgstr ""
 msgid "No mail dispatcher."
 msgstr "Er is geen verzendprogramma."
 
-#: utils/util.cpp:295
+#: utils/util.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "E-mailverzendprogramma aanmaken"
 
-#: utils/util.cpp:310
+#: utils/util.cpp:311
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2821,12 +2821,12 @@ msgstr ""
 "Het verzendprogramma voor e-mail is offline, e-mails kunnen niet worden "
 "verzonden. Wilt u het online zetten?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:312
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "Verzendprogramma voor e-mail is offline."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:313
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
