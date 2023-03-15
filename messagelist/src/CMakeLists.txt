@@ -143,7 +143,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageList
     PRIVATE
     KF${KF_MAJOR_VERSION}::KIOCore
     KPim${KF_MAJOR_VERSION}::MessageCore
-    KF5::PimCommonAkonadi
+    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
     KPim${KF_MAJOR_VERSION}::AkonadiSearchPIM
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::IconThemes

@@ -145,7 +145,7 @@ target_include_directories(KPim${KF_MAJOR_VERSION}WebEngineViewer INTERFACE "$<I
 target_link_libraries(KPim${KF_MAJOR_VERSION}WebEngineViewer
     PUBLIC
     Qt::WebEngineWidgets
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     PRIVATE
     KF${KF_MAJOR_VERSION}::CoreAddons

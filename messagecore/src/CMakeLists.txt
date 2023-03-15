@@ -96,7 +96,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore
     KF${KF_MAJOR_VERSION}::I18n
     KPim${KF_MAJOR_VERSION}::IdentityManagement
     KPim${KF_MAJOR_VERSION}::MimeTreeParser
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE QGpgmeQt6)

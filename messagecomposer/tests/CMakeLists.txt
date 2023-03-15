@@ -12,6 +12,6 @@ target_link_libraries(recipienteditortest KF${KF_MAJOR_VERSION}::KIOCore KPim${K
 add_executable(composerlineedittest)
 target_sources(composerlineedittest PRIVATE testcomposerlineedit.cpp)
 ecm_mark_as_test(composerlineedittest)
-target_link_libraries(composerlineedittest KPim${KF_MAJOR_VERSION}::MessageComposer  KF5::PimCommonAkonadi KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(composerlineedittest KPim${KF_MAJOR_VERSION}::MessageComposer  KPim${KF_MAJOR_VERSION}::PimCommonAkonadi KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
 
 

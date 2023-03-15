@@ -270,7 +270,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     PUBLIC
     KPim${KF_MAJOR_VERSION}::Mime
     KPim${KF_MAJOR_VERSION}::MessageCore
-    KF5::PimCommonAkonadi
+    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
     KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
     KPim${KF_MAJOR_VERSION}::PimTextEdit
@@ -284,7 +284,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::TemplateParser
     KPim${KF_MAJOR_VERSION}::AkonadiWidgets
-    KF5::PimCommonAkonadi
+    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::KIOCore
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::KIOFileWidgets # for KEncodingDialog

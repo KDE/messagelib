@@ -407,7 +407,7 @@ endif()
 target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     PUBLIC
     KPim${KF_MAJOR_VERSION}::MessageCore
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KF${KF_MAJOR_VERSION}::Contacts
