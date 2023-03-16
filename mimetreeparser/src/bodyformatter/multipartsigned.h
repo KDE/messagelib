@@ -16,7 +16,7 @@ class MultiPartSignedBodyPartFormatter : public Interface::BodyPartFormatter
     static const MultiPartSignedBodyPartFormatter *self;
 
 public:
-    MessagePartPtr process(Interface::BodyPart &part) const override;
+    Q_REQUIRED_RESULT MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

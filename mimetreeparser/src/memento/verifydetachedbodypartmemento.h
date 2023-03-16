@@ -7,6 +7,7 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
+#include <QStringList>
 #include <gpgme++/key.h>
 #include <gpgme++/verificationresult.h>
 
@@ -21,8 +22,6 @@ class VerifyDetachedJob;
 class KeyListJob;
 }
 
-#include <QStringList>
-
 namespace MimeTreeParser
 {
 class VerifyDetachedBodyPartMemento : public CryptoBodyPartMemento
@@ -32,7 +31,7 @@ public:
     explicit VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText);
     ~VerifyDetachedBodyPartMemento() override;
 
-    bool start() override;
+    Q_REQUIRED_RESULT bool start() override;
     void exec() override;
 
     const GpgME::VerificationResult &verifyResult() const
@@ -52,9 +51,9 @@ private Q_SLOTS:
 
 private:
     void saveResult(const GpgME::VerificationResult &);
-    bool canStartKeyListJob() const;
-    QStringList keyListPattern() const;
-    bool startKeyListJob();
+    Q_REQUIRED_RESULT bool canStartKeyListJob() const;
+    Q_REQUIRED_RESULT QStringList keyListPattern() const;
+    Q_REQUIRED_RESULT bool startKeyListJob();
 
 private:
     // input:

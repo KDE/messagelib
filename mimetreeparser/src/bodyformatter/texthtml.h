@@ -16,7 +16,7 @@ class TextHtmlBodyPartFormatter : public Interface::BodyPartFormatter
     static const TextHtmlBodyPartFormatter *self;
 
 public:
-    MessagePartPtr process(Interface::BodyPart &part) const override;
+    Q_REQUIRED_RESULT MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

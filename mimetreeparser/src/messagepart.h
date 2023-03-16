@@ -69,7 +69,7 @@ public:
     ~MessagePart() override;
 
     void setParentPart(MessagePart *parentPart);
-    MessagePart *parentPart() const;
+    Q_REQUIRED_RESULT MessagePart *parentPart() const;
 
     Q_REQUIRED_RESULT virtual QString text() const;
     void setText(const QString &text);
@@ -80,14 +80,14 @@ public:
     /** The KMime::Content* node that's represented by this part.
      *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
      */
-    KMime::Content *content() const;
+    Q_REQUIRED_RESULT KMime::Content *content() const;
     void setContent(KMime::Content *node);
 
     /** The KMime::Content* node that's the source of this part.
      *  This is not necessarily the same as content(), for example for
      *  broken-up multipart nodes.
      */
-    KMime::Content *attachmentContent() const;
+    Q_REQUIRED_RESULT KMime::Content *attachmentContent() const;
     void setAttachmentContent(KMime::Content *node);
     Q_REQUIRED_RESULT bool isAttachment() const;
     /** @see KMime::Content::index() */

@@ -58,9 +58,9 @@ private Q_SLOTS:
 
 private:
     void saveResult(const GpgME::VerificationResult &, const QByteArray &);
-    bool canStartKeyListJob() const;
-    QStringList keyListPattern() const;
-    bool startKeyListJob();
+    Q_REQUIRED_RESULT bool canStartKeyListJob() const;
+    Q_REQUIRED_RESULT QStringList keyListPattern() const;
+    Q_REQUIRED_RESULT bool startKeyListJob();
 
 private:
     // input:

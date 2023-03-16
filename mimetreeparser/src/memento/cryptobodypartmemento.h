@@ -27,7 +27,7 @@ public:
     virtual void exec() = 0;
     Q_REQUIRED_RESULT bool isRunning() const;
 
-    const QString &auditLogAsHtml() const
+    Q_REQUIRED_RESULT const QString &auditLogAsHtml() const
     {
         return m_auditLog;
     }

@@ -20,7 +20,7 @@ public:
     };
     Q_DECLARE_FLAGS(EncryptionFlags, EncryptionFlag)
 
-    MessagePartPtr process(Interface::BodyPart &part) const override;
+    Q_REQUIRED_RESULT MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create(EncryptionFlags flags);
 
 private:
