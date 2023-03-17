@@ -5411,7 +5411,7 @@ msgstr "أ&لغِ"
 #~ msgstr "وصلة متبوعة"
 
 #~ msgid "Misspelled Words"
-#~ msgstr "كلمات التهجئة الخاطئة"
+#~ msgstr "كلمات التهجية الخاطئة"
 
 #~ msgid "New Message"
 #~ msgstr "رسالة جديدة"

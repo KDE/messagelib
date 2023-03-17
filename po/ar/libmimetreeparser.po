@@ -5131,7 +5131,7 @@ msgstr "خطأ: %1"
 #~ msgstr "وصلة متبوعة"
 
 #~ msgid "Misspelled Words"
-#~ msgstr "كلمات التهجئة الخاطئة"
+#~ msgstr "كلمات التهجية الخاطئة"
 
 #~ msgid "Unread Message"
 #~ msgstr "رسالة غير مقروءة"
