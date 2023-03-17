@@ -91,7 +91,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore
     KF${KF_MAJOR_VERSION}::Codecs
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
     Qt::Network
     KF${KF_MAJOR_VERSION}::I18n
     KPim${KF_MAJOR_VERSION}::IdentityManagement
