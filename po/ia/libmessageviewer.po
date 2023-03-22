@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022.
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2022-05-18 21:37+0200\n"
+"PO-Revision-Date: 2023-03-21 15:26+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -117,14 +117,13 @@ msgstr "clave incognite"
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Conformitate: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Message Cryptate"
+msgstr "Message Cryptate (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -281,45 +280,34 @@ msgstr "Aviso: Le signatura es mal."
 #: messagepartthemes/default/templates/signedmessagepart.html:142
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Conformitate: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Signatura invalide."
+msgstr "Signatura invalide"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "Information insufficiente pro verificar validitate de signatura."
+msgstr "Information insufficiente pro verificar validitate de signatura"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Signate per <a href='mailto:%1'>%1</a>."
+msgstr "Signate per <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "Signatura es valide."
+msgstr "Signatura es valide"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "Stato de signatura incognite"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "Fallite: %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
