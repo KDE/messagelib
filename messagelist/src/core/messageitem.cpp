@@ -9,8 +9,6 @@
 #include "messageitem.h"
 #include "messageitem_p.h"
 
-#include <PimCommonAkonadi/AnnotationDialog>
-
 #include "messagelist_debug.h"
 #include <Akonadi/EntityAnnotationsAttribute>
 #include <Akonadi/Item>
