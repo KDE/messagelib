@@ -284,7 +284,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::TemplateParser
     KPim${KF_MAJOR_VERSION}::AkonadiWidgets
-    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::KIOCore
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::KIOFileWidgets # for KEncodingDialog
