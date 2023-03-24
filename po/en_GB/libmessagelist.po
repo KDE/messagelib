@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-24 00:49+0000\n"
 "PO-Revision-Date: 2023-02-26 19:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -132,13 +132,13 @@ msgstr "Favour Speed"
 msgid "Batch Job (No Interactivity)"
 msgstr "Batch Job (No Interactivity)"
 
-#: core/item.cpp:252 core/messageitem.cpp:538
+#: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Read"
 
-#: core/item.cpp:254 core/messageitem.cpp:538
+#: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -156,7 +156,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Action Item"
 
-#: core/item.cpp:266 core/messageitem.cpp:536
+#: core/item.cpp:266 core/messageitem.cpp:534
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"

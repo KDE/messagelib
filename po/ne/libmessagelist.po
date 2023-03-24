@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-24 00:49+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:538
+#: core/item.cpp:252 core/messageitem.cpp:536
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Read"
@@ -156,7 +156,7 @@ msgctxt "Status of an item"
 msgid "Read"
 msgstr "पढ्नुहोस्"
 
-#: core/item.cpp:254 core/messageitem.cpp:538
+#: core/item.cpp:254 core/messageitem.cpp:536
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -178,7 +178,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "महत्वपूर्ण सन्देशका चिन्ह हटाउनुहोस्"
 
-#: core/item.cpp:266 core/messageitem.cpp:536
+#: core/item.cpp:266 core/messageitem.cpp:534
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"

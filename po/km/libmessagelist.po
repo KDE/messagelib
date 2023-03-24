@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-24 00:49+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -133,13 +133,13 @@ msgstr "ល្បឿន​ដែល​ពេញចិត្ត"
 msgid "Batch Job (No Interactivity)"
 msgstr "ការងារ​កញ្ចប់ (គ្មាន​អន្តរ​សកម្មភាព)"
 
-#: core/item.cpp:252 core/messageitem.cpp:538
+#: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "បាន​អាន"
 
-#: core/item.cpp:254 core/messageitem.cpp:538
+#: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -157,7 +157,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "ធាតុ​សកម្មភាព"
 
-#: core/item.cpp:266 core/messageitem.cpp:536
+#: core/item.cpp:266 core/messageitem.cpp:534
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"

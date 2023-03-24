@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:48+0000\n"
+"POT-Creation-Date: 2023-03-24 00:49+0000\n"
 "PO-Revision-Date: 2023-01-11 09:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -136,13 +136,13 @@ msgstr "Afavorix la velocitat"
 msgid "Batch Job (No Interactivity)"
 msgstr "Treball per lots (sense interactivitat)"
 
-#: core/item.cpp:252 core/messageitem.cpp:538
+#: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Llegit"
 
-#: core/item.cpp:254 core/messageitem.cpp:538
+#: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -160,7 +160,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Element d'acció"
 
-#: core/item.cpp:266 core/messageitem.cpp:536
+#: core/item.cpp:266 core/messageitem.cpp:534
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
