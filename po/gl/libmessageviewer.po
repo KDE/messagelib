@@ -320,8 +320,6 @@ msgid "Signature is valid"
 msgstr "A sinatura é correcta."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "O estado da sinatura é descoñecido"
 
