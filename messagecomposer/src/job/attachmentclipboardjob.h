@@ -25,6 +25,6 @@ protected Q_SLOTS:
     void doStart() override;
 
 private:
-    void addAttachment(const QByteArray &data, const QString &attachmentName);
+    MESSAGECOMPOSER_NO_EXPORT void addAttachment(const QByteArray &data, const QString &attachmentName);
 };
 }

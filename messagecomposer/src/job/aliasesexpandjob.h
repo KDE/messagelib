@@ -61,11 +61,11 @@ public:
     Q_REQUIRED_RESULT QStringList emailAddressOnly() const;
 
 private Q_SLOTS:
-    void slotDistributionListExpansionDone(KJob *);
-    void slotNicknameExpansionDone(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotDistributionListExpansionDone(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotNicknameExpansionDone(KJob *);
 
 private:
-    void finishExpansion();
+    MESSAGECOMPOSER_NO_EXPORT void finishExpansion();
 
     QStringList mEmailAddressOnly;
 

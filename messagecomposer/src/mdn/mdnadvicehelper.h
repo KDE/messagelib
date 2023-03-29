@@ -42,15 +42,15 @@ public:
     Q_REQUIRED_RESULT QPair<QString, bool> mdnMessageText(const char *what);
 
 private:
-    explicit MDNAdviceHelper(QObject *parent = nullptr)
+    MESSAGECOMPOSER_NO_EXPORT explicit MDNAdviceHelper(QObject *parent = nullptr)
         : QObject(parent)
     {
     }
 
     ~MDNAdviceHelper() override = default;
 
-    Q_REQUIRED_RESULT int requestAdviceOnMDN(const char *what);
-    MessageComposer::MDNAdvice questionIgnoreSend(const QString &text, bool canDeny);
+    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT int requestAdviceOnMDN(const char *what);
+    MESSAGECOMPOSER_NO_EXPORT MessageComposer::MDNAdvice questionIgnoreSend(const QString &text, bool canDeny);
 
     static MDNAdviceHelper *s_instance;
 };

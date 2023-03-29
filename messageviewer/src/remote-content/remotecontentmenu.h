@@ -33,8 +33,8 @@ Q_SIGNALS:
     void updateEmail();
 
 private:
-    void authorize(const QString &url);
-    void slotConfigure();
+    MESSAGEVIEWER_NO_EXPORT void authorize(const QString &url);
+    MESSAGEVIEWER_NO_EXPORT void slotConfigure();
     QStringList mUrls;
     QAction *const mConfigureRemoteContentAction;
     QList<QAction *> mListAction;

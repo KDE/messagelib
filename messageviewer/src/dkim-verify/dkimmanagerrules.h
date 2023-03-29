@@ -39,9 +39,9 @@ public:
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
-    Q_REQUIRED_RESULT int loadRules(const QString &fileName = QString());
-    void save(const QString &fileName = QString(), const QVector<DKIMRule> &lst = {});
-    Q_REQUIRED_RESULT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT int loadRules(const QString &fileName = QString());
+    MESSAGEVIEWER_NO_EXPORT void save(const QString &fileName = QString(), const QVector<DKIMRule> &lst = {});
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;
 };
 }

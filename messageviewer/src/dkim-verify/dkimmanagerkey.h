@@ -70,7 +70,7 @@ public:
     void updateLastUsed(const QString &selector, const QString &domain);
 
 private:
-    Q_REQUIRED_RESULT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QVector<KeyInfo> mKeys;
     QCA::Initializer *const mQcaInitializer;
 };

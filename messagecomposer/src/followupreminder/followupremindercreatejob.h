@@ -48,7 +48,7 @@ private Q_SLOTS:
     void slotCreateNewTodo(KJob *job);
 
 private:
-    void writeFollowupReminderInfo();
+    MESSAGECOMPOSER_NO_EXPORT void writeFollowupReminderInfo();
 
     std::unique_ptr<FollowupReminderCreateJobPrivate> const d;
 };

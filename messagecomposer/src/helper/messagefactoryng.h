@@ -227,27 +227,27 @@ Q_SIGNALS:
     void createForwardDone(const KMime::Message::Ptr &msg);
 
 private Q_SLOTS:
-    void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
-    void slotCreateForwardDone(const KMime::Message::Ptr &msg);
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateForwardDone(const KMime::Message::Ptr &msg);
 
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagement::IdentityManager::identityForAddress()
     **/
-    Q_REQUIRED_RESULT uint identityUoid(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const KMime::Message::Ptr &msg);
 
-    Q_REQUIRED_RESULT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
+    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
 
     /*
      * If force charset option is enabled, try to set the original charset
      *  in the newly created message. If unable to encode, fall back to
      *  preferred charsets, and if all fail, use UTF-8.
      */
-    void applyCharset(const KMime::Message::Ptr msg);
+    MESSAGECOMPOSER_NO_EXPORT void applyCharset(const KMime::Message::Ptr msg);
 
-    Q_REQUIRED_RESULT QByteArray getRefStr(const KMime::Message::Ptr &msg);
-    KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
+    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
+    MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages

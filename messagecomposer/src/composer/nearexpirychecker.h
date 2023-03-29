@@ -52,14 +52,14 @@ private:
 
     std::unique_ptr<NearExpiryCheckerPrivate> const d;
 
-    Q_REQUIRED_RESULT double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
+    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
 
-    void checkKeyNearExpiry(const GpgME::Key &key,
-                            bool isOwnKey,
-                            bool isSigningKey,
-                            bool ca = false,
-                            int recur_limit = 100,
-                            const GpgME::Key &orig_key = GpgME::Key::null) const;
+    MESSAGECOMPOSER_NO_EXPORT void checkKeyNearExpiry(const GpgME::Key &key,
+                                                      bool isOwnKey,
+                                                      bool isSigningKey,
+                                                      bool ca = false,
+                                                      int recur_limit = 100,
+                                                      const GpgME::Key &orig_key = GpgME::Key::null) const;
 };
 }
 Q_DECLARE_METATYPE(GpgME::Key)

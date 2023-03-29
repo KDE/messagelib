@@ -97,7 +97,7 @@ public:
     Q_REQUIRED_RESULT QStringList expandedReplyTo() const;
 
 private:
-    void slotAliasExpansionDone(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotAliasExpansionDone(KJob *);
     std::unique_ptr<EmailAddressResolveJobPrivate> const d;
 };
 }

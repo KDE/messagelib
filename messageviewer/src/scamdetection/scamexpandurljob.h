@@ -30,8 +30,8 @@ Q_SIGNALS:
     void expandUrlError(QNetworkReply::NetworkError error);
 
 private:
-    void slotError(QNetworkReply::NetworkError error);
-    void slotExpandFinished(QNetworkReply *reply);
+    MESSAGEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
+    MESSAGEVIEWER_NO_EXPORT void slotExpandFinished(QNetworkReply *reply);
 
 private:
     std::unique_ptr<ScamExpandUrlJobPrivate> const d;

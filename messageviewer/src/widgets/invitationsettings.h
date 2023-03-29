@@ -29,7 +29,7 @@ Q_SIGNALS:
     void changed();
 
 private:
-    void slotLegacyBodyInvitesToggled(bool on);
+    MESSAGEVIEWER_NO_EXPORT void slotLegacyBodyInvitesToggled(bool on);
     std::unique_ptr<InvitationSettingsPrivate> const d;
 };
 }

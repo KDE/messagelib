@@ -24,10 +24,10 @@ public:
     ~DKIMManagerKeyDialog() override;
 
 private:
-    void readConfig();
-    void writeConfig();
-    void loadKeys();
-    void slotAccept();
+    MESSAGEVIEWER_NO_EXPORT void readConfig();
+    MESSAGEVIEWER_NO_EXPORT void writeConfig();
+    MESSAGEVIEWER_NO_EXPORT void loadKeys();
+    MESSAGEVIEWER_NO_EXPORT void slotAccept();
     DKIMManagerKeyWidget *const mManagerWidget;
 };
 }

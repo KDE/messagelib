@@ -54,7 +54,7 @@ public:
     void restoreHeaders(const QByteArray &header);
 
 private:
-    void slotCustomContextMenuRequested(const QPoint &);
+    MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &);
     QTreeWidget *const mTreeWidget;
 };
 }

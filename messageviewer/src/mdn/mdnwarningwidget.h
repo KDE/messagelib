@@ -38,9 +38,9 @@ Q_SIGNALS:
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
-    void slotSend();
-    void slotIgnore();
-    void slotSendDeny();
+    MESSAGEVIEWER_NO_EXPORT void slotSend();
+    MESSAGEVIEWER_NO_EXPORT void slotIgnore();
+    MESSAGEVIEWER_NO_EXPORT void slotSendDeny();
     QAction *const mIgnoreAction;
     QAction *const mSendAction;
     QAction *const mSendDenyAction;

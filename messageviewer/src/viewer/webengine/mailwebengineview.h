@@ -87,14 +87,14 @@ Q_SIGNALS:
     void pageIsScrolledToBottom(bool);
 
 private Q_SLOTS:
-    void handleScrollToAnchor(const QVariant &result);
-    void handleIsScrolledToBottom(const QVariant &result);
+    MESSAGEVIEWER_NO_EXPORT void handleScrollToAnchor(const QVariant &result);
+    MESSAGEVIEWER_NO_EXPORT void handleIsScrolledToBottom(const QVariant &result);
 
-    void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
-    void slotLoadFinished();
+    MESSAGEVIEWER_NO_EXPORT void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
+    MESSAGEVIEWER_NO_EXPORT void slotLoadFinished();
 
 private:
-    void runJavaScriptInWordId(const QString &script);
+    MESSAGEVIEWER_NO_EXPORT void runJavaScriptInWordId(const QString &script);
     std::unique_ptr<MailWebEngineViewPrivate> const d;
 };
 }

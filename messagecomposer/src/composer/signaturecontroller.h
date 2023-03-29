@@ -81,10 +81,10 @@ private:
      * in the editor, connecting slot functions to KMeditor::insertSignature().
      * @param placement the position of the signature
      */
-    void insertSignatureHelper(KIdentityManagement::Signature::Placement placement);
+    MESSAGECOMPOSER_NO_EXPORT void insertSignatureHelper(KIdentityManagement::Signature::Placement placement);
 
 private Q_SLOTS:
-    void identityChanged(uint id);
+    MESSAGECOMPOSER_NO_EXPORT void identityChanged(uint id);
 
 private:
     std::unique_ptr<SignatureControllerPrivate> const d;

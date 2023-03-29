@@ -24,11 +24,11 @@ public:
     ~DKIMManageRulesDialog() override;
 
 private:
-    void slotAccepted();
-    void readConfig();
-    void writeConfig();
-    void slotImport();
-    void slotExport();
+    MESSAGEVIEWER_NO_EXPORT void slotAccepted();
+    MESSAGEVIEWER_NO_EXPORT void readConfig();
+    MESSAGEVIEWER_NO_EXPORT void writeConfig();
+    MESSAGEVIEWER_NO_EXPORT void slotImport();
+    MESSAGEVIEWER_NO_EXPORT void slotExport();
     DKIMManageRulesWidget *const mRulesWidget;
     QPushButton *const mExportButton;
 };

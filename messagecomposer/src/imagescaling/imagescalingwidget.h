@@ -37,19 +37,19 @@ Q_SIGNALS:
     void changed();
 
 private Q_SLOTS:
-    void slotComboboxChanged(int index);
-    void slotSourceFilterClicked(int);
-    void slotRecipientFilterClicked(int);
-    void slotHelpLinkClicked(const QString &);
+    MESSAGECOMPOSER_NO_EXPORT void slotComboboxChanged(int index);
+    MESSAGECOMPOSER_NO_EXPORT void slotSourceFilterClicked(int);
+    MESSAGECOMPOSER_NO_EXPORT void slotRecipientFilterClicked(int);
+    MESSAGECOMPOSER_NO_EXPORT void slotHelpLinkClicked(const QString &);
 
 private:
-    void slotRecipientFilterAbstractClicked(QAbstractButton *button);
-    void slotSourceFilterAbstractButtonClicked(QAbstractButton *button);
-    void updateFilterSourceTypeSettings();
-    void initComboBox(QComboBox *combo);
-    void initWriteImageFormat();
-    void updateEmailsFilterTypeSettings();
-    void updateSettings();
+    MESSAGECOMPOSER_NO_EXPORT void slotRecipientFilterAbstractClicked(QAbstractButton *button);
+    MESSAGECOMPOSER_NO_EXPORT void slotSourceFilterAbstractButtonClicked(QAbstractButton *button);
+    MESSAGECOMPOSER_NO_EXPORT void updateFilterSourceTypeSettings();
+    MESSAGECOMPOSER_NO_EXPORT void initComboBox(QComboBox *combo);
+    MESSAGECOMPOSER_NO_EXPORT void initWriteImageFormat();
+    MESSAGECOMPOSER_NO_EXPORT void updateEmailsFilterTypeSettings();
+    MESSAGECOMPOSER_NO_EXPORT void updateSettings();
     std::unique_ptr<ImageScalingWidgetPrivate> const d;
 };
 }

@@ -93,8 +93,8 @@ public:
     void setIDomain(const QString &iDomain);
 
 private:
-    void parseCanonicalization(const QString &str);
-    void parseAlgorithm(const QString &str);
+    MESSAGEVIEWER_NO_EXPORT void parseCanonicalization(const QString &str);
+    MESSAGEVIEWER_NO_EXPORT void parseAlgorithm(const QString &str);
     HashingAlgorithmType mHashingAlgorithm = HashingAlgorithmType::Any;
     QString mSigningAlgorithm;
     QString mDomain;

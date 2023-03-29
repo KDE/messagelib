@@ -30,7 +30,7 @@ public:
     Q_REQUIRED_RESULT OpenWithUrlInfo openWith(const QUrl &url);
 
 private:
-    void loadSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadSettings();
 
     QVector<OpenWithUrlInfo> mOpenWithUrlInfo;
 };

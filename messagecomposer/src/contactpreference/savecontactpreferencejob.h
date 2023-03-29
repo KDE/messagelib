@@ -29,8 +29,8 @@ public:
     void start();
 
 private:
-    void slotSearchContact(KJob *job);
-    void slotModifyCreateItem(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotSearchContact(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotModifyCreateItem(KJob *job);
 
     std::unique_ptr<SaveContactPreferenceJobPrivate> d_ptr;
     Q_DECLARE_PRIVATE(SaveContactPreferenceJob)

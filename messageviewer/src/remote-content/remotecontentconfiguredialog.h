@@ -23,9 +23,9 @@ public:
     ~RemoteContentConfigureDialog() override;
 
 private:
-    void readConfig();
-    void writeConfig();
-    void slotAccept();
+    MESSAGEVIEWER_NO_EXPORT void readConfig();
+    MESSAGEVIEWER_NO_EXPORT void writeConfig();
+    MESSAGEVIEWER_NO_EXPORT void slotAccept();
     RemoteContentConfigureWidget *const mRemoteContentConfigureWidget;
 };
 }

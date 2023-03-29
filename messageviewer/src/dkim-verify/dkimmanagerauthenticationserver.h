@@ -26,8 +26,8 @@ public:
     void setServerList(const QStringList &serverList);
 
 private:
-    void load();
-    void save();
+    MESSAGEVIEWER_NO_EXPORT void load();
+    MESSAGEVIEWER_NO_EXPORT void save();
     QStringList mServerList;
 };
 }

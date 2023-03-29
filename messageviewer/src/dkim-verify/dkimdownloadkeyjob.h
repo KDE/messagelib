@@ -41,7 +41,7 @@ Q_SIGNALS:
     void success(const QList<QByteArray> &, const QString &domain, const QString &selector);
 
 private:
-    void resolvDnsDone();
+    MESSAGEVIEWER_NO_EXPORT void resolvDnsDone();
     QString mDomainName;
     QString mSelectorName;
     QDnsLookup *mDnsLookup = nullptr;

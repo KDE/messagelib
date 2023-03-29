@@ -53,9 +53,10 @@ private:
     /**
     Queue or send immediately one message using MailTransport::MessageQueueJob.
     */
-    void sendOrQueueMessage(const KMime::Message::Ptr &msg, MessageComposer::MessageSender::SendMethod method = MessageComposer::MessageSender::SendDefault);
+    MESSAGECOMPOSER_NO_EXPORT void sendOrQueueMessage(const KMime::Message::Ptr &msg,
+                                                      MessageComposer::MessageSender::SendMethod method = MessageComposer::MessageSender::SendDefault);
 
-    void queueJobResult(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void queueJobResult(KJob *job);
     std::unique_ptr<AkonadiSenderPrivate> const d;
 };
 }

@@ -39,7 +39,7 @@ Q_SIGNALS:
     void clearInfo();
 
 private:
-    void checkFullInfo(const Akonadi::Item &item);
+    MESSAGEVIEWER_NO_EXPORT void checkFullInfo(const Akonadi::Item &item);
     DKIMCheckPolicy mCheckPolicy;
 };
 }

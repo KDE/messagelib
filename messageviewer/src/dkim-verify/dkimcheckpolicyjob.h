@@ -38,8 +38,8 @@ Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
-    void compareWithDefaultRules();
-    void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
+    MESSAGEVIEWER_NO_EXPORT void compareWithDefaultRules();
+    MESSAGEVIEWER_NO_EXPORT void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mCheckResult;
     QString mEmailAddress;
     DKIMCheckPolicy mPolicy;

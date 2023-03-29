@@ -31,10 +31,10 @@ public:
     void requestSync();
 
 private Q_SLOTS:
-    void slotSyncNow();
+    MESSAGEVIEWER_NO_EXPORT void slotSyncNow();
 
 private:
-    MessageViewerSettings();
+    MESSAGEVIEWER_NO_EXPORT MessageViewerSettings();
     ~MessageViewerSettings() override;
     static MessageViewerSettings *mSelf;
 

@@ -23,8 +23,8 @@ public:
     static ScamDetectionWhiteListSettingsManager *self();
 
 private:
-    void loadSettings();
-    void writeSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadSettings();
+    MESSAGEVIEWER_NO_EXPORT void writeSettings();
     QVector<ScamDetectionInfo> mScamDetectionInfoList;
 };
 }

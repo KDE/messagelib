@@ -31,7 +31,7 @@ public:
     void deleteRecipient(const QByteArray &addr);
 
 private:
-    AutocryptStorage();
+    MESSAGECORE_NO_EXPORT AutocryptStorage();
     static AutocryptStorage::Ptr mSelf;
 
 private:

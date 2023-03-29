@@ -32,7 +32,7 @@ public Q_SLOTS:
     void showDetails();
 
 private Q_SLOTS:
-    void handleScanPage(const QVariant &result);
+    MESSAGEVIEWER_NO_EXPORT void handleScanPage(const QVariant &result);
 
 Q_SIGNALS:
     void messageMayBeAScam();

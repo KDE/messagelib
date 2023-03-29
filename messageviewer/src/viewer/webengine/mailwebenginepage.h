@@ -24,7 +24,7 @@ public:
     void setPrintElementBackground(bool printElementBackground);
 
 private:
-    void slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature);
-    void initialize();
+    MESSAGEVIEWER_NO_EXPORT void slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature);
+    MESSAGEVIEWER_NO_EXPORT void initialize();
 };
 }

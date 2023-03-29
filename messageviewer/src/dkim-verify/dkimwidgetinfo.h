@@ -35,10 +35,10 @@ protected:
     Q_REQUIRED_RESULT bool event(QEvent *e) override;
 
 private:
-    void updateInfo();
-    void updateToolTip();
-    void initColors();
-    void updatePalette();
+    MESSAGEVIEWER_NO_EXPORT void updateInfo();
+    MESSAGEVIEWER_NO_EXPORT void updateToolTip();
+    MESSAGEVIEWER_NO_EXPORT void initColors();
+    MESSAGEVIEWER_NO_EXPORT void updatePalette();
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     QLabel *const mLabel;
     QColor mWarningColor;

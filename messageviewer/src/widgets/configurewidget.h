@@ -48,7 +48,7 @@ Q_SIGNALS:
     void settingsChanged();
 
 private:
-    void readCurrentOverrideCodec();
+    MESSAGEVIEWER_NO_EXPORT void readCurrentOverrideCodec();
     std::unique_ptr<ConfigureWidgetPrivate> const d;
 };
 }

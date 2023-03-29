@@ -31,7 +31,7 @@ Q_SIGNALS:
     void showDkimRules();
 
 private:
-    void initialize();
+    MESSAGEVIEWER_NO_EXPORT void initialize();
     QMenu *const mMenu;
     QAction *mUpdateDKIMKey = nullptr;
 };

@@ -116,9 +116,9 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    void dataFromFields();
-    void fieldsFromData();
-    void slotAddRecipient(const QString &);
+    MESSAGECOMPOSER_NO_EXPORT void dataFromFields();
+    MESSAGECOMPOSER_NO_EXPORT void fieldsFromData();
+    MESSAGECOMPOSER_NO_EXPORT void slotAddRecipient(const QString &);
     RecipientComboBox *mCombo = nullptr;
     RecipientLineEdit *mEdit = nullptr;
     int mRecipientsCount = 0;

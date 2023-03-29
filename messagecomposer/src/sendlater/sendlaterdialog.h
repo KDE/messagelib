@@ -42,12 +42,12 @@ public:
     Q_REQUIRED_RESULT SendLaterAction action() const;
 
 private:
-    void slotRecurrenceClicked(bool);
-    void slotOkClicked();
-    void slotDelay(bool delayEnabled);
+    MESSAGECOMPOSER_NO_EXPORT void slotRecurrenceClicked(bool);
+    MESSAGECOMPOSER_NO_EXPORT void slotOkClicked();
+    MESSAGECOMPOSER_NO_EXPORT void slotDelay(bool delayEnabled);
 
-    void slotDateChanged(const QString &date);
-    void load(SendLaterInfo *info);
+    MESSAGECOMPOSER_NO_EXPORT void slotDateChanged(const QString &date);
+    MESSAGECOMPOSER_NO_EXPORT void load(SendLaterInfo *info);
 
 private:
     QDateTime mSendDateTime;

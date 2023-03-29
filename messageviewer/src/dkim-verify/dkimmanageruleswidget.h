@@ -65,10 +65,10 @@ Q_SIGNALS:
     void updateExportButton(bool enabled);
 
 private:
-    void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
-    void slotCustomContextMenuRequested(const QPoint &);
-    void duplicateRule(DKIMManageRulesWidgetItem *rulesItem);
-    void emitUpdateExportButton();
+    MESSAGEVIEWER_NO_EXPORT void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
+    MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &);
+    MESSAGEVIEWER_NO_EXPORT void duplicateRule(DKIMManageRulesWidgetItem *rulesItem);
+    MESSAGEVIEWER_NO_EXPORT void emitUpdateExportButton();
     QTreeWidget *const mTreeWidget;
 };
 }

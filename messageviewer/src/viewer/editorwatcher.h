@@ -58,9 +58,9 @@ Q_SIGNALS:
     void editDone(MessageViewer::EditorWatcher *watcher);
 
 private:
-    void editorExited();
-    void inotifyEvent();
-    void checkEditDone();
+    MESSAGEVIEWER_NO_EXPORT void editorExited();
+    MESSAGEVIEWER_NO_EXPORT void inotifyEvent();
+    MESSAGEVIEWER_NO_EXPORT void checkEditDone();
     const QUrl mUrl;
     const QString mMimeType;
     QTimer mTimer;

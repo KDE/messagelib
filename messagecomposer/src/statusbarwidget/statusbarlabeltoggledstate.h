@@ -33,7 +33,7 @@ protected:
     void mousePressEvent(QMouseEvent *ev) override;
 
 private:
-    void updateLabel();
+    MESSAGECOMPOSER_NO_EXPORT void updateLabel();
     QString mToggled;
     QString mUnToggled;
     bool mToggleMode = false;

@@ -88,10 +88,10 @@ protected:
     void openWith(const KService::Ptr &offer = KService::Ptr());
 
 private:
-    void attachDirectory(const QUrl &url);
-    void slotPutResult(KJob *job);
-    void slotOpenWithDialog();
-    void slotOpenWithAction(QAction *act);
+    MESSAGECOMPOSER_NO_EXPORT void attachDirectory(const QUrl &url);
+    MESSAGECOMPOSER_NO_EXPORT void slotPutResult(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotOpenWithDialog();
+    MESSAGECOMPOSER_NO_EXPORT void slotOpenWithAction(QAction *act);
 
 private:
     class AttachmentControllerBasePrivate;

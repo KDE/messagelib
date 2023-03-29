@@ -35,11 +35,11 @@ public:
 
     void accept() override;
 
-    Akonadi::Collection collection() const;
+    Q_REQUIRED_RESULT Akonadi::Collection collection() const;
 
 private Q_SLOTS:
-    void slotDateChanged();
-    void updateOkButton();
+    MESSAGECOMPOSER_NO_EXPORT void slotDateChanged();
+    MESSAGECOMPOSER_NO_EXPORT void updateOkButton();
 
 private:
     std::unique_ptr<FollowUpReminderSelectDateDialogPrivate> const d;

@@ -140,18 +140,18 @@ Q_SIGNALS:
     void storeKey(const QString &key, const QString &domain, const QString &selector);
 
 private:
-    void downloadKey(const DKIMInfo &info);
-    void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
-    void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
-    Q_REQUIRED_RESULT QString headerCanonizationSimple() const;
-    Q_REQUIRED_RESULT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
-    Q_REQUIRED_RESULT QString bodyCanonizationRelaxed() const;
-    Q_REQUIRED_RESULT QString bodyCanonizationSimple() const;
-    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
-    void verifySignature();
-    void verifyRSASignature();
-    void verifyEd25519Signature();
-    void computeHeaderCanonization(bool removeQuoteOnContentType);
+    MESSAGEVIEWER_NO_EXPORT void downloadKey(const DKIMInfo &info);
+    MESSAGEVIEWER_NO_EXPORT void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
+    MESSAGEVIEWER_NO_EXPORT void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString headerCanonizationSimple() const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationRelaxed() const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationSimple() const;
+    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
+    MESSAGEVIEWER_NO_EXPORT void verifySignature();
+    MESSAGEVIEWER_NO_EXPORT void verifyRSASignature();
+    MESSAGEVIEWER_NO_EXPORT void verifyEd25519Signature();
+    MESSAGEVIEWER_NO_EXPORT void computeHeaderCanonization(bool removeQuoteOnContentType);
     QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;

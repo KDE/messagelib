@@ -26,9 +26,9 @@ public:
     Q_REQUIRED_RESULT MessageComposer::MDNAdvice result() const;
 
 private:
-    void slotUser1Clicked();
-    void slotUser2Clicked();
-    void slotYesClicked();
+    MESSAGECOMPOSER_NO_EXPORT void slotUser1Clicked();
+    MESSAGECOMPOSER_NO_EXPORT void slotUser2Clicked();
+    MESSAGECOMPOSER_NO_EXPORT void slotYesClicked();
     MessageComposer::MDNAdvice m_result = MessageComposer::MDNIgnore;
 };
 }
