@@ -881,7 +881,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     if ((scheme == QLatin1String("http")) || (scheme == QLatin1String("https")) || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
         || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp")) || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
         || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish")) || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))
-        || (scheme == QLatin1String("geo"))) {
+        || (scheme == QLatin1String("geo")) || (scheme == QLatin1String("sms"))) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2s, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
