@@ -143,7 +143,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
     widgets/configurewidget.cpp
     widgets/printingsettings.cpp
     widgets/htmlstatusbar.cpp
-    widgets/vcardviewer.cpp
     widgets/invitationsettings.cpp
     widgets/opensavedfilefolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
@@ -280,7 +279,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
     widgets/printingsettings.h
     widgets/opensavedfilefolderwidget.h
     widgets/configurewidget.h
-    widgets/vcardviewer.h
     widgets/attachmentdialog.h
     remote-content/remotecontentinfo.h
     remote-content/remotecontentconfigurewidget.h
