@@ -2218,13 +2218,15 @@ void ViewerPrivate::slotDelayPrintPreview()
 
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (!mViewer->execPrintPreviewPage(printing, 10000)) { // 10 seconds
             qCWarning(MESSAGEVIEWER_LOG) << " Impossible to generate preview";
         }
+#else
+        mViewer->printPreviewPage(printing);
+#endif
         QApplication::restoreOverrideCursor();
     });
-
     dialog->open(this, SIGNAL(printingFinished()));
 }
 
@@ -2308,6 +2310,8 @@ void ViewerPrivate::slotPrintMessage()
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
 #else
+        mViewer->print(mCurrentPrinter);
+        // TODO call slotHandlePagePrinted when printing is finished
 #pragma "QT6: need to reimplement it";
 #endif
     }
