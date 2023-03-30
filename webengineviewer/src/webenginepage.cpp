@@ -18,6 +18,7 @@
 #include <QWebEngineDownloadItem>
 #else
 #include <QWebEngineDownloadRequest>
+#include <QWebEngineView>
 #endif
 #include <QWebEngineProfile>
 
@@ -73,8 +74,10 @@ void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
 #endif
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-
     const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
+#else
+    const QString fileName = QFileDialog::getSaveFileName(QWebEngineView::forPage(this), i18n("Save HTML Page"));
+#endif
     if (!fileName.isEmpty()) {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
@@ -85,9 +88,6 @@ void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
         download->setDownloadFileName(QFileInfo(fileName).fileName());
         download->accept();
     }
-#else
-#pragma "QT6: NEED TO REIMPLEMENT it"
-#endif
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
