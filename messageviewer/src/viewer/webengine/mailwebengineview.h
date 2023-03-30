@@ -57,10 +57,13 @@ public:
 
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
+#endif
     void readConfig();
 
     static void initializeCustomScheme();
+    void printPreviewPage(QPrinter *printer);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

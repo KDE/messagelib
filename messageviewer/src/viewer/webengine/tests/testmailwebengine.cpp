@@ -105,8 +105,11 @@ void TestMailWebEngine::slotPrintPreview()
 
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         mTestWebEngine->execPrintPreviewPage(printing, 10 * 1000);
+#else
+        mTestWebEngine->printPreviewPage(printing);
+#endif
         QApplication::restoreOverrideCursor();
     });
 

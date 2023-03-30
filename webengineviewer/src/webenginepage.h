@@ -65,10 +65,10 @@ public:
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void saveHtml(QWebEngineDownloadItem *download);
+    Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
 #else
     void saveHtml(QWebEngineDownloadRequest *download);
 #endif
-    Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
 
     Q_REQUIRED_RESULT QPoint mapToViewport(const QPoint &pos) const;
 Q_SIGNALS:

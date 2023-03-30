@@ -348,10 +348,18 @@ void MailWebEngineView::setPrintElementBackground(bool printElementBackground)
 {
     d->mPageEngine->setPrintElementBackground(printElementBackground);
 }
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 bool MailWebEngineView::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
     return d->mPageEngine->execPrintPreviewPage(printer, timeout);
+}
+#endif
+
+void MailWebEngineView::printPreviewPage(QPrinter *printer)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    print(printer);
+#endif
 }
 
 void MailWebEngineView::initializeCustomScheme()

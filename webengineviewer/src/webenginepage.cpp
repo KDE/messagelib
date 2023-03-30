@@ -111,10 +111,10 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
     Q_EMIT showConsoleMessage(message);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
     bool result = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QPointer<QEventLoop> loop = new QEventLoop;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
 
@@ -127,8 +127,6 @@ bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 
     loop->exec();
     delete loop;
-#else
-#pragma "QT6: NEED TO REIMPLEMENT it"
-#endif
     return result;
 }
+#endif
