@@ -209,7 +209,7 @@ public:
     Q_REQUIRED_RESULT QString temporaryFilePath() const;
 
 private:
-    void parseContent();
+    MIMETREEPARSER_NO_EXPORT void parseContent();
 
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
@@ -434,9 +434,9 @@ private:
      */
     Q_REQUIRED_RESULT bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
 
-    void sigStatusToMetaData();
+    MIMETREEPARSER_NO_EXPORT void sigStatusToMetaData();
 
-    void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
+    MIMETREEPARSER_NO_EXPORT void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
 
 protected:
     const QGpgME::Protocol *mCryptoProto;

@@ -46,23 +46,23 @@ Q_SIGNALS:
     void templatesUpdated();
 
 private Q_SLOTS:
-    void slotInsertCommand(const QString &cmd, int adjustCursor = 0);
-    void slotTextChanged();
-    void slotAddClicked();
-    void slotRemoveClicked();
-    void slotListSelectionChanged();
-    void slotTypeActivated(int index);
-    void slotShortcutChanged(const QKeySequence &newSeq);
-    void slotItemChanged(QTreeWidgetItem *item, int column);
-    void slotHelpLinkClicked(const QString &);
-    void slotNameChanged(const QString &text);
-    void slotDuplicateClicked();
+    TEMPLATEPARSER_NO_EXPORT void slotInsertCommand(const QString &cmd, int adjustCursor = 0);
+    TEMPLATEPARSER_NO_EXPORT void slotTextChanged();
+    TEMPLATEPARSER_NO_EXPORT void slotAddClicked();
+    TEMPLATEPARSER_NO_EXPORT void slotRemoveClicked();
+    TEMPLATEPARSER_NO_EXPORT void slotListSelectionChanged();
+    TEMPLATEPARSER_NO_EXPORT void slotTypeActivated(int index);
+    TEMPLATEPARSER_NO_EXPORT void slotShortcutChanged(const QKeySequence &newSeq);
+    TEMPLATEPARSER_NO_EXPORT void slotItemChanged(QTreeWidgetItem *item, int column);
+    TEMPLATEPARSER_NO_EXPORT void slotHelpLinkClicked(const QString &);
+    TEMPLATEPARSER_NO_EXPORT void slotNameChanged(const QString &text);
+    TEMPLATEPARSER_NO_EXPORT void slotDuplicateClicked();
 
 private:
-    Q_REQUIRED_RESULT bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = nullptr);
-    Q_REQUIRED_RESULT QString indexToType(int index);
-    Q_REQUIRED_RESULT QString createUniqueName(const QString &name) const;
-    void iconFromType(CustomTemplates::Type type, CustomTemplateItem *item);
+    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = nullptr);
+    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString indexToType(int index);
+    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString createUniqueName(const QString &name) const;
+    TEMPLATEPARSER_NO_EXPORT void iconFromType(CustomTemplates::Type type, CustomTemplateItem *item);
 
     /// These templates will be deleted when we're saving.
     QStringList mItemsToDelete;

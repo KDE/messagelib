@@ -30,8 +30,8 @@ Q_SIGNALS:
     void loadContentDone(bool success);
 
 private:
-    void slotLoadFinished(bool ok);
-    void setPlainText(const QString &plainText);
+    TEMPLATEPARSER_NO_EXPORT void slotLoadFinished(bool ok);
+    TEMPLATEPARSER_NO_EXPORT void setPlainText(const QString &plainText);
 
     QString mExtractedPlainText;
     TemplateWebEnginePage *const mPage;

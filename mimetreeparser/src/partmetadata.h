@@ -10,8 +10,6 @@
 
 #pragma once
 
-#include "mimetreeparser_export.h"
-
 #include <gpgme++/context.h>
 #include <gpgme++/verificationresult.h>
 

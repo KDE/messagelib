@@ -30,7 +30,7 @@ Q_SIGNALS:
     void finished(const WebEngineViewer::WebHitTestResult &result);
 
 private Q_SLOTS:
-    void handleHitTest(const QVariant &result);
+    WEBENGINEVIEWER_NO_EXPORT void handleHitTest(const QVariant &result);
 
 private:
     std::unique_ptr<WebHitTestPrivate> const d;

@@ -35,7 +35,7 @@ public:
     void setDelayRemoveAllInMs(int ms);
 
 private:
-    void slotRemoveTempFiles();
+    MIMETREEPARSER_NO_EXPORT void slotRemoveTempFiles();
     std::unique_ptr<AttachmentTemporaryFilesDirsPrivate> const d;
 };
 }

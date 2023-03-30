@@ -43,7 +43,7 @@ Q_SIGNALS:
     void openUrl(const QUrl &url);
 
 private:
-    void handleSearchAccessKey(const QVariant &res);
+    WEBENGINEVIEWER_NO_EXPORT void handleSearchAccessKey(const QVariant &res);
     std::unique_ptr<WebEngineAccessKeyPrivate> const d;
 };
 }

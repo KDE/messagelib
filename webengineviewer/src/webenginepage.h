@@ -80,6 +80,6 @@ protected:
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
 
 private:
-    void init();
+    WEBENGINEVIEWER_NO_EXPORT void init();
 };
 }

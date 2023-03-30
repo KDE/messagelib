@@ -230,8 +230,8 @@ private:
     Q_DISABLE_COPY(NodeHelper)
     bool unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
 
-    void mergeExtraNodes(KMime::Content *node);
-    void cleanFromExtraNodes(KMime::Content *node);
+    MIMETREEPARSER_NO_EXPORT void mergeExtraNodes(KMime::Content *node);
+    MIMETREEPARSER_NO_EXPORT void cleanFromExtraNodes(KMime::Content *node);
 
     /** Creates a persistent index string that bridges the gap between the
         permanent nodes and the temporary ones.

@@ -40,9 +40,9 @@ Q_SIGNALS:
     void debugJson(const QByteArray &ba);
 
 private:
-    void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
-    void slotError(QNetworkReply::NetworkError error);
-    void slotCheckUrlFinished(QNetworkReply *reply);
+    WEBENGINEVIEWER_NO_EXPORT void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
+    WEBENGINEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
+    WEBENGINEVIEWER_NO_EXPORT void slotCheckUrlFinished(QNetworkReply *reply);
     std::unique_ptr<CheckPhishingUrlJobPrivate> const d;
 };
 }

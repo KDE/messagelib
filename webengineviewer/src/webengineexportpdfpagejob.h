@@ -36,7 +36,7 @@ Q_SIGNALS:
     void exportToPdfSuccess();
 
 private:
-    void slotPdfPrintingFinished(const QString &filePath, bool success);
+    WEBENGINEVIEWER_NO_EXPORT void slotPdfPrintingFinished(const QString &filePath, bool success);
     QString mPdfPath;
     QWebEngineView *mWebEngineView = nullptr;
 };

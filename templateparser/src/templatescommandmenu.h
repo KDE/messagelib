@@ -125,7 +125,7 @@ protected:
     KActionMenu *mMenu = nullptr;
 
 private:
-    void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
+    TEMPLATEPARSER_NO_EXPORT void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
     MenuTypes mType = Default;
     bool mWasInitialized = false;
 };

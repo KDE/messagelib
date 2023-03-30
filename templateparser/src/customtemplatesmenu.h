@@ -41,10 +41,10 @@ Q_SIGNALS:
     void forwardTemplateSelected(const QString &tmpl);
 
 private:
-    void slotReplySelected(int idx);
-    void slotReplyAllSelected(int idx);
-    void slotForwardSelected(int idx);
-    void clear();
+    TEMPLATEPARSER_NO_EXPORT void slotReplySelected(int idx);
+    TEMPLATEPARSER_NO_EXPORT void slotReplyAllSelected(int idx);
+    TEMPLATEPARSER_NO_EXPORT void slotForwardSelected(int idx);
+    TEMPLATEPARSER_NO_EXPORT void clear();
     std::unique_ptr<CustomTemplatesMenuPrivate> const d;
 };
 }

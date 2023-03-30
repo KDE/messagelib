@@ -46,9 +46,9 @@ Q_SIGNALS:
     void changed();
 
 private:
-    void slotHelpLinkClicked(const QString &);
-    Q_REQUIRED_RESULT QPlainTextEdit *currentTextEdit() const;
-    Q_REQUIRED_RESULT QString strOrBlank(const QString &str);
+    TEMPLATEPARSER_NO_EXPORT void slotHelpLinkClicked(const QString &);
+    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QPlainTextEdit *currentTextEdit() const;
+    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString strOrBlank(const QString &str);
     std::unique_ptr<TemplatesConfigurationPrivate> const d;
 };
 }

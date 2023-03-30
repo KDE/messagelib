@@ -21,8 +21,8 @@ public:
     Q_REQUIRED_RESULT QWebEnginePage *enginePage() const;
 
 private:
-    void readConfig();
-    void writeConfig();
+    WEBENGINEVIEWER_NO_EXPORT void readConfig();
+    WEBENGINEVIEWER_NO_EXPORT void writeConfig();
     DeveloperToolWidget *const mDeveloperToolWidget;
 };
 }

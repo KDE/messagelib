@@ -26,8 +26,8 @@ public:
     void setDetails(const QString &details);
 
 private:
-    void writeConfig();
-    void readConfig();
+    WEBENGINEVIEWER_NO_EXPORT void writeConfig();
+    WEBENGINEVIEWER_NO_EXPORT void readConfig();
 
     KPIMTextEdit::RichTextEditorWidget *const mDetails;
 };

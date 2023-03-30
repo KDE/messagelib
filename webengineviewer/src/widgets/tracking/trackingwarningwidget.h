@@ -28,8 +28,8 @@ public:
     void hideAndClear();
 
 private:
-    void slotShowDetails(const QString &content);
-    Q_REQUIRED_RESULT QString generateDetails() const;
+    WEBENGINEVIEWER_NO_EXPORT void slotShowDetails(const QString &content);
+    Q_REQUIRED_RESULT WEBENGINEVIEWER_NO_EXPORT QString generateDetails() const;
 
     struct blackListFound {
         QString url;

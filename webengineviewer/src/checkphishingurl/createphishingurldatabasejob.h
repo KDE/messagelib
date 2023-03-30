@@ -59,9 +59,9 @@ Q_SIGNALS:
     void debugJson(const QByteArray &ba);
 
 private:
-    void slotDownloadDataBaseFinished(QNetworkReply *reply);
-    void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
-    void slotError(QNetworkReply::NetworkError error);
+    WEBENGINEVIEWER_NO_EXPORT void slotDownloadDataBaseFinished(QNetworkReply *reply);
+    WEBENGINEVIEWER_NO_EXPORT void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
+    WEBENGINEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
 
     std::unique_ptr<CreatePhishingUrlDataBaseJobPrivate> const d;
 };

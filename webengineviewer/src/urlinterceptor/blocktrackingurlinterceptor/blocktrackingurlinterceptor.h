@@ -45,7 +45,7 @@ Q_SIGNALS:
     void trackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
 
 private:
-    void initializeList();
+    WEBENGINEVIEWER_NO_EXPORT void initializeList();
     QVector<TrackerBlackList> mBackList;
     bool mEnabledMailTrackingInterceptor = false;
 };

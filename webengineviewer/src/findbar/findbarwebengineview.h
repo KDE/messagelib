@@ -25,9 +25,9 @@ public:
     ~FindBarWebEngineView() override;
 
 private:
-    void clearSelections() override;
-    void searchText(bool backward, bool isAutoSearch) override;
-    void updateSensitivity(bool sensitivity) override;
+    WEBENGINEVIEWER_NO_EXPORT void clearSelections() override;
+    WEBENGINEVIEWER_NO_EXPORT void searchText(bool backward, bool isAutoSearch) override;
+    WEBENGINEVIEWER_NO_EXPORT void updateSensitivity(bool sensitivity) override;
 
 private:
     std::unique_ptr<FindBarWebEngineViewPrivate> const d;
