@@ -30,7 +30,6 @@ public:
 
     Q_REQUIRED_RESULT int numberOfHttpFailed() const;
 
-public Q_SLOTS:
     void slotTimerFinished();
 
 private:
