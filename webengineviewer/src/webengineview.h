@@ -12,7 +12,6 @@
 namespace WebEngineViewer
 {
 class WebEngineViewPrivate;
-class WebEngineManageScript;
 class LocalDataBaseManager;
 
 /**
@@ -29,8 +28,6 @@ public:
     void clearRelativePosition();
     void saveRelativePosition();
     Q_REQUIRED_RESULT qreal relativePosition() const;
-
-    Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
 
     Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 

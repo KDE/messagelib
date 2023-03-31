@@ -61,7 +61,6 @@ public:
 
     qreal mSavedRelativePosition = -1;
     QWidget *mCurrentWidget = nullptr;
-    WebEngineManageScript *mManagerScript = nullptr;
     WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor = nullptr;
     WebEngineView *mWebEngineNavigatorInterceptorView = nullptr;
     LocalDataBaseManager *mPhishingDatabase = nullptr;
@@ -76,7 +75,6 @@ WebEngineView::WebEngineView(QWidget *parent)
     , d(new WebEngineViewer::WebEngineViewPrivate(this))
 {
     installEventFilter(this);
-    d->mManagerScript = new WebEngineManageScript(this);
 
     connect(this, &QWebEngineView::renderProcessTerminated, this, [this](QWebEnginePage::RenderProcessTerminationStatus status) {
         d->renderProcessTerminated(status);
@@ -90,11 +88,6 @@ WebEngineView::WebEngineView(QWidget *parent)
 }
 
 WebEngineView::~WebEngineView() = default;
-
-WebEngineManageScript *WebEngineView::webEngineManagerScript() const
-{
-    return d->mManagerScript;
-}
 
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)
 {

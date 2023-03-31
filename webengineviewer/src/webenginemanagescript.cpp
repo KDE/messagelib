@@ -5,12 +5,3 @@
 */
 
 #include "webenginemanagescript.h"
-
-using namespace WebEngineViewer;
-
-WebEngineManageScript::WebEngineManageScript(QObject *parent)
-    : QObject(parent)
-{
-}
-
-WebEngineManageScript::~WebEngineManageScript() = default;
