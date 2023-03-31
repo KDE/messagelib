@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
 "PO-Revision-Date: 2022-05-10 17:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1643,7 +1643,7 @@ msgstr ""
 "till papperskorgen, så fort svaret har skickats med lyckat resultat."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Använd teckensnitt med fast &breddsteg"
@@ -2004,7 +2004,7 @@ msgstr "Storlek"
 msgid "Turn on HTML rendering for this message."
 msgstr "Aktivera HTML-visning för det här brevet."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Ladda externa referenser från Internet i brevet."
@@ -2084,7 +2084,7 @@ msgstr "Ö&ppna i adressboken"
 msgid "&Copy Email Address"
 msgstr "&Kopiera e-postadress"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adressen kopierad till klippbordet."
@@ -2140,7 +2140,7 @@ msgstr "Kör"
 msgid "Loading message..."
 msgstr "Läser in brev..."
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:356
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2149,13 +2149,13 @@ msgstr ""
 "Att ta bort en bilaga från ett krypterat brev eller från ett gammaldags "
 "mailman-brev stöds inte."
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:357 viewer/viewer_p.cpp:364 viewer/viewer_p.cpp:586
+#: viewer/viewer_p.cpp:1719
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Ta bort bilaga"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:363
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2163,333 +2163,333 @@ msgid ""
 msgstr ""
 "Att ta bort en bilaga kan göra eventuell digital signatur av brevet ogiltig."
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:445
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Ö&ppna med"
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:463
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Öv&riga..."
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:465 viewer/viewer_p.cpp:478
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Ö&ppna med..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:542 viewer/viewer_p.cpp:1697
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Öppna"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:556 viewer/viewer_p.cpp:1704
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Visa"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:564
 #, kde-format
 msgid "Scroll To"
 msgstr "Panorera till"
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:569
 #, kde-format
 msgid "Save As..."
 msgstr "Spara som..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:575 viewer/viewer_p.cpp:1714
 #, kde-format
 msgid "Copy"
 msgstr "Kopiera"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:597
 #, kde-format
 msgid "Reply To Author"
 msgstr "Svara till brevskrivaren"
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:605
 #, kde-format
 msgid "Reply To All"
 msgstr "Svara till alla"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:611 viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:748
 #, kde-format
 msgid "KMail"
 msgstr "Kmail"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:749
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE:s e-postklient"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1276
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Visa bilaga: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Bil&agor"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Välj sätt att visa bilagor"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1469
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Som &ikoner"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1472
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Visa alla bilagor som ikoner. Klicka för att titta på dem."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Smart"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Visa bilagor på det sätt som föreslås av avsändaren."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "På &plats"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Visa alla bilagor på plats (om möjligt)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Dölj"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Visa inte bilagor i brevvyn"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Bara i rubriken"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Visa bara bilagor i brevets rubrik"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgid "&Set Encoding"
 msgstr "An&ge kodning"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1510 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automatisk"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopiera text"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1527
 #, kde-format
 msgid "Select All Text"
 msgstr "Markera all text"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1533 viewer/viewer_p.cpp:2018
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopiera länkadress"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1538
 #, kde-format
 msgid "Open URL"
 msgstr "Öppna webbadress"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Visa brevstruktur"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "&View Source"
 msgstr "Visa k&ällkoden"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Spara brev..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgid "&Save Display Format"
 msgstr "&Spara visningsformat"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "Åte&rställ visningsformat"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Panorera uppåt i brev"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Panorera neråt i brev"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Panorera uppåt i brev (mer)"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Panorera neråt i brev (mer)"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Växla HTML-visningsläge"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Växla visningsläge mellan HTML och vanlig text"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1612
 #, kde-format
 msgid "Load external references"
 msgstr "Ladda externa referenser"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Läs upp text"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "Share Text..."
 msgstr "Dela text..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopiera bildplats"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1636
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Hitta i brevet..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1645
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Inaktivera smilis"
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1694
 #, kde-format
 msgid "Save &As..."
 msgstr "Spara s&om..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1702
 #, kde-format
 msgid "Open With..."
 msgstr "Öppna med..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1709
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Spara alla bilagor..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1938
 #, kde-format
 msgid "The network is broken."
 msgstr "Nätverket fungerar inte."
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1938 viewer/viewer_p.cpp:1941
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Kontrollera nätfiskewebbadress"
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1941
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Webbadressen %1 är inte giltig."
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1961
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Webbplatsen innehåller skadlig programvara, vill du fortsätta att visa den?"
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "Malware"
 msgstr "Skadlig programvara"
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopiera e-postadress"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2097
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Brevet som ren text"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2300
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Skriv ut dokument"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2716
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Webbadressen kopierad till klippbordet."
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2868
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Inläsning av brevet misslyckades: %1."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2873
 #, kde-format
 msgid "Message not found."
 msgstr "Brevet hittades inte."
@@ -2653,26 +2653,18 @@ msgstr "Nästa brev"
 msgid "Previous Message"
 msgstr "Föregående brev"
 
-#: widgets/vcardviewer.cpp:39
-#, kde-format
-msgctxt "@title:window"
-msgid "vCard Viewer"
-msgstr "vCard-visning"
+#~ msgctxt "@title:window"
+#~ msgid "vCard Viewer"
+#~ msgstr "vCard-visning"
 
-#: widgets/vcardviewer.cpp:50
-#, kde-format
-msgid "&Import"
-msgstr "&Importera"
+#~ msgid "&Import"
+#~ msgstr "&Importera"
 
-#: widgets/vcardviewer.cpp:51
-#, kde-format
-msgid "&Next Card"
-msgstr "&Nästa kort"
+#~ msgid "&Next Card"
+#~ msgstr "&Nästa kort"
 
-#: widgets/vcardviewer.cpp:52
-#, kde-format
-msgid "&Previous Card"
-msgstr "&Föregående kort"
+#~ msgid "&Previous Card"
+#~ msgstr "&Föregående kort"
 
 #~ msgid "Reply From:"
 #~ msgstr "Svar från:"
