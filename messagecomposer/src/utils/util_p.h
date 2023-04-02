@@ -16,7 +16,7 @@ namespace KMime
 class Content;
 }
 
-namespace MailTransport
+namespace Akonadi
 {
 class MessageQueueJob;
 }
@@ -52,6 +52,6 @@ void setNestedContentDisposition(KMime::Content *content, Kleo::CryptoMessageFor
  * resulting message will be a mime message or not.
  */
 bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
-void addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport::MessageQueueJob *qjob);
+void addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob);
 }
 }

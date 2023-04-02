@@ -40,6 +40,7 @@
 #include <QPrintPreviewDialog>
 #include <QVBoxLayout>
 
+#include <Akonadi/ErrorAttribute>
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/MessageFlags>
@@ -57,7 +58,6 @@
 #include <KSharedConfig>
 #include <KStandardGuiItem>
 #include <KToggleAction>
-#include <MailTransportAkonadi/ErrorAttribute>
 #include <MessageCore/Util>
 #include <QIcon>
 #include <QMenu>
@@ -158,7 +158,6 @@
 #include <chrono>
 
 using namespace std::chrono_literals;
-using namespace MailTransport;
 using namespace MessageViewer;
 using namespace MessageCore;
 
@@ -237,7 +236,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     mMonitor.setSession(mSession);
     Akonadi::ItemFetchScope fs;
     fs.fetchFullPayload();
-    fs.fetchAttribute<MailTransport::ErrorAttribute>();
+    fs.fetchAttribute<Akonadi::ErrorAttribute>();
     fs.fetchAttribute<MessageViewer::MessageDisplayFormatAttribute>();
     fs.fetchAttribute<MessageViewer::ScamAttribute>();
     fs.fetchAttribute<MessageViewer::DKIMResultAttribute>();
@@ -804,9 +803,9 @@ void ViewerPrivate::displayMessage()
     // It is updated right after parseMsg() instead.
     mColorBar->setMode(MimeTreeParser::Util::Normal, HtmlStatusBar::NoUpdate);
 
-    if (mMessageItem.hasAttribute<ErrorAttribute>()) {
+    if (mMessageItem.hasAttribute<Akonadi::ErrorAttribute>()) {
         // TODO: Insert link to clear error so that message might be resent
-        const ErrorAttribute *const attr = mMessageItem.attribute<ErrorAttribute>();
+        const auto *const attr = mMessageItem.attribute<Akonadi::ErrorAttribute>();
         Q_ASSERT(attr);
         initializeColorFromScheme();
 

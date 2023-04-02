@@ -27,7 +27,7 @@
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebHitTestResult>
 
-#include <MailTransportAkonadi/ErrorAttribute>
+#include <Akonadi/ErrorAttribute>
 
 #include <KLocalizedString>
 
@@ -536,7 +536,7 @@ Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     job->fetchScope().fetchFullPayload(true);
     job->fetchScope().setFetchRelations(true); // needed to know if we have notes or not
-    job->fetchScope().fetchAttribute<MailTransport::ErrorAttribute>();
+    job->fetchScope().fetchAttribute<Akonadi::ErrorAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::MDNStateAttribute>();
     return job;
 }

@@ -16,17 +16,16 @@
 
 #include <Libkdepim/ProgressManager>
 
+#include <Akonadi/DispatcherInterface>
+#include <Akonadi/MessageQueueJob>
 #include <KEmailAddress>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
-#include <MailTransportAkonadi/DispatcherInterface>
-#include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
 using namespace KMime::Types;
 using namespace KPIM;
-using namespace MailTransport;
 using namespace MessageComposer;
 
 static QStringList addrSpecListToStringList(const AddrSpecList &l, bool allowEmpty = false)
@@ -99,7 +98,7 @@ bool AkonadiSender::doSendQueued(int customTransportId)
 
     d->mCustomTransportId = customTransportId;
 
-    auto dispatcher = new DispatcherInterface();
+    auto dispatcher = new Akonadi::DispatcherInterface();
     if (d->mCustomTransportId == -1) {
         dispatcher->dispatchManually();
     } else {
@@ -114,11 +113,11 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     Q_ASSERT(message);
     qCDebug(MESSAGECOMPOSER_LOG) << "KMime::Message: \n[\n" << message->encodedContent().left(1000) << "\n]\n";
 
-    auto qjob = new MessageQueueJob(this);
+    auto qjob = new Akonadi::MessageQueueJob(this);
     if (message->hasHeader("X-KMail-FccDisabled")) {
-        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::Delete);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::Delete);
     } else if (auto hrd = message->headerByType("X-KMail-Fcc")) {
-        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = hrd->asUnicodeString().toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity")) {
@@ -126,7 +125,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
         const QString identityStrId = hrd->asUnicodeString();
         const KIdentityManagement::Identity id = im->modifyIdentityForUoid(identityStrId.toUInt());
         const QString fccId = id.fcc();
-        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity-Name")) {
@@ -134,11 +133,11 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
         const QString identityStrName = hrd->asUnicodeString();
         const KIdentityManagement::Identity id = im->modifyIdentityForName(identityStrName);
         const QString fccId = id.fcc();
-        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else {
-        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::MoveToDefaultSentCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToDefaultSentCollection);
     }
     qjob->setMessage(message);
 
@@ -151,7 +150,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
             transportId = hrd->asUnicodeString().toInt();
         }
     }
-    const Transport *transport = TransportManager::self()->transportById(transportId);
+    const auto *transport = MailTransport::TransportManager::self()->transportById(transportId);
     if (!transport) {
         qCDebug(MESSAGECOMPOSER_LOG) << " No transport defined. Need to create it";
         qjob->deleteLater();
@@ -168,7 +167,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
 
     // if we want to manually queue it for sending later, then do it
     if (method == MessageComposer::MessageSender::SendLater) {
-        qjob->dispatchModeAttribute().setDispatchMode(MailTransport::DispatchModeAttribute::Manual);
+        qjob->dispatchModeAttribute().setDispatchMode(Akonadi::DispatchModeAttribute::Manual);
     }
 
     // Get addresses.
@@ -201,7 +200,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     message->assemble();
 
     // Queue the message.
-    connect(qjob, &MessageQueueJob::result, this, &AkonadiSender::queueJobResult);
+    connect(qjob, &Akonadi::MessageQueueJob::result, this, &AkonadiSender::queueJobResult);
     d->mPendingJobs.insert(qjob);
     qjob->start();
     qCDebug(MESSAGECOMPOSER_LOG) << "QueueJob started.";

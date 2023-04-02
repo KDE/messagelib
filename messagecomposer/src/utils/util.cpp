@@ -27,9 +27,9 @@
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentInstanceCreateJob>
 #include <Akonadi/AgentManager>
+#include <Akonadi/MessageQueueJob>
 #include <KMime/Content>
 #include <KMime/Headers>
-#include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
@@ -269,16 +269,16 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
     return res.trimmed();
 }
 
-void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport::MessageQueueJob *qjob)
+void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob)
 {
     QVector<Akonadi::Item::Id> originalMessageId;
     QVector<Akonadi::MessageStatus> linkStatus;
     if (MessageComposer::Util::getLinkInformation(message, originalMessageId, linkStatus)) {
         for (Akonadi::Item::Id id : std::as_const(originalMessageId)) {
             if (linkStatus.first() == Akonadi::MessageStatus::statusReplied()) {
-                qjob->sentActionAttribute().addAction(MailTransport::SentActionAttribute::Action::MarkAsReplied, QVariant(id));
+                qjob->sentActionAttribute().addAction(Akonadi::SentActionAttribute::Action::MarkAsReplied, QVariant(id));
             } else if (linkStatus.first() == Akonadi::MessageStatus::statusForwarded()) {
-                qjob->sentActionAttribute().addAction(MailTransport::SentActionAttribute::Action::MarkAsForwarded, QVariant(id));
+                qjob->sentActionAttribute().addAction(Akonadi::SentActionAttribute::Action::MarkAsForwarded, QVariant(id));
             }
         }
     }

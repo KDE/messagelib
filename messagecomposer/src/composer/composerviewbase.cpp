@@ -44,9 +44,9 @@
 #include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
+#include <Akonadi/MessageQueueJob>
 #include <MailTransport/TransportComboBox>
 #include <MailTransport/TransportManager>
-#include <MailTransportAkonadi/MessageQueueJob>
 
 #include <Akonadi/CollectionComboBox>
 #include <Akonadi/CollectionFetchJob>
@@ -1093,22 +1093,22 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer)
 {
     const MessageComposer::InfoPart *infoPart = composer->infoPart();
-    auto qjob = new MailTransport::MessageQueueJob(this);
+    auto qjob = new Akonadi::MessageQueueJob(this);
     qjob->setMessage(message);
     qjob->transportAttribute().setTransportId(infoPart->transportId());
     if (mSendMethod == MessageComposer::MessageSender::SendLater) {
-        qjob->dispatchModeAttribute().setDispatchMode(MailTransport::DispatchModeAttribute::Manual);
+        qjob->dispatchModeAttribute().setDispatchMode(Akonadi::DispatchModeAttribute::Manual);
     }
 
     if (message->hasHeader("X-KMail-FccDisabled")) {
-        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::Delete);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::Delete);
     } else if (!infoPart->fcc().isEmpty()) {
-        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
 
         const Akonadi::Collection sentCollection(infoPart->fcc().toLongLong());
         qjob->sentBehaviourAttribute().setMoveToCollection(sentCollection);
     } else {
-        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::MoveToDefaultSentCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToDefaultSentCollection);
     }
 
     MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(infoPart->transportId());
@@ -1138,7 +1138,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
 
     MessageComposer::Util::addCustomHeaders(message, m_customHeader);
     message->assemble();
-    connect(qjob, &MailTransport::MessageQueueJob::result, this, &ComposerViewBase::slotQueueResult);
+    connect(qjob, &Akonadi::MessageQueueJob::result, this, &ComposerViewBase::slotQueueResult);
     m_pendingQueueJobs++;
     qjob->start();
 
@@ -1148,7 +1148,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
 void ComposerViewBase::slotQueueResult(KJob *job)
 {
     m_pendingQueueJobs--;
-    auto qjob = static_cast<MailTransport::MessageQueueJob *>(job);
+    auto qjob = static_cast<Akonadi::MessageQueueJob *>(job);
     qCDebug(MESSAGECOMPOSER_LOG) << "mPendingQueueJobs" << m_pendingQueueJobs;
     Q_ASSERT(m_pendingQueueJobs >= 0);
 

@@ -420,7 +420,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     Qt::Network
     KPim${KF_MAJOR_VERSION}::WebEngineViewer
     KPim${KF_MAJOR_VERSION}::GrantleeTheme
-    KPim${KF_MAJOR_VERSION}::MailTransportAkonadi
     KPim${KF_MAJOR_VERSION}::Mime
     KPim${KF_MAJOR_VERSION}::Mbox
     KPim${KF_MAJOR_VERSION}::PimTextEdit
