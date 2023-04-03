@@ -430,6 +430,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::Codecs
+    KPim${KF_MAJOR_VERSION}::ContactEditor
     KPim${KF_MAJOR_VERSION}::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport
