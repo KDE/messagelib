@@ -84,7 +84,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mSearch, &QLineEdit::textChanged, this, &FindBarBase::autoSearch);
     connect(mSearch, &QLineEdit::returnPressed, this, &FindBarBase::findNext);
 
-    mStatus = new QLabel;
+    mStatus = new QLabel(this);
     mStatus->setObjectName(QStringLiteral("status"));
     mStatus->setTextFormat(Qt::PlainText);
     QFontMetrics fm(mStatus->font());

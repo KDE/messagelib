@@ -87,11 +87,11 @@ ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
 {
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
-    mFormat = new QLineEdit;
+    mFormat = new QLineEdit(this);
     connect(mFormat, &QLineEdit::textChanged, this, &ImageScalingSelectFormat::textChanged);
     mFormat->setReadOnly(true);
     lay->addWidget(mFormat);
-    mSelectFormat = new QPushButton(i18n("Select Format..."));
+    mSelectFormat = new QPushButton(i18n("Select Format..."), this);
     connect(mSelectFormat, &QPushButton::clicked, this, &ImageScalingSelectFormat::slotSelectFormat);
     lay->addWidget(mSelectFormat);
 }

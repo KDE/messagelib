@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:48+0000\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
 "PO-Revision-Date: 2022-09-23 10:12+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "Rozróżniaj wielkość liter"
 msgid "Phrase not found"
 msgstr "Nie znaleziono wyrażenia"
 
-#: webenginepage.cpp:77
+#: webenginepage.cpp:77 webenginepage.cpp:79
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Zapisz stronę HTML"

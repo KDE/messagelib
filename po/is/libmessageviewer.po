@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1724,7 +1724,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Nota &jafnbreitt letur"
@@ -2106,7 +2106,7 @@ msgstr "Stærð"
 msgid "Turn on HTML rendering for this message."
 msgstr "Túlka HTML upplýsingar í bréfi."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Hlaða inn utanaðkomandi tilvísunum frá Internetinu fyrir þetta bréf."
@@ -2196,7 +2196,7 @@ msgstr "Opna í vistfangaskrá"
 msgid "&Copy Email Address"
 msgstr "Netfang"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Netfang afritað á klemmuspjaldið."
@@ -2258,376 +2258,376 @@ msgstr "Keyra"
 msgid "Loading message..."
 msgstr "Færi bréf"
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:356
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:357 viewer/viewer_p.cpp:364 viewer/viewer_p.cpp:586
+#: viewer/viewer_p.cpp:1719
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
 msgstr "Fja&rlægja viðhengi"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:363
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:445
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Opna með..."
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:463
 #, fuzzy, kde-format
 #| msgid "Other Actio&ns"
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Aðrar að&gerðir"
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:465 viewer/viewer_p.cpp:478
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Opna með..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:542 viewer/viewer_p.cpp:1697
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Opna"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:556 viewer/viewer_p.cpp:1704
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Skoða"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:564
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:569
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "Vista &sem..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:575 viewer/viewer_p.cpp:1714
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Afrit til"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:597
 #, fuzzy, kde-format
 #| msgid "Reply to A&uthor..."
 msgid "Reply To Author"
 msgstr "S&vara sendanda..."
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:605
 #, fuzzy, kde-format
 msgid "Reply To All"
 msgstr "&Svara"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:611 viewer/viewer_p.cpp:1724
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&Eiginleikar"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:748
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:749
 #, fuzzy, kde-format
 #| msgid "KDE Email Client"
 msgid "The KDE Mail Client"
 msgstr "KDE póstforrit"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1276
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Skoða viðhengi: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Viðhengi"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Veldu sýnisnið viðhengja"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1469
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Sem táknmyndir"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1472
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Snjöll"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Sýna viðhengi samkv. tillögu sendanda."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Innfelld"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Sýna öll viðengi innfeld (ef hægt)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Falin"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ekki sýna viðhengi í bréfaskoðaranum"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1500
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Velja stafa&töflu"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1510 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Sjálfvirkt"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1520
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Afrit til"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1527
 #, kde-format
 msgid "Select All Text"
 msgstr "Velja allan texta"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1533 viewer/viewer_p.cpp:2018
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Afrita vistfang tengils"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1538
 #, kde-format
 msgid "Open URL"
 msgstr "Opna slóð"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1549
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "Spjald sem sýnir uppbyggingu bréfs"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "&View Source"
 msgstr "S&koða frumtexta"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1563
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "1 bréf, %2."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1573
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1580
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1590
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1595
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1612
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "Hlaða inn utanaðkomandi tilvísunum"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Ve&lja..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Veldu staðsetningu"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1636
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Leita í bréfi..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1645
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1694
 #, kde-format
 msgid "Save &As..."
 msgstr "Vista &sem..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1702
 #, kde-format
 msgid "Open With..."
 msgstr "Opna með..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1709
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Vista öll viðhengi..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1938
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1938 viewer/viewer_p.cpp:1941
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1941
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Undirritunarskráin er ekki gild"
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1961
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2016
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Netfang"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2097
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Bréf sem einfaldur texti"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2300
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Handbækur"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2716
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Slóð afrituð á klemmuspjaldið."
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2868
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Bréf var undirritað af %1."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2873
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
@@ -2821,29 +2821,24 @@ msgstr "&Næsta bréf"
 msgid "Previous Message"
 msgstr "Fy&rra ólesið bréf"
 
-#: widgets/vcardviewer.cpp:39
-#, fuzzy, kde-format
-#| msgid "VCard Viewer"
-msgctxt "@title:window"
-msgid "vCard Viewer"
-msgstr "vCard skoðari"
+#, fuzzy
+#~| msgid "VCard Viewer"
+#~ msgctxt "@title:window"
+#~ msgid "vCard Viewer"
+#~ msgstr "vCard skoðari"
 
-#: widgets/vcardviewer.cpp:50
-#, kde-format
-msgid "&Import"
-msgstr "&Flytja inn"
+#~ msgid "&Import"
+#~ msgstr "&Flytja inn"
 
-#: widgets/vcardviewer.cpp:51
-#, fuzzy, kde-format
-#| msgid "&Next Card"
-msgid "&Next Card"
-msgstr "&Næsta kort"
+#, fuzzy
+#~| msgid "&Next Card"
+#~ msgid "&Next Card"
+#~ msgstr "&Næsta kort"
 
-#: widgets/vcardviewer.cpp:52
-#, fuzzy, kde-format
-#| msgid "&Previous Card"
-msgid "&Previous Card"
-msgstr "&Fyrra kort"
+#, fuzzy
+#~| msgid "&Previous Card"
+#~ msgid "&Previous Card"
+#~ msgstr "&Fyrra kort"
 
 #, fuzzy
 #~| msgid "Reply to: "

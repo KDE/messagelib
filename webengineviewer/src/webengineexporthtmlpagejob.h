@@ -31,10 +31,8 @@ Q_SIGNALS:
     void failed();
     void success(const QString &filename);
 
-private Q_SLOTS:
-    void slotSaveHtmlToPage(const QString &text);
-
 private:
+    WEBENGINEVIEWER_NO_EXPORT void slotSaveHtmlToPage(const QString &text);
     QWebEngineView *mEngineView = nullptr;
 };
 }

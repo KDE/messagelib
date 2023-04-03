@@ -576,7 +576,7 @@ static QString searchFullEmailByUid(const QString &uid)
 
 static void runKAddressBook(const QUrl &url)
 {
-    auto job = new Akonadi::OpenEmailAddressJob(url.path(), nullptr);
+    auto job = new ContactEditor::OpenEmailAddressJob(url.path(), nullptr);
     job->start();
 }
 

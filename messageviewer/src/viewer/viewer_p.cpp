@@ -105,7 +105,6 @@
 #include "widgets/attachmentdialog.h"
 #include "widgets/htmlstatusbar.h"
 #include "widgets/shownextmessagewidget.h"
-#include "widgets/vcardviewer.h"
 
 #include "header/headerstylemenumanager.h"
 #include "htmlwriter/webengineparthtmlwriter.h"
@@ -302,10 +301,6 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     // prefer the value of the Content-Type header
     QMimeDatabase mimeDb;
     auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(node->contentType()->mimeType().toLower()));
-    if (mimetype.isValid() && mimetype.inherits(KContacts::Addressee::mimeType())) {
-        showVCard(node);
-        return;
-    }
 
     // special case treatment on mac and windows
     QUrl atmUrl = url;
@@ -917,15 +912,6 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
     }
 
     return style->format(aMsg);
-}
-
-void ViewerPrivate::showVCard(KMime::Content *msgPart)
-{
-    const QByteArray vCard = msgPart->decodedContent();
-
-    auto vcv = new VCardViewer(mMainWindow, vCard);
-    vcv->setAttribute(Qt::WA_DeleteOnClose);
-    vcv->show();
 }
 
 void ViewerPrivate::initHtmlWidget()
@@ -2231,13 +2217,15 @@ void ViewerPrivate::slotDelayPrintPreview()
 
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (!mViewer->execPrintPreviewPage(printing, 10000)) { // 10 seconds
             qCWarning(MESSAGEVIEWER_LOG) << " Impossible to generate preview";
         }
+#else
+        mViewer->printPreviewPage(printing);
+#endif
         QApplication::restoreOverrideCursor();
     });
-
     dialog->open(this, SIGNAL(printingFinished()));
 }
 
@@ -2321,6 +2309,8 @@ void ViewerPrivate::slotPrintMessage()
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
 #else
+        mViewer->print(mCurrentPrinter);
+        // TODO call slotHandlePagePrinted when printing is finished
 #pragma "QT6: need to reimplement it";
 #endif
     }

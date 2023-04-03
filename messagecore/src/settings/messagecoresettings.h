@@ -22,7 +22,7 @@ public:
     static MessageCoreSettings *self();
 
 private:
-    MessageCoreSettings();
+    MESSAGECORE_NO_EXPORT MessageCoreSettings();
     ~MessageCoreSettings() override;
     static MessageCoreSettings *mSelf;
 };
