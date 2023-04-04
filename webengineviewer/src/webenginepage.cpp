@@ -14,13 +14,9 @@
 #include <QPointer>
 #include <QPrinter>
 #include <QTimer>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QWebEngineDownloadItem>
-#else
 #include <QWebEngineDownloadRequest>
-#include <QWebEngineView>
-#endif
 #include <QWebEngineProfile>
+#include <QWebEngineView>
 
 using namespace WebEngineViewer;
 

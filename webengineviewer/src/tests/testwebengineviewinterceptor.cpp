@@ -114,9 +114,6 @@ int main(int argc, char *argv[])
     QWebEngineUrlScheme::registerScheme(scheme);
 
     QApplication app(argc, argv);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
     auto handler = new CidSchemeHandler(nullptr);
     QWebEngineProfile::defaultProfile()->installUrlSchemeHandler("cid", handler);
     auto testWebEngine = new TestWebEngineViewInterceptor;

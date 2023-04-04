@@ -74,16 +74,11 @@ QVector<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataLi
 
 void PluginEditorInitManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins =
-        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/kmail/plugineditorinit"));
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorinit"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QVectorIterator<KPluginMetaData> i(plugins);
-#else
     QListIterator<KPluginMetaData> i(plugins);
-#endif
     i.toBack();
     while (i.hasPrevious()) {
         PluginEditorInitInfo info;

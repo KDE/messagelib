@@ -8,12 +8,8 @@
 
 #include "messageviewer_export.h"
 #include <GrantleeTheme/GrantleeTheme>
-#include <QString>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/templateloader.h>
-#else
 #include <KTextTemplate/TemplateLoader>
-#endif
+#include <QString>
 namespace KMime
 {
 class Message;

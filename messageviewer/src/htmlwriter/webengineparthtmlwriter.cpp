@@ -63,12 +63,7 @@ void WebEnginePartHtmlWriter::end()
         mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".html"));
         mTempFile->open();
         QTextStream stream(mTempFile);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QByteArray codecValue = Util::htmlCodec(data(), codec());
-        stream.setCodec(codecValue.constData());
-#else
         stream.setEncoding(Util::htmlEncoding(data(), codec()));
-#endif
         stream << data();
         // Bug 387061
         mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));

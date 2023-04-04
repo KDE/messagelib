@@ -29,9 +29,6 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
     connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);
     initColors();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &DKIMWidgetInfo::updatePalette);
-#endif
 }
 
 DKIMWidgetInfo::~DKIMWidgetInfo() = default;
@@ -313,10 +310,8 @@ void DKIMWidgetInfo::updateToolTip()
 
 bool DKIMWidgetInfo::event(QEvent *e)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (e->type() == QEvent::ApplicationPaletteChange) {
         updatePalette();
     }
-#endif
     return QWidget::event(e);
 }

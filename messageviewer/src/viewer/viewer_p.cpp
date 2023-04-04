@@ -60,12 +60,10 @@
 #include <KToggleAction>
 #include <MessageCore/Util>
 #include <QIcon>
+#include <QKeyCombination>
 #include <QMenu>
 #include <QMimeData>
 #include <QTemporaryDir>
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QKeyCombination>
-#endif
 
 // Qt includes
 #include <QActionGroup>
@@ -1416,7 +1414,7 @@ void ViewerPrivate::createWidgets()
     mViewerPluginToolManager = new MessageViewer::ViewerPluginToolManager(readerBox, this);
     mViewerPluginToolManager->setActionCollection(mActionCollection);
     mViewerPluginToolManager->setPluginName(QStringLiteral("messageviewer"));
-    mViewerPluginToolManager->setPluginDirectory(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/viewerplugin"));
+    mViewerPluginToolManager->setPluginDirectory(QStringLiteral("pim6/messageviewer/viewerplugin"));
     if (!mViewerPluginToolManager->initializePluginList()) {
         qCWarning(MESSAGEVIEWER_LOG) << " Impossible to initialize plugins";
     }

@@ -275,11 +275,7 @@ static QByteArray md5Encode(const QString &str)
     }
 
     QCryptographicHash c(QCryptographicHash::Md5);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    c.addData(reinterpret_cast<const char *>(trimmed.unicode()), sizeof(QChar) * trimmed.length());
-#else
     c.addData(QByteArrayView(reinterpret_cast<const char *>(trimmed.unicode()), sizeof(QChar) * trimmed.length()));
-#endif
     return c.result();
 }
 

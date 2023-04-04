@@ -94,9 +94,6 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &FindBarBase::updatePalette);
-#endif
 }
 
 FindBarBase::~FindBarBase() = default;

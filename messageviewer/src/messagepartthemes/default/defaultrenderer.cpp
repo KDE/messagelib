@@ -34,20 +34,12 @@
 #include <KIconLoader>
 #include <KLocalizedString>
 
-#include <QUrl>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/context.h>
-#include <grantlee/engine.h>
-#include <grantlee/metatype.h>
-#include <grantlee/template.h>
-#include <grantlee/templateloader.h>
-#else
 #include <KTextTemplate/Context>
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
 #include <KTextTemplate/Template>
 #include <KTextTemplate/TemplateLoader>
-#endif
+#include <QUrl>
 
 using namespace MimeTreeParser;
 using namespace MessageViewer;

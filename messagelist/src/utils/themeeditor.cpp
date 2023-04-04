@@ -479,11 +479,7 @@ void ThemePreviewWidget::internalHandleDragMoveEvent(QDragMoveEvent *e)
     }
 
     Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (!computeContentItemInsertPosition(e->pos(), type)) {
-#else
     if (!computeContentItemInsertPosition(e->position().toPoint(), type)) {
-#endif
         return;
     }
 
@@ -528,11 +524,7 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
     }
 
     Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (!computeContentItemInsertPosition(e->pos(), type)) {
-#else
     if (!computeContentItemInsertPosition(e->position().toPoint(), type)) {
-#endif
         viewport()->update();
         return;
     }
