@@ -72,14 +72,9 @@ QString MessageViewerConfigureSettingsPluginManagerPrivate::configPrefixSettingK
 
 void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins =
-        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/configuresettings"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/configuresettings"));
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QListIterator<KPluginMetaData> i(plugins);
-#else
-    QListIterator<KPluginMetaData> i(plugins);
-#endif
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;

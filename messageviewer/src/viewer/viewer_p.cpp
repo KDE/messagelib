@@ -1546,12 +1546,8 @@ void ViewerPrivate::createActions()
     mToggleMimePartTreeAction = new KToggleAction(i18n("Show Message Structure"), this);
     ac->addAction(QStringLiteral("toggle_mimeparttree"), mToggleMimePartTreeAction);
     connect(mToggleMimePartTreeAction, &QAction::toggled, this, &ViewerPrivate::slotToggleMimePartTree);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_D | Qt::CTRL | Qt::ALT));
-#else
     QKeyCombination combinationKeys(Qt::CTRL | Qt::ALT, Qt::Key_D);
     ac->setDefaultShortcut(mToggleMimePartTreeAction, combinationKeys);
-#endif
     mViewSourceAction = new QAction(i18n("&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
     connect(mViewSourceAction, &QAction::triggered, this, &ViewerPrivate::slotShowMessageSource);
@@ -2215,13 +2211,7 @@ void ViewerPrivate::slotDelayPrintPreview()
 
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        if (!mViewer->execPrintPreviewPage(printing, 10000)) { // 10 seconds
-            qCWarning(MESSAGEVIEWER_LOG) << " Impossible to generate preview";
-        }
-#else
         mViewer->printPreviewPage(printing);
-#endif
         QApplication::restoreOverrideCursor();
     });
     dialog->open(this, SIGNAL(printingFinished()));
@@ -2304,13 +2294,9 @@ void ViewerPrivate::slotPrintMessage()
         connect(mViewer->page(), &QWebEnginePage::pdfPrintingFinished, this, &ViewerPrivate::slotPdfPrintingFinished);
         mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
     } else {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
-#else
         mViewer->print(mCurrentPrinter);
         // TODO call slotHandlePagePrinted when printing is finished
 #pragma "QT6: need to reimplement it";
-#endif
     }
     delete dialog;
 }

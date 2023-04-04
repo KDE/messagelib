@@ -56,11 +56,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         }
     }
     msgPart->setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
     return true;
 }

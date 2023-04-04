@@ -84,14 +84,10 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(pluginDirectory);
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
-    plugins += KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/viewercommonplugin"));
+    plugins += KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/viewercommonplugin"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QListIterator<KPluginMetaData> i(plugins);
-#else
-    QListIterator<KPluginMetaData> i(plugins);
-#endif
     i.toBack();
     while (i.hasPrevious()) {
         ViewerPluginInfo info;

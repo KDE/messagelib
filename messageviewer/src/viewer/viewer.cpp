@@ -92,10 +92,6 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::showPreviousMessage, this, &Viewer::showPreviousMessage);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &Viewer::slotGeneralPaletteChanged);
-#endif
 }
 
 void Viewer::slotGeneralPaletteChanged()
@@ -352,12 +348,9 @@ bool Viewer::event(QEvent *e)
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;
-    }
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    else if (e->type() == QEvent::ApplicationPaletteChange) {
+    } else if (e->type() == QEvent::ApplicationPaletteChange) {
         slotGeneralPaletteChanged();
     }
-#endif
 
     return QWidget::event(e);
 }

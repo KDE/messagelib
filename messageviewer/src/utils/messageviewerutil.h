@@ -40,10 +40,8 @@
 #include <Akonadi/Item>
 #include <KMime/Content>
 #include <KService>
-#include <QTextCodec>
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringConverter>
-#endif
+#include <QTextCodec>
 class QUrl;
 class QWidget;
 class QActionGroup;
@@ -76,9 +74,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::
 /** Return a QTextCodec for the specified charset.
  * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 MESSAGEVIEWER_EXPORT QStringConverter::Encoding htmlEncoding(const QByteArray &data, const QByteArray &codec);
-#endif
 struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;

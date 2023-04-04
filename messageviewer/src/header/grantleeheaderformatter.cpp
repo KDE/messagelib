@@ -19,13 +19,8 @@
 #include <KColorScheme>
 #include <KIconLoader>
 #include <KLocalizedString>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/engine.h>
-#include <grantlee/metatype.h>
-#else
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
-#endif
 
 using namespace MessageCore;
 
@@ -38,11 +33,7 @@ Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
 Q_DECLARE_METATYPE(QDateTime)
 
 // Read-only introspection of KMime::Headers::Generics::AddressList object.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-namespace Grantlee
-#else
 namespace KTextTemplate
-#endif
 {
 template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object,
@@ -69,11 +60,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
     return {};
 }
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-#else
 KTEXTTEMPLATE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-#endif
 if (property == QLatin1String("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
 } else if (property == QLatin1String("isSet")) {
@@ -92,18 +79,10 @@ if (property == QLatin1String("nameOnly")) {
                                                                    QStringLiteral("Full") + name + QStringLiteral("AddressList"));
     return val;
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_END_LOOKUP
-#else
 KTEXTTEMPLATE_END_LOOKUP
-#endif
 
 // Read-only introspection of KMime::Headers::Generics::MailboxList object.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-namespace Grantlee
-#else
 namespace KTextTemplate
-#endif
 {
 template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object,
@@ -130,11 +109,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
     return {};
 }
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
-#else
 KTEXTTEMPLATE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
-#endif
 if (property == QLatin1String("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
 } else if (property == QLatin1String("isSet")) {
@@ -153,16 +128,8 @@ if (property == QLatin1String("nameOnly")) {
                                                                    QStringLiteral("Full") + name + QStringLiteral("AddressList"));
     return val;
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_END_LOOKUP
-#else
 KTEXTTEMPLATE_END_LOOKUP
-#endif
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-namespace Grantlee
-#else
 namespace KTextTemplate
-#endif
 {
 template<>
 inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
@@ -306,31 +273,15 @@ class MessageViewer::GrantleeHeaderFormatter::GrantleeHeaderFormatterPrivate
 {
 public:
     GrantleeHeaderFormatterPrivate()
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        : engine(new Grantlee::Engine)
-#else
         : engine(new KTextTemplate::Engine)
-#endif
     {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
-        Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
-        Grantlee::registerMetaType<QDateTime>();
-#else
         KTextTemplate::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         KTextTemplate::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
         KTextTemplate::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
         KTextTemplate::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
         KTextTemplate::registerMetaType<QDateTime>();
-#endif
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
-#else
         templateLoader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>(new KTextTemplate::FileSystemTemplateLoader);
-#endif
         engine->addTemplateLoader(templateLoader);
 
         QList<QByteArray> addressHeaders;
@@ -360,13 +311,8 @@ public:
     {
         headerFormatter[header] = formatter;
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
-    Grantlee::Engine *const engine;
-#else
     QSharedPointer<KTextTemplate::FileSystemTemplateLoader> templateLoader;
     KTextTemplate::Engine *const engine;
-#endif
     QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     QColor activeColor;
@@ -389,11 +335,7 @@ QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeH
         return errorMessage;
     }
     d->templateLoader->setTemplateDirs(QStringList() << settings.theme.absolutePath());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
-#else
     KTextTemplate::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
-#endif
     if (headerTemplate->error()) {
         errorMessage = headerTemplate->errorString();
         return errorMessage;
@@ -415,26 +357,13 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
                                         bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template headerTemplate = d->engine->loadByName(filename);
-#else
     KTextTemplate::Template headerTemplate = d->engine->loadByName(filename);
-#endif
     if (headerTemplate->error()) {
         return headerTemplate->errorString();
     }
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-QString GrantleeHeaderFormatter::format(const QString &absolutePath,
-                                        const Grantlee::Template &headerTemplate,
-                                        const QStringList &displayExtraHeaders,
-                                        bool isPrinting,
-                                        const MessageViewer::HeaderStyle *style,
-                                        KMime::Message *message,
-                                        bool showEmoticons) const
-#else
 QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                                         const KTextTemplate::Template &headerTemplate,
                                         const QStringList &displayExtraHeaders,
@@ -442,7 +371,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                                         const MessageViewer::HeaderStyle *style,
                                         KMime::Message *message,
                                         bool showEmoticons) const
-#endif
 {
     QVariantHash headerObject;
     const auto nodeHelper = style->nodeHelper();
@@ -591,11 +519,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
 
     QVariantHash mapping;
     mapping.insert(QStringLiteral("header"), headerObject);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Context context(mapping);
-#else
     KTextTemplate::Context context(mapping);
-#endif
 
     return headerTemplate->render(&context);
 }

@@ -285,50 +285,29 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     if (!mp->hasSubParts()) {
         return;
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral("encapsulatedrfc822messagepart.html"));
-    Grantlee::Context c = MessagePartRendererManager::self()->createContext();
-#else
     KTextTemplate::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral("encapsulatedrfc822messagepart.html"));
     KTextTemplate::Context c = MessagePartRendererManager::self()->createContext();
-
-#endif
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
     block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mCreateMessageHeader(mp->message().data()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-                 renderSubParts(mp, htmlWriter);
-             }));
-#else
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                  renderSubParts(mp, htmlWriter);
              }));
-#endif
     HTMLBlock::Ptr aBlock;
     if (mp->isAttachment()) {
         aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
 }
 
 void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("htmlmessagepart.html"));
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#else
     KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("htmlmessagepart.html"));
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#endif
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
@@ -366,11 +345,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     if (mp->isAttachment()) {
         aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
 }
 
@@ -378,29 +353,9 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
 {
     KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("encryptedmessagepart.html"));
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#else
     KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("encryptedmessagepart.html"));
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#endif
     QObject block;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (node || mp->hasSubParts()) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-                     HTMLBlock::Ptr rBlock;
-                     if (mp->content() && mp->isRoot()) {
-                         rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
-                     }
-                     renderSubParts(mp, htmlWriter);
-                 }));
-    } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-                     renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
-                 }));
-    }
-#else
     if (node || mp->hasSubParts()) {
         c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
@@ -414,8 +369,6 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }
-
-#endif
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->cryptoProto()));
     if (!mp->decryptRecipients().empty()) {
         c.insert(QStringLiteral("decryptedRecipients"), QVariant::fromValue(mp->decryptRecipients()));
@@ -432,11 +385,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     block.setProperty("noSecKey", mp->isNoSecKey());
     block.setProperty("isCompliant", metaData.isCompliant);
     block.setProperty("compliance", metaData.compliance);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
 }
 
@@ -447,30 +396,10 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     auto cryptoProto = mp->cryptoProto();
 
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("signedmessagepart.html"));
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#else
     KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("signedmessagepart.html"));
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#endif
     QObject block;
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (node) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-                     HTMLBlock::Ptr rBlock;
-                     if (mp->isRoot()) {
-                         rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
-                     }
-                     renderSubParts(mp, htmlWriter);
-                 }));
-    } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-                     renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
-                 }));
-    }
-#else
     if (node) {
         c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
@@ -484,7 +413,6 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }
-#endif
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));
     c.insert(QStringLiteral("block"), &block);
 
@@ -664,11 +592,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("statusStr", statusStr);
     block.setProperty("signClass", mClass);
     block.setProperty("greenCaseWarning", greenCaseWarning);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
 }
 
@@ -748,13 +672,8 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     const GpgME::ImportResult &importResult(mp->importResult());
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("certmessagepart.html"));
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#else
     KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("certmessagepart.html"));
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-#endif
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
@@ -780,11 +699,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
     if (mp->isAttachment()) {
         aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::OutputStream s(htmlWriter->stream());
-#else
     KTextTemplate::OutputStream s(htmlWriter->stream());
-#endif
     t->render(&s, &c);
 }
 

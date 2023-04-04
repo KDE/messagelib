@@ -17,17 +17,10 @@
 
 #include <QGpgME/Protocol>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/context.h>
-#include <grantlee/engine.h>
-#include <grantlee/metatype.h>
-#include <grantlee/templateloader.h>
-#else
 #include <KTextTemplate/Context>
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
 #include <KTextTemplate/TemplateLoader>
-#endif
 
 #include <QGuiApplication>
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
@@ -35,25 +28,13 @@ Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 Q_DECLARE_METATYPE(GpgME::Key)
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-#else
 KTEXTTEMPLATE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-#endif
 if (property == QLatin1String("keyID")) {
     return QString::fromLatin1(object.keyID());
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_END_LOOKUP
-#else
 KTEXTTEMPLATE_END_LOOKUP
-#endif
 // Read-only introspection of QGpgME::Protocol object.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-namespace Grantlee
-#else
 namespace KTextTemplate
-#endif
 {
 template<>
 inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
@@ -68,11 +49,7 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 }
 
 // Read-only introspection of std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> object.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-namespace Grantlee
-#else
 namespace KTextTemplate
-#endif
 {
 template<>
 inline QVariant
@@ -139,59 +116,33 @@ MessagePartRendererManager *MessagePartRendererManager::self()
 
 void MessagePartRendererManager::initializeRenderer()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
-    Grantlee::registerMetaType<const QGpgME::Protocol *>();
-    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
-#else
     KTextTemplate::registerMetaType<GpgME::DecryptionResult::Recipient>();
     KTextTemplate::registerMetaType<const QGpgME::Protocol *>();
     KTextTemplate::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
-#endif
     m_engine = new GrantleeTheme::Engine;
     const auto libraryPaths = QCoreApplication::libraryPaths();
-    const QString subPath = QStringLiteral("/pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer");
+    const QString subPath = QStringLiteral("/pim6/messageviewer");
     for (const auto &p : libraryPaths) {
         m_engine->addPluginPath(p + subPath);
     }
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
-#else
     auto loader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>(new KTextTemplate::FileSystemTemplateLoader());
-#endif
     loader->setTemplateDirs({QStringLiteral(":/")});
     m_engine->addTemplateLoader(loader);
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
-#else
 KTextTemplate::Template MessagePartRendererManager::loadByName(const QString &name)
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Template t = m_engine->loadByName(name);
-#else
     KTextTemplate::Template t = m_engine->loadByName(name);
-#endif
     if (t->error()) {
         qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations"
                                      << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     }
     return t;
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-Grantlee::Context MessagePartRendererManager::createContext()
-#else
 KTextTemplate::Context MessagePartRendererManager::createContext()
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Context c;
-#else
     KTextTemplate::Context c;
-#endif
 
     // careful, m_engine->localizer() is actually a factory function!
     auto localizer = m_engine->localizer();

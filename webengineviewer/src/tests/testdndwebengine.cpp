@@ -35,9 +35,6 @@ TestDndWebEngine::~TestDndWebEngine() = default;
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
     auto testWebEngine = new TestDndWebEngine;
     testWebEngine->show();
     const int ret = app.exec();

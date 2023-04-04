@@ -73,13 +73,8 @@ QString MessageViewerCheckBeforeDeletingPluginManagerPrivate::configPrefixSettin
 
 void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins =
-        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/checkbeforedeleting"));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/checkbeforedeleting"));
     QListIterator<KPluginMetaData> i(plugins);
-#else
-    QListIterator<KPluginMetaData> i(plugins);
-#endif
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;

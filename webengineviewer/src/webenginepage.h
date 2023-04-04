@@ -9,11 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QWebEnginePage>
 class QWebEngineProfile;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class QWebEngineDownloadItem;
-#else
 class QWebEngineDownloadRequest;
-#endif
 class QPrinter;
 namespace WebEngineViewer
 {
@@ -63,12 +59,7 @@ public:
 
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    void saveHtml(QWebEngineDownloadItem *download);
-    Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
-#else
     void saveHtml(QWebEngineDownloadRequest *download);
-#endif
 
     Q_REQUIRED_RESULT QPoint mapToViewport(const QPoint &pos) const;
 Q_SIGNALS:

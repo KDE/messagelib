@@ -264,10 +264,8 @@ bool FindBarBase::event(QEvent *e)
             return true;
         }
     }
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (e->type() == QEvent::ApplicationPaletteChange) {
         updatePalette();
     }
-#endif
     return QWidget::event(e);
 }

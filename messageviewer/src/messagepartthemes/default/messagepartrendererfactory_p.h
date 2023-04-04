@@ -32,6 +32,6 @@ public:
     void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
-    QString m_pluginSubdir = QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/bodypartformatter");
+    QString m_pluginSubdir = QStringLiteral("pim6/messageviewer/bodypartformatter");
 };
 }

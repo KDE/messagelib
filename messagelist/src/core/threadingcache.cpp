@@ -23,11 +23,7 @@ struct CacheHeader {
     Aggregation::Grouping grouping;
     Aggregation::Threading threading;
     Aggregation::ThreadLeader threadLeader;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    int cacheSize;
-#else
     qsizetype cacheSize;
-#endif
 };
 
 QDataStream &operator<<(QDataStream &stream, const CacheHeader &header)

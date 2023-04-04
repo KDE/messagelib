@@ -48,15 +48,6 @@ public:
                                      bool isPrinting) const;
 
 private:
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Q_REQUIRED_RESULT QString format(const QString &absolutePath,
-                                     const Grantlee::Template &headerTemplate,
-                                     const QStringList &displayExtraHeaders,
-                                     bool isPrinting,
-                                     const MessageViewer::HeaderStyle *style,
-                                     KMime::Message *message,
-                                     bool showEmoticons = true) const;
-#else
     Q_REQUIRED_RESULT QString format(const QString &absolutePath,
                                      const KTextTemplate::Template &headerTemplate,
                                      const QStringList &displayExtraHeaders,
@@ -64,7 +55,6 @@ private:
                                      const MessageViewer::HeaderStyle *style,
                                      KMime::Message *message,
                                      bool showEmoticons = true) const;
-#endif
     class GrantleeHeaderFormatterPrivate;
     std::unique_ptr<GrantleeHeaderFormatterPrivate> const d;
 };

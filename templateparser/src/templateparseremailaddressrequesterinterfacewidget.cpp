@@ -24,8 +24,7 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
 
 void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
 {
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR))
-                                           + QStringLiteral("/templateparser/templateparseraddressrequesterplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/templateparser/templateparseraddressrequesterplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<TemplateParser::TemplateParserEmailAddressRequesterBase>(editWidgetPlugin, this);
     if (result) {

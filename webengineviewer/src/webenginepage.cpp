@@ -63,23 +63,11 @@ QPoint WebEnginePage::mapToViewport(const QPoint &pos) const
     return QPoint(pos.x() / zoomFactor(), pos.y() / zoomFactor());
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
-#else
 void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
-#else
     const QString fileName = QFileDialog::getSaveFileName(QWebEngineView::forPage(this), i18n("Save HTML Page"));
-#endif
     if (!fileName.isEmpty()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
-#else
         download->setSavePageFormat(QWebEngineDownloadRequest::SingleHtmlSaveFormat);
-#endif
         download->setDownloadDirectory(QFileInfo(fileName).path());
         download->setDownloadFileName(QFileInfo(fileName).fileName());
         download->accept();
@@ -106,23 +94,3 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
     qDebug() << "WebEnginePage::javaScriptConsoleMessage lineNumber: " << lineNumber << " message: " << message;
     Q_EMIT showConsoleMessage(message);
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
-{
-    bool result = false;
-    QPointer<QEventLoop> loop = new QEventLoop;
-    QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
-
-    print(printer, [loop, &result](bool res) {
-        if (loop && loop->isRunning()) {
-            result = res;
-            loop->quit();
-        }
-    });
-
-    loop->exec();
-    delete loop;
-    return result;
-}
-#endif
