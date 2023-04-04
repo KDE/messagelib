@@ -29,8 +29,8 @@ else()
     set(HAVE_SYS_INOTIFY_H 0)
 endif()
 
-find_package(Qca-qt${QT_MAJOR_VERSION} 2.2.0 CONFIG REQUIRED)
-set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+find_package(Qca-qt6 2.2.0 CONFIG REQUIRED)
+set_package_properties(Qca-qt6 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
                    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
                    PURPOSE "Needed for dkim support.")
 
@@ -434,7 +434,7 @@ target_link_libraries(KPim6MessageViewer
     ${TEMPLATES_LIB}
     Qt::PrintSupport
     ${Inotify_LIBRARIES}
-    qca-qt${QT_MAJOR_VERSION}
+    qca-qt6
     KF6::Notifications
     )
 
@@ -445,11 +445,7 @@ target_link_libraries(KPim6MessageViewer
     )
 endif()
 
-if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
-else()
-    target_link_libraries(KPim6MessageViewer PRIVATE QGpgme)
-endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KPim6MessageViewer PRIVATE Qt6::Core5Compat)
 endif()

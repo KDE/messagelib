@@ -1,10 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(qgpgme_lib QGpgmeQt6)
-else()
-    set(qgpgme_lib QGpgme)
-endif()
+set(qgpgme_lib QGpgmeQt6)
 add_definitions( -DMESSAGEVIEWER_UTIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 macro(add_messageviewer_utils_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)

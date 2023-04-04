@@ -97,11 +97,7 @@ target_link_libraries(KPim6MessageCore
     KPim6::MimeTreeParser
     KPim6::PimCommon
     )
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
-else()
-    target_link_libraries(KPim6MessageCore PRIVATE QGpgme)
-endif()
+target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 
 target_include_directories(KPim6MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>")
 

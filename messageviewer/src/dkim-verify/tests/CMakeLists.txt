@@ -11,7 +11,7 @@ set(dkimtest_checkrsapublickey_SRCS checkrsapublickey.cpp checkrsapublickey.h)
 add_executable(dkimtest_checkrsapublickey ${dkimtest_checkrsapublickey_SRCS})
 target_link_libraries(dkimtest_checkrsapublickey
         Qt::Network
-        qca-qt${QT_MAJOR_VERSION}
+        qca-qt6
 )
 
 set(dkimtest_checksignature_SRCS checksignature.cpp checksignature.h)
@@ -19,7 +19,7 @@ add_executable(dkimtest_checksignature ${dkimtest_checksignature_SRCS})
 target_link_libraries(dkimtest_checksignature
         Qt::Network
         KPim6::MessageViewer
-        qca-qt${QT_MAJOR_VERSION}
+        qca-qt6
 )
 
 set(dkimtest_dmarclookupkey_SRCS dmarclookupkey.cpp dmarclookupkey.h)
@@ -27,5 +27,5 @@ add_executable(dkimtest_dmarclookupkey ${dkimtest_dmarclookupkey_SRCS})
 target_link_libraries(dkimtest_dmarclookupkey
         Qt::Network
         KPim6::MessageViewer
-        qca-qt${QT_MAJOR_VERSION}
+        qca-qt6
 )

@@ -7,11 +7,7 @@ add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 set(test_libmessageviewer_SRCS)
 ecm_qt_declare_logging_category(test_libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(qgpgme_lib QGpgmeQt6)
-else()
-    set(qgpgme_lib QGpgme)
-endif()
+set(qgpgme_lib QGpgmeQt6)
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)

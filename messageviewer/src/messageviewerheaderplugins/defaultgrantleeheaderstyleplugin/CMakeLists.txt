@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 kcoreaddons_add_plugin(messageviewer_defaultgrantleeheaderstyleplugin
-    INSTALL_NAMESPACE pim${QT_MAJOR_VERSION}/messageviewer/headerstyle
+    INSTALL_NAMESPACE pim6/messageviewer/headerstyle
 )
 
 target_sources(messageviewer_defaultgrantleeheaderstyleplugin PRIVATE

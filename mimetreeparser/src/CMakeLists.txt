@@ -163,13 +163,8 @@ target_link_libraries(KPim6MimeTreeParser
     KPim6::Mime
     Qt::Gui
     )
-if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KPim6MimeTreeParser PRIVATE QGpgmeQt6)
     target_link_libraries(KPim6MimeTreeParser PRIVATE Qt6::Core5Compat)
-else()
-    target_link_libraries(KPim6MimeTreeParser PRIVATE Gpgmepp)
-    target_link_libraries(KPim6MimeTreeParser PRIVATE QGpgme)
-endif()
 
 install(TARGETS
     KPim6MimeTreeParser
