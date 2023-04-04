@@ -11,7 +11,7 @@
 #pragma once
 
 #include <QByteArray>
-#include <QVector>
+#include <QList>
 
 namespace MimeTreeParser
 {
@@ -45,7 +45,7 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-Q_REQUIRED_RESULT QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
+Q_REQUIRED_RESULT QList<Block> prepareMessageForDecryption(const QByteArray &msg);
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);

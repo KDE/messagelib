@@ -44,16 +44,16 @@ public:
     }
 
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
-    Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PluginEditorCheckBeforeSend *> pluginsList() const;
     void initializePlugins();
-    QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
+    QList<PluginEditorCheckBeforeSendInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorCheckBeforeSendManager *const q;
 };
 
@@ -67,14 +67,14 @@ QString PluginEditorCheckBeforeSendManagerPrivate::configPrefixSettingKey() cons
     return QStringLiteral("PluginCheckBefore");
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
 {
     return mPluginDataList;
 }
 
 void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugincheckbeforesend"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugincheckbeforesend"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -100,8 +100,8 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
             qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<PluginEditorCheckBeforeSendInfo>::iterator end(mPluginList.end());
-    for (QVector<PluginEditorCheckBeforeSendInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<PluginEditorCheckBeforeSendInfo>::iterator end(mPluginList.end());
+    for (QList<PluginEditorCheckBeforeSendInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
@@ -116,11 +116,11 @@ void PluginEditorCheckBeforeSendManagerPrivate::loadPlugin(PluginEditorCheckBefo
     }
 }
 
-QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate::pluginsList() const
+QList<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate::pluginsList() const
 {
-    QVector<PluginEditorCheckBeforeSend *> lst;
-    QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PluginEditorCheckBeforeSend *> lst;
+    QList<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -130,8 +130,8 @@ QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate
 
 PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -153,7 +153,7 @@ PluginEditorCheckBeforeSendManager *PluginEditorCheckBeforeSendManager::self()
     return &s_self;
 }
 
-QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManager::pluginsList() const
+QList<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -168,7 +168,7 @@ QString PluginEditorCheckBeforeSendManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
 {
     return d->pluginsDataList();
 }

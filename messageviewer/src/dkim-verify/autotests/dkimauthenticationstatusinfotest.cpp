@@ -103,7 +103,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("in68.mail.ovh.net"));
-        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
         property.method = QStringLiteral("dkim");
         property.result = QStringLiteral("pass");
@@ -184,7 +184,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("example.com"));
 
-        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
             property.method = QStringLiteral("dkim");
@@ -228,7 +228,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("example.com"));
 
-        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
             property.method = QStringLiteral("dkim");
@@ -269,7 +269,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("letterbox.kde.org"));
-        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
             property.method = QStringLiteral("dmarc");

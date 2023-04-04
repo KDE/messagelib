@@ -8,7 +8,7 @@
 #include "viewerplugin.h"
 #include "viewerpluginmanager.h"
 
-#include <QVector>
+#include <QList>
 
 using namespace MessageViewer;
 
@@ -66,7 +66,7 @@ void ViewerPluginToolManagerPrivate::refreshActionList()
 
 void ViewerPluginToolManagerPrivate::createView()
 {
-    const QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
+    const QList<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
     for (MessageViewer::ViewerPlugin *plugin : listPlugin) {
         if (plugin->isEnabled()) {
             MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);

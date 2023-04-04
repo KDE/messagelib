@@ -178,9 +178,9 @@ bool LocalDataBaseFile::checkFileChanged()
     return somethingChanged;
 }
 
-QVector<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
+QList<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
 {
-    QVector<WebEngineViewer::Addition> lst;
+    QList<WebEngineViewer::Addition> lst;
     quint64 numberOfElement = getUint64(4);
     lst.reserve(numberOfElement);
     int index = 12; // quint16 major + quint16 minor + quint64 number of element

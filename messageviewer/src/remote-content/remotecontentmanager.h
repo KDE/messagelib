@@ -29,9 +29,9 @@ public:
     Q_REQUIRED_RESULT bool isAutorized(const QUrl &url, bool &contains) const;
 
     void addRemoteContent(const RemoteContentInfo &info);
-    Q_REQUIRED_RESULT QVector<RemoteContentInfo> removeContentInfo() const;
+    Q_REQUIRED_RESULT QList<RemoteContentInfo> removeContentInfo() const;
 
-    void setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo);
+    void setRemoveContentInfo(const QList<RemoteContentInfo> &removeContentInfo);
 
     Q_REQUIRED_RESULT bool isUnique(const RemoteContentInfo &newInfo) const;
 
@@ -40,6 +40,6 @@ public:
 private:
     void loadSettings();
     void writeSettings();
-    QVector<RemoteContentInfo> mRemoveContentInfo;
+    QList<RemoteContentInfo> mRemoveContentInfo;
 };
 }

@@ -49,7 +49,7 @@ void EncryptJobTest::initTestCase()
 void EncryptJobTest::testContentDirect()
 {
     Composer composer;
-    const QVector<QByteArray> charsets = {"us-ascii"};
+    const QList<QByteArray> charsets = {"us-ascii"};
     composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
@@ -81,7 +81,7 @@ void EncryptJobTest::testContentDirect()
 void EncryptJobTest::testContentChained()
 {
     Composer composer;
-    const QVector<QByteArray> charsets = {"us-ascii"};
+    const QList<QByteArray> charsets = {"us-ascii"};
     composer.globalPart()->setCharsets(charsets);
 
     TextPart part;

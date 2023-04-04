@@ -26,7 +26,7 @@ public:
 
     void saveFilter(MessageList::Core::Filter *filter, const QString &filtername, const QString &iconName);
     void loadMenu(QMenu *menu);
-    Q_REQUIRED_RESULT QVector<FilterInfo> filterInfos() const;
+    Q_REQUIRED_RESULT QList<FilterInfo> filterInfos() const;
 
     static FilterSavedManager *self();
 

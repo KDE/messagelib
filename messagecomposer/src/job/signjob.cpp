@@ -13,7 +13,7 @@
 
 #include <QGpgME/Protocol>
 #include <QGpgME/SignJob>
-#include <QVector>
+#include <QList>
 
 #include "messagecomposer_debug.h"
 #include <KMime/Content>
@@ -208,9 +208,9 @@ void SignJob::process()
         if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
-            QVector<QByteArray> search;
+            QList<QByteArray> search;
             search.reserve(3);
-            QVector<QByteArray> replacements;
+            QList<QByteArray> replacements;
             replacements.reserve(3);
             search << "From "
                    << "from "

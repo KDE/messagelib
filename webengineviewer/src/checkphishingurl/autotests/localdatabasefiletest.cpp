@@ -72,7 +72,7 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     d.prefixSize = 5;
     d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
-    QVector<WebEngineViewer::Addition> lst;
+    QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
     info.minimumWaitDuration = QStringLiteral("593.440s");

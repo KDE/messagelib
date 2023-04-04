@@ -13,7 +13,7 @@
 
 #include "messageviewer_private_export.h"
 
-#include <QVector>
+#include <QList>
 
 class QUrl;
 class QString;
@@ -61,7 +61,7 @@ public:
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, ViewerPrivate *w = nullptr) const;
 
 private:
-    using HandlerList = QVector<const MimeTreeParser::URLHandler *>;
+    using HandlerList = QList<const MimeTreeParser::URLHandler *>;
     HandlerList mHandlers;
     BodyPartURLHandlerManager *mBodyPartURLHandlerManager = nullptr;
 };

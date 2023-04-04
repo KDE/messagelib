@@ -10,9 +10,9 @@
 
 class QDataStream;
 
+#include <QList>
 #include <QPair>
 #include <QString>
-#include <QVector>
 
 #include "core/optionset.h"
 
@@ -152,7 +152,7 @@ public:
      * pairs in that the first item is the localized description of the
      * option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateGroupingOptions();
+    static QList<QPair<QString, int>> enumerateGroupingOptions();
 
     /**
      * Returns the current GroupExpandPolicy.
@@ -177,7 +177,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateGroupExpandPolicyOptions(Grouping g);
+    static QList<QPair<QString, int>> enumerateGroupExpandPolicyOptions(Grouping g);
 
     /**
      * Returns the current threading method.
@@ -200,7 +200,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateThreadingOptions();
+    static QList<QPair<QString, int>> enumerateThreadingOptions();
 
     /**
      * Returns the current thread leader determination method.
@@ -227,7 +227,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateThreadLeaderOptions(Grouping g, Threading t);
+    static QList<QPair<QString, int>> enumerateThreadLeaderOptions(Grouping g, Threading t);
 
     /**
      * Returns the current thread expand policy.
@@ -253,7 +253,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateThreadExpandPolicyOptions(Threading t);
+    static QList<QPair<QString, int>> enumerateThreadExpandPolicyOptions(Threading t);
 
     /**
      * Returns the current fill view strategy.
@@ -276,7 +276,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateFillViewStrategyOptions();
+    static QList<QPair<QString, int>> enumerateFillViewStrategyOptions();
 
     /**
      * Pure virtual reimplemented from OptionSet.

@@ -79,7 +79,7 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.
@@ -175,7 +175,7 @@ protected:
     /**
      * This is called by View when a message is right clicked.
      */
-    virtual void viewMessageListContextPopupRequest(const QVector<MessageItem *> &selectedItems, const QPoint &globalPos);
+    virtual void viewMessageListContextPopupRequest(const QList<MessageItem *> &selectedItems, const QPoint &globalPos);
 
     /**
      * This is called by View when a group header is right clicked.

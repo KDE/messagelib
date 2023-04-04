@@ -12,8 +12,8 @@
 
 #include <KMime/Message>
 
+#include <QList>
 #include <QString>
-#include <QVector>
 
 namespace MessageViewer
 {
@@ -100,7 +100,7 @@ private:
     QString mHeader;
     QString mConfidenceHeader;
 };
-using SpamScores = QVector<SpamScore>;
+using SpamScores = QList<SpamScore>;
 
 /**
     @short Flyweight for analysing spam headers.

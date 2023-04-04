@@ -196,12 +196,12 @@ bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo
         && mListAuthStatusInfo == other.listAuthStatusInfo();
 }
 
-QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
+QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
 {
     return mListAuthStatusInfo;
 }
 
-void DKIMAuthenticationStatusInfo::setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo)
+void DKIMAuthenticationStatusInfo::setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo)
 {
     mListAuthStatusInfo = listAuthStatusInfo;
 }

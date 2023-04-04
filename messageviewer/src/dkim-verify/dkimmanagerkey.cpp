@@ -54,7 +54,7 @@ void DKIMManagerKey::updateLastUsed(const QString &selector, const QString &doma
 
 void DKIMManagerKey::addKey(const KeyInfo &key)
 {
-    const QVector<KeyInfo> keys = mKeys;
+    const QList<KeyInfo> keys = mKeys;
     for (const KeyInfo &keyInfo : keys) {
         if (keyInfo.selector == key.selector && keyInfo.domain == key.domain) {
             mKeys.removeAll(keyInfo);
@@ -73,7 +73,7 @@ void DKIMManagerKey::removeKey(const QString &key)
     }
 }
 
-QVector<KeyInfo> DKIMManagerKey::keys() const
+QList<KeyInfo> DKIMManagerKey::keys() const
 {
     return mKeys;
 }
@@ -125,7 +125,7 @@ void DKIMManagerKey::saveKeys()
     }
 }
 
-void DKIMManagerKey::saveKeys(const QVector<MessageViewer::KeyInfo> &lst)
+void DKIMManagerKey::saveKeys(const QList<MessageViewer::KeyInfo> &lst)
 {
     mKeys = lst;
     saveKeys();

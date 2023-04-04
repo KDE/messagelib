@@ -38,8 +38,8 @@ public:
 
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
-    Q_REQUIRED_RESULT QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::ViewerPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
 
     QString pluginDirectory;
     QString pluginName;
@@ -49,8 +49,8 @@ public:
     ViewerPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<ViewerPluginInfo> mPluginList;
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
+    QList<ViewerPluginInfo> mPluginList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
     ViewerPluginManager *const q;
 };
 
@@ -81,14 +81,14 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         return false;
     }
 
-    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(pluginDirectory);
+    QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(pluginDirectory);
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
     plugins += KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/viewercommonplugin"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QVectorIterator<KPluginMetaData> i(plugins);
+    QListIterator<KPluginMetaData> i(plugins);
 #else
     QListIterator<KPluginMetaData> i(plugins);
 #endif
@@ -115,8 +115,8 @@ bool ViewerPluginManagerPrivate::initializePluginList()
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name() << " doesn't have correct plugin version. Please update it";
         }
     }
-    QVector<ViewerPluginInfo>::iterator end(mPluginList.end());
-    for (QVector<ViewerPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<ViewerPluginInfo>::iterator end(mPluginList.end());
+    for (QList<ViewerPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
     return true;
@@ -132,11 +132,11 @@ void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
     }
 }
 
-QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
+QList<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
 {
-    QVector<MessageViewer::ViewerPlugin *> lst;
-    QVector<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<MessageViewer::ViewerPlugin *> lst;
+    QList<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -144,15 +144,15 @@ QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
     return lst;
 }
 
-QVector<PimCommon::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() const
+QList<PimCommon::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
 
 ViewerPlugin *ViewerPluginManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -179,7 +179,7 @@ ViewerPluginManager *ViewerPluginManager::self()
     return &s_self;
 }
 
-QVector<MessageViewer::ViewerPlugin *> ViewerPluginManager::pluginsList() const
+QList<MessageViewer::ViewerPlugin *> ViewerPluginManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -194,7 +194,7 @@ QString ViewerPluginManager::pluginDirectory() const
     return d->pluginDirectory;
 }
 
-QVector<PimCommon::PluginUtilData> ViewerPluginManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> ViewerPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

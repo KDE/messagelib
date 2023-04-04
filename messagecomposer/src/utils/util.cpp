@@ -228,7 +228,7 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
     }
 }
 
-QByteArray MessageComposer::Util::selectCharset(const QVector<QByteArray> &charsets, const QString &text)
+QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charsets, const QString &text)
 {
     for (const QByteArray &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
@@ -271,8 +271,8 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
 
 void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob)
 {
-    QVector<Akonadi::Item::Id> originalMessageId;
-    QVector<Akonadi::MessageStatus> linkStatus;
+    QList<Akonadi::Item::Id> originalMessageId;
+    QList<Akonadi::MessageStatus> linkStatus;
     if (MessageComposer::Util::getLinkInformation(message, originalMessageId, linkStatus)) {
         for (Akonadi::Item::Id id : std::as_const(originalMessageId)) {
             if (linkStatus.first() == Akonadi::MessageStatus::statusReplied()) {
@@ -381,7 +381,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
     msg->setHeader(header);
 }
 
-bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, QVector<Akonadi::Item::Id> &id, QVector<Akonadi::MessageStatus> &status)
+bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
 {
     auto hrdLinkMsg = msg->headerByType("X-KMail-Link-Message");
     auto hrdLinkType = msg->headerByType("X-KMail-Link-Type");

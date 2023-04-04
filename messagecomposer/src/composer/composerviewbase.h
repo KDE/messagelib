@@ -17,9 +17,9 @@
 #include <MessageComposer/NearExpiryChecker>
 
 #include <Libkleo/Enum>
+#include <QList>
 #include <QObject>
 #include <QUrl>
-#include <QVector>
 
 class QTimer;
 class KJob;
@@ -178,7 +178,7 @@ public:
      *  the default values will be used.
      */
     void setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMessageFormat format, bool neverEncryptDrafts = false);
-    void setCharsets(const QVector<QByteArray> &charsets);
+    void setCharsets(const QList<QByteArray> &charsets);
     void setMDNRequested(bool mdnRequested);
     void setUrgent(bool urgent);
 
@@ -299,7 +299,7 @@ private:
         UseUnExpandedRecipients,
     };
     void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
-    Q_REQUIRED_RESULT QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
+    Q_REQUIRED_RESULT QList<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
     void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);
@@ -337,7 +337,7 @@ private:
     void addSendLaterItem(const Akonadi::Item &item);
 
     bool addKeysToContext(const QString &gnupgHome,
-                          const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                          const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
                           const std::map<QByteArray, QString> &autocryptMap);
 
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
@@ -359,7 +359,7 @@ private:
     // List of active composer jobs. For example, saving as draft, autosaving and printing
     // all create a composer, which is added to this list as long as it is active.
     // Used mainly to prevent closing the window if a composer is active
-    QVector<MessageComposer::Composer *> m_composers;
+    QList<MessageComposer::Composer *> m_composers;
 
     bool m_sign = false;
     bool m_encrypt = false;
@@ -373,7 +373,7 @@ private:
     QString m_from;
     QString m_subject;
     QStringList mExpandedTo, mExpandedCc, mExpandedBcc, mExpandedReplyTo;
-    QVector<QByteArray> m_charsets;
+    QList<QByteArray> m_charsets;
     QMap<QByteArray, QString> m_customHeader;
 
     int m_pendingQueueJobs = 0;

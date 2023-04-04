@@ -333,7 +333,7 @@ public:
 #endif
         engine->addTemplateLoader(templateLoader);
 
-        QVector<QByteArray> addressHeaders;
+        QList<QByteArray> addressHeaders;
         addressHeaders << "to"
                        << "reply-To"
                        << "cc"
@@ -459,7 +459,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     // TODO: use correct subject from nodeHelper->mailHeader
     headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
 
-    QVector<QByteArray> defaultHeaders;
+    QList<QByteArray> defaultHeaders;
     defaultHeaders << "to"
                    << "reply-To"
                    << "cc"

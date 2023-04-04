@@ -66,7 +66,7 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
 
     const auto attr = collection.attribute<Akonadi::PersistentSearchAttribute>();
     Akonadi::Collection::List cols;
-    const QVector<qint64> queryCols = attr->queryCollections();
+    const QList<qint64> queryCols = attr->queryCollections();
     cols.reserve(queryCols.count());
     for (qint64 col : queryCols) {
         cols.push_back(Akonadi::Collection(col));

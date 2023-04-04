@@ -57,11 +57,11 @@ void FilterSavedManager::loadMenu(QMenu *menu)
     }
 }
 
-QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
+QList<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
 {
     KConfigGroup grp(KSharedConfig::openConfig(), "General");
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
-    QVector<FilterSavedManager::FilterInfo> lst;
+    QList<FilterSavedManager::FilterInfo> lst;
     lst.reserve(numberFilter);
     for (int i = 0; i < numberFilter; ++i) {
         KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
@@ -92,7 +92,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
 {
     KConfigGroup grp(KSharedConfig::openConfig(), "General");
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
-    QVector<Filter *> lst;
+    QList<Filter *> lst;
     lst.reserve(numberFilter);
     for (int i = 0; i < numberFilter; ++i) {
         Filter *f = Filter::load(KSharedConfig::openConfig(), i);

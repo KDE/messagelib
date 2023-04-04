@@ -18,7 +18,7 @@ void CryptoHelperTest::testPMFDEmpty()
 void CryptoHelperTest::testPMFDWithNoPGPBlock()
 {
     const QByteArray text = "testblabla";
-    const QVector<Block> blocks = prepareMessageForDecryption(text);
+    const QList<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 1);
     QCOMPARE(blocks[0].text(), text);
     QCOMPARE(blocks[0].type(), NoPgpBlock);
@@ -51,7 +51,7 @@ void CryptoHelperTest::testPGPBlockType()
             break;
         }
         QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
-        QVector<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
+        QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
@@ -98,7 +98,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
 void CryptoHelperTest::testEmbededPGPBlock()
 {
     const QByteArray text = QByteArray("before\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\nafter");
-    const QVector<Block> blocks = prepareMessageForDecryption(text);
+    const QList<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 3);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
@@ -109,7 +109,7 @@ void CryptoHelperTest::testClearSignedMessage()
 {
     const QByteArray text = QByteArray(
         "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter");
-    const QVector<Block> blocks = prepareMessageForDecryption(text);
+    const QList<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 3);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(),
@@ -122,7 +122,7 @@ void CryptoHelperTest::testMultipleBlockMessage()
     const QByteArray text = QByteArray(
         "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP "
         "SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
-    const QVector<Block> blocks = prepareMessageForDecryption(text);
+    const QList<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 4);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
     QCOMPARE(blocks[1].text(),

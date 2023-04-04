@@ -109,7 +109,7 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
     MessageViewer::Util::addHelpTextAction(headerMenu, i18n("Choose display style of message headers"));
     group = new QActionGroup(q);
 
-    const QVector<MessageViewer::HeaderStylePlugin *> lstPlugin = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
+    const QList<MessageViewer::HeaderStylePlugin *> lstPlugin = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
     for (MessageViewer::HeaderStylePlugin *plugin : lstPlugin) {
         if (plugin->isEnabled()) {
             MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group, ac, q);

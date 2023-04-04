@@ -25,7 +25,7 @@ namespace MessageComposer
 {
 namespace Util
 {
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QVector<QByteArray> &charsets, const QString &text);
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
@@ -55,7 +55,7 @@ MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &messag
  * @returns Whether the mail contains valid link information or not.
  */
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool
-getLinkInformation(const KMime::Message::Ptr &msg, QVector<Akonadi::Item::Id> &id, QVector<Akonadi::MessageStatus> &status);
+getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
 
 /**
  * Returns whether the item represents a valid KMime::Message that is not

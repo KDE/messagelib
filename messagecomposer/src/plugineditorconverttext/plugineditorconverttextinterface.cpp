@@ -17,7 +17,7 @@ class MessageComposer::PluginEditorConvertTextInterfacePrivate
 public:
     PluginEditorConvertTextInterfacePrivate() = default;
 
-    QVector<PluginActionType> mActionTypes;
+    QList<PluginActionType> mActionTypes;
 
     QWidget *mParentWidget = nullptr;
     QWidget *statusBarWidget = nullptr;
@@ -50,12 +50,12 @@ QWidget *PluginEditorConvertTextInterface::parentWidget() const
     return d->mParentWidget;
 }
 
-void PluginEditorConvertTextInterface::setActionType(const QVector<PluginActionType> &type)
+void PluginEditorConvertTextInterface::setActionType(const QList<PluginActionType> &type)
 {
     d->mActionTypes = type;
 }
 
-QVector<PluginActionType> PluginEditorConvertTextInterface::actionTypes() const
+QList<PluginActionType> PluginEditorConvertTextInterface::actionTypes() const
 {
     return d->mActionTypes;
 }

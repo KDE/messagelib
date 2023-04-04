@@ -372,7 +372,7 @@ void View::applyThemeColumns()
     // all saved then the total hint is equal to the total saved width.
 
     int totalVisibleWidthHint = 0;
-    QVector<int> lColumnSizeHints;
+    QList<int> lColumnSizeHints;
     for (const auto col : std::as_const(columns)) {
         if (col->currentlyVisible() || (idx == 0)) {
             // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
@@ -397,7 +397,7 @@ void View::applyThemeColumns()
     // Now compute somewhat "proportional" widths.
     idx = 0;
 
-    QVector<double> lColumnWidths;
+    QList<double> lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
     for (const auto col : std::as_const(columns)) {
@@ -891,9 +891,9 @@ bool View::selectionEmpty() const
     return selectionModel()->selectedRows().isEmpty();
 }
 
-QVector<MessageItem *> View::selectionAsMessageItemList(bool includeCollapsedChildren) const
+QList<MessageItem *> View::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
-    QVector<MessageItem *> selectedMessages;
+    QList<MessageItem *> selectedMessages;
 
     QModelIndexList lSelected = selectionModel()->selectedRows();
     if (lSelected.isEmpty()) {
@@ -934,9 +934,9 @@ QVector<MessageItem *> View::selectionAsMessageItemList(bool includeCollapsedChi
     return selectedMessages;
 }
 
-QVector<MessageItem *> View::currentThreadAsMessageItemList() const
+QList<MessageItem *> View::currentThreadAsMessageItemList() const
 {
-    QVector<MessageItem *> currentThread;
+    QList<MessageItem *> currentThread;
 
     MessageItem *msg = currentMessageItem();
     if (!msg) {
@@ -1087,7 +1087,7 @@ void View::setAllGroupsExpanded(bool expand)
     }
 }
 
-void View::selectMessageItems(const QVector<MessageItem *> &list)
+void View::selectMessageItems(const QList<MessageItem *> &list)
 {
     QItemSelection selection;
     for (const auto mi : list) {
@@ -1634,7 +1634,7 @@ void View::modelFinishedLoading()
     // nothing here for now :)
 }
 
-MessageItemSetReference View::createPersistentSet(const QVector<MessageItem *> &items)
+MessageItemSetReference View::createPersistentSet(const QList<MessageItem *> &items)
 {
     return d->mModel->createPersistentSet(items);
 }
@@ -2524,7 +2524,7 @@ void View::focusQuickSearch(const QString &selectedText)
     d->mWidget->focusQuickSearch(selectedText);
 }
 
-QVector<Akonadi::MessageStatus> View::currentFilterStatus() const
+QList<Akonadi::MessageStatus> View::currentFilterStatus() const
 {
     return d->mWidget->currentFilterStatus();
 }

@@ -46,12 +46,12 @@ public:
     /**
      * Returns the currently set status mask
      */
-    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const;
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const;
 
     /**
      * Sets the status mask for this filter.
      */
-    void setStatus(const QVector<Akonadi::MessageStatus> &lstStatus);
+    void setStatus(const QList<Akonadi::MessageStatus> &lstStatus);
 
     /**
      * Sets the current folder of this filter.
@@ -111,7 +111,7 @@ Q_SIGNALS:
 
 private:
     Q_REQUIRED_RESULT bool containString(const QString &searchInString) const;
-    QVector<Akonadi::MessageStatus> mStatus; ///< Messages must match these statuses, if non 0
+    QList<Akonadi::MessageStatus> mStatus; ///< Messages must match these statuses, if non 0
     QString mSearchString; ///< Messages must match this search string, if not empty
     QString mTagId; ///< Messages must have this tag, if not empty. Contains a tag url.
     Akonadi::Collection mCurrentFolder;

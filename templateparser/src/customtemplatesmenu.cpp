@@ -13,8 +13,8 @@
 #include <KActionMenu>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QList>
 #include <QMenu>
-#include <QVector>
 
 using namespace TemplateParser;
 class TemplateParser::CustomTemplatesMenuPrivate
@@ -32,7 +32,7 @@ public:
     KActionCollection *mOwnerActionCollection = nullptr;
 
     QStringList mCustomTemplates;
-    QVector<QAction *> mCustomTemplateActions;
+    QList<QAction *> mCustomTemplateActions;
 
     // Custom template actions menu
     KActionMenu *mCustomReplyActionMenu = nullptr;

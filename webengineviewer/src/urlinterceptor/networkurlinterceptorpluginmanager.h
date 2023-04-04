@@ -8,8 +8,8 @@
 
 #include "webengineviewer_export.h"
 #include <PimCommon/PluginUtil>
+#include <QList>
 #include <QObject>
-#include <QVector>
 namespace WebEngineViewer
 {
 class NetworkUrlInterceptorPluginManagerPrivate;
@@ -26,10 +26,10 @@ public:
     explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
     ~NetworkUrlInterceptorPluginManager() override;
 
-    Q_REQUIRED_RESULT QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:

@@ -11,7 +11,7 @@
 
 #include <MimeTreeParser/MessagePart>
 
-#include <QVector>
+#include <QList>
 
 #include <memory>
 
@@ -37,7 +37,7 @@ public:
 
     static MessagePartRendererFactory *instance();
 
-    Q_REQUIRED_RESULT QVector<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
+    Q_REQUIRED_RESULT QList<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
 
 private:
     Q_DISABLE_COPY(MessagePartRendererFactory)

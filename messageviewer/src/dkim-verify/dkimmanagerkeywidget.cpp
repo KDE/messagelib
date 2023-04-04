@@ -104,7 +104,7 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-    const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
+    const QList<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
         auto item = new DKIMManagerKeyTreeWidgetItem(mTreeWidget);
         item->setStoredAtDateTime(key.storedAtDateTime);
@@ -124,7 +124,7 @@ void DKIMManagerKeyWidget::loadKeys()
 
 void DKIMManagerKeyWidget::saveKeys()
 {
-    QVector<MessageViewer::KeyInfo> lst;
+    QList<MessageViewer::KeyInfo> lst;
     lst.reserve(mTreeWidget->topLevelItemCount());
     for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);

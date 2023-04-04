@@ -435,7 +435,7 @@ public:
     /**
      * Vector of signal-slot connections between StorageModel and us
      */
-    QVector<QMetaObject::Connection> mStorageModelConnections;
+    QList<QMetaObject::Connection> mStorageModelConnections;
 
     /**
      * Caches child - parent relation based on Akonadi ID and persists the cache

@@ -92,7 +92,7 @@ DKIMManageRulesWidget::~DKIMManageRulesWidget() = default;
 
 void DKIMManageRulesWidget::updateRules()
 {
-    const QVector<MessageViewer::DKIMRule> rules = MessageViewer::DKIMManagerRules::self()->rules();
+    const QList<MessageViewer::DKIMRule> rules = MessageViewer::DKIMManagerRules::self()->rules();
 
     for (const MessageViewer::DKIMRule &rule : rules) {
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
@@ -110,9 +110,9 @@ void DKIMManageRulesWidget::loadSettings()
     updateRules();
 }
 
-QVector<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
+QList<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
 {
-    QVector<MessageViewer::DKIMRule> rules;
+    QList<MessageViewer::DKIMRule> rules;
     const int total = mTreeWidget->topLevelItemCount();
     rules.reserve(total);
     for (int i = 0; i < total; ++i) {

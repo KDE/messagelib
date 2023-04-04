@@ -72,7 +72,7 @@ URLHandlerManager *URLHandlerManager::self = nullptr;
 
 BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
-    for_each(mHandlers.begin(), mHandlers.end(), [](QVector<const Interface::BodyPartURLHandler *> &handlers) {
+    for_each(mHandlers.begin(), mHandlers.end(), [](QList<const Interface::BodyPartURLHandler *> &handlers) {
         for_each(handlers.begin(), handlers.end(), DeleteAndSetToZero<Interface::BodyPartURLHandler>());
     });
 }
@@ -134,7 +134,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     return w->nodeFromUrl(QUrl(urlParts.at(1)));
 }
 
-QVector<const Interface::BodyPartURLHandler *> BodyPartURLHandlerManager::handlersForPart(KMime::Content *node) const
+QList<const Interface::BodyPartURLHandler *> BodyPartURLHandlerManager::handlersForPart(KMime::Content *node) const
 {
     if (auto ct = node->contentType(false)) {
         auto mimeType = ct->mimeType();

@@ -119,7 +119,7 @@ public:
     virtual void fix() const;
 
     void appendSubPart(const MessagePart::Ptr &messagePart);
-    const QVector<MessagePart::Ptr> &subParts() const;
+    const QList<MessagePart::Ptr> &subParts() const;
     Q_REQUIRED_RESULT bool hasSubParts() const;
     void clearSubParts();
 
@@ -128,7 +128,7 @@ public:
 
     Q_REQUIRED_RESULT virtual bool hasHeader(const char *headerType) const;
     virtual const KMime::Headers::Base *header(const char *headerType) const;
-    virtual QVector<KMime::Headers::Base *> headers(const char *headerType) const;
+    virtual QList<KMime::Headers::Base *> headers(const char *headerType) const;
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
@@ -368,7 +368,7 @@ public:
 
     Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
-    QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
+    QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
     QByteArray mDecryptedData;
 
@@ -424,7 +424,7 @@ public:
 
     Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
-    QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
+    QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
 private:
     /** Handles the verification of data

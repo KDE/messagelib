@@ -26,11 +26,11 @@ public:
 
     static PluginEditorConvertTextManager *self();
 
-    Q_REQUIRED_RESULT QVector<PluginEditorConvertText *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PluginEditorConvertText *> pluginsList() const;
 
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:

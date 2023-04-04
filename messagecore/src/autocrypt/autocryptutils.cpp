@@ -40,12 +40,12 @@ const KMime::Headers::Base *HeaderMixupNodeHelper::mailHeaderAsBase(const char *
     return mNodeHelper->mailHeaderAsBase(header, message);
 }
 
-QVector<MimeTreeParser::MessagePart::Ptr> HeaderMixupNodeHelper::messagePartsOfMailHeader(const char *header) const
+QList<MimeTreeParser::MessagePart::Ptr> HeaderMixupNodeHelper::messagePartsOfMailHeader(const char *header) const
 {
     return mNodeHelper->messagePartsOfMailHeader(header, message);
 }
 
-QVector<KMime::Headers::Base *> HeaderMixupNodeHelper::headers(const char *header) const
+QList<KMime::Headers::Base *> HeaderMixupNodeHelper::headers(const char *header) const
 {
     return mNodeHelper->headers(header, message);
 }

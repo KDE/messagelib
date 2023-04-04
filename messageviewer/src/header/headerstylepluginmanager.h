@@ -26,10 +26,10 @@ public:
     explicit HeaderStylePluginManager(QObject *parent = nullptr);
     ~HeaderStylePluginManager() override;
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
     Q_REQUIRED_RESULT QStringList pluginListName() const;
 
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);

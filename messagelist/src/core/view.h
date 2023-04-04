@@ -11,7 +11,6 @@
 #include <QList>
 #include <QPoint>
 #include <QTreeView>
-#include <QVector>
 
 #include <messagelist/enums.h>
 #include <messagelist/quicksearchline.h>
@@ -149,7 +148,7 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    QVector<MessageItem *> selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
+    QList<MessageItem *> selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
 
     /**
      * Returns the MessageItems bound to the current StorageModel that
@@ -161,7 +160,7 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    QVector<MessageItem *> currentThreadAsMessageItemList() const;
+    QList<MessageItem *> currentThreadAsMessageItemList() const;
 
     /**
      * Fast function that determines if the selection is empty
@@ -172,7 +171,7 @@ public:
      * Selects the specified MessageItems. The current selection is NOT removed.
      * Use clearSelection() for that purpose.
      */
-    void selectMessageItems(const QVector<MessageItem *> &list);
+    void selectMessageItems(const QList<MessageItem *> &list);
 
     /**
      * Creates a persistent set for the specified MessageItems and
@@ -184,7 +183,7 @@ public:
      * while manipulating the view) so be sure to call deletePersistentSet()
      * when you no longer need it.
      */
-    MessageItemSetReference createPersistentSet(const QVector<MessageItem *> &items);
+    MessageItemSetReference createPersistentSet(const QList<MessageItem *> &items);
 
     /**
      * Returns the list of MessageItems that are still existing in the
@@ -326,7 +325,7 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.

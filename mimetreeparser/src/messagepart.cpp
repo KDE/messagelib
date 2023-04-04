@@ -44,7 +44,7 @@ class MessagePartPrivate
 {
 public:
     MessagePart *mParentPart = nullptr;
-    QVector<MessagePart::Ptr> mBlocks;
+    QList<MessagePart::Ptr> mBlocks;
     KMime::Content *mNode = nullptr;
     KMime::Content *mAttachmentNode = nullptr;
     QString mText;
@@ -187,7 +187,7 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
     d->mRoot = subMessagePart->isRoot();
-    const QVector<MessagePart::Ptr> subParts = subMessagePart->subParts();
+    const QList<MessagePart::Ptr> subParts = subMessagePart->subParts();
     for (const auto &part : subParts) {
         appendSubPart(part);
     }
@@ -220,7 +220,7 @@ void MessagePart::appendSubPart(const MessagePart::Ptr &messagePart)
     d->mBlocks.append(messagePart);
 }
 
-const QVector<MessagePart::Ptr> &MessagePart::subParts() const
+const QList<MessagePart::Ptr> &MessagePart::subParts() const
 {
     return d->mBlocks;
 }
@@ -267,7 +267,7 @@ const KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *head
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> MessagePart::headers(const char *headerType) const
+QList<KMime::Headers::Base *> MessagePart::headers(const char *headerType) const
 {
     Q_UNUSED(headerType)
     return {};
@@ -1017,7 +1017,7 @@ const KMime::Headers::Base *MimeTreeParser::SignedMessagePart::header(const char
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char *headerType) const
+QList<KMime::Headers::Base *> SignedMessagePart::headers(const char *headerType) const
 {
     if (content()) {
         return content()->headersByType(headerType);
@@ -1370,7 +1370,7 @@ const KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType)
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *headerType) const
+QList<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {

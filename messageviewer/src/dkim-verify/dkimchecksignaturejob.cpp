@@ -264,7 +264,7 @@ void DKIMCheckSignatureJob::setHeaderParser(const DKIMHeaderParser &headerParser
     mHeaderParser = headerParser;
 }
 
-void DKIMCheckSignatureJob::setCheckSignatureAuthenticationResult(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
+void DKIMCheckSignatureJob::setCheckSignatureAuthenticationResult(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
 {
     mCheckSignatureAuthenticationResult = lst;
 }

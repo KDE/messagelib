@@ -611,7 +611,7 @@ inline bool cryptoWarningUnencrypted(const KIdentityManagement::Identity &identi
 } // nameless namespace
 
 bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
-                                        const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                                        const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
                                         const std::map<QByteArray, QString> &autocryptMap)
 {
     bool needSpecialContext = false;
@@ -698,7 +698,7 @@ void ComposerViewBase::setAkonadiLookupEnabled(bool akonadiLookupEnabled)
     m_akonadiLookupEnabled = akonadiLookupEnabled;
 }
 
-QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
+QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const auto id = currentIdentity();
 
@@ -824,7 +824,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         return {};
     }
 
-    QVector<MessageComposer::Composer *> composers;
+    QList<MessageComposer::Composer *> composers;
 
     // No encryption or signing is needed
     if (!signSomething && !encryptSomething) {
@@ -870,7 +870,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
 
             if (encryptSomething || autocryptEnabled()) {
                 auto end(encData.end());
-                QVector<QPair<QStringList, std::vector<GpgME::Key>>> data;
+                QList<QPair<QStringList, std::vector<GpgME::Key>>> data;
                 data.reserve(encData.size());
                 for (auto it = encData.begin(); it != end; ++it) {
                     QPair<QStringList, std::vector<GpgME::Key>> p(it->recipients, it->keys);
@@ -1076,15 +1076,15 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    const QVector<QByteArray> toAddresses = msg->to()->addresses();
+    const QList<QByteArray> toAddresses = msg->to()->addresses();
     for (const QByteArray &address : toAddresses) {
         PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
-    const QVector<QByteArray> ccAddresses = msg->cc()->addresses();
+    const QList<QByteArray> ccAddresses = msg->cc()->addresses();
     for (const QByteArray &address : ccAddresses) {
         PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
-    const QVector<QByteArray> bccAddresses = msg->bcc()->addresses();
+    const QList<QByteArray> bccAddresses = msg->bcc()->addresses();
     for (const QByteArray &address : bccAddresses) {
         PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
@@ -1821,7 +1821,7 @@ void ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMes
     m_neverEncrypt = neverEncryptDrafts;
 }
 
-void ComposerViewBase::setCharsets(const QVector<QByteArray> &charsets)
+void ComposerViewBase::setCharsets(const QList<QByteArray> &charsets)
 {
     m_charsets = charsets;
 }

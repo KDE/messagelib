@@ -24,7 +24,7 @@ void OpenUrlWithManagerTest::shouldHaveDefaultValues()
 
 void OpenUrlWithManagerTest::shouldSearchOpenWithInfo()
 {
-    QFETCH(QVector<MessageViewer::OpenWithUrlInfo>, infos);
+    QFETCH(QList<MessageViewer::OpenWithUrlInfo>, infos);
     QFETCH(QUrl, url);
     QFETCH(bool, openWithInfoIsValid);
     MessageViewer::OpenUrlWithManager w;
@@ -34,15 +34,15 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfo()
 
 void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
 {
-    QTest::addColumn<QVector<MessageViewer::OpenWithUrlInfo>>("infos");
+    QTest::addColumn<QList<MessageViewer::OpenWithUrlInfo>>("infos");
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("openWithInfoIsValid");
     {
-        QVector<MessageViewer::OpenWithUrlInfo> lst;
+        QList<MessageViewer::OpenWithUrlInfo> lst;
         QTest::newRow("empty") << lst << QUrl() << false;
     }
     {
-        QVector<MessageViewer::OpenWithUrlInfo> lst;
+        QList<MessageViewer::OpenWithUrlInfo> lst;
         MessageViewer::OpenWithUrlInfo i;
         i.setUrl(QStringLiteral("http://www.kde.org"));
         i.setCommand(QStringLiteral("bla"));

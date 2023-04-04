@@ -102,7 +102,7 @@ public:
         QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
 
-        QVector<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
+        QList<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
@@ -133,7 +133,7 @@ public:
 
     void setHeaderParser(const DKIMHeaderParser &headerParser);
 
-    void setCheckSignatureAuthenticationResult(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst);
+    void setCheckSignatureAuthenticationResult(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst);
 
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
@@ -152,7 +152,7 @@ private:
     MESSAGEVIEWER_NO_EXPORT void verifyRSASignature();
     MESSAGEVIEWER_NO_EXPORT void verifyEd25519Signature();
     MESSAGEVIEWER_NO_EXPORT void computeHeaderCanonization(bool removeQuoteOnContentType);
-    QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
+    QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;
     KMime::Message::Ptr mMessage;

@@ -23,8 +23,8 @@ public:
     {
     }
 
-    void createFileFromFullUpdate(const QVector<Addition> &additionList);
-    void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
+    void createFileFromFullUpdate(const QList<Addition> &additionList);
+    void removeElementFromDataBase(const QList<Removal> &removalList, QList<Addition> &oldDataBaseAddition);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
@@ -33,7 +33,7 @@ public:
     CreateDatabaseFileJob *const q;
 };
 
-void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList)
+void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QList<Addition> &additionList)
 {
     // 1 add version number
     const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
@@ -43,7 +43,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     hashStartPosition += mFile.write(reinterpret_cast<const char *>(&minor), sizeof(minor));
 
     // 2 add number of items
-    QVector<Addition> itemToStore;
+    QList<Addition> itemToStore;
     for (const Addition &add : additionList) {
         switch (add.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
@@ -69,7 +69,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
         case UpdateDataBaseInfo::RiceCompression: {
             // TODO
             qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
-            const QVector<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
+            const QList<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
             qDebug() << " listRice" << listRice;
             break;
         }
@@ -134,10 +134,10 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
             return;
         }
         // Read Element from database.
-        QVector<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
+        QList<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
 
         removeElementFromDataBase(mInfoDataBase.removalList, oldDataBaseAddition);
-        QVector<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
+        QList<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
         oldDataBaseAddition += additionList;
 
         // Close file
@@ -157,9 +157,9 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
     }
 }
 
-void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
+void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QList<Removal> &removalList, QList<Addition> &oldDataBaseAddition)
 {
-    QVector<quint32> indexToRemove;
+    QList<quint32> indexToRemove;
     for (const Removal &removeItem : removalList) {
         switch (removeItem.compressionType) {
         case UpdateDataBaseInfo::RawCompression:

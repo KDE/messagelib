@@ -25,8 +25,8 @@ public:
     ~ViewerPluginManager() override;
     static ViewerPluginManager *self();
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::ViewerPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
 
     Q_REQUIRED_RESULT bool initializePluginList();
 

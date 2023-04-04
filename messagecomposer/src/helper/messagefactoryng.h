@@ -15,7 +15,7 @@
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <Akonadi/MessageStatus>
-#include <QVector>
+#include <QList>
 
 namespace KIdentityManagement
 {
@@ -81,7 +81,7 @@ public:
      * If no list is passed, use the original message passed in the MessageFactoryNG
      *  constructor.
      */
-    Q_REQUIRED_RESULT QPair<KMime::Message::Ptr, QVector<KMime::Content *>> createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
+    Q_REQUIRED_RESULT QPair<KMime::Message::Ptr, QList<KMime::Content *>> createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
@@ -120,7 +120,7 @@ public:
                                                     KMime::MDN::DispositionType d,
                                                     KMime::MDN::SendingMode s,
                                                     int mdnQuoteOriginal = 0,
-                                                    const QVector<KMime::MDN::DispositionModifier> &m = QVector<KMime::MDN::DispositionModifier>());
+                                                    const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
 
     /**
      * Create a new forwarded MIME digest. If the user is trying to forward multiple messages

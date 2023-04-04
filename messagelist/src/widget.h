@@ -15,7 +15,7 @@
 #include <KMime/KMimeMessage>
 
 #include "messagelist_export.h"
-#include <QVector>
+#include <QList>
 class KXMLGUIClient;
 class QWidget;
 class KJob;
@@ -201,7 +201,7 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QList<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
      * Returns the currently selected Items (bound to current StorageModel).
@@ -228,8 +228,8 @@ public:
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
 
-    Q_REQUIRED_RESULT QVector<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren) const;
-    Q_REQUIRED_RESULT QVector<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren) const;
+    Q_REQUIRED_RESULT QList<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren) const;
+    Q_REQUIRED_RESULT QList<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren) const;
 
     /**
      * Returns the Akonadi::Item bound to the current StorageModel that
@@ -246,7 +246,7 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.
@@ -335,7 +335,7 @@ protected:
     /**
      * Reimplemented from MessageList::Core::Widget
      */
-    void viewMessageListContextPopupRequest(const QVector<Core::MessageItem *> &selectedItems, const QPoint &globalPos) override;
+    void viewMessageListContextPopupRequest(const QList<Core::MessageItem *> &selectedItems, const QPoint &globalPos) override;
 
     /**
      * Reimplemented from MessageList::Core::Widget

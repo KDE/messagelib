@@ -14,8 +14,8 @@
 #include <QDebug>
 #include <QKeyEvent>
 #include <QLabel>
+#include <QList>
 #include <QToolTip>
-#include <QVector>
 #include <QWebEngineView>
 using namespace WebEngineViewer;
 template<typename Arg, typename R, typename C>
@@ -53,7 +53,7 @@ public:
 
     void makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element);
     bool checkForAccessKey(QKeyEvent *event);
-    QVector<QLabel *> mAccessKeyLabels;
+    QList<QLabel *> mAccessKeyLabels;
     QMultiHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *const mWebEngine;
@@ -246,14 +246,14 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
     // qDebug() << " void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     const QVariantList lst = res.toList();
-    QVector<WebEngineViewer::WebEngineAccessKeyAnchor> anchorList;
+    QList<WebEngineViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
     for (const QVariant &var : lst) {
         // qDebug()<<" var"<<var;
         anchorList << WebEngineViewer::WebEngineAccessKeyAnchor(var);
     }
 
-    QVector<QChar> unusedKeys;
+    QList<QChar> unusedKeys;
     unusedKeys.reserve(10 + ('Z' - 'A' + 1));
     for (char c = 'A'; c <= 'Z'; ++c) {
         unusedKeys << QLatin1Char(c);
@@ -278,7 +278,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             }
         }
     }
-    QVector<WebEngineViewer::WebEngineAccessKeyAnchor> unLabeledElements;
+    QList<WebEngineViewer::WebEngineAccessKeyAnchor> unLabeledElements;
     QRect viewport = d->mWebEngine->rect();
     for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : std::as_const(anchorList)) {
         const QRect geometry = element.boundingRect();

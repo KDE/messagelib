@@ -26,7 +26,7 @@ public:
     void setup();
     void messageviewer_create_builtin_bodypart_formatters(); // defined in bodypartformatter.cpp
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority = 0);
-    void appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters);
+    void appendFormattersForType(const QString &mimeType, QList<const Interface::BodyPartFormatter *> &formatters);
 
     BodyPartFormatterFactory *const q;
     struct FormatterInfo {

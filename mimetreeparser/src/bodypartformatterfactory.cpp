@@ -65,7 +65,7 @@ void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, const Inte
     });
 }
 
-void BodyPartFormatterFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters)
+void BodyPartFormatterFactoryPrivate::appendFormattersForType(const QString &mimeType, QList<const Interface::BodyPartFormatter *> &formatters)
 {
     const auto it = registry.constFind(mimeType);
     if (it == registry.constEnd()) {
@@ -94,9 +94,9 @@ void BodyPartFormatterFactory::insert(const QString &mimeType, const Interface::
     d->insert(mimeType.toLower(), formatter, priority);
 }
 
-QVector<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formattersForType(const QString &mimeType) const
+QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formattersForType(const QString &mimeType) const
 {
-    QVector<const Interface::BodyPartFormatter *> r;
+    QList<const Interface::BodyPartFormatter *> r;
     d->setup();
 
     QMimeDatabase db;
@@ -137,7 +137,7 @@ QVector<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatte
 
 void BodyPartFormatterFactory::loadPlugins()
 {
-    const QVector<KPluginMetaData> plugins =
+    const QList<KPluginMetaData> plugins =
         KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/bodypartformatter"));
     for (const auto &md : plugins) {
         const auto formatterData = md.rawData().value(QLatin1String("formatter")).toArray();

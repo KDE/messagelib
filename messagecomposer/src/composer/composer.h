@@ -10,8 +10,8 @@
 #include <Libkleo/Enum>
 
 #include "messagecomposer_export.h"
+#include <QList>
 #include <QStringList>
-#include <QVector>
 
 #include <KMime/KMimeMessage>
 
@@ -38,7 +38,7 @@ public:
     explicit Composer(QObject *parent = nullptr);
     ~Composer() override;
 
-    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> resultMessages() const;
+    Q_REQUIRED_RESULT QList<KMime::Message::Ptr> resultMessages() const;
 
     Q_REQUIRED_RESULT GlobalPart *globalPart() const;
     Q_REQUIRED_RESULT InfoPart *infoPart() const;
@@ -53,7 +53,7 @@ public:
     void setSignAndEncrypt(const bool doSign, const bool doEncrypt);
     void setMessageCryptoFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(const std::vector<GpgME::Key> &signers);
-    void setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data);
+    void setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 
     void setAutocryptEnabled(bool autocryptEnabled);
     void setSenderEncryptionKey(const GpgME::Key &senderKey);

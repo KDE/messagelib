@@ -141,7 +141,7 @@ void RemoteContentConfigureWidget::slotAdd()
 
 void RemoteContentConfigureWidget::saveSettings()
 {
-    QVector<RemoteContentInfo> lst;
+    QList<RemoteContentInfo> lst;
     const int count = mTreeWidget->topLevelItemCount();
     lst.reserve(count);
     for (int i = 0; i < count; ++i) {
@@ -156,7 +156,7 @@ void RemoteContentConfigureWidget::saveSettings()
 
 void RemoteContentConfigureWidget::readSettings()
 {
-    const QVector<RemoteContentInfo> remoteContentInfos = RemoteContentManager::self()->removeContentInfo();
+    const QList<RemoteContentInfo> remoteContentInfos = RemoteContentManager::self()->removeContentInfo();
     for (const RemoteContentInfo &info : remoteContentInfos) {
         insertRemoteContentInfo(info);
     }

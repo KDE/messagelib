@@ -22,8 +22,8 @@ class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 public:
     Q_REQUIRED_RESULT UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
     Q_REQUIRED_RESULT RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
-    Q_REQUIRED_RESULT QVector<Removal> parseRemovals(const QVariantList &lst);
-    Q_REQUIRED_RESULT QVector<Addition> parseAdditions(const QVariantList &lst);
+    Q_REQUIRED_RESULT QList<Removal> parseRemovals(const QVariantList &lst);
+    Q_REQUIRED_RESULT QList<Addition> parseAdditions(const QVariantList &lst);
     QString mDataBaseState;
     CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType = CreatePhishingUrlDataBaseJob::RawCompression;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded = CreatePhishingUrlDataBaseJob::FullDataBase;
@@ -200,9 +200,9 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
     return riceDeltaEncodingTmp;
 }
 
-QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVariantList &lst)
+QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVariantList &lst)
 {
-    QVector<Addition> additionList;
+    QList<Addition> additionList;
     for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
             QMapIterator<QString, QVariant> mapIt(v.toMap());
@@ -259,9 +259,9 @@ UpdateDataBaseInfo::CompressionType CreatePhishingUrlDataBaseJobPrivate::parseCo
     return type;
 }
 
-QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariantList &lst)
+QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariantList &lst)
 {
-    QVector<Removal> removalList;
+    QList<Removal> removalList;
     for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
             Removal tmp;
@@ -332,13 +332,13 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 const QString mapKey = mapIt.key();
                                 if (mapKey == QLatin1String("additions")) {
                                     const QVariantList lst = mapIt.value().toList();
-                                    const QVector<Addition> addList = d->parseAdditions(lst);
+                                    const QList<Addition> addList = d->parseAdditions(lst);
                                     if (!addList.isEmpty()) {
                                         databaseInfo.additionList.append(addList);
                                     }
                                 } else if (mapKey == QLatin1String("removals")) {
                                     const QVariantList lst = mapIt.value().toList();
-                                    const QVector<Removal> removeList = d->parseRemovals(lst);
+                                    const QList<Removal> removeList = d->parseRemovals(lst);
                                     if (!removeList.isEmpty()) {
                                         databaseInfo.removalList.append(removeList);
                                     }

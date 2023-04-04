@@ -73,7 +73,7 @@ public:
     Core::PreSelectionMode mPreSelectionMode = Core::PreSelectLastSelected;
 
     QHash<Widget *, QItemSelectionModel *> mWidgetSelectionHash;
-    QVector<const QAbstractProxyModel *> mProxyStack;
+    QList<const QAbstractProxyModel *> mProxyStack;
 
     QToolButton *mNewTabButton = nullptr;
     QToolButton *mCloseTabButton = nullptr;
@@ -720,7 +720,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
     if (action == allOtherAction) { // Close all other tabs
-        QVector<Widget *> widgets;
+        QList<Widget *> widgets;
         const int index = q->indexOf(w);
 
         for (int i = 0; i < q->count(); ++i) {
@@ -851,7 +851,7 @@ QItemSelection Pane::PanePrivate::mapSelectionFromSource(const QItemSelection &s
 {
     QItemSelection result = selection;
 
-    using Iterator = QVector<const QAbstractProxyModel *>::ConstIterator;
+    using Iterator = QList<const QAbstractProxyModel *>::ConstIterator;
 
     for (Iterator it = mProxyStack.end() - 1; it != mProxyStack.begin(); --it) {
         result = (*it)->mapSelectionFromSource(result);
@@ -925,7 +925,7 @@ KMime::Message::Ptr Pane::currentMessage() const
     return w->currentMessage();
 }
 
-QVector<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
+QList<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
@@ -943,7 +943,7 @@ Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildr
     return w->selectionAsMessageItemList(includeCollapsedChildren);
 }
 
-QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
+QList<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
@@ -952,7 +952,7 @@ QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedC
     return w->selectionAsListMessageId(includeCollapsedChildren);
 }
 
-QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChildren) const
+QList<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
@@ -995,7 +995,7 @@ void Pane::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetR
     }
 }
 
-QVector<Akonadi::MessageStatus> Pane::currentFilterStatus() const
+QList<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {

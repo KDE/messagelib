@@ -85,12 +85,12 @@ OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
     return {};
 }
 
-const QVector<OpenWithUrlInfo> &OpenUrlWithManager::openWithUrlInfo() const
+const QList<OpenWithUrlInfo> &OpenUrlWithManager::openWithUrlInfo() const
 {
     return mOpenWithUrlInfo;
 }
 
-void OpenUrlWithManager::setOpenWithUrlInfo(const QVector<OpenWithUrlInfo> &newOpenWithUrlInfo)
+void OpenUrlWithManager::setOpenWithUrlInfo(const QList<OpenWithUrlInfo> &newOpenWithUrlInfo)
 {
     mOpenWithUrlInfo = newOpenWithUrlInfo;
 }

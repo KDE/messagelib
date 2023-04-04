@@ -12,7 +12,6 @@
 #include <QList>
 #include <QPair>
 #include <QString>
-#include <QVector>
 
 #include <core/optionset.h>
 #include <core/sortorder.h>
@@ -864,7 +863,7 @@ private:
     QList<Column *> mColumns; ///< The list of columns available in this theme
 
     // pixmaps cache. Mutable, so it can be lazily populated from const methods
-    mutable QVector<QPixmap *> mPixmaps;
+    mutable QList<QPixmap *> mPixmaps;
 
     GroupHeaderBackgroundMode mGroupHeaderBackgroundMode; ///< How do we paint group header background ?
     QColor mGroupHeaderBackgroundColor; ///< The background color of the message group, used only if CustomColor
@@ -961,7 +960,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateGroupHeaderBackgroundStyles();
+    static QList<QPair<QString, int>> enumerateGroupHeaderBackgroundStyles();
 
     /**
      * Returns the currently set ViewHeaderPolicy
@@ -990,7 +989,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateViewHeaderPolicyOptions();
+    static QList<QPair<QString, int>> enumerateViewHeaderPolicyOptions();
 
     inline const QPixmap *pixmap(ThemeIcon icon) const
     {

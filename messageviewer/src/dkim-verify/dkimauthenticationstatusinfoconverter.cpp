@@ -26,10 +26,10 @@ void DKIMAuthenticationStatusInfoConverter::setStatusInfo(const MessageViewer::D
     mStatusInfo = statusInfo;
 }
 
-QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthenticationStatusInfoConverter::convert() const
+QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthenticationStatusInfoConverter::convert() const
 {
-    QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lstResult;
-    const QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
+    QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lstResult;
+    const QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
         DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult convertedResult;
         convertedResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);

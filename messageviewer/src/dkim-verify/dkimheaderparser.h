@@ -9,7 +9,7 @@
 #include "messageviewer_export.h"
 
 #include <QByteArray>
-#include <QVector>
+#include <QList>
 namespace MessageViewer
 {
 /**
@@ -47,14 +47,14 @@ public:
     void setWasAlreadyParsed(bool wasAlreadyParsed);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMHeaderParser &other) const;
-    Q_REQUIRED_RESULT QVector<DKIMHeaderParser::Header> listHeaders() const;
+    Q_REQUIRED_RESULT QList<DKIMHeaderParser::Header> listHeaders() const;
 
 private:
     Q_REQUIRED_RESULT static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
     Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
     Q_REQUIRED_RESULT static QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
-    QVector<DKIMHeaderParser::Header> mListHeaders;
+    QList<DKIMHeaderParser::Header> mListHeaders;
     bool mWasAlreadyParsed = false;
 };
 }

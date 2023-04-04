@@ -173,7 +173,7 @@ void Aggregation::save(QDataStream &stream) const
     stream << (int)mFillViewStrategy;
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateGroupingOptions()
+QList<QPair<QString, int>> Aggregation::enumerateGroupingOptions()
 {
     return {{i18nc("No grouping of messages", "None"), NoGrouping},
             {i18n("By Exact Date (of Thread Leaders)"), GroupByDate},
@@ -183,9 +183,9 @@ QVector<QPair<QString, int>> Aggregation::enumerateGroupingOptions()
             {i18n("By Receiver"), GroupByReceiver}};
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
+QList<QPair<QString, int>> Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
 {
-    QVector<QPair<QString, int>> ret;
+    QList<QPair<QString, int>> ret;
     if (g == NoGrouping) {
         return ret;
     }
@@ -197,7 +197,7 @@ QVector<QPair<QString, int>> Aggregation::enumerateGroupExpandPolicyOptions(Grou
     return ret;
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateThreadingOptions()
+QList<QPair<QString, int>> Aggregation::enumerateThreadingOptions()
 {
     return {{i18nc("No threading of messages", "None"), NoThreading},
             {i18n("Perfect Only"), PerfectOnly},
@@ -205,9 +205,9 @@ QVector<QPair<QString, int>> Aggregation::enumerateThreadingOptions()
             {i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject}};
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
+QList<QPair<QString, int>> Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
 {
-    QVector<QPair<QString, int>> ret;
+    QList<QPair<QString, int>> ret;
     if (t == NoThreading) {
         return ret;
     }
@@ -219,7 +219,7 @@ QVector<QPair<QString, int>> Aggregation::enumerateThreadLeaderOptions(Grouping 
     return ret;
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateThreadExpandPolicyOptions(Threading t)
+QList<QPair<QString, int>> Aggregation::enumerateThreadExpandPolicyOptions(Threading t)
 {
     if (t == NoThreading) {
         return {};
@@ -231,7 +231,7 @@ QVector<QPair<QString, int>> Aggregation::enumerateThreadExpandPolicyOptions(Thr
             {i18n("Always Expand Threads"), AlwaysExpandThreads}};
 }
 
-QVector<QPair<QString, int>> Aggregation::enumerateFillViewStrategyOptions()
+QList<QPair<QString, int>> Aggregation::enumerateFillViewStrategyOptions()
 {
     return {{i18n("Favor Interactivity"), FavorInteractivity}, {i18n("Favor Speed"), FavorSpeed}, {i18n("Batch Job (No Interactivity)"), BatchNoInteractivity}};
 }

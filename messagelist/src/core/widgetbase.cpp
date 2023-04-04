@@ -248,7 +248,7 @@ MessageList::Core::QuickSearchLine::SearchOptions Widget::currentOptions() const
     return d->quickSearchLine->searchOptions();
 }
 
-QVector<Akonadi::MessageStatus> Widget::currentFilterStatus() const
+QList<Akonadi::MessageStatus> Widget::currentFilterStatus() const
 {
     if (d->mFilter) {
         return d->mFilter->status();
@@ -582,7 +582,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
 
     QActionGroup *grp;
     QAction *act;
-    QVector<QPair<QString, int>> options;
+    QList<QPair<QString, int>> options;
 
     grp = new QActionGroup(menu);
 
@@ -1043,7 +1043,7 @@ void Widget::viewSelectionChanged()
 {
 }
 
-void Widget::viewMessageListContextPopupRequest(const QVector<MessageItem *> &, const QPoint &)
+void Widget::viewMessageListContextPopupRequest(const QList<MessageItem *> &, const QPoint &)
 {
 }
 

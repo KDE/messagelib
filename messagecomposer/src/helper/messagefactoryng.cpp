@@ -354,12 +354,12 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair<KMime::Message::Ptr, QVector<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
     KMime::Message::Ptr msg(new KMime::Message);
-    QVector<KMime::Content *> attachments;
+    QList<KMime::Content *> attachments;
 
     const int numberOfItems(items.count());
     if (numberOfItems >= 2) {
@@ -390,7 +390,7 @@ QPair<KMime::Message::Ptr, QVector<KMime::Content *>> MessageFactoryNG::createAt
     applyCharset(msg);
 
     // msg->assemble();
-    return QPair<KMime::Message::Ptr, QVector<KMime::Content *>>(msg, QVector<KMime::Content *>() << attachments);
+    return QPair<KMime::Message::Ptr, QList<KMime::Content *>>(msg, QList<KMime::Content *>() << attachments);
 }
 
 KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg)
@@ -592,7 +592,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
                                                 KMime::MDN::DispositionType d,
                                                 KMime::MDN::SendingMode s,
                                                 int mdnQuoteOriginal,
-                                                const QVector<KMime::MDN::DispositionModifier> &m)
+                                                const QList<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;
@@ -946,7 +946,7 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
         } else if (!codec->canEncode(body)) { // charset can't encode body, fall back to preferred
             const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
 
-            QVector<QByteArray> chars;
+            QList<QByteArray> chars;
             chars.reserve(charsets.count());
             for (const QString &charset : charsets) {
                 chars << charset.toLatin1();

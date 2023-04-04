@@ -47,15 +47,15 @@ public:
     void initializePluginList();
 
     void loadPlugin(MailNetworkUrlInterceptorPluginInfo *item);
-    Q_REQUIRED_RESULT QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
     Q_REQUIRED_RESULT NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
+    QList<MailNetworkUrlInterceptorPluginInfo> mPluginList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
     NetworkUrlInterceptorPluginManager *const q;
 };
 
@@ -69,17 +69,17 @@ QString NetworkUrlInterceptorPluginManagerPrivate::configPrefixSettingKey() cons
     return QStringLiteral("PluginsNetworkUrlInterceptor");
 }
 
-QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
+QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/webengineviewer/urlinterceptor"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/webengineviewer/urlinterceptor"));
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QVectorIterator<KPluginMetaData> i(plugins);
+    QListIterator<KPluginMetaData> i(plugins);
 #else
     QListIterator<KPluginMetaData> i(plugins);
 #endif
@@ -108,17 +108,17 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
             qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());
-    for (QVector<MailNetworkUrlInterceptorPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());
+    for (QList<MailNetworkUrlInterceptorPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
 
-QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManagerPrivate::pluginsList() const
+QList<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManagerPrivate::pluginsList() const
 {
-    QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> lst;
-    QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<WebEngineViewer::NetworkPluginUrlInterceptor *> lst;
+    QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -139,8 +139,8 @@ void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterce
 
 WebEngineViewer::NetworkPluginUrlInterceptor *NetworkUrlInterceptorPluginManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -163,7 +163,7 @@ NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *
 
 NetworkUrlInterceptorPluginManager::~NetworkUrlInterceptorPluginManager() = default;
 
-QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManager::pluginsList() const
+QList<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -178,7 +178,7 @@ QString NetworkUrlInterceptorPluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

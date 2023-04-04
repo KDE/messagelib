@@ -48,7 +48,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
     if (m_pluginSubdir.isEmpty()) {
         return;
     }
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(m_pluginSubdir);
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(m_pluginSubdir);
     for (const auto &md : plugins) {
         const auto pluginData = md.rawData().value(QLatin1String("renderer")).toArray();
         if (pluginData.isEmpty()) {
@@ -129,7 +129,7 @@ MessagePartRendererFactory *MessagePartRendererFactory::instance()
     return &s_instance;
 }
 
-QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePartPtr &mp) const
+QList<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePartPtr &mp) const
 {
     d->setup();
 
@@ -168,7 +168,7 @@ QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(
         return ancestors.indexOf(lhs.mimeType) < ancestors.indexOf(rhs.mimeType);
     });
 
-    QVector<MessagePartRendererBase *> r;
+    QList<MessagePartRendererBase *> r;
     r.reserve(candidates.size());
     for (const auto &candidate : candidates) {
         r.push_back(candidate.renderer.data());

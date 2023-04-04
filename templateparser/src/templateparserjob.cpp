@@ -1165,7 +1165,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     d->mMsg->parse();
 }
 
-KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Content *> &attachments, KMime::Content *textPart) const
+KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Content *> &attachments, KMime::Content *textPart) const
 {
     auto mixedPart = new KMime::Content(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();

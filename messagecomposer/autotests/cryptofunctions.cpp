@@ -191,7 +191,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
+        QList<KMime::Content *> extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
         if (combined) {
             QCOMPARE(nh->signatureState(resultMessage.data()), MimeTreeParser::KMMsgFullySigned);
@@ -217,7 +217,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
+        QList<KMime::Content *> extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
         QCOMPARE(nh->signatureState(extra[0]), MimeTreeParser::KMMsgFullySigned);
     }

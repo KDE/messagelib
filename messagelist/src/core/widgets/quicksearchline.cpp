@@ -126,19 +126,19 @@ void QuickSearchLine::resetFilter()
     mSearchEdit->setLocked(false);
 }
 
-void QuickSearchLine::slotFilterActionChanged(const QVector<Akonadi::MessageStatus> &lst)
+void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)
 {
     mLstStatus = lst;
     Q_EMIT statusButtonsClicked();
 }
 
-void QuickSearchLine::setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus)
+void QuickSearchLine::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
     mLstStatus = newLstStatus;
     mSearchEdit->setFilterMessageStatus(mLstStatus);
 }
 
-QVector<Akonadi::MessageStatus> QuickSearchLine::status() const
+QList<Akonadi::MessageStatus> QuickSearchLine::status() const
 {
     return mLstStatus;
 }

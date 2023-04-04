@@ -7,8 +7,8 @@
 #pragma once
 
 #include <QHash>
+#include <QList>
 #include <QTabWidget>
-#include <QVector>
 #include <messagelist/enums.h>
 #include <messagelist/view.h>
 
@@ -90,7 +90,7 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QList<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
      * Returns the currently selected Items (bound to current StorageModel).
@@ -116,9 +116,9 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    Q_REQUIRED_RESULT QVector<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QList<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren = true) const;
 
-    Q_REQUIRED_RESULT QVector<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QList<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren = true) const;
 
     /**
      * Returns the Akonadi::Item bound to the current StorageModel that
@@ -254,7 +254,7 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.

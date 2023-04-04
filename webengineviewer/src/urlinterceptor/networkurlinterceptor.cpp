@@ -8,7 +8,7 @@
 #include "networkpluginurlinterceptorinterface.h"
 
 #include <QDebug>
-#include <QVector>
+#include <QList>
 
 using namespace WebEngineViewer;
 
@@ -20,7 +20,7 @@ public:
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);
     void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
-    QVector<NetworkPluginUrlInterceptorInterface *> listInterceptor;
+    QList<NetworkPluginUrlInterceptorInterface *> listInterceptor;
 };
 
 void NetworkUrlInterceptorPrivate::addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)

@@ -8,7 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QDebug>
-#include <QVector>
+#include <QList>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace WebEngineViewer
 {
@@ -46,7 +46,7 @@ Q_SIGNALS:
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void initializeList();
-    QVector<TrackerBlackList> mBackList;
+    QList<TrackerBlackList> mBackList;
     bool mEnabledMailTrackingInterceptor = false;
 };
 }

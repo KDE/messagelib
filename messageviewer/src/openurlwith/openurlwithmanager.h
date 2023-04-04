@@ -8,8 +8,8 @@
 
 #include "messageviewer_export.h"
 #include "openwithurlinfo.h"
+#include <QList>
 #include <QObject>
-#include <QVector>
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT OpenUrlWithManager : public QObject
@@ -23,8 +23,8 @@ public:
 
     void clear();
 
-    Q_REQUIRED_RESULT const QVector<OpenWithUrlInfo> &openWithUrlInfo() const;
-    void setOpenWithUrlInfo(const QVector<OpenWithUrlInfo> &newOpenWithUrlInfo);
+    Q_REQUIRED_RESULT const QList<OpenWithUrlInfo> &openWithUrlInfo() const;
+    void setOpenWithUrlInfo(const QList<OpenWithUrlInfo> &newOpenWithUrlInfo);
     void saveRules();
 
     Q_REQUIRED_RESULT OpenWithUrlInfo openWith(const QUrl &url);
@@ -32,6 +32,6 @@ public:
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
 
-    QVector<OpenWithUrlInfo> mOpenWithUrlInfo;
+    QList<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
 }

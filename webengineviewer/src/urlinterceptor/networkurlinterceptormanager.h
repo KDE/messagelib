@@ -9,8 +9,8 @@
 #include "networkpluginurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
 #include "webengineviewer_export.h"
+#include <QList>
 #include <QObject>
-#include <QVector>
 #include <WebEngineViewer/WebHitTestResult>
 #include <memory>
 class KActionCollection;
@@ -30,7 +30,7 @@ public:
     explicit NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~NetworkUrlInterceptorManager() override;
 
-    Q_REQUIRED_RESULT QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
+    Q_REQUIRED_RESULT QList<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
 private:

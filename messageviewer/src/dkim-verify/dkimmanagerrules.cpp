@@ -40,7 +40,7 @@ bool DKIMManagerRules::isEmpty() const
     return mRules.isEmpty();
 }
 
-QVector<DKIMRule> DKIMManagerRules::rules() const
+QList<DKIMRule> DKIMManagerRules::rules() const
 {
     return mRules;
 }
@@ -85,7 +85,7 @@ int DKIMManagerRules::loadRules(const QString &fileName)
     return numberOfRulesAdded;
 }
 
-void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
+void DKIMManagerRules::saveRules(const QList<DKIMRule> &lst)
 {
     mRules = lst;
     save();
@@ -102,12 +102,12 @@ int DKIMManagerRules::importRules(const QString &fileName)
     return loadRules(fileName);
 }
 
-void DKIMManagerRules::exportRules(const QString &fileName, const QVector<DKIMRule> &lst)
+void DKIMManagerRules::exportRules(const QString &fileName, const QList<DKIMRule> &lst)
 {
     save(fileName, lst);
 }
 
-void DKIMManagerRules::save(const QString &fileName, const QVector<DKIMRule> &lst)
+void DKIMManagerRules::save(const QString &fileName, const QList<DKIMRule> &lst)
 {
     const KSharedConfig::Ptr &config =
         KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
@@ -116,7 +116,7 @@ void DKIMManagerRules::save(const QString &fileName, const QVector<DKIMRule> &ls
     for (const QString &group : rulesGroups) {
         config->deleteGroup(group);
     }
-    QVector<DKIMRule> rules = lst;
+    QList<DKIMRule> rules = lst;
     if (lst.isEmpty()) {
         rules = mRules;
     }

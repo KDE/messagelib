@@ -37,10 +37,10 @@ public:
         int methodVersion = -1;
 
         // Add Properties
-        QVector<Property> smtp;
-        QVector<Property> header;
-        QVector<Property> body;
-        QVector<Property> policy;
+        QList<Property> smtp;
+        QList<Property> header;
+        QList<Property> body;
+        QList<Property> policy;
 
         Q_REQUIRED_RESULT bool operator==(const AuthStatusInfo &other) const;
         Q_REQUIRED_RESULT bool isValid() const;
@@ -59,12 +59,12 @@ public:
 
     Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
 
-    Q_REQUIRED_RESULT QVector<AuthStatusInfo> listAuthStatusInfo() const;
-    void setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo);
+    Q_REQUIRED_RESULT QList<AuthStatusInfo> listAuthStatusInfo() const;
+    void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
     Q_REQUIRED_RESULT AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
-    QVector<AuthStatusInfo> mListAuthStatusInfo;
+    QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;
     int mAuthVersion = -1;

@@ -124,7 +124,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
+    Q_REQUIRED_RESULT static QList<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
 
     /**
      * Enumerates the available message sorting directions for the specified MessageSorting option.
@@ -132,7 +132,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
+    Q_REQUIRED_RESULT static QList<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
 
     /**
      * Enumerates the group sorting options compatible with the specified Grouping.
@@ -140,7 +140,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
+    Q_REQUIRED_RESULT static QList<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
 
     /**
      * Enumerates the group sort direction options compatible with the specified Grouping and GroupSorting.
@@ -148,7 +148,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
+    Q_REQUIRED_RESULT static QList<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
 
     /**
      * Checks if this sort order can be used in combination with the given aggregation.

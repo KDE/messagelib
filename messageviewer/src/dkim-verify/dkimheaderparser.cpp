@@ -118,7 +118,7 @@ QByteArray DKIMHeaderParser::unfoldHeader(const char *header, size_t headerSize)
     return result;
 }
 
-QVector<DKIMHeaderParser::Header> DKIMHeaderParser::listHeaders() const
+QList<DKIMHeaderParser::Header> DKIMHeaderParser::listHeaders() const
 {
     return mListHeaders;
 }

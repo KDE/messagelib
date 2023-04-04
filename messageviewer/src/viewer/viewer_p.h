@@ -20,9 +20,9 @@
 #include <KMime/Message>
 #include <KService>
 #include <PimCommon/ShareServiceUrlManager>
+#include <QList>
 #include <QPointer>
 #include <QUrl>
-#include <QVector>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
 #include <QObject>
@@ -713,7 +713,7 @@ public:
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager = nullptr;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu = nullptr;
     QPrinter *mCurrentPrinter = nullptr;
-    QVector<QPointer<MessageViewer::MailSourceWebEngineViewer>> mListMailSourceViewer;
+    QList<QPointer<MessageViewer::MailSourceWebEngineViewer>> mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;

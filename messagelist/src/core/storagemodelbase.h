@@ -9,7 +9,7 @@
 #pragma once
 
 #include <QAbstractItemModel>
-#include <QVector>
+#include <QList>
 namespace Akonadi
 {
 class MessageStatus;
@@ -106,7 +106,7 @@ public:
      * The implementation-specific mime data for this list of items.
      *    Called when the user initiates a drag from the messagelist.
      */
-    virtual QMimeData *mimeData(const QVector<MessageItem *> &) const = 0;
+    virtual QMimeData *mimeData(const QList<MessageItem *> &) const = 0;
     using QAbstractItemModel::mimeData;
 };
 } // namespace Core

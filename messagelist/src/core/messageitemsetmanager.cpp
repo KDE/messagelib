@@ -57,7 +57,7 @@ QList<MessageItem *> MessageItemSetManager::messageItems(MessageItemSetReference
 
 void MessageItemSetManager::removeMessageItemFromAllSets(MessageItem *mi)
 {
-    QVector<MessageItemSetReference> setsToBeKilled;
+    QList<MessageItemSetReference> setsToBeKilled;
 
     for (auto it = mSets->cbegin(), end = mSets->cend(); it != end; ++it) {
         (*it)->remove(mi);

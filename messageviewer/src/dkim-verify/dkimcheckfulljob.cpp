@@ -67,7 +67,7 @@ void DKIMCheckFullJob::checkAuthenticationResults()
     }
 }
 
-void DKIMCheckFullJob::checkSignature(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
+void DKIMCheckFullJob::checkSignature(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
 {
     auto job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
@@ -134,7 +134,7 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
     // TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
-    const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lst = converter.convert();
+    const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lst = converter.convert();
     // qDebug() << "  lst " << lst;
     // TODO use it.
 

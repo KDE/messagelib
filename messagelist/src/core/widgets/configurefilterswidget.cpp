@@ -32,7 +32,7 @@ ConfigureFiltersWidget::~ConfigureFiltersWidget() = default;
 
 void ConfigureFiltersWidget::init()
 {
-    const QVector<FilterSavedManager::FilterInfo> lstFilters = FilterSavedManager::self()->filterInfos();
+    const QList<FilterSavedManager::FilterInfo> lstFilters = FilterSavedManager::self()->filterInfos();
     for (const auto &filter : lstFilters) {
         auto item = new FilterListWidgetItem(mListFiltersWidget);
         item->setText(filter.filterName);

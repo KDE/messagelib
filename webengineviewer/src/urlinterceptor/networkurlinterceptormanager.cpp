@@ -20,7 +20,7 @@ public:
 
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
-    QVector<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
+    QList<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
 
 private:
     NetworkUrlInterceptorManager *const q;
@@ -55,7 +55,7 @@ NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QWebEngineView *webEn
 
 NetworkUrlInterceptorManager::~NetworkUrlInterceptorManager() = default;
 
-QVector<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterceptorManager::interfaceList() const
+QList<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterceptorManager::interfaceList() const
 {
     return d->mListInterface;
 }

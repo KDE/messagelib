@@ -74,7 +74,7 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
 {
     Q_Q(MainTextJob);
 
-    const QVector<QByteArray> charsets = q->globalPart()->charsets(true);
+    const QList<QByteArray> charsets = q->globalPart()->charsets(true);
     if (charsets.isEmpty()) {
         q->setError(JobBase::BugError);
         q->setErrorText(

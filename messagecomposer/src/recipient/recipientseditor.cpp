@@ -105,7 +105,7 @@ void RecipientsEditor::addRecipient(RecipientLineNG *line, const QString &recipi
     addRecipient(recipient, line->recipientType());
 }
 
-bool RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type type)
+bool RecipientsEditor::setRecipientString(const QList<KMime::Types::Mailbox> &mailboxes, Recipient::Type type)
 {
     int count = 1;
     for (const KMime::Types::Mailbox &mailbox : mailboxes) {
@@ -128,7 +128,7 @@ bool RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &
 
 Recipient::List RecipientsEditor::recipients() const
 {
-    const QVector<MultiplyingLineData::Ptr> dataList = allData();
+    const QList<MultiplyingLineData::Ptr> dataList = allData();
     Recipient::List recList;
     for (const MultiplyingLineData::Ptr &datum : dataList) {
         Recipient::Ptr rec = qSharedPointerDynamicCast<Recipient>(datum);

@@ -162,7 +162,7 @@ public:
      * Appends the whole subtree originating at this item
      * to the specified list. This item is included!
      */
-    void subTreeToList(QVector<MessageItem *> &list);
+    void subTreeToList(QList<MessageItem *> &list);
 
     //
     // Colors and fonts shared by all message items.

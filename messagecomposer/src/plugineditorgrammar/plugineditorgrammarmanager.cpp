@@ -45,16 +45,16 @@ public:
     }
 
     void loadPlugin(PluginEditorGrammarInfo *item);
-    Q_REQUIRED_RESULT QVector<PimCommon::CustomToolsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::CustomToolsPlugin *> pluginsList() const;
     void initializePlugins();
-    QVector<PluginEditorGrammarInfo> mPluginList;
+    QList<PluginEditorGrammarInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorGrammarManager *const q;
 };
 
@@ -68,20 +68,20 @@ QString PluginEditorGrammarManagerPrivate::configPrefixSettingKey() const
     return QStringLiteral("PluginEditorGrammar");
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDataList() const
 {
     return mPluginDataList;
 }
 
 void PluginEditorGrammarManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins =
+    const QList<KPluginMetaData> plugins =
         KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/kmail/plugineditorgrammar"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QVectorIterator<KPluginMetaData> i(plugins);
+    QListIterator<KPluginMetaData> i(plugins);
 #else
     QListIterator<KPluginMetaData> i(plugins);
 #endif
@@ -106,8 +106,8 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
             qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<PluginEditorGrammarInfo>::iterator end(mPluginList.end());
-    for (QVector<PluginEditorGrammarInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<PluginEditorGrammarInfo>::iterator end(mPluginList.end());
+    for (QList<PluginEditorGrammarInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
@@ -122,11 +122,11 @@ void PluginEditorGrammarManagerPrivate::loadPlugin(PluginEditorGrammarInfo *item
     }
 }
 
-QVector<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManagerPrivate::pluginsList() const
+QList<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManagerPrivate::pluginsList() const
 {
-    QVector<PimCommon::CustomToolsPlugin *> lst;
-    QVector<PluginEditorGrammarInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorGrammarInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PimCommon::CustomToolsPlugin *> lst;
+    QList<PluginEditorGrammarInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorGrammarInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -136,8 +136,8 @@ QVector<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManagerPrivate::plugi
 
 PimCommon::CustomToolsPlugin *PluginEditorGrammarManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<PluginEditorGrammarInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorGrammarInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PluginEditorGrammarInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorGrammarInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -160,7 +160,7 @@ PluginEditorGrammarManager *PluginEditorGrammarManager::self()
     return &s_self;
 }
 
-QVector<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManager::pluginsList() const
+QList<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -175,7 +175,7 @@ QString PluginEditorGrammarManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorGrammarManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorGrammarManager::pluginsDataList() const
 {
     return d->pluginsDataList();
 }

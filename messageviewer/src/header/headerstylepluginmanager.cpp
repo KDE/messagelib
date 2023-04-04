@@ -34,8 +34,8 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(HeaderStylePluginInfo *item);
     Q_REQUIRED_RESULT QString configGroupName() const;
@@ -43,8 +43,8 @@ public:
     MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
-    QVector<HeaderStylePluginInfo> mPluginList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<HeaderStylePluginInfo> mPluginList;
     HeaderStylePluginManager *const q;
 };
 
@@ -56,7 +56,7 @@ QString pluginVersion()
 }
 }
 
-QVector<PimCommon::PluginUtilData> HeaderStylePluginManagerPrivate::pluginDataList() const
+QList<PimCommon::PluginUtilData> HeaderStylePluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -73,17 +73,17 @@ QString HeaderStylePluginManagerPrivate::configPrefixSettingKey() const
 
 void HeaderStylePluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins =
+    const QList<KPluginMetaData> plugins =
         KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/headerstyle"));
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QVectorIterator<KPluginMetaData> i(plugins);
+    QListIterator<KPluginMetaData> i(plugins);
 #else
     QListIterator<KPluginMetaData> i(plugins);
 #endif
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
-    QVector<int> listOrder;
+    QList<int> listOrder;
     while (i.hasPrevious()) {
         HeaderStylePluginInfo info;
 
@@ -120,17 +120,17 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
-    for (QVector<HeaderStylePluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<HeaderStylePluginInfo>::iterator end(mPluginList.end());
+    for (QList<HeaderStylePluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
 
-QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::pluginsList() const
+QList<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::pluginsList() const
 {
-    QVector<MessageViewer::HeaderStylePlugin *> lst;
-    QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<MessageViewer::HeaderStylePlugin *> lst;
+    QList<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -150,8 +150,8 @@ void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
 
 MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -174,7 +174,7 @@ HeaderStylePluginManager::HeaderStylePluginManager(QObject *parent)
 
 HeaderStylePluginManager::~HeaderStylePluginManager() = default;
 
-QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManager::pluginsList() const
+QList<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -200,7 +200,7 @@ QString HeaderStylePluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> HeaderStylePluginManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> HeaderStylePluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

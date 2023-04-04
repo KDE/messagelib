@@ -13,7 +13,7 @@
 #include <QDebug>
 #include <QSignalSpy>
 #include <QTest>
-Q_DECLARE_METATYPE(QVector<WebEngineViewer::Addition>)
+Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
 QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
@@ -93,10 +93,10 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 {
     QTest::addColumn<QList<quint32>>("listElementToRemove");
-    QTest::addColumn<QVector<WebEngineViewer::Addition>>("listElementToAdd");
+    QTest::addColumn<QList<WebEngineViewer::Addition>>("listElementToAdd");
     QTest::addColumn<QByteArray>("newssha");
     QTest::addColumn<bool>("success");
-    QVector<WebEngineViewer::Addition> lstAdditions;
+    QList<WebEngineViewer::Addition> lstAdditions;
     QList<quint32> r = {2, 3, 4};
     QTest::newRow("correctdatabase") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
     r = {3, 2, 4};
@@ -151,7 +151,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 {
     QFETCH(QList<quint32>, listElementToRemove);
-    QFETCH(QVector<WebEngineViewer::Addition>, listElementToAdd);
+    QFETCH(QList<WebEngineViewer::Addition>, listElementToAdd);
     QFETCH(QByteArray, newssha);
     QFETCH(bool, success);
 
@@ -191,7 +191,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     d.prefixSize = 5;
     d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
-    QVector<WebEngineViewer::Addition> lst;
+    QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
     info.minimumWaitDuration = QStringLiteral("593.440s");
@@ -233,7 +233,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
         index += sizeof(quint64);
     }
-    const QVector<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
+    const QList<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
     QCOMPARE(lstInfo.count(), 9);
     for (int i = 0; i < 9; i++) {
         QCOMPARE(lstInfo.at(i).hashString, storageData.at(i));
@@ -270,7 +270,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     // >>> encoded
     // 'yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE='
 
-    QVector<WebEngineViewer::Removal> lstRemovals;
+    QList<WebEngineViewer::Removal> lstRemovals;
     lstRemovals << r;
     updateinfo.additionList = listElementToAdd;
     updateinfo.removalList = lstRemovals;
@@ -325,7 +325,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
     d.prefixSize = 5;
     d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
-    QVector<WebEngineViewer::Addition> lst;
+    QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
     info.minimumWaitDuration = QStringLiteral("593.440s");
@@ -367,7 +367,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
         index += sizeof(quint64);
     }
-    const QVector<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
+    const QList<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
     QCOMPARE(lstInfo.count(), 9);
     for (int i = 0; i < 9; i++) {
         QCOMPARE(lstInfo.at(i).hashString, storageData.at(i));

@@ -9,8 +9,8 @@
 #include "messageviewer_export.h"
 #include <KSharedConfig>
 #include <MessageViewer/DKIMRule>
+#include <QList>
 #include <QObject>
-#include <QVector>
 namespace MessageViewer
 {
 /**
@@ -27,21 +27,21 @@ public:
 
     void addRule(const DKIMRule &rule);
 
-    Q_REQUIRED_RESULT QVector<DKIMRule> rules() const;
+    Q_REQUIRED_RESULT QList<DKIMRule> rules() const;
 
-    void saveRules(const QVector<DKIMRule> &lst);
+    void saveRules(const QList<DKIMRule> &lst);
 
     void clear();
 
     Q_REQUIRED_RESULT int importRules(const QString &fileName);
-    void exportRules(const QString &fileName, const QVector<DKIMRule> &lst = {});
+    void exportRules(const QString &fileName, const QList<DKIMRule> &lst = {});
 
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
     Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT int loadRules(const QString &fileName = QString());
-    MESSAGEVIEWER_NO_EXPORT void save(const QString &fileName = QString(), const QVector<DKIMRule> &lst = {});
+    MESSAGEVIEWER_NO_EXPORT void save(const QString &fileName = QString(), const QList<DKIMRule> &lst = {});
     Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
-    QVector<DKIMRule> mRules;
+    QList<DKIMRule> mRules;
 };
 }

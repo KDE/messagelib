@@ -9,8 +9,8 @@
 
 #include "messageviewer_export.h"
 #include "scamdetectioninfo.h"
+#include <QList>
 #include <QObject>
-#include <QVector>
 namespace MessageViewer
 {
 class ScamDetectionInfo;
@@ -25,6 +25,6 @@ public:
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
     MESSAGEVIEWER_NO_EXPORT void writeSettings();
-    QVector<ScamDetectionInfo> mScamDetectionInfoList;
+    QList<ScamDetectionInfo> mScamDetectionInfoList;
 };
 }

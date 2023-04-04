@@ -25,8 +25,8 @@ public:
     Q_REQUIRED_RESULT KMime::Headers::Base const *mailHeaderAsBase(const char *header) const;
     Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
     Q_REQUIRED_RESULT QDateTime dateHeader() const;
-    Q_REQUIRED_RESULT QVector<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
-    Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char *headerType) const;
+    Q_REQUIRED_RESULT QList<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
+    Q_REQUIRED_RESULT QList<KMime::Headers::Base *> headers(const char *headerType) const;
 
 public:
     KMime::Content *message = nullptr;

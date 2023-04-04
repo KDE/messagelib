@@ -48,7 +48,7 @@ public:
     Q_REQUIRED_RESULT QComboBox *tagFilterComboBox() const;
     Q_REQUIRED_RESULT SearchLineStatus *searchEdit() const;
     void resetFilter();
-    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const;
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const;
 
     void updateComboboxVisibility();
 
@@ -59,7 +59,7 @@ public:
     void addCompletionItem(const QString &str);
 
     void setSearchOptions(QuickSearchLine::SearchOptions opts);
-    void setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus);
+    void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
 
 Q_SIGNALS:
     void clearButtonClicked();
@@ -75,12 +75,12 @@ protected:
 private Q_SLOTS:
     MESSAGELIST_NO_EXPORT void slotSearchEditTextEdited(const QString &text);
     MESSAGELIST_NO_EXPORT void slotClearButtonClicked();
-    MESSAGELIST_NO_EXPORT void slotFilterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
+    MESSAGELIST_NO_EXPORT void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
 
 private:
     SearchLineStatus *const mSearchEdit;
     QComboBox *const mTagFilterCombo;
-    QVector<Akonadi::MessageStatus> mLstStatus;
+    QList<Akonadi::MessageStatus> mLstStatus;
 };
 }
 }

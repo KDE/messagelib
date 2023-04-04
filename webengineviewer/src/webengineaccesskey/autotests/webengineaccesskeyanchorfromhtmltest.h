@@ -23,7 +23,7 @@ private Q_SLOTS:
 
     void handleSearchAccessKey(const QVariant &var);
 Q_SIGNALS:
-    void accessKeySearchFinished(const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> &var);
+    void accessKeySearchFinished(const QList<WebEngineViewer::WebEngineAccessKeyAnchor> &var);
 
 private:
     QWebEngineView *mEngineView = nullptr;

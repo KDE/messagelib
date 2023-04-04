@@ -45,7 +45,7 @@ public:
 
     Q_REQUIRED_RESULT bool shouldCheck() const;
     Q_REQUIRED_RESULT bool checkFileChanged();
-    Q_REQUIRED_RESULT QVector<WebEngineViewer::Addition> extractAllInfo() const;
+    Q_REQUIRED_RESULT QList<WebEngineViewer::Addition> extractAllInfo() const;
 
 private:
     std::unique_ptr<LocalDataBaseFilePrivate> const d;

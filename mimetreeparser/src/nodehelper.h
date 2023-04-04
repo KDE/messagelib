@@ -19,7 +19,6 @@
 #include <QMap>
 #include <QPointer>
 #include <QSet>
-#include <QVector>
 
 class QUrl;
 class QTextCodec;
@@ -76,10 +75,10 @@ public:
     void clearOverrideHeaders();
     void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
     Q_REQUIRED_RESULT bool hasMailHeader(const char *header, const KMime::Content *message) const;
-    QVector<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
+    QList<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
     KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
     QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
-    QVector<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
+    QList<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
     Q_REQUIRED_RESULT QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
@@ -88,7 +87,7 @@ public:
     void cleanExtraContent(KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
-    Q_REQUIRED_RESULT QVector<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
+    Q_REQUIRED_RESULT QList<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
 
     /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
@@ -220,7 +219,7 @@ public:
      * Note that this does not include attachments from the primary node tree.
      * @see KMime::Content::attachments().
      */
-    QVector<KMime::Content *> attachmentsOfExtraContents() const;
+    QList<KMime::Content *> attachmentsOfExtraContents() const;
 
     Q_REQUIRED_RESULT QString extractAttachmentIndex(const QString &path) const;
 Q_SIGNALS:
@@ -257,10 +256,10 @@ private:
     QMap<KMime::Content *, const QTextCodec *> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
-    QMap<KMime::Message::Content *, QVector<KMime::Content *>> mExtraContents;
+    QMap<KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;
     QPointer<AttachmentTemporaryFilesDirs> mAttachmentFilesDir;
-    QMap<const KMime::Content *, QVector<MessagePartPtr>> mHeaderOverwrite;
-    QVector<QPointer<AttachmentTemporaryFilesDirs>> mListAttachmentTemporaryDirs;
+    QMap<const KMime::Content *, QList<MessagePartPtr>> mHeaderOverwrite;
+    QList<QPointer<AttachmentTemporaryFilesDirs>> mListAttachmentTemporaryDirs;
     friend class NodeHelperTest;
 };
 }

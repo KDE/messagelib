@@ -98,7 +98,7 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
     mProcessedNodes.removeAll(node);
 
     // avoid double addition of extra nodes, eg. encrypted attachments
-    const QMap<KMime::Content *, QVector<KMime::Content *>>::iterator it = mExtraContents.find(node);
+    const QMap<KMime::Content *, QList<KMime::Content *>>::iterator it = mExtraContents.find(node);
     if (it != mExtraContents.end()) {
         const auto contents = it.value();
         for (KMime::Content *c : contents) {
@@ -147,9 +147,9 @@ void NodeHelper::clear()
     mOverrideCodecs.clear();
     std::for_each(mBodyPartMementoMap.begin(), mBodyPartMementoMap.end(), &clearBodyPartMemento);
     mBodyPartMementoMap.clear();
-    QMap<KMime::Content *, QVector<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
+    QMap<KMime::Content *, QList<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
 
-    for (QMap<KMime::Content *, QVector<KMime::Content *>>::ConstIterator it = mExtraContents.constBegin(); it != end; ++it) {
+    for (QMap<KMime::Content *, QList<KMime::Content *>>::ConstIterator it = mExtraContents.constBegin(); it != end; ++it) {
         const auto contents = it.value();
         for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
@@ -503,9 +503,9 @@ bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message
     return message->hasHeader(header);
 }
 
-QVector<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *header, const KMime::Content *message) const
+QList<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *header, const KMime::Content *message) const
 {
-    QVector<MessagePart::Ptr> ret;
+    QList<MessagePart::Ptr> ret;
     if (mHeaderOverwrite.contains(message)) {
         const auto parts = mHeaderOverwrite.value(message);
         for (const auto &messagePart : parts) {
@@ -517,7 +517,7 @@ QVector<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *heade
     return ret;
 }
 
-QVector<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KMime::Content *message)
+QList<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KMime::Content *message)
 {
     const auto mp = messagePartsOfMailHeader(header, message);
     if (mp.size() > 0) {
@@ -559,7 +559,7 @@ void NodeHelper::clearOverrideHeaders()
 void NodeHelper::registerOverrideHeader(KMime::Content *message, MessagePart::Ptr part)
 {
     if (!mHeaderOverwrite.contains(message)) {
-        mHeaderOverwrite[message] = QVector<MessagePart::Ptr>();
+        mHeaderOverwrite[message] = QList<MessagePart::Ptr>();
     }
     mHeaderOverwrite[message].append(part);
 }
@@ -707,7 +707,7 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
 
     QString indexStr = node->index().toString();
     if (indexStr.isEmpty()) {
-        QMapIterator<KMime::Message::Content *, QVector<KMime::Content *>> it(mExtraContents);
+        QMapIterator<KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
         while (it.hasNext()) {
             it.next();
             const auto &extraNodes = it.value();
@@ -725,10 +725,10 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
     } else {
         const KMime::Content *const topLevel = node->topLevel();
         // if the node is an extra node, prepend the index of the extra node to the url
-        QMapIterator<KMime::Message::Content *, QVector<KMime::Content *>> it(mExtraContents);
+        QMapIterator<KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
         while (it.hasNext()) {
             it.next();
-            const QVector<KMime::Content *> &extraNodes = extraContents(it.key());
+            const QList<KMime::Content *> &extraNodes = extraContents(it.key());
             for (int i = 0; i < extraNodes.size(); ++i) {
                 KMime::Content *const extraNode = extraNodes[i];
                 if (topLevel == extraNode) {
@@ -758,7 +758,7 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
         for (int i = 0; i < pathPartsSize; ++i) {
             const QString &path = pathParts[i];
             if (path.startsWith(QLatin1Char('e'))) {
-                const QVector<KMime::Content *> &extraParts = mExtraContents.value(c);
+                const QList<KMime::Content *> &extraParts = mExtraContents.value(c);
                 const int idx = QStringView(path).mid(1).toInt();
                 c = (idx < extraParts.size()) ? extraParts[idx] : nullptr;
             } else {
@@ -856,7 +856,7 @@ QString NodeHelper::fromAsString(KMime::Content *node) const
     if (auto topLevel = dynamic_cast<KMime::Message *>(node->topLevel())) {
         return topLevel->from()->asUnicodeString();
     } else {
-        auto realNode = std::find_if(mExtraContents.cbegin(), mExtraContents.cend(), [node](const QVector<KMime::Content *> &nodes) {
+        auto realNode = std::find_if(mExtraContents.cbegin(), mExtraContents.cend(), [node](const QList<KMime::Content *> &nodes) {
             return nodes.contains(node);
         });
         if (realNode != mExtraContents.cend()) {
@@ -879,7 +879,7 @@ void NodeHelper::cleanExtraContent(KMime::Content *topLevelNode)
     mExtraContents[topLevelNode].clear();
 }
 
-QVector<KMime::Content *> NodeHelper::extraContents(KMime::Content *topLevelnode) const
+QList<KMime::Content *> NodeHelper::extraContents(KMime::Content *topLevelnode) const
 {
     return mExtraContents.value(topLevelnode);
 }
@@ -890,7 +890,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
         return;
     }
 
-    const QVector<KMime::Content *> extraNodes = extraContents(node);
+    const QList<KMime::Content *> extraNodes = extraContents(node);
     for (KMime::Content *extra : extraNodes) {
         if (node->bodyIsMessage()) {
             qCWarning(MIMETREEPARSER_LOG) << "Asked to attach extra content to a kmime::message, this does not make sense. Attaching to:" << node
@@ -915,7 +915,7 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
     if (!node) {
         return;
     }
-    const QVector<KMime::Content *> extraNodes = extraContents(node);
+    const QList<KMime::Content *> extraNodes = extraContents(node);
     for (KMime::Content *extra : extraNodes) {
         QByteArray s = extra->encodedContent();
         const auto children = node->contents();
@@ -959,7 +959,7 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
 
 KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) const
 {
-    const QVector<KMime::Content *> xc = extraContents(content);
+    const QList<KMime::Content *> xc = extraContents(content);
     if (!xc.empty()) {
         if (xc.size() == 1) {
             return xc.front();
@@ -1106,9 +1106,9 @@ KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &or
     }
 }
 
-QVector<KMime::Content *> NodeHelper::attachmentsOfExtraContents() const
+QList<KMime::Content *> NodeHelper::attachmentsOfExtraContents() const
 {
-    QVector<KMime::Content *> result;
+    QList<KMime::Content *> result;
     for (auto it = mExtraContents.begin(), end = mExtraContents.end(); it != end; ++it) {
         const auto contents = it.value();
         for (auto content : contents) {

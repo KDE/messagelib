@@ -58,7 +58,7 @@ public:
     void restoreHeaders(const QByteArray &header);
 
     void addRule();
-    Q_REQUIRED_RESULT QVector<MessageViewer::DKIMRule> rules() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::DKIMRule> rules() const;
 
     void updateRules();
 Q_SIGNALS:

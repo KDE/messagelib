@@ -114,7 +114,7 @@ public:
         }
     }
 
-    QVector<QTemporaryDir *> tempDirs;
+    QList<QTemporaryDir *> tempDirs;
     KMime::Content *root = nullptr;
     QMimeDatabase m_mimeDb;
 };

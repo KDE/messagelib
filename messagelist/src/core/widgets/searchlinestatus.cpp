@@ -145,7 +145,7 @@ void SearchLineStatus::slotToggledLockAction()
 
 void SearchLineStatus::updateFilters()
 {
-    QVector<Akonadi::MessageStatus> lstStatus;
+    QList<Akonadi::MessageStatus> lstStatus;
 
     for (QAction *act : std::as_const(mFilterListActions)) {
         if (act->isChecked()) {
@@ -363,7 +363,7 @@ void SearchLineStatus::setSearchOptions(QuickSearchLine::SearchOptions opts)
     }
 }
 
-void SearchLineStatus::setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus)
+void SearchLineStatus::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
     clearFilterAction();
     clearFilterByAction();

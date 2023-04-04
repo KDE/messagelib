@@ -10,8 +10,8 @@
 #include "messageviewer_export.h"
 #include <KSharedConfig>
 #include <QDateTime>
+#include <QList>
 #include <QObject>
-#include <QVector>
 namespace QCA
 {
 class Initializer;
@@ -57,12 +57,12 @@ public:
     static DKIMManagerKey *self();
 
     void loadKeys();
-    void saveKeys(const QVector<KeyInfo> &lst);
+    void saveKeys(const QList<KeyInfo> &lst);
 
     void addKey(const KeyInfo &key);
     void removeKey(const QString &key);
 
-    Q_REQUIRED_RESULT QVector<KeyInfo> keys() const;
+    Q_REQUIRED_RESULT QList<KeyInfo> keys() const;
 
     void saveKeys();
     Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
@@ -71,7 +71,7 @@ public:
 
 private:
     Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
-    QVector<KeyInfo> mKeys;
+    QList<KeyInfo> mKeys;
     QCA::Initializer *const mQcaInitializer;
 };
 }

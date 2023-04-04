@@ -14,16 +14,16 @@
 
 using namespace MessageList::Utils;
 
-void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QVector<QPair<QString, int>> &optionDescriptors)
+void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList<QPair<QString, int>> &optionDescriptors)
 {
     int val = getIntegerOptionComboValue(combo, -1);
     combo->clear();
     int valIdx = -1;
     int idx = 0;
 
-    QVector<QPair<QString, int>>::ConstIterator end(optionDescriptors.end());
+    QList<QPair<QString, int>>::ConstIterator end(optionDescriptors.end());
 
-    for (QVector<QPair<QString, int>>::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
+    for (QList<QPair<QString, int>>::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
         if (val == (*it).second) {
             valIdx = idx;
         }

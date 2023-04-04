@@ -106,12 +106,12 @@ bool Filter::match(const MessageItem *item) const
     return true;
 }
 
-QVector<Akonadi::MessageStatus> Filter::status() const
+QList<Akonadi::MessageStatus> Filter::status() const
 {
     return mStatus;
 }
 
-void Filter::setStatus(const QVector<Akonadi::MessageStatus> &lstStatus)
+void Filter::setStatus(const QList<Akonadi::MessageStatus> &lstStatus)
 {
     mStatus = lstStatus;
 }
@@ -202,7 +202,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     filter->setFilterName(newGroup.readEntry("name"));
     filter->setIconName(newGroup.readEntry("iconName"));
     const QList<qint32> lst = newGroup.readEntry("status", QList<qint32>());
-    QVector<Akonadi::MessageStatus> messageStatusLst;
+    QList<Akonadi::MessageStatus> messageStatusLst;
     messageStatusLst.reserve(lst.count());
     for (const auto s : std::as_const(lst)) {
         Akonadi::MessageStatus status;

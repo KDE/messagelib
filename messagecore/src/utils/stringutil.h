@@ -8,8 +8,8 @@
 #include "kmime/kmime_message.h"
 #include "messagecore_export.h"
 
+#include <QList>
 #include <QStringList>
-#include <QVector>
 class QUrl;
 
 namespace KMime
@@ -17,7 +17,7 @@ namespace KMime
 namespace Types
 {
 struct Address;
-using AddressList = QVector<Address>;
+using AddressList = QList<Address>;
 class Mailbox;
 }
 namespace Headers
@@ -40,7 +40,7 @@ namespace StringUtil
 /**
  * Parses a mailto: url and extracts the information in the QMap (field name as key).
  */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QVector<QPair<QString, QString>> parseMailtoUrl(const QUrl &url);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url);
 
 /**
  * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.
@@ -143,7 +143,7 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Head
 /**
  * Same as the above, only for Mailbox::List types.
  */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList,
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
                                                                Display display = DisplayNameOnly,
                                                                const QString &cssStyle = QString(),
                                                                Link link = ShowLink,

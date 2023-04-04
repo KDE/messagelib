@@ -68,7 +68,7 @@ void EmailAddressResolveJob::setDefaultDomainName(const QString &domainName)
 
 void EmailAddressResolveJob::start()
 {
-    QVector<AliasesExpandJob *> jobs;
+    QList<AliasesExpandJob *> jobs;
 
     if (containsAliases(d->mFrom)) {
         auto job = new AliasesExpandJob(d->mFrom, d->mDefaultDomainName, this);

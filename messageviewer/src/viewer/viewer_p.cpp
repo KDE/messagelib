@@ -347,7 +347,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return true;
     }
 
-    const QVector<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
+    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
     if (extraNodes.contains(node->topLevel())) {
         KMessageBox::error(mMainWindow,
                            i18n("Deleting an attachment from an encrypted or old-style mailman message is not supported."),

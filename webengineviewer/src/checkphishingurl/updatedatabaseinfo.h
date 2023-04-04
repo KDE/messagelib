@@ -9,7 +9,6 @@
 #include "webengineviewer_export.h"
 #include <QList>
 #include <QObject>
-#include <QVector>
 namespace WebEngineViewer
 {
 struct Addition;
@@ -30,8 +29,8 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
         RawCompression = 2,
     };
 
-    QVector<Addition> additionList;
-    QVector<Removal> removalList;
+    QList<Addition> additionList;
+    QList<Removal> removalList;
     QString minimumWaitDuration;
     QString threatType;
     QString threatEntryType;

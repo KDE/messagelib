@@ -10,8 +10,8 @@
 
 #pragma once
 
+#include <QList>
 #include <QRegularExpression>
-#include <QVector>
 
 class QString;
 
@@ -95,7 +95,7 @@ private:
     QRegularExpression mThreshold;
     QRegularExpression mConfidence;
 };
-using SpamAgents = QVector<SpamAgent>;
+using SpamAgents = QList<SpamAgent>;
 
 class AntiSpamConfigSingletonProvider;
 

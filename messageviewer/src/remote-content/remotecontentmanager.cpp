@@ -129,12 +129,12 @@ void RemoteContentManager::writeSettings()
     group.sync();
 }
 
-void RemoteContentManager::setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo)
+void RemoteContentManager::setRemoveContentInfo(const QList<RemoteContentInfo> &removeContentInfo)
 {
     mRemoveContentInfo = removeContentInfo;
 }
 
-QVector<RemoteContentInfo> RemoteContentManager::removeContentInfo() const
+QList<RemoteContentInfo> RemoteContentManager::removeContentInfo() const
 {
     return mRemoveContentInfo;
 }

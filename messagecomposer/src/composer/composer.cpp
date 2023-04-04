@@ -60,14 +60,14 @@ public:
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
 
     QString gnupgHome;
-    QVector<QPair<QStringList, std::vector<GpgME::Key>>> encData;
+    QList<QPair<QStringList, std::vector<GpgME::Key>>> encData;
     GpgME::Key senderEncryptionKey;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
     // attachments with different sign/encrypt settings from
     // main message body. added at the end of the process
     AttachmentPart::List lateAttachmentParts;
-    QVector<KMime::Message::Ptr> resultMessages;
+    QList<KMime::Message::Ptr> resultMessages;
 
     Kleo::CryptoMessageFormat format;
 
@@ -478,7 +478,7 @@ Composer::Composer(QObject *parent)
 
 Composer::~Composer() = default;
 
-QVector<KMime::Message::Ptr> Composer::resultMessages() const
+QList<KMime::Message::Ptr> Composer::resultMessages() const
 {
     Q_D(const Composer);
     Q_ASSERT(d->finished);
@@ -574,7 +574,7 @@ void Composer::setSigningKeys(const std::vector<GpgME::Key> &signers)
     d->signers = signers;
 }
 
-void Composer::setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &encData)
+void Composer::setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &encData)
 {
     Q_D(Composer);
 

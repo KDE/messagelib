@@ -26,9 +26,9 @@ public:
     explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
     ~MessageViewerConfigureSettingsPluginManager() override;
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
 
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);

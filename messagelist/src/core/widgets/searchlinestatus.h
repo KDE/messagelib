@@ -33,12 +33,12 @@ public:
     Q_REQUIRED_RESULT bool containsOutboundMessages() const;
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions searchOptions() const;
     void setSearchOptions(QuickSearchLine::SearchOptions opts);
-    void setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus);
+    void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
     void addCompletionItem(const QString &str);
     void slotClearHistory();
     void clearFilterButtonClicked();
 Q_SIGNALS:
-    void filterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
+    void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
     void searchOptionChanged();
     void clearButtonClicked();
     void forceLostFocus();

@@ -33,7 +33,7 @@ Q_SIGNALS:
 private:
     void slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info);
-    void checkSignature(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst = {});
+    void checkSignature(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst = {});
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
     void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);

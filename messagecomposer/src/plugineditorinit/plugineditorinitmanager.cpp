@@ -44,16 +44,16 @@ public:
     }
 
     void loadPlugin(PluginEditorInitInfo *item);
-    Q_REQUIRED_RESULT QVector<PluginEditorInit *> pluginsList() const;
+    Q_REQUIRED_RESULT QList<PluginEditorInit *> pluginsList() const;
     void initializePlugins();
-    QVector<PluginEditorInitInfo> mPluginList;
+    QList<PluginEditorInitInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorInit *pluginFromIdentifier(const QString &id);
 
 private:
-    QVector<PimCommon::PluginUtilData> mPluginDataList;
+    QList<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorInitManager *const q;
 };
 
@@ -67,14 +67,14 @@ QString PluginEditorInitManagerPrivate::configPrefixSettingKey() const
     return QStringLiteral("PluginEditorInit");
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataList() const
 {
     return mPluginDataList;
 }
 
 void PluginEditorInitManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorinit"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorinit"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -100,8 +100,8 @@ void PluginEditorInitManagerPrivate::initializePlugins()
             qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<PluginEditorInitInfo>::iterator end(mPluginList.end());
-    for (QVector<PluginEditorInitInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QList<PluginEditorInitInfo>::iterator end(mPluginList.end());
+    for (QList<PluginEditorInitInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
@@ -116,11 +116,11 @@ void PluginEditorInitManagerPrivate::loadPlugin(PluginEditorInitInfo *item)
     }
 }
 
-QVector<PluginEditorInit *> PluginEditorInitManagerPrivate::pluginsList() const
+QList<PluginEditorInit *> PluginEditorInitManagerPrivate::pluginsList() const
 {
-    QVector<PluginEditorInit *> lst;
-    QVector<PluginEditorInitInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorInitInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PluginEditorInit *> lst;
+    QList<PluginEditorInitInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorInitInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -130,8 +130,8 @@ QVector<PluginEditorInit *> PluginEditorInitManagerPrivate::pluginsList() const
 
 PluginEditorInit *PluginEditorInitManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<PluginEditorInitInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<PluginEditorInitInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QList<PluginEditorInitInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<PluginEditorInitInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -153,7 +153,7 @@ PluginEditorInitManager *PluginEditorInitManager::self()
     return &s_self;
 }
 
-QVector<PluginEditorInit *> PluginEditorInitManager::pluginsList() const
+QList<PluginEditorInit *> PluginEditorInitManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -168,7 +168,7 @@ QString PluginEditorInitManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> PluginEditorInitManager::pluginsDataList() const
+QList<PimCommon::PluginUtilData> PluginEditorInitManager::pluginsDataList() const
 {
     return d->pluginsDataList();
 }

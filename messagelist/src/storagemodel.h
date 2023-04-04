@@ -12,7 +12,7 @@
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <KMime/KMimeMessage>
-#include <QVector>
+#include <QList>
 
 class QAbstractItemModel;
 class QItemSelectionModel;
@@ -62,7 +62,7 @@ public:
     Q_REQUIRED_RESULT QModelIndex parent(const QModelIndex &index) const override;
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QMimeData *mimeData(const QVector<MessageList::Core::MessageItem *> &) const override;
+    QMimeData *mimeData(const QList<MessageList::Core::MessageItem *> &) const override;
     using MessageList::Core::StorageModel::mimeData;
 
     Q_REQUIRED_RESULT Akonadi::Item itemForRow(int row) const;

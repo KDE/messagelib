@@ -53,12 +53,12 @@ void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
     QCOMPARE(info, info2);
 
     WebEngineViewer::UpdateDataBaseInfo value;
-    QVector<WebEngineViewer::Addition> additionList;
+    QList<WebEngineViewer::Addition> additionList;
     WebEngineViewer::Addition tmp;
     tmp.prefixSize = 4;
     tmp.hashString = QByteArrayLiteral("rnGLoQ==");
     additionList.append(tmp);
-    QVector<WebEngineViewer::Removal> removalList;
+    QList<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
     tmpRemoval.indexes = QList<quint32>() << 0 << 2 << 4;
     removalList.append(tmpRemoval);
@@ -255,7 +255,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
                                     << WebEngineViewer::UpdateDataBaseInfo();
 
     WebEngineViewer::UpdateDataBaseInfo value;
-    QVector<WebEngineViewer::Addition> additionList;
+    QList<WebEngineViewer::Addition> additionList;
     WebEngineViewer::Addition tmp;
     tmp.prefixSize = 4;
     QByteArray hash = QByteArrayLiteral("rnGLoQ==");
@@ -263,7 +263,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     tmp.hashString = hash;
     tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList.append(tmp);
-    QVector<WebEngineViewer::Removal> removalList;
+    QList<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
     tmpRemoval.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     tmpRemoval.indexes = QList<quint32>() << 0 << 2 << 4;
@@ -281,7 +281,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << value;
 
     value.clear();
-    QVector<WebEngineViewer::Addition> additionList2;
+    QList<WebEngineViewer::Addition> additionList2;
     QByteArray hash1 = QByteArrayLiteral("AAAaxAAAG3QAACdhAAA");
     hash1 = QByteArray::fromBase64(hash1);
     tmp.hashString = hash1;
