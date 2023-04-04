@@ -3,27 +3,27 @@
 add_executable(webenginetest testwebengine.cpp testwebengine.h)
 
 target_link_libraries(webenginetest
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets
     )
 
 #####
 add_executable(webenginescripttest testwebenginescript.cpp testwebenginescript.h)
 
 target_link_libraries(webenginescripttest
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets
     )
 
 ####
 add_executable(selectedtextwebenginetest testselectedtextwebengine.cpp testselectedtextwebengine.h)
 
 target_link_libraries(selectedtextwebenginetest
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets
     )
 ####
 add_executable(testdndwebenginetest testdndwebengine.cpp testdndwebengine.h)
 
 target_link_libraries(testdndwebenginetest
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets
     )
 
 #####
@@ -31,7 +31,7 @@ target_link_libraries(testdndwebenginetest
 add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp testselectionchangedwebengine.h)
 
 target_link_libraries(testselectionchangedwebengine
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
     )
 
 ####

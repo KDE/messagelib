@@ -13,15 +13,15 @@ macro(add_templateparser_unittest _source)
   add_executable( ${_name} ${_test} ${_name}.h)
   ecm_mark_as_test(templateparser-${_name})
   target_link_libraries(${_name}
-    KPim${KF_MAJOR_VERSION}::Libkleo
-    KPim${KF_MAJOR_VERSION}::TemplateParser
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
+    KPim6::Libkleo
+    KPim6::TemplateParser
+    KPim6::MimeTreeParser
     Qt::Test
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KPim${KF_MAJOR_VERSION}::Mime
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::IconThemes
+    KF6::KIOCore
+    KPim6::Mime
+    KPim6::IdentityManagement
+    KF6::XmlGui
+    KF6::IconThemes
     Qt::WebEngineWidgets
   )
   add_gpg_crypto_test(${_name} templateparser-${_name})

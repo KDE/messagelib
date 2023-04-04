@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: MessageComposer
-   cmake: "KF5::MessageComposer"
-cmakename: KF5MessageComposer
+   cmake: "KF6::MessageComposer"
+cmakename: KF6MessageComposer
 

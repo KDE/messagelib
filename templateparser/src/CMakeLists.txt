@@ -2,11 +2,11 @@
 # SPDX-FileCopyrightText: none
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
-add_library(KPim${KF_MAJOR_VERSION}TemplateParser)
-add_library(KPim${KF_MAJOR_VERSION}::TemplateParser ALIAS KPim${KF_MAJOR_VERSION}TemplateParser)
+add_library(KPim6TemplateParser)
+add_library(KPim6::TemplateParser ALIAS KPim6TemplateParser)
 
 
-target_sources(KPim${KF_MAJOR_VERSION}TemplateParser PRIVATE
+target_sources(KPim6TemplateParser PRIVATE
     templateparserjob.cpp
     defaulttemplates.cpp
     templatesutil.cpp
@@ -52,7 +52,7 @@ target_sources(KPim${KF_MAJOR_VERSION}TemplateParser PRIVATE
     templateextracthtmlelementfrommail.h
     templateparseremailaddressrequesterlineedit.h
     )
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
+ecm_qt_declare_logging_category(KPim6TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
         DESCRIPTION "messagelib (templateparser)"
         OLD_CATEGORY_NAMES log_templateparser
         EXPORT MESSAGELIB
@@ -60,53 +60,53 @@ ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}TemplateParser HEADER tem
 
 
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}TemplateParser settings/templatesconfiguration_kfg.kcfgc)
+kconfig_add_kcfg_files(KPim6TemplateParser settings/templatesconfiguration_kfg.kcfgc)
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}TemplateParser
+kconfig_add_kcfg_files(KPim6TemplateParser
     settings/customtemplates_kfg.kcfgc
     settings/globalsettings_templateparser.kcfgc
     )
 
-ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}TemplateParser
+ki18n_wrap_ui(KPim6TemplateParser
     ui/templatesconfiguration_base.ui
     ui/customtemplates_base.ui
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}TemplateParser PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6TemplateParser PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim${KF_MAJOR_VERSION}TemplateParser BASE_NAME templateparser)
+generate_export_header(KPim6TemplateParser BASE_NAME templateparser)
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}TemplateParser
+target_link_libraries(KPim6TemplateParser
     PRIVATE
-    KPim${KF_MAJOR_VERSION}::Mime
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KPim${KF_MAJOR_VERSION}::MessageCore
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::Completion
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::SonnetUi
-    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+    KPim6::Mime
+    KPim6::MimeTreeParser
+    KPim6::IdentityManagement
+    KPim6::MessageCore
+    KF6::XmlGui
+    KF6::Completion
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::SonnetUi
+    KF6::SyntaxHighlighting
     Qt::WebEngineWidgets
-    KPim${KF_MAJOR_VERSION}::Libkdepim
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
+    KPim6::Libkdepim
+    KPim6::PimTextEdit
     Gpgmepp
     )
 
 if (TARGET Qt::Core5Compat)
-    target_link_libraries(KPim${KF_MAJOR_VERSION}TemplateParser PRIVATE Qt::Core5Compat)
+    target_link_libraries(KPim6TemplateParser PRIVATE Qt::Core5Compat)
 endif()
 
-set_target_properties(KPim${KF_MAJOR_VERSION}TemplateParser PROPERTIES
+set_target_properties(KPim6TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION}
     SOVERSION ${TEMPLATEPARSER_SOVERSION}
     EXPORT_NAME TemplateParser
     )
 
-target_include_directories(KPim${KF_MAJOR_VERSION}TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/>")
+target_include_directories(KPim6TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/>")
 
 install(FILES
     settings/customtemplates_kfg.kcfg
@@ -134,18 +134,18 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME TemplateParser
-    LIB_NAME KPim${KF_MAJOR_VERSION}TemplateParser
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser
+    LIB_NAME KPim6TemplateParser
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser
     )
 
 
-install(TARGETS KPim${KF_MAJOR_VERSION}TemplateParser EXPORT KPim${KF_MAJOR_VERSION}TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim6TemplateParser EXPORT KPim6TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 
 install(FILES
     ${TemplateParser_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/TemplateParser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/TemplateParser
     COMPONENT Devel
     )
 
@@ -156,7 +156,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/customtemplates_kfg.h
     ${CMAKE_CURRENT_BINARY_DIR}/ui_templatesconfiguration_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/templatesconfiguration_kfg.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/TemplateParser/templateparser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/templateparser
     COMPONENT Devel
     )
 
@@ -168,17 +168,17 @@ install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.k
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}TemplateParser_QCH
-        NAME KPim${KF_MAJOR_VERSION}TemplateParser
-        BASE_NAME KPim${KF_MAJOR_VERSION}TemplateParser
+        KPim6TemplateParser_QCH
+        NAME KPim6TemplateParser
+        BASE_NAME KPim6TemplateParser
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TemplateParser_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -189,10 +189,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}TemplateParser_QCH
-        FILE KPim${KF_MAJOR_VERSION}TemplateParserQchTargets.cmake
+        TARGETS KPim6TemplateParser_QCH
+        FILE KPim6TemplateParserQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}TemplateParserQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TemplateParserQchTargets.cmake\")")
 endif()

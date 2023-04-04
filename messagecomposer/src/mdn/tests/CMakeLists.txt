@@ -5,6 +5,6 @@ ecm_mark_as_test(mndadvicedialoggui)
 target_link_libraries(mndadvicedialoggui
   Qt::Core
   Qt::Gui
-  KPim${KF_MAJOR_VERSION}::MessageComposer
-  KF${KF_MAJOR_VERSION}::I18n
+  KPim6::MessageComposer
+  KF6::I18n
 )

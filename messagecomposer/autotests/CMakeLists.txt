@@ -16,22 +16,22 @@ macro( add_messagecomposer_test _source )
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
-            KF${KF_MAJOR_VERSION}::I18n
-            KPim${KF_MAJOR_VERSION}::MailTransport
-            KPim${KF_MAJOR_VERSION}::Mime
-            KPim${KF_MAJOR_VERSION}::MessageComposer
-            KPim${KF_MAJOR_VERSION}::MessageViewer
-            KPim${KF_MAJOR_VERSION}::MessageCore
-            KPim${KF_MAJOR_VERSION}::TemplateParser
-            KPim${KF_MAJOR_VERSION}::PimTextEdit
+            KF6::I18n
+            KPim6::MailTransport
+            KPim6::Mime
+            KPim6::MessageComposer
+            KPim6::MessageViewer
+            KPim6::MessageCore
+            KPim6::TemplateParser
+            KPim6::PimTextEdit
             Qt::Test
-            KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
-            KF${KF_MAJOR_VERSION}::Contacts
-            KPim${KF_MAJOR_VERSION}::AkonadiCore
-            KF${KF_MAJOR_VERSION}::XmlGui
-            KPim${KF_MAJOR_VERSION}::Libkdepim
-            KF${KF_MAJOR_VERSION}::IconThemes
-            KF${KF_MAJOR_VERSION}::Completion
+            KPim6::IdentityManagementWidgets
+            KF6::Contacts
+            KPim6::AkonadiCore
+            KF6::XmlGui
+            KPim6::Libkdepim
+            KF6::IconThemes
+            KF6::Completion
     )
 
     if (TARGET Qt::Core5Compat)
@@ -45,20 +45,20 @@ macro( add_messagecomposer_cryptotest _source )
     add_executable( ${_name} ${_test}  ${_name}.h )
     target_link_libraries(
         ${_name}
-        KF${KF_MAJOR_VERSION}::I18n
-        KPim${KF_MAJOR_VERSION}::Mime
-        KPim${KF_MAJOR_VERSION}::MessageComposer
-        KPim${KF_MAJOR_VERSION}::MessageViewer
-        KPim${KF_MAJOR_VERSION}::MessageCore
-        KPim${KF_MAJOR_VERSION}::Libkleo
-        KPim${KF_MAJOR_VERSION}::Libkdepim
-        KPim${KF_MAJOR_VERSION}::PimTextEdit
-        KPim${KF_MAJOR_VERSION}::AkonadiCore
+        KF6::I18n
+        KPim6::Mime
+        KPim6::MessageComposer
+        KPim6::MessageViewer
+        KPim6::MessageCore
+        KPim6::Libkleo
+        KPim6::Libkdepim
+        KPim6::PimTextEdit
+        KPim6::AkonadiCore
         Qt::Test
-        KF${KF_MAJOR_VERSION}::IconThemes
-        KF${KF_MAJOR_VERSION}::Completion
-        KPim${KF_MAJOR_VERSION}::MailTransport
-        KF${KF_MAJOR_VERSION}::Contacts
+        KF6::IconThemes
+        KF6::Completion
+        KPim6::MailTransport
+        KF6::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
     set_tests_properties(messagecomposer-${_name} PROPERTIES
@@ -111,9 +111,9 @@ ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
         TEST_NAME "nearexpirycheckertest"
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
-            KPim${KF_MAJOR_VERSION}::MessageComposer
+            KPim6::MessageComposer
             Qt::Test
-            KPim${KF_MAJOR_VERSION}::Libkleo
+            KPim6::Libkleo
     )
 
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
@@ -122,17 +122,17 @@ set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
 ecm_add_test(followupreminderselectdatedialogtest.cpp
     NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
-        KPim${KF_MAJOR_VERSION}::AkonadiCore
-        KPim${KF_MAJOR_VERSION}::AkonadiWidgets
-        KF${KF_MAJOR_VERSION}::CalendarCore
-        KPim${KF_MAJOR_VERSION}::MessageComposer
+        KPim6::AkonadiCore
+        KPim6::AkonadiWidgets
+        KF6::CalendarCore
+        KPim6::MessageComposer
         Qt::Test
 )
 
 ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
     NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
-        KF${KF_MAJOR_VERSION}::Contacts
-        KPim${KF_MAJOR_VERSION}::MessageComposer
+        KF6::Contacts
+        KPim6::MessageComposer
         Qt::Test
 )

@@ -2,32 +2,32 @@
 # SPDX-FileCopyrightText: none
 ecm_setup_version(PROJECT VARIABLE_PREFIX WEBENGINEVIEWER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}WebEngineViewerConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfigVersion.cmake"
+    SOVERSION 6
     )
 
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}WebEngineViewer")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6WebEngineViewer")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimWebEngineViewerConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}WebEngineViewerConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}WebEngineViewerConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}WebEngineViewerConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}WebEngineViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}WebEngineViewerTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
+install(EXPORT KPim6WebEngineViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6WebEngineViewerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/WebEngineViewer COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer COMPONENT Devel
     )
 include_directories(${Messagelib_BINARY_DIR})
 add_subdirectory(src)

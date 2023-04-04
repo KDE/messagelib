@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: WebEngineViewer
-   cmake: "KF5::WebEngineViewer"
-cmakename: KF5WebEngineViewer
+   cmake: "KF6::WebEngineViewer"
+cmakename: KF6WebEngineViewer
 

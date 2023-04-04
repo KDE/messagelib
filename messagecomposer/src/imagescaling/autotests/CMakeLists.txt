@@ -3,7 +3,7 @@
 ecm_add_test(imagescalingtest.cpp imagescalingtest.h
         TEST_NAME imagescalingtest
     NAME_PREFIX "messagecomposer-imagescaling-"
-    LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::MessageComposer KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::MessageCore KPim${KF_MAJOR_VERSION}::TemplateParser
-                   KPim${KF_MAJOR_VERSION}::PimTextEdit Qt::Test KPim${KF_MAJOR_VERSION}::IdentityManagement KF${KF_MAJOR_VERSION}::Contacts
-                   KPim${KF_MAJOR_VERSION}::AkonadiCore
+    LINK_LIBRARIES KPim6::Mime KPim6::MessageComposer KPim6::MessageViewer KPim6::MessageCore KPim6::TemplateParser
+                   KPim6::PimTextEdit Qt::Test KPim6::IdentityManagement KF6::Contacts
+                   KPim6::AkonadiCore
 )

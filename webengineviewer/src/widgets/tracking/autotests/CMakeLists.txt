@@ -5,7 +5,7 @@ macro(add_webengine_widget_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "webengineviewer-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::WebEngineViewer Qt::Test
+        LINK_LIBRARIES KPim6::WebEngineViewer Qt::Test
     )
 endmacro ()
 

@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: TemplateParser
-   cmake: "KF5::TemplateParser"
-cmakename: KF5TemplateParser
+   cmake: "KF6::TemplateParser"
+cmakename: KF6TemplateParser
 

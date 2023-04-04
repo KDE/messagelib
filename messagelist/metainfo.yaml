@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: MessageList
-   cmake: "KF5::MessageList"
-cmakename: KF5MessageList
+   cmake: "KF6::MessageList"
+cmakename: KF6MessageList
 

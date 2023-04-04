@@ -4,7 +4,7 @@
 
 add_executable(recipienteditortest)
 target_sources(recipienteditortest PRIVATE recipientseditortest.cpp recipientseditortest.h)
-target_link_libraries(recipienteditortest KF${KF_MAJOR_VERSION}::KIOCore KPim${KF_MAJOR_VERSION}::AkonadiContact KPim${KF_MAJOR_VERSION}::MessageComposer KPim${KF_MAJOR_VERSION}::Libkdepim KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(recipienteditortest KF6::KIOCore KPim6::AkonadiContact KPim6::MessageComposer KPim6::Libkdepim KF6::Completion KF6::I18n)
 
 
 ########### recipientseditor test ###############
@@ -12,6 +12,6 @@ target_link_libraries(recipienteditortest KF${KF_MAJOR_VERSION}::KIOCore KPim${K
 add_executable(composerlineedittest)
 target_sources(composerlineedittest PRIVATE testcomposerlineedit.cpp)
 ecm_mark_as_test(composerlineedittest)
-target_link_libraries(composerlineedittest KPim${KF_MAJOR_VERSION}::MessageComposer  KPim${KF_MAJOR_VERSION}::PimCommonAkonadi KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(composerlineedittest KPim6::MessageComposer  KPim6::PimCommonAkonadi KF6::Completion KF6::I18n)
 
 

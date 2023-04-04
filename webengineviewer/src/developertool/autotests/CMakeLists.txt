@@ -5,7 +5,7 @@ macro(add_webengineviewer_widget_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "webengineviewer-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::WebEngineViewer Qt::Test
+        LINK_LIBRARIES KPim6::WebEngineViewer Qt::Test
     )
     # needed for the CI to run webengine-related tests
     # the CI runs as root, and webengine insists on disabling sandboxing in that case

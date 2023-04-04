@@ -7,7 +7,7 @@ macro(add_composerng_autocorrect_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-composerng-"
-        LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::MessageComposer KF${KF_MAJOR_VERSION}::XmlGui
+        LINK_LIBRARIES Qt::Test KPim6::MessageComposer KF6::XmlGui
     )
 endmacro()
 

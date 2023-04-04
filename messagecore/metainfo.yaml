@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: MessageCore
-   cmake: "KF5::MessageCore"
-cmakename: KF5MessageCore
+   cmake: "KF6::MessageCore"
+cmakename: KF6MessageCore
 

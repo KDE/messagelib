@@ -2,11 +2,11 @@
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
-add_library(KPim${KF_MAJOR_VERSION}MessageCore)
-add_library(KPim${KF_MAJOR_VERSION}::MessageCore ALIAS KPim${KF_MAJOR_VERSION}MessageCore)
+add_library(KPim6MessageCore)
+add_library(KPim6::MessageCore ALIAS KPim6MessageCore)
 
 ########### next target ###############
-target_sources(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE
+target_sources(KPim6MessageCore PRIVATE
     autocrypt/autocryptutils.cpp
     autocrypt/autocryptrecipient.cpp
     autocrypt/autocryptstorage.cpp
@@ -57,63 +57,63 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE
     settings/messagecoresettings.h
     )
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageCore
+kconfig_add_kcfg_files(KPim6MessageCore
     settings/globalsettings_messagecore.kcfgc
     )
 
-ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageCore
+ki18n_wrap_ui(KPim6MessageCore
     attachment/ui/attachmentpropertiesdialog.ui
     attachment/ui/attachmentpropertiesdialog_readonly.ui
     )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageCore HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
+ecm_qt_declare_logging_category(KPim6MessageCore HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
         DESCRIPTION "messagelib (messagecore)"
         OLD_CATEGORY_NAMES log_messagecore
         EXPORT MESSAGELIB
     )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
+ecm_qt_declare_logging_category(KPim6MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
         DESCRIPTION "messagelib (messagecore.autocrypt)"
         EXPORT MESSAGELIB
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MessageCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim${KF_MAJOR_VERSION}MessageCore BASE_NAME messagecore)
+generate_export_header(KPim6MessageCore BASE_NAME messagecore)
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore
+target_link_libraries(KPim6MessageCore
     PUBLIC
-    KPim${KF_MAJOR_VERSION}::Mime
+    KPim6::Mime
     PRIVATE
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KF${KF_MAJOR_VERSION}::Codecs
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KF${KF_MAJOR_VERSION}::Archive
+    KF6::KIOCore
+    KF6::Codecs
+    KPim6::PimTextEdit
+    KF6::Archive
     Qt::Network
-    KF${KF_MAJOR_VERSION}::I18n
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
-    KPim${KF_MAJOR_VERSION}::PimCommon
+    KF6::I18n
+    KPim6::IdentityManagement
+    KPim6::MimeTreeParser
+    KPim6::PimCommon
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE QGpgmeQt6)
+    target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 else()
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageCore PRIVATE QGpgme)
+    target_link_libraries(KPim6MessageCore PRIVATE QGpgme)
 endif()
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/>")
+target_include_directories(KPim6MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>")
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MessageCore PROPERTIES
+set_target_properties(KPim6MessageCore PROPERTIES
     VERSION ${MESSAGECORE_VERSION}
     SOVERSION ${MESSAGECORE_SOVERSION}
     EXPORT_NAME MessageCore
     )
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MessageCore
-    EXPORT KPim${KF_MAJOR_VERSION}MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MessageCore
+    EXPORT KPim6MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
@@ -179,8 +179,8 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageCore
-    LIB_NAME KPim${KF_MAJOR_VERSION}MessageCore
-    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore
+    LIB_NAME KPim6MessageCore
+    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore
     )
 
 
@@ -193,7 +193,7 @@ install(FILES
     ${MessageCore_Camelcaseattachment_HEADERS}
     ${MessageCore_Camelcasemisc_HEADERS}
     ${MessageCore_Camelcasemain_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/MessageCore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/MessageCore
     COMPONENT Devel
     )
 
@@ -208,7 +208,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
     ${MessageCore_attachment_HEADERS}
     ${MessageCore_misc_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageCore/messagecore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/messagecore
     COMPONENT Devel
     )
 install(FILES
@@ -217,9 +217,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MessageCore_QCH
-        NAME KPim${KF_MAJOR_VERSION}MessageCore
-        BASE_NAME KPim${KF_MAJOR_VERSION}MessageCore
+        KPim6MessageCore_QCH
+        NAME KPim6MessageCore
+        BASE_NAME KPim6MessageCore
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -230,9 +230,9 @@ if (BUILD_QCH)
         ${MessageCore_utils_HEADERS}
         ${MessageCore_main_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -243,11 +243,11 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MessageCore_QCH
-        FILE KPim${KF_MAJOR_VERSION}MessageCoreQchTargets.cmake
+        TARGETS KPim6MessageCore_QCH
+        FILE KPim6MessageCoreQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageCoreQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageCoreQchTargets.cmake\")")
 endif()
 

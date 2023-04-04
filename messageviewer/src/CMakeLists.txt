@@ -40,8 +40,8 @@ configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-m
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
 
-add_library(KPim${KF_MAJOR_VERSION}MessageViewer)
-add_library(KPim${KF_MAJOR_VERSION}::MessageViewer ALIAS KPim${KF_MAJOR_VERSION}MessageViewer)
+add_library(KPim6MessageViewer)
+add_library(KPim6::MessageViewer ALIAS KPim6MessageViewer)
 
 
 if(BUILD_TESTING)
@@ -67,7 +67,7 @@ if (BUILD_TESTING)
     add_subdirectory(dkim-verify/autotests)
     add_subdirectory(dkim-verify/tests)
 endif()
-target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
+target_sources(KPim6MessageViewer PRIVATE
     dkim-verify/dkiminfo.cpp
     dkim-verify/dkimmanagerkey.cpp
     dkim-verify/dkimmanagerkeywidget.cpp
@@ -109,7 +109,7 @@ if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
 if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
-    target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
+    target_sources(KPim6MessageViewer PRIVATE
         conversationview/conversationviewwidget.cpp
         conversationview/conversationviewwidget.h
         )
@@ -118,7 +118,7 @@ if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
         add_subdirectory(conversationview/tests)
     endif()
 endif()
-target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
+target_sources(KPim6MessageViewer PRIVATE
     viewer/renderer/messageviewerrenderer.cpp
     viewer/webengine/mailwebengineview.cpp
     viewer/webengine/mailwebenginepage.cpp
@@ -368,22 +368,22 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
     mdn/mdnwarningwidget.h
     )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
+ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
         DESCRIPTION "messagelib (messageviewer)"
         OLD_CATEGORY_NAMES log_messageviewer
         EXPORT MESSAGELIB
     )
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageViewer HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
+ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
         DESCRIPTION "messagelib (messageviewer dkim support)"
         EXPORT MESSAGELIB
     )
 
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageViewer
+kconfig_add_kcfg_files(KPim6MessageViewer
     settings/globalsettings_messageviewer.kcfgc
     )
 
-ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageViewer
+ki18n_wrap_ui(KPim6MessageViewer
     ui/settings.ui
     ui/invitationsettings.ui
     ui/printingsettings.ui
@@ -391,78 +391,78 @@ ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageViewer
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MessageViewer PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MessageViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim${KF_MAJOR_VERSION}MessageViewer BASE_NAME messageviewer)
+generate_export_header(KPim6MessageViewer BASE_NAME messageviewer)
 
 if (${Inotify_FOUND})
-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
+    target_include_directories(KPim6MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
 else()
-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/>")
+    target_include_directories(KPim6MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/>")
 endif()
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
+target_link_libraries(KPim6MessageViewer
     PUBLIC
-    KPim${KF_MAJOR_VERSION}::MessageCore
-    KPim${KF_MAJOR_VERSION}::PimCommon
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::AkonadiMime
-    KF${KF_MAJOR_VERSION}::Contacts
-    KPim${KF_MAJOR_VERSION}::Libkleo
-    KPim${KF_MAJOR_VERSION}::MimeTreeParser
-    KF${KF_MAJOR_VERSION}::Service
+    KPim6::MessageCore
+    KPim6::PimCommon
+    KPim6::AkonadiCore
+    KPim6::AkonadiMime
+    KF6::Contacts
+    KPim6::Libkleo
+    KPim6::MimeTreeParser
+    KF6::Service
     PRIVATE
-    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
-    KF${KF_MAJOR_VERSION}::ItemViews
+    KF6::SyntaxHighlighting
+    KF6::ItemViews
     Qt::Network
-    KPim${KF_MAJOR_VERSION}::WebEngineViewer
-    KPim${KF_MAJOR_VERSION}::GrantleeTheme
-    KPim${KF_MAJOR_VERSION}::Mime
-    KPim${KF_MAJOR_VERSION}::Mbox
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KPim${KF_MAJOR_VERSION}::Gravatar
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KF${KF_MAJOR_VERSION}::IconThemes
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::KIOFileWidgets
-    KF${KF_MAJOR_VERSION}::KIOWidgets
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::Codecs
-    KPim${KF_MAJOR_VERSION}::ContactEditor
-    KPim${KF_MAJOR_VERSION}::AkonadiContact
+    KPim6::WebEngineViewer
+    KPim6::GrantleeTheme
+    KPim6::Mime
+    KPim6::Mbox
+    KPim6::PimTextEdit
+    KPim6::Gravatar
+    KPim6::IdentityManagement
+    KF6::IconThemes
+    KF6::I18n
+    KF6::KIOFileWidgets
+    KF6::KIOWidgets
+    KF6::XmlGui
+    KF6::Codecs
+    KPim6::ContactEditor
+    KPim6::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
-    KF${KF_MAJOR_VERSION}::Notifications
+    KF6::Notifications
     )
 
-if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
-target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
+if (TARGET KF6::TextEditTextToSpeech)
+target_link_libraries(KPim6MessageViewer
     PRIVATE
-    KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
+    KF6::TextEditTextToSpeech
     )
 endif()
 
 if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE QGpgmeQt6)
+    target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
 else()
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE QGpgme)
+    target_link_libraries(KPim6MessageViewer PRIVATE QGpgme)
 endif()
 if (TARGET Qt6::Core5Compat)
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE Qt6::Core5Compat)
+    target_link_libraries(KPim6MessageViewer PRIVATE Qt6::Core5Compat)
 endif()
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MessageViewer PROPERTIES
+set_target_properties(KPim6MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION}
     SOVERSION ${MESSAGEVIEWER_SOVERSION}
     EXPORT_NAME MessageViewer
     )
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MessageViewer
-    EXPORT KPim${KF_MAJOR_VERSION}MessageViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MessageViewer
+    EXPORT KPim6MessageViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
@@ -671,18 +671,18 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageViewer
-    LIB_NAME KPim${KF_MAJOR_VERSION}MessageViewer
-    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer
+    LIB_NAME KPim6MessageViewer
+    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer
     )
 install(FILES
     ${MessageViewer_Cameldkimverify_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/MessageViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/MessageViewer
     COMPONENT Devel
 )
 
 install(FILES
     ${MessageViewer_dkimverify_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/messageviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/messageviewer
     COMPONENT Devel
 )
 
@@ -706,7 +706,7 @@ install(FILES
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
     ${MessageViewer_Camelopenurlwith_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/MessageViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/MessageViewer
     COMPONENT Devel
     )
 
@@ -734,7 +734,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
     ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/messageviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/messageviewer
     COMPONENT Devel
     )
 
@@ -750,9 +750,9 @@ install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MessageViewer_QCH
-        NAME KPim${KF_MAJOR_VERSION}MessageViewer
-        BASE_NAME KPim${KF_MAJOR_VERSION}MessageViewer
+        KPim6MessageViewer_QCH
+        NAME KPim6MessageViewer
+        BASE_NAME KPim6MessageViewer
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -774,9 +774,9 @@ if (BUILD_QCH)
         ${MessageViewer_renderer_HEADERS}
         ${MessageViewer_remotecontent_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -787,10 +787,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MessageViewer_QCH
-        FILE KPim${KF_MAJOR_VERSION}MessageViewerQchTargets.cmake
+        TARGETS KPim6MessageViewer_QCH
+        FILE KPim6MessageViewerQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageViewerQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageViewerQchTargets.cmake\")")
 endif()

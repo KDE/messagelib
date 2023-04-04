@@ -11,7 +11,7 @@ macro(add_messageviewer_utils_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MessageViewer KPim${KF_MAJOR_VERSION}::WebEngineViewer KPim${KF_MAJOR_VERSION}::Libkleo ${qgpgme_lib} Qt::Test
+        LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo ${qgpgme_lib} Qt::Test
     )
     if (TARGET Qt::Core5Compat)
         target_link_libraries(${_name} Qt::Core5Compat)

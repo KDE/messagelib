@@ -10,7 +10,7 @@ set(scrolladdattachment_test_SRCS
 add_executable(scrolladdattachmenttest ${scrolladdattachment_test_SRCS})
 
 target_link_libraries(scrolladdattachmenttest
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
     )
 
 ####
@@ -22,7 +22,7 @@ set(testmailwebengine_test_SRCS
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 
 target_link_libraries(testmailwebengine
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer Qt::PrintSupport KF${KF_MAJOR_VERSION}::I18n
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer Qt::PrintSupport KF6::I18n
 )
 
 #####
@@ -33,7 +33,7 @@ target_link_libraries(testmailwebengine
 #add_executable(testwebengineaccesskey ${testwebengineaccesskey_test_SRCS})
 
 #target_link_libraries(testwebengineaccesskey
-#    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KPim${KF_MAJOR_VERSION}::MessageViewer
+#    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KPim6::MessageViewer
 #    )
 
 ####
@@ -45,7 +45,7 @@ set(testmailwebengineselection_test_SRCS
 add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
 
 target_link_libraries(testmailwebengineselection
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
     )
 ######
 
@@ -56,7 +56,7 @@ set(testmaildndattachment_test_SRCS
 add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 
 target_link_libraries(testmaildndattachment
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
     )
 
 #####
@@ -68,5 +68,5 @@ set(testmailmboxwebengine_test_SRCS
 add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
 
 target_link_libraries(testmailmboxwebengine
-    Qt::Widgets KPim${KF_MAJOR_VERSION}::WebEngineViewer  Qt::WebEngineWidgets KF${KF_MAJOR_VERSION}::XmlGui KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::MessageViewer
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
     )

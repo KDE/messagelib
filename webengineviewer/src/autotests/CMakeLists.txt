@@ -7,25 +7,25 @@ include_directories(${Messagelib_BINARY_DIR})
 ecm_add_test(webhittestresulttest.cpp webhittestresulttest.h
     TEST_NAME webhittestresulttest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )
 
 
 ecm_add_test(zoomactionmenutest.cpp zoomactionmenutest.h
     TEST_NAME zoomactionmenutest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::WebEngineViewer KF${KF_MAJOR_VERSION}::XmlGui
+    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer KF6::XmlGui
 )
 
 
 ecm_add_test(webengineexporthtmlpagejobtest.cpp webengineexporthtmlpagejobtest.h ${testwebengineviewer_webengine_SRCS}
     TEST_NAME webengineexporthtmlpagejobtest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )
 
 ecm_add_test(webengineexportpdfpagejobtest.cpp webengineexportpdfpagejobtest.h ${testwebengineviewer_webengine_SRCS}
     TEST_NAME webengineexportpdfpagejobtest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )

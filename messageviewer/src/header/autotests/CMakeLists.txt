@@ -8,10 +8,10 @@ ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
     TEST_NAME grantleeheaderstyletest
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
-        KPim${KF_MAJOR_VERSION}::GrantleeTheme
-        KF${KF_MAJOR_VERSION}::IconThemes
-        KPim${KF_MAJOR_VERSION}::MessageViewer
-        KPim${KF_MAJOR_VERSION}::Mime
+        KPim6::GrantleeTheme
+        KF6::IconThemes
+        KPim6::MessageViewer
+        KPim6::Mime
         Qt::Test
 )
 
@@ -20,10 +20,10 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
         ${TEMPLATES_LIB}
-        KPim${KF_MAJOR_VERSION}::GrantleeTheme
-        KF${KF_MAJOR_VERSION}::IconThemes
-        KPim${KF_MAJOR_VERSION}::MessageViewer
-        KPim${KF_MAJOR_VERSION}::Mime
+        KPim6::GrantleeTheme
+        KF6::IconThemes
+        KPim6::MessageViewer
+        KPim6::Mime
         Qt::Test
 )
 

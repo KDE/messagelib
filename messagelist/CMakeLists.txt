@@ -2,33 +2,33 @@
 # SPDX-FileCopyrightText: none
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGELIST
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagelist_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MessageListConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfigVersion.cmake"
+    SOVERSION 6
     )
 
 ########### Targets ###########
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}MessageList")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageList")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageListConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MessageListConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MessageListConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}MessageListConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}MessageListTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}MessageListTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
+install(EXPORT KPim6MessageListTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageListTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelist_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList COMPONENT Devel
     )
 
 add_subdirectory(src)

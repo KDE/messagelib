@@ -11,11 +11,11 @@ macro(add_messageviewer_crypto_unittest _source)
     add_executable( ${_name} ${_test} setupenv.cpp  testcsshelper.cpp )
     ecm_mark_as_test(messageviewer-messageparttheme-${_name})
     target_link_libraries( ${_name}
-        KPim${KF_MAJOR_VERSION}::MessageViewer
+        KPim6::MessageViewer
         Qt::Test
-        KF${KF_MAJOR_VERSION}::IconThemes
-        KPim${KF_MAJOR_VERSION}::Mime
-        KPim${KF_MAJOR_VERSION}::GrantleeTheme
+        KF6::IconThemes
+        KPim6::Mime
+        KPim6::GrantleeTheme
     )
     add_gpg_crypto_test(${_name} messageviewer-messageparttheme-${_name})
     set_tests_properties(messageviewer-messageparttheme-${_name} PROPERTIES
@@ -30,17 +30,17 @@ add_messageviewer_crypto_unittest(unencryptedmessagetest.cpp)
 ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
     TEST_NAME quotehtmltest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::MessageViewer KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::Mime
+    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime
 )
 
 ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
     TEST_NAME showonlymimeparttest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::MessageViewer KF${KF_MAJOR_VERSION}::IconThemes KPim${KF_MAJOR_VERSION}::Mime KPim${KF_MAJOR_VERSION}::GrantleeTheme
+    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime KPim6::GrantleeTheme
 )
 
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp
     TEST_NAME converthtmltoplaintexttest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::PimTextEdit Qt::Gui
+    LINK_LIBRARIES Qt::Test KPim6::PimTextEdit Qt::Gui
 )

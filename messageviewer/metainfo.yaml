@@ -9,6 +9,6 @@ deprecated: false
 release: false
 libraries:
  - qmake: MessageViewer
-   cmake: "KF5::MessageViewer"
-cmakename: KF5MessageViewer
+   cmake: "KF6::MessageViewer"
+cmakename: KF6MessageViewer
 

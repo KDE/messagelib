@@ -11,7 +11,7 @@ macro(add_mimetreeparser_unittest _source)
     ecm_add_test(${_source} util.cpp setupenv.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "mimetreeparser-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MimeTreeParser Qt::Test KPim${KF_MAJOR_VERSION}::Mime Gpgmepp
+        LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
     )
 endmacro ()
 
@@ -20,7 +20,7 @@ macro(add_mimetreeparser_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "mimetreeparser-"
-        LINK_LIBRARIES KPim${KF_MAJOR_VERSION}::MimeTreeParser Qt::Test KPim${KF_MAJOR_VERSION}::Mime Gpgmepp
+        LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
     )
 endmacro ()
 
@@ -30,9 +30,9 @@ macro(add_mimetreeparser_crypto_unittest _source)
     add_executable( ${_name} ${_test} setupenv.cpp)
     ecm_mark_as_test(mimetreeparser-${_name})
     target_link_libraries( ${_name}
-        KPim${KF_MAJOR_VERSION}::MimeTreeParser
+        KPim6::MimeTreeParser
         Qt::Test
-        KPim${KF_MAJOR_VERSION}::Mime
+        KPim6::Mime
     )
     if (QT_MAJOR_VERSION STREQUAL "6")
         target_link_libraries(${_name} QGpgmeQt6 Qt6::Core5Compat)

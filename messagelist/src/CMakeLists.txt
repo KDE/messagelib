@@ -3,8 +3,8 @@
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)
 configure_file(config-messagelist.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h)
-add_library(KPim${KF_MAJOR_VERSION}MessageList)
-add_library(KPim${KF_MAJOR_VERSION}::MessageList ALIAS KPim${KF_MAJOR_VERSION}MessageList)
+add_library(KPim6MessageList)
+add_library(KPim6::MessageList ALIAS KPim6MessageList)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist\")
 
@@ -12,7 +12,7 @@ add_subdirectory(pics)
 if(BUILD_TESTING)
 	add_subdirectory(core/widgets/autotests)
 endif()
-target_sources(KPim${KF_MAJOR_VERSION}MessageList PRIVATE
+target_sources(KPim6MessageList PRIVATE
     core/aggregation.cpp
     core/delegate.cpp
     core/filter.cpp
@@ -117,50 +117,50 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageList PRIVATE
     core/item.h
 
     )
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
+ecm_qt_declare_logging_category(KPim6MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
         DESCRIPTION "messagelib (messagelist)"
         OLD_CATEGORY_NAMES log_messagelist
         EXPORT MESSAGELIB
     )
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageList
+kconfig_add_kcfg_files(KPim6MessageList
     core/messagelistsettings.kcfgc
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MessageList PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim${KF_MAJOR_VERSION}MessageList BASE_NAME messagelist)
+generate_export_header(KPim6MessageList BASE_NAME messagelist)
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/>")
+target_include_directories(KPim6MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/>")
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}MessageList
+target_link_libraries(KPim6MessageList
     PUBLIC
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::AkonadiMime
-    KPim${KF_MAJOR_VERSION}::Mime
+    KPim6::AkonadiCore
+    KPim6::AkonadiMime
+    KPim6::Mime
     PRIVATE
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KPim${KF_MAJOR_VERSION}::MessageCore
-    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
-    KPim${KF_MAJOR_VERSION}::AkonadiSearchPIM
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::IconThemes
-    KF${KF_MAJOR_VERSION}::Completion
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::TextWidgets
+    KF6::KIOCore
+    KPim6::MessageCore
+    KPim6::PimCommonAkonadi
+    KPim6::AkonadiSearchPIM
+    KF6::XmlGui
+    KF6::IconThemes
+    KF6::Completion
+    KF6::I18n
+    KF6::TextWidgets
     )
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MessageList PROPERTIES
+set_target_properties(KPim6MessageList PROPERTIES
     VERSION ${MESSAGELIST_VERSION}
     SOVERSION ${MESSAGELIST_SOVERSION}
     EXPORT_NAME MessageList
     )
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MessageList
-    EXPORT KPim${KF_MAJOR_VERSION}MessageListTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MessageList
+    EXPORT KPim6MessageListTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageList_Camelcasecore_HEADERS
@@ -207,8 +207,8 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageList
-    LIB_NAME KPim${KF_MAJOR_VERSION}MessageList
-    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList
+    LIB_NAME KPim6MessageList
+    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList
     )
 
 
@@ -217,7 +217,7 @@ install(FILES
     ${MessageList_CamelCase_HEADERS}
     ${MessageList_Camelcasecore_HEADERS}
     ${MessageList_Camelcaseutil_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/MessageList
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/MessageList
     COMPONENT Devel
     )
 
@@ -228,7 +228,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelistsettings.h
     ${MessageList_core_HEADERS}
     ${MessageList_util_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageList/messagelist
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/messagelist
     COMPONENT Devel
     )
 install(FILES
@@ -237,9 +237,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MessageList_QCH
-        NAME KPim${KF_MAJOR_VERSION}MessageList
-        BASE_NAME KPim${KF_MAJOR_VERSION}MessageList
+        KPim6MessageList_QCH
+        NAME KPim6MessageList
+        BASE_NAME KPim6MessageList
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -248,9 +248,9 @@ if (BUILD_QCH)
         ${MessageList_core_HEADERS}
         ${MessageList_util_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -261,10 +261,10 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MessageList_QCH
-        FILE KPim${KF_MAJOR_VERSION}MessageListQchTargets.cmake
+        TARGETS KPim6MessageList_QCH
+        FILE KPim6MessageListQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageListQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageListQchTargets.cmake\")")
 endif()

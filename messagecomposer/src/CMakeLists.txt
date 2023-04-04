@@ -17,8 +17,8 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
 
-add_library( KPim${KF_MAJOR_VERSION}MessageComposer)
-add_library(KPim${KF_MAJOR_VERSION}::MessageComposer ALIAS KPim${KF_MAJOR_VERSION}MessageComposer)
+add_library( KPim6MessageComposer)
+add_library(KPim6::MessageComposer ALIAS KPim6MessageComposer)
 
 set(messagecomposer_interface_SRCS)
 qt_add_dbus_interface(messagecomposer_interface_SRCS
@@ -31,7 +31,7 @@ qt_add_dbus_interface(messagecomposer_interface_SRCS
     followupreminderinterface
 )
 
-target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
+target_sources( KPim6MessageComposer PRIVATE
     ${messagecomposer_interface_SRCS}
     job/jobbase.cpp
     job/contentjobbase.cpp
@@ -237,11 +237,11 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
 )
 
 
-ki18n_wrap_ui(KPim${KF_MAJOR_VERSION}MessageComposer
+ki18n_wrap_ui(KPim6MessageComposer
     imagescaling/ui/imagescalingwidget.ui
     sendlater/ui/sendlaterwidget.ui
 )
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
+ecm_qt_declare_logging_category(KPim6MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
     DESCRIPTION "messagelib (messagecomposer)"
     OLD_CATEGORY_NAMES log_messagecomposer
     EXPORT MESSAGELIB
@@ -258,58 +258,58 @@ endif()
 
 configure_file(settings/messagecomposer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer.kcfg)
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}MessageComposer
+kconfig_add_kcfg_files(KPim6MessageComposer
     settings/messagecomposersettings_base.kcfgc
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}MessageComposer PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6MessageComposer PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}MessageComposer BASE_NAME messagecomposer)
-target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
+generate_export_header(KPim6MessageComposer BASE_NAME messagecomposer)
+target_link_libraries(KPim6MessageComposer
     PUBLIC
-    KPim${KF_MAJOR_VERSION}::Mime
-    KPim${KF_MAJOR_VERSION}::MessageCore
-    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::IdentityManagementWidgets
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KPim${KF_MAJOR_VERSION}::AkonadiMime
-    KPim${KF_MAJOR_VERSION}::Libkleo
-    KPim${KF_MAJOR_VERSION}::MessageViewer
-    KF${KF_MAJOR_VERSION}::TextAutoCorrection
+    KPim6::Mime
+    KPim6::MessageCore
+    KPim6::PimCommonAkonadi
+    KPim6::AkonadiCore
+    KPim6::IdentityManagementWidgets
+    KPim6::PimTextEdit
+    KPim6::AkonadiMime
+    KPim6::Libkleo
+    KPim6::MessageViewer
+    KF6::TextAutoCorrection
     PRIVATE
-    KPim${KF_MAJOR_VERSION}::MailTransport
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KPim${KF_MAJOR_VERSION}::TemplateParser
-    KPim${KF_MAJOR_VERSION}::AkonadiWidgets
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::KIOFileWidgets # for KEncodingDialog
-    KF${KF_MAJOR_VERSION}::XmlGui         # for KActionCollection
-    KF${KF_MAJOR_VERSION}::SonnetUi
-    KF${KF_MAJOR_VERSION}::CalendarCore   # for KCalendarCore/Todo
-    KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::Contacts
-    KF${KF_MAJOR_VERSION}::SonnetCore
-    KF${KF_MAJOR_VERSION}::GuiAddons
-    KF${KF_MAJOR_VERSION}::Codecs
+    KPim6::MailTransport
+    KPim6::PimTextEdit
+    KPim6::TemplateParser
+    KPim6::AkonadiWidgets
+    KF6::KIOCore
+    KF6::I18n
+    KF6::KIOFileWidgets # for KEncodingDialog
+    KF6::XmlGui         # for KActionCollection
+    KF6::SonnetUi
+    KF6::CalendarCore   # for KCalendarCore/Todo
+    KF6::Archive
+    KF6::Contacts
+    KF6::SonnetCore
+    KF6::GuiAddons
+    KF6::Codecs
     )
 if (TARGET Qt6::Core5Compat)
-    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE Qt6::Core5Compat)
+    target_link_libraries(KPim6MessageComposer PRIVATE Qt6::Core5Compat)
 endif()
 
-target_include_directories(KPim${KF_MAJOR_VERSION}MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/>")
+target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
 
-set_target_properties(KPim${KF_MAJOR_VERSION}MessageComposer PROPERTIES
+set_target_properties(KPim6MessageComposer PROPERTIES
     VERSION ${MESSAGECOMPOSER_VERSION}
     SOVERSION ${MESSAGECOMPOSER_SOVERSION}
     EXPORT_NAME MessageComposer
     )
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}MessageComposer
-    EXPORT KPim${KF_MAJOR_VERSION}MessageComposerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6MessageComposer
+    EXPORT KPim6MessageComposerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
@@ -569,8 +569,8 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME MessageComposer
-    LIB_NAME KPim${KF_MAJOR_VERSION}MessageComposer
-    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer
+    LIB_NAME KPim6MessageComposer
+    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer
     )
 
 install(FILES
@@ -598,7 +598,7 @@ install(FILES
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
     ${MessageComposer_Camelstatusbarwidget_HEADERS}
     ${MessageComposer_Camelcasedraftstatus_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/MessageComposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/MessageComposer
     COMPONENT Devel
     )
 
@@ -632,7 +632,7 @@ install(FILES
     ${MessageComposer_plugineditorgrammar_HEADERS}
     ${MessageComposer_draftstatus_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer/messagecomposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/messagecomposer
     COMPONENT Devel
     )
 
@@ -642,9 +642,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}MessageComposer_QCH
-        NAME KPim${KF_MAJOR_VERSION}MessageComposer
-        BASE_NAME KPim${KF_MAJOR_VERSION}MessageComposer
+        KPim6MessageComposer_QCH
+        NAME KPim6MessageComposer
+        BASE_NAME KPim6MessageComposer
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -672,9 +672,9 @@ if (BUILD_QCH)
         ${MessageComposer_plugineditorgrammar_HEADERS}
         ${MessageComposer_draftstatus_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -685,11 +685,11 @@ if (BUILD_QCH)
     )
 
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}MessageComposer_QCH
-        FILE KPim${KF_MAJOR_VERSION}MessageComposerQchTargets.cmake
+        TARGETS KPim6MessageComposer_QCH
+        FILE KPim6MessageComposerQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}MessageComposerQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerQchTargets.cmake\")")
 
 endif()

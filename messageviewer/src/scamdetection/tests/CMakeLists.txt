@@ -9,9 +9,9 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 add_executable(scamdetectionwebengine_gui)
 target_sources(scamdetectionwebengine_gui PRIVATE scamdetectionwebengine_gui.cpp scamdetectionwebengine_gui.h)
 target_link_libraries(scamdetectionwebengine_gui
-    KF${KF_MAJOR_VERSION}::KIOCore
-    KPim${KF_MAJOR_VERSION}::MessageViewer
+    KF6::KIOCore
+    KPim6::MessageViewer
     Qt::WebEngineWidgets
-    KF${KF_MAJOR_VERSION}::I18n
+    KF6::I18n
     )
 
