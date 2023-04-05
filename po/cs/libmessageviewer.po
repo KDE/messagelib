@@ -2612,16 +2612,3 @@ msgstr "Následující zpráva"
 #, kde-format
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "Prohlížeč vizitek"
-
-#~ msgid "&Import"
-#~ msgstr "&Importovat"
-
-#~ msgid "&Next Card"
-#~ msgstr "&Následující vizitka"
-
-#~ msgid "&Previous Card"
-#~ msgstr "&Předchozí vizitka"
