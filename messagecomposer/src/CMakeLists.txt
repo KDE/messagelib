@@ -265,7 +265,13 @@ kconfig_add_kcfg_files(KPim6MessageComposer
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageComposer PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim6MessageComposer BASE_NAME messagecomposer)
+ecm_generate_export_header(KPim6MessageComposer
+    BASE_NAME messagecomposer
+    VERSION ${MESSAGECOMPOSER_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
+
 target_link_libraries(KPim6MessageComposer
     PUBLIC
     KPim6::Mime

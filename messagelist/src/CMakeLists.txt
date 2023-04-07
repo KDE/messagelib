@@ -131,7 +131,13 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim6MessageList BASE_NAME messagelist)
+ecm_generate_export_header(KPim6MessageList
+    BASE_NAME messagelist
+    VERSION ${MESSAGELIST_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
+
 
 target_include_directories(KPim6MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/>")
 

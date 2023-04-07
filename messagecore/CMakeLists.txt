@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECORE
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/messagecore_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
     SOVERSION 6
     )
@@ -30,7 +30,7 @@ install(FILES
 install(EXPORT KPim6MessageCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageCoreTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/src/messagecore_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore COMPONENT Devel
     )
 

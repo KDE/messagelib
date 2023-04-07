@@ -150,8 +150,12 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MimeTreeParser PROPERTIES UNITY_BUILD ON)
 endif()
 
-
-generate_export_header(KPim6MimeTreeParser BASE_NAME mimetreeparser)
+ecm_generate_export_header(KPim6MimeTreeParser
+    BASE_NAME mimetreeparser
+    VERSION ${MIMETREEPARSER_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 
 target_link_libraries(KPim6MimeTreeParser

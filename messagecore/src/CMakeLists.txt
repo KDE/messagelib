@@ -81,7 +81,12 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
-generate_export_header(KPim6MessageCore BASE_NAME messagecore)
+ecm_generate_export_header(KPim6MessageCore
+    BASE_NAME messagecore
+    VERSION ${MESSAGECORE_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 target_link_libraries(KPim6MessageCore
     PUBLIC

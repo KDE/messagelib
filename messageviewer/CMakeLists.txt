@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGEVIEWER
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/messageviewer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfigVersion.cmake"
     SOVERSION 6
     )
@@ -29,7 +29,7 @@ install(FILES
 install(EXPORT KPim6MessageViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageViewerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/src/messageviewer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer COMPONENT Devel
     )
 

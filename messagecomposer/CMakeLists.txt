@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/messagecomposer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfigVersion.cmake"
     SOVERSION 6
     )
@@ -25,7 +25,7 @@ install(FILES
 install(EXPORT KPim6MessageComposerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageComposerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/src/messagecomposer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer COMPONENT Devel
     )
 

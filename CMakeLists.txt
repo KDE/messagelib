@@ -41,7 +41,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-include(GenerateExportHeader)
+include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
