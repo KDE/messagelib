@@ -5,7 +5,7 @@
 # Matthias Kalle Dalheimer <kalle@kdab.net>, 2004.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008, 2009, 2010.
 # Burkhard Lück <lueck@hube-lueck.de>, 2006, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011, 2012, 2013, 2016, 2020, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011, 2012, 2013, 2016, 2020, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2009.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Torbjörn Klatt <torbjoern@torbjoern-klatt.de>, 2011.
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-04 00:48+0000\n"
-"PO-Revision-Date: 2022-04-15 04:56+0200\n"
+"PO-Revision-Date: 2023-04-03 16:48+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -122,18 +122,16 @@ msgid "unknown key"
 msgstr "Unbekannter Schlüssel"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr " Spalte: %1 "
+msgstr "Konformität: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Verschlüsselte Nachricht"
+msgstr "Verschlüsselte Nachricht (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -293,43 +291,34 @@ msgid "Warning: The signature is bad."
 msgstr "Warnung: ungültige Signatur"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgid "Compliance: %1"
-msgstr " Spalte: %1 "
+msgstr "Konformität: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Ungültige Signatur."
+msgstr "Ungültige Signatur"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
 msgstr ""
-"Es sind nicht genügend Informationen zur Überprüfung der Signatur vorhanden."
+"Es sind nicht genügend Informationen zur Überprüfung der Signatur vorhanden"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Signiert von <a href='mailto:%1'>%1</a>."
+msgstr "Signiert von <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "Die Signatur ist gültig."
+msgstr "Die Signatur ist gültig"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
 msgid "Unknown signature state"
 msgstr "Unbekannter Status der Signatur"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1009,15 +998,13 @@ msgid "Reply to: "
 msgstr "Antwort an: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignorieren"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
 msgstr "Senden"
@@ -2380,8 +2367,7 @@ msgid "&View Source"
 msgstr "Nachr&ichtencode ansehen"
 
 #: viewer/viewer_p.cpp:1562
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "Nachricht &speichern ..."
 
@@ -2660,11 +2646,10 @@ msgid "Open folder where attachment was saved"
 msgstr "Ordner öffnen, in dem der Anhang gespeichert wurde"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Open Full Search"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Vollständige Suche öffnen"
+msgstr "Datei öffnen"
 
 #: widgets/opensavedfilefolderwidget.cpp:61
 #, kde-format
@@ -2679,10 +2664,9 @@ msgid "Open folder where PDF file was saved"
 msgstr "Ordner öffnen, in dem die PDF-Datei gespeichert wurde"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "Bearbeiten des Anhangs nicht möglich"
+msgstr "KMail kann den Anhang nicht öffnen."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format

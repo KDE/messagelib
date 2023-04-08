@@ -1,4 +1,4 @@
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2018.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2018, 2023.
 # Torbjörn Klatt <opensource@torbjoern-klatt.de>, 2011.
 # Burkhard Lück <lueck@hube-lueck.de>, 2012, 2013, 2015, 2021.
 # Jürgen Jäckle <divmails1@gmx.net>, 2021.
@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2021-08-17 13:09+0200\n"
-"Last-Translator: Jürgen Jäckle <divmails1@gmx.net>\n"
+"PO-Revision-Date: 2023-04-03 16:49+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -230,10 +230,7 @@ msgstr "I&ntelligent zitieren"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
-#, fuzzy, kde-format
-#| msgid ""
-#| "Reply or forward using the same visual format of the original message "
-#| "(plain text or HTML)"
+#, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
@@ -837,9 +834,7 @@ msgstr "Antwort an alle"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "Weiterleiten"
