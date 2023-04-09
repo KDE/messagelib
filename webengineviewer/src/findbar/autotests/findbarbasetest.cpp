@@ -48,7 +48,7 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 {
     WebEngineViewer::FindBarBase bar;
     bar.show();
-    QApplication::setActiveWindow(&bar);
+    bar.activateWindow();
     QSignalSpy spy(&bar, &WebEngineViewer::FindBarBase::hideFindBar);
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
     QVERIFY(bar.isVisible());
@@ -67,7 +67,7 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 {
     WebEngineViewer::FindBarBase bar;
     bar.show();
-    QApplication::setActiveWindow(&bar);
+    bar.activateWindow();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
     auto previous = bar.findChild<QPushButton *>(QStringLiteral("findprevious"));
 

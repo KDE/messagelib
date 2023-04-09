@@ -46,7 +46,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
 {
     MessageComposer::RecipientsEditor editor(new RecipientsLineTestFactory());
     editor.show();
-    QApplication::setActiveWindow(&editor);
+    editor.activateWindow();
     QVERIFY(QTest::qWaitForWindowActive(&editor));
 
     QVERIFY(editor.recipients().isEmpty());
