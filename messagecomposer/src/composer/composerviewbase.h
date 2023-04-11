@@ -41,10 +41,12 @@ namespace MailTransport
 {
 class TransportComboBox;
 }
-
-namespace KIdentityManagement
+namespace KIdentityManagementWidgets
 {
 class IdentityCombo;
+}
+namespace KIdentityManagement
+{
 class Identity;
 class IdentityManager;
 }
@@ -147,8 +149,8 @@ public:
     void setSignatureController(MessageComposer::SignatureController *sigController);
     Q_REQUIRED_RESULT MessageComposer::SignatureController *signatureController();
 
-    void setIdentityCombo(KIdentityManagement::IdentityCombo *identCombo);
-    Q_REQUIRED_RESULT KIdentityManagement::IdentityCombo *identityCombo();
+    void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *identCombo);
+    Q_REQUIRED_RESULT KIdentityManagementWidgets::IdentityCombo *identityCombo();
 
     void setIdentityManager(KIdentityManagement::IdentityManager *identMan);
     Q_REQUIRED_RESULT KIdentityManagement::IdentityManager *identityManager();
@@ -347,7 +349,7 @@ private:
     MessageComposer::AttachmentModel *m_attachmentModel = nullptr;
     MessageComposer::SignatureController *m_signatureController = nullptr;
     MessageComposer::RecipientsEditor *m_recipientsEditor = nullptr;
-    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
+    KIdentityManagementWidgets::IdentityCombo *m_identityCombo = nullptr;
     KIdentityManagement::IdentityManager *m_identMan = nullptr;
     MessageComposer::RichTextComposerNg *m_editor = nullptr;
     MailTransport::TransportComboBox *m_transport = nullptr;

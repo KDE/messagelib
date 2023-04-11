@@ -9,10 +9,13 @@
 #include <QDir>
 #include <QObject>
 
+namespace KIdentityManagementWidgets
+{
+class IdentityCombo;
+}
 namespace KIdentityManagement
 {
 class IdentityManager;
-class IdentityCombo;
 }
 
 class ComposerViewBaseTest : public QObject
@@ -35,6 +38,6 @@ private Q_SLOTS:
 
 private:
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
-    KIdentityManagement::IdentityCombo *mIdentCombo = nullptr;
+    KIdentityManagementWidgets::IdentityCombo *mIdentCombo = nullptr;
     QDir autocryptDir;
 };

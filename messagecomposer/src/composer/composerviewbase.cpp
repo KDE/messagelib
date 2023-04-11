@@ -55,8 +55,8 @@
 #include <Akonadi/SpecialMailCollections>
 
 #include <KEmailAddress>
-#include <KIdentityManagement/IdentityCombo>
 #include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementWidgets/IdentityCombo>
 
 #include "messagecomposer_debug.h"
 
@@ -1665,12 +1665,12 @@ MessageComposer::SignatureController *ComposerViewBase::signatureController()
     return m_signatureController;
 }
 
-void ComposerViewBase::setIdentityCombo(KIdentityManagement::IdentityCombo *identCombo)
+void ComposerViewBase::setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *identCombo)
 {
     m_identityCombo = identCombo;
 }
 
-KIdentityManagement::IdentityCombo *ComposerViewBase::identityCombo()
+KIdentityManagementWidgets::IdentityCombo *ComposerViewBase::identityCombo()
 {
     return m_identityCombo;
 }

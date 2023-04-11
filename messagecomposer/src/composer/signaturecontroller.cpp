@@ -16,8 +16,8 @@
 #include "settings/messagecomposersettings.h"
 
 #include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityCombo>
 #include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementWidgets/IdentityCombo>
 
 using namespace MessageComposer;
 
@@ -27,7 +27,7 @@ public:
     SignatureControllerPrivate() = default;
 
     uint m_currentIdentityId = 0;
-    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
+    KIdentityManagementWidgets::IdentityCombo *m_identityCombo = nullptr;
     MessageComposer::RichTextComposerNg *m_editor = nullptr;
 };
 
@@ -44,7 +44,7 @@ void SignatureController::setEditor(MessageComposer::RichTextComposerNg *editor)
     d->m_editor = editor;
 }
 
-void SignatureController::setIdentityCombo(KIdentityManagement::IdentityCombo *combo)
+void SignatureController::setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *combo)
 {
     d->m_identityCombo = combo;
     d->m_currentIdentityId = combo->currentIdentity();
@@ -76,14 +76,14 @@ void SignatureController::identityChanged(uint id)
 void SignatureController::suspend()
 {
     if (d->m_identityCombo) {
-        disconnect(d->m_identityCombo, &KIdentityManagement::IdentityCombo::identityChanged, this, &SignatureController::identityChanged);
+        disconnect(d->m_identityCombo, &KIdentityManagementWidgets::IdentityCombo::identityChanged, this, &SignatureController::identityChanged);
     }
 }
 
 void SignatureController::resume()
 {
     if (d->m_identityCombo) {
-        connect(d->m_identityCombo, &KIdentityManagement::IdentityCombo::identityChanged, this, &SignatureController::identityChanged);
+        connect(d->m_identityCombo, &KIdentityManagementWidgets::IdentityCombo::identityChanged, this, &SignatureController::identityChanged);
     }
 }
 

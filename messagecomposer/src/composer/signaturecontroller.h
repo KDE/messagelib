@@ -16,7 +16,7 @@
 #include <KIdentityManagement/Signature>
 #include <QObject>
 
-namespace KIdentityManagement
+namespace KIdentityManagementWidgets
 {
 class IdentityCombo;
 }
@@ -39,7 +39,7 @@ public:
     ~SignatureController() override;
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);
-    void setIdentityCombo(KIdentityManagement::IdentityCombo *combo);
+    void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *combo);
 
     /** Temporarily disable identity tracking, useful for initial loading for example. */
     void suspend();

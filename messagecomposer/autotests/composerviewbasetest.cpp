@@ -21,8 +21,8 @@
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityCombo>
 #include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementWidgets/IdentityCombo>
 
 #include <MailTransport/TransportComboBox>
 
@@ -60,7 +60,7 @@ void ComposerViewBaseTest::initTestCase()
     ident.setPGPEncryptionKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");
     ident.setPGPSigningKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");
     mIdentMan->commit();
-    mIdentCombo = new KIdentityManagement::IdentityCombo(mIdentMan);
+    mIdentCombo = new KIdentityManagementWidgets::IdentityCombo(mIdentMan);
 
     MessageComposerSettings::self()->setCryptoShowKeysForApproval(false);
 
