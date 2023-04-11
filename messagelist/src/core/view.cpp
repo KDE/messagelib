@@ -726,11 +726,6 @@ int View::sizeHintForColumn(int logicalColumnIndex) const
     return w;
 }
 
-void View::showEvent(QShowEvent *e)
-{
-    QTreeView::showEvent(e);
-}
-
 void View::slotHeaderContextMenuRequested(const QPoint &pnt)
 {
     if (!d->mTheme) {

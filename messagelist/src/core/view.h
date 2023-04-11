@@ -363,11 +363,6 @@ protected:
     void changeEvent(QEvent *e) override;
 
     /**
-     * Reimplemented in order to apply theme column widths on the first show
-     */
-    void showEvent(QShowEvent *e) override;
-
-    /**
      * Reimplemented in order to handle clicks with sub-item precision.
      */
     void mousePressEvent(QMouseEvent *e) override;
