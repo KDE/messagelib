@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-04 00:48+0000\n"
-"PO-Revision-Date: 2023-04-07 10:09+0100\n"
+"PO-Revision-Date: 2023-04-10 12:21+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2538,8 +2538,8 @@ msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br / "
-">s<br />a<br />g<br />e<br /></qt>"
+"<qt><br />P<br />l<br />a<br />t<br />a<br /> <br />M<br />e<br />s<br /"
+">a<br />ĝ<br />o<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
 #, kde-format
@@ -2548,8 +2548,8 @@ msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br / "
-">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+"<qt><br />K<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br />a<br /> "
+"<br />M<br />e<br />s<br />a<br />ĝ<br />o<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
