@@ -56,7 +56,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddTests)
 include(ECMAddQch)
-set(KTEXTADDONS_MIN_VERSION "1.1.0")
+set(KTEXTADDONS_MIN_VERSION "1.2.0")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
