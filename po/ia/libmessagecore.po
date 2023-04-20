@@ -133,7 +133,7 @@ msgid ""
 msgstr ""
 "<p>Un description del parte:</p><p>Isto es sol un description informational "
 "del parte, assi como le Subjecto es pro le message integre; le plure de "
-"agentes de e-posta monstrara iste information in lor vista preliminari de "
+"agentes de e-posta monstrara iste information in lor vista preliminar de "
 "messages insimul al icone del attachamento.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:160
@@ -165,10 +165,10 @@ msgid ""
 "default \"attachment\".</p>"
 msgstr ""
 "<p>Tu marca iste option si tu vole suggerer al destinatario le monstrator "
-"automatic (inline) de iste parte in le vista preliminari del message, in "
-"vice del vista de icone predefinite;</p><p>Technicamente, isto es exequite "
-"per fixar le campo capite de <em>Disposition de Contento</em> de iste parte "
-"a \"inline\" in vice del predefinite \"attachamento\".</p>"
+"automatic (inline) de iste parte in le vista preliminar del message, in vice "
+"del vista de icone predefinite;</p><p>Technicamente, isto es exequite per "
+"fixar le campo capite de <em>Disposition de Contento</em> de iste parte a "
+"\"inline\" in vice del predefinite \"attachamento\".</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
