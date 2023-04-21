@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 00:48+0000\n"
+"POT-Creation-Date: 2023-04-15 00:50+0000\n"
 "PO-Revision-Date: 2023-03-31 21:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1764,81 +1764,81 @@ msgid "Always show encryption/signature details"
 msgstr "Her zaman şifreleme/imzalama ayrıntılarını göster."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
-#: ui/settings.ui:31
+#: ui/settings.ui:19
 #, kde-format
 msgid "Viewer settings"
 msgstr "Görüntüleyici ayarları"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: ui/settings.ui:59
+#: ui/settings.ui:47
 #, kde-format
 msgid "O&verride character encoding:"
 msgstr "&Karakter kodlamasının üzerine yaz:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
-#: ui/settings.ui:91
+#: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
 msgstr "Erişim düğmesini etkinleştir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
-#: ui/settings.ui:98
+#: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
 msgstr "&Alıntılanan metnin yazıtipini küçült"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
-#: ui/settings.ui:105
+#: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
 msgstr "&Aktarılan metni genişlet/daralt işaretlerini göster"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
-#: ui/settings.ui:133
+#: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
 msgstr "Otomatik genişletme &düzeyi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: ui/settings.ui:202
+#: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
 msgstr "&En küçük yazıtipi boyutu:"
 
-#: utils/messageviewerutil.cpp:155
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "%1 adında bir dosya mevcut. Üzerine yazılsın mı?"
 
-#: utils/messageviewerutil.cpp:158
+#: utils/messageviewerutil.cpp:126
 #, kde-format
 msgid "Overwrite File?"
 msgstr "Dosyanın Üzerine Yazılsın mı?"
 
-#: utils/messageviewerutil.cpp:208
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Ekleri Farklı Kaydet"
 
-#: utils/messageviewerutil.cpp:225
+#: utils/messageviewerutil.cpp:193
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "eklenti.1"
 
-#: utils/messageviewerutil.cpp:231
+#: utils/messageviewerutil.cpp:199
 #, kde-format
 msgid "Save Attachment"
 msgstr "Eklentiyi Kaydet"
 
-#: utils/messageviewerutil.cpp:255
+#: utils/messageviewerutil.cpp:223
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "eklenti.%1"
 
-#: utils/messageviewerutil.cpp:353
+#: utils/messageviewerutil.cpp:321
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1847,22 +1847,22 @@ msgstr ""
 "İletinin %1 kısmı şifrelenmiş. Kaydederken şifrelemeyi muhafaza etmek "
 "istiyor musunuz?"
 
-#: utils/messageviewerutil.cpp:355 utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "KMail Question"
 msgstr "K Posta Sorusu"
 
-#: utils/messageviewerutil.cpp:355
+#: utils/messageviewerutil.cpp:323
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Şifrelemeyi Koru"
 
-#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Koruma"
 
-#: utils/messageviewerutil.cpp:366
+#: utils/messageviewerutil.cpp:334
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1871,13 +1871,13 @@ msgstr ""
 "İletinin %1 kısmı imzalanmış. Kaydederken imzayı muhafaza etmek istiyor "
 "musunuz?"
 
-#: utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "Keep Signature"
 msgstr "İmzayı Koru"
 
-#: utils/messageviewerutil.cpp:432 utils/messageviewerutil.cpp:450
-#: utils/messageviewerutil.cpp:468 utils/messageviewerutil.cpp:587
+#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1886,66 +1886,66 @@ msgid ""
 msgstr ""
 "<qt>Dosyaya yazılamadı:<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:435 utils/messageviewerutil.cpp:453
-#: utils/messageviewerutil.cpp:471
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
+#: utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Eklentiyi kaydederken hata oluştu"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Kaydedilecek eklenti yok."
 
-#: utils/messageviewerutil.cpp:499
+#: utils/messageviewerutil.cpp:467
 #, kde-format
 msgid "message"
 msgstr "ileti"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "eposta iletileri (*.mbox);;tüm dosyalar (*)"
 
-#: utils/messageviewerutil.cpp:532
+#: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "İletiyi Kaydet"
 msgstr[1] "İletileri Kaydet"
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "%1 dosyası yüklenemedi."
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "Error loading message"
 msgstr "İleti yüklenirken bir hata oluştu"
 
-#: utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:527
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: utils/messageviewerutil.cpp:559 utils/messageviewerutil.cpp:570
-#: utils/messageviewerutil.cpp:590
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:558
 #, kde-format
 msgid "Error saving message"
 msgstr "İleti kaydedilirken hata"
 
-#: utils/messageviewerutil.cpp:570
+#: utils/messageviewerutil.cpp:538
 #, kde-format
 msgid "We cannot save message."
 msgstr "İletiyi kaydedemiyoruz."
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:579
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1 &ile Aç"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:581
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

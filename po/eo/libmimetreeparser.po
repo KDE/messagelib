@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2023-02-06 21:11+0100\n"
+"PO-Revision-Date: 2023-04-18 06:31+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -31,7 +31,7 @@ msgstr "Sennoma"
 #: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
 #, kde-format
 msgid "Wrong Crypto Plug-In."
-msgstr "Malkorekta ĉifro&kromaĵo."
+msgstr "Malkorekta ĉifrokromprogramo."
 
 #: src/messagepart.cpp:794 src/messagepart.cpp:1252
 #, kde-format

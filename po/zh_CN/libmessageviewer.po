@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 00:48+0000\n"
-"PO-Revision-Date: 2023-03-27 11:59\n"
+"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"PO-Revision-Date: 2023-04-16 12:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1694,116 +1694,116 @@ msgid "Always show encryption/signature details"
 msgstr "始终显示加密/签名详细信息"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
-#: ui/settings.ui:31
+#: ui/settings.ui:19
 #, kde-format
 msgid "Viewer settings"
 msgstr "查看器设置"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: ui/settings.ui:59
+#: ui/settings.ui:47
 #, kde-format
 msgid "O&verride character encoding:"
 msgstr "覆盖字符编码(&V)："
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
-#: ui/settings.ui:91
+#: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
 msgstr "启用访问键"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
-#: ui/settings.ui:98
+#: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
 msgstr "引用的文字以较小字体显示(&Q)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
-#: ui/settings.ui:105
+#: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
 msgstr "显示展开/折叠的引用标记(&E)"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
-#: ui/settings.ui:133
+#: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
 msgstr "自动折叠等级(&L)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: ui/settings.ui:202
+#: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
 msgstr "最小字体大小(&M)："
 
-#: utils/messageviewerutil.cpp:155
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "名为“%1” 的文件已经存在。您要覆盖它吗？"
 
-#: utils/messageviewerutil.cpp:158
+#: utils/messageviewerutil.cpp:126
 #, kde-format
 msgid "Overwrite File?"
 msgstr "覆盖文件吗？"
 
-#: utils/messageviewerutil.cpp:208
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgid "Save Attachments To"
 msgstr "附件保存至"
 
-#: utils/messageviewerutil.cpp:225
+#: utils/messageviewerutil.cpp:193
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "附件.1"
 
-#: utils/messageviewerutil.cpp:231
+#: utils/messageviewerutil.cpp:199
 #, kde-format
 msgid "Save Attachment"
 msgstr "保存附件"
 
-#: utils/messageviewerutil.cpp:255
+#: utils/messageviewerutil.cpp:223
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "附件.%1"
 
-#: utils/messageviewerutil.cpp:353
+#: utils/messageviewerutil.cpp:321
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr "信件的第 %1 部分经过加密。您想要在保存时保持加密吗？"
 
-#: utils/messageviewerutil.cpp:355 utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail 提问"
 
-#: utils/messageviewerutil.cpp:355
+#: utils/messageviewerutil.cpp:323
 #, kde-format
 msgid "Keep Encryption"
 msgstr "保持加密"
 
-#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Do Not Keep"
 msgstr "不保持"
 
-#: utils/messageviewerutil.cpp:366
+#: utils/messageviewerutil.cpp:334
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "信件的第 %1 部分经过签名。您想要在保存时保留签名吗？"
 
-#: utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "Keep Signature"
 msgstr "保持签名"
 
-#: utils/messageviewerutil.cpp:432 utils/messageviewerutil.cpp:450
-#: utils/messageviewerutil.cpp:468 utils/messageviewerutil.cpp:587
+#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1811,65 +1811,65 @@ msgid ""
 "qt>"
 msgstr "<qt>无法写入文件<br/><filename>%1</filename><br/><br/>%2</qt>"
 
-#: utils/messageviewerutil.cpp:435 utils/messageviewerutil.cpp:453
-#: utils/messageviewerutil.cpp:471
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
+#: utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "保存附件时出错"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "没有发现要保存的附件。"
 
-#: utils/messageviewerutil.cpp:499
+#: utils/messageviewerutil.cpp:467
 #, kde-format
 msgid "message"
 msgstr "信件"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "电子邮件 (*.mbox);;所有文件(*)"
 
-#: utils/messageviewerutil.cpp:532
+#: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "保存信件"
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "无法加载文件 %1。"
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "Error loading message"
 msgstr "加载信件错误"
 
-#: utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:527
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "文件 %1 无法创建。"
 
-#: utils/messageviewerutil.cpp:559 utils/messageviewerutil.cpp:570
-#: utils/messageviewerutil.cpp:590
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:558
 #, kde-format
 msgid "Error saving message"
 msgstr "保存信件错误"
 
-#: utils/messageviewerutil.cpp:570
+#: utils/messageviewerutil.cpp:538
 #, kde-format
 msgid "We cannot save message."
 msgstr "无法保存信件。"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:579
 #, kde-format
 msgid "Open &with %1"
 msgstr "用 %1 打开(&W)"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:581
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -2549,16 +2549,3 @@ msgstr ""
 #, kde-format
 msgid "Previous Message"
 msgstr ""
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "vCard 查看器"
-
-#~ msgid "&Import"
-#~ msgstr "导入(&I)"
-
-#~ msgid "&Next Card"
-#~ msgstr "下一张名片(&N)"
-
-#~ msgid "&Previous Card"
-#~ msgstr "上一张名片(&P)"

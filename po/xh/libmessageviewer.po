@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 00:48+0000\n"
+"POT-Creation-Date: 2023-04-15 00:50+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1785,82 +1785,82 @@ msgid "Always show encryption/signature details"
 msgstr "&Yenza utyikityo"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
-#: ui/settings.ui:31
+#: ui/settings.ui:19
 #, fuzzy, kde-format
 msgid "Viewer settings"
 msgstr "&Ithumela"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: ui/settings.ui:59
+#: ui/settings.ui:47
 #, fuzzy, kde-format
 msgid "O&verride character encoding:"
 msgstr "Cwa&ngcisa Ukusebenzisa ikhowudi"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
-#: ui/settings.ui:91
+#: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
-#: ui/settings.ui:98
+#: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
-#: ui/settings.ui:105
+#: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
-#: ui/settings.ui:133
+#: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: ui/settings.ui:202
+#: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:155
+#: utils/messageviewerutil.cpp:123
 #, fuzzy, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Ifayile eneligama sele ikhona. Ufuna ukubhala ngaphezulu kwayo?"
 
-#: utils/messageviewerutil.cpp:158
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 msgid "Overwrite File?"
 msgstr "Ngenisa Ifayile"
 
-#: utils/messageviewerutil.cpp:208
+#: utils/messageviewerutil.cpp:176
 #, fuzzy, kde-format
 msgid "Save Attachments To"
 msgstr "Gcina Izincamatheliso Njenge"
 
-#: utils/messageviewerutil.cpp:225
+#: utils/messageviewerutil.cpp:193
 #, fuzzy, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "Uncamathelo: "
 
-#: utils/messageviewerutil.cpp:231
+#: utils/messageviewerutil.cpp:199
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "Gcina Izincamatheliso Njenge"
 
-#: utils/messageviewerutil.cpp:255
+#: utils/messageviewerutil.cpp:223
 #, fuzzy, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "Uncamathelo: "
 
-#: utils/messageviewerutil.cpp:353
+#: utils/messageviewerutil.cpp:321
 #, fuzzy, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1869,35 +1869,35 @@ msgstr ""
 "Le ndawo yomyalezo ibhalwe ngokufihlisa. Ufuna ukugcina ubhalo ngokufihlisa "
 "xa ugcina?"
 
-#: utils/messageviewerutil.cpp:355 utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "KMail Question"
 msgstr "Umbuzo we KMail"
 
-#: utils/messageviewerutil.cpp:355
+#: utils/messageviewerutil.cpp:323
 #, fuzzy, kde-format
 msgid "Keep Encryption"
 msgstr "Ufihlo"
 
-#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, fuzzy, kde-format
 msgid "Do Not Keep"
 msgstr "&Sukufihla"
 
-#: utils/messageviewerutil.cpp:366
+#: utils/messageviewerutil.cpp:334
 #, fuzzy, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "Le ndawo yomyalezo ityikityiwe. Uyafuna ukugcina utyikityo xa ugcina?"
 
-#: utils/messageviewerutil.cpp:368
+#: utils/messageviewerutil.cpp:336
 #, fuzzy, kde-format
 msgid "Keep Signature"
 msgstr "&Utyikityo"
 
-#: utils/messageviewerutil.cpp:432 utils/messageviewerutil.cpp:450
-#: utils/messageviewerutil.cpp:468 utils/messageviewerutil.cpp:587
+#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1905,69 +1905,69 @@ msgid ""
 "qt>"
 msgstr "Ayinakubhala kwifayile."
 
-#: utils/messageviewerutil.cpp:435 utils/messageviewerutil.cpp:453
-#: utils/messageviewerutil.cpp:471
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
+#: utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Uncamathelo: "
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:452
 #, fuzzy, kde-format
 msgid "Found no attachments to save."
 msgstr "Sukubonisa izincamathiselo kumbonisi womyalezo"
 
-#: utils/messageviewerutil.cpp:499
+#: utils/messageviewerutil.cpp:467
 #, fuzzy, kde-format
 msgid "message"
 msgstr "<message>"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:532
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] " %1 umyalezo, %2."
 msgstr[1] " %1 umyalezo, %2."
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Gcina imiyalezo &efihliweyo"
 
-#: utils/messageviewerutil.cpp:557
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 msgid "Error loading message"
 msgstr ""
 "Imposiso ngexesha lofundo lwefayile:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:527
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Gcina imiyalezo &efihliweyo"
 
-#: utils/messageviewerutil.cpp:559 utils/messageviewerutil.cpp:570
-#: utils/messageviewerutil.cpp:590
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 msgid "Error saving message"
 msgstr "Ukuhambisa umyalezo %3 we %2 kwi %1."
 
-#: utils/messageviewerutil.cpp:570
+#: utils/messageviewerutil.cpp:538
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Isiphelo somyalezo otyikityiweyo"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:579
 #, fuzzy, kde-format
 msgid "Open &with %1"
 msgstr "Vula nge..."
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:581
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
