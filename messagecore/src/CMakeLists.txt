@@ -114,7 +114,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}MessageCore PROPERTIES
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}MessageCore
-    EXPORT KPim${KF_MAJOR_VERSION}MessageCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS

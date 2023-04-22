@@ -173,7 +173,7 @@ endif()
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}MimeTreeParser
-    EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}MimeTreeParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 set_target_properties(KPim${KF_MAJOR_VERSION}MimeTreeParser PROPERTIES

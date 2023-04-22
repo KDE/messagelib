@@ -311,7 +311,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}MessageComposer PROPERTIES
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}MessageComposer
-    EXPORT KPim${KF_MAJOR_VERSION}MessageComposerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}MessageComposerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS

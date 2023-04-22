@@ -162,7 +162,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}WebEngineViewer PROPERTIES
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}WebEngineViewer
-    EXPORT KPim${KF_MAJOR_VERSION}WebEngineViewerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}WebEngineViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
