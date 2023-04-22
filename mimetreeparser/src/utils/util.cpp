@@ -79,15 +79,23 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
         tMimeType = QStringLiteral("application/pkcs7-signature");
     } else if (mimeType == QLatin1String("message/global")) {
         tMimeType = QStringLiteral("message/rfc822");
+    } else if (mimeType == QLatin1String("text/x-moz-deleted")) {
+        // Avoid debug warning about unknown mimetype
+        // Bug: 468801
+        // We need to show unknown icon
+        tMimeType.clear();
+        fileName = QStringLiteral("unknown");
     }
     QMimeDatabase mimeDb;
-    auto mime = mimeDb.mimeTypeForName(tMimeType);
-    if (mime.isValid()) {
-        fileName = mime.iconName();
-    } else {
-        fileName = QStringLiteral("unknown");
-        if (!tMimeType.isEmpty()) {
-            qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
+    if (!tMimeType.isEmpty()) {
+        auto mime = mimeDb.mimeTypeForName(tMimeType);
+        if (mime.isValid()) {
+            fileName = mime.iconName();
+        } else {
+            fileName = QStringLiteral("unknown");
+            if (!tMimeType.isEmpty()) {
+                qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
+            }
         }
     }
     // WorkAround for #199083
