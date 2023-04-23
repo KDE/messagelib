@@ -277,7 +277,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Libkleo
     KPim${KF_MAJOR_VERSION}::MessageViewer
-    KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::PimTextEdit
@@ -295,6 +294,17 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KF${KF_MAJOR_VERSION}::GuiAddons
     KF${KF_MAJOR_VERSION}::Codecs
     )
+if (TARGET KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
+        PUBLIC
+        KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets
+    )
+else()
+    target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
+        PUBLIC
+        KF${KF_MAJOR_VERSION}::TextAutoCorrection
+    )
+endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE Qt6::Core5Compat)
 endif()
