@@ -25,10 +25,12 @@ install(FILES
 install(EXPORT KPim6MessageComposerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageComposerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/src/messagecomposer_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/src/config-messagecomposer.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer COMPONENT Devel
     )
 
+configure_file(config-messagecomposer.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/config-messagecomposer.h)
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(autotests)

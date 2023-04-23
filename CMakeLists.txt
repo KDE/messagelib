@@ -112,7 +112,17 @@ find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
 if (TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
-find_package(KF6TextAutoCorrection ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
+
+find_package(KF6TextAutoCorrectionWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
+set_package_properties(KF6TextAutoCorrectionWidgets PROPERTIES DESCRIPTION
+    "Add support for text auto correction"
+    TYPE OPTIONAL
+)
+if (TARGET KF6::TextAutoCorrectionWidgets)
+    set(HAVE_TEXT_AUTOCORRECTION_WIDGETS TRUE)
+else()
+    find_package(KF6TextAutoCorrection ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
+endif()
 
 find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")

@@ -284,7 +284,6 @@ target_link_libraries(KPim6MessageComposer
     KPim6::AkonadiMime
     KPim6::Libkleo
     KPim6::MessageViewer
-    KF6::TextAutoCorrection
     PRIVATE
     KPim6::MailTransport
     KPim6::PimTextEdit
@@ -302,9 +301,18 @@ target_link_libraries(KPim6MessageComposer
     KF6::GuiAddons
     KF6::Codecs
     )
-if (TARGET Qt6::Core5Compat)
-    target_link_libraries(KPim6MessageComposer PRIVATE Qt6::Core5Compat)
+if (TARGET KF6::TextAutoCorrectionWidgets)
+    target_link_libraries(KPim6MessageComposer
+        PUBLIC
+        KF6::TextAutoCorrectionWidgets
+    )
+else()
+    target_link_libraries(KPim6MessageComposer
+        PUBLIC
+        KF6::TextAutoCorrection
+    )
 endif()
+target_link_libraries(KPim6MessageComposer PRIVATE Qt6::Core5Compat)
 
 target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
 
