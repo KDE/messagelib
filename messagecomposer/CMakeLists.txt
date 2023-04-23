@@ -29,6 +29,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer COMPONENT Devel
     )
 
+configure_file(config-messagecomposer.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/config-messagecomposer.h)
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
