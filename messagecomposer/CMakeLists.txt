@@ -26,6 +26,7 @@ install(EXPORT KPim${KF_MAJOR_VERSION}MessageComposerTargets DESTINATION "${CMAK
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/src/config-messagecomposer.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageComposer COMPONENT Devel
     )
 
