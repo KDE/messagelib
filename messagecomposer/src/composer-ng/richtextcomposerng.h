@@ -6,24 +6,16 @@
 
 #pragma once
 
-#include "config-messagecomposer.h"
 #include "messagecomposer_export.h"
 #include <KIdentityManagement/Signature>
 #include <KPIMTextEdit/RichTextComposer>
 #include <MessageComposer/PluginEditorConvertTextInterface>
 
 class RichTextComposerNgTest;
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
 namespace TextAutoCorrectionCore
 {
 class AutoCorrection;
 }
-#else
-namespace TextAutoCorrection
-{
-class AutoCorrection;
-}
-#endif
 namespace MessageComposer
 {
 class TextPart;
@@ -39,13 +31,8 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
     Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
-#else
-    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrection *autocorrection() const;
-    void setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect);
-#endif
 
     void setAutocorrectionLanguage(const QString &lang);
 

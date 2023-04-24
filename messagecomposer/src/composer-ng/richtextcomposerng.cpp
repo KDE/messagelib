@@ -13,12 +13,7 @@
 #include <KPIMTextEdit/RichTextComposerImages>
 #include <KPIMTextEdit/TextHTMLBuilder>
 
-#include "config-messagecomposer.h"
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
 #include <TextAutoCorrectionCore/AutoCorrection>
-#else
-#include <TextAutoCorrection/AutoCorrection>
-#endif
 
 #include <part/textpart.h>
 
@@ -41,11 +36,7 @@ public:
 
     void fixHtmlFontSize(QString &cleanHtml) const;
     Q_REQUIRED_RESULT QString toCleanHtml() const;
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
     TextAutoCorrectionCore::AutoCorrection *autoCorrection = nullptr;
-#else
-    TextAutoCorrection::AutoCorrection *autoCorrection = nullptr;
-#endif
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;
 };
@@ -63,20 +54,12 @@ MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignatu
     return d->richTextComposerSignatures;
 }
 
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
 TextAutoCorrectionCore::AutoCorrection *RichTextComposerNg::autocorrection() const
-#else
-TextAutoCorrection::AutoCorrection *RichTextComposerNg::autocorrection() const
-#endif
 {
     return d->autoCorrection;
 }
 
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
 void RichTextComposerNg::setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect)
-#else
-void RichTextComposerNg::setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect)
-#endif
 {
     d->autoCorrection = autocorrect;
 }
@@ -84,11 +67,7 @@ void RichTextComposerNg::setAutocorrection(TextAutoCorrection::AutoCorrection *a
 void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 {
     if (d->autoCorrection) {
-#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
         TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
-#else
-        TextAutoCorrection::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
-#endif
         settings->setLanguage(lang);
         d->autoCorrection->setAutoCorrectionSettings(settings);
     }
