@@ -34,9 +34,7 @@ macro( add_messagecomposer_test _source )
             KF6::Completion
     )
 
-    if (TARGET Qt::Core5Compat)
-        target_link_libraries(${_name} Qt::Core5Compat)
-    endif()
+    target_link_libraries(${_name} Qt::Core5Compat)
 endmacro()
 
 macro( add_messagecomposer_cryptotest _source )

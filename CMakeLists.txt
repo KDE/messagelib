@@ -92,8 +92,6 @@ find_package(KF6Notifications ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextTemplate CONFIG REQUIRED)
 set(TEMPLATES_LIB KF6::TextTemplate)
 
-find_package(Qt6Core5Compat)
-
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiMime ${AKONADIMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6ContactEditor ${AKONADICONTACT_LIB_VERSION} CONFIG REQUIRED)

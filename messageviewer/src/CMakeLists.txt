@@ -451,9 +451,7 @@ target_link_libraries(KPim6MessageViewer
 endif()
 
     target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
-if (TARGET Qt6::Core5Compat)
     target_link_libraries(KPim6MessageViewer PRIVATE Qt6::Core5Compat)
-endif()
 
 set_target_properties(KPim6MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION}
