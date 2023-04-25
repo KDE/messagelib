@@ -10,19 +10,20 @@
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-08 00:48+0000\n"
-"PO-Revision-Date: 2021-01-17 11:58+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-04-24 12:06+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -136,14 +137,13 @@ msgstr "неизвестный ключ"
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Соответствие: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Зашифрованное письмо"
+msgstr "Зашифрованное письмо (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -298,45 +298,34 @@ msgstr "Предупреждение: ошибка в подписи."
 #: messagepartthemes/default/templates/signedmessagepart.html:142
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Соответствие: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Неверная подпись."
+msgstr "Недействительная подпись"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "Недостаточно информации для проверки подписи."
+msgstr "Недостаточно информации для проверки подписи"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Подпись: <a href='mailto:%1'>%1</a>."
+msgstr "Подпись: <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "Подпись верна."
+msgstr "Подпись верна"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "Неизвестный статус подписи"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "Ошибка: %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -355,11 +344,10 @@ msgid "Key Changed"
 msgstr "Изменение ключа"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "в сертификате: "
+msgstr "Сохранить"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #: dkim-verify/dkimmanageruleswidget.cpp:72
@@ -380,12 +368,12 @@ msgstr "Ключ DKIM"
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Вставленное"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Последнее использованное"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, kde-format
@@ -393,33 +381,30 @@ msgid "Copy Key"
 msgstr "Копировать ключ"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "Remove Key"
+#, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] "Удалить ключ"
-msgstr[1] "Удалить ключ"
-msgstr[2] "Удалить ключ"
+msgstr[0] "Удалить ключи"
+msgstr[1] "Удалить ключи"
+msgstr[2] "Удалить ключи"
 msgstr[3] "Удалить ключ"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this key?"
+#, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] "Удалить этот ключ?"
-msgstr[1] "Удалить этот ключ?"
-msgstr[2] "Удалить этот ключ?"
+msgstr[0] "Удалить эти ключи?"
+msgstr[1] "Удалить эти ключи?"
+msgstr[2] "Удалить эти ключи?"
 msgstr[3] "Удалить этот ключ?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "Удаление ключа"
-msgstr[1] "Удаление ключа"
-msgstr[2] "Удаление ключа"
+msgstr[0] "Удаление ключей"
+msgstr[1] "Удаление ключей"
+msgstr[2] "Удаление ключей"
 msgstr[3] "Удаление ключа"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
@@ -429,16 +414,14 @@ msgid "Delete All"
 msgstr "Удалить все"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Do you want to delete all rules?"
+#, kde-format
 msgid "Do you want to delete all keys?"
-msgstr "Удалить все правила?"
+msgstr "Удалить все ключи?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgid "Delete Keys"
-msgstr "Удаление ключа"
+msgstr "Удалить ключи"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -1026,21 +1009,19 @@ msgstr "Обратный адрес:"
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорировать"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "Отправитель:"
+msgstr "Отправить"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "Отправитель:"
+msgstr "Отправить отказ"
 
 #: messagepartthemes/default/defaultrenderer.cpp:76
 #, kde-format
@@ -1172,48 +1153,42 @@ msgstr ""
 "отправителя %2 невозможно."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr "Параметры правила"
+msgstr "Настройка удалённого содержимого"
 
 #: remote-content/remotecontentconfigurewidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "Статус: "
+msgstr "Статус"
 
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this rule?"
+#, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr "Удалить это правило?"
+msgstr "Удалить это правило «%1»?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "Редактирование удалённого содержимого"
 
 #: remote-content/remotecontentconfigurewidget.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr "Параметры правила"
+msgstr "Добавление удалённого содержимого"
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "Запись уже определяет этот адрес. Измените его."
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "Add new Url"
-msgstr ""
+msgstr "Добавить новый URL-адрес"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1223,19 +1198,17 @@ msgstr "Настроить"
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "Удалённое содержимое"
 
 #: remote-content/remotecontentmenu.cpp:50
-#, fuzzy, kde-format
-#| msgid "Authorized"
+#, kde-format
 msgid "Authorize %1"
-msgstr "Авторизован"
+msgstr "Авторизовать %1"
 
 #: remote-content/remotecontentmenu.cpp:58
-#, fuzzy, kde-format
-#| msgid "Authorized"
+#, kde-format
 msgid "Authorize all Urls"
-msgstr "Авторизован"
+msgstr "Авторизовать все URL-адреса"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
@@ -1243,10 +1216,9 @@ msgid "Authorized"
 msgstr "Авторизован"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
-#, fuzzy, kde-format
-#| msgid "Block image"
+#, kde-format
 msgid "Blocked"
-msgstr "Заблокировать рекламное изображение"
+msgstr "Блокирован"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
@@ -2379,10 +2351,9 @@ msgid "&View Source"
 msgstr "Просмотр &исходного текста письма..."
 
 #: viewer/viewer_p.cpp:1577
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
-msgstr "&Сохранить письмо..."
+msgstr "&Сохранить письмо…"
 
 #: viewer/viewer_p.cpp:1583
 #, kde-format
@@ -2647,20 +2618,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML код для отображения письма пользователю"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "Открыть папку с сохранёнными вложениями"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "&Открыть в..."
+msgstr "Открыть файл"
 
 #: widgets/opensavedfilefolderwidget.cpp:61
 #, kde-format
@@ -2677,10 +2644,9 @@ msgid "Open folder where PDF file was saved"
 msgstr "Открыть папку с сохранённым файлом в формате PDF"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "Невозможно отредактировать вложение"
+msgstr "Не удалось открыть вложение."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
