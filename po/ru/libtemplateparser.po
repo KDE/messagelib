@@ -5,19 +5,20 @@
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2021-01-08 11:57+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-04-24 11:29+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -237,10 +238,7 @@ msgstr "Использовать умное &цитирование"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
-#, fuzzy, kde-format
-#| msgid ""
-#| "Reply or forward using the same visual format of the original message "
-#| "(plain text or HTML)"
+#, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
@@ -826,9 +824,7 @@ msgstr "Ответ всем"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "Пересылка"

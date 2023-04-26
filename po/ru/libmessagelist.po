@@ -10,19 +10,20 @@
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2021-02-08 10:14+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-04-24 11:23+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -1076,13 +1077,12 @@ msgstr[3] "<b>%1</b> письмо (непрочитанных: <b>%2</b>)"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "Любой заданный фильтр."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Create Filter"
-msgstr "Очистить фильтр"
+msgstr "Создать фильтр"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1128,48 +1128,41 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "Эта папка всегда использует такую сортировку"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "Очистить фильтр"
+msgstr "Настройка фильтра"
 
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 #: core/widgets/configurefilterswidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "Удалить тему «%1»?"
+msgstr "Удалить этот фильтр?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Remove Filter"
-msgstr "Очистить фильтр"
+msgstr "Удалить фильтр"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "Очистить фильтр"
+msgstr "Редактирование фильтра"
 
 #: core/widgets/filternamewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgid "Name:"
 msgstr "Название:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Save Filter..."
-msgstr "Очистить фильтр"
+msgstr "Сохранить фильтр…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1224,10 +1217,9 @@ msgid "Filter Mails by Status"
 msgstr "Фильтровать письма по состоянию"
 
 #: core/widgets/searchlinestatus.cpp:116
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Saved Filter"
-msgstr "Очистить фильтр"
+msgstr "Сохранённый фильтр"
 
 #: core/widgets/searchlinestatus.cpp:215
 #, kde-format
@@ -1931,16 +1923,14 @@ msgid "Collapse All Groups"
 msgstr "Свернуть все группы"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Развернуть все группы"
+msgstr "Развернуть все дискуссии"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Свернуть все группы"
+msgstr "Свернуть все дискуссии"
 
 #: widget.cpp:419
 #, kde-format
@@ -1958,12 +1948,10 @@ msgid "C&ancel"
 msgstr "О&тменить"
 
 #, fuzzy
-#~| msgid "Clear Filter"
 #~ msgid "Rename Filter"
 #~ msgstr "Очистить фильтр"
 
 #, fuzzy
-#~| msgid "Filter message by:"
 #~ msgid "Filter Name"
 #~ msgstr "Где искать текст:"
 
