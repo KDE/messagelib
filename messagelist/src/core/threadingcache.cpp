@@ -117,10 +117,11 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
         cacheFile.remove();
         return;
     }
-    mItemCache.reserve(cacheHeader.cacheSize);
-    mParentCache.reserve(cacheHeader.cacheSize);
+    const qsizetype values = cacheHeader.cacheSize;
+    mItemCache.reserve(values);
+    mParentCache.reserve(values);
 
-    for (int i = 0; i < cacheHeader.cacheSize; ++i) {
+    for (int i = 0; i < values; ++i) {
         qint64 child;
         qint64 parent;
         stream >> child >> parent;
@@ -136,7 +137,7 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
         mParentCache.insert(child, parent);
     }
 
-    qCDebug(MESSAGELIST_LOG) << "Loaded" << cacheHeader.cacheSize << "entries from threading cache";
+    qCDebug(MESSAGELIST_LOG) << "Loaded" << values << "entries from threading cache";
 }
 
 void ThreadingCache::save()
