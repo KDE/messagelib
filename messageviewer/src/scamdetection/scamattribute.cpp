@@ -44,6 +44,7 @@ QByteArray ScamAttribute::serialized() const
 {
     QByteArray result;
     QDataStream s(&result, QIODevice::WriteOnly);
+    s.setVersion(QDataStream::Qt_5_15);
     s << isAScam();
     return result;
 }
@@ -51,6 +52,7 @@ QByteArray ScamAttribute::serialized() const
 void ScamAttribute::deserialize(const QByteArray &data)
 {
     QDataStream s(data);
+    s.setVersion(QDataStream::Qt_5_15);
     bool value = false;
     s >> value;
     d->isAScam = value;
