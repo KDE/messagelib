@@ -10,6 +10,7 @@
 #include "aggregation.h"
 #include "messagelist_debug.h"
 
+#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QStandardPaths>
@@ -29,6 +30,16 @@ struct CacheHeader {
     qsizetype cacheSize;
 #endif
 };
+
+QDebug operator<<(QDebug d, const CacheHeader &t)
+{
+    d << " grouping " << t.grouping;
+    d << " threading " << t.threading;
+    d << " threadLeader " << t.threadLeader;
+    d << " grouping " << t.grouping;
+    d << " cacheSize " << t.cacheSize;
+    return d;
+}
 
 QDataStream &operator<<(QDataStream &stream, const CacheHeader &header)
 {
@@ -110,7 +121,6 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
         cacheFile.remove();
         return;
     }
-
     mItemCache.reserve(cacheHeader.cacheSize);
     mParentCache.reserve(cacheHeader.cacheSize);
 
