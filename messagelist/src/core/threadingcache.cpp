@@ -91,6 +91,7 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     }
 
     QDataStream stream(&cacheFile);
+    stream.setVersion(QDataStream::Qt_5_15);
     CacheHeader cacheHeader = {};
     stream >> cacheHeader;
 
@@ -154,6 +155,7 @@ void ThreadingCache::save()
     qCDebug(MESSAGELIST_LOG) << "Saving threading cache to" << cacheFile.fileName();
 
     QDataStream stream(&cacheFile);
+    stream.setVersion(QDataStream::Qt_5_15);
     CacheHeader cacheHeader{1, // version
                             mGrouping,
                             mThreading,
