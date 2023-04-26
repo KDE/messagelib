@@ -24,7 +24,7 @@ struct CacheHeader {
     Aggregation::Grouping grouping;
     Aggregation::Threading threading;
     Aggregation::ThreadLeader threadLeader;
-    qsizetype cacheSize;
+    int cacheSize;
 };
 
 QDebug operator<<(QDebug d, const CacheHeader &t)
