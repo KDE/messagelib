@@ -46,6 +46,7 @@ QByteArray MessageDisplayFormatAttribute::serialized() const
 {
     QByteArray result;
     QDataStream s(&result, QIODevice::WriteOnly);
+    s.setVersion(QDataStream::Qt_5_15);
     s << messageFormat();
     s << remoteContent();
 
@@ -80,6 +81,7 @@ Viewer::DisplayFormatMessage MessageDisplayFormatAttribute::messageFormat() cons
 void MessageDisplayFormatAttribute::deserialize(const QByteArray &data)
 {
     QDataStream s(data);
+    s.setVersion(QDataStream::Qt_5_15);
     int value = 0;
     s >> value;
     d->messageFormat = static_cast<Viewer::DisplayFormatMessage>(value);

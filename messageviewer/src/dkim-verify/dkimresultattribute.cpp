@@ -45,6 +45,7 @@ QByteArray DKIMResultAttribute::serialized() const
 {
     QByteArray result;
     QDataStream s(&result, QIODevice::WriteOnly);
+    s.setVersion(QDataStream::Qt_5_15);
     s << status();
     s << warning();
     s << error();
@@ -54,6 +55,7 @@ QByteArray DKIMResultAttribute::serialized() const
 void DKIMResultAttribute::deserialize(const QByteArray &data)
 {
     QDataStream s(data);
+    s.setVersion(QDataStream::Qt_5_15);
     int stat = -1;
     s >> stat;
     d->status = stat;
