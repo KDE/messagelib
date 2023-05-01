@@ -83,6 +83,7 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 
 void GrantleeHeaderStyleTest::initTestCase()
 {
+    qputenv("LC_ALL", "en_US.UTF-8");
     QStandardPaths::setTestModeEnabled(true);
     expectedDataLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
     expectedDataLocation += QStringLiteral("/messageviewer/defaultthemes");
