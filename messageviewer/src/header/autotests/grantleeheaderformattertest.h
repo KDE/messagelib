@@ -10,6 +10,8 @@
 class GrantleeHeaderFormatterTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit GrantleeHeaderFormatterTest(QObject *parent = nullptr);
 
 private Q_SLOTS:
     void testInvalid();

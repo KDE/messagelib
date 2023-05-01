@@ -20,6 +20,13 @@ using namespace MessageViewer;
 
 QTEST_MAIN(GrantleeHeaderFormatterTest)
 
+GrantleeHeaderFormatterTest::GrantleeHeaderFormatterTest(QObject *parent)
+    : QObject(parent)
+{
+    qputenv("LC_ALL", "en_US.UTF-8");
+    QStandardPaths::setTestModeEnabled(true);
+}
+
 void testHeaderFile(const QString &data, const QString &absolutePath, const QString &name)
 {
     QString header = QStringLiteral(

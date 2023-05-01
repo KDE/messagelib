@@ -9,6 +9,7 @@
 #include "dkim-verify/dkimmanageruleswidget.h"
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(DKIMManageRulesDialogTest)
@@ -16,6 +17,7 @@ QTEST_MAIN(DKIMManageRulesDialogTest)
 DKIMManageRulesDialogTest::DKIMManageRulesDialogTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManageRulesDialogTest::shouldHaveDefaultValues()
