@@ -167,7 +167,7 @@ void ThreadingCache::save()
                             mGrouping,
                             mThreading,
                             mThreadLeader,
-                            mParentCache.size()};
+                            static_cast<int>(mParentCache.size())};
     stream << cacheHeader;
     cacheFile.flush();
 
