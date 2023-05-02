@@ -2303,9 +2303,8 @@ void ViewerPrivate::slotPrintMessage()
 
 void ViewerPrivate::slotPdfPrintingFinished(const QString &filePath, bool success)
 {
-    Q_UNUSED(filePath)
     if (!success) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Print to pdf failed";
+        qCWarning(MESSAGEVIEWER_LOG) << "Print to pdf failed" << filePath;
     }
     delete mCurrentPrinter;
     mCurrentPrinter = nullptr;
