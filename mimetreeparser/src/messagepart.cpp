@@ -848,8 +848,18 @@ void SignedMessagePart::sigStatusToMetaData()
             // Search for the key by its fingerprint so that we can check for
             // trust etc.
             key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+            if (key.isNull() && signature.fingerprint()) {
+                // try to find a subkey that was used for signing;
+                // assumes that the key ID is the last 16 characters of the fingerprint
+                const auto fpr = std::string_view{signature.fingerprint()};
+                const auto keyID = std::string{fpr, fpr.size() - 16, 16};
+                const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
+                if (subkeys.size() > 0) {
+                    key = subkeys[0].parent();
+                }
+            }
             if (key.isNull()) {
-                qCDebug(MIMETREEPARSER_LOG) << "Found no Key for Fingerprint" << signature.fingerprint();
+                qCDebug(MIMETREEPARSER_LOG) << "Found no key or subkey for fingerprint" << signature.fingerprint();
             }
         }
 
