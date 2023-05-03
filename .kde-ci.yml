@@ -22,7 +22,7 @@ Dependencies:
     'pim/libkleo' : '@same'
     'pim/pimcommon' : '@same'
     'libraries/qca' : '@latest'
-    'libraries/ktextaddons': '@stable'
+    'libraries/ktextaddons': '1.2'
     'third-party/grantlee' : '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
