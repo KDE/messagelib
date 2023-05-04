@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-05-04 00:48+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -22,12 +22,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "অনামিকা"
 
-#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1059
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1252
+#: src/messagepart.cpp:794 src/messagepart.cpp:1262
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "কোন উপযুক্ত ক্রিপ্টো প্লাগ-ইন পাওয়া যায়নি।"
@@ -52,18 +52,18 @@ msgid ""
 "<br />Reason: %1"
 msgstr "স্বাক্ষরটির বৈধতা যাচাই করা যায়নি।"
 
-#: src/messagepart.cpp:1254
+#: src/messagepart.cpp:1264
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "\"%1\" ক্রিপ্টো প্লাগ-ইন তথ্য পাঠোদ্ধার করতে পারেনি।"
 
-#: src/messagepart.cpp:1256
+#: src/messagepart.cpp:1266
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "\"%1\" ক্রিপ্টো প্লাগ-ইন তথ্য পাঠোদ্ধার করতে পারেনি।"
 
-#: src/messagepart.cpp:1257
+#: src/messagepart.cpp:1267
 #, kde-format
 msgid "Error: %1"
 msgstr "সমস্যা: %1"
