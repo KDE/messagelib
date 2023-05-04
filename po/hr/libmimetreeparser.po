@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-05-04 02:56+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -29,12 +29,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Neimenovano"
 
-#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1049
+#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1059
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Neispravni umetak za kriptiranje."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1252
+#: src/messagepart.cpp:794 src/messagepart.cpp:1262
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nije pronađen odgovarajući umetak za kriptiranje."
@@ -58,17 +58,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Nije moguće provjeriti valjanost potpisa."
 
-#: src/messagepart.cpp:1254
+#: src/messagepart.cpp:1264
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:1256
+#: src/messagepart.cpp:1266
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:1257
+#: src/messagepart.cpp:1267
 #, fuzzy, kde-format
 msgid "Error: %1"
 msgstr "Greška: %1"
