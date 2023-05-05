@@ -426,6 +426,7 @@ ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     ComposerViewBase
     ComposerViewInterface
     ComposerAttachmentInterface
+    KeyResolver
     NearExpiryChecker
     SignatureController
     REQUIRED_HEADERS MessageComposer_composer_HEADERS
