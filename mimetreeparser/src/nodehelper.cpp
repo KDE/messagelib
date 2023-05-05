@@ -785,6 +785,11 @@ QString NodeHelper::asHREF(const KMime::Content *node, const QString &place) con
     return QStringLiteral("attachment:%1?place=%2").arg(persistentIndex(node), place);
 }
 
+QString NodeHelper::asHREF(const KMime::Content *node) const
+{
+    return QStringLiteral("attachment:%1").arg(persistentIndex(node));
+}
+
 KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &url) const
 {
     if (url.isEmpty()) {

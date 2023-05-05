@@ -143,7 +143,7 @@ QString MessagePart::makeLink(const QString &path) const
     }
     return QStringLiteral("x-kmail:/bodypart/%1/%2/%3")
         .arg(serial++)
-        .arg(content()->index().toString(), QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
+        .arg(mOtp->nodeHelper()->asHREF(content()), QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
 }
 
 void MessagePart::setIsRoot(bool root)

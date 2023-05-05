@@ -150,6 +150,9 @@ public:
     Q_REQUIRED_RESULT QString asHREF(const KMime::Content *node, const QString &place) const;
     KMime::Content *fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &href) const;
 
+    // Overload which creates a URL without the query part. Used by MessagePart::makeLink.
+    Q_REQUIRED_RESULT QString asHREF(const KMime::Content *node) const;
+
     /**
      * @return true if this node is a child or an encapsulated message
      */
