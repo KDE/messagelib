@@ -7,9 +7,9 @@
 #include "imagescalingwidget.h"
 #include "settings/messagecomposersettings.h"
 #include "ui_imagescalingwidget.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <QButtonGroup>
 #include <QComboBox>
@@ -48,10 +48,10 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     initComboBox(d->ui->CBMinimumHeight);
 
     initWriteImageFormat();
-    new KPIM::LineEditCatchReturnKey(d->ui->pattern, this);
-    new KPIM::LineEditCatchReturnKey(d->ui->renameResizedImagePattern, this);
-    new KPIM::LineEditCatchReturnKey(d->ui->resizeEmailsPattern, this);
-    new KPIM::LineEditCatchReturnKey(d->ui->doNotResizePattern, this);
+    KLineEditEventHandler::catchReturnKey(d->ui->pattern);
+    KLineEditEventHandler::catchReturnKey(d->ui->renameResizedImagePattern);
+    KLineEditEventHandler::catchReturnKey(d->ui->resizeEmailsPattern);
+    KLineEditEventHandler::catchReturnKey(d->ui->doNotResizePattern);
 
     connect(d->ui->enabledAutoResize, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->KeepImageRatio, &QCheckBox::clicked, this, &ImageScalingWidget::changed);

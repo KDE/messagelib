@@ -6,8 +6,8 @@
 
 #include "filternamewidget.h"
 #include <KIconButton>
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
@@ -26,7 +26,7 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     mName->setClearButtonEnabled(true);
     mIconButton->setObjectName(QStringLiteral("mIconButton"));
     mIconButton->setFixedSize(32, 32);
-    new KPIM::LineEditCatchReturnKey(mName, this);
+    KLineEditEventHandler::catchReturnKey(mName);
 
     auto label = new QLabel(i18n("Name:"), this);
     label->setObjectName(QStringLiteral("label"));

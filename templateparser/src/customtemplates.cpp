@@ -11,8 +11,8 @@
 #include "templateparser/templatesinsertcommandpushbutton.h"
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 #include "ui_customtemplates_base.h"
+#include <KLineEditEventHandler>
 #include <KPIMTextEdit/PlainTextEditor>
-#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -39,7 +39,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
     mUi->mList->header()->setSectionsMovable(false);
     mUi->mEditFrame->setEnabled(false);
 
-    new KPIM::LineEditCatchReturnKey(mUi->mName, this);
+    KLineEditEventHandler::catchReturnKey(mUi->mName);
     connect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged, this, &CustomTemplates::slotTextChanged);
     connect(mUi->mToEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     connect(mUi->mCCEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
