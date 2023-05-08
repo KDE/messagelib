@@ -104,6 +104,10 @@ void AttachmentJob::doStart()
         }
         ct->setCharset(textCharset);
     }
+    const auto ctParams = d->part->contentTypeParams();
+    for (auto it = ctParams.begin(), end = ctParams.end(); it != end; ++it) {
+        ct->setParameter(it.key(), it.value());
+    }
 
     sjob->contentDescription()->fromUnicodeString(d->part->description(), charset);
 

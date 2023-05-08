@@ -34,6 +34,7 @@ void AttachmentJobTest::testAttachment()
     const QString description = QStringLiteral("long long long description...");
     const QByteArray mimeType("x-some/x-type");
     const QByteArray data("la la la");
+    const QMap<QString, QString> params{{QStringLiteral("method"), QStringLiteral("request")}};
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     part->setName(name);
@@ -41,6 +42,7 @@ void AttachmentJobTest::testAttachment()
     part->setDescription(description);
     part->setMimeType(mimeType);
     part->setData(data);
+    part->setContentTypeParams(params);
 
     Composer composer;
     composer.globalPart()->setFallbackCharsetEnabled(true);
@@ -54,6 +56,10 @@ void AttachmentJobTest::testAttachment()
     QCOMPARE(result->contentDisposition(false)->filename(), fileName);
     QCOMPARE(result->contentDescription(false)->asUnicodeString(), description);
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
+    for (auto it = params.cbegin(), end = params.cend(); it != end; ++it) {
+        QVERIFY(result->contentType(false)->hasParameter(it.key()));
+        QCOMPARE(result->contentType(false)->parameter(it.key()), it.value());
+    }
     QCOMPARE(result->body(), data);
     QVERIFY(result->contentDisposition(false)->disposition() == Headers::CDattachment);
     delete ajob;

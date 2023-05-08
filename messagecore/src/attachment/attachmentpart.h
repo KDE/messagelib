@@ -11,6 +11,7 @@
 #include <KMime/Headers>
 
 #include <QList>
+#include <QMap>
 #include <QMetaType>
 #include <QSharedPointer>
 
@@ -132,6 +133,16 @@ public:
      * Returns the mime type of the attachment.
      */
     Q_REQUIRED_RESULT QByteArray mimeType() const;
+
+    /**
+     * Sets custom additional parameters of the attachment's content-type.
+     */
+    void setContentTypeParams(const QMap<QString, QString> &params);
+
+    /**
+     * Returns a map with additional parameters of attachment's content-type.
+     */
+    Q_REQUIRED_RESULT QMap<QString, QString> contentTypeParams() const;
 
     /**
      * Sets whether the attachment is @p compressed.

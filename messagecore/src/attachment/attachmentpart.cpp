@@ -61,6 +61,7 @@ public:
     QByteArray mCharset;
     QByteArray mMimeType;
     QByteArray mData;
+    QMap<QString, QString> mContentTypeParams;
     KMime::Headers::contentEncoding mEncoding = KMime::Headers::CE7Bit;
     qint64 mSize = -1;
     bool mIsInline = false;
@@ -232,4 +233,14 @@ void AttachmentPart::setUrl(const QUrl &url)
 QUrl AttachmentPart::url() const
 {
     return d->mUrl;
+}
+
+void AttachmentPart::setContentTypeParams(const QMap<QString, QString> &params)
+{
+    d->mContentTypeParams = params;
+}
+
+QMap<QString, QString> AttachmentPart::contentTypeParams() const
+{
+    return d->mContentTypeParams;
 }
