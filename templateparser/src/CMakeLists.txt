@@ -96,7 +96,6 @@ target_link_libraries(KPim6TemplateParser
     KF6::SonnetUi
     KF6::SyntaxHighlighting
     Qt::WebEngineWidgets
-    KPim6::Libkdepim
     KPim6::PimTextEdit
     Gpgmepp
     )
