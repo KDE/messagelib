@@ -5,7 +5,6 @@
 */
 
 #include "checkphishingurlutil.h"
-#include "webengineviewer_version.h"
 #include <QDateTime>
 #include <QtMath>
 
