@@ -192,18 +192,15 @@ install(FILES
     ${MessageCore_Camelcaseutils_HEADERS}
     ${MessageCore_Camelcaseattachment_HEADERS}
     ${MessageCore_Camelcasemisc_HEADERS}
-    ${MessageCore_Camelcasemain_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/MessageCore
     COMPONENT Devel
     )
 
 install(FILES
-    ${MessageCore_HEADERS}
     ${MessageCore_autocrypt_HEADERS}
     ${MessageCore_helpers_HEADERS}
     ${MessageCore_settings_HEADERS}
     ${MessageCore_utils_HEADERS}
-    ${MessageCore_main_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
     ${MessageCore_attachment_HEADERS}
@@ -223,12 +220,10 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${MessageCore_HEADERS}
         ${MessageCore_autocrypt_HEADERS}
         ${MessageCore_helpers_HEADERS}
         ${MessageCore_settings_HEADERS}
         ${MessageCore_utils_HEADERS}
-        ${MessageCore_main_HEADERS}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
