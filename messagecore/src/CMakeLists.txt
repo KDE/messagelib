@@ -94,7 +94,6 @@ target_link_libraries(KPim6MessageCore
     PRIVATE
     KF6::KIOCore
     KF6::Codecs
-    KPim6::PimTextEdit
     KF6::Archive
     Qt::Network
     KF6::I18n
