@@ -6,6 +6,15 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
     SOVERSION 5
     )
 
+find_package(Inotify)
+set_package_properties(Inotify PROPERTIES
+                       PURPOSE "Filesystem alteration notifications using inotify")
+if(Inotify_FOUND)
+    set(HAVE_SYS_INOTIFY_H 1)
+else()
+    set(HAVE_SYS_INOTIFY_H 0)
+endif()
+
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}MessageComposer")
 

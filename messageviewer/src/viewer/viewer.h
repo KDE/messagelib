@@ -9,7 +9,6 @@
 
 #pragma once
 
-#include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
 #include "messageviewer_export.h"
 #include <MimeTreeParser/Enums>

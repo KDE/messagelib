@@ -89,6 +89,7 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     part/textpart.cpp
     attachment/attachmentcontrollerbase.cpp
     attachment/attachmentmodel.cpp
+    attachment/editorwatcher.cpp
     helper/messagehelper.cpp
     helper/messagefactoryng.cpp
     helper/messagefactoryforwardjob.cpp
@@ -166,6 +167,7 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     utils/util.h
     attachment/attachmentmodel.h
     attachment/attachmentcontrollerbase.h
+    attachment/editorwatcher.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesend.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.h
@@ -293,6 +295,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KF${KF_MAJOR_VERSION}::SonnetCore
     KF${KF_MAJOR_VERSION}::GuiAddons
     KF${KF_MAJOR_VERSION}::Codecs
+    ${Inotify_LIBRARIES}
     )
 if (TARGET KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets)
     target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
@@ -409,6 +412,7 @@ ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
     HEADER_NAMES
     AttachmentModel
     AttachmentControllerBase
+    EditorWatcher
     REQUIRED_HEADERS MessageComposer_attachement_HEADERS
     PREFIX MessageComposer
     RELATIVE attachment

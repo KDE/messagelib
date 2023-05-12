@@ -10,14 +10,15 @@
 
 #pragma once
 
-#include <QObject>
+#include "messagecomposer_export.h"
 
+#include "editorwatcher.h"
+
+#include <QObject>
 #include <QUrl>
 
-#include "messagecomposer_export.h"
 #include <KService>
 #include <MessageCore/AttachmentPart>
-#include <MessageViewer/EditorWatcher>
 
 class KActionCollection;
 class QAction;
@@ -56,7 +57,7 @@ public Q_SLOTS:
     void openAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void viewAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void editAttachment(MessageCore::AttachmentPart::Ptr part,
-                        MessageViewer::EditorWatcher::OpenWithOption option = MessageViewer::EditorWatcher::NoOpenWithDialog);
+                        MessageComposer::EditorWatcher::OpenWithOption option = MessageComposer::EditorWatcher::NoOpenWithDialog);
     void editAttachmentWith(const MessageCore::AttachmentPart::Ptr &part);
     void saveAttachmentAs(const MessageCore::AttachmentPart::Ptr &part);
     void attachmentProperties(const MessageCore::AttachmentPart::Ptr &part);

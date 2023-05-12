@@ -5,7 +5,6 @@
 */
 
 #include "grantleeheaderformatter.h"
-#include "config-messageviewer.h"
 #include "headerstyle_util.h"
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"

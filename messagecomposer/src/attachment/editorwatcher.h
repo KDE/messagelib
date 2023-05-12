@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
 #include <QUrl>
 
 #include <QElapsedTimer>
@@ -14,7 +13,7 @@
 #include <QTimer>
 class KProcess;
 
-namespace MessageViewer
+namespace MessageComposer
 {
 /**
   Starts an editor for the given URL and emits an signal when
@@ -22,7 +21,7 @@ namespace MessageViewer
   as the edited file are watched to work with as many as possible
   editors.
 */
-class MESSAGEVIEWER_EXPORT EditorWatcher : public QObject
+class EditorWatcher : public QObject
 {
     Q_OBJECT
 public:
@@ -55,12 +54,12 @@ public:
     Q_REQUIRED_RESULT bool fileChanged() const;
     Q_REQUIRED_RESULT QUrl url() const;
 Q_SIGNALS:
-    void editDone(MessageViewer::EditorWatcher *watcher);
+    void editDone(MessageComposer::EditorWatcher *watcher);
 
 private:
-    MESSAGEVIEWER_NO_EXPORT void editorExited();
-    MESSAGEVIEWER_NO_EXPORT void inotifyEvent();
-    MESSAGEVIEWER_NO_EXPORT void checkEditDone();
+    void editorExited();
+    void inotifyEvent();
+    void checkEditDone();
     const QUrl mUrl;
     const QString mMimeType;
     QTimer mTimer;

@@ -86,7 +86,7 @@ public:
     void removeSelectedAttachments(); // slot
     void saveSelectedAttachmentAs(); // slot
     void selectedAttachmentProperties(); // slot
-    void editDone(MessageViewer::EditorWatcher *watcher); // slot
+    void editDone(MessageComposer::EditorWatcher *watcher); // slot
     void attachPublicKeyJobResult(KJob *job); // slot
     void slotAttachmentContentCreated(KJob *job); // slot
     void addAttachmentPart(AttachmentPart::Ptr part);
@@ -101,8 +101,8 @@ public:
     AttachmentControllerBase *const q;
     MessageComposer::AttachmentModel *model = nullptr;
     QWidget *wParent = nullptr;
-    QHash<MessageViewer::EditorWatcher *, AttachmentPart::Ptr> editorPart;
-    QHash<MessageViewer::EditorWatcher *, QTemporaryFile *> editorTempFile;
+    QHash<MessageComposer::EditorWatcher *, AttachmentPart::Ptr> editorPart;
+    QHash<MessageComposer::EditorWatcher *, QTemporaryFile *> editorTempFile;
 
     KActionCollection *mActionCollection = nullptr;
     QAction *attachPublicKeyAction = nullptr;
@@ -228,13 +228,13 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::viewSelectedAtta
 void AttachmentControllerBase::AttachmentControllerBasePrivate::editSelectedAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::NoOpenWithDialog);
+    q->editAttachment(selectedParts.constFirst(), MessageComposer::EditorWatcher::NoOpenWithDialog);
 }
 
 void AttachmentControllerBase::AttachmentControllerBasePrivate::editSelectedAttachmentWith()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::OpenWithDialog);
+    q->editAttachment(selectedParts.constFirst(), MessageComposer::EditorWatcher::OpenWithDialog);
 }
 
 void AttachmentControllerBase::AttachmentControllerBasePrivate::removeSelectedAttachments()
@@ -288,7 +288,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::editDone(MessageViewer::EditorWatcher *watcher)
+void AttachmentControllerBase::AttachmentControllerBasePrivate::editDone(MessageComposer::EditorWatcher *watcher)
 {
     AttachmentPart::Ptr part = editorPart.take(watcher);
     Q_ASSERT(part);
@@ -744,7 +744,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::slotAttachmentCo
     }
 }
 
-void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageViewer::EditorWatcher::OpenWithOption openWithOption)
+void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageComposer::EditorWatcher::OpenWithOption openWithOption)
 {
     QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
     if (!tempFile) {
@@ -753,13 +753,13 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
     }
 
     auto watcher =
-        new MessageViewer::EditorWatcher(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()), openWithOption, this, d->wParent);
-    connect(watcher, &MessageViewer::EditorWatcher::editDone, this, [this](MessageViewer::EditorWatcher *watcher) {
+        new MessageComposer::EditorWatcher(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()), openWithOption, this, d->wParent);
+    connect(watcher, &MessageComposer::EditorWatcher::editDone, this, [this](MessageComposer::EditorWatcher *watcher) {
         d->editDone(watcher);
     });
 
     switch (watcher->start()) {
-    case MessageViewer::EditorWatcher::NoError:
+    case MessageComposer::EditorWatcher::NoError:
         // The attachment is being edited.
         // We will clean things up in editDone().
         d->editorPart[watcher] = part;
@@ -768,12 +768,12 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
         // Delete the temp file if the composer is closed (and this object is destroyed).
         tempFile->setParent(this); // Manages lifetime.
         break;
-    case MessageViewer::EditorWatcher::CannotStart:
+    case MessageComposer::EditorWatcher::CannotStart:
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not start EditorWatcher.";
         Q_FALLTHROUGH();
-    case MessageViewer::EditorWatcher::Unknown:
-    case MessageViewer::EditorWatcher::Canceled:
-    case MessageViewer::EditorWatcher::NoServiceFound:
+    case MessageComposer::EditorWatcher::Unknown:
+    case MessageComposer::EditorWatcher::Canceled:
+    case MessageComposer::EditorWatcher::NoServiceFound:
         delete watcher;
         delete tempFile;
         break;
@@ -782,7 +782,7 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
 
 void AttachmentControllerBase::editAttachmentWith(const AttachmentPart::Ptr &part)
 {
-    editAttachment(part, MessageViewer::EditorWatcher::OpenWithDialog);
+    editAttachment(part, MessageComposer::EditorWatcher::OpenWithDialog);
 }
 
 void AttachmentControllerBase::saveAttachmentAs(const AttachmentPart::Ptr &part)

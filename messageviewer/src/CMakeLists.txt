@@ -20,22 +20,11 @@ endif()
 
 configure_file(settings/messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
-find_package(Inotify)
-set_package_properties(Inotify PROPERTIES
-                       PURPOSE "Filesystem alteration notifications using inotify")
-if(Inotify_FOUND)
-    set(HAVE_SYS_INOTIFY_H 1)
-else()
-    set(HAVE_SYS_INOTIFY_H 0)
-endif()
 
 find_package(Qca-qt${QT_MAJOR_VERSION} 2.2.0 CONFIG REQUIRED)
 set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
                    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
                    PURPOSE "Needed for dkim support.")
-
-
-configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
 
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
@@ -128,7 +117,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
     viewer/attachmentstrategy.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
-    viewer/editorwatcher.cpp
     viewer/objecttreeemptysource.cpp
     viewer/objecttreeviewersource.cpp
     viewer/viewer.cpp
@@ -315,7 +303,6 @@ target_sources(KPim${KF_MAJOR_VERSION}MessageViewer PRIVATE
     viewer/webengine/cidschemehandler/cidschemehandler.h
     viewer/webengine/mailwebenginepage.h
     viewer/viewer.h
-    viewer/editorwatcher.h
     viewer/attachmentstrategy.h
     viewer/mimeparttree/mimetreemodel.h
     viewer/mimeparttree/mimeparttreeview.h
@@ -396,11 +383,7 @@ endif()
 
 generate_export_header(KPim${KF_MAJOR_VERSION}MessageViewer BASE_NAME messageviewer)
 
-if (${Inotify_FOUND})
-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
-else()
-    target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/>")
-endif()
+target_include_directories(KPim${KF_MAJOR_VERSION}MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/>")
 
 target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     PUBLIC
@@ -433,7 +416,6 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageViewer
     KPim${KF_MAJOR_VERSION}::AkonadiContact
     ${TEMPLATES_LIB}
     Qt::PrintSupport
-    ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
     KF${KF_MAJOR_VERSION}::Notifications
     )
@@ -536,7 +518,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     CSSHelperBase
     CSSHelper
     ObjectTreeEmptySource
-    EditorWatcher
     Stl_Util
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
@@ -733,7 +714,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
-    ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/MessageViewer/messageviewer
     COMPONENT Devel
     )
