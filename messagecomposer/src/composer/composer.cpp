@@ -13,6 +13,7 @@
 #include "job/attachmentjob.h"
 #include "job/autocryptheadersjob.h"
 #include "job/encryptjob.h"
+#include "job/itipjob.h"
 #include "job/jobbase_p.h"
 #include "job/maintextjob.h"
 #include "job/multipartjob.h"
@@ -22,6 +23,7 @@
 #include "job/transparentjob.h"
 #include "part/globalpart.h"
 #include "part/infopart.h"
+#include "part/itippart.h"
 #include "part/textpart.h"
 #include "settings/messagecomposersettings.h"
 
@@ -75,6 +77,7 @@ public:
     GlobalPart *globalPart = nullptr;
     InfoPart *infoPart = nullptr;
     TextPart *textPart = nullptr;
+    ItipPart *itipPart = nullptr;
 
     // Stuff that we play with.
     KMime::Message *skeletonMessage = nullptr;
@@ -97,7 +100,8 @@ void ComposerPrivate::init()
     // their parent q is not fully constructed at that time.
     globalPart = new GlobalPart(q);
     infoPart = new InfoPart(q);
-    textPart = new TextPart(q);
+    textPart = nullptr;
+    itipPart = nullptr;
 }
 
 void ComposerPrivate::doStart()
@@ -135,7 +139,16 @@ void ComposerPrivate::composeStep2()
     Q_Q(Composer);
 
     ContentJobBase *mainJob = nullptr;
-    auto mainTextJob = new MainTextJob(textPart, q);
+    ContentJobBase *mainContentJob = nullptr;
+    Q_ASSERT(textPart || itipPart); // At least one must be present, otherwise it's a useless message
+    if (textPart && !itipPart) {
+        mainContentJob = new MainTextJob(textPart, q);
+    } else if (!textPart && itipPart) {
+        mainContentJob = new ItipJob(itipPart, q);
+    } else {
+        // Combination of both text and itip parts not supported right now
+        Q_ASSERT(!textPart || !itipPart);
+    }
 
     if ((sign || encrypt) && format & Kleo::InlineOpenPGPFormat) { // needs custom handling --- one SignEncryptJob by itself
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to sign/enc inline job!";
@@ -143,10 +156,10 @@ void ComposerPrivate::composeStep2()
         if (encrypt) {
             // TODO: fix Inline PGP with encrypted attachments
 
-            const QList<ContentJobBase *> jobs = createEncryptJobs(mainTextJob, sign);
+            const QList<ContentJobBase *> jobs = createEncryptJobs(mainContentJob, sign);
             for (ContentJobBase *subJob : jobs) {
                 if (attachmentParts.isEmpty()) {
-                    // We have no attachments.  Use the content given by the MainTextJob.
+                    // We have no attachments.  Use the content given by the mainContentJob
                     mainJob = subJob;
                 } else {
                     auto multipartJob = new MultipartJob(q);
@@ -165,10 +178,10 @@ void ComposerPrivate::composeStep2()
             auto subJob = new SignJob(q);
             subJob->setSigningKeys(signers);
             subJob->setCryptoMessageFormat(format);
-            subJob->appendSubjob(mainTextJob);
+            subJob->appendSubjob(mainContentJob);
 
             if (attachmentParts.isEmpty()) {
-                // We have no attachments.  Use the content given by the MainTextJob.
+                // We have no attachments.  Use the content given by the mainContentJob.
                 mainJob = subJob;
             } else {
                 auto multipartJob = new MultipartJob(q);
@@ -192,8 +205,8 @@ void ComposerPrivate::composeStep2()
     }
 
     if (attachmentParts.isEmpty()) {
-        // We have no attachments.  Use the content given by the MainTextJob.
-        mainJob = mainTextJob;
+        // We have no attachments.  Use the content given by the mainContentJob
+        mainJob = mainContentJob;
     } else {
         // We have attachments.  Create a multipart/mixed content.
         QMutableListIterator<AttachmentPart::Ptr> iter(attachmentParts);
@@ -208,7 +221,7 @@ void ComposerPrivate::composeStep2()
         }
         auto multipartJob = new MultipartJob(q);
         multipartJob->setMultipartSubtype("mixed");
-        multipartJob->appendSubjob(mainTextJob);
+        multipartJob->appendSubjob(mainContentJob);
         for (const AttachmentPart::Ptr &part : std::as_const(attachmentParts)) {
             multipartJob->appendSubjob(new AttachmentJob(part));
         }
@@ -501,7 +514,35 @@ InfoPart *Composer::infoPart() const
 TextPart *Composer::textPart() const
 {
     Q_D(const Composer);
+    if (!d->textPart) {
+        auto *self = const_cast<Composer *>(this);
+        self->d_func()->textPart = new TextPart(self);
+    }
     return d->textPart;
+}
+
+void Composer::clearTextPart()
+{
+    Q_D(Composer);
+    delete d->textPart;
+    d->textPart = nullptr;
+}
+
+ItipPart *Composer::itipPart() const
+{
+    Q_D(const Composer);
+    if (!d->itipPart) {
+        auto *self = const_cast<Composer *>(this);
+        self->d_func()->itipPart = new ItipPart(self);
+    }
+    return d->itipPart;
+}
+
+void Composer::clearItipPart()
+{
+    Q_D(Composer);
+    delete d->itipPart;
+    d->itipPart = nullptr;
 }
 
 AttachmentPart::List Composer::attachmentParts() const
