@@ -27,7 +27,6 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
     setModel(mMimePartModel);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
-    connect(this, &MimePartTreeView::destroyed, this, &MimePartTreeView::slotMimePartDestroyed);
     setContextMenuPolicy(Qt::CustomContextMenu);
     header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     connect(mMimePartModel, &MimeTreeModel::modelReset, this, &MimePartTreeView::expandAll);
@@ -37,7 +36,8 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
 
 MimePartTreeView::~MimePartTreeView()
 {
-    disconnect(mMimePartModel, &MimeTreeModel::modelReset, this, &MimePartTreeView::expandAll);
+    // root is either null or a modified tree that we need to clean up
+    clearModel();
     saveMimePartTreeConfig();
 }
 
@@ -56,12 +56,6 @@ void MimePartTreeView::saveMimePartTreeConfig()
 {
     KConfigGroup grp(KSharedConfig::openStateConfig(), myMimePartTreeViewConfigGroupName);
     grp.writeEntry("State", header()->saveState());
-}
-
-void MimePartTreeView::slotMimePartDestroyed()
-{
-    // root is either null or a modified tree that we need to clean up
-    clearModel();
 }
 
 void MimePartTreeView::clearModel()

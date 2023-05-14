@@ -27,7 +27,6 @@ public:
     Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
 
 private:
-    void slotMimePartDestroyed();
     void saveMimePartTreeConfig();
     void restoreMimePartTreeConfig();
     MimeTreeModel *const mMimePartModel;
