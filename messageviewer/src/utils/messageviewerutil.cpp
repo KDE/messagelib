@@ -113,7 +113,7 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
     if (url.isLocalFile()) {
         fileExists = QFile::exists(url.toLocalFile());
     } else {
-        auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic);
+        auto job = KIO::stat(url, KIO::StatJob::DestinationSide, KIO::StatBasic);
         KJobWidgets::setWindow(job, w);
         fileExists = job->exec();
     }
@@ -268,7 +268,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 if (curUrl.isLocalFile()) {
                     fileExists = QFile::exists(curUrl.toLocalFile());
                 } else {
-                    auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
+                    auto job = KIO::stat(url, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
                     KJobWidgets::setWindow(job, parent);
                     fileExists = job->exec();
                 }
