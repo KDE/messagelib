@@ -5,7 +5,7 @@
 # Munzir Taha <munzir@kacst.edu.sa>, 2004.
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# Safa Alfulaij <safa1996alfulaij@gmail.com>, ٢٠١٦, 2018.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
 msgid ""
 msgstr ""
@@ -1683,17 +1683,17 @@ msgstr ""
 #: utils/themeeditor.cpp:192
 #, kde-format
 msgid "Sample Tag 1"
-msgstr "وسم عيّنة ١"
+msgstr "وسم عيّنة 1"
 
 #: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 2"
-msgstr "وسم عيّنة ٢"
+msgstr "وسم عيّنة 2"
 
 #: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 3"
-msgstr "وسم عيّنة ٣"
+msgstr "وسم عيّنة 3"
 
 #: utils/themeeditor.cpp:409
 #, kde-format

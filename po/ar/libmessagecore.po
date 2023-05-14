@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Safa Alfulaij <safa1996alfulaij@gmail.com>, ٢٠١٦, 2018.
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
 msgid ""
 msgstr ""
@@ -145,7 +145,7 @@ msgstr ""
 "ترميزًا مبدئيًّا مناسبًا وذلك حسب نوع MIME، إلّا أنّه أحيانًا تستطيع تقليل حجم "
 "الرّسالة النّاتجة بشكل ملحوظ، مثل ملفّ PostScript الذي لا يحتوي أيّ بيانات "
 "ثنائيّة بل يتكوّن من نصّ فحسب. في هذه الحالة اختيار ”...“ بدلًا من المبدئيّ "
-"”base64“ سيوفّر حتّى ٢٥٪ من حجم الرّسالة النّاتجة.</p>"
+"”base64“ سيوفّر حتّى 25٪ من حجم الرّسالة النّاتجة.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:171
 #, fuzzy, kde-format

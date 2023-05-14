@@ -1883,7 +1883,7 @@ msgstr "احفظ المرفقات في"
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
-msgstr "مرفق.١"
+msgstr "مرفق.1"
 
 #: utils/messageviewerutil.cpp:231
 #, kde-format
