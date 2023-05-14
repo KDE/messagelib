@@ -254,7 +254,7 @@ QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
 
 QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address)
 {
-    const QStringList lst = address.split(QStringLiteral(", "));
+    const QStringList lst = KEmailAddress::splitAddressList(address);
     QStringList resultName;
     for (const QString &str : lst) {
         KMime::Types::Mailbox mailBoxAddress;
@@ -271,7 +271,7 @@ QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address
 
 QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
 {
-    const QStringList lst = address.split(QStringLiteral(", "));
+    const QStringList lst = KEmailAddress::splitAddressList(address);
     QStringList resultName;
     for (const QString &str : lst) {
         KMime::Types::Mailbox newAddress;
