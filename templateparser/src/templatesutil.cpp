@@ -112,7 +112,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
     QString res;
     if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
         int i;
-        for (i = sep_pos; i >= 0; --i) {
+        for (i = (sep_pos - 1); i >= 0; --i) {
             const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 res.prepend(c);
