@@ -5,9 +5,9 @@
 */
 
 #include "editorwatcher.h"
-#include <config-messageviewer.h>
+#include <config-messagecomposer.h>
 
-#include "messageviewer_debug.h"
+#include "messagecomposer_debug.h"
 
 #include <KApplicationTrader>
 #include <KIO/DesktopExecParser>
@@ -29,7 +29,7 @@
 #include <unistd.h>
 #endif
 
-using namespace MessageViewer;
+using namespace MessageComposer;
 
 EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget)
     : QObject(parent)
@@ -83,7 +83,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
             mFileModified = false;
         }
     } else {
-        qCWarning(MESSAGEVIEWER_LOG) << "Failed to activate INOTIFY!";
+        qCWarning(MESSAGECOMPOSER_LOG()) << "Failed to activate INOTIFY!";
     }
 #endif
 

@@ -8,7 +8,6 @@
 
 #pragma once
 
-#include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
 #include "messageviewer_private_export.h"
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer

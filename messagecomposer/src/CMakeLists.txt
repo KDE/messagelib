@@ -89,6 +89,7 @@ target_sources( KPim6MessageComposer PRIVATE
     part/textpart.cpp
     attachment/attachmentcontrollerbase.cpp
     attachment/attachmentmodel.cpp
+    attachment/editorwatcher.cpp
     helper/messagehelper.cpp
     helper/messagefactoryng.cpp
     helper/messagefactoryforwardjob.cpp
@@ -166,6 +167,7 @@ target_sources( KPim6MessageComposer PRIVATE
     utils/util.h
     attachment/attachmentmodel.h
     attachment/attachmentcontrollerbase.h
+    attachment/editorwatcher.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesend.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.h
     plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.h
@@ -300,6 +302,7 @@ target_link_libraries(KPim6MessageComposer
     KF6::SonnetCore
     KF6::GuiAddons
     KF6::Codecs
+    ${Inotify_LIBRARIES}
     )
 if (TARGET KF6::TextAutoCorrectionWidgets)
     target_link_libraries(KPim6MessageComposer
@@ -414,6 +417,7 @@ ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
     HEADER_NAMES
     AttachmentModel
     AttachmentControllerBase
+    EditorWatcher
     REQUIRED_HEADERS MessageComposer_attachement_HEADERS
     PREFIX MessageComposer
     RELATIVE attachment

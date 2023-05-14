@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "config-messageviewer.h"
 #include "messageviewer_export.h"
 #include <KSharedConfig>
 #include <QDateTime>
