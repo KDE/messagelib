@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 
 #include <QEventLoop>
 #include <QObject>
@@ -15,7 +15,7 @@
 class QWebEngineView;
 namespace MessageViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT PrintMessage : public QObject
+class MESSAGEVIEWER_EXPORT PrintMessage : public QObject
 {
     Q_OBJECT
 public:

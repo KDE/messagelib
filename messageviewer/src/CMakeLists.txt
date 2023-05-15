@@ -520,6 +520,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     CSSHelperBase
     CSSHelper
     ObjectTreeEmptySource
+    PrintMessage
     Stl_Util
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
