@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2014-01-31 19:13+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -620,12 +620,12 @@ msgstr "Uključeno blokiranje reklama"
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "From:"
 msgstr "Od:"
@@ -855,87 +855,87 @@ msgstr "%1: "
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, kde-format
 msgid "Subject:"
 msgstr "Tema:"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "To:"
 msgstr "Za:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "Reply to:"
 msgid "Reply To:"
 msgstr "Odgovor na:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, fuzzy, kde-format
 #| msgid "sender: "
 msgid "Sender:"
 msgstr "pošiljalac: "
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent from:"
 msgstr "zamjeram iz"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent to:"
 msgstr "zamjeram iz"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grentl  tema \"%1\" nije vazeca."
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "Nema teme"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "Status spama:"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Printing mode"
 msgstr "Režim štampe"
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "Prilozi:"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
 msgstr ""
@@ -2041,25 +2041,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "Izmijeni sa:"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-"Kmail se ne moze otkriti kada je izabrani editor zatvoren.Kako biste "
-"izbjegli gubitak podataka,uređivanje priloga će se prekinuti."
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "Ne mogu da uredim prilog"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2763,6 +2744,19 @@ msgstr "Snimi poruku"
 #| msgid "Decrypt Message"
 msgid "Previous Message"
 msgstr "Dešifruj poruku"
+
+#~ msgid "Edit with:"
+#~ msgstr "Izmijeni sa:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "Kmail se ne moze otkriti kada je izabrani editor zatvoren.Kako biste "
+#~ "izbjegli gubitak podataka,uređivanje priloga će se prekinuti."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Ne mogu da uredim prilog"
 
 #, fuzzy
 #~| msgid "vCard Viewer"

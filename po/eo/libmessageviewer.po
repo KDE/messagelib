@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2023-04-10 12:21+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -561,12 +561,12 @@ msgstr "Ebligita"
 msgid "Domain:"
 msgstr "Domajno:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr "Listo-identigilo:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "From:"
 msgstr "De:"
@@ -784,83 +784,83 @@ msgstr "%1: Valida"
 msgid "Not Signed"
 msgstr "Ne Subskribita"
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, kde-format
 msgid "Subject:"
 msgstr "Subjekto:"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, kde-format
 msgid "Date:"
 msgstr "Dato:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "To:"
 msgstr "Al:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Reply To:"
 msgstr "Respondi al:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, kde-format
 msgid "Sender:"
 msgstr "Sendanto:"
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, kde-format
 msgid "resent from:"
 msgstr "resendi de:"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, kde-format
 msgid "resent to:"
 msgstr "resendi al:"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Subvenciita etoso \"%1\" ne validas."
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "sen temo"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "Spamstato:"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Printing mode"
 msgstr "Presa reĝimo"
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "Aldonaĵoj:"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
 msgstr "Sekureco:"
@@ -1945,25 +1945,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "Redakti kun:"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-"KMail ne povas detekti kiam la elektita redaktilo estas fermita. Por eviti "
-"datumperdon, redaktado de la aldonaĵo estos ĉesigita."
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "Ne eblas redakti aldonaĵon"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2639,6 +2620,19 @@ msgstr "Sekva Mesaĝo"
 #, kde-format
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
+
+#~ msgid "Edit with:"
+#~ msgstr "Redakti kun:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail ne povas detekti kiam la elektita redaktilo estas fermita. Por "
+#~ "eviti datumperdon, redaktado de la aldonaĵo estos ĉesigita."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Ne eblas redakti aldonaĵon"
 
 #~ msgctxt "@title:window"
 #~ msgid "vCard Viewer"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2022-10-25 00:15+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -229,7 +229,7 @@ msgstr "No se puede abrir el adjunto"
 msgid "KMail was unable to open the attachment."
 msgstr "KMail no pudo abrir el adjunto."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "No se puede editar el adjunto"
@@ -369,6 +369,19 @@ msgstr "Firmar"
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Sugerir visualización automática"
+
+#: attachment/editorwatcher.cpp:60
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgid "Edit with:"
+msgstr "Editar con..."
+
+#: attachment/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
 
 #: composer/composer.cpp:276
 #, kde-format

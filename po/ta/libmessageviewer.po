@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2023-03-12 17:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -572,12 +572,12 @@ msgstr "இயக்கப்பட்டது"
 msgid "Domain:"
 msgstr "ஆள்களம்:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr "List-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "From:"
 msgstr "அனுப்புநர்:"
@@ -793,84 +793,84 @@ msgstr "%1: முறையானது"
 msgid "Not Signed"
 msgstr "கையொப்பமிடாதது"
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, kde-format
 msgid "Subject:"
 msgstr "தலைப்பு:"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, kde-format
 msgid "Date:"
 msgstr "தேதி:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "To:"
 msgstr "பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Reply To:"
 msgstr "பதில் பெறுபவர்:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "CC:"
 msgstr "நகல்:"
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "BCC:"
 msgstr "கமுக்க நகல்:"
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, kde-format
 msgid "Sender:"
 msgstr "அனுப்புநர்:"
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, kde-format
 msgid "resent from:"
 msgstr "மீளனுப்பியவர்:"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, kde-format
 msgid "resent to:"
 msgstr "மீளனுப்பிபோதான பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "\"%1\" என்ற Grantlee திட்டம் செல்லுபடியாகாதது."
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "தலைப்பு இல்லை"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "ஸ்பேம் நிலை:"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Printing mode"
 msgstr "அச்சிடும் பயன்முறை"
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vஅட்டை]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "உடனிணைப்புகள்:"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
 msgstr "பாதுகாப்பு:"
@@ -1940,25 +1940,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "இதனால் திருத்து:"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-"தேரந்தெடுத்துள்ள உரைதிருத்தி மூடப்படுவதை கேமெயிலால் கண்டறிய முடியாது. தரவிழப்பைத் "
-"தவிர்க்க, உடனிணைப்பைத் திருத்துவது கைவிடப்படும்."
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "உடனிணைப்பை திருத்த முடியவில்லை"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2619,6 +2600,19 @@ msgstr "அடுத்த அஞ்சல்"
 #, kde-format
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
+
+#~ msgid "Edit with:"
+#~ msgstr "இதனால் திருத்து:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "தேரந்தெடுத்துள்ள உரைதிருத்தி மூடப்படுவதை கேமெயிலால் கண்டறிய முடியாது. தரவிழப்பைத் "
+#~ "தவிர்க்க, உடனிணைப்பைத் திருத்துவது கைவிடப்படும்."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "உடனிணைப்பை திருத்த முடியவில்லை"
 
 #~ msgctxt "@title:window"
 #~ msgid "vCard Viewer"

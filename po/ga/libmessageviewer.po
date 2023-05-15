@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -641,12 +641,12 @@ msgstr "Cumasaigh"
 msgid "Domain:"
 msgstr "Fearann réamhshocrai&the:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "Translate from language"
 #| msgid "From:"
@@ -885,97 +885,97 @@ msgstr ""
 msgid "Not Signed"
 msgstr "&Ná Sínigh"
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of the found message."
 #| msgid "Subject"
 msgid "Subject:"
 msgstr "Ábhar"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "Dáta: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgctxt "Translate to language"
 #| msgid "To:"
 msgid "To:"
 msgstr "Go:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "Reply"
 msgid "Reply To:"
 msgstr "Freagair"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "Seoltóir"
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(athsheolta ó %1)"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(athsheolta ó %1)"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Is neamhbhailí é an comhad sínithe"
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "Gan Ábhar"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "Stádas Dramhphoist:"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "Aschur Priontála"
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[v-Chárta]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "Iatáin:"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, fuzzy, kde-format
 #| msgid "Security"
 msgid "Security:"
@@ -2029,23 +2029,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "Cuir in eagar le:"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "Ní féidir an t-iatán a chur in eagar"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2749,6 +2732,12 @@ msgstr "A&n Chéad Teachtaireacht Eile"
 #| msgid "Current Message"
 msgid "Previous Message"
 msgstr "Teachtaireacht Reatha"
+
+#~ msgid "Edit with:"
+#~ msgstr "Cuir in eagar le:"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Ní féidir an t-iatán a chur in eagar"
 
 #, fuzzy
 #~| msgid "vCard Viewer"

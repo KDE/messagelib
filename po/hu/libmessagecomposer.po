@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2021-01-05 20:41+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -227,7 +227,7 @@ msgstr "A melléklet nem nyitható meg"
 msgid "KMail was unable to open the attachment."
 msgstr "A KMail nem tudta megnyitni a mellékletet."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "A melléklet nem szerkeszthető"
@@ -368,6 +368,19 @@ msgstr "Aláírás"
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Automatikus megjelenítés javaslása"
+
+#: attachment/editorwatcher.cpp:60
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgid "Edit with:"
+msgstr "Szerkesztés ezzel…"
+
+#: attachment/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
 
 #: composer/composer.cpp:276
 #, kde-format
