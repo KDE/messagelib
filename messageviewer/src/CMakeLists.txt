@@ -422,7 +422,7 @@ target_link_libraries(KPim6MessageViewer
     KF6::Codecs
     KPim6::ContactEditor
     KPim6::AkonadiContact
-    ${TEMPLATES_LIB}
+    KF6::TextTemplate
     Qt::PrintSupport
     qca-qt6
     KF6::Notifications
