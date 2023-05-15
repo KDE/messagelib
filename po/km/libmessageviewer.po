@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -596,12 +596,12 @@ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "Translate from language"
 #| msgid "From:"
@@ -834,94 +834,94 @@ msgstr ""
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "​គ្មាន​ប្រធាន​បទ"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "កាលបរិច្ឆេទ ៖ "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgctxt "Translate to language"
 #| msgid "To:"
 msgid "To:"
 msgstr "ជូន​ចំពោះ ៖​"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To:"
 msgstr "ឆ្លើយតប​ទៅ ៖ "
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "ចម្លងជូន ៖ "
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "ចម្លងជាសម្ងាត់ជូន ៖ "
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, fuzzy, kde-format
 #| msgid "sender: "
 msgid "Sender:"
 msgstr "អ្នកផ្ញើ ៖ "
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "​គ្មាន​ប្រធាន​បទ"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "ស្ថានភាព​សារ​ឥតបានការ ៖"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Printing mode"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "ឯកសារ​ភ្ជាប់ ៖"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
 msgstr ""
@@ -1995,25 +1995,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "កែសម្រួល​ជា​មួយ ៖"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-"KMail មិន​អាច​រក​ឃើញ​​នៅ​ពេល​បាន​បិទ​កម្មវិធី​និពន្ធ​ដែល​បាន​ជ្រើស ។ ដើម្បី​ជៀស​វាង​ពី​កា​រ​បាត់បង់​ទិន្នន័យ កា​រ​"
-"កែសម្រួល​ឯកសារ​ភ្ជាប់​នឹង​ត្រូវ​បាន​បោះបង់ ។"
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ្ជាប់"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2707,6 +2688,19 @@ msgstr "រក្សា​ទុក​សារ​"
 #| msgid "Decrypt Message"
 msgid "Previous Message"
 msgstr "ឌិគ្រីប​សារ"
+
+#~ msgid "Edit with:"
+#~ msgstr "កែសម្រួល​ជា​មួយ ៖"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail មិន​អាច​រក​ឃើញ​​នៅ​ពេល​បាន​បិទ​កម្មវិធី​និពន្ធ​ដែល​បាន​ជ្រើស ។ ដើម្បី​ជៀស​វាង​ពី​កា​រ​បាត់បង់​ទិន្នន័យ "
+#~ "កា​រ​កែសម្រួល​ឯកសារ​ភ្ជាប់​នឹង​ត្រូវ​បាន​បោះបង់ ។"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ្ជាប់"
 
 #, fuzzy
 #~| msgid "VCard Viewer"

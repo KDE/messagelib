@@ -18,4 +18,10 @@ public:
 private Q_SLOTS:
     void shouldRemoveSpaceAtBegin_data();
     void shouldRemoveSpaceAtBegin();
+    void shouldHasNotEmptyKeywordsWithArgs();
+    void shouldHasNotEmptyKeywords();
+    void shouldGetFirstNameFromEmail_data();
+    void shouldGetFirstNameFromEmail();
+    void shouldGetLastNameFromEmail();
+    void shouldGetLastNameFromEmail_data();
 };

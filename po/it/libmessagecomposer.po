@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2023-04-14 21:51+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -231,7 +231,7 @@ msgstr "Impossibile aprire l'allegato"
 msgid "KMail was unable to open the attachment."
 msgstr "KMail non è riuscito ad aprire l'allegato."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "Impossibile modificare l'allegato"
@@ -371,6 +371,20 @@ msgstr "Firma"
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Suggerisci visualizzazione automatica"
+
+#: attachment/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Modifica con:"
+
+#: attachment/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail non è in grado di rilevare se l'editor scelto è chiuso. Per evitare "
+"perdite di dati, la modifica dell'allegato sarà interrotta."
 
 #: composer/composer.cpp:276
 #, kde-format
@@ -10268,16 +10282,6 @@ msgstr "Imposta in linea"
 
 #~ msgid "No quota is set for this folder."
 #~ msgstr "Nessuna quota è impostata per questa cartella."
-
-#~ msgid "Edit with:"
-#~ msgstr "Modifica con:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail non è in grado di rilevare se l'editor scelto è chiuso. Per evitare "
-#~ "perdite di dati, la modifica dell'allegato sarà interrotta."
 
 #~ msgid "Do Not Enable"
 #~ msgstr "Non abilitare"
