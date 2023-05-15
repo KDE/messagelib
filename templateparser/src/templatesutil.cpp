@@ -62,12 +62,12 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
     // if there is ',' in name, than format is 'Last, First'
     // else format is 'First Last'
     // last resort -- return 'name' from 'name@domain'
-    int sep_pos;
+    int sep_pos = -1;
     QString res;
     if ((sep_pos = str.indexOf(QLatin1Char('@'))) > 0) {
         int i;
         for (i = (sep_pos - 1); i >= 0; --i) {
-            QChar c = str[i];
+            const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 res.prepend(c);
             } else {
@@ -79,7 +79,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
         bool begin = false;
         const int strLength(str.length());
         for (i = sep_pos; i < strLength; ++i) {
-            QChar c = str[i];
+            const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 begin = true;
                 res.append(c);
@@ -91,7 +91,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
         int i;
         const int strLength(str.length());
         for (i = 0; i < strLength; ++i) {
-            QChar c = str[i];
+            const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 res.append(c);
             } else {
@@ -101,18 +101,18 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
     }
     return res;
 }
-#include <QDebug>
+
 QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
 {
     // simple logic:
     // if there is ',' in name, than format is 'Last, First'
     // else format is 'First Last'
-    int sep_pos;
+    int sep_pos = -1;
     QString res;
     if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
         int i;
         for (i = sep_pos; i >= 0; --i) {
-            QChar c = str[i];
+            const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 res.prepend(c);
             } else {
@@ -124,7 +124,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
             bool begin = false;
             const int strLength(str.length());
             for (int i = sep_pos; i < strLength; ++i) {
-                QChar c = str[i];
+                const QChar c = str.at(i);
                 if (c.isLetterOrNumber()) {
                     begin = true;
                     res.append(c);
