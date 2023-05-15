@@ -42,7 +42,6 @@ class KActionMenu;
 class QPoint;
 class QSplitter;
 class QModelIndex;
-class QPrinter;
 
 namespace KIdentityManagement
 {
@@ -480,7 +479,6 @@ private Q_SLOTS:
     void slotOpenInBrowser();
     void slotExportHtmlPageFailed();
     void slotExportHtmlPageSuccess(const QString &filename);
-    void slotHandlePagePrinted(bool result);
     void slotToggleEmoticons();
 
 public Q_SLOTS:
@@ -611,7 +609,6 @@ private:
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
     void assignMessageItem(const Akonadi::Item &item);
-    void slotPdfPrintingFinished(const QString &filePath, bool success);
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
@@ -711,7 +708,6 @@ public:
     MessageViewer::HeaderStyleMenuManager *mHeaderStyleMenuManager = nullptr;
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager = nullptr;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu = nullptr;
-    QPrinter *mCurrentPrinter = nullptr;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer>> mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;

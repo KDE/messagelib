@@ -8,6 +8,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "viewer_p.h"
+#include "printmessage.h"
 #include "viewerpurposemenuwidget.h"
 
 #include "mdn/mdnwarningwidget.h"
@@ -15,7 +16,6 @@
 #include "messageviewer_debug.h"
 #include "scamdetection/scamattribute.h"
 #include "scamdetection/scamdetectionwarningwidget.h"
-#include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "viewer/objecttreeemptysource.h"
@@ -2205,16 +2205,11 @@ void ViewerPrivate::slotPrintPreview()
 
 void ViewerPrivate::slotDelayPrintPreview()
 {
-    auto dialog = new QPrintPreviewDialog(q);
-    dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->resize(800, 750);
-
-    connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
-        QApplication::setOverrideCursor(Qt::WaitCursor);
-        mViewer->printPreviewPage(printing);
-        QApplication::restoreOverrideCursor();
-    });
-    dialog->open(this, SIGNAL(printingFinished()));
+    auto printMessage = new PrintMessage(this);
+    printMessage->setParentWidget(q);
+    printMessage->setView(mViewer);
+    printMessage->printPreview();
+    connect(printMessage, &PrintMessage::printingFinished, this, &ViewerPrivate::printingFinished);
 }
 
 void ViewerPrivate::exportToPdf(const QString &fileName)
@@ -2278,9 +2273,18 @@ void ViewerPrivate::slotPrintMessage()
     if (!mMessage) {
         return;
     }
+    auto printMessage = new PrintMessage(this);
+    connect(printMessage, &PrintMessage::printingFinished, this, &ViewerPrivate::printingFinished);
+    printMessage->setParentWidget(q);
+    printMessage->setView(mViewer);
+    printMessage->setDocumentName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
+    printMessage->print();
+
+#if 0
     if (mCurrentPrinter) {
         return;
     }
+
     mCurrentPrinter = new QPrinter();
     mCurrentPrinter->setDocName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
     QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
@@ -2299,24 +2303,7 @@ void ViewerPrivate::slotPrintMessage()
 #pragma "QT6: need to reimplement it";
     }
     delete dialog;
-}
-
-void ViewerPrivate::slotPdfPrintingFinished(const QString &filePath, bool success)
-{
-    if (!success) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Print to pdf failed" << filePath;
-    }
-    delete mCurrentPrinter;
-    mCurrentPrinter = nullptr;
-    Q_EMIT printingFinished();
-}
-
-void ViewerPrivate::slotHandlePagePrinted(bool result)
-{
-    Q_UNUSED(result)
-    delete mCurrentPrinter;
-    mCurrentPrinter = nullptr;
-    Q_EMIT printingFinished();
+#endif
 }
 
 void ViewerPrivate::slotSetEncoding()

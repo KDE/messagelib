@@ -91,6 +91,40 @@ target_sources(KPim6MessageViewer PRIVATE
     dkim-verify/dkimruledialog.cpp
     dkim-verify/dkimrulewidget.cpp
     dkim-verify/dmarcmanager.cpp
+    dkim-verify/dkimcheckpolicy.h
+    dkim-verify/dkimauthenticationstatusinfoconverter.h
+    dkim-verify/dkimkeyrecord.h
+    dkim-verify/dkimauthenticationstatusinfoutil.h
+    dkim-verify/dkimmanagerauthenticationserver.h
+    dkim-verify/dkimviewermenu.h
+    dkim-verify/dkimauthenticationstatusinfo.h
+    dkim-verify/dkimcheckauthenticationstatusjob.h
+    dkim-verify/dkimresultattribute.h
+    dkim-verify/dmarcrecordjob.h
+    dkim-verify/dkimmanagerkey.h
+    dkim-verify/dkimstoreresultjob.h
+    dkim-verify/dkimutil.h
+    dkim-verify/dmarcmanager.h
+    dkim-verify/dkimmanagerulesdialog.h
+    dkim-verify/dkimmanagerkeydialog.h
+    dkim-verify/dkimdownloadkeyjob.h
+    dkim-verify/dkimchecksignaturejob.h
+    dkim-verify/dkimmanagerulescombobox.h
+    dkim-verify/dkimruledialog.h
+    dkim-verify/dkimmanagerrules.h
+    dkim-verify/dkiminfo.h
+    dkim-verify/dkimcheckfulljob.h
+    dkim-verify/dkimmanageruleswidget.h
+    dkim-verify/dmarcinfo.h
+    dkim-verify/dkimrulewidget.h
+    dkim-verify/dkimgeneraterulejob.h
+    dkim-verify/dkimmanager.h
+    dkim-verify/dkimheaderparser.h
+    dkim-verify/dkimwidgetinfo.h
+    dkim-verify/dkimrule.h
+    dkim-verify/dkimcheckpolicyjob.h
+    dkim-verify/dkimmanagerkeywidget.h
+    dkim-verify/dmarcpolicyjob.h
 )
 
 
@@ -127,6 +161,8 @@ target_sources(KPim6MessageViewer PRIVATE
     viewer/mimeparttree/mimetreemodel.cpp
     viewer/viewerpurposemenuwidget.cpp
     viewer/messagewidgetarea.cpp
+    viewer/printmessage.cpp
+    viewer/printmessage.h
     widgets/attachmentdialog.cpp
     widgets/configurewidget.cpp
     widgets/printingsettings.cpp
@@ -306,40 +342,6 @@ target_sources(KPim6MessageViewer PRIVATE
     viewer/attachmentstrategy.h
     viewer/mimeparttree/mimetreemodel.h
     viewer/mimeparttree/mimeparttreeview.h
-    dkim-verify/dkimcheckpolicy.h
-    dkim-verify/dkimauthenticationstatusinfoconverter.h
-    dkim-verify/dkimkeyrecord.h
-    dkim-verify/dkimauthenticationstatusinfoutil.h
-    dkim-verify/dkimmanagerauthenticationserver.h
-    dkim-verify/dkimviewermenu.h
-    dkim-verify/dkimauthenticationstatusinfo.h
-    dkim-verify/dkimcheckauthenticationstatusjob.h
-    dkim-verify/dkimresultattribute.h
-    dkim-verify/dmarcrecordjob.h
-    dkim-verify/dkimmanagerkey.h
-    dkim-verify/dkimstoreresultjob.h
-    dkim-verify/dkimutil.h
-    dkim-verify/dmarcmanager.h
-    dkim-verify/dkimmanagerulesdialog.h
-    dkim-verify/dkimmanagerkeydialog.h
-    dkim-verify/dkimdownloadkeyjob.h
-    dkim-verify/dkimchecksignaturejob.h
-    dkim-verify/dkimmanagerulescombobox.h
-    dkim-verify/dkimruledialog.h
-    dkim-verify/dkimmanagerrules.h
-    dkim-verify/dkiminfo.h
-    dkim-verify/dkimcheckfulljob.h
-    dkim-verify/dkimmanageruleswidget.h
-    dkim-verify/dmarcinfo.h
-    dkim-verify/dkimrulewidget.h
-    dkim-verify/dkimgeneraterulejob.h
-    dkim-verify/dkimmanager.h
-    dkim-verify/dkimheaderparser.h
-    dkim-verify/dkimwidgetinfo.h
-    dkim-verify/dkimrule.h
-    dkim-verify/dkimcheckpolicyjob.h
-    dkim-verify/dkimmanagerkeywidget.h
-    dkim-verify/dmarcpolicyjob.h
     antispam/spamheaderanalyzer.h
     antispam/antispamconfig.h
     settings/messageviewersettings.h

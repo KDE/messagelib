@@ -5,6 +5,7 @@
 */
 
 #include "testmailwebengine.h"
+#include "viewer/printmessage.h"
 #include "webenginescript.h"
 
 #include <KActionCollection>
@@ -99,17 +100,10 @@ void TestMailWebEngine::slotZoomUp()
 
 void TestMailWebEngine::slotPrintPreview()
 {
-    auto dialog = new QPrintPreviewDialog(this);
-    dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->resize(800, 750);
-
-    connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
-        QApplication::setOverrideCursor(Qt::WaitCursor);
-        mTestWebEngine->printPreviewPage(printing);
-        QApplication::restoreOverrideCursor();
-    });
-
-    dialog->open();
+    auto printMessage = new MessageViewer::PrintMessage(this);
+    printMessage->setView(mTestWebEngine);
+    printMessage->setParentWidget(this);
+    printMessage->printPreview();
 }
 
 int main(int argc, char *argv[])
