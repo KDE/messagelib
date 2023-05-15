@@ -11,6 +11,7 @@
 #include <KSharedConfig>
 #include <QRegularExpression>
 #include <QStringList>
+
 using namespace TemplateParser;
 
 void TemplateParser::Util::deleteTemplate(const QString &id)
@@ -134,7 +135,6 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
             }
         }
     }
-    qDebug() << " res " << res;
     return res;
 }
 
