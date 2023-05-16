@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-07 00:48+0000\n"
-"PO-Revision-Date: 2023-02-01 12:57+0300\n"
+"PO-Revision-Date: 2023-05-15 21:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.03.70\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -152,7 +152,7 @@ msgstr "Okunmamış"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
-msgstr "Eklentisi Olan"
+msgstr "Eki Var"
 
 #: core/item.cpp:262
 #, kde-format
@@ -385,7 +385,7 @@ msgstr "Boyut"
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
-msgstr "Eklenti"
+msgstr "Ek"
 
 #: core/manager.cpp:638
 #, kde-format
@@ -707,7 +707,7 @@ msgstr "Okunmamış/Okunmuş Simgesi"
 #: core/theme.cpp:128
 #, kde-format
 msgid "Attachment Icon"
-msgstr "Eklenti Simgesi"
+msgstr "Ek Simgesi"
 
 #: core/theme.cpp:131
 #, kde-format
@@ -1241,7 +1241,7 @@ msgstr "Yok Sayılan"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
-msgstr "Eklentisi Olan"
+msgstr "Eki Var"
 
 #: core/widgets/searchlinestatus.cpp:253
 #, kde-format
