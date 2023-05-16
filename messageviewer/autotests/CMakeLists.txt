@@ -7,15 +7,13 @@ add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 set(test_libmessageviewer_SRCS)
 ecm_qt_declare_logging_category(test_libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
 
-set(qgpgme_lib QGpgmeQt6)
-
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo ${qgpgme_lib} Qt::Test KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
+        LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
     )
 endmacro ()
 
@@ -52,4 +50,4 @@ add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowse
 
 add_akonadi_isolated_test_advanced(viewertest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
 add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim6::MessageViewer;KPim6::Libkleo;${qgpgme_lib};KF6::KIOCore;KPim6::Mime;KPim6::AkonadiCore;KF6::CalendarCore;KPim6::WebEngineViewer")
+add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim6::MessageViewer;KPim6::Libkleo;QGpgmeQt6;KF6::KIOCore;KPim6::Mime;KPim6::AkonadiCore;KF6::CalendarCore;KPim6::WebEngineViewer")
