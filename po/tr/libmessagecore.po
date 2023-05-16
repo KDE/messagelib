@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:59+0000\n"
-"PO-Revision-Date: 2023-03-07 20:14+0300\n"
+"PO-Revision-Date: 2023-05-15 22:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413102213.000000\n"
 
@@ -39,12 +39,12 @@ msgstr ""
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
 msgid "Could not initiate attachment compression."
-msgstr "Eklenti sıkıştırma süreci başlatılamadı."
+msgstr "Ek sıkıştırma süreci başlatılamadı."
 
 #: attachment/attachmentcompressjob.cpp:60
 #, kde-format
 msgid "Could not compress the attachment."
-msgstr "Eklenti sıkıştırılamadı."
+msgstr "Ek sıkıştırılamadı."
 
 #: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
@@ -90,8 +90,7 @@ msgstr "\"%1\" bulunamadı. Lütfen tam yolu belirtin."
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
-"Ekleyebileceğiniz en büyük dosya boyutu %1 olabilir. Bunu depolama "
-"hizmetiyle paylaşın."
+"%1 boyutundan büyük dosyalar iliştiremezsiniz. Depolama hizmeti ile paylaşın."
 
 #: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
@@ -113,8 +112,8 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
-"<p>Tahmini eklenti büyüklüğü:</p><p>E-posta iletisinde base64 ile kodlanmış "
-"bir ikili dosya, gerçek boyutunun dört bölü üçü kadar yer kaplar.</p>"
+"<p>Ekin tahmini büyüklüğü:</p><p>E-posta iletisinde base64 ile kodlanmış bir "
+"ikili dosya, gerçek boyutunun dört bölü üçü kadar yer kaplar.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
@@ -139,8 +138,7 @@ msgid ""
 msgstr ""
 "<p>Bölümün tanımı:</p><p>bu, bölümün yalnızca bilgi amaçlı bir tanımıdır, "
 "tıpkı Konu kısmının bütün iletiyi ilgilendirmesi gibidir; pek çok posta "
-"programı, bu bilgiyi eklenti simgesinin yanında, ileti önizlemesinde "
-"gösterir.</p>"
+"programı, bu bilgiyi ek simgesinin yanında, ileti önizlemesinde gösterir.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
@@ -201,7 +199,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
-msgstr "Eklenti Özellikleri"
+msgstr "Ek Özellikleri"
 
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
@@ -259,13 +257,13 @@ msgstr "Otomatik görüntülemeyi öner"
 #: attachment/ui/attachmentpropertiesdialog.ui:194
 #, kde-format
 msgid "Encrypt this attachment"
-msgstr "Bu eklentiyi şifrele"
+msgstr "Bu eki şifrele"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sign)
 #: attachment/ui/attachmentpropertiesdialog.ui:201
 #, kde-format
 msgid "Sign this attachment"
-msgstr "Bu eklentiyi imzala"
+msgstr "Bu eki imzala"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:32

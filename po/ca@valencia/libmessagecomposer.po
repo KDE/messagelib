@@ -1,17 +1,17 @@
 # Translation of libmessagecomposer.po to Catalan (Valencian)
-# Copyright (C) 2010-2022 This_file_is_part_of_KDE
+# Copyright (C) 2010-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2010, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-10-24 10:50+0200\n"
+"PO-Revision-Date: 2023-05-15 10:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -372,10 +372,9 @@ msgid "Suggest Automatic Display"
 msgstr "Suggerix mostrar automàticament"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Edita amb..."
+msgstr "Edita amb:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -383,6 +382,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail no pot detectar quan es tanca l'editor seleccionat. Per a evitar la "
+"pèrdua de dades, s'ha interromput l'edició de l'adjunt."
 
 #: composer/composer.cpp:276
 #, kde-format

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-10-24 10:58+0100\n"
+"PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -403,10 +403,9 @@ msgid "Suggest Automatic Display"
 msgstr "Sugerir a Apresentação Automática"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Editar Com..."
+msgstr "Editar com:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -414,6 +413,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"O KMail não consegue detectar quando o editor escolhido é fechado. Para "
+"evitar a perda de dados, a edição do anexo será interrompida."
 
 #: composer/composer.cpp:276
 #, kde-format

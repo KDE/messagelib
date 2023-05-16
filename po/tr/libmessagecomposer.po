@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2023-03-24 19:48+0300\n"
+"PO-Revision-Date: 2023-05-15 22:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
 msgid "Failed to compress attachment"
-msgstr "Eklentiyi sıkıştırma başarısız oldu"
+msgstr "Eki sıkıştırma başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:179
 #, kde-format
@@ -32,8 +32,7 @@ msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr ""
-"Sıkıştırılmış eklenti özgünden daha büyük. Özgün eklentiyi saklamak ister "
-"misiniz?"
+"Sıkıştırılmış ek özgünden daha büyük. Özgün eki saklamak istiyor musunuz?"
 
 #: attachment/attachmentcontrollerbase.cpp:182
 #, kde-format
@@ -49,12 +48,12 @@ msgstr "Sıkıştır"
 #: attachment/attachmentcontrollerbase.cpp:202
 #, kde-format
 msgid "Failed to attach file"
-msgstr "Dosya ekleme başarısız oldu"
+msgstr "Dosya iliştirme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:275
 #, kde-format
 msgid "Failed to reload attachment"
-msgstr "Eklentiyi yeniden yükleme başarısız oldu"
+msgstr "Eki yeniden yükleme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:322
 #, kde-format
@@ -78,27 +77,27 @@ msgstr "&Birlikte Aç..."
 #: attachment/attachmentcontrollerbase.cpp:378
 #, kde-format
 msgid "Failed to attach public key"
-msgstr "Genel anahtar ekleme başarısız oldu"
+msgstr "Genel anahtar iliştirme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:392
 #, kde-format
 msgid "Failed to attach vCard"
-msgstr "vCard ekleme başarısız oldu"
+msgstr "vCard iliştirme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:405
 #, kde-format
 msgid "Failed to attach text from clipboard"
-msgstr "Panodan metin ekleme başarısız oldu"
+msgstr "Panodan metin iliştirme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:453
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "&Genel Anahtar Ekle..."
+msgstr "&Genel Anahtar İliştir..."
 
 #: attachment/attachmentcontrollerbase.cpp:456
 #, kde-format
 msgid "Attach &My Public Key"
-msgstr "G&enel Anahtarımı Ekle"
+msgstr "G&enel Anahtarımı İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:459
 #: attachment/attachmentcontrollerbase.cpp:464
@@ -106,28 +105,28 @@ msgstr "G&enel Anahtarımı Ekle"
 #: attachment/attachmentcontrollerbase.cpp:479
 #, kde-format
 msgid "Attach"
-msgstr "Ekle"
+msgstr "İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #: composer/composerviewbase.cpp:1899
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Dosya Ekle..."
+msgstr "&Dosya İliştir..."
 
 #: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Eklenti Ekle..."
+msgstr "Ek Ekle..."
 
 #: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "&Dizin Ekle..."
+msgstr "&Dizin İliştir..."
 
 #: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Attach Own vCard"
-msgstr "Kendi vCard'ımı Ekle"
+msgstr "Kendi vCard'ımı İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:474
 #, kde-format
@@ -137,22 +136,22 @@ msgstr "Kendi vCard'ım"
 #: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "&vCard'lar Ekle..."
+msgstr "&vCard'lar İliştir..."
 
 #: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "&Panodan Metin Ekle..."
+msgstr "&Panodan Metin İliştir..."
 
 #: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach Text From Clipboard"
-msgstr "Panodan Metin Ekle"
+msgstr "Panodan Metin İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "&Remove Attachment"
-msgstr "Eklentiyi &Kaldır"
+msgstr "Eki &Kaldır"
 
 #: attachment/attachmentcontrollerbase.cpp:496
 #, kde-format
@@ -185,7 +184,7 @@ msgstr "Şununla Düzenle..."
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Eklentiyi &Farklı Kaydet..."
+msgstr "Eki &Farklı Kaydet..."
 
 #: attachment/attachmentcontrollerbase.cpp:525
 #, kde-format
@@ -195,7 +194,7 @@ msgstr "Farklı Kaydet..."
 #: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "Eklenti &Özellikleri..."
+msgstr "Ek &Özellikleri..."
 
 #: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
@@ -217,23 +216,23 @@ msgstr "Yeniden Yükle"
 #: attachment/attachmentcontrollerbase.cpp:751
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr "K Posta eklentiyi geçici bir dosyaya yazamadı."
+msgstr "K Posta, eki geçici bir dosyaya yazamadı."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:702
 #, kde-format
 msgid "Unable to open attachment"
-msgstr "Eklenti açılamadı"
+msgstr "Ek açılamadı"
 
 #: attachment/attachmentcontrollerbase.cpp:711
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "K Posta eklentiyi açamadı."
+msgstr "K Posta eki açamadı."
 
 #: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
-msgstr "Eklenti düzenlenemedi"
+msgstr "Ek düzenlenemiyor"
 
 #: attachment/attachmentcontrollerbase.cpp:792
 #, kde-format
@@ -243,7 +242,7 @@ msgstr "adsız"
 #: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
 msgid "Save Attachment As"
-msgstr "Eklentiyi Farklı Kaydet"
+msgstr "Eki Farklı Kaydet"
 
 #: attachment/attachmentcontrollerbase.cpp:818
 #, kde-format
@@ -251,7 +250,7 @@ msgid ""
 "File %1 exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"%1 dosyası mevcut.\n"
+"%1 dosyası var.\n"
 "Değiştirmek istiyor musunuz?"
 
 #: attachment/attachmentcontrollerbase.cpp:819
@@ -268,44 +267,44 @@ msgstr "&Değiştir"
 #: attachment/attachmentcontrollerbase.cpp:905
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "\"%1\" dizinini gerçekten eklemek istiyor musunuz?"
+msgstr "\"%1\" dizinini gerçekten iliştirmek istiyor musunuz?"
 
 #: attachment/attachmentcontrollerbase.cpp:848
 #: attachment/attachmentcontrollerbase.cpp:906
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr "Dizin ekle"
+msgstr "Dizin İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:849
 #: attachment/attachmentcontrollerbase.cpp:907
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
-msgstr "Ekle"
+msgstr "İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:884
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr "Dizin Ekle"
+msgstr "Dizin İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:893
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr "Dosya Ekle"
+msgstr "Dosya İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "Dosya ekleme başarısız oldu"
+msgstr "Dosya iliştirilemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
 msgid "Attach Public OpenPGP Key"
-msgstr "Genel OpenPGP Anahtarını Ekle"
+msgstr "Genel OpenPGP Anahtarı İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
@@ -315,7 +314,7 @@ msgstr "Eklenecek genel anahtarı seçin."
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
 msgid "unnamed attachment"
-msgstr "adsız eklenti"
+msgstr "adsız ek"
 
 #: attachment/attachmentmodel.cpp:256
 #, kde-format
@@ -372,10 +371,9 @@ msgid "Suggest Automatic Display"
 msgstr "Otomatik Görüntülemeyi Öner"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Şununla Düzenle..."
+msgstr "Şununla düzenle..."
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -383,6 +381,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"K Posta, seçili düzenleyicinin kapatıldığını algılayamaz. Veri kaybını "
+"engellemek için eki düzenleme iptal edilecek."
 
 #: composer/composer.cpp:276
 #, kde-format
@@ -558,9 +558,9 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
-"Düzenlediğiniz iletide eklentiden bahsetmişsiniz; ancak eklenmiş bir dosya "
-"yok.\n"
-"İletinize bir dosya eklemek istiyor musunuz?"
+"Oluşturduğunuz ileti, bir eke atıfta bulunuyor gibi görünüyor; ancak "
+"herhangi bir şey iliştirmediniz.\n"
+"İletinize bir dosya iliştirmek istiyor musunuz?"
 
 #: composer/composerviewbase.cpp:1898
 #, kde-format
@@ -1569,7 +1569,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Bu bir MIME özeti yönlendirmesidir. Bu iletinin içeriği eklenti(ler)de "
+"Bu bir MIME özeti yönlendirmesidir. Bu iletinin içeriği eklerde "
 "tutulmaktadır.\n"
 "\n"
 "\n"
@@ -1833,12 +1833,12 @@ msgstr "Panoda metin bulunamadı"
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr "Eklenti Adını Tanımla"
+msgstr "Ek Adını Tanımla"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr "Eklenti Adı:"
+msgstr "Ek Adı:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -2450,7 +2450,7 @@ msgstr "En yüksek alıcı girdisi sayısı:"
 #: settings/messagecomposer.kcfg.cmake:66
 #, kde-format
 msgid "Outlook-compatible attachment naming"
-msgstr "Outlook-uyumlu eklenti isimlendirmesi"
+msgstr "Outlook-uyumlu ek adlandırması"
 
 #. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:67
@@ -2459,8 +2459,8 @@ msgid ""
 "Turn this option on to make Outlook &#8482; understand attachment names "
 "containing non-English characters"
 msgstr ""
-"Outlook &#8482;'un İngilizce olmayan eklenti isimlerini anlayabilmesi için "
-"bu seçeneği aktif hale getirin"
+"Outlook'un İngilizce olmayan ek adlarını anlayabilmesi için bu seçeneği "
+"etkinleştirin"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:71
@@ -2648,12 +2648,12 @@ msgstr "Gizli Kopya Alanı Adı"
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
 msgid "Attachment"
-msgstr "Eklenti"
+msgstr "Ek"
 
 #: snippet/convertsnippetvariablemenu.cpp:90
 #, kde-format
 msgid "Number Of Attachments"
-msgstr "Eklenti Sayısı"
+msgstr "Ek Sayısı"
 
 #: snippet/convertsnippetvariablemenu.cpp:93
 #, kde-format
@@ -2778,7 +2778,9 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr "eklenti,ekteki,ek,ekli,eklenmiş"
+msgstr ""
+"eklenti,ekteki,ek,ekli,eklenmiş,ilişik,iliştiriyorum,ekliyorum,eklidir,"
+"ektedir"
 
 #: utils/util.cpp:293
 #, kde-format
