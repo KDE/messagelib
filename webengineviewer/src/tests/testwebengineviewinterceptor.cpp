@@ -50,6 +50,7 @@ CidUrlRequestInterceptor::CidUrlRequestInterceptor(QObject *p)
 void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
+    qDebug() << " urlRequestUrl " << urlRequestUrl;
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
         qDebug() << " info.resourceType() " << info.resourceType();
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
@@ -95,8 +96,8 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
         "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">"
         "</head>"
         "<body>"
-        "<p>image from resource file<img src=\"cid:resource_src\" /> end</p>"
-        "<p>image from local file<img src=\"cid:local_src\" /> end</p>"
+        "<p>image from resource file <img src=\"cid:resource_src\" /> end</p>"
+        "<p>image from local file <img src=\"cid:local_src\" /> end</p>"
         "<p>Xcv</p>"
         "<p>bxcvbxcvbxcvb</p>"
         "<br /></body>"
@@ -108,10 +109,11 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
 
 int main(int argc, char *argv[])
 {
-    QWebEngineUrlScheme scheme("cid");
-    scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
-    scheme.setFlags(QWebEngineUrlScheme::LocalScheme | QWebEngineUrlScheme::LocalAccessAllowed);
-    QWebEngineUrlScheme::registerScheme(scheme);
+    QWebEngineUrlScheme cidScheme("cid");
+    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored | QWebEngineUrlScheme::LocalScheme
+                       | QWebEngineUrlScheme::LocalAccessAllowed);
+    cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+    QWebEngineUrlScheme::registerScheme(cidScheme);
 
     QApplication app(argc, argv);
     auto handler = new CidSchemeHandler(nullptr);
