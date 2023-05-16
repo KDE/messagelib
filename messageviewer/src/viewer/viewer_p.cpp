@@ -2279,31 +2279,6 @@ void ViewerPrivate::slotPrintMessage()
     printMessage->setView(mViewer);
     printMessage->setDocumentName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
     printMessage->print();
-
-#if 0
-    if (mCurrentPrinter) {
-        return;
-    }
-
-    mCurrentPrinter = new QPrinter();
-    mCurrentPrinter->setDocName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
-    QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
-    dialog->setWindowTitle(i18nc("@title:window", "Print Document"));
-    if (dialog->exec() != QDialog::Accepted) {
-        slotHandlePagePrinted(false);
-        delete dialog;
-        return;
-    }
-    if (dialog->printer()->outputFormat() == QPrinter::PdfFormat) {
-        connect(mViewer->page(), &QWebEnginePage::pdfPrintingFinished, this, &ViewerPrivate::slotPdfPrintingFinished);
-        mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
-    } else {
-        mViewer->print(mCurrentPrinter);
-        // TODO call slotHandlePagePrinted when printing is finished
-#pragma "QT6: need to reimplement it";
-    }
-    delete dialog;
-#endif
 }
 
 void ViewerPrivate::slotSetEncoding()
