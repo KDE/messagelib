@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-10-24 13:58+0300\n"
+"PO-Revision-Date: 2023-05-15 15:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -370,10 +370,9 @@ msgid "Suggest Automatic Display"
 msgstr "Пропонувати автоматичний показ"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Редагувати за допомогою…"
+msgstr "Редагувати за допомогою:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -381,6 +380,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail не може визначити момент закриття вибраного редактора. Щоб уникнути "
+"втратам даних, редагування долучення буде припинено."
 
 #: composer/composer.cpp:276
 #, kde-format

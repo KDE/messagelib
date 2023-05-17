@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2023-03-31 21:33+0300\n"
+"PO-Revision-Date: 2023-05-15 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -860,7 +860,7 @@ msgstr "[vcard]"
 #: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
-msgstr "Eklentiler:"
+msgstr "Ekler:"
 
 #: header/grantleeheaderformatter.cpp:589
 #, kde-format
@@ -1473,7 +1473,7 @@ msgstr "Dış kaynakların Internet'ten yüklenmesine izin ver"
 #: settings/messageviewer.kcfg.cmake:131
 #, kde-format
 msgid "How attachments are shown"
-msgstr "Eklentilerin nasıl gösterileceği"
+msgstr "Eklerin nasıl gösterileceği"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg.cmake:135
@@ -1825,18 +1825,18 @@ msgstr "Ekleri Farklı Kaydet"
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
-msgstr "eklenti.1"
+msgstr "ek.1"
 
 #: utils/messageviewerutil.cpp:199
 #, kde-format
 msgid "Save Attachment"
-msgstr "Eklentiyi Kaydet"
+msgstr "Eki Kaydet"
 
 #: utils/messageviewerutil.cpp:223
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
-msgstr "eklenti.%1"
+msgstr "ek.%1"
 
 #: utils/messageviewerutil.cpp:321
 #, kde-format
@@ -1890,12 +1890,12 @@ msgstr ""
 #: utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
-msgstr "Eklentiyi kaydederken hata oluştu"
+msgstr "Eki kaydederken hata oluştu"
 
 #: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "Kaydedilecek eklenti yok."
+msgstr "Kaydedilecek ek yok."
 
 #: utils/messageviewerutil.cpp:467
 #, kde-format
@@ -2069,7 +2069,7 @@ msgstr "Kişiye Adres Defterinden Bak"
 #: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
-msgstr "Eklenti: %1"
+msgstr "Ek: %1"
 
 #: viewer/urlhandlermanager.cpp:805
 #, kde-format
@@ -2084,7 +2084,7 @@ msgstr "Kapsüllenmiş ileti"
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
 msgid "Unnamed attachment"
-msgstr "İsimsiz eklenti"
+msgstr "Adsız ek"
 
 #: viewer/urlhandlermanager.cpp:845
 #, kde-format
@@ -2111,7 +2111,7 @@ msgstr "Komut Çalıştır"
 #: viewer/viewer.cpp:138
 #, kde-format
 msgid "Loading message..."
-msgstr "Mesaj yükleniyor..."
+msgstr "İleti yükleniyor..."
 
 #: viewer/viewer_p.cpp:355
 #, kde-format
@@ -2125,15 +2125,14 @@ msgstr ""
 #: viewer/viewer_p.cpp:1718
 #, kde-format
 msgid "Delete Attachment"
-msgstr "Eklentiyi Sil"
+msgstr "Eki Sil"
 
 #: viewer/viewer_p.cpp:362
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
-msgstr ""
-"Bir eklentiyi silmek o iletide kullanılan tüm imzaları geçersiz kılabilir."
+msgstr "Bir eki silmek, o iletide kullanılan tüm imzaları geçersiz kılabilir."
 
 #: viewer/viewer_p.cpp:444
 #, kde-format
@@ -2209,13 +2208,13 @@ msgstr "KDE E-Posta İstemcisi"
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr "Eklentiyi Görüntüle: %1"
+msgstr "Eki Görüntüle: %1"
 
 #: viewer/viewer_p.cpp:1463
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
-msgstr "&Eklentiler"
+msgstr "&Ekler"
 
 #: viewer/viewer_p.cpp:1465
 #, kde-format
@@ -2264,7 +2263,7 @@ msgstr "&Gizle"
 #: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Do not show attachments in the message viewer"
-msgstr "İleti göstericide eklentileri gösterme"
+msgstr "İleti görüntüleyicide ekleri gösterme"
 
 #: viewer/viewer_p.cpp:1496
 #, kde-format
@@ -2275,7 +2274,7 @@ msgstr "Yalnızca Başlıkta"
 #: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "Eklentileri yalnızca postanın başlığında göster"
+msgstr "Ekleri yalnızca postanın başlığında göster"
 
 #: viewer/viewer_p.cpp:1504
 #, kde-format
@@ -2406,7 +2405,7 @@ msgstr "Birlikte Aç..."
 #: viewer/viewer_p.cpp:1708
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "Tüm Eklentileri Kaydet..."
+msgstr "Tüm Ekleri Kaydet..."
 
 #: viewer/viewer_p.cpp:1937
 #, kde-format
@@ -2460,12 +2459,12 @@ msgstr "URL panoya kopyalandı."
 #: viewer/viewer_p.cpp:2867
 #, kde-format
 msgid "Message loading failed: %1."
-msgstr "Mesaj yükleme başarısız: %1."
+msgstr "İleti yükleme başarısız: %1."
 
 #: viewer/viewer_p.cpp:2872
 #, kde-format
 msgid "Message not found."
-msgstr "Mesaj bulunamadı."
+msgstr "İleti bulunamadı."
 
 #: widgets/attachmentdialog.cpp:27
 #, kde-kuit-format
@@ -2474,14 +2473,14 @@ msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"<filename>%1</filename> eklentisi açılsın mı?<nl/>Bir eklentinin açılması "
-"sistem güvenliğini tehlikeye atabileceğini unutmayın."
+"<filename>%1</filename> eki açılsın mı?<nl/>Bir ekin açılmasının sistem "
+"güvenliğini tehlikeye atabileceğini unutmayın."
 
 #: widgets/attachmentdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "Eklenti Açılsın mı?"
+msgstr "Ek Açılsın mı?"
 
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
@@ -2591,7 +2590,7 @@ msgstr "Kullanıcıya ileti görüntülemek için HTML kodu"
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Eklentinin kaydedildiği klasörü aç"
+msgstr "Ekin kaydedildiği klasörü aç"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2603,8 +2602,8 @@ msgstr "Dosya Aç"
 #, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Eklentinin kaydedildiği klasörü aç"
-msgstr[1] "Eklentilerin kaydedildiği klasörü aç"
+msgstr[0] "Ekin kaydedildiği klasörü aç"
+msgstr[1] "Eklerin kaydedildiği klasörü aç"
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format
@@ -2614,7 +2613,7 @@ msgstr "PDF dosyasının kaydedildiği klasörü aç"
 #: widgets/opensavedfilefolderwidget.cpp:77
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "K Posta, eklentiyi açamadı."
+msgstr "K Posta, eki açamadı."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format

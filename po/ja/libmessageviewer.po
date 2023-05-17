@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:50+0000\n"
+"POT-Creation-Date: 2023-05-15 00:48+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -609,12 +609,12 @@ msgstr ""
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -846,93 +846,93 @@ msgstr ""
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:232
+#: header/grantleeheaderformatter.cpp:231
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "件名なし"
 
-#: header/grantleeheaderformatter.cpp:252
+#: header/grantleeheaderformatter.cpp:251
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "日付: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "宛先: "
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To:"
 msgstr "返信先: "
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:280
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:284
+#: header/grantleeheaderformatter.cpp:283
 #, fuzzy, kde-format
 #| msgid "sender: "
 msgid "Sender:"
 msgstr "送信者: "
 
-#: header/grantleeheaderformatter.cpp:286
+#: header/grantleeheaderformatter.cpp:285
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(%1 から再送)"
 
-#: header/grantleeheaderformatter.cpp:288
+#: header/grantleeheaderformatter.cpp:287
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(%1 から再送)"
 
-#: header/grantleeheaderformatter.cpp:388
+#: header/grantleeheaderformatter.cpp:387
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "件名なし"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:499
 #, kde-format
 msgid "Spam Status:"
 msgstr "スパムの状態:"
 
-#: header/grantleeheaderformatter.cpp:512
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Printing mode"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:554
+#: header/grantleeheaderformatter.cpp:553
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:561
+#: header/grantleeheaderformatter.cpp:560
 #, kde-format
 msgid "Attachments:"
 msgstr "添付ファイル:"
 
-#: header/grantleeheaderformatter.cpp:590
+#: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
 msgstr ""
@@ -1991,25 +1991,6 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr ""
 
-#: viewer/editorwatcher.cpp:60
-#, kde-format
-msgid "Edit with:"
-msgstr "次で編集:"
-
-#: viewer/editorwatcher.cpp:194
-#, kde-format
-msgid ""
-"KMail is unable to detect when the chosen editor is closed. To avoid data "
-"loss, editing the attachment will be aborted."
-msgstr ""
-"KMail は選択されたエディタが閉じられても検知できません。データの消失を避ける"
-"ために添付ファイルの編集を中止します。"
-
-#: viewer/editorwatcher.cpp:196
-#, kde-format
-msgid "Unable to edit attachment"
-msgstr "添付ファイルを編集できません"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
@@ -2717,6 +2698,19 @@ msgstr "メッセージを保存(&S)"
 #| msgid "&Previous Card"
 msgid "Previous Message"
 msgstr "前のカード(&P)"
+
+#~ msgid "Edit with:"
+#~ msgstr "次で編集:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail は選択されたエディタが閉じられても検知できません。データの消失を避け"
+#~ "るために添付ファイルの編集を中止します。"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "添付ファイルを編集できません"
 
 #, fuzzy
 #~| msgid "VCard Viewer"
