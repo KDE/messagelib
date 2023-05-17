@@ -87,6 +87,7 @@ find_package(KF6SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6DBusAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Notifications ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextTemplate CONFIG REQUIRED)
 

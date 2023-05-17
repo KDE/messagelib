@@ -22,5 +22,6 @@ Dependencies:
     'pim/libkdepim' : '@latest-kf6'
     'pim/libkleo' : '@latest-kf6'
     'pim/pimcommon' : '@latest-kf6'
+    'frameworks/kcolorscheme': '@latest-kf6'
     'libraries/qca' : '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'

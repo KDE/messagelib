@@ -99,7 +99,10 @@ target_link_libraries(KPim6MessageCore
     KF6::I18n
     KPim6::IdentityManagement
     KPim6::MimeTreeParser
-    KPim6::PimCommon
+    KF6::ColorScheme
+    KF6::ConfigGui
+    Qt::Widgets
+    KPim6::PimTextEdit
     )
 target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 

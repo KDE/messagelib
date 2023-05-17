@@ -14,17 +14,18 @@
 
 #include "messagecore_debug.h"
 #include <KAboutData>
-#include <PimCommon/PimUtil>
 
 #include <KMime/Content>
 #include <KMime/Headers>
 
 #include <KIO/Global>
 #include <KLocalizedString>
+#include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QPushButton>
+#include <QUrlQuery>
 #include <QVBoxLayout>
 
 using namespace MessageCore;
@@ -367,9 +368,26 @@ void AttachmentPropertiesDialog::accept()
     QDialog::accept();
 }
 
+// Copy from PimCommon::Util::invokeHelp
+// Avoid to add PimCommon dep for this method
+void invokeHelp(const QString &docfile, const QString &anchor)
+{
+    if (!docfile.isEmpty()) {
+        QUrl url;
+        url = QUrl(QStringLiteral("help:/")).resolved(QUrl(docfile));
+        if (!anchor.isEmpty()) {
+            QUrlQuery query(url);
+            query.addQueryItem(QStringLiteral("anchor"), anchor);
+            url.setQuery(query);
+        }
+        // launch khelpcenter, or a browser for URIs not handled by khelpcenter
+        QDesktopServices::openUrl(url);
+    }
+}
+
 void AttachmentPropertiesDialog::slotHelp()
 {
-    PimCommon::Util::invokeHelp(QStringLiteral("kmail2/the-composer-window.html"), QStringLiteral("attachments"));
+    invokeHelp(QStringLiteral("kmail2/the-composer-window.html"), QStringLiteral("attachments"));
 }
 
 #include "moc_attachmentpropertiesdialog.cpp"
