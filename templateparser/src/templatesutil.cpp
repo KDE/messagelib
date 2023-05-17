@@ -63,43 +63,35 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
     // if there is ',' in name, than format is 'Last, First'
     // else format is 'First Last'
     // last resort -- return 'name' from 'name@domain'
+
+    // The following code returns the first consecutive sequence of alpha numeric characters.
+    // If the mail contains a ',' it is assumed that the address has the form
+    // 'LastName, Firstname <foo@mail.xx>' and the search starts at the comma character.
+    //
+    // Otherwise the address is either 'FirstName LastName <foo@mail.xx>' or a plain
+    // address without display name 'foo@mail.xx'. In both cases the search starts at the
+    // beginning of the string.
+
     int sep_pos = -1;
     QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char('@'))) > 0) {
-        int i;
-        for (i = (sep_pos - 1); i >= 0; --i) {
-            const QChar c = str.at(i);
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
-        int i;
-        bool begin = false;
-        const int strLength(str.length());
-        for (i = sep_pos; i < strLength; ++i) {
-            const QChar c = str.at(i);
-            if (c.isLetterOrNumber()) {
-                begin = true;
-                res.append(c);
-            } else if (begin) {
-                break;
-            }
-        }
-    } else {
-        int i;
-        const int strLength(str.length());
-        for (i = 0; i < strLength; ++i) {
-            const QChar c = str.at(i);
-            if (c.isLetterOrNumber()) {
-                res.append(c);
-            } else {
-                break;
-            }
+    if ((sep_pos = str.indexOf(QLatin1Char(','))) < 0) {
+        // no comma, start at the beginning of the string
+        sep_pos = 0;
+    }
+
+    int i;
+    bool begin = false;
+    const int strLength(str.length());
+    for (i = sep_pos; i < strLength; ++i) {
+        const QChar c = str.at(i);
+        if (c.isLetterOrNumber()) {
+            begin = true;
+            res.append(c);
+        } else if (begin) {
+            break;
         }
     }
+
     return res;
 }
 
@@ -112,7 +104,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
     QString res;
     if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
         int i;
-        for (i = sep_pos; i >= 0; --i) {
+        for (i = (sep_pos - 1); i >= 0; --i) {
             const QChar c = str.at(i);
             if (c.isLetterOrNumber()) {
                 res.prepend(c);

@@ -51,10 +51,10 @@ void TemplateParserUtilTest::shouldGetFirstNameFromEmail_data()
     QTest::addColumn<QString>("firstName");
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("test1") << QStringLiteral("foo@kde.org") << QStringLiteral("foo");
-    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("foo");
-    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("foo");
-    QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("foo");
-    QTest::newRow("test5") << QStringLiteral("\'bla bli\' <foo@kde.org>") << QStringLiteral("foo");
+    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bli");
+    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bli");
+    QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bla");
+    QTest::newRow("test5") << QStringLiteral("\'bla bli\' <foo@kde.org>") << QStringLiteral("bla");
     QTest::newRow("test6") << QStringLiteral("bla bli") << QStringLiteral("bla");
     QTest::newRow("test7") << QStringLiteral("bla, bli") << QStringLiteral("bli");
 }
@@ -72,11 +72,11 @@ void TemplateParserUtilTest::shouldGetLastNameFromEmail_data()
     QTest::addColumn<QString>("firstName");
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("test1") << QStringLiteral("foo@kde.org") << QString();
-    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QString();
-    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QString();
+    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bla");
+    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bla");
     QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bli");
     QTest::newRow("test5") << QStringLiteral("\'bla bli\' <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test6") << QStringLiteral("\'bla, bli\'") << QString();
+    QTest::newRow("test6") << QStringLiteral("\'bla, bli\'") << QStringLiteral("bla");
 }
 
 void TemplateParserUtilTest::shouldGetLastNameFromEmail()
