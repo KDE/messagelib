@@ -8,6 +8,7 @@
 #include "templatesutil_p.h"
 
 #include <KConfigGroup>
+#include <KEmailAddress>
 #include <KSharedConfig>
 #include <QRegularExpression>
 #include <QStringList>
@@ -60,36 +61,45 @@ QStringList TemplateParser::Util::keywords()
 QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
 {
     // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    // last resort -- return 'name' from 'name@domain'
+    // 1. If there is ',' in name, than format is 'Last, First'. If the first name consists
+    //    of several words, all parts are returned.
+    // 2. If there is no ',' in the name, the format is 'First Last'. If the first name consists
+    //    of several words, there is not way to decided whether the middle names are part of the
+    //    the first or the last name, so we return only the first word.
+    // 3. If the display name is empty, return 'name' from 'name@domain'.
 
-    // The following code returns the first consecutive sequence of alpha numeric characters.
-    // If the mail contains a ',' it is assumed that the address has the form
-    // 'LastName, Firstname <foo@mail.xx>' and the search starts at the comma character.
-    //
-    // Otherwise the address is either 'FirstName LastName <foo@mail.xx>' or a plain
-    // address without display name 'foo@mail.xx'. In both cases the search starts at the
-    // beginning of the string.
-
-    int sep_pos = -1;
     QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char(','))) < 0) {
-        // no comma, start at the beginning of the string
-        sep_pos = 0;
-    }
-
-    int i;
-    bool begin = false;
-    const int strLength(str.length());
-    for (i = sep_pos; i < strLength; ++i) {
-        const QChar c = str.at(i);
-        if (c.isLetterOrNumber()) {
-            begin = true;
-            res.append(c);
-        } else if (begin) {
-            break;
+    QString mail, name;
+    KEmailAddress::extractEmailAddressAndName(str, mail, name);
+    if (!name.isEmpty()) {
+        // we have a display name, look for a comma
+        int nameLength = name.length();
+        int sep_pos = -1;
+        int i;
+        if ((sep_pos = name.indexOf(QLatin1Char(','))) < 0) {
+            // no comma, start at the beginning of the string and return the first sequence
+            // of non-whitespace characters
+            for (i = 0; i < nameLength; i++) {
+                const QChar c = name.at(i);
+                if (!c.isSpace()) {
+                    res.append(c);
+                } else {
+                    break;
+                }
+            }
+        } else {
+            // found a comma, first name is everything after that comma
+            res = name.midRef(sep_pos + 1).trimmed().toString();
         }
+    } else if (!mail.isEmpty()) {
+        // extract the part of the mail address before the '@'
+        int sep_pos = -1;
+        if ((sep_pos = mail.indexOf(QLatin1Char('@'))) < 0) {
+            // no '@', this should actually never happen, but just in case we return the
+            // full address
+            sep_pos = mail.length();
+        }
+        res = mail.left(sep_pos);
     }
 
     return res;
@@ -98,35 +108,37 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
 QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
 {
     // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    int sep_pos = -1;
+    // 1. If there is ',' in name, than format is 'Last, First'. If the last name consists
+    //    of several words, all parts are returned (i.e. everything before the ',' is returned).
+    // 2. If there is no ',' in the name, the format is 'First Last'. If the last name consists
+    //    of several words, there is not way to decided whether the middle names are part of the
+    //    the first or the last name, so we return only the last word.
+
     QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
+    QString mail, name;
+    KEmailAddress::extractEmailAddressAndName(str, mail, name);
+    if (!name.isEmpty()) {
+        // we have a display name, look for a comma
+        int nameLength = name.length();
+        int sep_pos = -1;
         int i;
-        for (i = (sep_pos - 1); i >= 0; --i) {
-            const QChar c = str.at(i);
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else {
-        if ((sep_pos = str.indexOf(QLatin1Char(' '))) > 0) {
-            bool begin = false;
-            const int strLength(str.length());
-            for (int i = sep_pos; i < strLength; ++i) {
-                const QChar c = str.at(i);
-                if (c.isLetterOrNumber()) {
-                    begin = true;
-                    res.append(c);
-                } else if (begin) {
+        if ((sep_pos = name.indexOf(QLatin1Char(','))) < 0) {
+            // no comma, start at the end of the string and return the last sequence
+            // of non-whitespace characters
+            for (i = nameLength - 1; i >= 0; i--) {
+                const QChar c = name.at(i);
+                if (!c.isSpace()) {
+                    res.prepend(c);
+                } else {
                     break;
                 }
             }
+        } else {
+            // found a comma, last name is everything before that comma
+            res = name.leftRef(sep_pos).trimmed().toString();
         }
     }
+
     return res;
 }
 
