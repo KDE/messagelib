@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2023-01-12 18:12+0100\n"
+"PO-Revision-Date: 2023-05-17 18:02+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -378,10 +378,9 @@ msgid "Suggest Automatic Display"
 msgstr "Suggérer l'affichage automatique"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Éditer avec…"
+msgstr "Modifier avec :"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -389,6 +388,9 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"Il est impossible pour KMail de détecter la fermeture de l'éditeur choisi. "
+"Pour éviter la perte de données, la modification de la pièce jointe sera "
+"annulée."
 
 #: composer/composer.cpp:276
 #, kde-format

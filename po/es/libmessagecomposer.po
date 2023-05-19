@@ -5,20 +5,20 @@
 # Javier Vinal <kde-l10n-es@kde.org >, 2010.
 # Javier Viñal <fjvinal@gmail.com>, 2010, 2013.
 # Javier Vinal <fjvinal@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-10-25 00:15+0200\n"
+"PO-Revision-Date: 2023-05-17 13:44+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
@@ -371,10 +371,9 @@ msgid "Suggest Automatic Display"
 msgstr "Sugerir visualización automática"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Editar con..."
+msgstr "Editar con:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -382,6 +381,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail no puede detectar el cierre del editor escogido. Para evitar pérdida "
+"de datos, se interrumpirá la edición del adjunto."
 
 #: composer/composer.cpp:276
 #, kde-format
