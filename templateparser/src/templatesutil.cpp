@@ -89,7 +89,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
             }
         } else {
             // found a comma, first name is everything after that comma
-            res = name.midRef(sep_pos + 1).trimmed().toString();
+            res = QStringView(name).mid(sep_pos + 1).trimmed().toString();
         }
     } else if (!mail.isEmpty()) {
         // extract the part of the mail address before the '@'
@@ -135,7 +135,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
             }
         } else {
             // found a comma, last name is everything before that comma
-            res = name.leftRef(sep_pos).trimmed().toString();
+            res = QStringView(name).left(sep_pos).trimmed().toString();
         }
     }
 
