@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2023-04-10 12:21+0100\n"
+"PO-Revision-Date: 2023-05-17 11:58+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -43,29 +43,29 @@ msgstr "Atestila importstato:"
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 nova atestilo estis importita."
+msgstr[1] "%1 novaj atestiloj estis importitaj."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 atestilo estis neŝanĝita."
+msgstr[1] "%1 atestiloj estis neŝanĝitaj."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 nova sekreta atestilo estis importita."
+msgstr[1] "%1 novaj sekretaj atestiloj estis importitaj."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 sekreta atestilo estis neŝanĝita."
+msgstr[1] "%1 sekretaj atestiloj estis neŝanĝitaj."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
@@ -373,8 +373,8 @@ msgstr "Kopii Ŝlosilon"
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Forigi Ŝlosilon"
+msgstr[1] "Forigi Ŝlosilojn"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
@@ -387,8 +387,8 @@ msgstr[1] ""
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Forigi Ŝlosilon"
+msgstr[1] "Forigi Ŝlosilojn"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
 #: dkim-verify/dkimmanageruleswidget.cpp:221
@@ -1905,8 +1905,8 @@ msgstr "retpoŝtaj mesaĝoj (*.mbox);;ĉiuj dosieroj (*)"
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Konservi mesaĝon"
+msgstr[1] "Konservi mesaĝojn"
 
 #: utils/messageviewerutil.cpp:525
 #, kde-format
@@ -1916,7 +1916,7 @@ msgstr "Dosiero %1 ne povis esti ŝargita."
 #: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "Error loading message"
-msgstr "Eraro dum ŝarĝo de mesaĝo"
+msgstr "Eraro dum ŝargo de mesaĝo"
 
 #: utils/messageviewerutil.cpp:527
 #, kde-format
@@ -2105,7 +2105,7 @@ msgstr "Lanĉi"
 #: viewer/viewer.cpp:138
 #, kde-format
 msgid "Loading message..."
-msgstr "Ŝarĝante mesaĝon..."
+msgstr "Ŝargante mesaĝon..."
 
 #: viewer/viewer_p.cpp:355
 #, kde-format
@@ -2361,7 +2361,7 @@ msgstr "Ŝalti ekranreĝimon inter HTML kaj simpla teksto"
 #: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Load external references"
-msgstr "Ŝarĝi eksterajn referencojn"
+msgstr "Ŝargi eksterajn referencojn"
 
 #: viewer/viewer_p.cpp:1617 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
@@ -2453,7 +2453,7 @@ msgstr "URL kopiita al interdeponejo"
 #: viewer/viewer_p.cpp:2867
 #, kde-format
 msgid "Message loading failed: %1."
-msgstr "Ŝarĝo de mesaĝo malsukcesis: %1."
+msgstr "Ŝargo de mesaĝo malsukcesis: %1."
 
 #: viewer/viewer_p.cpp:2872
 #, kde-format
@@ -2620,29 +2620,3 @@ msgstr "Sekva Mesaĝo"
 #, kde-format
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
-
-#~ msgid "Edit with:"
-#~ msgstr "Redakti kun:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail ne povas detekti kiam la elektita redaktilo estas fermita. Por "
-#~ "eviti datumperdon, redaktado de la aldonaĵo estos ĉesigita."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "Ne eblas redakti aldonaĵon"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "vCard Viewer"
-
-#~ msgid "&Import"
-#~ msgstr "&Importi"
-
-#~ msgid "&Next Card"
-#~ msgstr "Se&kva karto"
-
-#~ msgid "&Previous Card"
-#~ msgstr "An&taŭa karto"

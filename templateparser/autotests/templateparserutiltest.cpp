@@ -50,13 +50,18 @@ void TemplateParserUtilTest::shouldGetFirstNameFromEmail_data()
     QTest::addColumn<QString>("email");
     QTest::addColumn<QString>("firstName");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("test1") << QStringLiteral("foo@kde.org") << QStringLiteral("foo");
+    QTest::newRow("test1") << QStringLiteral("foo.bar-baz@kde.org") << QStringLiteral("foo.bar-baz");
     QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bli");
     QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bli");
     QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bla");
-    QTest::newRow("test5") << QStringLiteral("\'bla bli\' <foo@kde.org>") << QStringLiteral("bla");
-    QTest::newRow("test6") << QStringLiteral("bla bli") << QStringLiteral("bla");
-    QTest::newRow("test7") << QStringLiteral("bla, bli") << QStringLiteral("bli");
+    QTest::newRow("test5") << QStringLiteral("bla bli") << QStringLiteral("bla");
+    QTest::newRow("test6") << QStringLiteral("bla, bli") << QStringLiteral("bli");
+    QTest::newRow("test7") << QStringLiteral("\"bla, bli-blo\" <foo@kde.org>") << QStringLiteral("bli-blo");
+    QTest::newRow("test8") << QStringLiteral("\"bla-blo bli\" <foo@kde.org>") << QStringLiteral("bla-blo");
+    QTest::newRow("test9") << QStringLiteral("bla-blo bli") << QStringLiteral("bla-blo");
+    QTest::newRow("test10") << QStringLiteral("bla, bli-blo") << QStringLiteral("bli-blo");
+    QTest::newRow("test11") << QStringLiteral("\"bla, bli blo\" <foo@kde.org>") << QStringLiteral("bli blo");
+    QTest::newRow("test12") << QStringLiteral("bla blo bli") << QStringLiteral("bla");
 }
 
 void TemplateParserUtilTest::shouldGetFirstNameFromEmail()
@@ -69,19 +74,20 @@ void TemplateParserUtilTest::shouldGetFirstNameFromEmail()
 void TemplateParserUtilTest::shouldGetLastNameFromEmail_data()
 {
     QTest::addColumn<QString>("email");
-    QTest::addColumn<QString>("firstName");
+    QTest::addColumn<QString>("lastName");
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("test1") << QStringLiteral("foo@kde.org") << QString();
-    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bla");
+    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bli"); // ',' without quote is not allowed
     QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bla");
     QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test5") << QStringLiteral("\'bla bli\' <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test6") << QStringLiteral("\'bla, bli\'") << QStringLiteral("bla");
+    QTest::newRow("test5") << QStringLiteral("bla-blo, bli <foo@kde.org>") << QStringLiteral("bli"); // ',' without quote is not allowed
+    QTest::newRow("test6") << QStringLiteral("\"bla-blo, bli\" <foo@kde.org>") << QStringLiteral("bla-blo");
+    QTest::newRow("test7") << QStringLiteral("\"bla bli-blo\" <foo@kde.org>") << QStringLiteral("bli-blo");
 }
 
 void TemplateParserUtilTest::shouldGetLastNameFromEmail()
 {
     QFETCH(const QString, email);
-    QFETCH(const QString, firstName);
-    QCOMPARE(TemplateParser::Util::getLastNameFromEmail(email), firstName);
+    QFETCH(const QString, lastName);
+    QCOMPARE(TemplateParser::Util::getLastNameFromEmail(email), lastName);
 }
