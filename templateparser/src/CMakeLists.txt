@@ -93,6 +93,7 @@ target_link_libraries(KPim6TemplateParser
     KF6::Completion
     KF6::CoreAddons
     KF6::I18n
+    KF6::Codecs
     KF6::SonnetUi
     KF6::SyntaxHighlighting
     Qt::WebEngineWidgets
