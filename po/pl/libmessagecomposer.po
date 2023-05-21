@@ -3,13 +3,13 @@
 #
 # Artur Chłond <eugenewolfe@o2.pl>, 2010.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2010, 2013.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-11-23 19:37+0100\n"
+"PO-Revision-Date: 2023-05-20 09:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -371,10 +371,9 @@ msgid "Suggest Automatic Display"
 msgstr "Podpowiedz sposób wyświetlania"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Edytuj za pomocą..."
+msgstr "Edytuj w:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -382,6 +381,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail nie może wykryć zamknięcia edytora. Żeby uniknąć utraty danych, edycja "
+"załącznika zostanie przerwana."
 
 #: composer/composer.cpp:276
 #, kde-format
