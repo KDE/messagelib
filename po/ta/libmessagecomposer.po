@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-10-25 19:51+0530\n"
+"PO-Revision-Date: 2023-05-21 14:48+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -368,10 +368,9 @@ msgid "Suggest Automatic Display"
 msgstr "தானாக காட்டச் சொல்"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "இதனால் திருத்து…"
+msgstr "இதனால் திருத்து:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -379,6 +378,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"தேரந்தெடுத்துள்ள உரைதிருத்தி மூடப்படுவதை கேமெயிலால் கண்டறிய முடியாது. தரவிழப்பைத் "
+"தவிர்க்க, உடனிணைப்பைத் திருத்துவது கைவிடப்படும்."
 
 #: composer/composer.cpp:276
 #, kde-format
@@ -2389,18 +2390,13 @@ msgstr "HTML அஞ்சலின் சாதாரண-உரை வடிவ�
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "முடிந்தால் அனைத்து அஞ்சல்களுக்கும் கையொப்பமிடு"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"அனைத்து பெறுநர்களுக்குமான நம்பகமான மறையாக்க சாவிகள் உங்களிடம் உள்ளன.\n"
-"அஞ்சலை மறையாக்கம் செய்யலாமா?"
+msgstr "அனைத்து பெறுநர்களுக்குமான சாவிகள் கிடைத்தால் மறையாக்கு"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
@@ -2412,13 +2408,13 @@ msgstr "மறையாக்கப்படாத அஞ்சல்களை �
 #: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "எண்ம கையொப்பமிடாத அஞ்சல்களை அனுப்புமுன் எச்சரி"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:101
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
+msgstr "சான்றிதழ்கள் / சாவிகள் காலாவதி ஆகப்போகும்போது எச்சரி (வரம்புகளை கீழே அமைக்கலாம்)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
