@@ -40,8 +40,14 @@ namespace KMime
 class Content;
 }
 
+namespace Kleo
+{
+class KeyCache;
+}
+
 namespace MimeTreeParser
 {
+class CompositeMemento;
 class CryptoBodyPartMemento;
 class MessagePartPrivate;
 namespace Interface
@@ -388,6 +394,7 @@ protected:
     QByteArray mVerifiedText;
     QByteArray mMementoName;
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
+    std::shared_ptr<const Kleo::KeyCache> mKeyCache;
 
     friend class EncryptedBodyPartFormatter;
 };
@@ -436,13 +443,14 @@ private:
 
     MIMETREEPARSER_NO_EXPORT void sigStatusToMetaData();
 
-    MIMETREEPARSER_NO_EXPORT void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
+    void setVerificationResult(const CompositeMemento *m, KMime::Content *textNode);
 
 protected:
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
     QByteArray mVerifiedText;
     QByteArray mMementoName;
+    std::shared_ptr<const Kleo::KeyCache> mKeyCache;
 
     friend EncryptedMessagePart;
 };
