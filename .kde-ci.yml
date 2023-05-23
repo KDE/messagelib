@@ -25,3 +25,5 @@ Dependencies:
     'libraries/ktextaddons': '@stable'
     'third-party/grantlee' : '@stable'
 
+Options:
+  json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']
