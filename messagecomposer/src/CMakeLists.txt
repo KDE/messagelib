@@ -53,6 +53,7 @@ target_sources( KPim6MessageComposer PRIVATE
     job/attachmentclipboardjob.cpp
     job/protectedheadersjob.cpp
     job/autocryptheadersjob.cpp
+    job/itipjob.cpp
     statusbarwidget/statusbarlabeltoggledstate.cpp
     composer/composer.cpp
     composer/signaturecontroller.cpp
@@ -86,6 +87,7 @@ target_sources( KPim6MessageComposer PRIVATE
     part/messagepart.cpp
     part/globalpart.cpp
     part/infopart.cpp
+    part/itippart.cpp
     part/textpart.cpp
     attachment/attachmentcontrollerbase.cpp
     attachment/attachmentmodel.cpp
@@ -161,6 +163,7 @@ target_sources( KPim6MessageComposer PRIVATE
     job/attachmentvcardfromaddressbookjob.h
     job/jobbase.h
     job/attachmentfrompublickeyjob.h
+    job/itipjob.h
     draftstatus/draftstatus.h
     utils/util_p.h
     utils/kleo_util.h
@@ -224,6 +227,7 @@ target_sources( KPim6MessageComposer PRIVATE
     plugineditor/plugineditormanager.h
     settings/messagecomposersettings.h
     part/infopart.h
+    part/itippart.h
     part/textpart.h
     part/messagepart.h
     part/globalpart.h
@@ -496,6 +500,7 @@ ecm_generate_headers(MessageComposer_Camelcasepart_HEADERS
     TextPart
     GlobalPart
     InfoPart
+    ItipPart
     MessagePart
     REQUIRED_HEADERS MessageComposer_part_HEADERS
     PREFIX MessageComposer
@@ -565,6 +570,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     AliasesExpandJob
     SkeletonMessageJob
     AttachmentClipBoardJob
+    ItipJob
     REQUIRED_HEADERS MessageComposer_job_HEADERS
     PREFIX MessageComposer
     RELATIVE job

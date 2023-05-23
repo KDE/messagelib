@@ -26,6 +26,7 @@ class ComposerPrivate;
 class GlobalPart;
 class InfoPart;
 class TextPart;
+class ItipPart;
 
 /**
  * @brief The Composer class
@@ -43,6 +44,9 @@ public:
     Q_REQUIRED_RESULT GlobalPart *globalPart() const;
     Q_REQUIRED_RESULT InfoPart *infoPart() const;
     Q_REQUIRED_RESULT TextPart *textPart() const;
+    Q_REQUIRED_RESULT ItipPart *itipPart() const;
+    void clearTextPart();
+    void clearItipPart();
     Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachmentParts() const;
     void addAttachmentPart(MessageCore::AttachmentPart::Ptr part, bool autoresizeImage = false);
     void addAttachmentParts(const MessageCore::AttachmentPart::List &parts, bool autoresizeImage = false);

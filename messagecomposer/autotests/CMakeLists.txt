@@ -82,6 +82,7 @@ add_messagecomposer_test( multipartjobtest.cpp )
 # More complex content jobs.
 add_messagecomposer_test( attachmentjobtest.cpp )
 add_messagecomposer_test( maintextjobtest.cpp )
+add_messagecomposer_test( itipjobtest.cpp )
 
 # Composer.
 add_messagecomposer_test( composertest.cpp )
