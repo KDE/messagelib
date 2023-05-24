@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-24 00:48+0000\n"
 "PO-Revision-Date: 2023-05-17 18:02+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -392,7 +392,7 @@ msgstr ""
 "Pour éviter la perte de données, la modification de la pièce jointe sera "
 "annulée."
 
-#: composer/composer.cpp:276
+#: composer/composer.cpp:289
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."

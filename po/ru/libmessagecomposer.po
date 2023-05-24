@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-24 00:48+0000\n"
 "PO-Revision-Date: 2023-04-24 10:57+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -387,7 +387,7 @@ msgid ""
 "loss, editing the attachment will be aborted."
 msgstr ""
 
-#: composer/composer.cpp:276
+#: composer/composer.cpp:289
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Нет данных о криптографических ключах получателей."

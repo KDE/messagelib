@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:48+0000\n"
+"POT-Creation-Date: 2023-05-24 00:48+0000\n"
 "PO-Revision-Date: 2013-03-20 15:50+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -375,7 +375,7 @@ msgid ""
 "loss, editing the attachment will be aborted."
 msgstr ""
 
-#: composer/composer.cpp:276
+#: composer/composer.cpp:289
 #, kde-format
 msgid "No key data for recipients found."
 msgstr ""
