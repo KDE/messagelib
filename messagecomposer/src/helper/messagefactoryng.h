@@ -17,7 +17,7 @@
 #include <Akonadi/MessageStatus>
 #include <QList>
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -139,7 +139,7 @@ public:
      * Required to be set before create* is called, otherwise the created messages
      *  might have the wrong identity data.
      */
-    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
     /**
      * Set the reply strategy to use. Default is ReplySmart.
@@ -174,7 +174,7 @@ public:
      *  Set the identity that is set for the folder in which the given message is.
      *   It is used as a fallback when finding the identity if it can't be found in
      *   any other way.
-     *   @param folderIdentityId an uoid of KIdentityManagement::Identity
+     *   @param folderIdentityId an uoid of KIdentityManagementCore::Identity
      */
     void setFolderIdentity(uint folderIdentityId);
 
@@ -233,7 +233,7 @@ private Q_SLOTS:
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
-      searches with KIdentityManagement::IdentityManager::identityForAddress()
+      searches with KIdentityManagementCore::IdentityManager::identityForAddress()
     **/
     Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const KMime::Message::Ptr &msg);
 
@@ -249,7 +249,7 @@ private:
     Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
     MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages
     KMime::Message::Ptr mOrigMsg;
     uint mFolderId;

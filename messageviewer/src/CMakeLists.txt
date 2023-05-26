@@ -413,7 +413,7 @@ target_link_libraries(KPim6MessageViewer
     KPim6::Mbox
     KPim6::PimTextEdit
     KPim6::Gravatar
-    KPim6::IdentityManagement
+    KPim6::IdentityManagementCore
     KF6::IconThemes
     KF6::I18n
     KF6::KIOFileWidgets

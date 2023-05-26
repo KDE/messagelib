@@ -285,7 +285,7 @@ target_link_libraries(KPim6MessageComposer
     KPim6::PimCommonAkonadi
     KPim6::AkonadiCore
     KPim6::IdentityManagementWidgets
-    KPim6::IdentityManagement
+    KPim6::IdentityManagementCore
     KPim6::PimTextEdit
     KPim6::AkonadiMime
     KPim6::Libkleo

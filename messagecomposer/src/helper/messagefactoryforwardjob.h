@@ -9,7 +9,7 @@
 #include <Akonadi/Collection>
 #include <KMime/Message>
 #include <QObject>
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -31,7 +31,7 @@ public:
 
     void setOrigMsg(const KMime::Message::Ptr &origMsg);
 
-    void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager);
 
     void setCollection(const Akonadi::Collection &collection);
 
@@ -46,6 +46,6 @@ private:
     KMime::Message::Ptr mMsg = nullptr;
     KMime::Message::Ptr mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
 };
 }

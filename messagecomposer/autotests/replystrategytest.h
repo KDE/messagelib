@@ -12,7 +12,7 @@
 
 #include <MessageComposer/MessageFactoryNG>
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -35,5 +35,5 @@ private Q_SLOTS:
 private:
     KMime::Message::Ptr makeReply(const KMime::Message::Ptr &original, const MessageComposer::ReplyStrategy strategy);
 
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
 };

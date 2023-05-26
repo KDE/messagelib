@@ -9,7 +9,7 @@
 #include "messagecomposer_export.h"
 #include <QObject>
 #include <memory>
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class Signature;
 }
@@ -28,9 +28,9 @@ public:
     explicit RichTextComposerSignatures(MessageComposer::RichTextComposerNg *composer, QObject *parent = nullptr);
     ~RichTextComposerSignatures() override;
 
-    void cleanWhitespace(const KIdentityManagement::Signature &sig);
+    void cleanWhitespace(const KIdentityManagementCore::Signature &sig);
 
-    Q_REQUIRED_RESULT bool replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig);
+    Q_REQUIRED_RESULT bool replaceSignature(const KIdentityManagementCore::Signature &oldSig, const KIdentityManagementCore::Signature &newSig);
 
 private:
     class RichTextComposerSignaturesPrivate;

@@ -79,7 +79,7 @@ void MessageFactoryReplyJob::setOrigMsg(const KMime::Message::Ptr &origMsg)
     mOrigMsg = origMsg;
 }
 
-void MessageFactoryReplyJob::setIdentityManager(KIdentityManagement::IdentityManager *identityManager)
+void MessageFactoryReplyJob::setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager)
 {
     mIdentityManager = identityManager;
 }

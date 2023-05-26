@@ -97,7 +97,7 @@ target_link_libraries(KPim6MessageCore
     KF6::Archive
     Qt::Network
     KF6::I18n
-    KPim6::IdentityManagement
+    KPim6::IdentityManagementCore
     KPim6::MimeTreeParser
     KF6::ColorScheme
     KF6::ConfigGui

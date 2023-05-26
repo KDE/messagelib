@@ -7,7 +7,7 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KIdentityManagement/Signature>
+#include <KIdentityManagementCore/Signature>
 #include <KPIMTextEdit/RichTextComposer>
 #include <MessageComposer/PluginEditorConvertTextInterface>
 
@@ -39,9 +39,9 @@ public:
     void fillComposerTextPart(MessageComposer::TextPart *textPart);
     Q_REQUIRED_RESULT MessageComposer::RichTextComposerSignatures *composerSignature() const;
 
-    void insertSignature(const KIdentityManagement::Signature &signature,
-                         KIdentityManagement::Signature::Placement placement,
-                         KIdentityManagement::Signature::AddedText addedText);
+    void insertSignature(const KIdentityManagementCore::Signature &signature,
+                         KIdentityManagementCore::Signature::Placement placement,
+                         KIdentityManagementCore::Signature::AddedText addedText);
     Q_REQUIRED_RESULT QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;

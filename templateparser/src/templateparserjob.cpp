@@ -21,8 +21,8 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include "templateparser_debug.h"
 #include <KLocalizedString>
@@ -125,7 +125,7 @@ bool TemplateParserJob::shouldStripSignature() const
     return (d->mMode == Reply || d->mMode == ReplyAll) && TemplateParserSettings::self()->stripSignature();
 }
 
-void TemplateParserJob::setIdentityManager(KIdentityManagement::IdentityManager *ident)
+void TemplateParserJob::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
 {
     d->m_identityManager = ident;
 }
@@ -1079,15 +1079,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 
 QString TemplateParserJob::getPlainSignature() const
 {
-    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagementCore::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
 
     if (identity.isNull()) {
         return {};
     }
 
-    KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagementCore::Signature signature = const_cast<KIdentityManagementCore::Identity &>(identity).signature();
 
-    if (signature.type() == KIdentityManagement::Signature::Inlined && signature.isInlinedHtml()) {
+    if (signature.type() == KIdentityManagementCore::Signature::Inlined && signature.isInlinedHtml()) {
         return signature.toPlainText();
     } else {
         return signature.rawText();
@@ -1099,12 +1099,12 @@ QString TemplateParserJob::getPlainSignature() const
 // There should be no two signatures.
 QString TemplateParserJob::getHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagementCore::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
     if (identity.isNull()) {
         return {};
     }
 
-    KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagementCore::Signature signature = const_cast<KIdentityManagementCore::Identity &>(identity).signature();
 
     if (!signature.isInlinedHtml()) {
         signature = signature.rawText().toHtmlEscaped();
@@ -1498,13 +1498,13 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
 
 bool TemplateParserJob::isHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagementCore::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
 
     if (identity.isNull()) {
         return false;
     }
 
-    const KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    const KIdentityManagementCore::Signature signature = const_cast<KIdentityManagementCore::Identity &>(identity).signature();
 
     return signature.isInlinedHtml();
 }

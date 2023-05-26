@@ -19,8 +19,8 @@
 #include <KUser>
 
 #include <KCodecs>
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KPIMTextEdit/TextUtils>
 #include <QHostInfo>
 #include <QRegularExpression>
@@ -413,7 +413,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     QString result;
     int numberAddresses = 0;
     bool expandableInserted = false;
-    KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
+    KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
 
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
     const bool onlyOneIdentity = (im->identities().count() == 1);
@@ -441,7 +441,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                     + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagement::Identity::null());
+            const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.

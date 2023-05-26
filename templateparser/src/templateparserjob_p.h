@@ -17,7 +17,7 @@ class ObjectTreeParser;
 class SimpleObjectTreeSource;
 }
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -33,7 +33,7 @@ public:
 
     KMime::Message::Ptr mMsg; // Msg to write to
     KMime::Message::Ptr mOrigMsg; // Msg to read from
-    KIdentityManagement::IdentityManager *m_identityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *m_identityManager = nullptr;
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;
     QString mSelection;

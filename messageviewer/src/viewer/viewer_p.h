@@ -43,7 +43,7 @@ class QPoint;
 class QSplitter;
 class QModelIndex;
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -440,7 +440,7 @@ public:
     MessageViewer::DKIMViewerMenu *dkimViewerMenu();
 
     Q_REQUIRED_RESULT bool isAutocryptEnabled(KMime::Message *message);
-    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
 
     Q_REQUIRED_RESULT RemoteContentMenu *remoteContentMenu() const;
@@ -714,7 +714,7 @@ public:
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
     MessageViewer::DKIMViewerMenu *mDkimViewerMenu = nullptr;
     MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     RemoteContentMenu *mRemoteContentMenu = nullptr;
     MessageViewer::MDNWarningWidget *mMdnWarning = nullptr;
 };

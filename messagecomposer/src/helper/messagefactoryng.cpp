@@ -16,8 +16,8 @@
 
 #include <KCursorSaver>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include "helper/messagehelper.h"
 #include "messagecomposer_debug.h"
@@ -47,7 +47,8 @@ static bool operator==(const KMime::Types::Mailbox &left, const KMime::Types::Ma
  * Strips all the user's addresses from an address list. This is used
  * when replying.
  */
-static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::Types::Mailbox::List &list, const KIdentityManagement::IdentityManager *manager)
+static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::Types::Mailbox::List &list,
+                                                                   const KIdentityManagementCore::IdentityManager *manager)
 {
     KMime::Types::Mailbox::List addresses(list);
     for (KMime::Types::Mailbox::List::Iterator it = addresses.begin(); it != addresses.end();) {
@@ -466,7 +467,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
             }
         }
     }
-    const KIdentityManagement::Identity &ident = mIdentityManager->identityForUoidOrDefault(id);
+    const KIdentityManagementCore::Identity &ident = mIdentityManager->identityForUoidOrDefault(id);
 
     // X-KMail-Redirect-From: content
     const QString strByWayOf =
@@ -744,7 +745,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
     return QPair<KMime::Message::Ptr, KMime::Content *>(msg, digest);
 }
 
-void MessageFactoryNG::setIdentityManager(KIdentityManagement::IdentityManager *ident)
+void MessageFactoryNG::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
 {
     mIdentityManager = ident;
 }

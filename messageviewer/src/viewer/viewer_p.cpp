@@ -87,8 +87,8 @@
 #include <Akonadi/MessageParts>
 #include <Akonadi/MessageStatus>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <MessageCore/AutocryptUtils>
 
 // own includes
@@ -3049,7 +3049,7 @@ bool ViewerPrivate::isAutocryptEnabled(KMime::Message *message)
     return id.autocryptEnabled();
 }
 
-void ViewerPrivate::setIdentityManager(KIdentityManagement::IdentityManager *ident)
+void ViewerPrivate::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
 {
     mIdentityManager = ident;
 }

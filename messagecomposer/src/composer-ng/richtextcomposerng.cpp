@@ -261,7 +261,7 @@ static bool isCursorAtEndOfLine(const QTextCursor &cursor)
 
 static void insertSignatureHelper(const QString &signature,
                                   RichTextComposerNg *textEdit,
-                                  KIdentityManagement::Signature::Placement placement,
+                                  KIdentityManagementCore::Signature::Placement placement,
                                   bool isHtml,
                                   bool addNewlines)
 {
@@ -275,11 +275,11 @@ static void insertSignatureHelper(const QString &signature,
         QTextCursor oldCursor = cursor;
         cursor.beginEditBlock();
 
-        if (placement == KIdentityManagement::Signature::End) {
+        if (placement == KIdentityManagementCore::Signature::End) {
             cursor.movePosition(QTextCursor::End);
-        } else if (placement == KIdentityManagement::Signature::Start) {
+        } else if (placement == KIdentityManagementCore::Signature::Start) {
             cursor.movePosition(QTextCursor::Start);
-        } else if (placement == KIdentityManagement::Signature::AtCursor) {
+        } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
             cursor.movePosition(QTextCursor::StartOfLine);
         }
         textEdit->setTextCursor(cursor);
@@ -298,7 +298,7 @@ static void insertSignatureHelper(const QString &signature,
         QString headSep;
         QString tailSep;
 
-        if (placement == KIdentityManagement::Signature::End) {
+        if (placement == KIdentityManagementCore::Signature::End) {
             // There is one special case when re-setting the old cursor: The cursor
             // was at the end. In this case, QTextEdit has no way to know
             // if the signature was added before or after the cursor, and just
@@ -308,7 +308,7 @@ static void insertSignatureHelper(const QString &signature,
                 newCursorPos = oldCursor.position();
             }
             headSep = lineSep;
-        } else if (placement == KIdentityManagement::Signature::Start) {
+        } else if (placement == KIdentityManagementCore::Signature::Start) {
             // When prepending signatures, add a couple of new lines before
             // the signature, and move the cursor to the beginning of the QTextEdit.
             // People tends to insert new text there.
@@ -317,7 +317,7 @@ static void insertSignatureHelper(const QString &signature,
             if (!isCursorAtEndOfLine(cursor)) {
                 tailSep = lineSep;
             }
-        } else if (placement == KIdentityManagement::Signature::AtCursor) {
+        } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
             if (!isCursorAtEndOfLine(cursor)) {
                 tailSep = lineSep;
             }
@@ -346,15 +346,15 @@ static void insertSignatureHelper(const QString &signature,
     }
 }
 
-void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &signature,
-                                         KIdentityManagement::Signature::Placement placement,
-                                         KIdentityManagement::Signature::AddedText addedText)
+void RichTextComposerNg::insertSignature(const KIdentityManagementCore::Signature &signature,
+                                         KIdentityManagementCore::Signature::Placement placement,
+                                         KIdentityManagementCore::Signature::AddedText addedText)
 {
     if (signature.isEnabledSignature()) {
         QString signatureStr;
         bool ok = false;
         QString errorMessage;
-        if (addedText & KIdentityManagement::Signature::AddSeparator) {
+        if (addedText & KIdentityManagementCore::Signature::AddSeparator) {
             signatureStr = signature.withSeparator(&ok, &errorMessage);
         } else {
             signatureStr = signature.rawText(&ok, &errorMessage);
@@ -367,13 +367,13 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
         insertSignatureHelper(signatureStr,
                               this,
                               placement,
-                              (signature.isInlinedHtml() && signature.type() == KIdentityManagement::Signature::Inlined),
-                              (addedText & KIdentityManagement::Signature::AddNewLines));
+                              (signature.isInlinedHtml() && signature.type() == KIdentityManagementCore::Signature::Inlined),
+                              (addedText & KIdentityManagementCore::Signature::AddNewLines));
 
         // We added the text of the signature above, now it is time to add the images as well.
         if (signature.isInlinedHtml()) {
-            const QList<KIdentityManagement::Signature::EmbeddedImagePtr> embeddedImages = signature.embeddedImages();
-            for (const KIdentityManagement::Signature::EmbeddedImagePtr &image : embeddedImages) {
+            const QList<KIdentityManagementCore::Signature::EmbeddedImagePtr> embeddedImages = signature.embeddedImages();
+            for (const KIdentityManagementCore::Signature::EmbeddedImagePtr &image : embeddedImages) {
                 composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
             }
         }

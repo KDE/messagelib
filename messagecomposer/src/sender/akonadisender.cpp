@@ -19,8 +19,8 @@
 #include <Akonadi/DispatcherInterface>
 #include <Akonadi/MessageQueueJob>
 #include <KEmailAddress>
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
@@ -121,17 +121,17 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
         const int sentCollectionId = hrd->asUnicodeString().toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity")) {
-        KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
+        KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
         const QString identityStrId = hrd->asUnicodeString();
-        const KIdentityManagement::Identity id = im->modifyIdentityForUoid(identityStrId.toUInt());
+        const KIdentityManagementCore::Identity id = im->modifyIdentityForUoid(identityStrId.toUInt());
         const QString fccId = id.fcc();
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity-Name")) {
-        KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
+        KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
         const QString identityStrName = hrd->asUnicodeString();
-        const KIdentityManagement::Identity id = im->modifyIdentityForName(identityStrName);
+        const KIdentityManagementCore::Identity id = im->modifyIdentityForName(identityStrName);
         const QString fccId = id.fcc();
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();

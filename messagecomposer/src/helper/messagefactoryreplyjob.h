@@ -7,7 +7,7 @@
 #pragma once
 
 #include <Akonadi/Collection>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KMime/Message>
 #include <QObject>
 
@@ -30,7 +30,7 @@ public:
 
     void setOrigMsg(const KMime::Message::Ptr &origMsg);
 
-    void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager);
 
     void setReplyAll(bool replyAll);
 
@@ -50,6 +50,6 @@ private:
     Akonadi::Collection mCollection;
     bool mReplyAll = false;
     bool mReplyAsHtml = false;
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
 };
 }

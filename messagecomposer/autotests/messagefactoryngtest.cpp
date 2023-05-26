@@ -25,8 +25,8 @@
 
 #include <KMime/DateFormatter>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include "globalsettings_templateparser.h"
 
@@ -138,9 +138,9 @@ void MessageFactoryTest::cleanupTestCase()
 void MessageFactoryTest::initTestCase()
 {
     qRegisterMetaType<MessageComposer::MessageFactoryNG::MessageReply>();
-    mIdentMan = new KIdentityManagement::IdentityManager;
+    mIdentMan = new KIdentityManagementCore::IdentityManager;
 
-    KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
+    KIdentityManagementCore::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
     ident.setFullName(QStringLiteral("another"));
     ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
 
@@ -161,10 +161,10 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message_and_identity_in_cc.mbox"));
     KMime::Message::Ptr msg = Test::loadMessage(filename);
-    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
-    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    KIdentityManagementCore::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
     i2.setFullName(QStringLiteral("foo2"));
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();
@@ -212,10 +212,10 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
     KMime::Message::Ptr msg = Test::loadMessage(filename);
-    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
-    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    KIdentityManagementCore::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
     i2.setFullName(QStringLiteral("foo2"));
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();
@@ -260,10 +260,10 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_without_identity_message.mbox"));
     KMime::Message::Ptr msg = Test::loadMessage(filename);
-    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
-    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    KIdentityManagementCore::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
     i2.setFullName(QStringLiteral("foo2"));
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();

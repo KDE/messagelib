@@ -13,7 +13,7 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KIdentityManagement/Signature>
+#include <KIdentityManagementCore/Signature>
 #include <QObject>
 
 namespace KIdentityManagementWidgets
@@ -48,7 +48,7 @@ public:
 
     /** Adds the given signature to the editor, taking user preferences into account.
      */
-    void applySignature(const KIdentityManagement::Signature &signature);
+    void applySignature(const KIdentityManagementCore::Signature &signature);
 
 public Q_SLOTS:
     /**
@@ -81,7 +81,7 @@ private:
      * in the editor, connecting slot functions to KMeditor::insertSignature().
      * @param placement the position of the signature
      */
-    MESSAGECOMPOSER_NO_EXPORT void insertSignatureHelper(KIdentityManagement::Signature::Placement placement);
+    MESSAGECOMPOSER_NO_EXPORT void insertSignatureHelper(KIdentityManagementCore::Signature::Placement placement);
 
 private Q_SLOTS:
     MESSAGECOMPOSER_NO_EXPORT void identityChanged(uint id);

@@ -24,7 +24,7 @@ class Item;
 class ItemFetchJob;
 }
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -331,7 +331,7 @@ public:
 
     void showDevelopmentTools();
 
-    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
     Q_REQUIRED_RESULT MessageViewer::MDNWarningWidget *mdnWarning() const;
 Q_SIGNALS:

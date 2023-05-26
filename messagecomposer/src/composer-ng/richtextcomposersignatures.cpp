@@ -7,7 +7,7 @@
 #include "richtextcomposersignatures.h"
 #include "richtextcomposerng.h"
 
-#include <KIdentityManagement/Signature>
+#include <KIdentityManagementCore/Signature>
 
 #include <QRegularExpression>
 #include <QTextBlock>
@@ -21,8 +21,8 @@ public:
     {
     }
 
-    void cleanWhitespaceHelper(const QRegularExpression &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
-    Q_REQUIRED_RESULT QList<QPair<int, int>> signaturePositions(const KIdentityManagement::Signature &sig) const;
+    void cleanWhitespaceHelper(const QRegularExpression &regExp, const QString &newText, const KIdentityManagementCore::Signature &sig);
+    Q_REQUIRED_RESULT QList<QPair<int, int>> signaturePositions(const KIdentityManagementCore::Signature &sig) const;
     RichTextComposerNg *const richTextComposer;
 };
 
@@ -36,7 +36,7 @@ RichTextComposerSignatures::~RichTextComposerSignatures() = default;
 
 void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegularExpression &regExp,
                                                                                           const QString &newText,
-                                                                                          const KIdentityManagement::Signature &sig)
+                                                                                          const KIdentityManagementCore::Signature &sig)
 {
     int currentSearchPosition = 0;
 
@@ -78,7 +78,7 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
     }
 }
 
-void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagement::Signature &sig)
+void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagementCore::Signature &sig)
 {
     QTextCursor cursor(d->richTextComposer->document());
     cursor.beginEditBlock();
@@ -99,7 +99,7 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagement::Sign
     cursor.endEditBlock();
 }
 
-QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePositions(const KIdentityManagement::Signature &sig) const
+QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePositions(const KIdentityManagementCore::Signature &sig) const
 {
     QList<QPair<int, int>> signaturePositions;
     if (!sig.rawText().isEmpty()) {
@@ -121,7 +121,7 @@ QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPri
     return signaturePositions;
 }
 
-bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)
+bool RichTextComposerSignatures::replaceSignature(const KIdentityManagementCore::Signature &oldSig, const KIdentityManagementCore::Signature &newSig)
 {
     bool found = false;
     if (oldSig == newSig) {
@@ -165,7 +165,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         // Remove the old and insert the new signature
         cursor.removeSelectedText();
         d->richTextComposer->setTextCursor(cursor);
-        d->richTextComposer->insertSignature(newSig, KIdentityManagement::Signature::AtCursor, KIdentityManagement::Signature::AddNothing);
+        d->richTextComposer->insertSignature(newSig, KIdentityManagementCore::Signature::AtCursor, KIdentityManagementCore::Signature::AddNothing);
         found = true;
 
         currentSearchPosition += newSig.toPlainText().length();

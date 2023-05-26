@@ -11,8 +11,8 @@
 #include <QStringLiteral>
 #include <QTest>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
@@ -92,14 +92,14 @@ void ReplyStrategyTest::initTestCase()
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/emailidentities"));
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/emaildefaults"));
 
-    mIdentityManager = new KIdentityManagement::IdentityManager;
+    mIdentityManager = new KIdentityManagementCore::IdentityManager;
 
     auto homeIdentity =
-        mIdentityManager->newFromExisting(KIdentityManagement::Identity{QStringLiteral("Home Identity"), QStringLiteral("Full Home Name"), defaultAddress});
+        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{QStringLiteral("Home Identity"), QStringLiteral("Full Home Name"), defaultAddress});
     QVERIFY(mIdentityManager->setAsDefault(homeIdentity.uoid()));
 
-    auto workIdentity =
-        mIdentityManager->newFromExisting(KIdentityManagement::Identity{QStringLiteral("Work Identity"), QStringLiteral("Full Work Name"), nondefaultAddress});
+    auto workIdentity = mIdentityManager->newFromExisting(
+        KIdentityManagementCore::Identity{QStringLiteral("Work Identity"), QStringLiteral("Full Work Name"), nondefaultAddress});
 
     mIdentityManager->commit();
 }

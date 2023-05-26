@@ -10,7 +10,7 @@
 
 #include <KMime/KMimeMessage>
 #include <QObject>
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -61,5 +61,5 @@ private:
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
     Q_REQUIRED_RESULT KMime::Message::Ptr createReplyAllForMessage(KMime::Message::Ptr origMsg);
-    KIdentityManagement::IdentityManager *mIdentMan = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentMan = nullptr;
 };

@@ -13,7 +13,7 @@ namespace KIdentityManagementWidgets
 {
 class IdentityCombo;
 }
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -37,7 +37,7 @@ private Q_SLOTS:
     void testAutocryptKey();
 
 private:
-    KIdentityManagement::IdentityManager *mIdentMan = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentMan = nullptr;
     KIdentityManagementWidgets::IdentityCombo *mIdentCombo = nullptr;
     QDir autocryptDir;
 };

@@ -13,7 +13,7 @@
 #include <KMime/Headers>
 #include <KMime/KMimeMessage>
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -32,17 +32,17 @@ namespace MessageHelper
 /** Initialize header fields. Should be called on new messages
     if they are not set manually. E.g. before composing. Calling
     of setAutomaticFields(), see below, is still required. */
-void MESSAGECOMPOSER_EXPORT initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id = 0);
+void MESSAGECOMPOSER_EXPORT initHeader(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id = 0);
 
 /** Set the from, to, cc, bcc, encryption etc headers as specified in the
  * given identity. */
-void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id);
+void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id);
 
 /** Initialize headers fields according to the identity and the transport
    header of the given original message */
 void initFromMessage(const KMime::Message::Ptr &msg,
                      const KMime::Message::Ptr &orgiMsg,
-                     KIdentityManagement::IdentityManager *,
+                     KIdentityManagementCore::IdentityManager *,
                      uint id,
                      bool idHeaders = true);
 

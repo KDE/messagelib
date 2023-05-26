@@ -45,7 +45,7 @@ namespace KIdentityManagementWidgets
 {
 class IdentityCombo;
 }
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class Identity;
 class IdentityManager;
@@ -130,7 +130,7 @@ public:
     Q_REQUIRED_RESULT QString replyTo() const;
     Q_REQUIRED_RESULT QString subject() const;
 
-    Q_REQUIRED_RESULT const KIdentityManagement::Identity &currentIdentity() const;
+    Q_REQUIRED_RESULT const KIdentityManagementCore::Identity &currentIdentity() const;
     Q_REQUIRED_RESULT bool autocryptEnabled() const;
 
     /**
@@ -152,8 +152,8 @@ public:
     void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *identCombo);
     Q_REQUIRED_RESULT KIdentityManagementWidgets::IdentityCombo *identityCombo();
 
-    void setIdentityManager(KIdentityManagement::IdentityManager *identMan);
-    Q_REQUIRED_RESULT KIdentityManagement::IdentityManager *identityManager();
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *identMan);
+    Q_REQUIRED_RESULT KIdentityManagementCore::IdentityManager *identityManager();
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);
     Q_REQUIRED_RESULT MessageComposer::RichTextComposerNg *editor() const;
@@ -240,7 +240,7 @@ public:
     Q_REQUIRED_RESULT NearExpiryChecker::Ptr nearExpiryChecker();
 
 public Q_SLOTS:
-    void identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared = false);
+    void identityChanged(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, bool msgCleared = false);
 
     /**
      * Save the message.
@@ -307,7 +307,8 @@ private:
     void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);
     void saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn);
     void saveRecentAddresses(const KMime::Message::Ptr &ptr);
-    void updateRecipients(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, MessageComposer::Recipient::Type type);
+    void
+    updateRecipients(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, MessageComposer::Recipient::Type type);
 
     void markAllAttachmentsForSigning(bool sign);
     void markAllAttachmentsForEncryption(bool encrypt);
@@ -350,7 +351,7 @@ private:
     MessageComposer::SignatureController *m_signatureController = nullptr;
     MessageComposer::RecipientsEditor *m_recipientsEditor = nullptr;
     KIdentityManagementWidgets::IdentityCombo *m_identityCombo = nullptr;
-    KIdentityManagement::IdentityManager *m_identMan = nullptr;
+    KIdentityManagementCore::IdentityManager *m_identMan = nullptr;
     MessageComposer::RichTextComposerNg *m_editor = nullptr;
     MailTransport::TransportComboBox *m_transport = nullptr;
     Sonnet::DictionaryComboBox *m_dictionary = nullptr;

@@ -35,7 +35,7 @@
 #include <MessageComposer/RecipientsEditor>
 
 #include <KCursorSaver>
-#include <KIdentityManagement/Identity>
+#include <KIdentityManagementCore/Identity>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 #include <Sonnet/DictionaryComboBox>
@@ -55,7 +55,7 @@
 #include <Akonadi/SpecialMailCollections>
 
 #include <KEmailAddress>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KIdentityManagementWidgets/IdentityCombo>
 
 #include "messagecomposer_debug.h"
@@ -593,7 +593,7 @@ inline bool showKeyApprovalDialog()
     return MessageComposer::MessageComposerSettings::self()->cryptoShowKeysForApproval();
 }
 
-inline bool cryptoWarningUnsigned(const KIdentityManagement::Identity &identity)
+inline bool cryptoWarningUnsigned(const KIdentityManagementCore::Identity &identity)
 {
     if (identity.encryptionOverride()) {
         return identity.warnNotSign();
@@ -601,7 +601,7 @@ inline bool cryptoWarningUnsigned(const KIdentityManagement::Identity &identity)
     return MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned();
 }
 
-inline bool cryptoWarningUnencrypted(const KIdentityManagement::Identity &identity)
+inline bool cryptoWarningUnencrypted(const KIdentityManagementCore::Identity &identity)
 {
     if (identity.encryptionOverride()) {
         return identity.warnNotEncrypt();
@@ -1610,7 +1610,7 @@ QString ComposerViewBase::subject() const
     return MessageComposer::Util::cleanedUpHeaderString(m_subject);
 }
 
-const KIdentityManagement::Identity &ComposerViewBase::currentIdentity() const
+const KIdentityManagementCore::Identity &ComposerViewBase::currentIdentity() const
 {
     return m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 }
@@ -1675,8 +1675,8 @@ KIdentityManagementWidgets::IdentityCombo *ComposerViewBase::identityCombo()
     return m_identityCombo;
 }
 
-void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ident,
-                                        const KIdentityManagement::Identity &oldIdent,
+void ComposerViewBase::updateRecipients(const KIdentityManagementCore::Identity &ident,
+                                        const KIdentityManagementCore::Identity &oldIdent,
                                         MessageComposer::Recipient::Type type)
 {
     QString oldIdentList;
@@ -1708,14 +1708,14 @@ void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ide
     }
 }
 
-void ComposerViewBase::identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared)
+void ComposerViewBase::identityChanged(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, bool msgCleared)
 {
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Bcc);
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Cc);
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::ReplyTo);
 
-    KIdentityManagement::Signature oldSig = const_cast<KIdentityManagement::Identity &>(oldIdent).signature();
-    KIdentityManagement::Signature newSig = const_cast<KIdentityManagement::Identity &>(ident).signature();
+    KIdentityManagementCore::Signature oldSig = const_cast<KIdentityManagementCore::Identity &>(oldIdent).signature();
+    KIdentityManagementCore::Signature newSig = const_cast<KIdentityManagementCore::Identity &>(ident).signature();
     // replace existing signatures
     const bool replaced = editor()->composerSignature()->replaceSignature(oldSig, newSig);
     // Just append the signature if there was no old signature
@@ -1750,12 +1750,12 @@ MailTransport::TransportComboBox *ComposerViewBase::transportComboBox() const
     return m_transport;
 }
 
-void ComposerViewBase::setIdentityManager(KIdentityManagement::IdentityManager *identMan)
+void ComposerViewBase::setIdentityManager(KIdentityManagementCore::IdentityManager *identMan)
 {
     m_identMan = identMan;
 }
 
-KIdentityManagement::IdentityManager *ComposerViewBase::identityManager()
+KIdentityManagementCore::IdentityManager *ComposerViewBase::identityManager()
 {
     return m_identMan;
 }

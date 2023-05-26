@@ -20,8 +20,8 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KIdentityManagementWidgets/IdentityCombo>
 
 #include <MailTransport/TransportComboBox>
@@ -53,9 +53,9 @@ void ComposerViewBaseTest::cleanupTestCase()
 
 void ComposerViewBaseTest::initTestCase()
 {
-    mIdentMan = new KIdentityManagement::IdentityManager;
+    mIdentMan = new KIdentityManagementCore::IdentityManager;
 
-    KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
+    KIdentityManagementCore::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
     ident.setAutocryptEnabled(true);
     ident.setPGPEncryptionKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");
     ident.setPGPSigningKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");

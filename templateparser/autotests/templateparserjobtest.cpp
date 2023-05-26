@@ -8,8 +8,8 @@
 
 #include "templateparserjob.h"
 #include "templateparserjob_p.h"
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <MimeTreeParser/ObjectTreeParser>
 
 #include <QDir>
@@ -70,7 +70,7 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(!referenceData.isEmpty());
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagementCore::IdentityManager;
     parser->setIdentityManager(identMan);
 
     parser->d->mOrigMsg = origMsg;
@@ -129,7 +129,7 @@ void TemplateParserJobTest::test_replyHtml()
     QVERIFY(!referenceData.isEmpty());
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagementCore::IdentityManager;
     parser->setIdentityManager(identMan);
 
     parser->d->mOrigMsg = origMsg;
@@ -421,7 +421,7 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     origMsg->parse();
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     parser->setSelection(selection);
-    auto identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagementCore::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(true);
     parser->d->mOrigMsg = origMsg;
@@ -516,7 +516,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     origMsg->parse();
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
-    auto identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagementCore::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
     parser->d->mOrigMsg = origMsg;
@@ -561,7 +561,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     origMsg->parse();
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
-    auto identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagementCore::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
     parser->d->mOrigMsg = origMsg;

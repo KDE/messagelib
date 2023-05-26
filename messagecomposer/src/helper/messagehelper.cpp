@@ -11,8 +11,8 @@
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KMime/DateFormatter>
 #include <KMime/MDN>
 #include <KMime/Message>
@@ -21,7 +21,7 @@ using namespace MessageCore;
 
 namespace MessageHelper
 {
-void initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id)
+void initHeader(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
 {
     applyIdentity(message, identMan, id);
     message->removeHeader<KMime::Headers::To>();
@@ -34,7 +34,7 @@ void initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::I
 
 void initFromMessage(const KMime::Message::Ptr &msg,
                      const KMime::Message::Ptr &origMsg,
-                     KIdentityManagement::IdentityManager *identMan,
+                     KIdentityManagementCore::IdentityManager *identMan,
                      uint id,
                      bool idHeaders)
 {
@@ -54,9 +54,9 @@ void initFromMessage(const KMime::Message::Ptr &msg,
     }
 }
 
-void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id)
+void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
 {
-    const KIdentityManagement::Identity &ident = identMan->identityForUoidOrDefault(id);
+    const KIdentityManagementCore::Identity &ident = identMan->identityForUoidOrDefault(id);
 
     if (ident.fullEmailAddr().isEmpty()) {
         message->removeHeader<KMime::Headers::From>();

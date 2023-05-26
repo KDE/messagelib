@@ -5,14 +5,14 @@
 
 #include "util.h"
 
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include <KMime/Message>
 
 using namespace MessageCore;
 
-const KIdentityManagement::Identity &
-Util::identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId)
+const KIdentityManagementCore::Identity &
+Util::identityForMessage(KMime::Message *msg, const KIdentityManagementCore::IdentityManager *const identMgr, uint folderIdentityId)
 {
     const auto &identity = identMgr->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString());
 

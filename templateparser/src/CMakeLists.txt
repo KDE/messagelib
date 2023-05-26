@@ -87,7 +87,7 @@ target_link_libraries(KPim6TemplateParser
     PRIVATE
     KPim6::Mime
     KPim6::MimeTreeParser
-    KPim6::IdentityManagement
+    KPim6::IdentityManagementCore
     KPim6::MessageCore
     KF6::XmlGui
     KF6::Completion

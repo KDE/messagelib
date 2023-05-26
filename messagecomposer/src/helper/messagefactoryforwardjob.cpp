@@ -6,7 +6,7 @@
 
 #include "messagefactoryforwardjob.h"
 #include "settings/messagecomposersettings.h"
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <TemplateParser/TemplateParserJob>
 
 using namespace MessageComposer;
@@ -64,7 +64,7 @@ void MessageFactoryForwardJob::setOrigMsg(const KMime::Message::Ptr &origMsg)
     mOrigMsg = origMsg;
 }
 
-void MessageFactoryForwardJob::setIdentityManager(KIdentityManagement::IdentityManager *identityManager)
+void MessageFactoryForwardJob::setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager)
 {
     mIdentityManager = identityManager;
 }

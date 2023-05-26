@@ -14,7 +14,7 @@
 
 #include <memory>
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -186,7 +186,7 @@ public:
     /**
      * Set the identity manager to be used when creating the template.
      */
-    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
     /**
      * Sets the list of charsets to try to use to encode the resulting text.
@@ -297,7 +297,7 @@ private:
 
     /** @return the UOID of the identity for this message.
      * Searches the "x-kmail-identity" header and if that fails,
-     * searches with KIdentityManagement::IdentityManager::identityForAddress()
+     * searches with KIdentityManagementCore::IdentityManager::identityForAddress()
      */
     Q_REQUIRED_RESULT uint identityUoid(const KMime::Message::Ptr &msg) const;
 

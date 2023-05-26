@@ -6,9 +6,9 @@
 
 #include "messagecore_export.h"
 
-#include <KIdentityManagement/Identity>
+#include <KIdentityManagementCore/Identity>
 
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class IdentityManager;
 }
@@ -25,7 +25,7 @@ namespace MessageCore
  */
 namespace Util
 {
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagement::Identity &
-identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagementCore::Identity &
+identityForMessage(KMime::Message *msg, const KIdentityManagementCore::IdentityManager *const identMgr, uint folderIdentityId);
 }
 }

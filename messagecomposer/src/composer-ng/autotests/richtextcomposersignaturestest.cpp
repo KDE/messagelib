@@ -26,17 +26,17 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
     QVERIFY(composerSignature);
 
-    KIdentityManagement::Signature signature1;
+    KIdentityManagementCore::Signature signature1;
     signature1.setText(QStringLiteral("bla      Bla\t"));
     signature1.setEnabledSignature(true);
     signature1.setInlinedHtml(false);
 
-    KIdentityManagement::Signature signature2(QStringLiteral("Signature"));
+    KIdentityManagementCore::Signature signature2(QStringLiteral("Signature"));
     signature2.setText(QStringLiteral("Foo      Bla\t"));
     signature2.setEnabledSignature(true);
     signature2.setInlinedHtml(false);
 
-    richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
+    richtextComposerNg.insertSignature(signature1, KIdentityManagementCore::Signature::Start, KIdentityManagementCore::Signature::AddNewLines);
     composerSignature->cleanWhitespace(signature2);
 
     QVERIFY(!composerSignature->replaceSignature(signature1, signature2));
@@ -57,17 +57,17 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
     MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
     QVERIFY(composerSignature);
 
-    KIdentityManagement::Signature signature1;
+    KIdentityManagementCore::Signature signature1;
     signature1.setText(QStringLiteral("bla      Bla\t"));
     signature1.setEnabledSignature(true);
     signature1.setInlinedHtml(false);
 
-    KIdentityManagement::Signature signature2(QStringLiteral("Signature"));
+    KIdentityManagementCore::Signature signature2(QStringLiteral("Signature"));
     signature2.setText(QStringLiteral("Foo      Bla\t"));
     signature2.setEnabledSignature(true);
     signature2.setInlinedHtml(false);
 
-    richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
+    richtextComposerNg.insertSignature(signature1, KIdentityManagementCore::Signature::End, KIdentityManagementCore::Signature::AddSeparator);
     composerSignature->cleanWhitespace(signature2);
 
     QVERIFY(!composerSignature->replaceSignature(signature1, signature2));
