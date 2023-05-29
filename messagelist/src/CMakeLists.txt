@@ -153,6 +153,7 @@ target_link_libraries(KPim6MessageList
     KPim6::AkonadiSearchPIM
     KF6::XmlGui
     KF6::IconThemes
+    KF6::IconWidgets
     KF6::Completion
     KF6::I18n
     KF6::TextWidgets
