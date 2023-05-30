@@ -2353,7 +2353,7 @@ void ViewerPrivate::slotSettingsChanged()
 
 void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
 {
-    QModelIndex index = mMimePartTree->indexAt(pos);
+    const QModelIndex index = mMimePartTree->indexAt(pos);
     if (index.isValid()) {
         auto content = static_cast<KMime::Content *>(index.internalPointer());
         showContextMenu(content, pos);
