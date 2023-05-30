@@ -20,7 +20,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 1.0\n"
@@ -528,29 +528,25 @@ msgstr "%1 %2"
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "1 / %2 件のメッセージを処理しました"
-msgstr[1] "%1 / %2 件のメッセージを処理しました"
+msgstr[0] "%1 / %2 件のメッセージを処理しました"
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "1 / %2 件のメッセージをスレッド化しました"
-msgstr[1] "%1 / %2 件のメッセージをスレッド化しました"
+msgstr[0] "%1 / %2 件のメッセージをスレッド化しました"
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "1 / %2 個のスレッドをグループ化しました"
-msgstr[1] "%1 / %2 個のスレッドをグループ化しました"
+msgstr[0] "%1 / %2 個のスレッドをグループ化しました"
 
 #: core/model.cpp:3811
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] "1 / %2 個のグループを更新しました"
-msgstr[1] "%1 / %2 個のグループを更新しました"
+msgstr[0] "%1 / %2 個のグループを更新しました"
 
 #: core/model.cpp:3903
 #, kde-format
@@ -930,14 +926,12 @@ msgstr "プレビュー"
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "返信 <b>%1</b> 件"
-msgstr[1] "返信 <b>%1</b> 件"
 
 #: core/view.cpp:2305
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "サブツリーに <b>%1</b> メッセージ (未読 <b>%2</b>)"
-msgstr[1] "サブツリーに <b>%1</b> メッセージ (未読 <b>%2</b>)"
 
 #: core/view.cpp:2342
 #, kde-format
@@ -1047,14 +1041,12 @@ msgstr "%1 によって受信されたメッセージ"
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> スレッド"
-msgstr[1] "<b>%1</b> スレッド"
 
 #: core/view.cpp:2467
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> メッセージ (未読 <b>%2</b>)"
-msgstr[1] "<b>%1</b> メッセージ (未読 <b>%2</b>)"
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1894,7 +1886,6 @@ msgctxt "suffix in a spinbox"
 msgid " pixel"
 msgid_plural " pixels"
 msgstr[0] " ピクセル"
-msgstr[1] " ピクセル"
 
 #: widget.cpp:220
 #, kde-format
