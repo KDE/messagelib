@@ -52,7 +52,8 @@
 
 #include <algorithm>
 
-#include <Libkleo/MessageBox>
+#include <Libkleo/AuditLogEntry>
+#include <Libkleo/AuditLogViewer>
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -826,7 +827,7 @@ bool ShowAuditLogURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) cons
     if (auditLog.isEmpty()) {
         return false;
     }
-    Kleo::MessageBox::auditLog(w->mMainWindow, auditLog);
+    Kleo::AuditLogViewer::showAuditLog(w->mMainWindow, Kleo::AuditLogEntry{auditLog, GpgME::Error{}}, auditLog);
     return true;
 }
 
