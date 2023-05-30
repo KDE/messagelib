@@ -3026,9 +3026,8 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                     qWarning() << " Unimplemented yet updateDkimKey";
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::showDkimRules, this, [this]() {
-                    QPointer<DKIMManageRulesDialog> dlg = new DKIMManageRulesDialog(viewer());
-                    dlg->exec();
-                    delete dlg;
+                    DKIMManageRulesDialog dlg(viewer());
+                    dlg.exec();
                 });
             }
             mDkimViewerMenu->setEnableUpdateDkimKeyMenu(MessageViewer::MessageViewerSettings::saveKey()
