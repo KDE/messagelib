@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -45,29 +45,25 @@ msgstr "証明書インポートの結果:"
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] "1 個の新しい証明書をインポートしました。"
-msgstr[1] "%1 個の新しい証明書をインポートしました。"
+msgstr[0] "%1 個の新しい証明書をインポートしました。"
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] "1 個の証明書は変更されていません。"
-msgstr[1] "%1 個の証明書は変更されていません。"
+msgstr[0] "%1 個の証明書は変更されていません。"
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] "1 個の新しい秘密鍵をインポートしました。"
-msgstr[1] "%1 個の新しい秘密鍵をインポートしました。"
+msgstr[0] "%1 個の新しい秘密鍵をインポートしました。"
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] "1 個の秘密鍵は変更されていません。"
-msgstr[1] "%1 個の秘密鍵は変更されていません。"
+msgstr[0] "%1 個の秘密鍵は変更されていません。"
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
@@ -403,14 +399,12 @@ msgstr "コピー"
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] ""
-msgstr[1] ""
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
-msgstr[1] ""
 
 # ACCELERATOR added by translator
 #: dkim-verify/dkimmanagerkeywidget.cpp:76
@@ -419,7 +413,6 @@ msgstr[1] ""
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "すべてのテキストを選択(&S)"
-msgstr[1] "すべてのテキストを選択(&S)"
 
 # ACCELERATOR added by translator
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
@@ -1946,7 +1939,6 @@ msgstr ""
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "メッセージを保存(&S)"
-msgstr[1] "メッセージを保存(&S)"
 
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
@@ -2674,7 +2666,6 @@ msgstr "アプリケーションで開く(&O)..."
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
-msgstr[1] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format
