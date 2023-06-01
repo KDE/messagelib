@@ -14,11 +14,20 @@
 #include <QDebug>
 #include <QFile>
 #include <QStandardPaths>
+#include <QWebEngineUrlScheme>
 
 using namespace MessageViewer;
 
 int main(int argc, char **argv)
 {
+    // Necessary for "cid" support in kmail.
+    QWebEngineUrlScheme cidScheme("cid");
+    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored | QWebEngineUrlScheme::LocalScheme
+                       | QWebEngineUrlScheme::LocalAccessAllowed);
+
+    cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+    QWebEngineUrlScheme::registerScheme(cidScheme);
+
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
     QCommandLineParser parser;

@@ -10,5 +10,6 @@ target_link_libraries(viewertest_gui
   KPim6::GrantleeTheme
   KF6::I18n
   KF6::XmlGui
+  Qt::WebEngineWidgets
 )
 
