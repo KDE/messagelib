@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2018, 2019, 2020.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2010, 2012, 2015, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2010, 2012, 2015, 2019, 2020, 2021, 2022, 2023.
 # Aracele Torres <araceletorres@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-24 00:48+0000\n"
-"PO-Revision-Date: 2022-12-15 11:16-0300\n"
+"PO-Revision-Date: 2023-05-31 14:22-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -370,10 +370,9 @@ msgid "Suggest Automatic Display"
 msgstr "Sugerir resposta automática"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Editar com..."
+msgstr "Editar com:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -381,6 +380,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"O KMail não consegue detectar quando o editor selecionado é fechado. Para "
+"evitar a perda de dados, a edição do anexo será cancelada."
 
 #: composer/composer.cpp:289
 #, kde-format
