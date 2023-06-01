@@ -26,7 +26,8 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, enableElement);
     settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, enableElement);
-    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, enableElement);
+    // We need to activate in qt6 otherwise it can't load external url.
+    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
     // We need to activate it in qt5.15 otherwise we can't load local css file and co
     // settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, enableElement);
