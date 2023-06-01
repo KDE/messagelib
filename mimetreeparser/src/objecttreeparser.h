@@ -319,20 +319,8 @@ private:
     KMime::Content *mTopLevelContent = nullptr;
     MessagePartPtr mParsedPart;
 
-    /// Show only one mime part means that the user has selected some node in the message structure
-    /// viewer that is not the root, which means the user wants to only see the selected node and its
-    /// children. If that is the case, this variable is set to true.
-    /// The code needs to behave differently if this is set. For example, it should not process the
-    /// siblings. Also, consider inline images: Normally, those nodes are completely hidden, as the
-    /// HTML node embeds them. However, when showing only the node of the image, one has to show them,
-    /// as their is no HTML node in which they are displayed. There are many more cases where this
-    /// variable needs to be obeyed.
-    /// This variable is set to false again when processing the children in stdChildHandling(), as
-    /// the children can be completely displayed again.
-    bool mShowOnlyOneMimePart;
-
     bool mHasPendingAsyncJobs = false;
-    bool mAllowAsync;
+    bool mAllowAsync = false;
     // DataUrl Icons cache
     QString mCollapseIcon;
     QString mExpandIcon;
