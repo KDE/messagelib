@@ -222,7 +222,7 @@ public:
      * Note that this does not include attachments from the primary node tree.
      * @see KMime::Content::attachments().
      */
-    QList<KMime::Content *> attachmentsOfExtraContents() const;
+    Q_REQUIRED_RESULT QList<KMime::Content *> attachmentsOfExtraContents() const;
 
     Q_REQUIRED_RESULT QString extractAttachmentIndex(const QString &path) const;
 Q_SIGNALS:
