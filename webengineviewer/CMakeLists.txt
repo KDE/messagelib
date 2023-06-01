@@ -29,6 +29,5 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/src/webengineviewer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer COMPONENT Devel
     )
-include_directories(${Messagelib_BINARY_DIR})
 add_subdirectory(src)
 
