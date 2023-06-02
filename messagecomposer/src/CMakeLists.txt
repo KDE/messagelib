@@ -60,9 +60,6 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     composer/composerlineedit.cpp
     composer/composerviewbase.cpp
     composer/keyresolver.cpp
-    composer/nearexpirychecker.cpp
-    composer/nearexpirychecker.h
-    composer/nearexpirychecker_p.h
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
     contactpreference/contactpreference.cpp
@@ -430,7 +427,6 @@ ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     ComposerViewInterface
     ComposerAttachmentInterface
     KeyResolver
-    NearExpiryChecker
     SignatureController
     REQUIRED_HEADERS MessageComposer_composer_HEADERS
     PREFIX MessageComposer

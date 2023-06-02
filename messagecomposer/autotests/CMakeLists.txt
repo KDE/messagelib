@@ -108,15 +108,6 @@ add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
 add_messagecomposer_cryptotest( keyresolvertest.cpp )
 
-ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
-        TEST_NAME "nearexpirycheckertest"
-        NAME_PREFIX "messagecomposer-"
-        LINK_LIBRARIES
-            KPim${KF_MAJOR_VERSION}::MessageComposer
-            Qt::Test
-            KPim${KF_MAJOR_VERSION}::Libkleo
-    )
-
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
 set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
 

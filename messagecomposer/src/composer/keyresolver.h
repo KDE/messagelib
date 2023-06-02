@@ -27,12 +27,12 @@
 namespace MessageComposer
 {
 class ContactPreference;
-class NearExpiryChecker;
-using NearExpiryCheckerPtr = QSharedPointer<NearExpiryChecker>;
 }
 
 namespace Kleo
 {
+class ExpiryChecker;
+
 enum Result {
     Failure = 0,
     Ok = 1,
@@ -114,7 +114,7 @@ enum Result {
 class MESSAGECOMPOSER_EXPORT KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker);
+    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, const std::shared_ptr<Kleo::ExpiryChecker> &expiryChecker);
 
     ~KeyResolver();
 
