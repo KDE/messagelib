@@ -648,7 +648,8 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                 } else {
                     if (!blockAddrs.empty()) {
                         const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl ::toPercentEncoding(address.path())), signer);
+                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>")
+                                     .arg(QLatin1String(QUrl ::toPercentEncoding(address.path())), MessageCore::StringUtil::quoteHtmlChars(signer, true));
                     }
                 }
             }
