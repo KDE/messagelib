@@ -22,8 +22,6 @@
 
 #include <Libkleo/Algorithm>
 #include <Libkleo/Compliance>
-#include <Libkleo/Dn>
-#include <Libkleo/Formatting>
 #include <Libkleo/KeySelectionDialog>
 
 #include <QGpgME/KeyListJob>
@@ -66,18 +64,11 @@ static inline QString ItemDotAddress(const Kleo::KeyResolver::Item &item)
     return item.address;
 }
 
-static bool keyIsCompliant(const GpgME::Key &key)
-{
-    return (key.keyListMode() & GpgME::Validate) //
-        && Kleo::Formatting::uidsHaveFullValidity(key) //
-        && Kleo::Formatting::isKeyDeVs(key);
-}
-
 static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
 {
     bool approvalNeeded = item.pref == Kleo::NeverEncrypt || item.keys.empty();
     if (!approvalNeeded && Kleo::DeVSCompliance::isCompliant()) {
-        approvalNeeded = !Kleo::all_of(item.keys, &keyIsCompliant);
+        approvalNeeded = !Kleo::all_of(item.keys, &Kleo::DeVSCompliance::keyIsCompliant);
     }
     return approvalNeeded;
 }
