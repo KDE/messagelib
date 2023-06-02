@@ -18,7 +18,6 @@
 #include "messagepartrendererfactory.h"
 #include "messagepartrenderermanager.h"
 #include "utils/iconnamecache.h"
-#include "utils/mimetype.h"
 #include "viewer/attachmentstrategy.h"
 #include "viewer/csshelperbase.h"
 
@@ -421,7 +420,11 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
     block.setProperty("detailHeader", showSignatureDetails());
     block.setProperty("isPrinting", isPrinting());
-    block.setProperty("addr", metaData.signerMailAddresses.join(QLatin1Char(',')));
+    QStringList endodedEmails;
+    for (const auto &addr : metaData.signerMailAddresses) {
+        endodedEmails.append(MessageCore::StringUtil::quoteHtmlChars(addr, true));
+    }
+    block.setProperty("addr", endodedEmails.join(QLatin1Char(',')));
     block.setProperty("technicalProblem", metaData.technicalProblem);
     block.setProperty("keyId", metaData.keyId);
     if (metaData.creationTime.isValid()) { // should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
@@ -525,7 +528,12 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                 }
 
                 if (!blockAddrs.empty()) {
-                    if (!blockAddrs.contains(msgFrom, Qt::CaseInsensitive)) {
+                    QStringList::ConstIterator end(blockAddrs.constEnd());
+                    QStringList extractedEmails;
+                    for (QStringList::ConstIterator it = blockAddrs.constBegin(); it != end; ++it) {
+                        extractedEmails.append(KEmailAddress::extractEmailAddress(*it));
+                    }
+                    if (!extractedEmails.contains(msgFrom, Qt::CaseInsensitive)) {
                         greenCaseWarning = QStringLiteral("<u>") + i18nc("Start of warning message.", "Warning:") + QStringLiteral("</u> ")
                             + i18n("Sender's mail address is not stored in the %1 used for signing.", certificate) + QStringLiteral("<br />") + i18n("sender: ")
                             + msgFrom + QStringLiteral("<br />") + i18n("stored: ");
@@ -534,14 +542,14 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                         // extract the mail addresses (without '<''>')
                         // before including it into our string:
                         bool bStart = true;
-                        QStringList::ConstIterator end(blockAddrs.constEnd());
-                        for (QStringList::ConstIterator it = blockAddrs.constBegin(); it != end; ++it) {
+                        QStringList::ConstIterator end(extractedEmails.constEnd());
+                        for (QStringList::ConstIterator it = extractedEmails.constBegin(); it != end; ++it) {
                             if (!bStart) {
                                 greenCaseWarning.append(QLatin1String(", <br />&nbsp; &nbsp;"));
                             }
 
                             bStart = false;
-                            greenCaseWarning.append(KEmailAddress::extractEmailAddress(*it));
+                            greenCaseWarning.append(*it);
                         }
                     }
                 } else {
@@ -560,7 +568,8 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                 } else {
                     if (!blockAddrs.empty()) {
                         const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl ::toPercentEncoding(address.path())), signer);
+                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>")
+                                     .arg(QLatin1String(QUrl ::toPercentEncoding(address.path())), MessageCore::StringUtil::quoteHtmlChars(signer, true));
                     }
                 }
             }

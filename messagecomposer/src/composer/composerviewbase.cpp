@@ -13,7 +13,6 @@
 #include "composer-ng/richtextcomposersignatures.h"
 #include "composer.h"
 #include "composer/keyresolver.h"
-#include "composer/nearexpirychecker.h"
 #include "composer/signaturecontroller.h"
 #include "draftstatus/draftstatus.h"
 #include "imagescaling/imagescalingutils.h"
@@ -59,6 +58,9 @@
 #include <KIdentityManagementWidgets/IdentityCombo>
 
 #include "messagecomposer_debug.h"
+
+#include <Libkleo/ExpiryChecker>
+#include <Libkleo/ExpiryCheckerSettings>
 
 #include <QGpgME/ExportJob>
 #include <QGpgME/ImportJob>
@@ -552,40 +554,40 @@ namespace
 {
 // helper methods for reading encryption settings
 
-inline int encryptOwnKeyNearExpiryWarningThresholdInDays()
+inline Kleo::chrono::days encryptOwnKeyNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
+        return Kleo::chrono::days{-1};
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnOwnEncrKeyNearExpiryThresholdDays();
-    return qMax(1, num);
+    return Kleo::chrono::days{qMax(1, num)};
 }
 
-inline int encryptKeyNearExpiryWarningThresholdInDays()
+inline Kleo::chrono::days encryptKeyNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
+        return Kleo::chrono::days{-1};
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnEncrKeyNearExpiryThresholdDays();
-    return qMax(1, num);
+    return Kleo::chrono::days{qMax(1, num)};
 }
 
-inline int encryptRootCertNearExpiryWarningThresholdInDays()
+inline Kleo::chrono::days encryptRootCertNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
+        return Kleo::chrono::days{-1};
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnEncrRootNearExpiryThresholdDays();
-    return qMax(1, num);
+    return Kleo::chrono::days{qMax(1, num)};
 }
 
-inline int encryptChainCertNearExpiryWarningThresholdInDays()
+inline Kleo::chrono::days encryptChainCertNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
+        return Kleo::chrono::days{-1};
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnEncrChaincertNearExpiryThresholdDays();
-    return qMax(1, num);
+    return Kleo::chrono::days{qMax(1, num)};
 }
 
 inline bool showKeyApprovalDialog()
@@ -705,10 +707,10 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
     bool canceled = false;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
-    connect(nearExpiryChecker().data(),
-            &NearExpiryChecker::expiryMessage,
+    connect(expiryChecker().get(),
+            &Kleo::ExpiryChecker::expiryMessage,
             this,
-            [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info, bool isNewMessage) {
+            [&canceled](const GpgME::Key &key, QString msg, Kleo::ExpiryChecker::ExpiryInformation info, bool isNewMessage) {
                 if (!isNewMessage) {
                     return;
                 }
@@ -718,12 +720,12 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                 }
                 QString title;
                 QString dontAskAgainName;
-                if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OwnKeyNearExpiry) {
+                if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OwnKeyNearExpiry) {
                     dontAskAgainName = QStringLiteral("own key expires soon warning");
                 } else {
                     dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
                 }
-                if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OtherKeyExpired) {
+                if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OtherKeyExpired) {
                     title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired") : i18n("S/MIME Certificate Expired");
                 } else {
                     title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon") : i18n("S/MIME Certificate Expires Soon");
@@ -735,7 +737,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
             });
 
     QScopedPointer<Kleo::KeyResolver> keyResolver(
-        new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
+        new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, expiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
@@ -2242,13 +2244,13 @@ KMime::Message::Ptr ComposerViewBase::msg() const
     return m_msg;
 }
 
-NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
+std::shared_ptr<Kleo::ExpiryChecker> ComposerViewBase::expiryChecker()
 {
-    if (!mNearExpiryChecker) {
-        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptOwnKeyNearExpiryWarningThresholdInDays(),
-                                                                          encryptKeyNearExpiryWarningThresholdInDays(),
-                                                                          encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                                          encryptChainCertNearExpiryWarningThresholdInDays()));
+    if (!mExpiryChecker) {
+        mExpiryChecker.reset(new Kleo::ExpiryChecker{Kleo::ExpiryCheckerSettings{encryptOwnKeyNearExpiryWarningThresholdInDays(),
+                                                                                 encryptKeyNearExpiryWarningThresholdInDays(),
+                                                                                 encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                                                 encryptChainCertNearExpiryWarningThresholdInDays()}});
     }
-    return mNearExpiryChecker;
+    return mExpiryChecker;
 }

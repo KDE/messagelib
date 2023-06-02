@@ -14,8 +14,6 @@
 #include <Akonadi/Item>
 #include <KMime/Message>
 
-#include <MessageComposer/NearExpiryChecker>
-
 #include <Libkleo/Enum>
 #include <QList>
 #include <QObject>
@@ -53,6 +51,7 @@ class IdentityManager;
 
 namespace Kleo
 {
+class ExpiryChecker;
 class KeyResolver;
 }
 
@@ -237,7 +236,7 @@ public:
     Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
 
-    Q_REQUIRED_RESULT NearExpiryChecker::Ptr nearExpiryChecker();
+    Q_REQUIRED_RESULT std::shared_ptr<Kleo::ExpiryChecker> expiryChecker();
 
 public Q_SLOTS:
     void identityChanged(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, bool msgCleared = false);
@@ -389,7 +388,7 @@ private:
     MessageComposer::MessageSender::SendMethod mSendMethod;
     MessageComposer::MessageSender::SaveIn mSaveIn;
 
-    NearExpiryChecker::Ptr mNearExpiryChecker;
+    std::shared_ptr<Kleo::ExpiryChecker> mExpiryChecker;
 
     QDate mFollowUpDate;
     Akonadi::Collection mFollowUpCollection;

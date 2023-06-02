@@ -12,7 +12,7 @@
 */
 
 #include "composer/keyresolver.h"
-#include "composer/nearexpirychecker.h"
+
 #include "contactpreference/savecontactpreferencejob.h"
 
 #include "utils/kleo_util.h"
@@ -22,8 +22,7 @@
 
 #include <Libkleo/Algorithm>
 #include <Libkleo/Compliance>
-#include <Libkleo/Dn>
-#include <Libkleo/Formatting>
+#include <Libkleo/ExpiryChecker>
 #include <Libkleo/KeySelectionDialog>
 
 #include <QGpgME/KeyListJob>
@@ -66,18 +65,11 @@ static inline QString ItemDotAddress(const Kleo::KeyResolver::Item &item)
     return item.address;
 }
 
-static bool keyIsCompliant(const GpgME::Key &key)
-{
-    return (key.keyListMode() & GpgME::Validate) //
-        && Kleo::Formatting::uidsHaveFullValidity(key) //
-        && Kleo::Formatting::isKeyDeVs(key);
-}
-
 static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
 {
     bool approvalNeeded = item.pref == Kleo::NeverEncrypt || item.keys.empty();
     if (!approvalNeeded && Kleo::DeVSCompliance::isCompliant()) {
-        approvalNeeded = !Kleo::all_of(item.keys, &keyIsCompliant);
+        approvalNeeded = !Kleo::all_of(item.keys, &Kleo::DeVSCompliance::keyIsCompliant);
     }
     return approvalNeeded;
 }
@@ -623,21 +615,17 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
     using ContactPreferencesMap = std::map<QString, MessageComposer::ContactPreference>;
     ContactPreferencesMap mContactPreferencesMap;
     std::map<QByteArray, QString> mAutocryptMap;
-    MessageComposer::NearExpiryChecker::Ptr nearExpiryChecker;
+    std::shared_ptr<Kleo::ExpiryChecker> expiryChecker;
 };
 
-Kleo::KeyResolver::KeyResolver(bool encToSelf,
-                               bool showApproval,
-                               bool oppEncryption,
-                               unsigned int f,
-                               const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker)
+Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, const std::shared_ptr<Kleo::ExpiryChecker> &expiryChecker)
     : d(new KeyResolverPrivate)
     , mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)
     , mCryptoMessageFormats(f)
 {
-    d->nearExpiryChecker = nearExpiryChecker;
+    d->expiryChecker = expiryChecker;
 }
 
 Kleo::KeyResolver::~KeyResolver() = default;
@@ -680,11 +668,11 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
     std::vector<GpgME::Key>::const_iterator end(d->mOpenPGPEncryptToSelfKeys.end());
 
     for (auto it = d->mOpenPGPEncryptToSelfKeys.begin(); it != end; ++it) {
-        d->nearExpiryChecker->checkOwnKey(*it);
+        d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnEncryptionKey);
     }
     std::vector<GpgME::Key>::const_iterator end2(d->mSMIMEEncryptToSelfKeys.end());
     for (auto it = d->mSMIMEEncryptToSelfKeys.begin(); it != end2; ++it) {
-        d->nearExpiryChecker->checkOwnKey(*it);
+        d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnEncryptionKey);
     }
 
     return Kleo::Ok;
@@ -721,11 +709,11 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
     // check for near expiry:
 
     for (auto it = d->mOpenPGPSigningKeys.begin(), total = d->mOpenPGPSigningKeys.end(); it != total; ++it) {
-        d->nearExpiryChecker->checkOwnSigningKey(*it);
+        d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnSigningKey);
     }
 
     for (auto it = d->mSMIMESigningKeys.begin(), total = d->mSMIMESigningKeys.end(); it != total; ++it) {
-        d->nearExpiryChecker->checkOwnSigningKey(*it);
+        d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnSigningKey);
     }
 
     return Kleo::Ok;
@@ -991,7 +979,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         const std::vector<SplitInfo> si_list = encryptionItems(concreteCryptoMessageFormats[i]);
         for (auto sit = si_list.begin(), total = si_list.end(); sit != total; ++sit) {
             for (auto kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
-                d->nearExpiryChecker->checkKey(*kit);
+                d->expiryChecker->checkKey(*kit, Kleo::ExpiryChecker::EncryptionKey);
             }
         }
     }
