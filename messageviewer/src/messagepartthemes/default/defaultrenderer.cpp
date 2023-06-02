@@ -18,7 +18,6 @@
 #include "messagepartrendererfactory.h"
 #include "messagepartrenderermanager.h"
 #include "utils/iconnamecache.h"
-#include "utils/mimetype.h"
 #include "viewer/attachmentstrategy.h"
 #include "viewer/csshelperbase.h"
 

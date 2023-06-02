@@ -5,7 +5,6 @@
 */
 #pragma once
 
-#include "defaultrenderer.h"
 #include "messagepartrendererbase.h"
 
 #include <MimeTreeParser/MessagePart>
