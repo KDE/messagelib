@@ -608,7 +608,12 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                 }
 
                 if (!blockAddrs.empty()) {
-                    if (!blockAddrs.contains(msgFrom, Qt::CaseInsensitive)) {
+                    QStringList::ConstIterator end(blockAddrs.constEnd());
+                    QStringList extractedEmails;
+                    for (QStringList::ConstIterator it = blockAddrs.constBegin(); it != end; ++it) {
+                        extractedEmails.append(KEmailAddress::extractEmailAddress(*it));
+                    }
+                    if (!extractedEmails.contains(msgFrom, Qt::CaseInsensitive)) {
                         greenCaseWarning = QStringLiteral("<u>") + i18nc("Start of warning message.", "Warning:") + QStringLiteral("</u> ")
                             + i18n("Sender's mail address is not stored in the %1 used for signing.", certificate) + QStringLiteral("<br />") + i18n("sender: ")
                             + msgFrom + QStringLiteral("<br />") + i18n("stored: ");
@@ -617,14 +622,14 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                         // extract the mail addresses (without '<''>')
                         // before including it into our string:
                         bool bStart = true;
-                        QStringList::ConstIterator end(blockAddrs.constEnd());
-                        for (QStringList::ConstIterator it = blockAddrs.constBegin(); it != end; ++it) {
+                        QStringList::ConstIterator end(extractedEmails.constEnd());
+                        for (QStringList::ConstIterator it = extractedEmails.constBegin(); it != end; ++it) {
                             if (!bStart) {
                                 greenCaseWarning.append(QLatin1String(", <br />&nbsp; &nbsp;"));
                             }
 
                             bStart = false;
-                            greenCaseWarning.append(KEmailAddress::extractEmailAddress(*it));
+                            greenCaseWarning.append(*it);
                         }
                     }
                 } else {
