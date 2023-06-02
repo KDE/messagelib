@@ -292,7 +292,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mCreateMessageHeader(mp->message().data()));
-    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+    c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                  renderSubParts(mp, htmlWriter);
              }));
     HTMLBlock::Ptr aBlock;
@@ -356,7 +356,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
     if (node || mp->hasSubParts()) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
                      if (mp->content() && mp->isRoot()) {
                          rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -364,7 +364,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
                      renderSubParts(mp, htmlWriter);
                  }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }
@@ -400,7 +400,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     QObject block;
 
     if (node) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
                      if (mp->isRoot()) {
                          rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -408,7 +408,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                      renderSubParts(mp, htmlWriter);
                  }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }

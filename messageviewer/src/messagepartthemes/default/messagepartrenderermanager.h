@@ -23,7 +23,7 @@ namespace MessageViewer
 {
 class GlobalContext;
 
-using GrantleeCallback = std::function<void(KTextTemplate::OutputStream *)>;
+using KTextTemplateCallback = std::function<void(KTextTemplate::OutputStream *)>;
 /**
  * @brief The MessagePartRendererManager class
  */
@@ -44,4 +44,4 @@ private:
 };
 }
 
-Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
+Q_DECLARE_METATYPE(MessageViewer::KTextTemplateCallback)

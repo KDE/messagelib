@@ -38,7 +38,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
     KTextTemplate::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
     c.insert(QStringLiteral("showOnlyOneMimePart"), context->showOnlyOneMimePart());
-    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](KTextTemplate::OutputStream *) {
+    c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([mp, htmlWriter, context](KTextTemplate::OutputStream *) {
                  context->renderSubParts(mp, htmlWriter);
              }));
 

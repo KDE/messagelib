@@ -14,7 +14,7 @@
 
 namespace MessageViewer
 {
-using GrantleeCallback = std::function<void(KTextTemplate::OutputStream *)>;
+using KTextTemplateCallback = std::function<void(KTextTemplate::OutputStream *)>;
 
 class CallbackTag : public KTextTemplate::Node
 {
@@ -33,15 +33,15 @@ class CallbackTagFactory : public KTextTemplate::AbstractNodeFactory
 public:
     KTextTemplate::Node *getNode(const QString &tagContent, KTextTemplate::Parser *parser) const override;
 };
-class GrantleeTagLibrary : public QObject, public KTextTemplate::TagLibraryInterface
+class KTextTemplateTagLibrary : public QObject, public KTextTemplate::TagLibraryInterface
 {
     Q_OBJECT
     Q_INTERFACES(KTextTemplate::TagLibraryInterface)
     Q_PLUGIN_METADATA(IID "org.grantlee.TagLibraryInterface")
 public:
-    explicit GrantleeTagLibrary(QObject *parent = nullptr);
+    explicit KTextTemplateTagLibrary(QObject *parent = nullptr);
     Q_REQUIRED_RESULT QHash<QString, KTextTemplate::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
 }
 
-Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
+Q_DECLARE_METATYPE(MessageViewer::KTextTemplateCallback)

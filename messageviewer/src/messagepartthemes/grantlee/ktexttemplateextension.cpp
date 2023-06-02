@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "grantleeextension.h"
+#include "ktexttemplateextension.h"
 
 #include <KTextTemplate/Exception>
 #include <KTextTemplate/Parser>
@@ -19,7 +19,7 @@ CallbackTag::CallbackTag(const QString &name, QObject *parent)
 
 void CallbackTag::render(KTextTemplate::OutputStream *stream, KTextTemplate::Context *context) const
 {
-    auto cb = context->lookup(m_name).value<GrantleeCallback>();
+    auto cb = context->lookup(m_name).value<KTextTemplateCallback>();
     if (cb) {
         cb(stream);
     }
@@ -35,12 +35,12 @@ KTextTemplate::Node *CallbackTagFactory::getNode(const QString &tagContent, KTex
     return new CallbackTag(expr.at(1), parser);
 }
 
-GrantleeTagLibrary::GrantleeTagLibrary(QObject *parent)
+KTextTemplateTagLibrary::KTextTemplateTagLibrary(QObject *parent)
     : QObject(parent)
 {
 }
 
-QHash<QString, KTextTemplate::AbstractNodeFactory *> GrantleeTagLibrary::nodeFactories(const QString &name)
+QHash<QString, KTextTemplate::AbstractNodeFactory *> KTextTemplateTagLibrary::nodeFactories(const QString &name)
 {
     Q_UNUSED(name)
     QHash<QString, KTextTemplate::AbstractNodeFactory *> nodeFactories;

@@ -125,7 +125,7 @@ void MessagePartRendererManager::initializeRenderer()
     for (const auto &p : libraryPaths) {
         m_engine->addPluginPath(p + subPath);
     }
-    m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));
+    m_engine->addDefaultLibrary(QStringLiteral("messageviewer_ktexttemplate_extension"));
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
     auto loader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>(new KTextTemplate::FileSystemTemplateLoader());
     loader->setTemplateDirs({QStringLiteral(":/")});
