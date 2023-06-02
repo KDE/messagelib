@@ -500,7 +500,11 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
     block.setProperty("detailHeader", showSignatureDetails());
     block.setProperty("isPrinting", isPrinting());
-    block.setProperty("addr", metaData.signerMailAddresses.join(QLatin1Char(',')));
+    QStringList endodedEmails;
+    for (const auto &addr : metaData.signerMailAddresses) {
+        endodedEmails.append(MessageCore::StringUtil::quoteHtmlChars(addr, true));
+    }
+    block.setProperty("addr", endodedEmails.join(QLatin1Char(',')));
     block.setProperty("technicalProblem", metaData.technicalProblem);
     block.setProperty("keyId", metaData.keyId);
     if (metaData.creationTime.isValid()) { // should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
