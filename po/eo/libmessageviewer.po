@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 00:48+0000\n"
 "PO-Revision-Date: 2023-05-17 11:58+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1007,127 +1007,127 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Sendi Neon"
 
-#: messagepartthemes/default/defaultrenderer.cpp:76
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Eraro: subskribo ne kontrolata"
 
-#: messagepartthemes/default/defaultrenderer.cpp:80
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "Good signature"
 msgstr "Korekta subskribo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:84
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "Bad signature"
 msgstr "Malbona subskribo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:88
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Neniu publikŝlosilo por kontroli la subskribon"
 
-#: messagepartthemes/default/defaultrenderer.cpp:92
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "No signature found"
 msgstr "Subskribo ne trovita."
 
-#: messagepartthemes/default/defaultrenderer.cpp:96
+#: messagepartthemes/default/defaultrenderer.cpp:95
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Eraro dum kontrolo de subskribo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:100
+#: messagepartthemes/default/defaultrenderer.cpp:99
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Diversaj rezultoj por subskriboj"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:119
 #, kde-format
 msgid "No status information available."
 msgstr "Neniu stato haviĝebla"
 
-#: messagepartthemes/default/defaultrenderer.cpp:127
-#: messagepartthemes/default/defaultrenderer.cpp:212
+#: messagepartthemes/default/defaultrenderer.cpp:126
+#: messagepartthemes/default/defaultrenderer.cpp:211
 #, kde-format
 msgid "Good signature."
 msgstr "Korekta subskribo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:147
 #, kde-format
 msgid "One key has expired."
 msgstr "Ŝlosilo malvalidiĝis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:152
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "The signature has expired."
 msgstr "La subskribo malvalidiĝis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:156
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Ne eblas kontroli: Ŝlosilo mankas."
 
-#: messagepartthemes/default/defaultrenderer.cpp:164
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "CRL not available."
 msgstr "ANVLo ne uzebla."
 
-#: messagepartthemes/default/defaultrenderer.cpp:168
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Uzebla ANVLo estas tro malnova."
 
-#: messagepartthemes/default/defaultrenderer.cpp:172
+#: messagepartthemes/default/defaultrenderer.cpp:171
 #, kde-format
 msgid "A policy was not met."
 msgstr "Ĝi ne akordas kun iu direktivo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:176
+#: messagepartthemes/default/defaultrenderer.cpp:175
 #, kde-format
 msgid "A system error occurred."
 msgstr "Sistemeraro okazis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:187
+#: messagepartthemes/default/defaultrenderer.cpp:186
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Ŝlosilo estas reprenita."
 
-#: messagepartthemes/default/defaultrenderer.cpp:214
+#: messagepartthemes/default/defaultrenderer.cpp:213
 #, kde-format
 msgid "Bad signature."
 msgstr "Malbona subskribo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:602
-#: messagepartthemes/default/defaultrenderer.cpp:604
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "certificate"
 msgstr "atestilo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:609
-#: messagepartthemes/default/defaultrenderer.cpp:628
+#: messagepartthemes/default/defaultrenderer.cpp:617
+#: messagepartthemes/default/defaultrenderer.cpp:636
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Averto:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Retpoŝta adreso de la sendinto ne estas konservita en %1 por subskribi."
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "sender: "
 msgstr "sendinto: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:611
+#: messagepartthemes/default/defaultrenderer.cpp:619
 #, kde-format
 msgid "stored: "
 msgstr "konservita: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:629
+#: messagepartthemes/default/defaultrenderer.cpp:637
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

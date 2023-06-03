@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-24 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 00:48+0000\n"
 "PO-Revision-Date: 2023-05-15 15:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -107,7 +107,7 @@ msgid "Attach"
 msgstr "Долучити"
 
 #: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1899
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Долучити файл…"
@@ -388,37 +388,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "Не знайдено ключових даних щодо отримувачів."
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&Зберегти розмітку, не підписувати чи шифрувати"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&Зберегти розмітку, не шифрувати"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&Зберегти розмітку, не підписувати"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Підписати/зашифрувати (розмітку буде втрачено)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Зашифрувати (розмітку буде втрачено)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Підписати (розмітку буде втрачено)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:333
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -427,70 +427,70 @@ msgstr ""
 "<qt><p>Не вдалося виконати підписування чи шифрування повідомлення з "
 "вбудовуванням у HTML-повідомлення.</p><p>Хочете вилучити розмітку?</p></qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:335
 #, kde-format
 msgid "Sign/Encrypt Message?"
 msgstr "Підписати/зашифрувати повідомлення?"
 
-#: composer/composerviewbase.cpp:514
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Не вдалося створити вікно редактора повідомлень."
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:526
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Бажаєте змінити розміри зображень?"
 
-#: composer/composerviewbase.cpp:525
+#: composer/composerviewbase.cpp:527
 #, kde-format
 msgid "Auto Resize Images"
 msgstr "Автоматична зміна розмірів зображень"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Автоматична зміна"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:529
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Не змінювати розмірів"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "Ключ OpenPGP застарів"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME сертифікат застарів"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "Ключ OpenPGP скоро застаріє"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME сертифікат скоро застаріє"
 
-#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
-#: composer/composerviewbase.cpp:850
+#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
+#: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Не вдалося визначити ключі. Будь ласка, повідомте про ваду."
 
-#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Завдання скасовано користувачем"
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -499,38 +499,38 @@ msgstr ""
 "Не вдалося створити повідомлення: %1 \n"
 "Будь ласка, повідомте про цю помилку."
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Не вдалося створити повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Під час спроби додати повідомлення до черги надсилання виникли проблеми: %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Не вдалося автоматично зберегти повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Не вдалося записати до файла всі дані."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Не вдалося завершити запис файла."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
 msgstr "Не вдалося відкрити файл."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -541,17 +541,17 @@ msgstr ""
 "%2\n"
 "Причина: %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1365
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Помилка автозбереження повідомлення"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Не вдалося зберегти повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1895
+#: composer/composerviewbase.cpp:1897
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -562,17 +562,17 @@ msgstr ""
 "не долучили жодного файла.\n"
 "Бажаєте долучити файл?"
 
-#: composer/composerviewbase.cpp:1898
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Нагадування про долучення файла"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1902
 #, kde-format
 msgid "&Send as Is"
 msgstr "Надіслати &як є"
 
-#: composer/composerviewbase.cpp:1952
+#: composer/composerviewbase.cpp:1954
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -583,23 +583,23 @@ msgstr ""
 "виявлено, що слід визначитися, чи варто підписувати це повідомлення.\n"
 "Підписати це повідомлення?"
 
-#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Sign Message?"
 msgstr "Підписати повідомлення?"
 
-#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Підписати"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Не підписувати"
 
-#: composer/composerviewbase.cpp:1981
+#: composer/composerviewbase.cpp:1983
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -609,7 +609,7 @@ msgstr ""
 "надісланих до них.\n"
 "Підписати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2010
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -618,17 +618,17 @@ msgstr ""
 "Ви запитали на підписування цього повідомлення, але для цього профілю не "
 "вказано жодного ключа для підписування."
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Надіслати без підпису?"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Надіслати &без підпису"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2027
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -640,7 +640,7 @@ msgstr ""
 "листування.\n"
 "Підписати всі частини?"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -651,27 +651,27 @@ msgstr ""
 "Надсилання непідписаних повідомлень може порушити правила листування.\n"
 "Підписати повідомлення?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Підписати всі частини"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign"
 msgstr "&Підписати"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Попередження щодо непідписаного повідомлення"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid "Send &As Is"
 msgstr "Надіслати &як є"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -680,7 +680,7 @@ msgstr ""
 "Для всіх адресатів було знайдено дійсні ключі, що мають довіру.\n"
 "Чи зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -691,34 +691,34 @@ msgstr ""
 "виявлено, що слід визначитися, чи слід шифрувати це повідомлення.\n"
 "Зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2123
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Зашифрувати повідомлення?"
 
-#: composer/composerviewbase.cpp:2094
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Підписати та &зашифрувати"
 
-#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
-#: composer/keyresolver.cpp:1368
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Зашифрувати"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Sign Only"
 msgstr "Т&ільки підписати"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Надіслати як є"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2118
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -728,12 +728,12 @@ msgstr ""
 "надісланих до них.\n"
 "Зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2127
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Не зашифровувати"
 
-#: composer/composerviewbase.cpp:2145
+#: composer/composerviewbase.cpp:2147
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -744,17 +744,17 @@ msgstr ""
 "але для цього профілю не встановлено чинних ключів для шифрування, що мають "
 "довіру."
 
-#: composer/composerviewbase.cpp:2149
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Надіслати незашифрованим?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
+#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Надіслати &незашифрованим"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -767,7 +767,7 @@ msgstr ""
 "листування.\n"
 "Зашифрувати всі частини?"
 
-#: composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -779,17 +779,17 @@ msgstr ""
 "Надсилання незашифрованих повідомлень може порушити правила листування.\n"
 "Зашифрувати повідомлення?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2174
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Зашифровувати всі частини"
 
-#: composer/composerviewbase.cpp:2175
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Попередження щодо незашифрованогоповідомлення"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:309
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -798,7 +798,7 @@ msgstr ""
 "Один або декілька з налаштованих вами ключів шифрування OpenPGP або "
 "сертифікатів S/MIME не є досить надійними для шифрування."
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:313
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -807,7 +807,7 @@ msgstr ""
 "Один або декілька з ключів шифрування OpenPGP або сертифікатів S/MIME для "
 "отримувача «%1» не є досить надійними для шифрування."
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:320
 #, kde-format
 msgid ""
 "\n"
@@ -816,7 +816,7 @@ msgstr ""
 "\n"
 "Наступні ключі мають лише обмежену надійність: \n"
 
-#: composer/keyresolver.cpp:332
+#: composer/keyresolver.cpp:324
 #, kde-format
 msgid ""
 "\n"
@@ -825,7 +825,7 @@ msgstr ""
 "\n"
 "Наступні ключі або сертифікати мають невідомий рівень надійності: \n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -834,12 +834,12 @@ msgstr ""
 "\n"
 "Наступні ключі або сертифікати <b>відкликано</b>: \n"
 
-#: composer/keyresolver.cpp:342
+#: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Не повністю надійні ключі для шифрування"
 
-#: composer/keyresolver.cpp:660
+#: composer/keyresolver.cpp:648
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -856,13 +856,13 @@ msgstr ""
 "Якщо ви продовжите, а пізніше знадобляться ключі, програма попросить вас "
 "вказати ключі, які потрібно буде використати."
 
-#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
-#: composer/keyresolver.cpp:1052
+#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
+#: composer/keyresolver.cpp:1040
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Непридатні ключі для шифрування"
 
-#: composer/keyresolver.cpp:702
+#: composer/keyresolver.cpp:690
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -878,13 +878,13 @@ msgstr ""
 "Якщо ви продовжите, а пізніше знадобляться ключі, програма попросить вас "
 "вказати ключі, які потрібно буде використати."
 
-#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
-#: composer/keyresolver.cpp:1099
+#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
+#: composer/keyresolver.cpp:1087
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Непридатні ключі для підписування"
 
-#: composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1001
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -901,7 +901,7 @@ msgstr ""
 "Можна продовжити не зашифрував повідомлення для себе; якщо це зробити, то ви "
 "не зможете прочитати власні зашифровані повідомлення."
 
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:1030
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -918,7 +918,7 @@ msgstr ""
 "Можна продовжити не зашифрувавши повідомлення для себе; якщо це зробити, ви "
 "не зможете прочитати власні зашифровані повідомлення."
 
-#: composer/keyresolver.cpp:1074
+#: composer/keyresolver.cpp:1062
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -932,12 +932,12 @@ msgstr ""
 "Але для цього профілю ви не налаштували коректних OpenPGP ключів для "
 "підписування."
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1070
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Не виконувати OpenPGP підписування"
 
-#: composer/keyresolver.cpp:1092
+#: composer/keyresolver.cpp:1080
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -951,12 +951,12 @@ msgstr ""
 "Але для цього профілю ви не налаштували правильних сертифікатів S/MIME для "
 "підписування."
 
-#: composer/keyresolver.cpp:1100
+#: composer/keyresolver.cpp:1088
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Не виконувати S/MIME підписування"
 
-#: composer/keyresolver.cpp:1162
+#: composer/keyresolver.cpp:1150
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -968,12 +968,12 @@ msgstr ""
 "підпису.\n"
 "Надіслати це повідомлення без підпису?"
 
-#: composer/keyresolver.cpp:1166
+#: composer/keyresolver.cpp:1154
 #, kde-format
 msgid "No signing possible"
 msgstr "Неможливо підписати"
 
-#: composer/keyresolver.cpp:1329
+#: composer/keyresolver.cpp:1317
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -982,13 +982,13 @@ msgstr ""
 "Ви не вибрали ключ для шифрування для себе. Це не дозволить вам розшифрувати "
 "ваше власне повідомлення, якщо ви не зашифруєте його."
 
-#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
-#: composer/keyresolver.cpp:1368
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Попередження про відсутність ключа"
 
-#: composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -997,7 +997,7 @@ msgstr ""
 "Ви не вибрали ключ шифрування для отримувача, тому повідомлення не буде "
 "зашифровано."
 
-#: composer/keyresolver.cpp:1351
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1006,7 +1006,7 @@ msgstr ""
 "Ви не вибрали ключ шифрування для жодного з отримувача, тому повідомлення не "
 "буде зашифровано."
 
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1348
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1015,7 +1015,7 @@ msgstr ""
 "Ви не вибрали ключ шифрування для одного з отримувач, — ця людина не зможе "
 "розшифрувати повідомлення, якщо його зашифрувати."
 
-#: composer/keyresolver.cpp:1364
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1024,12 +1024,12 @@ msgstr ""
 "Ви не вибрали ключ шифрування для декількох отримувачів, — вони не зможуть "
 "розшифрувати повідомлення, якщо його зашифрувати."
 
-#: composer/keyresolver.cpp:1440
+#: composer/keyresolver.cpp:1428
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Вибір ключа для шифрування"
 
-#: composer/keyresolver.cpp:1484
+#: composer/keyresolver.cpp:1472
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1043,7 +1043,7 @@ msgstr ""
 "\n"
 "Будь ласка, виберіть ще раз сертифікати для цього отримувача."
 
-#: composer/keyresolver.cpp:1556
+#: composer/keyresolver.cpp:1544
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1060,7 +1060,7 @@ msgstr ""
 "списку немає належного сертифіката, ви можете виконати пошук зовнішніх "
 "сертифікатів натисканням кнопки пошуку зовнішніх сертифікатів.</qt>"
 
-#: composer/keyresolver.cpp:1566
+#: composer/keyresolver.cpp:1554
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1073,582 +1073,6 @@ msgstr ""
 "Для «%1» знайдено більше одного сертифіката.\n"
 "\n"
 "Виберіть сертифікати, які слід використовувати для цього отримувача."
-
-#: composer/nearexpirychecker.cpp:68
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:74
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:80
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
-"менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів %1 "
-"дні тому.</p>"
-msgstr[2] ""
-"<p>OpenPGP ключ </p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів %1 "
-"днів тому.</p>"
-msgstr[3] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
-"менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:89
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:95
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:101
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
-"менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
-"менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>OpenPGP ключ </p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
-"менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
-"менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:121
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:129
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:137
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-"less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
-"days ago.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застарів "
-"менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застарів "
-"%1 дні тому.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застарів "
-"%1 днів тому.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застарів "
-"менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:147
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:155
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:163
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:179
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:185
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:191
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів менше, ніж %1 день тому.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів %1 дні тому.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів %1 днів тому.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застарів менше, ніж %1 день тому.</p>"
-
-#: composer/nearexpirychecker.cpp:204
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
-"%3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:212
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:220
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застаріє "
-"менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застаріє "
-"менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застаріє "
-"менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
-"сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</p><p>застаріє "
-"менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:230
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для підписування</p><p align=\"center"
-"\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:238
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center\"><b>"
-"%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:246
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>%4</"
-"b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> (серійний "
-"номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:262
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:268
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
-"(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
-
-#: composer/nearexpirychecker.cpp:274
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 день.</p>"
-msgstr[1] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 дні.</p>"
-msgstr[2] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 днів.</p>"
-msgstr[3] ""
-"<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
-"p><p>застаріє менше, ніж через %1 день.</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -3014,6 +2438,546 @@ msgstr "Агент розподілу пошти працює автономно
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Запустити"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
+#~ "менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
+#~ "%1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>OpenPGP ключ </p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
+#~ "%1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застарів "
+#~ "менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш OpenPGP ключ для підписування </p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш OpenPGP ключ для шифрування </p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
+#~ "менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
+#~ "менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>OpenPGP ключ </p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
+#~ "менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>OpenPGP ключ</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>застаріє "
+#~ "менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "%1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 "
+#~ "день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 "
+#~ "день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</"
+#~ "p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</"
+#~ "p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 дні тому.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів %1 днів тому.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застарів менше, ніж %1 день тому.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для підписування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката для шифрування</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Кореневий сертифікат</p><p align=center><b>%4</b></p><p>Вашого S/MIME "
+#~ "сертифіката</p><p align=center><b>%2</b> (серійний номер %3)</"
+#~ "p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через "
+#~ "%1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через "
+#~ "%1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через "
+#~ "%1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для підписування</p><p align="
+#~ "\"center\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через "
+#~ "%1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день."
+#~ "</p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</"
+#~ "p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 днів."
+#~ "</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката для шифрування</p><p align=\"center"
+#~ "\"><b>%2</b> (серійний номер %3)</p><p>застаріє менше, ніж через %1 день."
+#~ "</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Проміжний сертифікат гаранта сертифікації (CA)</p><p align=center><b>"
+#~ "%4</b></p><p>Вашого S/MIME сертифіката</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат для підписування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат для шифрування</p><p align=center><b>%2</b> "
+#~ "(серійний номер %3)</p><p>застаріє менше, ніж через %1 день.</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
+#~ msgstr[1] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 дні.</p>"
+#~ msgstr[2] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 днів.</p>"
+#~ msgstr[3] ""
+#~ "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер "
+#~ "%3)</p><p>застаріє менше, ніж через %1 день.</p>"
 
 #~ msgid ""
 #~ "The minimum number of days that the signature certificate should be valid "
