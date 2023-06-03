@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 02:39+0000\n"
 "PO-Revision-Date: 2023-03-10 07:29+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1021,128 +1021,128 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Pošlji zavrnitev"
 
-#: messagepartthemes/default/defaultrenderer.cpp:76
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Napaka: podpis ni preverjen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:80
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "Good signature"
 msgstr "Dober podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:84
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "Bad signature"
 msgstr "Slab podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:88
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Na voljo ni nobenega javnega ključa za preverjanje podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:92
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "No signature found"
 msgstr "Najdeno ni bil nobenega podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:96
+#: messagepartthemes/default/defaultrenderer.cpp:95
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Napaka med preverjanjem podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:100
+#: messagepartthemes/default/defaultrenderer.cpp:99
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Različni rezultati za podpise"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:119
 #, kde-format
 msgid "No status information available."
 msgstr "Podatki o stanju niso na voljo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:127
-#: messagepartthemes/default/defaultrenderer.cpp:212
+#: messagepartthemes/default/defaultrenderer.cpp:126
+#: messagepartthemes/default/defaultrenderer.cpp:211
 #, kde-format
 msgid "Good signature."
 msgstr "Dober podpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:147
 #, kde-format
 msgid "One key has expired."
 msgstr "En ključ je pretekel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:152
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "The signature has expired."
 msgstr "Podpis je pretekel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:156
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Ni mogoče preveriti: manjka ključ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:164
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL ni na voljo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:168
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL, ki je na voljo, je prestar."
 
-#: messagepartthemes/default/defaultrenderer.cpp:172
+#: messagepartthemes/default/defaultrenderer.cpp:171
 #, kde-format
 msgid "A policy was not met."
 msgstr "Pravilniku ni bilo zadoščeno."
 
-#: messagepartthemes/default/defaultrenderer.cpp:176
+#: messagepartthemes/default/defaultrenderer.cpp:175
 #, kde-format
 msgid "A system error occurred."
 msgstr "Prišlo je do sistemske napake."
 
-#: messagepartthemes/default/defaultrenderer.cpp:187
+#: messagepartthemes/default/defaultrenderer.cpp:186
 #, kde-format
 msgid "One key has been revoked."
 msgstr "En ključ je bil preklican."
 
-#: messagepartthemes/default/defaultrenderer.cpp:214
+#: messagepartthemes/default/defaultrenderer.cpp:213
 #, kde-format
 msgid "Bad signature."
 msgstr "Slab podpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:602
-#: messagepartthemes/default/defaultrenderer.cpp:604
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "certificate"
 msgstr "potrdilo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:609
-#: messagepartthemes/default/defaultrenderer.cpp:628
+#: messagepartthemes/default/defaultrenderer.cpp:617
+#: messagepartthemes/default/defaultrenderer.cpp:636
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Opozorilo:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Pošiljateljev e-poštni naslov ni shranjen v %1, ki se uporablja za "
 "podpisovanje."
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "sender: "
 msgstr "pošiljatelj: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:611
+#: messagepartthemes/default/defaultrenderer.cpp:619
 #, kde-format
 msgid "stored: "
 msgstr "shranjeno: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:629
+#: messagepartthemes/default/defaultrenderer.cpp:637
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

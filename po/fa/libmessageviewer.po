@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 02:39+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -1118,130 +1118,130 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "هم اکنون ارسال شود"
 
-#: messagepartthemes/default/defaultrenderer.cpp:76
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "خطا: امضا وارسی نشد"
 
-#: messagepartthemes/default/defaultrenderer.cpp:80
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "Good signature"
 msgstr "امضای خوب"
 
-#: messagepartthemes/default/defaultrenderer.cpp:84
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "امضای خوب"
 
-#: messagepartthemes/default/defaultrenderer.cpp:88
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "برای وارسی امضا، کلید عمومی وجود ندارد"
 
-#: messagepartthemes/default/defaultrenderer.cpp:92
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "No signature found"
 msgstr "امضایی یافت نشد"
 
-#: messagepartthemes/default/defaultrenderer.cpp:96
+#: messagepartthemes/default/defaultrenderer.cpp:95
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "خطای وارسی امضا"
 
-#: messagepartthemes/default/defaultrenderer.cpp:100
+#: messagepartthemes/default/defaultrenderer.cpp:99
 #, kde-format
 msgid "Different results for signatures"
 msgstr "نتایج متفاوت برای امضاها"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:119
 #, kde-format
 msgid "No status information available."
 msgstr "اطلاعات وضعیتی وجود ندارد."
 
-#: messagepartthemes/default/defaultrenderer.cpp:127
-#: messagepartthemes/default/defaultrenderer.cpp:212
+#: messagepartthemes/default/defaultrenderer.cpp:126
+#: messagepartthemes/default/defaultrenderer.cpp:211
 #, kde-format
 msgid "Good signature."
 msgstr "امضای خوب."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:147
 #, kde-format
 msgid "One key has expired."
 msgstr "یک کلید انقضا یافت."
 
-#: messagepartthemes/default/defaultrenderer.cpp:152
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "The signature has expired."
 msgstr "امضا انقضا یافت."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:156
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "قادر به وارسی نیست: فاقد کلید."
 
-#: messagepartthemes/default/defaultrenderer.cpp:164
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL وجود ندارد."
 
-#: messagepartthemes/default/defaultrenderer.cpp:168
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL موجود، بسیار قدیمی است."
 
-#: messagepartthemes/default/defaultrenderer.cpp:172
+#: messagepartthemes/default/defaultrenderer.cpp:171
 #, kde-format
 msgid "A policy was not met."
 msgstr "سیاستی دیده نشد."
 
-#: messagepartthemes/default/defaultrenderer.cpp:176
+#: messagepartthemes/default/defaultrenderer.cpp:175
 #, kde-format
 msgid "A system error occurred."
 msgstr "یک خطای سیستمی رخ داد."
 
-#: messagepartthemes/default/defaultrenderer.cpp:187
+#: messagepartthemes/default/defaultrenderer.cpp:186
 #, kde-format
 msgid "One key has been revoked."
 msgstr "یک کلید فسخ شده است."
 
-#: messagepartthemes/default/defaultrenderer.cpp:214
+#: messagepartthemes/default/defaultrenderer.cpp:213
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "امضای خوب."
 
-#: messagepartthemes/default/defaultrenderer.cpp:602
-#: messagepartthemes/default/defaultrenderer.cpp:604
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, fuzzy, kde-format
 #| msgid "Show certificate 0x%1"
 msgid "certificate"
 msgstr "نمایش گواهی‌نامه 0x%1"
 
-#: messagepartthemes/default/defaultrenderer.cpp:609
-#: messagepartthemes/default/defaultrenderer.cpp:628
+#: messagepartthemes/default/defaultrenderer.cpp:617
+#: messagepartthemes/default/defaultrenderer.cpp:636
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "اخطار:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr "نشانی نامه فرستند در %1 مورد استفاده برای امضا ذخیره نمی‌شود."
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "sender: "
 msgstr "ارسال‌کننده:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:611
+#: messagepartthemes/default/defaultrenderer.cpp:619
 #, kde-format
 msgid "stored: "
 msgstr "ذخیره‌شده:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:629
+#: messagepartthemes/default/defaultrenderer.cpp:637
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

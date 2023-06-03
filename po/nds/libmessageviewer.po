@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 02:39+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1088,130 +1088,130 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Liekers loosstüern"
 
-#: messagepartthemes/default/defaultrenderer.cpp:76
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Fehler: Ünnerschrift nich pröövt"
 
-#: messagepartthemes/default/defaultrenderer.cpp:80
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "Good signature"
 msgstr "Goot Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:84
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "Goot Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:88
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Keen apen Slötel för't Pröven vun de Ünnerschrift verföögbor"
 
-#: messagepartthemes/default/defaultrenderer.cpp:92
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "No signature found"
 msgstr "Keen Ünnerschrift funnen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:96
+#: messagepartthemes/default/defaultrenderer.cpp:95
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Fehler bi't Pröven vun de Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:100
+#: messagepartthemes/default/defaultrenderer.cpp:99
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Verscheden Resultaten för Ünnerschriften"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:119
 #, kde-format
 msgid "No status information available."
 msgstr "Keen Statusinformatschonen verföögbor."
 
-#: messagepartthemes/default/defaultrenderer.cpp:127
-#: messagepartthemes/default/defaultrenderer.cpp:212
+#: messagepartthemes/default/defaultrenderer.cpp:126
+#: messagepartthemes/default/defaultrenderer.cpp:211
 #, kde-format
 msgid "Good signature."
 msgstr "Ünnerschrift gellt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:147
 #, kde-format
 msgid "One key has expired."
 msgstr "Een Slötel is aflopen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:152
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "The signature has expired."
 msgstr "De Ünnerschrift is aflopen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:156
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Prööv nich mööglich: Slötel fehlt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:164
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "CRL not available."
 msgstr "ZTL nich verföögbor"
 
-#: messagepartthemes/default/defaultrenderer.cpp:168
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Verföögbor ZTL is to oolt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:172
+#: messagepartthemes/default/defaultrenderer.cpp:171
 #, kde-format
 msgid "A policy was not met."
 msgstr "En Regel wöör braken."
 
-#: messagepartthemes/default/defaultrenderer.cpp:176
+#: messagepartthemes/default/defaultrenderer.cpp:175
 #, kde-format
 msgid "A system error occurred."
 msgstr "Dat geev en Systeemfehler."
 
-#: messagepartthemes/default/defaultrenderer.cpp:187
+#: messagepartthemes/default/defaultrenderer.cpp:186
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Een Slötel wöör torüchropen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:214
+#: messagepartthemes/default/defaultrenderer.cpp:213
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "Ünnerschrift gellt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:602
-#: messagepartthemes/default/defaultrenderer.cpp:604
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, kde-format
 msgid "certificate"
 msgstr "Zertifikaat"
 
-#: messagepartthemes/default/defaultrenderer.cpp:609
-#: messagepartthemes/default/defaultrenderer.cpp:628
+#: messagepartthemes/default/defaultrenderer.cpp:617
+#: messagepartthemes/default/defaultrenderer.cpp:636
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Wohrschoen:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Den Senner sien Nettpostadress is nich binnen dat %1 sekert, dat för de "
 "Ünnerschrift bruukt wöör."
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "sender: "
 msgstr "Senner: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:611
+#: messagepartthemes/default/defaultrenderer.cpp:619
 #, kde-format
 msgid "stored: "
 msgstr "sekert: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:629
+#: messagepartthemes/default/defaultrenderer.cpp:637
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "

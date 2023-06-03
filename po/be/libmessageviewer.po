@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-08 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 02:39+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1148,128 +1148,128 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Даслаць зараз"
 
-#: messagepartthemes/default/defaultrenderer.cpp:76
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, fuzzy, kde-format
 msgid "Error: Signature not verified"
 msgstr "Памылка: не атрымоўваецца праверыць подпіс."
 
-#: messagepartthemes/default/defaultrenderer.cpp:80
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, fuzzy, kde-format
 msgid "Good signature"
 msgstr "Дакладны подпіс"
 
-#: messagepartthemes/default/defaultrenderer.cpp:84
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, fuzzy, kde-format
 msgid "Bad signature"
 msgstr "Дакладны подпіс"
 
-#: messagepartthemes/default/defaultrenderer.cpp:88
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, fuzzy, kde-format
 msgid "No public key to verify the signature"
 msgstr "Адсутнічае адчынены ключ для праверкі подпісу."
 
-#: messagepartthemes/default/defaultrenderer.cpp:92
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "No signature found"
 msgstr "Подпіс не знойдзены"
 
-#: messagepartthemes/default/defaultrenderer.cpp:96
+#: messagepartthemes/default/defaultrenderer.cpp:95
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Немагчыма праверыць подпіс"
 
-#: messagepartthemes/default/defaultrenderer.cpp:100
+#: messagepartthemes/default/defaultrenderer.cpp:99
 #, fuzzy, kde-format
 msgid "Different results for signatures"
 msgstr "Розныя вынікі для подпісаў"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:119
 #, fuzzy, kde-format
 msgid "No status information available."
 msgstr "Адсутнічае інфармацыя стану."
 
-#: messagepartthemes/default/defaultrenderer.cpp:127
-#: messagepartthemes/default/defaultrenderer.cpp:212
+#: messagepartthemes/default/defaultrenderer.cpp:126
+#: messagepartthemes/default/defaultrenderer.cpp:211
 #, fuzzy, kde-format
 msgid "Good signature."
 msgstr "Дакладны подпіс."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:147
 #, fuzzy, kde-format
 msgid "One key has expired."
 msgstr "Адзін ключ пратэрмінаваны."
 
-#: messagepartthemes/default/defaultrenderer.cpp:152
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, fuzzy, kde-format
 msgid "The signature has expired."
 msgstr "Подпіс пратэрмінаваная."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:156
 #, fuzzy, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Памылка пры праверцы: адсутнічае ключ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:164
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, fuzzy, kde-format
 msgid "CRL not available."
 msgstr "CRL недаступны."
 
-#: messagepartthemes/default/defaultrenderer.cpp:168
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, fuzzy, kde-format
 msgid "Available CRL is too old."
 msgstr "Наяўны CRL састарэлы."
 
-#: messagepartthemes/default/defaultrenderer.cpp:172
+#: messagepartthemes/default/defaultrenderer.cpp:171
 #, fuzzy, kde-format
 msgid "A policy was not met."
 msgstr "Правіла не падыходзіць."
 
-#: messagepartthemes/default/defaultrenderer.cpp:176
+#: messagepartthemes/default/defaultrenderer.cpp:175
 #, fuzzy, kde-format
 msgid "A system error occurred."
 msgstr "Адбылася сістэмная памылка."
 
-#: messagepartthemes/default/defaultrenderer.cpp:187
+#: messagepartthemes/default/defaultrenderer.cpp:186
 #, fuzzy, kde-format
 msgid "One key has been revoked."
 msgstr "Адзін з ключоў быў адкліканы."
 
-#: messagepartthemes/default/defaultrenderer.cpp:214
+#: messagepartthemes/default/defaultrenderer.cpp:213
 #, fuzzy, kde-format
 msgid "Bad signature."
 msgstr "Дакладны подпіс."
 
-#: messagepartthemes/default/defaultrenderer.cpp:602
-#: messagepartthemes/default/defaultrenderer.cpp:604
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:607
 #, fuzzy, kde-format
 #| msgid "Certificates"
 msgid "certificate"
 msgstr "Сертыфікаты"
 
-#: messagepartthemes/default/defaultrenderer.cpp:609
-#: messagepartthemes/default/defaultrenderer.cpp:628
+#: messagepartthemes/default/defaultrenderer.cpp:617
+#: messagepartthemes/default/defaultrenderer.cpp:636
 #, fuzzy, kde-format
 #| msgid "Warning:"
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Папярэджанне:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, fuzzy, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr "Адрас адпраўніка не паказаны ў %1, выкарыстоўваным для подпісу."
 
-#: messagepartthemes/default/defaultrenderer.cpp:610
+#: messagepartthemes/default/defaultrenderer.cpp:618
 #, fuzzy, kde-format
 msgid "sender: "
 msgstr "Адпраўнік:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:611
+#: messagepartthemes/default/defaultrenderer.cpp:619
 #, fuzzy, kde-format
 msgid "stored: "
 msgstr "захаваны:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:629
+#: messagepartthemes/default/defaultrenderer.cpp:637
 #, fuzzy, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
