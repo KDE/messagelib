@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-24 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 00:48+0000\n"
 "PO-Revision-Date: 2015-06-17 09:27+0800\n"
 "Last-Translator: Franklin\n"
 "Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
@@ -106,7 +106,7 @@ msgid "Attach"
 msgstr "附加"
 
 #: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1899
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "附加檔案(&A)..."
@@ -390,37 +390,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "找不到收件者的金鑰資料。"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "保存標記，不要加密或簽署(&K)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "保存標記，不要加密(&K)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "保存標記，不要簽署(&K)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "加密或簽署信件，刪除標記"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "加密信件，刪除標記"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "簽署信件，刪除標記"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:333
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -429,72 +429,72 @@ msgstr ""
 "<qt><p>無法對 HTML 信件做內含式簽署(Inline signing)或加密。</p> <p>您要刪除標"
 "記嗎？</p> </qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:335
 #, kde-format
 msgid "Sign/Encrypt Message?"
 msgstr "要簽署或加密信件嗎？"
 
-#: composer/composerviewbase.cpp:514
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "無法建立信件編輯器。"
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:526
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "您要調整影像大小嗎？"
 
-#: composer/composerviewbase.cpp:525
+#: composer/composerviewbase.cpp:527
 #, kde-format
 msgid "Auto Resize Images"
 msgstr "自動調整影像大小"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:528
 #, fuzzy, kde-format
 #| msgid "Auto Resize Images"
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "自動調整影像大小"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:529
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "不要簽署(&N)"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP 金鑰已到期"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME 憑證已到期"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP 金鑰即將過期失效"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME 憑證即將過期失效"
 
-#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
-#: composer/composerviewbase.cpp:850
+#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
+#: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "解析金鑰時失敗。請回報此錯誤。"
 
-#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "使用者取消工作"
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -503,37 +503,37 @@ msgstr ""
 "無法撰寫信件：%1\n"
 "請回報此錯誤。"
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "無法撰寫信件：%1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "將信件放入傳送佇列時發生問題：%1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "無法自動儲存信件：%1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "無法將所有資料寫入檔案。"
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "無法結束此檔案。"
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
 msgstr "無法開啟檔案。"
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -544,17 +544,17 @@ msgstr ""
 "%2\n"
 "理由：%3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1365
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "自動儲存信件失敗"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "儲存信件時失敗：%1"
 
-#: composer/composerviewbase.cpp:1895
+#: composer/composerviewbase.cpp:1897
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -564,17 +564,17 @@ msgstr ""
 "您似乎打算在信中附加檔案，但是忘了這麼做。\n"
 "您要在信件中附檔嗎？"
 
-#: composer/composerviewbase.cpp:1898
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "提醒附加檔"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1902
 #, kde-format
 msgid "&Send as Is"
 msgstr "就這樣送吧(&S)"
 
-#: composer/composerviewbase.cpp:1952
+#: composer/composerviewbase.cpp:1954
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -584,23 +584,23 @@ msgstr ""
 "收件人的簽署設定要求您確認是否要簽署此信件。\n"
 "要簽署此信件嗎？"
 
-#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Sign Message?"
 msgstr "要簽署信件嗎？"
 
-#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "簽署(&S)"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "不要簽署(&N)"
 
-#: composer/composerviewbase.cpp:1981
+#: composer/composerviewbase.cpp:1983
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -609,24 +609,24 @@ msgstr ""
 "這些收件人的簽署設定有衝突。\n"
 "要簽署信件嗎？"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2010
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr "您已要求簽署此信件，但是此身份沒有設定合法的簽署金鑰。"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "不簽署直接傳送嗎？"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "不簽署直接傳送(&U)"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2027
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -637,7 +637,7 @@ msgstr ""
 "不過部份簽署的信件有可能會違反站台政策。\n"
 "您要改成簽署整份信件嗎？"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -648,27 +648,27 @@ msgstr ""
 "不過傳送未簽署的信件有可能會違反站台政策。\n"
 "您要改成簽署信件嗎？"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "簽署整份信件(&S)"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign"
 msgstr "簽署(&S)"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "未簽署信件警告"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid "Send &As Is"
 msgstr "就這樣送吧(&A)"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -677,7 +677,7 @@ msgstr ""
 "所有的收件人都有合法受信任的加密金鑰。\n"
 "要加密此信件嗎？"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -687,34 +687,34 @@ msgstr ""
 "收件人的加密設定要求您確認是否要加密此信件。\n"
 "要加密此信件嗎？"
 
-#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2123
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "要加密信件嗎？"
 
-#: composer/composerviewbase.cpp:2094
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "簽署並加密(&E)"
 
-#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
-#: composer/keyresolver.cpp:1368
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "&Encrypt"
 msgstr "加密(&E)"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Sign Only"
 msgstr "只簽署(&S)"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Send As-Is"
 msgstr "就這樣送吧(&S)"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2118
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -723,12 +723,12 @@ msgstr ""
 "這些收件人的加密設定有衝突。\n"
 "要加密此信件嗎？"
 
-#: composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2127
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "不要加密(&N)"
 
-#: composer/composerviewbase.cpp:2145
+#: composer/composerviewbase.cpp:2147
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -738,17 +738,17 @@ msgstr ""
 "您已要求加密此信件，並傳送加密過的複本給您自己，但是此身份沒有設定合法受信任"
 "的加密金鑰。"
 
-#: composer/composerviewbase.cpp:2149
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "不加密直接傳送嗎？"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
+#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "不加密直接傳送(&U)"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -760,7 +760,7 @@ msgstr ""
 "不過部份加密的信件有可能會違反站台政策，並且可能洩露敏感資訊。\n"
 "您要改成加密整份信件嗎？"
 
-#: composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -772,24 +772,24 @@ msgstr ""
 "不過傳送未加密的信件有可能會違反站台政策，並且可能洩露敏感資訊。\n"
 "您要改成加密信件嗎？"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2174
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "加密整份信件(&E)"
 
-#: composer/composerviewbase.cpp:2175
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "未加密信件警告"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:309
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr "您設定的 OpenPGP 加密金鑰或 S/MIME 憑證並未完全被信任做加密。"
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:313
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -798,7 +798,7 @@ msgstr ""
 "有一個以上的收件人 \"%1\" 的 OpenPGP 加密金鑰或 S/MIME 憑證並未完全被信任做加"
 "密。"
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:320
 #, kde-format
 msgid ""
 "\n"
@@ -807,7 +807,7 @@ msgstr ""
 "\n"
 "以下的金鑰只被部份信任：\n"
 
-#: composer/keyresolver.cpp:332
+#: composer/keyresolver.cpp:324
 #, kde-format
 msgid ""
 "\n"
@@ -816,7 +816,7 @@ msgstr ""
 "\n"
 "以下的金鑰或憑證擁有未知的信任等級：\n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -825,12 +825,12 @@ msgstr ""
 "\n"
 "以下的金鑰或憑證已經<b>被撤銷</b>：\n"
 
-#: composer/keyresolver.cpp:342
+#: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "非完全信任的加密金鑰"
 
-#: composer/keyresolver.cpp:660
+#: composer/keyresolver.cpp:648
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -844,13 +844,13 @@ msgstr ""
 "設定您的加密金鑰或憑證。\n"
 "如果您要繼續，而稍後會需要加密時，系統會詢問您要使用哪個金鑰。"
 
-#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
-#: composer/keyresolver.cpp:1052
+#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
+#: composer/keyresolver.cpp:1040
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "此金鑰無法用於加密"
 
-#: composer/keyresolver.cpp:702
+#: composer/keyresolver.cpp:690
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -863,13 +863,13 @@ msgstr ""
 "設定重新設定您的簽署金鑰或憑證。\n"
 "如果您要繼續，而稍後會需要簽署時，系統會詢問您要使用哪個金鑰。"
 
-#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
-#: composer/keyresolver.cpp:1099
+#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
+#: composer/keyresolver.cpp:1087
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "此金鑰無法用於簽署"
 
-#: composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1001
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -883,7 +883,7 @@ msgstr ""
 "但是，您並未對這個身份設定可信任的 OpenPGP 加密金鑰。\n"
 "您可以選擇不要對自己加密，但是您就有可能無法讀取自己寫的信件。"
 
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:1030
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -897,7 +897,7 @@ msgstr ""
 "但是，您並未對這個身份設定可信任的 OpenPGP 加密金鑰。\n"
 "您可以選擇不要對自己加密，但是您就有可能無法讀取自己寫的信件。"
 
-#: composer/keyresolver.cpp:1074
+#: composer/keyresolver.cpp:1062
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -908,12 +908,12 @@ msgstr ""
 "根據您的設定，信件應該至少對部份的收件人使用 OpenPGP 簽署數位簽章。\n"
 "但是，您並未對這個身份設定可信任的 OpenPGP 簽署金鑰。"
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1070
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "不使用 OpenPGP 簽署"
 
-#: composer/keyresolver.cpp:1092
+#: composer/keyresolver.cpp:1080
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -924,12 +924,12 @@ msgstr ""
 "根據您的設定，信件應該至少對部份的收件人使用 S/MIME 簽署數位簽章。\n"
 "但是，您並未對這個身份設定可信任的 S/MIME 簽署金鑰。"
 
-#: composer/keyresolver.cpp:1100
+#: composer/keyresolver.cpp:1088
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "不使用 S/MIME 簽署"
 
-#: composer/keyresolver.cpp:1162
+#: composer/keyresolver.cpp:1150
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -939,58 +939,58 @@ msgstr ""
 "在您的設定中找不到與您的金鑰型態相符的簽名。\n"
 "要放棄簽署信件嗎？"
 
-#: composer/keyresolver.cpp:1166
+#: composer/keyresolver.cpp:1154
 #, kde-format
 msgid "No signing possible"
 msgstr "無法簽署信件"
 
-#: composer/keyresolver.cpp:1329
+#: composer/keyresolver.cpp:1317
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr "您沒有選擇對自己加密的金鑰。您將無法解開您自己所寫的信件。"
 
-#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
-#: composer/keyresolver.cpp:1368
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "警告：找不到金鑰"
 
-#: composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr "您沒有選擇對此收件人使用之加密金鑰。信件將不會加密。"
 
-#: composer/keyresolver.cpp:1351
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr "您沒有選擇對任一收件人使用之加密金鑰。信件將不會加密。"
 
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1348
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr "您沒有選擇對收件人之一使用之加密金鑰。如果您加密的話對方將無法解密。"
 
-#: composer/keyresolver.cpp:1364
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr "您沒有選擇對某些收件人使用之加密金鑰。如果您加密的話對方將無法解密。"
 
-#: composer/keyresolver.cpp:1440
+#: composer/keyresolver.cpp:1428
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "選擇加密金鑰"
 
-#: composer/keyresolver.cpp:1484
+#: composer/keyresolver.cpp:1472
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1004,7 +1004,7 @@ msgstr ""
 "\n"
 "請重新選擇使用之憑證。"
 
-#: composer/keyresolver.cpp:1556
+#: composer/keyresolver.cpp:1544
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1019,7 +1019,7 @@ msgstr ""
 "<qt>找不到 %1 的合法與受信任的加密憑證。<br/> <br/>請選擇要對此收件者使用的憑"
 "證。若沒有適合的憑證，您可以點擊「搜尋外部憑證」按鈕。</qt>"
 
-#: composer/keyresolver.cpp:1566
+#: composer/keyresolver.cpp:1554
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1032,414 +1032,6 @@ msgstr ""
 "有一個以上的憑證符合 %1。\n"
 "\n"
 "請選擇使用之憑證。"
-
-#: composer/nearexpirychecker.cpp:68
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 簽署金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>已在 %1 天前到期。</p>"
-
-#: composer/nearexpirychecker.cpp:74
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>已在 %1 天前到期。</p>"
-
-#: composer/nearexpirychecker.cpp:80
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>已在 %1 天前到期。</p>"
-
-#: composer/nearexpirychecker.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 簽署金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>將在 %1 天內到期。</p>"
-
-#: composer/nearexpirychecker.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>將在 %1 天內到期。</p>"
-
-#: composer/nearexpirychecker.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#| "p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#| "p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</p> "
-"<p>將在 %1 天內到期。</p>"
-
-#: composer/nearexpirychecker.cpp:121
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p>所使用"
-"的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>已在 %1 "
-"天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:129
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p>所使用"
-"的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>已在 %1 "
-"天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:137
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-"less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
-"days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使用的根"
-"憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>u32在 %1 天"
-"前到期</p>"
-
-#: composer/nearexpirychecker.cpp:147
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使"
-"用的中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center\"><b>"
-"%4</b></p> <p>已在 %1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:155
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使用"
-"的中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center\"><b>%4</"
-"b></p> <p>已在 %1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:163
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使用的"
-"中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center\"><b>%4</"
-"b></p> <p>已在 %1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:179
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3) </p> <p>"
-"已在 %1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:185
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3) </p><p>已"
-"在 %1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:191
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p><p align=\"center\"><b>%2</b></p><p>的 S/MIME 憑證（序號 %3） </p><p>已在 "
-"%1 天前到期</p>"
-
-#: composer/nearexpirychecker.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
-"align=\"center\">所使用的根憑證 (root certificate)</p> <p align=\"center"
-"\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
-"align=\"center\">所使用的根憑證 (root certificate)</p> <p align=\"center"
-"\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:220
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
-#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#| "p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
-#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#| "p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p align="
-"\"center\"> 所使用的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</"
-"b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
-"align =\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> <p "
-"align=\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:238
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
-#| "b> (serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
-#| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
-"align=\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> <p "
-"align=\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p align="
-"\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> <p align="
-"\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:262
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3) </p> <p>"
-"將在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:268
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3) </p><p>將"
-"在 %1 天內到期</p>"
-
-#: composer/nearexpirychecker.cpp:274
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p align=\"center\"><b>%2</b></p><p>的 S/MIME 憑證（序號 %3） </p><p>將在 %1 "
-"天內到期</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -2761,6 +2353,378 @@ msgstr "郵件配送代理程式已離線。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 簽署金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>已在 %1 天前到期。</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>已在 %1 天前到期。</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>已在 %1 天前到期。</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 簽署金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>將在 %1 天內到期。</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>將在 %1 天內到期。</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~| "p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~| "p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 OpenPGP 加密金鑰</p> <p align=\"center\"><b>%2</b>(KeyID 0x%3)</"
+#~ "p> <p>將在 %1 天內到期。</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p>所"
+#~ "使用的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>"
+#~ "已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p>所使"
+#~ "用的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>已"
+#~ "在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "%1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使用"
+#~ "的根憑證 (root certificate)</p> <p align=\"center\"><b>%4</b></p> <p>u32"
+#~ "在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所"
+#~ "使用的中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center"
+#~ "\"><b>%4</b></p> <p>已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所"
+#~ "使用的中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center"
+#~ "\"><b>%4</b></p> <p>已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p> 所使用"
+#~ "的中介 CA 憑證 (intermediate CA certificate)</p> <p align=\"center\"><b>"
+#~ "%4</b></p> <p>已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3) </p> "
+#~ "<p>已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3) </p><p>"
+#~ "已在 %1 天前到期</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p><p align=\"center\"><b>%2</b></p><p>的 S/MIME 憑證（序號 %3） </p><p>已"
+#~ "在 %1 天前到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align=\"center\">所使用的根憑證 (root certificate)</p> <p align=\"center"
+#~ "\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align=\"center\">所使用的根憑證 (root certificate)</p> <p align=\"center"
+#~ "\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
+#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#~| "p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
+#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#~| "p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align=\"center\"> 所使用的根憑證 (root certificate)</p> <p align=\"center"
+#~ "\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
+#~| "b> (serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
+#~| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align =\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> "
+#~ "<p align=\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
+#~| "%2</b> (serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
+#~| "%2</b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align=\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> "
+#~ "<p align=\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 憑證 </p><p align=\"center\"><b>%2</b> (序號 %3)</p><p "
+#~ "align=\"center\"> 所使用的中介 CA 憑證 (intermediate CA certificate)</p> "
+#~ "<p align=\"center\"><b>%4</b></p> <p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 簽署憑證 </p><p align=\"center\"><b>%2</b> (序號 %3) </p> "
+#~ "<p>將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>您的 S/MIME 加密憑證</p><p align=\"center\"><b>%2</b> (序號 %3) </p><p>"
+#~ "將在 %1 天內到期</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p align=\"center\"><b>%2</b></p><p>的 S/MIME 憑證（序號 %3） </p><p>將在 "
+#~ "%1 天內到期</p>"
 
 #~ msgid ""
 #~ "The minimum number of days that the signature certificate should be valid "

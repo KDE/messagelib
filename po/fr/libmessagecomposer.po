@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-24 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 00:48+0000\n"
 "PO-Revision-Date: 2023-05-17 18:02+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -114,7 +114,7 @@ msgid "Attach"
 msgstr "Joindre"
 
 #: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1899
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Joindre un fichier…"
@@ -397,37 +397,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&Conserver le marquage, ne pas signer / chiffrer"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&Conserver le marquage, ne pas chiffrer"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&Conserver le marquage, ne pas signer"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Signer / chiffrer (supprimer le marquage)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Chiffrer (supprimer le marquage)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Signer (supprimer le marquage)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:333
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -436,70 +436,70 @@ msgstr ""
 "<qt><p>La signature / chiffrage intégré de messages HTML est impossible.</"
 "p><p>Voulez-vous effacer votre marquage ?</p></qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:335
 #, kde-format
 msgid "Sign/Encrypt Message?"
 msgstr "Signer / chiffrer le message ?"
 
-#: composer/composerviewbase.cpp:514
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Il a été impossible de créer un éditeur de message."
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:526
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Voulez-vous redimensionner les images ?"
 
-#: composer/composerviewbase.cpp:525
+#: composer/composerviewbase.cpp:527
 #, kde-format
 msgid "Auto Resize Images"
 msgstr "Redimensionner automatiquement les images"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Redimensionner automatiquement"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:529
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Ne pas redimensionner"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "Clé « OpenPGP » expirée"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "Certificat S/MIME expiré"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "La clé OpenPGP expire bientôt"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Le certificat S/MIME expire bientôt"
 
-#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
-#: composer/composerviewbase.cpp:850
+#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
+#: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Impossible de résoudre les clés. Veuillez rapporter un bogue."
 
-#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Travail interrompu par l'utilisateur"
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -508,39 +508,39 @@ msgstr ""
 "Impossible d'éditer le message : %1 \n"
 " Veuillez rapporter ce bogue."
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Impossible d'éditer le message : %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Il y a eu des problèmes en essayant de mettre en file le message pour "
 "envoi : %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Impossible de sauvegarder automatiquement le message : %1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Impossible d'écrire toutes les données dans le fichier."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Impossible de finaliser le fichier."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
 msgstr "Impossible d'ouvrir le fichier."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -551,17 +551,17 @@ msgstr ""
 "%2\n"
 "Motif : %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1365
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Échec de l'enregistrement automatique"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Impossible d'enregistrer le message : %1"
 
-#: composer/composerviewbase.cpp:1895
+#: composer/composerviewbase.cpp:1897
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -572,17 +572,17 @@ msgstr ""
 "mais vous n'avez rien joint.\n"
 "Voulez-vous joindre un fichier à votre message ?"
 
-#: composer/composerviewbase.cpp:1898
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Rappel de fichier joint"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1902
 #, kde-format
 msgid "&Send as Is"
 msgstr "En&voyez tel quel"
 
-#: composer/composerviewbase.cpp:1952
+#: composer/composerviewbase.cpp:1954
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -593,23 +593,23 @@ msgstr ""
 "sera demandé s'il faut signer ou non ce message.\n"
 "Signer ce message ?"
 
-#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Sign Message?"
 msgstr "Signer le message ?"
 
-#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Signer"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Ne pas signer"
 
-#: composer/composerviewbase.cpp:1981
+#: composer/composerviewbase.cpp:1983
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -618,7 +618,7 @@ msgstr ""
 "Il y a des préférences de signature conflictuelles pour ces destinataires.\n"
 "Signer ce message ?"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2010
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -627,17 +627,17 @@ msgstr ""
 "Vous avez demandé de signer ce message, mais aucune clé de signature valable "
 "n'a été configurée pour cette identité."
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Envoyer non signé ?"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Envoyer &non signé"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2027
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -649,7 +649,7 @@ msgstr ""
 "politique du site.\n"
 "Signer toutes les parties à la place ?"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -660,27 +660,27 @@ msgstr ""
 "L'envoi de messages non signés pourrait violer la politique du site.\n"
 "Signer le message à la place ?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Signer toutes les parties"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign"
 msgstr "&Signer"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Avertissement de message non signé"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid "Send &As Is"
 msgstr "En&voyez tel quel"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -690,7 +690,7 @@ msgstr ""
 "destinataires.\n"
 "Voulez-vous chiffrer ce message ?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -701,34 +701,34 @@ msgstr ""
 "sera demandé s'il faut chiffrer ou non ce message.\n"
 "Chiffrer ce message ?"
 
-#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2123
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Chiffrer ce message ?"
 
-#: composer/composerviewbase.cpp:2094
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Signer et chiffr&er"
 
-#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
-#: composer/keyresolver.cpp:1368
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Chiffrer"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Signer seulement"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Send As-Is"
 msgstr "En&voyez tel quel"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2118
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -738,12 +738,12 @@ msgstr ""
 "destinataires.\n"
 "Signer ce message ?"
 
-#: composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2127
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Ne pas chiffrer"
 
-#: composer/composerviewbase.cpp:2145
+#: composer/composerviewbase.cpp:2147
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -754,17 +754,17 @@ msgstr ""
 "vous-même, mais aucune clé de chiffrement de confiance valable n'a été "
 "configurée pour cette identité."
 
-#: composer/composerviewbase.cpp:2149
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Envoyer non chiffré ?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
+#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Envoyer &non-chiffré"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -777,7 +777,7 @@ msgstr ""
 "politique du site et / ou faire fuir des informations sensibles.\n"
 "Chiffrer toutes les parties à la place ?"
 
-#: composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -790,17 +790,17 @@ msgstr ""
 "ou faire fuir des informations sensibles.\n"
 "Chiffrer le message à la place ?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2174
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Chiffrer toutes les parties"
 
-#: composer/composerviewbase.cpp:2175
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Avertissement de message non chiffré"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:309
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -809,7 +809,7 @@ msgstr ""
 "Une ou plusieurs de vos clés de chiffrage OpenPGP ou de vos certificats S/"
 "MIME configurés ne sont pas suffisamment de confiance pour le chiffrage."
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:313
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -819,7 +819,7 @@ msgstr ""
 "MIME pour le destinataire « %1 » ne sont pas suffisamment de confiance pour "
 "le chiffrage."
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:320
 #, kde-format
 msgid ""
 "\n"
@@ -828,7 +828,7 @@ msgstr ""
 "\n"
 "Les clés suivantes ne sont que partiellement de confiance : \n"
 
-#: composer/keyresolver.cpp:332
+#: composer/keyresolver.cpp:324
 #, kde-format
 msgid ""
 "\n"
@@ -837,7 +837,7 @@ msgstr ""
 "\n"
 "Les clés ou certificats suivants ont un niveau de confiance inconnu : \n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -846,12 +846,12 @@ msgstr ""
 "\n"
 "Les clés ou certificats suivants sont <b>révoqués</b> : \n"
 
-#: composer/keyresolver.cpp:342
+#: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Clés de chiffrage de confiance limitée"
 
-#: composer/keyresolver.cpp:660
+#: composer/keyresolver.cpp:648
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -868,13 +868,13 @@ msgstr ""
 "Si vous choisissez de continuer, et que les clés sont requises plus tard, il "
 "vous sera demandé de préciser les clés à utiliser."
 
-#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
-#: composer/keyresolver.cpp:1052
+#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
+#: composer/keyresolver.cpp:1040
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Clés de chiffrage inutilisables"
 
-#: composer/keyresolver.cpp:702
+#: composer/keyresolver.cpp:690
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -890,13 +890,13 @@ msgstr ""
 "Si vous choisissez de continuer, et que les clés sont requises plus tard, il "
 "vous sera demandé de préciser les clés à utiliser."
 
-#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
-#: composer/keyresolver.cpp:1099
+#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
+#: composer/keyresolver.cpp:1087
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Clés de signature inutilisables"
 
-#: composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1001
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -912,7 +912,7 @@ msgstr ""
 "Vous pouvez continuer sans chiffrage pour vous-même mais soyez avertis que "
 "vous ne serez pas capable de lire vos propres messages si vous faites ainsi."
 
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:1030
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -928,7 +928,7 @@ msgstr ""
 "Vous pouvez continuer sans chiffrage pour vous-même mais soyez avertis que "
 "vous ne serez pas capable de lire vos propres messages si vous faites ainsi."
 
-#: composer/keyresolver.cpp:1074
+#: composer/keyresolver.cpp:1062
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -942,12 +942,12 @@ msgstr ""
 "Cependant vous n'avez pas configuré de certificats de signature OpenGPG "
 "valable pour cette identité."
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1070
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Ne pas signer avec OpenGPG"
 
-#: composer/keyresolver.cpp:1092
+#: composer/keyresolver.cpp:1080
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -961,12 +961,12 @@ msgstr ""
 "Cependant vous n'avez pas configuré de certificats de signature S/MIME "
 "valable pour cette identité."
 
-#: composer/keyresolver.cpp:1100
+#: composer/keyresolver.cpp:1088
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Ne pas signer avec S/MIME"
 
-#: composer/keyresolver.cpp:1162
+#: composer/keyresolver.cpp:1150
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -978,12 +978,12 @@ msgstr ""
 "disponibles.\n"
 "Envoyer le message sans le signer ?"
 
-#: composer/keyresolver.cpp:1166
+#: composer/keyresolver.cpp:1154
 #, kde-format
 msgid "No signing possible"
 msgstr "Pas de signature possible"
 
-#: composer/keyresolver.cpp:1329
+#: composer/keyresolver.cpp:1317
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -993,13 +993,13 @@ msgstr ""
 "chiffrage). Vous ne pourrez pas déchiffrer vos propres messages si vous les "
 "chiffrez."
 
-#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
-#: composer/keyresolver.cpp:1368
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Avertissement de clé manquante"
 
-#: composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1008,7 +1008,7 @@ msgstr ""
 "Vous n'avez pas sélectionné de clé de chiffrage pour le destinataire de ce "
 "message ; par conséquent le message ne sera pas chiffré."
 
-#: composer/keyresolver.cpp:1351
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1017,7 +1017,7 @@ msgstr ""
 "Vous n'avez pas sélectionné de clé de chiffrage pour aucun des destinataires "
 "de ce message ; par conséquent le message ne sera pas chiffré."
 
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1348
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1027,7 +1027,7 @@ msgstr ""
 "de ce message : cette personne ne pourra pas déchiffrer le message si vous "
 "le chiffrez."
 
-#: composer/keyresolver.cpp:1364
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1037,12 +1037,12 @@ msgstr ""
 "destinataires de ce message : ces personnes ne pourront pas déchiffrer le "
 "message si vous le chiffrez."
 
-#: composer/keyresolver.cpp:1440
+#: composer/keyresolver.cpp:1428
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Sélection de la clé de chiffrage"
 
-#: composer/keyresolver.cpp:1484
+#: composer/keyresolver.cpp:1472
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1057,7 +1057,7 @@ msgstr ""
 "Veuillez re-sélectionner le ou les certificats qui devraient être utilisées "
 "pour ce destinataire."
 
-#: composer/keyresolver.cpp:1556
+#: composer/keyresolver.cpp:1544
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1075,7 +1075,7 @@ msgstr ""
 "la liste, vous pouvez également en chercher dans les certificats externes en "
 "cliquant sur ce bouton : rechercher des certificats externes.</qt>"
 
-#: composer/keyresolver.cpp:1566
+#: composer/keyresolver.cpp:1554
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1089,414 +1089,6 @@ msgstr ""
 "\n"
 "Sélectionner le ou les certificats qui devraient être utilisées pour ce "
 "destinataire."
-
-#: composer/nearexpirychecker.cpp:68
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:74
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:80
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
-"expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
-"expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:89
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:95
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:101
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>La clé « OpenPGP » pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expire dans %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:121
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:129
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:137
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-"less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
-"days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
-"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
-"expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
-"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
-"expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:147
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:155
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
-"%3)</p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:163
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
-"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
-"expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
-"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
-"expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:179
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
-"de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
-"de série %3)<p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:185
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
-"de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
-"de série %3)<p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:191
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de série "
-"%3)<p><p>a expiré il y a moins d'une journée.</p>"
-msgstr[1] ""
-"<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de série "
-"%3)<p><p>a expiré il y a %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:204
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat « S / MIME » de signature </p><p align=center><b>%2</b> (numéro "
-"de série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=\"center\"><b>%4</b></p><p>pour votre "
-"certificat de signature S/MIME</p><p align=\"center\"><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:212
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat « S / MIME » de chiffrage </p><p align=center><b>%2</b> (numéro "
-"de série %3) ;</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
-"certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:220
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
-"certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série %3)</"
-"p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
-"certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série %3)</"
-"p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:230
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour votre certificat « S / MIME » de signature</p><p align=center><b>"
-"%2</b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour votre certificat « S / MIME » de signature</p><p align=center><b>"
-"%2</b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:238
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour votre certificat « S / MIME » de chiffrage</p><p align=center><b>"
-"%2</b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour votre certificat « S / MIME » de chiffrage</p><p align=center><b>"
-"%2</b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:246
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
-"p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:262
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</b> "
-"(numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</b> "
-"(numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:268
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> "
-"(numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> "
-"(numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
-
-#: composer/nearexpirychecker.cpp:274
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans moins d'un jour.</p>"
-msgstr[1] ""
-"<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro de "
-"série %3)</p><p>expire dans moins de %1 jours.</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -2862,6 +2454,370 @@ msgstr "Répartiteur de messagerie hors-ligne."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Définir en ligne"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
+#~ "expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
+#~ "expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID "
+#~ "0x%3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>La clé « OpenPGP » pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expire dans %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "%1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</"
+#~ "p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</"
+#~ "p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour "
+#~ "votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour "
+#~ "votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour "
+#~ "votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour "
+#~ "votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</"
+#~ "p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</"
+#~ "p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> "
+#~ "(numéro de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> "
+#~ "(numéro de série %3)<p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> "
+#~ "(numéro de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> "
+#~ "(numéro de série %3)<p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)<p><p>a expiré il y a moins d'une journée.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de "
+#~ "série %3)<p><p>a expiré il y a %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat « S / MIME » de signature </p><p align=center><b>%2</b> "
+#~ "(numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=\"center\"><b>%4</b></p><p>pour votre "
+#~ "certificat de signature S/MIME</p><p align=\"center\"><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat « S / MIME » de chiffrage </p><p align=center><b>%2</b> "
+#~ "(numéro de série %3) ;</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+#~ "certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série "
+#~ "%3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+#~ "certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série "
+#~ "%3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour votre certificat « S / MIME » de signature</p><p "
+#~ "align=center><b>%2</b> (numéro de série %3)</p><p>expire dans moins d'un "
+#~ "jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour votre certificat « S / MIME » de signature</p><p "
+#~ "align=center><b>%2</b> (numéro de série %3)</p><p>expire dans moins de %1 "
+#~ "jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour votre certificat « S / MIME » de chiffrage</p><p "
+#~ "align=center><b>%2</b> (numéro de série %3)</p><p>expire dans moins d'un "
+#~ "jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour votre certificat « S / MIME » de chiffrage</p><p "
+#~ "align=center><b>%2</b> (numéro de série %3)</p><p>expire dans moins de %1 "
+#~ "jours.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+#~ "p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</"
+#~ "b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</"
+#~ "b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</"
+#~ "b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</"
+#~ "b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans moins d'un jour.</p>"
+#~ msgstr[1] ""
+#~ "<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro "
+#~ "de série %3)</p><p>expire dans moins de %1 jours.</p>"
 
 #~ msgid ""
 #~ "The minimum number of days that the signature certificate should be valid "

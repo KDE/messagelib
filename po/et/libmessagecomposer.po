@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-24 00:48+0000\n"
+"POT-Creation-Date: 2023-06-03 00:48+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -105,7 +105,7 @@ msgid "Attach"
 msgstr "Kaasamine"
 
 #: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1899
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "Kaasa &fail..."
@@ -386,37 +386,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "Saajate võtmeandmeid ei leitud."
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&Säilita märkekeel, ära allkirjasta/krüpti"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&Säilita märkekeel, ära krüpti"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&Säilita märkekeel, ära allkirjasta"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Allkirjasta/krüpti (kustutab märkekeele)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Krüpti (kustutab märkekeele)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Allkirjasta (kustutab märkekeele)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:333
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -425,72 +425,72 @@ msgstr ""
 "<qt><p>HTML-kirjade sisene allkirjastamine/krüptimine ei ole võimalik.</"
 "p><p>Kas soovid märkekeele kustutada?</p></qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:335
 #, kde-format
 msgid "Sign/Encrypt Message?"
 msgstr "Kas allkirjastada/krüptida kiri?"
 
-#: composer/composerviewbase.cpp:514
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Kirjakoostaja loomine nurjus."
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:526
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Kas muuta piltide suurust?"
 
-#: composer/composerviewbase.cpp:525
+#: composer/composerviewbase.cpp:527
 #, kde-format
 msgid "Auto Resize Images"
 msgstr "Automaatne piltide suuruse muutmine"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:528
 #, fuzzy, kde-format
 #| msgid "Auto Resize Images"
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Automaatne piltide suuruse muutmine"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:529
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Ä&ra allkirjasta"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP võti on aegunud"
 
-#: composer/composerviewbase.cpp:727
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME sertifikaat on aegunud"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP võti aegub varsti"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:731
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME sertifikaat aegub varsti"
 
-#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
-#: composer/composerviewbase.cpp:850
+#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
+#: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Võtmete lahendamine nurjus. Palun anna veast teada."
 
-#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Kasutaja katkestas töö"
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -499,37 +499,37 @@ msgstr ""
 "Viga kirja koostamisel: %1\n"
 " Palun anna veast teada."
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Viga kirja koostamisel: %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Kirja panemisel järjekorda saatmiseks tekkis viga: %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Kirja automaatne salvestamine nurjus: %1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Kõigi andmete kirjutamine faili nurjus."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Faili lõpetamine nurjus."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
 msgstr "Faili avamine nurjus."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -540,17 +540,17 @@ msgstr ""
 "%2\n"
 "Põhjus: %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1365
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Kirja automaatne salvestamine nurjus"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Kirja salvestamine nurjus: %1"
 
-#: composer/composerviewbase.cpp:1895
+#: composer/composerviewbase.cpp:1897
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -561,17 +561,17 @@ msgstr ""
 "lisanud.\n"
 "Kas soovid nüüd kirjale faili lisada?"
 
-#: composer/composerviewbase.cpp:1898
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Faili kaasamise meeldetuletus"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1902
 #, kde-format
 msgid "&Send as Is"
 msgstr "&Saada nagu on"
 
-#: composer/composerviewbase.cpp:1952
+#: composer/composerviewbase.cpp:1954
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -582,23 +582,23 @@ msgstr ""
 "kas kiri allkirjastada või mitte.\n"
 "Kas kiri allkirjastada?"
 
-#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Sign Message?"
 msgstr "Kas allkirjastada kiri?"
 
-#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Allkirja&sta"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "Ä&ra allkirjasta"
 
-#: composer/composerviewbase.cpp:1981
+#: composer/composerviewbase.cpp:1983
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -607,7 +607,7 @@ msgstr ""
 "Saajate allkirjastamiseelistused on konfliktis.\n"
 "Kas kiri allkirjastada?"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2010
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -616,17 +616,17 @@ msgstr ""
 "Soovisid kirja allkirjastada, kuid antud identiteedile ei ole seadistatud "
 "ühtki kehtivat allkirjavõtit."
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Kas saata allkirjastamata?"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Saada allkir&jastamata"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2027
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -637,7 +637,7 @@ msgstr ""
 "Ainult osaliselt allkirjastatud kirja saatmine võib rikkuda reegleid.\n"
 "Kas allkirjastada kõik osad?"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -648,27 +648,27 @@ msgstr ""
 "Allkirjastamata kirja saatmine võib rikkuda reegleid.\n"
 "Kas kiri allkirjastada?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Allkirja&sta kõik osad"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "&Sign"
 msgstr "Allkirja&sta"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Allkirjastamata kirja hoiatus"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid "Send &As Is"
 msgstr "S&aada nagu on"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -677,7 +677,7 @@ msgstr ""
 "Kõigile saajatele leiti kehtivad usaldusväärsed krüptovõtmed.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -688,34 +688,34 @@ msgstr ""
 "krüptida või mitte.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2123
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Kas krüptida kiri?"
 
-#: composer/composerviewbase.cpp:2094
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Allk&irjasta ja krüpti"
 
-#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2124
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1332
-#: composer/keyresolver.cpp:1368
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "&Encrypt"
 msgstr "Krüpt&i"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Sign Only"
 msgstr "Ainult allkirja&sta"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Saada nagu on"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2118
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -724,12 +724,12 @@ msgstr ""
 "Saajate krüptoeelistused on konfliktis.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2127
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "Ä&ra krüpti"
 
-#: composer/composerviewbase.cpp:2145
+#: composer/composerviewbase.cpp:2147
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -739,17 +739,17 @@ msgstr ""
 "Soovisid krüptida kirja ja selle koopiat iseendale, kuid antud identiteedile "
 "ei ole seadistatud ühtki kehtivat usaldusväärset krüptovõtit."
 
-#: composer/composerviewbase.cpp:2149
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Kas saata krüptimata?"
 
-#: composer/composerviewbase.cpp:2149 composer/keyresolver.cpp:1354
+#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Saada &krüptimata"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -762,7 +762,7 @@ msgstr ""
 "kaasa tundliku info lekkimise.\n"
 "Kas krüptida kirja kõik osad?"
 
-#: composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -775,17 +775,17 @@ msgstr ""
 "info lekkimise.\n"
 "Kas krüptida kiri?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2174
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Krüpt&i kõik osad"
 
-#: composer/composerviewbase.cpp:2175
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Krüptimata kirja hoiatus"
 
-#: composer/keyresolver.cpp:317
+#: composer/keyresolver.cpp:309
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -794,7 +794,7 @@ msgstr ""
 "Vähemalt üks sinu seadistatud OpenPGP krüptovõtmetest või S/MIME "
 "sertifikaatidest ei ole krüptimiseks täiesti usaldusväärne."
 
-#: composer/keyresolver.cpp:321
+#: composer/keyresolver.cpp:313
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -803,7 +803,7 @@ msgstr ""
 "Vähemalt üks saaja \"%1\" OpenPGP krüptovõtmetest või S/MIME "
 "sertifikaatidest ei ole krüptimiseks täiesti usaldusväärne."
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:320
 #, kde-format
 msgid ""
 "\n"
@@ -812,7 +812,7 @@ msgstr ""
 "\n"
 "Järgmised võtmed on ainult põgusalt usaldusväärsed: \n"
 
-#: composer/keyresolver.cpp:332
+#: composer/keyresolver.cpp:324
 #, kde-format
 msgid ""
 "\n"
@@ -821,7 +821,7 @@ msgstr ""
 "\n"
 "Järgmiste võtmete või sertifikaatide usaldusväärsus on teadmata: \n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:328
 #, kde-format
 msgid ""
 "\n"
@@ -830,12 +830,12 @@ msgstr ""
 "\n"
 "Järgmised võtmed või sertifikaadid on <b>tühistatud</b>: \n"
 
-#: composer/keyresolver.cpp:342
+#: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Täieliku usaldusväärsuseta krüptovõtmed"
 
-#: composer/keyresolver.cpp:660
+#: composer/keyresolver.cpp:648
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -852,13 +852,13 @@ msgstr ""
 "Kui jätkad ja vajad hiljem võtmeid, palutakse sul määrata, millist võtit "
 "kasutada."
 
-#: composer/keyresolver.cpp:670 composer/keyresolver.cpp:1023
-#: composer/keyresolver.cpp:1052
+#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
+#: composer/keyresolver.cpp:1040
 #, kde-format
 msgid "Unusable Encryption Keys"
 msgstr "Kasutamatud krüptovõtmed"
 
-#: composer/keyresolver.cpp:702
+#: composer/keyresolver.cpp:690
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -874,13 +874,13 @@ msgstr ""
 "Kui jätkad ja vajad hiljem võtmeid, palutakse sul määrata, millist võtit "
 "kasutada."
 
-#: composer/keyresolver.cpp:712 composer/keyresolver.cpp:1081
-#: composer/keyresolver.cpp:1099
+#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
+#: composer/keyresolver.cpp:1087
 #, kde-format
 msgid "Unusable Signing Keys"
 msgstr "Kasutamatud allkirjastamisvõtmed"
 
-#: composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1001
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -897,7 +897,7 @@ msgstr ""
 "Võid küll jätkata ilma endale krüptimist võimaldamata, kuid arvesta, et "
 "sellisel juhul ei saa ka iseenda kirju lugeda."
 
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:1030
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -914,7 +914,7 @@ msgstr ""
 "Võid küll jätkata ilma endale krüptimist võimaldamata, kuid arvesta, et "
 "sellisel juhul ei saa ka iseenda kirju lugeda."
 
-#: composer/keyresolver.cpp:1074
+#: composer/keyresolver.cpp:1062
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -927,12 +927,12 @@ msgstr ""
 "Paraku ei ole sul seadistatud antud identiteedile kehtivaid OpenPGP "
 "allkirjastamissertifikaate."
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1070
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Ära kasuta OpenPGP allkirja"
 
-#: composer/keyresolver.cpp:1092
+#: composer/keyresolver.cpp:1080
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -945,12 +945,12 @@ msgstr ""
 "Paraku ei ole sul seadistatud antud identiteedile kehtivaid S/MIME "
 "allkirjastamissertifikaate."
 
-#: composer/keyresolver.cpp:1100
+#: composer/keyresolver.cpp:1088
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Ära kasuta S/MIME allkirja"
 
-#: composer/keyresolver.cpp:1162
+#: composer/keyresolver.cpp:1150
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -961,12 +961,12 @@ msgstr ""
 "allkirjatüüpi, mis sobiks saadaolevate allkirjastamisvõtmetega.\n"
 "Kas saata kiri allkirjastamata?"
 
-#: composer/keyresolver.cpp:1166
+#: composer/keyresolver.cpp:1154
 #, kde-format
 msgid "No signing possible"
 msgstr "Allkirjastamine pole võimalik"
 
-#: composer/keyresolver.cpp:1329
+#: composer/keyresolver.cpp:1317
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -975,13 +975,13 @@ msgstr ""
 "Sa ei ole valinud krüptovõtit endale krüptimiseks. Kui nüüd kirja krüptid, "
 "ei saa sa seda enam ise lahti krüptida."
 
-#: composer/keyresolver.cpp:1332 composer/keyresolver.cpp:1354
-#: composer/keyresolver.cpp:1368
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid "Missing Key Warning"
 msgstr "Puuduva võtme hoiatus"
 
-#: composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -990,7 +990,7 @@ msgstr ""
 "Sa ei ole valinud selle kirja saajale krüptovõtit. Seepärast kirja ka ei "
 "krüptita."
 
-#: composer/keyresolver.cpp:1351
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -999,7 +999,7 @@ msgstr ""
 "Sa ei ole valinud ühelegi selle kirja saajale krüptovõtit. Seepärast kirja "
 "ka ei krüptita."
 
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1348
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1008,7 +1008,7 @@ msgstr ""
 "Sa ei ole valinud ühele selle kirja saajatest krüptovõtit. See isik ei suuda "
 "kirja lahti krüptida, kui sa selle nüüd krüptid."
 
-#: composer/keyresolver.cpp:1364
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1017,12 +1017,12 @@ msgstr ""
 "Sa ei ole valinud mõnele selle kirja saajatest krüptovõtit. Need isikud ei "
 "suuda kirja lahti krüptida, kui sa selle nüüd krüptid."
 
-#: composer/keyresolver.cpp:1440
+#: composer/keyresolver.cpp:1428
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Krüptovõtme valik"
 
-#: composer/keyresolver.cpp:1484
+#: composer/keyresolver.cpp:1472
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1036,7 +1036,7 @@ msgstr ""
 "\n"
 "Palun vali uuesti sertifikaat/sertifikaadid, mida selle saaja jaoks kasutada."
 
-#: composer/keyresolver.cpp:1556
+#: composer/keyresolver.cpp:1544
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1053,7 +1053,7 @@ msgstr ""
 "Kui nimekirjas pole sobivat sertifikaati, võid ka otsida väliseid "
 "sertifikaate, klõpsates vastavale nupule.</qt>"
 
-#: composer/keyresolver.cpp:1566
+#: composer/keyresolver.cpp:1554
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1066,498 +1066,6 @@ msgstr ""
 "\"%1\" jaoks sobib mitu sertifikaati.\n"
 "\n"
 "Palun vali sertifikaat/sertifikaadid, mida selle saaja jaoks kasutada."
-
-#: composer/nearexpirychecker.cpp:68
-#, kde-format
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu OpenPGP allkirjastamisvõti</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu OpenPGP allkirjastamisvõti</p><p align=center><b>%2</b> (KeyID 0x"
-"%3)</p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:74
-#, kde-format
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu OpenPGP krüptovõti</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu OpenPGP krüptovõti</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:80
-#, kde-format
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>OpenPGP võti toimingule</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>OpenPGP võti toimingule</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu OpenPGP allkirjastamisvõti</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-"%3)</p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu OpenPGP allkirjastamisvõti</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-"%3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu OpenPGP krüptovõti</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu OpenPGP krüptovõti</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:101
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#| "p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#| "p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>OpenPGP võti</p><p align=\"center\"><b>%2</b> jaoks (KeyID 0x%3)</"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>OpenPGP võti</p><p align=\"center\"><b>%2</b> jaoks (KeyID 0x%3)</"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:121
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
-"p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
-"p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:129
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui "
-"päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva "
-"eest.</p>"
-
-#: composer/nearexpirychecker.cpp:137
-#, kde-format
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-"less than a day ago.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
-"days ago.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
-"p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui "
-"päeva eest.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
-"p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva eest."
-"</p>"
-
-#: composer/nearexpirychecker.cpp:147
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
-"p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
-"p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:155
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui "
-"päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva "
-"eest.</p>"
-
-#: composer/nearexpirychecker.cpp:163
-#, kde-format
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-"p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
-"p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui päeva "
-"eest.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
-"p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva eest.</"
-"p>"
-
-#: composer/nearexpirychecker.cpp:179
-#, kde-format
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=center><b>%2</b> "
-"(seerianumber %3)</p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:185
-#, kde-format
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaat</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaat</p><p align=center><b>%2</b> (seerianumber "
-"%3)</p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:191
-#, kde-format
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired less than a day ago.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3)</p><p>expired %1 days ago.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaat </p><p align=center><b>%2</b> jaoks (seerianumber %3)</"
-"p><p>aegus vähem kui päeva eest.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaat </p><p align=center><b>%2</b> jaoks (seerianumber %3)</"
-"p><p>aegus %1 päeva eest.</p>"
-
-#: composer/nearexpirychecker.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
-#| "%3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
-#| "%3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
-#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
-"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:220
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
-#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#| "p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
-#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#| "p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than a day.</p>"
-msgid_plural ""
-"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
-"in less than %1 days.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber %3)</"
-"p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub vähem kui "
-"päeva pärast.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber %3)</"
-"p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub vähem kui "
-"%1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:238
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
-#| "b> (serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
-#| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
-"p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:246
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
-"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-"p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber %3)</"
-"p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub vähem kui "
-"päeva pärast.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber %3)</"
-"p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub vähem kui "
-"%1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:262
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:268
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-"number %3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>Sinu S/MIME krüptosertifikaat</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>Sinu S/MIME krüptosertifikaat</p><p align=\"center\"><b>%2</b> "
-"(seerianumber %3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
-
-#: composer/nearexpirychecker.cpp:274
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than a day.</p>"
-#| msgid_plural ""
-#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#| "number %3)</p><p>expires in less than %1 days.</p>"
-msgid ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than a day.</p>"
-msgid_plural ""
-"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-"%3);</p><p>expires in less than %1 days.</p>"
-msgstr[0] ""
-"<p>S/MIME sertifikaat </p><p align=\"center\"><b>%2</b> jaoks (seerianumber "
-"%3)</p><p>aegub vähem kui päeva pärast.</p>"
-msgstr[1] ""
-"<p>S/MIME sertifikaat </p><p align=\"center\"><b>%2</b> jaoks (seerianumber "
-"%3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -2915,6 +2423,462 @@ msgstr "Kirjade edastamise agent ei ole võrgus."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu OpenPGP allkirjastamisvõti</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu OpenPGP allkirjastamisvõti</p><p align=center><b>%2</b> (KeyID 0x"
+#~ "%3)</p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu OpenPGP krüptovõti</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu OpenPGP krüptovõti</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>OpenPGP võti toimingule</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>OpenPGP võti toimingule</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu OpenPGP allkirjastamisvõti</p><p align=\"center\"><b>%2</b> "
+#~ "(KeyID 0x%3)</p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu OpenPGP allkirjastamisvõti</p><p align=\"center\"><b>%2</b> "
+#~ "(KeyID 0x%3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#~| "%3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu OpenPGP krüptovõti</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu OpenPGP krüptovõti</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~| "p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#~| "p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>OpenPGP võti</p><p align=\"center\"><b>%2</b> jaoks (KeyID 0x%3)</"
+#~ "p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>OpenPGP võti</p><p align=\"center\"><b>%2</b> jaoks (KeyID 0x%3)</"
+#~ "p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+#~ "%1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
+#~ "p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui "
+#~ "päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
+#~ "p><p>juursertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva "
+#~ "eest.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=center><b>%4</b></"
+#~ "p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+#~ "p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
+#~ "p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus vähem kui "
+#~ "päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=center><b>%2</b> (seerianumber %3)</"
+#~ "p><p>SK sertifikaat</p><p align=center><b>%4</b></p><p>aegus %1 päeva "
+#~ "eest.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaat</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaat</p><p align=center><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegus %1 päeva eest.</p>"
+
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired less than a day ago.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3)</p><p>expired %1 days ago.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaat </p><p align=center><b>%2</b> jaoks (seerianumber "
+#~ "%3)</p><p>aegus vähem kui päeva eest.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaat </p><p align=center><b>%2</b> jaoks (seerianumber "
+#~ "%3)</p><p>aegus %1 päeva eest.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
+#~ "</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</"
+#~ "b> (seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</"
+#~ "b></p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</"
+#~ "b> (seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</"
+#~ "b></p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
+#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
+#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
+#~ "p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></"
+#~ "p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
+#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#~| "p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
+#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#~| "p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber "
+#~ "%3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub "
+#~ "vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber "
+#~ "%3)</p><p>juursertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub "
+#~ "vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
+#~| "b> (serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
+#~| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</"
+#~ "b> (seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</"
+#~ "b></p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaadi</p><p align=\"center\"><b>%2</"
+#~ "b> (seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</"
+#~ "b></p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
+#~| "%2</b> (serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
+#~| "%2</b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
+#~ "p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaadi</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></"
+#~ "p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+#~ "p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber "
+#~ "%3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub "
+#~ "vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaadi</p><p align=\"center\"><b>%2</b> (seerianumber "
+#~ "%3)</p><p>SK sertifikaat</p><p align=\"center\"><b>%4</b></p><p>aegub "
+#~ "vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+#~ "number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME allkirjastamissertifikaat</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
+#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>Sinu S/MIME krüptosertifikaat</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>Sinu S/MIME krüptosertifikaat</p><p align=\"center\"><b>%2</b> "
+#~ "(seerianumber %3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than a day.</p>"
+#~| msgid_plural ""
+#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#~| "number %3)</p><p>expires in less than %1 days.</p>"
+#~ msgid ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than a day.</p>"
+#~ msgid_plural ""
+#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+#~ "%3);</p><p>expires in less than %1 days.</p>"
+#~ msgstr[0] ""
+#~ "<p>S/MIME sertifikaat </p><p align=\"center\"><b>%2</b> jaoks "
+#~ "(seerianumber %3)</p><p>aegub vähem kui päeva pärast.</p>"
+#~ msgstr[1] ""
+#~ "<p>S/MIME sertifikaat </p><p align=\"center\"><b>%2</b> jaoks "
+#~ "(seerianumber %3)</p><p>aegub vähem kui %1 päeva pärast.</p>"
 
 #~ msgid ""
 #~ "The minimum number of days that the signature certificate should be valid "
