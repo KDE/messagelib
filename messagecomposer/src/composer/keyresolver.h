@@ -232,6 +232,13 @@ public:
      */
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
 
+    /** Sets crypto preferences for given email address.
+     * This is an alternative to setting crypto preferences for a contact when Akonadi
+     * lookup is disabled - useful mostly for testing cases when it's not possible to
+     * index contacts on demand.
+     */
+    void setContactPreferences(const QString &address, const MessageComposer::ContactPreference &preference);
+
 private:
     void dump() const;
     std::vector<Item> getEncryptionItems(const QStringList &recipients);

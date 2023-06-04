@@ -1655,10 +1655,15 @@ MessageComposer::ContactPreference Kleo::KeyResolver::lookupContactPreferences(c
         KContacts::Addressee addr = res.at(0);
         pref.fillFromAddressee(addr);
     }
-    // insert into map and grab resulting iterator
-    d->mContactPreferencesMap.insert(std::make_pair(address, pref));
+
+    const_cast<KeyResolver *>(this)->setContactPreferences(address, pref);
 
     return pref;
+}
+
+void Kleo::KeyResolver::setContactPreferences(const QString &address, const MessageComposer::ContactPreference &pref)
+{
+    d->mContactPreferencesMap.insert(std::make_pair(address, pref));
 }
 
 void Kleo::KeyResolver::saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const
