@@ -2593,16 +2593,3 @@ msgstr "Následující zpráva"
 #, kde-format
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
-
-#~ msgid "Edit with:"
-#~ msgstr "Upravit pomocí:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail nedokáže poznat kdy zvolený editor ukončíte. Aby se předešlo ztrátě "
-#~ "dat, úprava přílohy bude zrušena."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "Nelze upravit přílohu"
