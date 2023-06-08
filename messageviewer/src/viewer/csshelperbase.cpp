@@ -316,8 +316,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
               "}\n\n"
 
               "%3 {\n"
-              "  border: 2px solid #ffffff ! important;\n"
-              "  line-height: normal;\n"
+              "  display:none ! important;\n"
               "}\n\n"
 
               "div.senderpic{\n"
