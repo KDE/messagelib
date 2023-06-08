@@ -5,9 +5,11 @@
 */
 
 #include "dkimmanagerkeytreeview.h"
+#include "dkimmanagerkeyproxymodel.h"
 using namespace MessageViewer;
 DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     : QTreeView(parent)
+    , mManagerKeyProxyModel(new DKIMManagerKeyProxyModel(this))
 {
     setRootIsDecorated(false);
     setAlternatingRowColors(true);
@@ -20,5 +22,6 @@ DKIMManagerKeyTreeView::~DKIMManagerKeyTreeView() = default;
 
 void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
 {
+    // mManagerKeyProxyModel->setFilterText(str);
     // TODO
 }
