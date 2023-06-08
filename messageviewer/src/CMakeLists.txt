@@ -126,6 +126,9 @@ target_sources(KPim6MessageViewer PRIVATE
     dkim-verify/dkimcheckpolicyjob.h
     dkim-verify/dkimmanagerkeywidget.h
     dkim-verify/dmarcpolicyjob.h
+
+    dkim-verify/dkimmanagerkeymodel.h
+    dkim-verify/dkimmanagerkeymodel.cpp
 )
 
 
