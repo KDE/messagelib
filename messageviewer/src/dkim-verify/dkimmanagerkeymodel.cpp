@@ -5,6 +5,7 @@
 */
 
 #include "dkimmanagerkeymodel.h"
+#include <KLocalizedString>
 using namespace MessageViewer;
 
 DKIMManagerKeyModel::DKIMManagerKeyModel(QObject *parent)
@@ -65,6 +66,27 @@ QVariant DKIMManagerKeyModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
+QVariant DKIMManagerKeyModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (orientation != Qt::Horizontal || role != Qt::DisplayRole) {
+        return {};
+    }
+
+    switch (static_cast<DKIMManagerKeyRoles>(section)) {
+    case KeyRole:
+        return i18n("DKIM Key");
+    case SelectorRole:
+        return i18n("Selector");
+    case DomainRole:
+        return i18n("SDID");
+    case StoredAtDateTimeRole:
+        return i18n("Inserted");
+    case LastUsedDateTimeRole:
+        return i18n("Last Used");
+    }
+    return {};
+}
+
 void DKIMManagerKeyModel::clear()
 {
     if (!mKeyInfos.isEmpty()) {
@@ -77,17 +99,15 @@ void DKIMManagerKeyModel::clear()
 bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
 {
     bool found = false;
-    if (/*keyInfo.isValid()*/ 1) {
-        auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
-            return key == keyInfo;
-        });
-        if (it == mKeyInfos.cend()) {
-            beginInsertRows(QModelIndex(), mKeyInfos.count() - 1, mKeyInfos.count());
-            mKeyInfos.append(keyInfo);
-            endInsertRows();
-        } else {
-            found = true;
-        }
+    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
+        return key == keyInfo;
+    });
+    if (it == mKeyInfos.cend()) {
+        beginInsertRows(QModelIndex(), mKeyInfos.count() - 1, mKeyInfos.count());
+        mKeyInfos.append(keyInfo);
+        endInsertRows();
+    } else {
+        found = true;
     }
     return found;
 }
