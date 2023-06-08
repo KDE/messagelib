@@ -14,5 +14,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyTreeView : public QTreeView
 public:
     explicit DKIMManagerKeyTreeView(QWidget *parent = nullptr);
     ~DKIMManagerKeyTreeView() override;
+
+    void setFilterStr(const QString &str);
 };
 }

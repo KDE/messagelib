@@ -9,8 +9,16 @@ using namespace MessageViewer;
 DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     : QTreeView(parent)
 {
+    setRootIsDecorated(false);
+    setAlternatingRowColors(true);
+    setSelectionBehavior(QAbstractItemView::SelectRows);
+    setSelectionMode(ExtendedSelection);
+    setUniformRowHeights(true);
 }
 
-DKIMManagerKeyTreeView::~DKIMManagerKeyTreeView()
+DKIMManagerKeyTreeView::~DKIMManagerKeyTreeView() = default;
+
+void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
 {
+    // TODO
 }
