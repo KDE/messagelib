@@ -29,6 +29,7 @@ private:
     QDateTime mLastUsedDateTime;
 };
 
+class DKIMManagerKeyTreeView;
 /**
  * @brief The DKIMManagerKeyWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -56,5 +57,6 @@ public:
 private:
     MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &);
     QTreeWidget *const mTreeWidget;
+    DKIMManagerKeyTreeView *mDKIMManagerKeyTreeView = nullptr;
 };
 }

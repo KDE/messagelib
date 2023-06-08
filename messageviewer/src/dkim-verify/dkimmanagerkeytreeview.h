@@ -9,6 +9,7 @@
 namespace MessageViewer
 {
 class DKIMManagerKeyProxyModel;
+class DKIMManagerKeyModel;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyTreeView : public QTreeView
 {
     Q_OBJECT
@@ -18,7 +19,10 @@ public:
 
     void setFilterStr(const QString &str);
 
+    void setKeyModel(DKIMManagerKeyModel *model);
+
 private:
     DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
+    DKIMManagerKeyModel *mManagerKeyModel = nullptr;
 };
 }

@@ -5,12 +5,14 @@
 */
 
 #include "dkimmanagerkeytreeview.h"
+#include "dkimmanagerkeymodel.h"
 #include "dkimmanagerkeyproxymodel.h"
 using namespace MessageViewer;
 DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     : QTreeView(parent)
     , mManagerKeyProxyModel(new DKIMManagerKeyProxyModel(this))
 {
+    mManagerKeyProxyModel->setObjectName(QStringLiteral("mManagerKeyProxyModel"));
     setRootIsDecorated(false);
     setAlternatingRowColors(true);
     setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -24,4 +26,11 @@ void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
 {
     // mManagerKeyProxyModel->setFilterText(str);
     // TODO
+}
+
+void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
+{
+    mManagerKeyModel = model;
+    mManagerKeyProxyModel->setSourceModel(mManagerKeyModel);
+    setModel(mManagerKeyModel);
 }

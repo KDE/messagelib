@@ -6,6 +6,8 @@
 
 #include "dkimmanagerkeywidget.h"
 #include "dkimmanagerkey.h"
+#include "dkimmanagerkeymodel.h"
+#include "dkimmanagerkeytreeview.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -16,7 +18,7 @@
 #include <QMenu>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-
+// #define USE_NEW_DKIMMANAGERKEYTREEVIEW
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
@@ -40,6 +42,11 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
     mainLayout->addWidget(mTreeWidget);
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::slotCustomContextMenuRequested);
+
+#ifdef USE_NEW_DKIMMANAGERKEYTREEVIEW
+    mDKIMManagerKeyTreeView = new DKIMManagerKeyTreeView(this);
+    mainLayout->addWidget(mDKIMManagerKeyTreeView);
+#endif
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget() = default;
@@ -104,6 +111,11 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
 
 void DKIMManagerKeyWidget::loadKeys()
 {
+#ifdef USE_NEW_DKIMMANAGERKEYTREEVIEW
+    auto model = new DKIMManagerKeyModel(this);
+    model->setKeyInfos(DKIMManagerKey::self()->keys());
+    mDKIMManagerKeyTreeView->setKeyModel(model);
+#endif
     const QList<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
         auto item = new DKIMManagerKeyTreeWidgetItem(mTreeWidget);
