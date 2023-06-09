@@ -69,8 +69,8 @@ private:
 
     QStringList mEmailAddressOnly;
 
-    QStringList mRecipients;
-    QString mDefaultDomain;
+    const QStringList mRecipients;
+    const QString mDefaultDomain;
 
     QString mEmailAddresses;
     QStringList mEmptyDistributionLists;
