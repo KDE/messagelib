@@ -114,7 +114,29 @@ bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
 
 void DKIMManagerKeyModel::removeKeyInfo(const KeyInfo &keyInfo)
 {
+    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
+        return key == keyInfo;
+    });
+    if (it != mKeyInfos.cend()) {
+        beginResetModel();
+        mKeyInfos.removeAll(keyInfo);
+        endResetModel();
+    }
+}
+
+void DKIMManagerKeyModel::removeKeyInfos(const QList<KeyInfo> &keyInfos)
+{
+    if (keyInfos.isEmpty()) {
+        return;
+    }
     beginResetModel();
-    // TODO
+    for (const auto &keyInfo : keyInfos) {
+        auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
+            return key == keyInfo;
+        });
+        if (it != mKeyInfos.cend()) {
+            mKeyInfos.removeAll(keyInfo);
+        }
+    }
     endResetModel();
 }

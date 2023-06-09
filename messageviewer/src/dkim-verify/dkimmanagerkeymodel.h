@@ -35,6 +35,7 @@ public:
     Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
     Q_REQUIRED_RESULT bool insertKeyInfo(const MessageViewer::KeyInfo &keyInfo);
     void removeKeyInfo(const MessageViewer::KeyInfo &keyInfo);
+    void removeKeyInfos(const QList<KeyInfo> &keyInfo);
 
     void clear();
 
