@@ -83,12 +83,7 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
                                                                KStandardGuiItem::del(),
                                                                KStandardGuiItem::cancel());
                            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#if 0
-                               const auto selectedItems = mTreeWidget->selectedItems();
-                               for (QTreeWidgetItem *item : selectedItems) {
-                                   delete item;
-                               }
-#endif
+                               deleteSelectedItems();
                            }
                        });
         menu.addSeparator();
@@ -108,4 +103,20 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
     if (!menu.isEmpty()) {
         menu.exec(QCursor::pos());
     }
+}
+
+void DKIMManagerKeyTreeView::deleteSelectedItems()
+{
+    const QModelIndexList selectedIndexes = selectionModel()->selectedRows();
+    if (selectedIndexes.isEmpty()) {
+        return;
+    }
+#if 0 // TODO
+    LoggingCategory::List categories;
+    for (const auto &index : selectedIndexes) {
+        const auto cat = mCustomLoggingCategoryModel->index(index.row()).data(CustomLoggingCategoryModel::CategoryRole).value<LoggingCategory>();
+        categories.append(cat);
+    }
+    mCustomLoggingCategoryModel->removeCategory(categories);
+#endif
 }

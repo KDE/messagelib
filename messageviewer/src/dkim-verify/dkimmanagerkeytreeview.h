@@ -27,6 +27,7 @@ public:
     void clear();
 
 private:
+    void deleteSelectedItems();
     void slotCustomContextMenuRequested(const QPoint &pos);
     DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
     DKIMManagerKeyModel *mManagerKeyModel = nullptr;
