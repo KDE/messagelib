@@ -62,6 +62,8 @@ QVariant DKIMManagerKeyModel::data(const QModelIndex &index, int role) const
         return keyInfo.storedAtDateTime.toString();
     case LastUsedDateTimeRole:
         return keyInfo.lastUsedDateTime.toString();
+    case KeyInfoRole:
+        return QVariant::fromValue(keyInfo);
     }
     return {};
 }
@@ -83,6 +85,8 @@ QVariant DKIMManagerKeyModel::headerData(int section, Qt::Orientation orientatio
         return i18n("Inserted");
     case LastUsedDateTimeRole:
         return i18n("Last Used");
+    case KeyInfoRole:
+        return {};
     }
     return {};
 }

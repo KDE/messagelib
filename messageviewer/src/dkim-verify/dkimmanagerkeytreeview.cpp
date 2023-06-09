@@ -54,6 +54,7 @@ void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
     mManagerKeyModel = model;
     mManagerKeyProxyModel->setSourceModel(mManagerKeyModel);
     setModel(mManagerKeyProxyModel);
+    hideColumn(DKIMManagerKeyModel::KeyInfoRole);
 }
 
 void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
@@ -111,12 +112,16 @@ void DKIMManagerKeyTreeView::deleteSelectedItems()
     if (selectedIndexes.isEmpty()) {
         return;
     }
-#if 0 // TODO
-    LoggingCategory::List categories;
+    QList<MessageViewer::KeyInfo> lst;
     for (const auto &index : selectedIndexes) {
-        const auto cat = mCustomLoggingCategoryModel->index(index.row()).data(CustomLoggingCategoryModel::CategoryRole).value<LoggingCategory>();
-        categories.append(cat);
+        //        qDebug() << " index " << index;
+        const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole))
+                              .data(DKIMManagerKeyModel::KeyInfoRole)
+                              .value<MessageViewer::KeyInfo>();
+        //        qDebug() << " info " << info;
+        //        qDebug() << " mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole) "
+        //                 << mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole).data(DKIMManagerKeyModel::KeyInfoRole);
+        lst.append(info);
     }
-    mCustomLoggingCategoryModel->removeCategory(categories);
-#endif
+    mManagerKeyModel->removeKeyInfos(lst);
 }

@@ -20,7 +20,8 @@ public:
         KeyRole,
         StoredAtDateTimeRole,
         LastUsedDateTimeRole,
-        LastColumn = LastUsedDateTimeRole,
+        KeyInfoRole,
+        LastColumn = KeyInfoRole,
     };
 
     explicit DKIMManagerKeyModel(QObject *parent = nullptr);
