@@ -11,6 +11,7 @@
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <QHeaderView>
 #include <QLineEdit>
 #include <QVBoxLayout>
 
@@ -39,13 +40,12 @@ DKIMManagerKeyWidget::~DKIMManagerKeyWidget() = default;
 
 QByteArray DKIMManagerKeyWidget::saveHeaders() const
 {
-    return {}; // TODO
-    // return mTreeWidget->header()->saveState();
+    return mDKIMManagerKeyTreeView->header()->saveState();
 }
 
 void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
 {
-    // TODO mTreeWidget->header()->restoreState(header);
+    mDKIMManagerKeyTreeView->header()->restoreState(header);
 }
 
 void DKIMManagerKeyWidget::loadKeys()
