@@ -54,7 +54,6 @@ void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
     mManagerKeyModel = model;
     mManagerKeyProxyModel->setSourceModel(mManagerKeyModel);
     setModel(mManagerKeyProxyModel);
-    hideColumn(DKIMManagerKeyModel::KeyInfoRole);
 }
 
 void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
@@ -112,16 +111,10 @@ void DKIMManagerKeyTreeView::deleteSelectedItems()
     if (selectedIndexes.isEmpty()) {
         return;
     }
-    QList<MessageViewer::KeyInfo> lst;
+    QStringList lst;
     for (const auto &index : selectedIndexes) {
-        //        qDebug() << " index " << index;
-        const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole))
-                              .data(DKIMManagerKeyModel::KeyInfoRole)
-                              .value<MessageViewer::KeyInfo>();
-        //        qDebug() << " info " << info;
-        //        qDebug() << " mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole) "
-        //                 << mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyInfoRole).data(DKIMManagerKeyModel::KeyInfoRole);
-        lst.append(info);
+        const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyRole));
+        lst.append(info.data().toString());
     }
     mManagerKeyModel->removeKeyInfos(lst);
 }

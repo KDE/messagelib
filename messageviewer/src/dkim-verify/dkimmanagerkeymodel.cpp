@@ -62,8 +62,6 @@ QVariant DKIMManagerKeyModel::data(const QModelIndex &index, int role) const
         return keyInfo.storedAtDateTime.toString();
     case LastUsedDateTimeRole:
         return keyInfo.lastUsedDateTime.toString();
-    case KeyInfoRole:
-        return QVariant::fromValue(keyInfo);
     }
     return {};
 }
@@ -85,8 +83,6 @@ QVariant DKIMManagerKeyModel::headerData(int section, Qt::Orientation orientatio
         return i18n("Inserted");
     case LastUsedDateTimeRole:
         return i18n("Last Used");
-    case KeyInfoRole:
-        return {};
     }
     return {};
 }
@@ -116,19 +112,19 @@ bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
     return found;
 }
 
-void DKIMManagerKeyModel::removeKeyInfo(const KeyInfo &keyInfo)
+void DKIMManagerKeyModel::removeKeyInfo(const QString &keyValue)
 {
-    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
-        return key == keyInfo;
+    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyValue](const KeyInfo &key) {
+        return key.keyValue == keyValue;
     });
     if (it != mKeyInfos.cend()) {
         beginResetModel();
-        mKeyInfos.removeAll(keyInfo);
+        mKeyInfos.removeAll(*it);
         endResetModel();
     }
 }
 
-void DKIMManagerKeyModel::removeKeyInfos(const QList<KeyInfo> &keyInfos)
+void DKIMManagerKeyModel::removeKeyInfos(const QStringList &keyInfos)
 {
     if (keyInfos.isEmpty()) {
         return;
@@ -136,10 +132,10 @@ void DKIMManagerKeyModel::removeKeyInfos(const QList<KeyInfo> &keyInfos)
     beginResetModel();
     for (const auto &keyInfo : keyInfos) {
         auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
-            return key == keyInfo;
+            return key.keyValue == keyInfo;
         });
         if (it != mKeyInfos.cend()) {
-            mKeyInfos.removeAll(keyInfo);
+            mKeyInfos.removeAll(*it);
         }
     }
     endResetModel();

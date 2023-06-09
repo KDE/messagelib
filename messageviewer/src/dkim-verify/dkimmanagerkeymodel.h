@@ -20,8 +20,7 @@ public:
         KeyRole,
         StoredAtDateTimeRole,
         LastUsedDateTimeRole,
-        KeyInfoRole,
-        LastColumn = KeyInfoRole,
+        LastColumn = LastUsedDateTimeRole,
     };
 
     explicit DKIMManagerKeyModel(QObject *parent = nullptr);
@@ -35,8 +34,8 @@ public:
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
     Q_REQUIRED_RESULT bool insertKeyInfo(const MessageViewer::KeyInfo &keyInfo);
-    void removeKeyInfo(const MessageViewer::KeyInfo &keyInfo);
-    void removeKeyInfos(const QList<KeyInfo> &keyInfo);
+    void removeKeyInfo(const QString &keyValue);
+    void removeKeyInfos(const QStringList &keyInfos);
 
     void clear();
 
