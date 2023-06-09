@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
+#include "dkimmanagerkey.h"
 #include "messageviewer_private_export.h"
 #include <QTreeView>
 namespace MessageViewer
@@ -20,6 +21,10 @@ public:
     void setFilterStr(const QString &str);
 
     void setKeyModel(DKIMManagerKeyModel *model);
+
+    Q_REQUIRED_RESULT QList<MessageViewer::KeyInfo> keyInfos() const;
+
+    void clear();
 
 private:
     void slotCustomContextMenuRequested(const QPoint &pos);

@@ -9,188 +9,59 @@
 #include "dkimmanagerkeymodel.h"
 #include "dkimmanagerkeytreeview.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <KMessageBox>
-#include <KTreeWidgetSearchLine>
-#include <QApplication>
-#include <QClipboard>
-#include <QHeaderView>
-#include <QMenu>
-#include <QTreeWidget>
+#include <QLineEdit>
 #include <QVBoxLayout>
-#define USE_NEW_DKIMMANAGERKEYTREEVIEW
+
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
-    , mTreeWidget(new QTreeWidget(this))
+    , mDKIMManagerKeyTreeView(new DKIMManagerKeyTreeView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 
-    mTreeWidget->setObjectName(QStringLiteral("treewidget"));
-    mTreeWidget->setRootIsDecorated(false);
-    mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key"), i18n("Inserted"), i18n("Last Used")});
-    mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    mTreeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    mTreeWidget->setAlternatingRowColors(true);
+    mDKIMManagerKeyTreeView->setObjectName(QStringLiteral("mDKIMManagerKeyTreeView"));
 
-    auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
+    auto searchLineEdit = new QLineEdit(this);
+    KLineEditEventHandler::catchReturnKey(searchLineEdit);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
+    connect(searchLineEdit, &QLineEdit::textChanged, mDKIMManagerKeyTreeView, &DKIMManagerKeyTreeView::setFilterStr);
 
-    mainLayout->addWidget(mTreeWidget);
-    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::slotCustomContextMenuRequested);
-
-#ifdef USE_NEW_DKIMMANAGERKEYTREEVIEW
-    mDKIMManagerKeyTreeView = new DKIMManagerKeyTreeView(this);
     mainLayout->addWidget(mDKIMManagerKeyTreeView);
-#endif
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget() = default;
 
 QByteArray DKIMManagerKeyWidget::saveHeaders() const
 {
-    return mTreeWidget->header()->saveState();
+    return {}; // TODO
+    // return mTreeWidget->header()->saveState();
 }
 
 void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
 {
-    mTreeWidget->header()->restoreState(header);
-}
-
-void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
-{
-    QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
-    QMenu menu(this);
-    if (item) {
-        const auto selectedItemsCount{mTreeWidget->selectedItems().count()};
-        if (selectedItemsCount == 1) {
-            menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {
-                QApplication::clipboard()->setText(item->text(2));
-            });
-            menu.addSeparator();
-        }
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
-                       i18np("Remove Key", "Remove Keys", selectedItemsCount),
-                       this,
-                       [this, selectedItemsCount]() {
-                           const int answer = KMessageBox::questionTwoActions(
-                               this,
-                               i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
-                               i18np("Delete Key", "Delete Keys", selectedItemsCount),
-                               KStandardGuiItem::del(),
-                               KStandardGuiItem::cancel());
-                           if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-                               const auto selectedItems = mTreeWidget->selectedItems();
-                               for (QTreeWidgetItem *item : selectedItems) {
-                                   delete item;
-                               }
-                           }
-                       });
-        menu.addSeparator();
-    }
-    if (mTreeWidget->topLevelItemCount() > 0) {
-        menu.addAction(i18n("Delete All"), this, [this]() {
-            const int answer = KMessageBox::warningTwoActions(this,
-                                                              i18n("Do you want to delete all keys?"),
-                                                              i18n("Delete Keys"),
-                                                              KStandardGuiItem::del(),
-                                                              KStandardGuiItem::cancel());
-            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-                mTreeWidget->clear();
-            }
-        });
-    }
-    if (!menu.isEmpty()) {
-        menu.exec(QCursor::pos());
-    }
+    // TODO mTreeWidget->header()->restoreState(header);
 }
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-#ifdef USE_NEW_DKIMMANAGERKEYTREEVIEW
     auto model = new DKIMManagerKeyModel(this);
     model->setKeyInfos(DKIMManagerKey::self()->keys());
     mDKIMManagerKeyTreeView->setKeyModel(model);
-#endif
-    const QList<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
-    for (const MessageViewer::KeyInfo &key : lst) {
-        auto item = new DKIMManagerKeyTreeWidgetItem(mTreeWidget);
-        item->setStoredAtDateTime(key.storedAtDateTime);
-        item->setLastUsedDateTime(key.lastUsedDateTime);
-        item->setText(ManagerKeyTreeWidget::Domain, key.domain);
-        item->setText(ManagerKeyTreeWidget::Selector, key.selector);
-        item->setText(ManagerKeyTreeWidget::KeyValue, key.keyValue);
-        item->setText(ManagerKeyTreeWidget::InsertDate, key.storedAtDateTime.toString());
-        item->setText(ManagerKeyTreeWidget::LastUsedDate, key.lastUsedDateTime.toString());
-        item->setToolTip(ManagerKeyTreeWidget::KeyValue, key.keyValue);
-    }
-    mTreeWidget->setSortingEnabled(true);
-    mTreeWidget->header()->setSortIndicatorShown(true);
-    mTreeWidget->header()->setSectionsClickable(true);
-    mTreeWidget->sortByColumn(ManagerKeyTreeWidget::Domain, Qt::AscendingOrder);
 }
 
 void DKIMManagerKeyWidget::saveKeys()
 {
-    QList<MessageViewer::KeyInfo> lst;
-    lst.reserve(mTreeWidget->topLevelItemCount());
-    for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
-        QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
-        const MessageViewer::KeyInfo info{item->text(ManagerKeyTreeWidget::KeyValue),
-                                          item->text(ManagerKeyTreeWidget::Selector),
-                                          item->text(ManagerKeyTreeWidget::Domain),
-                                          QDateTime::fromString(item->text(ManagerKeyTreeWidget::InsertDate)),
-                                          QDateTime::fromString(item->text(ManagerKeyTreeWidget::LastUsedDate))};
-        lst.append(info);
-    }
-    DKIMManagerKey::self()->saveKeys(lst);
+    DKIMManagerKey::self()->saveKeys(mDKIMManagerKeyTreeView->keyInfos());
 }
 
 void DKIMManagerKeyWidget::resetKeys()
 {
-    mTreeWidget->clear();
+    mDKIMManagerKeyTreeView->clear();
     loadKeys();
-}
-
-DKIMManagerKeyTreeWidgetItem::DKIMManagerKeyTreeWidgetItem(QTreeWidget *parent)
-    : QTreeWidgetItem(parent)
-{
-}
-
-DKIMManagerKeyTreeWidgetItem::~DKIMManagerKeyTreeWidgetItem() = default;
-
-bool DKIMManagerKeyTreeWidgetItem::operator<(const QTreeWidgetItem &other) const
-{
-    const int column = treeWidget()->sortColumn();
-    if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate) {
-        return storedAtDateTime() < static_cast<const DKIMManagerKeyTreeWidgetItem *>(&other)->storedAtDateTime();
-    }
-    if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate) {
-        return lastUsedDateTime() < static_cast<const DKIMManagerKeyTreeWidgetItem *>(&other)->lastUsedDateTime();
-    }
-    return QTreeWidgetItem::operator<(other);
-}
-
-const QDateTime &DKIMManagerKeyTreeWidgetItem::storedAtDateTime() const
-{
-    return mStoredAtDateTime;
-}
-
-void DKIMManagerKeyTreeWidgetItem::setStoredAtDateTime(const QDateTime &newStoredAtDateTime)
-{
-    mStoredAtDateTime = newStoredAtDateTime;
-}
-
-const QDateTime &DKIMManagerKeyTreeWidgetItem::lastUsedDateTime() const
-{
-    return mLastUsedDateTime;
-}
-
-void DKIMManagerKeyTreeWidgetItem::setLastUsedDateTime(const QDateTime &newLastUsedDateTime)
-{
-    mLastUsedDateTime = newLastUsedDateTime;
 }

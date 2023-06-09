@@ -59,9 +59,9 @@ QVariant DKIMManagerKeyModel::data(const QModelIndex &index, int role) const
     case DomainRole:
         return keyInfo.domain;
     case StoredAtDateTimeRole:
-        return keyInfo.storedAtDateTime;
+        return keyInfo.storedAtDateTime.toString();
     case LastUsedDateTimeRole:
-        return keyInfo.lastUsedDateTime;
+        return keyInfo.lastUsedDateTime.toString();
     }
     return {};
 }

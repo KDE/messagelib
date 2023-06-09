@@ -5,10 +5,10 @@
 */
 
 #include "dkimmanagerkeywidgettest.h"
+#include "dkim-verify/dkimmanagerkeytreeview.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
-#include <KTreeWidgetSearchLine>
+#include <QLineEdit>
 #include <QTest>
-#include <QTreeWidget>
 #include <QVBoxLayout>
 QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
@@ -24,12 +24,11 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
+    auto searchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("searchlineedit"));
     QVERIFY(searchLineEdit);
     QVERIFY(searchLineEdit->isClearButtonEnabled());
     mainLayout->addWidget(searchLineEdit);
 
-    auto mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
-    QVERIFY(mTreeWidget);
-    QCOMPARE(mTreeWidget->topLevelItemCount(), 0);
+    auto mDKIMManagerKeyTreeView = w.findChild<MessageViewer::DKIMManagerKeyTreeView *>(QStringLiteral("mDKIMManagerKeyTreeView"));
+    QVERIFY(mDKIMManagerKeyTreeView);
 }

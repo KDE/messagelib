@@ -26,6 +26,7 @@ DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     setSelectionMode(ExtendedSelection);
     setUniformRowHeights(true);
     setContextMenuPolicy(Qt::CustomContextMenu);
+    setSortingEnabled(true);
     connect(this, &DKIMManagerKeyTreeView::customContextMenuRequested, this, &DKIMManagerKeyTreeView::slotCustomContextMenuRequested);
 }
 
@@ -35,6 +36,18 @@ void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
 {
     // mManagerKeyProxyModel->setFilterText(str);
     // TODO
+}
+
+QList<MessageViewer::KeyInfo> DKIMManagerKeyTreeView::keyInfos() const
+{
+    return mManagerKeyModel ? mManagerKeyModel->keyInfos() : QList<MessageViewer::KeyInfo>();
+}
+
+void DKIMManagerKeyTreeView::clear()
+{
+    if (mManagerKeyModel) {
+        mManagerKeyModel->clear();
+    }
 }
 
 void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
@@ -54,8 +67,8 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
 
     if (index.isValid()) {
         if (selectedItemCount == 1) {
-            menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [index]() {
-                // QApplication::clipboard()->setText(item->text(2));
+            menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [index, this]() {
+                QApplication::clipboard()->setText(mManagerKeyModel->index(index.row()).data(DKIMManagerKeyModel::KeyRole).toString());
             });
             menu.addSeparator();
         }
@@ -81,8 +94,7 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
                        });
         menu.addSeparator();
     }
-#if 0
-    if (mTreeWidget->topLevelItemCount() > 0) {
+    if (mManagerKeyProxyModel->rowCount() > 0) {
         menu.addAction(i18n("Delete All"), this, [this]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete all keys?"),
@@ -94,7 +106,6 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
             }
         });
     }
-#endif
     if (!menu.isEmpty()) {
         menu.exec(QCursor::pos());
     }
