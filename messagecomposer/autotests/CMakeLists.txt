@@ -20,7 +20,7 @@ macro( add_messagecomposer_test _source )
             KPim${KF_MAJOR_VERSION}::MailTransport
             KPim${KF_MAJOR_VERSION}::Mime
             KPim${KF_MAJOR_VERSION}::MessageComposer
-            KPim${KF_MAJOR_VERSION}::MessageViewer
+            KPim${KF_MAJOR_VERSION}::MimeTreeParser
             KPim${KF_MAJOR_VERSION}::MessageCore
             KPim${KF_MAJOR_VERSION}::TemplateParser
             KPim${KF_MAJOR_VERSION}::PimTextEdit
@@ -48,7 +48,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF${KF_MAJOR_VERSION}::I18n
         KPim${KF_MAJOR_VERSION}::Mime
         KPim${KF_MAJOR_VERSION}::MessageComposer
-        KPim${KF_MAJOR_VERSION}::MessageViewer
+        KPim${KF_MAJOR_VERSION}::MimeTreeParser
         KPim${KF_MAJOR_VERSION}::MessageCore
         KPim${KF_MAJOR_VERSION}::Libkleo
         KPim${KF_MAJOR_VERSION}::Libkdepim

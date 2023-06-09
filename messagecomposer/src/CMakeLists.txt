@@ -279,8 +279,8 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}MessageComposer
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::AkonadiMime
     KPim${KF_MAJOR_VERSION}::Libkleo
-    KPim${KF_MAJOR_VERSION}::MessageViewer
     PRIVATE
+    KPim${KF_MAJOR_VERSION}::MessageViewer
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::TemplateParser
