@@ -19,7 +19,6 @@ using namespace KMime;
 #include <MessageComposer/GlobalPart>
 using namespace MessageComposer;
 
-// #include "messagecore/attachmentfromfolderjob.h"
 #include <MessageCore/AttachmentPart>
 using namespace MessageCore;
 
