@@ -25,7 +25,6 @@
 #include "part/infopart.h"
 #include "part/itippart.h"
 #include "part/textpart.h"
-#include "settings/messagecomposersettings.h"
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>

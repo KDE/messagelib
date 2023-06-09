@@ -48,7 +48,6 @@
 #include <Libkleo/KeySelectionDialog>
 #include <QGpgME/Protocol>
 
-#include "attachment/attachmentfrommimecontentjob.h"
 #include "attachment/attachmentfromurljob.h"
 #include "messagecore/attachmentupdatejob.h"
 #include <Akonadi/EmailAddressSelectionDialog>
