@@ -189,7 +189,7 @@ GpgME::Key gpgKey(const QByteArray &keydata)
     auto context = GpgME::Context::create(GpgME::OpenPGP);
     QGpgME::QByteArrayDataProvider dp(KCodecs::base64Decode(keydata));
     GpgME::Data data(&dp);
-    auto keys = data.toKeys();
+    const auto keys = data.toKeys();
     if (keys.size() == 0) {
         return {};
     }
