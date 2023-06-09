@@ -18,7 +18,7 @@
 #include <QMenu>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-// #define USE_NEW_DKIMMANAGERKEYTREEVIEW
+#define USE_NEW_DKIMMANAGERKEYTREEVIEW
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)

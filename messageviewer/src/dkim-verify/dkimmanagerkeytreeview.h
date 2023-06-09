@@ -22,6 +22,7 @@ public:
     void setKeyModel(DKIMManagerKeyModel *model);
 
 private:
+    void slotCustomContextMenuRequested(const QPoint &pos);
     DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
     DKIMManagerKeyModel *mManagerKeyModel = nullptr;
 };
