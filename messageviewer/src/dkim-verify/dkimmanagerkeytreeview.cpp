@@ -34,8 +34,7 @@ DKIMManagerKeyTreeView::~DKIMManagerKeyTreeView() = default;
 
 void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
 {
-    // mManagerKeyProxyModel->setFilterText(str);
-    // TODO
+    mManagerKeyProxyModel->setFilterText(str);
 }
 
 QList<MessageViewer::KeyInfo> DKIMManagerKeyTreeView::keyInfos() const
