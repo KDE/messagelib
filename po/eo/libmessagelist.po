@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2023-05-10 20:14+0100\n"
+"PO-Revision-Date: 2023-06-11 15:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -516,29 +516,29 @@ msgstr "%1 %2"
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Prilaboris 1 Mesaĝon de %2"
+msgstr[1] "Prilaboris %1 Mesaĝojn de %2"
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Fadenigis 1 Mesaĝon de %2"
+msgstr[1] "Fadenigis %1 Mesaĝojn de %2"
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Grupigis 1 Fadenon de %2"
+msgstr[1] "Grupigis %1 Fadenojn de %2"
 
 #: core/model.cpp:3811
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĝisdatigis 1 Grupon de %2"
+msgstr[1] "Ĝisdatigis %1 Grupojn de %2"
 
 #: core/model.cpp:3903
 #, kde-format
@@ -565,7 +565,7 @@ msgstr ""
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
 #, kde-format
 msgid "None (Storage Order)"
-msgstr "Neniu (Stoka Ordo)"
+msgstr "Neniu (Konserva Ordo)"
 
 #: core/sortorder.cpp:64
 #, kde-format
@@ -699,32 +699,33 @@ msgstr "Grandeco"
 #: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
-msgstr "Nelegita/Legita Ikono"
+msgstr "Nelegita/Legita Piktogramo"
 
 #: core/theme.cpp:128
 #, kde-format
 msgid "Attachment Icon"
-msgstr "Aldonaĵa Ikono"
+msgstr "Aldonaĵa Piktogramo"
 
 #: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
-msgstr "Respondita / Plusendita Ikono"
+msgstr "Respondita / Plusendita Piktogramo"
 
 #: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr "Kombinita Nova / Nelegita / Legita / Respondita / Plusendita Ikono"
+msgstr ""
+"Kombinita Nova / Nelegita / Legita / Respondita / Plusendita Piktogramo"
 
 #: core/theme.cpp:137
 #, kde-format
 msgid "Action Item Icon"
-msgstr "Ago-Ikono"
+msgstr "Ago-Piktogramo"
 
 #: core/theme.cpp:140
 #, kde-format
 msgid "Important Icon"
-msgstr "Grava Ikono"
+msgstr "Grava Piktogramo"
 
 #: core/theme.cpp:143
 #, kde-format
@@ -734,27 +735,27 @@ msgstr "Grupo Head Etikedo"
 #: core/theme.cpp:146
 #, kde-format
 msgid "Spam/Ham Icon"
-msgstr "Spamo / Ŝinko Ikono"
+msgstr "Spamo / Ŝinko Piktogramo"
 
 #: core/theme.cpp:149
 #, kde-format
 msgid "Watched/Ignored Icon"
-msgstr "Rigardita/Ignorita Ikono"
+msgstr "Rigardita/Ignorita Piktogramo"
 
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr "Grupo Header Vastigi / Kolapsi Ikonon"
+msgstr "Grupo Header Vastigi / Kolapsi Piktogramon"
 
 #: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
-msgstr "Ĉifrada Ŝtata Ikono"
+msgstr "Ĉifradostata Piktogramo"
 
 #: core/theme.cpp:158
 #, kde-format
 msgid "Signature State Icon"
-msgstr "Subskribo Ŝtata Ikono"
+msgstr "Subskribostata Piktogramo"
 
 #: core/theme.cpp:161
 #, kde-format
@@ -779,12 +780,12 @@ msgstr "Mesaĝaj Etikedoj"
 #: core/theme.cpp:173
 #, kde-format
 msgid "Note Icon"
-msgstr "Noto Ikono"
+msgstr "Noto Piktogramo"
 
 #: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
-msgstr "Invita Ikono"
+msgstr "Invita Piktogramo"
 
 #: core/theme.cpp:177
 #, kde-format
@@ -913,15 +914,15 @@ msgstr "Antaŭrigardo"
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> respondo"
+msgstr[1] "<b>%1</b> respondoj"
 
 #: core/view.cpp:2305
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> mesaĝo en subarbo (<b>%2</b> nelegitaj)"
+msgstr[1] "<b>%1</b> mesaĝoj en subarbo (<b>%2</b> nelegitaj)"
 
 #: core/view.cpp:2342
 #, kde-format
@@ -1030,15 +1031,15 @@ msgstr "Mesaĝoj ricevitaj de %1"
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> fadeno"
+msgstr[1] "<b>%1</b> fadenoj"
 
 #: core/view.cpp:2467
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>%1</b> mesaĝo (<b>%2</b> nelegitaj)"
+msgstr[1] "<b>%1</b> mesaĝoj (<b>%2</b> nelegitaj)"
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1859,8 +1860,8 @@ msgstr "Piktograma grandeco:"
 msgctxt "suffix in a spinbox"
 msgid " pixel"
 msgid_plural " pixels"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " rastrumero"
+msgstr[1] " rastrumeroj"
 
 #: widget.cpp:220
 #, kde-format
