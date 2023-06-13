@@ -8,6 +8,7 @@
 #include "remotecontentdialog.h"
 #include "remotecontentmanager.h"
 #include "remotecontentstatustypecombobox.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
@@ -57,6 +58,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
+    KLineEditEventHandler::catchReturnKey(searchLineEdit);
 
     mainLayout->addWidget(mTreeWidget);
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &RemoteContentConfigureWidget::slotCustomContextMenuRequested);

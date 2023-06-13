@@ -8,6 +8,7 @@
 #include "dkimmanagerulescombobox.h"
 #include "dkimruledialog.h"
 #include "messageviewer_dkimcheckerdebug.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
@@ -77,6 +78,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
+    KLineEditEventHandler::catchReturnKey(searchLineEdit);
 
     mainLayout->addWidget(mTreeWidget);
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManageRulesWidget::slotCustomContextMenuRequested);
