@@ -170,15 +170,15 @@ QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
     QString result;
     if (mHeaderPlugin) {
         result = mHeaderPlugin->extraCommonCss(headerFont);
-        if (result.isEmpty()) {
-            // Add default value
-            result = QStringLiteral(
-                "div.header table {\n"
-                "  width: 100% ! important;\n"
-                "  border-width: 0px ! important;\n"
-                "  line-height: normal;\n"
-                "}\n\n");
-        }
+    }
+    if (result.isEmpty()) {
+        // Add default value
+        result = QStringLiteral(
+            "div.header table {\n"
+            "  width: 100% ! important;\n"
+            "  border-width: 0px ! important;\n"
+            "  line-height: normal;\n"
+            "}\n\n");
     }
     return result;
 }
@@ -664,7 +664,6 @@ QString CSSHelperBase::commonCssDefinitions() const
     for (const auto &msgStyle : inlineMessageStyles) {
         inlineMessageCss.push_back(QLatin1String("div.") + QString::fromLatin1(msgStyle.cssName));
     }
-
     return QStringLiteral(
                "div.header {\n"
                "  margin-bottom: 10pt ! important;\n"
@@ -735,7 +734,8 @@ QString CSSHelperBase::commonCssDefinitions() const
                "  position: absolute;\n"
                "  margin-left:-10px;\n"
                "}\n\n")
-        .arg(extraCommonCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
+        .arg(extraCommonCss(headerFont))
+        .arg(inlineMessageCss.join(QLatin1String(", ")))
         .arg(mForegroundColor.red())
         .arg(mForegroundColor.green())
         .arg(mForegroundColor.blue())
