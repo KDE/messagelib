@@ -290,6 +290,7 @@ target_link_libraries(KPim6MessageComposer
     KPim6::MailTransport
     KPim6::PimTextEdit
     KPim6::TemplateParser
+    KPim6::MessageViewer
     KPim6::AkonadiWidgets
     KF6::KIOCore
     KF6::I18n

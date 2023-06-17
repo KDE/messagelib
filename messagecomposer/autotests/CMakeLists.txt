@@ -55,6 +55,8 @@ macro( add_messagecomposer_cryptotest _source )
         KF6::Completion
         KPim6::MailTransport
         KF6::Contacts
+	KPim6::MimeTreeParser
+	KF6::Service
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
     set_tests_properties(messagecomposer-${_name} PROPERTIES
