@@ -9,7 +9,6 @@ find_dependency(KPim6Akonadi "@AKONADI_VERSION@")
 find_dependency(KPim6IdentityManagementWidgets "@IDENTITYMANAGEMENT_LIB_VERSION@")
 find_dependency(KPim6AkonadiMime "@AKONADIMIME_LIB_VERSION@")
 find_dependency(KPim6Libkleo "@LIBKLEO_LIB_VERSION@")
-find_dependency(KPim6MessageViewer "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KF6TextAutoCorrectionWidgets "@KTEXTADDONS_MIN_VERSION@")
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

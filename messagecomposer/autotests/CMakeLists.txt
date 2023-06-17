@@ -20,7 +20,6 @@ macro( add_messagecomposer_test _source )
             KPim6::MailTransport
             KPim6::Mime
             KPim6::MessageComposer
-            KPim6::MessageViewer
             KPim6::MessageCore
             KPim6::TemplateParser
             KPim6::PimTextEdit
@@ -46,7 +45,6 @@ macro( add_messagecomposer_cryptotest _source )
         KF6::I18n
         KPim6::Mime
         KPim6::MessageComposer
-        KPim6::MessageViewer
         KPim6::MessageCore
         KPim6::Libkleo
         KPim6::Libkdepim

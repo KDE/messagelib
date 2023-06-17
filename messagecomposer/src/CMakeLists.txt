@@ -286,7 +286,6 @@ target_link_libraries(KPim6MessageComposer
     KPim6::PimTextEdit
     KPim6::AkonadiMime
     KPim6::Libkleo
-    KPim6::MessageViewer
     PRIVATE
     KPim6::MailTransport
     KPim6::PimTextEdit
