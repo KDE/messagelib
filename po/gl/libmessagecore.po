@@ -1,23 +1,24 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Xosé <xosecalvo@gmail.com>, 2009, 2010, 2011, 2012, 2013.
 # Marce Villarino <mvillarino@kde-espana.org>, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2016, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:59+0000\n"
-"PO-Revision-Date: 2019-02-17 19:10+0100\n"
+"PO-Revision-Date: 2023-06-18 14:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -121,7 +122,7 @@ msgid ""
 "the part to disk.</p>"
 msgstr ""
 "<p>O nome de ficheiro da parte:</p><p>Aínda que de maneira predeterminada é "
-"o nome do ficheiro anexado, non especifica o ficheiro que se anexa; no canto "
+"o nome do ficheiro anexado, non indica o ficheiro que se anexa; no canto "
 "disto, suxire un nome de ficheiro para que utilice o axente de correo do "
 "destinatario ao gardar a parte no disco.</p>"
 
@@ -135,7 +136,7 @@ msgid ""
 msgstr ""
 "<p>Unha descrición da parte:</p><p>Isto é simplemente unha descrición "
 "informativa da parte, similar ao que é o asunto para a mensaxe completa; a "
-"maioría dos axentes de correo mostran esta información nas vistas previas da "
+"maioría dos axentes de correo amosan esta información nas vistas previas da "
 "mensaxe xunto coa icona do anexo.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:160
@@ -194,8 +195,7 @@ msgstr ""
 
 #: attachment/attachmentpropertiesdialog.cpp:306
 #: attachment/attachmentpropertiesdialog.cpp:321
-#, fuzzy, kde-format
-#| msgid "Attachment Properties"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
 msgstr "Propiedades do anexo"
@@ -250,7 +250,7 @@ msgstr "Codificación:"
 #: attachment/ui/attachmentpropertiesdialog.ui:187
 #, kde-format
 msgid "Suggest automatic display"
-msgstr "Suxerir que se mostre automaticamente"
+msgstr "Suxerir que se amose automaticamente"
 
 #. i18n: ectx: property (text), widget (QCheckBox, encrypt)
 #: attachment/ui/attachmentpropertiesdialog.ui:194
@@ -273,7 +273,7 @@ msgid ""
 msgstr ""
 "Se cambia o valor predeterminado «Automático», obrígase a empregar a "
 "codificación específica para todos os correos electrónicos, omitindo o que "
-"eles mesmos especifiquen."
+"eles mesmos indiquen."
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
 #: settings/messagecore.kcfg:35
