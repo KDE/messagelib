@@ -336,8 +336,6 @@ msgid "Signature is valid"
 msgstr "Semnătura este validă."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "Stare semnătură necunoscută"
 
