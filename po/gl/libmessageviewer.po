@@ -145,7 +145,7 @@ msgstr "Mensaxe cifrada"
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
-msgstr "Mostrar os detalles"
+msgstr "Amosar os detalles"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
@@ -178,9 +178,9 @@ msgid ""
 "activate formatted HTML display for this message <a href='kmail:showHTML'>by "
 "clicking here</a>."
 msgstr ""
-"<b>Nota:</b> Esta é unha mensaxe HTML. Por razóns de seguranza, só se mostra "
-"o código HTML en cru. Se confía no remitente da mensaxe, pode activar o "
-"formato real de HTML para esta mensaxe <a href=\"kmail:showHTML\">premendo "
+"<b>Nota:</b> Esta é unha mensaxe HTML. Por razóns de seguridade, só se "
+"mostra o código HTML en cru. Se confía no remitente da mensaxe, pode activar "
+"o formato real de HTML para esta mensaxe <a href=\"kmail:showHTML\">premendo "
 "aquí</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
@@ -191,7 +191,7 @@ msgid ""
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
 "<b>Nota:</b> Esta mensaxe HTML podería conter referencias externas a imaxes "
-"e outras cousas. Por razóns de seguranza e intimidade non se cargan as "
+"e outras cousas. Por razóns de seguridade e intimidade non se cargan as "
 "referencias externas. Se confía no remitente da mensaxes pode cargar as "
 "referencias externas da mensaxes <a href=\"kmail:loadExternal\">premendo "
 "aquí</a>."
@@ -912,7 +912,7 @@ msgstr "Anexos:"
 #: header/grantleeheaderformatter.cpp:589
 #, kde-format
 msgid "Security:"
-msgstr "Seguranza:"
+msgstr "Seguridade:"
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -1405,15 +1405,14 @@ msgstr ""
 #, kde-format
 msgid "Always show encryption/signature details when we print message"
 msgstr ""
-"Mostrar sempre os detalles de cifrado ou sinatura ao imprimir unha mensaxe"
+"Amosar sempre os detalles de cifrado ou sinatura ao imprimir unha mensaxe"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
-"Cando se mostre HTML non empregar un tamaño de tipo de letra inferior ao "
-"mínimo."
+"Cando se amose HTML non usar un tamaño de tipo de letra inferior ao mínimo."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:38
@@ -1443,7 +1442,7 @@ msgstr "Pechar a xanela de mensaxes despois de responder ou reenviar."
 #: settings/messageviewer.kcfg.cmake:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Mostrar marcas para despregar/pregar citas de texto"
+msgstr "Amosar marcas para despregar/pregar citas de texto"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:73
@@ -1452,7 +1451,7 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
-"Active esta opción para mostrar os distintos niveis de citas textuais. "
+"Active esta opción para amosar os distintos niveis de citas textuais. "
 "Desactívea para agochar os niveis de citas textuais."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
@@ -1472,7 +1471,7 @@ msgstr "Reducir o tamaño de tipo de letra do texto citado"
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Active esta opción para mostrar as citas textuais cunha fonte máis pequena."
+"Active esta opción para amosar as citas textuais cunha fonte máis pequena."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.cmake:88
@@ -1491,26 +1490,26 @@ msgstr "Visor da estrutura da mensaxe"
 #: settings/messageviewer.kcfg.cmake:94
 #, kde-format
 msgid "Show never"
-msgstr "Non mostrar nunca"
+msgstr "Non amosar nunca"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.cmake:97
 #, kde-format
 msgid "Show always"
-msgstr "Mostrar sempre"
+msgstr "Amosar sempre"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
 #: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr "Que estilo de cabeceira quere mostrar"
+msgstr "Que estilo de cabeceira quere amosar"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg.cmake:119
 #, kde-format
 msgid "How much of headers should be displayed"
-msgstr "Canto quere mostrar das cabeceiras"
+msgstr "Canto quere amosar das cabeceiras"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg.cmake:123
@@ -1817,7 +1816,7 @@ msgstr "Imprimir a cor e as imaxes do fondo"
 #: ui/printingsettings.ui:38
 #, kde-format
 msgid "Always show encryption/signature details"
-msgstr "Mostrar sempre os detalles de cifrado ou sinatura"
+msgstr "Amosar sempre os detalles de cifrado ou sinatura"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -1847,7 +1846,7 @@ msgstr "Reducir o tama&ño de tipo de letra do texto citado"
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr "Mostrar marcas para d&espregar/pregar as citas de texto"
+msgstr "Amosar marcas para d&espregar/pregar as citas de texto"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -2055,7 +2054,7 @@ msgstr "Descifrar a mensaxe."
 #: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Show signature details."
-msgstr "Mostrar os detalles da sinatura."
+msgstr "Amosar os detalles da sinatura."
 
 #: viewer/urlhandlermanager.cpp:417
 #, kde-format
@@ -2065,7 +2064,7 @@ msgstr "Agochar os detalles da sinatura."
 #: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Show encryption details."
-msgstr "Mostrar os detalles da cifraxe."
+msgstr "Amosar os detalles da cifraxe."
 
 #: viewer/urlhandlermanager.cpp:421
 #, kde-format
@@ -2100,7 +2099,7 @@ msgstr "Erro de KMail"
 #: viewer/urlhandlermanager.cpp:541
 #, kde-format
 msgid "Show certificate 0x%1"
-msgstr "Mostrar o certificado 0x%1"
+msgstr "Amosar o certificado 0x%1"
 
 #: viewer/urlhandlermanager.cpp:600
 #, kde-format
@@ -2145,7 +2144,7 @@ msgstr "Anexo sen nome"
 #: viewer/urlhandlermanager.cpp:845
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
-msgstr "Mostrar o rexistro de auditoría de GnuPG desta operación"
+msgstr "Amosar o rexistro de auditoría de GnuPG desta operación"
 
 #: viewer/urlhandlermanager.cpp:885
 #, kde-format
@@ -2289,7 +2288,7 @@ msgstr "Com&o iconas"
 #: viewer/viewer_p.cpp:1471
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
-msgstr "Mostrar todos os anexos como iconas. Prema para velos."
+msgstr "Amosar todos os anexos como iconas. Prema para velos."
 
 #: viewer/viewer_p.cpp:1475
 #, kde-format
@@ -2300,7 +2299,7 @@ msgstr "Inteli&xente"
 #: viewer/viewer_p.cpp:1478
 #, kde-format
 msgid "Show attachments as suggested by sender."
-msgstr "Mostrar os anexos como o suxira o remitente."
+msgstr "Amosar os anexos como o suxira o remitente."
 
 #: viewer/viewer_p.cpp:1482
 #, kde-format
@@ -2311,7 +2310,7 @@ msgstr "Inserir en &liña"
 #: viewer/viewer_p.cpp:1485
 #, kde-format
 msgid "Show all attachments inline (if possible)"
-msgstr "Mostrar todos os anexos en liña (se for posíbel)"
+msgstr "Amosar todos os anexos en liña (se for posíbel)"
 
 #: viewer/viewer_p.cpp:1489
 #, kde-format
@@ -2322,7 +2321,7 @@ msgstr "&Agochar"
 #: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Do not show attachments in the message viewer"
-msgstr "Non mostrar os arquivos anexos na vista da mensaxe"
+msgstr "Non amosar os arquivos anexos na vista da mensaxe"
 
 #: viewer/viewer_p.cpp:1496
 #, kde-format
@@ -2333,7 +2332,7 @@ msgstr "Só na cabeceira"
 #: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "Mostrar os anexos só na cabeceira do correo"
+msgstr "Amosar os anexos só na cabeceira do correo"
 
 #: viewer/viewer_p.cpp:1504
 #, kde-format
@@ -2369,7 +2368,7 @@ msgstr "Abrir URL"
 #: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "Show Message Structure"
-msgstr "Mostrar a estrutura da mensaxe"
+msgstr "Amosar a estrutura da mensaxe"
 
 #: viewer/viewer_p.cpp:1557
 #, kde-format
@@ -2486,7 +2485,7 @@ msgstr "O URL %1 non é válido."
 #: viewer/viewer_p.cpp:1960
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
-msgstr "Este sitio web é software malicioso, quere mostralo de todos xeitos?"
+msgstr "Este sitio web é software malicioso, quere amosalo de todos xeitos?"
 
 #: viewer/viewer_p.cpp:1961
 #, kde-format
@@ -2535,7 +2534,7 @@ msgid ""
 "may compromise your system's security."
 msgstr ""
 "Quere abrir o anexo <filename>%1</filename>?<nl/>Lembre que abrir ficheiros "
-"anexos podería poñer en perigo a seguranza do sistema."
+"anexos podería poñer en perigo a seguridade do sistema."
 
 #: widgets/attachmentdialog.cpp:32
 #, fuzzy, kde-format
@@ -2651,7 +2650,7 @@ msgstr "Fonte en HTML"
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr "Código HTML para lle mostrar a mensaxe ao usuario"
+msgstr "Código HTML para lle amosar a mensaxe ao usuario"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, fuzzy, kde-format
