@@ -368,7 +368,7 @@ msgstr "Asinar"
 #, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
-msgstr "Suxerir que se mostre automaticamente"
+msgstr "Suxerir que se amose automaticamente"
 
 #: composer/composer.cpp:276
 #, kde-format
@@ -884,7 +884,7 @@ msgid ""
 "not be able to read your own messages if you do so."
 msgstr ""
 "O exame das preferencias de cifrado do destinatario concluíu que a mensaxe "
-"debería cifrarse empregando OpenPGP, polo menos para algúns destinatarios;\n"
+"debería cifrarse usando OpenPGP, polo menos para algúns destinatarios;\n"
 "porén, non configurou ningunha chave de cifrado OpenPGP correcta e "
 "autenticada para esta identidade.\n"
 "Pode continuar sen cifrarse a si mesmo, pero sexa consciente de que non será "
@@ -901,7 +901,7 @@ msgid ""
 "not be able to read your own messages if you do so."
 msgstr ""
 "O exame das preferencias de cifrado do destinatario concluíu que a mensaxe "
-"debería cifrarse empregando S/MIME, polo menos para algúns destinatarios;\n"
+"debería cifrarse usando S/MIME, polo menos para algúns destinatarios;\n"
 "porén, non configurou ningún certificado S/MIME correcto e autenticado para "
 "esta identidade.\n"
 "Pode continuar sen cifrarse a si mesmo, pero sexa consciente de que non será "
@@ -916,7 +916,7 @@ msgid ""
 "identity."
 msgstr ""
 "O exame das preferencias de asinado dos destinatarios revelou que a mensaxe "
-"debería asinarse empregando OpenPGP, polo menos para algúns destinatarios;\n"
+"debería asinarse usando OpenPGP, polo menos para algúns destinatarios;\n"
 "porén, non configurou ningún certificado de sinatura OpenPGP correcto para "
 "esta identidade."
 
@@ -934,8 +934,7 @@ msgid ""
 "identity."
 msgstr ""
 "O exame das preferencias de sinatura dos destinatarios revelou que a mensaxe "
-"debería asinarse empregando S/MIME, polo menos para algúns dos "
-"destinatarios;\n"
+"debería asinarse usando S/MIME, polo menos para algúns dos destinatarios;\n"
 "porén, non configurou certificados S/MIME correctos para asinar con esta "
 "identidade."
 
@@ -1028,7 +1027,7 @@ msgid ""
 msgstr ""
 "Hai un problema co(s) certificado(s) de cifrado de «%1».\n"
 "\n"
-"Seleccione de novo o(s) certificado(s) que desexa empregar para este "
+"Seleccione de novo o(s) certificado(s) que desexa usar para este "
 "destinatario."
 
 #: composer/keyresolver.cpp:1556
@@ -1044,7 +1043,7 @@ msgid ""
 "certificates.</qt>"
 msgstr ""
 "<qt>Non se atopou ningún certificado de cifrado correcto e de confianza para "
-"«%1».<br/><br/>Escolla o(s) certificado(s) que desexe empregar con este "
+"«%1».<br/><br/>Escolla o(s) certificado(s) que desexe usar con este "
 "destinatario. De non haber ningún certificado axeitado na lista tamén se "
 "poden buscar certificados externos premendo o botón: buscar certificados "
 "externos.</qt>"
@@ -1061,7 +1060,7 @@ msgid ""
 msgstr ""
 "Hai máis dun certificado que coincide con «%1».\n"
 "\n"
-"Escolla o(s) certificados que desexa empregar con este destinatario."
+"Escolla o(s) certificados que desexa usar con este destinatario."
 
 #: composer/nearexpirychecker.cpp:68
 #, kde-format
@@ -1974,15 +1973,14 @@ msgstr ""
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
-"Pediuse empregar o axuste de liña pero non se forneceu texto simple con "
-"axuste de liña."
+"Pediuse usar o axuste de liña pero non se forneceu texto simple con axuste "
+"de liña."
 
 #: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
-"Pediuse non empregar o axuste de liña pero non se forneceu texto simple "
-"limpo."
+"Pediuse non usar o axuste de liña pero non se forneceu texto simple limpo."
 
 #: job/maintextjob.cpp:81
 #, kde-format
@@ -2482,8 +2480,7 @@ msgstr "Colocar un separador antes da sinatura"
 #: settings/messagecomposer.kcfg.cmake:45
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr ""
-"Empregar os enderezos indexados de mensaxes para o completado automático"
+msgstr "Usar os enderezos indexados de mensaxes para o completado automático"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:46
@@ -2492,7 +2489,7 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Desactive esta opción se quere que só se mostren os enderezos dos seus "
+"Desactive esta opción se quere que só se amosen os enderezos dos seus "
 "cadernos de enderezos na lista de completado automático dos campos de "
 "enderezo da xanela de edición de mensaxes."
 
@@ -2503,14 +2500,14 @@ msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
 msgstr ""
-"Permitir empregar o carácter de punto e coma (;) como separador no "
-"compositor de mensaxes."
+"Permitir usar o carácter de punto e coma (;) como separador no compositor de "
+"mensaxes."
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:55
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr "Empregar os enderezos recentes para o completado automático"
+msgstr "Usar os enderezos recentes para o completado automático"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:56
@@ -2519,7 +2516,7 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
-"Desactive esta opción se non quere que se mostren os enderezos recentemente "
+"Desactive esta opción se non quere que se amosen os enderezos recentemente "
 "usados na lista de completado automático dos campos de enderezo da xanela de "
 "edición de mensaxes."
 
@@ -2605,7 +2602,7 @@ msgid ""
 "before issuing a warning"
 msgstr ""
 "O número mínimo de días que ten que ser correcto o certificado de cifrado "
-"antes de mostrar un aviso"
+"antes de amosar un aviso"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:113
@@ -2615,7 +2612,7 @@ msgid ""
 "valid before issuing a warning"
 msgstr ""
 "O número mínimo de días que teñen que ser correctos todos os certificados da "
-"cadea antes de mostrar un aviso"
+"cadea antes de amosar un aviso"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:117
@@ -2625,14 +2622,14 @@ msgid ""
 "issuing a warning"
 msgstr ""
 "O número mínimo de días que ten que ser correcto o certificado raíz antes de "
-"mostrar un aviso"
+"amosar un aviso"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:121
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
-msgstr "Mostrar sempre a lista de chaves de cifrado para escoller a que usar."
+msgstr "Amosar sempre a lista de chaves de cifrado para escoller a que usar."
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
