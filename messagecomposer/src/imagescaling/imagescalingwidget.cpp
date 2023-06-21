@@ -359,3 +359,5 @@ void ImageScalingWidget::resetToDefault()
     updateSettings();
     MessageComposer::MessageComposerSettings::self()->useDefaults(bUseDefaults);
 }
+
+#include "moc_imagescalingwidget.cpp"

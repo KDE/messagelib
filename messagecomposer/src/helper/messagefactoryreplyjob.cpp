@@ -83,3 +83,5 @@ void MessageFactoryReplyJob::setIdentityManager(KIdentityManagementCore::Identit
 {
     mIdentityManager = identityManager;
 }
+
+#include "moc_messagefactoryreplyjob.cpp"

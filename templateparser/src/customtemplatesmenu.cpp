@@ -206,3 +206,5 @@ void CustomTemplatesMenu::slotForwardSelected(int idx)
 {
     Q_EMIT forwardTemplateSelected(d->mCustomTemplates.at(idx));
 }
+
+#include "moc_customtemplatesmenu.cpp"

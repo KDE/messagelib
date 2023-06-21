@@ -59,3 +59,5 @@ void DKIMRuleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mPriority);
     QCOMPARE(mPriority->value(), 1000);
 }
+
+#include "moc_dkimrulewidgettest.cpp"

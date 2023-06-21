@@ -40,3 +40,5 @@ void TemplateParserEmailAddressRequesterLineEdit::clear()
 {
     mLineEdit->clear();
 }
+
+#include "moc_templateparseremailaddressrequesterlineedit.cpp"

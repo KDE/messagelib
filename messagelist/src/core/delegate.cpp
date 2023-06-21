@@ -22,3 +22,5 @@ Item *Delegate::itemFromIndex(const QModelIndex &index) const
 {
     return static_cast<Item *>(index.internalPointer());
 }
+
+#include "moc_delegate.cpp"

@@ -32,3 +32,5 @@ void RemoteContentInfoTest::shouldVerifyIsValid()
     info.setUrl({});
     QVERIFY(!info.isValid());
 }
+
+#include "moc_remotecontentinfotest.cpp"

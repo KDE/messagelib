@@ -122,3 +122,5 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
 }
 
 QTEST_GUILESS_MAIN(VerifyDataBaseUpdateTest)
+
+#include "moc_verifydatabaseupdatetest.cpp"

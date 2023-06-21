@@ -1958,3 +1958,5 @@ const Theme *ThemeDelegate::theme() const
 {
     return mTheme;
 }
+
+#include "moc_themedelegate.cpp"

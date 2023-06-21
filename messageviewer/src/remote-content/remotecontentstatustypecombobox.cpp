@@ -27,3 +27,5 @@ RemoteContentInfo::RemoteContentInfoStatus RemoteContentStatusTypeComboBox::stat
 {
     return currentData().value<RemoteContentInfo::RemoteContentInfoStatus>();
 }
+
+#include "moc_remotecontentstatustypecombobox.cpp"

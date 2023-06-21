@@ -63,3 +63,5 @@ bool WebEngineExportPdfPageJob::canStart() const
 {
     return mWebEngineView && !mPdfPath.isEmpty();
 }
+
+#include "moc_webengineexportpdfpagejob.cpp"

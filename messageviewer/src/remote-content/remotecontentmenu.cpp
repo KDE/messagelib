@@ -89,3 +89,5 @@ void RemoteContentMenu::appendUrl(const QString &url)
         mUrls.append(url);
     }
 }
+
+#include "moc_remotecontentmenu.cpp"

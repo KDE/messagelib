@@ -22,3 +22,5 @@ MessageCoreSettings *MessageCoreSettings::self()
 MessageCoreSettings::MessageCoreSettings() = default;
 
 MessageCoreSettings::~MessageCoreSettings() = default;
+
+#include "moc_messagecoresettings.cpp"

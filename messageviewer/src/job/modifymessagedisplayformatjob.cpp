@@ -82,3 +82,5 @@ void ModifyMessageDisplayFormatJob::slotModifyItemDone(KJob *job)
     }
     deleteLater();
 }
+
+#include "moc_modifymessagedisplayformatjob.cpp"

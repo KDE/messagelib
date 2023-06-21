@@ -140,3 +140,5 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
     QCOMPARE(content->contentType(false)->charset(), "utf-8");
     QVERIFY(content->decodedText().isEmpty());
 }
+
+#include "moc_itipjobtest.cpp"

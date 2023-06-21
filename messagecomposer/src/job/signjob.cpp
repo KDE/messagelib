@@ -285,3 +285,5 @@ void SignJob::process()
         emitResult();
     }
 }
+
+#include "moc_signjob.cpp"

@@ -28,3 +28,5 @@ void WebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
 }
 
 QTEST_APPLESS_MAIN(WebEngineAccessKeyAnchorTest)
+
+#include "moc_webengineaccesskeyanchortest.cpp"

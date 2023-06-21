@@ -174,3 +174,5 @@ void ContactDisplayMessageMemento::slotGravatarResolvUrlFinished(Gravatar::Grava
         Q_EMIT update(MimeTreeParser::Delayed);
     }
 }
+
+#include "moc_contactdisplaymessagememento.cpp"

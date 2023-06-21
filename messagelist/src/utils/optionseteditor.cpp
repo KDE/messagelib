@@ -65,3 +65,5 @@ QLineEdit *OptionSetEditor::nameEdit() const
 {
     return mNameEdit;
 }
+
+#include "moc_optionseteditor.cpp"

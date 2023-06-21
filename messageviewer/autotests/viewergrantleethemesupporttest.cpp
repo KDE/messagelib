@@ -40,3 +40,5 @@ void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
 }
 
 QTEST_MAIN(ViewerGrantleeThemeSupportTest)
+
+#include "moc_viewergrantleethemesupporttest.cpp"

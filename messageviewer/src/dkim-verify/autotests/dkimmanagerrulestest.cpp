@@ -50,3 +50,5 @@ void DKIMManagerRulesTest::shouldClearRules()
 }
 
 // TODO add save/load support
+
+#include "moc_dkimmanagerrulestest.cpp"

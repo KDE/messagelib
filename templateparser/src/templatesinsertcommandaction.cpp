@@ -33,3 +33,5 @@ void TemplatesInsertCommandAction::setType(TemplatesCommandMenu::MenuTypes type)
     mMenuCommand->setType(type);
     setMenu(mMenuCommand->menu());
 }
+
+#include "moc_templatesinsertcommandaction.cpp"

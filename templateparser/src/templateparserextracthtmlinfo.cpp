@@ -87,3 +87,5 @@ void TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished(bool success)
     Q_EMIT finished(mResult);
     deleteLater();
 }
+
+#include "moc_templateparserextracthtmlinfo.cpp"

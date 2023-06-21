@@ -102,3 +102,5 @@ void PluginEditorInterface::setApplyOnFieldTypes(PluginEditorInterface::ApplyOnF
 {
     d->mApplyOnFieldTypes = types;
 }
+
+#include "moc_plugineditorinterface.cpp"

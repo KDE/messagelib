@@ -34,3 +34,5 @@ QWebEnginePage *DeveloperToolWidget::enginePage() const
 {
     return mEnginePage;
 }
+
+#include "moc_developertoolwidget.cpp"

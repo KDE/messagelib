@@ -52,3 +52,5 @@ void AttachmentPartTest::shouldHaveDefaultValue()
     QVERIFY(part.mimeType().isEmpty());
     QVERIFY(part.data().isEmpty());
 }
+
+#include "moc_attachmentparttest.cpp"

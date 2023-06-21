@@ -41,3 +41,5 @@ void FilterSavedMenu::slotShowMenu()
     connect(mSaveAction, &QAction::triggered, this, &FilterSavedMenu::saveFilter);
     connect(mConfigureAction, &QAction::triggered, this, &FilterSavedMenu::configureFilters);
 }
+
+#include "moc_filtersavedmenu.cpp"

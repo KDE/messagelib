@@ -71,3 +71,5 @@ void MDNWarningWidget::setSendingMode(KMime::MDN::SendingMode newSendingMode)
 {
     mSendingMode = newSendingMode;
 }
+
+#include "moc_mdnwarningwidget.cpp"

@@ -60,3 +60,5 @@ void MDNAdviceDialog::slotYesClicked()
     m_result = MessageComposer::MDNIgnore;
     accept();
 }
+
+#include "moc_mdnadvicedialog.cpp"

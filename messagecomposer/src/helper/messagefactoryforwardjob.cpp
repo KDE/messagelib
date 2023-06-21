@@ -68,3 +68,5 @@ void MessageFactoryForwardJob::setIdentityManager(KIdentityManagementCore::Ident
 {
     mIdentityManager = identityManager;
 }
+
+#include "moc_messagefactoryforwardjob.cpp"

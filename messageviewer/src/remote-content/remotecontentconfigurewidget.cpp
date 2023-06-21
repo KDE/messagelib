@@ -180,3 +180,5 @@ void RemoteContentConfigureWidget::fillContentInfo(const RemoteContentInfo &info
     item->setToolTip(0, info.url());
     item->setStatus(info.status());
 }
+
+#include "moc_remotecontentconfigurewidget.cpp"

@@ -173,3 +173,5 @@ void ViewerPluginToolManager::updateActions(const Akonadi::Item &messageItem)
 {
     d->updateActions(messageItem);
 }
+
+#include "moc_viewerplugintoolmanager.cpp"

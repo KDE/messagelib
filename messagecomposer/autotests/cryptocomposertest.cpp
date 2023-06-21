@@ -896,3 +896,5 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
         QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
     }
 }
+
+#include "moc_cryptocomposertest.cpp"

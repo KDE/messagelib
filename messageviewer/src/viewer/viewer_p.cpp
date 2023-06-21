@@ -3057,3 +3057,5 @@ void MessageViewer::ViewerPrivate::setFolderIdentity(uint folderIdentity)
 {
     mFolderIdentity = folderIdentity;
 }
+
+#include "moc_viewer_p.cpp"

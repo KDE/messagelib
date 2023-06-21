@@ -118,3 +118,5 @@ void WebHitTest::handleHitTest(const QVariant &result)
     Q_EMIT finished(webHitResult);
     deleteLater();
 }
+
+#include "moc_webhittest.cpp"

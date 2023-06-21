@@ -124,3 +124,5 @@ void WebEnginePartHtmlWriter::setExtraHead(const QString &str)
 {
     mExtraHead = str;
 }
+
+#include "moc_webengineparthtmlwriter.cpp"

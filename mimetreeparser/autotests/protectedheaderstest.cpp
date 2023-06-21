@@ -240,3 +240,5 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
         QCOMPARE(actual, QStringList());
     }
 }
+
+#include "moc_protectedheaderstest.cpp"

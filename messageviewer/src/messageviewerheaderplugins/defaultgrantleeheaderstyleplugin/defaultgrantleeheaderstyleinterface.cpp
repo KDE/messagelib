@@ -48,3 +48,5 @@ void DefaultGrantleeHeaderStyleInterface::slotDefaultGrantleeHeaders()
     mHeaderStylePlugin->headerStyle()->setTheme(mDefaultTheme);
     slotStyleChanged();
 }
+
+#include "moc_defaultgrantleeheaderstyleinterface.cpp"

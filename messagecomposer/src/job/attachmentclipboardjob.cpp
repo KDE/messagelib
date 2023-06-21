@@ -52,3 +52,5 @@ void AttachmentClipBoardJob::doStart()
         }
     }
 }
+
+#include "moc_attachmentclipboardjob.cpp"

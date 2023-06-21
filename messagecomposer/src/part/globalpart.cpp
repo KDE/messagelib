@@ -104,3 +104,5 @@ void GlobalPart::setRequestDeleveryConfirmation(bool value)
 {
     d->requestDeleveryConfirmation = value;
 }
+
+#include "moc_globalpart.cpp"

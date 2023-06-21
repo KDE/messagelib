@@ -53,3 +53,5 @@ void DKIMManagerAuthenticationServer::save()
     KConfigGroup grp(config, myDKIMManagerAuthenticationServerConfigGroupName);
     grp.writeEntry("ServerList", mServerList);
 }
+
+#include "moc_dkimmanagerauthenticationserver.cpp"

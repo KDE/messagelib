@@ -65,3 +65,5 @@ void MultipartJob::process()
                                  << "subjobContents.";
     emitResult();
 }
+
+#include "moc_multipartjob.cpp"

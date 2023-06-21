@@ -41,3 +41,5 @@ int main(int argc, char **argv)
     delete w;
     return 0;
 }
+
+#include "moc_templateparseremailrequester.cpp"

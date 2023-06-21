@@ -27,3 +27,5 @@ void CustomTemplatesMenuTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(CustomTemplatesMenuTest)
+
+#include "moc_customtemplatesmenutest.cpp"

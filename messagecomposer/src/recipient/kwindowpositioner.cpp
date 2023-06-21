@@ -55,3 +55,5 @@ void KWindowPositioner::reposition()
     mSlave->move(pos);
     mSlave->raise();
 }
+
+#include "moc_kwindowpositioner.cpp"

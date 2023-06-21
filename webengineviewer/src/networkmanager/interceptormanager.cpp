@@ -58,3 +58,5 @@ QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer
     }
     return actions;
 }
+
+#include "moc_interceptormanager.cpp"

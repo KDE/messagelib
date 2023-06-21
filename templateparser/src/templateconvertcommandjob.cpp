@@ -39,3 +39,5 @@ void TemplateConvertCommandJob::setOriginalMessage(const KMime::Message::Ptr &or
 {
     mOriginalMessage = originalMessage;
 }
+
+#include "moc_templateconvertcommandjob.cpp"

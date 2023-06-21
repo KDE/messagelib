@@ -156,3 +156,5 @@ void SignatureController::applySignature(const KIdentityManagementCore::Signatur
         }
     }
 }
+
+#include "moc_signaturecontroller.cpp"

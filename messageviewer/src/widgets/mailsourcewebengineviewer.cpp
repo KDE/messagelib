@@ -123,3 +123,5 @@ void MailSourceWebEngineViewer::setFixedFont()
         mHtmlBrowser->setFixedFont();
     }
 }
+
+#include "moc_mailsourcewebengineviewer.cpp"

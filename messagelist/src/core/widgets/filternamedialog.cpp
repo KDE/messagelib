@@ -58,3 +58,5 @@ void FilterNameDialog::setIconName(const QString &icon)
 {
     mFilterNameWidget->setIconName(icon);
 }
+
+#include "moc_filternamedialog.cpp"

@@ -61,3 +61,5 @@ void SearchLineStatusTest::shouldClearCompleter()
 }
 
 QTEST_MAIN(SearchLineStatusTest)
+
+#include "moc_searchlinestatustest.cpp"

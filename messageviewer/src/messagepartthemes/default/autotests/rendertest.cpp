@@ -319,3 +319,5 @@ void RenderTest::testRender()
 }
 
 QTEST_MAIN(RenderTest)
+
+#include "moc_rendertest.cpp"

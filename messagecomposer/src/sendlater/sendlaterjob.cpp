@@ -50,3 +50,5 @@ void SendLaterJob::start()
         emitResult();
     });
 }
+
+#include "moc_sendlaterjob.cpp"

@@ -348,3 +348,5 @@ void SignJobTest::testProtectedHeadersSkipLong()
 
     Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
+
+#include "moc_signjobtest.cpp"

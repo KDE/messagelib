@@ -168,3 +168,5 @@ bool CheckPhishingUrlJob::canStart() const
 {
     return d->mUrl.isValid();
 }
+
+#include "moc_checkphishingurljob.cpp"

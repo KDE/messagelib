@@ -15,3 +15,5 @@ DKIMManagerTest::DKIMManagerTest(QObject *parent)
 {
     QStandardPaths::setTestModeEnabled(true);
 }
+
+#include "moc_dkimmanagertest.cpp"

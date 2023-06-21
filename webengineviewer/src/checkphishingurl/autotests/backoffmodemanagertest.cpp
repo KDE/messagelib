@@ -40,3 +40,5 @@ void BackOffModeManagerTest::shouldIncreaseBackOff()
 }
 
 QTEST_GUILESS_MAIN(BackOffModeManagerTest)
+
+#include "moc_backoffmodemanagertest.cpp"

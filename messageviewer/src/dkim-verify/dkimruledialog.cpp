@@ -78,3 +78,5 @@ MessageViewer::DKIMRule DKIMRuleDialog::rule() const
 {
     return mRuleWidget->rule();
 }
+
+#include "moc_dkimruledialog.cpp"

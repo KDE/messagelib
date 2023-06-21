@@ -158,3 +158,5 @@ CheckPhishingUrlCache *CheckPhishingUrlCache::self()
     static CheckPhishingUrlCache s_self;
     return &s_self;
 }
+
+#include "moc_checkphishingurlcache.cpp"

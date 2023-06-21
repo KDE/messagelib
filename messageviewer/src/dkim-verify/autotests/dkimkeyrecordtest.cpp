@@ -49,3 +49,5 @@ void DKIMKeyRecordTest::shouldTestExtractDkimKeyRecord_data()
     QTest::addColumn<bool>("isValid");
     QTest::addRow("empty") << QString() << MessageViewer::DKIMKeyRecord() << false;
 }
+
+#include "moc_dkimkeyrecordtest.cpp"

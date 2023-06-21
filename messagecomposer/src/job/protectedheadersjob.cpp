@@ -152,3 +152,5 @@ void ProtectedHeadersJob::process()
 
     emitResult();
 }
+
+#include "moc_protectedheadersjob.cpp"

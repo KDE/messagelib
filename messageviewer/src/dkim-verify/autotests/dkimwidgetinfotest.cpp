@@ -48,3 +48,5 @@ void DKIMWidgetInfoTest::shouldClearWidget()
     QVERIFY(mLabel->text().isEmpty());
     QCOMPARE(w.result(), MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult());
 }
+
+#include "moc_dkimwidgetinfotest.cpp"

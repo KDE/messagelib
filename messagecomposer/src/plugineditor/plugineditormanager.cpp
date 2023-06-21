@@ -185,3 +185,5 @@ PluginEditor *PluginEditorManager::pluginFromIdentifier(const QString &id)
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_plugineditormanager.cpp"

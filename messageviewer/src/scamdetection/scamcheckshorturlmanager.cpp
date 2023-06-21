@@ -37,3 +37,5 @@ ScamCheckShortUrl *ScamCheckShortUrlManager::scamCheckShortUrl() const
 {
     return d->mCheckShortUrl;
 }
+
+#include "moc_scamcheckshorturlmanager.cpp"

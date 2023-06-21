@@ -81,3 +81,5 @@ void InsertTextFileJob::start()
     connect(job, &KIO::TransferJob::data, this, &InsertTextFileJob::slotFileData);
     job->start();
 }
+
+#include "moc_inserttextfilejob.cpp"

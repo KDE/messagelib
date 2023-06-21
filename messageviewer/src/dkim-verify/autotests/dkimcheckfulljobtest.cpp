@@ -19,3 +19,5 @@ void DKIMCheckFullJobTest::shouldHaveDefaultValues()
     MessageViewer::DKIMCheckFullJob job;
     // TODO
 }
+
+#include "moc_dkimcheckfulljobtest.cpp"

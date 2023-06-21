@@ -270,3 +270,5 @@ void MainTextJob::process()
     d->resultContent = d->subjobContents.constFirst();
     emitResult();
 }
+
+#include "moc_maintextjob.cpp"

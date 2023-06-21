@@ -791,3 +791,5 @@ void Viewer::setFolderIdentity(uint folderIdentity)
 }
 
 }
+
+#include "moc_viewer.cpp"

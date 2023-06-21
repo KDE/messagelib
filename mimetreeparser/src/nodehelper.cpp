@@ -1127,3 +1127,5 @@ QList<KMime::Content *> NodeHelper::attachmentsOfExtraContents() const
     return result;
 }
 }
+
+#include "moc_nodehelper.cpp"

@@ -43,3 +43,5 @@ void ComposerLineEdit::keyPressEvent(QKeyEvent *e)
     }
     AddresseeLineEdit::keyPressEvent(e);
 }
+
+#include "moc_composerlineedit.cpp"

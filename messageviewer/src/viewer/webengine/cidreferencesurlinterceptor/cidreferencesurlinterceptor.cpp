@@ -49,3 +49,5 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
     }
     return false;
 }
+
+#include "moc_cidreferencesurlinterceptor.cpp"

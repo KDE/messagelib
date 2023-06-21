@@ -129,3 +129,5 @@ PluginEditorConvertText *PluginEditorConvertTextInterface::plugin() const
 {
     return d->plugin;
 }
+
+#include "moc_plugineditorconverttextinterface.cpp"

@@ -103,3 +103,5 @@ void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool succes
     Q_EMIT createDataBaseFinished(success, newClientState, minimumWaitDurationStr);
     quit();
 }
+
+#include "moc_downloadlocaldatabasethread.cpp"

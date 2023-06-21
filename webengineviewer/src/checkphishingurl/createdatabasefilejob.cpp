@@ -228,3 +228,5 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     d->mFileName = filename;
 }
+
+#include "moc_createdatabasefilejob.cpp"

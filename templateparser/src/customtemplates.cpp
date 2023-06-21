@@ -552,3 +552,5 @@ void CustomTemplateItem::setOldName(const QString &name)
 {
     mName = name;
 }
+
+#include "moc_customtemplates.cpp"

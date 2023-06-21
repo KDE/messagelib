@@ -609,3 +609,5 @@ void TemplateParserJobTest::test_makeValidHtml()
 }
 
 QTEST_MAIN(TemplateParserJobTest)
+
+#include "moc_templateparserjobtest.cpp"

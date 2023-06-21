@@ -357,3 +357,5 @@ QDebug operator<<(QDebug d, const DKIMInfo &t)
     d << "mIdomain " << t.iDomain();
     return d;
 }
+
+#include "moc_dkiminfo.cpp"

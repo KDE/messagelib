@@ -109,3 +109,5 @@ QDebug operator<<(QDebug d, const DKIMRule &t)
     d << " mPriority " << t.priority();
     return d;
 }
+
+#include "moc_dkimrule.cpp"

@@ -269,3 +269,5 @@ void EncryptJob::process()
         emitResult();
     }
 }
+
+#include "moc_encryptjob.cpp"

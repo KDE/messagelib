@@ -186,3 +186,5 @@ QStringList EmailAddressResolveJob::expandedReplyTo() const
 {
     return KEmailAddress::splitAddressList(d->mResultMap.value(QStringLiteral("infoPartReplyTo")).toString());
 }
+
+#include "moc_emailaddressresolvejob.cpp"

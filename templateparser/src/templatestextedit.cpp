@@ -14,3 +14,5 @@ TemplatesTextEdit::TemplatesTextEdit(QWidget *parent)
 }
 
 TemplatesTextEdit::~TemplatesTextEdit() = default;
+
+#include "moc_templatestextedit.cpp"

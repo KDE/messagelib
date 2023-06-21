@@ -177,3 +177,5 @@ void SinglepartJob::process()
 
     emitResult();
 }
+
+#include "moc_singlepartjob.cpp"

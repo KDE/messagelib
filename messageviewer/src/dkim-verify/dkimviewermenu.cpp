@@ -43,3 +43,5 @@ void DKIMViewerMenu::initialize()
     QAction *manageDKIMRuleDKIMKey = mMenu->addAction(i18n("Rules..."));
     connect(manageDKIMRuleDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::showDkimRules);
 }
+
+#include "moc_dkimviewermenu.cpp"

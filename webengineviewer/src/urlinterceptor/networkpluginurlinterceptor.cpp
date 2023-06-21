@@ -34,3 +34,5 @@ bool NetworkPluginUrlInterceptor::isEnabled() const
 {
     return mIsEnabled;
 }
+
+#include "moc_networkpluginurlinterceptor.cpp"

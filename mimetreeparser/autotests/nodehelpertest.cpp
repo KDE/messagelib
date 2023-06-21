@@ -284,3 +284,5 @@ void NodeHelperTest::shouldTestExtractAttachmentIndex()
 }
 
 QTEST_GUILESS_MAIN(NodeHelperTest)
+
+#include "moc_nodehelpertest.cpp"

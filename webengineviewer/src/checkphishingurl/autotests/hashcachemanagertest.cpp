@@ -48,3 +48,5 @@ void HashCacheManagerTest::shouldAddValue()
 }
 
 QTEST_GUILESS_MAIN(HashCacheManagerTest)
+
+#include "moc_hashcachemanagertest.cpp"

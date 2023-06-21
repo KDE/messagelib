@@ -64,3 +64,5 @@ void RemoteContentConfigureDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), myRemoteContentConfigureConfigGroupName);
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+#include "moc_remotecontentconfiguredialog.cpp"

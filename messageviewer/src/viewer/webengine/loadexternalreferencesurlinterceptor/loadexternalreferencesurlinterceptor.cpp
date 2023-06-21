@@ -37,3 +37,5 @@ bool LoadExternalReferencesUrlInterceptor::urlIsAuthorized(const QUrl &requested
     }
     return true;
 }
+
+#include "moc_loadexternalreferencesurlinterceptor.cpp"

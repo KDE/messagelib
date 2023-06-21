@@ -28,3 +28,5 @@ void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(WebEngineExportHtmlPageJobTest)
+
+#include "moc_webengineexporthtmlpagejobtest.cpp"

@@ -141,3 +141,5 @@ void ItipJob::process()
     d->resultContent = d->subjobContents.constFirst();
     emitResult();
 }
+
+#include "moc_itipjob.cpp"

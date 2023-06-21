@@ -36,3 +36,5 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Close});
 }
+
+#include "moc_dkimmanagerkeydialogtest.cpp"

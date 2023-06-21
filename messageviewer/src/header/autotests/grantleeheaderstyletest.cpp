@@ -202,3 +202,5 @@ void GrantleeHeaderStyleTest::testRenderHeader()
     testHeaderFile(style, aMsg.data(), mailFileName);
     aMsg.clear();
 }
+
+#include "moc_grantleeheaderstyletest.cpp"

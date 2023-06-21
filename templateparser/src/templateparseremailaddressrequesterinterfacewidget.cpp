@@ -53,3 +53,5 @@ void TemplateParserEmailAddressRequesterInterfaceWidget::clear()
 {
     mTemplateParserEmailBase->clear();
 }
+
+#include "moc_templateparseremailaddressrequesterinterfacewidget.cpp"

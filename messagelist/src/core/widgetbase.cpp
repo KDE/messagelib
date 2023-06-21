@@ -1106,3 +1106,5 @@ bool Widget::searchEditHasFocus() const
 {
     return d->quickSearchLine->searchEdit()->hasFocus();
 }
+
+#include "moc_widgetbase.cpp"

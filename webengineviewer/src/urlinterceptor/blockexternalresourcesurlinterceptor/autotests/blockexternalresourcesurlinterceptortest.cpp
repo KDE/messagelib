@@ -37,3 +37,5 @@ void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()
                                          QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMainFrame,
                                          QWebEngineUrlRequestInfo::NavigationType::NavigationTypeRedirect));
 }
+
+#include "moc_blockexternalresourcesurlinterceptortest.cpp"

@@ -68,3 +68,5 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
     QVERIFY(dkimSignatureSpy.wait());
     delete msg;
 }
+
+#include "moc_dkimcheckauthenticationstatusjobtest.cpp"

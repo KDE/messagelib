@@ -176,3 +176,5 @@ void ObjectTreeParserTester::test_Alternative()
     }
     msg.clear();
 }
+
+#include "moc_objecttreeparsertest.cpp"

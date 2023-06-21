@@ -26,3 +26,5 @@ bool WebEngineNavigationRequestInterceptor::acceptNavigationRequest(const QUrl &
     }
     return false;
 }
+
+#include "moc_webenginenavigationrequestinterceptor.cpp"

@@ -20,3 +20,5 @@ void PrintMessageTest::shouldHaveDefaultValues()
     QVERIFY(w.documentName().isEmpty());
     QVERIFY(!w.parentWidget());
 }
+
+#include "moc_printmessagetest.cpp"

@@ -56,3 +56,5 @@ void StatusBarLabelToggledState::mousePressEvent(QMouseEvent *ev)
         setToggleMode(!mToggleMode);
     }
 }
+
+#include "moc_statusbarlabeltoggledstate.cpp"

@@ -27,3 +27,5 @@ void TabLockedWarning::slotLinkActivated(const QString &contents)
         Q_EMIT unlockTabRequested();
     }
 }
+
+#include "moc_tablockedwarning.cpp"

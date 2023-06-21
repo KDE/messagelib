@@ -195,3 +195,5 @@ QColor HtmlStatusBar::bgColor() const
     }
     return Qt::white;
 }
+
+#include "moc_htmlstatusbar.cpp"

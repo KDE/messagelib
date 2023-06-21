@@ -57,3 +57,5 @@ void OpenUrlWithJob::setUrl(const QUrl &url)
 {
     mUrl = url;
 }
+
+#include "moc_openurlwithjob.cpp"

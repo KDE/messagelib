@@ -172,3 +172,5 @@ QString TestScriptWidget::script() const
 {
     return mScriptEdit->toPlainText();
 }
+
+#include "moc_testwebenginescript.cpp"

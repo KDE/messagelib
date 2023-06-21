@@ -62,3 +62,5 @@ QString TemplateExtractTextFromMail::plainText() const
 {
     return mExtractedPlainText;
 }
+
+#include "moc_templateextracttextfrommail.cpp"

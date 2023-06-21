@@ -55,3 +55,5 @@ void ConfigureFiltersDialog::writeConfig()
     group.writeEntry("Size", size());
     group.sync();
 }
+
+#include "moc_configurefiltersdialog.cpp"

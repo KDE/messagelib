@@ -55,3 +55,5 @@ void RemoteContentManagerTest::shouldIsBlocked()
     QCOMPARE(isInList, contains);
     QCOMPARE(blocked, result);
 }
+
+#include "moc_remotecontentmanagertest.cpp"

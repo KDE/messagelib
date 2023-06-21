@@ -83,3 +83,5 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
     connect(job, &DKIMCheckFullJob::result, this, &DKIMManager::result);
     job->startCheckFullInfo(message);
 }
+
+#include "moc_dkimmanager.cpp"

@@ -92,3 +92,5 @@ void ConfigureWidget::readCurrentOverrideCodec()
         MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(QString());
     }
 }
+
+#include "moc_configurewidget.cpp"

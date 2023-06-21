@@ -131,3 +131,5 @@ void FilterListWidgetItem::setIconName(const QString &newIconName)
 {
     mIconName = newIconName;
 }
+
+#include "moc_configurefilterswidget.cpp"

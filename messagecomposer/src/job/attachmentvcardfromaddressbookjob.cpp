@@ -103,3 +103,5 @@ void AttachmentVcardFromAddressBookJob::slotExpandGroupResult(KJob *job)
         emitResult();
     }
 }
+
+#include "moc_attachmentvcardfromaddressbookjob.cpp"

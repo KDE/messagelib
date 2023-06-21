@@ -52,3 +52,5 @@ void QuickSearchWarningTest::shouldSetSearchText_data()
 }
 
 QTEST_MAIN(QuickSearchWarningTest)
+
+#include "moc_quicksearchwarningtest.cpp"

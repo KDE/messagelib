@@ -74,3 +74,5 @@ void KeyResolverTest::testAutocrypt()
     QCOMPARE(items[0].recipients, recipients);
     QCOMPARE(items[0].keys.size(), 3);
 }
+
+#include "moc_keyresolvertest.cpp"

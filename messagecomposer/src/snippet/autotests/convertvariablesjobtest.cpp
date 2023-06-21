@@ -61,3 +61,5 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::newRow("subject") << QStringLiteral("bla bli blo %FULLSUBJECT") << QStringLiteral("bla bli blo Subject!!!!");
     // TODO add more autotests !
 }
+
+#include "moc_convertvariablesjobtest.cpp"

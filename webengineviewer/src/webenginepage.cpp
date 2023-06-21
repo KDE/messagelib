@@ -94,3 +94,5 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
     qDebug() << "WebEnginePage::javaScriptConsoleMessage lineNumber: " << lineNumber << " message: " << message;
     Q_EMIT showConsoleMessage(message);
 }
+
+#include "moc_webenginepage.cpp"

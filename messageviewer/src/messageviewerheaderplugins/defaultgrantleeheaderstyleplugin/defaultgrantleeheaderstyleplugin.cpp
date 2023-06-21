@@ -57,3 +57,5 @@ QString DefaultGrantleeHeaderStylePlugin::name() const
 }
 
 #include "defaultgrantleeheaderstyleplugin.moc"
+
+#include "moc_defaultgrantleeheaderstyleplugin.cpp"

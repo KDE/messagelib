@@ -177,3 +177,5 @@ PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManager::pluginFromIdent
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_plugineditorcheckbeforesendmanager.cpp"

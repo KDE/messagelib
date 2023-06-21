@@ -428,3 +428,5 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
 }
 
 QTEST_MAIN(CreateDatabaseFileJobTest)
+
+#include "moc_createdatabasefilejobtest.cpp"

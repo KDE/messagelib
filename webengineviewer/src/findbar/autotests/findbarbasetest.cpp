@@ -99,3 +99,5 @@ void FindBarBaseTest::shouldClearAllWhenShowBar()
 }
 
 QTEST_MAIN(FindBarBaseTest)
+
+#include "moc_findbarbasetest.cpp"

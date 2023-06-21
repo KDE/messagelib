@@ -90,3 +90,5 @@ void MultipartJobTest::test8BitPropagation()
     QCOMPARE(content->contentTransferEncoding(false)->encoding(), Headers::CE8Bit);
     delete content;
 }
+
+#include "moc_multipartjobtest.cpp"

@@ -286,3 +286,5 @@ QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
     const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
     return str;
 }
+
+#include "moc_convertsnippetvariablesjob.cpp"

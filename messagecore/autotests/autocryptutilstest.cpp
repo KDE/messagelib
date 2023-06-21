@@ -344,3 +344,5 @@ void AutocryptUtilsTest::test_update_autocrypt_gossip()
     QCOMPARE(alice->count_no_ach(), 0);
     QCOMPARE(alice->gossip_timestamp(), newDate);
 }
+
+#include "moc_autocryptutilstest.cpp"

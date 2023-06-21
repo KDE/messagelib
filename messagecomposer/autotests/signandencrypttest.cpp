@@ -121,3 +121,5 @@ void SignAndEncryptTest::testHeaders()
 
     delete result;
 }
+
+#include "moc_signandencrypttest.cpp"

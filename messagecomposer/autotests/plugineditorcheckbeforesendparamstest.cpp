@@ -103,3 +103,5 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
 }
 
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)
+
+#include "moc_plugineditorcheckbeforesendparamstest.cpp"

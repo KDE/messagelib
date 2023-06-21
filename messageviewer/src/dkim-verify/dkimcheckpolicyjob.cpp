@@ -137,3 +137,5 @@ void DKIMCheckPolicyJob::setPolicy(const DKIMCheckPolicy &policy)
 {
     mPolicy = policy;
 }
+
+#include "moc_dkimcheckpolicyjob.cpp"

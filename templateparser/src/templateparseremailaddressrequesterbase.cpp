@@ -27,3 +27,5 @@ void TemplateParserEmailAddressRequesterBase::setText(const QString &str)
 void TemplateParserEmailAddressRequesterBase::clear()
 {
 }
+
+#include "moc_templateparseremailaddressrequesterbase.cpp"

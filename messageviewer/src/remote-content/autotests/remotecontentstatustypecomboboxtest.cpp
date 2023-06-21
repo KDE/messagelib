@@ -18,3 +18,5 @@ void RemoteContentStatusTypeComboBoxTest::shouldHaveDefaultValues()
     MessageViewer::RemoteContentStatusTypeComboBox w;
     QCOMPARE(w.count(), 2);
 }
+
+#include "moc_remotecontentstatustypecomboboxtest.cpp"

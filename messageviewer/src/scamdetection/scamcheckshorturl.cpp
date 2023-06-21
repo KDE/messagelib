@@ -56,3 +56,5 @@ void ScamCheckShortUrl::loadLongUrlServices()
         qCDebug(MESSAGEVIEWER_LOG) << " json file \'longurlServices.json\' not found";
     }
 }
+
+#include "moc_scamcheckshorturl.cpp"

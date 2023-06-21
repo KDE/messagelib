@@ -97,3 +97,5 @@ void DKIMUtilTest::shouldConvertAuthenticationMethodToString()
              MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QString()), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
 }
+
+#include "moc_dkimutiltest.cpp"

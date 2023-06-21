@@ -1529,3 +1529,5 @@ MessageList::Core::Theme *ThemeEditor::editedTheme() const
 {
     return mCurrentTheme;
 }
+
+#include "moc_themeeditor.cpp"

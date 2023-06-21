@@ -555,3 +555,5 @@ void ObjectTreeParserTest::testHTMLOnly()
     QVERIFY(otp.plainTextContent().isEmpty());
     QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
 }
+
+#include "moc_basicobjecttreeparsertest.cpp"

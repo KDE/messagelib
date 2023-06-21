@@ -204,3 +204,5 @@ MessageViewer::HeaderStylePlugin *HeaderStylePluginManager::pluginFromIdentifier
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_headerstylepluginmanager.cpp"

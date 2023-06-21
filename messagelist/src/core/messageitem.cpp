@@ -726,3 +726,5 @@ void TagCache::onTagsFetched(KJob *job)
         m->fillTagList(fetchJob->tags());
     }
 }
+
+#include "moc_messageitem_p.cpp"

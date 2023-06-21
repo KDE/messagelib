@@ -70,3 +70,5 @@ void WebEngineViewBase::dropEvent(QDropEvent *e)
     qDebug() << " void WebEngineViewBase::dropEvent(QDropEvent *e)";
     QWebEngineView::dropEvent(e);
 }
+
+#include "moc_testdndwebengine.cpp"

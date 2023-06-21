@@ -60,3 +60,5 @@ void DKIMCheckAuthenticationStatusJob::setUseRelaxedParsing(bool useRelaxedParsi
 {
     mUseRelaxedParsing = useRelaxedParsing;
 }
+
+#include "moc_dkimcheckauthenticationstatusjob.cpp"

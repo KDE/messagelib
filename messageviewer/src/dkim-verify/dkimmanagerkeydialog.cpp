@@ -68,3 +68,5 @@ void DKIMManagerKeyDialog::slotAccept()
 {
     mManagerWidget->saveKeys();
 }
+
+#include "moc_dkimmanagerkeydialog.cpp"

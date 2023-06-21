@@ -49,3 +49,5 @@ void PluginEditorCheckBeforeSendInterface::reloadConfig()
 {
     // Reimplement it
 }
+
+#include "moc_plugineditorcheckbeforesendinterface.cpp"

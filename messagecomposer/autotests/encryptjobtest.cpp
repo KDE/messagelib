@@ -300,3 +300,5 @@ void EncryptJobTest::checkEncryption(EncryptJob *eJob)
 
     delete result;
 }
+
+#include "moc_encryptjobtest.cpp"

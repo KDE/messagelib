@@ -32,3 +32,5 @@ QString SendLaterCreateJob::getErrorString(Error, const QString &detail) const
 {
     return i18n("Failed to schedule message for sending later: %1", detail);
 }
+
+#include "moc_sendlatercreatejob.cpp"

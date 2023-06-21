@@ -264,3 +264,5 @@ void SignEncryptTest::testProtectedHeaders()
 
     Test::compareFile(&tempNode, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
+
+#include "moc_signencrypttest.cpp"

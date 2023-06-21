@@ -30,3 +30,5 @@ void RemoteContentWidgetTest::shouldHaveDefaultValues()
     auto mStatusComboBox = w.findChild<MessageViewer::RemoteContentStatusTypeComboBox *>(QStringLiteral("mStatusComboBox"));
     QVERIFY(mStatusComboBox);
 }
+
+#include "moc_remotecontentwidgettest.cpp"

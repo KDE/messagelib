@@ -30,3 +30,5 @@ void DMARCRecordJobTest::shouldBeAbleToStart()
     job.setDomainName(QString());
     QVERIFY(!job.canStart());
 }
+
+#include "moc_dmarcrecordjobtest.cpp"

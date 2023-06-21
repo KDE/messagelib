@@ -89,3 +89,5 @@ void CheckPhishingUrlJobTest::shouldParseResult()
 }
 
 QTEST_MAIN(CheckPhishingUrlJobTest)
+
+#include "moc_checkphishingurljobtest.cpp"

@@ -63,3 +63,5 @@ void MessageViewerCheckBeforeDeletingInterface::createActions(KActionCollection 
 {
     Q_UNUSED(ac);
 }
+
+#include "moc_messageviewercheckbeforedeletinginterface.cpp"

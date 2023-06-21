@@ -20,3 +20,5 @@ void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()
     QVERIFY(!job.canStart());
     QVERIFY(!job.result().isValid());
 }
+
+#include "moc_dkimgeneraterulejobtest.cpp"

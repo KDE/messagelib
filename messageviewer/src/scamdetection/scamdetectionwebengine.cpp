@@ -236,3 +236,5 @@ void ScamDetectionWebEngine::showDetails()
     d->mDetailsDialog->setDetails(d->mDetails);
     d->mDetailsDialog->show();
 }
+
+#include "moc_scamdetectionwebengine.cpp"

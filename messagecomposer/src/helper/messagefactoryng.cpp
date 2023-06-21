@@ -1006,3 +1006,5 @@ QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
     retRefStr += msg->messageID()->as7BitString(false);
     return retRefStr;
 }
+
+#include "moc_messagefactoryng.cpp"

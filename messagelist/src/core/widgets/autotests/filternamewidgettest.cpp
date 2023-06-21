@@ -31,3 +31,5 @@ void FilterNameWidgetTest::shouldHaveDefaultValues()
     auto mIconButton = w.findChild<KIconButton *>(QStringLiteral("mIconButton"));
     QVERIFY(mIconButton);
 }
+
+#include "moc_filternamewidgettest.cpp"

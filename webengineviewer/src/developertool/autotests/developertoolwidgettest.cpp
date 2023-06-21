@@ -31,3 +31,5 @@ void DeveloperToolWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(mWebEngineView->page(), mEnginePage);
     QVERIFY(mEnginePage->settings()->testAttribute(QWebEngineSettings::JavascriptEnabled));
 }
+
+#include "moc_developertoolwidgettest.cpp"

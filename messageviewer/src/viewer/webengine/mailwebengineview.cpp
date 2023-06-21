@@ -362,3 +362,5 @@ void MailWebEngineView::initializeCustomScheme()
     cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
     QWebEngineUrlScheme::registerScheme(cidScheme);
 }
+
+#include "moc_mailwebengineview.cpp"

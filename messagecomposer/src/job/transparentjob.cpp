@@ -46,3 +46,5 @@ void TransparentJob::process()
     d->resultContent = d->content;
     emitResult();
 }
+
+#include "moc_transparentjob.cpp"

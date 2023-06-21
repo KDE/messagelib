@@ -40,3 +40,5 @@ void ZoomActionMenuTest::shouldAssignZoomFactor()
 }
 
 QTEST_MAIN(ZoomActionMenuTest)
+
+#include "moc_zoomactionmenutest.cpp"

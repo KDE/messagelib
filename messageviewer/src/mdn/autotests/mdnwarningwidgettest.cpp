@@ -91,3 +91,5 @@ void MDNWarningWidgetTest::shouldChangeInformation()
     w.setInformation(str);
     QCOMPARE(w.text(), str);
 }
+
+#include "moc_mdnwarningwidgettest.cpp"

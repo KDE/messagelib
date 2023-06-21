@@ -104,3 +104,5 @@ void ScamDetectionDetailsDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), myScamDetectionDetailsDialogConfigGroupName);
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+#include "moc_scamdetectiondetailsdialog.cpp"

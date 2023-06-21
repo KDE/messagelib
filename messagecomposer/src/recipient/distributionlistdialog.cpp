@@ -354,3 +354,5 @@ void DistributionListDialog::writeConfig()
     group.writeEntry("Size", size());
     group.writeEntry("Header", mRecipientsList->header()->saveState());
 }
+
+#include "moc_distributionlistdialog.cpp"

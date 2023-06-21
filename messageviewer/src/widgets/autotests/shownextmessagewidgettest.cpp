@@ -33,3 +33,5 @@ void ShowNextMessageWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!mNextMessage->text().isEmpty());
     QVERIFY(!mNextMessage->isEnabled());
 }
+
+#include "moc_shownextmessagewidgettest.cpp"

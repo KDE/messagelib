@@ -412,3 +412,5 @@ void SearchLineStatus::slotClearHistory()
     mListCompetion.clear();
     mCompleterListModel->setStringList(mListCompetion);
 }
+
+#include "moc_searchlinestatus.cpp"

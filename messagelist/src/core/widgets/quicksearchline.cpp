@@ -178,3 +178,5 @@ void QuickSearchLine::addCompletionItem(const QString &str)
 {
     mSearchEdit->addCompletionItem(str);
 }
+
+#include "moc_quicksearchline.cpp"

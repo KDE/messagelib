@@ -321,3 +321,5 @@ QStringList MimeTreeModel::mimeTypes() const
     const QStringList types = {QStringLiteral("text/uri-list")};
     return types;
 }
+
+#include "moc_mimetreemodel.cpp"

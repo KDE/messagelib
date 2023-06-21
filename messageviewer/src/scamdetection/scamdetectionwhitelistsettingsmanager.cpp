@@ -45,3 +45,5 @@ void ScamDetectionWhiteListSettingsManager::writeSettings()
     KConfigGroup group(config, myScamDetectionWhiteListGroupName);
     // TODO
 }
+
+#include "moc_scamdetectionwhitelistsettingsmanager.cpp"

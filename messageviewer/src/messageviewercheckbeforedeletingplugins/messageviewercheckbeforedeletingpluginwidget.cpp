@@ -19,3 +19,5 @@ QString MessageViewerCheckBeforeDeletingPluginWidget::helpAnchor() const
 {
     return {};
 }
+
+#include "moc_messageviewercheckbeforedeletingpluginwidget.cpp"

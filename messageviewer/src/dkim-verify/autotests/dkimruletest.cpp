@@ -24,3 +24,5 @@ void DKIMRuleTest::shouldHaveDefaultValues()
     QCOMPARE(rule.ruleType(), MessageViewer::DKIMRule::RuleType::Unknown);
     QCOMPARE(rule.priority(), 1000);
 }
+
+#include "moc_dkimruletest.cpp"

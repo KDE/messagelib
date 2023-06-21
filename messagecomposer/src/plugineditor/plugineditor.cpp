@@ -38,3 +38,5 @@ bool PluginEditor::canProcessKeyEvent() const
 {
     return false;
 }
+
+#include "moc_plugineditor.cpp"

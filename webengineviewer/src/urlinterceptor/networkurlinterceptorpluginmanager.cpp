@@ -183,3 +183,5 @@ WebEngineViewer::NetworkPluginUrlInterceptor *NetworkUrlInterceptorPluginManager
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_networkurlinterceptorpluginmanager.cpp"

@@ -18,3 +18,5 @@ void DKIMViewerMenuTest::shouldHaveDefaultValues()
     MessageViewer::DKIMViewerMenu menu;
     QVERIFY(menu.menu());
 }
+
+#include "moc_dkimviewermenutest.cpp"

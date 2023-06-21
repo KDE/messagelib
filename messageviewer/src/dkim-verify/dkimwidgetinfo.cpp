@@ -315,3 +315,5 @@ bool DKIMWidgetInfo::event(QEvent *e)
     }
     return QWidget::event(e);
 }
+
+#include "moc_dkimwidgetinfo.cpp"

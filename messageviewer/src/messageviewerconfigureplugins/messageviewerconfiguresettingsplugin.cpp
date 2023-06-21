@@ -26,3 +26,5 @@ void MessageViewerConfigureSettingsPlugin::showConfigureDialog(QWidget *parent)
     Q_UNUSED(parent)
     // Reimplement
 }
+
+#include "moc_messageviewerconfiguresettingsplugin.cpp"

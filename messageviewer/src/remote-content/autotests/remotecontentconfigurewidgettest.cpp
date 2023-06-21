@@ -33,3 +33,5 @@ void RemoteContentConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(searchLineEdit);
     QVERIFY(searchLineEdit->isClearButtonEnabled());
 }
+
+#include "moc_remotecontentconfigurewidgettest.cpp"

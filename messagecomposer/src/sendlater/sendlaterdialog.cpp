@@ -143,3 +143,5 @@ void SendLaterDialog::slotDelay(bool delayEnabled)
     mSendLaterWidget->mRecurrenceValue->setEnabled(delayEnabled && mSendLaterWidget->mRecurrence->isChecked());
     mSendLaterWidget->mRecurrenceComboBox->setEnabled(delayEnabled && mSendLaterWidget->mRecurrence->isChecked());
 }
+
+#include "moc_sendlaterdialog.cpp"

@@ -153,3 +153,5 @@ void AutocryptStorageTest::test_create_basedir()
     storage->save();
     QCOMPARE(baseDir.exists(fileName), true);
 }
+
+#include "moc_autocryptstoragetest.cpp"

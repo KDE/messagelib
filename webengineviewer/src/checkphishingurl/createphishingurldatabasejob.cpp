@@ -392,3 +392,5 @@ void CreatePhishingUrlDataBaseJob::setContraintsCompressionType(CreatePhishingUr
 {
     d->mContraintsCompressionType = type;
 }
+
+#include "moc_createphishingurldatabasejob.cpp"

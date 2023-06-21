@@ -98,3 +98,5 @@ void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::LastMonthNameLong),
              QStringLiteral("%LASTMONTHNAMELONG"));
 }
+
+#include "moc_convertsnippetvariablesutiltest.cpp"

@@ -361,3 +361,5 @@ RecipientLineNG *RecipientsEditor::activeLine() const
     MultiplyingLine *line = MultiplyingLineEditor::activeLine();
     return qobject_cast<RecipientLineNG *>(line);
 }
+
+#include "moc_recipientseditor.cpp"

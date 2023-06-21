@@ -70,3 +70,5 @@ void NetworkUrlInterceptor::removeInterceptor(NetworkPluginUrlInterceptorInterfa
 {
     d->removeInterceptor(interceptor);
 }
+
+#include "moc_networkurlinterceptor.cpp"

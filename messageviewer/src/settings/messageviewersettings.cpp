@@ -43,3 +43,5 @@ void MessageViewerSettings::slotSyncNow()
 }
 
 MessageViewerSettings::~MessageViewerSettings() = default;
+
+#include "moc_messageviewersettings.cpp"

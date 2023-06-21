@@ -154,3 +154,5 @@ KTextTemplate::Context MessagePartRendererManager::createContext()
 }
 
 #include "messagepartrenderermanager.moc"
+
+#include "moc_messagepartrenderermanager.cpp"

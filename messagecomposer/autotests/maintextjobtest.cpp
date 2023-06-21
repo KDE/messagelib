@@ -309,3 +309,5 @@ void MainTextJobTest::testHtmlWithImages()
     delete textPart;
     delete composer;
 }
+
+#include "moc_maintextjobtest.cpp"

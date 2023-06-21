@@ -23,3 +23,5 @@ void ComposerAttachmentInterfaceTest::shouldHaveDefaultValues()
     QVERIFY(interface.fileNames().isEmpty());
     QVERIFY(interface.names().isEmpty());
 }
+
+#include "moc_composerattachmentinterfacetest.cpp"

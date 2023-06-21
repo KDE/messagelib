@@ -276,3 +276,5 @@ void SearchFullHashJob::setSearchFullHashForUrl(const QUrl &url)
 {
     d->mUrl = url;
 }
+
+#include "moc_searchfullhashjob.cpp"

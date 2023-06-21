@@ -56,3 +56,5 @@ void StorageModel::savePreSelectedMessage(unsigned long uniqueIdOfMessage)
         conf.deleteEntry(MessageList::Util::messageUniqueIdConfigName().arg(storageModelId));
     }
 }
+
+#include "moc_storagemodelbase.cpp"

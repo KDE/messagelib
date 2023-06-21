@@ -307,3 +307,5 @@ QDebug operator<<(QDebug d, const MessageList::Core::Filter &t)
     d << "status " << t.status();
     return d;
 }
+
+#include "moc_filter.cpp"

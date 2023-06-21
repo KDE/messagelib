@@ -172,3 +172,5 @@ void UrlHashingTest::shouldGenerateHashList()
 }
 
 QTEST_GUILESS_MAIN(UrlHashingTest)
+
+#include "moc_urlhashingtest.cpp"

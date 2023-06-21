@@ -184,3 +184,5 @@ QStringList AliasesExpandJob::emailAddressOnly() const
 {
     return mEmailAddressOnly;
 }
+
+#include "moc_aliasesexpandjob.cpp"

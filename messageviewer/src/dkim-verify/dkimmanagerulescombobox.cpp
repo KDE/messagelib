@@ -34,3 +34,5 @@ void DKIMManageRulesComboBox::setRuleType(MessageViewer::DKIMRule::RuleType type
         setCurrentIndex(index);
     }
 }
+
+#include "moc_dkimmanagerulescombobox.cpp"

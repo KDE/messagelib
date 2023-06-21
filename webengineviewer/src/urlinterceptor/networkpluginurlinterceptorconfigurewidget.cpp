@@ -19,3 +19,5 @@ QString NetworkPluginUrlInterceptorConfigureWidget::helpAnchor() const
 {
     return {};
 }
+
+#include "moc_networkpluginurlinterceptorconfigurewidget.cpp"

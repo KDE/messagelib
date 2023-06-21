@@ -156,3 +156,5 @@ void VerifyDetachedBodyPartMemento::slotKeyListJobDone()
     setRunning(false);
     notify();
 }
+
+#include "moc_verifydetachedbodypartmemento.cpp"

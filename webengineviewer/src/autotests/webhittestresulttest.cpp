@@ -156,3 +156,5 @@ void WebHitTestResultTest::shouldCopyWebHitTestResult()
 }
 
 QTEST_MAIN(WebHitTestResultTest)
+
+#include "moc_webhittestresulttest.cpp"

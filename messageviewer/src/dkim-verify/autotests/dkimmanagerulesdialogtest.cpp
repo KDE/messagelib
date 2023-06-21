@@ -48,3 +48,5 @@ void DKIMManageRulesDialogTest::shouldHaveDefaultValues()
     QVERIFY(!mExportButton->text().isEmpty());
     QVERIFY(!mExportButton->isEnabled());
 }
+
+#include "moc_dkimmanagerulesdialogtest.cpp"

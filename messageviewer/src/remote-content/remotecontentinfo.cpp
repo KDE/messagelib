@@ -41,3 +41,5 @@ QDebug operator<<(QDebug d, const MessageViewer::RemoteContentInfo &t)
     d << "mStatus " << t.status();
     return d;
 }
+
+#include "moc_remotecontentinfo.cpp"

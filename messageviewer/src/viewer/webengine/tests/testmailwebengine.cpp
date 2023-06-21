@@ -114,3 +114,5 @@ int main(int argc, char *argv[])
     const int ret = app.exec();
     return ret;
 }
+
+#include "moc_testmailwebengine.cpp"

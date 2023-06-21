@@ -265,3 +265,5 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
     Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
+
+#include "moc_autocryptheadersjobtest.cpp"

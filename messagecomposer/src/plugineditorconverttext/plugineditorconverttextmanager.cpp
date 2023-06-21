@@ -177,3 +177,5 @@ PluginEditorConvertText *PluginEditorConvertTextManager::pluginFromIdentifier(co
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_plugineditorconverttextmanager.cpp"

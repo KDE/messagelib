@@ -47,3 +47,5 @@ QHash<QString, KTextTemplate::AbstractNodeFactory *> KTextTemplateTagLibrary::no
     nodeFactories.insert(QStringLiteral("callback"), new CallbackTagFactory());
     return nodeFactories;
 }
+
+#include "moc_ktexttemplateextension.cpp"

@@ -106,3 +106,5 @@ void ViewerTest::shouldSwitchToAnotherMessage()
 }
 
 QTEST_MAIN(ViewerTest)
+
+#include "moc_viewertest.cpp"

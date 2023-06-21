@@ -18,3 +18,5 @@ void DKIMStoreResultJobTest::shouldHaveDefaultValues()
     MessageViewer::DKIMStoreResultJob w;
     QVERIFY(!w.canStart());
 }
+
+#include "moc_dkimstoreresultjobtest.cpp"

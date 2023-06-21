@@ -48,3 +48,5 @@ void HeaderStyleInterface::slotStyleChanged()
 {
     Q_EMIT styleChanged(mHeaderStylePlugin);
 }
+
+#include "moc_headerstyleinterface.cpp"

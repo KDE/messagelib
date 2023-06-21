@@ -506,3 +506,5 @@ void TemplatesCommandMenu::slotInsertCommand(TemplatesCommandMenu::Command cmd)
     }
     qCDebug(TEMPLATEPARSER_LOG) << "Unknown template command index:" << cmd;
 }
+
+#include "moc_templatescommandmenu.cpp"

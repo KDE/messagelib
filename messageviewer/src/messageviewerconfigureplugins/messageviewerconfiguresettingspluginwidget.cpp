@@ -19,3 +19,5 @@ QString MessageViewerConfigureSettingsPluginWidget::helpAnchor() const
 {
     return {};
 }
+
+#include "moc_messageviewerconfiguresettingspluginwidget.cpp"

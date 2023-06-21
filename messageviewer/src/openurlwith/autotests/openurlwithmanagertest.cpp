@@ -54,3 +54,5 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
         QTest::newRow("invalid-1") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
     }
 }
+
+#include "moc_openurlwithmanagertest.cpp"

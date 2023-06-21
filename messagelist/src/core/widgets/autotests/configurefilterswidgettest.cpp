@@ -25,3 +25,5 @@ void ConfigureFiltersWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mListFiltersWidget);
     QCOMPARE(mListFiltersWidget->count(), 0);
 }
+
+#include "moc_configurefilterswidgettest.cpp"

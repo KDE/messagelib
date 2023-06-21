@@ -175,3 +175,5 @@ QMenu *ConvertSnippetVariableMenu::menu() const
 {
     return mMenu;
 }
+
+#include "moc_convertsnippetvariablemenu.cpp"

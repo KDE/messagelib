@@ -40,3 +40,5 @@ void DKIMHeaderParserTest::shouldAssignElement()
     MessageViewer::DKIMHeaderParser parser2 = parser;
     QCOMPARE(parser2, parser);
 }
+
+#include "moc_dkimheaderparsertest.cpp"

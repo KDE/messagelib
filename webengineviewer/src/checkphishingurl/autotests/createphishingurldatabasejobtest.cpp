@@ -323,3 +323,5 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
 }
 
 QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)
+
+#include "moc_createphishingurldatabasejobtest.cpp"

@@ -90,3 +90,5 @@ void DKIMDownloadKeyJob::resolvDnsDone()
     Q_EMIT success(textRecordResult, mDomainName, mSelectorName);
     deleteLater();
 }
+
+#include "moc_dkimdownloadkeyjob.cpp"

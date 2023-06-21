@@ -59,3 +59,5 @@ void DKIMStoreResultJob::setItem(const Akonadi::Item &item)
 {
     mItem = item;
 }
+
+#include "moc_dkimstoreresultjob.cpp"

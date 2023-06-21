@@ -49,3 +49,5 @@ void PluginEditorInitInterface::reloadConfig()
 {
     // Reimplement it
 }
+
+#include "moc_plugineditorinitinterface.cpp"

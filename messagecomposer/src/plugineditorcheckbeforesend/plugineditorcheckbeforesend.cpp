@@ -14,3 +14,5 @@ PluginEditorCheckBeforeSend::PluginEditorCheckBeforeSend(QObject *parent)
 }
 
 PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend() = default;
+
+#include "moc_plugineditorcheckbeforesend.cpp"

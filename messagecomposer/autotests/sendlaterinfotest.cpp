@@ -79,3 +79,5 @@ void SendLaterInfoTest::shouldCopyInfo()
 }
 
 QTEST_MAIN(SendLaterInfoTest)
+
+#include "moc_sendlaterinfotest.cpp"

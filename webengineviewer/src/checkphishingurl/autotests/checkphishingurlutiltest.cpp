@@ -78,3 +78,5 @@ void CheckPhishingUrlUtilTest::shouldGenerateBackModeDelay()
 }
 
 QTEST_GUILESS_MAIN(CheckPhishingUrlUtilTest)
+
+#include "moc_checkphishingurlutiltest.cpp"

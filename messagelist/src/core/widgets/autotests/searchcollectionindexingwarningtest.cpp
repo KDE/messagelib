@@ -24,3 +24,5 @@ void SearchCollectionIndexingWarningTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SearchCollectionIndexingWarningTest)
+
+#include "moc_searchcollectionindexingwarningtest.cpp"

@@ -65,3 +65,5 @@ void DKIMManagerKeyWidget::resetKeys()
     mDKIMManagerKeyTreeView->clear();
     loadKeys();
 }
+
+#include "moc_dkimmanagerkeywidget.cpp"

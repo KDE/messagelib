@@ -349,3 +349,5 @@ void WebEngineAccessKey::showAccessKeys()
                                          WebEngineManageScript::scriptWordId(),
                                          invokeWebAccessKey(this, &WebEngineAccessKey::handleSearchAccessKey));
 }
+
+#include "moc_webengineaccesskey.cpp"

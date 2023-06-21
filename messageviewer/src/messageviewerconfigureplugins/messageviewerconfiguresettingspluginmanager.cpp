@@ -191,3 +191,5 @@ MessageViewerConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManage
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_messageviewerconfiguresettingspluginmanager.cpp"

@@ -153,3 +153,5 @@ bool RemoteContentManager::isUnique(const RemoteContentInfo &newInfo) const
     }
     return true;
 }
+
+#include "moc_remotecontentmanager.cpp"

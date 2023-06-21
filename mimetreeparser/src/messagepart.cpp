@@ -1428,3 +1428,5 @@ const KMime::Message::Ptr EncapsulatedRfc822MessagePart::message() const
 {
     return mMessage;
 }
+
+#include "moc_messagepart.cpp"

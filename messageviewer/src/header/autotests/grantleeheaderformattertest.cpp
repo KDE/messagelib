@@ -180,3 +180,5 @@ void GrantleeHeaderFormatterTest::testBlock()
 
     testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, tmplName);
 }
+
+#include "moc_grantleeheaderformattertest.cpp"

@@ -1010,3 +1010,5 @@ void MessageFactoryTest::testCreateReplyWithForcedCharset()
         QCOMPARE(msg->body(), QByteArray("\xE2\x82\xAC> Test \xC3\x84"));
     }
 }
+
+#include "moc_messagefactoryngtest.cpp"

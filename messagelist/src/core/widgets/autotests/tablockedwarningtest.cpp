@@ -22,3 +22,5 @@ void TabLockedWarningTest::shouldHaveDefaultValues()
     QVERIFY(!w.isCloseButtonVisible());
     QCOMPARE(w.messageType(), KMessageWidget::Warning);
 }
+
+#include "moc_tablockedwarningtest.cpp"

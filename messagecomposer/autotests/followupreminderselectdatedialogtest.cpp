@@ -105,3 +105,5 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfModelIsEmpty()
 }
 
 QTEST_MAIN(FollowupReminderSelectDateDialogTest)
+
+#include "moc_followupreminderselectdatedialogtest.cpp"

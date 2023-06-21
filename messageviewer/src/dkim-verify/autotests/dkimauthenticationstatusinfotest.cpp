@@ -288,3 +288,5 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         QTest::addRow("gmails") << QStringLiteral("letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n") << info << true << true;
     }
 }
+
+#include "moc_dkimauthenticationstatusinfotest.cpp"

@@ -37,3 +37,5 @@ bool MessageViewerCheckBeforeDeletingPlugin::isEnabled() const
 {
     return d->mIsEnabled;
 }
+
+#include "moc_messageviewercheckbeforedeletingplugin.cpp"

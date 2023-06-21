@@ -94,3 +94,5 @@ void UtilTest::shouldTestHasMissingAttachment()
     QTextDocument doc(body);
     QCOMPARE(Util::hasMissingAttachments(attachmentKeywords, &doc, subject), hasMissingAttachment);
 }
+
+#include "moc_utiltest.cpp"

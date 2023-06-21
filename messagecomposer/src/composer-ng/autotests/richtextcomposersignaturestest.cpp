@@ -80,3 +80,5 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
     }
     QCOMPARE(richtextComposerNg.toPlainText(), result);
 }
+
+#include "moc_richtextcomposersignaturestest.cpp"

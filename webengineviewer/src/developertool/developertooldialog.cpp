@@ -62,3 +62,5 @@ void DeveloperToolDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), myDeveloperToolDialogConfigGroupName);
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+#include "moc_developertooldialog.cpp"

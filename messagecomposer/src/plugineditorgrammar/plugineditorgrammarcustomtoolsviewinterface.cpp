@@ -114,3 +114,5 @@ QDebug operator<<(QDebug d, const PluginGrammarAction &t)
     d << "urls " << t.infoUrls();
     return d;
 }
+
+#include "moc_plugineditorgrammarcustomtoolsviewinterface.cpp"

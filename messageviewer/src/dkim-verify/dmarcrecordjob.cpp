@@ -77,3 +77,5 @@ void DMARCRecordJob::setDomainName(const QString &domainName)
 {
     mDomainName = domainName;
 }
+
+#include "moc_dmarcrecordjob.cpp"

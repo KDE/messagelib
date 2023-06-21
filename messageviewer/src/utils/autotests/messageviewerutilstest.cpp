@@ -351,3 +351,5 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
     QTest::newRow("codec windows-1252 with meta charset-2")
         << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=UTF-8>") << QByteArray("UTF-8");
 }
+
+#include "moc_messageviewerutilstest.cpp"

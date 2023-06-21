@@ -234,3 +234,5 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
     }
     menu.exec(QCursor::pos());
 }
+
+#include "moc_dkimmanageruleswidget.cpp"

@@ -106,3 +106,5 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
 }
 
 QTEST_MAIN(WebEngineAccessKeyAnchorFromHtmlTest)
+
+#include "moc_webengineaccesskeyanchorfromhtmltest.cpp"

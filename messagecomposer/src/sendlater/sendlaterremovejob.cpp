@@ -26,3 +26,5 @@ QString SendLaterRemoveJob::getErrorString(Error, const QString &detail) const
 {
     return i18n("Failed to removed message from send later schedule: %1", detail);
 }
+
+#include "moc_sendlaterremovejob.cpp"

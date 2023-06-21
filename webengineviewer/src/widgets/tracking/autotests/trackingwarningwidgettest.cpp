@@ -23,3 +23,5 @@ void TrackingWarningWidgetTest::shouldHaveDefaultValues()
     QVERIFY(w.wordWrap());
     QVERIFY(!w.text().isEmpty());
 }
+
+#include "moc_trackingwarningwidgettest.cpp"

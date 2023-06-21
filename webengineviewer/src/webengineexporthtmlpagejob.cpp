@@ -71,3 +71,5 @@ void WebEngineExportHtmlPageJob::setEngineView(QWebEngineView *engineView)
 {
     mEngineView = engineView;
 }
+
+#include "moc_webengineexporthtmlpagejob.cpp"

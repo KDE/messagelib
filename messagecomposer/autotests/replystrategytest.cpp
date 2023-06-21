@@ -354,3 +354,5 @@ void ReplyStrategyTest::testReply()
 }
 
 QTEST_MAIN(ReplyStrategyTest)
+
+#include "moc_replystrategytest.cpp"

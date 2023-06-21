@@ -727,3 +727,5 @@ void KXFace::PushGreys(char *f, int wid, int hei)
         RevPush(freqs + *f + 2 * *(f + 1) + 4 * *(f + WIDTH) + 8 * *(f + WIDTH + 1));
     }
 }
+
+#include "moc_kxface.cpp"

@@ -63,3 +63,5 @@ void PrintingSettings::doResetToDefaultsOther()
     doLoadFromGlobalSettings();
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }
+
+#include "moc_printingsettings.cpp"

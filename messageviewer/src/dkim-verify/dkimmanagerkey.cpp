@@ -150,3 +150,5 @@ QDebug operator<<(QDebug d, const KeyInfo &t)
     d << " lastUsedDateTime " << t.lastUsedDateTime;
     return d;
 }
+
+#include "moc_dkimmanagerkey.cpp"

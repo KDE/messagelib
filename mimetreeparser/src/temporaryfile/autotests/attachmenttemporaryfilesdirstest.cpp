@@ -136,3 +136,5 @@ void AttachmentTemporaryFilesDirsTest::shouldRemoveTemporaryFilesAfterTime()
 }
 
 QTEST_GUILESS_MAIN(AttachmentTemporaryFilesDirsTest)
+
+#include "moc_attachmenttemporaryfilesdirstest.cpp"

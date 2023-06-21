@@ -222,3 +222,5 @@ void AkonadiSender::queueJobResult(KJob *job)
         qCDebug(MESSAGECOMPOSER_LOG) << "QueueJob success.";
     }
 }
+
+#include "moc_akonadisender.cpp"

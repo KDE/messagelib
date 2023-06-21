@@ -83,3 +83,5 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         d->mFile.reload();
     }
 }
+
+#include "moc_localdatabasemanager.cpp"

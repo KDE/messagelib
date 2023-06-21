@@ -776,3 +776,5 @@ void StringUtilTest::test_normalizeText()
         QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("telephone"));
     }
 }
+
+#include "moc_stringutiltest.cpp"

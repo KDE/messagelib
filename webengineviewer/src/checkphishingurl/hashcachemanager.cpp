@@ -192,3 +192,5 @@ HashCacheManager::UrlStatus HashCacheManager::hashStatus(const QByteArray &hash)
 {
     return d->hashStatus(hash);
 }
+
+#include "moc_hashcachemanager.cpp"

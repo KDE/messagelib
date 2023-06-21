@@ -18,3 +18,5 @@ void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *job)
 {
     Q_UNUSED(job)
 }
+
+#include "moc_cidschemehandler.cpp"

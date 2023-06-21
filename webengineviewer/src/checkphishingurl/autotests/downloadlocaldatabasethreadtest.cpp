@@ -17,3 +17,5 @@ DownloadLocalDatabaseThreadTest::DownloadLocalDatabaseThreadTest(QObject *parent
 DownloadLocalDatabaseThreadTest::~DownloadLocalDatabaseThreadTest() = default;
 
 QTEST_GUILESS_MAIN(DownloadLocalDatabaseThreadTest)
+
+#include "moc_downloadlocaldatabasethreadtest.cpp"

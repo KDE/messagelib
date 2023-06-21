@@ -50,3 +50,5 @@ void QuickSearchWarning::slotDoNotRememberIt()
     MessageList::MessageListSettings::setQuickSearchWarningDoNotShowAgain(true);
     animatedHide();
 }
+
+#include "moc_quicksearchwarning.cpp"

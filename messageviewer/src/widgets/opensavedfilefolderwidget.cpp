@@ -110,3 +110,5 @@ void OpenSavedFileFolderWidget::slotTimeOut()
 {
     animatedHide();
 }
+
+#include "moc_opensavedfilefolderwidget.cpp"

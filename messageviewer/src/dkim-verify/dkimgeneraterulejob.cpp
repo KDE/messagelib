@@ -56,3 +56,5 @@ void DKIMGenerateRuleJob::setResult(const DKIMCheckSignatureJob::CheckSignatureR
 {
     mResult = checkResult;
 }
+
+#include "moc_dkimgeneraterulejob.cpp"

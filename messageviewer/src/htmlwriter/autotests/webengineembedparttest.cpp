@@ -53,3 +53,5 @@ void WebEngineEmbedPartTest::shouldAddTwoIdenticalValues()
 }
 
 QTEST_MAIN(WebEngineEmbedPartTest)
+
+#include "moc_webengineembedparttest.cpp"

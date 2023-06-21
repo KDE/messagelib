@@ -131,3 +131,5 @@ void ZoomActionMenuPrivate::createMenu()
     q->addAction(mZoomResetAction);
     mActionCollection->addAction(QStringLiteral("zoom_menu"), q);
 }
+
+#include "moc_zoomactionmenu.cpp"

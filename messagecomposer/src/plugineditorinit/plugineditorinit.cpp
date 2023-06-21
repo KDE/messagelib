@@ -14,3 +14,5 @@ PluginEditorInit::PluginEditorInit(QObject *parent)
 }
 
 PluginEditorInit::~PluginEditorInit() = default;
+
+#include "moc_plugineditorinit.cpp"

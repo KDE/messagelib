@@ -82,3 +82,5 @@ void DistributionListExpandJob::slotExpansionDone(KJob *job)
 
     emitResult();
 }
+
+#include "moc_distributionlistexpandjob.cpp"

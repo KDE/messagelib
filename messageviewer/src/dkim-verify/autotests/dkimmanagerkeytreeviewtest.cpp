@@ -22,3 +22,5 @@ void DKIMManagerKeyTreeViewTest::shouldHaveDefaultValues()
     QCOMPARE(w.selectionBehavior(), QAbstractItemView::SelectRows);
     QCOMPARE(w.selectionMode(), QAbstractItemView::ExtendedSelection);
 }
+
+#include "moc_dkimmanagerkeytreeviewtest.cpp"

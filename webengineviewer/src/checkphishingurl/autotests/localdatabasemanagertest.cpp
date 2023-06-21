@@ -55,3 +55,5 @@ LocalDataBaseManagerTest::LocalDataBaseManagerTest(QObject *parent)
 LocalDataBaseManagerTest::~LocalDataBaseManagerTest() = default;
 
 QTEST_GUILESS_MAIN(LocalDataBaseManagerTest)
+
+#include "moc_localdatabasemanagertest.cpp"

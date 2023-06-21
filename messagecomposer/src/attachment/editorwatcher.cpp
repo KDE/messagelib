@@ -200,3 +200,5 @@ void EditorWatcher::checkEditDone()
     Q_EMIT editDone(this);
     deleteLater();
 }
+
+#include "moc_editorwatcher.cpp"

@@ -66,3 +66,5 @@ void FilterNameWidget::setExistingFilterNames(const QStringList &lst)
 {
     mFilterListNames = lst;
 }
+
+#include "moc_filternamewidget.cpp"

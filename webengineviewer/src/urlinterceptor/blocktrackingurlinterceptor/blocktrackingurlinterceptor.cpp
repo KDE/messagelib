@@ -84,3 +84,5 @@ QDebug operator<<(QDebug d, const WebEngineViewer::BlockTrackingUrlInterceptor::
     d << "mPattern : " << t.mPattern;
     return d;
 }
+
+#include "moc_blocktrackingurlinterceptor.cpp"

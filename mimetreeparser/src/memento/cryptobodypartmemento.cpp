@@ -37,3 +37,5 @@ void CryptoBodyPartMemento::detach()
 {
     disconnect(this, SIGNAL(update(MimeTreeParser::UpdateMode)), nullptr, nullptr);
 }
+
+#include "moc_cryptobodypartmemento.cpp"

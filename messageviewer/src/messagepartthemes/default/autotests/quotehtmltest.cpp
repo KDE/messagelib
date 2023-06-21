@@ -245,3 +245,5 @@ void QuoteHtmlTest::testQuoteHtml()
     testWriter.end();
     QCOMPARE(testWriter.data(), result.toUtf8());
 }
+
+#include "moc_quotehtmltest.cpp"

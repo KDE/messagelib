@@ -82,3 +82,5 @@ QString HeaderStylePlugin::extraCommonCss(const QString &headerFont) const
     Q_UNUSED(headerFont)
     return {};
 }
+
+#include "moc_headerstyleplugin.cpp"

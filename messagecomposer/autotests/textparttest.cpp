@@ -24,3 +24,5 @@ void TextPartTest::shouldHaveDefaultValue()
 }
 
 QTEST_APPLESS_MAIN(TextPartTest)
+
+#include "moc_textparttest.cpp"

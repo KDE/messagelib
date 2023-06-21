@@ -39,3 +39,5 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
 }
 
 TemplateWebEnginePage::~TemplateWebEnginePage() = default;
+
+#include "moc_templatewebenginepage.cpp"

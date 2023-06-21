@@ -38,3 +38,5 @@ void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(MailSourceViewTextBrowserWidgetTest)
+
+#include "moc_mailsourceviewtextbrowserwidgettest.cpp"

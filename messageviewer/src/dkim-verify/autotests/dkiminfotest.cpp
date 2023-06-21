@@ -159,3 +159,5 @@ void DKIMInfoTest::shouldTestExtractDkimInfo()
         QVERIFY(isEqual);
     }
 }
+
+#include "moc_dkiminfotest.cpp"

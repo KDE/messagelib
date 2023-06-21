@@ -223,3 +223,5 @@ LocalDataBaseManager *WebEngineView::phishingDatabase() const
     }
     return d->mPhishingDatabase;
 }
+
+#include "moc_webengineview.cpp"

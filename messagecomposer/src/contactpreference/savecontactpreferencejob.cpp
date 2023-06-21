@@ -122,3 +122,5 @@ void SaveContactPreferenceJob::slotModifyCreateItem(KJob *job)
     }
     deleteLater();
 }
+
+#include "moc_savecontactpreferencejob.cpp"

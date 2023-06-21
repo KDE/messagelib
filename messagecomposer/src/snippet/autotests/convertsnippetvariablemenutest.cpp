@@ -19,3 +19,5 @@ void ConvertSnippetVariableMenuTest::shouldHaveDefaultValues()
     MessageComposer::ConvertSnippetVariableMenu w(true, nullptr);
     QVERIFY(w.menu());
 }
+
+#include "moc_convertsnippetvariablemenutest.cpp"

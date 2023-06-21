@@ -101,3 +101,5 @@ void PrintMessage::printPreview()
     mInPrintPreview = false;
     deleteLater();
 }
+
+#include "moc_printmessage.cpp"

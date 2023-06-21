@@ -562,3 +562,5 @@ void RichTextComposerNgTest::toCleanHtmlRegexTest()
 }
 
 QTEST_MAIN(RichTextComposerNgTest)
+
+#include "moc_richtextcomposerngtest.cpp"

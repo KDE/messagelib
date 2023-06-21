@@ -19,3 +19,5 @@ void RemoteContentMenuTest::shouldHaveDefaultValues()
     MessageViewer::RemoteContentMenu m;
     QVERIFY(m.urls().isEmpty());
 }
+
+#include "moc_remotecontentmenutest.cpp"

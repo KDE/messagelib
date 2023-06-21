@@ -12,3 +12,5 @@ DKIMAuthenticationStatusInfoUtilTest::DKIMAuthenticationStatusInfoUtilTest(QObje
     : QObject(parent)
 {
 }
+
+#include "moc_dkimauthenticationstatusinfoutiltest.cpp"

@@ -43,3 +43,5 @@ void MessageComposerSettings::slotSyncNow()
 }
 
 MessageComposerSettings::~MessageComposerSettings() = default;
+
+#include "moc_messagecomposersettings.cpp"

@@ -27,3 +27,5 @@ void SubmittedFormWarningWidget::showWarning()
 {
     animatedShow();
 }
+
+#include "moc_submittedformwarningwidget.cpp"

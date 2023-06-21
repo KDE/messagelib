@@ -108,3 +108,5 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
 }
 
 QTEST_GUILESS_MAIN(LocalDataBaseFileTest)
+
+#include "moc_localdatabasefiletest.cpp"

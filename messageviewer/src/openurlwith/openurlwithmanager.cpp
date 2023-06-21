@@ -94,3 +94,5 @@ void OpenUrlWithManager::setOpenWithUrlInfo(const QList<OpenWithUrlInfo> &newOpe
 {
     mOpenWithUrlInfo = newOpenWithUrlInfo;
 }
+
+#include "moc_openurlwithmanager.cpp"

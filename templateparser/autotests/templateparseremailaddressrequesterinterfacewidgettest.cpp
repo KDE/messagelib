@@ -42,3 +42,5 @@ void TemplateParserEmailAddressRequesterInterfaceWidgetTest::shouldAssignValues(
 }
 
 QTEST_MAIN(TemplateParserEmailAddressRequesterInterfaceWidgetTest)
+
+#include "moc_templateparseremailaddressrequesterinterfacewidgettest.cpp"

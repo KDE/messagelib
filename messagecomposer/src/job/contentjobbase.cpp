@@ -114,3 +114,5 @@ void ContentJobBase::slotResult(KJob *job)
     d->subjobContents.append(cjob->content());
     d->doNextSubjob();
 }
+
+#include "moc_contentjobbase.cpp"

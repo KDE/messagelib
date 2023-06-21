@@ -12,3 +12,5 @@ DKIMManagerKeyTest::DKIMManagerKeyTest(QObject *parent)
     : QObject(parent)
 {
 }
+
+#include "moc_dkimmanagerkeytest.cpp"

@@ -58,3 +58,5 @@ void DKIMResultAttributeTest::shouldDeserializeValue()
     result.deserialize(ba);
     QVERIFY(result == attr);
 }
+
+#include "moc_dkimresultattributetest.cpp"

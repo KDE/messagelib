@@ -72,3 +72,5 @@ void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithEmptyVCard()
 }
 
 QTEST_MAIN(AttachmentVcardFromAddressBookJobTest)
+
+#include "moc_attachmentvcardfromaddressbookjobtest.cpp"

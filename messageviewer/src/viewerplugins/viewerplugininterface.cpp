@@ -95,3 +95,5 @@ void ViewerPluginInterface::slotActivatePlugin()
 {
     Q_EMIT activatePlugin(this);
 }
+
+#include "moc_viewerplugininterface.cpp"

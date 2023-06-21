@@ -113,3 +113,5 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
 }
 
 QTEST_MAIN(CheckPhishingUrlCacheTest)
+
+#include "moc_checkphishingurlcachetest.cpp"

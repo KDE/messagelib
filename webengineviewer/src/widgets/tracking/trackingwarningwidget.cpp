@@ -68,3 +68,5 @@ void TrackingWarningWidget::hideAndClear()
     mBackLists.clear();
     setVisible(false);
 }
+
+#include "moc_trackingwarningwidget.cpp"

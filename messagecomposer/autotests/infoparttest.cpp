@@ -33,3 +33,5 @@ void InfoPartTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(InfoPartTest)
+
+#include "moc_infoparttest.cpp"

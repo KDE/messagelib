@@ -120,3 +120,5 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QCOMPARE(info.sdid, dkimdomain);
     QCOMPARE(info.fromEmail, fromEmail);
 }
+
+#include "moc_dkimchecksignaturejobtest.cpp"

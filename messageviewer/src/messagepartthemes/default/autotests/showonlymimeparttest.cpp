@@ -124,3 +124,5 @@ void ShowOnlyMimePartTest::testRelated()
 }
 
 QTEST_MAIN(ShowOnlyMimePartTest)
+
+#include "moc_showonlymimeparttest.cpp"

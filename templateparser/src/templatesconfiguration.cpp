@@ -384,3 +384,5 @@ QString TemplatesConfiguration::configIdString(uint id)
 {
     return QStringLiteral("IDENTITY_%1").arg(id);
 }
+
+#include "moc_templatesconfiguration.cpp"

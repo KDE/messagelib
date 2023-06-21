@@ -57,3 +57,5 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 
     return interceptRequest(info.requestUrl(), resourceType, navigationType);
 }
+
+#include "moc_blockexternalresourcesurlinterceptor.cpp"

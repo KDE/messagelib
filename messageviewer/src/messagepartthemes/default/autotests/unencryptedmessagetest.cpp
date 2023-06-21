@@ -88,3 +88,5 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
     QVERIFY(testWriter.data().contains("Sorry, certificate could not be imported."));
     originalMessage.clear();
 }
+
+#include "moc_unencryptedmessagetest.cpp"

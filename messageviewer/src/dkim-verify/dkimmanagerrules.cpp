@@ -134,3 +134,5 @@ void DKIMManagerRules::save(const QString &fileName, const QList<DKIMRule> &lst)
         group.writeEntry(QStringLiteral("Priority"), rule.priority());
     }
 }
+
+#include "moc_dkimmanagerrules.cpp"

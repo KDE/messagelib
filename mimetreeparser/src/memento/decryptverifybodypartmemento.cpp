@@ -66,3 +66,5 @@ void DecryptVerifyBodyPartMemento::slotResult(const DecryptionResult &dr, const 
     m_job = nullptr;
     notify();
 }
+
+#include "moc_decryptverifybodypartmemento.cpp"

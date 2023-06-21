@@ -151,3 +151,5 @@ void RecipientsEditorSideWidget::pickRecipient()
         p->show();
     }
 }
+
+#include "moc_recipientseditorsidewidget.cpp"

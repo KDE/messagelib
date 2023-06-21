@@ -157,3 +157,5 @@ void VerifyOpaqueBodyPartMemento::slotKeyListJobDone()
     setRunning(false);
     notify();
 }
+
+#include "moc_verifyopaquebodypartmemento.cpp"

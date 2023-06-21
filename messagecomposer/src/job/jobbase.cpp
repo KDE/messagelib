@@ -42,3 +42,5 @@ GlobalPart *JobBase::globalPart()
     qCCritical(MESSAGECOMPOSER_LOG) << "Job is not part of a Composer.";
     return nullptr;
 }
+
+#include "moc_jobbase.cpp"

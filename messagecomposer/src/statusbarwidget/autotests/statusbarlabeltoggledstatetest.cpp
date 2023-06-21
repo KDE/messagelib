@@ -97,3 +97,5 @@ void StatusBarLabelToggledStateTest::shouldChangeTestWhenStateChanged()
     widget.setToggleMode(true);
     QCOMPARE(widget.text(), newText);
 }
+
+#include "moc_statusbarlabeltoggledstatetest.cpp"

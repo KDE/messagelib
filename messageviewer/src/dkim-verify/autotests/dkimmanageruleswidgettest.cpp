@@ -35,3 +35,5 @@ void DKIMManageRulesWidgetTest::shouldHaveDefaultValues()
     auto searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
     QVERIFY(searchLineEdit->isClearButtonEnabled());
 }
+
+#include "moc_dkimmanageruleswidgettest.cpp"

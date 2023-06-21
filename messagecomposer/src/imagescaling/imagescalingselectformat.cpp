@@ -117,3 +117,5 @@ QString ImageScalingSelectFormat::format() const
 {
     return mFormat->text();
 }
+
+#include "moc_imagescalingselectformat.cpp"

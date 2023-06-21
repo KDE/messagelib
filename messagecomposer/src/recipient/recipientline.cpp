@@ -292,3 +292,5 @@ bool RecipientLineNG::eventFilter(QObject *watched, QEvent *event)
 
     return false;
 }
+
+#include "moc_recipientline.cpp"

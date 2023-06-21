@@ -63,3 +63,5 @@ void WebEngineExportPdfPageJobTest::shouldEmitSignalSuccess()
     QCOMPARE(spySuccess.count(), 1);
     delete webEngine;
 }
+
+#include "moc_webengineexportpdfpagejobtest.cpp"

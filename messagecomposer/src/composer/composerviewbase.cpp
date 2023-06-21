@@ -2254,3 +2254,5 @@ std::shared_ptr<Kleo::ExpiryChecker> ComposerViewBase::expiryChecker()
     }
     return mExpiryChecker;
 }
+
+#include "moc_composerviewbase.cpp"

@@ -61,3 +61,5 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     QVERIFY(part->isInline());
     QCOMPARE(part->data(), data);
 }
+
+#include "moc_attachmentfrommimecontentjobtest.cpp"

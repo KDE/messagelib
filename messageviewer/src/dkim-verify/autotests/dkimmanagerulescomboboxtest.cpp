@@ -26,3 +26,5 @@ void DKIMManageRulesComboBoxTest::shouldChangeIndex()
     w.setCurrentIndex(1);
     QCOMPARE(w.ruleType(), MessageViewer::DKIMRule::RuleType::CanBeSigned);
 }
+
+#include "moc_dkimmanagerulescomboboxtest.cpp"

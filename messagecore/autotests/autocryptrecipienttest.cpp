@@ -630,3 +630,5 @@ void AutocryptRecipientTest::test_getters()
 
     QCOMPARE(recipient.bad_user_agent(), QByteArray());
 }
+
+#include "moc_autocryptrecipienttest.cpp"

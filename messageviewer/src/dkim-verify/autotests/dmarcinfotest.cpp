@@ -66,3 +66,5 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     info3.setSubDomainPolicy(QStringLiteral("none"));
     QTest::addRow("intel.com") << QStringLiteral("v=DMARC1;p=none;sp=none;fo=1;rua=mailto:dmarc.notification@intel.com") << info3 << true;
 }
+
+#include "moc_dmarcinfotest.cpp"

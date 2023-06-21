@@ -21,3 +21,5 @@ void ScamDetectionInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.domainOrEmail().isEmpty());
     QVERIFY(!info.isValid());
 }
+
+#include "moc_scamdetectioninfotest.cpp"

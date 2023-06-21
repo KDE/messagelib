@@ -21,3 +21,5 @@ void DKIMCheckPolicyJobTest::shouldHaveDefaultValues()
     QVERIFY(!job.canStart());
     QVERIFY(!job.checkResult().isValid());
 }
+
+#include "moc_dkimcheckpolicyjobtest.cpp"

@@ -32,3 +32,5 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
     auto mDKIMManagerKeyTreeView = w.findChild<MessageViewer::DKIMManagerKeyTreeView *>(QStringLiteral("mDKIMManagerKeyTreeView"));
     QVERIFY(mDKIMManagerKeyTreeView);
 }
+
+#include "moc_dkimmanagerkeywidgettest.cpp"

@@ -14,3 +14,5 @@ ConversationViewWidget::ConversationViewWidget(QWidget *parent)
 ConversationViewWidget::~ConversationViewWidget()
 {
 }
+
+#include "moc_conversationviewwidget.cpp"

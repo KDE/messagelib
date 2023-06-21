@@ -133,3 +133,5 @@ void ConvertHtmlToPlainTextTest::shouldConvertToPlainText()
 }
 
 QTEST_MAIN(ConvertHtmlToPlainTextTest)
+
+#include "moc_converthtmltoplaintexttest.cpp"

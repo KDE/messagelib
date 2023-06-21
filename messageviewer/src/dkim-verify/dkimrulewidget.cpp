@@ -90,3 +90,5 @@ MessageViewer::DKIMRule DKIMRuleWidget::rule() const
     rule.setPriority(mPriority->value());
     return rule;
 }
+
+#include "moc_dkimrulewidget.cpp"

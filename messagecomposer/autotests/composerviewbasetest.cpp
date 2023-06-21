@@ -349,3 +349,5 @@ void ComposerViewBaseTest::testAutocryptKey()
 
     QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
 }
+
+#include "moc_composerviewbasetest.cpp"

@@ -752,3 +752,5 @@ bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::isValid() co
     // TODO improve it
     return (method != AuthenticationMethod::Unknown);
 }
+
+#include "moc_dkimchecksignaturejob.cpp"

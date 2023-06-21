@@ -134,3 +134,5 @@ void FollowupReminderCreateJob::writeFollowupReminderInfo()
         emitResult();
     });
 }
+
+#include "moc_followupremindercreatejob.cpp"

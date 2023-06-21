@@ -19,3 +19,5 @@ void MDNWarningWidgetJobTest::shouldHaveDefaultValues()
     QVERIFY(!job.item().isValid());
     QVERIFY(!job.canStart());
 }
+
+#include "moc_mdnwarningwidgetjobtest.cpp"

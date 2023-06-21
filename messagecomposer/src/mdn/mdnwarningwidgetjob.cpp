@@ -84,3 +84,5 @@ void MDNWarningWidgetJob::setItem(const Akonadi::Item &newItem)
 {
     mItem = newItem;
 }
+
+#include "moc_mdnwarningwidgetjob.cpp"

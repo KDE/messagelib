@@ -133,3 +133,5 @@ void SearchCollectionIndexingWarning::queryIndexerStatus()
         animatedShow();
     }
 }
+
+#include "moc_searchcollectionindexingwarning.cpp"

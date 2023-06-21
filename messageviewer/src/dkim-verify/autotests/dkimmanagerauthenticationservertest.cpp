@@ -21,3 +21,5 @@ void DKIMManagerAuthenticationServerTest::shouldHaveDefaultValue()
     MessageViewer::DKIMManagerAuthenticationServer w;
     QVERIFY(w.serverList().isEmpty());
 }
+
+#include "moc_dkimmanagerauthenticationservertest.cpp"

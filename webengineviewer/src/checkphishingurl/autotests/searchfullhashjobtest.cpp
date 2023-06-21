@@ -72,3 +72,5 @@ void SearchFullHashJobTest::shouldCreateRequest()
 }
 
 QTEST_GUILESS_MAIN(SearchFullHashJobTest)
+
+#include "moc_searchfullhashjobtest.cpp"

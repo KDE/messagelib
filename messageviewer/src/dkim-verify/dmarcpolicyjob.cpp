@@ -157,3 +157,5 @@ void DMARCPolicyJob::setEmailAddress(const QString &emailAddress)
 {
     mEmailAddress = emailAddress;
 }
+
+#include "moc_dmarcpolicyjob.cpp"

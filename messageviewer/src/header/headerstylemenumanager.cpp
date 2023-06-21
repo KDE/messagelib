@@ -149,3 +149,5 @@ void HeaderStyleMenuManager::readConfig()
 {
     d->readSettings();
 }
+
+#include "moc_headerstylemenumanager.cpp"

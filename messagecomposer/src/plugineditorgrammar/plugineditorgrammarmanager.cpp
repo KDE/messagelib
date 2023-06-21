@@ -179,3 +179,5 @@ PimCommon::CustomToolsPlugin *PluginEditorGrammarManager::pluginFromIdentifier(c
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_plugineditorgrammarmanager.cpp"

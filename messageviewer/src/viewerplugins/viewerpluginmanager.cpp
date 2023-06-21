@@ -219,3 +219,5 @@ QString ViewerPluginManager::pluginName() const
 {
     return d->pluginName;
 }
+
+#include "moc_viewerpluginmanager.cpp"

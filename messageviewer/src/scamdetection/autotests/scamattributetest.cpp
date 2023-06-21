@@ -59,3 +59,5 @@ void ScamAttributeTest::shouldHaveType()
 }
 
 QTEST_MAIN(ScamAttributeTest)
+
+#include "moc_scamattributetest.cpp"

@@ -111,3 +111,5 @@ void FollowUpReminderSelectDateDialog::accept()
     }
     QDialog::accept();
 }
+
+#include "moc_followupreminderselectdatedialog.cpp"

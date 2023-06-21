@@ -99,3 +99,5 @@ void TemplatesTextEditor::keyPressEvent(QKeyEvent *e)
     KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
     mTextEditorCompleter->completeText();
 }
+
+#include "moc_templatestexteditor.cpp"

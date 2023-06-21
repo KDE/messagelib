@@ -42,3 +42,5 @@ void DKIMDownloadKeyJobTest::shouldVerifyResolveDns()
     job.setSelectorName(QStringLiteral("bli"));
     QCOMPARE(job.resolvDnsValue(), QStringLiteral("bli._domainkey.bla"));
 }
+
+#include "moc_dkimdownloadkeyjobtest.cpp"

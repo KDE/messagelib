@@ -25,3 +25,5 @@ QList<QAction *> NetworkPluginUrlInterceptorInterface::interceptorUrlActions(con
     Q_UNUSED(result)
     return {};
 }
+
+#include "moc_networkpluginurlinterceptorinterface.cpp"

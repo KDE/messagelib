@@ -22,3 +22,5 @@ void ContactPreferenceTest::shouldHaveDefaultValues()
     QVERIFY(w.pgpKeyFingerprints.isEmpty());
     QVERIFY(w.smimeCertFingerprints.isEmpty());
 }
+
+#include "moc_contactpreferencetest.cpp"

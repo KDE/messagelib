@@ -972,3 +972,5 @@ void Manager::saveConfiguration()
 
     MessageListSettings::self()->config()->sync();
 }
+
+#include "moc_manager.cpp"

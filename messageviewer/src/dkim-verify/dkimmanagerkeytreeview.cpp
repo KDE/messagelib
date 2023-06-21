@@ -118,3 +118,5 @@ void DKIMManagerKeyTreeView::deleteSelectedItems()
     }
     mManagerKeyModel->removeKeyInfos(lst);
 }
+
+#include "moc_dkimmanagerkeytreeview.cpp"

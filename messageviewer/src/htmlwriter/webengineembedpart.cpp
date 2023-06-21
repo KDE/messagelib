@@ -45,3 +45,5 @@ QMap<QString, QString> WebEngineEmbedPart::embeddedPartMap() const
 {
     return mEmbeddedPartMap;
 }
+
+#include "moc_webengineembedpart.cpp"

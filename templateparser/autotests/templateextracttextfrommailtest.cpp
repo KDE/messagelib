@@ -36,3 +36,5 @@ void TemplateExtractTextFromMailTest::shouldExtractHtml()
 }
 
 QTEST_MAIN(TemplateExtractTextFromMailTest)
+
+#include "moc_templateextracttextfrommailtest.cpp"

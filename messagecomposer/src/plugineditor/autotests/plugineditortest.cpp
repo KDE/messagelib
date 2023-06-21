@@ -18,3 +18,5 @@ void PluginEditorTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_plugineditortest.cpp"

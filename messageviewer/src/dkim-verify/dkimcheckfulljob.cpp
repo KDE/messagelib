@@ -197,3 +197,5 @@ void DKIMCheckFullJob::slotCheckSignatureResult(const DKIMCheckSignatureJob::Che
         storeResult(checkResult);
     }
 }
+
+#include "moc_dkimcheckfulljob.cpp"

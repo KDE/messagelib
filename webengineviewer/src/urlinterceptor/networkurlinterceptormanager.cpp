@@ -64,3 +64,5 @@ QList<QAction *> NetworkUrlInterceptorManager::interceptorUrlActions(const WebEn
 {
     return d->interceptorUrlActions(result);
 }
+
+#include "moc_networkurlinterceptormanager.cpp"

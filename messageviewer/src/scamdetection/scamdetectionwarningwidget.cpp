@@ -92,3 +92,5 @@ void ScamDetectionWarningWidget::slotAddToWhiteList()
     setVisible(false);
     Q_EMIT addToWhiteList();
 }
+
+#include "moc_scamdetectionwarningwidget.cpp"

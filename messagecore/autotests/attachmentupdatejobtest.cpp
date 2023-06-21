@@ -207,3 +207,5 @@ void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
 }
 
 QTEST_MAIN(AttachmentUpdateJobTest)
+
+#include "moc_attachmentupdatejobtest.cpp"

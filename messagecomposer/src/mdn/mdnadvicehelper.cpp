@@ -216,3 +216,5 @@ int MDNAdviceHelper::requestAdviceOnMDN(const char *what)
         }
     }
 }
+
+#include "moc_mdnadvicehelper.cpp"

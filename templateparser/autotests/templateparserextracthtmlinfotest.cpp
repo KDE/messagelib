@@ -51,3 +51,5 @@ void TemplateParserExtractHtmlInfoTest::shouldReturnNullButWithTemplate()
 }
 
 QTEST_MAIN(TemplateParserExtractHtmlInfoTest)
+
+#include "moc_templateparserextracthtmlinfotest.cpp"

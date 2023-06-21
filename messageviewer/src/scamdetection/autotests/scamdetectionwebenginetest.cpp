@@ -160,3 +160,5 @@ void ScamDetectionWebEngineTest::scamtest()
 }
 
 QTEST_MAIN(ScamDetectionWebEngineTest)
+
+#include "moc_scamdetectionwebenginetest.cpp"

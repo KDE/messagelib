@@ -14,3 +14,5 @@ MessagePart::MessagePart(QObject *parent)
 }
 
 MessagePart::~MessagePart() = default;
+
+#include "moc_messagepart.cpp"

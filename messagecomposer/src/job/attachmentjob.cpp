@@ -127,3 +127,5 @@ void AttachmentJob::process()
     d->resultContent = d->subjobContents.constFirst();
     emitResult();
 }
+
+#include "moc_attachmentjob.cpp"

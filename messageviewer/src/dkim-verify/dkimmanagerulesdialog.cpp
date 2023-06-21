@@ -114,3 +114,5 @@ void DKIMManageRulesDialog::writeConfig()
     group.writeEntry("Size", size());
     group.sync();
 }
+
+#include "moc_dkimmanagerulesdialog.cpp"

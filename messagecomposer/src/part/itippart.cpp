@@ -68,3 +68,5 @@ void ItipPart::setInvitationBody(const QString &invitationBody)
     d->invitationBody = invitationBody;
     Q_EMIT invitationBodyChanged();
 }
+
+#include "moc_itippart.cpp"

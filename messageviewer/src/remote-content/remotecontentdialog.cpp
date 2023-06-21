@@ -43,3 +43,5 @@ void RemoteContentDialog::setInfo(const RemoteContentInfo &info)
 {
     mRemoveContentWidget->setInfo(info);
 }
+
+#include "moc_remotecontentdialog.cpp"

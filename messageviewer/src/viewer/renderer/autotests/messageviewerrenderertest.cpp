@@ -23,3 +23,5 @@ void MessageViewerRendererTest::shouldHaveDefaultValue()
     QVERIFY(!w.currentWidget());
     QVERIFY(!w.cssHelper());
 }
+
+#include "moc_messageviewerrenderertest.cpp"

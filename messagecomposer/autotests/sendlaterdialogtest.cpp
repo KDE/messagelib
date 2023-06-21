@@ -43,3 +43,5 @@ void SendLaterDialogTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SendLaterDialogTest)
+
+#include "moc_sendlaterdialogtest.cpp"

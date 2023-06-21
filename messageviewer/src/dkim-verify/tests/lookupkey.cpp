@@ -42,3 +42,5 @@ void LookUpKey::handleServers()
     }
     mDnsLookup->deleteLater();
 }
+
+#include "moc_lookupkey.cpp"

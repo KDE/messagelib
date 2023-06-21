@@ -21,3 +21,5 @@ void DMARCPolicyJobTest::shouldHaveDefaultValues()
     QVERIFY(!job.canStart());
     // TODO
 }
+
+#include "moc_dmarcpolicyjobtest.cpp"

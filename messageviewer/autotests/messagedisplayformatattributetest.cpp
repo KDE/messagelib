@@ -75,3 +75,5 @@ void MessageDisplayFormatAttributeTest::shouldDefineType()
 }
 
 QTEST_MAIN(MessageDisplayFormatAttributeTest)
+
+#include "moc_messagedisplayformatattributetest.cpp"

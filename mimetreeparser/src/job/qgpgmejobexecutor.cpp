@@ -138,3 +138,5 @@ QString QGpgMEJobExecutor::auditLogAsHtml() const
 {
     return mAuditLog;
 }
+
+#include "moc_qgpgmejobexecutor.cpp"

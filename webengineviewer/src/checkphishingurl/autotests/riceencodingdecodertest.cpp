@@ -96,3 +96,5 @@ void RiceEncodingDecoderTest::shouldDecodeRiceHashes()
 }
 
 QTEST_GUILESS_MAIN(RiceEncodingDecoderTest)
+
+#include "moc_riceencodingdecodertest.cpp"

@@ -17,3 +17,5 @@ MessageWidgetArea::MessageWidgetArea(QWidget *parent)
 }
 
 MessageWidgetArea::~MessageWidgetArea() = default;
+
+#include "moc_messagewidgetarea.cpp"

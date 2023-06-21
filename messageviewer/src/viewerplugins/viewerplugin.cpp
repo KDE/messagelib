@@ -43,3 +43,5 @@ bool ViewerPlugin::isEnabled() const
 {
     return d->mEnabled;
 }
+
+#include "moc_viewerplugin.cpp"

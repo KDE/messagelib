@@ -174,3 +174,5 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagementCore:
     cursor.endEditBlock();
     return found;
 }
+
+#include "moc_richtextcomposersignatures.cpp"

@@ -96,3 +96,5 @@ void ImageScalingTest::shouldHaveChangeMimetype()
 }
 
 QTEST_MAIN(ImageScalingTest)
+
+#include "moc_imagescalingtest.cpp"

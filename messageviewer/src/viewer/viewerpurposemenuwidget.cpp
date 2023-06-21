@@ -28,3 +28,5 @@ void MailfilterPurposeMenuWidget::setViewer(MailWebEngineView *viewer)
 {
     mViewer = viewer;
 }
+
+#include "moc_viewerpurposemenuwidget.cpp"

@@ -91,3 +91,5 @@ void TemplateParserUtilTest::shouldGetLastNameFromEmail()
     QFETCH(const QString, lastName);
     QCOMPARE(TemplateParser::Util::getLastNameFromEmail(email), lastName);
 }
+
+#include "moc_templateparserutiltest.cpp"

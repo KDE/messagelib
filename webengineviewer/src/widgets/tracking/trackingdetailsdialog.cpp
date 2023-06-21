@@ -67,3 +67,5 @@ void TrackingDetailsDialog::setDetails(const QString &details)
 {
     mDetails->setHtml(details);
 }
+
+#include "moc_trackingdetailsdialog.cpp"

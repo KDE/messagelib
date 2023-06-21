@@ -19,3 +19,5 @@ QString PluginEditorConfigureBaseWidget::helpAnchor() const
 {
     return {};
 }
+
+#include "moc_plugineditorconfigurebasewidget.cpp"

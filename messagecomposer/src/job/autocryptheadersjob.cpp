@@ -280,3 +280,5 @@ void AutocryptHeadersJob::process()
         emitResult();
     }
 }
+
+#include "moc_autocryptheadersjob.cpp"

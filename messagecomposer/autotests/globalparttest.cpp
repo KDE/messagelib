@@ -26,3 +26,5 @@ void GlobalPartTest::shouldHaveDefaultValue()
 }
 
 QTEST_GUILESS_MAIN(GlobalPartTest)
+
+#include "moc_globalparttest.cpp"

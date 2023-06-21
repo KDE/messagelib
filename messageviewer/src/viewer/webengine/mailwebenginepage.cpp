@@ -60,3 +60,5 @@ void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url, QWebEngi
     // Denied all permissions.
     setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
 }
+
+#include "moc_mailwebenginepage.cpp"

@@ -34,3 +34,5 @@ bool PluginEditorConvertText::hasPopupMenuSupport() const
 {
     return false;
 }
+
+#include "moc_plugineditorconverttext.cpp"

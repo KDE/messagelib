@@ -62,3 +62,5 @@ bool LoadExternalReferencesUrlInterceptor::allowExternalContent() const
 {
     return mAllowLoadExternalReference;
 }
+
+#include "moc_loadexternalreferencesurlinterceptor.cpp"

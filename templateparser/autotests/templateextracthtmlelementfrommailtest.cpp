@@ -50,3 +50,5 @@ void TemplateExtractHtmlElementFromMailTest::shouldExtractHtml()
 }
 
 QTEST_MAIN(TemplateExtractHtmlElementFromMailTest)
+
+#include "moc_templateextracthtmlelementfrommailtest.cpp"

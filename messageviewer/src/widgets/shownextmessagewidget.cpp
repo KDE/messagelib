@@ -39,3 +39,5 @@ void ShowNextMessageWidget::updateButton(bool hasPreviousMessage, bool hasNextMe
     mPreviousMessage->setEnabled(hasPreviousMessage);
     mNextMessage->setEnabled(hasNextMessage);
 }
+
+#include "moc_shownextmessagewidget.cpp"

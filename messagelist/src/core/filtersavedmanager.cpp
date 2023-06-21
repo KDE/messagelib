@@ -133,3 +133,5 @@ void FilterSavedManager::updateFilter(const QString &identifier, const QString &
         }
     }
 }
+
+#include "moc_filtersavedmanager.cpp"

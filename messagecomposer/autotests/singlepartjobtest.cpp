@@ -169,3 +169,5 @@ void SinglepartJobTest::testContentTransferEncoding()
     }
     delete composer;
 }
+
+#include "moc_singlepartjobtest.cpp"

@@ -101,3 +101,5 @@ void MailingListTest::shouldCopyReminderInfo()
 }
 
 QTEST_APPLESS_MAIN(MailingListTest)
+
+#include "moc_mailinglisttest.cpp"

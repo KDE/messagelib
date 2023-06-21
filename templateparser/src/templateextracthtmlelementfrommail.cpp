@@ -102,3 +102,5 @@ QString TemplateExtractHtmlElementFromMail::bodyElement() const
 {
     return mBodyElement;
 }
+
+#include "moc_templateextracthtmlelementfrommail.cpp"

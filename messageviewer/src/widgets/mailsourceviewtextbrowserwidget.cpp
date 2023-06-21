@@ -158,3 +158,5 @@ void MailSourceViewTextBrowser::slotSpeakText()
     mTextToSpeechContainerWidget->say(text);
 #endif
 }
+
+#include "moc_mailsourceviewtextbrowserwidget.cpp"

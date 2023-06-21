@@ -64,3 +64,5 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldEmitSignal()
 }
 
 QTEST_MAIN(TemplateParserEmailAddressRequesterLineEditTest)
+
+#include "moc_templateparseremailaddressrequesterlineedittest.cpp"

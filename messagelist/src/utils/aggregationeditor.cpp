@@ -204,3 +204,5 @@ void AggregationEditor::fillFillViewStrategyCombo()
 {
     ComboBoxUtils::fillIntegerOptionCombo(mFillViewStrategyCombo, Aggregation::enumerateFillViewStrategyOptions());
 }
+
+#include "moc_aggregationeditor.cpp"

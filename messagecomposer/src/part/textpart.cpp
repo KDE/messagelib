@@ -118,3 +118,5 @@ void TextPart::setEmbeddedImages(const KPIMTextEdit::ImageList &images)
 {
     d->embeddedImages = images;
 }
+
+#include "moc_textpart.cpp"

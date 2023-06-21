@@ -66,3 +66,5 @@ void DKIMCheckPolicyTest::shouldAssignValues()
     QCOMPARE(pol.useRelaxedParsing(), mRelaxedParsing);
     QCOMPARE(pol.useOnlyAuthenticationResults(), mUseOnlyAuthenticationResults);
 }
+
+#include "moc_dkimcheckpolicytest.cpp"

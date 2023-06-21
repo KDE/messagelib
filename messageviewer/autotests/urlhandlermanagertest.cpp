@@ -121,3 +121,5 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
 }
 
 QTEST_MAIN(BodyPartUrlHandlerManagerTest)
+
+#include "moc_urlhandlermanagertest.cpp"

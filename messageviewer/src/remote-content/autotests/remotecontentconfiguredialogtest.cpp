@@ -34,3 +34,5 @@ void RemoteContentConfigureDialogTest::shouldHaveDefaultValues()
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Close});
 }
+
+#include "moc_remotecontentconfiguredialogtest.cpp"

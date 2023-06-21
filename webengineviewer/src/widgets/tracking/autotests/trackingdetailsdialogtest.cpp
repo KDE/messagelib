@@ -22,3 +22,5 @@ void TrackingDetailsDialogTest::shouldHaveDefaultValue()
     WebEngineViewer::TrackingDetailsDialog d;
     // TODO
 }
+
+#include "moc_trackingdetailsdialogtest.cpp"

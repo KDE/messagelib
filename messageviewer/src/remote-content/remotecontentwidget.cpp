@@ -54,3 +54,5 @@ void RemoteContentWidget::setInfo(const RemoteContentInfo &info)
     mLineEdit->setText(info.url());
     mStatusComboBox->setStatus(info.status());
 }
+
+#include "moc_remotecontentwidget.cpp"

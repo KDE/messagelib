@@ -84,3 +84,5 @@ KMime::Content::List MimePartTreeView::selectedContents() const
     }
     return contents;
 }
+
+#include "moc_mimeparttreeview.cpp"

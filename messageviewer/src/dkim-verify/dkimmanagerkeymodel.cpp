@@ -140,3 +140,5 @@ void DKIMManagerKeyModel::removeKeyInfos(const QStringList &keyInfos)
     }
     endResetModel();
 }
+
+#include "moc_dkimmanagerkeymodel.cpp"

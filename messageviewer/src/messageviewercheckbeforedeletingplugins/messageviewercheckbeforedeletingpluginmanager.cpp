@@ -196,3 +196,5 @@ MessageViewerCheckBeforeDeletingPlugin *MessageViewerCheckBeforeDeletingPluginMa
 {
     return d->pluginFromIdentifier(id);
 }
+
+#include "moc_messageviewercheckbeforedeletingpluginmanager.cpp"

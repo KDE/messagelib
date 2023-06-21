@@ -433,3 +433,5 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
         }
     }
 }
+
+#include "moc_richtextcomposerng.cpp"

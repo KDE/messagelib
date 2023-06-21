@@ -90,3 +90,5 @@ void ScamExpandUrlJob::slotError(QNetworkReply::NetworkError error)
     Q_EMIT expandUrlError(error);
     deleteLater();
 }
+
+#include "moc_scamexpandurljob.cpp"

@@ -23,3 +23,5 @@ void DKIMAuthenticationStatusInfoConverterTest::shouldHaveDefaultValues()
     QVERIFY(status.convert().isEmpty());
     QCOMPARE(status.statusInfo(), MessageViewer::DKIMAuthenticationStatusInfo());
 }
+
+#include "moc_dkimauthenticationstatusinfoconvertertest.cpp"
