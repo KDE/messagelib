@@ -1,23 +1,24 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Xosé <xosecalvo@gmail.com>, 2011, 2012, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
 # Marce Villarino <mvillarino@kde-espana.org>, 2013.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2019-04-06 11:51+0200\n"
+"PO-Revision-Date: 2023-06-18 21:32+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -63,14 +64,14 @@ msgid ""
 "templates.</p></qt>"
 msgstr ""
 "<qt><p>Aquí pode engadir, editar e eliminar os modelos de mensaxes "
-"personalizados que queira empregar ao redactar ou responder a unha mensaxe "
-"que queira reenviar. Cree un modelo personalizado escribindo o seu nome na "
-"caixa e prema o botón «+». Pode tamén ligar unha combinación de teclado ao "
-"teclado para traballar máis rápido.</p><p>Os modelos de mensaxes permiten "
-"utilizar ordes de substitución, simplemente escribíndoas ou seleccionándoas "
-"no menú <i>Inserir unha orde</i>.</p><p>Existen catro tipos de modelos "
+"personalizados que queira usar ao redactar ou responder a unha mensaxe que "
+"queira reenviar. Cree un modelo personalizado escribindo o seu nome na caixa "
+"e prema o botón «+». Pode tamén ligar unha combinación de teclado ao teclado "
+"para traballar máis rápido.</p><p>Os modelos de mensaxes permiten utilizar "
+"ordes de substitución, simplemente escribíndoas ou seleccionándoas no menú "
+"<i>Inserir unha orde</i>.</p><p>Existen catro tipos de modelos "
 "personalizados: utilízanse para <i>Responder</i>, <i>Responder a todos</i>, "
-"<i>Reenviar</i> e <i>Universal</i> e pódense empregar para todo tipo de "
+"<i>Reenviar</i> e <i>Universal</i> e pódense usar para todo tipo de "
 "operacións. Non se pode ligar un atallo de teclado aos modelos "
 "<i>Universais</i>.</p></qt>"
 
@@ -228,7 +229,7 @@ msgstr "Retirar a sinatura ao responder"
 #: settings/templateparser.kcfg:15
 #, kde-format
 msgid "Use smart &quoting"
-msgstr "Empregar aspas inteli&xentes"
+msgstr "Usar comiñas inteli&xentes"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
@@ -237,6 +238,8 @@ msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
 msgstr ""
+"Responda ou reenvíe co mesmo formato visual que a mensaxe orixinal (texto "
+"simple ou HTML)."
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -549,7 +552,7 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>Os modelos especificados son específicos do cartafol. Ignoran tanto os "
+"<p>Os modelos indicados son específicos do cartafol. Ignoran tanto os "
 "modelos globais como os modelos para cada identidade.</p>"
 
 #: templatesconfiguration.cpp:63
@@ -559,9 +562,9 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>Os modelos especificados aquí son específicos da identidade. Ignoran os "
-"modelos globais pero pódennos ignorar os modelos por cartafol, de se "
-"especificaren.</p>"
+"<p>Os modelos indicados aquí son específicos da identidade. Ignoran os "
+"modelos globais pero pódennos ignorar os modelos por cartafol, se se indican."
+"</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -570,7 +573,7 @@ msgid ""
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
 "<p>Estes son modelos globais (predeterminados). Pódense ignorar con modelos "
-"para cada identidade ou para cada cartafol, de se especificaren.</p>"
+"para cada identidade ou para cada cartafol, se se indican.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
@@ -601,13 +604,13 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
-"O uso de «Responder con texto simple» e «Responder empregando texto HTML» en "
-"pares non é correcto. Empregue só unha das ordes mencionadas con «Responder "
-"como orde de mensaxe citada» segundo precise\n"
-"(a)Responder empregando texto simple para que as citas estean estritamente "
-"en texto simple\n"
-"(b)Responder empregando texto en HTML para que as citas estean no formato "
-"HTML, de estar presente"
+"O uso de «Responder con texto simple» e «Responder con HTML» en pares non é "
+"correcto. Use só unha das ordes mencionadas con «Responder como orde de "
+"mensaxe citada» segundo precise\n"
+"(a)Responder usando texto simple para que as citas estean estritamente en "
+"texto simple\n"
+"(b)Responder usando texto en HTML para que as citas estean no formato HTML, "
+"de estar presente"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
@@ -618,7 +621,7 @@ msgstr "&Inserir unha orde"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr "Escolla unha orde para inserir no modelo"
+msgstr "Escolla unha orde para inserir no modelo."
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -637,7 +640,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter a name for the custom template"
-msgstr "Insira un nome para o modelo personalizado"
+msgstr "Insira un nome para o modelo personalizado."
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:89
@@ -655,7 +658,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new custom template"
-msgstr "Engadir un modelo personalizado novo"
+msgstr "Engadir un modelo personalizado novo."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:99
@@ -665,15 +668,15 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
-"Prema este botón se quere creasr un modelo personalizado novo co nome "
-"indicado"
+"Prema este botón se quere crear un modelo personalizado novo co nome "
+"indicado."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove the selected custom template"
-msgstr "Retirar o modelo personalizado seleccionado"
+msgstr "Retirar o modelo personalizado seleccionado."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:109
@@ -682,14 +685,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
-msgstr "Prema este botón se quere retirar o modelo personalizado seleccionado"
+msgstr "Prema este botón se quere retirar o modelo personalizado seleccionado."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Duplicate the selected custom template"
-msgstr "Duplicar o modelo personalizado seleccionado"
+msgstr "Duplicar o modelo personalizado seleccionado."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:119
@@ -698,14 +701,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
-msgstr "Prema este botón para duplicar o modelo personalizado seleccionado"
+msgstr "Prema este botón para duplicar o modelo personalizado seleccionado."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "List of custom templates available"
-msgstr "Lista de modelos personalizados dispoñíbeis"
+msgstr "Lista de modelos personalizados dispoñíbeis."
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:137
@@ -747,7 +750,7 @@ msgstr "Copia:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients of the message"
-msgstr "Destinatarios adicionais da mensaxe"
+msgstr "Destinatarios adicionais da mensaxe."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:222
@@ -757,7 +760,7 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
-"Ao empregar este modelo, os destinatarios predeterminados son os que insira "
+"Ao usar este modelo, os destinatarios predeterminados son os que insira "
 "aquí. Esta é unha lista de enderezos de correo separados por comas."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
@@ -765,7 +768,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients who get a copy of the message"
-msgstr "Destinatarios adicionais que reciben unha copia da mensaxe"
+msgstr "Destinatarios adicionais que reciben unha copia da mensaxe."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:238
@@ -775,16 +778,16 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
-"Ao empregar este modelo, os destinatarios que insira aquí recibirán de "
-"maneira predeterminada unha copia desta mensaxe. Esta é unha lista de "
-"enderezos de correo separados por comas."
+"Ao usar este modelo, os destinatarios que insira aquí recibirán de maneira "
+"predeterminada unha copia desta mensaxe. Esta é unha lista de enderezos de "
+"correo separados por comas."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The custom template"
-msgstr "O modelo personalizado"
+msgstr "O modelo personalizado."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:258
@@ -816,9 +819,7 @@ msgstr "Responder a todos"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "Reenviar"
@@ -856,7 +857,7 @@ msgstr "Mensaxe nova"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for new messages"
-msgstr "Crear o modelo para as mensaxes novas"
+msgstr "Crear o modelo para as mensaxes novas."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:92
@@ -883,7 +884,7 @@ msgstr "Responder ao remitente"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message replies"
-msgstr "Crear o modelo para as respostas ás mensaxes"
+msgstr "Crear o modelo para as respostas ás mensaxes."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:149
@@ -912,7 +913,7 @@ msgctxt "@info:tooltip"
 msgid "Create the template for replying to all recipients or to a mailing list"
 msgstr ""
 "Crear o modelo para responder a todos os destinatarios ou a unha lista de "
-"correo"
+"correo."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:206
@@ -939,7 +940,7 @@ msgstr "Reenviar a mensaxe"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message forwards"
-msgstr "Crear o modelo para os reenvíos"
+msgstr "Crear o modelo para os reenvíos."
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:263
@@ -966,7 +967,7 @@ msgstr "&Indicador de cita:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr "Indicar o prefixo das liñas de mensaxe citadas"
+msgstr "Indicar o prefixo das liñas de mensaxe citadas."
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326
