@@ -144,6 +144,7 @@ void Manager::saveAggregationForStorageModel(const QString &modelId, const QStri
     if (!storageUsesPrivateAggregation) {
         conf.writeEntry(QStringLiteral("DefaultSet"), id);
     }
+    conf.sync();
 }
 
 const Aggregation *Manager::aggregationForStorageModel(const Akonadi::Collection &col, bool *storageUsesPrivateAggregation)
@@ -426,6 +427,7 @@ void Manager::saveThemeForStorageModel(const QString &storageModelIndex, const Q
     if (!storageUsesPrivateTheme) {
         conf.writeEntry(QStringLiteral("DefaultSet"), id);
     }
+    conf.sync();
 }
 
 const Theme *Manager::themeForStorageModel(const Akonadi::Collection &col, bool *storageUsesPrivateTheme)
