@@ -4,22 +4,22 @@
 # Xosé <xosecalvo@gmail.com>, 2010, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
 # Marce Villarino <mvillarino@kde-espana.org>, 2014.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2020-01-05 19:13+0100\n"
+"PO-Revision-Date: 2023-06-24 09:56+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -545,7 +545,7 @@ msgstr[1] "Actualizáronse %1 grupos de %2"
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
-msgstr "Listo"
+msgstr "Listo."
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:11
@@ -745,7 +745,7 @@ msgstr "Icona de Vixiada/Ignorada"
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr "Icona de Expandir/Pregar cabeceira de grupo"
+msgstr "Icona de expandir ou recoller a cabeceira de grupo"
 
 #: core/theme.cpp:155
 #, kde-format
@@ -791,7 +791,7 @@ msgstr "Icona de importante"
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr ""
+msgstr "Cartafol"
 
 #: core/theme.cpp:179
 #, kde-format
@@ -898,7 +898,7 @@ msgstr "Tamaño"
 #: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Folder"
-msgstr ""
+msgstr "Cartafol"
 
 #: core/view.cpp:2274 core/view.cpp:2276
 #, kde-format
@@ -1044,13 +1044,12 @@ msgstr[1] "<b>%1</b> mensaxes (<b>%2</b> sen ler)"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "Calquera filtro definido."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Create Filter"
-msgstr "Limpar o filtro"
+msgstr "Crear un filtro"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1096,48 +1095,41 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "O cartafol sempre usa este modo de ordenación"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "Limpar o filtro"
+msgstr "Configurar o filtro"
 
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: core/widgets/configurefilterswidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "Quere eliminar «%1»?"
+msgstr "Quere eliminar o filtro?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Remove Filter"
-msgstr "Limpar o filtro"
+msgstr "Eliminar o filtro"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "Limpar o filtro"
+msgstr "Editar o filtro"
 
 #: core/widgets/filternamewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgid "Name:"
 msgstr "Nome:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Save Filter..."
-msgstr "Limpar o filtro"
+msgstr "Gardar o filtro…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1184,7 +1176,7 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
-"Active este botón se quere manter a barra de buscas rápidas bloqueada cando "
+"Conmute este botón se quere manter a barra de buscas rápidas bloqueada cando "
 "se mova a outros cartafoles ou cando reduza a busca polo estado das mensaxes."
 
 #: core/widgets/searchlinestatus.cpp:112
@@ -1193,10 +1185,9 @@ msgid "Filter Mails by Status"
 msgstr "Filtrar as mensaxes por estado"
 
 #: core/widgets/searchlinestatus.cpp:116
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Saved Filter"
-msgstr "Limpar o filtro"
+msgstr "Filtro gardado"
 
 #: core/widgets/searchlinestatus.cpp:215
 #, kde-format
@@ -1255,7 +1246,7 @@ msgstr "Contén un anexo"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
-msgstr "Ten un convite"
+msgstr "Ten unha invitación"
 
 #: core/widgets/searchlinestatus.cpp:257
 #, kde-format
@@ -1302,14 +1293,12 @@ msgstr "Borrar o historial"
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr ""
+msgstr "O separador está bloqueado."
 
 #: core/widgets/tablockedwarning.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgid "(Unlock it)"
-msgstr "Bloquear a busca"
+msgstr "(desbloquealo)"
 
 #: messagelistutil.cpp:104
 #, kde-format
@@ -1320,7 +1309,7 @@ msgstr "Ordenación"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
-msgstr "Abrir un novo separador"
+msgstr "Abrir un novo separador."
 
 #: pane.cpp:126
 #, kde-format
@@ -1331,7 +1320,7 @@ msgstr "Novo separador"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
-msgstr "Pechar o separador actual"
+msgstr "Pechar o separador actual."
 
 #: pane.cpp:138
 #, kde-format
@@ -1402,20 +1391,16 @@ msgid "Close All Other Tabs"
 msgstr "Pechar os outros separadores"
 
 #: pane.cpp:721
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "Bloquear a busca"
+msgstr "Desbloquear o separador"
 
 #: pane.cpp:721
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr "Bloquear a busca"
+msgstr "Bloquear o separador"
 
 #: storagemodel.cpp:219
 #, kde-format
@@ -1442,7 +1427,7 @@ msgstr "Agrupamento:"
 #: utils/aggregationeditor.cpp:41
 #, kde-format
 msgid "Group expand policy:"
-msgstr "Opción de expansión dos grupos:"
+msgstr "Política de expansión dos grupos:"
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
@@ -1457,7 +1442,7 @@ msgstr "Inicio do fío:"
 #: utils/aggregationeditor.cpp:55
 #, kde-format
 msgid "Thread expand policy:"
-msgstr "Opción de expansión dos fíos:"
+msgstr "Política de expansión dos fíos:"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1471,8 +1456,7 @@ msgid "Fill view strategy:"
 msgstr "Estratexia de enchido das vistas:"
 
 #: utils/configureaggregationsdialog.cpp:100
-#, fuzzy, kde-format
-#| msgid "Customize Message Aggregation Modes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Personalice os modos de agrupamento das mensaxes"
@@ -1525,8 +1509,7 @@ msgid "All Files (*)"
 msgstr "Todos os ficheiros (*)"
 
 #: utils/configurethemesdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "Customize Themes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Personalizar os temas"
@@ -1888,7 +1871,7 @@ msgstr "Todos"
 #: widget.cpp:345
 #, kde-format
 msgid "Collapse Group"
-msgstr "Pregar este grupo"
+msgstr "Recoller este grupo"
 
 #: widget.cpp:348
 #, kde-format
@@ -1903,19 +1886,17 @@ msgstr "Expandir todos os grupos"
 #: widget.cpp:357
 #, kde-format
 msgid "Collapse All Groups"
-msgstr "Pregar todos os grupos"
+msgstr "Recoller todos os grupos"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Expandir todos os grupos"
+msgstr "Expandir todos os fíos"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Pregar todos os grupos"
+msgstr "Recoller todos os fíos"
 
 #: widget.cpp:419
 #, kde-format

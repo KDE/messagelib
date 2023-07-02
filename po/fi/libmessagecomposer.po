@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-02-22 11:21+0200\n"
+"PO-Revision-Date: 2023-06-02 20:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2013-01-13 20:43:22+0000\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -373,10 +373,9 @@ msgid "Suggest Automatic Display"
 msgstr "Ehdota automaattista näkymää"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Muokkaa sovelluksella…"
+msgstr "Muokkaa sovelluksella:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -384,6 +383,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail ei kykene havaitsemaan valitun muokkaimen sulkemista. Jottei tietoja "
+"menetettäisi, liitteen muokkaus keskeytetään."
 
 #: composer/composer.cpp:289
 #, kde-format
