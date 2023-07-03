@@ -26,6 +26,9 @@ class HeaderStylePlugin;
 class MESSAGEVIEWER_EXPORT CSSHelperBase
 {
 public:
+    struct MESSAGEVIEWER_EXPORT HtmlHeadSettings {
+        bool fixedFont = false;
+    };
     /** Construct a CSSHelper object and set its font and color settings to
         default values.
         Sub-Classes should put their config loading here.
@@ -35,10 +38,10 @@ public:
 
     /** @return HTML head including style sheet definitions and the
         &gt;body&lt; tag */
-    virtual QString htmlHead(bool fixedFont = false) const;
+    virtual QString htmlHead(const HtmlHeadSettings &) const;
 
     /** @return The collected CSS definitions as a string */
-    Q_REQUIRED_RESULT QString cssDefinitions(bool fixedFont = false) const;
+    Q_REQUIRED_RESULT QString cssDefinitions(const HtmlHeadSettings &) const;
 
     /** @return a &lt;div&gt; start tag with embedded style
         information suitable for quoted text with quote level @p level */
@@ -119,9 +122,9 @@ private:
     Q_REQUIRED_RESULT QString quoteCssDefinition() const;
     int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
-    Q_REQUIRED_RESULT QString printCssDefinitions(bool fixed) const;
+    Q_REQUIRED_RESULT QString printCssDefinitions(const HtmlHeadSettings &) const;
     // returns CSS rules specific to the screen media type
-    Q_REQUIRED_RESULT QString screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const;
+    Q_REQUIRED_RESULT QString screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &) const;
     // returns CSS rules common to both screen and print media types
     Q_REQUIRED_RESULT QString commonCssDefinitions() const;
     Q_REQUIRED_RESULT QString fullAddressList() const;

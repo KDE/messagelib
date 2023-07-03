@@ -66,7 +66,8 @@ void ShowOnlyMimePartTest::testDrawFrame()
     otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
     fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
+    CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
+    fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), showOnlyMimePart);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
@@ -114,7 +115,8 @@ void ShowOnlyMimePartTest::testRelated()
     otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
     fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
+    CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
+    fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), showOnlyMimePart);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();

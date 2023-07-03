@@ -307,7 +307,7 @@ bool Viewer::htmlLoadExternal() const
 bool Viewer::isFixedFont() const
 {
     Q_D(const Viewer);
-    return d->mUseFixedFont;
+    return d->mHtmlHeadSettings.fixedFont;
 }
 
 void Viewer::setUseFixedFont(bool useFixedFont)

@@ -109,12 +109,12 @@ void CSSHelper::updateColor()
     mBackgroundColor = KColorScheme(QPalette::Active).background().color(); // QApplication::palette().color(QPalette::Base);
 }
 
-QString CSSHelper::htmlHead(bool fixed) const
+QString CSSHelper::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
 {
     return QLatin1String(
                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
                "<html><head><title></title><style>\n")
-        + cssDefinitions(fixed)
+        + cssDefinitions(htmlHeadSettings)
         + QLatin1String(
                "</style></head>\n"
                "<body>\n");

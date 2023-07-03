@@ -92,7 +92,6 @@
 #include <MessageCore/AutocryptUtils>
 
 // own includes
-#include "csshelper.h"
 #include "messageviewer/messageviewerutil.h"
 #include "openurlwith/openurlwithjob.h"
 #include "settings/messageviewersettings.h"
@@ -786,7 +785,7 @@ void ViewerPrivate::displayMessage()
     }
 
     htmlWriter()->begin();
-    htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
+    htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
     if (!mMainWindow) {
         q->setWindowTitle(mMessage->subject()->asUnicodeString());
@@ -991,9 +990,9 @@ void ViewerPrivate::readConfig()
         headerStylePlugin()->headerStyle()->setShowEmoticons(mForceEmoticons);
     }
 
-    mUseFixedFont = MessageViewer::MessageViewerSettings::self()->useFixedFont();
+    mHtmlHeadSettings.fixedFont = MessageViewer::MessageViewerSettings::self()->useFixedFont();
     if (mToggleFixFontAction) {
-        mToggleFixFontAction->setChecked(mUseFixedFont);
+        mToggleFixFontAction->setChecked(mHtmlHeadSettings.fixedFont);
     }
 
     mHtmlMailGlobalSetting = MessageViewer::MessageViewerSettings::self()->htmlMail();
@@ -1043,7 +1042,7 @@ void ViewerPrivate::slotGeneralFontChanged()
 void ViewerPrivate::writeConfig(bool sync)
 {
     MessageViewer::MessageViewerSettings::self()->setShowEmoticons(mForceEmoticons);
-    MessageViewer::MessageViewerSettings::self()->setUseFixedFont(mUseFixedFont);
+    MessageViewer::MessageViewerSettings::self()->setUseFixedFont(mHtmlHeadSettings.fixedFont);
     if (attachmentStrategy()) {
         MessageViewer::MessageViewerSettings::self()->setAttachmentStrategy(QLatin1String(attachmentStrategy()->name()));
     }
@@ -1275,7 +1274,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         }
 
         htmlWriter()->begin();
-        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
+        htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
         parseContent(node);
 
@@ -1830,7 +1829,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (elidedTextSize == -1) {
                 html += info.label;
             } else {
-                QFont bodyFont = cssHelper()->bodyFont(mUseFixedFont);
+                QFont bodyFont = cssHelper()->bodyFont(mHtmlHeadSettings.fixedFont);
                 QFontMetrics fm(bodyFont);
                 html += fm.elidedText(info.label, Qt::ElideRight, elidedTextSize);
             }
@@ -2066,7 +2065,7 @@ void ViewerPrivate::slotFind()
 
 void ViewerPrivate::slotToggleFixedFont()
 {
-    mUseFixedFont = !mUseFixedFont;
+    mHtmlHeadSettings.fixedFont = !mHtmlHeadSettings.fixedFont;
     update(MimeTreeParser::Force);
 }
 
@@ -2091,7 +2090,7 @@ void ViewerPrivate::slotShowMessageSource()
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);
     viewer->setDisplayedSource(mViewer->page());
-    if (mUseFixedFont) {
+    if (mHtmlHeadSettings.fixedFont) {
         viewer->setFixedFont();
     }
     viewer->show();
@@ -2130,7 +2129,7 @@ void ViewerPrivate::updateReaderWin()
             mColorBar->hide();
             mMimePartTree->hide();
             htmlWriter()->begin();
-            htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + cssHelper()->endBodyHtml());
+            htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings) + cssHelper()->endBodyHtml());
             htmlWriter()->end();
         }
     }
@@ -2798,10 +2797,10 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 
 void ViewerPrivate::setUseFixedFont(bool useFixedFont)
 {
-    if (mUseFixedFont != useFixedFont) {
-        mUseFixedFont = useFixedFont;
+    if (mHtmlHeadSettings.fixedFont != useFixedFont) {
+        mHtmlHeadSettings.fixedFont = useFixedFont;
         if (mToggleFixFontAction) {
-            mToggleFixFontAction->setChecked(mUseFixedFont);
+            mToggleFixFontAction->setChecked(mHtmlHeadSettings.fixedFont);
         }
     }
 }

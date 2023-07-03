@@ -183,18 +183,18 @@ QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
     return result;
 }
 
-QString CSSHelperBase::cssDefinitions(bool fixed) const
+QString CSSHelperBase::cssDefinitions(const HtmlHeadSettings &htmlHeadSetting) const
 {
-    return commonCssDefinitions() + QLatin1String("@media screen {\n\n") + screenCssDefinitions(this, fixed)
+    return commonCssDefinitions() + QLatin1String("@media screen {\n\n") + screenCssDefinitions(this, htmlHeadSetting)
         + QLatin1String(
                "}\n"
                "@media print {\n\n")
-        + printCssDefinitions(fixed) + QLatin1String("}\n");
+        + printCssDefinitions(htmlHeadSetting) + QLatin1String("}\n");
 }
 
-QString CSSHelperBase::htmlHead(bool fixedFont) const
+QString CSSHelperBase::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
 {
-    Q_UNUSED(fixedFont)
+    Q_UNUSED(htmlHeadSettings)
     return QStringLiteral(
         "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"
         "<html><head><title></title></head>\n"
@@ -264,11 +264,11 @@ void CSSHelperBase::setHeaderPlugin(const HeaderStylePlugin *headerPlugin)
 
 static const char *const quoteFontSizes[] = {"85", "80", "75"};
 
-QString CSSHelperBase::printCssDefinitions(bool fixed) const
+QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSettings) const
 {
     const QString headerFont = defaultPrintHeaderFont();
 
-    const QFont printFont = bodyFont(fixed, true /* print */);
+    const QFont printFont = bodyFont(htmlHeadSettings.fixedFont, true /* print */);
     QString quoteCSS;
     if (printFont.italic()) {
         quoteCSS += QLatin1String("  font-style: italic ! important;\n");
@@ -431,7 +431,7 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
     return headerFont;
 }
 
-QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const
+QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &htmlHeadSettings) const
 {
     const QString bgColor = mBackgroundColor.name();
     const QString headerFont = defaultScreenHeaderFont();
@@ -452,14 +452,14 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     const QString cPgpOk1BColorName = cPgpOk1B.name();
     const QString cPgpOk0BColorName = cPgpOk0B.name();
 #endif
-    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(fixed))) + QLatin1String("px");
+    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1String("px");
     const QPalette &pal = QApplication::palette();
 
     QString quoteCSS;
-    if (bodyFont(fixed).italic()) {
+    if (bodyFont(htmlHeadSettings.fixedFont).italic()) {
         quoteCSS += QLatin1String("  font-style: italic ! important;\n");
     }
-    if (bodyFont(fixed).bold()) {
+    if (bodyFont(htmlHeadSettings.fixedFont).bold()) {
         quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
     }
     if (!quoteCSS.isEmpty()) {
@@ -535,7 +535,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                "  color: %3 ! important;\n"
                "%4"
                "}\n\n")
-               .arg(bodyFont(fixed).family(), bodyFontSize, fgColor, background)
+               .arg(bodyFont(htmlHeadSettings.fixedFont).family(), bodyFontSize, fgColor, background)
         + linkColorDefinition()
         + QStringLiteral(
               "a.white {\n"
