@@ -120,7 +120,7 @@ protected:
 
 private:
     Q_REQUIRED_RESULT QString quoteCssDefinition() const;
-    int fontSize(bool fixed, bool print = false) const;
+    Q_REQUIRED_RESULT int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
     Q_REQUIRED_RESULT QString printCssDefinitions(const HtmlHeadSettings &) const;
     // returns CSS rules specific to the screen media type
@@ -131,6 +131,7 @@ private:
     Q_REQUIRED_RESULT QString linkColorDefinition() const;
     Q_REQUIRED_RESULT QString defaultScreenHeaderFont() const;
     Q_REQUIRED_RESULT QString defaultPrintHeaderFont() const;
+    Q_REQUIRED_RESULT bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
 
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;

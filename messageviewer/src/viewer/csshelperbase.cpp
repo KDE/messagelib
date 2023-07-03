@@ -16,7 +16,6 @@
 #include <QPalette>
 #include <QUrl>
 
-#define USE_HTML_STYLE_COLOR 1
 namespace MessageViewer
 {
 namespace
@@ -340,7 +339,6 @@ QString CSSHelperBase::linkColorDefinition() const
 {
     const QString linkColor = mLinkColor.name();
     if (mUseBrowserColor) {
-#ifdef USE_HTML_STYLE_COLOR
         const QString bgColor = mBackgroundColor.name();
         const QString background = QStringLiteral("  background: %1 ! important;\n").arg(bgColor);
 
@@ -360,18 +358,6 @@ QString CSSHelperBase::linkColorDefinition() const
                    "    %2"
                    "}\n\n")
             .arg(linkColor, background);
-#else
-        return QStringLiteral(
-                   "div#headerbox a:link {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n"
-                   "div#header a:link {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n")
-            .arg(linkColor);
-#endif
     } else {
         return QStringLiteral(
                    "a {\n"
@@ -431,27 +417,23 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
     return headerFont;
 }
 
+bool CSSHelperBase::useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const
+{
+    // TODO
+    return mUseBrowserColor;
+}
+
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &htmlHeadSettings) const
 {
     const QString bgColor = mBackgroundColor.name();
     const QString headerFont = defaultScreenHeaderFont();
-#ifdef USE_HTML_STYLE_COLOR
-    const QString fgColor = mUseBrowserColor ? QStringLiteral("black") : mForegroundColor.name();
-    const QString background = mUseBrowserColor ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
-    const QString signWarnBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpWarnB.name();
-    const QString cPgpErrBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpErrB.name();
-    const QString cPgpEncrBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpEncrB.name();
-    const QString cPgpOk1BColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpOk1B.name();
-    const QString cPgpOk0BColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpOk0B.name();
-#else
-    const QString fgColor = mForegroundColor.name();
-    const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
-    const QString signWarnBColorName = cPgpWarnB.name();
-    const QString cPgpErrBColorName = cPgpErrB.name();
-    const QString cPgpEncrBColorName = cPgpEncrB.name();
-    const QString cPgpOk1BColorName = cPgpOk1B.name();
-    const QString cPgpOk0BColorName = cPgpOk0B.name();
-#endif
+    const QString fgColor = useBrowserColor(htmlHeadSettings) ? QStringLiteral("black") : mForegroundColor.name();
+    const QString background = useBrowserColor(htmlHeadSettings) ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+    const QString signWarnBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpWarnB.name();
+    const QString cPgpErrBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpErrB.name();
+    const QString cPgpEncrBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpEncrB.name();
+    const QString cPgpOk1BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk1B.name();
+    const QString cPgpOk0BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk0B.name();
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1String("px");
     const QPalette &pal = QApplication::palette();
 
