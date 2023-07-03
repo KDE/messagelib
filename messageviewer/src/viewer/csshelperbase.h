@@ -120,7 +120,7 @@ protected:
 
 private:
     Q_REQUIRED_RESULT QString quoteCssDefinition() const;
-    int fontSize(bool fixed, bool print = false) const;
+    Q_REQUIRED_RESULT int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
     Q_REQUIRED_RESULT QString printCssDefinitions(const HtmlHeadSettings &) const;
     // returns CSS rules specific to the screen media type
