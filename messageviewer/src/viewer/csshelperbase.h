@@ -131,6 +131,7 @@ private:
     Q_REQUIRED_RESULT QString linkColorDefinition() const;
     Q_REQUIRED_RESULT QString defaultScreenHeaderFont() const;
     Q_REQUIRED_RESULT QString defaultPrintHeaderFont() const;
+    Q_REQUIRED_RESULT bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
 
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;
