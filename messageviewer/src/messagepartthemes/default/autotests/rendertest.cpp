@@ -290,7 +290,8 @@ void RenderTest::testRender()
     otp.parseObjectTree(msg.data());
 
     fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
+    CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
+    fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), false);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
@@ -307,7 +308,8 @@ void RenderTest::testRender()
         otp.parseObjectTree(msg.data());
 
         fileWriter.begin();
-        fileWriter.write(cssHelper.htmlHead(false));
+        CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
+        fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
         testSource.render(otp.parsedPart(), false);
         fileWriter.write(QStringLiteral("</body></html>"));
         fileWriter.end();

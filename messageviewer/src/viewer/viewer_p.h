@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include "csshelper.h"
 #include "messageviewer/viewerplugininterface.h"
 #include "messageviewer_private_export.h"
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
@@ -640,7 +641,7 @@ public:
     /// the splash/busy page is displayed.
     bool mMsgDisplay = true;
 
-    bool mUseFixedFont = false;
+    CSSHelperBase::HtmlHeadSettings mHtmlHeadSettings;
     bool mPrinting = false;
     QWidget *mMainWindow = nullptr;
     KActionCollection *const mActionCollection;

@@ -17,7 +17,7 @@ class TestCSSHelper : public MessageViewer::CSSHelper
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);
     ~TestCSSHelper() override;
-    QString htmlHead(bool fixed) const override;
+    QString htmlHead(const HtmlHeadSettings &htmlHeadSettings) const override;
 };
 }
 }
