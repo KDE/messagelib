@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 00:48+0000\n"
+"POT-Creation-Date: 2023-07-04 00:49+0000\n"
 "PO-Revision-Date: 2023-05-15 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1636,7 +1636,7 @@ msgstr ""
 "başarı ile gönderildiği zaman Çöp klasörüne taşınır."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1542
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "S&abit Yazıtipi Kullan"
@@ -1976,7 +1976,7 @@ msgstr "Boyut"
 msgid "Turn on HTML rendering for this message."
 msgstr "Bu ileti için HTML sunumunu aç."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1615
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1614
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Bu e-posta için dış başvuruların Internet'ten yüklenmesine izin ver."
@@ -2056,7 +2056,7 @@ msgstr "&Adres Defterinden Aç"
 msgid "&Copy Email Address"
 msgstr "E-posta Adresini Ko&pyala"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2709
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adres panoya kopyalandı."
@@ -2113,7 +2113,7 @@ msgstr "Komut Çalıştır"
 msgid "Loading message..."
 msgstr "İleti yükleniyor..."
 
-#: viewer/viewer_p.cpp:355
+#: viewer/viewer_p.cpp:354
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2121,347 +2121,347 @@ msgid ""
 msgstr ""
 "Şifrelenmiş veya eski biçem iletiden bir ek silmek desteklenmemektedir."
 
-#: viewer/viewer_p.cpp:356 viewer/viewer_p.cpp:363 viewer/viewer_p.cpp:585
-#: viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:355 viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:584
+#: viewer/viewer_p.cpp:1717
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Eki Sil"
 
-#: viewer/viewer_p.cpp:362
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "Bir eki silmek, o iletide kullanılan tüm imzaları geçersiz kılabilir."
 
-#: viewer/viewer_p.cpp:444
+#: viewer/viewer_p.cpp:443
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Birlikte Aç"
 
-#: viewer/viewer_p.cpp:462
+#: viewer/viewer_p.cpp:461
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Diğer..."
 
-#: viewer/viewer_p.cpp:464 viewer/viewer_p.cpp:477
+#: viewer/viewer_p.cpp:463 viewer/viewer_p.cpp:476
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Birlikte Aç..."
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1695
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Aç"
 
-#: viewer/viewer_p.cpp:555 viewer/viewer_p.cpp:1703
+#: viewer/viewer_p.cpp:554 viewer/viewer_p.cpp:1702
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Görünüm"
 
-#: viewer/viewer_p.cpp:563
+#: viewer/viewer_p.cpp:562
 #, kde-format
 msgid "Scroll To"
 msgstr "Şuraya Sar"
 
-#: viewer/viewer_p.cpp:568
+#: viewer/viewer_p.cpp:567
 #, kde-format
 msgid "Save As..."
 msgstr "Farklı Kaydet..."
 
-#: viewer/viewer_p.cpp:574 viewer/viewer_p.cpp:1713
+#: viewer/viewer_p.cpp:573 viewer/viewer_p.cpp:1712
 #, kde-format
 msgid "Copy"
 msgstr "Kopyala"
 
-#: viewer/viewer_p.cpp:596
+#: viewer/viewer_p.cpp:595
 #, kde-format
 msgid "Reply To Author"
 msgstr "Yazana Yanıtla"
 
-#: viewer/viewer_p.cpp:604
+#: viewer/viewer_p.cpp:603
 #, kde-format
 msgid "Reply To All"
 msgstr "Tümüne Gönder"
 
-#: viewer/viewer_p.cpp:610 viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:609 viewer/viewer_p.cpp:1722
 #, kde-format
 msgid "Properties"
 msgstr "Özellikler"
 
-#: viewer/viewer_p.cpp:747
+#: viewer/viewer_p.cpp:746
 #, kde-format
 msgid "KMail"
 msgstr "K Posta"
 
-#: viewer/viewer_p.cpp:748
+#: viewer/viewer_p.cpp:747
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE E-Posta İstemcisi"
 
-#: viewer/viewer_p.cpp:1275
+#: viewer/viewer_p.cpp:1274
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Eki Görüntüle: %1"
 
-#: viewer/viewer_p.cpp:1463
+#: viewer/viewer_p.cpp:1462
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Ekler"
 
-#: viewer/viewer_p.cpp:1465
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Eklerin görüntülenme biçimini seç"
 
-#: viewer/viewer_p.cpp:1468
+#: viewer/viewer_p.cpp:1467
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Simge olar&ak görüntüle"
 
-#: viewer/viewer_p.cpp:1471
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Bütün ekleri simge olarak göster. Görmek için tıklayın."
 
-#: viewer/viewer_p.cpp:1475
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Akıllı görüntüleme"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1477
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Gönderen tarafından bildirilen ekleri göster."
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Dosyanın içinde"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Bütün ekleri gövde göster (mümkünse)"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Gizle"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "İleti görüntüleyicide ekleri gösterme"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Yalnızca Başlıkta"
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Ekleri yalnızca postanın başlığında göster"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Kodlamayı Düzenle"
 
-#: viewer/viewer_p.cpp:1509 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1508 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Otomatik"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgid "Copy Text"
 msgstr "Metni Kopyala"
 
-#: viewer/viewer_p.cpp:1526
+#: viewer/viewer_p.cpp:1525
 #, kde-format
 msgid "Select All Text"
 msgstr "&Tüm Metinleri Seç"
 
-#: viewer/viewer_p.cpp:1532 viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:1531 viewer/viewer_p.cpp:2016
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Bağlantı Adresini Kopyala"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Open URL"
 msgstr "URL Aç"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1547
 #, kde-format
 msgid "Show Message Structure"
 msgstr "İleti Yapısını Göster"
 
-#: viewer/viewer_p.cpp:1557
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgid "&View Source"
 msgstr "&Kaynağı Göster"
 
-#: viewer/viewer_p.cpp:1562
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgid "&Save Message..."
 msgstr "&İletiyi Kaydet..."
 
-#: viewer/viewer_p.cpp:1568
+#: viewer/viewer_p.cpp:1567
 #, kde-format
 msgid "&Save Display Format"
 msgstr "&Görüntü Biçimini Kaydet"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "&Gösterim Biçimini Sıfırla"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1578
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "İletiyi Yukarı Sar"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "İletiyi Aşağı Sar"
 
-#: viewer/viewer_p.cpp:1589
+#: viewer/viewer_p.cpp:1588
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "İletiyi Yukarı Sar (Daha Fazla)"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1593
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "İletiyi Aşağı Sar (Daha Fazla)"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1603
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML Görünüm Kipini Aç/Kapa"
 
-#: viewer/viewer_p.cpp:1608
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Görünüm Kipini HTML ve düz metin arasında değiştir"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1610
 #, kde-format
 msgid "Load external references"
 msgstr "Dış referansları yükle"
 
-#: viewer/viewer_p.cpp:1617 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1616 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Metni Oku"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Share Text..."
 msgstr "Metni Paylaş..."
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Görsel Konumunu Kopyala"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1634
 #, kde-format
 msgid "&Find in Message..."
 msgstr "İletide &Bul..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1643
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Yüz İfadelerini Devre Dışı Bırak"
 
-#: viewer/viewer_p.cpp:1693
+#: viewer/viewer_p.cpp:1692
 #, kde-format
 msgid "Save &As..."
 msgstr "&Farklı Kaydet..."
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1700
 #, kde-format
 msgid "Open With..."
 msgstr "Birlikte Aç..."
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1707
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Tüm Ekleri Kaydet..."
 
-#: viewer/viewer_p.cpp:1937
+#: viewer/viewer_p.cpp:1936
 #, kde-format
 msgid "The network is broken."
 msgstr "Ağ bozuk."
 
-#: viewer/viewer_p.cpp:1937 viewer/viewer_p.cpp:1940
+#: viewer/viewer_p.cpp:1936 viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Kimlik Avı URL'sini kontrol et"
 
-#: viewer/viewer_p.cpp:1940
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 URL'si geçerli değil."
 
-#: viewer/viewer_p.cpp:1960
+#: viewer/viewer_p.cpp:1959
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Bu web sitesi bir zararlı yazılım içeriyor, bunu göstermeyi sürdürmek "
 "istiyor musunuz?"
 
-#: viewer/viewer_p.cpp:1961
+#: viewer/viewer_p.cpp:1960
 #, kde-format
 msgid "Malware"
 msgstr "Zararlı Yazılım"
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "Copy Email Address"
 msgstr "E-posta Adresini Kopyala"
 
-#: viewer/viewer_p.cpp:2096
+#: viewer/viewer_p.cpp:2095
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Düz Metin İleti"
 
-#: viewer/viewer_p.cpp:2299
+#: viewer/viewer_p.cpp:2298
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Belgeyi Yazdır"
 
-#: viewer/viewer_p.cpp:2715
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL panoya kopyalandı."
 
-#: viewer/viewer_p.cpp:2867
+#: viewer/viewer_p.cpp:2866
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "İleti yükleme başarısız: %1."
 
-#: viewer/viewer_p.cpp:2872
+#: viewer/viewer_p.cpp:2871
 #, kde-format
 msgid "Message not found."
 msgstr "İleti bulunamadı."
