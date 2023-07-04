@@ -429,8 +429,7 @@ target_link_libraries(KPim6MessageViewer
     KF6::KIOWidgets
     KF6::XmlGui
     KF6::Codecs
-    KPim6::ContactEditor
-    KPim6::AkonadiContact
+    KPim6::AkonadiContactWidgets
     KF6::TextTemplate
     Qt::PrintSupport
     qca-qt6
