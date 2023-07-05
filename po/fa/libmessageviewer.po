@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  .r1608 (kmail)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
@@ -43,28 +43,32 @@ msgid "Certificate import status:"
 msgstr "وضعیت واردات گواهی‌نامه:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:13
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
 msgstr[0] "%1 گواهی‌نامه جدید وارد شد."
+msgstr[1] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
 msgstr[0] "%1 گواهی‌نامه تغییر نکرده بود"
+msgstr[1] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
 msgstr[0] "%1 کلید سری جدید وارد شد."
+msgstr[1] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
 msgstr[0] "%1 کلید سری تغییر نکرد."
+msgstr[1] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
@@ -420,12 +424,14 @@ msgstr "&رونوشت در‌"
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "حذف"
+msgstr[1] ""
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:75
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:76
 #, fuzzy, kde-format
@@ -433,6 +439,7 @@ msgstr[0] ""
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "حذف"
+msgstr[1] ""
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
 #: dkim-verify/dkimmanageruleswidget.cpp:221
@@ -2033,6 +2040,7 @@ msgstr ""
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] " پیام"
+msgstr[1] ""
 
 #: utils/messageviewerutil.cpp:557
 #, fuzzy, kde-format
@@ -2788,6 +2796,7 @@ msgstr "حذف جستجو"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
+msgstr[1] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format
