@@ -28,6 +28,7 @@ class MESSAGEVIEWER_EXPORT CSSHelperBase
 public:
     struct MESSAGEVIEWER_EXPORT HtmlHeadSettings {
         bool fixedFont = false;
+        bool htmlFormat = true;
     };
     /** Construct a CSSHelper object and set its font and color settings to
         default values.
@@ -128,7 +129,7 @@ private:
     // returns CSS rules common to both screen and print media types
     Q_REQUIRED_RESULT QString commonCssDefinitions() const;
     Q_REQUIRED_RESULT QString fullAddressList() const;
-    Q_REQUIRED_RESULT QString linkColorDefinition() const;
+    Q_REQUIRED_RESULT QString linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const;
     Q_REQUIRED_RESULT QString defaultScreenHeaderFont() const;
     Q_REQUIRED_RESULT QString defaultPrintHeaderFont() const;
     Q_REQUIRED_RESULT bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;

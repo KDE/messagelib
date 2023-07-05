@@ -294,7 +294,7 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
                "  background-color: #ffffff ! important\n"
                "}\n\n")
                .arg(printFont.family(), QString::number(printFont.pointSize()))
-        + linkColorDefinition()
+        + linkColorDefinition(htmlHeadSettings)
         + QStringLiteral(
               "tr.textAtmH,\n"
               "tr.signInProgressH,\n"
@@ -335,10 +335,10 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
         + quoteCSS + fullAddressList();
 }
 
-QString CSSHelperBase::linkColorDefinition() const
+QString CSSHelperBase::linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const
 {
     const QString linkColor = mLinkColor.name();
-    if (mUseBrowserColor) {
+    if (useBrowserColor(htmlHeadSettings)) {
         const QString bgColor = mBackgroundColor.name();
         const QString background = QStringLiteral("  background: %1 ! important;\n").arg(bgColor);
 
@@ -419,7 +419,7 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
 
 bool CSSHelperBase::useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const
 {
-    // TODO
+    // TODO htmlHeadSettings.htmlFormat
     return mUseBrowserColor;
 }
 
@@ -518,7 +518,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
                "%4"
                "}\n\n")
                .arg(bodyFont(htmlHeadSettings.fixedFont).family(), bodyFontSize, fgColor, background)
-        + linkColorDefinition()
+        + linkColorDefinition(htmlHeadSettings)
         + QStringLiteral(
               "a.white {\n"
               "  color: white ! important;\n"

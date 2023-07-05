@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2023-05-15 21:37+0300\n"
+"PO-Revision-Date: 2023-07-04 00:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -923,8 +923,8 @@ msgstr[1] "<b>%1</b> yanıt"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> mesaj (<b>%2</b> okunmamış)"
-msgstr[1] "<b>%1</b> mesaj (<b>%2</b> okunmamış)"
+msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
+msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
 
 #: core/view.cpp:2342
 #, kde-format
@@ -1040,8 +1040,8 @@ msgstr[1] "<b>%1</b> konu"
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> mesaj (<b>%2</b> okunmamış)"
-msgstr[1] "<b>%1</b> mesaj (<b>%2</b> okunmamış)"
+msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
+msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1341,7 +1341,7 @@ msgstr "Hızlı Arama Çubuğunu Göster"
 #: pane.cpp:221
 #, kde-format
 msgid "Message List"
-msgstr "Mesaj Listesi"
+msgstr "İleti Listesi"
 
 #: pane.cpp:227
 #, kde-format
