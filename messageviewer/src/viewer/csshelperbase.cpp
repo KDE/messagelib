@@ -419,8 +419,7 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
 
 bool CSSHelperBase::useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const
 {
-    // TODO htmlHeadSettings.htmlFormat
-    return mUseBrowserColor;
+    return mUseBrowserColor && htmlHeadSettings.htmlFormat;
 }
 
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &htmlHeadSettings) const
