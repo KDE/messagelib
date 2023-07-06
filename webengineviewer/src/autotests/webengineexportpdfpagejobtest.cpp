@@ -7,12 +7,14 @@
 #include "webengineexportpdfpagejobtest.h"
 #include "webengineexportpdfpagejob.h"
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 #include <QWebEngineView>
 QTEST_MAIN(WebEngineExportPdfPageJobTest)
 WebEngineExportPdfPageJobTest::WebEngineExportPdfPageJobTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void WebEngineExportPdfPageJobTest::shouldHaveDefaultValue()

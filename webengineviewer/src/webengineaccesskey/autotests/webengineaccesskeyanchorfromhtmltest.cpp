@@ -7,6 +7,7 @@
 #include "../webengineaccesskeyutils.h"
 #include <QHBoxLayout>
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 #include <QWebEngineView>
 #include <WebEngineViewer/WebEngineManageScript>
@@ -70,6 +71,7 @@ WebEngineAccessKeyAnchorFromHtmlTest::WebEngineAccessKeyAnchorFromHtmlTest(QObje
     : QObject(parent)
 {
     qRegisterMetaType<QList<WebEngineViewer::WebEngineAccessKeyAnchor>>();
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
