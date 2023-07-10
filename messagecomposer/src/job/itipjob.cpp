@@ -14,8 +14,6 @@
 #include "part/itippart.h"
 #include "utils/util.h"
 
-#include <QTextCodec>
-
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
