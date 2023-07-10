@@ -89,8 +89,8 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         // The user has the possibility to override the default charset.
 
         QByteArray codecName = "utf-8";
-        if (part.source()->overrideCodec()) {
-            codecName = part.source()->overrideCodec()->name();
+        if (auto codec = part.source()->overrideCodec()) {
+            codecName = codec->name();
         }
 
         const auto codec = QTextCodec::codecForName(codecName);

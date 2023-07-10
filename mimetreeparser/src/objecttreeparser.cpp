@@ -280,8 +280,8 @@ void ObjectTreeParser::setPlainTextContent(const QString &plainTextContent)
 const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
 {
     Q_ASSERT(node);
-    if (mSource->overrideCodec()) {
-        return mSource->overrideCodec();
+    if (auto codec = mSource->overrideCodec()) {
+        return codec;
     }
     return mNodeHelper->codec(node);
 }
