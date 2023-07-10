@@ -166,8 +166,8 @@ target_link_libraries(KPim6MimeTreeParser
     KPim6::Libkleo
     KPim6::Mime
     Qt::Gui
+    QGpgmeQt6
     )
-    target_link_libraries(KPim6MimeTreeParser PRIVATE QGpgmeQt6)
     target_link_libraries(KPim6MimeTreeParser PRIVATE Qt6::Core5Compat)
 
 install(TARGETS
