@@ -11,7 +11,7 @@
 #include <KIO/Job>
 
 #include <QPointer>
-#include <QTextCodec>
+#include <QStringDecoder>
 
 using namespace MessageComposer;
 class MessageComposer::InsertTextFileJobPrivate
@@ -55,9 +55,9 @@ void InsertTextFileJob::slotGetJobFinished(KJob *job)
 
     if (d->mEditor) {
         if (!d->mEncoding.isEmpty()) {
-            const QTextCodec *fileCodec = QTextCodec::codecForName(d->mEncoding.toLatin1());
-            if (fileCodec) {
-                d->mEditor->textCursor().insertText(fileCodec->toUnicode(d->mFileData.data()));
+            QStringDecoder fileCodec(d->mEncoding.toLatin1().constData());
+            if (fileCodec.isValid()) {
+                d->mEditor->textCursor().insertText(fileCodec.decode(d->mFileData.data()));
             } else {
                 d->mEditor->textCursor().insertText(QString::fromLocal8Bit(d->mFileData.data()));
             }

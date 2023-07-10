@@ -13,7 +13,7 @@
 #include "part/textpart.h"
 #include "utils/util.h"
 
-#include <QTextCodec>
+#include <QStringEncoder>
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
@@ -135,16 +135,16 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
 bool MainTextJobPrivate::encodeTexts()
 {
     Q_Q(MainTextJob);
-    QTextCodec *codec = QTextCodec::codecForName(chosenCharset);
-    if (!codec) {
+    QStringEncoder codec(chosenCharset.constData());
+    if (!codec.isValid()) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << chosenCharset;
         q->setError(JobBase::BugError);
         q->setErrorText(i18n("Could not get text codec for charset \"%1\".", QString::fromLatin1(chosenCharset)));
         return false;
     }
-    encodedPlainText = codec->fromUnicode(sourcePlainText);
+    encodedPlainText = codec.encode(sourcePlainText);
     if (!textPart->cleanHtml().isEmpty()) {
-        encodedHtml = codec->fromUnicode(textPart->cleanHtml());
+        encodedHtml = codec.encode(textPart->cleanHtml());
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "Done.";
     return true;
