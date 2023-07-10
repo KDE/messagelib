@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2022-11-22 07:49+0100\n"
+"PO-Revision-Date: 2023-07-09 07:29+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -71,7 +71,7 @@ msgstr "უცნობი"
 #: customtemplates.cpp:252
 #, kde-format
 msgid "A template with same name already exists."
-msgstr ""
+msgstr "ნიმუში ამ სახელით უკვე არსებობს."
 
 #: customtemplates.cpp:252
 #, kde-format
@@ -238,7 +238,7 @@ msgstr ""
 #: settings/templateparser.kcfg:42
 #, kde-format
 msgid "Quote characters"
-msgstr ""
+msgstr "ბრჭყალის სიმბოლოები"
 
 #: templateparserjob.cpp:349
 #, kde-format
@@ -336,27 +336,27 @@ msgstr "სახელის"
 
 #: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
 msgid "CC Field First Name"
-msgstr ""
+msgstr "ასლის სახელის გვერდიდან"
 
 #: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "ასლის გვარის ველიდან"
 
 #: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
 msgid "From Field Address"
-msgstr ""
+msgstr "მისამართის ველიდან"
 
 #: templatescommandmenu.cpp:66
 msgid "From Field Name"
-msgstr ""
+msgstr "სახელის ველიდან"
 
 #: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
 msgid "From Field First Name"
-msgstr ""
+msgstr "სახელის ველიდან"
 
 #: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
 msgid "From Field Last Name"
-msgstr ""
+msgstr "გვარის ველიდან"
 
 #: templatescommandmenu.cpp:72
 msgid "Addresses of all recipients"
