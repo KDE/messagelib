@@ -624,6 +624,20 @@ const QTextCodec *Util::codecForName(const QByteArray &_str)
     return codecFromName;
 }
 
+QStringDecoder Util::decoderForName(const QByteArray &_str)
+{
+    QStringDecoder dec;
+    if (_str.isEmpty()) {
+        return dec;
+    }
+    const QByteArray codec = _str.toLower();
+    QStringDecoder codecFromName = QStringDecoder(codec.constData());
+    if (!codecFromName.isValid()) {
+        codecFromName = QStringDecoder(QStringEncoder::System);
+    }
+    return codecFromName;
+}
+
 void Util::readGravatarConfig()
 {
     Gravatar::GravatarCache::self()->setMaximumSize(Gravatar::GravatarSettings::self()->gravatarCacheSize());
