@@ -35,6 +35,7 @@
 #include <QFileInfo>
 #include <QLocale>
 #include <QRegularExpression>
+#include <QStringDecoder>
 #include <QTextCodec>
 
 namespace
@@ -1395,7 +1396,8 @@ QString TemplateParserJob::pipe(const QString &cmd, const QString &buf)
     }
 
     if (success) {
-        return QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput());
+        QStringDecoder codecFromName(QStringEncoder::System);
+        return codecFromName.decode(process.readAllStandardOutput());
     } else {
         return {};
     }
