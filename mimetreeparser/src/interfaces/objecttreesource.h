@@ -12,6 +12,7 @@
 
 #include <KMime/Message>
 #include <QSharedPointer>
+#include <QStringDecoder>
 class QTextCodec;
 
 namespace MimeTreeParser
@@ -55,6 +56,8 @@ public:
     virtual bool autoImportKeys() const = 0;
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
+
+    virtual const QStringDecoder *overrideDecoderCodec() = 0;
 
 private:
     Q_DISABLE_COPY(ObjectTreeSource)

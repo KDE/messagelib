@@ -22,6 +22,7 @@
 #include <PimCommon/ShareServiceUrlManager>
 #include <QList>
 #include <QPointer>
+#include <QStringDecoder>
 #include <QUrl>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
@@ -358,6 +359,8 @@ public:
     /** Get codec corresponding to the currently selected override character encoding.
       @return The override codec or 0 if auto-detection is selected. */
     const QTextCodec *overrideCodec() const;
+
+    const QStringDecoder *overrideDecoderCodec();
 
     Q_REQUIRED_RESULT QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 

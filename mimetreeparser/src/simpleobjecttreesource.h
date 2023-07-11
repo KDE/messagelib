@@ -37,6 +37,9 @@ public:
     void setOverrideCodec(QTextCodec *codec);
     const QTextCodec *overrideCodec() override;
 
+    void setOverrideDecoderCodec(QStringDecoder *decoder);
+    const QStringDecoder *overrideDecoderCodec() override;
+
 private:
     std::unique_ptr<SimpleObjectTreeSourcePrivate> d;
 };

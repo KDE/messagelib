@@ -8,6 +8,7 @@
 #pragma once
 
 #include "objecttreeemptysource.h"
+#include <QStringDecoder>
 class QString;
 
 namespace MessageViewer
@@ -28,6 +29,9 @@ public:
     Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
     Q_REQUIRED_RESULT int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
+
+    const QStringDecoder *overrideDecoderCodec() override;
+
     Q_REQUIRED_RESULT QString createMessageHeader(KMime::Message *message) override;
     const AttachmentStrategy *attachmentStrategy() const override;
     HtmlWriter *htmlWriter() const override;

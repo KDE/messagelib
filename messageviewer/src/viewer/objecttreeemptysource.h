@@ -9,8 +9,9 @@
 
 #include "messageviewer_export.h"
 #include <MimeTreeParser/ObjectTreeSource>
-class QString;
 
+class QString;
+class QStringDecoder;
 namespace MessageViewer
 {
 class AttachmentStrategy;
@@ -32,6 +33,7 @@ public:
     Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
     const QTextCodec *overrideCodec() override;
+    const QStringDecoder *overrideDecoderCodec() override;
     virtual QString createMessageHeader(KMime::Message *message);
     Q_REQUIRED_RESULT bool autoImportKeys() const override;
 

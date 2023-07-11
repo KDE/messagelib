@@ -43,7 +43,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::
 /** Return a QTextCodec for the specified charset.
  * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
-MESSAGEVIEWER_EXPORT QStringDecoder decoderForName(const QByteArray &_str);
+MESSAGEVIEWER_EXPORT const QStringDecoder *decoderForName(const QByteArray &_str);
 MESSAGEVIEWER_EXPORT QStringConverter::Encoding htmlEncoding(const QByteArray &data, const QByteArray &codec);
 struct HtmlMessageInfo {
     QString htmlSource;

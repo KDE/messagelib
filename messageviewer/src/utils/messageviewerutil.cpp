@@ -624,16 +624,17 @@ const QTextCodec *Util::codecForName(const QByteArray &_str)
     return codecFromName;
 }
 
-QStringDecoder Util::decoderForName(const QByteArray &_str)
+const QStringDecoder *Util::decoderForName(const QByteArray &_str)
 {
-    QStringDecoder dec;
+    QStringDecoder *dec = nullptr;
     if (_str.isEmpty()) {
         return dec;
     }
     const QByteArray codec = _str.toLower();
-    QStringDecoder codecFromName = QStringDecoder(codec.constData());
-    if (!codecFromName.isValid()) {
-        codecFromName = QStringDecoder(QStringEncoder::System);
+    auto codecFromName = new QStringDecoder(codec.constData());
+    if (!codecFromName->isValid()) {
+        delete codecFromName;
+        codecFromName = new QStringDecoder(QStringEncoder::System);
     }
     return codecFromName;
 }

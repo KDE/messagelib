@@ -80,6 +80,11 @@ int MailViewerSource::levelQuote() const
     return mViewer->mLevelQuote;
 }
 
+const QStringDecoder *MailViewerSource::overrideDecoderCodec()
+{
+    return mViewer->overrideDecoderCodec();
+}
+
 const QTextCodec *MailViewerSource::overrideCodec()
 {
     return mViewer->overrideCodec();

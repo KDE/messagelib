@@ -1765,6 +1765,15 @@ const QTextCodec *ViewerPrivate::overrideCodec() const
     }
 }
 
+const QStringDecoder *ViewerPrivate::overrideDecoderCodec()
+{
+    if (mOverrideEncoding.isEmpty() || mOverrideEncoding == QLatin1String("Auto")) { // Auto
+        return {};
+    } else {
+        return MessageViewer::Util::decoderForName(mOverrideEncoding.toLatin1());
+    }
+}
+
 static QColor nextColor(const QColor &c)
 {
     int h;

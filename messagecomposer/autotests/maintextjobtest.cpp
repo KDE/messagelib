@@ -7,7 +7,8 @@
 #include "maintextjobtest.h"
 
 #include <QStandardPaths>
-#include <QTextCodec>
+// #include <QTextCodec>
+#include <QStringDecoder>
 
 #include <QDebug>
 #include <QTest>
@@ -105,9 +106,15 @@ void MainTextJobTest::testCustomCharset()
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), charset);
     QByteArray outData = result->body();
+#if 0 // Remove when we remove all QTextCodec support
     QTextCodec *codec = QTextCodec::codecForName(charset);
     QVERIFY(codec);
     QCOMPARE(codec->toUnicode(outData), data);
+#endif
+    QStringDecoder dec(charset.constData());
+    QVERIFY(dec.isValid());
+    QCOMPARE(dec.decode(outData), data);
+
     delete textPart;
 }
 
