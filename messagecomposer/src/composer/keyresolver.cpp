@@ -345,7 +345,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
 
 namespace
 {
-struct IsNotForFormat : public std::unary_function<GpgME::Key, bool> {
+struct IsNotForFormat : public std::function<bool(GpgME::Key)> {
     IsNotForFormat(Kleo::CryptoMessageFormat f)
         : format(f)
     {
@@ -359,7 +359,7 @@ struct IsNotForFormat : public std::unary_function<GpgME::Key, bool> {
     const Kleo::CryptoMessageFormat format;
 };
 
-struct IsForFormat : std::unary_function<GpgME::Key, bool> {
+struct IsForFormat : std::function<bool(GpgME::Key)> {
     explicit IsForFormat(Kleo::CryptoMessageFormat f)
         : protocol(isOpenPGP(f)     ? GpgME::OpenPGP
                        : isSMIME(f) ? GpgME::CMS
@@ -376,7 +376,7 @@ struct IsForFormat : std::unary_function<GpgME::Key, bool> {
 };
 }
 
-class Kleo::KeyResolver::SigningPreferenceCounter : public std::unary_function<Kleo::KeyResolver::Item, void>
+class Kleo::KeyResolver::SigningPreferenceCounter : public std::function<void(Kleo::KeyResolver::Item)>
 {
 public:
     SigningPreferenceCounter() = default;
@@ -417,7 +417,7 @@ void Kleo::KeyResolver::SigningPreferenceCounter::operator()(const Kleo::KeyReso
     ++mTotal;
 }
 
-class Kleo::KeyResolver::EncryptionPreferenceCounter : public std::unary_function<Item, void>
+class Kleo::KeyResolver::EncryptionPreferenceCounter : public std::function<void(Item)>
 {
     const Kleo::KeyResolver *_this;
 
@@ -484,7 +484,7 @@ void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
 
 namespace
 {
-class FormatPreferenceCounterBase : public std::unary_function<Kleo::KeyResolver::Item, void>
+class FormatPreferenceCounterBase : public std::function<void(Kleo::KeyResolver::Item)>
 {
 public:
     FormatPreferenceCounterBase() = default;
