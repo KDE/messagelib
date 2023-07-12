@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-05-16 05:36+0200\n"
+"PO-Revision-Date: 2023-07-09 07:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -564,6 +564,9 @@ msgid ""
 "whether or not to sign this message.\n"
 "Sign this message?"
 msgstr ""
+"მიმღების ხელმოწერის პარამეტრების გამოცდამ დაასკვნა, რომ გკითხავთ, გნებავთ ამ "
+"შეტყობინების ხელმოწერა, თუ არა.\n"
+"მოვაწერო ხელი ამ შეტყობინებაზე?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
@@ -587,6 +590,8 @@ msgid ""
 "There are conflicting signing preferences for these recipients.\n"
 "Sign this message?"
 msgstr ""
+"ამ მიმღებებისთვის ურთიერთგამომრიცხავი ხელმოწერის პარამეტრებია არჩეული.\n"
+"მოვაწერო ხელი ამ შეტყობინებას?"
 
 #: composer/composerviewbase.cpp:2010
 #, kde-format
@@ -594,6 +599,8 @@ msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr ""
+"მოითხოვეთ ამ შეტყობინების ხელმოწერა, მაგრამ ამ ანგარიშისთვის სწორი "
+"ხელმოწერის გასაღებები მითითებული არაა."
 
 #: composer/composerviewbase.cpp:2013
 #, kde-format
@@ -612,6 +619,9 @@ msgid ""
 "Sending only partially signed messages might violate site policy.\n"
 "Sign all parts instead?"
 msgstr ""
+"ამ შეტყობინების ზოგიერთი ნაწილი ხელმოწერილი არ იქნება.\n"
+"ნაწილობრივ ხელმოწერილი შეტყობინების გაზავნა კი შეიძლება აკრძალული იყოს.\n"
+"მოხდეს ყველა ნაწილის ხელმოწერა?"
 
 #: composer/composerviewbase.cpp:2031
 #, kde-format
@@ -620,6 +630,9 @@ msgid ""
 "Sending unsigned message might violate site policy.\n"
 "Sign message instead?"
 msgstr ""
+"ამ შეტყობინების ხელმოწერა არ მოხდება.\n"
+"ხელმოუწერელი შეტყობინების გაგზავნით შეიძლება წესები დაარღვიოთ.\n"
+"მოვაწერო ხელი შეტყობინებას?"
 
 #: composer/composerviewbase.cpp:2034
 #, kde-format
@@ -647,6 +660,8 @@ msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"ყველა მიმღებისთვის აღმოჩენილია სწორი დაშიფვრის გასაღებები.\n"
+"დავშიფრო შეტყობინება?"
 
 #: composer/composerviewbase.cpp:2089
 #, kde-format
@@ -655,6 +670,9 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
+"მიმღების დაშიფვრის პარამეტრების ანალიზიდან გამომდინარე გეკითხებით, დავშიფრო "
+"ეს შეტყობინება, თუ არა.\n"
+"დავშიფრო შეტყობინება?"
 
 #: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
@@ -689,6 +707,8 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"ამ მიმღებებისთვის ურთიერთგამომრიცხავი დაშიფვრის პარამეტრებია არჩეული.\n"
+"მოვაწერო ხელი ამ შეტყობინებას?"
 
 #: composer/composerviewbase.cpp:2127
 #, kde-format
@@ -702,6 +722,8 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
+"მოითხოვეთ ამ შეტყობინების დაშიფვრა და რომ თქვენი ასლიც დაიშიფროს, მაგრამ ამ "
+"ანგარიშისთვის სწორი დაშიფვრის გასაღებები მითითებული არაა."
 
 #: composer/composerviewbase.cpp:2151
 #, kde-format
@@ -721,6 +743,10 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
+"ამ შეტყობინების ზოგიერთი ნაწილის დაშიფვრა არ მოხდება.\n"
+"ნაწილობრივ დაშიფრული შეტყობინების გაგზავნით შეიძლება დაარღვიოთ წესები და "
+"მოხდეს ინფორმაციის გაჟონვა.\n"
+"დავშიფრო მთლიანად?"
 
 #: composer/composerviewbase.cpp:2170
 #, kde-format
