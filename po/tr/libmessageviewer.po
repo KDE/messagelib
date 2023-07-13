@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-04 00:49+0000\n"
-"PO-Revision-Date: 2023-05-15 21:39+0300\n"
+"PO-Revision-Date: 2023-07-12 12:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -459,7 +459,7 @@ msgstr "Kuralları Dışa Aktar"
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
-msgstr "Kuralları İçe Aktar"
+msgstr "Kurallar İçe Aktar"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
@@ -1639,7 +1639,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Use Fi&xed Font"
-msgstr "S&abit Yazıtipi Kullan"
+msgstr "Eş A&ralıklı Yazıtipi Kullan"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.cmake:237
