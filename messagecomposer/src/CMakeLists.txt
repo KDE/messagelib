@@ -55,6 +55,7 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     job/autocryptheadersjob.cpp
     job/itipjob.cpp
     statusbarwidget/statusbarlabeltoggledstate.cpp
+    composer/autocryptkeyresolvercore.cpp
     composer/composer.cpp
     composer/signaturecontroller.cpp
     composer/composerlineedit.cpp
@@ -195,6 +196,7 @@ target_sources( KPim${KF_MAJOR_VERSION}MessageComposer PRIVATE
     recipient/recipientspicker.h
     recipient/recipientseditorsidewidget.h
     recipient/recipientline.h
+    composer/autocryptkeyresolvercore.h
     composer/composerviewinterface.h
     composer/composer.h
     composer/keyresolver.h
@@ -421,6 +423,7 @@ ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     HEADER_NAMES
+    AutocryptKeyResolverCore
     Composer
     ComposerLineEdit
     ComposerViewBase
