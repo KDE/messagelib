@@ -141,16 +141,6 @@ target_sources(KPim6MessageViewer PRIVATE
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
-if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
-    target_sources(KPim6MessageViewer PRIVATE
-        conversationview/conversationviewwidget.cpp
-        conversationview/conversationviewwidget.h
-        )
-    if (BUILD_TESTING)
-        add_subdirectory(conversationview/autotests)
-        add_subdirectory(conversationview/tests)
-    endif()
-endif()
 target_sources(KPim6MessageViewer PRIVATE
     viewer/renderer/messageviewerrenderer.cpp
     viewer/webengine/mailwebengineview.cpp

@@ -26,8 +26,6 @@
 #include <KMime/Headers>
 #include <KMime/Message>
 
-// KDE includes
-
 // Qt includes
 #include <QByteArray>
 #include <QTextCodec>

@@ -32,7 +32,7 @@
 #include "htmlwriter/webengineembedpart.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
-// KDE includes
+
 #include <KActionCollection>
 #include <KActionMenu>
 #include <QAction>
