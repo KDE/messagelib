@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfigVersion.cmake"
+    SOVERSION 6
+    )
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer\")
 
 if(BUILD_TESTING)
@@ -662,6 +669,8 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageComposer")
+
 if (BUILD_QCH)
     ecm_add_qch(
         KPim6MessageComposer_QCH
@@ -715,3 +724,25 @@ if (BUILD_QCH)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerQchTargets.cmake\")")
 
 endif()
+
+########### CMake Config Files ###########
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageComposerConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KPim6MessageComposerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageComposerTargets.cmake NAMESPACE KPim6::)
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer COMPONENT Devel
+    )

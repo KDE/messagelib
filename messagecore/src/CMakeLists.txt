@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECORE
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
+    SOVERSION 6
+    )
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
 add_library(KPim6MessageCore)
@@ -215,6 +222,9 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
+
+
 if (BUILD_QCH)
     ecm_add_qch(
         KPim6MessageCore_QCH
@@ -248,4 +258,24 @@ if (BUILD_QCH)
     )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageCoreQchTargets.cmake\")")
 endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageCoreConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KPim6MessageCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageCoreTargets.cmake NAMESPACE KPim6::)
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore COMPONENT Devel
+    )
 

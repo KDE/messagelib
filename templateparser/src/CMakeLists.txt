@@ -1,6 +1,12 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEMPLATEPARSER
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfigVersion.cmake"
+    SOVERSION 6
+    )
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
 add_library(KPim6TemplateParser)
 add_library(KPim6::TemplateParser ALIAS KPim6TemplateParser)
@@ -169,6 +175,9 @@ install(FILES
 
 install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.kde.syntax-highlighting/syntax)
 
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6TemplateParser")
+
+
 if (BUILD_QCH)
     ecm_add_qch(
         KPim6TemplateParser_QCH
@@ -199,3 +208,24 @@ if (BUILD_QCH)
     )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TemplateParserQchTargets.cmake\")")
 endif()
+
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimTemplateParserConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KPim6TemplateParserTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6TemplateParserTargets.cmake NAMESPACE KPim6::)
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser COMPONENT Devel
+    )
