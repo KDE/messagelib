@@ -2642,29 +2642,3 @@ msgstr "Missatge següent"
 #, kde-format
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid "Edit with:"
-#~ msgstr "Edita amb:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "El KMail no pot detectar quan es tanca l'editor seleccionat. Per a evitar "
-#~ "la pèrdua de dades, s'ha interromput l'edició de l'adjunt."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "No es pot editar l'adjunt"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "Visualitzador de la vCard"
-
-#~ msgid "&Import"
-#~ msgstr "&Importa"
-
-#~ msgid "&Next Card"
-#~ msgstr "&Targeta següent"
-
-#~ msgid "&Previous Card"
-#~ msgstr "Targeta &prèvia"
