@@ -44,7 +44,7 @@ public:
 
 SinglepartJob *ItipJobPrivate::createInvitationBodyJob()
 {
-    auto *job = new SinglepartJob; // No parent.
+    auto job = new SinglepartJob; // No parent.
     job->contentType()->setMimeType("text/plain");
     job->contentType()->setCharset("utf-8");
     job->contentType()->setParameter(QStringLiteral("method"), QStringLiteral("request"));
@@ -56,7 +56,7 @@ SinglepartJob *ItipJobPrivate::createInvitationBodyJob()
 
 SinglepartJob *ItipJobPrivate::createInvitationJob()
 {
-    auto *job = new SinglepartJob;
+    auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
     job->contentType()->setCharset("utf-8");
     job->contentType()->setName(QStringLiteral("cal.ics"), "utf-8");
@@ -69,12 +69,12 @@ SinglepartJob *ItipJobPrivate::createInvitationJob()
 
 ContentJobBase *ItipJobPrivate::createStandardItipJob()
 {
-    auto *bodyJob = createInvitationBodyJob();
+    auto bodyJob = createInvitationBodyJob();
     if (itipPart->invitation().isEmpty()) {
         return bodyJob;
     }
 
-    auto *mpJob = new MultipartJob;
+    auto mpJob = new MultipartJob;
     mpJob->setMultipartSubtype("mixed");
     mpJob->appendSubjob(bodyJob);
     mpJob->appendSubjob(createInvitationJob());
@@ -83,7 +83,7 @@ ContentJobBase *ItipJobPrivate::createStandardItipJob()
 
 SinglepartJob *ItipJobPrivate::createOutlookItipJob()
 {
-    auto *job = new SinglepartJob;
+    auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
     job->contentType()->setName(QStringLiteral("cal.ics"), "utf-8");
     job->contentType()->setParameter(QStringLiteral("method"), QStringLiteral("request"));
