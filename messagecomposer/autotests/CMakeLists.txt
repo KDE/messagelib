@@ -104,6 +104,7 @@ add_messagecomposer_cryptotest( signjobtest.cpp )
 add_messagecomposer_cryptotest( encryptjobtest.cpp )
 add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
+add_messagecomposer_cryptotest( autocryptresolvercoretest.cpp )
 add_messagecomposer_cryptotest( keyresolvertest.cpp )
 
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)

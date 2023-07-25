@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-02-28 22:57+0100\n"
+"PO-Revision-Date: 2023-07-25 01:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -366,10 +366,9 @@ msgid "Suggest Automatic Display"
 msgstr "자동 표시 제안"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "다음으로 편집..."
+msgstr "다음으로 편집:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -377,6 +376,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail에서 선택한 편집기가 닫힌 시점을 알 수 없습니다. 데이터가 손실되지 않도"
+"록 첨부 파일 편집을 중단합니다."
 
 #: composer/composer.cpp:289
 #, kde-format
@@ -572,7 +573,7 @@ msgid ""
 "whether or not to sign this message.\n"
 "Sign this message?"
 msgstr ""
-"받는 사람의 서명 선호도에 의하면 서명 여부를 선택할 수 있습니다.\n"
+"받는 사람의 서명 선호도 검사 결과, 메시지에 서명 여부를 선택할 수 있습니다.\n"
 "이 메시지에 서명하시겠습니까?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
@@ -675,7 +676,7 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
-"받는 사람의 암호화 선호도에 의하면 암호화 여부를 선택할 수 있습니다.\n"
+"받는 사람의 암호화 선호도 검사 결과, 암호화 여부를 선택할 수 있습니다.\n"
 "이 메시지를 암호화하시겠습니까?"
 
 #: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
@@ -686,7 +687,7 @@ msgstr "메시지 암호화?"
 #: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid "Sign && &Encrypt"
-msgstr "서명 및 암호화"
+msgstr "서명 및 암호화(&E)"
 
 #: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
