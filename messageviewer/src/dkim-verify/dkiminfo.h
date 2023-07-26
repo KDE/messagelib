@@ -114,5 +114,4 @@ private:
     CanonicalizationType mBodyCanonization = Unknown;
 };
 }
-Q_DECLARE_METATYPE(MessageViewer::DKIMInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMInfo &t);
