@@ -46,5 +46,5 @@ private:
     bool mEnabled = false;
 };
 }
-Q_DECLARE_TYPEINFO(MessageViewer::ScamDetectionInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::ScamDetectionInfo, Q_RELOCATABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t);

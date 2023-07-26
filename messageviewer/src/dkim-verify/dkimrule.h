@@ -63,5 +63,5 @@ private:
     bool mEnabled = true;
 };
 }
-Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_RELOCATABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMRule &t);

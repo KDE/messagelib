@@ -39,4 +39,4 @@ private:
 };
 }
 
-Q_DECLARE_TYPEINFO(WebEngineViewer::WebEngineAccessKeyAnchor, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(WebEngineViewer::WebEngineAccessKeyAnchor, Q_RELOCATABLE_TYPE);

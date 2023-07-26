@@ -170,4 +170,4 @@ private:
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
-Q_DECLARE_TYPEINFO(MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_RELOCATABLE_TYPE);

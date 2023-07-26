@@ -61,7 +61,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(cons
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString parseBodyStyle(const QString &style);
 }
 }
-Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(MessageViewer::Util::HtmlMessageInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::Util::HtmlMessageInfo &t);
 Q_DECLARE_METATYPE(KService::Ptr)

@@ -74,6 +74,6 @@ private:
     QCA::Initializer *const mQcaInitializer;
 };
 }
-Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(MessageViewer::KeyInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::KeyInfo &t);

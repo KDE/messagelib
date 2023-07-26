@@ -41,5 +41,5 @@ private:
     QString mUrl;
 };
 }
-Q_DECLARE_TYPEINFO(MessageViewer::RemoteContentInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::RemoteContentInfo, Q_RELOCATABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::RemoteContentInfo &t);

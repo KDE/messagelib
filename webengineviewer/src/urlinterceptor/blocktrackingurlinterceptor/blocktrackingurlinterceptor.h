@@ -50,6 +50,6 @@ private:
     bool mEnabledMailTrackingInterceptor = false;
 };
 }
-Q_DECLARE_TYPEINFO(WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList)
 WEBENGINEVIEWER_EXPORT QDebug operator<<(QDebug d, const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &t);

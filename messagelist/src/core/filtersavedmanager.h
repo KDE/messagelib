@@ -40,4 +40,4 @@ Q_SIGNALS:
 };
 }
 }
-Q_DECLARE_TYPEINFO(MessageList::Core::FilterSavedManager::FilterInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageList::Core::FilterSavedManager::FilterInfo, Q_RELOCATABLE_TYPE);
