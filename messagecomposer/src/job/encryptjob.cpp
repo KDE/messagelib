@@ -238,6 +238,9 @@ void EncryptJob::process()
 
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
+    if (!(d->format & Kleo::InlineOpenPGPFormat)) {
+        eJob->setInputEncoding(GpgME::Data::MimeEncoding);
+    }
 
     if (!d->gnupgHome.isEmpty()) {
         QGpgME::Job::context(eJob)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
