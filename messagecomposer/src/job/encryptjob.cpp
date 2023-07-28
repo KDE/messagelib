@@ -5,6 +5,8 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <config-messagelib.h>
+
 #include "job/encryptjob.h"
 
 #include "contentjobbase_p.h"
@@ -238,9 +240,11 @@ void EncryptJob::process()
 
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
+#if QGPGME_SUPPORTS_ENCRYPTION_JOB_SET_INPUT_ENCODING
     if (!(d->format & Kleo::InlineOpenPGPFormat)) {
         eJob->setInputEncoding(GpgME::Data::MimeEncoding);
     }
+#endif
 
     if (!d->gnupgHome.isEmpty()) {
         QGpgME::Job::context(eJob)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
