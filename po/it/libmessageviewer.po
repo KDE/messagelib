@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-04 00:49+0000\n"
-"PO-Revision-Date: 2023-03-08 22:17+0100\n"
+"PO-Revision-Date: 2023-07-27 21:39+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1414,7 +1414,7 @@ msgstr "Livello contrazione automatica:"
 #: settings/messageviewer.kcfg.cmake:83
 #, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Riduci dimensione caratteri per il testo citato"
+msgstr "Riduci la dimensione dei caratteri per il testo citato"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.cmake:84
@@ -1796,7 +1796,7 @@ msgstr "Attiva i tasti di accesso"
 #: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "Riduci la &dimensione caratteri per il testo citato"
+msgstr "Riduci la &dimensione dei caratteri per il testo citato"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
