@@ -599,16 +599,18 @@ bool Util::deleteAttachment(KMime::Content *node)
     }
 
     // text/plain part:
+    const auto newName = i18nc("Argument is the original name of the deleted attachment", "Deleted: %1", name);
     auto deletePart = new KMime::Content(parentNode);
     auto deleteCt = deletePart->contentType(true);
     deleteCt->setMimeType("text/x-moz-deleted");
-    deleteCt->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
+    deleteCt->setName(newName, "utf8");
     deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
-    deletePart->contentDisposition(false)->setFilename(QStringLiteral("Deleted: %1").arg(name));
+    deletePart->contentDisposition(false)->setFilename(newName);
 
     deleteCt->setCharset("utf-8");
-    deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    QByteArray bodyMessage = QByteArrayLiteral("\nYou deleted an attachment from this message. The original MIME headers for the attachment were:");
+    deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);
+    QByteArray bodyMessage = QByteArrayLiteral("\n");
+    bodyMessage += i18n("You deleted an attachment from this message. The original MIME headers for the attachment were:").toUtf8() + ("\n");
     bodyMessage += ("\nContent-Type: ") + mimetype;
     bodyMessage += ("\nname=\"") + name.toUtf8() + "\"";
     bodyMessage += ("\nfilename=\"") + filename.toUtf8() + "\"";
