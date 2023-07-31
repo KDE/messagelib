@@ -620,6 +620,8 @@ private:
     void slotUrlBlocked(const QUrl &url);
     void updateColorFromScheme();
 
+    void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
+
 public:
     KMime::Message::Ptr mMessage; // the current message, if it was set manually
     Akonadi::Item mMessageItem; // the message item from Akonadi

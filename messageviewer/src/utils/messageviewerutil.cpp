@@ -572,6 +572,65 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     return saveMessageInMboxAndGetUrl(url, retrievedMsgs, parent, appendMessages);
 }
 
+bool Util::deleteAttachment(KMime::Content *node)
+{
+    Q_ASSERT(node);
+
+    auto parentNode = node->parent();
+    if (!parentNode) {
+        return false;
+    }
+
+    QString filename;
+    QString name;
+    QByteArray mimetype;
+    if (auto cd = node->contentDisposition(false)) {
+        filename = cd->filename();
+    }
+
+    if (auto ct = node->contentType(false)) {
+        name = ct->name();
+        mimetype = ct->mimeType();
+    }
+
+    if (mimetype == "text/x-moz-deleted") {
+        // The attachment has already been deleted, no need to delete the deletion attachment
+        return false;
+    }
+
+    // text/plain part:
+    auto deletePart = new KMime::Content(parentNode);
+    auto deleteCt = deletePart->contentType(true);
+    deleteCt->setMimeType("text/x-moz-deleted");
+    deleteCt->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
+    deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
+    deletePart->contentDisposition(false)->setFilename(QStringLiteral("Deleted: %1").arg(name));
+
+    deleteCt->setCharset("utf-8");
+    deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
+    QByteArray bodyMessage = QByteArrayLiteral("\nYou deleted an attachment from this message. The original MIME headers for the attachment were:");
+    bodyMessage += ("\nContent-Type: ") + mimetype;
+    bodyMessage += ("\nname=\"") + name.toUtf8() + "\"";
+    bodyMessage += ("\nfilename=\"") + filename.toUtf8() + "\"";
+    deletePart->setBody(bodyMessage);
+    parentNode->replaceContent(node, deletePart);
+
+    parentNode->assemble();
+
+    return true;
+}
+
+int Util::deleteAttachments(const KMime::Content::List &nodes)
+{
+    int updatedCount = 0;
+    for (const auto node : nodes) {
+        if (deleteAttachment(node)) {
+            ++updatedCount;
+        }
+    }
+    return updatedCount;
+}
+
 QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
 {
     QString actionName(service->name().replace(QLatin1Char('&'), QStringLiteral("&&")));

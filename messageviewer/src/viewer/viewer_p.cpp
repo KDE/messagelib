@@ -338,6 +338,31 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     }
 }
 
+static bool confirmAttachmentDeletion(QWidget *parent)
+{
+    return KMessageBox::warningContinueCancel(parent,
+                                              i18n("Deleting an attachment might invalidate any digital signature on this message."),
+                                              i18n("Delete Attachment"),
+                                              KStandardGuiItem::del(),
+                                              KStandardGuiItem::cancel(),
+                                              QStringLiteral("DeleteAttachmentSignatureWarning"))
+        == KMessageBox::Continue;
+}
+
+void ViewerPrivate::updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message)
+{
+    KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(message.data());
+    mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
+    mMessageItem.setPayloadFromData(message->encodedContent());
+    // Modifying the payload might change the remote id (e.g. for IMAP) of the item, so don't try to force on it
+    // a potentially old remote id. Without clearing the remote id, deleting multiple attachments from a message
+    // stored on an IMAP server will likely fail with "Invalid attempt to modify the remoteID for item [...]".
+    mMessageItem.setRemoteId({});
+    auto job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
+    job->disableRevisionCheck();
+    connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
+}
+
 bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
 {
     if (!node) {
@@ -356,59 +381,19 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return true; // cancelled
     }
 
-    if (showWarning
-        && KMessageBox::warningContinueCancel(mMainWindow,
-                                              i18n("Deleting an attachment might invalidate any digital signature on this message."),
-                                              i18n("Delete Attachment"),
-                                              KStandardGuiItem::del(),
-                                              KStandardGuiItem::cancel(),
-                                              QStringLiteral("DeleteAttachmentSignatureWarning"))
-            != KMessageBox::Continue) {
+    if (showWarning && !confirmAttachmentDeletion(mMainWindow)) {
         return false; // cancelled
     }
+
     // don't confuse the model
     mMimePartTree->clearModel();
-    QString filename;
-    QString name;
-    QByteArray mimetype;
-    if (auto cd = node->contentDisposition(false)) {
-        filename = cd->filename();
+
+    if (!Util::deleteAttachment(node)) {
+        return false;
     }
 
-    if (auto ct = node->contentType(false)) {
-        name = ct->name();
-        mimetype = ct->mimeType();
-    }
+    updateMessageAfterDeletingAttachments(mMessage);
 
-    // text/plain part:
-    auto deletePart = new KMime::Content(parent);
-    auto deleteCt = deletePart->contentType(true);
-    deleteCt->setMimeType("text/x-moz-deleted");
-    deleteCt->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
-    deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
-    deletePart->contentDisposition(false)->setFilename(QStringLiteral("Deleted: %1").arg(name));
-
-    deleteCt->setCharset("utf-8");
-    deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    QByteArray bodyMessage = QByteArrayLiteral("\nYou deleted an attachment from this message. The original MIME headers for the attachment were:");
-    bodyMessage += ("\nContent-Type: ") + mimetype;
-    bodyMessage += ("\nname=\"") + name.toUtf8() + "\"";
-    bodyMessage += ("\nfilename=\"") + filename.toUtf8() + "\"";
-    deletePart->setBody(bodyMessage);
-    parent->replaceContent(node, deletePart);
-
-    parent->assemble();
-
-    KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(mMessage.data());
-    mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
-    mMessageItem.setPayloadFromData(mMessage->encodedContent());
-    // Modifying the payload might change the remote id (e.g. for IMAP) of the item, so don't try to force on it
-    // a potentially old remote id. Without clearing the remote id, deleting multiple attachments from a message
-    // stored on an IMAP server will likely fail with "Invalid attempt to modify the remoteID for item [...]".
-    mMessageItem.setRemoteId({});
-    auto job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
-    job->disableRevisionCheck();
-    connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
     return true;
 }
 
