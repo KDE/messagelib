@@ -1328,8 +1328,8 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
             groupLabel = QLocale::system().toString(dDate, QLocale::ShortFormat);
         } else if (dDate.month() == mTodayDate.month() // GroupByDateRange within this month
                    && dDate.year() == mTodayDate.year()) {
-            int startOfWeekDaysAgo = (daysInWeek + mTodayDate.dayOfWeek() - QLocale().firstDayOfWeek()) % daysInWeek;
-            int weeksAgo = ((daysAgo - startOfWeekDaysAgo) / daysInWeek) + 1;
+            const int startOfWeekDaysAgo = (daysInWeek + mTodayDate.dayOfWeek() - QLocale().firstDayOfWeek()) % daysInWeek;
+            const int weeksAgo = ((daysAgo - startOfWeekDaysAgo) / daysInWeek) + 1;
             switch (weeksAgo) {
             case 0: // This week
                 groupLabel = QLocale::system().standaloneDayName(dDate.dayOfWeek());

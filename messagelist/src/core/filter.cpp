@@ -9,6 +9,7 @@
 #include "core/filter.h"
 #include "core/messageitem.h"
 #include <MessageCore/StringUtil>
+#include <TextUtils/ConvertText>
 
 #include <KRandom>
 #include <PIM/emailquery.h>
@@ -24,9 +25,9 @@ Filter::Filter(QObject *parent)
 bool Filter::containString(const QString &searchInString) const
 {
     bool found = false;
-    const QString searchInStringNormalize{MessageCore::StringUtil::normalize(searchInString)};
+    const QString searchInStringNormalize{TextUtils::ConvertText::normalize(searchInString)};
     for (const QString &str : std::as_const(mSearchList)) {
-        if (searchInStringNormalize.contains(MessageCore::StringUtil::normalize(str), Qt::CaseInsensitive)) {
+        if (searchInStringNormalize.contains(TextUtils::ConvertText::normalize(str), Qt::CaseInsensitive)) {
             found = true;
         } else {
             found = false;

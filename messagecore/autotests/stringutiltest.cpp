@@ -761,20 +761,4 @@ void StringUtilTest::test_splitAddressField()
     }
 }
 
-void StringUtilTest::test_normalizeText()
-{
-    {
-        const QString str(QStringLiteral("foo"));
-        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("foo"));
-    }
-    {
-        const QString str(QStringLiteral("numérique"));
-        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("numerique"));
-    }
-    {
-        const QString str(QStringLiteral("téléphone"));
-        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("telephone"));
-    }
-}
-
 #include "moc_stringutiltest.cpp"

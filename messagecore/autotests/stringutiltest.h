@@ -35,6 +35,4 @@ private Q_SLOTS:
     void test_xdgemail();
     void test_parseMailToBug206269();
     void test_splitAddressField();
-
-    void test_normalizeText();
 };

@@ -163,6 +163,7 @@ target_link_libraries(KPim6MessageList
     KF6::Completion
     KF6::I18n
     KF6::TextWidgets
+    KF6::TextUtils
     )
 
 set_target_properties(KPim6MessageList PROPERTIES

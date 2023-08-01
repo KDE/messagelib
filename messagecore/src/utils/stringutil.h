@@ -225,7 +225,5 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(KMime::Message *msg);
       @p str is replaced by @p newPrefix.
   **/
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
-
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString normalize(QStringView str);
 }
 }
