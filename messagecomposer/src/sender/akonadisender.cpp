@@ -1,6 +1,7 @@
 /*
  * This file is part of KMail.
  * SPDX-FileCopyrightText: 2009 Constantin Berzan <exit3219@gmail.com>
+ * SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -24,23 +25,27 @@
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
+
 using namespace KMime::Types;
 using namespace KPIM;
 using namespace MessageComposer;
 
-static QStringList addrSpecListToStringList(const AddrSpecList &l, bool allowEmpty = false)
+namespace
+{
+
+QStringList addrSpecListToStringList(const AddrSpecList &addresses, bool allowEmpty = false)
 {
     QStringList result;
-    for (AddrSpecList::const_iterator it = l.constBegin(), end = l.constEnd(); it != end; ++it) {
-        const QString s = (*it).asString();
-        if (allowEmpty || !s.isEmpty()) {
-            result.push_back(s);
+    for (const auto &address : addresses) {
+        const auto addressString = address.asString();
+        if (allowEmpty || !addressString.isEmpty()) {
+            result.append(addressString);
         }
     }
     return result;
 }
 
-static void extractSenderToCCAndBcc(const KMime::Message::Ptr &aMsg, QString &sender, QStringList &to, QStringList &cc, QStringList &bcc)
+void extractSenderToCCAndBcc(const KMime::Message::Ptr &aMsg, QString &sender, QStringList &to, QStringList &cc, QStringList &bcc)
 {
     sender = aMsg->sender()->asUnicodeString();
     if (aMsg->headerByType("X-KMail-Recipients")) {
@@ -58,38 +63,50 @@ static void extractSenderToCCAndBcc(const KMime::Message::Ptr &aMsg, QString &se
         bcc = addrSpecListToStringList(MessageHelper::extractAddrSpecs(aMsg, "Bcc"));
     }
 }
+}
 
 class MessageComposer::AkonadiSenderPrivate
 {
 public:
-    AkonadiSenderPrivate() = default;
+    enum Method {
+        SendImmediately,
+        Queue,
+    };
+    AkonadiSenderPrivate(AkonadiSender *parent)
+        : q(parent)
+    {
+    }
 
+    AkonadiSender *q;
     QSet<KJob *> mPendingJobs;
     int mCustomTransportId = -1;
+
+    bool sendOrQueueMessage(const KMime::Message::Ptr &message, Method method);
+
+    void queueJobResult(KJob *job);
 };
 
 AkonadiSender::AkonadiSender(QObject *parent)
     : QObject(parent)
-    , d(new MessageComposer::AkonadiSenderPrivate)
+    , d(std::make_unique<MessageComposer::AkonadiSenderPrivate>(this))
 {
 }
 
 AkonadiSender::~AkonadiSender() = default;
 
-bool AkonadiSender::doSend(const KMime::Message::Ptr &aMsg, short sendNow)
+bool AkonadiSender::send(const KMime::Message::Ptr &message, MessageSender::SendMethod method)
 {
-    if (sendNow == -1) {
-        sendNow = MessageComposer::MessageComposerSettings::self()->sendImmediate(); // -1 == use default setting
+    if (method == MessageSender::SendDefault) {
+        method = MessageComposer::MessageComposerSettings::self()->sendImmediate() ? MessageSender::SendImmediate : MessageSender::SendLater;
     }
-    if (sendNow) {
-        sendOrQueueMessage(aMsg, MessageComposer::MessageSender::SendImmediate);
+    if (method == MessageSender::SendImmediate) {
+        return d->sendOrQueueMessage(message, MessageComposer::AkonadiSenderPrivate::SendImmediately);
     } else {
-        sendOrQueueMessage(aMsg, MessageComposer::MessageSender::SendLater);
+        return d->sendOrQueueMessage(message, MessageComposer::AkonadiSenderPrivate::Queue);
     }
-    return true;
 }
 
-bool AkonadiSender::doSendQueued(int customTransportId)
+bool AkonadiSender::sendQueued(MailTransport::Transport::Id customTransportId)
 {
     qCDebug(MESSAGECOMPOSER_LOG) << "Sending queued message with custom transport:" << customTransportId;
     if (!MessageComposer::Util::sendMailDispatcherIsOnline()) {
@@ -98,22 +115,21 @@ bool AkonadiSender::doSendQueued(int customTransportId)
 
     d->mCustomTransportId = customTransportId;
 
-    auto dispatcher = new Akonadi::DispatcherInterface();
+    Akonadi::DispatcherInterface dispatcher;
     if (d->mCustomTransportId == -1) {
-        dispatcher->dispatchManually();
+        dispatcher.dispatchManually();
     } else {
-        dispatcher->dispatchManualTransport(d->mCustomTransportId);
+        dispatcher.dispatchManualTransport(d->mCustomTransportId);
     }
-    delete dispatcher;
     return true;
 }
 
-void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SendMethod method)
+bool AkonadiSenderPrivate::sendOrQueueMessage(const KMime::Message::Ptr &message, Method method)
 {
     Q_ASSERT(message);
     qCDebug(MESSAGECOMPOSER_LOG) << "KMime::Message: \n[\n" << message->encodedContent().left(1000) << "\n]\n";
 
-    auto qjob = new Akonadi::MessageQueueJob(this);
+    auto qjob = new Akonadi::MessageQueueJob(q);
     if (message->hasHeader("X-KMail-FccDisabled")) {
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::Delete);
     } else if (auto hrd = message->headerByType("X-KMail-Fcc")) {
@@ -142,9 +158,9 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     qjob->setMessage(message);
 
     // Get transport.
-    int transportId = -1;
-    if (d->mCustomTransportId != -1) {
-        transportId = d->mCustomTransportId;
+    int transportId = MessageComposer::MessageSender::DefaultTransport;
+    if (mCustomTransportId != MessageComposer::MessageSender::DefaultTransport) {
+        transportId = mCustomTransportId;
     } else {
         if (auto hrd = message->headerByType("X-KMail-Transport")) {
             transportId = hrd->asUnicodeString().toInt();
@@ -152,21 +168,22 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     }
     const auto *transport = MailTransport::TransportManager::self()->transportById(transportId);
     if (!transport) {
-        qCDebug(MESSAGECOMPOSER_LOG) << " No transport defined. Need to create it";
+        qCWarning(MESSAGECOMPOSER_LOG) << "No email transporter found with id" << transportId;
         qjob->deleteLater();
-        return;
+        return false;
     }
 
-    if ((method == MessageComposer::MessageSender::SendImmediate) && !MessageComposer::Util::sendMailDispatcherIsOnline()) {
+    if ((method == SendImmediately) && !MessageComposer::Util::sendMailDispatcherIsOnline()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "Trying to send a message but dispatcher is offline";
         qjob->deleteLater();
-        return;
+        return false;
     }
 
     qCDebug(MESSAGECOMPOSER_LOG) << "Using transport (" << transport->name() << "," << transport->id() << ")";
     qjob->transportAttribute().setTransportId(transport->id());
 
     // if we want to manually queue it for sending later, then do it
-    if (method == MessageComposer::MessageSender::SendLater) {
+    if (method == Queue) {
         qjob->dispatchModeAttribute().setDispatchMode(Akonadi::DispatchModeAttribute::Manual);
     }
 
@@ -184,7 +201,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     if (qjob->addressAttribute().to().isEmpty()) {
         qCWarning(MESSAGECOMPOSER_LOG) << " Impossible to specify TO! It's a bug";
         qjob->deleteLater();
-        return;
+        return false;
     }
 
     if (transport && transport->specifySenderOverwriteAddress()) {
@@ -200,8 +217,10 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     message->assemble();
 
     // Queue the message.
-    connect(qjob, &Akonadi::MessageQueueJob::result, this, &AkonadiSender::queueJobResult);
-    d->mPendingJobs.insert(qjob);
+    qjob->connect(qjob, &Akonadi::MessageQueueJob::result, q, [this](KJob *job) {
+        queueJobResult(job);
+    });
+    mPendingJobs.insert(qjob);
     qjob->start();
     qCDebug(MESSAGECOMPOSER_LOG) << "QueueJob started.";
 
@@ -209,12 +228,13 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     // The MDA finishes sending a message before I queue the next one, and
     // thinking it is finished, the progress item deletes itself.
     // Turn the MDA offline until everything is queued?
+    return true;
 }
 
-void AkonadiSender::queueJobResult(KJob *job)
+void AkonadiSenderPrivate::queueJobResult(KJob *job)
 {
-    Q_ASSERT(d->mPendingJobs.contains(job));
-    d->mPendingJobs.remove(job);
+    Q_ASSERT(mPendingJobs.contains(job));
+    mPendingJobs.remove(job);
 
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "QueueJob failed with error" << job->errorString();
