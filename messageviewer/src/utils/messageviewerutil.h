@@ -38,6 +38,22 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Ite
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
+/**
+ * @brief Replaces the @c node message part by an empty attachment with information about deleted attachment.
+ *
+ * @param node A message part representing an attachment. The part will be replaced by a new empty party with
+ *             filename "Deleted: <original attachment name>". Must not be @p null.
+ * @return Returns whether the message was actually modified.
+ */
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool deleteAttachment(KMime::Content *node);
+/**
+ * @brief Calls deleteAttachment() for each node in the @p contents list.
+ *
+ * @param contents List of attachments to replace by an empty part (see deleteAttachment())
+ * @return Returns number of attachments that have actually been replaced.
+ * @see deleteAttachment()
+ */
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT int deleteAttachments(const KMime::Content::List &contents);
 
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 /** Return a QTextCodec for the specified charset.
