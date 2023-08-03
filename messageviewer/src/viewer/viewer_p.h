@@ -608,6 +608,7 @@ private:
 
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
+    void adaptHtmlHeadSettings();
     void slotDelayPrintPreview();
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);

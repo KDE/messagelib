@@ -786,6 +786,7 @@ void ViewerPrivate::displayMessage()
         setDisplayFormatMessageOverwrite(attr->messageFormat());
     }
 
+    adaptHtmlHeadSettings();
     htmlWriter()->begin();
     htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
@@ -1276,6 +1277,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         }
 
         htmlWriter()->begin();
+        adaptHtmlHeadSettings();
         htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
         parseContent(node);
@@ -1283,6 +1285,11 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         htmlWriter()->write(cssHelper()->endBodyHtml());
         htmlWriter()->end();
     }
+}
+
+void ViewerPrivate::adaptHtmlHeadSettings()
+{
+    mHtmlHeadSettings.htmlFormat = htmlMail();
 }
 
 void ViewerPrivate::showHideMimeTree()
