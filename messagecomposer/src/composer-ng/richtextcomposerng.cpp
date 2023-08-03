@@ -35,8 +35,8 @@ class MessageComposer::RichTextComposerNgPrivate
 public:
     explicit RichTextComposerNgPrivate(RichTextComposerNg *q)
         : richtextComposer(q)
+        , richTextComposerSignatures(new MessageComposer::RichTextComposerSignatures(richtextComposer, richtextComposer))
     {
-        richTextComposerSignatures = new MessageComposer::RichTextComposerSignatures(richtextComposer, richtextComposer);
     }
 
     void fixHtmlFontSize(QString &cleanHtml) const;
@@ -47,7 +47,7 @@ public:
     TextAutoCorrection::AutoCorrection *autoCorrection = nullptr;
 #endif
     RichTextComposerNg *const richtextComposer;
-    MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;
+    MessageComposer::RichTextComposerSignatures *const richTextComposerSignatures;
 };
 
 RichTextComposerNg::RichTextComposerNg(QWidget *parent)
