@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"POT-Creation-Date: 2023-08-04 00:47+0000\n"
 "PO-Revision-Date: 2023-03-13 18:42+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1629,7 +1629,7 @@ msgstr ""
 "kun niihin on vastattu."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1526
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1533
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "K&äytä tasavälistä fonttia"
@@ -1985,7 +1985,7 @@ msgstr "Koko"
 msgid "Turn on HTML rendering for this message."
 msgstr "Salli HTML-esitysmuoto tälle viestille."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1599
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Lataa tämän ulkoiset viitteet internetistä."
@@ -2065,7 +2065,7 @@ msgstr "&Avaa osoitekirjasta"
 msgid "&Copy Email Address"
 msgstr "&Kopioi sähköpostiosoite"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2693
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2700
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Osoite kopioitu leikepöydälle."
@@ -2131,7 +2131,7 @@ msgstr ""
 "virheelliseksi."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1702
+#: viewer/viewer_p.cpp:1709
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Poista liite"
@@ -2163,13 +2163,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Avaa &ohjelmalla…"
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1680
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1687
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Avaa"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1687
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1694
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2185,7 +2185,7 @@ msgstr "Vieritä"
 msgid "Save As..."
 msgstr "Tallenna nimellä…"
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1697
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1704
 #, kde-format
 msgid "Copy"
 msgstr "Kopioi"
@@ -2200,7 +2200,7 @@ msgstr "Vastaa lähettäjälle"
 msgid "Reply To All"
 msgstr "Vastaa kaikille"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1707
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1714
 #, kde-format
 msgid "Properties"
 msgstr "Ominaisuudet"
@@ -2215,263 +2215,263 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE:n sähköpostiohjelma"
 
-#: viewer/viewer_p.cpp:1259
+#: viewer/viewer_p.cpp:1260
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Näytä liite: %1"
 
-#: viewer/viewer_p.cpp:1447
+#: viewer/viewer_p.cpp:1454
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Liitteet"
 
-#: viewer/viewer_p.cpp:1449
+#: viewer/viewer_p.cpp:1456
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Valitse liitteiden esitystapa"
 
-#: viewer/viewer_p.cpp:1452
+#: viewer/viewer_p.cpp:1459
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Kuvakkeina"
 
-#: viewer/viewer_p.cpp:1455
+#: viewer/viewer_p.cpp:1462
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Näytä kaikki liitteet kuvakkeina. Näytä ne napsauttamalla."
 
-#: viewer/viewer_p.cpp:1459
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Lähettäjän ehdottamalla tavalla"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1469
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Näytä liitteet lähettäjän ehdottamalla tavalla."
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Sisällytettyinä"
 
-#: viewer/viewer_p.cpp:1469
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Näytä kaikki liitteet osana viestiä (jos mahdollista)"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Piilota"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Älä näytä liitteitä viestinäkymässä"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Vain otsakkeissa"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Näytä liitteet vain viestin otsakkeissa"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "&Set Encoding"
 msgstr "A&seta koodaus"
 
-#: viewer/viewer_p.cpp:1493 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1500 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automaattinen"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1510
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopioi teksti"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1517
 #, kde-format
 msgid "Select All Text"
 msgstr "Valitse kaikki tekstit"
 
-#: viewer/viewer_p.cpp:1516 viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:1523 viewer/viewer_p.cpp:2008
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopioi linkin osoite"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1528
 #, kde-format
 msgid "Open URL"
 msgstr "Avaa URL"
 
-#: viewer/viewer_p.cpp:1532
+#: viewer/viewer_p.cpp:1539
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Näytä viestin rakenne"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "&View Source"
 msgstr "&Näytä lähdekoodi"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Tallenna viesti…"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "&Save Display Format"
 msgstr "&Tallenna näkymän muoto"
 
-#: viewer/viewer_p.cpp:1556
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "&Alusta näkymän muoto"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Vieritä viestiä ylös"
 
-#: viewer/viewer_p.cpp:1568
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Vieritä viestiä alas"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Vieritä viestiä ylös (enemmän)"
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Vieritä viestiä alas (enemmän)"
 
-#: viewer/viewer_p.cpp:1588
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Vaihda näyttötilaa"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Vaihda näyttötilaa HTML:n ja paljaan tekstin välillä"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1602
 #, kde-format
 msgid "Load external references"
 msgstr "Lataa ulkoiset viitteet"
 
-#: viewer/viewer_p.cpp:1601 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1608 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Puhu teksti"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1614
 #, kde-format
 msgid "Share Text..."
 msgstr "Jaa tekstiä…"
 
-#: viewer/viewer_p.cpp:1613
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopioi kuvan sijainti"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Etsi viestistä…"
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Poista hymiöt käytöstä"
 
-#: viewer/viewer_p.cpp:1677
+#: viewer/viewer_p.cpp:1684
 #, kde-format
 msgid "Save &As..."
 msgstr "Tallenna &nimellä…"
 
-#: viewer/viewer_p.cpp:1685
+#: viewer/viewer_p.cpp:1692
 #, kde-format
 msgid "Open With..."
 msgstr "Avaa ohjelmalla…"
 
-#: viewer/viewer_p.cpp:1692
+#: viewer/viewer_p.cpp:1699
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Tallenna kaikki liitteet…"
 
-#: viewer/viewer_p.cpp:1921
+#: viewer/viewer_p.cpp:1928
 #, kde-format
 msgid "The network is broken."
 msgstr "Verkko on rikki."
 
-#: viewer/viewer_p.cpp:1921 viewer/viewer_p.cpp:1924
+#: viewer/viewer_p.cpp:1928 viewer/viewer_p.cpp:1931
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Tarkista verkko-osoitteen väärennös"
 
-#: viewer/viewer_p.cpp:1924
+#: viewer/viewer_p.cpp:1931
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Verkko-osoite %1 ei ole kelvollinen."
 
-#: viewer/viewer_p.cpp:1944
+#: viewer/viewer_p.cpp:1951
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Tämä verkko-osoite on pahantahtoinen: haluatko silti jatkaa ja näyttää sen?"
 
-#: viewer/viewer_p.cpp:1945
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "Malware"
 msgstr "Pahantahtoinen sivusto"
 
-#: viewer/viewer_p.cpp:1999
+#: viewer/viewer_p.cpp:2006
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopioi sähköpostiosoite"
 
-#: viewer/viewer_p.cpp:2080
+#: viewer/viewer_p.cpp:2087
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Viesti raakatekstinä"
 
-#: viewer/viewer_p.cpp:2283
+#: viewer/viewer_p.cpp:2290
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Tulosta tiedosto"
 
-#: viewer/viewer_p.cpp:2699
+#: viewer/viewer_p.cpp:2706
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL kopioitu leikepöydälle."
 
-#: viewer/viewer_p.cpp:2851
+#: viewer/viewer_p.cpp:2858
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Viestin nouto epäonnistui: %1."
 
-#: viewer/viewer_p.cpp:2856
+#: viewer/viewer_p.cpp:2863
 #, kde-format
 msgid "Message not found."
 msgstr "Viestiä ei löytynyt."

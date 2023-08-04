@@ -107,6 +107,10 @@ if (TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
 
+if (Gpgmepp_VERSION VERSION_GREATER_EQUAL "1.22.0")
+    set(QGPGME_SUPPORTS_ENCRYPTION_JOB_SET_INPUT_ENCODING 1)
+endif()
+
 find_package(KF6TextAutoCorrectionWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
@@ -127,6 +131,13 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
     add_definitions(-DCOMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-messagelib.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelib.h)
+
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
