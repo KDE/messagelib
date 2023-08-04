@@ -165,3 +165,5 @@ void AutocryptKeyResolverCoreTest::testNormalKeyResolver()
     QCOMPARE(resolver.isAutocryptKey(recipient), false);
     QCOMPARE(resolver.isGossipKey(recipient), false);
 }
+
+#include "moc_autocryptresolvercoretest.cpp"
