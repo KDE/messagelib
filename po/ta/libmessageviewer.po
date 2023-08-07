@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2023-03-12 17:59+0530\n"
+"PO-Revision-Date: 2023-08-06 14:00+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -615,7 +615,7 @@ msgstr "DKIM கையொப்பத்தை மீண்டும் சர�
 #: dkim-verify/dkimviewermenu.cpp:39
 #, kde-format
 msgid "Update DKIM key"
-msgstr ""
+msgstr "DKIM சாவியைப் புதுப்பி"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
@@ -743,7 +743,7 @@ msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Problem during converting public key"
 msgstr "பொது சாவியை வடிவமாற்றுவதில் சிக்கல்"
 
@@ -1737,7 +1737,7 @@ msgstr "தேர்ந்தெடுத்த உரையை மட்டு�
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr ""
+msgstr "மேற்கோள்களை &விரிப்பதற்கான/சுருக்குவதற்கான அமைப்புகளை பின்பற்று"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
@@ -2560,7 +2560,7 @@ msgstr "HTML மூலம்"
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr ""
+msgstr "பயனருக்கு அஞ்சலை காட்ட பயன்படுத்தப்படும் HTML நிரல்தொடர்"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-08-05 11:53+0200\n"
+"PO-Revision-Date: 2023-08-06 05:36+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -1220,7 +1220,7 @@ msgstr "Erro nos valores mínimo ou máximo."
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr "Cambiar automaticamente o tamaño das imaxes"
+msgstr "Cambiar automaticamente o tamaño das imaxes."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1232,7 +1232,7 @@ msgstr "Xeral"
 #: imagescaling/ui/imagescalingwidget.ui:34
 #, kde-format
 msgid "Keep ratio"
-msgstr "Manter as proporcións"
+msgstr "Manter as proporcións."
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41
@@ -1286,7 +1286,7 @@ msgstr " px"
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr "Ampliar a imaxe ás dimensións mínimas"
+msgstr "Ampliar a imaxe ás dimensións mínimas."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
@@ -1374,7 +1374,7 @@ msgstr "Formato da imaxe"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr "Cambiar o tamaño de todas as imaxes que teñan un destes formatos"
+msgstr "Cambiar o tamaño de todas as imaxes que teñan un destes formatos."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
@@ -1775,7 +1775,7 @@ msgstr "Gardar a lista…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr "Gardar os destinatarios como lista de distribución"
+msgstr "Gardar os destinatarios como lista de distribución."
 
 #: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
@@ -1787,21 +1787,21 @@ msgstr "Se&leccionar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr "Seleccionar destinatarios na axenda de enderezos"
+msgstr "Seleccionar destinatarios na axenda de enderezos."
 
 #: recipient/recipientseditorsidewidget.cpp:77
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
-msgstr "Sen destinatarios"
+msgstr "Sen destinatarios."
 
 #: recipient/recipientseditorsidewidget.cpp:79
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] "1 destinatario"
-msgstr[1] "%1 destinatarios"
+msgstr[0] "1 destinatario."
+msgstr[1] "%1 destinatarios."
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
