@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2023-07-27 21:39+0200\n"
+"PO-Revision-Date: 2023-08-03 22:54+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1953,12 +1953,10 @@ msgid "We cannot save message."
 msgstr "Impossibile salvare il messaggio."
 
 #: utils/messageviewerutil.cpp:602
-#, fuzzy, kde-format
-#| msgctxt "Not able to attend."
-#| msgid "Declined: %1"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Rifiutato: %1"
+msgstr "Eliminato: %1"
 
 #: utils/messageviewerutil.cpp:613
 #, kde-format
@@ -1966,6 +1964,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Hai eliminato un allegato da questo messaggio. Le intestazioni MIME "
+"originali per l'allegato erano:"
 
 #: utils/messageviewerutil.cpp:640
 #, kde-format
