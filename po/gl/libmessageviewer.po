@@ -1,6 +1,5 @@
 # translation of kmail.po to galician
 # Copyright (C) 2003, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
-#
 # Xabi García <xabigf@gmx.net>, 2003, 2004.
 # Xabier García Feal <xabigf@gmx.net>, 2004.
 # Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
@@ -14,13 +13,14 @@
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2019-11-28 00:30+0100\n"
+"PO-Revision-Date: 2023-08-06 05:36+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -191,7 +191,7 @@ msgid ""
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
 "<b>Nota:</b> Esta mensaxe HTML podería conter referencias externas a imaxes "
-"e outras cousas. Por razóns de seguridade e intimidade non se cargan as "
+"e outras cousas. Por razóns de seguridade e privacidade non se cargan as "
 "referencias externas. Se confía no remitente da mensaxes pode cargar as "
 "referencias externas da mensaxes <a href=\"kmail:loadExternal\">premendo "
 "aquí</a>."
@@ -1676,7 +1676,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Eliminar os correos de convite unha vez enviada a resposta"
+msgstr "Eliminar os correos de convite unha vez enviada a resposta."
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:206
@@ -1726,13 +1726,13 @@ msgid ""
 "invitation replies"
 msgstr ""
 "Escolla esta opción para facer que Outlook(tm) comprenda as súas respostas "
-"aos convites"
+"aos convites."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
 #, kde-format
 msgid "&Mangle From:/To: headers in replies to invitations"
-msgstr "Xestionar as cabeceiras De:/Para: nas respostas aos convites"
+msgstr "Xestionar as cabeceiras De:/Para: nas respostas aos convites."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:33
@@ -1742,13 +1742,13 @@ msgid ""
 "invitations"
 msgstr ""
 "Escolla esta opción para facer que Outlook(tm) comprenda as súas respostas "
-"aos convites"
+"aos convites."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
 #, kde-format
 msgid "Send &invitations in the mail body"
-msgstr "Enviar os conv&ites no corpo da mensaxe"
+msgstr "Enviar os conv&ites no corpo da mensaxe."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:45
@@ -1770,7 +1770,7 @@ msgstr ""
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr "&Nomes de convites compatíbeis con Exchange"
+msgstr "&Nomes de convites compatíbeis con Exchange."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1786,7 +1786,7 @@ msgstr ""
 #: ui/invitationsettings.ui:58
 #, kde-format
 msgid "&Automatic invitation sending"
-msgstr "Envío &automático de convites"
+msgstr "Envío &automático de convites."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: ui/invitationsettings.ui:68
@@ -1798,25 +1798,25 @@ msgstr "Opcións"
 #: ui/printingsettings.ui:17
 #, kde-format
 msgid "Print only selected text"
-msgstr "Imprimir só o texto seleccionado"
+msgstr "Imprimir só o texto seleccionado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr "Respectar as marcas para d&espregar/pregar as citas de texto"
+msgstr "Respectar as marcas para d&espregar/pregar as citas de texto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
 #, kde-format
 msgid "Print background color and images"
-msgstr "Imprimir a cor e as imaxes do fondo"
+msgstr "Imprimir a cor e as imaxes do fondo."
 
 #. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
 #: ui/printingsettings.ui:38
 #, kde-format
 msgid "Always show encryption/signature details"
-msgstr "Amosar sempre os detalles de cifrado ou sinatura"
+msgstr "Amosar sempre os detalles de cifrado ou sinatura."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -1834,19 +1834,19 @@ msgstr "I&gnorar a codificación de caracteres:"
 #: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
-msgstr "Activar a tecla de acceso"
+msgstr "Activar a tecla de acceso."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
 #: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "Reducir o tama&ño de tipo de letra do texto citado"
+msgstr "Reducir o tama&ño de tipo de letra do texto citado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr "Amosar marcas para d&espregar/pregar as citas de texto"
+msgstr "Amosar marcas para d&espregar/pregar as citas de texto."
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -2118,7 +2118,7 @@ msgstr "Amosar o certificado 0x%1"
 #: viewer/urlhandlermanager.cpp:600
 #, kde-format
 msgid "&Open in Address Book"
-msgstr "&Abrir no caderno de enderezos"
+msgstr "&Abrir na axenda de enderezos"
 
 #: viewer/urlhandlermanager.cpp:602
 #, kde-format
