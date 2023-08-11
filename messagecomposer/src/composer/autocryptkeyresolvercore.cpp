@@ -5,10 +5,8 @@
 #include "composer/autocryptkeyresolvercore.h"
 
 #include <Akonadi/ContactSearchJob>
-#include <Libkleo/KeyResolverCore>
-#include <MessageCore/AutocryptStorage>
 #include <MessageComposer/ContactPreference>
-
+#include <MessageCore/AutocryptStorage>
 
 #include <messagecomposer_debug.h>
 
