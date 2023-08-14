@@ -863,7 +863,7 @@ void SignedMessagePart::sigStatusToMetaData()
     if (partMetaData()->isSigned) {
         GpgME::Signature signature = mSignatures.front();
         partMetaData()->status_code = signatureToStatus(signature);
-        partMetaData()->isGoodSignature = partMetaData()->status_code & GPGME_SIG_STAT_GOOD;
+        partMetaData()->isGoodSignature = partMetaData()->status_code == GPGME_SIG_STAT_GOOD;
         // save extended signature status flags
         partMetaData()->sigSummary = signature.summary();
 
