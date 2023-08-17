@@ -12,7 +12,7 @@
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
-namespace KPIMTextEdit
+namespace TextAddonsWidgets
 {
 class SlideContainer;
 }
@@ -54,7 +54,7 @@ private:
     KSyntaxHighlighting::Repository mRepo;
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
-    KPIMTextEdit::SlideContainer *const mSliderContainer;
+    TextAddonsWidgets::SlideContainer *const mSliderContainer;
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
 #endif

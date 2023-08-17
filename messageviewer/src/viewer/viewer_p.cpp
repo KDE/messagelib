@@ -25,7 +25,7 @@
 #include "messageviewer/headerstrategy.h"
 #include "messageviewer/headerstyle.h"
 #include "openurlwith/openurlwithmanager.h"
-#include <KPIMTextEdit/SlideContainer>
+#include <TextAddonsWidgets/SlideContainer>
 
 #include "job/modifymessagedisplayformatjob.h"
 
@@ -1412,11 +1412,11 @@ void ViewerPrivate::createWidgets()
     mViewerPluginToolManager->createView();
     connect(mViewerPluginToolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPrivate::slotActivatePlugin);
 
-    mSliderContainer = new KPIMTextEdit::SlideContainer(readerBox);
+    mSliderContainer = new TextAddonsWidgets::SlideContainer(readerBox);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     readerBoxVBoxLayout->addWidget(mSliderContainer);
     mFindBar = new WebEngineViewer::FindBarWebEngineView(mViewer, q);
-    connect(mFindBar, &WebEngineViewer::FindBarWebEngineView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(mFindBar, &WebEngineViewer::FindBarWebEngineView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);

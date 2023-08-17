@@ -9,7 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QDialog>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class RichTextEditorWidget;
 }
@@ -29,6 +29,6 @@ private:
     WEBENGINEVIEWER_NO_EXPORT void writeConfig();
     WEBENGINEVIEWER_NO_EXPORT void readConfig();
 
-    KPIMTextEdit::RichTextEditorWidget *const mDetails;
+    TextCustomEditor::RichTextEditorWidget *const mDetails;
 };
 }

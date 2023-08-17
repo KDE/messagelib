@@ -9,7 +9,7 @@
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 
-#include <KPIMTextEdit/RichTextEditorWidget>
+#include <TextCustomEditor/RichTextEditorWidget>
 
 #include <KLocalizedString>
 
@@ -35,7 +35,7 @@ static const char myScamDetectionDetailsDialogConfigGroupName[] = "ScamDetection
 }
 ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     : QDialog(parent)
-    , mDetails(new KPIMTextEdit::RichTextEditorWidget(this))
+    , mDetails(new TextCustomEditor::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);

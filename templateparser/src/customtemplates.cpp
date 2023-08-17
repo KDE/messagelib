@@ -12,7 +12,7 @@
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 #include "ui_customtemplates_base.h"
 #include <KLineEditEventHandler>
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 
 #include <KLocalizedString>
 #include <KMessageBox>

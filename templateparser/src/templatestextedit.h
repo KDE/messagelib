@@ -7,7 +7,7 @@
 
 #include "templateparser_export.h"
 
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 namespace TemplateParser
 {
@@ -15,7 +15,7 @@ namespace TemplateParser
  * @brief The TemplatesTextEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public KPIMTextEdit::PlainTextEditorWidget
+class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public TextCustomEditor::PlainTextEditorWidget
 {
     Q_OBJECT
 public:

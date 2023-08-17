@@ -12,7 +12,7 @@
 #include "findbar/findbarsourceview.h"
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
-#include <KPIMTextEdit/SlideContainer>
+#include <TextAddonsWidgets/SlideContainer>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -38,7 +38,7 @@
 using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
-    , mSliderContainer(new KPIMTextEdit::SlideContainer(this))
+    , mSliderContainer(new TextAddonsWidgets::SlideContainer(this))
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     , mTextToSpeechContainerWidget(new TextEditTextToSpeech::TextToSpeechContainerWidget(this))
 #endif
@@ -71,7 +71,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
 
     mFindBar = new FindBarSourceView(mTextBrowser, this);
     mFindBar->setObjectName(QStringLiteral("findbar"));
-    connect(mFindBar, &FindBarSourceView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(mFindBar, &FindBarSourceView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
     lay->addWidget(mSliderContainer);

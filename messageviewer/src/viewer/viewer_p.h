@@ -50,7 +50,7 @@ namespace KIdentityManagementCore
 class IdentityManager;
 }
 
-namespace KPIMTextEdit
+namespace TextAddonsWidgets
 {
 class SlideContainer;
 }
@@ -708,7 +708,7 @@ public:
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
     PimCommon::ShareServiceUrlManager *mShareServiceManager = nullptr;
     KActionMenu *mShareServiceUrlMenu = nullptr;
     MessageViewer::HeaderStylePlugin *mHeaderStylePlugin = nullptr;

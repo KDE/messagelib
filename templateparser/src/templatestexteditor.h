@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 
 #include <KSyntaxHighlighting/Repository>
 
@@ -17,7 +17,7 @@ class TextEditorCompleter;
 }
 namespace TemplateParser
 {
-class TemplatesTextEditor : public KPIMTextEdit::PlainTextEditor
+class TemplatesTextEditor : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 public:

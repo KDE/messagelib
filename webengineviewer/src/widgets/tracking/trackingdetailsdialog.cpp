@@ -7,13 +7,13 @@
 #include "trackingdetailsdialog.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KPIMTextEdit/RichTextEditorWidget>
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextCustomEditor/RichTextEditorWidget>
 
 using namespace WebEngineViewer;
 namespace
@@ -22,7 +22,7 @@ static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDe
 }
 TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)
-    , mDetails(new KPIMTextEdit::RichTextEditorWidget(this))
+    , mDetails(new TextCustomEditor::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);

@@ -9,7 +9,7 @@
 using namespace TemplateParser;
 
 TemplatesTextEdit::TemplatesTextEdit(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditorWidget(new TemplatesTextEditor, parent)
+    : TextCustomEditor::PlainTextEditorWidget(new TemplatesTextEditor, parent)
 {
 }
 

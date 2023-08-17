@@ -8,7 +8,7 @@
 #include "templatesconfiguration.h"
 #include "globalsettings_templateparser.h"
 #include "templatesconfiguration_kfg.h"
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 
 #include "templateparser_debug.h"
 #include <KLocalizedString>

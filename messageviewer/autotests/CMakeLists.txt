@@ -35,7 +35,7 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::PimTextEdit
-        KPim6::PimCommon KPim6::MessageViewer KPim6::WebEngineViewer KF6::SyntaxHighlighting
+        KPim6::PimCommon KPim6::MessageViewer KPim6::WebEngineViewer KF6::SyntaxHighlighting KF6::TextAddonsWidgets
         KF6::I18n KF6::IconThemes
     )
     if (TARGET KF6::TextEditTextToSpeech)

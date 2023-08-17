@@ -10,7 +10,7 @@ using namespace MessageViewer;
 
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
-#include <KPIMTextEdit/SlideContainer>
+// #include <TextAddonsWidgets/SlideContainer>
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>

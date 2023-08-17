@@ -430,6 +430,7 @@ target_link_libraries(KPim6MessageViewer
     Qt::PrintSupport
     qca-qt6
     KF6::Notifications
+    KF6::TextAddonsWidgets
     )
 
 if (TARGET KF6::TextEditTextToSpeech)

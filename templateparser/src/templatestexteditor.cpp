@@ -7,8 +7,8 @@
 #include "templatestexteditor.h"
 #include "templatesutil_p.h"
 
-#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
 #include <KPIMTextEdit/TextEditorCompleter>
+#include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
@@ -20,7 +20,7 @@
 using namespace TemplateParser;
 
 TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent)
+    : TextCustomEditor::PlainTextEditor(parent)
 {
     setFocus();
     const QFont f = QFontDatabase::systemFont(QFontDatabase::FixedFont);
@@ -42,7 +42,7 @@ TemplatesTextEditor::~TemplatesTextEditor() = default;
 
 void TemplatesTextEditor::updateHighLighter()
 {
-    auto hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
+    auto hlighter = dynamic_cast<TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
@@ -55,7 +55,7 @@ void TemplatesTextEditor::clearDecorator()
 
 void TemplatesTextEditor::createHighlighter()
 {
-    auto highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
+    auto highlighter = new TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("KMail Template")));
@@ -96,7 +96,7 @@ void TemplatesTextEditor::keyPressEvent(QKeyEvent *e)
             break;
         }
     }
-    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
+    TextCustomEditor::PlainTextEditor::keyPressEvent(e);
     mTextEditorCompleter->completeText();
 }
 

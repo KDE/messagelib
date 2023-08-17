@@ -9,7 +9,7 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class RichTextEditorWidget;
 }
@@ -29,6 +29,6 @@ private:
     void slotSaveAs();
     void writeConfig();
     void readConfig();
-    KPIMTextEdit::RichTextEditorWidget *const mDetails;
+    TextCustomEditor::RichTextEditorWidget *const mDetails;
 };
 }
