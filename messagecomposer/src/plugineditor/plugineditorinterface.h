@@ -12,7 +12,7 @@
 #include <QObject>
 
 class QKeyEvent;
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class RichTextEditor;
 }
@@ -45,8 +45,8 @@ public:
     void setActionType(PluginActionType type);
     Q_REQUIRED_RESULT PluginActionType actionType() const;
 
-    Q_REQUIRED_RESULT KPIMTextEdit::RichTextEditor *richTextEditor() const;
-    void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
+    Q_REQUIRED_RESULT TextCustomEditor::RichTextEditor *richTextEditor() const;
+    void setRichTextEditor(TextCustomEditor::RichTextEditor *richTextEditor);
 
     void setNeedSelectedText(bool b);
     Q_REQUIRED_RESULT bool needSelectedText() const;

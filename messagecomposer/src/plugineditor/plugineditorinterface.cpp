@@ -22,7 +22,7 @@ public:
     PluginEditorInterface::ApplyOnFieldTypes mApplyOnFieldTypes = {PluginEditorInterface::ApplyOnFieldType::All};
     PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
-    KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
+    TextCustomEditor::RichTextEditor *mRichTextEditor = nullptr;
     MessageComposer::PluginComposerInterface *mComposerInterface = nullptr;
     PluginEditor *plugin = nullptr;
     QWidget *statusBarWidget = nullptr;
@@ -47,12 +47,12 @@ PluginActionType PluginEditorInterface::actionType() const
     return d->mActionType;
 }
 
-KPIMTextEdit::RichTextEditor *PluginEditorInterface::richTextEditor() const
+TextCustomEditor::RichTextEditor *PluginEditorInterface::richTextEditor() const
 {
     return d->mRichTextEditor;
 }
 
-void PluginEditorInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor)
+void PluginEditorInterface::setRichTextEditor(TextCustomEditor::RichTextEditor *richTextEditor)
 {
     d->mRichTextEditor = richTextEditor;
 }
