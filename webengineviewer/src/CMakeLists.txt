@@ -157,7 +157,6 @@ target_link_libraries(KPim6WebEngineViewer
     PUBLIC
     Qt::WebEngineWidgets
     KPim6::PimCommon
-    KPim6::PimTextEdit
     PRIVATE
     KF6::CoreAddons
     KF6::XmlGui
