@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-08-02 11:25+0200\n"
+"PO-Revision-Date: 2023-08-17 20:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -371,10 +371,9 @@ msgid "Suggest Automatic Display"
 msgstr "Iradoki automatikoki azaltzea"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Editatu honekin..."
+msgstr "Editatu honekin:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -382,6 +381,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail ez da, aukeratutako editorea itxita noiz dagoen antzemateko gai. Datu "
+"galera saihesteko, eranskina editatzea bertan behera utziko da."
 
 #: composer/composer.cpp:289
 #, kde-format
@@ -578,6 +579,9 @@ msgid ""
 "whether or not to sign this message.\n"
 "Sign this message?"
 msgstr ""
+"Hartzailearen sinadura-hobespenen azterketak, mezu hau sinatu nahi duzun ala "
+"ez galdetzea ekarri du.\n"
+"Mezu hori sinatu nahi duzu?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
@@ -682,6 +686,9 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
+"Hartzailearen zifratzeko hobespenen azterketak, mezu hau zifratu behar den "
+"edo ez zuri galdetzeko beharra eman du.\n"
+"Mezua hori zifratu?"
 
 #: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
 #, kde-format
@@ -731,6 +738,9 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
+"Mezu hau zifratzea eskatu duzu, baita zeure buruarentzako kopia bat "
+"zifratzea ere, baina nortasun honetarako ez da konfiantzazko zifratzeko gako "
+"baliodunik konfiguratu."
 
 #: composer/composerviewbase.cpp:2151
 #, kde-format
@@ -784,6 +794,8 @@ msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr ""
+"Konfiguratuta dauden zure zifratzeko OpenPGP edo S/MIME ziurtagirietako "
+"batek edo gehiagok ez dauka zifratzeko erabateko konfiantza."
 
 #: composer/keyresolver.cpp:313
 #, kde-format
@@ -791,6 +803,8 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
+"\"%1\" hartzailearentzat konfiguratuta dauden zifratzeko OpenPGP edo S/MIME "
+"ziurtagirietako batek edo gehiagok ez dauka zifratzeko erabateko konfiantza."
 
 #: composer/keyresolver.cpp:320
 #, kde-format
@@ -798,6 +812,8 @@ msgid ""
 "\n"
 "The following keys are only marginally trusted: \n"
 msgstr ""
+"\n"
+"Ondoko gakoek bazterreko konfiantza besterik ez dute:\n"
 
 #: composer/keyresolver.cpp:324
 #, kde-format
@@ -805,6 +821,8 @@ msgid ""
 "\n"
 "The following keys or certificates have unknown trust level: \n"
 msgstr ""
+"\n"
+"Ondoko gakoek edo ziurtagiriek konfiantza maila ezezaguna dute:\n"
 
 #: composer/keyresolver.cpp:328
 #, kde-format
@@ -812,11 +830,13 @@ msgid ""
 "\n"
 "The following keys or certificates are <b>revoked</b>: \n"
 msgstr ""
+"\n"
+"Ondoko gakoak edo ziurtagiriak <b>indargabetuta</b> daude:\n"
 
 #: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
-msgstr ""
+msgstr "Ez dago erabateko konfiantza duen zifratzeko gakorik"
 
 #: composer/keyresolver.cpp:648
 #, kde-format
@@ -912,7 +932,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1154
 #, kde-format
 msgid "No signing possible"
-msgstr ""
+msgstr "Ezin da sinatu"
 
 #: composer/keyresolver.cpp:1317
 #, kde-format
@@ -920,6 +940,8 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
+"Ez zenuen zeure buruarentzako zifratzeko gakorik aukeratu (norberarentzat "
+"zifratzeko). Zeure mezua zifratzen baduzu, ezingo duzu deszifratu."
 
 #: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
 #: composer/keyresolver.cpp:1356
@@ -1845,7 +1867,7 @@ msgstr ""
 #: sendlater/ui/sendlaterwidget.ui:29
 #, kde-format
 msgid "Send at:"
-msgstr ""
+msgstr "Noiz bidali:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -1877,7 +1899,7 @@ msgstr "A&utomatikoki txertatu sinadura"
 #: settings/messagecomposer.kcfg.cmake:36
 #, kde-format
 msgid "Insert signature above quoted text"
-msgstr ""
+msgstr "Sartu sinadura aipua duen testuaren gainetik"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:40
