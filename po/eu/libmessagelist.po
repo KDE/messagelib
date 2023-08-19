@@ -1,6 +1,5 @@
 # Translation for libmessagelist.po to Euskara/Basque (eu).
-# Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# Copyright (C) 2008-2021, This file is Copyright:
+# Copyright (C) 2003-2021, This file is Copyright:
 # This file is distributed under the same license as the messagelib package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
@@ -10,20 +9,20 @@
 # Marcos <marcos@euskalgnu.org>, 2005.
 # marcos <marcos@euskalgnu.org>, 2006.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2021-04-27 18:16+0200\n"
+"PO-Revision-Date: 2023-08-18 11:42+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/aggregation.cpp:178
@@ -1051,13 +1050,12 @@ msgstr[1] "<b>%1</b> mezu (<b>%2</b> irakurri gabe)"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "Definitutako edozein iragazki."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgid "Create Filter"
-msgstr "Hustu iragazkia"
+msgstr "Sortu iragazkia"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1103,48 +1101,41 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "Karpetak beti erabiltzen du sailkatzeko hurrenkera hau"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Configure &Filters..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "Konfiguratu &iragazkiak..."
+msgstr "Konfiguratu iragazkia"
 
 #: core/widgets/configurefilterswidget.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove"
-msgstr "&Kendu"
+msgstr "Kendu"
 
 #: core/widgets/configurefilterswidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "«%1» ezabatu nahi duzu?"
+msgstr "Iragazki hori ezabatu nahi duzu?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Rename Filter"
+#, kde-format
 msgid "Remove Filter"
-msgstr "Berrizendatu iragazkia"
+msgstr "Kendu iragazkia"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgid "Save List..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "Gorde zerrenda..."
+msgstr "Editatu iragazkia"
 
 #: core/widgets/filternamewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgid "Name:"
 msgstr "Izena:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save List..."
+#, kde-format
 msgid "Save Filter..."
-msgstr "Gorde zerrenda..."
+msgstr "Gorde iragazkia..."
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1201,10 +1192,9 @@ msgid "Filter Mails by Status"
 msgstr "Iragazi postak egoeraren arabera"
 
 #: core/widgets/searchlinestatus.cpp:116
-#, fuzzy, kde-format
-#| msgid "Save List..."
+#, kde-format
 msgid "Saved Filter"
-msgstr "Gorde zerrenda..."
+msgstr "Gordetako iragazkia"
 
 #: core/widgets/searchlinestatus.cpp:215
 #, kde-format
@@ -1377,12 +1367,12 @@ msgstr "Aktibatu aurreko fitxa"
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "Eraman fitxa ezkerrera"
+msgstr "Mugitu fitxa ezkerrera"
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "Eraman fitxa eskuinera"
+msgstr "Mugitu fitxa eskuinera"
 
 #: pane.cpp:298
 #, kde-format
@@ -1817,12 +1807,12 @@ msgstr "Ezabatu zutabea"
 #: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Left"
-msgstr "Eraman zutabea ezkerrera"
+msgstr "Mugitu zutabea ezkerrera"
 
 #: utils/themeeditor.cpp:1180
 #, kde-format
 msgid "Move Column to Right"
-msgstr "Eraman zutabea eskuinera"
+msgstr "Mugitu zutabea eskuinera"
 
 #: utils/themeeditor.cpp:1229
 #, kde-format
@@ -1906,23 +1896,19 @@ msgid "Collapse All Groups"
 msgstr "Tolestu talde guztiak"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "Ex&pand All Threads"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Z&abaldu hari guztiak"
+msgstr "Zabaldu hari guztiak"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "C&ollapse All Threads"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "T&olestu hari guztiak"
+msgstr "Tolestu hari guztiak"
 
 #: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
-msgstr "Era&man hona"
+msgstr "&Mugitu hona"
 
 #: widget.cpp:420
 #, kde-format
