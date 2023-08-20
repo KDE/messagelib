@@ -7,8 +7,8 @@
 #include "templatestexteditor.h"
 #include "templatesutil_p.h"
 
-#include <KPIMTextEdit/TextEditorCompleter>
 #include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
+#include <TextCustomEditor/TextEditorCompleter>
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
@@ -76,7 +76,7 @@ void TemplatesTextEditor::initCompleter()
     listWord << excludeKeyWord;
     listWord << Util::keywordsWithArgs();
 
-    mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
+    mTextEditorCompleter = new TextCustomEditor::TextEditorCompleter(this, this);
     mTextEditorCompleter->setCompleterStringList(listWord);
     mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$^&*()+{}|\"<>,./;'[]\\-= "));
 }

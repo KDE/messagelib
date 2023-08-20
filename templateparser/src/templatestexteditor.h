@@ -11,7 +11,7 @@
 #include <KSyntaxHighlighting/Repository>
 
 class QKeyEvent;
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class TextEditorCompleter;
 }
@@ -34,7 +34,7 @@ protected:
     void createHighlighter() override;
 
 private:
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    TextCustomEditor::TextEditorCompleter *mTextEditorCompleter = nullptr;
     KSyntaxHighlighting::Repository mSyntaxRepo;
 };
 }
