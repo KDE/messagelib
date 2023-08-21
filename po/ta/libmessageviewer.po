@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2023-08-06 14:00+0530\n"
+"PO-Revision-Date: 2023-08-20 16:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -2493,7 +2493,7 @@ msgctxt ""
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
-msgstr "<qt><b><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br></qt>"
+msgstr "<qt><b><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br></b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
 #, kde-format
@@ -2519,7 +2519,9 @@ msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
-msgstr "<qt><br>நா<br>ள்<br><br>கா<br>ட்<br>டி<br>அ<br> <br>ஞ்<br>ச<br>ல்<br></qt>"
+msgstr ""
+"<qt><br />நா<br />ள்<br /><br />கா<br />ட்<br />டி<br />அ<br /> <br />ஞ்<br /"
+">ச<br />ல்<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
