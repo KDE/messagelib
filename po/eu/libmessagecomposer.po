@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-08-17 20:16+0200\n"
+"PO-Revision-Date: 2023-08-22 00:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -794,8 +794,8 @@ msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr ""
-"Konfiguratuta dauden zure zifratzeko OpenPGP edo S/MIME ziurtagirietako "
-"batek edo gehiagok ez dauka zifratzeko erabateko konfiantza."
+"Zifratzeko konfiguratuta duzun OpenPGP gako edo S/MIME ziurtagiri batek edo "
+"gehiagok ez dauka zifratzeko erabateko konfiantza."
 
 #: composer/keyresolver.cpp:313
 #, kde-format
@@ -848,6 +848,12 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"Zifratzeko konfiguratuta duzun OpenPGP gako edo S/MIME ziurtagiri bat edo "
+"gehiago ezin da zifratzeko erabili. Mesedez, berriz konfiguratu nortasun "
+"horretarako zifratzeko zure gakoak eta ziurtagiriak, nortasuna "
+"konfiguratzeko elkarrizketa-koadroan.\n"
+"Jarraitzea aukeratzen baduzu, eta aurrerago gakoak behar badira, erabili "
+"beharreko gakoak zehaztea eskatuko zaizu."
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
@@ -864,6 +870,12 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"Zifratzeko konfiguratuta duzun OpenPGP gako edo S/MIME ziurtagiri bat edo "
+"gehiago ezin da zifratzeko erabili. Mesedez, berriz konfiguratu nortasun "
+"horretarako zifratzeko zure gakoak eta ziurtagiriak, nortasuna "
+"konfiguratzeko elkarrizketa-koadroan.\n"
+"Jarraitzea aukeratzen baduzu, eta aurrerago gakoak behar badira, erabili "
+"beharreko gakoak zehaztea eskatuko zaizu."
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
@@ -881,6 +893,12 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"Hartzaileen zifratze-hobespenen azterketak, hartzaile batzuetarako "
+"gutxienez, mezua OpenPGP erabiliz zifratu beharko litzatekeela eman du;\n"
+"hala ere, nortasun honetarako ez duzu konfiantza duen zifratzeko OpenPGP "
+"gakorik konfiguratu.\n"
+"Zeure buruarentzako zifratu gabe jarrai dezakezu, baina jakin ezazu hala "
+"eginez gero, zure mezu propioak ezingo dituzula irakurri."
 
 #: composer/keyresolver.cpp:1030
 #, kde-format
@@ -892,6 +910,12 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"Hartzaileen zifratze-hobespenen azterketak, hartzaile batzuetarako "
+"gutxienez, mezua S/MIME erabiliz zifratu beharko litzatekeela eman du;\n"
+"hala ere, nortasun honetarako ez duzu konfiantza duen zifratzeko S/MIME "
+"gakorik konfiguratu.\n"
+"Zeure buruarentzako zifratu gabe jarrai dezakezu, baina jakin ezazu hala "
+"eginez gero, zure mezu propioak ezingo dituzula irakurri."
 
 #: composer/keyresolver.cpp:1062
 #, kde-format
@@ -901,6 +925,10 @@ msgid ""
 "however, you have not configured valid OpenPGP signing certificates for this "
 "identity."
 msgstr ""
+"Hartzaileen sinatze-hobespenen azterketak, hartzaile batzuetarako gutxienez, "
+"mezua OpenPGP erabiliz sinatu beharko litzatekeela eman du;\n"
+"hala ere, nortasun honetarako ez duzu konfiantza duen sinatzeko OpenPGP "
+"ziurtagiririk konfiguratu."
 
 #: composer/keyresolver.cpp:1070
 #, kde-format
@@ -915,6 +943,10 @@ msgid ""
 "however, you have not configured valid S/MIME signing certificates for this "
 "identity."
 msgstr ""
+"Hartzaileen sinatze-hobespenen azterketak, hartzaile batzuetarako gutxienez, "
+"mezua S/MIME erabiliz sinatu beharko litzatekeela eman du;\n"
+"hala ere, nortasun honetarako ez duzu konfiantza duen sinatzeko S/MIME "
+"ziurtagiririk konfiguratu."
 
 #: composer/keyresolver.cpp:1088
 #, kde-format
@@ -928,6 +960,9 @@ msgid ""
 "signature matching your available signing keys.\n"
 "Send message without signing?"
 msgstr ""
+"Hartzaileen sinatze-hobespenen azterketak, erakutsi du ez dagoela zure "
+"sinatzeko gako erabilgarriekin bat datorren sinadura mota komunik.\n"
+" Mezua sinatu gabe bidali?"
 
 #: composer/keyresolver.cpp:1154
 #, kde-format
@@ -1000,6 +1035,10 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
+"Arazo bat dago \"%1\"(e)rako zifratzeko ziurtagiri(ar)ekin.\n"
+"\n"
+"Mesedez, berriz aukeratu hartzaile honetarako erabili beharreko "
+"ziurtagiria(k)."
 
 #: composer/keyresolver.cpp:1544
 #, kde-format
@@ -1013,6 +1052,10 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
+"<qt>Ez da aurkitu \"%1\"(r)entzako zifratzeko ziurtagiri baliodun eta "
+"konfiantzadunik.<br/><br/>Hautatu hartzaile honetarako erabili beharreko "
+"ziurtagiria(k). Zerrendan ziurtagiri egokirik ez badago, botoia sakatuz "
+"kanpoko ziurtagiriak bila ditzakezu: bilatu kanpoko ziurtagiriak.</qt>"
 
 #: composer/keyresolver.cpp:1554
 #, kde-format
@@ -1046,7 +1089,7 @@ msgstr "Hautatu kontaktu berria gordetzeko helbide-liburu karpeta:"
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr ""
+msgstr "Itxoin \"%1\"(e)ren erantzuna bidali \"%2\"(e)ri"
 
 #: followupreminder/followupremindercreatejob.cpp:99
 #, kde-format
@@ -1054,11 +1097,13 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"Oroigarri berri bat biltegiratzea huts egin du: errorea, zure egutegian "
+"zeregin berri bat sortzen saiatzean sortu da: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr ""
+msgstr "Oroigarri berri bat biltegiratzea huts egin du: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
 #, kde-format
@@ -1115,6 +1160,10 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"\n"
+"Hori, MIME laburpen birbidali  bat da. Mezuaren edukia eranskine(t)an dago.\n"
+"\n"
+"\n"
 
 #: imagescaling/imagescalingselectformat.cpp:24
 #, kde-format
@@ -1139,6 +1188,10 @@ msgid ""
 "current time</li><li>%d set current date</li><li>%n original filename</"
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
+"<qt><p>Hemen irudiaren fitxategi-izena definitu dezakezu. Erabil ditzakezu: "
+"</p><ul><li>%t ezarri uneko ordua</li><li>%d ezarri egungo data</li><li>%n "
+"jatorrizko fitxategi-izena</li><li>%e jatorrizko hedapena</li><li>%x hedapen "
+"berria</li></ul></qt>"
 
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
@@ -1244,6 +1297,7 @@ msgstr "Gutxieneko altuera:"
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
 msgstr ""
+"Ezikusi sorburu fitxategiaren neurria hori baino txikiagoa duen irudia:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
@@ -1261,7 +1315,7 @@ msgstr "Fitxategi-izena"
 #: imagescaling/ui/imagescalingwidget.ui:269
 #, kde-format
 msgid "Source filter"
-msgstr ""
+msgstr "Sorburu iragazkia"
 
 #. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
 #: imagescaling/ui/imagescalingwidget.ui:275
@@ -1345,25 +1399,25 @@ msgstr "Ez iragazi (hartzaile guztiak baimentzen dira)"
 #: imagescaling/ui/imagescalingwidget.ui:405
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "Neurria aldatu e-posta helbideetako bakoitzak ereduetako bat badu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "Neurria aldatu e-posta helbidetako batek ereduetako bat badu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "Neurria ez aldatu e-posta helbideetako bakoitzak ereduetako bat badu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "Neurria ez aldatu e-posta helbidetako batek ereduetako bat badu"
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
@@ -1425,16 +1479,21 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
+"<p>Errore bat gertatu da bizkarraldekotik gakoa esportatzen saiatzean:</"
+"p><p><b>Ez da aurkitu %1 (%2) erabiltzailearentzako gako baliodunik</b></p>"
 
 #: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
+"Testu itzulbira erabiltzea eskatu da, baina ez da eman itzulbira duen testu "
+"soila."
 
 #: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
+"Testu itzulbira ez erabiltzeko eskatu da, baina ez da eman testu soil garbia."
 
 #: job/maintextjob.cpp:81
 #, kde-format
@@ -1442,6 +1501,9 @@ msgid ""
 "No charsets were available for encoding. Please check your configuration and "
 "make sure it contains at least one charset for sending."
 msgstr ""
+"Ez zegoen kodetzeko karaktere-multzorik erabilgarri. Mesedez, egiaztatu zure "
+"konfigurazioa eta ziurtatu bidalketarako karaktere-multzo bat gutxienez "
+"baduzula."
 
 #: job/maintextjob.cpp:99
 #, kde-format
@@ -1475,23 +1537,23 @@ msgstr "Erabiltzaileak kodeketa aldatzea erabaki du."
 #: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr ""
+msgstr "Hautatutako (%1) kodeketak ezin du mezua osorik kodetu."
 
 #: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr ""
+msgstr "Ezin izan du lortu \"%1\" karaktere multzoaren kodeka."
 
 #: job/singlepartjob.cpp:67
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr ""
+msgstr "%1 eduki-igorpen-kodeketak ezin du mezu hau behar bezala kodetu."
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "Mezu disposizioaren jakinarazpen eskaera"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1515,6 +1577,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Mezu honek zuk jaso izanaren jakinarazpen bat bidaltzeko eskaera bat du.\n"
+"Eskaera ezikusi dezakezu, edo posta programari «ukatua» erantzuna edo "
+"erantzun arrunt bat bidaltzen utz diezaiokezu."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1525,6 +1590,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"Mezu honek zuk jaso izanaren jakinarazpen bat bidaltzeko eskaera bat du.\n"
+"«beharrezkoa» gisa markatuta dagoen prozesatzeko jarraibide bat du, posta "
+"programari ezezaguna zaiona.\n"
+"Eskaera ez-ikusi dezakezu, edo posta programari «hutsegina» erantzun bat "
+"bidaltzen utz diezaiokezu."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1534,6 +1604,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Mezu honek zuk jaso izanaren jakinarazpen bat bidaltzeko eskaera bat du,\n"
+"baina jakinarazpena helbide bat baino gehiagotara bidaltzea eskatzen da.\n"
+"Eskaera ezikusi dezakezu, edo posta programari «ukatua» erantzun bat "
+"bidaltzen utz diezaiokezu."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1543,6 +1617,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Mezu honek zuk jaso izanaren jakinarazpen bat bidaltzeko eskaera bat du,\n"
+"baino ez da itzulerako bide-izenik ezarri.\n"
+"Eskaera ezikusi dezakezu, edo posta programari «ukatua» erantzuna edo "
+"erantzun arrunt bat bidaltzen utz diezaiokezu."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1553,6 +1631,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Mezu honek zuk jaso izanaren jakinarazpen bat bidaltzeko eskaera bat du,\n"
+"baino itzulerako bide-izeneko\n"
+"helbidea ez dator bat jakinarazpena bidaltzeko eskatutako helbidearekin.\n"
+"Eskaera ezikusi dezakezu, edo posta programari «ukatua» erantzuna edo "
+"erantzun arrunt bat bidaltzen utz diezaiokezu."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1683,8 +1766,8 @@ msgstr "Ezarri mezu hau jaso behar duten e-posta helbideen zerenda"
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hartzaileen zerrenda %1(e)tik %2(e)ra moztu."
+msgstr[1] "Hartzaileen zerrenda %1(e)tik %2(e)ra moztu."
 
 #: recipient/recipientseditorsidewidget.cpp:41
 #, kde-format
@@ -1783,8 +1866,8 @@ msgstr "Gehitu &BCC gisa"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "E-posta %1 hautatu da"
+msgstr[1] "%1 e-posta hautatu dira"
 
 #: recipient/recipientspicker.cpp:172
 #, kde-format
@@ -1856,12 +1939,12 @@ msgstr "«Bidali beranduago» agentea ez dago martxan."
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "Beranduago bidaltzeko antolaketatik mezua kentzea huts egin du: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
 #, kde-format
 msgid "You cannot select a date prior to the current date."
-msgstr ""
+msgstr "Ezin duzu egungo data aurreko data bat aukeratu."
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
@@ -1905,13 +1988,13 @@ msgstr "Sartu sinadura aipua duen testuaren gainetik"
 #: settings/messagecomposer.kcfg.cmake:40
 #, kde-format
 msgid "Prepend separator to signature"
-msgstr ""
+msgstr "Ipini banatzekoa sinaduraren aurretik"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:45
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr ""
+msgstr "Erabili e-postetatik indexatutako helbideak osatze automatikorako"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:46
@@ -1920,6 +2003,8 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
+"Ezgaitu aukera hori, konposatzailearen helbide-eremuan osatze-automatikoren "
+"zerrendan bakarrik zure helbide-liburuko kontaktuak agertzea nahi baduzu."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:52
@@ -1928,6 +2013,8 @@ msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
 msgstr ""
+"Baimendu, mezu konposatzailean puntu eta koma (';') karakterea bereizle gisa "
+"erabiltzea"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:55
@@ -1942,6 +2029,8 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
+"Ezgaitu aukera hori azken aldian erabilitako helbideak konposatzailearen "
+"helbide-eremuko osatze-automatikoren zerrendan agertzerik nahi ez baduzu."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:61
@@ -2018,6 +2107,8 @@ msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
 msgstr ""
+"Abisu bat eman aurretik zifratze-ziurtagiriari baliozkoa izateari uzteko "
+"gelditu behar zaion gutxieneko egun kopurua"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:113
@@ -2026,6 +2117,8 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
+"Abisu bat eman aurretik kateko ziurtagiriari denek baliozkoa izateari uzteko "
+"gelditu behar zaien gutxieneko egun kopurua"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:117
@@ -2034,6 +2127,8 @@ msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
 msgstr ""
+"Abisu bat eman aurretik erro ziurtagiriari baliozkoa izateari uzteko gelditu "
+"behar zaion gutxieneko egun kopurua"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:121

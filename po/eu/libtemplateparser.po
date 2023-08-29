@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2023-08-18 23:25+0200\n"
+"PO-Revision-Date: 2023-08-20 00:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -63,6 +63,17 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
+"<qt><p>Hemen, erantzun edo birbidaltze mezu bat idaztean erabiltzeko, "
+"neurrira egokitutako mezu txantiloiak gehitu, editatu eta ezabatu ditzakezu. "
+"Sortu neurrira egokitutako txantiloia, sarrerako laukian izena tekleatu eta "
+"'+' botoia sakatuz. Gainera, eragiketak azkartzeko, txantiloiari teklatuko "
+"konbinazio bat lotu diezaiokezu.</p><p>Mezuen txantiloiek ordezkapen-"
+"komandoak onartzen dituzte, haiek tekleatuz edo <i>Txertatu komandoa</i> "
+"menutik haiek hautatuz.</p><p>Neurrira egokitutako lau txantiloi mota daude: "
+"haien erabilera, <i>Erantzun</i>, <i>Erantzun denei</i>, <i>Birbidali</i>, "
+"eta <i>Unibertsala</i>, eragiketa mota guztietarako erabil daitekeena. "
+"<i>Unibertsala</i> txantiloiei ezin zaie teklatuko lasterbiderik lotu.</p></"
+"qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -228,7 +239,7 @@ msgid ""
 "text or HTML)"
 msgstr ""
 "Erantzun edo birbidali jatorrizko mezuaren ikuste-formatu bera erabiliz "
-"(testu laua edo HTML)"
+"(testu soila edo HTML)"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -401,7 +412,7 @@ msgstr "Goiburuaren edukia"
 
 #: templatescommandmenu.cpp:82
 msgid "Reply as Quoted Plain Text"
-msgstr "Erantzuna aipu arteko testu lau gisa"
+msgstr "Erantzuna aipu arteko testu soil gisa"
 
 #: templatescommandmenu.cpp:84
 msgid "Reply as Quoted HTML Text"
@@ -532,6 +543,10 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
+"<p>Hemen, mezu berriak, erantzunak eta birbidaltzeko mezuak idaztean "
+"erabiltzeko txantiloiak sortu eta kudeatu ditzakezu.</p><p>Mezuen "
+"txantiloiek ordezkapen-komandoak onartzen dituzte, haiek tekleatuz edo "
+"<i>Txertatu komandoa</i> menutik haiek hautatuz.</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -539,6 +554,8 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
+"<p>Hemen zehaztutako txantiloiak karpetarenak berariazkoak dira. Txantiloi "
+"globalak eta nortasunekoak baliogabetzen dituzte.</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -547,6 +564,8 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
+"<p>Hemen zehaztutako txantiloiak nortasunarenak berariazkoak dira. Txantiloi "
+"globalak eta nortasunekoak baliogabetzen dituzte.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -554,11 +573,15 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
+"<p>Horiek txantiloi global (lehenetsiak) dira. Haiek zehaztuz gero, "
+"nortasuneko edo karpetako txantiloiak baliogabetu ditzakete.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
+"Uneko txantiloia edo txantiloi denak balio lehenetsietan berrezarri nahi "
+"dituzu?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
@@ -584,6 +607,13 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
+"\"Erantzun testu soila erabiliz\"  eta \" Erantzun HTML testua erabiliz\" "
+"bikotean erabiltzea ez da zuzena. Erabili aipatutako komandoetako bat "
+"\"Erantzun aipu arteko mezu komandoa\" zure beharren arabera\n"
+"(a) Erantzun testu soila erabiliz aipuak, zorrotz, testu soilean egon "
+"daitezen\n"
+"(b) Erantzun HTML testua erabiliz aipuak HTML formatuan baleude hala egon "
+"daitezen"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
@@ -604,6 +634,9 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
+"Menu hori gurutzatu, editatzen ari zaren txantiloian txertatzeko komando bat "
+"aurkitzeko. Komandoa kurtsorearen kokalekuan txertatuko da, beraz, aurrena, "
+"zure kurtsorea txertatzea nahi duzun puntura mugitu behar duzu."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
@@ -620,6 +653,8 @@ msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
 msgstr ""
+"Neurrira egokitutako txantiloi bat sortzeko, aurrena sartu bere izena eta "
+"sakatu '+' botoia."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
@@ -636,6 +671,8 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
+"Sakatu botoi hori zehaztutako izenarekin neurrira egokitutako txantiloi bat "
+"sortzeko"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
@@ -652,13 +689,14 @@ msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
 msgstr ""
+"Sakatu botoi hori unean hautatutako neurrira egokitutako txantiloia kentzeko"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Duplicate the selected custom template"
-msgstr ""
+msgstr "Bikoiztu hautatutako neurrira egokitutako txantiloia"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:119
@@ -668,13 +706,15 @@ msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
 msgstr ""
+"Sakatu botoi hori unean hautatutako neurrira egokitutako txantiloia  "
+"bikoiztu nahi baduzu"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "List of custom templates available"
-msgstr ""
+msgstr "Erabilgarri dauden neurrira egokitutako txantiloien zerrenda"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:137
@@ -682,6 +722,7 @@ msgstr ""
 msgctxt "@info:whatsthis"
 msgid "This is a list of all the custom templates available."
 msgstr ""
+"Hori, neurrira egokitutako txantiloi erabilgarri guztien zerrenda bat da."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:147
@@ -726,13 +767,15 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
+"Txantiloi hori erabiltzean, hartzaile lehenetsiak hemen sartzen dituzunak "
+"dira. Hori, komaz banatutako e-posta helbide zerrenda bat da."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients who get a copy of the message"
-msgstr ""
+msgstr "Mezuaren kopia bat jasotzen duten hartzaile gehigarriak"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:238
@@ -742,6 +785,9 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
+"Txantiloi hori erabiltzean, hemen gehitzen dituzun hartzaileek era "
+"lehenetsian mezuaren kopia bat jasoko dute. Hori, komaz banatutako e-posta "
+"helbide zerrenda bat da."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
@@ -755,7 +801,7 @@ msgstr "Neurrira egokitutako txantiloia"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This area contains the associated custom template."
-msgstr ""
+msgstr "Ermu honek lotutako, neurrira egokitutako txantiloia, du."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:283
@@ -829,6 +875,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"Eremu honetan e-posta mezu berrietarako txantiloia sortzen duzu. Txantiloia "
+"nola sortu jakiteko, sakatu elkarrizketa-koadroan \"Hori nola dabil?\" "
+"esteka."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
@@ -853,6 +902,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"Eremu honetan mezuen erantzunetarako txantiloia sortzen duzu. Txantiloia "
+"nola sortu jakiteko, sakatu elkarrizketa-koadroan \"Hori nola dabil?\" "
+"esteka."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
@@ -878,6 +930,9 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
+"Eremu honetan, erantzun-denei mezuetarako edo posta zerrendetara erantzuteko "
+"txantiloia sortzen duzu. Txantiloia nola sortu jakiteko, sakatu elkarrizketa-"
+"koadroan \"Hori nola dabil?\" esteka."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
@@ -902,6 +957,8 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"Eremu honetan mezuk birbidaltzeko txantiloia sortzen duzu. Txantiloia nola "
+"sortu jakiteko, sakatu elkarrizketa-koadroan \"Hori nola dabil?\" esteka."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
@@ -932,3 +989,11 @@ msgid ""
 "             </ul></qt>\n"
 "           "
 msgstr ""
+"\n"
+"             <qt>Ondoko leku-markak onartzen dira aipu-adierazlean:\n"
+"             <ul>\n"
+"             <li>%f: erabiltzailearen inizialak</li>\n"
+"             <li>%%: ehuneko zeinua</li>\n"
+"             <li>%_: zuriunea</li>\n"
+"             </ul></qt>\n"
+"           "

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2023-08-07 00:12+0200\n"
+"PO-Revision-Date: 2023-08-27 01:19+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -86,7 +86,7 @@ msgstr "캡슐화된 메시지 끝"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:3
 msgid "This message is encrypted."
-msgstr "메시지가 암호화되어 있습니다."
+msgstr "이 메시지는 암호화되어 있습니다."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
 msgid "Decrypt Message"
