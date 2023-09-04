@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2023-08-22 23:19+0300\n"
+"PO-Revision-Date: 2023-09-03 21:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -109,12 +109,12 @@ msgstr "Konuları Asla Genişletme"
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "Okunmamış İletiler Olan Konuları Genişlet"
+msgstr "Okunmayan İletiler Olan Konuları Genişlet"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr "Okunmamış veya Önemli İletiler Olan Konuları Genişlet"
+msgstr "Okunmayan veya Önemli İletiler Olan Konuları Genişlet"
 
 #: core/aggregation.cpp:231
 #, kde-format
@@ -140,13 +140,13 @@ msgstr "Toplu Görevler (Etkileşim Yok)"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
-msgstr "Okunmuş"
+msgstr "Okunan"
 
 #: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
-msgstr "Okunmamış"
+msgstr "Okunmayan"
 
 #: core/item.cpp:258
 #, kde-format
@@ -164,19 +164,19 @@ msgstr "Eylem Ögesi"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
-msgstr "Yanıtlanmış"
+msgstr "Yanıtlanan"
 
 #: core/item.cpp:270
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
-msgstr "Yönlendirilmiş"
+msgstr "Yönlendirilen"
 
 #: core/item.cpp:274
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
-msgstr "Gönderilmiş"
+msgstr "Gönderilen"
 
 #: core/item.cpp:278
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "İstenmeyen"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr "İşlenmemiş"
+msgstr "İşlenmeyen"
 
 #: core/item.cpp:290
 #, kde-format
@@ -390,12 +390,12 @@ msgstr "Ek"
 #: core/manager.cpp:638
 #, kde-format
 msgid "Read/Unread"
-msgstr "Okunmuş/Okunmamış"
+msgstr "Okunan/Okunmayan"
 
 #: core/manager.cpp:643
 #, kde-format
 msgid "Replied"
-msgstr "Yanıtlanmış"
+msgstr "Yanıtlanan"
 
 #: core/manager.cpp:645
 #, kde-format
@@ -411,12 +411,12 @@ msgstr "Eylem Ögesi"
 #: core/manager.cpp:657
 #, kde-format
 msgid "Spam/Ham"
-msgstr "İstenmeyen/İşlenmemiş"
+msgstr "İstenmeyen/İşlenmeyen"
 
 #: core/manager.cpp:663
 #, kde-format
 msgid "Watched/Ignored"
-msgstr "İzlenen/Yok sayılan"
+msgstr "İzlenen/Yok Sayılan"
 
 #: core/manager.cpp:669
 #, kde-format
@@ -598,7 +598,7 @@ msgstr "Yapılacak Ögesinin Durumuna Göre"
 #: core/sortorder.cpp:74
 #, kde-format
 msgid "By Unread Status"
-msgstr "Okunmamış Durumuna Göre"
+msgstr "Okunmayan Durumuna Göre"
 
 #: core/sortorder.cpp:75
 #, kde-format
@@ -702,7 +702,7 @@ msgstr "Boyut"
 #: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
-msgstr "Okunmamış/Okunmuş Simgesi"
+msgstr "Okunan/Okunmayan Simgesi"
 
 #: core/theme.cpp:128
 #, kde-format
@@ -717,7 +717,7 @@ msgstr "Yanıtlanmış/Yönlendirilmiş Simgesi"
 #: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr "Birleştirilmiş Yeni/Okunmamış/Okunmuş/Cevaplanmış/İletilmiş simgesi"
+msgstr "Birleştirilmiş Yeni/Okunmayan/Okunan/Yanıtlanan/İletilen simgesi"
 
 #: core/theme.cpp:137
 #, kde-format
@@ -804,7 +804,7 @@ msgstr "Bilinmeyen"
 #: core/theme.cpp:853
 #, kde-format
 msgid "Unread"
-msgstr "Okunmamış"
+msgstr "Okunmayan"
 
 #: core/theme.cpp:1047
 #, kde-format
@@ -923,8 +923,8 @@ msgstr[1] "<b>%1</b> yanıt"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
-msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
+msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmayan)"
+msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmayan)"
 
 #: core/view.cpp:2342
 #, kde-format
@@ -1040,8 +1040,8 @@ msgstr[1] "<b>%1</b> konu"
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
-msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmamış)"
+msgstr[0] "<b>%1</b> ileti (<b>%2</b> okunmayan)"
+msgstr[1] "<b>%1</b> ileti (<b>%2</b> okunmayan)"
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1199,19 +1199,19 @@ msgstr "Süzgeci Temizle"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
-msgstr "Okunmamış"
+msgstr "Okunmayan"
 
 #: core/widgets/searchlinestatus.cpp:225
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
-msgstr "Yanıtlanmış"
+msgstr "Yanıtlanan"
 
 #: core/widgets/searchlinestatus.cpp:229
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
-msgstr "Yönlendirilmiş"
+msgstr "Yönlendirilen"
 
 #: core/widgets/searchlinestatus.cpp:233
 #, kde-format
@@ -1259,12 +1259,12 @@ msgstr "İstenmeyen"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
-msgstr "İşlenmemiş"
+msgstr "İşlenmeyen"
 
 #: core/widgets/searchlinestatus.cpp:271
 #, kde-format
 msgid "Full Message"
-msgstr "Tüm İleti"
+msgstr "Tam İleti"
 
 #: core/widgets/searchlinestatus.cpp:278
 #, kde-format
@@ -1279,7 +1279,7 @@ msgstr "Konu"
 #: core/widgets/searchlinestatus.cpp:294
 #, kde-format
 msgid "BCC"
-msgstr "BCC"
+msgstr "Gizli Kopya"
 
 #: core/widgets/searchlinestatus.cpp:322
 #, kde-format
@@ -1289,7 +1289,7 @@ msgstr "Kime"
 #: core/widgets/searchlinestatus.cpp:404
 #, kde-format
 msgid "Clear History"
-msgstr "Geçimişi Temizle"
+msgstr "Geçmişi Temizle"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -1315,7 +1315,7 @@ msgstr "Yeni bir sekme aç"
 #: pane.cpp:126
 #, kde-format
 msgid "New tab"
-msgstr "Yeni sekme"
+msgstr "Yeni Sekme"
 
 #: pane.cpp:136
 #, kde-format
@@ -1326,7 +1326,7 @@ msgstr "Geçerli sekmeyi kapat"
 #: pane.cpp:138
 #, kde-format
 msgid "Close tab"
-msgstr "Sekmeyi kapat"
+msgstr "Sekmeyi Kapat"
 
 #: pane.cpp:180
 #, kde-format
