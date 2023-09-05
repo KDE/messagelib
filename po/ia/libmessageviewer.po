@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2023-03-21 15:26+0100\n"
+"PO-Revision-Date: 2023-09-04 10:34+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1942,12 +1942,10 @@ msgid "We cannot save message."
 msgstr "Nos non pote salveguardar message."
 
 #: utils/messageviewerutil.cpp:602
-#, fuzzy, kde-format
-#| msgid "Delete Key"
-#| msgid_plural "Delete Keys"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Dele  clave"
+msgstr "Delite: %1"
 
 #: utils/messageviewerutil.cpp:613
 #, kde-format
