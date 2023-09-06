@@ -67,6 +67,12 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
     }
     return {};
 }
+
+template<>
+inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, const QString &property)
+{
+    return object;
+}
 }
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
@@ -259,6 +265,24 @@ public:
     }
 };
 
+class MessageIdFormatter : public HeaderFormatter
+{
+public:
+    QString i18nName() override
+    {
+        return i18n("Message-Id:");
+    }
+
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
+    {
+        const auto messageIdHeader = nodeHelper->mailHeaderAsBase("Message-Id", message);
+        if (messageIdHeader != nullptr) {
+            return static_cast<const KMime::Headers::MessageID *>(messageIdHeader)->identifier();
+        }
+        return {};
+    }
+};
+
 class AddressHeaderFormatter : public HeaderFormatter
 {
 public:
@@ -317,12 +341,14 @@ public:
         Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
         Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
         Grantlee::registerMetaType<QDateTime>();
+        Grantlee::registerMetaType<QByteArray>();
 #else
         KTextTemplate::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         KTextTemplate::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
         KTextTemplate::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
         KTextTemplate::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
         KTextTemplate::registerMetaType<QDateTime>();
+        KTextTemplate::registerMetaType<QByteArray>();
 #endif
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -348,6 +374,7 @@ public:
 
         registerHeaderFormatter("subject", QSharedPointer<HeaderFormatter>(new SubjectFormatter()));
         registerHeaderFormatter("date", QSharedPointer<HeaderFormatter>(new DateFormatter()));
+        registerHeaderFormatter("Message-Id", QSharedPointer<HeaderFormatter>(new MessageIdFormatter()));
     }
 
     ~GrantleeHeaderFormatterPrivate()
@@ -470,7 +497,8 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                    << "subject"
                    << "organization"
                    << "list-id"
-                   << "date";
+                   << "date"
+                   << "Message-Id";
 
     for (const auto &header : std::as_const(defaultHeaders)) {
         QSharedPointer<HeaderFormatter> formatter;
