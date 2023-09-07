@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -621,12 +621,12 @@ msgstr "مكّن"
 msgid "Domain:"
 msgstr "المجال الإفت&راضي:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:216
 #, kde-format
 msgid "List-Id:"
 msgstr "معرّف القائمة:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:305
 #, kde-format
 msgid "From:"
 msgstr "من:"
@@ -859,86 +859,91 @@ msgstr ""
 msgid "Not Signed"
 msgstr "لا &توقِع"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:237
 #, kde-format
 msgid "Subject:"
 msgstr "الموضوع:"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:257
 #, kde-format
 msgid "Date:"
 msgstr "التّاريخ:"
 
 #: header/grantleeheaderformatter.cpp:273
+#, fuzzy, kde-format
+msgid "Message-Id:"
+msgstr "رسالة هوية"
+
+#: header/grantleeheaderformatter.cpp:297
 #, kde-format
 msgid "To:"
 msgstr "إلى:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:299
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "&ردً إلى"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:301
 #, kde-format
 msgid "CC:"
 msgstr "ن‌ك:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:303
 #, kde-format
 msgid "BCC:"
 msgstr "ن‌ك‌ع:"
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:307
 #, kde-format
 msgid "Sender:"
 msgstr "المرسل:"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:309
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent from:"
 msgstr "أُعيد إرسالها من"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:311
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent to:"
 msgstr "أُعيد إرسالها من"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:414
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "سمة «غرانتلي» ”%1“ غير صالحة."
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:522 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "لا موضوع"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:527
 #, kde-format
 msgid "Spam Status:"
 msgstr "حالة السّخام:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:539
 #, kde-format
 msgid "Printing mode"
 msgstr "وضع الطّباعة"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:581
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:588
 #, kde-format
 msgid "Attachments:"
 msgstr "المرفقات:"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:617
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"
@@ -11259,10 +11264,6 @@ msgstr "ال&رسالة السابقة غير المقروءة"
 #, fuzzy
 #~ msgid "Message Text as Is"
 #~ msgstr "رسالة نص هو"
-
-#, fuzzy
-#~ msgid "Message Id"
-#~ msgstr "رسالة هوية"
 
 #~ msgid "Date"
 #~ msgstr "التاريخ"

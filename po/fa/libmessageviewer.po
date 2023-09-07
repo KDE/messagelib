@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -637,12 +637,12 @@ msgstr "فعال‌سازی"
 msgid "Domain:"
 msgstr "دامنه &پیش‌فرض:‌"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:216
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:305
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -880,13 +880,13 @@ msgstr ""
 msgid "Not Signed"
 msgstr "امضا &نشود‌"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:237
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "&موضوع:‌"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:257
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
@@ -894,82 +894,88 @@ msgstr "تاریخ: "
 
 #: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
+#| msgid "Message Id"
+msgid "Message-Id:"
+msgstr "شناسه پیام"
+
+#: header/grantleeheaderformatter.cpp:297
+#, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "به: "
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:299
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "&پاسخ به‌"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:301
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "ر.ن: "
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:303
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "ر.ن.م: "
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:307
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "فرستنده"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:309
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr ")ارسال مجدد از %1("
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:311
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr ")ارسال مجدد از %1("
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:414
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "پرونده امضا معتبر نیست"
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:522 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "بدون موضوع"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:527
 #, kde-format
 msgid "Spam Status:"
 msgstr "وضعیت هرزنامه:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:539
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "خروجی چاپ"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:581
 #, kde-format
 msgid "[vcard]"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:588
 #, fuzzy, kde-format
 #| msgctxt "Config->Composer->Attachments"
 #| msgid "A&ttachments"
 msgid "Attachments:"
 msgstr "&پیوستها‌"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:617
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"
@@ -11245,9 +11251,6 @@ msgstr "&پیام خوانده‌نشده قبلی‌"
 
 #~ msgid "Message Text as Is"
 #~ msgstr "متن پیام همان طور که هست"
-
-#~ msgid "Message Id"
-#~ msgstr "شناسه پیام"
 
 #~ msgid "Date"
 #~ msgstr "تاریخ"

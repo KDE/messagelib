@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2023-08-18 12:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -562,12 +562,12 @@ msgstr "Gaituta"
 msgid "Domain:"
 msgstr "Domeinua:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:216
 #, kde-format
 msgid "List-Id:"
 msgstr "Zerrenda-ID:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:305
 #, kde-format
 msgid "From:"
 msgstr "Nork:"
@@ -785,83 +785,88 @@ msgstr "%1: Balioduna"
 msgid "Not Signed"
 msgstr "Sinatu gabe"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:237
 #, kde-format
 msgid "Subject:"
 msgstr "Gaia:"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:257
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
 #: header/grantleeheaderformatter.cpp:273
+#, fuzzy, kde-format
+msgid "Message-Id:"
+msgstr "Mezuaren gorputza"
+
+#: header/grantleeheaderformatter.cpp:297
 #, kde-format
 msgid "To:"
 msgstr "Nori:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:299
 #, kde-format
 msgid "Reply To:"
 msgstr "Erantzun honi:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:301
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:303
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:307
 #, kde-format
 msgid "Sender:"
 msgstr "Bidaltzailea:"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:309
 #, kde-format
 msgid "resent from:"
 msgstr "nork birbidali:"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:311
 #, kde-format
 msgid "resent to:"
 msgstr "nori birbidali:"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:414
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "«%1» Grantlee-ren gaia ez da baliozkoa."
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:522 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "Gairik ez"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:527
 #, kde-format
 msgid "Spam Status:"
 msgstr "Baztergarri-egoera:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:539
 #, kde-format
 msgid "Printing mode"
 msgstr "Inprimatzeko modua"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:581
 #, kde-format
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:588
 #, kde-format
 msgid "Attachments:"
 msgstr "Eranskinak:"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:617
 #, kde-format
 msgid "Security:"
 msgstr "Segurtasuna:"
@@ -11034,10 +11039,6 @@ msgstr "Aurreko mezua"
 #, fuzzy
 #~ msgid "Message Text as Is"
 #~ msgstr "Mezu-zerrenda"
-
-#, fuzzy
-#~ msgid "Message Id"
-#~ msgstr "Mezuaren gorputza"
 
 #~ msgid "Date"
 #~ msgstr "Data"

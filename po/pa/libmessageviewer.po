@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
+"POT-Creation-Date: 2023-09-07 00:46+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -638,12 +638,12 @@ msgstr "ਯੋਗ"
 msgid "Domain:"
 msgstr "ਡਿਫਾਲਟ ਡੋਮੇਨ(&t):"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:216
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:305
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -881,14 +881,14 @@ msgstr ""
 msgid "Not Signed"
 msgstr "ਸਾਇਨ ਨਾ ਕਰੋ(&N)"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:237
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox Subject of email."
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "ਵਿਸ਼ਾ(&u):"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:257
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
@@ -896,82 +896,88 @@ msgstr "ਮਿਤੀ:"
 
 #: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
+#| msgid "Message Id"
+msgid "Message-Id:"
+msgstr "ਸੁਨੇਹਾ Id"
+
+#: header/grantleeheaderformatter.cpp:297
+#, fuzzy, kde-format
 #| msgctxt "To-field of the mailheader."
 #| msgid "To: "
 msgid "To:"
 msgstr "ਵੱਲ: "
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:299
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "ਜਵਾਬ(&R)"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:301
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:303
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:307
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "ਭੇਜਣ ਵਾਲਾ"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:309
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(%1 ਵਲੋਂ ਮੁੜ-ਭੇਜਿਆ)"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:311
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(%1 ਵਲੋਂ ਮੁੜ-ਭੇਜਿਆ)"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:414
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "ਦਸਤਖਤ ਫਾਇਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:522 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "ਕੋਈ ਵਿਸ਼ਾ ਨਹੀਂ"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:527
 #, kde-format
 msgid "Spam Status:"
 msgstr "ਸਪਮ ਹਾਲਤ:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:539
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "ਪ੍ਰਿਟਿੰਗ ਆਉਟਪੁੱਟ"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:581
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:588
 #, kde-format
 msgid "Attachments:"
 msgstr "ਅਟੈਚਮੈਂਟ:"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:617
 #, fuzzy, kde-format
 #| msgid "Security"
 msgid "Security:"
@@ -8256,9 +8262,6 @@ msgstr "ਪਿਛਲੇ ਨਾ-ਪੜ੍ਹੇ ਸੁਨੇਹੇ ਉੱਤੇ �
 
 #~ msgid "Message Text as Is"
 #~ msgstr "ਸੁਨੇਹਾ ਸਧਾਰਨ ਟੈਕਸਟ ਵਾਂਗ"
-
-#~ msgid "Message Id"
-#~ msgstr "ਸੁਨੇਹਾ Id"
 
 #~ msgid "Date"
 #~ msgstr "ਮਿਤੀ"
