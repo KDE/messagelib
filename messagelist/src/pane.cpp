@@ -1191,7 +1191,7 @@ void Pane::restoreHeaderSettings(int index, bool restoreSession)
         if (restoreSession) {
             const Akonadi::Collection::Id id = grp.readEntry(QStringLiteral("collectionId"), -1);
             if (id != -1) {
-                Akonadi::ETMViewStateSaver *saver = new Akonadi::ETMViewStateSaver;
+                auto saver = new Akonadi::ETMViewStateSaver;
                 saver->setSelectionModel(d->mSelectionModel);
                 saver->selectCollections(Akonadi::Collection::List() << Akonadi::Collection(id));
                 saver->restoreCurrentItem(QString::fromLatin1("c%1").arg(id));
