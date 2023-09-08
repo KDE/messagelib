@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-07 00:46+0000\n"
-"PO-Revision-Date: 2023-08-03 06:41+0100\n"
+"PO-Revision-Date: 2023-09-07 20:53+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -795,10 +795,9 @@ msgid "Date:"
 msgstr "Dato:"
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
-msgstr "mesaĝo"
+msgstr "Mesaĝ-Ident:"
 
 #: header/grantleeheaderformatter.cpp:297
 #, kde-format

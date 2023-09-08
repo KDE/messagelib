@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-07 00:46+0000\n"
-"PO-Revision-Date: 2023-08-03 22:54+0200\n"
+"PO-Revision-Date: 2023-09-07 16:19+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -796,10 +796,9 @@ msgid "Date:"
 msgstr "Data: "
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "Message Id"
+#, kde-format
 msgid "Message-Id:"
-msgstr "ID del messaggio"
+msgstr "ID messaggio:"
 
 #: header/grantleeheaderformatter.cpp:297
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-07 00:46+0000\n"
-"PO-Revision-Date: 2023-08-03 09:14+0300\n"
+"PO-Revision-Date: 2023-09-07 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -806,10 +806,9 @@ msgid "Date:"
 msgstr "Дата:"
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
-msgstr "повідомлення"
+msgstr "Ід. повідомлення:"
 
 #: header/grantleeheaderformatter.cpp:297
 #, kde-format
