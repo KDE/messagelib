@@ -54,7 +54,7 @@ private:
     QMap<QString, Aggregation *> mAggregations;
     QMap<QString, Theme *> mThemes;
     KMime::DateFormatter *const mDateFormatter;
-    QString mCachedLocalizedUnknownText;
+    const QString mCachedLocalizedUnknownText;
 
 public:
     // instance management

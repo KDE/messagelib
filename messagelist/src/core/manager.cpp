@@ -32,10 +32,9 @@ Manager *Manager::mInstance = nullptr;
 Manager::Manager()
     : QObject()
     , mDateFormatter(new KMime::DateFormatter())
+    , mCachedLocalizedUnknownText(i18nc("Unknown date", "Unknown"))
 {
     mInstance = this;
-
-    mCachedLocalizedUnknownText = i18nc("Unknown date", "Unknown");
 
     loadConfiguration();
     connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
