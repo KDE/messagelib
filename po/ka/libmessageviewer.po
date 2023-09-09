@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-07 00:46+0000\n"
-"PO-Revision-Date: 2023-08-05 10:05+0200\n"
+"PO-Revision-Date: 2023-09-08 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -775,10 +775,9 @@ msgid "Date:"
 msgstr "თარიღი:"
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
-msgstr "შეტყობინება"
+msgstr "შეტყობინების-ID:"
 
 #: header/grantleeheaderformatter.cpp:297
 #, kde-format
@@ -1953,7 +1952,7 @@ msgstr ""
 #: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
+msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
 
 #: viewer/urlhandlermanager.cpp:526
 #, kde-format
