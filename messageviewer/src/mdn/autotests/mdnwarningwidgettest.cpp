@@ -47,7 +47,7 @@ void MDNWarningWidgetTest::shouldEmitSignals()
     const auto acts{w.actions()};
     bool found = false;
     for (auto a : acts) {
-        if (a->objectName() == QStringLiteral("mIgnoreAction")) {
+        if (a->objectName() == QLatin1String("mIgnoreAction")) {
             found = true;
             QSignalSpy ignoreMdn(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
@@ -59,7 +59,7 @@ void MDNWarningWidgetTest::shouldEmitSignals()
 
     found = false;
     for (auto a : acts) {
-        if (a->objectName() == QStringLiteral("mSendAction")) {
+        if (a->objectName() == QLatin1String("mSendAction")) {
             found = true;
             QSignalSpy sendMdn(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
@@ -71,7 +71,7 @@ void MDNWarningWidgetTest::shouldEmitSignals()
 
     found = false;
     for (auto a : acts) {
-        if (a->objectName() == QStringLiteral("mSendDenyAction")) {
+        if (a->objectName() == QLatin1String("mSendDenyAction")) {
             found = true;
             QSignalSpy sendDeny(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
