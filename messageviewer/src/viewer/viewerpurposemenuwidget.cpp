@@ -9,14 +9,14 @@
 
 using namespace MessageViewer;
 
-MailfilterPurposeMenuWidget::MailfilterPurposeMenuWidget(QWidget *parentWidget, QObject *parent)
+ViewerPurposeMenuWidget::ViewerPurposeMenuWidget(QWidget *parentWidget, QObject *parent)
     : PimCommon::PurposeMenuWidget(parentWidget, parent)
 {
 }
 
-MailfilterPurposeMenuWidget::~MailfilterPurposeMenuWidget() = default;
+ViewerPurposeMenuWidget::~ViewerPurposeMenuWidget() = default;
 
-QByteArray MailfilterPurposeMenuWidget::text()
+QByteArray ViewerPurposeMenuWidget::text()
 {
     if (mViewer) {
         return mViewer->selectedText().toUtf8();
@@ -24,7 +24,7 @@ QByteArray MailfilterPurposeMenuWidget::text()
     return {};
 }
 
-void MailfilterPurposeMenuWidget::setViewer(MailWebEngineView *viewer)
+void ViewerPurposeMenuWidget::setViewer(MailWebEngineView *viewer)
 {
     mViewer = viewer;
 }

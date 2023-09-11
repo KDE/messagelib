@@ -1604,7 +1604,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
     connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
 #endif
-    auto purposeMenuWidget = new MailfilterPurposeMenuWidget(mViewer, this);
+    auto purposeMenuWidget = new ViewerPurposeMenuWidget(mViewer, this);
     mShareTextAction = new QAction(i18n("Share Text..."), this);
     mShareTextAction->setMenu(purposeMenuWidget->menu());
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));

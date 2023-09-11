@@ -10,12 +10,12 @@
 namespace MessageViewer
 {
 class MailWebEngineView;
-class MailfilterPurposeMenuWidget : public PimCommon::PurposeMenuWidget
+class ViewerPurposeMenuWidget : public PimCommon::PurposeMenuWidget
 {
     Q_OBJECT
 public:
-    explicit MailfilterPurposeMenuWidget(QWidget *parentWidget, QObject *parent = nullptr);
-    ~MailfilterPurposeMenuWidget() override;
+    explicit ViewerPurposeMenuWidget(QWidget *parentWidget, QObject *parent = nullptr);
+    ~ViewerPurposeMenuWidget() override;
 
     Q_REQUIRED_RESULT QByteArray text() override;
     void setViewer(MailWebEngineView *viewer);
