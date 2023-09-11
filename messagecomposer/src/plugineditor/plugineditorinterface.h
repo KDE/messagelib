@@ -66,6 +66,9 @@ Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
     void insertText(const QString &str);
 
+    void errorMessage(const QString &message);
+    void successMessage(const QString &message);
+
 private:
     std::unique_ptr<PluginEditorInterfacePrivate> const d;
 };
