@@ -45,6 +45,11 @@ class QPoint;
 class QSplitter;
 class QModelIndex;
 
+namespace PimCommon
+{
+class PurposeMenuMessageWidget;
+}
+
 namespace KIdentityManagementCore
 {
 class IdentityManager;
@@ -724,5 +729,6 @@ public:
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     RemoteContentMenu *mRemoteContentMenu = nullptr;
     MessageViewer::MDNWarningWidget *mMdnWarning = nullptr;
+    PimCommon::PurposeMenuMessageWidget *mPurposeMenuMessageWidget = nullptr;
 };
 }

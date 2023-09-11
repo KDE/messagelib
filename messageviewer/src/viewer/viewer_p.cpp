@@ -128,6 +128,8 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 
+#include <PimCommon/PurposeMenuMessageWidget>
+
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -1366,6 +1368,10 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
+    mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(readerBox);
+    mPurposeMenuMessageWidget->setObjectName(QStringLiteral("mPurposeMenuMessageWidget"));
+    readerBoxVBoxLayout->addWidget(mPurposeMenuMessageWidget);
+
     mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
     mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
     readerBoxVBoxLayout->addWidget(mShowNextMessageWidget);
@@ -1610,6 +1616,8 @@ void ViewerPrivate::createActions()
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     ac->addAction(QStringLiteral("purpose_share_text_menu"), mShareTextAction);
     purposeMenuWidget->setViewer(mViewer);
+    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareError, mPurposeMenuMessageWidget, &PimCommon::PurposeMenuMessageWidget::slotShareError);
+    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareSuccess, mPurposeMenuMessageWidget, &PimCommon::PurposeMenuMessageWidget::slotShareSuccess);
 
     mCopyImageLocation = new QAction(i18n("Copy Image Location"), this);
     mCopyImageLocation->setIcon(QIcon::fromTheme(QStringLiteral("view-media-visualization")));
