@@ -55,7 +55,7 @@ msgstr "Següent"
 #: findbar/findbarbase.cpp:59
 #, kde-format
 msgid "Jump to next match"
-msgstr "Salta a la coincidència següent"
+msgstr "Salta fins a la coincidència següent"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "Anterior"
 #: findbar/findbarbase.cpp:65
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Salta a la coincidència anterior"
+msgstr "Salta fins a la coincidència anterior"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
