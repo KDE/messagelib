@@ -792,10 +792,9 @@ msgid "Date:"
 msgstr "Datum:"
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
-msgstr "zpráva"
+msgstr ""
 
 #: header/grantleeheaderformatter.cpp:297
 #, kde-format
