@@ -8,7 +8,7 @@
 # Pablo de Vicente <p.devicente@wanadoo.es>, 2005.
 # Pablo de Vicente <pablo.devicente@gmail.com>, 2005, 2006.
 # Juan Manuel García Molina <juanma@superiodico.net>, 2006, 2007.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2014, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2014, 2019, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 # Franco Mariluis <fmariluis@gmail.com>, 2008, 2009.
 # Dario Andres Rodriguez <andrebajotierra@gmail.com>, 2009.
 # Javier Vinal <fjvinalgmail.com>, 2009, 2010, 2011.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2023-03-09 01:07+0100\n"
+"PO-Revision-Date: 2023-09-20 01:09+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jaime Robles <jaime@kde.org>\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -109,7 +109,7 @@ msgstr "Descifrar mensaje"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Por favor, espere mientras se descifra el mensaje..."
+msgstr "Espere mientras se descifra el mensaje..."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -198,7 +198,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Por favor, espere mientras se verifica la firma..."
+msgstr "Espere mientras se verifica la firma..."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -814,12 +814,12 @@ msgstr "Responder a:"
 #: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "CC:"
-msgstr "CC:"
+msgstr "Cc:"
 
 #: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "BCC:"
-msgstr "CCO:"
+msgstr "Cco:"
 
 #: header/grantleeheaderformatter.cpp:283
 #, kde-format
@@ -985,12 +985,12 @@ msgstr "A: "
 #: header/plainheaderstyle.cpp:126
 #, kde-format
 msgid "CC: "
-msgstr "CC: "
+msgstr "Cc: "
 
 #: header/plainheaderstyle.cpp:133
 #, kde-format
 msgid "BCC: "
-msgstr "CCO: "
+msgstr "Cco: "
 
 #: header/plainheaderstyle.cpp:138
 #, kde-format
@@ -1176,7 +1176,7 @@ msgstr "Añadir contenido remoto"
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr "Ya hay una entrada que define este URL. Por favor, modifíquela."
+msgstr "Ya hay una entrada que define esta URL. Modifíquela."
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
@@ -2052,8 +2052,8 @@ msgstr "Contraer el texto citado."
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
-"No se ha podido iniciar el asistente de certificados. Por favor, compruebe "
-"su instalación."
+"No se ha podido iniciar el asistente de certificados. Compruebe su "
+"instalación."
 
 #: viewer/urlhandlermanager.cpp:526
 #, kde-format
