@@ -5,20 +5,20 @@
 # Javier Vinal <kde-l10n-es@kde.org >, 2010.
 # Javier Viñal <fjvinal@gmail.com>, 2010, 2013.
 # Javier Vinal <fjvinal@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-05-17 13:44+0200\n"
+"PO-Revision-Date: 2023-09-20 01:04+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
@@ -484,7 +484,8 @@ msgstr "El certificado S/MIME caduca pronto"
 #: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr "Ha fallado al resolver las claves. Por favor, informe del fallo."
+msgstr ""
+"Ha ocurrido un error al resolver las claves. Por favor, informe del fallo."
 
 #: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
@@ -1039,9 +1040,9 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
-"Hay un problema con los certificados s de cifrado para «%1».\n"
+"Hay un problema con los certificados de cifrado para «%1».\n"
 "\n"
-"Por favor, vuelva a seleccionar los certificados que se deben usar para este "
+"Vuelva a seleccionar los certificados que se deben usar para este "
 "destinatario."
 
 #: composer/keyresolver.cpp:1544
@@ -1072,7 +1073,7 @@ msgid ""
 msgstr ""
 "Hay más de un certificado coincide con «%1».\n"
 "\n"
-"Seleccione el certificado(s) que se debe usar para este destinatario."
+"Seleccione los certificados que se debe usar para este destinatario."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
@@ -1208,7 +1209,7 @@ msgstr "Personalizado"
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr "Por favor, compruebe los valores mínimo y máximo."
+msgstr "Compruebe los valores mínimo y máximo."
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
@@ -1509,9 +1510,9 @@ msgid ""
 "No charsets were available for encoding. Please check your configuration and "
 "make sure it contains at least one charset for sending."
 msgstr ""
-"No se disponía juegos de caracteres para la codificación. Por favor, "
-"compruebe su configuración y asegúrese de que contiene al menos un juego de "
-"caracteres para envíos."
+"No dispone de ningún juego de caracteres para la codificación. Compruebe su "
+"configuración y asegúrese de que contiene al menos un juego de caracteres "
+"para enviar."
 
 #: job/maintextjob.cpp:99
 #, kde-format
@@ -1710,7 +1711,7 @@ msgstr "Nueva lista de distribución"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr "Por favor, introduzca el nombre:"
+msgstr "Introduzca el nombre:"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1720,7 +1721,7 @@ msgid ""
 "exists. Please select a different name.</para>"
 msgstr ""
 "<para>Lista de distribución con el nombre proporcionado <resource>%1</"
-"resource> ya existe. Por favor, seleccione un nombre distinto.</para>"
+"resource> ya existe. Seleccione un nombre distinto.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
@@ -1750,13 +1751,13 @@ msgstr "Para"
 #, kde-format
 msgctxt "@label:listbox Carbon Copy recipient of an email message."
 msgid "CC"
-msgstr "CC"
+msgstr "Cc"
 
 #: recipient/recipient.cpp:103
 #, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
-msgstr "BCC"
+msgstr "Cco"
 
 #: recipient/recipient.cpp:105
 #, kde-format
@@ -1838,13 +1839,13 @@ msgstr "Para:%1"
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr "CC:%1"
+msgstr "Cc:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr "CCO:%1"
+msgstr "Cco:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
@@ -1876,12 +1877,12 @@ msgstr "Añadir como &Para"
 #: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
-msgstr "Añadir como CC"
+msgstr "Añadir como Cc"
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
-msgstr "Añadir como &CCO"
+msgstr "Añadir como &Cco"
 
 #: recipient/recipientspicker.cpp:105
 #, kde-format
@@ -1902,11 +1903,11 @@ msgid_plural ""
 msgstr[0] ""
 "Ha seleccionado 1 destinatario. El número máximo de destinatarios que se "
 "admite es %2.\n"
-"Por favor, adapte la selección."
+"Adapte la selección."
 msgstr[1] ""
 "Ha seleccionado %1 destinatarios. El número máximo de destinatarios que se "
 "admite es %2.\n"
-"Por favor, adapte la selección."
+"Adapte la selección."
 
 #: recipient/recipientspicker.cpp:189
 #, kde-format
@@ -2218,52 +2219,52 @@ msgstr "Nombre del campo «De»"
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
 msgid "CC"
-msgstr "CC"
+msgstr "Cc"
 
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
 msgid "CC Field Address"
-msgstr "Dirección del campo «CC»"
+msgstr "Dirección del campo «Cc»"
 
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr "Apellidos del campo «CC»"
+msgstr "Apellidos del campo «Cc»"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr "Nombre del campo «CC»"
+msgstr "Nombre del campo «Cc»"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr "Nombre del campo «CC»"
+msgstr "Nombre del campo «Cc»"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr "BCC"
+msgstr "Cco"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr "Dirección del campo «BCC»"
+msgstr "Dirección del campo «Cco»"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr "Apellidos del campo «BCC»"
+msgstr "Apellidos del campo «Cco»"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr "Nombre del campo «BCC»"
+msgstr "Nombre del campo «Cco»"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr "Nombre del campo «BCC»"
+msgstr "Nombre del campo «Cco»"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
