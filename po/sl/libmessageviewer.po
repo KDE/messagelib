@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2023-08-03 08:58+0200\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"PO-Revision-Date: 2023-09-07 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -346,38 +346,38 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "Shramba"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#, kde-format
-msgid "SDID"
-msgstr "SDID"
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#, kde-format
-msgid "Selector"
-msgstr "Izbirnik"
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
 msgstr "Ključ DKIM"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#, kde-format
+msgid "Selector"
+msgstr "Izbirnik"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Inserted"
 msgstr "Vstavljeno"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "Last Used"
 msgstr "Zadnje uporabljeno"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#: dkim-verify/dkimmanagerkeytreeview.cpp:69
 #, kde-format
 msgid "Copy Key"
 msgstr "Kopiraj ključ"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
@@ -386,7 +386,7 @@ msgstr[1] "Odstrani ključa"
 msgstr[2] "Odstrani ključe"
 msgstr[3] "Odstrani ključe"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
@@ -395,7 +395,7 @@ msgstr[1] "Ali želite izbrisati ta ključa?"
 msgstr[2] "Ali želite izbrisati te ključe?"
 msgstr[3] "Ali želite izbrisati te ključe?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
@@ -404,18 +404,18 @@ msgstr[1] "Izbriši ključa"
 msgstr[2] "Izbriši ključe"
 msgstr[3] "Izbriši ključe"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:89
-#: dkim-verify/dkimmanageruleswidget.cpp:221
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, kde-format
 msgid "Delete All"
 msgstr "Izbriši vse"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "Ali želite izbrisati vse ključe?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, kde-format
 msgid "Delete Keys"
 msgstr "Izbriši ključe"
@@ -478,77 +478,77 @@ msgstr "Uvozi pravila"
 msgid "No rules imported."
 msgstr "Ni uvoženih pravil."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
 msgstr "Domena"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
 msgstr "Aktivno"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
 msgstr "Seznam-ID"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
 msgstr "Vrsta pravila"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
 msgstr "Prednost"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:194
-#: remote-content/remotecontentconfigurewidget.cpp:78
+#: dkim-verify/dkimmanageruleswidget.cpp:196
+#: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
 msgstr "Dodaj..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:199
-#: remote-content/remotecontentconfigurewidget.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:201
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
 msgstr "Spremeni..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: dkim-verify/dkimmanageruleswidget.cpp:205
 #, kde-format
 msgid "Duplicate Rule"
 msgstr "Podvojeno pravilo"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:207
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, kde-format
 msgid "Remove Rule"
 msgstr "Odstrani pravilo"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: dkim-verify/dkimmanageruleswidget.cpp:211
 #, kde-format
 msgid "Do you want to delete this rule?"
 msgstr "Ali želite izbrisati to pravilo?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:210
-#: remote-content/remotecontentconfigurewidget.cpp:88
+#: dkim-verify/dkimmanageruleswidget.cpp:212
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
 msgid "Delete Rule"
 msgstr "Izbriši pravilo"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr "Ali želite izbrisati vsa pravila?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:224
+#: dkim-verify/dkimmanageruleswidget.cpp:226
 #, kde-format
 msgid "Delete Rules"
 msgstr "Izbriši pravila"
@@ -575,12 +575,12 @@ msgstr "Omogočeno"
 msgid "Domain:"
 msgstr "Domena:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
 msgstr "ID-seznama:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
 #, kde-format
 msgid "From:"
 msgstr "Od:"
@@ -625,256 +625,261 @@ msgstr "Osveži ključ DKIM"
 msgid "Rules..."
 msgstr "Pravila..."
 
-#: dkim-verify/dkimwidgetinfo.cpp:97
+#: dkim-verify/dkimwidgetinfo.cpp:94
 #, kde-format
 msgid "Unknown"
 msgstr "Neznano"
 
-#: dkim-verify/dkimwidgetinfo.cpp:103
+#: dkim-verify/dkimwidgetinfo.cpp:100
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
 msgstr "DKIM: veljavno (Sporočilo je podpisal %1)."
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
 msgstr "DKIM: neveljavno"
 
-#: dkim-verify/dkimwidgetinfo.cpp:113
+#: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr "DKIM: ni podpisano"
 
-#: dkim-verify/dkimwidgetinfo.cpp:118
+#: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr "DKIM: Moralo bi biti podpisano od %1"
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr "Kontrolna vsota vsebine pokvarjena."
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr "Domena ne obstaja."
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
 msgstr "Manjka polje Od/From."
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:140
 #, kde-format
 msgid "Missing signature."
 msgstr "Manjka podpis."
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:143
 #, kde-format
 msgid "Invalid query method."
 msgstr "Neveljaven postopek poizvedbe."
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr "Neveljavna kanonikalizacija glave."
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr "Neveljavna kanonikalizacija telesa."
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr "Neznan algoritem razprševalne funkcije telesa."
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
 msgid "Signature algorithm is invalid."
 msgstr "Algoritem podpisa je neveljaven."
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:158
 #, kde-format
 msgid "The public key was revoked."
 msgstr "Javni ključ je bil preklican."
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:161
 #, kde-format
 msgid "Signature is too large."
 msgstr "Podpis je prevelik."
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr "Algoritem razprševalne funkcije ni podprt."
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
 msgstr "Javni ključ je premajhen."
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:170
 #, kde-format
 msgid "Impossible to verify signature."
 msgstr "Ni mogoče preveriti podpisa."
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 "AUID mora biti v isti domeni kot SDID (s-zastavica nastavljena v zapisu "
 "ključa)."
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr "Podpisna domena samo testira DKIM."
 
-#: dkim-verify/dkimwidgetinfo.cpp:182
+#: dkim-verify/dkimwidgetinfo.cpp:179
 #, kde-format
 msgid "Impossible to download key."
 msgstr "Ni mogoče naložiti ključa."
 
-#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "Algoritem razprševanja ni varen (sha1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr "AUID ni v poddomeni of SDID"
 
-#: dkim-verify/dkimwidgetinfo.cpp:191
+#: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
 msgstr "Težava med pretvorbo javnega ključa"
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:197
 #, kde-format
 msgid "Signature expired"
 msgstr "Podpis je potekel"
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
 msgstr "Podpis je bil ustvarjen v bodočnosti"
 
-#: dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:203
 #, kde-format
 msgid "Signature too small"
 msgstr "Podpis je premajhen"
 
-#: dkim-verify/dkimwidgetinfo.cpp:212
+#: dkim-verify/dkimwidgetinfo.cpp:209
 #, kde-format
 msgid "Public Key too small"
 msgstr "Javni ključ prekratek"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:256
+#: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Nič"
 
-#: dkim-verify/dkimwidgetinfo.cpp:271
+#: dkim-verify/dkimwidgetinfo.cpp:268
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Veljavno (Podpisal je %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Veljavno"
 
-#: dkim-verify/dkimwidgetinfo.cpp:306
+#: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
 msgstr "Ni podpisano"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:204
 #, kde-format
 msgid "Subject:"
 msgstr "Zadeva:"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:224
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:240
+#, kde-format
+msgid "Message-Id:"
+msgstr "Določilnik sporočila:"
+
+#: header/grantleeheaderformatter.cpp:264
 #, kde-format
 msgid "To:"
 msgstr "Za:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:266
 #, kde-format
 msgid "Reply To:"
 msgstr "Odgovor na:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:268
 #, kde-format
 msgid "CC:"
 msgstr "Kp:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:270
 #, kde-format
 msgid "BCC:"
 msgstr "Skp:"
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:274
 #, kde-format
 msgid "Sender:"
 msgstr "Pošiljatelj:"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:276
 #, kde-format
 msgid "resent from:"
 msgstr "znova poslano od:"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:278
 #, kde-format
 msgid "resent to:"
 msgstr "znova poslano za:"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:359
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Tema Grantlee \"%1\" ni veljavna."
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "Brez zadeve"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:454
 #, kde-format
 msgid "Spam Status:"
 msgstr "Stanje neželene pošte:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:466
 #, kde-format
 msgid "Printing mode"
 msgstr "Način tiskanja"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:508
 #, kde-format
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:515
 #, kde-format
 msgid "Attachments:"
 msgstr "Priloge:"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:544
 #, kde-format
 msgid "Security:"
 msgstr "Varnost:"
@@ -1021,128 +1026,128 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Pošlji zavrnitev"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Napaka: podpis ni preverjen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:71
 #, kde-format
 msgid "Good signature"
 msgstr "Dober podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Bad signature"
 msgstr "Slab podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Na voljo ni nobenega javnega ključa za preverjanje podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "No signature found"
 msgstr "Najdeno ni bil nobenega podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:95
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Napaka med preverjanjem podpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:99
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Različni rezultati za podpise"
 
-#: messagepartthemes/default/defaultrenderer.cpp:119
+#: messagepartthemes/default/defaultrenderer.cpp:111
 #, kde-format
 msgid "No status information available."
 msgstr "Podatki o stanju niso na voljo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:126
-#: messagepartthemes/default/defaultrenderer.cpp:211
+#: messagepartthemes/default/defaultrenderer.cpp:118
+#: messagepartthemes/default/defaultrenderer.cpp:203
 #, kde-format
 msgid "Good signature."
 msgstr "Dober podpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:147
+#: messagepartthemes/default/defaultrenderer.cpp:139
 #, kde-format
 msgid "One key has expired."
 msgstr "En ključ je pretekel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:151
+#: messagepartthemes/default/defaultrenderer.cpp:143
 #, kde-format
 msgid "The signature has expired."
 msgstr "Podpis je pretekel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:156
+#: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Ni mogoče preveriti: manjka ključ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:155
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL ni na voljo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:159
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL, ki je na voljo, je prestar."
 
-#: messagepartthemes/default/defaultrenderer.cpp:171
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "A policy was not met."
 msgstr "Pravilniku ni bilo zadoščeno."
 
-#: messagepartthemes/default/defaultrenderer.cpp:175
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "A system error occurred."
 msgstr "Prišlo je do sistemske napake."
 
-#: messagepartthemes/default/defaultrenderer.cpp:186
+#: messagepartthemes/default/defaultrenderer.cpp:178
 #, kde-format
 msgid "One key has been revoked."
 msgstr "En ključ je bil preklican."
 
-#: messagepartthemes/default/defaultrenderer.cpp:213
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Bad signature."
 msgstr "Slab podpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:525
+#: messagepartthemes/default/defaultrenderer.cpp:527
 #, kde-format
 msgid "certificate"
 msgstr "potrdilo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:617
-#: messagepartthemes/default/defaultrenderer.cpp:636
+#: messagepartthemes/default/defaultrenderer.cpp:537
+#: messagepartthemes/default/defaultrenderer.cpp:556
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "Opozorilo:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "Pošiljateljev e-poštni naslov ni shranjen v %1, ki se uporablja za "
 "podpisovanje."
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "sender: "
 msgstr "pošiljatelj: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:619
+#: messagepartthemes/default/defaultrenderer.cpp:539
 #, kde-format
 msgid "stored: "
 msgstr "shranjeno: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:637
+#: messagepartthemes/default/defaultrenderer.cpp:557
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -1157,34 +1162,34 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Nastavi oddaljeno vsebino"
 
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Status"
 msgstr "Status"
 
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Ali želite izbrisati to pravilo '%1'?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:105
+#: remote-content/remotecontentconfigurewidget.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "Uredi oddaljeno vsebino"
 
-#: remote-content/remotecontentconfigurewidget.cpp:121
+#: remote-content/remotecontentconfigurewidget.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Dodaj oddaljeno vsebino"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr "Vnos že določa ta url. Spremenite ga."
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "Add new Url"
 msgstr "Dodaj nov Url"
@@ -1639,7 +1644,7 @@ msgstr ""
 "poslani, premaknjena v mapo Smeti."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1533
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Uporabi pisavo stalne širine"
@@ -1992,143 +1997,154 @@ msgstr "Vrsta"
 msgid "Size"
 msgstr "Velikost"
 
-#: viewer/urlhandlermanager.cpp:405
+#: viewer/printmessage.cpp:61
+#, kde-format
+msgid "Could not generate print preview."
+msgstr ""
+
+#: viewer/printmessage.cpp:97
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Natisni dokument"
+
+#: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Vklopi izrisovanje HTML za to sporočilo."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Naloži zunanje sklice z interneta za to sporočilo."
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
 msgstr "Delaj povezano."
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
 msgstr "Vzpostavi povezavo za račun."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Decrypt message."
 msgstr "Dešifriraj sporočilo."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
 msgstr "Pokaži podrobnosti o podpisu."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
 msgstr "Skrij podrobnosti o podpisu."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show encryption details."
 msgstr "Pokaži podrobnosti o šifriranju."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Skrij podrobnosti o šifriranju."
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:427
 #, kde-format
 msgid "Open Documentation"
 msgstr "Odpri dokumentacijo"
 
-#: viewer/urlhandlermanager.cpp:460
+#: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Razširi vso navedeno besedilo."
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:463
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Zloži navedeno besedilo."
 
-#: viewer/urlhandlermanager.cpp:524
+#: viewer/urlhandlermanager.cpp:525
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Ni bilo mogoče zagnati upravljalnika potrdil. Preverite namestitev."
 
-#: viewer/urlhandlermanager.cpp:526
+#: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
 msgstr "Napaka KMaila"
 
-#: viewer/urlhandlermanager.cpp:541
+#: viewer/urlhandlermanager.cpp:542
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Pokaži potrdilo 0x%1"
 
-#: viewer/urlhandlermanager.cpp:600
+#: viewer/urlhandlermanager.cpp:601
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Odpri v imeniku"
 
-#: viewer/urlhandlermanager.cpp:602
+#: viewer/urlhandlermanager.cpp:603
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2700
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Naslov kopiran na odložišče."
 
-#: viewer/urlhandlermanager.cpp:626
+#: viewer/urlhandlermanager.cpp:627
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Poišči stik v KAddressbooku"
 
-#: viewer/urlhandlermanager.cpp:802
+#: viewer/urlhandlermanager.cpp:803
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Priloga: %1"
 
-#: viewer/urlhandlermanager.cpp:805
+#: viewer/urlhandlermanager.cpp:806
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Vloženo sporočilo (zadeva: %1)"
 
-#: viewer/urlhandlermanager.cpp:807
+#: viewer/urlhandlermanager.cpp:808
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Vloženo sporočilo"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:811
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Neimenovana priloga"
 
-#: viewer/urlhandlermanager.cpp:845
+#: viewer/urlhandlermanager.cpp:846
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Pokaži GnuPG-jev dnevnik presoje varnosti za to opravilo"
 
-#: viewer/urlhandlermanager.cpp:885
+#: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
 msgstr "Odpiranje naslova URL ..."
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:895
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ali res želite izvesti <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:896
+#: viewer/urlhandlermanager.cpp:897
 #, kde-format
 msgid "Execute"
 msgstr "Izvedi"
 
-#: viewer/viewer.cpp:138
+#: viewer/viewer.cpp:134
 #, kde-format
 msgid "Loading message..."
 msgstr "Nalaganje sporočila ..."
@@ -2143,7 +2159,7 @@ msgstr ""
 "sporočilo."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1709
+#: viewer/viewer_p.cpp:1711
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Izbriši prilogo"
@@ -2175,13 +2191,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Odpri z..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1687
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Odpri"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2197,7 +2213,7 @@ msgstr "Pomakni se do"
 msgid "Save As..."
 msgstr "Shrani kot ..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
 #, kde-format
 msgid "Copy"
 msgstr "Kopiraj"
@@ -2212,7 +2228,7 @@ msgstr "Odgovori avtorju"
 msgid "Reply To All"
 msgstr "Odgovori vsem"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1714
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Properties"
 msgstr "Lastnosti"
@@ -2233,104 +2249,104 @@ msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Pokaži prilogo: %1"
 
-#: viewer/viewer_p.cpp:1454
+#: viewer/viewer_p.cpp:1458
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Priloge"
 
-#: viewer/viewer_p.cpp:1456
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Izberite slog prikaza prilog"
 
-#: viewer/viewer_p.cpp:1459
+#: viewer/viewer_p.cpp:1463
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Kot ikone"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Pokaži vse priloge kot ikone. Kliknite nanje, da jih vidite."
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "Pameten prikaz"
 
-#: viewer/viewer_p.cpp:1469
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Pokaži priloge tako, kot je predlagal pošiljatelj."
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1477
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Znotrajvrst&ično"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Pokaži vse priloge znotraj vrstic sporočila (če je mogoče)"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Skrij"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ne pokaži prilog v pregledovalniku sporočil"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Samo v glavah"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Priloge pokaži samo v glavi sporočila"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Na&stavi kodiranje"
 
-#: viewer/viewer_p.cpp:1500 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Samodejno"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopiraj besedilo"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Select All Text"
 msgstr "Izberi vse besedilo"
 
-#: viewer/viewer_p.cpp:1523 viewer/viewer_p.cpp:2008
+#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopiraj naslov povezave"
 
-#: viewer/viewer_p.cpp:1528
+#: viewer/viewer_p.cpp:1532
 #, kde-format
 msgid "Open URL"
 msgstr "Odpri URL"
 
-#: viewer/viewer_p.cpp:1539
+#: viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Pokaži zgradbo sporočila"
@@ -2400,91 +2416,85 @@ msgstr "Izgovori besedilo"
 msgid "Share Text..."
 msgstr "Deli besedilo..."
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopiraj mesto slike"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Najd&i v sporočilu..."
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Onemogoči izrazno ikono"
 
-#: viewer/viewer_p.cpp:1684
+#: viewer/viewer_p.cpp:1686
 #, kde-format
 msgid "Save &As..."
 msgstr "Shrani kot..."
 
-#: viewer/viewer_p.cpp:1692
+#: viewer/viewer_p.cpp:1694
 #, kde-format
 msgid "Open With..."
 msgstr "Odpri z ..."
 
-#: viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Shrani vse priloge ..."
 
-#: viewer/viewer_p.cpp:1928
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "The network is broken."
 msgstr "Omrežje ni vzpostavljeno."
 
-#: viewer/viewer_p.cpp:1928 viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Preveri URL za ribarjenjem"
 
-#: viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Naslov URL %1 ni veljaven."
 
-#: viewer/viewer_p.cpp:1951
+#: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "To spletišče vsebuje zlonamerno programsko opremo. Ali ga želite vseeno "
 "pokazati?"
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1963
 #, kde-format
 msgid "Malware"
 msgstr "Zlonamerna programska oprema"
 
-#: viewer/viewer_p.cpp:2006
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/viewer_p.cpp:2087
+#: viewer/viewer_p.cpp:2098
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Sporočilo kot navadno besedilo"
 
-#: viewer/viewer_p.cpp:2290
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Document"
-msgstr "Natisni dokument"
-
-#: viewer/viewer_p.cpp:2706
+#: viewer/viewer_p.cpp:2668
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Naslov URL kopiran na odložišče."
 
-#: viewer/viewer_p.cpp:2858
+#: viewer/viewer_p.cpp:2820
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nalaganje sporočila ni uspelo: %1."
 
-#: viewer/viewer_p.cpp:2863
+#: viewer/viewer_p.cpp:2825
 #, kde-format
 msgid "Message not found."
 msgstr "Sporočilo ni bilo najdeno."

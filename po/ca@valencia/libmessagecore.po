@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2020-08-17 23:09+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 "No podeu adjuntar fitxers més grans que %1. Compartiu-lo amb el servei "
 "d'emmagatzematge."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -103,7 +103,7 @@ msgstr ""
 "vegades %1 pot no detectar el tipus de fitxer correctament. Ací és on podreu "
 "solucionar-ho.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -114,7 +114,7 @@ msgstr ""
 "missatge de correu electrònic, un fitxer binari codificat amb base64 prendrà "
 "més de quatre terços de la mida real del fitxer.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -127,7 +127,7 @@ msgstr ""
 "sols se suggerix un nom perquè el programa de correu del destinatari "
 "l'utilitze en guardar esta part al disc.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -140,7 +140,7 @@ msgstr ""
 "majoria dels programes de correu mostraran esta informació en la vista "
 "prèvia del missatge, al costat de la icona de l'adjunt.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -154,12 +154,12 @@ msgstr ""
 "<p>La codificació del transport d'esta part:</p><p>normalment no "
 "necessitareu canviar açò, atés que, %1 emprarà una codificació "
 "predeterminada decent, depenent del tipus MIME. Així i tot, algunes vegades, "
-"podríeu reduir significativament la mida del missatge, p. ex. si un fitxer "
+"podríeu reduir significativament la mida del missatge, p. ex., si un fitxer "
 "PostScript no conté dades binàries, sinó només text. En este cas, escollint "
 "«quoted printable» en comptes de «base64» estalviareu fins al 25% de la mida "
 "del missatge.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -174,7 +174,7 @@ msgstr ""
 "<em>Content-Disposition</em> d'esta part com a «inline» (inclosa) en comptes "
 "del valor predeterminat que és «attachment» (adjunta).</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -185,7 +185,7 @@ msgstr ""
 "p><p>La signatura es farà amb la clau que teniu associada amb la identitat "
 "seleccionada.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -194,8 +194,8 @@ msgstr ""
 "<p>Marqueu esta opció si voleu que esta part del missatge s'encripte.</"
 "p><p>La part s'encriptarà per als destinataris del missatge.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

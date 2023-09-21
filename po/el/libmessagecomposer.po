@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 00:48+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2013-01-17 21:45+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.4\n"
 
-#: attachment/attachmentcontrollerbase.cpp:168
+#: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
 msgid "Failed to compress attachment"
 msgstr "Αποτυχία sυμπίεσης του συνημμένου"
 
-#: attachment/attachmentcontrollerbase.cpp:179
+#: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -33,217 +33,217 @@ msgstr ""
 "Το συμπιεσμένο συνημμένο είναι μεγαλύτερο από το αρχικό. Θέλετε να "
 "διατηρήσετε το αρχικό;"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Διατήρηση"
 
-#: attachment/attachmentcontrollerbase.cpp:183
+#: attachment/attachmentcontrollerbase.cpp:182
 #, kde-format
 msgid "Compress"
 msgstr "Συμπίεση"
 
-#: attachment/attachmentcontrollerbase.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:201
 #, kde-format
 msgid "Failed to attach file"
 msgstr "Η επισύναψη του αρχείου απέτυχε"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:274
 #, kde-format
 msgid "Failed to reload attachment"
 msgstr "Αποτυχία επαναφόρτωσης συνημμένου"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Ά&νοιγμα με"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:341
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "'Άλλο..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:343
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Ά&νοιγμα με..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:377
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "Η επισύναψη του δημόσιου κλειδιού απέτυχε"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:391
 #, kde-format
 msgid "Failed to attach vCard"
 msgstr "Αποτυχία επισύναψης vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:404
 #, kde-format
 msgid "Failed to attach text from clipboard"
 msgstr "Αποτυχία επισύναψης κειμένου από το πρόχειρο"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:452
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr "Επισύναψη &δημόσιου κλειδιού..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:455
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr "Επισύναψη του δημόσιου κλειδιού μου"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
-#: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:458
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Attach"
 msgstr "Επισύναψη"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:462
 #: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "Επισύν&αψη αρχείου..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Προσθήκη συνημμένου..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "Επισύν&αψη καταλόγου..."
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Attach Own vCard"
 msgstr "Επισύναψη της δικής μου vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Η δική μου vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "Επισύν&αψη vCards..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "Επισύν&αψη κειμένου από το πρόχειρο..."
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Επισύναψη κειμένου από το πρόχειρο"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Αφαίρεση συνημμένου"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:503
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Προβολή"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgid "Edit With..."
 msgstr "Επεξεργασία με..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Αποθήκευση συνημμένου ως..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Αποθήκευση ως..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Attachment Pr&operties..."
 msgstr "Ιδιότητες &συνημμένου..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:541
 #, kde-format
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
 msgid "Reload"
 msgstr "Ανανέωση"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:701
+#: attachment/attachmentcontrollerbase.cpp:750
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "Το KMail δεν μπόρεσε να γράψει το συνημμένο σε ένα προσωρινό αρχείο."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:701
 #, kde-format
 msgid "Unable to open attachment"
 msgstr "Αδύνατο το άνοιγμα του συνημμένου"
 
-#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:710
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "Το KMail δεν μπόρεσε να ανοίξει το συνημμένο αρχείο."
 
-#: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "Αδύνατη η επεξεργασία του συνημμένου"
 
-#: attachment/attachmentcontrollerbase.cpp:792
+#: attachment/attachmentcontrollerbase.cpp:791
 #, kde-format
 msgid "unnamed"
 msgstr "χωρίς όνομα"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:794
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Αποθήκευση συνημμένου ως"
 
-#: attachment/attachmentcontrollerbase.cpp:818
+#: attachment/attachmentcontrollerbase.cpp:817
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -252,61 +252,61 @@ msgstr ""
 "Το αρχείο %1 υπάρχει.\n"
 "Επιθυμείτε την αντικατάστασή του;"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:818
 #, kde-format
 msgid "Save to File"
 msgstr "Αποθήκευση σε αρχείο"
 
-#: attachment/attachmentcontrollerbase.cpp:820
+#: attachment/attachmentcontrollerbase.cpp:819
 #, kde-format
 msgid "&Replace"
 msgstr "&Αντικατάσταση"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:846
+#: attachment/attachmentcontrollerbase.cpp:904
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Θέλετε πραγματικά να επισυνάψετε αυτόν τον κατάλογο «%1»;"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Επισύναψη καταλόγου"
 
-#: attachment/attachmentcontrollerbase.cpp:849
-#: attachment/attachmentcontrollerbase.cpp:907
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Επισύναψη"
 
-#: attachment/attachmentcontrollerbase.cpp:884
+#: attachment/attachmentcontrollerbase.cpp:883
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Επισύναψη καταλόγου"
 
-#: attachment/attachmentcontrollerbase.cpp:893
+#: attachment/attachmentcontrollerbase.cpp:892
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Επισύναψη αρχείου"
 
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Αποτυχία επισύναψης του αρχείου"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:959
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Επισύναψη δημοσίου OpenPGP κλειδιού"
 
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Επιλέξτε το δημόσιο κλειδί που πρέπει να επισυναφθεί."
@@ -383,7 +383,7 @@ msgid ""
 "loss, editing the attachment will be aborted."
 msgstr ""
 
-#: composer/composer.cpp:289
+#: composer/composer.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Δεν βρέθηκαν δεδομένα κλειδιού για τον παραλήπτη."
@@ -1162,17 +1162,17 @@ msgstr "Ο επιλεγμένος φάκελος δεν είναι έγκυρο�
 msgid "Invalid folder"
 msgstr "Μη έγκυρος φάκελος"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
 #, kde-format
 msgid "forwarded message"
 msgstr "προωθημένο μήνυμα"
 
-#: helper/messagefactoryng.cpp:576
+#: helper/messagefactoryng.cpp:577
 #, kde-format
 msgid "Receipt: "
 msgstr "Απόδειξη:"
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:704
 #, kde-format
 msgid ""
 "\n"

@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 16:34+0530\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"PO-Revision-Date: 2023-09-10 17:22+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -349,70 +349,70 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "சேமி"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#, kde-format
-msgid "SDID"
-msgstr "SDID"
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#, kde-format
-msgid "Selector"
-msgstr "தேர்வி"
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
 msgstr "DKIM சாவி"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#, kde-format
+msgid "Selector"
+msgstr "தேர்வி"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Inserted"
 msgstr "சேர்க்கப்பட்டது"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "Last Used"
 msgstr "கடைசியாக பயன்படுத்தப்பட்டது"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#: dkim-verify/dkimmanagerkeytreeview.cpp:69
 #, kde-format
 msgid "Copy Key"
 msgstr "சாவியை நகலெடு"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "சாவியை நீக்கு"
 msgstr[1] "சாவிகளை நீக்கு"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "இச்சாவியை நீக்க வேண்டுமா?"
 msgstr[1] "இச்சாவிகளை நீக்க வேண்டுமா?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "சாவியை நீக்குவது"
 msgstr[1] "சாவிகளை நீக்குவது"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:89
-#: dkim-verify/dkimmanageruleswidget.cpp:221
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, kde-format
 msgid "Delete All"
 msgstr "அனைத்தையும் நீக்கு"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "அனைத்து சாவிகளையும் நீக்க வேண்டுமா?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, kde-format
 msgid "Delete Keys"
 msgstr "சாவிகளை நீக்குவது"
@@ -475,77 +475,77 @@ msgstr "விதிமுறைகளை இறக்குமதி செய�
 msgid "No rules imported."
 msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
 msgstr "ஆள்களம்"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
 msgstr "செயலிலுள்ளதா"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
 msgstr "List-ID"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "From"
 msgstr "அனுப்புநர்"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
 msgstr "விதி வகை"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
 msgstr "முன்னிலை"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:194
-#: remote-content/remotecontentconfigurewidget.cpp:78
+#: dkim-verify/dkimmanageruleswidget.cpp:196
+#: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
 msgstr "சேர்..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:199
-#: remote-content/remotecontentconfigurewidget.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:201
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
 msgstr "திருத்து…"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: dkim-verify/dkimmanageruleswidget.cpp:205
 #, kde-format
 msgid "Duplicate Rule"
 msgstr "விதிமுறையை நகலெடு"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:207
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, kde-format
 msgid "Remove Rule"
 msgstr "விதிமுறையை நீக்கு"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: dkim-verify/dkimmanageruleswidget.cpp:211
 #, kde-format
 msgid "Do you want to delete this rule?"
 msgstr "உறுதியாக இந்த விதிமுறையை நீக்க விரும்புகிறீர்களா?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:210
-#: remote-content/remotecontentconfigurewidget.cpp:88
+#: dkim-verify/dkimmanageruleswidget.cpp:212
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
 msgid "Delete Rule"
 msgstr "விதிமுறையை நீக்கு"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr "உறுதியாக அனைத்து விதிமுறைகளையும் நீக்க விரும்புகிறீர்களா?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:224
+#: dkim-verify/dkimmanageruleswidget.cpp:226
 #, kde-format
 msgid "Delete Rules"
 msgstr "விதிமுறைகளை நீக்கு"
@@ -572,12 +572,12 @@ msgstr "இயக்கப்பட்டது"
 msgid "Domain:"
 msgstr "ஆள்களம்:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
 msgstr "List-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
 #, kde-format
 msgid "From:"
 msgstr "அனுப்புநர்:"
@@ -622,255 +622,260 @@ msgstr "DKIM சாவியைப் புதுப்பி"
 msgid "Rules..."
 msgstr "விதிமுறைகள்…"
 
-#: dkim-verify/dkimwidgetinfo.cpp:97
+#: dkim-verify/dkimwidgetinfo.cpp:94
 #, kde-format
 msgid "Unknown"
 msgstr "தெரியாதது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:103
+#: dkim-verify/dkimwidgetinfo.cpp:100
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
 msgstr "DKIM: முறையானது (%1 கையொப்பமிட்டது)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
 msgstr "DKIM: செல்லுபடியாகாதது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:113
+#: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr "DKIM: கையொப்பமிடாதது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:118
+#: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr "DKIM: %1 கையொப்பமிட்டிருக்க வேண்டும்"
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "உடற்பகுதியின் சரிகாண்தொகை செல்லுபடியாகாதது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr "ஆள்களம் இல்லை."
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
 msgstr "அனுப்புநர் புலம் இல்லை."
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:140
 #, kde-format
 msgid "Missing signature."
 msgstr "கையொப்பம் இல்லை."
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:143
 #, kde-format
 msgid "Invalid query method."
 msgstr "செல்லுபடியாகாத வினா (query) முறை."
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
 msgid "Signature algorithm is invalid."
 msgstr "கையொப்பத்தின் படிமுறை செல்லுபடியாகாதது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:158
 #, kde-format
 msgid "The public key was revoked."
 msgstr "பொது சாவி திரும்பபெறப்பட்டுள்ளது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:161
 #, kde-format
 msgid "Signature is too large."
 msgstr "கையொப்பம் அதிகபட்ச அளவைவிட பெரியது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr "ஆதரிக்கப்படா சரிகாண்தொகை முறை"
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
 msgstr "பொது சாவி, தேவையானதைவிட சிறியது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:170
 #, kde-format
 msgid "Impossible to verify signature."
 msgstr "கையொப்பத்தை சரிபார்க்க முடியாது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr "கையொப்பமிட்ட ஆள்கலம், DKIM-ஐ சோதனை மட்டும் செய்கிறது."
 
-#: dkim-verify/dkimwidgetinfo.cpp:182
+#: dkim-verify/dkimwidgetinfo.cpp:179
 #, kde-format
 msgid "Impossible to download key."
 msgstr "சாவியைப் பதிவிறக்க முடியவில்லை."
 
-#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "பாதுகாப்பற்ற சரிகாண்தொகை முறை (sha1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:191
+#: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
 msgstr "பொது சாவியை வடிவமாற்றுவதில் சிக்கல்"
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:197
 #, kde-format
 msgid "Signature expired"
 msgstr "கையொப்பம் காலாவதியாகிவிட்டது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
 msgstr "கையொப்பம் எதிர்காலத்தில் இடப்பட்டது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:203
 #, kde-format
 msgid "Signature too small"
 msgstr "கையொப்பம் குறைந்தபட்ச அளவைவிட சிறியது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:212
+#: dkim-verify/dkimwidgetinfo.cpp:209
 #, kde-format
 msgid "Public Key too small"
 msgstr "பொது சாவி, தேவையானதைவிட சிறியது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:256
+#: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
 msgid "%1: None"
 msgstr "%1: ஏதுமில்லை"
 
-#: dkim-verify/dkimwidgetinfo.cpp:271
+#: dkim-verify/dkimwidgetinfo.cpp:268
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: முறையானது (%2 கையொப்பமிட்டது)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: முறையானது"
 
-#: dkim-verify/dkimwidgetinfo.cpp:306
+#: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
 msgstr "கையொப்பமிடாதது"
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:204
 #, kde-format
 msgid "Subject:"
 msgstr "தலைப்பு:"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:224
 #, kde-format
 msgid "Date:"
 msgstr "தேதி:"
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:240
+#, fuzzy, kde-format
+msgid "Message-Id:"
+msgstr "செய்தியின் கருத்து"
+
+#: header/grantleeheaderformatter.cpp:264
 #, kde-format
 msgid "To:"
 msgstr "பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:266
 #, kde-format
 msgid "Reply To:"
 msgstr "பதில் பெறுபவர்:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:268
 #, kde-format
 msgid "CC:"
 msgstr "நகல்:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:270
 #, kde-format
 msgid "BCC:"
 msgstr "கமுக்க நகல்:"
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:274
 #, kde-format
 msgid "Sender:"
 msgstr "அனுப்புநர்:"
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:276
 #, kde-format
 msgid "resent from:"
 msgstr "மீளனுப்பியவர்:"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:278
 #, kde-format
 msgid "resent to:"
 msgstr "மீளனுப்பிபோதான பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:359
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "\"%1\" என்ற Grantlee திட்டம் செல்லுபடியாகாதது."
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "தலைப்பு இல்லை"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:454
 #, kde-format
 msgid "Spam Status:"
 msgstr "ஸ்பேம் நிலை:"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:466
 #, kde-format
 msgid "Printing mode"
 msgstr "அச்சிடும் பயன்முறை"
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:508
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vஅட்டை]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:515
 #, kde-format
 msgid "Attachments:"
 msgstr "உடனிணைப்புகள்:"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:544
 #, kde-format
 msgid "Security:"
 msgstr "பாதுகாப்பு:"
@@ -1017,126 +1022,126 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "மறுத்த‍தாக பதிலளி"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "சிக்கல்: கையொப்பம் சரிபார்க்கப்படவில்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:71
 #, kde-format
 msgid "Good signature"
 msgstr "செல்லுபடியாகும் கையொப்பம்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Bad signature"
 msgstr "செல்லுபடியாகாத கையொப்பம்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "கையொப்பத்தை சரிபார்க்க எந்த பொது சாவியும் இல்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "No signature found"
 msgstr "கையொப்பம் கண்டுபிடிக்கப்படவில்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:95
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "கையொப்பத்தை சரிபார்ப்பதில் சிக்கல்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:99
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, fuzzy, kde-format
 msgid "Different results for signatures"
 msgstr "கையொப்பத்திற்கு வெவ்வேறு விளைவுகள்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:119
+#: messagepartthemes/default/defaultrenderer.cpp:111
 #, kde-format
 msgid "No status information available."
 msgstr "நிலை குறித்த தகவல் இல்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:126
-#: messagepartthemes/default/defaultrenderer.cpp:211
+#: messagepartthemes/default/defaultrenderer.cpp:118
+#: messagepartthemes/default/defaultrenderer.cpp:203
 #, kde-format
 msgid "Good signature."
 msgstr "செல்லுபடியாகும் கையொப்பம்."
 
-#: messagepartthemes/default/defaultrenderer.cpp:147
+#: messagepartthemes/default/defaultrenderer.cpp:139
 #, kde-format
 msgid "One key has expired."
 msgstr "ஒரு சாவி காலாவதியாகியுள்ளது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:151
+#: messagepartthemes/default/defaultrenderer.cpp:143
 #, kde-format
 msgid "The signature has expired."
 msgstr "கையொப்பம் காலாவதியாகிவிட்டது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:156
+#: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "சரிபார்க்க முடியவில்லை: சாவியைக் காணவில்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:155
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL இல்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:159
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "இருக்கும் CRL மிக பழையது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:171
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "A policy was not met."
 msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:175
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, fuzzy, kde-format
 msgid "A system error occurred."
 msgstr "கணினி சிக்கல் நேர்ந்தது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:186
+#: messagepartthemes/default/defaultrenderer.cpp:178
 #, kde-format
 msgid "One key has been revoked."
 msgstr "ஒரு விசை திரும்பப்பெறப்பட்டுள்ளது"
 
-#: messagepartthemes/default/defaultrenderer.cpp:213
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Bad signature."
 msgstr "செல்லுபடியாகாத கையொப்பம்."
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:525
+#: messagepartthemes/default/defaultrenderer.cpp:527
 #, kde-format
 msgid "certificate"
 msgstr "சான்றிதழில்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:617
-#: messagepartthemes/default/defaultrenderer.cpp:636
+#: messagepartthemes/default/defaultrenderer.cpp:537
+#: messagepartthemes/default/defaultrenderer.cpp:556
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "எச்சரிக்கை:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr "கையொப்பமிட பயன்பட்ட %1 அனுப்புநரின் முகவரி குறிப்பிடப்படவில்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "sender: "
 msgstr "அனுப்புநர்: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:619
+#: messagepartthemes/default/defaultrenderer.cpp:539
 #, kde-format
 msgid "stored: "
 msgstr "குறிப்பிடப்பட்டது: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:637
+#: messagepartthemes/default/defaultrenderer.cpp:557
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -1151,34 +1156,34 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "தொலை உள்ளடக்கங்களை அமைத்தல்"
 
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Status"
 msgstr "நிலை"
 
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr "உறுதியாக '%1' என்ற விதிமுறையை நீக்க விரும்புகிறீர்களா?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:105
+#: remote-content/remotecontentconfigurewidget.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "தொலை உள்ளடக்கங்களை திருத்துதல்"
 
-#: remote-content/remotecontentconfigurewidget.cpp:121
+#: remote-content/remotecontentconfigurewidget.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "தொலை உள்ளடக்கங்களை சேர்த்தல்"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr "இம்முகவிரிக்கு ஏற்கனவே ஓர் பதிவுள்ளது. அப்பதிவையே மாற்றுங்கள்."
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "Add new Url"
 msgstr "புதிய முகவரியை சேர்"
@@ -1620,7 +1625,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1533
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "சம &அகல எழுத்துருவை பயன்படுத்து"
@@ -1975,145 +1980,157 @@ msgstr "வகை"
 msgid "Size"
 msgstr "அளவு"
 
-#: viewer/urlhandlermanager.cpp:405
+#: viewer/printmessage.cpp:61
+#, fuzzy, kde-format
+#| msgid "Could not write the file %1."
+msgid "Could not generate print preview."
+msgstr "%1கோப்பை எழுதமுடியாது"
+
+#: viewer/printmessage.cpp:97
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "அஞ்சலை அச்சிடுவது"
+
+#: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML rendering க்கான தகவலை இயக்கு."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை ஏற்ற விடவும்"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
 msgstr "தொடர்புள்ள நிலையில் இயங்கு."
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
 msgstr "கணக்கை தொடர்புள்ள நிலைக்கு மாற்று."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Decrypt message."
 msgstr "அஞ்சலை மறைநீக்கு."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
 msgstr "கையொப்ப விவரங்களைக் காட்டு."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
 msgstr "கையொப்ப விவரங்களை மறை."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show encryption details."
 msgstr "மறையாக்க விவரங்களைக் காட்டு."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide encryption details."
 msgstr "மறையாக்க விவரங்களை மறை"
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:427
 #, kde-format
 msgid "Open Documentation"
 msgstr "கையேட்டைத் திற"
 
-#: viewer/urlhandlermanager.cpp:460
+#: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் விரி"
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:463
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் சுருக்கு"
 
-#: viewer/urlhandlermanager.cpp:524
+#: viewer/urlhandlermanager.cpp:525
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "சான்றிதழ் மேலாளியைத் திறக்க முடியவில்லை. அது சரியாக நிறுவப்பட்டுள்ளதா என பாருங்கள்."
 
-#: viewer/urlhandlermanager.cpp:526
+#: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
 msgstr "கேமெயில் சிக்கல்"
 
-#: viewer/urlhandlermanager.cpp:541
+#: viewer/urlhandlermanager.cpp:542
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 சான்றிதழைக் காட்டு"
 
-#: viewer/urlhandlermanager.cpp:600
+#: viewer/urlhandlermanager.cpp:601
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&முகவரிப்புத்தகத்தில் திற"
 
-#: viewer/urlhandlermanager.cpp:602
+#: viewer/urlhandlermanager.cpp:603
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2700
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
-#: viewer/urlhandlermanager.cpp:626
+#: viewer/urlhandlermanager.cpp:627
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "&முகவரிபுத்தகத்தில் திற"
 
-#: viewer/urlhandlermanager.cpp:802
+#: viewer/urlhandlermanager.cpp:803
 #, kde-format
 msgid "Attachment: %1"
 msgstr "உடனிணைப்பு: %1"
 
-#: viewer/urlhandlermanager.cpp:805
+#: viewer/urlhandlermanager.cpp:806
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "உட்பொதிந்த அஞ்சல்: (தலைப்பு: %1)"
 
-#: viewer/urlhandlermanager.cpp:807
+#: viewer/urlhandlermanager.cpp:808
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "உட்பொதிந்த அஞ்சல்"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:811
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "பெயரிடப்படாத உடனிணைப்பு"
 
-#: viewer/urlhandlermanager.cpp:845
+#: viewer/urlhandlermanager.cpp:846
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:885
+#: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
 msgstr "முகவரி திறக்கப்படுகிறது..."
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:895
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename> தனை உறுதியாக இயக்க வேண்டுமா?"
 
-#: viewer/urlhandlermanager.cpp:896
+#: viewer/urlhandlermanager.cpp:897
 #, kde-format
 msgid "Execute"
 msgstr "இயக்கு"
 
-#: viewer/viewer.cpp:138
+#: viewer/viewer.cpp:134
 #, kde-format
 msgid "Loading message..."
 msgstr "அஞ்சல் ஏற்றப்படுகிறது"
@@ -2128,7 +2145,7 @@ msgstr ""
 "தாகலாம்."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1709
+#: viewer/viewer_p.cpp:1711
 #, kde-format
 msgid "Delete Attachment"
 msgstr "உடனிணைப்பை நீக்கு"
@@ -2158,13 +2175,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&இதனால் திற..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1687
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "திற"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2180,7 +2197,7 @@ msgstr "ஓர் இடத்திற்கு உருள்"
 msgid "Save As..."
 msgstr "இவ்வாறு சேமி..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
 #, kde-format
 msgid "Copy"
 msgstr "நகலெடு"
@@ -2195,7 +2212,7 @@ msgstr "அனுப்புநருக்கு பதிலளி"
 msgid "Reply To All"
 msgstr "அனைவருக்கும் பதிலளி"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1714
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Properties"
 msgstr "பண்புகள்"
@@ -2216,104 +2233,104 @@ msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "உடனிணைப்பைப் பார்ப்பது: %1"
 
-#: viewer/viewer_p.cpp:1454
+#: viewer/viewer_p.cpp:1458
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&உடனிணைப்புகள்"
 
-#: viewer/viewer_p.cpp:1456
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "உடனிணைப்புகளின் காட்சிமுறையை தேர்ந்தெடுங்கள்"
 
-#: viewer/viewer_p.cpp:1459
+#: viewer/viewer_p.cpp:1463
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&சின்னங்களாக"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "உடனிணைப்புகளை சின்னங்களாக காட்டும். அவற்றைக் காண கிளிக் செய்யலாம்."
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "சூ&ழமைவாக"
 
-#: viewer/viewer_p.cpp:1469
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "இணைப்புகளை அனுப்புநர் விரும்புவது போல் காண்பிக்கும்."
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1477
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&உள்ளமைவாக"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "முடிந்தால் உடனிணைப்புகளை அஞ்சல்காட்டிக்குள்ளேயே காட்டும்"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&மறை"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "அஞ்சல்காட்டியில் உடனிணைப்புகளைக் காட்ட வேண்டாம்"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "தலைப்புப்பகுதியில் மட்டும்"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "உடனிணைப்புகளை அஞ்சலின் தலைப்புப்பகுதியில் மட்டும் காட்டு"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "&Set Encoding"
 msgstr "குறியாக்கத்தை அமைப்பது"
 
-#: viewer/viewer_p.cpp:1500 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "தானியக்கம்"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Copy Text"
 msgstr "உரையை நகலெடு"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Select All Text"
 msgstr "எல்லா உரையையும் தேர்ந்தெடு"
 
-#: viewer/viewer_p.cpp:1523 viewer/viewer_p.cpp:2008
+#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
 #, kde-format
 msgid "Copy Link Address"
 msgstr "இணைப்பின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1528
+#: viewer/viewer_p.cpp:1532
 #, kde-format
 msgid "Open URL"
 msgstr "முகவரியை திற"
 
-#: viewer/viewer_p.cpp:1539
+#: viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Show Message Structure"
 msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
@@ -2383,89 +2400,83 @@ msgstr "உரையைப் பேச்சாக்கு"
 msgid "Share Text..."
 msgstr "உரையைப் பகிர்..."
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Copy Image Location"
 msgstr "படத்தின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&அஞ்சலில் கண்டுபிடி..."
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "முகவடியை முடக்கு"
 
-#: viewer/viewer_p.cpp:1684
+#: viewer/viewer_p.cpp:1686
 #, kde-format
 msgid "Save &As..."
 msgstr "&இப்படி சேமி..."
 
-#: viewer/viewer_p.cpp:1692
+#: viewer/viewer_p.cpp:1694
 #, kde-format
 msgid "Open With..."
 msgstr "இதனால் திற..."
 
-#: viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "அனைத்து உடனிணைப்புகளையும் சேமி..."
 
-#: viewer/viewer_p.cpp:1928
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "The network is broken."
 msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
-#: viewer/viewer_p.cpp:1928 viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
-#: viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
 
-#: viewer/viewer_p.cpp:1951
+#: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1963
 #, kde-format
 msgid "Malware"
 msgstr "தீங்குநிரல்"
 
-#: viewer/viewer_p.cpp:2006
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:2087
+#: viewer/viewer_p.cpp:2098
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "அஞ்சல், சாதாரண உரையாக"
 
-#: viewer/viewer_p.cpp:2290
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Document"
-msgstr "அஞ்சலை அச்சிடுவது"
-
-#: viewer/viewer_p.cpp:2706
+#: viewer/viewer_p.cpp:2668
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
-#: viewer/viewer_p.cpp:2858
+#: viewer/viewer_p.cpp:2820
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
-#: viewer/viewer_p.cpp:2863
+#: viewer/viewer_p.cpp:2825
 #, kde-format
 msgid "Message not found."
 msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."
@@ -10076,10 +10087,6 @@ msgstr "முந்தைய அஞ்சல்"
 #~ msgid "Message Text as Is"
 #~ msgstr "செய்தி பட்டியல்"
 
-#, fuzzy
-#~ msgid "Message Id"
-#~ msgstr "செய்தியின் கருத்து"
-
 #~ msgid "Date"
 #~ msgstr "தேதி"
 
@@ -13671,9 +13678,6 @@ msgstr "முந்தைய அஞ்சல்"
 #~ msgctxt "@action:inmenu Forward current message inline."
 #~ msgid "&Inline..."
 #~ msgstr "இணைப்பில்..."
-
-#~ msgid "Could not write the file %1."
-#~ msgstr "%1கோப்பை எழுதமுடியாது"
 
 #, fuzzy
 #~| msgid "Choo&se..."

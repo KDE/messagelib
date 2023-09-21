@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2010-01-15 21:01+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -88,7 +88,7 @@ msgstr "\"%1\" nav atrasts. Lūdzu norādiet pilnu ceļu."
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "Jūs nevarat pievienot failus, kas lielāki par %1."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -100,7 +100,7 @@ msgstr ""
 "jo tas tiek noteikts automātiski. Bet dažreiz, %1 nespēj korekti noteikt "
 "tipu -- tad jūs to šeit varat izlabot.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -110,7 +110,7 @@ msgstr ""
 "<p>Aptuvens pielikuma izmērs:</p><p>Ņemiet vērā ka e-pastā binārie dati tiek "
 "kodēti ar bas64 un aizņems līdz pat četrām trešdaļām no sākotnējā izmēra.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -122,7 +122,7 @@ msgstr ""
 "nosaukums, tas nekādi nav saistīts ar pašu failu, tas drīzāk iesaka kādu "
 "faila nosaukumu izmantot saņēmējam, saglabājot to uz diska.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -134,7 +134,7 @@ msgstr ""
 "visai vēstulei ir temats. Vairums pasta aģentu šo informāciju parādīs "
 "vēstuļu priekšskatījumā pie pielikuma ikonas.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -151,7 +151,7 @@ msgstr ""
 "tikai tekstu, bez bināriem datiem, to var sūtīt kā \"Quoted printable\", "
 "nevis noklusēto \"Base64\", kas samazinās tā izmēru par 25%.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -165,7 +165,7 @@ msgstr ""
 "tiek realizēts uzstādot pielikuma <em>Content-Disposition</em> galveni uz "
 "\"inline\" nevis, noklusēto  \"attachment\".</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -175,7 +175,7 @@ msgstr ""
 "<p>Atzīmējiet šo, ja vēlaties parakstīt šo vēstules daļu.</p><p>Paraksts "
 "tiks veikts ar aktīvajai identitātei piesaistīto atslēgu.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -184,8 +184,8 @@ msgstr ""
 "<p>Atzīmējiet šo, ja vēlaties šifrēt šo vēstules daļu.</p><p>Tā tiks šifrēta "
 "visiem vēstules saņēmējiem.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"

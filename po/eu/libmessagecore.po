@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2023-08-18 14:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "Ezin dituzu erantsi %1 baino handiagoak diren fitxategiak. Partekatu ezazu "
 "biltegiratze zerbitzuarekin."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -102,7 +102,7 @@ msgstr ""
 "baina batzuetan, baliteke %1(e)k mota behar bezala ez antzematea -- hori "
 "hemen konpon dezakezu.</p> "
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -113,7 +113,7 @@ msgstr ""
 "«base64»rekin kodetutako fitxategi bitar batek fitxategiaren benetako "
 "neurriaren lau heren arte hartuko dituela.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -126,7 +126,7 @@ msgstr ""
 "aitzitik, hartzailearen posta agenteak atala diskoan gordetzean erabiltzeko "
 "fitxategi-izen bat proposatzen du.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -139,7 +139,7 @@ msgstr ""
 "informazio hori, eranskinaren ikonoarekin batera, mezu aurreikuspegietan "
 "erakutsiko dute.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -158,7 +158,7 @@ msgstr ""
 "lehenetsiaren ordez \"quoted-printable\" aukeratzeak sortutako mezuan "
 "neurriaren % 25 arte aurreztea suposa dezake..</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -172,7 +172,7 @@ msgstr ""
 "iradokitzeko;</p><p>Teknikoki, atal honen <em>Edukiaren-antolaketa</em> "
 "goiburu eremua \"attachment\" ordez \"inline\" ezarrita egiten da hori.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -182,7 +182,7 @@ msgstr ""
 "<p>Markatu aukera hori mezuaren atal hori sinatzea nahi baduzu.</p><p>Unean "
 "hautatuta duzun nortasunarekin elkartu zenuen gakoarekin sinatuko da.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -191,8 +191,8 @@ msgstr ""
 "<p>Markatu aukera hori mezuaren atal hori zifratzea nahi baduzu.</p><p>Atal "
 "hori, mezu honetako hartzaileentzako zifratu egingo da.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

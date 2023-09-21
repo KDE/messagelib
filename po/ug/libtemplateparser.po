@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -239,31 +239,31 @@ msgstr ""
 msgid "Quote characters"
 msgstr "نەقىل ھەرپلىرى"
 
-#: templateparserjob.cpp:349
+#: templateparserjob.cpp:350
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr ""
 
-#: templateparserjob.cpp:519
+#: templateparserjob.cpp:520
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "خەت تاپشۇرۇۋالغۇچى："
 
-#: templateparserjob.cpp:530
+#: templateparserjob.cpp:531
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1185
+#: templateparserjob.cpp:1186
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr ""
 
-#: templateparserjob.cpp:1394
+#: templateparserjob.cpp:1395
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

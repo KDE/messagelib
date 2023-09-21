@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2021-12-19 19:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -84,7 +84,7 @@ msgstr "لم يُعثر على ”%1“. رجاءً حدّد المسار كام
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "لا يمكنك إرفاق ملفّات أكبر من %1. شاركها عبر خدمة تخزين."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -96,7 +96,7 @@ msgstr ""
 "نوع الملفّ يُكتشف آليًّا، ولكن أحيانًا قد لا يكتشف «%1» النّوع بشكل صحيح، لذا "
 "سيكون هذا هو مكان إصلاح هذه المشكلة.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -106,7 +106,7 @@ msgstr ""
 "<p>الحجم المتوقّع للمرفق:</p><p>لاحظ أنّ الملفّ الثّنائيّ (في الرّسائل "
 "الإلكترونيّة) المرمّز بِ‍base64 سيأخذ أربعة أثلاث الحجم الأصليّ للملفّ.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -118,7 +118,7 @@ msgstr ""
 "لا يحدّد الملفّ الذي سيُرفق، بل يقترح اسم ملفّ يستخدمه عميل بريد المستلم عند حفظ "
 "الجزء على القرص.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -130,7 +130,7 @@ msgstr ""
 "الرّسالة بالرّسالة نفسها. سيعرض أغلب وكلاء البريد هذه المعلومات في معاينات "
 "الرّسائل مع أيقونة المرفق.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -147,7 +147,7 @@ msgstr ""
 "ثنائيّة بل يتكوّن من نصّ فحسب. في هذه الحالة اختيار ”...“ بدلًا من المبدئيّ "
 "”base64“ سيوفّر حتّى 25٪ من حجم الرّسالة النّاتجة.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -159,7 +159,7 @@ msgstr ""
 "<p>أشّر على هذا الخيار إن أردت اقتراح عرض آليّ (ضمن السّياق) لمستلم هذا الجزء "
 "في معاينة الرّسالة، وذلك بدلًا من المنظور الأيقوناتيّ المبدئيّ."
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -169,7 +169,7 @@ msgstr ""
 "<p>أشّر على هذا الخيار إن أردت توقيع جزء الرّسالة هذا.</p><p>سيُجرى التّوقيع "
 "بالمفتاح الذي ربطته بالهويّة المحدّدة حاليًّا.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -178,8 +178,8 @@ msgstr ""
 "<p>أشّر على هذا الخيار إن أردت تعمية جزء الرّسالة.</p><p>سيُعمّى الجزء لمستلمي "
 "هذه الرّسالة.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

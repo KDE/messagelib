@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2019-03-22 00:36+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -84,7 +84,7 @@ msgstr "找不到 %1。請指定完整路徑。"
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "您可能不能附加大於 %1 的檔案。請使用儲存服務分享。"
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -95,7 +95,7 @@ msgstr ""
 "<p>檔案的 <em>MIME 型態</em>：</p> <p>通常您不需要去改變這個設定，系統會自動"
 "偵測檔案型態。但是有時候 %1 無法正確偵測，您可以在這裡修正。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -105,7 +105,7 @@ msgstr ""
 "<p>附件的估計大小：</p> <p>注意，在信件中，用 base64 編碼一個非文字檔時，產生"
 "的大小會比原來的大四分之三。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -116,7 +116,7 @@ msgstr ""
 "<p>此部份的檔案名稱</p> <p>雖然通常是指附檔本身的檔名，但是並不盡然。更正確地"
 "說，它只是用於建議收件者在儲存的時候使用什麼名稱。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -127,7 +127,7 @@ msgstr ""
 "<p>此部份的說明：</p> <p>這是一些關於此部份的資訊，通常會顯示在附件圖示的說"
 "明。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -143,7 +143,7 @@ msgstr ""
 "例如 PostScript 檔內以文字為主，使用 quoted-printable 而不是預設的 base64 可"
 "以省下約 25% 的大小。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -156,7 +156,7 @@ msgstr ""
 "選項。</p> <p>技術上，這只消在 <em>Content-Disposition</em> 標頭上使用 "
 "inline 而不是用 attachment 即可。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -166,15 +166,15 @@ msgstr ""
 "<p>如果您要簽署這部份，就勾選這個選項。</p> <p>系統會使用您發信的身份指定的簽"
 "章來簽署。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr "<p>如果您要將這部份加密，就勾選此選項。</p> <p>這部份將會被加密。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"

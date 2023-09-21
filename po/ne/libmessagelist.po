@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 00:49+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -239,7 +239,7 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "उपेक्षीत"
 
-#: core/manager.cpp:38 core/model.cpp:332
+#: core/manager.cpp:35 core/model.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Unknown"
@@ -347,86 +347,86 @@ msgid ""
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:567
+#: core/manager.cpp:568
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr ""
 
-#: core/manager.cpp:567
+#: core/manager.cpp:568
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:571
+#: core/manager.cpp:572
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "विषयवस्तु"
 
-#: core/manager.cpp:607 core/theme.cpp:113
+#: core/manager.cpp:608 core/theme.cpp:113
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Sender/Receiver"
 msgstr "प्रेषक/प्रापक"
 
-#: core/manager.cpp:614
+#: core/manager.cpp:615
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "प्रेषक"
 
-#: core/manager.cpp:616
+#: core/manager.cpp:617
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "प्रापक"
 
-#: core/manager.cpp:622
+#: core/manager.cpp:623
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "मिति"
 
-#: core/manager.cpp:624
+#: core/manager.cpp:625
 #, fuzzy, kde-format
 #| msgid "Redirect Message"
 msgid "Most Recent Date"
 msgstr "सन्देश पुन: निर्देशन गर्नुहोस्"
 
-#: core/manager.cpp:630
+#: core/manager.cpp:631
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "साइज"
 
-#: core/manager.cpp:632
+#: core/manager.cpp:633
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "सङ्लग्नता"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:639
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Read/Unread"
 msgstr "नपढेको"
 
-#: core/manager.cpp:643
+#: core/manager.cpp:644
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
 msgid "Replied"
 msgstr "जवाफ दिइएको"
 
-#: core/manager.cpp:645
+#: core/manager.cpp:646
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -434,67 +434,67 @@ msgctxt "Message importance indication"
 msgid "Important"
 msgstr "महत्वपूर्ण"
 
-#: core/manager.cpp:651
+#: core/manager.cpp:652
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgid "Action Item"
 msgstr "महत्वपूर्ण सन्देशका चिन्ह हटाउनुहोस्"
 
-#: core/manager.cpp:657
+#: core/manager.cpp:658
 #, kde-format
 msgid "Spam/Ham"
 msgstr "स्पाम/हाम"
 
-#: core/manager.cpp:663
+#: core/manager.cpp:664
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "हेरिएको/उपेक्षा गरिएको"
 
-#: core/manager.cpp:669
+#: core/manager.cpp:670
 #, kde-format
 msgid "Encryption"
 msgstr "गुप्तिकरण"
 
-#: core/manager.cpp:675
+#: core/manager.cpp:676
 #, kde-format
 msgid "Signature"
 msgstr "हस्ताक्षर"
 
-#: core/manager.cpp:680
+#: core/manager.cpp:681
 #, fuzzy, kde-format
 #| msgid "Save List"
 msgid "Tag List"
 msgstr "बचत सूची"
 
-#: core/manager.cpp:688
+#: core/manager.cpp:689
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "छरितो"
 
-#: core/manager.cpp:688
+#: core/manager.cpp:689
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:692
+#: core/manager.cpp:693
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Message"
 msgstr "सन्देश"
 
-#: core/manager.cpp:776
+#: core/manager.cpp:777
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:777
+#: core/manager.cpp:778
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "स्थिति"
@@ -960,62 +960,62 @@ msgstr ""
 msgid "No result found"
 msgstr "हस्ताक्षर फेला परेन"
 
-#: core/view.cpp:766
+#: core/view.cpp:761
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr ""
 
-#: core/view.cpp:770
+#: core/view.cpp:765
 #, fuzzy, kde-format
 #| msgid "Show alway&s"
 msgid "Show Default Columns"
 msgstr "सधैँँ देखाउनुहोस्"
 
-#: core/view.cpp:775
+#: core/view.cpp:770
 #, fuzzy, kde-format
 msgid "Display Tooltips"
 msgstr "यसलाई"
 
-#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:324
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "यसबाट"
 
-#: core/view.cpp:2245 core/view.cpp:2249
+#: core/view.cpp:2240 core/view.cpp:2244
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "यसलाई"
 
-#: core/view.cpp:2246 core/view.cpp:2250
+#: core/view.cpp:2241 core/view.cpp:2245
 #, kde-format
 msgid "Date"
 msgstr "मिति"
 
-#: core/view.cpp:2264 core/view.cpp:2268
+#: core/view.cpp:2259 core/view.cpp:2263
 #, kde-format
 msgid "Size"
 msgstr "साइज"
 
-#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Folder"
 msgstr "फोल्डर"
 
-#: core/view.cpp:2274 core/view.cpp:2276
+#: core/view.cpp:2269 core/view.cpp:2271
 #, fuzzy, kde-format
 #| msgid "Notes"
 msgid "Note"
 msgstr "टिपोट"
 
-#: core/view.cpp:2283 core/view.cpp:2285
+#: core/view.cpp:2278 core/view.cpp:2280
 #, fuzzy, kde-format
 msgid "Preview"
 msgstr "अघिल्लो कार्ड"
 
-#: core/view.cpp:2302
+#: core/view.cpp:2297
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1023,14 +1023,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>गलत</b> हस्ताक्षर"
 msgstr[1] "<b>गलत</b> हस्ताक्षर"
 
-#: core/view.cpp:2305
+#: core/view.cpp:2300
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2342
+#: core/view.cpp:2337
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -1038,27 +1038,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "खोल्नका लागि पूर्वनिर्धारित थ्रेड"
 
-#: core/view.cpp:2344
+#: core/view.cpp:2339
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "खोल्नका लागि पूर्वनिर्धारित थ्रेड"
 
-#: core/view.cpp:2348
+#: core/view.cpp:2343
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "थ्रेड गरिएका सन्देश सूची"
 
-#: core/view.cpp:2358
+#: core/view.cpp:2353
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2361
+#: core/view.cpp:2356
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1066,93 +1066,93 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2365
+#: core/view.cpp:2360
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "सन्देश"
 
-#: core/view.cpp:2367
+#: core/view.cpp:2362
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2371
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "खोल्नका लागि पूर्वनिर्धारित थ्रेड"
 
-#: core/view.cpp:2379
+#: core/view.cpp:2374
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "थ्रेड गरिएका सन्देश सूची"
 
-#: core/view.cpp:2387
+#: core/view.cpp:2382
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "सन्देश कुञ्जी %1 ले चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2389
+#: core/view.cpp:2384
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "सन्देश कुञ्जी %1 ले चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2398
+#: core/view.cpp:2393
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "खोल्नका लागि पूर्वनिर्धारित थ्रेड"
 
-#: core/view.cpp:2401
+#: core/view.cpp:2396
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "थ्रेड गरिएका सन्देश सूची"
 
-#: core/view.cpp:2410 core/view.cpp:2434
+#: core/view.cpp:2405 core/view.cpp:2429
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2412
+#: core/view.cpp:2407
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2415
+#: core/view.cpp:2410
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2418
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "खोल्नका लागि पूर्वनिर्धारित थ्रेड"
 
-#: core/view.cpp:2426
+#: core/view.cpp:2421
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "थ्रेड गरिएका सन्देश सूची"
 
-#: core/view.cpp:2436
+#: core/view.cpp:2431
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2457
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1160,7 +1160,7 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>गलत</b> हस्ताक्षर"
 msgstr[1] "<b>गलत</b> हस्ताक्षर"
 
-#: core/view.cpp:2467
+#: core/view.cpp:2462
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1542,20 +1542,20 @@ msgstr ""
 msgid "Close Tab"
 msgstr "सबै थ्रेड संक्षिप्त गर्नुहोस्"
 
-#: pane.cpp:520 pane.cpp:816
+#: pane.cpp:520 pane.cpp:812
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "खाली"
 
-#: pane.cpp:712
+#: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:716
+#: pane.cpp:712
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1563,14 +1563,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "सबै थ्रेड संक्षिप्त गर्नुहोस्"
 
-#: pane.cpp:721
+#: pane.cpp:717
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "अन्तिम खोजी"
 
-#: pane.cpp:721
+#: pane.cpp:717
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
@@ -1743,7 +1743,7 @@ msgstr "थ्रेड मेट्नुहोस्"
 msgid "Unnamed Theme"
 msgstr "बेनामी"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1223
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
@@ -1888,51 +1888,51 @@ msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr ""
 
-#: utils/themeeditor.cpp:857
+#: utils/themeeditor.cpp:849
 #, fuzzy, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "पठाउनुहोस्"
 
-#: utils/themeeditor.cpp:864
+#: utils/themeeditor.cpp:856
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "बाक्लो"
 
-#: utils/themeeditor.cpp:868
+#: utils/themeeditor.cpp:860
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "छड्के"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:867
 #, fuzzy, kde-format
 #| msgid "&Fonts"
 msgid "Font"
 msgstr "फन्ट"
 
-#: utils/themeeditor.cpp:883
+#: utils/themeeditor.cpp:875
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "पूर्वनिर्धारित सेट"
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:880
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:896
+#: utils/themeeditor.cpp:888
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Foreground Color"
 msgstr "वैकल्पिक पृष्ठभूमि रङ"
 
-#: utils/themeeditor.cpp:905
+#: utils/themeeditor.cpp:897
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Hide"
@@ -1942,7 +1942,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "लुकाउनुहोस्"
 
-#: utils/themeeditor.cpp:912
+#: utils/themeeditor.cpp:904
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1950,7 +1950,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:911
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1958,101 +1958,101 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:919
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:933
+#: utils/themeeditor.cpp:925
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header"
 msgstr "ग्रुपवेयर"
 
-#: utils/themeeditor.cpp:940
+#: utils/themeeditor.cpp:932
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "कुनै पनि होइन"
 
-#: utils/themeeditor.cpp:945
+#: utils/themeeditor.cpp:937
 #, fuzzy, kde-format
 #| msgid "Never Automatically"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "कहिल्यै पनि स्वचालित रूपमा होइन"
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:942
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:958
+#: utils/themeeditor.cpp:950
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Color"
 msgstr "वैकल्पिक पृष्ठभूमि रङ"
 
-#: utils/themeeditor.cpp:978
+#: utils/themeeditor.cpp:970
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Style"
 msgstr "वैकल्पिक पृष्ठभूमि रङ"
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1156
 #, fuzzy, kde-format
 msgid "Column Properties..."
 msgstr "विशेषता"
 
-#: utils/themeeditor.cpp:1167
+#: utils/themeeditor.cpp:1159
 #, fuzzy, kde-format
 #| msgid "Add Entry..."
 msgid "Add Column..."
 msgstr "प्रविष्टि थप्नुहोस्..."
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1162
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Delete Column"
 msgstr "फोल्डर मेट्नुहोस्"
 
-#: utils/themeeditor.cpp:1176
+#: utils/themeeditor.cpp:1168
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1180
+#: utils/themeeditor.cpp:1172
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1229
+#: utils/themeeditor.cpp:1221
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add New Column"
 msgstr "स्तम्भ हेर्नुहोस्"
 
-#: utils/themeeditor.cpp:1253
+#: utils/themeeditor.cpp:1245
 #, fuzzy, kde-format
 msgid "Column Properties"
 msgstr "विशेषता"
 
-#: utils/themeeditor.cpp:1295
+#: utils/themeeditor.cpp:1287
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Append"
 msgid "Appearance"
 msgstr "थप्नुहोस्"
 
-#: utils/themeeditor.cpp:1299
+#: utils/themeeditor.cpp:1291
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Content Items"
 msgstr "सम्पर्क"
 
-#: utils/themeeditor.cpp:1431
+#: utils/themeeditor.cpp:1423
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2060,26 +2060,26 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1441
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "&Advanced"
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1437
 #, fuzzy, kde-format
 #| msgid "H&eaders"
 msgid "Header:"
 msgstr "हेडर"
 
-#: utils/themeeditor.cpp:1451
+#: utils/themeeditor.cpp:1443
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Icon size:"
 msgstr "साइज"
 
-#: utils/themeeditor.cpp:1457
+#: utils/themeeditor.cpp:1449
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

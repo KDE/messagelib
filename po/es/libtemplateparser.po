@@ -3,20 +3,20 @@
 #
 # Javier Vinal <fjvinalgmail.com>, 2010, 2011, 2012.
 # Javier Viñal <fjvinal@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2018.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2013, 2019, 2020, 2021.
+# SPDX-FileCopyrightText: 2013, 2019, 2020, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2021-08-08 23:32+0200\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"PO-Revision-Date: 2023-09-20 01:16+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.07.90\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -270,31 +270,31 @@ msgstr "Plantilla para reenviar"
 msgid "Quote characters"
 msgstr "Caracteres de citado"
 
-#: templateparserjob.cpp:349
+#: templateparserjob.cpp:350
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "No se puede insertar el contenido del archivo %1: %2"
 
-#: templateparserjob.cpp:519
+#: templateparserjob.cpp:520
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Para:"
 
-#: templateparserjob.cpp:530
+#: templateparserjob.cpp:531
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1185
+#: templateparserjob.cpp:1186
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Adjunto %1"
 
-#: templateparserjob.cpp:1394
+#: templateparserjob.cpp:1395
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
@@ -584,8 +584,8 @@ msgstr ""
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
-"¿Quiere usted reiniciar la plantilla actual o todas las plantillas por "
-"defecto?"
+"¿Quiere reiniciar la plantilla actual o todas las plantillas a las "
+"predeterminadas?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
@@ -638,9 +638,9 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
-"Atraviese este menú para encontrar una orden para insertar en la plantilla "
-"que se está editando. La orden se insertará en la posición del cursor, por "
-"lo que usted querrá mover el cursor a la posición deseada primero."
+"Recorra este menú para encontrar una orden para insertar en la plantilla que "
+"se está editando. La orden se insertará en la posición del cursor, por lo "
+"que querrá mover el cursor a la posición deseada primero."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
@@ -675,8 +675,8 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
-"Pulse este botón si usted quiere crear una nueva plantilla personalizada con "
-"el nombre especificado"
+"Pulse este botón si quiere crear una nueva plantilla personalizada con el "
+"nombre especificado"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
@@ -693,8 +693,8 @@ msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
 msgstr ""
-"Pulse este botón si usted quiere eliminar la plantilla personalizada "
-"seleccionada actualmente"
+"Pulse este botón si quiere eliminar la plantilla personalizada seleccionada "
+"actualmente"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
@@ -711,8 +711,8 @@ msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
 msgstr ""
-"Pulse este botón si usted quiere duplicar la plantilla personalizada "
-"seleccionada actualmente"
+"Pulse este botón si quiere duplicar la plantilla personalizada seleccionada "
+"actualmente"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
@@ -880,7 +880,7 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"En esta área usted crea la plantilla para los nuevos mensajes de correo. "
+"En esta área puede crear la plantilla para los nuevos mensajes de correo. "
 "Para más información sobre cómo crear la plantilla, pulse el enlace «¿Cómo "
 "funciona esto?» en este diálogo."
 
@@ -907,7 +907,7 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"Es esta área usted crea la plantilla para los mensajes de respuesta. Para "
+"Es esta área puede crear la plantilla para los mensajes de respuesta. Para "
 "más información sobre cómo crear la plantilla, pulse el enlace «¿Cómo "
 "funciona esto?» en este diálogo."
 
@@ -936,8 +936,8 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
-"Es esta área usted crea la plantilla para responder a todos los mensajes o a "
-"una lista de correo. Para más información sobre cómo crear la plantilla, "
+"Es esta área puede crear la plantilla para responder a todos los mensajes o "
+"a una lista de correo. Para más información sobre cómo crear la plantilla, "
 "pulse el enlace «¿Cómo funciona esto?» en este diálogo."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
@@ -963,7 +963,7 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"Es esta área usted crea la plantilla para reenviar mensajes. Para más "
+"Es esta área puede crear la plantilla para reenviar mensajes. Para más "
 "información sobre cómo crear la plantilla, pulse el enlace «¿Cómo funciona "
 "esto?» en este diálogo."
 

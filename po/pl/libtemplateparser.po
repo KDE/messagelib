@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2021-08-08 09:00+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -272,31 +272,31 @@ msgstr "Szablon przekierowania"
 msgid "Quote characters"
 msgstr "Znaki cytatu"
 
-#: templateparserjob.cpp:349
+#: templateparserjob.cpp:350
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Nie można wstawić treści z pliku %1: %2"
 
-#: templateparserjob.cpp:519
+#: templateparserjob.cpp:520
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Do:"
 
-#: templateparserjob.cpp:530
+#: templateparserjob.cpp:531
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "DW:"
 
-#: templateparserjob.cpp:1185
+#: templateparserjob.cpp:1186
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Załącznik %1"
 
-#: templateparserjob.cpp:1394
+#: templateparserjob.cpp:1395
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

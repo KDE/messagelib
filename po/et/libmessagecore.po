@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2019-12-18 19:56+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -82,7 +82,7 @@ msgstr "\"%1\" ei leitud. Palun anna täielik asukoht."
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "Suuremaid faile kui %1 ei saa kaasata. Jagage seda salvestusteenusega."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -94,7 +94,7 @@ msgstr ""
 "sest failitüüp valitakse automaatselt. Kuid vahel ei pruugi %1 tüüpi "
 "korrektselt ära tunda. Siin saab viga parandada.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -104,7 +104,7 @@ msgstr ""
 "<p>Manuse hinnanguline suurus:</p><p>arvesta, et e-kirjas võtab base64-ga "
 "kodeeritud binaarfail umbes neli kolmandikku faili tegelikust suurusest.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -116,7 +116,7 @@ msgstr ""
 "määra see veel antud faili kaasatuks. See näitab pigem soovitatavat nime, "
 "millega kirja saaja võiks selle salvestada.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -128,7 +128,7 @@ msgstr ""
 "kirja kohta rida 'Teema'. Enamik e-posti rakendusi näitab seda infot "
 "lugemispaneelis kaasatud faili ikooni kõrval.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -146,7 +146,7 @@ msgstr ""
 "vaikimisi antud \"Base64\" asemel \"Quoted-printable\" valimine tuua kaasa "
 "kirja suuruse kahanemise kuni veerandi võrra.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -160,7 +160,7 @@ msgstr ""
 "tähendab see antud osa päise väljal <em>Content-Disposition</em> vaikimisi "
 "määratud kirje \"attachment\" asendamist \"inline\"-iga.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -170,7 +170,7 @@ msgstr ""
 "<p>Märgi see valik, kui soovid allkirjastada seda kirja osa.</p> <p>Allkiri "
 "antakse võtmega, mille oled sidunud aktiivse identiteediga.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -179,8 +179,8 @@ msgstr ""
 "<p>Märgi see valik, kui soovid krüptida selle kirja osa.</p> <p>See osa "
 "krüptitakse kirja saajate jaoks.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

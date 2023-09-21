@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2014-04-08 23:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 "Dateien mit en Grött vun mehr as %1 laat sik nich bileggen. Du kannst de "
 "över en Datenaflaagdeenst delen."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -100,7 +100,7 @@ msgstr ""
 "ännern, de Typ vun de Datei warrt automaatsch faststellt. Wenn %1 dat "
 "villicht doch maal nich richtig maakt, kannst Du dat hier richten.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -111,7 +111,7 @@ msgstr ""
 "en Nettbreef, de mit Base64 kodeert is, bet to veer Drüddel vun de "
 "Dateigrött bruukt.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -124,7 +124,7 @@ msgstr ""
 "Dat Feld is en Vörslag för den Adressaat sien Nettpostprogramm, den dat "
 "bruken kann, wenn de Deel na de Fastplaat sekert warrn schall.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -137,7 +137,7 @@ msgstr ""
 "mehrsten Nettpostprogrammen wiest disse Informatschoon binnen de Narichten-"
 "Vöransicht blang dat Bilaag-Lüttbild.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -155,7 +155,7 @@ msgstr ""
 "to 25% lütter maken, wenn Du hier \"Quoted Printable\" un nich dat "
 "vörinstellte \"Base 64\" utsöchst.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -170,7 +170,7 @@ msgstr ""
 "Disposition\") op <i>inbett</i> (\"inline\") sett, un nich op den "
 "Standardweert <i>Bilaag</i> (\"attachment\").</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -181,7 +181,7 @@ msgstr ""
 "de Ünnerschrift warrt de Slötel bruukt, den Du för de aktuelle Identiteet "
 "fastleggt hest.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -190,8 +190,8 @@ msgstr ""
 "<p>Maak dit an, wenn Du dissen Narichtendeel verslöteln wullt.</p><p>De Deel "
 "warrt för all Adressaten vun de Naricht verslötelt.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"

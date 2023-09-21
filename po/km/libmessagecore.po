@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2012-06-19 09:11+0700\n"
 "Last-Translator: Sophea <sophea@khmeros.info>\n"
 "Language-Team: Khmer <>\n"
@@ -87,7 +87,7 @@ msgstr "រក​មិន​ឃើញ \"%1\" ។ សូម​បញ្ជាក
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "អ្នក​មិន​អាច​ភ្ជាប់​ឯកសារ​ធំជាង %1 បាន​ទេ ។"
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -99,7 +99,7 @@ msgstr ""
 "ឯកសារ​នេះ​ត្រូវ​បាន​ពិនិត្យមើល​ដោយ​ស្វ័យប្រវត្តិ ប៉ុន្តែ​ពេល​ខ្លះ %1 អាច​រក​មិន​ឃើញ​ប្រភេទ​មិន​ត្រឹមត្រូវ -- "
 "ទីនេះ​អ្នក​អាច​ជួសជុល​វា​បាន ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -109,7 +109,7 @@ msgstr ""
 "<p>ទំហំ​ប៉ាន់ស្មាន​របស់​ឯកសារ ៖</p><p>ចងចាំ​ថា នៅ​ក្នុង​សារ​អ៊ីមែល ឯកសារ​គោល​ពីរ​ត្រូវ​បាន​អ៊ិនកូដ​ជាមួយ "
 "base64 ដែល​នឹង​ត្រូវ​ឡើង​ដល់​បួន​ភាគ​បី​នៃ​ទំហំ​ឯកសារ​សារ​ជាក់ស្ដែង ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "ឯកសារ​ដែល​បាន​ភ្ជាប់​ទេ ជាងនេះ​ទៅទៀត វា​ស្នើ​ឈ្មោះ​ឯកសារ​ដែល​ត្រូវ​បាន​ប្រើ​ដោយ​ភ្នាក់ងារ​សំបុត្រ​របស់​"
 "អ្នកទទួល ពេល​រក្សាទុក​ផ្នែក​ទៅកាន់​ថាស ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -133,7 +133,7 @@ msgstr ""
 "ប្រធានបទ​សម្រាប់​សារ​ទាំងមូល ភ្នាក់ងារ​សារ​ភាគច្រើន​បង្ហាញ​ព័ត៌មាន​នេះ​នៅ​ក្នុង​ការ​មើល​សារ​ជាមុន​របស់​ពួកគេ​"
 "ដែល​ក្បែរ​រូបតំណាង​របស់​ឯកសារ​ភ្ជាប់ ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -150,7 +150,7 @@ msgstr ""
 "ជ្រើស \"សម្រង់​ដែល​អាច​បោះពុម្ព​បាន\" តាម​លំនាំដើម \"base64\" នឹង​សន្សំ​រហូតដល់ ២៥% នៅ​ក្នុង​ការ​"
 "បង្ហាញ​ទំហំសារ ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -164,7 +164,7 @@ msgstr ""
 "ដោះស្រាយ​ដោយ​ការ​កំណត់​វាល​បឋមកថា <em>ការ​ចែកចាយ​មាតិកា</em> របស់​ផ្នែក​នេះ​ទៅកាន់ \"ក្នុង​តួ\" "
 "ជំនួស​ឲ្យ​លំនាំដើម \"ឯកសារ​ភ្ជាប់\" ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -174,7 +174,7 @@ msgstr ""
 "<p>ធីក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​ផ្នែក​របស់​សារ​នេះ​ត្រូវ​បាន​ចុះហត្ថលេខា ។</p><p>ហត្ថលេខា​ត្រូវ​បាន​"
 "បង្កើត​ឡើង​ជាមួយ​គ្រាប់ចុច​ដែល​អ្នក​បាន​ជាប់​ទាក់ទង​នឹង​អត្តសញ្ញាណ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -183,8 +183,8 @@ msgstr ""
 "<p>ធីក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​ផ្នែក​របស់​សារ​នេះ​ត្រូវ​បាន​អ៊ិនគ្រីប ។</p><p>ផ្នែក​នេះ​នឹង​ត្រូវ​បាន​"
 "អ៊ិនគ្រីប​សម្រាប់​អ្នកទទួល​សារ​នេះ ។</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"

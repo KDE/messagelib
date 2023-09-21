@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2020-10-04 18:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "\"%1\"을(를) 찾을 수 없습니다. 전체 경로를 입력하십시
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "%1보다 큰 파일을 첨부할 수 없습니다. 저장소 서비스로 공유하십시오."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -94,7 +94,7 @@ msgstr ""
 "되기 때문에 이 설정을 편집할 필요는 없습니다. 하지만 %1에서 가끔씩 파일 형식"
 "을 올바르게 인식하지 못할 수도 있으며 이 경우 여기에서 편집하십시오.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -104,7 +104,7 @@ msgstr ""
 "<p>예상되는 첨부 파일 크기:</p><p>이메일 메시지에서 base64 인코딩된 바이너리 "
 "파일은 실제 크기보다 25% 정도 더 커질 수도 있습니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -116,7 +116,7 @@ msgstr ""
 "을 가리키지는 않으며, 수신자의 메일 프로그램에서 이 부분을 디스크에 저장할 "
 "때 사용할 파일 이름입니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -127,7 +127,7 @@ msgstr ""
 "<p>부분의 설명:</p><p>각각 부분에 대한 설명입니다. 대부분의 메일 프로그램에서"
 "는 메시지 미리 보기 옆에 첨부 아이콘과 같이 이 메시지를 표시합니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -145,7 +145,7 @@ msgstr ""
 "\"quoted-printable\"을 선택하면 메시지 크기의 25% 정도를 줄일 수 있습니다.</"
 "p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -158,7 +158,7 @@ msgstr ""
 "기에 같이 포함시키게 됩니다.</p><p>기술적으로는 이 부분의 <em>Content-"
 "Disposition</em> 헤더를 \"attachment\" 대신 \"inline\"으로 변경합니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -168,7 +168,7 @@ msgstr ""
 "<p>이 옵션을 선택하면 메시지의 이 부분을 서명합니다.</p><p>서명은 현재 선택"
 "한 프로필과 연결된 키로 생성해야 합니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -177,8 +177,8 @@ msgstr ""
 "<p>이 옵션을 선택하면 메시지의 이 부분을 암호화합니다.</p><p>이 메시지를 받"
 "는 사람의 공개 키로 암호화됩니다.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

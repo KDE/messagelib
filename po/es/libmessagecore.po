@@ -3,31 +3,31 @@
 #
 # Javier Vinal <fjvinal@gmail.com>, 2009, 2010, 2011.
 # Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2018.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019.
+# SPDX-FileCopyrightText: 2019, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
-"PO-Revision-Date: 2019-12-27 00:06+0100\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"PO-Revision-Date: 2023-09-20 01:06+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Javier Viñal"
+msgstr "Eloy Cuadra,Javier Viñal"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "fjvinal@gmail.com"
+msgstr "ecuadra@eloihr.net,fjvinal@gmail.com"
 
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
@@ -79,16 +79,16 @@ msgstr "desconocido"
 #: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
-msgstr "«%1» no encontrado. Por favor, especifique la ruta completa."
+msgstr "No se ha encontrado «%1». Especifique la ruta completa."
 
 #: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
-"Usted no debe anexar archivos mayores de %1. Compártalos mediante un "
-"servicio de almacenamiento."
+"No debe anexar archivos mayores de %1. Compártalos mediante un servicio de "
+"almacenamiento."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -101,7 +101,7 @@ msgstr ""
 "pero a veces, %1 puede no detectar el tipo de archivo correctamente. -- aquí "
 "es donde puede solucionarlo.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -112,7 +112,7 @@ msgstr ""
 "de correo, un archivo binario codificado en base 64 cuadriplicará el tamaño "
 "del archivo.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -125,7 +125,7 @@ msgstr ""
 "nombre para que el programa de correo del destinatario lo use al guardar "
 "esta parte en disco.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -138,7 +138,7 @@ msgstr ""
 "de los programas de correo mostrarán esta información en las vistas previas "
 "del mensaje, al lado del icono del adjunto.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -157,7 +157,7 @@ msgstr ""
 "vez del predeterminado «base64» ahorrará hasta el 25 % del tamaño del "
 "mensaje.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -172,7 +172,7 @@ msgstr ""
 "este componente de campo de encabezado <em>Content-Disposition</em> como "
 "«intercalado» en vez de lo predeterminado como «adjunto».</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -183,7 +183,7 @@ msgstr ""
 "p><p>La firma se hará con la clave que tenga asociada a la identidad "
 "actualmente seleccionada.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -192,8 +192,8 @@ msgstr ""
 "<p>Marque esta opción si quiere que esta parte del mensaje sea cifrada.</"
 "p><p>La parte será cifrada para los destinatarios del mensaje</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -302,7 +302,7 @@ msgstr "Sustituir el prefi&jo reconocido con \"Re:\""
 #: settings/messagecore.kcfg:62
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
-msgstr "Reemplazar prefijo reconocido por «&Fwd:»"
+msgstr "Sustituir el prefijo reconocido por «&Fwd:»"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
 #: settings/messagecore.kcfg:67

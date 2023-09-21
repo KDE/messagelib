@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2022-01-27 20:03+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "%1-ஐ விட பெரிய கோப்புகளை உடனிணைக்க முடியாது. ஏதாவதொரு சேமிப்பக சேவையின் மூலம் அதை "
 "பகிருங்கள்."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "கண்டறியப்படுவதால் இத்தேர்வை நீங்கள் மாற்றும் தேவை இருக்காது. ஆனால் சிலசமயம், கோப்புவகையை "
 "%1 தவறாக கண்டறியலாம் — அவ்வாறு நடந்தால், இத்தேர்வை கொண்டு அதை சரி செய்யலாம்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -108,7 +108,7 @@ msgstr ""
 "<p>உடனிணைப்பின் உத்தேசமான அளவு:</p><p> அஞ்சலில் base64 முறையில் இணைக்கப்படும் கோப்பு, "
 "உண்மையான அளவைவிட 33% அதிகமான இடத்தை எடுக்கும் என்பதை நினைவில் கொள்ளுங்கள்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -120,7 +120,7 @@ msgstr ""
 "இதை மாற்றுவதன் மூலம் இணைக்கப்படும் கோப்பை மாற்ற முடியாது. மாறாக, பெறுநர் இக்கோப்பை "
 "வட்டுக்கு சேமிக்கும்போது அவரது அஞ்சல் செயலி பரிந்துரைக்கும் பெயரையே இது குறிக்கும்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -132,7 +132,7 @@ msgstr ""
 "கோப்பின் உள்ளடக்கத்தை விவரிக்கும்; அஞ்சலின் உடனிணைப்புகளை பட்டியலிடும்போது, பெரும்பாலான "
 "அஞ்சல் செயலிகள் பக்கத்தில் இதை காட்டும்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -144,7 +144,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -154,7 +154,7 @@ msgid ""
 "default \"attachment\".</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -162,15 +162,15 @@ msgid ""
 "selected identity.</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

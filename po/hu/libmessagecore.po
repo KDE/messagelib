@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2014-05-04 17:17+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -85,7 +85,7 @@ msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Nem csatolhat nagyobb fájlokat mint %1. Ossza meg tároló szolgáltatással."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "azonban a(z) %1 nem ismeri fel helyesen a típust, olyankor itt javíthatja a "
 "hibát.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -108,7 +108,7 @@ msgstr ""
 "<p>A melléklet becsült mérete:</p><p>Ne feledje, hogy egy e-mail üzenetben "
 "egy base64 kódolású bináris fájl a tényleges méretének 4/3-át veszi fel.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -120,7 +120,7 @@ msgstr ""
 "nem adja meg a csatolandó fájlt. Helyette javasol egy, a címzett "
 "levelezőügynöke által használandó fájlnevet a lemezre mentéskor.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -133,7 +133,7 @@ msgstr ""
 "megjeleníti ezt az információt az üzenet előnézetében a melléklet ikonja "
 "mellett.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -151,7 +151,7 @@ msgstr ""
 "beállítással 25%-kal csökkenti az üzenet méretét a „base64” kódoláshoz "
 "képest.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -166,7 +166,7 @@ msgstr ""
 "történik, hogy a <em>Content-Disposition</em> mező tartalma „inline” helyett "
 "„attachment” lesz.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -176,7 +176,7 @@ msgstr ""
 "<p>Jelölje be ezt a beállítást, ha szeretné aláírni az üzenetrészt.</p><p>Az "
 "aláírás az aktuálisan kijelölt identitáshoz rendelt kulccsal történik.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -185,8 +185,8 @@ msgstr ""
 "<p>Jelölje be ezt a beállítást ha szeretné az üzenetrészt titkosítani.</"
 "p><p>A rész titkosítva lesz az üzenet címzettjének.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"

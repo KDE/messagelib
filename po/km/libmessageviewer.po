@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -359,70 +359,70 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "បានទុក ៖ "
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#, kde-format
-msgid "SDID"
-msgstr ""
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#, kde-format
-msgid "Selector"
-msgstr ""
-
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Inserted"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "Last Used"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#: dkim-verify/dkimmanagerkeytreeview.cpp:69
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Copy Key"
 msgstr "អត្ថបទ​សំឡេង"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "លុប​ឯកសារ​ភ្ជាប់"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:89
-#: dkim-verify/dkimmanageruleswidget.cpp:221
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Delete All"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Delete Keys"
@@ -492,82 +492,82 @@ msgstr "នាំចូល"
 msgid "No rules imported."
 msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "Translate from language"
 #| msgid "From:"
 msgid "From"
 msgstr "ពី ៖"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:194
-#: remote-content/remotecontentconfigurewidget.cpp:78
+#: dkim-verify/dkimmanageruleswidget.cpp:196
+#: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:199
-#: remote-content/remotecontentconfigurewidget.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:201
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: dkim-verify/dkimmanageruleswidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Duplicate Rule"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:207
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Remove Rule"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: dkim-verify/dkimmanageruleswidget.cpp:211
 #, kde-format
 msgid "Do you want to delete this rule?"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:210
-#: remote-content/remotecontentconfigurewidget.cpp:88
+#: dkim-verify/dkimmanageruleswidget.cpp:212
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Delete Rule"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:224
+#: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgid "Delete Rules"
@@ -596,12 +596,12 @@ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:281
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
 #, fuzzy, kde-format
 #| msgctxt "Translate from language"
 #| msgid "From:"
@@ -649,279 +649,285 @@ msgstr ""
 msgid "Rules..."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:97
+#: dkim-verify/dkimwidgetinfo.cpp:94
 #, fuzzy, kde-format
 #| msgctxt "Unknown date"
 #| msgid "Unknown"
 msgid "Unknown"
 msgstr "​(មិន​ស្គាល់)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:103
+#: dkim-verify/dkimwidgetinfo.cpp:100
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "DKIM: valid (signed by %1)"
 msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %1 ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:113
+#: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:118
+#: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:140
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Missing signature."
 msgstr "ហត្ថលេខា​ល្អ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:143
 #, fuzzy, kde-format
 #| msgid "Invalid signature."
 msgid "Invalid query method."
 msgstr "ហត្ថលេខា​មិន​ត្រឹមត្រូវ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:155
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature algorithm is invalid."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:158
 #, fuzzy, kde-format
 #| msgid "One key has been revoked."
 msgid "The public key was revoked."
 msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:161
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature is too large."
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:170
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to verify signature."
 msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:182
+#: dkim-verify/dkimwidgetinfo.cpp:179
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to download key."
 msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
 
-#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:191
+#: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:197
 #, fuzzy, kde-format
 #| msgid "The signature has expired."
 msgid "Signature expired"
 msgstr "ហត្ថលេខា​បាន​ផុត​កំណត់​ហើយ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:203
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature too small"
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:212
+#: dkim-verify/dkimwidgetinfo.cpp:209
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Public Key too small"
 msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:256
+#: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
 msgid "%1: None"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:271
+#: dkim-verify/dkimwidgetinfo.cpp:268
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %1 ។"
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:306
+#: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:231
+#: header/grantleeheaderformatter.cpp:204
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "​គ្មាន​ប្រធាន​បទ"
 
-#: header/grantleeheaderformatter.cpp:251
+#: header/grantleeheaderformatter.cpp:224
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "កាលបរិច្ឆេទ ៖ "
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:240
+#, fuzzy, kde-format
+#| msgid "message"
+msgid "Message-Id:"
+msgstr "សារ​"
+
+#: header/grantleeheaderformatter.cpp:264
 #, fuzzy, kde-format
 #| msgctxt "Translate to language"
 #| msgid "To:"
 msgid "To:"
 msgstr "ជូន​ចំពោះ ៖​"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:266
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To:"
 msgstr "ឆ្លើយតប​ទៅ ៖ "
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:268
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "ចម្លងជូន ៖ "
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:270
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "ចម្លងជាសម្ងាត់ជូន ៖ "
 
-#: header/grantleeheaderformatter.cpp:283
+#: header/grantleeheaderformatter.cpp:274
 #, fuzzy, kde-format
 #| msgid "sender: "
 msgid "Sender:"
 msgstr "អ្នកផ្ញើ ៖ "
 
-#: header/grantleeheaderformatter.cpp:285
+#: header/grantleeheaderformatter.cpp:276
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
 
-#: header/grantleeheaderformatter.cpp:287
+#: header/grantleeheaderformatter.cpp:278
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
 
-#: header/grantleeheaderformatter.cpp:387
+#: header/grantleeheaderformatter.cpp:359
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:494 header/headerstyle_util.cpp:81
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
 #: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
 #, kde-format
 msgid "No Subject"
 msgstr "​គ្មាន​ប្រធាន​បទ"
 
-#: header/grantleeheaderformatter.cpp:499
+#: header/grantleeheaderformatter.cpp:454
 #, kde-format
 msgid "Spam Status:"
 msgstr "ស្ថានភាព​សារ​ឥតបានការ ៖"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:466
 #, kde-format
 msgid "Printing mode"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:553
+#: header/grantleeheaderformatter.cpp:508
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:560
+#: header/grantleeheaderformatter.cpp:515
 #, kde-format
 msgid "Attachments:"
 msgstr "ឯកសារ​ភ្ជាប់ ៖"
 
-#: header/grantleeheaderformatter.cpp:589
+#: header/grantleeheaderformatter.cpp:544
 #, kde-format
 msgid "Security:"
 msgstr ""
@@ -1071,129 +1077,129 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "អ្នកផ្ញើ ៖ "
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "មាន​កំហុស ៖ មិនបាន​បញ្ជាក់​ហត្ថលេខាឡើយ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:71
 #, kde-format
 msgid "Good signature"
 msgstr "ហត្ថលេខា​ដែល​ល្អ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:75
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "ហត្ថលេខា​ដែល​ល្អ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "No signature found"
 msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:95
+#: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "មាន​កំហុស​នៅខណៈ​ពេល​ដែល​កំពុង​ផ្ទៀងផ្ទាត់​ហត្ថលេខា"
 
-#: messagepartthemes/default/defaultrenderer.cpp:99
+#: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "Different results for signatures"
 msgstr "លទ្ធផល​ផ្សេងគ្នា​ សម្រាប់​ហត្ថលេខា"
 
-#: messagepartthemes/default/defaultrenderer.cpp:119
+#: messagepartthemes/default/defaultrenderer.cpp:111
 #, kde-format
 msgid "No status information available."
 msgstr "មិនមាន​ព័ត៌មាន​ស្ថានភាពឡើយ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:126
-#: messagepartthemes/default/defaultrenderer.cpp:211
+#: messagepartthemes/default/defaultrenderer.cpp:118
+#: messagepartthemes/default/defaultrenderer.cpp:203
 #, kde-format
 msgid "Good signature."
 msgstr "ហត្ថលេខា​ល្អ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:147
+#: messagepartthemes/default/defaultrenderer.cpp:139
 #, kde-format
 msgid "One key has expired."
 msgstr "សោ​មួយ​បាន​ផុតកំណត់​ហើយ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:151
+#: messagepartthemes/default/defaultrenderer.cpp:143
 #, kde-format
 msgid "The signature has expired."
 msgstr "ហត្ថលេខា​បាន​ផុត​កំណត់​ហើយ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:156
+#: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "មិនអាចផ្ទៀងផ្ទាត់បាន ៖ បាត់បង់សោ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:155
 #, kde-format
 msgid "CRL not available."
 msgstr "មិនមាន CRL ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:159
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL ដែល​មាន​ គឺ​ចាស់​ពេក ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:171
+#: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "A policy was not met."
 msgstr "មិបានជួប​គោលការណ៍ឡើយ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:175
+#: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "A system error occurred."
 msgstr "កំហុស​ប្រព័ន្ធ​បាន​កើត​មានឡើយ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:186
+#: messagepartthemes/default/defaultrenderer.cpp:178
 #, kde-format
 msgid "One key has been revoked."
 msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:213
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "ហត្ថលេខា​ល្អ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:605
-#: messagepartthemes/default/defaultrenderer.cpp:607
+#: messagepartthemes/default/defaultrenderer.cpp:525
+#: messagepartthemes/default/defaultrenderer.cpp:527
 #, kde-format
 msgid "certificate"
 msgstr "​វិញ្ញាបនបត្រ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:617
-#: messagepartthemes/default/defaultrenderer.cpp:636
+#: messagepartthemes/default/defaultrenderer.cpp:537
+#: messagepartthemes/default/defaultrenderer.cpp:556
 #, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "​ការព្រមាន ៖"
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
 "អាសយដ្ឋាន​សំបុត្រ​របស់អ្នកផ្ញើ គឺ​​មិនត្រូវបាន​ទុក​នៅក្នុង​ %1 ដែលត្រូវបាន​ប្រើសម្រាប់​ការចុះហត្ថលេខាឡើយ​ ។"
 
-#: messagepartthemes/default/defaultrenderer.cpp:618
+#: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "sender: "
 msgstr "អ្នកផ្ញើ ៖ "
 
-#: messagepartthemes/default/defaultrenderer.cpp:619
+#: messagepartthemes/default/defaultrenderer.cpp:539
 #, kde-format
 msgid "stored: "
 msgstr "បានទុក ៖ "
 
-#: messagepartthemes/default/defaultrenderer.cpp:637
+#: messagepartthemes/default/defaultrenderer.cpp:557
 #, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
@@ -1210,24 +1216,24 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "បឋមកថា​វែង"
 
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Status: "
 msgid "Status"
 msgstr "ស្ថានភាព ៖ "
 
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:105
+#: remote-content/remotecontentconfigurewidget.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:121
+#: remote-content/remotecontentconfigurewidget.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "View->headers->"
 #| msgid "&Long Headers"
@@ -1235,12 +1241,12 @@ msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "បឋមកថា​វែង"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "Add new Url"
 msgstr ""
@@ -1676,7 +1682,7 @@ msgstr ""
 "ដែល​ការ​ឆ្លើយតប​ត្រូវ​បាន​ផ្ញើ​ដោយ​ជោគជ័យ ។"
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1533
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "ប្រើពុម្ពអក្សរថេរ"
@@ -2029,145 +2035,156 @@ msgstr "ប្រភេទ"
 msgid "Size"
 msgstr "ទំហំ"
 
-#: viewer/urlhandlermanager.cpp:405
+#: viewer/printmessage.cpp:61
+#, kde-format
+msgid "Could not generate print preview."
+msgstr ""
+
+#: viewer/printmessage.cpp:97
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "បើក​ការបង្ហាញ HTML សម្រាប់​សារ​នេះ ។"
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "ផ្ទុក​សេចក្ដី​យោង​ខាងក្រៅ​ពី អ៊ីនធឺណិត​សម្រាប់សារនេះ ។"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
 msgstr "ធ្វើការ​​លើ​បណ្ដាញ"
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
 msgstr "បង្កើត​គណនី​លើ​បណ្ដាញ ។"
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Decrypt message."
 msgstr "ឌិគ្រីប​សារ"
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
 msgstr "បង្ហាញ​សេចក្ដី​លម្អិត​ហត្ថលេខា ។"
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
 msgstr "លាក់​សេចក្ដី​លម្អិត​ហត្ថលេខា"
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "បង្ហាញ​សេចក្ដី​លម្អិត​ហត្ថលេខា ។"
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "លាក់​សេចក្ដី​លម្អិត​ហត្ថលេខា"
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:427
 #, kde-format
 msgid "Open Documentation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:460
+#: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "ពង្រីកអត្ថបទ​ដកស្រង់ទាំងអស់ ។"
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:463
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "វេញ​អត្ថបទ​ដកស្រង់ ។"
 
-#: viewer/urlhandlermanager.cpp:524
+#: viewer/urlhandlermanager.cpp:525
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "មិនអាច​ចាប់ផ្ដើម​កម្មវិធី​គ្រប់គ្រង​វិញ្ញាបនបត្រ​បានឡើយ ។ សូម​ពិនិត្យ្រ​មើល​កដំឡើង​របស់អ្នក ។n."
 
-#: viewer/urlhandlermanager.cpp:526
+#: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
 msgstr "កំហុស KMail"
 
-#: viewer/urlhandlermanager.cpp:541
+#: viewer/urlhandlermanager.cpp:542
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "បង្ហាញ​វិញ្ញាបនបត្រ 0x%1"
 
-#: viewer/urlhandlermanager.cpp:600
+#: viewer/urlhandlermanager.cpp:601
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "បើក​នៅ​ក្នុង​សៀវភៅ​អាសយដ្ឋាន"
 
-#: viewer/urlhandlermanager.cpp:602
+#: viewer/urlhandlermanager.cpp:603
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2700
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "បាន​ចម្លង​អាសយដ្ឋាន​ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
 
-#: viewer/urlhandlermanager.cpp:626
+#: viewer/urlhandlermanager.cpp:627
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "ស្វែងរក​ទាក់ទង​ក្នុង​​ KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:802
+#: viewer/urlhandlermanager.cpp:803
 #, kde-format
 msgid "Attachment: %1"
 msgstr "ឯកសារភ្ជាប់ ៖ %1"
 
-#: viewer/urlhandlermanager.cpp:805
+#: viewer/urlhandlermanager.cpp:806
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "សារ​ដែល​បាន​ស្រោប​​ (​ប្រធាន​បទ​ ៖​​ %1)"
 
-#: viewer/urlhandlermanager.cpp:807
+#: viewer/urlhandlermanager.cpp:808
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "សារ​ដែល​បាន​ស្រោប​"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:811
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "ឯកសារ​ភ្ជាប់​ដែល​គ្មានឈ្មោះ​"
 
-#: viewer/urlhandlermanager.cpp:845
+#: viewer/urlhandlermanager.cpp:846
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "បង្ហាញ​កំណត់ហេតុ​ត្រួតពិនិត្យ​ GnuPG សម្រាប់ប្រតិបត្តិការ​នេះ"
 
-#: viewer/urlhandlermanager.cpp:885
+#: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
 msgstr "កំពុង​បើក URL..."
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:895
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "តើ​អ្នក​​ពិត​ជា​ចង់​ប្រតិបត្តិ <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:896
+#: viewer/urlhandlermanager.cpp:897
 #, kde-format
 msgid "Execute"
 msgstr "​ប្រតិបត្តិ"
 
-#: viewer/viewer.cpp:138
+#: viewer/viewer.cpp:134
 #, kde-format
 msgid "Loading message..."
 msgstr "កំពុង​ផ្ទុក​សារ​​..."
@@ -2180,7 +2197,7 @@ msgid ""
 msgstr "លុប​ឯកសារ​ភ្ជាប់​អាច​គ្មាន​សុពលភាព​លើ​ហត្ថលេខា​ឌីជីថល​ណាមួយ​នៅ​លើ​សារ​នេះ ។"
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1709
+#: viewer/viewer_p.cpp:1711
 #, kde-format
 msgid "Delete Attachment"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
@@ -2210,13 +2227,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "​បើក​ជា​មួយ..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1687
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "បើក"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2232,7 +2249,7 @@ msgstr "រមូរ​ទៅកាន់​"
 msgid "Save As..."
 msgstr "​រក្សាទុកជា..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
 #, kde-format
 msgid "Copy"
 msgstr "ចម្លង"
@@ -2249,7 +2266,7 @@ msgstr "ឆ្លើយតប​ទៅ ៖ "
 msgid "Reply To All"
 msgstr "ឆ្លើយតប​ទៅ ៖ "
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1714
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Properties"
 msgstr "​លក្ខណៈ​សម្បត្តិ"
@@ -2273,105 +2290,105 @@ msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "មើល​ឯកសារ​ភ្ជាប់ ៖ %1"
 
-#: viewer/viewer_p.cpp:1454
+#: viewer/viewer_p.cpp:1458
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:1456
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "ជ្រើស​រចនាប័ទ្ម​បង្ហាញ​នៃ​ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:1459
+#: viewer/viewer_p.cpp:1463
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "ជា​រូបតំណាង"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1466
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់ទាំងអស់​ជា​រូបតំណាង ។ ចុច​ដើម្បី​មើល​ពួកវា ។"
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "ឆ្លាត"
 
-#: viewer/viewer_p.cpp:1469
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ថា​បាន​ផ្ដល់យោបល់​ដោល​អ្នកផ្ញើ ។"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1477
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "នៅក្នុង​បណ្ដាញ"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ទាំងអស់​នៅ​ក្នុង​បណ្ដាញ (ប្រសិន​បើ​អាច​ធ្វើ​ទៅ​បាន)"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "លាក់"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "កុំ​បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅក្នុង​កម្មវិធី​មើល​សារ"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "នៅ​ក្នុង​បឋមកថា​ប៉ុណ្ណោះ​"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅ​ក្នុង​បឋមកថា​របស់​សំបុត្រ​តែ​ប៉ុណ្ណោះ​​"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "&Set Encoding"
 msgstr "កំណត់​អ៊ិនកូឌីង"
 
-#: viewer/viewer_p.cpp:1500 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "ស្វ័យប្រវត្តិ"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1514
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Copy Text"
 msgstr "អត្ថបទ​សំឡេង"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "Select All Text"
 msgstr "ជ្រើស​អត្ថបទ​ទាំងអស់"
 
-#: viewer/viewer_p.cpp:1523 viewer/viewer_p.cpp:2008
+#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
 #, kde-format
 msgid "Copy Link Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​តំណ"
 
-#: viewer/viewer_p.cpp:1528
+#: viewer/viewer_p.cpp:1532
 #, kde-format
 msgid "Open URL"
 msgstr "​បើក URL"
 
-#: viewer/viewer_p.cpp:1539
+#: viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Show Message Structure"
 msgstr "បង្ហាញ​រចនាសម្ព័ន្ធ​សារ​"
@@ -2443,90 +2460,84 @@ msgstr "អត្ថបទ​សំឡេង"
 msgid "Share Text..."
 msgstr "អត្ថបទ​សំឡេង"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Copy Image Location"
 msgstr "ចម្លង​ទីតាំង​រូបភាព"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "&Find in Message..."
 msgstr "រក​​នៅ​ក្នុង​សារ..."
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1684
+#: viewer/viewer_p.cpp:1686
 #, kde-format
 msgid "Save &As..."
 msgstr "​រក្សាទុកជា..."
 
-#: viewer/viewer_p.cpp:1692
+#: viewer/viewer_p.cpp:1694
 #, kde-format
 msgid "Open With..."
 msgstr "​បើក​ជាមួយ..."
 
-#: viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "រក្សាទុក​ឯកសារភ្ជាប់​ទាំងអស់..."
 
-#: viewer/viewer_p.cpp:1928
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1928 viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1931
+#: viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1951
+#: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1963
 #, kde-format
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2006
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/viewer_p.cpp:2087
+#: viewer/viewer_p.cpp:2098
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "សារ​ជា​អត្ថបទ​ធម្មតា"
 
-#: viewer/viewer_p.cpp:2290
-#, kde-format
-msgctxt "@title:window"
-msgid "Print Document"
-msgstr ""
-
-#: viewer/viewer_p.cpp:2706
+#: viewer/viewer_p.cpp:2668
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "បាន​ចម្លង URL ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
 
-#: viewer/viewer_p.cpp:2858
+#: viewer/viewer_p.cpp:2820
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "បាន​បរាជ័យ​ផ្ទុក​សារ​ ៖​ %1 ។​"
 
-#: viewer/viewer_p.cpp:2863
+#: viewer/viewer_p.cpp:2825
 #, kde-format
 msgid "Message not found."
 msgstr "រក​មិន​ឃើញ​សារ​ ។"
