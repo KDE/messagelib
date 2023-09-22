@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:59+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2014-04-26 10:27+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -86,7 +86,7 @@ msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Du kan ikke legge ved filer større enn %1. Del den med lagringstjenesten."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "innstillinga. Filtypen sjekkes automatisk, men noen ganger gjenkjenner "
 "ikke %1 typen riktig. Her kan du ordne dette.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -108,7 +108,7 @@ msgstr ""
 "<p>Anslått størrelse på vedlegget:</p> <p>Merk at i en e-postmelding vil en "
 "binær fil kodet med base64 ta fire tredeler av filas egentlige størrelse.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "forslag til filnavn som mottagerens e-postprogram kan bruke når fila lagres "
 "på harddisken.</p> "
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -134,7 +134,7 @@ msgstr ""
 "vil vise denne informasjonen ved forhåndsvisning av brevet ved siden av "
 "ikonet for vedlegget.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -153,7 +153,7 @@ msgstr ""
 "valg av «quoted-printable» istedenfor standarden «base64» spare opptil 25% i "
 "forhold til opprinnelig størrelse.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -168,7 +168,7 @@ msgstr ""
 "feltet til denne meldingsdelen til «inline» (inni) i stedet for "
 "«attachment» (vedlegg).</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -179,7 +179,7 @@ msgstr ""
 "<p>Underskrifta blir laget med nøkkelen du har valgt for den identiteten du "
 "bruker.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -188,8 +188,8 @@ msgstr ""
 "<p>Kryss av her om du vil at denne delen av brevet skal krypteres.</p> "
 "<p>Denne delen vil bli kryptert til mottakerne av brevet.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:306
-#: attachment/attachmentpropertiesdialog.cpp:321
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"

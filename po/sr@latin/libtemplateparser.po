@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-31 18:11+0200\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,39 +19,39 @@ msgstr ""
 "X-Environment: kde\n"
 
 # >> @item
-#: customtemplates.cpp:83 customtemplates.cpp:137
+#: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "univerzalna"
 
 # >> @item
-#: customtemplates.cpp:84 customtemplates.cpp:143
+#: customtemplates.cpp:73 customtemplates.cpp:129
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "odgovor"
 
 # >> @item
-#: customtemplates.cpp:85 customtemplates.cpp:146
+#: customtemplates.cpp:74 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "odgovor svima"
 
 # >> @item
-#: customtemplates.cpp:86 customtemplates.cpp:149
+#: customtemplates.cpp:75 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "prosleđena"
 
-#: customtemplates.cpp:88 templatesconfiguration.cpp:90
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Kako ovo radi?</a>"
 
-#: customtemplates.cpp:99
+#: customtemplates.cpp:87
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -77,66 +77,66 @@ msgstr ""
 "p></qt>"
 
 # >> @item
-#: customtemplates.cpp:152
+#: customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "nepoznata"
 
-#: customtemplates.cpp:269
+#: customtemplates.cpp:252
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "Istoimeni šablon već postoji."
 
-#: customtemplates.cpp:270
+#: customtemplates.cpp:252
 #, kde-format
 msgid "Cannot create template"
 msgstr "Ne mogu da napravim šablon"
 
-#: customtemplates.cpp:367
+#: customtemplates.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "Želite li zaista da uklonite šablon „%1“?"
 
-#: customtemplates.cpp:368
+#: customtemplates.cpp:345
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
 msgstr "Ukloniti šablon?"
 
-#: customtemplatesmenu.cpp:63
+#: customtemplatesmenu.cpp:48
 #, kde-format
 msgid "With Custom Template"
 msgstr "Posebnim šablonom"
 
-#: customtemplatesmenu.cpp:67
+#: customtemplatesmenu.cpp:51
 #, kde-format
 msgid "Reply With Custom Template"
 msgstr "Odgovori posebnim šablonom"
 
-#: customtemplatesmenu.cpp:71
+#: customtemplatesmenu.cpp:54
 #, kde-format
 msgid "Reply to All With Custom Template"
 msgstr "Odgovori svima posebnim šablonom"
 
-#: customtemplatesmenu.cpp:198 customtemplatesmenu.cpp:204
-#: customtemplatesmenu.cpp:210
+#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
+#: customtemplatesmenu.cpp:189
 #, kde-format
 msgid "(no custom templates)"
 msgstr "(nema posebnih šablona)"
 
-#: defaulttemplates.cpp:29
+#: defaulttemplates.cpp:16
 #, kde-format
 msgid "Default new message template"
 msgstr "Podrazumevani šablon za novu poruku"
 
-#: defaulttemplates.cpp:35
+#: defaulttemplates.cpp:21
 #, kde-format
 msgid "Default reply template"
 msgstr "Podrazumevani šablon za odgovor"
 
-#: defaulttemplates.cpp:39
+#: defaulttemplates.cpp:26
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -150,12 +150,12 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: defaulttemplates.cpp:47
+#: defaulttemplates.cpp:37
 #, kde-format
 msgid "Default reply all template"
 msgstr "Podrazumevani šablon za odgovor svima"
 
-#: defaulttemplates.cpp:50
+#: defaulttemplates.cpp:41
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -169,12 +169,12 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: defaulttemplates.cpp:59
+#: defaulttemplates.cpp:53
 #, kde-format
 msgid "Default forward template"
 msgstr "Podrazumevani šablon za prosleđivanje"
 
-#: defaulttemplates.cpp:65
+#: defaulttemplates.cpp:60
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -235,10 +235,11 @@ msgstr "Pametno &citiranje"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
-#, fuzzy, kde-format
-#| msgid "Reply or forward using HTML if present"
-msgid "Reply or forward using HTML based on Visual Format"
-msgstr "Odgovor ili prosleđivanje sa HTML‑om ako ga ima"
+#, kde-format
+msgid ""
+"Reply or forward using the same visual format as the original message (plain "
+"text or HTML)"
+msgstr ""
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -270,271 +271,232 @@ msgstr "Šablon poruke za prosleđivanje"
 msgid "Quote characters"
 msgstr "Znakovi citiranja"
 
-#: templateparserjob.cpp:356
+#: templateparserjob.cpp:350
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Ne mogu da umetnem sadržaj iz fajla %1: %2"
 
-#: templateparserjob.cpp:535
+#: templateparserjob.cpp:520
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Za:"
 
-#: templateparserjob.cpp:546
+#: templateparserjob.cpp:531
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1212
+#: templateparserjob.cpp:1186
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "prilog %1"
 
-#: templateparserjob.cpp:1422
+#: templateparserjob.cpp:1395
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
 msgstr "Cevna naredba <command>%1</command> nije uspela."
 
 # >> @item
-#: templatescommandmenu.cpp:45
-#, kde-format
+#: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
 msgstr "citirani tekst poruke"
 
 # >> @item
-#: templatescommandmenu.cpp:50
-#, kde-format
+#: templatescommandmenu.cpp:30
 msgid "Message Text as Is"
 msgstr "sirovi tekst poruke"
 
 # >> @item
-#: templatescommandmenu.cpp:55
-#, kde-format
+#: templatescommandmenu.cpp:32
 msgid "Message Id"
 msgstr "ID poruke"
 
 # >> @item
-#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:194
-#, kde-format
+#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
 msgid "Date"
 msgstr "datum"
 
 # >> @item
-#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:199
-#, kde-format
+#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
 msgid "Date in Short Format"
 msgstr "datum u kratkom formatu"
 
 # >> @item
-#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:204
-#, kde-format
+#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
 msgid "Date in C Locale"
 msgstr "datum u C lokalitetu"
 
 # >> @item
-#: templatescommandmenu.cpp:75 templatescommandmenu.cpp:209
-#, kde-format
+#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
 msgid "Day of Week"
 msgstr "dan u sedmici"
 
 # >> @item
-#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:214
-#, kde-format
+#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
 msgid "Time"
 msgstr "vreme"
 
 # >> @item
-#: templatescommandmenu.cpp:85 templatescommandmenu.cpp:219
-#, kde-format
+#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
 msgid "Time in Long Format"
 msgstr "vreme u dugačkom formatu"
 
 # >> @item
-#: templatescommandmenu.cpp:90 templatescommandmenu.cpp:224
-#, kde-format
+#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
 msgid "Time in C Locale"
 msgstr "vreme u C lokalitetu"
 
 # >> @item
-#: templatescommandmenu.cpp:95 templatescommandmenu.cpp:228
-#, kde-format
+#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
 msgid "To Field Address"
 msgstr "adresa primaoca"
 
 # >> @item
-#: templatescommandmenu.cpp:100 templatescommandmenu.cpp:233
-#, kde-format
+#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
 msgid "To Field Name"
 msgstr "ime i prezime u polju „Za:“"
 
 # >> @item
-#: templatescommandmenu.cpp:105 templatescommandmenu.cpp:238
-#, kde-format
+#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
 msgid "To Field First Name"
 msgstr "ime u polju „Za:“"
 
 # >> @item
-#: templatescommandmenu.cpp:110 templatescommandmenu.cpp:243
-#, kde-format
+#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
 msgid "To Field Last Name"
 msgstr "prezime u polju „Za:“"
 
 # >> @item
-#: templatescommandmenu.cpp:115 templatescommandmenu.cpp:248
-#, kde-format
+#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
 msgid "CC Field Address"
 msgstr "adresa u polju „CC:“"
 
 # >> @item
-#: templatescommandmenu.cpp:120 templatescommandmenu.cpp:253
-#, kde-format
+#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
 msgid "CC Field Name"
 msgstr "ime i prezime u polju „CC:“"
 
 # >> @item
-#: templatescommandmenu.cpp:125 templatescommandmenu.cpp:258
-#, kde-format
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
 msgid "CC Field First Name"
 msgstr "ime u polju „CC:“"
 
 # >> @item
-#: templatescommandmenu.cpp:130 templatescommandmenu.cpp:263
-#, kde-format
+#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
 msgid "CC Field Last Name"
 msgstr "prezime u polju „CC:“"
 
 # >> @item
-#: templatescommandmenu.cpp:135 templatescommandmenu.cpp:268
-#, kde-format
+#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
 msgid "From Field Address"
 msgstr "adresa u polju „Od:“"
 
 # >> @item
-#: templatescommandmenu.cpp:140
-#, kde-format
+#: templatescommandmenu.cpp:66
 msgid "From Field Name"
 msgstr "ime i prezime u polju „Od:“"
 
 # >> @item
-#: templatescommandmenu.cpp:145 templatescommandmenu.cpp:278
-#, kde-format
+#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
 msgid "From Field First Name"
 msgstr "ime u polju „Od:“"
 
 # >> @item
-#: templatescommandmenu.cpp:150 templatescommandmenu.cpp:283
-#, kde-format
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
 msgid "From Field Last Name"
 msgstr "prezime u polju „Od:“"
 
 # >> @item
-#: templatescommandmenu.cpp:155
-#, kde-format
+#: templatescommandmenu.cpp:72
 msgid "Addresses of all recipients"
 msgstr "adrese svih primalaca"
 
 # >> @item
-#: templatescommandmenu.cpp:160
-#, kde-format
+#: templatescommandmenu.cpp:74
 msgctxt "Template value for subject of the message"
 msgid "Subject"
 msgstr "tema"
 
 # >> @item
-#: templatescommandmenu.cpp:165
-#, kde-format
+#: templatescommandmenu.cpp:76
 msgid "Quoted Headers"
 msgstr "citirana zaglavlja"
 
 # >> @item
-#: templatescommandmenu.cpp:170
-#, kde-format
+#: templatescommandmenu.cpp:78
 msgid "Headers as Is"
 msgstr "sirova zaglavlja"
 
 # >> @item
-#: templatescommandmenu.cpp:175 templatescommandmenu.cpp:293
-#, kde-format
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
 msgid "Header Content"
 msgstr "sadržaj zaglavlja"
 
 # >> @item
-#: templatescommandmenu.cpp:180
-#, kde-format
+#: templatescommandmenu.cpp:82
 msgid "Reply as Quoted Plain Text"
 msgstr "citat u odgovoru kao obični tekst"
 
 # >> @item
-#: templatescommandmenu.cpp:185
-#, kde-format
+#: templatescommandmenu.cpp:84
 msgid "Reply as Quoted HTML Text"
 msgstr "citat u odgovoru kao HTML tekst"
 
 # >> @item
-#: templatescommandmenu.cpp:273
-#, kde-format
+#: templatescommandmenu.cpp:118
 msgid "From field Name"
 msgstr "ime i prezime u polju „Od:“"
 
 # >> @item
-#: templatescommandmenu.cpp:288
-#, kde-format
+#: templatescommandmenu.cpp:124
 msgctxt "Template subject command."
 msgid "Subject"
 msgstr "tema"
 
 # >> @item
-#: templatescommandmenu.cpp:301
-#, kde-format
+#: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr ""
 "provlačenje tela izvorne poruke i umetanje rezultata kao citirani tekst"
 
 # >> @item
-#: templatescommandmenu.cpp:306
-#, kde-format
+#: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr "provlačenje tela izvorne poruke i umetanje sirovog rezultata"
 
 # >> @item
-#: templatescommandmenu.cpp:311
-#, kde-format
+#: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr "provlačenje izvorne poruke sa zaglavljima i umetanje sirovog rezultata"
 
 # >> @item
-#: templatescommandmenu.cpp:316
-#, kde-format
+#: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr "provlačenje tela tekuće poruke i umetanje sirovog rezultata"
 
 # >> @item
-#: templatescommandmenu.cpp:321
-#, kde-format
+#: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
 msgstr "provlačenje tela tekuće poruke i zamena rezultatom"
 
 # >> @item
-#: templatescommandmenu.cpp:331
-#, kde-format
+#: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
 msgstr "potpis"
 
 # >> @item
-#: templatescommandmenu.cpp:336
-#, kde-format
+#: templatescommandmenu.cpp:144
 msgid "Insert File Content"
 msgstr "umetanje sadržaja fajla"
 
 # >> @item
-#: templatescommandmenu.cpp:343
-#, kde-format
+#: templatescommandmenu.cpp:148
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
@@ -542,97 +504,88 @@ msgid "Discard to Next Line"
 msgstr "odbacivanje do sledećeg reda"
 
 # >> @item
-#: templatescommandmenu.cpp:348
-#, kde-format
+#: templatescommandmenu.cpp:151
 msgid "Template Comment"
 msgstr "komentar u šablonu"
 
 # >> @item
-#: templatescommandmenu.cpp:353
-#, kde-format
+#: templatescommandmenu.cpp:153
 msgid "No Operation"
 msgstr "bez obrade"
 
 # >> @item
-#: templatescommandmenu.cpp:358
-#, kde-format
+#: templatescommandmenu.cpp:155
 msgid "Clear Generated Message"
 msgstr "uklanjanje generisane poruke"
 
 # skip-rule: t-pointer
 # >> @item
-#: templatescommandmenu.cpp:362
-#, kde-format
+#: templatescommandmenu.cpp:156
 msgid "Cursor position"
 msgstr "položaj kursora"
 
 # >> @item
-#: templatescommandmenu.cpp:367
-#, kde-format
+#: templatescommandmenu.cpp:158
 msgid "Blank text"
 msgstr "prazan tekst"
 
 # >> @item
-#: templatescommandmenu.cpp:372
-#, kde-format
+#: templatescommandmenu.cpp:160
 msgid "Dictionary Language"
 msgstr "jezik rečnika"
 
 # >> @item
-#: templatescommandmenu.cpp:376
-#, kde-format
+#: templatescommandmenu.cpp:161
 msgid "Language"
 msgstr "jezik"
 
 # >> @item
-#: templatescommandmenu.cpp:385
-#, kde-format
+#: templatescommandmenu.cpp:166
 msgid "Turn Debug On"
 msgstr "uključivanje ispravljanja"
 
 # >> @item
-#: templatescommandmenu.cpp:390
-#, kde-format
+#: templatescommandmenu.cpp:168
 msgid "Turn Debug Off"
 msgstr "isključivanje ispravljanja"
 
-#: templatescommandmenu.cpp:428
+#: templatescommandmenu.cpp:201
 #, kde-format
 msgid "Insert Command"
 msgstr "Umetni naredbu"
 
 # >> @item:inmenu Insert Command
-#: templatescommandmenu.cpp:441
+#: templatescommandmenu.cpp:214
 #, kde-format
 msgid "Original Message"
 msgstr "izvorna poruka"
 
 # >> @item:inmenu Insert Command
-#: templatescommandmenu.cpp:455
+#: templatescommandmenu.cpp:228
 #, kde-format
 msgid "Current Message"
 msgstr "tekuća poruka"
 
 # >> @item:inmenu Insert Command
-#: templatescommandmenu.cpp:468
+#: templatescommandmenu.cpp:241
 #, kde-format
 msgid "Process with External Programs"
 msgstr "obrada spoljašnjim programima"
 
 # >> @item:inmenu Insert Command
-#: templatescommandmenu.cpp:481
+#: templatescommandmenu.cpp:254
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "razno"
 
-#: templatescommandmenu.cpp:495
+#: templatescommandmenu.cpp:268
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:67
+#: templatesconfiguration.cpp:50
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -645,7 +598,7 @@ msgstr ""
 "podržavaju naredbe za smenu, tako što ih jednostavno ukucate ili izaberete "
 "iz menija <i>Umetni naredbu</i>.</p>"
 
-#: templatesconfiguration.cpp:75
+#: templatesconfiguration.cpp:58
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -654,7 +607,7 @@ msgstr ""
 "<p>Ovde navedeni šabloni posebni su za ovu fasciklu. Oni imaju prioritet i "
 "nad globalnim šablonima i nad šablonima prema identitetu.</p>"
 
-#: templatesconfiguration.cpp:80
+#: templatesconfiguration.cpp:63
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -665,7 +618,7 @@ msgstr ""
 "nad globalnim šablonima ali ih mogu potisnuti šabloni po fascikli, ako su "
 "navedeni.</p>"
 
-#: templatesconfiguration.cpp:85
+#: templatesconfiguration.cpp:68
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -674,30 +627,30 @@ msgstr ""
 "<p>Ovo su globalni (podrazumevani) šabloni. Oni mogu biti potisnuti "
 "šablonima po identitetu ili po fascikli, ako su navedeni.</p>"
 
-#: templatesconfiguration.cpp:127
+#: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "Želite li da vratite tekući šablon ili sve šablone na podrazumevano?"
 
 # >> @title:window
-#: templatesconfiguration.cpp:128
+#: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
 msgstr "Vraćanje na podrazumevano"
 
 # skip-rule: t-reset
-#: templatesconfiguration.cpp:129
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Vrati tekući šablon"
 
 # skip-rule: t-reset
-#: templatesconfiguration.cpp:130
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Vrati sve šablone"
 
-#: templatesconfiguration.cpp:389
+#: templatesconfiguration.cpp:361
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -712,19 +665,19 @@ msgstr ""
 "(a) da u odgovoru koji je obični tekst citati budu strogo obični tekst\n"
 "(b) da u odgovoru koji sadrži HTML citati budu HTML ako ga ima"
 
-#: templatesinsertcommandpushbutton.cpp:31
+#: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
 msgid "&Insert Command"
 msgstr "&Umetni naredbu"
 
-#: templatesinsertcommandpushbutton.cpp:42
+#: templatesinsertcommandpushbutton.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "Izaberite naredbu za umetanje u šablon."
 
 # switch-rule: t-pointer > t-cursor
-#: templatesinsertcommandpushbutton.cpp:45
+#: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -921,12 +874,15 @@ msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
 msgid "Reply to All"
 msgstr "odgovor svima"
 
+# >> @item
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, kde-format
-msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#, fuzzy, kde-format
+#| msgctxt "Message->"
+#| msgid "Forward"
+msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "prosleđivanje"
+msgstr "prosleđena"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306
@@ -1087,3 +1043,12 @@ msgstr ""
 "\n"
 "<qt>Mestodržači podržani u pokazatelju citata:<ul><li>%f: inicijali "
 "pošiljaoca</li><li>%%: znak za procenat</li><li>%_: razmak</li></ul></qt>"
+
+#, fuzzy
+#~| msgid "Reply or forward using HTML if present"
+#~ msgid "Reply or forward using HTML based on Visual Format"
+#~ msgstr "Odgovor ili prosleđivanje sa HTML‑om ako ga ima"
+
+#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#~ msgid "Forward"
+#~ msgstr "prosleđivanje"

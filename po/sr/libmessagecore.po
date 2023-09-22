@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-06-18 02:23+0200\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -30,63 +30,63 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "slsimic@gmail.com"
 
-#: attachment/attachmentcompressjob.cpp:64
+#: attachment/attachmentcompressjob.cpp:50
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Не могу да покренем компресију прилога."
 
-#: attachment/attachmentcompressjob.cpp:76
+#: attachment/attachmentcompressjob.cpp:60
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "Не могу да компресујем прилог."
 
-#: attachment/attachmentfromfolderjob.cpp:63
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Не могу да направим компресовани фајл."
 
-#: attachment/attachmentfromfolderjob.cpp:103
+#: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr "Резултујући прилог био би већи од највећег дозвољеног, обустављам."
 
-#: attachment/attachmentfromfolderjob.cpp:113
-#: attachment/attachmentfromfolderjob.cpp:133
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "Не могу да додам ‘%1’ у архиву."
 
-#: attachment/attachmentfromfolderjob.cpp:126
+#: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "Не могу да отворим ‘%1’ за читање."
 
-#: attachment/attachmentfromurljob.cpp:83
+#: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "непознат%1"
 
-#: attachment/attachmentfromurljob.cpp:86
+#: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "непознат"
 
-#: attachment/attachmentfromurljob.cpp:121
+#: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "Није нађен „%1“. Наведите пуну путању."
 
-#: attachment/attachmentfromurljob.cpp:130
+#: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Не можете приложити фајлове веће од %1. Поделите их преко складишног сервиса."
 
-#: attachment/attachmentpropertiesdialog.cpp:145
+#: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "пошто се врста фајла аутоматски проверава. Међутим, понекад %1 не може да "
 "одреди врсту како ваља. Овде то можете поправити.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:151
+#: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -109,7 +109,7 @@ msgstr ""
 "бинарни фајл са кодирањем база64 заузети до трећину више од стварне величине "
 "фајла.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:155
+#: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "фајла, оно не назначава име фајла који се прилаже. Боље речено, оно предлаже "
 "име фајла примаочевом поштанском агенту када уписује део на диск.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -133,7 +133,7 @@ msgstr ""
 "тема за целу поруку. Већина поштанских агената ће приказати ову информацију "
 "у својим прегледима порука, одмах поред иконице прилога.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:167
+#: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -151,7 +151,7 @@ msgstr ""
 "тада ће избор „навод-читког“ уместо „базе64“ смањити крајњу величину и до "
 "25%.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:177
+#: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -166,7 +166,7 @@ msgstr ""
 "Disposition</tt> на <tt>inline</tt> уместо на подразумевано <tt>attachment</"
 "tt>.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:184
+#: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -177,7 +177,7 @@ msgstr ""
 "p><p>Потпис ће бити начињен кључем који је придружен тренутно одабраном "
 "идентитету.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:189
+#: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -186,15 +186,15 @@ msgstr ""
 "<p>Укључите ову опцију ако желите да овај део поруке буде шифрован.</"
 "p><p>Део ће бити шифрован за примаоце ове поруке.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:317
-#: attachment/attachmentpropertiesdialog.cpp:332
+#: attachment/attachmentpropertiesdialog.cpp:307
+#: attachment/attachmentpropertiesdialog.cpp:322
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"
 msgid "Attachment Properties"
 msgstr "Својства прилога"
 
-#: attachment/attachmentupdatejob.cpp:55
+#: attachment/attachmentupdatejob.cpp:40
 #, kde-format
 msgid "URL is empty."
 msgstr "УРЛ је празан."
@@ -223,8 +223,8 @@ msgctxt "file name of the attachment"
 msgid "Name:"
 msgstr "Име:"
 
-#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: attachment/ui/attachmentpropertiesdialog.ui:139
 #: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
 #, kde-format
@@ -259,7 +259,7 @@ msgid "Sign this attachment"
 msgstr "Потпиши овај прилог"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
-#: settings/messagecore.kcfg:34
+#: settings/messagecore.kcfg:32
 #, kde-format
 msgid ""
 "Changing this from its default 'Auto' will force the use of the specified "
@@ -269,37 +269,37 @@ msgstr ""
 "кодирања за све поруке, без обзира шта оне саме наводе."
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
-#: settings/messagecore.kcfg:37
+#: settings/messagecore.kcfg:35
 #, kde-format
 msgid "This is the color used in the 3rd level of quoted text"
 msgstr "Боја за трећи ниво цитираног текста"
 
 #. i18n: ectx: label, entry (QuotedText2), group (Reader)
-#: settings/messagecore.kcfg:41
+#: settings/messagecore.kcfg:39
 #, kde-format
 msgid "This is the color used in the 2nd level of quoted text"
 msgstr "Боја за други ниво цитираног текста"
 
 #. i18n: ectx: label, entry (QuotedText1), group (Reader)
-#: settings/messagecore.kcfg:45
+#: settings/messagecore.kcfg:43
 #, kde-format
 msgid "This is the color used in the 1st level of quoted text"
 msgstr "Боја за први ниво цитираног текста"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:56
+#: settings/messagecore.kcfg:54
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:64
+#: settings/messagecore.kcfg:62
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:69
+#: settings/messagecore.kcfg:67
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
@@ -308,7 +308,7 @@ msgstr ""
 "Највећа величина у битовима коју прилози е‑поште смеју да имају (-1 за "
 "неограничено)"
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:418
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

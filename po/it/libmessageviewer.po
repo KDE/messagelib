@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-09-07 16:19+0200\n"
+"PO-Revision-Date: 2023-09-21 19:09+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2004,10 +2004,9 @@ msgid "Size"
 msgstr "Dimensione"
 
 #: viewer/printmessage.cpp:61
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "Impossibile scrivere il file %1."
+msgstr "Impossibile generare l'anteprima di stampa."
 
 #: viewer/printmessage.cpp:97
 #, kde-format

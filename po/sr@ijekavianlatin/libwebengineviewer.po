@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-11-26 03:25+0100\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2016-06-19 15:36+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,74 +18,112 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: findbar/findbarbase.cpp:49 findbar/findbarbase.cpp:52
+#: developertool/developertooldialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Zatvori"
 
-#: findbar/findbarbase.cpp:58
+#: findbar/findbarbase.cpp:48
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Nađi:"
 
 # >> @info:tooltip
-#: findbar/findbarbase.cpp:63
+#: findbar/findbarbase.cpp:53
 #, kde-format
 msgid "Text to search for"
 msgstr "Tekst koji se traži."
 
-#: findbar/findbarbase.cpp:68
+#: findbar/findbarbase.cpp:58
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Sljedeće"
 
-#: findbar/findbarbase.cpp:69
+#: findbar/findbarbase.cpp:59
 #, kde-format
 msgid "Jump to next match"
 msgstr "Skoči na sljedeće poklapanje"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:64
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Prethodno"
 
-#: findbar/findbarbase.cpp:75
+#: findbar/findbarbase.cpp:65
 #, kde-format
 msgid "Jump to previous match"
 msgstr "Skoči na prethodno poklapanje"
 
-#: findbar/findbarbase.cpp:81
+#: findbar/findbarbase.cpp:71
 #, kde-format
 msgid "Options"
 msgstr "Opcije"
 
 # >> @info:tooltip
-#: findbar/findbarbase.cpp:82
+#: findbar/findbarbase.cpp:72
 #, kde-format
 msgid "Modify search behavior"
 msgstr "Izmenite ponašanje pretrage."
 
-#: findbar/findbarbase.cpp:84
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Case sensitive"
 msgstr "Razlikuj veličinu slova"
 
-#: findbar/findbarbase.cpp:100
+#: findbar/findbarbase.cpp:91
 #, kde-format
 msgid "Phrase not found"
 msgstr "Izraz nije nađen."
 
 # >> @title:window
-#: webenginepage.cpp:82
+#: webenginepage.cpp:68
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Upisivanje veb stranice"
 
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+
+#: widgets/tracking/trackingdetailsdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
 # >> @title:menu
-#: widgets/zoomactionmenu.cpp:142
+#: widgets/zoomactionmenu.cpp:127
 #, kde-format
 msgid "Zoom"
 msgstr "Uveličanje"
