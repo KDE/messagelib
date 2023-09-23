@@ -101,11 +101,11 @@ msgstr "Bu ileti şifrelenmiş."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
 msgid "Decrypt Message"
-msgstr "İletinin Şifrelemesini Aç"
+msgstr "İletinin Şifresini Çöz"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Lütfen iletinin şifrelemesi açılırken bekleyin..."
+msgstr "Lütfen iletinin şifresi çözülürken bekleyin..."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -145,23 +145,23 @@ msgstr "Ayrıntıları Göster"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
-msgstr "Şifrelenmiş ileti (yeniden açma mümkün değil)"
+msgstr "Şifrelenmiş ileti (şifre çözme olanaklı değil)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
-msgstr "Sebep: "
+msgstr "Gerekçe: "
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
-"İletiyi şifrelemek için hiçbir gizli anahtar bulunamadı. Aşağıdaki "
-"anahtarlar için şifrelendi:"
+"İletinin şifresini çözmek için hiçbir gizli anahtar bulunamadı. İleti, "
+"aşağıdaki anahtarlar için şifrelendi:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
-msgstr "Verinin şifrelemesi açılamadı."
+msgstr "Verinin şifresi çözülemedi."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
@@ -1428,8 +1428,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr ""
-"İletileri gösterirken şifrelemesini her zaman çöz ya da çözmeden önce sor"
+msgstr "İletileri görüntülerken şifresini her zaman çöz veya çözmeden önce sor"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.cmake:91
@@ -1993,7 +1992,7 @@ msgstr "Boyut"
 #: viewer/printmessage.cpp:61
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "Yazdırma önizlemesi üretilemedi."
 
 #: viewer/printmessage.cpp:97
 #, kde-format
@@ -2004,47 +2003,47 @@ msgstr "Belgeyi Yazdır"
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
-msgstr "Bu ileti için HTML sunumunu aç."
+msgstr "Bu ileti için HTML sunumunu açın."
 
 #: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Load external references from the Internet for this message."
-msgstr "Bu e-posta için dış başvuruların Internet'ten yüklenmesine izin ver."
+msgstr "Bu e-posta için dış başvuruların Internet'ten yüklenmesine izin verin."
 
 #: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
-msgstr "Çevrimiçi çalış."
+msgstr "Çevrimiçi çalışın."
 
 #: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
-msgstr "Hesabı çevrimiçi yap."
+msgstr "Hesabı çevrimiçi yapın."
 
 #: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Decrypt message."
-msgstr "İletinin şifrelemesini aç."
+msgstr "İletinin şifresini çözün."
 
 #: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
-msgstr "İmza ayrıntılarını göster."
+msgstr "İmza ayrıntılarını gösterin."
 
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
-msgstr "İmza ayrıntılarını gizle."
+msgstr "İmza ayrıntılarını gizleyin."
 
 #: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show encryption details."
-msgstr "Şifreleme ayrıntılarını göster."
+msgstr "Şifreleme ayrıntılarını gösterin."
 
 #: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide encryption details."
-msgstr "Şifreleme ayrıntılarını gizle."
+msgstr "Şifreleme ayrıntılarını gizleyin."
 
 #: viewer/urlhandlermanager.cpp:427
 #, kde-format
@@ -2054,17 +2053,17 @@ msgstr "Belgelendirmeyi Aç"
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
-msgstr "Alıntılanan metni genişlet."
+msgstr "Alıntılanan metni genişletin."
 
 #: viewer/urlhandlermanager.cpp:463
 #, kde-format
 msgid "Collapse quoted text."
-msgstr "Alıntılanan metni daralt."
+msgstr "Alıntılanan metni daraltın."
 
 #: viewer/urlhandlermanager.cpp:525
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr "Sertifika yöneticisi başlatılamıyor. Kurulumunuzu kontrol edin."
+msgstr "Sertifika yöneticisi başlatılamıyor. Kurulumunuzu denetleyin."
 
 #: viewer/urlhandlermanager.cpp:527
 #, kde-format
@@ -2648,29 +2647,3 @@ msgstr "Sonraki İleti"
 #, kde-format
 msgid "Previous Message"
 msgstr "Önceki İleti"
-
-#~ msgid "Edit with:"
-#~ msgstr "Şununla düzenle:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "K Posta seçilen düzenleyicinin kapatılıp kapatılmadığını anlayamadı. Veri "
-#~ "kaybını önlemek için eklentinin düzenlenmesi işlemi iptal edilecek."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "Eklenti düzenlenemedi"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "vCard Görüntüleyici"
-
-#~ msgid "&Import"
-#~ msgstr "&İçe Aktar"
-
-#~ msgid "&Next Card"
-#~ msgstr "S&onraki Kartvizit"
-
-#~ msgid "&Previous Card"
-#~ msgstr "&Önceki Kartvizit"

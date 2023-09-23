@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-07-09 07:29+0200\n"
+"PO-Revision-Date: 2023-09-22 21:36+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -194,7 +194,7 @@ msgstr "ლორი"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
-msgstr ""
+msgstr "ვუყურებ"
 
 #: core/item.cpp:294
 #, kde-format
@@ -1197,7 +1197,7 @@ msgstr "ქმედების ელემენტი"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
-msgstr ""
+msgstr "ვუყურებ"
 
 #: core/widgets/searchlinestatus.cpp:245
 #, kde-format
