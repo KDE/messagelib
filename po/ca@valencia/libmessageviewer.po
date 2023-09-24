@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-09-21 15:14+0200\n"
+"PO-Revision-Date: 2023-09-22 11:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1365,20 +1365,19 @@ msgstr ""
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
-"Quan es renderitze l'HTML, no utilitzar un tipus de lletra inferior a la "
-"mida mínima."
+"Quan es renderitze l'HTML, no utilitzar una lletra inferior a la mida mínima."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
-msgstr "Especifica el tipus de lletra utilitzat per al cos del missatge"
+msgstr "Especifica la lletra utilitzada en el cos del missatge"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr "Especifica el tipus de lletra utilitzat per a imprimir"
+msgstr "Especifica la lletra utilitzada en imprimir"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.cmake:49
@@ -1418,15 +1417,14 @@ msgstr "Nivell de plegat automàtic:"
 #: settings/messageviewer.kcfg.cmake:83
 #, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Reduïx la mida del tipus de lletra per al text citat"
+msgstr "Reduïx la mida de la lletra per al text citat"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.cmake:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Activeu esta opció per a mostrar el text citat amb un tipus de lletra més "
-"xicotet."
+"Activeu esta opció per a mostrar el text citat amb una lletra més xicoteta."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.cmake:88
@@ -1651,7 +1649,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Use Fi&xed Font"
-msgstr "Utilitza un tipus de lletra fi&xa"
+msgstr "Utilitza una lletra d'amplària fi&xa"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.cmake:237
@@ -1800,7 +1798,7 @@ msgstr "Activa les tecles d'accessibilitat"
 #: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "Reduïx la mida del tipus de lletra per al text c&itat"
+msgstr "Reduïx la mida de la lletra per al text c&itat"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
@@ -1818,7 +1816,7 @@ msgstr "Nive&ll de plegat automàtic:"
 #: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
-msgstr "Mida &mínima del tipus de lletra:"
+msgstr "Mida &mínima de la lletra:"
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
