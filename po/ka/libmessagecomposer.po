@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-07-09 07:28+0200\n"
+"PO-Revision-Date: 2023-09-24 11:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -306,7 +306,7 @@ msgstr "საჯარო OpenPGP გასაღების მიმაგ�
 #: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
 msgid "Select the public key which should be attached."
-msgstr ""
+msgstr "აირჩიეთ საჯარო გასაღები, რომლის მიმაგრებაც გნებავთ."
 
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
@@ -378,6 +378,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail-მა ვერ აღმოაჩინა, როდის დაიხურება არჩეული რედაქტორი. მონაცემების "
+"კარგვის თავიდან ასაცილებლად მიმაგრებული ფაილის ჩასწორება გაუქმდება."
 
 #: composer/composer.cpp:288
 #, kde-format
@@ -387,22 +389,22 @@ msgstr "მიმღებებისთვის საჭირო მონ�
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr ""
+msgstr "&მარკირების შენარჩუნება. ხელმოწერა/დაშიფვრა არ მოხდება"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr ""
+msgstr "&მარკირების შენარჩუნება. დაშიფვრა არ მოხდება"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr ""
+msgstr "&მარკირების შენარჩუნება. ხელმოწერა არ მოხდება"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr ""
+msgstr "ხელმოწერა/დაშიფვრა (მარკირების წაშლა)"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
@@ -429,7 +431,7 @@ msgstr "დავშიფრო/ხელი მოვაწერო შეტ
 #: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "It was not possible to create a message composer."
-msgstr ""
+msgstr "შეტყობინების კომპოზიტორის შექმნა შეუძლებელია."
 
 #: composer/composerviewbase.cpp:526
 #, kde-format
@@ -490,6 +492,8 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
+"შეტყობინების შექმნის შეცდომა: %1\n"
+"  შეგვატყობინეთ ამის შესახებ."
 
 #: composer/composerviewbase.cpp:1065
 #, kde-format
@@ -499,7 +503,7 @@ msgstr "შეტყობინების შედგენის შეც�
 #: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
-msgstr ""
+msgstr "პრობლემა შეტყობინების გასაგზავნ რიგში ჩამატებისას: %1"
 
 #: composer/composerviewbase.cpp:1326
 #, kde-format
@@ -528,6 +532,9 @@ msgid ""
 "%2\n"
 "Reason: %3"
 msgstr ""
+"შეტყობინების %1-ის სახით ავტომატური შენახვა ჩავარდა.\n"
+"%2\n"
+"მიზეზი: %3"
 
 #: composer/composerviewbase.cpp:1365
 #, kde-format
@@ -787,6 +794,8 @@ msgid ""
 "\n"
 "The following keys are only marginally trusted: \n"
 msgstr ""
+"\n"
+"შემდეგი გასაღებები, მხოლოდ, შეზღუდულადაა სანდო: \n"
 
 #: composer/keyresolver.cpp:324
 #, kde-format
@@ -794,6 +803,8 @@ msgid ""
 "\n"
 "The following keys or certificates have unknown trust level: \n"
 msgstr ""
+"\n"
+"შემდეგი გასაღებებს ან სერტიფიკატებს უცნობი ნდობის დონე აქვთ: \n"
 
 #: composer/keyresolver.cpp:328
 #, kde-format
@@ -801,11 +812,13 @@ msgid ""
 "\n"
 "The following keys or certificates are <b>revoked</b>: \n"
 msgstr ""
+"\n"
+"შემდეგი გასაღებები ან სერტიფიკატები <b>გაუქმებულია</b>: \n"
 
 #: composer/keyresolver.cpp:334
 #, kde-format
 msgid "Not Fully Trusted Encryption Keys"
-msgstr ""
+msgstr "არა-სრულა სანდო დაშიფვრის გასაღებები"
 
 #: composer/keyresolver.cpp:648
 #, kde-format
@@ -992,17 +1005,17 @@ msgstr "სახელის არჩევანი"
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr ""
+msgstr "რა სახელი უნდა ჰქონდეს კონტაქტს '%1' თქვენს მისამართების წიგნში?"
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
-msgstr ""
+msgstr "აირჩიეთ მისამართების წიგნი, რომელშიც ახალი კონტაქტი იქნება შენახული:"
 
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr ""
+msgstr "პასუხის დალოდება \"%1\"-სგან და \"%2\"-სთვის გაგზავნა"
 
 #: followupreminder/followupremindercreatejob.cpp:99
 #, kde-format
@@ -1014,7 +1027,7 @@ msgstr ""
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr ""
+msgstr "ახალი შემხსენებლის შენახვა ჩავარდა: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
 #, kde-format
@@ -1045,7 +1058,7 @@ msgstr "არასწორი თარიღი"
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr ""
+msgstr "არჩეული საქაღალდე სწორი არაა."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
@@ -1104,7 +1117,7 @@ msgstr "ხელით მითითებული"
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr ""
+msgstr "შემოწმეთ მინიმალური და მაქსიმალური მნიშვნელობები."
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
@@ -1139,7 +1152,7 @@ msgstr "კითხვა ზომის შეცვლამდე"
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr ""
+msgstr "შეცდომის შემთხვევაში გადართვა ფორმატზე:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
@@ -1151,7 +1164,7 @@ msgstr "სურათი"
 #: imagescaling/ui/imagescalingwidget.ui:95
 #, kde-format
 msgid "Reduce image to maximum dimension:"
-msgstr ""
+msgstr "გამოსახულების შემცირება მაქსიმალურ ზომამდე:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: imagescaling/ui/imagescalingwidget.ui:109
@@ -1181,7 +1194,7 @@ msgstr " px"
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr ""
+msgstr "გამოსახულების შემცირება მინიმალურ ზომამდე"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
@@ -1223,7 +1236,7 @@ msgstr "წყაროს ფილტრი"
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr ""
+msgstr "არ გაფილტრო (ჩასმულია ყველა ფაილი)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
@@ -1257,7 +1270,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr ""
+msgstr "მიუთითეთ ';'-ით გამოყოფილინ ნიმუშები"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -1269,7 +1282,7 @@ msgstr "გამოსახულების ფორმატი"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr ""
+msgstr "გამოსახულების ზომის შეცვლა ერთ-ერთით ამ ფორმატებიდან"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
@@ -1282,6 +1295,7 @@ msgstr "ფაილის სახელის ზომის შეცვლ
 #, kde-format
 msgid "Rename resized images with following pattern:"
 msgstr ""
+"ზომაშეცვლილი გამოსახულებების სახელის გადარქმევა ერთ-ერთით ამ ფორმატებიდან:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1293,7 +1307,7 @@ msgstr "მიმღები"
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr ""
+msgstr "არ გაფილტრო (დაშვებულია ყველა გამგზავნი)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
@@ -1420,17 +1434,17 @@ msgstr "კოდირების შეცვლა"
 #: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
-msgstr ""
+msgstr "მომხმარებელმა გადაწყვიტა, კოდირება შეცვალოს."
 
 #: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr ""
+msgstr "არჩეული შიფრით (%1) შეტყობინების სრულად გაშიფვრა შეუძლებელია."
 
 #: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr ""
+msgstr "ტექსტის კოდეკის მიღების შეცდომა კოდირებისთვის \"%1\"."
 
 #: job/singlepartjob.cpp:67
 #, kde-format
@@ -1508,7 +1522,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr ""
+msgstr "დაგზავნის სიის შენახვა"
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format
@@ -1525,7 +1539,7 @@ msgstr "&სახელი:"
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
 msgid "Name of Distribution List"
-msgstr ""
+msgstr "დაგზავნის სიის სახელი"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1551,7 +1565,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr ""
+msgstr "ახალი დაგზავნის სია"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
@@ -1577,11 +1591,13 @@ msgstr "არჩიეთ მისამართების წიგნი"
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
 msgstr ""
+"აირჩიეთ მისამართების წიგნის საქაღალდე, რომელშიც კონტაქტების ჯგუფი იქნება "
+"შენახული:"
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr ""
+msgstr "დაგზავნის სიის შექმნა შეუძლებელია: %1"
 
 #: recipient/recipient.cpp:99
 #, kde-format
@@ -1642,7 +1658,7 @@ msgstr "სიის შენახვა..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr ""
+msgstr "მიმღებების შენახვა დაგზავნის სიის სახით"
 
 #: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
@@ -1654,7 +1670,7 @@ msgstr "&აირჩიეთ..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr ""
+msgstr "აირჩიეთ მიმღებები თქვენი მისამართის წიგნიდან"
 
 #: recipient/recipientseditorsidewidget.cpp:77
 #, kde-format
@@ -1713,7 +1729,7 @@ msgstr "&Reply-To თავსართში დამატება"
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
-msgstr ""
+msgstr "&To თავსართში დამატება"
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
@@ -1742,7 +1758,11 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
+"აირჩიეთ 1 მიმღები. მიმღებების მაქსიმალური მხარდაჭერილი რიცხვია %2.\n"
+"გაითვალისწინეთ ეს."
 msgstr[1] ""
+"აირჩიეთ %1 მიმღები. მიმღებების მაქსიმალური მხარდაჭერილი რიცხვია %2.\n"
+"გაითვალისწინეთ ეს."
 
 #: recipient/recipientspicker.cpp:189
 #, kde-format
@@ -1752,7 +1772,7 @@ msgstr "მეტ მიმღებს ვეღარ დაამატებ
 #: sendlater/sendlatercreatejob.cpp:33
 #, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr ""
+msgstr "შეტყობინების მოგვიანებით გასაგზავნ სიაში ჩამატება ჩავარდა: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
@@ -1793,17 +1813,17 @@ msgstr "წელი"
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "ელფოსტის მოგვიანებით გაგზავნის აგენტი გაშვებული არაა."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "მოგვიანებით გასაგზავნთა სიიდან შეტყობინების წაშლა ჩავარდა: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
 #, kde-format
 msgid "You cannot select a date prior to the current date."
-msgstr ""
+msgstr "თარიღს მიმდინარემდე ვერ აირჩევთ."
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
@@ -1821,7 +1841,7 @@ msgstr "გამეორება ყოველ:"
 #: settings/messagecomposer.kcfg.cmake:18
 #, kde-format
 msgid "Only quote selected text when replying"
-msgstr ""
+msgstr "პასუხისას მხოლოდ მონიშნული ტექსტის ციტირება"
 
 #. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:23
@@ -1845,7 +1865,7 @@ msgstr "ხელმოწერის ციტირებული ტექ�
 #: settings/messagecomposer.kcfg.cmake:40
 #, kde-format
 msgid "Prepend separator to signature"
-msgstr ""
+msgstr "ხელმოწერისთვის გამყოფის დამატება"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:45
@@ -1873,7 +1893,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:55
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "უახლესი მისამართების გამოყენება ავტომატური შევსებისთვის"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:56
@@ -1887,7 +1907,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:61
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "მიმღების ჩანაწერების მაქსიმალური რაოდენობა:"
 
 #. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:66
@@ -1907,7 +1927,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:71
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "სიტყვის გადატანის სვეტი:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:81
@@ -2211,7 +2231,7 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr ""
+msgstr "attachment,attached,მიმაგრებული,მიმაგრებულიფაილი"
 
 #: utils/util.cpp:293
 #, kde-format
@@ -2241,7 +2261,7 @@ msgstr ""
 #: utils/util.cpp:312
 #, kde-format
 msgid "Mail dispatcher offline."
-msgstr ""
+msgstr "ელფოსტის დისპეტჩერი ოფლაინაა."
 
 #: utils/util.cpp:313
 #, kde-format
