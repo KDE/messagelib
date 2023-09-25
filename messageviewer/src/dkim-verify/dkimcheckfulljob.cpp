@@ -116,7 +116,7 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
                 // qDebug() << "domain " << domain << " selector " << selector;
                 const int answer = KMessageBox::warningTwoActions(nullptr,
                                                                   i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
-                                                                  i18n("Key Changed"),
+                                                                  i18nc("@title:window", "Key Changed"),
                                                                   KGuiItem(i18nc("@action:button", "Store")),
                                                                   KStandardGuiItem::discard());
                 if (answer == KMessageBox::ButtonCode::SecondaryAction) {

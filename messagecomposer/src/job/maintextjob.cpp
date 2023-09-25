@@ -99,7 +99,7 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
                                                         i18n("Encoding the message with %1 will lose some characters.\n"
                                                              "Do you want to continue?",
                                                              QString::fromLatin1(charsets.first())),
-                                                        i18n("Some Characters Will Be Lost"),
+                                                        i18nc("@title:window", "Some Characters Will Be Lost"),
                                                         KGuiItem(i18n("Lose Characters")),
                                                         KGuiItem(i18n("Change Encoding")));
             if (result == KMessageBox::ButtonCode::SecondaryAction) {

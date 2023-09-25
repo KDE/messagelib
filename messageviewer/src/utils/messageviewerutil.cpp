@@ -123,7 +123,7 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
                                                   i18n("A file named \"%1\" already exists. "
                                                        "Are you sure you want to overwrite it?",
                                                        url.toDisplayString()),
-                                                  i18n("Overwrite File?"),
+                                                  i18nc("@title:window", "Overwrite File?"),
                                                   KStandardGuiItem::overwrite())) {
             return false;
         }
@@ -400,7 +400,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
                                       "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
                                       file.fileName(),
                                       file.errorString()),
-                               i18n("Error saving attachment"));
+                               i18nc("@title:window", "Error saving attachment"));
             return false;
         }
         ds.setDevice(&file);
@@ -522,9 +522,9 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
         KMBox::MBox mbox;
         if (!mbox.load(localFileName)) {
             if (appendMessages) {
-                KMessageBox::error(parent, i18n("File %1 could not be loaded.", localFileName), i18n("Error loading message"));
+                KMessageBox::error(parent, i18n("File %1 could not be loaded.", localFileName), i18nc("@title:window", "Error loading message"));
             } else {
-                KMessageBox::error(parent, i18n("File %1 could not be created.", localFileName), i18n("Error saving message"));
+                KMessageBox::error(parent, i18n("File %1 could not be created.", localFileName), i18nc("@title:window", "Error saving message"));
             }
             return false;
         }
@@ -555,7 +555,7 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
                                           "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
                                           url.toDisplayString(),
                                           job->errorString()),
-                                   i18n("Error saving message"));
+                                   i18nc("@title:window", "Error saving message"));
                 return false;
             }
         } else {

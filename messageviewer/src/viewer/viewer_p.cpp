@@ -342,7 +342,7 @@ static bool confirmAttachmentDeletion(QWidget *parent)
 {
     return KMessageBox::warningContinueCancel(parent,
                                               i18n("Deleting an attachment might invalidate any digital signature on this message."),
-                                              i18n("Delete Attachment"),
+                                              i18nc("@title:window", "Delete Attachment"),
                                               KStandardGuiItem::del(),
                                               KStandardGuiItem::cancel(),
                                               QStringLiteral("DeleteAttachmentSignatureWarning"))
@@ -377,7 +377,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     if (extraNodes.contains(node->topLevel())) {
         KMessageBox::error(mMainWindow,
                            i18n("Deleting an attachment from an encrypted or old-style mailman message is not supported."),
-                           i18n("Delete Attachment"));
+                           i18nc("@title:window", "Delete Attachment"));
         return true; // cancelled
     }
 
@@ -1939,7 +1939,7 @@ void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::Che
         KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
-        KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18n("Check Phishing URL"));
+        KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18nc("@title:window", "Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         break;
@@ -1960,7 +1960,7 @@ bool ViewerPrivate::urlIsAMalwareButContinue()
     if (KMessageBox::ButtonCode::SecondaryAction
         == KMessageBox::warningTwoActions(mMainWindow,
                                           i18n("This web site is a malware, do you want to continue to show it?"),
-                                          i18n("Malware"),
+                                          i18nc("@title:window", "Malware"),
                                           KStandardGuiItem::cont(),
                                           KStandardGuiItem::cancel())) {
         return false;

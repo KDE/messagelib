@@ -87,7 +87,7 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete this rule '%1'?", item->text(0)),
-                                                              i18n("Delete Rule"),
+                                                              i18nc("@title:window", "Delete Rule"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
@@ -129,7 +129,7 @@ void RemoteContentConfigureWidget::slotAdd()
             const auto item = mTreeWidget->topLevelItem(i);
             if (item->text(0) == info.url()) {
                 isUnique = false;
-                KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18n("Add new Url"));
+                KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18nc("@title:window", "Add new Url"));
                 break;
             }
         }

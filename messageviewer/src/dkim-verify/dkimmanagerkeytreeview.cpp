@@ -92,7 +92,7 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
         menu.addAction(i18n("Delete All"), this, [this]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete all keys?"),
-                                                              i18n("Delete Keys"),
+                                                              i18nc("@title:window", "Delete Keys"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {

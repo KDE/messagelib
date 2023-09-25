@@ -332,7 +332,7 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
         int ret = KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                        i18n("<qt><p>Inline signing/encrypting of HTML messages is not possible;</p>"
                                                             "<p>do you want to delete your markup?</p></qt>"),
-                                                       i18n("Sign/Encrypt Message?"),
+                                                       i18nc("@title:window", "Sign/Encrypt Message?"),
                                                        KGuiItem(yesBtnText),
                                                        KGuiItem(keepBtnText));
         if (KMessageBox::Cancel == ret) {
@@ -524,7 +524,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 if (resizeUtils.containsImage(m_attachmentModel->attachments())) {
                     const int rc = KMessageBox::warningTwoActions(m_parentWidget,
                                                                   i18n("Do you want to resize images?"),
-                                                                  i18n("Auto Resize Images"),
+                                                                  i18nc("@title:window", "Auto Resize Images"),
                                                                   KGuiItem(i18nc("@action:button", "Auto Resize")),
                                                                   KGuiItem(i18nc("@action:button", "Do Not Resize")));
                     if (rc == KMessageBox::ButtonCode::PrimaryAction) {
@@ -1362,7 +1362,7 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
                                     filename,
                                     errorMessage,
                                     file.errorString()),
-                               i18n("Autosaving Message Failed"));
+                               i18nc("@title:window", "Autosaving Message Failed"));
 
             // Error dialog shown, hide the errors the next time
             m_autoSaveErrorShown = true;
@@ -1897,7 +1897,7 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                         i18n("The message you have composed seems to refer to an "
                                                              "attached file but you have not attached anything.\n"
                                                              "Do you want to attach a file to your message?"),
-                                                        i18n("File Attachment Reminder"),
+                                                        i18nc("@title:window", "File Attachment Reminder"),
                                                         KGuiItem(i18n("&Attach File..."), QLatin1String("mail-attachment")),
                                                         KGuiItem(i18n("&Send as Is"), QLatin1String("mail-send")));
     if (rc == KMessageBox::Cancel) {
@@ -1957,7 +1957,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "Sign this message?");
         switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                      msg,
-                                                     i18n("Sign Message?"),
+                                                     i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
                                                      KGuiItem(i18n("Do &Not Sign")))) {
         case KMessageBox::Cancel:
@@ -1985,7 +1985,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "Sign this message?");
         switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                      msg,
-                                                     i18n("Sign Message?"),
+                                                     i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
                                                      KGuiItem(i18n("Do &Not Sign")))) {
         case KMessageBox::Cancel:
@@ -2010,7 +2010,8 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "You have requested to sign this message, "
             "but no valid signing keys have been configured "
             "for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18n("Send Unsigned?"), KGuiItem(i18n("Send &Unsigned"))) == KMessageBox::Cancel) {
+        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unsigned?"), KGuiItem(i18n("Send &Unsigned")))
+            == KMessageBox::Cancel) {
             result = false;
             return false;
         } else {
@@ -2034,7 +2035,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             const QString buttonText = sign && !doSignCompletely ? i18n("&Sign All Parts") : i18n("&Sign");
             switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                          msg,
-                                                         i18n("Unsigned-Message Warning"),
+                                                         i18nc("@title:window", "Unsigned-Message Warning"),
                                                          KGuiItem(buttonText),
                                                          KGuiItem(i18n("Send &As Is")))) {
             case KMessageBox::Cancel:
@@ -2148,7 +2149,8 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             "and to encrypt a copy to yourself, "
             "but no valid trusted encryption keys have been "
             "configured for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18n("Send Unencrypted?"), KGuiItem(i18n("Send &Unencrypted"))) == KMessageBox::Cancel) {
+        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unencrypted?"), KGuiItem(i18n("Send &Unencrypted")))
+            == KMessageBox::Cancel) {
             result = false;
             return false;
         } else {
@@ -2174,7 +2176,7 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             const QString buttonText = !doEncryptCompletely ? i18n("&Encrypt All Parts") : i18n("&Encrypt");
             switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                          msg,
-                                                         i18n("Unencrypted Message Warning"),
+                                                         i18nc("@title:window", "Unencrypted Message Warning"),
                                                          KGuiItem(buttonText),
                                                          KGuiItem(signSomething ? i18n("&Sign Only") : i18n("&Send As-Is")))) {
             case KMessageBox::Cancel:

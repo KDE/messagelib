@@ -249,7 +249,7 @@ bool CustomTemplates::nameAlreadyExists(const QString &str, QTreeWidgetItem *ite
     while (*lit) {
         const QString name = (*lit)->text(1);
         if ((name == str) && ((*lit) != item)) {
-            KMessageBox::error(this, i18n("A template with same name already exists."), i18n("Cannot create template"));
+            KMessageBox::error(this, i18n("A template with same name already exists."), i18nc("@title:window", "Cannot create template"));
             return true;
         }
         ++lit;

@@ -102,11 +102,11 @@ void FollowUpReminderSelectDateDialog::accept()
 {
     const QDate date = selectedDate();
     if (date < QDate::currentDate()) {
-        KMessageBox::error(this, i18n("The selected date must be greater than the current date."), i18n("Invalid date"));
+        KMessageBox::error(this, i18n("The selected date must be greater than the current date."), i18nc("@title:window", "Invalid date"));
         return;
     }
     if (!d->mCollectionCombobox->currentCollection().isValid()) {
-        KMessageBox::error(this, i18n("The selected folder is not valid."), i18n("Invalid folder"));
+        KMessageBox::error(this, i18n("The selected folder is not valid."), i18nc("@title:window", "Invalid folder"));
         return;
     }
     QDialog::accept();

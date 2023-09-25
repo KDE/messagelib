@@ -76,7 +76,7 @@ void DKIMManageRulesDialog::slotExport()
 {
     const auto rules = mRulesWidget->rules();
     if (rules.isEmpty()) {
-        KMessageBox::error(this, i18n("No rules found"), i18n("Export Rules"));
+        KMessageBox::error(this, i18n("No rules found"), i18nc("@title:window", "Export Rules"));
         return;
     }
     const QString fileName = QFileDialog::getSaveFileName(this, i18n("Export Rules"));
@@ -90,7 +90,7 @@ void DKIMManageRulesDialog::slotImport()
     const QString fileName = QFileDialog::getOpenFileName(this, i18n("Import Rules"));
     if (!fileName.isEmpty()) {
         if (MessageViewer::DKIMManagerRules::self()->importRules(fileName) == 0) {
-            KMessageBox::error(this, i18n("No rules imported."), i18n("Import Rules"));
+            KMessageBox::error(this, i18n("No rules imported."), i18nc("@title:window", "Import Rules"));
         } else {
             mRulesWidget->updateRules();
         }

@@ -79,7 +79,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
             const QString identifier = item->identifier();
             const int answer = KMessageBox::questionTwoActions(this,
                                                                i18n("Do you want to delete this filter?"),
-                                                               i18n("Remove Filter"),
+                                                               i18nc("@title:window", "Remove Filter"),
                                                                KStandardGuiItem::del(),
                                                                KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {

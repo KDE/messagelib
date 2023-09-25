@@ -209,7 +209,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete this rule?"),
-                                                              i18n("Delete Rule"),
+                                                              i18nc("@title:window", "Delete Rule"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
@@ -223,7 +223,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
         menu.addAction(i18n("Delete All"), this, [this]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete all the rules?"),
-                                                              i18n("Delete Rules"),
+                                                              i18nc("@title:window", "Delete Rules"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {

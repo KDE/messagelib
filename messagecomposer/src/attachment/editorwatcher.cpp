@@ -193,7 +193,7 @@ void EditorWatcher::checkEditDone()
         KMessageBox::information(mParentWidget,
                                  i18n("KMail is unable to detect when the chosen editor is closed. "
                                       "To avoid data loss, editing the attachment will be aborted."),
-                                 i18n("Unable to edit attachment"),
+                                 i18nc("@title:window", "Unable to edit attachment"),
                                  QStringLiteral("UnableToEditAttachment"));
     }
 

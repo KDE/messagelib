@@ -164,7 +164,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachmentRemove
 void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to compress attachment"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to compress attachment"));
         return;
     }
 
@@ -674,7 +674,9 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
 {
     QTemporaryFile *tempFile = dumpAttachmentToTempFile(d->selectedParts.constFirst());
     if (!tempFile) {
-        KMessageBox::error(d->wParent, i18n("KMail was unable to write the attachment to a temporary file."), i18n("Unable to open attachment"));
+        KMessageBox::error(d->wParent,
+                           i18n("KMail was unable to write the attachment to a temporary file."),
+                           i18nc("@title:window", "Unable to open attachment"));
         return;
     }
     QUrl url = QUrl::fromLocalFile(tempFile->fileName());
@@ -698,7 +700,9 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 {
     QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
     if (!tempFile) {
-        KMessageBox::error(d->wParent, i18n("KMail was unable to write the attachment to a temporary file."), i18n("Unable to open attachment"));
+        KMessageBox::error(d->wParent,
+                           i18n("KMail was unable to write the attachment to a temporary file."),
+                           i18nc("@title:window", "Unable to open attachment"));
         return;
     }
     tempFile->setPermissions(QFile::ReadUser);
@@ -747,7 +751,9 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageC
 {
     QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
     if (!tempFile) {
-        KMessageBox::error(d->wParent, i18n("KMail was unable to write the attachment to a temporary file."), i18n("Unable to edit attachment"));
+        KMessageBox::error(d->wParent,
+                           i18n("KMail was unable to write the attachment to a temporary file."),
+                           i18nc("@title:window", "Unable to edit attachment"));
         return;
     }
 
@@ -815,7 +821,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
         if (job->error() == KIO::ERR_FILE_ALREADY_EXIST) {
             if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()),
-                                                   i18n("Save to File"),
+                                                   i18nc("@title:window", "Save to File"),
                                                    KGuiItem(i18n("&Replace")))
                 == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);

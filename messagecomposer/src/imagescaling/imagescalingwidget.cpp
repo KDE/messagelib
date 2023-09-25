@@ -312,7 +312,7 @@ void ImageScalingWidget::writeConfig()
     if (d->ui->EnlargeImageToMinimum->isChecked() && d->ui->ReduceImageToMaximum->isChecked()) {
         if ((d->ui->customMinimumWidth->value() >= d->ui->customMaximumWidth->value())
             || (d->ui->customMinimumHeight->value() >= d->ui->customMaximumHeight->value())) {
-            KMessageBox::error(this, i18n("Please verify minimum and maximum values."), i18n("Error in minimum Maximum value"));
+            KMessageBox::error(this, i18n("Please verify minimum and maximum values."), i18nc("@title:window", "Error in minimum Maximum value"));
             return;
         }
     }
