@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -89,7 +89,9 @@ msgid "A template with same name already exists."
 msgstr "Истоимени шаблон већ постоји."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Не могу да направим шаблон"
 
@@ -633,7 +635,9 @@ msgstr "Желите ли да вратите текући шаблон или �
 
 # >> @title:window
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Враћање на подразумевано"
 

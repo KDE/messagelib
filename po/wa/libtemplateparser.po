@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2011-08-15 08:44+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -75,6 +75,7 @@ msgstr ""
 #: customtemplates.cpp:252
 #, fuzzy, kde-format
 #| msgid "(no custom templates)"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "(pont d' modele a vosse môde)"
 
@@ -567,6 +568,7 @@ msgstr ""
 
 #: templatesconfiguration.cpp:101
 #, kde-format
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr ""
 

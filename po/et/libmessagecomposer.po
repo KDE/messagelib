@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -18,7 +18,9 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to compress attachment"
+msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Manuse tihendamine nurjus"
 
@@ -208,40 +210,44 @@ msgstr "Vali kõik"
 msgid "Reload"
 msgstr "Laadi uuesti"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#: attachment/attachmentcontrollerbase.cpp:750
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMailil ei õnnestunud kirjutada manust ajutisse faili."
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
+#, fuzzy, kde-format
+#| msgid "Unable to open attachment"
+msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Manuse avamine nurjus"
 
-#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "KMailil ei õnnestunud avada manust."
 
-#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Manuse muutmine ei ole võimalik"
 
-#: attachment/attachmentcontrollerbase.cpp:791
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "nimetu"
 
-#: attachment/attachmentcontrollerbase.cpp:794
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Manuse salvestamine"
 
-#: attachment/attachmentcontrollerbase.cpp:817
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -250,61 +256,63 @@ msgstr ""
 "Fail %1 on olemas.\n"
 "Kas asendada see?"
 
-#: attachment/attachmentcontrollerbase.cpp:818
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:824
+#, fuzzy, kde-format
+#| msgid "Save to File"
+msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Faili salvestamine"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgid "&Replace"
 msgstr "&Asenda"
 
-#: attachment/attachmentcontrollerbase.cpp:846
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Kas tõesti lisada manusena kataloog \"%1\"?"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Kataloogi lisamine"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:912
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Kaasamine"
 
-#: attachment/attachmentcontrollerbase.cpp:883
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Kataloogi lisamine"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:898
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Faili lisamine"
 
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:941
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Faili lisamine nurjus"
 
-#: attachment/attachmentcontrollerbase.cpp:959
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Avaliku OpenPGP võtme kaasamine"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Vali kaasatav avalik võti."
@@ -426,7 +434,9 @@ msgstr ""
 "p><p>Kas soovid märkekeele kustutada?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign/Encrypt Message?"
+msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Kas allkirjastada/krüptida kiri?"
 
@@ -441,7 +451,9 @@ msgid "Do you want to resize images?"
 msgstr "Kas muuta piltide suurust?"
 
 #: composer/composerviewbase.cpp:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Automaatne piltide suuruse muutmine"
 
@@ -541,7 +553,9 @@ msgstr ""
 "Põhjus: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Autosaving Message Failed"
+msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Kirja automaatne salvestamine nurjus"
 
@@ -562,7 +576,9 @@ msgstr ""
 "Kas soovid nüüd kirjale faili lisada?"
 
 #: composer/composerviewbase.cpp:1900
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Faili kaasamise meeldetuletus"
 
@@ -583,7 +599,9 @@ msgstr ""
 "Kas kiri allkirjastada?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign Message?"
+msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Kas allkirjastada kiri?"
 
@@ -617,7 +635,9 @@ msgstr ""
 "ühtki kehtivat allkirjavõtit."
 
 #: composer/composerviewbase.cpp:2013
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Kas saata allkirjastamata?"
 
@@ -626,7 +646,7 @@ msgstr "Kas saata allkirjastamata?"
 msgid "Send &Unsigned"
 msgstr "Saada allkir&jastamata"
 
-#: composer/composerviewbase.cpp:2027
+#: composer/composerviewbase.cpp:2028
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -637,7 +657,7 @@ msgstr ""
 "Ainult osaliselt allkirjastatud kirja saatmine võib rikkuda reegleid.\n"
 "Kas allkirjastada kõik osad?"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -648,27 +668,29 @@ msgstr ""
 "Allkirjastamata kirja saatmine võib rikkuda reegleid.\n"
 "Kas kiri allkirjastada?"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Allkirja&sta kõik osad"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign"
 msgstr "Allkirja&sta"
 
-#: composer/composerviewbase.cpp:2037
-#, kde-format
+#: composer/composerviewbase.cpp:2038
+#, fuzzy, kde-format
+#| msgid "Unsigned-Message Warning"
+msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Allkirjastamata kirja hoiatus"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid "Send &As Is"
 msgstr "S&aada nagu on"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2087
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -677,7 +699,7 @@ msgstr ""
 "Kõigile saajatele leiti kehtivad usaldusväärsed krüptovõtmed.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -688,34 +710,34 @@ msgstr ""
 "krüptida või mitte.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Kas krüptida kiri?"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Allk&irjasta ja krüpti"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
-#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1356
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1358
 #, kde-format
 msgid "&Encrypt"
 msgstr "Krüpt&i"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Sign Only"
 msgstr "Ainult allkirja&sta"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Saada nagu on"
 
-#: composer/composerviewbase.cpp:2118
+#: composer/composerviewbase.cpp:2119
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -724,12 +746,12 @@ msgstr ""
 "Saajate krüptoeelistused on konfliktis.\n"
 "Kas kiri krüptida?"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "Ä&ra krüpti"
 
-#: composer/composerviewbase.cpp:2147
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -739,17 +761,19 @@ msgstr ""
 "Soovisid krüptida kirja ja selle koopiat iseendale, kuid antud identiteedile "
 "ei ole seadistatud ühtki kehtivat usaldusväärset krüptovõtit."
 
-#: composer/composerviewbase.cpp:2151
-#, kde-format
+#: composer/composerviewbase.cpp:2152
+#, fuzzy, kde-format
+#| msgid "Send Unencrypted?"
+msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Kas saata krüptimata?"
 
-#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
+#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Saada &krüptimata"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -762,7 +786,7 @@ msgstr ""
 "kaasa tundliku info lekkimise.\n"
 "Kas krüptida kirja kõik osad?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -775,13 +799,15 @@ msgstr ""
 "info lekkimise.\n"
 "Kas krüptida kiri?"
 
-#: composer/composerviewbase.cpp:2174
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Krüpt&i kõik osad"
 
-#: composer/composerviewbase.cpp:2177
-#, kde-format
+#: composer/composerviewbase.cpp:2179
+#, fuzzy, kde-format
+#| msgid "Unencrypted Message Warning"
+msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Krüptimata kirja hoiatus"
 
@@ -831,7 +857,9 @@ msgstr ""
 "Järgmised võtmed või sertifikaadid on <b>tühistatud</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not Fully Trusted Encryption Keys"
+msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Täieliku usaldusväärsuseta krüptovõtmed"
 
@@ -854,7 +882,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Kasutamatud krüptovõtmed"
 
@@ -876,7 +906,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Signing Keys"
+msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Kasutamatud allkirjastamisvõtmed"
 
@@ -962,7 +994,9 @@ msgstr ""
 "Kas saata kiri allkirjastamata?"
 
 #: composer/keyresolver.cpp:1154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No signing possible"
+msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Allkirjastamine pole võimalik"
 
@@ -975,13 +1009,15 @@ msgstr ""
 "Sa ei ole valinud krüptovõtit endale krüptimiseks. Kui nüüd kirja krüptid, "
 "ei saa sa seda enam ise lahti krüptida."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
-#: composer/keyresolver.cpp:1356
-#, kde-format
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
+#: composer/keyresolver.cpp:1358
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Puuduva võtme hoiatus"
 
-#: composer/keyresolver.cpp:1335
+#: composer/keyresolver.cpp:1336
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -990,7 +1026,7 @@ msgstr ""
 "Sa ei ole valinud selle kirja saajale krüptovõtit. Seepärast kirja ka ei "
 "krüptita."
 
-#: composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1340
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -999,7 +1035,7 @@ msgstr ""
 "Sa ei ole valinud ühelegi selle kirja saajale krüptovõtit. Seepärast kirja "
 "ka ei krüptita."
 
-#: composer/keyresolver.cpp:1348
+#: composer/keyresolver.cpp:1350
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1008,7 +1044,7 @@ msgstr ""
 "Sa ei ole valinud ühele selle kirja saajatest krüptovõtit. See isik ei suuda "
 "kirja lahti krüptida, kui sa selle nüüd krüptid."
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1354
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1017,12 +1053,12 @@ msgstr ""
 "Sa ei ole valinud mõnele selle kirja saajatest krüptovõtit. Need isikud ei "
 "suuda kirja lahti krüptida, kui sa selle nüüd krüptid."
 
-#: composer/keyresolver.cpp:1428
+#: composer/keyresolver.cpp:1431
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Krüptovõtme valik"
 
-#: composer/keyresolver.cpp:1472
+#: composer/keyresolver.cpp:1475
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1036,7 +1072,7 @@ msgstr ""
 "\n"
 "Palun vali uuesti sertifikaat/sertifikaadid, mida selle saaja jaoks kasutada."
 
-#: composer/keyresolver.cpp:1544
+#: composer/keyresolver.cpp:1547
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1053,7 +1089,7 @@ msgstr ""
 "Kui nimekirjas pole sobivat sertifikaati, võid ka otsida väliseid "
 "sertifikaate, klõpsates vastavale nupule.</qt>"
 
-#: composer/keyresolver.cpp:1554
+#: composer/keyresolver.cpp:1557
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1127,7 +1163,9 @@ msgid "The selected date must be greater than the current date."
 msgstr "Valitud kuupäev peab olema tänasest tulevikus."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid date"
+msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Sobimatu kuupäev"
 
@@ -1137,7 +1175,9 @@ msgid "The selected folder is not valid."
 msgstr "Valitud kataloog ei ole korrektne."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid folder"
+msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Sobimatu kataloog"
 
@@ -1204,7 +1244,9 @@ msgid "Please verify minimum and maximum values."
 msgstr "Palun kontrolli miinimum- ja maksimumväärtusi."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error in minimum Maximum value"
+msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Tõrge miinimum- ja maksimumväärtuses"
 
@@ -1512,7 +1554,9 @@ msgstr ""
 "Kas jätkata?"
 
 #: job/maintextjob.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Some Characters Will Be Lost"
+msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Mõned märgid lähevad kaduma"
 
@@ -2393,7 +2437,9 @@ msgstr ""
 "agent?"
 
 #: utils/util.cpp:294
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Kirjade edastamise agent puudub."
 
@@ -2414,7 +2460,9 @@ msgstr ""
 "agent võrku?"
 
 #: utils/util.cpp:312
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mail dispatcher offline."
+msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Kirjade edastamise agent ei ole võrgus."
 

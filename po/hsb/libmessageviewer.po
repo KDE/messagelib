@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -348,7 +348,9 @@ msgid ""
 msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Změnjeny kluč"
 
@@ -430,6 +432,7 @@ msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Z&ničić"
 
@@ -479,13 +482,17 @@ msgid "No rules found"
 msgstr "Žane prawidła"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "iCal eksportować"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 msgid "Export Rules"
 msgstr "iCal eksportować"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Prawidła importować"
@@ -495,6 +502,13 @@ msgstr "Prawidła importować"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Žana signatura"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Prawidła importować"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -560,6 +574,7 @@ msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Prawidło zničić"
 
@@ -572,6 +587,7 @@ msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Filtrowe prawidła"
 
@@ -1208,7 +1224,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "URL dodać"
 
@@ -1796,7 +1814,9 @@ msgid ""
 msgstr "Dataja %1 eksistuje? Chceće ju woprawdźe přepisać?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Dataju přepisać?"
 
@@ -1867,8 +1887,13 @@ msgstr ""
 "Njemóžach do dataje pisać:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Přiwěšk: "
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Přiwěšk: "
@@ -1906,6 +1931,7 @@ msgstr "PGP-ŝifrowana powěsć"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Zmylk při pósłanju powěsće na server"
 
@@ -1914,9 +1940,9 @@ msgstr "Zmylk při pósłanju powěsće na server"
 msgid "File %1 could not be created."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
@@ -1925,6 +1951,11 @@ msgstr "Přesuwam powěsć %3 z %2 wot %1."
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Kónc podpisaneje powěsće"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+msgid "Error saving message"
+msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2144,9 +2175,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Přiwěšk zničić"
 
@@ -2201,6 +2233,11 @@ msgstr "Zawěsćić jako ..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopěrować"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Přiwěšk zničić"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2444,7 +2481,7 @@ msgstr "Wšitke powěsće zawěsćić..."
 msgid "The network is broken."
 msgstr "Syć njefunguje."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2454,13 +2491,21 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "URL '%1' njeje walidny."
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 

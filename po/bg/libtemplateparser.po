@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2022-06-28 09:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -84,7 +84,9 @@ msgid "A template with same name already exists."
 msgstr "Шаблон със същото име вече съществува."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Не може да се създаде шаблон"
 
@@ -583,7 +585,9 @@ msgstr ""
 "Искате ли да нулирате текущия шаблон или всички шаблони по подразбиране?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Възстановяване на стандарта"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-08-09 22:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -81,7 +81,9 @@ msgid "A template with same name already exists."
 msgstr "이름이 같은 템플릿이 이미 존재합니다."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "템플릿을 만들 수 없음"
 
@@ -569,7 +571,9 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "현재 템플릿을 초기화하거나 모든 템플릿을 초기화하시겠습니까?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "기본값으로 초기화"
 

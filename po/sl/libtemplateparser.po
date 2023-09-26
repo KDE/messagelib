@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-08-09 07:57+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -85,7 +85,9 @@ msgid "A template with same name already exists."
 msgstr "Predloga s tem imenom že obstaja."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Predloge ni mogoče ustvariti"
 
@@ -578,7 +580,9 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "Ali želite na privzeto ponastaviti trenutno predlogo ali vse predloge?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Ponastavi na privzeto"
 

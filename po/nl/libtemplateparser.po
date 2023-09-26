@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-08-08 22:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -83,7 +83,9 @@ msgid "A template with same name already exists."
 msgstr "Een sjabloon met dezelfde naam bestaat al."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Kan geen sjabloon aanmaken"
 
@@ -582,7 +584,9 @@ msgstr ""
 "Wilt u het huidige sjabloon of alle sjablonen terugzetten naar de standaard?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Terugzetten naar standaard"
 

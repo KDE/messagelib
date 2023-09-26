@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -352,6 +352,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -431,6 +432,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "すべてのテキストを選択(&S)"
 
@@ -478,13 +480,18 @@ msgid "No rules found"
 msgstr "署名が見つかりません"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "インポート(&I)"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Rules"
@@ -495,6 +502,13 @@ msgstr "インポート(&I)"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "署名が見つかりません"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "インポート(&I)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -565,6 +579,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "すべてのテキストを選択(&S)"
 
@@ -577,6 +592,7 @@ msgstr ""
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "すべてのテキストを選択(&S)"
 
@@ -1247,6 +1263,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr ""
 
@@ -1841,7 +1858,9 @@ msgid ""
 msgstr "‘%1’ という名前のファイルは既に存在します。本当に上書きしますか？"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ファイルを上書きしますか？"
 
@@ -1917,8 +1936,14 @@ msgstr ""
 "<qt>このファイルに書き込めませんでした<br/><filename>%1</filename><br/><br/>"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "添付ファイルの保存エラー"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "添付ファイルの保存エラー"
@@ -1955,6 +1980,7 @@ msgstr "メッセージを復号できませんでした。"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "End of signed message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "署名付きメッセージの末尾"
 
@@ -1964,10 +1990,10 @@ msgstr "署名付きメッセージの末尾"
 msgid "File %1 could not be created."
 msgstr "メッセージを復号できませんでした。"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "添付ファイルの保存エラー"
 
@@ -1976,6 +2002,12 @@ msgstr "添付ファイルの保存エラー"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "署名付きメッセージの末尾"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgid "Error saving message"
+msgstr "添付ファイルの保存エラー"
 
 # ACCELERATOR added by translator
 #: utils/messageviewerutil.cpp:602
@@ -2193,9 +2225,10 @@ msgstr ""
 "添付ファイルを削除すると、このメッセージの電子署名が無効になる可能性がありま"
 "す。"
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "添付ファイルを削除"
 
@@ -2252,6 +2285,11 @@ msgstr "名前を付けて保存..."
 #, kde-format
 msgid "Copy"
 msgstr "コピー"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "添付ファイルを削除"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2500,7 +2538,7 @@ msgstr "すべての添付ファイルを保存..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2510,6 +2548,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr ""
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2517,6 +2561,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

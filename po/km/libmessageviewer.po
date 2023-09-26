@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -349,6 +349,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -425,6 +426,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
@@ -474,13 +476,18 @@ msgid "No rules found"
 msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "នាំចូល"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Rules"
@@ -491,6 +498,13 @@ msgstr "នាំចូល"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "នាំចូល"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -559,6 +573,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
@@ -570,6 +585,7 @@ msgstr ""
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
@@ -1248,6 +1264,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr ""
 
@@ -1860,7 +1877,9 @@ msgid ""
 msgstr "មាន​ឯកសារឈ្មោះ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ពិត​ជា​ចង់​សរសេរ​ជាន់​លើ​វា​ឬ ?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "សរសេរ​ជាន់​លើ​ឯកសារឬ ?"
 
@@ -1931,8 +1950,14 @@ msgid ""
 "qt>"
 msgstr "<qt>មិនអាច​សរសេរ​ទៅកាន់<br><filename>%1</filename><br><br>%2 បានទេ"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "មាន​កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ​ភ្ជាប់"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "មាន​កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ​ភ្ជាប់"
@@ -1969,7 +1994,9 @@ msgid "File %1 could not be loaded."
 msgstr "មិន​អាច​ផ្ទុក​ឯកសារ %1 បាន​ទេ ។"
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក​សារ​​..."
 
@@ -1978,9 +2005,10 @@ msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក​សា
 msgid "File %1 could not be created."
 msgstr "ឯកសារ %1 មិន​អាច​ត្រូវ​បាន​បង្កើត​ទេ ។"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ"
 
@@ -1989,6 +2017,11 @@ msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក
 #| msgid "We can not save message."
 msgid "We cannot save message."
 msgstr "មិន​អាច​រក្សាទុក​សារ​បាន​ទេ ។"
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2196,9 +2229,10 @@ msgid ""
 "message."
 msgstr "លុប​ឯកសារ​ភ្ជាប់​អាច​គ្មាន​សុពលភាព​លើ​ហត្ថលេខា​ឌីជីថល​ណាមួយ​នៅ​លើ​សារ​នេះ ។"
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
@@ -2253,6 +2287,11 @@ msgstr "​រក្សាទុកជា..."
 #, kde-format
 msgid "Copy"
 msgstr "ចម្លង"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2495,7 +2534,7 @@ msgstr "រក្សាទុក​ឯកសារភ្ជាប់​ទាំ
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2505,6 +2544,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr ""
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2512,6 +2557,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

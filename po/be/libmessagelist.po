@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1153,6 +1153,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Стварыць фільтар"
 
@@ -1228,6 +1229,7 @@ msgstr "Вы ўпэўнены ў тым, што жадаеце ачысцiць �
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Перайменаваць фільтр"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2018-08-13 08:37+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -82,7 +82,9 @@ msgid "A template with same name already exists."
 msgstr "هناك قالب بنفس الاسم أساسًا."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "لا يمكن إنشاء القالب"
 
@@ -572,7 +574,9 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "أتريد تصفير القالب الحالي إلى المبدئيات، أم كل القوالب؟"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "التصفير إلى المبدئيات"
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2011-10-30 01:38+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -313,6 +313,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -387,6 +388,7 @@ msgstr ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr ""
 
@@ -432,13 +434,17 @@ msgid "No rules found"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr ""
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr ""
@@ -446,6 +452,12 @@ msgstr ""
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "No rules imported."
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
@@ -510,6 +522,7 @@ msgstr ""
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr ""
 
@@ -520,6 +533,7 @@ msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, kde-format
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr ""
 
@@ -1145,6 +1159,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr ""
 
@@ -1723,7 +1738,9 @@ msgid ""
 msgstr "Fiila nammaduvvon «%1» gávdno juo. Háliidatgo buhttet dan?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Buhttet?"
 
@@ -1795,8 +1812,14 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Šattai meattáhus mildosa vurkedettiin"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Šattai meattáhus mildosa vurkedettiin"
@@ -1829,24 +1852,32 @@ msgid "File %1 could not be loaded."
 msgstr ""
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "End of signed message"
+msgctxt "@title:window"
 msgid "Error loading message"
-msgstr ""
+msgstr "Vuolláičállon reivve loahppa"
 
 #: utils/messageviewerutil.cpp:527
 #, kde-format
 msgid "File %1 could not be created."
 msgstr ""
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
 msgid "Error saving message"
-msgstr ""
+msgstr "Šattai meattáhus mildosa vurkedettiin"
 
 #: utils/messageviewerutil.cpp:538
 #, kde-format
 msgid "We cannot save message."
+msgstr ""
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
 msgstr ""
 
 #: utils/messageviewerutil.cpp:602
@@ -2052,11 +2083,12 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr ""
+msgstr "Vurke mildosa"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -2108,6 +2140,11 @@ msgstr "Vurke nugo …"
 #: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
 #, kde-format
 msgid "Copy"
+msgstr ""
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
 msgstr ""
 
 #: viewer/viewer_p.cpp:580
@@ -2343,7 +2380,7 @@ msgstr "Vurke buot &mildosiid nugo …"
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2353,6 +2390,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr ""
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2360,6 +2403,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

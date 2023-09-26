@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-04-03 16:48+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -337,7 +337,9 @@ msgstr ""
 "Möchten Sie diesen Schlüssel auch speichern?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Schlüssel geändert"
 
@@ -412,7 +414,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Möchten Sie alle Schlüssel löschen?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Schlüssel löschen"
 
@@ -458,13 +462,18 @@ msgid "No rules found"
 msgstr "Keine Regeln gefunden"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Regeln exportieren"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Regeln exportieren"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Regeln importieren"
@@ -473,6 +482,13 @@ msgstr "Regeln importieren"
 #, kde-format
 msgid "No rules imported."
 msgstr "Keine Regeln importiert."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Regeln importieren"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -535,7 +551,9 @@ msgstr "Möchten Sie diese Regel löschen?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Regel löschen"
 
@@ -545,7 +563,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Möchten Sie alle Regeln löschen?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Regeln löschen"
 
@@ -1190,7 +1210,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Neue URL hinzufügen"
 
@@ -1843,7 +1865,9 @@ msgid ""
 msgstr "Die Datei „%1“ existiert bereits. Soll die Datei überschrieben werden?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Datei überschreiben?"
 
@@ -1918,8 +1942,14 @@ msgstr ""
 "<qt>Die Datei <br /><filename>%1</filename><br /> kann nicht geschrieben "
 "werden<br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Fehler beim Speichern des Anhangs"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Fehler beim Speichern des Anhangs"
@@ -1952,7 +1982,9 @@ msgid "File %1 could not be loaded."
 msgstr "Die Datei %1 kann nicht geladen werden."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Fehler beim Laden der Nachricht"
 
@@ -1961,9 +1993,10 @@ msgstr "Fehler beim Laden der Nachricht"
 msgid "File %1 could not be created."
 msgstr "Die Datei %1 kann nicht erstellt werden."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fehler beim Speichern der Nachricht"
 
@@ -1971,6 +2004,11 @@ msgstr "Fehler beim Speichern der Nachricht"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Die Nachricht kann nicht gespeichert werden."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Fehler beim Speichern der Nachricht"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2182,9 +2220,10 @@ msgstr ""
 "Das Löschen eines Anhangs könnte eine digitale Signatur für diese Nachricht "
 "ungültig machen."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Anhang entfernen"
 
@@ -2241,6 +2280,11 @@ msgstr "Speichern &unter ..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopieren"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Anhang entfernen"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2475,7 +2519,7 @@ msgstr "Alle A&nhänge speichern ..."
 msgid "The network is broken."
 msgstr "Das Netzwerk funktioniert nicht."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Phishing-Adresse überprüfen"
@@ -2485,6 +2529,13 @@ msgstr "Phishing-Adresse überprüfen"
 msgid "The URL %1 is not valid."
 msgstr "Die Adresse „%1“ ist ungültig."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Phishing-Adresse überprüfen"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2493,7 +2544,9 @@ msgstr ""
 "lassen?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Schadsoftware"
 

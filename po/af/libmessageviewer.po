@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -346,6 +346,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -421,6 +422,7 @@ msgstr ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Vee Uit"
 
@@ -474,6 +476,12 @@ msgid "No rules found"
 msgstr "frix@expertron.co.za"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Skep Filter"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
@@ -481,7 +489,6 @@ msgid "Export Rules"
 msgstr "Skep Filter"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Import Rules"
@@ -493,6 +500,13 @@ msgstr "Skep Filter"
 #| msgid "Your emails"
 msgid "No rules imported."
 msgstr "frix@expertron.co.za"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Skep Filter"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -558,6 +572,7 @@ msgstr ""
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Vee Uit"
 
@@ -568,6 +583,7 @@ msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Vee Uit"
 
@@ -1214,6 +1230,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Besigtig Kolomme"
 
@@ -1803,6 +1820,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Oorskryf"
 
@@ -1874,8 +1892,13 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Verwyder lêer aanhangsel"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Verwyder lêer aanhangsel"
@@ -1911,6 +1934,7 @@ msgstr "Merk gekose boodskappe as ongelees"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Skuif boodskappe"
 
@@ -1919,10 +1943,10 @@ msgstr "Skuif boodskappe"
 msgid "File %1 could not be created."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Skuif boodskappe"
 
@@ -1930,6 +1954,12 @@ msgstr "Skuif boodskappe"
 #, fuzzy, kde-format
 msgid "We cannot save message."
 msgstr "Vee boodskappe uit"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Skuif boodskappe"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2151,10 +2181,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Verwyder lêer aanhangsel"
 
@@ -2211,6 +2241,12 @@ msgstr "Stoor As..."
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "Kopiëer Na"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "Verwyder lêer aanhangsel"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2456,7 +2492,7 @@ msgstr "Stoor Aanhangsels..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2466,6 +2502,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr ""
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2473,6 +2515,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

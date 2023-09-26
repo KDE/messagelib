@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -1066,6 +1066,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Creează filtru"
 
@@ -1133,6 +1134,7 @@ msgstr "Sigur doriți să golesc coșul de gunoi?"
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Redenumire filtru"
 

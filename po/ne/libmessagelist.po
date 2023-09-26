@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1175,6 +1175,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "फिल्टर सिर्जना गर्नुहोस्"
 
@@ -1247,6 +1248,7 @@ msgstr "के तपाईँ रद्दीटोकरी खाली ग�
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "फिल्टर पुन: नामकरण गर्नुहोस्"
 

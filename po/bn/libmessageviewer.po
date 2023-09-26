@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -377,6 +377,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -456,6 +457,7 @@ msgstr "<qt>আপনি কি সত্যিই <b>%1</b> নামক পর
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "মুছে ফেলা"
 
@@ -509,6 +511,12 @@ msgid "No rules found"
 msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Key Export Failed"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "কী (Key) রপ্তানি ব্যর্থ"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
@@ -516,7 +524,6 @@ msgid "Export Rules"
 msgstr "কী (Key) রপ্তানি ব্যর্থ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
 msgid "Import Rules"
@@ -527,6 +534,13 @@ msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "vCard Import Failed"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -595,6 +609,7 @@ msgstr "<qt>আপনি কি সত্যিই <b>%1</b> নামক পর
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "ফিল্টার নিয়মাবলী"
 
@@ -607,6 +622,7 @@ msgstr "<qt>আপনি কি সত্যিই <b>%1</b> নামক পর
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "ফিল্টার নিয়মাবলী"
 
@@ -1277,6 +1293,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "কলাম দেখাও"
 
@@ -1865,7 +1882,9 @@ msgid ""
 msgstr "\"%1\" নামক একটি ফাইল আগে থেকেই আছে। আপনি কি সেটি মুছে লিখতে চান?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ফাইল মুছে লিখব?"
 
@@ -1944,8 +1963,14 @@ msgstr ""
 "ফাইল %1 লেখা যায়নি:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "একটি অ্যাটাচমেন্ট আছে"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -1983,6 +2008,7 @@ msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট �
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "বার্তা আপলোড করাকালীন সমস্যা"
 
@@ -1992,10 +2018,10 @@ msgstr "বার্তা আপলোড করাকালীন সমস্
 msgid "File %1 could not be created."
 msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট করা অবস্থায় সংরক্ষণ করো"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "বার্তা সরানো হচ্ছে"
 
@@ -2004,6 +2030,12 @@ msgstr "বার্তা সরানো হচ্ছে"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "স্বাক্ষর করা বার্তার শেষ"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "বার্তা সরানো হচ্ছে"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2228,10 +2260,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "অ্যাটাচমেন্ট &সরাও"
 
@@ -2291,6 +2323,12 @@ msgstr "&নতুন নামে সংরক্ষণ করো..."
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "কপি পাঠা&ও"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "অ্যাটাচমেন্ট &সরাও"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2543,7 +2581,7 @@ msgstr "সব অ্যাটাচমেন্ট সংরক্ষণ কর
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2553,6 +2591,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr ""
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2560,6 +2604,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

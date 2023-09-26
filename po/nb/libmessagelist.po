@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1046,6 +1046,7 @@ msgstr ""
 
 #: core/widgetbase.cpp:186
 #, kde-format
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr ""
 
@@ -1110,6 +1111,7 @@ msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr ""
 

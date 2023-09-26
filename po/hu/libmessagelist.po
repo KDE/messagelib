@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2014-09-04 12:28+0200\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1047,6 +1047,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Szűrő lét&rehozása"
 
@@ -1114,6 +1115,7 @@ msgstr "Biztosan ki szeretné üríteni a törölt üzenetek mappáját?"
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "A szűrő átnevezése"
 

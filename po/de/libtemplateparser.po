@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-04-03 16:49+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -84,7 +84,9 @@ msgid "A template with same name already exists."
 msgstr "Eine Vorlage mit dem gleichen Namen existiert bereits."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Vorlage kann nicht erstellt werden"
 
@@ -590,7 +592,9 @@ msgstr ""
 "zurücksetzen?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Auf Voreinstellungen zurücksetzen"
 

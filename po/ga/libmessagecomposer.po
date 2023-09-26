@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2010-03-18 00:57-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -18,9 +18,11 @@ msgstr ""
 "3 : 4\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr ""
+msgstr "Ní féidir an t-iatán a chur in eagar"
 
 #: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
@@ -213,40 +215,44 @@ msgstr "Roghnaigh Uile"
 msgid "Reload"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#: attachment/attachmentcontrollerbase.cpp:750
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
+#, fuzzy, kde-format
+#| msgid "Unable to open attachment"
+msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Ní féidir an t-iatán a oscailt"
 
-#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "Níorbh fhéidir le KMail an t-iatán a oscailt."
 
-#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Ní féidir an t-iatán a chur in eagar"
 
-#: attachment/attachmentcontrollerbase.cpp:791
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "gan ainm"
 
-#: attachment/attachmentcontrollerbase.cpp:794
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Sábháil an tIatán Mar"
 
-#: attachment/attachmentcontrollerbase.cpp:817
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -255,66 +261,68 @@ msgstr ""
 "Tá comhad %1 ann cheana.\n"
 "An bhfuil fonn ort scríobh air?"
 
-#: attachment/attachmentcontrollerbase.cpp:818
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:824
+#, fuzzy, kde-format
+#| msgid "Save to File"
+msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Sábháil go Comhad"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgid "&Replace"
 msgstr "&Ionadaigh"
 
-#: attachment/attachmentcontrollerbase.cpp:846
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, fuzzy, kde-format
 #| msgid "Do you really want to attach this directory \"%1\" ?"
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "An bhfuil tú cinnte gur mhaith leat comhadlann \"%1\" a cheangal?"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Ceangail comhadlann"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:912
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Ceangail"
 
-#: attachment/attachmentcontrollerbase.cpp:883
+#: attachment/attachmentcontrollerbase.cpp:889
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Ceangail comhadlann"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:898
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Cuir Comhad Leis"
 
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:941
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Ní féidir an t-iatán a chur in eagar"
 
-#: attachment/attachmentcontrollerbase.cpp:959
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Ceangail Eochair Phoiblí OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Roghnaigh an eochair phoiblí le ceangal."
@@ -434,7 +442,9 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:335
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign/Encrypt Message?"
+msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Sínigh/Criptigh an Teachtaireacht?"
 
@@ -449,9 +459,11 @@ msgid "Do you want to resize images?"
 msgstr ""
 
 #: composer/composerviewbase.cpp:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "A&utomatically insert signature"
+msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr ""
+msgstr "C&uir síniú isteach go huathoibríoch"
 
 #: composer/composerviewbase.cpp:528
 #, kde-format
@@ -544,6 +556,7 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:1365
 #, kde-format
+msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr ""
 
@@ -561,9 +574,11 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:1900
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr ""
+msgstr "Sábháil an tIatán Mar"
 
 #: composer/composerviewbase.cpp:1902
 #, kde-format
@@ -579,7 +594,9 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign Message?"
+msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Sínigh an Teachtaireacht?"
 
@@ -609,7 +626,9 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2013
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Seol Gan Síniú?"
 
@@ -618,7 +637,7 @@ msgstr "Seol Gan Síniú?"
 msgid "Send &Unsigned"
 msgstr "Seol &Gan Síniú"
 
-#: composer/composerviewbase.cpp:2027
+#: composer/composerviewbase.cpp:2028
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -626,7 +645,7 @@ msgid ""
 "Sign all parts instead?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -634,34 +653,36 @@ msgid ""
 "Sign message instead?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Sínigh Gach Páirt"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign"
 msgstr "&Sínigh"
 
-#: composer/composerviewbase.cpp:2037
-#, kde-format
+#: composer/composerviewbase.cpp:2038
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr ""
+msgstr "Rabhadh: Eochair Ar Iarraidh"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid "Send &As Is"
 msgstr "&Seol Mar Atá"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2087
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -669,46 +690,46 @@ msgid ""
 "Encrypt this message?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Criptigh an Teachtaireacht?"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Sínigh agus &Criptigh"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
-#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1356
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1358
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Criptigh"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Sínigh Amháin"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Seol Mar Atá"
 
-#: composer/composerviewbase.cpp:2118
+#: composer/composerviewbase.cpp:2119
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Ná Criptigh"
 
-#: composer/composerviewbase.cpp:2147
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -716,17 +737,19 @@ msgid ""
 "identity."
 msgstr ""
 
-#: composer/composerviewbase.cpp:2151
-#, kde-format
+#: composer/composerviewbase.cpp:2152
+#, fuzzy, kde-format
+#| msgid "Send Unencrypted?"
+msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Seol Gan Criptiú?"
 
-#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
+#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Seol &Gan Criptiú"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -735,7 +758,7 @@ msgid ""
 "Encrypt all parts instead?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -744,15 +767,17 @@ msgid ""
 "Encrypt messages instead?"
 msgstr ""
 
-#: composer/composerviewbase.cpp:2174
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Criptigh Gach Páirt"
 
-#: composer/composerviewbase.cpp:2177
-#, kde-format
+#: composer/composerviewbase.cpp:2179
+#, fuzzy, kde-format
+#| msgid "Encrypt Message?"
+msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
-msgstr ""
+msgstr "Criptigh an Teachtaireacht?"
 
 #: composer/keyresolver.cpp:309
 #, kde-format
@@ -790,9 +815,11 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
-msgstr ""
+msgstr "Eochracha Criptiúcháin Do-Úsáidte"
 
 #: composer/keyresolver.cpp:648
 #, kde-format
@@ -807,7 +834,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Eochracha Criptiúcháin Do-Úsáidte"
 
@@ -823,7 +852,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Signing Keys"
+msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Eochracha Sínithe Do-Úsáidte"
 
@@ -886,7 +917,9 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No signing possible"
+msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Ní féidir síniú"
 
@@ -897,46 +930,48 @@ msgid ""
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
-#: composer/keyresolver.cpp:1356
-#, kde-format
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
+#: composer/keyresolver.cpp:1358
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Rabhadh: Eochair Ar Iarraidh"
 
-#: composer/keyresolver.cpp:1335
+#: composer/keyresolver.cpp:1336
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr ""
 
-#: composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1340
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr ""
 
-#: composer/keyresolver.cpp:1348
+#: composer/keyresolver.cpp:1350
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1354
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1428
+#: composer/keyresolver.cpp:1431
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Roghnú Eochrach Criptithe"
 
-#: composer/keyresolver.cpp:1472
+#: composer/keyresolver.cpp:1475
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -947,7 +982,7 @@ msgid ""
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
 
-#: composer/keyresolver.cpp:1544
+#: composer/keyresolver.cpp:1547
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -960,7 +995,7 @@ msgid ""
 "certificates.</qt>"
 msgstr ""
 
-#: composer/keyresolver.cpp:1554
+#: composer/keyresolver.cpp:1557
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1027,6 +1062,7 @@ msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
+msgctxt "@title:window"
 msgid "Invalid date"
 msgstr ""
 
@@ -1037,6 +1073,7 @@ msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
+msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr ""
 
@@ -1098,6 +1135,7 @@ msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
+msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr ""
 
@@ -1399,7 +1437,9 @@ msgid ""
 msgstr ""
 
 #: job/maintextjob.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Some Characters Will Be Lost"
+msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Beidh Roinnt Carachtar Caillte"
 
@@ -2249,6 +2289,7 @@ msgstr ""
 
 #: utils/util.cpp:294
 #, kde-format
+msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr ""
 
@@ -2267,6 +2308,7 @@ msgstr ""
 
 #: utils/util.cpp:312
 #, kde-format
+msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr ""
 

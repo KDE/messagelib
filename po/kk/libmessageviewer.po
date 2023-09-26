@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -350,6 +350,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -428,6 +429,7 @@ msgstr "\"%1\" тізімін өшірмексіз бе?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Жойылған"
 
@@ -481,6 +483,12 @@ msgid "No rules found"
 msgstr "Қолтаңба табылмады"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export filters..."
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Сүзгілерді экспорттау..."
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export filters..."
@@ -488,7 +496,6 @@ msgid "Export Rules"
 msgstr "Сүзгілерді экспорттау..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters..."
 msgid "Import Rules"
@@ -499,6 +506,13 @@ msgstr "Сүзгілерді импорттау..."
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Қолтаңба табылмады"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters..."
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Сүзгілерді импорттау..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -568,6 +582,7 @@ msgstr "\"%1\" тізімін өшірмексіз бе?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Сүзгі ережелері"
 
@@ -580,6 +595,7 @@ msgstr "\"%1\" тізімін өшірмексіз бе?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Сүзгі ережелері"
 
@@ -1253,6 +1269,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Бағандар көрінісі"
 
@@ -1888,7 +1905,9 @@ msgid ""
 msgstr "\"%1\" деп аталған файл бар ғой. Оны қайта жазғыңыз келе ме?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Файл үстінен жаза берейік пе?"
 
@@ -1961,8 +1980,14 @@ msgid ""
 msgstr ""
 "<qt>\"%2\" деген жазу<br><br><filename>%1</filename><br>файлына жазылмады "
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Тіркемесін сақтау қатесі"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Тіркемесін сақтау қатесі"
@@ -1999,7 +2024,9 @@ msgid "File %1 could not be loaded."
 msgstr "%1 файлы жүктелмейді."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Хатты жүктегенде қате пайда болды"
 
@@ -2008,9 +2035,10 @@ msgstr "Хатты жүктегенде қате пайда болды"
 msgid "File %1 could not be created."
 msgstr "%1 файлы құрылмады."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Хат сақтау қатесі"
 
@@ -2018,6 +2046,11 @@ msgstr "Хат сақтау қатесі"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Хат сақталмады."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Хат сақтау қатесі"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2228,9 +2261,10 @@ msgid ""
 "message."
 msgstr "Тіркемені өшру хаттың цифрлық қолтаңбасын бұзуы мүмкін."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Тіркемесін өшіру"
 
@@ -2287,6 +2321,11 @@ msgstr "Былай сақтау..."
 #, kde-format
 msgid "Copy"
 msgstr "Көшіріп алу"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Тіркемесін өшіру"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2528,7 +2567,7 @@ msgstr "Барлық тіркемелерді сақтау..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2539,6 +2578,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Grantlee \"%1\" нақышы жарамсыз."
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2546,6 +2591,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

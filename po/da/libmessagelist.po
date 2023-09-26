@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1048,6 +1048,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "Clear Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Ryd filter"
 
@@ -1115,6 +1116,7 @@ msgstr "Vil du slette \"%1\"?"
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Omdøb filter"
 

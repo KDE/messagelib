@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-03-13 18:42+0200\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"PO-Revision-Date: 2023-08-28 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:25:13+0000\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -330,7 +330,9 @@ msgstr ""
 "Tallennettu DKIM-avain eroaa nykyisestä. Haluatko tallentaa myös tämän?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Avain on muuttunut"
 
@@ -404,7 +406,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Haluatko poistaa kaikki avaimet?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Poista avaimet"
 
@@ -450,13 +454,18 @@ msgid "No rules found"
 msgstr "Sääntöjä ei löytynyt"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Vientisäännöt"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Vientisäännöt"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Tuontisäännöt"
@@ -465,6 +474,13 @@ msgstr "Tuontisäännöt"
 #, kde-format
 msgid "No rules imported."
 msgstr "Yhtään sääntöä ei tuotu."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Tuontisäännöt"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -527,7 +543,9 @@ msgstr "Haluatko poistaa tämän säännön?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Poista sääntö"
 
@@ -537,7 +555,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Haluatko poistaa kaikki säännöt?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Poista säännöt"
 
@@ -1179,7 +1199,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Tämä verkko-osoite määritetään jo toisessa tietueessa. Muuta sitä."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Lisää uusi verkko-osoite"
 
@@ -1812,7 +1834,9 @@ msgid ""
 msgstr "Tiedosto nimeltä ”%1” on jo olemassa. Haluatko korvata sen?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Korvataanko tiedosto?"
 
@@ -1886,8 +1910,14 @@ msgstr ""
 "<qt>Ei voitu kirjoittaa tiedostoon<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Virhe tallennettaessa liitettä"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Virhe tallennettaessa liitettä"
@@ -1920,7 +1950,9 @@ msgid "File %1 could not be loaded."
 msgstr "Tiedostoa %1 ei voitu ladata."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Virhe ladattaessa viestiä"
 
@@ -1929,9 +1961,10 @@ msgstr "Virhe ladattaessa viestiä"
 msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Virhe tallennettaessa viestiä"
 
@@ -1940,13 +1973,16 @@ msgstr "Virhe tallennettaessa viestiä"
 msgid "We cannot save message."
 msgstr "VIestiä ei voi tallentaa."
 
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Virhe tallennettaessa viestiä"
+
 #: utils/messageviewerutil.cpp:602
-#, fuzzy, kde-format
-#| msgid "Delete Key"
-#| msgid_plural "Delete Keys"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Poista avain"
+msgstr "Poistettu: %1"
 
 #: utils/messageviewerutil.cpp:613
 #, kde-format
@@ -1954,6 +1990,7 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Poistit viestistä liitteen. Liitteen alkuperäiset MIME-otsakkeet olivat:"
 
 #: utils/messageviewerutil.cpp:640
 #, kde-format
@@ -2147,9 +2184,10 @@ msgstr ""
 "Liitteen poistaminen voi muuttaa viestin digitaalisen allekirjoituksen "
 "virheelliseksi."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Poista liite"
 
@@ -2206,6 +2244,11 @@ msgstr "Tallenna nimellä…"
 #, kde-format
 msgid "Copy"
 msgstr "Kopioi"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Poista liite"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2440,7 +2483,7 @@ msgstr "Tallenna kaikki liitteet…"
 msgid "The network is broken."
 msgstr "Verkko on rikki."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Tarkista verkko-osoitteen väärennös"
@@ -2450,6 +2493,13 @@ msgstr "Tarkista verkko-osoitteen väärennös"
 msgid "The URL %1 is not valid."
 msgstr "Verkko-osoite %1 ei ole kelvollinen."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Tarkista verkko-osoitteen väärennös"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2457,7 +2507,9 @@ msgstr ""
 "Tämä verkko-osoite on pahantahtoinen: haluatko silti jatkaa ja näyttää sen?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Pahantahtoinen sivusto"
 

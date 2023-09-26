@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-22 11:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -329,7 +329,9 @@ msgstr ""
 "emmagatzemar?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "S'ha canviat la clau"
 
@@ -403,7 +405,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Voleu suprimir totes les claus?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Suprimix les claus"
 
@@ -449,13 +453,18 @@ msgid "No rules found"
 msgstr "No s'ha trobat cap regla"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Exporta les regles"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Exporta les regles"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Importa algunes regles"
@@ -464,6 +473,13 @@ msgstr "Importa algunes regles"
 #, kde-format
 msgid "No rules imported."
 msgstr "No s'ha importat cap regla."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Importa algunes regles"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -526,7 +542,9 @@ msgstr "Voleu suprimir esta regla?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Suprimix la regla"
 
@@ -536,7 +554,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Voleu suprimir totes les regles?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Suprimix les regles"
 
@@ -1179,7 +1199,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Ja existix una entrada que definix este URL. Modifiqueu-la."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Afig un URL nou"
 
@@ -1825,7 +1847,9 @@ msgid ""
 msgstr "Ja existix un fitxer anomenat «%1». Segur que voleu sobreescriure'l?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Sobreescriure el fitxer?"
 
@@ -1900,8 +1924,14 @@ msgstr ""
 "<qt>No s'ha pogut escriure el fitxer<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "S'ha produït un error en guardar l'adjunt"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "S'ha produït un error en guardar l'adjunt"
@@ -1934,7 +1964,9 @@ msgid "File %1 could not be loaded."
 msgstr "El fitxer %1 no s'ha pogut carregar."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "S'ha produït un error en carregar el missatge"
 
@@ -1943,9 +1975,10 @@ msgstr "S'ha produït un error en carregar el missatge"
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "S'ha produït un error en guardar el missatge"
 
@@ -1953,6 +1986,11 @@ msgstr "S'ha produït un error en guardar el missatge"
 #, kde-format
 msgid "We cannot save message."
 msgstr "No s'ha pogut guardar el missatge."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "S'ha produït un error en guardar el missatge"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2162,9 +2200,10 @@ msgstr ""
 "La supressió d'un adjunt pot invalidar qualsevol signatura digital d'este "
 "missatge."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Suprimix l'adjunt"
 
@@ -2221,6 +2260,11 @@ msgstr "Anomena i guarda..."
 #, kde-format
 msgid "Copy"
 msgstr "Copia"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Suprimix l'adjunt"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2455,7 +2499,7 @@ msgstr "Guarda tots els adjunts..."
 msgid "The network is broken."
 msgstr "La xarxa no funciona."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Comprovació d'URL de pesca"
@@ -2465,13 +2509,22 @@ msgstr "Comprovació d'URL de pesca"
 msgid "The URL %1 is not valid."
 msgstr "L'URL %1 no és vàlid."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Comprovació d'URL de pesca"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Este lloc web és maliciós. Voleu continuar mostrant-lo?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Programari maliciós"
 

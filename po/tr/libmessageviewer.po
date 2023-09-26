@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-07 14:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -330,7 +330,9 @@ msgstr ""
 "musunuz?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Anahtar Değişti"
 
@@ -404,7 +406,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Tüm anahtarları silmek istiyor musunuz?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Anahtarları Sil"
 
@@ -450,13 +454,18 @@ msgid "No rules found"
 msgstr "Kural bulunamadı"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Kuralları Dışa Aktar"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Kuralları Dışa Aktar"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Kurallar İçe Aktar"
@@ -465,6 +474,13 @@ msgstr "Kurallar İçe Aktar"
 #, kde-format
 msgid "No rules imported."
 msgstr "Hiçbir kural içe aktarılmadı."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Kurallar İçe Aktar"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -527,7 +543,9 @@ msgstr "Bu kuralı silmek istiyor musunuz?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Kuralı Sil"
 
@@ -537,7 +555,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Tüm kuralları silmek istiyor musunuz?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Kuralları Sil"
 
@@ -1177,7 +1197,9 @@ msgstr ""
 "Bu URL'yi başka bir girdi halihazırda tanımlıyor. Lütfen onu değiştirin."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Yeni URL ekle"
 
@@ -1816,7 +1838,9 @@ msgid ""
 msgstr "%1 adında bir dosya mevcut. Üzerine yazılsın mı?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Dosyanın Üzerine Yazılsın mı?"
 
@@ -1890,8 +1914,14 @@ msgid ""
 msgstr ""
 "<qt>Dosyaya yazılamadı:<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Eki kaydederken hata oluştu"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Eki kaydederken hata oluştu"
@@ -1924,7 +1954,9 @@ msgid "File %1 could not be loaded."
 msgstr "%1 dosyası yüklenemedi."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "İleti yüklenirken bir hata oluştu"
 
@@ -1933,9 +1965,10 @@ msgstr "İleti yüklenirken bir hata oluştu"
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "İleti kaydedilirken hata"
 
@@ -1943,6 +1976,11 @@ msgstr "İleti kaydedilirken hata"
 #, kde-format
 msgid "We cannot save message."
 msgstr "İletiyi kaydedemiyoruz."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "İleti kaydedilirken hata"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2149,9 +2187,10 @@ msgid ""
 "message."
 msgstr "Bir eki silmek, o iletide kullanılan tüm imzaları geçersiz kılabilir."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Eki Sil"
 
@@ -2207,6 +2246,11 @@ msgstr "Farklı Kaydet..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopyala"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Eki Sil"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2441,7 +2485,7 @@ msgstr "Tüm Ekleri Kaydet..."
 msgid "The network is broken."
 msgstr "Ağ bozuk."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Kimlik Avı URL'si Denetle"
@@ -2451,6 +2495,13 @@ msgstr "Kimlik Avı URL'si Denetle"
 msgid "The URL %1 is not valid."
 msgstr "%1 URL'si geçerli değil."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Kimlik Avı URL'si Denetle"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2459,7 +2510,9 @@ msgstr ""
 "istiyor musunuz?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Zararlı Yazılım"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-06-02 20:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -22,7 +22,9 @@ msgstr ""
 "X-Generator: Lokalize 23.04.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to compress attachment"
+msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Liitteen pakkaus epäonnistui"
 
@@ -211,40 +213,44 @@ msgstr "Valitse kaikki"
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#: attachment/attachmentcontrollerbase.cpp:750
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail ei kyennyt kirjoittamaan liitettä väliaikaistiedostoon."
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
+#, fuzzy, kde-format
+#| msgid "Unable to open attachment"
+msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Liitettä ei voi avata."
 
-#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "KMail ei kyennyt avaamaan liitettä."
 
-#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Liitettä ei voi muokata"
 
-#: attachment/attachmentcontrollerbase.cpp:791
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "nimetön"
 
-#: attachment/attachmentcontrollerbase.cpp:794
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Tallenna liite nimellä"
 
-#: attachment/attachmentcontrollerbase.cpp:817
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -253,60 +259,62 @@ msgstr ""
 "Tiedosto %1 on olemassa.\n"
 "Korvataanko se?"
 
-#: attachment/attachmentcontrollerbase.cpp:818
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:824
+#, fuzzy, kde-format
+#| msgid "Save to File"
+msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Tallenna tiedostoon"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgid "&Replace"
 msgstr "&Korvaa"
 
-#: attachment/attachmentcontrollerbase.cpp:846
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Haluatko varmasti liittää tämän kansion ”%1”?"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Liitä kansio"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:912
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Liitä"
 
-#: attachment/attachmentcontrollerbase.cpp:883
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Liitä kansio"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:898
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:941
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Tiedoston liittäminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:959
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Liitä julkinen OpenPGP-avain"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Valitse liitettävä julkinen avain."
@@ -431,7 +439,9 @@ msgstr ""
 "p><p>Haluatko poistaa tekstin muotoilun?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign/Encrypt Message?"
+msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Allekirjoitetaanko tai salataanko viesti?"
 
@@ -446,7 +456,9 @@ msgid "Do you want to resize images?"
 msgstr "Haluatko muuttaa kuvien kokoa?"
 
 #: composer/composerviewbase.cpp:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Muuta kuvien kokoa automaattisesti"
 
@@ -544,7 +556,9 @@ msgstr ""
 "Syy: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Autosaving Message Failed"
+msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Viestin automaattitallennus epäonnistui"
 
@@ -565,7 +579,9 @@ msgstr ""
 "Haluatko liittää tiedoston viestiisi?"
 
 #: composer/composerviewbase.cpp:1900
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Tiedostoliitemuistutus"
 
@@ -586,7 +602,9 @@ msgstr ""
 "Allekirjoitetaanko viesti?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign Message?"
+msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Allekirjoitetaanko viesti?"
 
@@ -620,7 +638,9 @@ msgstr ""
 "määritetty kelvollisia allekirjoitusavaimia."
 
 #: composer/composerviewbase.cpp:2013
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Lähetetäänkö allekirjoittamatta?"
 
@@ -629,7 +649,7 @@ msgstr "Lähetetäänkö allekirjoittamatta?"
 msgid "Send &Unsigned"
 msgstr "Lähetä &allekirjoittamatta"
 
-#: composer/composerviewbase.cpp:2027
+#: composer/composerviewbase.cpp:2028
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -641,7 +661,7 @@ msgstr ""
 "palvelinkäytänteiden vastaista.\n"
 "Allekirjoitetaanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -653,27 +673,29 @@ msgstr ""
 "vastaista.\n"
 "Allekirjoitetaanko siis viesti?"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Allekirjoita kaikki osat"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign"
 msgstr "Allekirjoita"
 
-#: composer/composerviewbase.cpp:2037
-#, kde-format
+#: composer/composerviewbase.cpp:2038
+#, fuzzy, kde-format
+#| msgid "Unsigned-Message Warning"
+msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Varoitus allekirjoittamattomasta viestistä"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid "Send &As Is"
 msgstr "Lähetä &sellaisenaan"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2087
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -682,7 +704,7 @@ msgstr ""
 "Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -693,34 +715,34 @@ msgstr ""
 "päättää, salataanko viesti.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Allekirjoita ja salaa"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
-#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1356
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1358
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Salaa"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Vain allekirjoita"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Lähetä &sellaisenaan"
 
-#: composer/composerviewbase.cpp:2118
+#: composer/composerviewbase.cpp:2119
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -729,12 +751,12 @@ msgstr ""
 "Vastaanottajien salausasetuksissa on ristiriitoja.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Älä salaa"
 
-#: composer/composerviewbase.cpp:2147
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -744,17 +766,19 @@ msgstr ""
 "Olet pyytänyt salata viestin ja kopion itsellesi, mutta tälle henkilöydelle "
 "ei ole määritetty kelvollisia salausavaimia."
 
-#: composer/composerviewbase.cpp:2151
-#, kde-format
+#: composer/composerviewbase.cpp:2152
+#, fuzzy, kde-format
+#| msgid "Send Unencrypted?"
+msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Lähetetäänkö salaamattomana?"
 
-#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
+#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Lähetä salaamatt&omana"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -767,7 +791,7 @@ msgstr ""
 "vastaista ja aiheuttaa tietovuodon.\n"
 "Salataanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -780,13 +804,15 @@ msgstr ""
 "ja aiheuttaa tietovuodon.\n"
 "Salataanko viesti kuitenkin?"
 
-#: composer/composerviewbase.cpp:2174
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Salaa kaikki osat"
 
-#: composer/composerviewbase.cpp:2177
-#, kde-format
+#: composer/composerviewbase.cpp:2179
+#, fuzzy, kde-format
+#| msgid "Unencrypted Message Warning"
+msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Varoitus salaamattomasta viestistä"
 
@@ -836,7 +862,9 @@ msgstr ""
 "Seuraavat avaimet tai varmenteet on <b>peruttu</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not Fully Trusted Encryption Keys"
+msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Salausavaimia, joihin ei luoteta täysin"
 
@@ -858,7 +886,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Käyttökelvottomia salausavaimia"
 
@@ -880,7 +910,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Signing Keys"
+msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Käyttökelvottomia allekirjoitusavaimia"
 
@@ -966,7 +998,9 @@ msgstr ""
 "Lähetetäänkö viesti allekirjoittamatta?"
 
 #: composer/keyresolver.cpp:1154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No signing possible"
+msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Allekirjoittaminen ei mahdollista"
 
@@ -979,13 +1013,15 @@ msgstr ""
 "Et valinnut omaa salausavaintasi. Et voi enää purkaa viestisi salausta, jos "
 "salaat sen."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
-#: composer/keyresolver.cpp:1356
-#, kde-format
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
+#: composer/keyresolver.cpp:1358
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Varoitus puuttuvasta avaimesta"
 
-#: composer/keyresolver.cpp:1335
+#: composer/keyresolver.cpp:1336
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -993,7 +1029,7 @@ msgid ""
 msgstr ""
 "Et valinnut viestin vastaanottajan salausavainta, joten viestiä ei salata."
 
-#: composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1340
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1002,7 +1038,7 @@ msgstr ""
 "Et valinnut yhdenkään viestisi vastaanottajan salausavainta, joten viestiä "
 "ei salata."
 
-#: composer/keyresolver.cpp:1348
+#: composer/keyresolver.cpp:1350
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1011,7 +1047,7 @@ msgstr ""
 "Et valinnut salausavainta yhdelle vastaanottajistasi: hän ei voi purkaa "
 "viestiäsi, jos salaat sen."
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1354
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1020,12 +1056,12 @@ msgstr ""
 "Et valinnut salausavaimia kaikille vastaanottajistasi: kaikki eivät voi "
 "purkaa viestiäsi, jos salaat sen."
 
-#: composer/keyresolver.cpp:1428
+#: composer/keyresolver.cpp:1431
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Salausavaimen valinta"
 
-#: composer/keyresolver.cpp:1472
+#: composer/keyresolver.cpp:1475
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1040,7 +1076,7 @@ msgstr ""
 "Valitse uudelleen varmenne tai varmenteet, joita tälle vastaanottajalle "
 "tulisi käyttää."
 
-#: composer/keyresolver.cpp:1544
+#: composer/keyresolver.cpp:1547
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1058,7 +1094,7 @@ msgstr ""
 "ulkoisia varmenteita napsauttamalla painiketta ”Etsi ulkoisia varmenteita”.</"
 "qt>"
 
-#: composer/keyresolver.cpp:1554
+#: composer/keyresolver.cpp:1557
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1128,7 +1164,9 @@ msgid "The selected date must be greater than the current date."
 msgstr "Valitun päivän täytyy olla nykyistä päivää myöhempi."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid date"
+msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Virheellinen päivä"
 
@@ -1138,7 +1176,9 @@ msgid "The selected folder is not valid."
 msgstr "Valittu kansio ei ole kelvollinen."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid folder"
+msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Virheellinen kansio"
 
@@ -1206,7 +1246,9 @@ msgstr "Tarkista vähimmäis- ja enimmäisarvot."
 
 # Ikkunan otsikko virheilmoituksessa, joka näytetään, jos vähimmäisarvo  ≥ enimmäisarvo.
 #: imagescaling/imagescalingwidget.cpp:315
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error in minimum Maximum value"
+msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Virhe vähimmäis- ja enimmäisarvoissa"
 
@@ -1510,7 +1552,9 @@ msgstr ""
 "Haluatko jatkaa?"
 
 #: job/maintextjob.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Some Characters Will Be Lost"
+msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Joitakin merkkejä menetetään"
 
@@ -2376,7 +2420,9 @@ msgstr ""
 "määrittää viestinvälityksen?"
 
 #: utils/util.cpp:294
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ei viestinvälitystä."
 
@@ -2396,7 +2442,9 @@ msgstr ""
 "yhdistää viestinvälityksen verkkoon?"
 
 #: utils/util.cpp:312
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mail dispatcher offline."
+msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Viestinvälitys ei toiminnassa."
 

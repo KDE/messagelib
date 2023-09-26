@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -382,6 +382,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -463,6 +464,7 @@ msgstr "<qt>Дали навистина сакате да го отстрани�
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Избришана"
 
@@ -516,6 +518,12 @@ msgid "No rules found"
 msgstr "Не е пронајден потпис"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Key Export Failed"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Изнесувањето на клучот не успеа"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
@@ -523,7 +531,6 @@ msgid "Export Rules"
 msgstr "Изнесувањето на клучот не успеа"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
 msgid "Import Rules"
@@ -534,6 +541,13 @@ msgstr "Внесот на vCard не успеа"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Не е пронајден потпис"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "vCard Import Failed"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Внесот на vCard не успеа"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -602,6 +616,7 @@ msgstr "<qt>Дали навистина сакате да го отстрани�
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Правила за филтрирање"
 
@@ -614,6 +629,7 @@ msgstr "<qt>Дали навистина сакате да го отстрани�
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Правила за филтрирање"
 
@@ -1283,6 +1299,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Приказ на колони"
 
@@ -1884,7 +1901,9 @@ msgstr ""
 "врз неа?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Запишувате врз датотека?"
 
@@ -1964,8 +1983,14 @@ msgstr ""
 "Не можев да ја запишам датотеката %1:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "има прилог"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -2006,6 +2031,7 @@ msgstr "OpenPGP-порака - криптирана"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while copying messages."
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Грешка при копирањето на пораки."
 
@@ -2015,10 +2041,10 @@ msgstr "Грешка при копирањето на пораки."
 msgid "File %1 could not be created."
 msgstr "OpenPGP-порака - криптирана"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Преместување на пораки"
 
@@ -2027,6 +2053,12 @@ msgstr "Преместување на пораки"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Крај на потпишаната порака"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Преместување на пораки"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2254,10 +2286,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Отст&рани го прилогот"
 
@@ -2315,6 +2347,12 @@ msgstr "З&ачувај како..."
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Копирај во"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "Отст&рани го прилогот"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2566,7 +2604,7 @@ msgstr "Зачувај ги сите прилози..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2577,6 +2615,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Датотеката со потпис не е валидна"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2584,6 +2628,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

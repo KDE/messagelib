@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1055,6 +1055,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "Clear Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Vyčistiť filter"
 
@@ -1122,6 +1123,7 @@ msgstr "Chcete vymazať \"%1\"?"
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Clear Filter"
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Vyčistiť filter"
 

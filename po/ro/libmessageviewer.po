@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -359,6 +359,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -448,6 +449,7 @@ msgstr "Sigur doriți să expir toate mesajele vechi?"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Șterge"
 
@@ -499,6 +501,12 @@ msgid "No rules found"
 msgstr "Nu am găsit semnătura"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Exportă filtre"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
@@ -506,7 +514,6 @@ msgid "Export Rules"
 msgstr "Exportă filtre"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
 msgid "Import Rules"
@@ -517,6 +524,13 @@ msgstr "Importă filtre"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Nu am găsit semnătura"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Importă filtre"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -585,6 +599,7 @@ msgstr "Sigur doriți să expir toate mesajele vechi?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Reguli filtre"
 
@@ -597,6 +612,7 @@ msgstr "Sigur doriți să expir toate mesajele vechi?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Reguli filtre"
 
@@ -1283,6 +1299,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Adaugă marcaj nou"
 
@@ -1908,7 +1925,9 @@ msgstr ""
 "Există deja un fișier cu denumirea „%1”. Sigur doriți să îl suprascrieți?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Suprascrieți fișierul?"
 
@@ -1988,8 +2007,14 @@ msgstr ""
 "Nu am putut scrie în fișierul %1:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "are un atașament"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -2030,6 +2055,7 @@ msgstr "Mesajul nu a putut fi decriptat."
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Eroare la încărcarea mesajului"
 
@@ -2039,10 +2065,10 @@ msgstr "Eroare la încărcarea mesajului"
 msgid "File %1 could not be created."
 msgstr "Mesajul nu a putut fi decriptat."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Mutare mesaje"
 
@@ -2051,6 +2077,12 @@ msgstr "Mutare mesaje"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Sfârșitul mesajului semnat"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Mutare mesaje"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2276,9 +2308,10 @@ msgstr ""
 "Ștergerea unui atașament ar putea invalida orice semnătură digitală de pe "
 "mesaj."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Șterge atașamentul"
 
@@ -2336,6 +2369,11 @@ msgstr "Salvare ca..."
 #, kde-format
 msgid "Copy"
 msgstr "Copiază"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Șterge atașamentul"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2586,7 +2624,7 @@ msgstr "Salvează toate atașamentele..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2597,6 +2635,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Fișierul semnătură nu este valid"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2604,6 +2648,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

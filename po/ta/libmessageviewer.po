@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-10 17:22+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -339,7 +339,9 @@ msgstr ""
 "சேமித்துள்ள DKIM சாவி, தற்போதையதிலிருந்து மாறுபடுகிறது. இதையும் செமிக்க வேண்டுமா?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "சாவி மாறியுள்ளது"
 
@@ -413,7 +415,9 @@ msgid "Do you want to delete all keys?"
 msgstr "அனைத்து சாவிகளையும் நீக்க வேண்டுமா?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "சாவிகளை நீக்குவது"
 
@@ -459,13 +463,18 @@ msgid "No rules found"
 msgstr "எந்த விதிமுறைகளும் கண்டுபிடிக்கப்படவில்லை"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "விதிமுறைகளை இறக்குமதி செய்"
@@ -474,6 +483,13 @@ msgstr "விதிமுறைகளை இறக்குமதி செய�
 #, kde-format
 msgid "No rules imported."
 msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "விதிமுறைகளை இறக்குமதி செய்"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -536,7 +552,9 @@ msgstr "உறுதியாக இந்த விதிமுறையை ந
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "விதிமுறையை நீக்கு"
 
@@ -546,7 +564,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "உறுதியாக அனைத்து விதிமுறைகளையும் நீக்க விரும்புகிறீர்களா?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "விதிமுறைகளை நீக்கு"
 
@@ -1184,7 +1204,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "இம்முகவிரிக்கு ஏற்கனவே ஓர் பதிவுள்ளது. அப்பதிவையே மாற்றுங்கள்."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "புதிய முகவரியை சேர்"
 
@@ -1805,7 +1827,9 @@ msgid ""
 msgstr "'%1' என்ற கோப்பு ஏற்கனவே உள்ளது. உறுதியாக அதை மேலெழுத வேண்டுமா?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "கோப்பை மேலெழுதலாமா?"
 
@@ -1880,8 +1904,14 @@ msgstr ""
 "<qt>பின்வரும் கோப்புக்கு எழுத முடியவில்லை<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
@@ -1914,7 +1944,9 @@ msgid "File %1 could not be loaded."
 msgstr "%1 எனும் கோப்பை ஏற்ற முடியவில்லை."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
 
@@ -1923,9 +1955,10 @@ msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
 msgid "File %1 could not be created."
 msgstr "%1 எனும் கோப்பை உருவாக்க முடியவில்லை."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
@@ -1933,6 +1966,11 @@ msgstr "அஞ்சலை சேமிப்பதில் சிக்கல�
 #, kde-format
 msgid "We cannot save message."
 msgstr "அஞ்சலை சேமிக்க முடியாது."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2144,9 +2182,10 @@ msgstr ""
 "இவ்வஞ்சலுக்கு எண்ம கையொப்பமிருந்தால், உடனிணைப்பை நீக்குவதன் மூலம் அது செல்லுபடியாகாத‍"
 "தாகலாம்."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "உடனிணைப்பை நீக்கு"
 
@@ -2201,6 +2240,11 @@ msgstr "இவ்வாறு சேமி..."
 #, kde-format
 msgid "Copy"
 msgstr "நகலெடு"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "உடனிணைப்பை நீக்கு"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2435,7 +2479,7 @@ msgstr "அனைத்து உடனிணைப்புகளையும�
 msgid "The network is broken."
 msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
@@ -2445,13 +2489,22 @@ msgstr "ஏமாற்று முகவரியா என சோதிப்
 msgid "The URL %1 is not valid."
 msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "தீங்குநிரல்"
 

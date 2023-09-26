@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-05-21 14:48+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,9 @@ msgstr ""
 "X-Generator: Lokalize 23.04.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to compress attachment"
+msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "உடனிணைப்பை சுருக்க முடியவில்லை"
 
@@ -208,40 +210,44 @@ msgstr "அனைத்தையும் தேர்ந்தெடு"
 msgid "Reload"
 msgstr "மீளேற்று"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#: attachment/attachmentcontrollerbase.cpp:750
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "கேமெயிலால் உடனிணைப்பை தற்காலிக கோப்புக்கு எழுத முடியவில்லை."
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
+#, fuzzy, kde-format
+#| msgid "Unable to open attachment"
+msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "உடனிணைப்பை திறக்க முடியவில்லை"
 
-#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "கேமெயிலால் உடனிணைப்பை திறக்க முடியவில்லை."
 
-#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "உடனிணைப்பை திருத்த முடியவில்லை"
 
-#: attachment/attachmentcontrollerbase.cpp:791
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "பெயரிடப்படாதது"
 
-#: attachment/attachmentcontrollerbase.cpp:794
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "Save Attachment As"
 msgstr "உடனிணைப்பை இவ்வாறு சேமி"
 
-#: attachment/attachmentcontrollerbase.cpp:817
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -250,60 +256,62 @@ msgstr ""
 "%1 என்ற கோப்பு ஏற்கனவே உள்ளது.\n"
 "அதை மேலெழுத வேண்டுமா?"
 
-#: attachment/attachmentcontrollerbase.cpp:818
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:824
+#, fuzzy, kde-format
+#| msgid "Save to File"
+msgctxt "@title:window"
 msgid "Save to File"
 msgstr "கோப்புக்கு சேமி"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgid "&Replace"
 msgstr "மேலெழுது"
 
-#: attachment/attachmentcontrollerbase.cpp:846
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "\"%1\" என்ற அடைவை உறுதியாக இணைக்க வேண்டுமா?"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "அடைவை இணைத்தல்"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:912
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "இணை"
 
-#: attachment/attachmentcontrollerbase.cpp:883
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "அடைவை இணை"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:898
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "கோப்பை இணைத்தல்"
 
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:941
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "கோப்பை உடனிணைக்க முடியவில்லை"
 
-#: attachment/attachmentcontrollerbase.cpp:959
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "OpenPGP பொது சாவியை உடனிணைத்தல்"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "உடனிணைக்க வேண்டிய பொது சாவியை தேர்ந்தெடுங்கள்."
@@ -424,7 +432,9 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:335
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign/Encrypt Message?"
+msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "அஞ்சலை கையொப்பமிட்டு மறையாக்கலாமா?"
 
@@ -439,7 +449,9 @@ msgid "Do you want to resize images?"
 msgstr "படங்களின் அளவை மாற்ற வேண்டுமா?"
 
 #: composer/composerviewbase.cpp:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "படங்களின் அளவை தானாக மாற்று"
 
@@ -537,7 +549,9 @@ msgstr ""
 "காரணம்: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Autosaving Message Failed"
+msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "அஞ்சலை தானாக சேமிப்பது தோல்வியடைந்த‍து"
 
@@ -558,7 +572,9 @@ msgstr ""
 "ஏதாவதொரு கோப்பை இணைக்க விரும்புகிறீர்களா?"
 
 #: composer/composerviewbase.cpp:1900
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "கோப்பு உடனிணைப்பு நினைவூட்டல்"
 
@@ -579,7 +595,9 @@ msgstr ""
 "இவ்வஞ்சலுக்கு கையொப்பமிட வேண்டுமா?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign Message?"
+msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "அஞ்சலுக்கு கையொப்பமிட வேண்டுமா?"
 
@@ -613,7 +631,9 @@ msgstr ""
 "அமைக்கப்படவில்லை."
 
 #: composer/composerviewbase.cpp:2013
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "கையொப்பமிடாமல் அனுப்பலாமா?"
 
@@ -622,7 +642,7 @@ msgstr "கையொப்பமிடாமல் அனுப்பலாம�
 msgid "Send &Unsigned"
 msgstr "&கையொப்பமிடாமல் அனுப்பு"
 
-#: composer/composerviewbase.cpp:2027
+#: composer/composerviewbase.cpp:2028
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -633,7 +653,7 @@ msgstr ""
 "கையொப்பமிடாத பகுதிகளையுடைய அஞ்சல்களை அனுப்புவது, தள கொள்கைகளை மீறலாம்.\n"
 "பதிலாக அனைத்து பகுதிகளுக்கும் கையொப்பமிட வேண்டுமா?"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -644,27 +664,29 @@ msgstr ""
 "கையொப்பமிடாத அஞ்சல்களை அனுப்புவது, தள கொள்கைகளை மீறலாம்.\n"
 "பதிலாக அஞ்சலுக்கு கையொப்பமிட வேண்டுமா?"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "அனைத்து பகுதிகளுக்கும் &கையொப்பமிடு"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign"
 msgstr "&கையொப்பமிடு"
 
-#: composer/composerviewbase.cpp:2037
-#, kde-format
+#: composer/composerviewbase.cpp:2038
+#, fuzzy, kde-format
+#| msgid "Unsigned-Message Warning"
+msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "கையொப்பமிடாத அஞ்சலை பற்றிய எச்சரிக்கை"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid "Send &As Is"
 msgstr "&அப்படியே அனுப்பு"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2087
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -673,7 +695,7 @@ msgstr ""
 "அனைத்து பெறுநர்களுக்குமான நம்பகமான மறையாக்க சாவிகள் உங்களிடம் உள்ளன.\n"
 "அஞ்சலை மறையாக்கம் செய்யலாமா?"
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -684,34 +706,34 @@ msgstr ""
 "கேட்குமாறு அமைத்துள்ளீர்கள்.\n"
 "இவ்வஞ்சலை மறையாக்கம் செய்ய வேண்டுமா?"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "அஞ்சலை மறையாக்கலாமா?"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "&மறையாக்கி கையொப்பமிடு"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
-#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1356
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1358
 #, kde-format
 msgid "&Encrypt"
 msgstr "&மறையாக்கு"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Sign Only"
 msgstr "&கையொப்பம் மட்டும் இடு"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&அப்படியே அனுப்பு"
 
-#: composer/composerviewbase.cpp:2118
+#: composer/composerviewbase.cpp:2119
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -720,12 +742,12 @@ msgstr ""
 "இப்பெறுநர்களுக்கான மறையாக்க அமைப்புகள் முரண்படுகின்றன.\n"
 "இவ்வஞ்சலை மறையாக்கம் செய்யலாமா?"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "மறையாக்கா&தே"
 
-#: composer/composerviewbase.cpp:2147
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -735,17 +757,19 @@ msgstr ""
 "இவ்வஞ்சலை மறையாக்கம் செய்யும்படியும், மறையாக்கிய நகலை உங்களுக்கும் அனுப்புமாறும் "
 "கூறியுள்ளீர்கள், ஆனால் நம்பகமான மறையாக்க சாவிகள் எதுவும் இவ்வடையாளத்திற்கு அமைக்கப்படவில்லை."
 
-#: composer/composerviewbase.cpp:2151
-#, kde-format
+#: composer/composerviewbase.cpp:2152
+#, fuzzy, kde-format
+#| msgid "Send Unencrypted?"
+msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "மறையாக்காமல் அனுப்பலாமா?"
 
-#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
+#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "&மறையாக்காமல் அனுப்பு"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -758,7 +782,7 @@ msgstr ""
 "முக்கியமான தகவல்களை மூன்றாம் தரப்பினர் தெரிந்துகொள்வதற்கு உதவலாம்.\n"
 "பதிலாக அனைத்து பகுதிகளையும் மறையாக்கலாமா?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -771,13 +795,15 @@ msgstr ""
 "மூன்றாம் தரப்பினர் தெரிந்துகொள்வதற்கு உதவலாம்.\n"
 "பதிலாக இவ்வஞ்சலை மறையாக்கலாமா?"
 
-#: composer/composerviewbase.cpp:2174
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&அனைத்து பகுதிகளையும் மறையாக்கு"
 
-#: composer/composerviewbase.cpp:2177
-#, kde-format
+#: composer/composerviewbase.cpp:2179
+#, fuzzy, kde-format
+#| msgid "Unencrypted Message Warning"
+msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "மறையாக்கப்படாத அஞ்சலை குறித்த எச்சரிக்கை"
 
@@ -827,7 +853,9 @@ msgstr ""
 "பின்வரும் சாவிகள் அல்லது சான்றிதழ்கள் <b>திரும்பப்பெறப்பட்டுள்ளன</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not Fully Trusted Encryption Keys"
+msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "ஓரளவே நம்பகமான மறையாக்க சாவிகள்"
 
@@ -844,7 +872,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "பயன்படுத்த முடியாத மறையாக்க சாவிகள்"
 
@@ -860,7 +890,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Signing Keys"
+msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "பயன்படுத்த முடியாத கையொப்ப சாவிகள்"
 
@@ -923,7 +955,9 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No signing possible"
+msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "கையொப்பமிட முடியாது"
 
@@ -934,46 +968,48 @@ msgid ""
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
-#: composer/keyresolver.cpp:1356
-#, kde-format
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
+#: composer/keyresolver.cpp:1358
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "காணாத சாவியை குறித்த எச்சரிக்கை"
 
-#: composer/keyresolver.cpp:1335
+#: composer/keyresolver.cpp:1336
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr ""
 
-#: composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1340
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr ""
 
-#: composer/keyresolver.cpp:1348
+#: composer/keyresolver.cpp:1350
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1354
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
 
-#: composer/keyresolver.cpp:1428
+#: composer/keyresolver.cpp:1431
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "மறையாக்க சாவியை தேர்ந்தெடுத்தல்"
 
-#: composer/keyresolver.cpp:1472
+#: composer/keyresolver.cpp:1475
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -987,7 +1023,7 @@ msgstr ""
 "\n"
 "இப்பெறுநருக்கு பயன்படுத்தவேண்டிய சான்றிதழ்களை மீண்டும் தேர்ந்தெடுங்கள்."
 
-#: composer/keyresolver.cpp:1544
+#: composer/keyresolver.cpp:1547
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1000,7 +1036,7 @@ msgid ""
 "certificates.</qt>"
 msgstr ""
 
-#: composer/keyresolver.cpp:1554
+#: composer/keyresolver.cpp:1557
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1068,7 +1104,9 @@ msgid "The selected date must be greater than the current date."
 msgstr "தேர்ந்தெடுக்கும் தேதி, தற்போதைய தேதிக்கு பிறகு இருக்க வேண்டும்."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid date"
+msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "செல்லுபடியாகாத தேதி"
 
@@ -1078,7 +1116,9 @@ msgid "The selected folder is not valid."
 msgstr "தேர்ந்தெடுக்கப்பட்ட அடைவு செல்லுபடியாகாத‍து."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid folder"
+msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "செல்லுபடியாகாத அடைவு"
 
@@ -1145,7 +1185,9 @@ msgid "Please verify minimum and maximum values."
 msgstr "குறைந்தபட்ச மற்றும் அதிகபட்ச அளவுகளை சரிபாருங்கள்."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error in minimum Maximum value"
+msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "குறைந்தபட்ச/அதிகபட்ச அளவுகளில் பிழை"
 
@@ -1451,7 +1493,9 @@ msgstr ""
 "தொடர விரும்புகிறீர்களா?"
 
 #: job/maintextjob.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Some Characters Will Be Lost"
+msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "சில எழுத்தகள் காணாமல் போகலாம்"
 
@@ -2286,7 +2330,9 @@ msgstr ""
 "பின்னணி சேவையை உருவாக்க விரும்புகிறீர்களா?"
 
 #: utils/util.cpp:294
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "அஞ்சனுப்பும் பின்னணி சேவை இல்லை."
 
@@ -2306,7 +2352,9 @@ msgstr ""
 "பின்னணி சேவையை தொடர்புள்ள நிலைக்கு மாற்ற விரும்புகிறீர்களா?"
 
 #: utils/util.cpp:312
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mail dispatcher offline."
+msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "அஞ்சலனுப்பும் சேவை தொடர்பற்று உள்ளது."
 

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -361,6 +361,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -447,6 +448,7 @@ msgstr "<qt>Voloz po do bon disfacer l' idintité lomêye <b>%1</b>?</qt>"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Disfacer"
 
@@ -497,6 +499,12 @@ msgid "No rules found"
 msgstr "Nole sinateure di trovêye"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Ebaguer des passetes"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
@@ -504,7 +512,6 @@ msgid "Export Rules"
 msgstr "Ebaguer des passetes"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
 msgid "Import Rules"
@@ -515,6 +522,13 @@ msgstr "Abaguer des passetes"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Nole sinateure di trovêye"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Abaguer des passetes"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -584,6 +598,7 @@ msgstr "<qt>Voloz po do bon disfacer l' idintité lomêye <b>%1</b>?</qt>"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Rîles po les Passetes"
 
@@ -596,6 +611,7 @@ msgstr "<qt>Voloz po do bon disfacer l' idintité lomêye <b>%1</b>?</qt>"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Rîles po les Passetes"
 
@@ -1277,6 +1293,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Radjouter novele etikete"
 
@@ -1890,7 +1907,9 @@ msgstr ""
 "Li fitchî « %1 » egzistêye dedja. Estoz seur(e) ki vos l' voloz spotchî?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Sipotchî l' fitchî?"
 
@@ -1965,8 +1984,14 @@ msgstr ""
 "Dji n' a savou scrire e l' fitchî:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
@@ -2003,6 +2028,7 @@ msgstr "Wårder &ecriptés les messaedjes schapés"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Åk n' a nén stî come dj' eberwetéve li messaedje"
 
@@ -2011,10 +2037,10 @@ msgstr "Åk n' a nén stî come dj' eberwetéve li messaedje"
 msgid "File %1 could not be created."
 msgstr "Wårder &ecriptés les messaedjes schapés"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Dji bodje les messaedjes"
 
@@ -2023,6 +2049,12 @@ msgstr "Dji bodje les messaedjes"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Fén do messaedje siné"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Dji bodje les messaedjes"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2250,9 +2282,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Disfacer l' ataetchmint"
 
@@ -2310,6 +2343,11 @@ msgstr "Schaper et rlomer..."
 #, kde-format
 msgid "Copy"
 msgstr "Copyî"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Disfacer l' ataetchmint"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2563,7 +2601,7 @@ msgstr "Schaper tos ls ataetchmints..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2574,6 +2612,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Li fitchî sd' sinateure n' est nén valide"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2581,6 +2625,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

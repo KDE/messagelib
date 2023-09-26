@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -367,6 +367,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -444,6 +445,7 @@ msgstr "Uqinisekile ukuba ufuna ukuphelisa yonke imiyalezo emidala?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Ci&ma"
 
@@ -495,6 +497,12 @@ msgid "No rules found"
 msgstr "Akukho tyikityo olufumanekileyo"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Expire Folder"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Phelisa Incwadi eneenkcukacha"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
@@ -502,7 +510,6 @@ msgid "Export Rules"
 msgstr "Phelisa Incwadi eneenkcukacha"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Import Rules"
@@ -513,6 +520,13 @@ msgstr "&Yenza Icebo lokucoca ulwelo"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Akukho tyikityo olufumanekileyo"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "&Yenza Icebo lokucoca ulwelo"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -581,6 +595,7 @@ msgstr "Uqinisekile ukuba ufuna ukuphelisa yonke imiyalezo emidala?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Imithetho Yococo lolwelo"
 
@@ -593,6 +608,7 @@ msgstr "Uqinisekile ukuba ufuna ukuphelisa yonke imiyalezo emidala?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Imithetho Yococo lolwelo"
 
@@ -1252,6 +1268,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Jonga imihlathi"
 
@@ -1839,6 +1856,7 @@ msgstr "Ifayile eneligama sele ikhona. Ufuna ukubhala ngaphezulu kwayo?"
 
 #: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Ngenisa Ifayile"
 
@@ -1910,8 +1928,13 @@ msgid ""
 "qt>"
 msgstr "Ayinakubhala kwifayile."
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Uncamathelo: "
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Uncamathelo: "
@@ -1945,6 +1968,7 @@ msgstr "Gcina imiyalezo &efihliweyo"
 
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr ""
 "Imposiso ngexesha lofundo lwefayile:\n"
@@ -1955,9 +1979,9 @@ msgstr ""
 msgid "File %1 could not be created."
 msgstr "Gcina imiyalezo &efihliweyo"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Ukuhambisa umyalezo %3 we %2 kwi %1."
 
@@ -1966,6 +1990,11 @@ msgstr "Ukuhambisa umyalezo %3 we %2 kwi %1."
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Isiphelo somyalezo otyikityiweyo"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+msgid "Error saving message"
+msgstr "Ukuhambisa umyalezo %3 we %2 kwi %1."
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2187,10 +2216,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "&Susa Izincamatheliso"
 
@@ -2249,6 +2278,12 @@ msgstr "Gcina &Njenge..."
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Khuphela Ku"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "&Susa Izincamatheliso"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2498,7 +2533,7 @@ msgstr "&Gcina Izincamatheliso Njenge..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2508,6 +2543,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Utyikityo luphelelwe lixesha."
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2515,6 +2556,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

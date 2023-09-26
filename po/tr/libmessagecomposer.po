@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-07 14:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -22,7 +22,9 @@ msgstr ""
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to compress attachment"
+msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Eki sıkıştırma başarısız oldu"
 
@@ -211,40 +213,44 @@ msgstr "Tümünü Seç"
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#: attachment/attachmentcontrollerbase.cpp:750
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "K Posta, eki geçici bir dosyaya yazamadı."
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:701
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
+#, fuzzy, kde-format
+#| msgid "Unable to open attachment"
+msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Ek açılamadı"
 
-#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "K Posta eki açamadı."
 
-#: attachment/attachmentcontrollerbase.cpp:750 attachment/editorwatcher.cpp:196
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Ek düzenlenemiyor"
 
-#: attachment/attachmentcontrollerbase.cpp:791
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "adsız"
 
-#: attachment/attachmentcontrollerbase.cpp:794
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Eki Farklı Kaydet"
 
-#: attachment/attachmentcontrollerbase.cpp:817
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -253,60 +259,62 @@ msgstr ""
 "%1 dosyası var.\n"
 "Değiştirmek istiyor musunuz?"
 
-#: attachment/attachmentcontrollerbase.cpp:818
-#, kde-format
+#: attachment/attachmentcontrollerbase.cpp:824
+#, fuzzy, kde-format
+#| msgid "Save to File"
+msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Dosyaya Kaydet"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgid "&Replace"
 msgstr "&Değiştir"
 
-#: attachment/attachmentcontrollerbase.cpp:846
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "\"%1\" dizinini gerçekten iliştirmek istiyor musunuz?"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Dizin İliştir"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:912
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "İliştir"
 
-#: attachment/attachmentcontrollerbase.cpp:883
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Dizin İliştir"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:898
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Dosya İliştir"
 
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:941
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Dosya iliştirilemedi"
 
-#: attachment/attachmentcontrollerbase.cpp:959
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Genel OpenPGP Anahtarı İliştir"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Eklenecek genel anahtarı seçin."
@@ -429,7 +437,9 @@ msgstr ""
 "silmek istiyor musunuz?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign/Encrypt Message?"
+msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "İletiyi İmzala/Şifrele?"
 
@@ -444,7 +454,9 @@ msgid "Do you want to resize images?"
 msgstr "Görselleri yeniden boyutlandırmak istiyor musunuz?"
 
 #: composer/composerviewbase.cpp:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Görselleri Otomatik Boyutlandır"
 
@@ -542,7 +554,9 @@ msgstr ""
 "Neden: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Autosaving Message Failed"
+msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "İletiyi Otomatik Kaydetme Başarısız"
 
@@ -563,7 +577,9 @@ msgstr ""
 "İletinize bir dosya iliştirmek istiyor musunuz?"
 
 #: composer/composerviewbase.cpp:1900
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Dosya Ekleme Anımsatıcısı"
 
@@ -584,7 +600,9 @@ msgstr ""
 "İletiyi imzalamak istiyor musunuz?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sign Message?"
+msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "İleti imzalansın mı?"
 
@@ -618,7 +636,9 @@ msgstr ""
 "anahtarı yapılandırılmamış."
 
 #: composer/composerviewbase.cpp:2013
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "İmzasız gönderilsin mi?"
 
@@ -627,7 +647,7 @@ msgstr "İmzasız gönderilsin mi?"
 msgid "Send &Unsigned"
 msgstr "İ&mzalamadan Gönder"
 
-#: composer/composerviewbase.cpp:2027
+#: composer/composerviewbase.cpp:2028
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -638,7 +658,7 @@ msgstr ""
 "Kısmen imzalanmış iletiler site ilkesini ihlal edebilir.\n"
 "Tüm bölümler imzalansın mı?"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -649,27 +669,29 @@ msgstr ""
 "İmzalanmamış iletiler site ilkesini ihlal edebilir.\n"
 "İleti imzalansın mı?"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Tüm Bölümleri İmzala"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid "&Sign"
 msgstr "&İmzala"
 
-#: composer/composerviewbase.cpp:2037
-#, kde-format
+#: composer/composerviewbase.cpp:2038
+#, fuzzy, kde-format
+#| msgid "Unsigned-Message Warning"
+msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "İmzalanmamış İleti Uyarısı"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid "Send &As Is"
 msgstr "&Olduğu Gibi Gönder"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2087
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -678,7 +700,7 @@ msgstr ""
 "Tüm alıcılar için geçerli güvenilir şifreleme anahtarları bulundu.\n"
 "Bu ileti şifrelensin mi?"
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -689,34 +711,34 @@ msgstr ""
 "sormayı gerektirdi.\n"
 "İletiyi şifrelemek istiyor musunuz?"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "İletiyi şifrelensin mi?"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "İmzala ve Şifrele"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
-#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1356
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
+#: composer/keyresolver.cpp:1358
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Şifrele"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Yalnızca İmzala"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Olduğu Gibi Gönder"
 
-#: composer/composerviewbase.cpp:2118
+#: composer/composerviewbase.cpp:2119
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -725,12 +747,12 @@ msgstr ""
 "Bu alıcılar için çakışan şifreleme tercihleri var.\n"
 "İletiyi şifrelemek istiyor musunuz?"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Şifreleme Yapma"
 
-#: composer/composerviewbase.cpp:2147
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -740,17 +762,19 @@ msgstr ""
 "Bu iletiyi şifrelemek ve kendinizin kopyasını şifrelemek istediniz; ancak bu "
 "kimlik için geçerli şifreleme anahtarı yapılandırılmamış."
 
-#: composer/composerviewbase.cpp:2151
-#, kde-format
+#: composer/composerviewbase.cpp:2152
+#, fuzzy, kde-format
+#| msgid "Send Unencrypted?"
+msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Şifrelemeden gönderilsin mi?"
 
-#: composer/composerviewbase.cpp:2151 composer/keyresolver.cpp:1342
+#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "&Şifrelemeden Gönder"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -763,7 +787,7 @@ msgstr ""
 "bilgileri sızdırabilir.\n"
 "Tüm bölümler şifrelensin mi?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -776,13 +800,15 @@ msgstr ""
 "sızdırabilir.\n"
 "İleti şifrelensin mi?"
 
-#: composer/composerviewbase.cpp:2174
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Tüm Parçaları Şifrele"
 
-#: composer/composerviewbase.cpp:2177
-#, kde-format
+#: composer/composerviewbase.cpp:2179
+#, fuzzy, kde-format
+#| msgid "Unencrypted Message Warning"
+msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Şifrelenmemiş İleti Uyarısı"
 
@@ -832,7 +858,9 @@ msgstr ""
 "Aşağıdaki anahtar ve sertifikalar <b>iptal edilmiş</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not Fully Trusted Encryption Keys"
+msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Tamamen Güvenilmeyen Şifreleme Anahtarları"
 
@@ -855,7 +883,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Encryption Keys"
+msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Kullanılamayan Şifreleme Anahtarları"
 
@@ -877,7 +907,9 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unusable Signing Keys"
+msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Kullanılamayan İmzalama Anahtarları"
 
@@ -962,7 +994,9 @@ msgstr ""
 "İleti imzasız gönderilsin mi?"
 
 #: composer/keyresolver.cpp:1154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No signing possible"
+msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "İmzalamak olanaklı değil"
 
@@ -975,13 +1009,15 @@ msgstr ""
 "Kendiniz için şifreleme anahtarı belirlemediniz (kendinize şifrelemek için); "
 "bu yüzden şifreli gönderirseniz kendi iletinizin şifresini çözemeyeceksiniz."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1342
-#: composer/keyresolver.cpp:1356
-#, kde-format
+#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
+#: composer/keyresolver.cpp:1358
+#, fuzzy, kde-format
+#| msgid "Missing Key Warning"
+msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Eksik Anahtar Uyarısı"
 
-#: composer/keyresolver.cpp:1335
+#: composer/keyresolver.cpp:1336
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -990,7 +1026,7 @@ msgstr ""
 "Bu iletinin alıcısı için şifreleme anahtarı belirlemediniz; bu yüzden ileti "
 "şifrelenmeyecek."
 
-#: composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1340
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -999,7 +1035,7 @@ msgstr ""
 "Bu iletinin hiçbir alıcısı için şifreleme anahtarı belirlemediniz; bu yüzden "
 "ileti şifrelenmeyecek."
 
-#: composer/keyresolver.cpp:1348
+#: composer/keyresolver.cpp:1350
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1008,7 +1044,7 @@ msgstr ""
 "Bu iletinin alıcılarından biri için şifreleme anahtarı belirlemediniz; bu "
 "yüzden şifreli gönderirseniz karşıdaki kişi iletinin şifresini çözemeyecek."
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1354
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1018,12 +1054,12 @@ msgstr ""
 "bu yüzden şifreli gönderirseniz ilgili kişiler iletinin şifresini "
 "çözemeyecek."
 
-#: composer/keyresolver.cpp:1428
+#: composer/keyresolver.cpp:1431
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Şifreleme Anahtarı Seçimi"
 
-#: composer/keyresolver.cpp:1472
+#: composer/keyresolver.cpp:1475
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1038,7 +1074,7 @@ msgstr ""
 "\n"
 "Lütfen bu alıcı için kullanılacak sertifikayı/sertifikaları tekrar seçin."
 
-#: composer/keyresolver.cpp:1544
+#: composer/keyresolver.cpp:1547
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1055,7 +1091,7 @@ msgstr ""
 "Eğer listede uygun bir sertifika yoksa ayrıca şu düğme ile dış sertifikaları "
 "da arayabilirsiniz: harici sertifikaları ara.</qt>"
 
-#: composer/keyresolver.cpp:1554
+#: composer/keyresolver.cpp:1557
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1125,7 +1161,9 @@ msgid "The selected date must be greater than the current date."
 msgstr "Seçilen tarih bugünden ileride olmalıdır."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid date"
+msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Geçersiz tarih"
 
@@ -1135,7 +1173,9 @@ msgid "The selected folder is not valid."
 msgstr "Seçilen klasör geçerli değil."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Invalid folder"
+msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Geçersiz klasör"
 
@@ -1203,7 +1243,9 @@ msgid "Please verify minimum and maximum values."
 msgstr "Lütfen en küçük ve en büyük değerleri doğrulayın."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error in minimum Maximum value"
+msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "En küçük ve en büyük değerlerde hata"
 
@@ -1509,7 +1551,9 @@ msgstr ""
 "Sürdürmek istiyor musunuz?"
 
 #: job/maintextjob.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Some Characters Will Be Lost"
+msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Bazı Karakterler Kaybedilecek"
 
@@ -2382,7 +2426,9 @@ msgstr ""
 "gönderici oluşturmak istiyor musunuz?"
 
 #: utils/util.cpp:294
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Posta gönderici yok."
 
@@ -2402,7 +2448,9 @@ msgstr ""
 "yapmak istiyor musunuz?"
 
 #: utils/util.cpp:312
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mail dispatcher offline."
+msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Posta gönderici çevrimdışı."
 

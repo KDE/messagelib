@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-21 19:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -329,7 +329,9 @@ msgid ""
 msgstr "Gordetako DKIM gakoa unekoaren ezberdina da. Hau ere gorde nahi duzu?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Gakoa aldatu da"
 
@@ -403,7 +405,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Gako guztiak ezabatu nahi dituzu?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Ezabatu gakoak"
 
@@ -449,13 +453,18 @@ msgid "No rules found"
 msgstr "Ez da araurik aurkitu"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Esportatu arauak"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Esportatu arauak"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Inportatu arauak"
@@ -464,6 +473,13 @@ msgstr "Inportatu arauak"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ez da araurik inportatu."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Inportatu arauak"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -526,7 +542,9 @@ msgstr "Arau hau ezabatu nahi duzu?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Ezabatu araua"
 
@@ -536,7 +554,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Arau guztiak ezabatu nahi dituzu?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Ezabatu arauak"
 
@@ -1176,7 +1196,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Sarrera batek dagoeneko definitzen du URL hau. Mesedez alda ezazu."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Gehitu URL berria"
 
@@ -1812,7 +1834,9 @@ msgstr ""
 "«%1» izeneko fitxategi bat existitzen da. Ziur zaude gainidatzi nahi duzula?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Fitxategia gainidatzi?"
 
@@ -1886,8 +1910,14 @@ msgstr ""
 "<qt><filename>%1</filename><br />fitxategian ezin izan da idatzi<br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Errorea eranskina gordetzean"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Errorea eranskina gordetzean"
@@ -1920,7 +1950,9 @@ msgid "File %1 could not be loaded."
 msgstr "%1 fitxategia ezin  izan da zamatu."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Errorea mezua zamatzean"
 
@@ -1929,9 +1961,10 @@ msgstr "Errorea mezua zamatzean"
 msgid "File %1 could not be created."
 msgstr "%1 fitxategi ezin izan da sortu."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Errorea mezua gordetzean"
 
@@ -1939,6 +1972,11 @@ msgstr "Errorea mezua gordetzean"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Ezin dugu mezua gorde."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Errorea mezua gordetzean"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2148,9 +2186,10 @@ msgid ""
 msgstr ""
 "Eranskina ezabatzeak mezu honek izan ditzakeen sinadurak baliogabetu ditzake."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Kendu eranskina"
 
@@ -2207,6 +2246,11 @@ msgstr "Gorde honela..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopiatu"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Kendu eranskina"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2441,7 +2485,7 @@ msgstr "Gorde eranskin guztiak..."
 msgid "The network is broken."
 msgstr "Sarea hautsita dago."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Egiaztatu «phishing» URLa"
@@ -2451,6 +2495,13 @@ msgstr "Egiaztatu «phishing» URLa"
 msgid "The URL %1 is not valid."
 msgstr "%1 URLa ez da baliozkoa."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Egiaztatu «phishing» URLa"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2459,7 +2510,9 @@ msgstr ""
 "duzu?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Software gaiztoa - «Malware»"
 

@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-21 22:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -340,7 +340,9 @@ msgstr ""
 "De opgeslagen DKIM sleutel verschilt van de huidige. Wilt u deze ook opslaan?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Sleutel gewijzigd"
 
@@ -414,7 +416,9 @@ msgid "Do you want to delete all keys?"
 msgstr "Wilt u alle sleutels verwijderen?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Sleutels verwijderen"
 
@@ -460,13 +464,18 @@ msgid "No rules found"
 msgstr "Geen regels gevonden"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Regels exporteren"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Regels exporteren"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Regels importeren"
@@ -475,6 +484,13 @@ msgstr "Regels importeren"
 #, kde-format
 msgid "No rules imported."
 msgstr "Geen regels geïmporteerd."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Regels importeren"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -537,7 +553,9 @@ msgstr "Wilt u deze regel verwijderen?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Regel verwijderen"
 
@@ -547,7 +565,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Wilt u alle regels verwijderen?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Regels verwijderen"
 
@@ -1188,7 +1208,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Er is al een item dat deze URL definieert. Wijzig het."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Nieuwe URL toevoegen"
 
@@ -1839,7 +1861,9 @@ msgid ""
 msgstr "Een bestand met de naam \"%1\" bestaat al. Wilt u het overschrijven?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Bestand overschrijven?"
 
@@ -1914,8 +1938,14 @@ msgstr ""
 "<qt>Kon niet schrijven naar het bestand<br /><filename>%1</filename><br /"
 "><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Fout bij opslaan bijlage"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Fout bij opslaan bijlage"
@@ -1948,7 +1978,9 @@ msgid "File %1 could not be loaded."
 msgstr "Bestand %1 kan niet worden geladen."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Fout bij laden van bericht"
 
@@ -1957,9 +1989,10 @@ msgstr "Fout bij laden van bericht"
 msgid "File %1 could not be created."
 msgstr "Bestand %1 kan niet worden aangemaakt."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fout bij opslaan van bericht"
 
@@ -1967,6 +2000,11 @@ msgstr "Fout bij opslaan van bericht"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Bericht kan niet worden opgeslagen."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Fout bij opslaan van bericht"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2176,9 +2214,10 @@ msgstr ""
 "Het verwijderen van een bijlage kan een eventuele digitale ondertekening van "
 "het bericht ongeldig maken."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Bijlage verwijderen"
 
@@ -2235,6 +2274,11 @@ msgstr "Opslaan als..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopiëren"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Bijlage verwijderen"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2469,7 +2513,7 @@ msgstr "Alle bijlagen opslaan..."
 msgid "The network is broken."
 msgstr "Het netwerk is gebroken."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Phishing URL controleren"
@@ -2479,6 +2523,13 @@ msgstr "Phishing URL controleren"
 msgid "The URL %1 is not valid."
 msgstr "De URL %1 is niet geldig."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Phishing URL controleren"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2487,7 +2538,9 @@ msgstr ""
 "weergeven?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Schadelijke software (malware)"
 

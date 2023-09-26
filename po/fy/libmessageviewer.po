@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -388,6 +388,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -472,6 +473,7 @@ msgstr "Wolle jo alle âlde berjochten, wêrfan de bewartiid ferrûn is, wiskje 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Deleted"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Wiske"
 
@@ -525,6 +527,12 @@ msgid "No rules found"
 msgstr "Gjin hântekening fûn."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Key Export Failed"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Kaaieksport mislearre"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
@@ -532,7 +540,6 @@ msgid "Export Rules"
 msgstr "Kaaieksport mislearre"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
 msgid "Import Rules"
@@ -543,6 +550,13 @@ msgstr "Ymportaasje vCard mislearre"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Gjin hântekening fûn."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "vCard Import Failed"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Ymportaasje vCard mislearre"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -612,6 +626,7 @@ msgstr "Wolle jo alle âlde berjochten, wêrfan de bewartiid ferrûn is, wiskje 
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Filterregels"
 
@@ -624,6 +639,7 @@ msgstr "Wolle jo alle âlde berjochten, wêrfan de bewartiid ferrûn is, wiskje 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Filterregels"
 
@@ -1326,6 +1342,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Kolommen sjen litte"
 
@@ -1965,7 +1982,9 @@ msgid ""
 msgstr "In triem mei de namme \"%1\" bestiet al. Wolle jo it oerskriuwe?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Triem oerskriuwe?"
 
@@ -2045,8 +2064,14 @@ msgstr ""
 "Koe de triem %1 net bewarje:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "hat taheaksel"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -2086,6 +2111,7 @@ msgstr "Ferstjoerde berjochten f&ersifere bewarje"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Flater ûnder it opladen fan berjocht"
 
@@ -2095,10 +2121,10 @@ msgstr "Flater ûnder it opladen fan berjocht"
 msgid "File %1 could not be created."
 msgstr "Ferstjoerde berjochten f&ersifere bewarje"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Berjochten wurde ferpleatst"
 
@@ -2107,6 +2133,12 @@ msgstr "Berjochten wurde ferpleatst"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Ein fan tekene berjocht"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Berjochten wurde ferpleatst"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2332,10 +2364,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Taheaksel fuo&rtsmite"
 
@@ -2395,6 +2427,12 @@ msgstr "Bewarje &as..."
 #| msgid "&Copy To"
 msgid "Copy"
 msgstr "Ko&piearje nei"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "Taheaksel fuo&rtsmite"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2651,7 +2689,7 @@ msgstr "Bewarje alle taheaksels..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2662,6 +2700,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "De hântekeningstriem is ûnjildich"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2669,6 +2713,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

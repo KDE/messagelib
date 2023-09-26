@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -339,7 +339,9 @@ msgstr ""
 "denne?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Nøgle ændret"
 
@@ -422,6 +424,7 @@ msgstr "Vil du slette alle regler?"
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Delete Key"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Slet nøgle"
 
@@ -467,13 +470,18 @@ msgid "No rules found"
 msgstr "Ingen regler fundet"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Eksportér regler"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "Eksportér regler"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "Importér regler"
@@ -482,6 +490,13 @@ msgstr "Importér regler"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ingen regler importeret."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Importér regler"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -544,7 +559,9 @@ msgstr "Vil du slette denne regel?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Slet regel"
 
@@ -554,7 +571,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "Vil du slette alle reglerne?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Slet regler"
 
@@ -1201,6 +1220,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Tilføj nyt mærke"
 
@@ -1840,7 +1860,9 @@ msgid ""
 msgstr "En fil med navnet \"%1\" findes allerede. Vil du overskrive den?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Overskriv fil?"
 
@@ -1913,8 +1935,14 @@ msgstr ""
 "<qt>Kunne ikke skrive til filen<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Fejl ved gemning af bilag"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Fejl ved gemning af bilag"
@@ -1947,7 +1975,9 @@ msgid "File %1 could not be loaded."
 msgstr "Filen %1 kunne ikke indlæses."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Fejl ved indlæsning af brev"
 
@@ -1956,9 +1986,10 @@ msgstr "Fejl ved indlæsning af brev"
 msgid "File %1 could not be created."
 msgstr "Filen %1 kunne ikke oprettes."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fejl ved gemning af brev"
 
@@ -1966,6 +1997,11 @@ msgstr "Fejl ved gemning af brev"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Vi kan ikke gemme brevet."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Fejl ved gemning af brev"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2174,9 +2210,10 @@ msgid ""
 msgstr ""
 "Sletning af et bilag kan ugyldiggøre en digital signatur på dette brev."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Slet bilag"
 
@@ -2233,6 +2270,11 @@ msgstr "Gem som..."
 #, kde-format
 msgid "Copy"
 msgstr "Kopiér"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Slet bilag"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2468,7 +2510,7 @@ msgstr "Gem alle bilag..."
 msgid "The network is broken."
 msgstr "Netværket er nede."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Tjek phishing-URL"
@@ -2478,13 +2520,22 @@ msgstr "Tjek phishing-URL"
 msgid "The URL %1 is not valid."
 msgstr "URL'en %1 er ikke gyldig."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "Tjek phishing-URL"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Denne webside er malware. Vil du fortsætte med at vise den?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 

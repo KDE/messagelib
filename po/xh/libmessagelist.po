@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1128,6 +1128,7 @@ msgstr ""
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 
@@ -1196,6 +1197,7 @@ msgstr "Uqinisekile ukuba ufuna ukuchitha inkukuma yencwadi eneenkcukacha? "
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 

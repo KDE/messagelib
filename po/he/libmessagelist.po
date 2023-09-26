@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2017-05-16 06:42-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: <he@li.org>\n"
@@ -1033,6 +1033,7 @@ msgstr ""
 
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&צור מסנן"
 
@@ -1097,6 +1098,7 @@ msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "&צור מסנן"
 

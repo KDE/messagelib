@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -413,6 +413,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -498,6 +499,7 @@ msgstr "Выдаліць усе састарэлыя паведамленні?"
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Deleted"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Выдаліць"
 
@@ -550,6 +552,12 @@ msgid "No rules found"
 msgstr "Подпіс не знойдзены"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Key Export Failed"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Немагчыма экспартаваць ключ"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
@@ -557,7 +565,6 @@ msgid "Export Rules"
 msgstr "Немагчыма экспартаваць ключ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 msgid "Import Rules"
 msgstr "Немагчыма імпартаваць vCard"
@@ -567,6 +574,12 @@ msgstr "Немагчыма імпартаваць vCard"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Подпіс не знойдзены"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Немагчыма імпартаваць vCard"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -635,6 +648,7 @@ msgstr "Выдаліць усе састарэлыя паведамленні?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Правілы фільтру"
 
@@ -646,6 +660,7 @@ msgstr "Выдаліць усе састарэлыя паведамленні?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Правілы фільтру"
 
@@ -1323,6 +1338,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "View Columns"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Паказваць калёнкі"
 
@@ -1930,7 +1946,9 @@ msgstr ""
 "Файл з назвай \"%1\" ужо існуе. Ці вы сапраўды хочаце перазапісаць яго?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Перазапісаць файл?"
 
@@ -2004,8 +2022,14 @@ msgid ""
 "qt>"
 msgstr "Немагчыма запісаць у файл %1."
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "зьмяшчае далучэнне"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -2045,6 +2069,7 @@ msgstr "Захоўваць дасланыя паведамленні зашыф&
 
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Памылка пры перадачы паведамлення на сервер"
 
@@ -2054,10 +2079,10 @@ msgstr "Памылка пры перадачы паведамлення на с�
 msgid "File %1 could not be created."
 msgstr "Захоўваць дасланыя паведамленні зашыф&раванымі"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Перанос паведамленняў"
 
@@ -2066,6 +2091,12 @@ msgstr "Перанос паведамленняў"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Канец падпісанага паведамлення"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "Перанос паведамленняў"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2289,10 +2320,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "&Выдаліць далучэнне"
 
@@ -2353,6 +2384,12 @@ msgstr "Запісаць як..."
 #| msgid "&Copy To"
 msgid "Copy"
 msgstr "Скапіраваць"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Delete Attachment"
+msgstr "&Выдаліць далучэнне"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2609,7 +2646,7 @@ msgstr "Захаваць усе далучэнні..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2619,6 +2656,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Несапраўдны файл подпісу"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2626,6 +2669,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

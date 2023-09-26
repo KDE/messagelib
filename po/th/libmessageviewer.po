@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -346,6 +346,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -429,6 +430,7 @@ msgstr "คุณแน่ใจหรือไม่ ที่จะให้�
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "ลบ"
 
@@ -480,6 +482,12 @@ msgid "No rules found"
 msgstr "ไม่พบลายเซ็น"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "ส่งออกการกรอง"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
@@ -487,7 +495,6 @@ msgid "Export Rules"
 msgstr "ส่งออกการกรอง"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
 msgid "Import Rules"
@@ -498,6 +505,13 @@ msgstr "นำเข้าการกรอง"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "ไม่พบลายเซ็น"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "นำเข้าการกรอง"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -567,6 +581,7 @@ msgstr "คุณแน่ใจหรือไม่ ที่จะให้�
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "กฎการกรอง"
 
@@ -579,6 +594,7 @@ msgstr "คุณแน่ใจหรือไม่ ที่จะให้�
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "กฎการกรอง"
 
@@ -1255,6 +1271,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "เพิ่มป้ายใหม่"
 
@@ -1868,7 +1885,9 @@ msgid ""
 msgstr "มีแฟ้มชื่อ \"%1\" นี้อยู่แล้ว คุณต้องการเขียนทับมันหรือไม่ ?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "เขียนทับแฟ้มหรือไม่ ?"
 
@@ -1939,8 +1958,14 @@ msgid ""
 "qt>"
 msgstr "<qt>ไม่สามารถเขียนแฟ้ม<br><filename>%1</filename><br>ได้<br>%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "เกิดข้อผิดพลาดในการบันทึกสิ่งที่แนบมาด้วย"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "เกิดข้อผิดพลาดในการบันทึกสิ่งที่แนบมาด้วย"
@@ -1977,6 +2002,7 @@ msgstr "จดหมายจะไม่ถูกเข้ารหัส"
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "เกิดข้อผิดพลาดขึ้น ระหว่างอัพโหลดจดหมาย"
 
@@ -1986,10 +2012,10 @@ msgstr "เกิดข้อผิดพลาดขึ้น ระหว่�
 msgid "File %1 could not be created."
 msgstr "จดหมายจะไม่ถูกเข้ารหัส"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "กำลังย้ายจดหมาย"
 
@@ -1998,6 +2024,12 @@ msgstr "กำลังย้ายจดหมาย"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "จบจดหมายที่มีลายเซ็น"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "กำลังย้ายจดหมาย"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2220,9 +2252,10 @@ msgid ""
 "message."
 msgstr "การลบสิ่งที่แนบมาด้วยอาจจะทำให้ลายเซ็นดิจิตัลบนระบบนี้บางตัวใช้งานไม่ได้"
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "ลบสิ่งที่แนบมาด้วย"
 
@@ -2280,6 +2313,11 @@ msgstr "บันทึกเป็น..."
 #, kde-format
 msgid "Copy"
 msgstr "คัดลอก"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "ลบสิ่งที่แนบมาด้วย"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2527,7 +2565,7 @@ msgstr "บันทึกสิ่งที่แนบมาด้วยทั
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2538,6 +2576,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "แฟ้มลายเซ็นใช้งานไม่ได้"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2545,6 +2589,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -375,6 +375,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -461,6 +462,7 @@ msgstr "ਕੀ ਤੁਸੀਂ ਸਭ ਪੁਰਾਣੇ ਸੁਨੇਹਿਆ�
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "ਹਟਾਓ"
 
@@ -512,6 +514,12 @@ msgid "No rules found"
 msgstr "ਕੋਈ ਦਸਤਖਤ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "ਫਿਲਟਰ ਐਕਸਪੋਰਟ"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
@@ -519,7 +527,6 @@ msgid "Export Rules"
 msgstr "ਫਿਲਟਰ ਐਕਸਪੋਰਟ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
 msgid "Import Rules"
@@ -530,6 +537,13 @@ msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "ਕੋਈ ਦਸਤਖਤ ਉਪਲੱਬਧ ਨਹੀਂ"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -598,6 +612,7 @@ msgstr "ਕੀ ਤੁਸੀਂ ਸਭ ਪੁਰਾਣੇ ਸੁਨੇਹਿਆ�
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "ਫਿਲਟਰ ਰੂਲ"
 
@@ -610,6 +625,7 @@ msgstr "ਕੀ ਤੁਸੀਂ ਸਭ ਪੁਰਾਣੇ ਸੁਨੇਹਿਆ�
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "ਫਿਲਟਰ ਰੂਲ"
 
@@ -1298,6 +1314,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "ਨਵਾਂ ਟੈਗ ਸ਼ਾਮਲ"
 
@@ -1906,7 +1923,9 @@ msgid ""
 msgstr "ਫਾਇਲ ਨਾਂ \"%1\" ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਨੂੰ ਬਦਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ਫਾਇਲ ਉੱਤੇ ਲਿਖਣਾ ਹੈ?"
 
@@ -1983,8 +2002,14 @@ msgstr ""
 "ਫਾਇਲ %1 ਨੂੰ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "ਇੱਕ ਅਟੈਚਮੈਂਟ ਹੈ"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
@@ -2024,6 +2049,7 @@ msgstr "ਸੁਨੇਹਾ ਇੰਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ �
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "ਸੁਨੇਹਾ ਅੱਪਲੋਡ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ"
 
@@ -2033,10 +2059,10 @@ msgstr "ਸੁਨੇਹਾ ਅੱਪਲੋਡ ਕਰਨ ਦੌਰਾਨ ਗਲ�
 msgid "File %1 could not be created."
 msgstr "ਸੁਨੇਹਾ ਇੰਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "ਸੁਨੇਹੇ ਭੇਜੇ ਜਾ ਰਹੇ ਹਨ"
 
@@ -2045,6 +2071,12 @@ msgstr "ਸੁਨੇਹੇ ਭੇਜੇ ਜਾ ਰਹੇ ਹਨ"
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "ਦਸਤਖਤੀ ਸੁਨੇਹਾ ਦਾ ਅੰਤ"
+
+#: utils/messageviewerutil.cpp:538
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgid "Error saving message"
+msgstr "ਸੁਨੇਹੇ ਭੇਜੇ ਜਾ ਰਹੇ ਹਨ"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2266,9 +2298,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "ਅਟੈਚਮੈਂਟ ਹਟਾਓ"
 
@@ -2326,6 +2359,11 @@ msgstr "ਇੰਝ ਸੰਭਾਲੋ..."
 #, kde-format
 msgid "Copy"
 msgstr "ਕਾਪੀ"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "ਅਟੈਚਮੈਂਟ ਹਟਾਓ"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2576,7 +2614,7 @@ msgstr "ਸਭ ਅਟੈਚਮੈਂਟ ਸੰਭਾਲੋ..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2587,6 +2625,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "ਦਸਤਖਤ ਫਾਇਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2594,6 +2638,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2015-06-17 09:27+0800\n"
 "Last-Translator: Franklin\n"
 "Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
@@ -355,6 +355,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -431,6 +432,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "選取所有文字"
 
@@ -478,13 +480,18 @@ msgid "No rules found"
 msgstr "找不到簽章"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "匯入(&I)"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Rules"
@@ -495,6 +502,13 @@ msgstr "匯入(&I)"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "找不到簽章"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "匯入(&I)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -562,6 +576,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "選取所有文字"
 
@@ -573,6 +588,7 @@ msgstr ""
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Select All Text"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "選取所有文字"
 
@@ -1235,6 +1251,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr ""
 
@@ -1840,7 +1857,9 @@ msgid ""
 msgstr "檔案 %1 已存在，您是否要取代它？"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "覆蓋檔案？"
 
@@ -1911,8 +1930,14 @@ msgid ""
 "qt>"
 msgstr "<qt>無法寫入檔案<br/><filename>%1</filename><br/><br/>%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "儲存附件時發生錯誤"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "儲存附件時發生錯誤"
@@ -1944,7 +1969,9 @@ msgid "File %1 could not be loaded."
 msgstr "檔案 %1 無法被載入。"
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "載入信件時發生錯誤"
 
@@ -1953,9 +1980,10 @@ msgstr "載入信件時發生錯誤"
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
@@ -1963,6 +1991,11 @@ msgstr "儲存信件時發生錯誤"
 #, kde-format
 msgid "We cannot save message."
 msgstr "無法儲存信件。"
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "儲存信件時發生錯誤"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2172,9 +2205,10 @@ msgid ""
 "message."
 msgstr "刪除附件可能造成此信件的簽章不正確。"
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "移除附件"
 
@@ -2229,6 +2263,11 @@ msgstr "另存新檔..."
 #, kde-format
 msgid "Copy"
 msgstr "複製"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "移除附件"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2471,7 +2510,7 @@ msgstr "儲存所有附件..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2482,6 +2521,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Grantlee 主題 %1 不合法。"
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2489,6 +2534,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2012-06-19 14:59+0700\n"
 "Last-Translator: Sophea <sophea@khmeros.info>\n"
 "Language-Team: Khmer <>\n"
@@ -84,6 +84,7 @@ msgstr "ពុម្ព​ឈ្មោះ​ដូចគ្នា​នេះ​
 #: customtemplates.cpp:252
 #, fuzzy, kde-format
 #| msgid "Can not create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "មិន​អាច​បង្កើត​ពុម្ព​បាន​ទេ"
 
@@ -571,7 +572,9 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "តើ​អ្នក​ចង់​កំណត់​ពុម្ព​បច្ចុប្បន្ន​ឡើងវិញ ឬ​កំណត់​ពុម្ព​ទាំងអស់​ទៅ​លំនាំដើម ?"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "កំណត់​ឡើងវិញ​ទៅ​លំនាំដើម"
 

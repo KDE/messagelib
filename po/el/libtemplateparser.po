@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2021-07-12 10:30+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -87,7 +87,9 @@ msgid "A template with same name already exists."
 msgstr "Υπάρχει ήδη ένα πρότυπο με το ίδιο όνομα."
 
 #: customtemplates.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot create template"
+msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Αδυναμία δημιουργίας προτύπου"
 
@@ -594,7 +596,9 @@ msgstr ""
 "Θέλετε να επαναφέρετε στο προκαθορισμένο το τρέχον πρότυπο ή όλα τα πρότυπα;"
 
 #: templatesconfiguration.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset to default"
+msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Επαναφορά στο προκαθορισμένο"
 

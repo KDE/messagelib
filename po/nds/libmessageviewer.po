@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -352,6 +352,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -439,6 +440,7 @@ msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Wegdoon"
 
@@ -490,6 +492,12 @@ msgid "No rules found"
 msgstr "Keen Ünnerschrift funnen"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "Filtern exporteren"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
@@ -497,7 +505,6 @@ msgid "Export Rules"
 msgstr "Filtern exporteren"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
 msgid "Import Rules"
@@ -508,6 +515,13 @@ msgstr "Filtern importeren"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Keen Ünnerschrift funnen"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "Filtern importeren"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -576,6 +590,7 @@ msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Filterregeln"
 
@@ -588,6 +603,7 @@ msgstr "Wullt Du de List \"%1\" redig wegdoon?"
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Filterregeln"
 
@@ -1267,6 +1283,7 @@ msgstr ""
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Add new tag"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Nieg Slötelwoort tofögen"
 
@@ -1911,7 +1928,9 @@ msgstr ""
 "överschrieven wullt?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Datei överschrieven?"
 
@@ -1986,8 +2005,14 @@ msgid ""
 "qt>"
 msgstr "<qt>De Datei<br><b>%1</b><br>lett sik nich schrieven.<br><br>%2"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "Fehler bi't Sekern vun de Bilaag"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Fehler bi't Sekern vun de Bilaag"
@@ -2025,7 +2050,9 @@ msgid "File %1 could not be loaded."
 msgstr "De Datei \"%1\" lett sik nich laden."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Fehler bi't Laden vun en Naricht"
 
@@ -2034,9 +2061,10 @@ msgstr "Fehler bi't Laden vun en Naricht"
 msgid "File %1 could not be created."
 msgstr "Datei \"%1\" lett sik nich opstellen."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fehler bi't Sekern vun en Naricht"
 
@@ -2044,6 +2072,11 @@ msgstr "Fehler bi't Sekern vun en Naricht"
 #, kde-format
 msgid "We cannot save message."
 msgstr "Naricht lett sik nich sekern."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "Fehler bi't Sekern vun en Naricht"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2258,9 +2291,10 @@ msgstr ""
 "Dat Wegdoon vun en Bilaag maakt en digitaal Ünnerschrift för disse Naricht "
 "leeg."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Bilaag wegdoon"
 
@@ -2317,6 +2351,11 @@ msgstr "Sekern as..."
 #, kde-format
 msgid "Copy"
 msgstr "Koperen"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Bilaag wegdoon"
 
 #: viewer/viewer_p.cpp:580
 #, fuzzy, kde-format
@@ -2560,7 +2599,7 @@ msgstr "All Bilagen sekern..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
@@ -2571,6 +2610,12 @@ msgstr ""
 msgid "The URL %1 is not valid."
 msgstr "Grantlee-Muster \"%1\" gellt nich."
 
+#: viewer/viewer_p.cpp:1942
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2578,6 +2623,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1963
 #, kde-format
+msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 

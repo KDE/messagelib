@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2023-09-24 09:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -314,7 +314,9 @@ msgstr ""
 "დაიმახსოვროთ?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "გასაღები შეიცვალა"
 
@@ -388,7 +390,9 @@ msgid "Do you want to delete all keys?"
 msgstr "გნებავთ, წაშალოთ ყველა გასაღები?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Keys"
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "გასაღების წაშლა"
 
@@ -434,13 +438,18 @@ msgid "No rules found"
 msgstr "წესები ვერ ვიპოვე."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "Export Rules"
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "წესების გატანა"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
 msgstr "წესების გატანა"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "Import Rules"
 msgstr "წესების შემოტანა"
@@ -449,6 +458,13 @@ msgstr "წესების შემოტანა"
 #, kde-format
 msgid "No rules imported."
 msgstr "წესები შემოტანილი არაა."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "წესების შემოტანა"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -511,7 +527,9 @@ msgstr "გნებავთ, წაშალოთ ეს წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rule"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "წესის წაშლა"
 
@@ -521,7 +539,9 @@ msgid "Do you want to delete all the rules?"
 msgstr "გნებავთ, წაშალოთ ყველა წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "წესების წაშლა"
 
@@ -1158,7 +1178,9 @@ msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new Url"
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "ახალი ბმულის დამატება"
 
@@ -1739,7 +1761,9 @@ msgid ""
 msgstr "ფაილი \"%1\" სახელით უკვე არსებობს. შევცვალო?"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ჩავანაცვლო ფაილი?"
 
@@ -1808,8 +1832,14 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
@@ -1842,7 +1872,9 @@ msgid "File %1 could not be loaded."
 msgstr "ფაილის (%1) ჩატვირთვის შეცდომა."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "შეტყობინების ჩატვირთვის შეცდომა"
 
@@ -1851,9 +1883,10 @@ msgstr "შეტყობინების ჩატვირთვის შ�
 msgid "File %1 could not be created."
 msgstr "%1: ფაილის შექმნის შეცდომა."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "შეტყობინების შენახვის შეცდომა"
 
@@ -1861,6 +1894,11 @@ msgstr "შეტყობინების შენახვის შეც�
 #, kde-format
 msgid "We cannot save message."
 msgstr "ამ შეტყობინების შენახვა შეუძლებელია."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "შეტყობინების შენახვის შეცდომა"
 
 #: utils/messageviewerutil.cpp:602
 #, kde-format
@@ -2065,9 +2103,10 @@ msgid ""
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "მიმაგრებული ფაილის წაშლა"
 
@@ -2122,6 +2161,11 @@ msgstr "შენახვა, როგორც..."
 #, kde-format
 msgid "Copy"
 msgstr "კოპირება"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "მიმაგრებული ფაილის წაშლა"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2356,7 +2400,7 @@ msgstr "ყველა მიმაგრებული ფაილის შ
 msgid "The network is broken."
 msgstr "ქსელთა მიერთება გათიშულია."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "ფიშინგის ბმულის შემოწმება"
@@ -2366,6 +2410,13 @@ msgstr "ფიშინგის ბმულის შემოწმება"
 msgid "The URL %1 is not valid."
 msgstr "ბმული %1 არასწორია."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "ფიშინგის ბმულის შემოწმება"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
@@ -2373,7 +2424,9 @@ msgstr ""
 "ეს ვებგვერდი საზიანო პროგრამებს შეიცავს. გნებავთ გააგრძელოთ მისი ჩვენება?"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "მავნე პროგრამა"
 

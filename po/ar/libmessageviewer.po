@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-26 01:46+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -352,6 +352,7 @@ msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
+msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
@@ -443,6 +444,7 @@ msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل ال�
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "احذف"
 
@@ -496,13 +498,17 @@ msgid "No rules found"
 msgstr "لم يُعثر على أيّ توقيع"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr "فشل تصدير المفتاح"
+
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 msgid "Export Rules"
 msgstr "فشل تصدير المفتاح"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 msgid "Import Rules"
 msgstr "فشل أستيراد vCard"
@@ -512,6 +518,12 @@ msgstr "فشل أستيراد vCard"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "لم يُعثر على أيّ توقيع"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr "فشل أستيراد vCard"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -581,6 +593,7 @@ msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل ال�
 #: remote-content/remotecontentconfigurewidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "قواعد المرشح"
 
@@ -593,6 +606,7 @@ msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل ال�
 #: dkim-verify/dkimmanageruleswidget.cpp:226
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "قواعد المرشح"
 
@@ -1258,6 +1272,7 @@ msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "إضافة جديد بطاقة"
 
@@ -1875,7 +1890,9 @@ msgid ""
 msgstr "الملفّ بالاسم \"%1\" موجود فعلًا. أمتأكّد من الكتابة فوقه؟"
 
 #: utils/messageviewerutil.cpp:126
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "أأكتب فوق الملفّ؟"
 
@@ -1946,8 +1963,14 @@ msgstr ""
 "<html dir=\"rtl\">تعذّرت الكتابة في الملفّ<br /><filename>%1</filename><br /"
 "><br />%2</html>"
 
-#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
-#: utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:403
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr "خطأ في حفظ المستند"
+
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "خطأ في حفظ المستند"
@@ -1985,7 +2008,9 @@ msgid "File %1 could not be loaded."
 msgstr "تعذّر تحميل الملفّ %1."
 
 #: utils/messageviewerutil.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "خطأ في تحميل الرّسالة"
 
@@ -1994,9 +2019,10 @@ msgstr "خطأ في تحميل الرّسالة"
 msgid "File %1 could not be created."
 msgstr "تعذّر إنشاء الملفّ %1."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
-#: utils/messageviewerutil.cpp:558
-#, kde-format
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#, fuzzy, kde-format
+#| msgid "Error saving message"
+msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "خطأ في حفظ الرّسالة"
 
@@ -2004,6 +2030,11 @@ msgstr "خطأ في حفظ الرّسالة"
 #, kde-format
 msgid "We cannot save message."
 msgstr "تعذّر حفظ الرّسالة."
+
+#: utils/messageviewerutil.cpp:538
+#, kde-format
+msgid "Error saving message"
+msgstr "خطأ في حفظ الرّسالة"
 
 #: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
@@ -2210,9 +2241,10 @@ msgid ""
 "message."
 msgstr "حذف المرفق قد يلغي صلاحيّة أيّ توقيع رقميّ في هذه الرّسالة."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380 viewer/viewer_p.cpp:569
-#: viewer/viewer_p.cpp:1711
-#, kde-format
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, fuzzy, kde-format
+#| msgid "Delete Attachment"
+msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "احذف المرفق"
 
@@ -2271,6 +2303,11 @@ msgstr "احفظ كَ‍..."
 #, kde-format
 msgid "Copy"
 msgstr "انسخ"
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#, kde-format
+msgid "Delete Attachment"
+msgstr "احذف المرفق"
 
 #: viewer/viewer_p.cpp:580
 #, kde-format
@@ -2508,7 +2545,7 @@ msgstr "احفظ كلّ المرفقات..."
 msgid "The network is broken."
 msgstr "الشّبكة معطوبة."
 
-#: viewer/viewer_p.cpp:1939 viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1939
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "فحص المسار المنتحل"
@@ -2518,13 +2555,22 @@ msgstr "فحص المسار المنتحل"
 msgid "The URL %1 is not valid."
 msgstr "المسار %1 غير صالح."
 
+#: viewer/viewer_p.cpp:1942
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr "فحص المسار المنتحل"
+
 #: viewer/viewer_p.cpp:1962
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "هذا الموقع برنامجُ تجسّس، أتريد المتابعة وعرضه؟"
 
 #: viewer/viewer_p.cpp:1963
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Malware"
+msgctxt "@title:window"
 msgid "Malware"
 msgstr "برنامج تجسّس"
 
