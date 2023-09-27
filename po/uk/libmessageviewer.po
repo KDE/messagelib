@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-21 13:25+0300\n"
+"PO-Revision-Date: 2023-09-26 18:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -333,8 +333,7 @@ msgstr ""
 "Збережений ключ DKIM відрізняється від поточного. Хочете зберегти і цей ключ?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Ключ змінено"
@@ -415,11 +414,10 @@ msgid "Do you want to delete all keys?"
 msgstr "Хочете вилучити усі ключі?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "Вилучити ключі"
+msgstr "Вилучення ключів"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -463,8 +461,7 @@ msgid "No rules found"
 msgstr "Не знайдено жодного правила"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Експортування правил"
@@ -485,8 +482,7 @@ msgid "No rules imported."
 msgstr "Не імпортовано жодного правила"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Імпортування правил"
@@ -552,11 +548,10 @@ msgstr "Хочете вилучити це правило?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "Вилучити правило"
+msgstr "Вилучення правила"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -564,8 +559,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "Хочете вилучити усі правила?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Вилучення правил"
@@ -1206,11 +1200,10 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Запис вже визначає цю адресу. Будь ласка, змініть його."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "Додати нову адресу"
+msgstr "Додавання нової адреси"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1855,8 +1848,7 @@ msgid ""
 msgstr "Файл з назвою «%1» вже існує. Хочете його перезаписати?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Перезаписати файл?"
@@ -1930,8 +1922,7 @@ msgstr ""
 ">%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Помилка під час спроби збереження долучення"
@@ -1971,8 +1962,7 @@ msgid "File %1 could not be loaded."
 msgstr "Не вдалося завантажити файл %1."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Помилка під час спроби завантажити повідомлення"
@@ -1983,8 +1973,7 @@ msgid "File %1 could not be created."
 msgstr "Не вдалося створити файл %1."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Помилка під час спроби збереження повідомлення"
@@ -2207,11 +2196,10 @@ msgid ""
 msgstr "Вилучення долучення може позбавити лист коректного цифрового підпису."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "Вилучити долучення"
+msgstr "Вилучення долучення"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -2517,8 +2505,7 @@ msgid "The URL %1 is not valid."
 msgstr "Адреса %1 є некоректною."
 
 #: viewer/viewer_p.cpp:1942
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Перевірка шахрайських адрес"
@@ -2531,8 +2518,7 @@ msgstr ""
 "продовжити його перегляд попри це?"
 
 #: viewer/viewer_p.cpp:1963
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Зловмисне програмне забезпечення"

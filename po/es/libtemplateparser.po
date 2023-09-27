@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-20 01:16+0200\n"
+"PO-Revision-Date: 2023-09-27 00:56+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -86,8 +86,7 @@ msgid "A template with same name already exists."
 msgstr "Ya existe una plantilla con ese nombre."
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "No se puede crear la plantilla"
@@ -145,7 +144,7 @@ msgid ""
 "%3\n"
 "%4"
 msgstr ""
-"El %1 %2 usted escribió:\n"
+"El %1 a las %2, usted escribió:\n"
 "%3\n"
 "%4"
 
@@ -164,7 +163,7 @@ msgid ""
 "%4\n"
 "%5"
 msgstr ""
-"El %1 %2 %3 escribió:\n"
+"El %1 %2, %3 escribió:\n"
 "%4\n"
 "%5"
 
@@ -590,11 +589,10 @@ msgstr ""
 "predeterminadas?"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "Reiniciar por defecto"
+msgstr "Reiniciar a la predeterminada"
 
 #: templatesconfiguration.cpp:102
 #, kde-format

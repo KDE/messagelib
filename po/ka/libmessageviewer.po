@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-24 09:57+0200\n"
+"PO-Revision-Date: 2023-09-26 16:01+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -314,8 +314,7 @@ msgstr ""
 "დაიმახსოვროთ?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "გასაღები შეიცვალა"
@@ -390,11 +389,10 @@ msgid "Do you want to delete all keys?"
 msgstr "გნებავთ, წაშალოთ ყველა გასაღები?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "გასაღების წაშლა"
+msgstr "გასაღებების წაშლა"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -438,8 +436,7 @@ msgid "No rules found"
 msgstr "წესები ვერ ვიპოვე."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "წესების გატანა"
@@ -460,8 +457,7 @@ msgid "No rules imported."
 msgstr "წესები შემოტანილი არაა."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "წესების შემოტანა"
@@ -527,8 +523,7 @@ msgstr "გნებავთ, წაშალოთ ეს წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "წესის წაშლა"
@@ -539,8 +534,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "გნებავთ, წაშალოთ ყველა წესი?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "წესების წაშლა"
@@ -1178,8 +1172,7 @@ msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "ახალი ბმულის დამატება"
@@ -1369,13 +1362,13 @@ msgstr "ფიშინგის ბმულის შემოწმება"
 #: settings/messageviewer.kcfg.cmake:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "შეტყობინების ფანჯრის დახურვა პასუხის/გადაგზავნის შემდეგ"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr ""
+msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების ჩვენება"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:73
@@ -1761,8 +1754,7 @@ msgid ""
 msgstr "ფაილი \"%1\" სახელით უკვე არსებობს. შევცვალო?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ჩავანაცვლო ფაილი?"
@@ -1833,8 +1825,7 @@ msgid ""
 msgstr ""
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
@@ -1872,8 +1863,7 @@ msgid "File %1 could not be loaded."
 msgstr "ფაილის (%1) ჩატვირთვის შეცდომა."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "შეტყობინების ჩატვირთვის შეცდომა"
@@ -1884,8 +1874,7 @@ msgid "File %1 could not be created."
 msgstr "%1: ფაილის შექმნის შეცდომა."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "შეტყობინების შენახვის შეცდომა"
@@ -2104,8 +2093,7 @@ msgid ""
 msgstr ""
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "მიმაგრებული ფაილის წაშლა"
@@ -2323,22 +2311,22 @@ msgstr "&ჩვენების ფორმატის დაბრუნე
 #: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "Scroll Message Up"
-msgstr ""
+msgstr "შეტყობინების ზემოთ ახვევა"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "Scroll Message Down"
-msgstr ""
+msgstr "შეტყობინების ქვემოთ ჩამოხვევა"
 
 #: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "Scroll Message Up (More)"
-msgstr ""
+msgstr "შეტყობინების ზემოთ ახვევა (მეტი)"
 
 #: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Scroll Message Down (More)"
-msgstr ""
+msgstr "შეტყობინების ქვემოთ ჩამოხვევა (მეტი)"
 
 #: viewer/viewer_p.cpp:1595
 #, kde-format
@@ -2348,7 +2336,7 @@ msgstr "HTML-ით ჩვენების რეჟიმის გადა�
 #: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr ""
+msgstr "ჩვენების რეჟიმის ტექსტისა და HTML-ის შორის გადართვა"
 
 #: viewer/viewer_p.cpp:1602
 #, kde-format
@@ -2411,8 +2399,7 @@ msgid "The URL %1 is not valid."
 msgstr "ბმული %1 არასწორია."
 
 #: viewer/viewer_p.cpp:1942
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ფიშინგის ბმულის შემოწმება"
@@ -2424,8 +2411,7 @@ msgstr ""
 "ეს ვებგვერდი საზიანო პროგრამებს შეიცავს. გნებავთ გააგრძელოთ მისი ჩვენება?"
 
 #: viewer/viewer_p.cpp:1963
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "მავნე პროგრამა"
@@ -2570,7 +2556,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2582,13 +2568,13 @@ msgstr "ფაილის გახსნა"
 #, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
+msgstr[1] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილები შევინახე"
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "იმ საქაღალდის გახსნა, სადაც PDF ფაილი შევინახე"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
 #, kde-format

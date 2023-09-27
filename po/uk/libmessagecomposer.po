@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-05-15 15:09+0300\n"
+"PO-Revision-Date: 2023-09-26 18:53+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -21,8 +21,7 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Не вдалося стиснути долучення"
@@ -221,8 +220,7 @@ msgstr "KMail не вдалося записати долучення до ти�
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Не вдалося відкрити долучення"
@@ -233,8 +231,7 @@ msgid "KMail was unable to open the attachment."
 msgstr "KMail не вдалося відкрити долучення."
 
 #: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Змінити долучення неможливо"
@@ -259,11 +256,10 @@ msgstr ""
 "Хочете його замінити?"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr "Зберегти до файла"
+msgstr "Збереження до файла"
 
 #: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
@@ -436,8 +432,7 @@ msgstr ""
 "вбудовуванням у HTML-повідомлення.</p><p>Хочете вилучити розмітку?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Підписати/зашифрувати повідомлення?"
@@ -453,8 +448,7 @@ msgid "Do you want to resize images?"
 msgstr "Бажаєте змінити розміри зображень?"
 
 #: composer/composerviewbase.cpp:527
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Автоматична зміна розмірів зображень"
@@ -554,8 +548,7 @@ msgstr ""
 "Причина: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Помилка автозбереження повідомлення"
@@ -577,8 +570,7 @@ msgstr ""
 "Бажаєте долучити файл?"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Нагадування про долучення файла"
@@ -600,8 +592,7 @@ msgstr ""
 "Підписати це повідомлення?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Підписати повідомлення?"
@@ -637,11 +628,10 @@ msgstr ""
 "вказано жодного ключа для підписування."
 
 #: composer/composerviewbase.cpp:2013
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr "Надіслати без підпису?"
+msgstr "Надіслати без підписування?"
 
 #: composer/composerviewbase.cpp:2013
 #, kde-format
@@ -682,8 +672,7 @@ msgid "&Sign"
 msgstr "&Підписати"
 
 #: composer/composerviewbase.cpp:2038
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Попередження щодо непідписаного повідомлення"
@@ -767,8 +756,7 @@ msgstr ""
 "довіру."
 
 #: composer/composerviewbase.cpp:2152
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Надіслати незашифрованим?"
@@ -809,8 +797,7 @@ msgid "&Encrypt All Parts"
 msgstr "&Зашифровувати всі частини"
 
 #: composer/composerviewbase.cpp:2179
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Попередження щодо незашифрованогоповідомлення"
@@ -861,8 +848,7 @@ msgstr ""
 "Наступні ключі або сертифікати <b>відкликано</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Не повністю надійні ключі для шифрування"
@@ -886,8 +872,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Непридатні ключі для шифрування"
@@ -910,8 +895,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Непридатні ключі для підписування"
@@ -1001,8 +985,7 @@ msgstr ""
 "Надіслати це повідомлення без підпису?"
 
 #: composer/keyresolver.cpp:1154
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Неможливо підписати"
@@ -1018,8 +1001,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
 #: composer/keyresolver.cpp:1358
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Попередження про відсутність ключа"
@@ -1167,8 +1149,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Вибрана дата має слідувати за поточною."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Некоректна дата"
@@ -1179,8 +1160,7 @@ msgid "The selected folder is not valid."
 msgstr "Вибрана тека не є коректною."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Некоректна тека"
@@ -1249,8 +1229,7 @@ msgstr ""
 "Не вдалося перевірити відповідність мінімальному і максимальному значенню."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Помилка у мінімальному або максимальному значенні"
@@ -1566,8 +1545,7 @@ msgstr ""
 "Виконати зміну кодування?"
 
 #: job/maintextjob.cpp:102
-#, fuzzy, kde-format
-#| msgid "Some Characters Will Be Lost"
+#, kde-format
 msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Деякі символи буде втрачено"
@@ -2453,8 +2431,7 @@ msgstr ""
 "Бажаєте створити запис агента розподілу пошти?"
 
 #: utils/util.cpp:294
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Немає агента розподілу пошти."
@@ -2475,8 +2452,7 @@ msgstr ""
 "неможливе. Бажаєте встановити з’єднання для надсилання пошти?"
 
 #: utils/util.cpp:312
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Агент розподілу пошти працює автономно."

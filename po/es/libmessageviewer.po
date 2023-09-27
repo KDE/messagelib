@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-21 16:49+0200\n"
+"PO-Revision-Date: 2023-09-27 01:11+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
-msgstr "Disculpe, el certificado no se pudo importar."
+msgstr "No se ha podido importar el certificado."
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
 #, kde-format
@@ -41,7 +41,7 @@ msgstr "Motivo: %1"
 
 #: messagepartthemes/default/templates/certmessagepart.html:7
 msgid "Sorry, no certificates were found in this message."
-msgstr "Disculpe, no se encontraron certificados en este mensaje."
+msgstr "No se han encontrado certificados en este mensaje."
 
 #: messagepartthemes/default/templates/certmessagepart.html:9
 msgid "Certificate import status:"
@@ -51,34 +51,33 @@ msgstr "Estado de la importación del certificado:"
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] "Se importó 1 certificado nuevo."
-msgstr[1] "Se importaron %1 certificados nuevos."
+msgstr[0] "Se ha importado 1 certificado nuevo."
+msgstr[1] "Se han importado %1 certificados nuevos."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] "Un certificado permaneció sin cambios."
-msgstr[1] "%1 certificados permanecieron sin cambios."
+msgstr[0] "1 certificado no se ha cambiado."
+msgstr[1] "%1 certificados no se han cambiado."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] "Se importó una clave secreta nueva."
-msgstr[1] "Se importaron %1 claves secretas nuevas."
+msgstr[0] "Se ha importado 1 clave secreta nueva."
+msgstr[1] "Se han importado %1 claves secretas nuevas."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] "Una clave secreta permaneció sin cambios."
-msgstr[1] "%1 claves secretas permanecieron sin cambios."
+msgstr[0] "1 clave secreta no se ha cambiado."
+msgstr[1] "%1 claves secretas no se han cambiado."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
-msgstr ""
-"Disculpe, no hay detalles disponibles sobre la importación del certificado."
+msgstr "No hay detalles disponibles sobre la importación del certificado."
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
 msgid "Certificate import details:"
@@ -272,7 +271,7 @@ msgstr "La firma es válida, pero no se conoce la validez de la clave."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
-msgstr "La firma es válida, pero la clave es de confianza parcial."
+msgstr "La firma es válida, pero la clave es de confianza mínima."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
@@ -335,8 +334,7 @@ msgstr ""
 "La clave DKIM guardada es distinta de la actual. ¿Desea guardar esta también?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Clave modificada"
@@ -411,8 +409,7 @@ msgid "Do you want to delete all keys?"
 msgstr "¿Desea borrar todas las claves?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Borrar claves"
@@ -459,8 +456,7 @@ msgid "No rules found"
 msgstr "No se han encontrado reglas"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportar reglas"
@@ -481,8 +477,7 @@ msgid "No rules imported."
 msgstr "No se han importado reglas."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importar reglas"
@@ -548,8 +543,7 @@ msgstr "¿Desea borrar esta regla?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Borrar regla"
@@ -560,8 +554,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "¿Desea borrar todas las reglas?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Borrar reglas"
@@ -1063,7 +1056,7 @@ msgstr "No hay clave pública para verificar la firma"
 #: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
 msgid "No signature found"
-msgstr "No se encontró firma"
+msgstr "No se ha encontrado ninguna firma"
 
 #: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
@@ -1114,12 +1107,12 @@ msgstr "La CRL disponible es demasiado vieja."
 #: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
 msgid "A policy was not met."
-msgstr "No se encontró una política."
+msgstr "No se ha cumplido una política."
 
 #: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "A system error occurred."
-msgstr "Ocurrió un error de sistema."
+msgstr "Ha ocurrido un error del sistema."
 
 #: messagepartthemes/default/defaultrenderer.cpp:178
 #, kde-format
@@ -1204,11 +1197,10 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Ya hay una entrada que define esta URL. Modifíquela."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "Añadir nuevo URL"
+msgstr "Añadir nueva URL"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1325,7 +1317,8 @@ msgstr ""
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
-"Este correo contiene un URL abreviado (%1). Puede redirigir a otro servidor."
+"Este mensaje contiene una URL abreviada (%1). Puede redirigir a otro "
+"servidor."
 
 #: scamdetection/scamdetectionwebengine.cpp:220
 #, kde-format
@@ -1343,7 +1336,7 @@ msgstr "Detalles:"
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr ""
-"No se ha detectado conexión de red, por lo que no podemos expandir el URL."
+"No se ha detectado conexión de red, por lo que no podemos expandir la URL."
 
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
@@ -1353,7 +1346,7 @@ msgstr "No es posible expandir «%1»."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "El URL abreviado «%1» redirige a «%2»."
+msgstr "La URL abreviada «%1» redirige a «%2»."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.cmake:11
@@ -1412,7 +1405,7 @@ msgstr "Especifica el tipo de letra a usar para impresión"
 #: settings/messageviewer.kcfg.cmake:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr "Comprobar si el URL puede un engaño"
+msgstr "Comprobar si la URL puede un engaño"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.cmake:55
@@ -1856,8 +1849,7 @@ msgstr ""
 "Ya existe un archivo llamado «%1». ¿Está seguro de que quiere sobrescribirlo?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "¿Sobrescribir el archivo?"
@@ -1933,11 +1925,10 @@ msgstr ""
 "><br />%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr "Error guardando el adjunto"
+msgstr "Error al guardar el adjunto"
 
 #: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
@@ -1972,8 +1963,7 @@ msgid "File %1 could not be loaded."
 msgstr "Archivo «%1» no se pudo cargar."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Error al cargar el mensaje"
@@ -1984,8 +1974,7 @@ msgid "File %1 could not be created."
 msgstr "El archivo «%1» no se pudo crear."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error al guardar el mensaje"
@@ -2209,8 +2198,7 @@ msgstr ""
 "Borrar un adjunto puede invalidar cualquier firma digital en el mensaje."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Borrar adjunto"
@@ -2515,14 +2503,13 @@ msgstr "Comprobar URL engañoso"
 #: viewer/viewer_p.cpp:1942
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr "El URL %1 no es válido."
+msgstr "La URL %1 no es válida."
 
 #: viewer/viewer_p.cpp:1942
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr "Comprobar URL engañoso"
+msgstr "Comprobar URL engañosa"
 
 #: viewer/viewer_p.cpp:1962
 #, kde-format
@@ -2531,8 +2518,7 @@ msgstr ""
 "Este sitio web contiene programas maliciosos. ¿Desea continuar mostrándolo?"
 
 #: viewer/viewer_p.cpp:1963
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Programas maliciosos"
@@ -2551,12 +2537,12 @@ msgstr "Mensaje como texto sin formato"
 #: viewer/viewer_p.cpp:2668
 #, kde-format
 msgid "URL copied to clipboard."
-msgstr "URL copiado al portapapeles."
+msgstr "URL copiada al portapapeles."
 
 #: viewer/viewer_p.cpp:2820
 #, kde-format
 msgid "Message loading failed: %1."
-msgstr "Falló la carga del mensaje: %1."
+msgstr "Ha fallado la carga del mensaje: %1."
 
 #: viewer/viewer_p.cpp:2825
 #, kde-format

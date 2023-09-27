@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-21 08:21+0100\n"
+"PO-Revision-Date: 2023-09-26 20:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -328,8 +328,7 @@ msgstr ""
 "tiun?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Ŝlosilo Ŝanĝita"
@@ -404,8 +403,7 @@ msgid "Do you want to delete all keys?"
 msgstr "Ĉu vi volas forigi ĉiujn ŝlosilojn?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Forigi Ŝlosilojn"
@@ -452,21 +450,20 @@ msgid "No rules found"
 msgstr "Neniuj reguloj trovitaj"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "Eksportaj Reguloj"
+msgstr "Eksporti Regulojn"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
-msgstr "Eksportaj Reguloj"
+msgstr "Eksporti Regulojn"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
 #, kde-format
 msgid "Import Rules"
-msgstr "Reguloj de importo"
+msgstr "Importi Regulojn"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
@@ -474,11 +471,10 @@ msgid "No rules imported."
 msgstr "Neniuj reguloj importitaj."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "Reguloj de importo"
+msgstr "Importi Regulojn"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -541,8 +537,7 @@ msgstr "Ĉu vi volas forigi ĉi tiun regulon?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Forigi Regulon"
@@ -553,8 +548,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "Ĉu vi volas forigi ĉiujn regulojn?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Forigi Regulojn"
@@ -1195,8 +1189,7 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "Eniro jam difinas ĉi tiun URL. Bonvolu modifi ĝin."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Aldoni novan URL"
@@ -1832,8 +1825,7 @@ msgid ""
 msgstr "Dosiero nomita \"%1\" jam ekzistas. Ĉu vi volas anstataŭigi ĝin?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Ĉu anstataŭigi dosieron?"
@@ -1910,8 +1902,7 @@ msgstr ""
 "%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Eraro dum konservado de aldonaĵo"
@@ -1949,8 +1940,7 @@ msgid "File %1 could not be loaded."
 msgstr "Dosiero %1 ne povis esti ŝargita."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Eraro dum ŝargo de mesaĝo"
@@ -1961,8 +1951,7 @@ msgid "File %1 could not be created."
 msgstr "Dosiero %1 ne povis esti kreita."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Eraro dum konservado de mesaĝo"
@@ -2185,8 +2174,7 @@ msgstr ""
 "Forigi aldonaĵon eble nuligos ajnan ciferecan subskribon sur ĉi tiu mesaĝo."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Forigi Aldonaĵon"
@@ -2494,8 +2482,7 @@ msgid "The URL %1 is not valid."
 msgstr "La URL %1 ne validas."
 
 #: viewer/viewer_p.cpp:1942
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Kontroli Phishing URL"
@@ -2506,8 +2493,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Ĉi tiu retejo estas malware, ĉu vi volas daŭre montri ĝin?"
 
 #: viewer/viewer_p.cpp:1963
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"

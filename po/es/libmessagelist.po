@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-20 01:07+0200\n"
+"PO-Revision-Date: 2023-09-27 00:54+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -122,12 +122,12 @@ msgstr "Siempre expandir hilos de discusión"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Interactivity"
-msgstr "Elegir interactividad"
+msgstr "Favorecer la interactividad"
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Speed"
-msgstr "Elegir velocidad"
+msgstr "Favorecer la velocidad"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -1051,8 +1051,7 @@ msgid "Any filter defined."
 msgstr "Cualquier filtro definido."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Crear filtro"
@@ -1117,8 +1116,7 @@ msgid "Do you want to delete this filter?"
 msgstr "¿Desea borrar este filtro?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Remove Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Eliminar filtro"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-24 11:49+0200\n"
+"PO-Revision-Date: 2023-09-26 16:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -74,11 +74,10 @@ msgid "A template with same name already exists."
 msgstr "ნიმუში ამ სახელით უკვე არსებობს."
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
-msgstr "შაბლონის შექმნის შეცდომა"
+msgstr "შაბლონის შექმნა შეუძლებელია"
 
 #: customtemplates.cpp:344
 #, kde-format
@@ -553,13 +552,13 @@ msgstr ""
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
+"მართლა გნებავთ მიმდინარე ან ყველა ნიმუშის საწყის მნიშვნელობაზე დანრუნება?"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "ნაგულისხმებ მნიშვნელობაზე დაბრუნება"
+msgstr "ნაგულისხმევ მნიშვნელობაზე დაბრუნება"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
@@ -632,6 +631,8 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ შექმნათ მითითებული სახელის მქონე მომხმარებლის "
+"ნიმუში"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
@@ -648,6 +649,7 @@ msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ, ამჟამად მონიშნული მომხმარებლის ნიმუში აშალოთ"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
@@ -664,6 +666,8 @@ msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ, ამჟამად მონიშნული მომხმარებლის ნიმუში "
+"დააკოპიროთ"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
@@ -722,6 +726,8 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
+"ნიმუშის გამოყენებისას ნაგულისხმევი მიმღებების არჩევანი აქ უნდა შეიყვანოთ.  "
+"ეს მძიმეებით გამოყოფილი ელფოსტის მისამართების სიაა."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
@@ -738,6 +744,9 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
+"ამ ნიმუშის გამოყენებისას, მიმღებები, რომლებსაც აქ შეყვანთ, ამ შეტყობინების "
+"ნაგულისხმევ ასლს მიიღებენ.  ეს მძიმეებით გამოყოფილი ელფოსტის მისამართების "
+"სიაა."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
@@ -825,6 +834,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ახალი ელფოსტის შეტყობინებების ნიმუშებს ქმნით.  ნიმუშის "
+"შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს როგორ "
+"მუშაობს?\"."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
@@ -849,6 +861,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ახალი ელფოსტის შეტყობინების პასუხის ნიმუშებს ქმნით.  "
+"ნიმუშის შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს "
+"როგორ მუშაობს?\"."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
