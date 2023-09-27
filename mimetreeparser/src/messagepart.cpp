@@ -7,8 +7,10 @@
 #include "messagepart.h"
 #include "cryptohelper.h"
 #include "job/qgpgmejobexecutor.h"
+#include "memento/compositememento.h"
 #include "memento/cryptobodypartmemento.h"
 #include "memento/decryptverifybodypartmemento.h"
+#include "memento/keycachememento.h"
 #include "memento/verifydetachedbodypartmemento.h"
 #include "memento/verifyopaquebodypartmemento.h"
 #include "mimetreeparser_debug.h"
@@ -726,6 +728,19 @@ void SignedMessagePart::setMementoName(const QByteArray &name)
     mMementoName = name;
 }
 
+static GpgME::Protocol toGpgMeProtocol(const QGpgME::Protocol *protocol)
+{
+    if (protocol == QGpgME::openpgp()) {
+        return GpgME::OpenPGP;
+    }
+
+    if (protocol == QGpgME::smime()) {
+        return GpgME::CMS;
+    }
+
+    return GpgME::UnknownProtocol;
+}
+
 bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode)
 {
     NodeHelper *nodeHelper = mOtp->nodeHelper();
@@ -738,21 +753,29 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     const QByteArray _mementoName = mementoName();
 
-    auto m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
+    auto m = dynamic_cast<CompositeMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
     Q_ASSERT(!m || mCryptoProto); // No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
+        CryptoBodyPartMemento *newM = nullptr;
         if (!signature.isEmpty()) {
             QGpgME::VerifyDetachedJob *job = mCryptoProto->verifyDetachedJob();
             if (job) {
-                m = new VerifyDetachedBodyPartMemento(job, mCryptoProto->keyListJob(), signature, data);
+                newM = new VerifyDetachedBodyPartMemento(job, mCryptoProto->keyListJob(), signature, data);
             }
         } else {
             QGpgME::VerifyOpaqueJob *job = mCryptoProto->verifyOpaqueJob();
             if (job) {
-                m = new VerifyOpaqueBodyPartMemento(job, mCryptoProto->keyListJob(), data);
+                newM = new VerifyOpaqueBodyPartMemento(job, mCryptoProto->keyListJob(), data);
             }
         }
+
+        if (newM) {
+            m = new CompositeMemento();
+            m->addMemento(newM);
+            m->addMemento(new KeyCacheMemento(Kleo::KeyCache::mutableInstance(), toGpgMeProtocol(mCryptoProto)));
+        }
+
         if (m) {
             if (mOtp->allowAsync()) {
                 QObject::connect(m, &CryptoBodyPartMemento::update, nodeHelper, &NodeHelper::update);
@@ -847,13 +870,13 @@ void SignedMessagePart::sigStatusToMetaData()
         if (partMetaData()->isGoodSignature && !key.keyID()) {
             // Search for the key by its fingerprint so that we can check for
             // trust etc.
-            key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+            key = mKeyCache->findByFingerprint(signature.fingerprint());
             if (key.isNull() && signature.fingerprint()) {
                 // try to find a subkey that was used for signing;
                 // assumes that the key ID is the last 16 characters of the fingerprint
                 const auto fpr = std::string_view{signature.fingerprint()};
                 const auto keyID = std::string{fpr, fpr.size() - 16, 16};
-                const auto subkeys = Kleo::KeyCache::instance()->findSubkeysByKeyID({keyID});
+                const auto subkeys = mKeyCache->findSubkeysByKeyID({keyID});
                 if (subkeys.size() > 0) {
                     key = subkeys[0].parent();
                 }
@@ -933,23 +956,29 @@ void SignedMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     }
 }
 
-void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode)
+void SignedMessagePart::setVerificationResult(const CompositeMemento *m, KMime::Content *textNode)
 {
     {
-        const auto vm = dynamic_cast<const VerifyDetachedBodyPartMemento *>(m);
+        const auto kc = m->memento<KeyCacheMemento>();
+        if (kc) {
+            mKeyCache = kc->keyCache();
+        }
+    }
+    {
+        const auto vm = m->memento<VerifyDetachedBodyPartMemento>();
         if (vm) {
             mSignatures = vm->verifyResult().signatures();
         }
     }
     {
-        const auto vm = dynamic_cast<const VerifyOpaqueBodyPartMemento *>(m);
+        const auto vm = m->memento<VerifyOpaqueBodyPartMemento>();
         if (vm) {
             mVerifiedText = vm->plainText();
             mSignatures = vm->verifyResult().signatures();
         }
     }
     {
-        const auto vm = dynamic_cast<const DecryptVerifyBodyPartMemento *>(m);
+        const auto vm = m->memento<DecryptVerifyBodyPartMemento>();
         if (vm) {
             mVerifiedText = vm->plainText();
             mSignatures = vm->verifyResult().signatures();
@@ -1145,7 +1174,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 
     const QByteArray _mementoName = mementoName();
     // Check whether the memento contains a result from last time:
-    const DecryptVerifyBodyPartMemento *m = dynamic_cast<DecryptVerifyBodyPartMemento *>(nodeHelper->bodyPartMemento(&data, _mementoName));
+    const auto *m = dynamic_cast<CompositeMemento *>(nodeHelper->bodyPartMemento(&data, _mementoName));
 
     Q_ASSERT(!m || mCryptoProto); // No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
@@ -1155,7 +1184,9 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             cannotDecrypt = true;
         } else {
             const QByteArray ciphertext = data.decodedContent();
-            auto newM = new DecryptVerifyBodyPartMemento(job, ciphertext);
+            auto newM = new CompositeMemento();
+            newM->addMemento(new KeyCacheMemento(Kleo::KeyCache::mutableInstance(), toGpgMeProtocol(mCryptoProto)));
+            newM->addMemento(new DecryptVerifyBodyPartMemento(job, ciphertext));
             if (mOtp->allowAsync()) {
                 QObject::connect(newM, &CryptoBodyPartMemento::update, nodeHelper, &NodeHelper::update);
                 if (newM->start()) {
@@ -1168,6 +1199,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 newM->exec();
                 m = newM;
             }
+
             nodeHelper->setBodyPartMemento(&data, _mementoName, newM);
         }
     } else if (m && m->isRunning()) {
@@ -1177,9 +1209,16 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
     }
 
     if (m) {
-        const QByteArray &plainText = m->plainText();
-        const GpgME::DecryptionResult &decryptResult = m->decryptResult();
-        const GpgME::VerificationResult &verifyResult = m->verifyResult();
+        {
+            const auto *kcm = m->memento<KeyCacheMemento>();
+            if (kcm) {
+                mKeyCache = kcm->keyCache();
+            }
+        }
+        auto *decryptMemento = m->memento<DecryptVerifyBodyPartMemento>();
+        const QByteArray &plainText = decryptMemento->plainText();
+        const GpgME::DecryptionResult &decryptResult = decryptMemento->decryptResult();
+        const GpgME::VerificationResult &verifyResult = decryptMemento->verifyResult();
         partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
         if (partMetaData()->isSigned) {
@@ -1200,9 +1239,9 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 bDecryptionOk = true;
             }
             GpgME::Key key;
-            key = Kleo::KeyCache::instance()->findByKeyIDOrFingerprint(recipient.keyID());
+            key = mKeyCache->findByKeyIDOrFingerprint(recipient.keyID());
             if (key.isNull()) {
-                auto ret = Kleo::KeyCache::instance()->findSubkeysByKeyID({recipient.keyID()});
+                auto ret = mKeyCache->findSubkeysByKeyID({recipient.keyID()});
                 if (ret.size() == 1) {
                     key = ret.front().parent();
                 }

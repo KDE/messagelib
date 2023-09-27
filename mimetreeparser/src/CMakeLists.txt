@@ -39,8 +39,10 @@ target_sources(KPim6MimeTreeParser PRIVATE
     messagepart.cpp
     partnodebodypart.cpp
     simpleobjecttreesource.cpp
+    memento/compositememento.cpp
     memento/cryptobodypartmemento.cpp
     memento/decryptverifybodypartmemento.cpp
+    memento/keycachememento.cpp
     memento/verifydetachedbodypartmemento.cpp
     memento/verifyopaquebodypartmemento.cpp
 
@@ -65,8 +67,10 @@ target_sources(KPim6MimeTreeParser PRIVATE
     bodyformatter/textplain.h
     bodyformatter/multipartmixed.h
     bodyformatter/mailman.h
+    memento/compositememento.h
     memento/cryptobodypartmemento.h
     memento/decryptverifybodypartmemento.h
+    memento/keycachememento.h
     memento/verifydetachedbodypartmemento.h
     memento/verifyopaquebodypartmemento.h
     interfaces/bodypart.h
