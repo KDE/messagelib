@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2022-07-08 11:22+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -19,34 +19,34 @@ msgstr ""
 "X-Generator: Lokalize 22.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:433
+#: src/messagepart.cpp:435
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Неозаглавен"
 
-#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1059
+#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1088
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Грешна приставка за шифроване."
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1262
+#: src/messagepart.cpp:817 src/messagepart.cpp:1301
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не е открита подходяща приставка за шифроване."
 
-#: src/messagepart.cpp:796
+#: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Не е открита приставката %1."
 
-#: src/messagepart.cpp:799
+#: src/messagepart.cpp:822
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Приставката за шифроване \"%1\" не може да провери подписите."
 
-#: src/messagepart.cpp:802
+#: src/messagepart.cpp:825
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -55,17 +55,17 @@ msgstr ""
 "Съобщението е подписано, но валидността на подписа не може да бъде проверена."
 "<br />Причина: %1"
 
-#: src/messagepart.cpp:1264
+#: src/messagepart.cpp:1303
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Приставката за шифроване \"%1\" не може да разшифрова съобщенията."
 
-#: src/messagepart.cpp:1266
+#: src/messagepart.cpp:1305
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Приставката за шифроване \"%1\" не може да разшифрова данните."
 
-#: src/messagepart.cpp:1267
+#: src/messagepart.cpp:1306
 #, kde-format
 msgid "Error: %1"
 msgstr "Грешка: %1"

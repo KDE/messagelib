@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-26 16:00+0200\n"
+"PO-Revision-Date: 2023-09-27 07:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -226,6 +226,8 @@ msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
 msgstr ""
+"პასუხი ან გადაგზავნა იგივე ვიზუალურ ფორმატში (უბრალო ტექსტი ან HTML), რაც "
+"საწყის შეტყობინებას ჰქონდა"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -415,23 +417,27 @@ msgstr "თემა"
 
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
-msgstr ""
+msgstr "ორიგინალი შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ციტატის სახით"
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr ""
+"ორიგინალი შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr ""
+"ორიგინალი შეტყობინების სხეულის გადაცემა თავსართების ჩათვლით და შედეგის ჩასმა "
+"ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr ""
+"მიმდინარე შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr ""
+msgstr "მიმდინარე შეტყობინების სხეულის გადაცემა და მისი ჩანაცვლება შედეგით"
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
@@ -942,3 +948,11 @@ msgid ""
 "             </ul></qt>\n"
 "           "
 msgstr ""
+"\n"
+"             <qt>ციტატის მაჩვენებელში მხარდაჭერილია შემდეგი ადგილმჭერები:\n"
+"             <ul>\n"
+"             <li>%f: გამომგზავნის ინიციალები</li>\n"
+"             <li>%%: პროცენტის სიმბოლო</li>\n"
+"             <li>%_: გამოტოვება</li>\n"
+"             </ul></qt>\n"
+"           "

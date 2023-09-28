@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-26 16:01+0200\n"
+"PO-Revision-Date: 2023-09-27 08:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -922,7 +922,7 @@ msgstr "ზღვარი არასწორი რიცხვია"
 #: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
-msgstr ""
+msgstr "თავსართებიდან სპამის ფილტრის ქულების გამოღების შეცდომა"
 
 #: header/headerstyle_util.cpp:176
 #, kde-format
@@ -1120,6 +1120,7 @@ msgstr "გაფთხილება:"
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
 msgstr ""
+"გამომგზავნის ელფოსტის მისამართი %1-ში ხელმოსაწერად დამახსოვრებული არაა."
 
 #: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
@@ -1169,7 +1170,7 @@ msgstr "დაშორებული შემცველობის და�
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "ელემენტი ამ ბმულს უკვე აღწერს. შეცვალეთ ის."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
@@ -1267,7 +1268,7 @@ msgstr ""
 #: scamdetection/scamdetectionwebengine.cpp:141
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
-msgstr ""
+msgstr "ეს ელფოსტა შეიცავ ბმულს (%1), რომელიც გადამისამართებას წარმოადგენს"
 
 #: scamdetection/scamdetectionwebengine.cpp:148
 #, kde-format
@@ -1275,16 +1276,21 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
+"ელფოსტა შეიცავს ბმულს (%1), რომელიც http:// სტრიქონს ერთზე მეტჯერ შეიცავს. "
+"ეს ხშირად სკამერი ელფოსტის მაჩვენებელია."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
+"ეს ელფოსტა შეიცავს მოკლე ბმულს (%1). ის, შეიძლება, სხვა სერვერზე "
+"მისამართდებოდეს."
 
 #: scamdetection/scamdetectionwebengine.cpp:220
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
+"შეტყობინება ფორმის ელემენტს შეიცავს. ეს, ხშირად, სკამერების ელფოსტებშია."
 
 #: scamdetection/scamdetectionwebengine.cpp:224
 #, kde-format
@@ -1319,6 +1325,8 @@ msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
+"ბეჭდვისას მორგების ფანჯარაში მითითებული ციტატის გაშლა/ჩაკეცვის ნიშნების "
+"გათვალისწინება."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.cmake:19
@@ -1333,12 +1341,13 @@ msgstr ""
 #, kde-format
 msgid "Always show encryption/signature details when we print message"
 msgstr ""
+"შეტყობინების დაბეჭდვისას დაშიფვრის/ხელმოწერის დეტალების ყოველთვის ჩვენება"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr ""
+msgstr "HTML-ის რენდერისას ფონტების მინიმალურზე მცირე ზომას არ ვიყენებთ."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.cmake:38
@@ -1395,12 +1404,14 @@ msgstr "ციტატის ტექსტისთვის ფონტი�
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
+"ჩართეთ ეს პარამეტრი, თუ გნებავთ, ციტირებული ტექსტი უფრო მცირე ფონტით "
+"გამოჩნდეს."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.cmake:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr ""
+msgstr "ნახვისას ელფოსტის ავტომატური გაშიფვრა თუ კითხვა ამის შესახებ"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.cmake:91
@@ -1456,7 +1467,7 @@ msgstr "როგორაა ნაჩვენები მიმაგრე�
 #: settings/messageviewer.kcfg.cmake:135
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-msgstr ""
+msgstr "მიუთითებს, გამოიყენება თუ არა ციტირების ტექსტი მესამე დონის შემდეგ"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg.cmake:139
@@ -1471,6 +1482,8 @@ msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
 "techniques used to deceive you"
 msgstr ""
+"KMail-ს შეუძლია საეჭვო ელფოსტების შემოწმება თქვენს მოსატყუებლად ჩვეულებრივ "
+"გამოყენებული ხერხების არსებობის შემოწმებით"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.cmake:147
@@ -1488,7 +1501,7 @@ msgstr "ელფოსტების სკანირება ტრეკ�
 #: settings/messageviewer.kcfg.cmake:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
-msgstr ""
+msgstr "დაშიფრულ შეტყობინებებზე პასუხისას MDN გაგზავნილი არ იქნება"
 
 #. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
 #: settings/messageviewer.kcfg.cmake:161
@@ -1510,7 +1523,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:181
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr ""
+msgstr "ვისგან:/ვის: თავსართების გადაწერა პასუხებში პასუხად"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:182
@@ -1526,7 +1539,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:187
 #, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr ""
+msgstr "Groupware-ის მოსაწვევების ელფოსტის სხეულში გაგზავნა"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:188
@@ -1542,7 +1555,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:193
 #, kde-format
 msgid "Exchange-compatible invitation naming"
-msgstr ""
+msgstr "Exchange-სთან თავსებადი მოსაწვევის სახელები"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:194
@@ -1576,7 +1589,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
+msgstr "პასუხის გაგზავნის შემდეგ მოსაწვევის ელფოსტების წაშლა"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:206
@@ -1596,19 +1609,19 @@ msgstr "&ფიქსირებული ფონტის გამოყე
 #: settings/messageviewer.kcfg.cmake:237
 #, kde-format
 msgid "The most recent selected folder using for Todo."
-msgstr ""
+msgstr "გასაკეთებლისთვის გამოყენებული უახლესი საქაღალდე."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.cmake:243
 #, kde-format
 msgid "The most recent selected folder using for Event."
-msgstr ""
+msgstr "მოვლენისთვის გამოყენებული უახლესი საქაღალდე."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.cmake:249
 #, kde-format
 msgid "The most recent selected folder using for Notes."
-msgstr ""
+msgstr "შენიშვნებისთვის გამოყენებული უახლესი საქაღალდე."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1628,7 +1641,7 @@ msgstr ""
 #: ui/invitationsettings.ui:26
 #, kde-format
 msgid "&Mangle From:/To: headers in replies to invitations"
-msgstr ""
+msgstr "&ვისგან:/ვის: თავსართების გადაწერა პასუხებში პასუხად"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:33
@@ -1642,7 +1655,7 @@ msgstr ""
 #: ui/invitationsettings.ui:36
 #, kde-format
 msgid "Send &invitations in the mail body"
-msgstr ""
+msgstr "&მოსაწვევების ელფოსტის სხეულში გაგზავნა"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:45
@@ -1659,7 +1672,7 @@ msgstr ""
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr ""
+msgstr "Exchange-სთან თავსებადი მოსაწვევის &სახელები"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1691,7 +1704,7 @@ msgstr "მხოლოდ მონიშნული ტექსტის დ
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr ""
+msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების პარამეტრების &გგათვალისწინება"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
@@ -1733,7 +1746,7 @@ msgstr "&ციტატის ტექსტისთვის ფონტი
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr ""
+msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების ჩვენება"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -1787,6 +1800,7 @@ msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
+"შეტყობინების ნაწილი %1 დაშიფრულია. გნებავთ დაშიფვრის შენარჩუნება შენახვისას?"
 
 #: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
@@ -1809,6 +1823,8 @@ msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
+"შეტყობინების ნაწილი %1 ხელმოწერილია. გნებავთ ხელმოწერის შენარჩუნება "
+"შენახვისას?"
 
 #: utils/messageviewerutil.cpp:336
 #, kde-format
@@ -1823,6 +1839,8 @@ msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
+"<qt>შეცდომა, ჩაწერისას, ფაილში<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
 
 #: utils/messageviewerutil.cpp:403
 #, kde-format
@@ -2062,7 +2080,7 @@ msgstr "უსახელო მიმაგრებული ფაილი"
 #: viewer/urlhandlermanager.cpp:846
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
-msgstr ""
+msgstr "ამ ოპერაციის GnuPG აუდიტის ჟურნალის ჩვენება"
 
 #: viewer/urlhandlermanager.cpp:886
 #, kde-format
@@ -2091,6 +2109,8 @@ msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
+"მიმაგრებული ფაილის წაშლას, შეუძლია, ამ შეტყობინების ციფრული ხელმოწერები "
+"არასწორი გახადოს."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, kde-format
@@ -2104,6 +2124,8 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
+"დაშიფრული ან ძველი Mailman-ის ტიპის შეტყობინებებიდან მიმაგრებული ფაილის "
+"წაშლა მხარდაჭერილი არაა."
 
 #: viewer/viewer_p.cpp:428
 #, kde-format
@@ -2228,7 +2250,7 @@ msgstr "&ხაზშივე"
 #: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Show all attachments inline (if possible)"
-msgstr ""
+msgstr "ყველა მიმაგრებული ფაილის ხაზშივე ჩვენება (თუ შესაძლებელია)"
 
 #: viewer/viewer_p.cpp:1484
 #, kde-format
@@ -2240,6 +2262,7 @@ msgstr "&დამალვა"
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr ""
+"შეტყობინებების დამთვალიერებელში მიმაგრებული ფაილები ნაჩვენები არ იქნება"
 
 #: viewer/viewer_p.cpp:1491
 #, kde-format
@@ -2250,7 +2273,7 @@ msgstr "მხოლოდ თავსართში"
 #: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr ""
+msgstr "მიმაგრებული ფაილების, მხოლოდ, ელფოსტის თავსართებში ჩვენება"
 
 #: viewer/viewer_p.cpp:1499
 #, kde-format
@@ -2515,7 +2538,7 @@ msgstr ""
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr ""
+msgstr "დააწკაპუნეთ ჩვენების რეჟიმის ტექსტისა და HTML-ის შორის გადასართველად."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2540,6 +2563,8 @@ msgstr "დაუმუშავებელი წყარო"
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
+"დაუმუშავებელი, შეუცვლელი ელფოსტა, როგორც ის ფაილურ სისტემაში ან სერვერზეა "
+"დამახსოვრებული"
 
 #: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
@@ -2550,7 +2575,7 @@ msgstr "HTML წყარო"
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr ""
+msgstr "HTML კოდი მომხმარებლისთვის შეტყობინების საჩვენებლად"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format

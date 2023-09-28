@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-26 16:05+0200\n"
+"PO-Revision-Date: 2023-09-27 09:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1234,6 +1234,7 @@ msgstr "მინიმალური სიმაღლე:"
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
 msgstr ""
+"იმ გამოსახულებების გამოტოვება, რომლის წყაროს ფაილის ზომა ნაკლებია, ვიდრე:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
@@ -1263,13 +1264,14 @@ msgstr "არ გაფილტრო (ჩასმულია ყველ�
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr ""
+msgstr "ყველა იმ ფაილის ჩასმა, რომლის სახელის ერთ-ერთ შემდეგ ნიმუშს შეიცავს"
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
 msgstr ""
+"ყველა იმ ფაილის გამორიცხვა, რომლის სახელის ერთ-ერთ შემდეგ ნიმუშს შეიცავს"
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
@@ -1282,6 +1284,7 @@ msgstr "შაბლონი:"
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
 msgstr ""
+"ეს ხაზი რამდენიმე ნიმუშის აღწერის საშუალებას გაძლევთ. გამოყავით ისინი ';'-ით."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1334,25 +1337,26 @@ msgstr "არ გაფილტრო (დაშვებულია ყვ�
 #: imagescaling/ui/imagescalingwidget.ui:405
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "ზომის შეცვლა, თუ ყველა ელფოსტის მისამართი შეიცავს ერთ-ერთ ნიმუშს"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "ზომის შეცვლა, თუ ერთ-ერთი ელფოსტის მისამართი შეიცავს ერთ-ერთ ნიმუშს"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "ზომა არ შეიცვლება, თუ ყველა ელფოსტის მისამართი შეიცავს ერთ-ერთ ნიმუშს"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
 msgstr ""
+"ზომა არ შეიცვლება, თუ ერთ-ერთი ელფოსტის მისამართი შეიცავს ერთ-ერთ ნიმუშს"
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
@@ -1417,11 +1421,14 @@ msgstr ""
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
+"მოითხოვეთ, რომ მოხდეს სიტყვების გადაანა, მაგრამ უბრალო გადატანილი ტექსტი არ "
+"მოგიწოდებიათ."
 
 #: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
+"მოითხოვეთ, რომ სიტყვების გადატანა არ მოხდეს, მაგრამ ტექსტი არ მოგიწოდებიათ."
 
 #: job/maintextjob.cpp:81
 #, kde-format
@@ -1436,6 +1443,8 @@ msgid ""
 "Encoding the message with %1 will lose some characters.\n"
 "Do you want to continue?"
 msgstr ""
+"ამ შეტყობინების %1-ით დაშიფვრა ზოგიერთ სიმბოლოს დაკარგავს.\n"
+"გნებავთ, გააგრძელოთ?"
 
 #: job/maintextjob.cpp:102
 #, kde-format
@@ -1471,13 +1480,13 @@ msgstr "ტექსტის კოდეკის მიღების შე
 #: job/singlepartjob.cpp:67
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr ""
+msgstr "%1 Content-Transfer-Encoding-ს ამ შეტყობინების დაშიფვრა არ შეუძლია."
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "შეტყობინების ჩაბარების გაფრთხილების მოთხოვნა"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1870,6 +1879,8 @@ msgstr "პასუხისას მხოლოდ მონიშნულ�
 #, kde-format
 msgid "Keep original charset when replying or forwarding if possible"
 msgstr ""
+"საწყისი სიმბოლოების კოდირების შენარჩუნება პასუხის ან გადაგზავნისას, თუ ეს "
+"შესაძლებელია"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:32
@@ -1894,6 +1905,7 @@ msgstr "ხელმოწერისთვის გამყოფის დ�
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr ""
+"ავტომატური დასრულებისთვის ელფოსტებიდან დაინდექსებული მისამართების გამოყენება"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:46
@@ -1935,7 +1947,7 @@ msgstr "მიმღების ჩანაწერების მაქს�
 #: settings/messagecomposer.kcfg.cmake:66
 #, kde-format
 msgid "Outlook-compatible attachment naming"
-msgstr ""
+msgstr "Outlook-სთან თავსებადი მიმაგრებული ფაილის სახელები"
 
 #. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:67
@@ -1955,7 +1967,7 @@ msgstr "სიტყვის გადატანის სვეტი:"
 #: settings/messagecomposer.kcfg.cmake:81
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "HTML შეტყობინების ტექსტური ვერსიის გაუმჯობესება"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
@@ -1986,6 +1998,8 @@ msgstr "გაფრთხილება ხელმოუწერელი �
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
+"გაფრთხილება, თუ გასაღებების/სერტიფიკატების ვადა მალე იწურება (ზღვრები ქვემოთ "
+"მიუთითეთ)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)

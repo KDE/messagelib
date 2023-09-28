@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 0.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:433
+#: src/messagepart.cpp:435
 #, fuzzy, kde-format
 #| msgctxt "Default name for new email accounts/identities."
 #| msgid "Unnamed"
@@ -28,29 +28,29 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "ਬਿਨ-ਨਾਂ"
 
-#: src/messagepart.cpp:703 src/messagepart.cpp:736 src/messagepart.cpp:1059
+#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1088
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ਗਲਤ ਕਰਿਪ-ਟੂ ਪਲੱਗਇਨ ਹੈ।"
 
-#: src/messagepart.cpp:794 src/messagepart.cpp:1262
+#: src/messagepart.cpp:817 src/messagepart.cpp:1301
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "ਕੋਈ ਢੁੱਕਵੀਂ ਕਰਿਪ-ਟੂ ਪਲੱਗਇਨ ਨਹੀਂ ਲੱਭੀ ਹੈ।"
 
-#: src/messagepart.cpp:796
+#: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "ਕੋਈ %1 ਪਲੱਗਇਨ ਨਹੀਂ ਲੱਭੀ ਹੈ।"
 
-#: src/messagepart.cpp:799
+#: src/messagepart.cpp:822
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" is not initialized."
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "ਕ੍ਰਿਪਟੂ ਪਲੱਗਇਨ \"%1\" ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"
 
-#: src/messagepart.cpp:802
+#: src/messagepart.cpp:825
 #, fuzzy, kde-format
 #| msgid "The validity of the signature cannot be verified."
 msgid ""
@@ -58,19 +58,19 @@ msgid ""
 "<br />Reason: %1"
 msgstr "ਦਸਤਖਤੀ ਦੀ ਮਿਆਦ ਦੀ ਜਾਂਚ ਨਹੀਂ ਹੋ ਸਕੀ ਹੈ"
 
-#: src/messagepart.cpp:1264
+#: src/messagepart.cpp:1303
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" is not initialized."
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "ਕ੍ਰਿਪਟੂ ਪਲੱਗਇਨ \"%1\" ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"
 
-#: src/messagepart.cpp:1266
+#: src/messagepart.cpp:1305
 #, fuzzy, kde-format
 #| msgid "Could not write the file %1."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "ਫਾਇਲ %1 ਨੂੰ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"
 
-#: src/messagepart.cpp:1267
+#: src/messagepart.cpp:1306
 #, kde-format
 msgid "Error: %1"
 msgstr "ਗਲਤੀ: %1"
