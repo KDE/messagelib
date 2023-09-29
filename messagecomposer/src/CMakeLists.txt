@@ -600,11 +600,6 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     RELATIVE mdn
     )
 
-ecm_generate_pri_file(BASE_NAME MessageComposer
-    LIB_NAME KPim6MessageComposer
-    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer
-    )
-
 install(FILES
     ${MessageComposer_CamelcaseMdn_HEADERS}
     ${MessageComposer_CamelPluginEditorBase_HEADERS}
@@ -667,10 +662,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/messagecomposer
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageComposer")
 

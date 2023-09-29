@@ -188,13 +188,6 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     RELATIVE autocrypt
     )
 
-ecm_generate_pri_file(BASE_NAME MessageCore
-    LIB_NAME KPim6MessageCore
-    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore
-    )
-
-
-
 install(FILES
     ${MessageCore_Camelcaseautocrypt_HEADERS}
     ${MessageCore_Camelcasehelpers_HEADERS}
@@ -218,9 +211,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/messagecore
     COMPONENT Devel
     )
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
 

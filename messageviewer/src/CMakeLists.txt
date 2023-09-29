@@ -659,10 +659,6 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     RELATIVE messagepartthemes/default
     )
 
-ecm_generate_pri_file(BASE_NAME MessageViewer
-    LIB_NAME KPim6MessageViewer
-    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer
-    )
 install(FILES
     ${MessageViewer_Cameldkimverify_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/MessageViewer
@@ -725,11 +721,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/messageviewer
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 
 install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
 

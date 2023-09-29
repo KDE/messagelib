@@ -143,11 +143,6 @@ install(FILES
     COMPONENT Devel
     )
 
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
-    )
-
 ecm_qt_declare_logging_category(KPim6MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
         DESCRIPTION "messagelib (mimetreeparser)"
         OLD_CATEGORY_NAMES log_mimetreeparser
@@ -191,11 +186,6 @@ set_target_properties(KPim6MimeTreeParser PROPERTIES
     )
 
 target_include_directories(KPim6MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser/>")
-
-ecm_generate_pri_file(BASE_NAME MimeTreeParser
-    LIB_NAME KPim6MimeTreeParser
-    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser
-    )
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParser")
 

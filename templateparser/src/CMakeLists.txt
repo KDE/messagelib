@@ -142,12 +142,6 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     PREFIX TemplateParser
     )
 
-ecm_generate_pri_file(BASE_NAME TemplateParser
-    LIB_NAME KPim6TemplateParser
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser
-    )
-
-
 install(TARGETS KPim6TemplateParser EXPORT KPim6TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
@@ -168,10 +162,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/templateparser
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.kde.syntax-highlighting/syntax)
 

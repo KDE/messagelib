@@ -220,11 +220,6 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
     PREFIX MessageList
     )
 
-ecm_generate_pri_file(BASE_NAME MessageList
-    LIB_NAME KPim6MessageList
-    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList
-    )
-
 
 install(FILES
     ${MessageList_Camelcasewidgets_HEADERS}
@@ -245,10 +240,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/messagelist
     COMPONENT Devel
     )
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageList")
 
 
