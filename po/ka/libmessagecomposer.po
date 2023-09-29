@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-27 09:04+0200\n"
+"PO-Revision-Date: 2023-09-28 14:33+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -426,6 +426,8 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
+"<qt><p>HTML შეტყობინებების ხაზშივე ხელმოწერა/დაშიფვრა შეუძლებელია;</"
+"p><p>გნებავთ, წაშალოთ თქვენი მარკირება?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
 #, kde-format

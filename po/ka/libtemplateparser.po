@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-27 07:38+0200\n"
+"PO-Revision-Date: 2023-09-28 07:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -61,6 +61,16 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
+"<qt><p>აქ შეგიძლიათ დაამატოთ, ჩაასწოროთ და წაშალოთ მომხმარებლის შეტყობინების "
+"ნიმუშები, რომლებიც შეტყობინებების გადაგზავნის ან მასზე პასუხის დროს "
+"გამოიყენება. მომხმარებლის ნიმუშის შესაქმნელად ჩაწერეთ მისი სახელი შეყვანის "
+"ველში და დააწექით ღილაკს '+'. ასევე შეგიძლიათ, ოპერაციის უფრო "
+"გასწრაფებისთვის, მას კლავიატურის მალსახმობი მიანიჭოთ.</p><p>შეტყობინების "
+"ნიმუშებს ჩანაცვლების ოპერაციების მხარდაჭერაც გააჩნია, მათი აკრეფის ან "
+"<i>ბრძანების ჩასმის</i> მენიუდან.</p><p>არსებობს ოთხი ტიპის ნიმუში: "
+"<i>პასუხის</i>, <i>ყველასთვის პასუხის</i>, <i>გადაგზავნის</i> და "
+"<i>უნივერსალური</i>, რომელიც ყველა ტიპის ოპერაციაში შეგიძლიათ, გამოიყენოთ. "
+"<i>უნივერსალურ</i> ნიმუშებს კლავიატურის მალსახმობს ვერ მიანიჭებთ.</p></qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -531,6 +541,10 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
+"<p> აქ შეგიძლიათ შექმნათ და მართოთ ნიმუშები, რომლებიც ახალი შეტყობინების "
+"შექმნის, შეტყობინებებზე პასუხის ან გადაგზავნისთვის გამოიყენება</"
+"p><p>შეტყობინების ნიმუშებს გააჩნიათ ჩანაცვლების ბრძანებების მხარდაჭერაც, "
+"მათი უბრალოდ აკრეფის, ან <i>ბრძანების ჩასმის</i> მენიუდან გამოძახებით.</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -538,6 +552,8 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
+"<p>აქ მითითებული ნიმუშები თითოეული საქაღალდისთვის განსხვავდება. ისინი ორივე, "
+"გლობალურ და იდენტიფიკატორის საკუთარ ნიმუშებსაც გადაფარავენ.</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -546,6 +562,9 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
+"<p>აქ მითითებული ნიმუშები თითოეული იდენტიფიკატორისთვის განსხვავდება. ისინი "
+"ორივე, გლობალურ ნიმუშებს გადაფარავენ, მაგრამ გადაიფარებიან თითოეული "
+"საქაღალდის პარამეტრებით, თუ მათ მიუთითებთ.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -553,6 +572,8 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
+"<p>ეს გლობალური (ნაგულისხმევი) ნიმუშებია. ის ორივე, გლობალური და საქაღალდის "
+"საკუთარი ნიმუშებით გადაიფარება, თუ მათ მიუთითებთ.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
@@ -585,6 +606,12 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
+"\"უბრალო ტექსტით პასუხის\" და \"HTML ტექსტით პასუხს\" წყვილად გამოყენება "
+"სწორი არაა. გამოიყენეთ მხოლოდ ერთ-ერთი ბრძანება \"ციტირებული შეტყობინებით "
+"პასუხის ბრძანებასთან\", რომელიც გჭირდებათ\n"
+"(ა)უბრალოდ ტექსტით პასუხი, როცა ციტატს ბრჭყალები მკაცრად უბრალო ტექსტის "
+"სახით გჭირდებათ\n"
+"(ბ)HTML ტექსტის სახით პასუხი, HTML ფორმატით ციტირებისთვის, თუ ის არსებობს"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
@@ -605,6 +632,9 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
+"გაიარეთ ეს მენიუ, რომ იპოვოთ ბრძანება ნიმუშში ჩასასმელად, რომლის ჩასწორებაც "
+"ახლა მიმდინარეობს.  ბრძანება კურსორის მდებარეობაზე ჩაისმება, ასე რომ, ჯერ, "
+"კურსორი სასურველ ადგილას გადაიტანეთ."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
@@ -621,6 +651,8 @@ msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
 msgstr ""
+"მომხმარებლის ნიმუშის შესაქმნელად ჯერ შეიყვანეთ ნიმუშის სახელი, შემდეგ კი '+' "
+"ღილაკს დააწექით."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
@@ -894,6 +926,9 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
+"ამ ადგილას შეგძლიათ შექმნათ ყველასთვის-პასუხის ან დაგზავნიის-სიისთვის "
+"პასუხის ნიმუშები.  მეტი ინფორმაციისთვის, როგორ შექმნათ ნიმუში, ამ ფანჯარაში "
+"\"ეს როგორ მუშაობს?\" ბმულს დააწექით."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
@@ -918,6 +953,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ელფოსტის გადამისამართების ნიმუშებს ქმნით.  ნიმუშის "
+"შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს როგორ "
+"მუშაობს?\"."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
