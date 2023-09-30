@@ -8,7 +8,6 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: MessageCore
-   cmake: "KF6::MessageCore"
+ - cmake: "KF6::MessageCore"
 cmakename: KF6MessageCore
 

@@ -8,7 +8,6 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: MessageList
-   cmake: "KF6::MessageList"
+ - cmake: "KF6::MessageList"
 cmakename: KF6MessageList
 

@@ -8,7 +8,6 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: WebEngineViewer
-   cmake: "KF6::WebEngineViewer"
+ - cmake: "KF6::WebEngineViewer"
 cmakename: KF6WebEngineViewer
 

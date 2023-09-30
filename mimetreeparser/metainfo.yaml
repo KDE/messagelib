@@ -8,7 +8,6 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: MimeTreeParser
-   cmake: "KF6::MimeTreeParser"
+ - cmake: "KF6::MimeTreeParser"
 cmakename: KF6MimeTreeParser
 
