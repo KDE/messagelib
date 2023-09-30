@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2023-01-30 09:23+0100\n"
+"PO-Revision-Date: 2023-09-29 08:43+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,6 +92,10 @@ msgid ""
 "but, sometimes, %1 may not detect the type correctly -- here is where you "
 "can fix that.</p>"
 msgstr ""
+"<p>ფაილის <em>MIME ტიპი</em>:</p><p>ჩვეულებრივ, ამ პარამეტრზე შეხება არ "
+"გჭირდებათ, რადგან ტიპის დადგენა ავტომატურად ხდება. მაგრამ, ხანდახან, %1-მა "
+"ტიპი შეიძლება სწორად ვერ გამოიცნოს -- და ეს ფაქტი აქ შეგიძლიათ, გაასწოროთ.</"
+"p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
@@ -100,6 +104,9 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
+"<p>მიმაგრებული ფაილის დაახლოებითი ზომა:</p><p>დაიმახსოვრეთ, რომ ელფოსტის "
+"შეტყობინებაში ბინარული ფაილები base64-ით კოდირდება, ნამდვილი ფაილის ზომის "
+"130%-ს იკავებს.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
@@ -109,6 +116,10 @@ msgid ""
 "suggests a file name to be used by the recipient's mail agent when saving "
 "the part to disk.</p>"
 msgstr ""
+"<p>ნაწილის ფაილის სახელი:</p><p>იმის მიუხედავად, რომ ამის ნაგულისხმევი "
+"მნიშვნელობა მიმაგრებული ფაილის სახელია, მას ფაილის სახელი არ მიუთითებია. "
+"ამის მაგიერ ის გვიბიძგებს, ფაილის სახელს მიმღების ელფოსტის აგენტისთვის, როცა "
+"ნაწილს დისკზე ინახავთ.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
@@ -118,6 +129,10 @@ msgid ""
 "most mail agents will show this information in their message previews "
 "alongside the attachment's icon.</p>"
 msgstr ""
+"<p>ნაწილის აღწერა:</p><p>ეს მხოლოდ საინფორმაციო აღწერაა ნაწილისთვის. რაღაც "
+"მსგავსი იმისა, რაც თემაა მთელი შეტყობინებისთვის. ელფოსტის აგენტების "
+"უმრავლესობა ამ ინფორმაციას შეტყობინების გადახედვის ხედში აჩვენებენ, "
+"მიმაგრებული ფაილის ხატულის გასწვრივ.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
@@ -130,6 +145,13 @@ msgid ""
 "over the default \"base64\" will save up to 25% in resulting message size.</"
 "p>"
 msgstr ""
+"<p>ამ ნაწილის ტრანსპორტის კოდირება:</p><p>ჩვეულებრივ, ამის შეცვლა არ "
+"გჭირდებათ, რადგან %1 ძალიან კარგად იცნობს კოდირებებს, მათ MIME ტიპებზე "
+"დაყრდნობით. და მაინც, ხანდახან, შეგიძლიათ მიღებული შეტყობინების ზომა "
+"საგრძნობლად შეამციროთ. მაგ: თუ PostScript-ის ფაილი ბინარულ მონაცემებს არ "
+"შეიცავს და სუფთა ტექსტისგან შედგება -- ამ შემთხვევაში, \"ციტირებული-ბეჭდვადის"
+"\" არჩევა \"base64\"-ის მაგიერ მიღებული შეტყობინების ზომას 25%-მდე "
+"შეამცირებს.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
@@ -140,6 +162,10 @@ msgid ""
 "<em>Content-Disposition</em> header field to \"inline\" instead of the "
 "default \"attachment\".</p>"
 msgstr ""
+"<p>ჩართეთ ეს პარამეტრი, თუ გნებავთ, მიუთითოთ, რომ ეს ნაწილი ნაგულისხმევი "
+"ხატულის ხედის მაგიერ მიმღებთან ავტომატურად (ხაზშივე) გამოჩნდეს.</"
+"p><p>ტექნიკურად, ეს, ნაწილის <em>Content-Disposition</em> თავსართის ველის "
+"ნაგულისხმევი \"attachment\"-ის მაგიერ \"inline\"-ზე დაყენებით ხდება.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
@@ -148,6 +174,9 @@ msgid ""
 "signature will be made with the key that you associated with the currently-"
 "selected identity.</p>"
 msgstr ""
+"<p>ჩართეთ ეს პარამეტრი, თუ გნებავთ, შეტყობინების ეს ნაწილი ხელმოწერილი იყოს."
+"</p><p>ხელმოწერა შეიქმნება გასაღებით, რომელიც ამჟამად არჩეულ "
+"იდენტიფიკატორთანაა ასოცირებული.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
@@ -155,6 +184,8 @@ msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
+"<p>ჩართეთ ეს პარამეტრი, თუ გნებავთ, შეტყობინების ეს ნაწილი, დაიშიფროს.</"
+"p><p>ნაწილი ამ შეტყობინების მიმღებთათვის დაიშიფრება.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:307
 #: attachment/attachmentpropertiesdialog.cpp:322
@@ -234,6 +265,8 @@ msgid ""
 "Changing this from its default 'Auto' will force the use of the specified "
 "encoding for all emails, regardless of what they specify themselves."
 msgstr ""
+"ამის ნაგულისხმევი 'ავტომატურიდან' შეცვლა მითითებული კოდირების ყველა "
+"ელფოსტისთვის შეცვლას გამოიწვევს იმის მიუხედავად, თვითონ რა უნდათ."
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
 #: settings/messagecore.kcfg:35

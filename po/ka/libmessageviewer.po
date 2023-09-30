@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-28 14:44+0200\n"
+"PO-Revision-Date: 2023-09-29 07:22+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -177,6 +177,11 @@ msgid ""
 "trust the sender of this message then you can load the external references "
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
+"<b>შენიშვნა:</b> ეს HTML შეტყობინება, შეიძლება, შეიცავდეს გარე მიმართვებს "
+"სურათებთან და ა.შ. უსაფრთხოების/კონფიდენციალობის მიზეზებით ეს მიმართვები არ "
+"იტვირთება. თუ თქვენ ენდობით ამ შეტყობინების გამომგზავნს, შეგიძლიათ, ამ "
+"შეტყობინებაში, გარე მიმართვების ჩატვირთვა  <a href='kmail:loadExternal'>აქ "
+"დაწკაპუნებით ჩართოთ</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
@@ -1254,6 +1259,8 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
+"ეს ელფოსტა შეიცავს ბმულს, რომელიც ტექსტში იკითხება, როგორც '%1', მაგრამ "
+"მიუთითებს '%2'-ზე. ეს ხშირად მიმღების დასაბნევად, ბოროტი მიზნებით, კეთდება"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1262,6 +1269,8 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"ეს ელფოსტა შეიცავს ბმულს, რომელიც რიცხვით IP მისამართზე (%1) მიუთითებს, "
+"ტექსტური დომენის მაგიერ. ამას, ხშირად, სკამერები აკეთებენ."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1270,6 +1279,8 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"ეს ელფოსტა შეიცავს ბმულს, რომელიც თექვსმეტობით IP მისამართზე (%1) მიუთითებს, "
+"ტექსტური დომენის მაგიერ. ამას, ხშირად, სკამერები აკეთებენ."
 
 #: scamdetection/scamdetectionwebengine.cpp:141
 #, kde-format
@@ -1341,6 +1352,7 @@ msgid ""
 "Specifies whether the background color and images are also drawn when the "
 "page is printed."
 msgstr ""
+"მიუთითებს, დაიბეჭდება თუ არა გვერდთან ერთად ფონის ფერი და გამოსახულება."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.cmake:23
@@ -1518,6 +1530,8 @@ msgid ""
 "Specifies the default policy to use, for the Message Disposition "
 "Notifications (for internal use only)"
 msgstr ""
+"მიუთითებს ნაგულისხმევ პოლიტიკას შეტყობინების გადაცემის გაფრთხილებისთვის "
+"(მხოლოდ შიდა გამოყენებისთვის)"
 
 #. i18n: ectx: label, entry (QuoteMessage), group (MDN)
 #: settings/messageviewer.kcfg.cmake:165
@@ -1526,6 +1540,8 @@ msgid ""
 "Specifies the default quoting action to take, when replying to a message "
 "(for internal use only)"
 msgstr ""
+"მიუთითებს ციტირების ნაგულისხმევ ქმედებას შეტყობინებაზე პასუხისას (მხოლოდ "
+"შიდა გამოყენებისთვის)"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:181
@@ -1542,6 +1558,10 @@ msgid ""
 "problems with Outlook users not being able to get your replies, try setting "
 "this option."
 msgstr ""
+"Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. ეს "
+"პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, რომ "
+"Outlook-ის მომხმარებლები თქვენს პასუხს ვერ იღებენ, სცადეთ, ეს პარამეტრი "
+"ჩართოთ."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:187
@@ -1558,6 +1578,10 @@ msgid ""
 "problems with Outlook users not being able to get your invitations, try "
 "setting this option."
 msgstr ""
+"Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. ეს "
+"პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, რომ "
+"Outlook-ის მომხმარებლები თქვენს მოსაწვევებს ვერ იღებენ, სცადეთ, ეს პარამეტრი "
+"ჩართოთ."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:193
@@ -1574,6 +1598,10 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
+"Microsoft Outlook-ს, თუ მას Microsoft Exchange-სთან ერთად იყენებს, აქვს "
+"პრობლემა, გაიგოს სტანდარტებთან თავსებადი ჯგუფური ელფოსტა. ჩართეთ ეს "
+"პარამეტრი, რომ ჯგუფური მოსაწვევები ისე გავგზავნო, რომ Microsoft Exchange-მა "
+"გაიგოს."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:199
@@ -1591,6 +1619,11 @@ msgid ""
 "text in the composer window is in iCalendar syntax, and you should not try "
 "modifying it by hand."
 msgstr ""
+"თუ ეს ჩართულია, ელფოსტის კომპოზიტორის ფანჯარას ვერ დაინახავთ. სამაგიეროდ "
+"ყველა მოსაწვევის ელფოსტა ავტომატურად გაიგზავნება. თუ გნებავთ, ელფოსტა "
+"გაგზავნამდე ნახოთ, შეგიძლიათ, ეს პარამეტრი გამორთოთ. მაგრამ, დაიმახსოვრეთ, "
+"რომ ტექსტი კომპოზიტორის ფანჯარაში iCalendar-ის სინტაქსშითაა და ის ხელით არ "
+"უნდა შეცვალოთ."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
@@ -1606,6 +1639,8 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
+"თუ ეს ჩართულია, მიღებული მოსაწვევის ელფოსტები, რომლებზეც პასუხს გასცემთ, "
+"ნაგვის ყუთში აღმოჩნდება."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
@@ -1679,6 +1714,10 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
+"Microsoft Outlook-ს, თუ მას Microsoft Exchange-სთან ერთად იყენებს, აქვს "
+"პრობლემა, გაიგოს\n"
+"სტანდარტებთანთავსებადი ჯგუფური ელფოსტა. ჩართეთ ეს პარამეტრი,\n"
+"რომ ჯგუფური მოსაწვევები ისე გავგზავნო, რომ Microsoft Exchange-მა გაიგოს."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
@@ -1693,6 +1732,8 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
+"როცა ეს ჩართულია, მომხმარებლები ელფოსტის კომპოზიტორის ფანჯარას ვერ "
+"დაინახავენ. მოსაწვევის ელფოსტები ავტომატურად გაიგზავნება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
@@ -1931,6 +1972,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"თქვენ ამ შეტყობინებაზე მიმაგრებული ფაილი წაშალეთ. მიმაგრებული ფაილის საწყისი "
+"MIME თავსართები იყო:"
 
 #: utils/messageviewerutil.cpp:640
 #, kde-format
@@ -2484,6 +2527,8 @@ msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
+"გავხსნა მიმაგრებული ფაილი <filename>%1</filename>?<nl/>დაიმახსოვრეთ, რომ "
+"მიმაგრებულ ფაილებს თქვენი სისტემის უსაფრთხოების დარღვევა შეუძლიათ."
 
 #: widgets/attachmentdialog.cpp:32
 #, kde-format
@@ -2564,6 +2609,14 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+"<qt>მოსაწვევები, ჩვეულებრივ, ელფოსტაზე მიმაგრებული ფაილის სახით იგზავნება. "
+"ეს თოლია ცვლის, რომ მოსაწვევები ელფოსტის ტექსტით გაიგზავნოთ. ეს აუცილებელია, "
+"როცა მოსაწვევებს და პასუხებს Microsoft Outlook-ზე აგზავნით.<br />მაგრამ, "
+"როცა ამას გააკეთებთ, ვეღარ მიიღებთ ტექსტს, რომლებიც ელფოსტის პროგრამებს "
+"შეუძლიათ, წაიკითხონ. ასე რომ, ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამები, "
+"რომლებსაც მოსაწვევების მხარდაჭერა არ გააჩნია, ელფოსტას უცნაურად დაინახავენ."
+"<br />ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამა, რომელსაც მოსაწვევების "
+"მხარდაჭერა გააჩნია, ამასთან მაინც იმუშავებენ.</qt>"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
