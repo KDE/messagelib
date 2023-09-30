@@ -10,20 +10,13 @@ irc: akonadi
 portingAid: false
 deprecated: false
 libraries:
- - qmake: MessageComposer
-   cmake: "KPim6::MessageComposer"
- - qmake: MessageCore
-   cmake: "KPim6::MessageCore"
- - qmake: MessageList
-   cmake: "KPim6::MessageList"
- - qmake: MessageViewer
-   cmake: "KPim6::MessageViewer"
- - qmake: MimeTreeParser
-   cmake: "KPim6::MimeTreeParser"
- - qmake: TemplateParser
-   cmake: "KPim6::TemplateParser"
- - qmake: WebEngineViewer
-   cmake: "KPim6::WebEngineViewer"
+ - cmake: "KPim6::MessageComposer"
+ - cmake: "KPim6::MessageCore"
+ - cmake: "KPim6::MessageList"
+ - cmake: "KPim6::MessageViewer"
+ - cmake: "KPim6::MimeTreeParser"
+ - cmake: "KPim6::TemplateParser"
+ - cmake: "KPim6::WebEngineViewer"
 cmakename: KPim6MessageCore
 # FIXME kapidox does not support more than one cmake module per repo yet
 #cmakename: KPim6MessageComposer
