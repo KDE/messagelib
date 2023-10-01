@@ -165,7 +165,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
-msgstr "Non se puideron descifrar os datos."
+msgstr "Non foi posíbel descifrar os datos."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
@@ -264,7 +264,7 @@ msgstr "A mensaxe asinouse coa chave descoñecida %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:102
 msgid "The validity of the signature cannot be verified."
-msgstr "Non se pode verificar a validez da sinatura."
+msgstr "Non é posíbel verificar a validez da sinatura."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
@@ -749,7 +749,7 @@ msgstr "A chave pública é pequena de máis."
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "Impossible to verify signature."
-msgstr "Non se pode verificar a sinatura."
+msgstr "Non é posíbel verificar a sinatura."
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
@@ -766,7 +766,7 @@ msgstr "O dominio de sinatura só esta a probar DKIM."
 #: dkim-verify/dkimwidgetinfo.cpp:182
 #, kde-format
 msgid "Impossible to download key."
-msgstr "Non se pode descargar a chave."
+msgstr "Non é posíbel descargar a chave."
 
 #: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
 #, kde-format
@@ -929,7 +929,7 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
-"%1% de probabilidade de ser seguro correo non desexado %3%.\n"
+"%1% de probabilidade de ser seguro correo lixo %3%.\n"
 "\n"
 "Informe completo:\n"
 "Probabilidade=%2|n Fiabilidade=%4"
@@ -942,7 +942,7 @@ msgid ""
 "Full report:\n"
 "Probability=%2"
 msgstr ""
-"%1% de probabilidade de ser correo non desexado.\n"
+"%1% de probabilidade de ser correo lixo.\n"
 "\n"
 "Informe completo:\n"
 "Probabilidade=%2"
@@ -966,12 +966,12 @@ msgstr "O limiar non é un número correcto"
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
-"Non se puido extraer da cabeceira a puntuación do filtro de correo lixo"
+"Non foi posíbel extraer da cabeceira a puntuación do filtro de correo lixo"
 
 #: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr "Non se puido extraer da cabeceira o limiar"
+msgstr "Non foi posíbel extraer da cabeceira o limiar"
 
 #: header/headerstyle_util.cpp:179
 #, kde-format
@@ -1118,7 +1118,7 @@ msgstr "Caducou a sinatura."
 #: messagepartthemes/default/defaultrenderer.cpp:156
 #, kde-format
 msgid "Unable to verify: key missing."
-msgstr "Non se pode verificar: falta a chave."
+msgstr "Non é posíbel verificar: falta a chave."
 
 #: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
@@ -1367,7 +1367,7 @@ msgstr "Non se detectou ningunha conexión de rede; non se pode expandir o URL."
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Impossible to expand '%1'."
-msgstr "Non se pode expandir «%1»."
+msgstr "Non é posíbel expandir «%1»."
 
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
@@ -1576,8 +1576,8 @@ msgid ""
 "Specifies the default policy to use, for the Message Disposition "
 "Notifications (for internal use only)"
 msgstr ""
-"Indica a política predeterminada que utilizar para as Notificacións de "
-"Entrega de Mensaxes (só para uso interno)"
+"Indica a política predeterminada que usar para as Notificacións de Entrega "
+"de Mensaxes (só para uso interno)"
 
 #. i18n: ectx: label, entry (QuoteMessage), group (MDN)
 #: settings/messageviewer.kcfg.cmake:165
@@ -1972,7 +1972,7 @@ msgstr[1] "Gardar as mensaxes"
 #: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be loaded."
-msgstr "Non se puido cargar o ficheiro %1."
+msgstr "Non foi posíbel cargar o ficheiro %1."
 
 #: utils/messageviewerutil.cpp:525
 #, kde-format
@@ -1982,7 +1982,7 @@ msgstr "Produciuse un erro ao cargar a mensaxe"
 #: utils/messageviewerutil.cpp:527
 #, kde-format
 msgid "File %1 could not be created."
-msgstr "Non se puido crear o ficheiro %1."
+msgstr "Non foi posíbel crear o ficheiro %1."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:538
 #: utils/messageviewerutil.cpp:558
@@ -2089,7 +2089,8 @@ msgstr "Pregar o texto citado."
 #: viewer/urlhandlermanager.cpp:524
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr "Non se puido iniciar o xestor de certificados. Comprobe a instalación."
+msgstr ""
+"Non foi posíbel iniciar o xestor de certificados. Comprobe a instalación."
 
 #: viewer/urlhandlermanager.cpp:526
 #, kde-format
@@ -2165,7 +2166,7 @@ msgstr "Executar"
 #: viewer/viewer.cpp:138
 #, kde-format
 msgid "Loading message..."
-msgstr "Estase a cargar a mensaxe…"
+msgstr "Cargando a mensaxe…"
 
 #: viewer/viewer_p.cpp:354
 #, kde-format

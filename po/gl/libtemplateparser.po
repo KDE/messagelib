@@ -3,14 +3,14 @@
 # Xosé <xosecalvo@gmail.com>, 2011, 2012, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
 # Marce Villarino <mvillarino@kde-espana.org>, 2013.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2023-06-18 21:32+0200\n"
+"PO-Revision-Date: 2023-09-30 12:40+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -67,10 +67,10 @@ msgstr ""
 "personalizados que queira usar ao redactar ou responder a unha mensaxe que "
 "queira reenviar. Cree un modelo personalizado escribindo o seu nome na caixa "
 "e prema o botón «+». Pode tamén ligar unha combinación de teclado ao teclado "
-"para traballar máis rápido.</p><p>Os modelos de mensaxes permiten utilizar "
-"ordes de substitución, simplemente escribíndoas ou seleccionándoas no menú "
+"para traballar máis rápido.</p><p>Os modelos de mensaxes permiten usar ordes "
+"de substitución, simplemente escribíndoas ou seleccionándoas no menú "
 "<i>Inserir unha orde</i>.</p><p>Existen catro tipos de modelos "
-"personalizados: utilízanse para <i>Responder</i>, <i>Responder a todos</i>, "
+"personalizados: úsanse para <i>Responder</i>, <i>Responder a todos</i>, "
 "<i>Reenviar</i> e <i>Universal</i> e pódense usar para todo tipo de "
 "operacións. Non se pode ligar un atallo de teclado aos modelos "
 "<i>Universais</i>.</p></qt>"
@@ -89,7 +89,7 @@ msgstr "Xa existe un modelo co mesmo nome."
 #: customtemplates.cpp:252
 #, kde-format
 msgid "Cannot create template"
-msgstr "Non se pode crear o modelo"
+msgstr "Non é posíbel crear o modelo"
 
 #: customtemplates.cpp:344
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "Caracteres para as citas"
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
-msgstr "Non se pode inserir o contido do ficheiro %1: %2"
+msgstr "Non é posíbel inserir o contido do ficheiro %1: %2"
 
 #: templateparserjob.cpp:519
 #, kde-format
@@ -299,7 +299,7 @@ msgstr "Anexo %1"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr "Fallou a orde en tubaxe <command>%1</command>."
+msgstr "Fallou a orde de canalización <command>%1</command>."
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
@@ -430,24 +430,24 @@ msgstr "Asunto"
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr ""
-"Encamiñar o corpo da mensaxe orixinal e inserir o resultado como texto citado"
+"Canalizar o corpo da mensaxe orixinal e inserir o resultado como texto citado"
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
-msgstr "Encamiñar o corpo da mensaxe orixinal e inserir o resultado como está"
+msgstr "Canalizar o corpo da mensaxe orixinal e inserir o resultado como está"
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr ""
-"Encamiñar a mensaxe orixinal con cabeceiras e inserir o resultado como está"
+"Canalizar a mensaxe orixinal con cabeceiras e inserir o resultado como está"
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
-msgstr "Encamiñar o corpo da mensaxe actual e inserir o resultado como está"
+msgstr "Canalizar o corpo da mensaxe actual e inserir o resultado como está"
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr "Encamiñar o corpo da mensaxe actual e substituílo co resultado"
+msgstr "Canalizar o corpo da mensaxe actual e substituílo polo resultado"
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
@@ -475,7 +475,7 @@ msgstr "Ningunha operación"
 
 #: templatescommandmenu.cpp:155
 msgid "Clear Generated Message"
-msgstr "Limpar a mensaxe xerada"
+msgstr "Borrar a mensaxe xerada"
 
 #: templatescommandmenu.cpp:156
 msgid "Cursor position"
@@ -541,10 +541,10 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
-"<p>Aquí pode crear e xestionar modelos para utilizar ao redactar mensaxes "
-"novas, respostas ou mensaxes reenviadas.</p><p>Os modelos de mensaxes "
-"permiten ordes de substitución; simplemente escríbaas ou escóllaas no menú "
-"<i>Inserir unha orde</i>.</p>"
+"<p>Aquí pode crear e xestionar modelos para usar ao redactar mensaxes novas, "
+"respostas ou mensaxes reenviadas.</p><p>Os modelos de mensaxes permiten "
+"ordes de substitución; simplemente escríbaas ou escóllaas no menú <i>Inserir "
+"unha orde</i>.</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -552,7 +552,7 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>Os modelos indicados son específicos do cartafol. Ignoran tanto os "
+"<p>Os modelos indicados son específicos do cartafol. Sobredefinen tanto os "
 "modelos globais como os modelos para cada identidade.</p>"
 
 #: templatesconfiguration.cpp:63
@@ -562,7 +562,7 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>Os modelos indicados aquí son específicos da identidade. Ignoran os "
+"<p>Os modelos indicados aquí son específicos da identidade. Sobredefinen os "
 "modelos globais pero pódennos ignorar os modelos por cartafol, se se indican."
 "</p>"
 
@@ -572,28 +572,29 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>Estes son modelos globais (predeterminados). Pódense ignorar con modelos "
-"para cada identidade ou para cada cartafol, se se indican.</p>"
+"<p>Estes son modelos globais (predeterminados). Pódense sobredefinir con "
+"modelos para cada identidade ou para cada cartafol, se se indican.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
-msgstr "Quere reiniciar este modelo, ou todos os modelos, ao predeterminado?"
+msgstr ""
+"Quere restabelecer este modelo, ou todos os modelos, ao predeterminado?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
 msgid "Reset to default"
-msgstr "Reiniciar ao predeterminado"
+msgstr "Restaurar os valores predeterminados"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
-msgstr "Reiniciar este modelo"
+msgstr "Restablecer este modelo"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
-msgstr "Reiniciar todos os modelos"
+msgstr "Restabelecer todos os modelos"
 
 #: templatesconfiguration.cpp:361
 #, kde-format
@@ -967,7 +968,7 @@ msgstr "&Indicador de cita:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr "Indicar o prefixo das liñas de mensaxe citadas."
+msgstr "Definir o prefixo das liñas de mensaxe citadas."
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326

@@ -23,7 +23,7 @@ msgstr ""
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
 msgid "Failed to compress attachment"
-msgstr "Non se puido comprimir o anexo"
+msgstr "Non foi posíbel comprimir o anexo"
 
 #: attachment/attachmentcontrollerbase.cpp:179
 #, kde-format
@@ -47,12 +47,12 @@ msgstr "Comprimir"
 #: attachment/attachmentcontrollerbase.cpp:202
 #, kde-format
 msgid "Failed to attach file"
-msgstr "Non se puido anexar o ficheiro"
+msgstr "Non foi posíbel anexar o ficheiro"
 
 #: attachment/attachmentcontrollerbase.cpp:275
 #, kde-format
 msgid "Failed to reload attachment"
-msgstr "Non se puido recargar o anexo."
+msgstr "Non foi posíbel recargar o anexo."
 
 #: attachment/attachmentcontrollerbase.cpp:322
 #, kde-format
@@ -76,17 +76,17 @@ msgstr "&Abrir con…"
 #: attachment/attachmentcontrollerbase.cpp:378
 #, kde-format
 msgid "Failed to attach public key"
-msgstr "Non se puido anexar a chave pública"
+msgstr "Non foi posíbel anexar a chave pública"
 
 #: attachment/attachmentcontrollerbase.cpp:392
 #, kde-format
 msgid "Failed to attach vCard"
-msgstr "Non se puido anexar a vCard"
+msgstr "Non foi posíbel anexar a vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:405
 #, kde-format
 msgid "Failed to attach text from clipboard"
-msgstr "Non se puido anexar o texto do portapapeis"
+msgstr "Non foi posíbel anexar o texto do portapapeis"
 
 #: attachment/attachmentcontrollerbase.cpp:453
 #, kde-format
@@ -221,7 +221,7 @@ msgstr "KMail non puido escribir o anexo nun ficheiro temporal."
 #: attachment/attachmentcontrollerbase.cpp:702
 #, kde-format
 msgid "Unable to open attachment"
-msgstr "Non se pode abrir o anexo"
+msgstr "Non é posíbel abrir o anexo"
 
 #: attachment/attachmentcontrollerbase.cpp:711
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "KMail non puido abrir o anexo."
 #: attachment/attachmentcontrollerbase.cpp:751 attachment/editorwatcher.cpp:196
 #, kde-format
 msgid "Unable to edit attachment"
-msgstr "Non se pode editar o anexo"
+msgstr "Non é posíbel editar o anexo"
 
 #: attachment/attachmentcontrollerbase.cpp:792
 #, kde-format
@@ -299,7 +299,7 @@ msgstr "Anexar un ficheiro"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "Non se puido anexar o ficheiro"
+msgstr "Non foi posíbel anexar o ficheiro"
 
 #: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
@@ -485,7 +485,7 @@ msgstr "O certificado S/MIME caduca pronto"
 #: composer/composerviewbase.cpp:852
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr "Non se puideron resolver as chaves. Informe deste fallo, por favor."
+msgstr "Non foi posíbel resolver as chaves. Informe deste fallo, por favor."
 
 #: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
 #, kde-format
@@ -498,13 +498,13 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
-"Non se puido redactar a mensaxe: %1 \n"
+"Non foi posíbel redactar a mensaxe: %1 \n"
 " Informe deste fallo, por favor."
 
 #: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr "Non se puido redactar a mensaxe: %1"
+msgstr "Non foi posíbel redactar a mensaxe: %1"
 
 #: composer/composerviewbase.cpp:1162
 #, kde-format
@@ -514,22 +514,22 @@ msgstr "Houbo problemas ao intentar pór a mensaxe na fila de envíos: %1"
 #: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr "Non se puido gardar automaticamente a mensaxe: %1"
+msgstr "Non foi posíbel gardar automaticamente a mensaxe: %1"
 
 #: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
-msgstr "Non se puideron escribir todos os datos no ficheiro."
+msgstr "Non foi posíbel escribir todos os datos no ficheiro."
 
 #: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
-msgstr "Non se puido finalizar o ficheiro."
+msgstr "Non foi posíbel finalizar o ficheiro."
 
 #: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
-msgstr "Non se puido abrir o ficheiro."
+msgstr "Non foi posíbel abrir o ficheiro."
 
 #: composer/composerviewbase.cpp:1359
 #, kde-format
@@ -550,7 +550,7 @@ msgstr "Fallou a garda automática da mensaxe"
 #: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr "Non se puido gardar a mensaxe: %1"
+msgstr "Non foi posíbel gardar a mensaxe: %1"
 
 #: composer/composerviewbase.cpp:1897
 #, kde-format
@@ -1461,7 +1461,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Estase a exportar a chave…"
+msgstr "Exportando a chave…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1551,7 +1551,7 @@ msgstr ""
 #: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr "Non se puido obter o códec de texto do conxunto de caracteres «%1»."
+msgstr "Non foi posíbel obter o códec de texto do conxunto de caracteres «%1»."
 
 #: job/singlepartjob.cpp:67
 #, kde-format
@@ -1713,7 +1713,7 @@ msgstr ""
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr "Non se pode crear a lista de distribución: %1"
+msgstr "Non é posíbel crear a lista de distribución: %1"
 
 #: recipient/recipient.cpp:99
 #, kde-format
@@ -1762,8 +1762,8 @@ msgstr ""
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
-msgstr[0] "Estase a deter a lista de destinatarios na entrada nº %1 de %2."
-msgstr[1] "Estase a deter a lista de destinatarios na entrada nº %1 de %2."
+msgstr[0] "Detendo a lista de destinatarios na entrada nº %1 de %2."
+msgstr[1] "Detendo a lista de destinatarios na entrada nº %1 de %2."
 
 #: recipient/recipientseditorsidewidget.cpp:41
 #, kde-format
