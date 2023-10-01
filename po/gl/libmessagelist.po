@@ -4,14 +4,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
 # Marce Villarino <mvillarino@kde-espana.org>, 2014.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-06-24 09:56+0200\n"
+"PO-Revision-Date: 2023-09-30 13:03+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -121,7 +121,7 @@ msgstr "Expandir sempre os fíos"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Interactivity"
-msgstr "Favorecer a interactividade"
+msgstr "Favorecer a interacción"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "Favorecer a velocidade"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr "Traballo en lotes (sen interactividade)"
+msgstr "Traballo en lotes (sen interacción)"
 
 #: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
@@ -324,8 +324,8 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
-"Esta vista agrupa as mensaxes en fíos e a continuación agrupa os fíos polo "
-"usuario que os iniciou."
+"Esta vista agrupa as mensaxes en fíos e a continuación agrupa os fíos pola "
+"persoa que os iniciou."
 
 #: core/manager.cpp:568
 #, kde-format
@@ -551,7 +551,8 @@ msgstr "Listo."
 #: core/settings.kcfg:11
 #, kde-format
 msgid "Display tooltips for messages and group headers"
-msgstr "Amosar mensaxes informativas para as mensaxes e as cabeceiras de grupo"
+msgstr ""
+"Amosar indicacións emerxentes para as mensaxes e as cabeceiras de grupo"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:12
@@ -560,7 +561,7 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
-"Active esta opción para amosar mensaxes informativas ao pasar por riba dun "
+"Active esta opción para amosar indicacións emerxentes ao pasar por riba dun "
 "elemento da lista de mensaxes."
 
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
@@ -576,7 +577,7 @@ msgstr "Pola data/hora"
 #: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
-msgstr "Pola data/hora da máis recente na sub-árbore"
+msgstr "Pola data/hora da máis recente na subárbore"
 
 #: core/sortorder.cpp:71
 #, kde-format
@@ -745,7 +746,7 @@ msgstr "Icona de Vixiada/Ignorada"
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr "Icona de expandir ou recoller a cabeceira de grupo"
+msgstr "Icona de expandir ou pregar a cabeceira de grupo"
 
 #: core/theme.cpp:155
 #, kde-format
@@ -872,7 +873,7 @@ msgstr "Amosar as columnas predeterminadas"
 #: core/view.cpp:770
 #, kde-format
 msgid "Display Tooltips"
-msgstr "Amosar informacións emerxentes"
+msgstr "Amosar indicacións emerxentes"
 
 #: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -921,8 +922,8 @@ msgstr[1] "<b>%1</b> respostas"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> mensaxe na sub-árbore (<b>%2</b> sen ler)"
-msgstr[1] "<b>%1</b> mensaxes na sub-árbore (<b>%2</b> sen ler)"
+msgstr[0] "<b>%1</b> mensaxe na subárbore (<b>%2</b> sen ler)"
+msgstr[1] "<b>%1</b> mensaxes na subárbore (<b>%2</b> sen ler)"
 
 #: core/view.cpp:2337
 #, kde-format
@@ -1047,8 +1048,7 @@ msgid "Any filter defined."
 msgstr "Calquera filtro definido."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Crear un filtro"
@@ -1113,11 +1113,10 @@ msgid "Do you want to delete this filter?"
 msgstr "Quere eliminar o filtro?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Remove Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "Eliminar o filtro"
+msgstr "Eliminar un filtro"
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format
@@ -1165,13 +1164,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
-msgstr "Evitar que se limpe o campo de busca rápida ao cambiar de cartafoles."
+msgstr ""
+"Evitar que se baleire o campo de busca rápida ao cambiar de cartafoles."
 
 #: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr "Limpar o campo de busca rápida ao cambiar de cartafoles."
+msgstr "Baleirar o campo de busca rápida ao cambiar de cartafoles."
 
 #: core/widgets/searchlinestatus.cpp:101
 #, kde-format
@@ -1196,7 +1196,7 @@ msgstr "Filtro gardado"
 #: core/widgets/searchlinestatus.cpp:215
 #, kde-format
 msgid "Clear Filter"
-msgstr "Limpar o filtro"
+msgstr "Baleirar o filtro"
 
 #: core/widgets/searchlinestatus.cpp:221
 #, kde-format
@@ -1292,12 +1292,12 @@ msgstr "Para"
 #: core/widgets/searchlinestatus.cpp:404
 #, kde-format
 msgid "Clear History"
-msgstr "Borrar o historial"
+msgstr "Eliminar o historial"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr "O separador está bloqueado."
+msgstr "A lapela está bloqueada."
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -1313,28 +1313,28 @@ msgstr "Ordenación"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
-msgstr "Abrir un novo separador."
+msgstr "Abrir unha nova lapela."
 
 #: pane.cpp:126
 #, kde-format
 msgid "New tab"
-msgstr "Novo separador"
+msgstr "Nova lapela"
 
 #: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
-msgstr "Pechar o separador actual."
+msgstr "Pechar a lapela actual."
 
 #: pane.cpp:138
 #, kde-format
 msgid "Close tab"
-msgstr "Pechar o separador"
+msgstr "Pechar a lapela"
 
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "Activar o separador %1"
+msgstr "Activar a lapela %1"
 
 #: pane.cpp:200
 #, kde-format
@@ -1349,32 +1349,32 @@ msgstr "Lista de mensaxes"
 #: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
-msgstr "Crear un novo separador"
+msgstr "Crear unha nova lapela"
 
 #: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "Activar o seguinte separador"
+msgstr "Activar a seguinte lapela"
 
 #: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "Activar o separador anterior"
+msgstr "Activar a lapela anterior"
 
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "Mover o separador á esquerda"
+msgstr "Mover a lapela á esquerda"
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "Mover o separador á dereita"
+msgstr "Mover a lapela á dereita"
 
 #: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
-msgstr "Pechar o separador"
+msgstr "Pechar a lapela"
 
 #: pane.cpp:520 pane.cpp:812
 #, kde-format
@@ -1386,25 +1386,25 @@ msgstr "Baleira"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
-msgstr "Pechar o separador"
+msgstr "Pechar a lapela"
 
 #: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
-msgstr "Pechar os outros separadores"
+msgstr "Pechar as outras lapelas"
 
 #: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "Desbloquear o separador"
+msgstr "Desbloquear a lapela"
 
 #: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr "Bloquear o separador"
+msgstr "Bloquear a lapela"
 
 #: storagemodel.cpp:219
 #, kde-format
@@ -1617,7 +1617,7 @@ msgstr "Premendo a cabeceira ordénanse as mensaxes:"
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
-"O modo de ordenación que se activa cando se preme a cabeceira desta columna."
+"O modo de ordenación ao que se cambia ao premer a cabeceira desta columna."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1746,12 +1746,12 @@ msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
 "e.g. Important mark on a non important mail"
 msgid "Keep Softened Icon"
-msgstr "Manter a icona esvaida"
+msgstr "Manter a icona suavizada"
 
 #: utils/themeeditor.cpp:919
 #, kde-format
 msgid "When Disabled"
-msgstr "Cando estea desactivada"
+msgstr "Cando se desactiva esta opción"
 
 #: utils/themeeditor.cpp:925
 #, kde-format
@@ -1875,7 +1875,7 @@ msgstr "Todos"
 #: widget.cpp:345
 #, kde-format
 msgid "Collapse Group"
-msgstr "Recoller este grupo"
+msgstr "Pregar este grupo"
 
 #: widget.cpp:348
 #, kde-format
@@ -1890,7 +1890,7 @@ msgstr "Expandir todos os grupos"
 #: widget.cpp:357
 #, kde-format
 msgid "Collapse All Groups"
-msgstr "Recoller todos os grupos"
+msgstr "Pregar todos os grupos"
 
 #: widget.cpp:361
 #, kde-format
@@ -1900,7 +1900,7 @@ msgstr "Expandir todos os fíos"
 #: widget.cpp:363
 #, kde-format
 msgid "Collapse All Threads"
-msgstr "Recoller todos os fíos"
+msgstr "Pregar todos os fíos"
 
 #: widget.cpp:419
 #, kde-format
