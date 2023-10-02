@@ -13,7 +13,7 @@ class ItipPart::ItipPartPrivate
 public:
     QString invitation;
     QString invitationBody;
-    QString method;
+    QString method = QStringLiteral("request");
     bool outlookComnformInvitation = false;
 };
 
