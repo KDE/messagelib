@@ -7,14 +7,10 @@
 #include "job/itipjob.h"
 
 #include "contentjobbase_p.h"
-#include "job/attachmentjob.h"
 #include "job/multipartjob.h"
 #include "job/singlepartjob.h"
-#include "part/globalpart.h"
 #include "part/itippart.h"
-#include "utils/util.h"
 
-#include "messagecomposer_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -45,7 +41,7 @@ SinglepartJob *ItipJobPrivate::createInvitationBodyJob()
     auto job = new SinglepartJob; // No parent.
     job->contentType()->setMimeType("text/plain");
     job->contentType()->setCharset("utf-8");
-    job->contentType()->setParameter(QStringLiteral("method"), QStringLiteral("request"));
+    job->contentType()->setParameter(QStringLiteral("method"), itipPart->method());
     job->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);
     job->contentDisposition()->setDisposition(KMime::Headers::CDinline);
     job->setData(KMime::CRLFtoLF(itipPart->invitationBody().toUtf8()));
@@ -58,7 +54,7 @@ SinglepartJob *ItipJobPrivate::createInvitationJob()
     job->contentType()->setMimeType("text/calendar");
     job->contentType()->setCharset("utf-8");
     job->contentType()->setName(QStringLiteral("cal.ics"), "utf-8");
-    job->contentType()->setParameter(QStringLiteral("method"), QStringLiteral("request"));
+    job->contentType()->setParameter(QStringLiteral("method"), itipPart->method());
     job->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
     job->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);
     job->setData(KMime::CRLFtoLF(itipPart->invitation().toUtf8()));

@@ -23,10 +23,14 @@ class MESSAGECOMPOSER_EXPORT ItipPart : public MessagePart
     Q_PROPERTY(QString invitation READ invitation WRITE setInvitation NOTIFY invitationChanged)
     Q_PROPERTY(QString invitationBody READ invitationBody WRITE setInvitationBody NOTIFY invitationBodyChanged)
     Q_PROPERTY(bool outlookConformInvitation READ outlookConformInvitation WRITE setOutlookConformInvitation NOTIFY outlookConformInvitationChanged)
+    Q_PROPERTY(QString method READ method WRITE setMethod NOTIFY methodChanged)
 
 public:
     explicit ItipPart(QObject *parent = nullptr);
     ~ItipPart() override;
+
+    Q_REQUIRED_RESULT QString method() const;
+    void setMethod(const QString &method);
 
     Q_REQUIRED_RESULT QString invitation() const;
     void setInvitation(const QString &invitation);
@@ -39,6 +43,7 @@ public:
     void setOutlookConformInvitation(bool enabled);
 
 Q_SIGNALS:
+    void methodChanged();
     void invitationChanged();
     void invitationBodyChanged();
     void outlookConformInvitationChanged();

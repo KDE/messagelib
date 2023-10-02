@@ -13,6 +13,7 @@ class ItipPart::ItipPartPrivate
 public:
     QString invitation;
     QString invitationBody;
+    QString method;
     bool outlookComnformInvitation = false;
 };
 
@@ -37,6 +38,21 @@ void ItipPart::setOutlookConformInvitation(bool enabled)
 
     d->outlookComnformInvitation = enabled;
     Q_EMIT outlookConformInvitationChanged();
+}
+
+QString ItipPart::method() const
+{
+    return d->method;
+}
+
+void ItipPart::setMethod(const QString &method)
+{
+    if (d->method == method) {
+        return;
+    }
+
+    d->method = method;
+    Q_EMIT methodChanged();
 }
 
 QString ItipPart::invitation() const
