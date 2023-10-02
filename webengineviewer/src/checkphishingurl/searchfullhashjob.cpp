@@ -247,7 +247,7 @@ void SearchFullHashJob::start()
         // qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
-        connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this, &SearchFullHashJob::slotError);
+        connect(reply, &QNetworkReply::errorOccurred, this, &SearchFullHashJob::slotError);
     } else {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();
