@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-27 00:56+0200\n"
+"PO-Revision-Date: 2023-10-02 22:15+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -71,8 +71,8 @@ msgstr ""
 "<i>Insertar orden</i>.</p> <p>Hay cuatro tipos de plantillas personalizadas: "
 "se usan para <i>Responder</i>, <i>Responder a todos</i>, <i>Reenviar</i> y "
 "<i>Universal</i>, que se puede usar para toda clase de operaciones. No puede "
-"asignar un acceso rápido de teclado a las plantillas del tipo <i>Universal</"
-"i>.</p></qt>"
+"asignar un atajo de teclado a las plantillas del tipo <i>Universal</i>.</p></"
+"qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -211,7 +211,7 @@ msgstr "Contenido de la plantilla"
 #: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template shortcut"
-msgstr "Acceso rápido a la plantilla"
+msgstr "Atajo de teclado a la plantilla"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:21
@@ -843,7 +843,7 @@ msgstr "Reenviar"
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr "Acceso rá&pido:"
+msgstr "Ata&jo de teclado:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
