@@ -3305,7 +3305,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
         // Do update
         mStorageModel->updateMessageItemData(message, row);
-        QModelIndex idx = q->index(message, 0);
+        const QModelIndex idx = q->index(message, 0);
         Q_EMIT q->dataChanged(idx, idx);
 
         // Reinsert the item to the cache, if needed
