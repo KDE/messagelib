@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-30 22:16+0300\n"
+"PO-Revision-Date: 2023-10-04 13:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -89,7 +89,7 @@ msgstr "Başarısız oldu: %1 (%2)"
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
 msgid "Encapsulated message"
-msgstr "Kapsüllenmemiş ileti"
+msgstr "Kapsüllenmiş ileti"
 
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
 msgid "End of encapsulated message"
@@ -97,7 +97,7 @@ msgstr "Kapsüllenmiş iletinin sonu"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:3
 msgid "This message is encrypted."
-msgstr "Bu ileti şifrelenmiş."
+msgstr "Bu ileti şifrelendi."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
 msgid "Decrypt Message"
@@ -145,7 +145,7 @@ msgstr "Ayrıntıları Göster"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
-msgstr "Şifrelenmiş ileti (şifre çözme olanaklı değil)"
+msgstr "Şifreli ileti (şifre çözme olanaklı değil)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
@@ -165,7 +165,7 @@ msgstr "Verinin şifresi çözülemedi."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
-msgstr "Şifrelenmiş iletinin sonu"
+msgstr "Şifreli iletinin sonu"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
 msgid ""
@@ -205,34 +205,34 @@ msgstr "İmzalamayı denetlemek için yeterli bilgi yok. %1"
 #: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
-msgstr "İleti %1 tarafından imzalanmış."
+msgstr "İleti, %1 tarafından imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
 #: messagepartthemes/default/templates/signedmessagepart.html:99
 msgid "Message was signed with unknown key."
-msgstr "İleti bilinmeyen anahtarla imzalanmış."
+msgstr "İleti, bilinmeyen anahtarla imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:28
 #: messagepartthemes/default/templates/signedmessagepart.html:36
 #: messagepartthemes/default/templates/signedmessagepart.html:48
 #, kde-format
 msgid "Message was signed with key %1."
-msgstr "İleti %1 anahtarı ile imzalanmış."
+msgstr "İleti, %1 anahtarı ile imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:31
 #, kde-format
 msgid "Message was signed by %3 on %1 with key %2"
-msgstr "İleti %3 tarafından %2 anahtarı ile %1 tarihinde imzalanmış"
+msgstr "İleti, %3 tarafından %2 anahtarı ile %1 tarihinde imzalandı"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:39
 #, kde-format
 msgid "Message was signed on %1 with key %2."
-msgstr "İleti %2 anahtarı ile %1 tarihinde imzalanmış."
+msgstr "İleti, %2 anahtarı ile %1 tarihinde imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:45
 #, kde-format
 msgid "Message was signed by %2 with key %1."
-msgstr "İleti %2 tarafından %1 anahtarı ile imzalanmış."
+msgstr "İleti, %2 tarafından %1 anahtarı ile imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
 #: messagepartthemes/default/templates/signedmessagepart.html:105
@@ -244,17 +244,17 @@ msgstr "Durum: "
 #: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "İleti %2 tarafından imzalanmış (Anahtar No: %1)."
+msgstr "İleti, %2 tarafından imzalandı (Anahtar kimliği: %1)."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:92
 #, kde-format
 msgid "Message was signed on %1 with unknown key %2."
-msgstr "İleti bilinmeyen %2 anahtarıyla %1'de imzalanmış."
+msgstr "İleti, bilinmeyen %2 anahtarıyla %1 tarihinde imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:95
 #, kde-format
 msgid "Message was signed with unknown key %1."
-msgstr "İleti bilinmeyen %1 anahtarıyla imzalanmış."
+msgstr "İleti, bilinmeyen %1 anahtarıyla imzalandı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:102
 msgid "The validity of the signature cannot be verified."
@@ -262,23 +262,23 @@ msgstr "İmzanın geçerliliği doğrulanamadı."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
-msgstr "İmza geçerlidir, fakat anahtar'ın geçerliliği bilinmiyor."
+msgstr "İmza geçerli; ancak anahtarın geçerliliği bilinmiyor."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
-msgstr "İmza geçerlidir ve anahtar ucu ucuna güvenilirdir."
+msgstr "İmza geçerli; ancak anahtara pek az güveniliyor."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
-msgstr "İmza geçerlidir ve anahtar tam olarak güvenilirdir."
+msgstr "İmza geçerli ve anahtara güveniliyor."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:125
 msgid "The signature is valid and the key is ultimately trusted."
-msgstr "İmza geçerlidir ve anahtar en yüksek düzeyde güvenilirdir."
+msgstr "İmza geçerli ve anahtara en yüksek düzeyde güveniliyor."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
-msgstr "İmza geçerlidir, fakat anahtar güvenilir değildir."
+msgstr "İmza geçerli; ancak anahtara güvenilmiyor."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
@@ -318,7 +318,7 @@ msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
-msgstr "İmzalanmış iletinin sonu"
+msgstr "İmzalı iletinin sonu"
 
 #: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
@@ -635,7 +635,7 @@ msgstr "Bilinmeyen"
 #: dkim-verify/dkimwidgetinfo.cpp:100
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr "DKIM: Geçerli (%1 tarafından imzalanmış)"
+msgstr "DKIM: Geçerli (%1 tarafından imzalandı)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
@@ -726,8 +726,7 @@ msgstr "İmzayı doğrulama olanaksız."
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
-"AUID, SDID ile aynı alan adında olmalı (anahtar kaydında s-bayrağı "
-"ayarlanmış)."
+"AUID, SDID ile aynı alan adında olmalı (anahtar kaydında s-bayrağı ayarlı)."
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
@@ -788,7 +787,7 @@ msgstr "%1: Hiçbiri"
 #: dkim-verify/dkimwidgetinfo.cpp:268
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "%1: Geçerli (%2 tarafından imzalanmış)"
+msgstr "%1: Geçerli (%2 tarafından imzalandı)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
@@ -798,7 +797,7 @@ msgstr "%1: Geçerli"
 #: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
-msgstr "İmzalanmamış"
+msgstr "İmzalanmadı"
 
 #: header/grantleeheaderformatter.cpp:204
 #, kde-format
@@ -1219,7 +1218,7 @@ msgstr "Tüm URL'lerin Kimliğini Doğrula"
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr "Kimlik Doğrulanmış"
+msgstr "Kimlik Doğrulandı"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
@@ -1353,8 +1352,8 @@ msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
-"Yazdırma sırasında, ayarlarda belirtilmiş genişlet/daralt tırnak "
-"işaretlerine uy."
+"Yazdırma sırasında, ayarlarda belirtilen genişlet/daralt tırnak işaretlerine "
+"uy."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.cmake:19
@@ -1534,7 +1533,7 @@ msgstr "E-postaları, izleyen URL'ler için tara"
 #: settings/messageviewer.kcfg.cmake:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
-msgstr "Şifrelenmiş bir ileti için herhangi bir okundu yanıtı gönderme"
+msgstr "Şifreli bir ileti için herhangi bir okundu yanıtı gönderme"
 
 #. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
 #: settings/messageviewer.kcfg.cmake:161
@@ -1864,8 +1863,8 @@ msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
-"İletinin %1 kısmı şifrelenmiş. Kaydederken şifrelemeyi muhafaza etmek "
-"istiyor musunuz?"
+"İletinin %1 kısmı şifrelendi. Kaydederken şifrelemeyi korumak istiyor "
+"musunuz?"
 
 #: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
@@ -2187,8 +2186,7 @@ msgstr "Eki Sil"
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
-msgstr ""
-"Şifrelenmiş veya eski biçem iletiden bir ek silmek desteklenmemektedir."
+msgstr "Şifreli veya eski tarz iletiden bir ek silmek desteklenmemektedir."
 
 #: viewer/viewer_p.cpp:428
 #, kde-format
@@ -2635,7 +2633,7 @@ msgstr "Ham Kaynak"
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
-"Dosya sistemi veya sunucuda depolandığı gibi, ham değiştirilmemiş posta"
+"Dosya sistemi veya sunucuda depolandığı biçimde ham değiştirilmemiş posta"
 
 #: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
