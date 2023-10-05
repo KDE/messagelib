@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2023-07-09 07:29+0200\n"
+"PO-Revision-Date: 2023-10-04 19:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -61,6 +61,16 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
+"<qt><p>აქ შეგიძლიათ დაამატოთ, ჩაასწოროთ და წაშალოთ მომხმარებლის შეტყობინების "
+"ნიმუშები, რომლებიც შეტყობინებების გადაგზავნის ან მასზე პასუხის დროს "
+"გამოიყენება. მომხმარებლის ნიმუშის შესაქმნელად ჩაწერეთ მისი სახელი შეყვანის "
+"ველში და დააწექით ღილაკს '+'. ასევე შეგიძლიათ, ოპერაციის უფრო "
+"გასწრაფებისთვის, მას კლავიატურის მალსახმობი მიანიჭოთ.</p><p>შეტყობინების "
+"ნიმუშებს ჩანაცვლების ოპერაციების მხარდაჭერაც გააჩნია, მათი აკრეფის ან "
+"<i>ბრძანების ჩასმის</i> მენიუდან.</p><p>არსებობს ოთხი ტიპის ნიმუში: "
+"<i>პასუხის</i>, <i>ყველასთვის პასუხის</i>, <i>გადაგზავნის</i> და "
+"<i>უნივერსალური</i>, რომელიც ყველა ტიპის ოპერაციაში შეგიძლიათ, გამოიყენოთ. "
+"<i>უნივერსალურ</i> ნიმუშებს კლავიატურის მალსახმობს ვერ მიანიჭებთ.</p></qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -82,7 +92,7 @@ msgstr "შაბლონის შექმნის შეცდომა"
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
-msgstr ""
+msgstr "მართლა გნებავთ შაბლონის (\"%1\") წაშლა?"
 
 #: customtemplates.cpp:345
 #, kde-format
@@ -93,33 +103,33 @@ msgstr "წავშალო შაბლონი?"
 #: customtemplatesmenu.cpp:48
 #, kde-format
 msgid "With Custom Template"
-msgstr ""
+msgstr "მომხმარებლის შაბლონით"
 
 #: customtemplatesmenu.cpp:51
 #, kde-format
 msgid "Reply With Custom Template"
-msgstr ""
+msgstr "პასუხი მომხმარებლის შაბლონით"
 
 #: customtemplatesmenu.cpp:54
 #, kde-format
 msgid "Reply to All With Custom Template"
-msgstr ""
+msgstr "პასუხი ყველას მომხმარებლის შაბლონით"
 
 #: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
 #: customtemplatesmenu.cpp:189
 #, kde-format
 msgid "(no custom templates)"
-msgstr ""
+msgstr "(მომხმარებლის შაბლონების გარეშე)"
 
 #: defaulttemplates.cpp:16
 #, kde-format
 msgid "Default new message template"
-msgstr ""
+msgstr "ნაგულისხმევი ახალი შეტყობინების შაბლონი"
 
 #: defaulttemplates.cpp:21
 #, kde-format
 msgid "Default reply template"
-msgstr ""
+msgstr "ნაგულისხმევი პასუხის შაბლონი"
 
 #: defaulttemplates.cpp:26
 #, kde-format
@@ -131,11 +141,14 @@ msgid ""
 "%3\n"
 "%4"
 msgstr ""
+"%1 %2-ზე თქვენ დაწერეთ:\n"
+"%3\n"
+"%4"
 
 #: defaulttemplates.cpp:37
 #, kde-format
 msgid "Default reply all template"
-msgstr ""
+msgstr "ნაგულისხმევი ყველასთვის პასუხის შაბლონი"
 
 #: defaulttemplates.cpp:41
 #, kde-format
@@ -147,11 +160,14 @@ msgid ""
 "%4\n"
 "%5"
 msgstr ""
+"%1 %2 %3-ზე თქვენ დაწერეთ:\n"
+"%4\n"
+"%5"
 
 #: defaulttemplates.cpp:53
 #, kde-format
 msgid "Default forward template"
-msgstr ""
+msgstr "ნაგულისხმევი გადამისამართების შაბლონი"
 
 #: defaulttemplates.cpp:60
 #, kde-format
@@ -171,6 +187,16 @@ msgid ""
 "%5\n"
 "-----------------------------------------"
 msgstr ""
+"\n"
+"----------  გადმოგზავნილი შეტყობინება  ----------\n"
+"\n"
+"სათაური: %1\n"
+"თარიღი: %2, %3\n"
+"ვისგან: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:13
@@ -194,13 +220,13 @@ msgstr "შაბლონის ტიპი"
 #: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Remove the signature when replying"
-msgstr ""
+msgstr "პასუხისას ხელმოწერის წაშლა"
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
 #: settings/templateparser.kcfg:15
 #, kde-format
 msgid "Use smart &quoting"
-msgstr ""
+msgstr "ჭკვიანი ციტირების &გამოყენება"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
@@ -209,30 +235,32 @@ msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
 msgstr ""
+"პასუხი ან გადაგზავნა იგივე ვიზუალურ ფორმატში (უბრალო ტექსტი ან HTML), რაც "
+"საწყის შეტყობინებას ჰქონდა"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
 #, kde-format
 msgid "Message template for new message"
-msgstr ""
+msgstr "შეტყობინების შაბლონი ახალი შეტყობინებისთვის"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
 #: settings/templateparser.kcfg:30
 #, kde-format
 msgid "Message template for reply"
-msgstr ""
+msgstr "შეტყობინების შაბლონი პასუხისთვის"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
 #: settings/templateparser.kcfg:34
 #, kde-format
 msgid "Message template for reply to all"
-msgstr ""
+msgstr "შეტყობინების შაბლონი ყველასთვის პასუხისთვის"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
 #: settings/templateparser.kcfg:38
 #, kde-format
 msgid "Message template for forward"
-msgstr ""
+msgstr "შეტყობინების შაბლონი გადამისამართებისთვის"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
 #: settings/templateparser.kcfg:42
@@ -244,7 +272,7 @@ msgstr "ბრჭყალის სიმბოლოები"
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
-msgstr ""
+msgstr "შეუძლებელია შემცველობის ჩასმა ფაილიდან %1: %2"
 
 #: templateparserjob.cpp:519
 #, kde-format
@@ -268,15 +296,15 @@ msgstr "მიმაგრება %1"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr ""
+msgstr "გადამისამართების ბრძანება <command>%1</command> ჩავარდა."
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
-msgstr ""
+msgstr "ციტირებული შეტყობინების ტექსტი"
 
 #: templatescommandmenu.cpp:30
 msgid "Message Text as Is"
-msgstr ""
+msgstr "შეტყობინების ტექსტი, როგორც არის"
 
 #: templatescommandmenu.cpp:32
 msgid "Message Id"
@@ -360,7 +388,7 @@ msgstr "გვარის ველიდან"
 
 #: templatescommandmenu.cpp:72
 msgid "Addresses of all recipients"
-msgstr ""
+msgstr "ყველა მიმღების მისამართი"
 
 #: templatescommandmenu.cpp:74
 msgctxt "Template value for subject of the message"
@@ -369,27 +397,27 @@ msgstr "თემა"
 
 #: templatescommandmenu.cpp:76
 msgid "Quoted Headers"
-msgstr ""
+msgstr "ციტირებული თავსართები"
 
 #: templatescommandmenu.cpp:78
 msgid "Headers as Is"
-msgstr ""
+msgstr "თავსართები, როგორც არის"
 
 #: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
 msgid "Header Content"
-msgstr ""
+msgstr "თავსართის შემცველობა"
 
 #: templatescommandmenu.cpp:82
 msgid "Reply as Quoted Plain Text"
-msgstr ""
+msgstr "პასუხი ციტირებული უბრალო ტექსტის სახით"
 
 #: templatescommandmenu.cpp:84
 msgid "Reply as Quoted HTML Text"
-msgstr ""
+msgstr "პასუხი ციტირებული HTML ტექსტის სახით"
 
 #: templatescommandmenu.cpp:118
 msgid "From field Name"
-msgstr ""
+msgstr "ველიდან Name"
 
 #: templatescommandmenu.cpp:124
 msgctxt "Template subject command."
@@ -398,23 +426,27 @@ msgstr "თემა"
 
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
-msgstr ""
+msgstr "ორიგინალი შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ციტატის სახით"
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr ""
+"ორიგინალი შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr ""
+"ორიგინალი შეტყობინების სხეულის გადაცემა თავსართების ჩათვლით და შედეგის ჩასმა "
+"ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr ""
+"მიმდინარე შეტყობინების სხეულის გადაცემა და შედეგის ჩასმა ისე, როგორც არის"
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr ""
+msgstr "მიმდინარე შეტყობინების სხეულის გადაცემა და მისი ჩანაცვლება შედეგით"
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
@@ -430,7 +462,7 @@ msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
-msgstr ""
+msgstr "შემდეგი ხაზის მოცილება"
 
 #: templatescommandmenu.cpp:151
 msgid "Template Comment"
@@ -454,7 +486,7 @@ msgstr "ცარიელი ტექსტი"
 
 #: templatescommandmenu.cpp:160
 msgid "Dictionary Language"
-msgstr ""
+msgstr "ლექსიკონის ენა"
 
 #: templatescommandmenu.cpp:161
 msgid "Language"
@@ -486,7 +518,7 @@ msgstr "მიმდინარე შეტყობინება"
 #: templatescommandmenu.cpp:241
 #, kde-format
 msgid "Process with External Programs"
-msgstr ""
+msgstr "დამუშავება გარე პროგრამებით"
 
 #: templatescommandmenu.cpp:254
 #, kde-format
@@ -508,6 +540,10 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
+"<p> აქ შეგიძლიათ შექმნათ და მართოთ ნიმუშები, რომლებიც ახალი შეტყობინების "
+"შექმნის, შეტყობინებებზე პასუხის ან გადაგზავნისთვის გამოიყენება</"
+"p><p>შეტყობინების ნიმუშებს გააჩნიათ ჩანაცვლების ბრძანებების მხარდაჭერაც, "
+"მათი უბრალოდ აკრეფის, ან <i>ბრძანების ჩასმის</i> მენიუდან გამოძახებით.</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -515,6 +551,8 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
+"<p>აქ მითითებული ნიმუშები თითოეული საქაღალდისთვის განსხვავდება. ისინი ორივე, "
+"გლობალურ და იდენტიფიკატორის საკუთარ ნიმუშებსაც გადაფარავენ.</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -523,6 +561,9 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
+"<p>აქ მითითებული ნიმუშები თითოეული იდენტიფიკატორისთვის განსხვავდება. ისინი "
+"ორივე, გლობალურ ნიმუშებს გადაფარავენ, მაგრამ გადაიფარებიან თითოეული "
+"საქაღალდის პარამეტრებით, თუ მათ მიუთითებთ.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -530,11 +571,14 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
+"<p>ეს გლობალური (ნაგულისხმევი) ნიმუშებია. ის ორივე, გლობალური და საქაღალდის "
+"საკუთარი ნიმუშებით გადაიფარება, თუ მათ მიუთითებთ.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
+"მართლა გნებავთ მიმდინარე ან ყველა ნიმუშის საწყის მნიშვნელობაზე დანრუნება?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
@@ -544,12 +588,12 @@ msgstr "ნაგულისხმებ მნიშვნელობაზ�
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
-msgstr ""
+msgstr "მიმდინარე შაბლონის გადატვირთვა"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
-msgstr ""
+msgstr "ყველა შაბლონის გადატვირთვა"
 
 #: templatesconfiguration.cpp:361
 #, kde-format
@@ -560,17 +604,23 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
+"\"უბრალო ტექსტით პასუხის\" და \"HTML ტექსტით პასუხს\" წყვილად გამოყენება "
+"სწორი არაა. გამოიყენეთ მხოლოდ ერთ-ერთი ბრძანება \"ციტირებული შეტყობინებით "
+"პასუხის ბრძანებასთან\", რომელიც გჭირდებათ\n"
+"(ა)უბრალოდ ტექსტით პასუხი, როცა ციტატს ბრჭყალები მკაცრად უბრალო ტექსტის "
+"სახით გჭირდებათ\n"
+"(ბ)HTML ტექსტის სახით პასუხი, HTML ფორმატით ციტირებისთვის, თუ ის არსებობს"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
 msgid "&Insert Command"
-msgstr ""
+msgstr "&ბრძანების ჩასმა"
 
 #: templatesinsertcommandpushbutton.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr ""
+msgstr "აირჩიეთ ბრძანება შაბლონში ჩასასმელად"
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -586,7 +636,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter a name for the custom template"
-msgstr ""
+msgstr "შეიყვანეთ სახელი მომხმარებლის შაბლონისთვის"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:89
@@ -596,13 +646,15 @@ msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
 msgstr ""
+"მომხმარებლის ნიმუშის შესაქმნელად ჯერ შეიყვანეთ ნიმუშის სახელი, შემდეგ კი '+' "
+"ღილაკს დააწექით."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new custom template"
-msgstr ""
+msgstr "დაამატეთ ახალი მომხარებლის შაბლონი"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:99
@@ -612,13 +664,15 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ შექმნათ მითითებული სახელის მქონე მომხმარებლის "
+"ნიმუში"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove the selected custom template"
-msgstr ""
+msgstr "მონიშნული მომხმარებლის შაბლონის წაშლა"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:109
@@ -628,13 +682,14 @@ msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ, ამჟამად მონიშნული მომხმარებლის ნიმუში აშალოთ"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Duplicate the selected custom template"
-msgstr ""
+msgstr "მონიშნული მომხმარებლის შაბლონის დუბლირება"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:119
@@ -644,20 +699,22 @@ msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
 msgstr ""
+"დააწექით ამ ღილაკს, თუ გნებავთ, ამჟამად მონიშნული მომხმარებლის ნიმუში "
+"დააკოპიროთ"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "List of custom templates available"
-msgstr ""
+msgstr "ხელმისაწვდომი მომხმარებლის შაბლონების სია"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is a list of all the custom templates available."
-msgstr ""
+msgstr "ეს ხელმისაწვდომი მომხმარებლის შაბლონების სიაა."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:147
@@ -692,7 +749,7 @@ msgstr "ასლი:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients of the message"
-msgstr ""
+msgstr "ამ შეტყობინების დამატებითი მიმღებები"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:222
@@ -702,13 +759,15 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
+"ნიმუშის გამოყენებისას ნაგულისხმევი მიმღებების არჩევანი აქ უნდა შეიყვანოთ.  "
+"ეს მძიმეებით გამოყოფილი ელფოსტის მისამართების სიაა."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients who get a copy of the message"
-msgstr ""
+msgstr "დამატებითი მიმღებები, რომლებიც ამ შეტყობინების ასლს მიიღებენ"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:238
@@ -718,20 +777,23 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
+"ამ ნიმუშის გამოყენებისას, მიმღებები, რომლებსაც აქ შეყვანთ, ამ შეტყობინების "
+"ნაგულისხმევ ასლს მიიღებენ.  ეს მძიმეებით გამოყოფილი ელფოსტის მისამართების "
+"სიაა."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The custom template"
-msgstr ""
+msgstr "მომხმარებლის შაბლონი"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:258
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This area contains the associated custom template."
-msgstr ""
+msgstr "ეს ადგილი ასოცირებულ მომხმარებლის შაბლონს შეიცავს."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:283
@@ -794,7 +856,7 @@ msgstr "ახალი შეტყობინება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for new messages"
-msgstr ""
+msgstr "შექმენით შაბლონი ახალი შეტყობინებებისთვის"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:92
@@ -805,20 +867,23 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ახალი ელფოსტის შეტყობინებების ნიმუშებს ქმნით.  ნიმუშის "
+"შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს როგორ "
+"მუშაობს?\"."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to Sender"
-msgstr ""
+msgstr "გამომგზავნისთვის პასუხი"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:146
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message replies"
-msgstr ""
+msgstr "შექმენით შაბლონი შეტყობინებაზე საპასუხოდ"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:149
@@ -829,20 +894,23 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ახალი ელფოსტის შეტყობინების პასუხის ნიმუშებს ქმნით.  "
+"ნიმუშის შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს "
+"როგორ მუშაობს?\"."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to All / Reply to List"
-msgstr ""
+msgstr "ყველასთვის პასუხი / სიისთვის პასუხი"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for replying to all recipients or to a mailing list"
-msgstr ""
+msgstr "შექმენით შაბლონი ყველასთვის ან დაგზავნის სიისთვის საპასუხოდ"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:206
@@ -853,20 +921,23 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
+"ამ ადგილას შეგძლიათ შექმნათ ყველასთვის-პასუხის ან დაგზავნიის-სიისთვის "
+"პასუხის ნიმუშები.  მეტი ინფორმაციისთვის, როგორ შექმნათ ნიმუში, ამ ფანჯარაში "
+"\"ეს როგორ მუშაობს?\" ბმულს დააწექით."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
 #, kde-format
 msgctxt "@title Message template"
 msgid "Forward Message"
-msgstr ""
+msgstr "შეტყობინების გადაგზავნა"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message forwards"
-msgstr ""
+msgstr "შექმენით შაბლონი შეტყობინებების გადასაგზავნად"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:263
@@ -877,20 +948,23 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"ამ ადგილას თქვენ ელფოსტის გადამისამართების ნიმუშებს ქმნით.  ნიმუშის "
+"შესაქმნელად მეტი ინფორმაციის მისაღებად დააწექით ფანჯარაზე ბმულს \"ეს როგორ "
+"მუშაობს?\"."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr ""
+msgstr "&კვოტის მაჩვენებელი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr ""
+msgstr "დააყენეთ პრეფიქსი ციტირებული შეტყობინების ხაზებისთვის"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326
@@ -907,3 +981,11 @@ msgid ""
 "             </ul></qt>\n"
 "           "
 msgstr ""
+"\n"
+"             <qt>ციტატის მაჩვენებელში მხარდაჭერილია შემდეგი ადგილმჭერები:\n"
+"             <ul>\n"
+"             <li>%f: გამომგზავნის ინიციალები</li>\n"
+"             <li>%%: პროცენტის სიმბოლო</li>\n"
+"             <li>%_: გამოტოვება</li>\n"
+"             </ul></qt>\n"
+"           "
