@@ -19,11 +19,11 @@ public:
     explicit TemplateExtractHtmlElementFromMail(QObject *parent = nullptr);
     ~TemplateExtractHtmlElementFromMail() override;
 
-    Q_REQUIRED_RESULT QString bodyElement() const;
+    [[nodiscard]] QString bodyElement() const;
 
-    Q_REQUIRED_RESULT QString headerElement() const;
+    [[nodiscard]] QString headerElement() const;
 
-    Q_REQUIRED_RESULT QString htmlElement() const;
+    [[nodiscard]] QString htmlElement() const;
 
     void setHtmlContent(const QString &html);
 

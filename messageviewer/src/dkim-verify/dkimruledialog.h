@@ -20,7 +20,7 @@ public:
     explicit DKIMRuleDialog(QWidget *parent = nullptr);
     ~DKIMRuleDialog() override;
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
+    [[nodiscard]] MessageViewer::DKIMRule rule() const;
     void loadRule(const MessageViewer::DKIMRule &rule);
 
 private:

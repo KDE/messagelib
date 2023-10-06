@@ -14,7 +14,7 @@ class AutocryptRecipientPrivate
 {
 public:
     AutocryptRecipientPrivate();
-    Q_REQUIRED_RESULT QByteArray toJson(QJsonDocument::JsonFormat format) const;
+    [[nodiscard]] QByteArray toJson(QJsonDocument::JsonFormat format) const;
     void fromJson(const QByteArray &json);
 
 public:

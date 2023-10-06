@@ -25,7 +25,7 @@ namespace MessageCore
  */
 namespace Util
 {
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagementCore::Identity &
+[[nodiscard]] MESSAGECORE_EXPORT const KIdentityManagementCore::Identity &
 identityForMessage(KMime::Message *msg, const KIdentityManagementCore::IdentityManager *const identMgr, uint folderIdentityId);
 }
 }

@@ -22,7 +22,7 @@ public:
     }
 
     void cleanWhitespaceHelper(const QRegularExpression &regExp, const QString &newText, const KIdentityManagementCore::Signature &sig);
-    Q_REQUIRED_RESULT QList<QPair<int, int>> signaturePositions(const KIdentityManagementCore::Signature &sig) const;
+    [[nodiscard]] QList<QPair<int, int>> signaturePositions(const KIdentityManagementCore::Signature &sig) const;
     RichTextComposerNg *const richTextComposer;
 };
 

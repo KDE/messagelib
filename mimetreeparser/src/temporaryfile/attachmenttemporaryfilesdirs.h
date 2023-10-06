@@ -26,11 +26,11 @@ public:
 
     void addTempFile(const QString &file);
     void addTempDir(const QString &dir);
-    Q_REQUIRED_RESULT QStringList temporaryFiles() const;
+    [[nodiscard]] QStringList temporaryFiles() const;
     void removeTempFiles();
     void forceCleanTempFiles();
 
-    Q_REQUIRED_RESULT QStringList temporaryDirs() const;
+    [[nodiscard]] QStringList temporaryDirs() const;
 
     void setDelayRemoveAllInMs(int ms);
 

@@ -37,7 +37,7 @@ public:
      *  The candidates are ordered by priority, with the catch-call
      *  formatter coming last.
      */
-    Q_REQUIRED_RESULT QList<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
+    [[nodiscard]] QList<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
 
 protected:
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);

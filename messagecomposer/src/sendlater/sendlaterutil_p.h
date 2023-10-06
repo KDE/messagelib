@@ -12,7 +12,7 @@ namespace MessageComposer
 {
 namespace SendLaterUtil
 {
-Q_REQUIRED_RESULT QString agentServiceName();
-Q_REQUIRED_RESULT QString dbusPath();
+[[nodiscard]] QString agentServiceName();
+[[nodiscard]] QString dbusPath();
 }
 }

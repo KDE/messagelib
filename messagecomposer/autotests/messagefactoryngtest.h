@@ -58,8 +58,8 @@ private Q_SLOTS:
     void cleanupTestCase();
 
 private:
-    Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
-    Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
-    Q_REQUIRED_RESULT KMime::Message::Ptr createReplyAllForMessage(KMime::Message::Ptr origMsg);
+    [[nodiscard]] KMime::Message::Ptr createPlainTestMessage();
+    [[nodiscard]] KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
+    [[nodiscard]] KMime::Message::Ptr createReplyAllForMessage(KMime::Message::Ptr origMsg);
     KIdentityManagementCore::IdentityManager *mIdentMan = nullptr;
 };

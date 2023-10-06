@@ -24,22 +24,22 @@ public:
     ~PluginComposerInterface();
     void setComposerViewBase(ComposerViewBase *composerViewBase);
 
-    Q_REQUIRED_RESULT QString replyTo() const;
-    Q_REQUIRED_RESULT QString subject() const;
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString cc() const;
-    Q_REQUIRED_RESULT QString from() const;
-    Q_REQUIRED_RESULT ComposerAttachmentInterface attachments();
-    Q_REQUIRED_RESULT QString shortDate() const;
-    Q_REQUIRED_RESULT QString longDate() const;
-    Q_REQUIRED_RESULT QString shortTime() const;
-    Q_REQUIRED_RESULT QString longTime() const;
-    Q_REQUIRED_RESULT QString insertDayOfWeek() const;
+    [[nodiscard]] QString replyTo() const;
+    [[nodiscard]] QString subject() const;
+    [[nodiscard]] QString to() const;
+    [[nodiscard]] QString cc() const;
+    [[nodiscard]] QString from() const;
+    [[nodiscard]] ComposerAttachmentInterface attachments();
+    [[nodiscard]] QString shortDate() const;
+    [[nodiscard]] QString longDate() const;
+    [[nodiscard]] QString shortTime() const;
+    [[nodiscard]] QString longTime() const;
+    [[nodiscard]] QString insertDayOfWeek() const;
 
-    Q_REQUIRED_RESULT QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
-    Q_REQUIRED_RESULT QString convertText(const QString &str) const;
+    [[nodiscard]] QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
+    [[nodiscard]] QString convertText(const QString &str) const;
 
-    Q_REQUIRED_RESULT QString variableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
+    [[nodiscard]] QString variableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
 
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;

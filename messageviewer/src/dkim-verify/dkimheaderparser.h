@@ -23,12 +23,12 @@ private:
         QString headerName;
         QString headerValue;
         QByteArray codec;
-        Q_REQUIRED_RESULT bool isValid() const
+        [[nodiscard]] bool isValid() const
         {
             return !headerName.isEmpty();
         }
 
-        Q_REQUIRED_RESULT bool operator==(const Header &other) const
+        [[nodiscard]] bool operator==(const Header &other) const
         {
             return other.headerName == headerName && other.headerValue == headerValue && other.codec == codec;
         }
@@ -40,19 +40,20 @@ public:
     void parse();
     void setHead(const QByteArray &head);
 
-    Q_REQUIRED_RESULT QByteArray head() const;
+    [[nodiscard]] QByteArray head() const;
 
-    Q_REQUIRED_RESULT QString headerType(const QString &str);
-    Q_REQUIRED_RESULT bool wasAlreadyParsed() const;
+    [[nodiscard]] QString headerType(const QString &str);
+    [[nodiscard]] bool wasAlreadyParsed() const;
     void setWasAlreadyParsed(bool wasAlreadyParsed);
 
-    Q_REQUIRED_RESULT bool operator==(const DKIMHeaderParser &other) const;
-    Q_REQUIRED_RESULT QList<DKIMHeaderParser::Header> listHeaders() const;
+    [[nodiscard]] bool operator==(const DKIMHeaderParser &other) const;
+    [[nodiscard]] QList<DKIMHeaderParser::Header> listHeaders() const;
 
 private:
-    Q_REQUIRED_RESULT static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
-    Q_REQUIRED_RESULT static QByteArray unfoldHeader(const char *header, size_t headerSize);
+    [[nodiscard]] static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMHeaderParser::Header
+    extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
+    [[nodiscard]] static QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
     QList<DKIMHeaderParser::Header> mListHeaders;
     bool mWasAlreadyParsed = false;

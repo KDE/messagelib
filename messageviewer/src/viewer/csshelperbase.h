@@ -42,32 +42,32 @@ public:
     virtual QString htmlHead(const HtmlHeadSettings &) const;
 
     /** @return The collected CSS definitions as a string */
-    Q_REQUIRED_RESULT QString cssDefinitions(const HtmlHeadSettings &) const;
+    [[nodiscard]] QString cssDefinitions(const HtmlHeadSettings &) const;
 
     /** @return a &lt;div&gt; start tag with embedded style
         information suitable for quoted text with quote level @p level */
-    Q_REQUIRED_RESULT QString quoteFontTag(int level) const;
+    [[nodiscard]] QString quoteFontTag(int level) const;
     /** @return a &lt;div&gt; start tag with embedded style
         information suitable for non-quoted text */
-    Q_REQUIRED_RESULT QString nonQuotedFontTag() const;
+    [[nodiscard]] QString nonQuotedFontTag() const;
 
-    Q_REQUIRED_RESULT QFont bodyFont(bool fixedFont = false, bool printing = false) const;
+    [[nodiscard]] QFont bodyFont(bool fixedFont = false, bool printing = false) const;
 
     void setBodyFont(const QFont &font);
     void setPrintFont(const QFont &font);
 
     /** @return the quote color for the given level, where level ranges from 0 to 2 **/
-    Q_REQUIRED_RESULT QColor quoteColor(int level) const;
-    Q_REQUIRED_RESULT QString quoteColorName(int level) const;
+    [[nodiscard]] QColor quoteColor(int level) const;
+    [[nodiscard]] QString quoteColorName(int level) const;
 
-    Q_REQUIRED_RESULT QColor pgpWarnColor() const;
+    [[nodiscard]] QColor pgpWarnColor() const;
 
-    Q_REQUIRED_RESULT QString addEndBlockQuote(int numberBlock) const;
-    Q_REQUIRED_RESULT QString addStartBlockQuote(int numberBlock) const;
+    [[nodiscard]] QString addEndBlockQuote(int numberBlock) const;
+    [[nodiscard]] QString addStartBlockQuote(int numberBlock) const;
 
-    Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
-    Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
-    Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
+    [[nodiscard]] QString extraScreenCss(const QString &headerFont) const;
+    [[nodiscard]] QString extraPrintCss(const QString &headerFont) const;
+    [[nodiscard]] QString extraCommonCss(const QString &headerFont) const;
 
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
@@ -120,19 +120,19 @@ protected:
     QString imgHideUrl;
 
 private:
-    Q_REQUIRED_RESULT QString quoteCssDefinition() const;
-    Q_REQUIRED_RESULT int fontSize(bool fixed, bool print = false) const;
+    [[nodiscard]] QString quoteCssDefinition() const;
+    [[nodiscard]] int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
-    Q_REQUIRED_RESULT QString printCssDefinitions(const HtmlHeadSettings &) const;
+    [[nodiscard]] QString printCssDefinitions(const HtmlHeadSettings &) const;
     // returns CSS rules specific to the screen media type
-    Q_REQUIRED_RESULT QString screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &) const;
+    [[nodiscard]] QString screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &) const;
     // returns CSS rules common to both screen and print media types
-    Q_REQUIRED_RESULT QString commonCssDefinitions() const;
-    Q_REQUIRED_RESULT QString fullAddressList() const;
-    Q_REQUIRED_RESULT QString linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const;
-    Q_REQUIRED_RESULT QString defaultScreenHeaderFont() const;
-    Q_REQUIRED_RESULT QString defaultPrintHeaderFont() const;
-    Q_REQUIRED_RESULT bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
+    [[nodiscard]] QString commonCssDefinitions() const;
+    [[nodiscard]] QString fullAddressList() const;
+    [[nodiscard]] QString linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const;
+    [[nodiscard]] QString defaultScreenHeaderFont() const;
+    [[nodiscard]] QString defaultPrintHeaderFont() const;
+    [[nodiscard]] bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
 
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;

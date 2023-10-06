@@ -22,8 +22,8 @@ public:
 
     Kleo::KeyResolverCore::Result resolve();
 
-    Q_REQUIRED_RESULT bool isAutocryptKey(const QString &recipient) const;
-    Q_REQUIRED_RESULT bool isGossipKey(const QString &recipient) const;
+    [[nodiscard]] bool isAutocryptKey(const QString &recipient) const;
+    [[nodiscard]] bool isGossipKey(const QString &recipient) const;
 
 private:
     std::unique_ptr<AutocryptKeyResolverCorePrivate> const d;

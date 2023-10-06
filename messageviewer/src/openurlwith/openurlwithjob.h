@@ -19,7 +19,7 @@ public:
     explicit OpenUrlWithJob(QObject *parent = nullptr);
     ~OpenUrlWithJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void start();
 

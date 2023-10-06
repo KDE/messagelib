@@ -26,13 +26,13 @@ public:
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     void clear();
 
-    Q_REQUIRED_RESULT Akonadi::Item::Id currentItemId() const;
+    [[nodiscard]] Akonadi::Item::Id currentItemId() const;
     void setCurrentItemId(Akonadi::Item::Id currentItemId);
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
+    [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
 
 protected:
-    Q_REQUIRED_RESULT bool event(QEvent *e) override;
+    [[nodiscard]] bool event(QEvent *e) override;
 
 private:
     MESSAGEVIEWER_NO_EXPORT void updateInfo();

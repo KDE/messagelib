@@ -50,9 +50,9 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT Akonadi::Item::List selectionAsItems() const;
-    Q_REQUIRED_RESULT Akonadi::Item itemForRow(int row) const;
-    Q_REQUIRED_RESULT KMime::Message::Ptr messageForRow(int row) const;
+    [[nodiscard]] Akonadi::Item::List selectionAsItems() const;
+    [[nodiscard]] Akonadi::Item itemForRow(int row) const;
+    [[nodiscard]] KMime::Message::Ptr messageForRow(int row) const;
 
     Widget *const q;
 

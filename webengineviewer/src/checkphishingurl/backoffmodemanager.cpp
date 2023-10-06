@@ -31,7 +31,7 @@ public:
 
     void save();
     void load();
-    Q_REQUIRED_RESULT int calculateBackModeTime() const;
+    [[nodiscard]] int calculateBackModeTime() const;
     void startOffMode();
     void exitBackOffMode();
     void updateTimer(int seconds);

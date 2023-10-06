@@ -45,22 +45,22 @@ public:
     virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
-    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
     void setActionType(const QList<PluginActionType> &type);
     void addActionType(PluginActionType type);
-    Q_REQUIRED_RESULT QList<PluginActionType> actionTypes() const;
+    [[nodiscard]] QList<PluginActionType> actionTypes() const;
 
     virtual void createAction(KActionCollection *ac);
 
     virtual void setInitialData(const PluginEditorConverterInitialData &data);
-    Q_REQUIRED_RESULT PluginEditorConverterInitialData initialData() const;
+    [[nodiscard]] PluginEditorConverterInitialData initialData() const;
 
     virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
-    Q_REQUIRED_RESULT PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
+    [[nodiscard]] PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
     virtual void enableDisablePluginActions(bool richText);
 
@@ -69,7 +69,7 @@ public:
     QWidget *statusBarWidget() const;
 
     void setPlugin(PluginEditorConvertText *plugin);
-    Q_REQUIRED_RESULT PluginEditorConvertText *plugin() const;
+    [[nodiscard]] PluginEditorConvertText *plugin() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

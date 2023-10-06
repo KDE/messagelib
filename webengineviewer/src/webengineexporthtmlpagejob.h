@@ -24,7 +24,7 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT QWebEngineView *engineView() const;
+    [[nodiscard]] QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
 Q_SIGNALS:

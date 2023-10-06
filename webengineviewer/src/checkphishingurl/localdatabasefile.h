@@ -31,21 +31,21 @@ public:
     ~LocalDataBaseFile();
 
     void close();
-    Q_REQUIRED_RESULT bool fileExists() const;
+    [[nodiscard]] bool fileExists() const;
 
-    Q_REQUIRED_RESULT bool reload();
+    [[nodiscard]] bool reload();
 
-    Q_REQUIRED_RESULT bool isValid() const;
-    Q_REQUIRED_RESULT quint16 getUint16(int offset) const;
-    Q_REQUIRED_RESULT quint32 getUint32(int offset) const;
-    Q_REQUIRED_RESULT quint64 getUint64(int offset) const;
+    [[nodiscard]] bool isValid() const;
+    [[nodiscard]] quint16 getUint16(int offset) const;
+    [[nodiscard]] quint32 getUint32(int offset) const;
+    [[nodiscard]] quint64 getUint64(int offset) const;
     const char *getCharStar(int offset) const;
 
-    Q_REQUIRED_RESULT QByteArray searchHash(const QByteArray &hashToSearch);
+    [[nodiscard]] QByteArray searchHash(const QByteArray &hashToSearch);
 
-    Q_REQUIRED_RESULT bool shouldCheck() const;
-    Q_REQUIRED_RESULT bool checkFileChanged();
-    Q_REQUIRED_RESULT QList<WebEngineViewer::Addition> extractAllInfo() const;
+    [[nodiscard]] bool shouldCheck() const;
+    [[nodiscard]] bool checkFileChanged();
+    [[nodiscard]] QList<WebEngineViewer::Addition> extractAllInfo() const;
 
 private:
     std::unique_ptr<LocalDataBaseFilePrivate> const d;

@@ -55,25 +55,25 @@ enum VariableType {
     LastMonthNameLong,
 };
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString shortDate();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString longDate();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString shortTime();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString longTime();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString insertDayOfWeek();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString lastYear();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString nextYear();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString monthNumber();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfMonth();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString weekNumber();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString monthNameShort();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString monthNameLong();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeekNameShort();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeekNameLong();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString yearLastMonth();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString year();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeek();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString lastMonthNameLong();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString shortDate();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString longDate();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString shortTime();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString longTime();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString insertDayOfWeek();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString lastYear();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString nextYear();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNumber();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfMonth();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString weekNumber();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNameShort();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNameLong();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfWeekNameShort();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfWeekNameLong();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString yearLastMonth();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString year();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfWeek();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString lastMonthNameLong();
 }
 }

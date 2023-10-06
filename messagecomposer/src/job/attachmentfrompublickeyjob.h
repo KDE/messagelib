@@ -24,7 +24,7 @@ public:
     explicit AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent = nullptr);
     ~AttachmentFromPublicKeyJob() override;
 
-    Q_REQUIRED_RESULT QString fingerprint() const;
+    [[nodiscard]] QString fingerprint() const;
     void setFingerprint(const QString &fingerprint);
 
 protected Q_SLOTS:

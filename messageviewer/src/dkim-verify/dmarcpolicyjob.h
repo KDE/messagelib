@@ -21,13 +21,13 @@ public:
             return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty();
         }
 
-        Q_REQUIRED_RESULT bool operator==(const DMARCPolicyJob::DMARCResult &other) const
+        [[nodiscard]] bool operator==(const DMARCPolicyJob::DMARCResult &other) const
         {
             return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource
                 && mPercentage == other.mPercentage;
         }
 
-        Q_REQUIRED_RESULT bool operator!=(const DMARCPolicyJob::DMARCResult &other) const
+        [[nodiscard]] bool operator!=(const DMARCPolicyJob::DMARCResult &other) const
         {
             return !DMARCResult::operator==(other);
         }
@@ -42,10 +42,10 @@ public:
     explicit DMARCPolicyJob(QObject *parent = nullptr);
     ~DMARCPolicyJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool canStart() const;
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT QString emailAddress() const;
+    [[nodiscard]] QString emailAddress() const;
     void setEmailAddress(const QString &emailAddress);
 
 Q_SIGNALS:
@@ -55,9 +55,9 @@ private:
     void checkSubDomain(const QString &domainName);
     void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
     void slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName);
-    Q_REQUIRED_RESULT QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;
-    Q_REQUIRED_RESULT QString emailDomain() const;
-    Q_REQUIRED_RESULT QString emailSubDomain(const QString &domainName) const;
+    [[nodiscard]] QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;
+    [[nodiscard]] QString emailDomain() const;
+    [[nodiscard]] QString emailSubDomain(const QString &domainName) const;
     QString mEmailAddress;
 };
 }

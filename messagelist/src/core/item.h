@@ -75,12 +75,12 @@ public:
     /**
      * Returns the type of this item. The Type can be set only in the constructor.
      */
-    Q_REQUIRED_RESULT Type type() const;
+    [[nodiscard]] Type type() const;
 
     /**
      * The initial expand status we have to honor when attaching to the viewable root.
      */
-    Q_REQUIRED_RESULT InitialExpandStatus initialExpandStatus() const;
+    [[nodiscard]] InitialExpandStatus initialExpandStatus() const;
 
     /**
      * Set the initial expand status we have to honor when attaching to the viewable root.
@@ -90,13 +90,13 @@ public:
     /**
      * Is this item attached to the viewable root ?
      */
-    Q_REQUIRED_RESULT bool isViewable() const;
+    [[nodiscard]] bool isViewable() const;
 
     /**
      * Return true if Item pointed by it is an ancestor of this item (that is,
      * if it is its parent, parent of its parent, parent of its parent of its parent etc...
      */
-    Q_REQUIRED_RESULT bool hasAncestor(const Item *it) const;
+    [[nodiscard]] bool hasAncestor(const Item *it) const;
 
     /**
      * Makes this item viewable, that is, notifies its existence to any listener
@@ -109,46 +109,46 @@ public:
     /**
      * Return the list of child items. May be null.
      */
-    Q_REQUIRED_RESULT QList<Item *> *childItems() const;
+    [[nodiscard]] QList<Item *> *childItems() const;
 
     /**
      * Returns the child item at position idx or 0 if idx is out of the allowable range.
      */
-    Q_REQUIRED_RESULT Item *childItem(int idx) const;
+    [[nodiscard]] Item *childItem(int idx) const;
 
     /**
      * Returns the first child item, if any.
      */
-    Q_REQUIRED_RESULT Item *firstChildItem() const;
+    [[nodiscard]] Item *firstChildItem() const;
 
     /**
      * Returns the item that is visually below the specified child if this item.
      * Note that the returned item may belong to a completely different subtree.
      */
-    Q_REQUIRED_RESULT Item *itemBelowChild(Item *child);
+    [[nodiscard]] Item *itemBelowChild(Item *child);
 
     /**
      * Returns the item that is visually above the specified child if this item.
      * Note that the returned item may belong to a completely different subtree.
      */
-    Q_REQUIRED_RESULT Item *itemAboveChild(Item *child);
+    [[nodiscard]] Item *itemAboveChild(Item *child);
 
     /**
      * Returns the deepest item in the subtree originating at this item.
      */
-    Q_REQUIRED_RESULT Item *deepestItem();
+    [[nodiscard]] Item *deepestItem();
 
     /**
      * Returns the item that is visually below this item in the tree.
      * Note that the returned item may belong to a completely different subtree.
      */
-    Q_REQUIRED_RESULT Item *itemBelow();
+    [[nodiscard]] Item *itemBelow();
 
     /**
      * Returns the item that is visually above this item in the tree.
      * Note that the returned item may belong to a completely different subtree.
      */
-    Q_REQUIRED_RESULT Item *itemAbove();
+    [[nodiscard]] Item *itemAbove();
 
     /**
      * Debug helper. Dumps the structure of this subtree.
@@ -158,12 +158,12 @@ public:
     /**
      * Returns the number of children of this Item.
      */
-    Q_REQUIRED_RESULT int childItemCount() const;
+    [[nodiscard]] int childItemCount() const;
 
     /**
      * Convenience function that returns true if this item has children.
      */
-    Q_REQUIRED_RESULT bool hasChildren() const;
+    [[nodiscard]] bool hasChildren() const;
 
     /**
      * A structure used with MessageList::Item::childItemStats().
@@ -210,7 +210,7 @@ public:
      * Please note that even if this item has a non-zero parent, it can be still non viewable.
      * That is: the topmost parent of this item may be not attached to the viewable root.
      */
-    Q_REQUIRED_RESULT Item *parent() const;
+    [[nodiscard]] Item *parent() const;
 
     /**
      * Sets the parent for this item. You should also take care of inserting
@@ -221,7 +221,7 @@ public:
     /**
      * Returns the topmost parent item that is not a Root item (that is, is a Message or GroupHeader).
      */
-    Q_REQUIRED_RESULT Item *topmostNonRoot();
+    [[nodiscard]] Item *topmostNonRoot();
 
     /**
      * Returns the status associated to this Item.
@@ -236,7 +236,7 @@ public:
     /**
      * Returns a string describing the status e.g: "Read, Forwarded, Important"
      */
-    Q_REQUIRED_RESULT QString statusDescription() const;
+    [[nodiscard]] QString statusDescription() const;
 
     /**
      * Returns the size of this item (size of the Message, mainly)
@@ -252,7 +252,7 @@ public:
      * A string with a text rappresentation of size(). This is computed on-the-fly
      * and not cached.
      */
-    Q_REQUIRED_RESULT QString formattedSize() const;
+    [[nodiscard]] QString formattedSize() const;
 
     /**
      * Returns the date of this item
@@ -268,7 +268,7 @@ public:
      * A string with a text rappresentation of date() obtained via Manager. This is computed on-the-fly
      * and not cached.
      */
-    Q_REQUIRED_RESULT QString formattedDate() const;
+    [[nodiscard]] QString formattedDate() const;
 
     /**
      * Returns the maximum date in the subtree originating from this item.
@@ -285,7 +285,7 @@ public:
      * A string with a text rappresentation of maxDate() obtained via Manager. This is computed on-the-fly
      * and not cached.
      */
-    Q_REQUIRED_RESULT QString formattedMaxDate() const;
+    [[nodiscard]] QString formattedMaxDate() const;
 
     /**
      * Recompute the maximum date from the current children list.
@@ -296,7 +296,7 @@ public:
     /**
      * Returns the sender associated to this item.
      */
-    Q_REQUIRED_RESULT const QString &sender() const;
+    [[nodiscard]] const QString &sender() const;
 
     /**
      * Sets the sender associated to this item.
@@ -306,7 +306,7 @@ public:
     /**
      * Display sender.
      */
-    Q_REQUIRED_RESULT QString displaySender() const;
+    [[nodiscard]] QString displaySender() const;
 
     /**
      * Returns the receiver associated to this item.
@@ -321,7 +321,7 @@ public:
     /**
      * Display receiver.
      */
-    Q_REQUIRED_RESULT QString displayReceiver() const;
+    [[nodiscard]] QString displayReceiver() const;
 
     /**
      * Returns the sender or the receiver, depending on the underlying StorageModel settings.
@@ -331,7 +331,7 @@ public:
     /**
      * Display sender or receiver.
      */
-    Q_REQUIRED_RESULT QString displaySenderOrReceiver() const;
+    [[nodiscard]] QString displaySenderOrReceiver() const;
 
     /**
      * Returns whether sender or receiver is supposed to be displayed.
@@ -366,10 +366,10 @@ public:
     void initialSetup(time_t date, size_t size, const QString &sender, const QString &receiver, bool useReceiver);
 
     void setItemId(qint64 id);
-    Q_REQUIRED_RESULT qint64 itemId() const;
+    [[nodiscard]] qint64 itemId() const;
 
     void setParentCollectionId(qint64 id);
-    Q_REQUIRED_RESULT qint64 parentCollectionId() const;
+    [[nodiscard]] qint64 parentCollectionId() const;
 
     /**
      * This is meant to be called right after the constructor for MessageItem objects.

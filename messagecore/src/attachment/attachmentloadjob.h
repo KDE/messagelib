@@ -44,7 +44,7 @@ public:
     /**
      * Returns the loaded attachment.
      */
-    Q_REQUIRED_RESULT AttachmentPart::Ptr attachmentPart() const;
+    [[nodiscard]] AttachmentPart::Ptr attachmentPart() const;
 
 protected:
     /**

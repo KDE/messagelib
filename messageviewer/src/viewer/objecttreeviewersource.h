@@ -23,26 +23,26 @@ class MailViewerSource : public MessageViewer::EmptySource
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
     ~MailViewerSource() override;
-    Q_REQUIRED_RESULT bool decryptMessage() const override;
-    Q_REQUIRED_RESULT bool htmlLoadExternal() const override;
+    [[nodiscard]] bool decryptMessage() const override;
+    [[nodiscard]] bool htmlLoadExternal() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
-    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
-    Q_REQUIRED_RESULT int levelQuote() const override;
+    [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
+    [[nodiscard]] int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
 
     const QStringDecoder *overrideDecoderCodec() override;
 
-    Q_REQUIRED_RESULT QString createMessageHeader(KMime::Message *message) override;
+    [[nodiscard]] QString createMessageHeader(KMime::Message *message) override;
     const AttachmentStrategy *attachmentStrategy() const override;
     HtmlWriter *htmlWriter() const override;
     CSSHelperBase *cssHelper() const override;
 
-    Q_REQUIRED_RESULT bool autoImportKeys() const override;
-    Q_REQUIRED_RESULT bool showSignatureDetails() const override;
-    Q_REQUIRED_RESULT bool showEncryptionDetails() const override;
-    Q_REQUIRED_RESULT bool showEmoticons() const override;
-    Q_REQUIRED_RESULT bool showExpandQuotesMark() const override;
-    Q_REQUIRED_RESULT bool isPrinting() const override;
+    [[nodiscard]] bool autoImportKeys() const override;
+    [[nodiscard]] bool showSignatureDetails() const override;
+    [[nodiscard]] bool showEncryptionDetails() const override;
+    [[nodiscard]] bool showEmoticons() const override;
+    [[nodiscard]] bool showExpandQuotesMark() const override;
+    [[nodiscard]] bool isPrinting() const override;
 
 private:
     ViewerPrivate *const mViewer;

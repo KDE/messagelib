@@ -39,23 +39,23 @@ public:
     ~TextPart() override;
 
     // default true
-    Q_REQUIRED_RESULT bool isWordWrappingEnabled() const;
+    [[nodiscard]] bool isWordWrappingEnabled() const;
     void setWordWrappingEnabled(bool enabled);
     // default true
-    Q_REQUIRED_RESULT bool warnBadCharset() const;
+    [[nodiscard]] bool warnBadCharset() const;
     void setWarnBadCharset(bool warn);
 
-    Q_REQUIRED_RESULT QString cleanPlainText() const;
+    [[nodiscard]] QString cleanPlainText() const;
     void setCleanPlainText(const QString &text);
-    Q_REQUIRED_RESULT QString wrappedPlainText() const;
+    [[nodiscard]] QString wrappedPlainText() const;
     void setWrappedPlainText(const QString &text);
 
-    Q_REQUIRED_RESULT bool isHtmlUsed() const;
-    Q_REQUIRED_RESULT QString cleanHtml() const;
+    [[nodiscard]] bool isHtmlUsed() const;
+    [[nodiscard]] QString cleanHtml() const;
     void setCleanHtml(const QString &text);
 
-    Q_REQUIRED_RESULT bool hasEmbeddedImages() const;
-    Q_REQUIRED_RESULT KPIMTextEdit::ImageList embeddedImages() const;
+    [[nodiscard]] bool hasEmbeddedImages() const;
+    [[nodiscard]] KPIMTextEdit::ImageList embeddedImages() const;
     void setEmbeddedImages(const KPIMTextEdit::ImageList &images);
 
 Q_SIGNALS:

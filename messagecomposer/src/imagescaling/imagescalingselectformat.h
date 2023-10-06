@@ -39,7 +39,7 @@ public:
     ~ImageScalingSelectFormat() override;
 
     void setFormat(const QString &format);
-    Q_REQUIRED_RESULT QString format() const;
+    [[nodiscard]] QString format() const;
 
 Q_SIGNALS:
     void textChanged(const QString &);

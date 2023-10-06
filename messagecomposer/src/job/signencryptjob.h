@@ -50,10 +50,10 @@ public:
     void setProtectedHeaders(bool protectedHeaders);
     void setProtectedHeadersObvoscate(bool protectedHeadersObvoscate);
 
-    Q_REQUIRED_RESULT std::vector<GpgME::Key> encryptionKeys() const override;
-    Q_REQUIRED_RESULT QStringList recipients() const override;
+    [[nodiscard]] std::vector<GpgME::Key> encryptionKeys() const override;
+    [[nodiscard]] QStringList recipients() const override;
 
-    Q_REQUIRED_RESULT KMime::Content *origContent();
+    [[nodiscard]] KMime::Content *origContent();
 
 protected Q_SLOTS:
     void doStart() override;

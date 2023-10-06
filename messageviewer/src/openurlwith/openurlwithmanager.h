@@ -23,11 +23,11 @@ public:
 
     void clear();
 
-    Q_REQUIRED_RESULT const QList<OpenWithUrlInfo> &openWithUrlInfo() const;
+    [[nodiscard]] const QList<OpenWithUrlInfo> &openWithUrlInfo() const;
     void setOpenWithUrlInfo(const QList<OpenWithUrlInfo> &newOpenWithUrlInfo);
     void saveRules();
 
-    Q_REQUIRED_RESULT OpenWithUrlInfo openWith(const QUrl &url);
+    [[nodiscard]] OpenWithUrlInfo openWith(const QUrl &url);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();

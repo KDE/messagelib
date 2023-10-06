@@ -38,14 +38,14 @@ public:
 
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
-    Q_REQUIRED_RESULT QList<MessageViewer::ViewerPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<MessageViewer::ViewerPlugin *> pluginsList() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
 
     QString pluginDirectory;
     QString pluginName;
 
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
     ViewerPlugin *pluginFromIdentifier(const QString &id);
 
 private:

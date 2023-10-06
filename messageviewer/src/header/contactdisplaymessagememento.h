@@ -33,15 +33,15 @@ public:
     explicit ContactDisplayMessageMemento(const QString &emailAddress);
     ~ContactDisplayMessageMemento() override;
     void processAddress(const KContacts::Addressee &addressee);
-    Q_REQUIRED_RESULT KContacts::Picture photo() const;
+    [[nodiscard]] KContacts::Picture photo() const;
 
-    Q_REQUIRED_RESULT bool finished() const;
+    [[nodiscard]] bool finished() const;
 
     void detach() override;
 
-    Q_REQUIRED_RESULT QPixmap gravatarPixmap() const;
+    [[nodiscard]] QPixmap gravatarPixmap() const;
 
-    Q_REQUIRED_RESULT QImage imageFromUrl() const;
+    [[nodiscard]] QImage imageFromUrl() const;
 
 Q_SIGNALS:
     // TODO: Factor our update and detach into base class
@@ -54,7 +54,7 @@ private Q_SLOTS:
     void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
 
 private:
-    Q_REQUIRED_RESULT bool searchPhoto(const KContacts::AddresseeList &list);
+    [[nodiscard]] bool searchPhoto(const KContacts::AddresseeList &list);
     KContacts::Picture mPhoto;
     QPixmap mGravatarPixmap;
     QImage mImageFromUrl;

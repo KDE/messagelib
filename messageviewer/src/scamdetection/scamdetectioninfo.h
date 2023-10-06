@@ -28,17 +28,17 @@ public:
     ScamDetectionInfo();
     ~ScamDetectionInfo();
 
-    Q_REQUIRED_RESULT const QString &domainOrEmail() const;
+    [[nodiscard]] const QString &domainOrEmail() const;
     void setDomainOrEmail(const QString &newDomainOrEmail);
 
-    Q_REQUIRED_RESULT bool enabled() const;
+    [[nodiscard]] bool enabled() const;
     void setEnabled(bool newEnabled);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT ScamDetectionInfo::ScamDetectionFields scamChecks() const;
+    [[nodiscard]] ScamDetectionInfo::ScamDetectionFields scamChecks() const;
 
-    Q_REQUIRED_RESULT bool operator==(const ScamDetectionInfo &other) const;
+    [[nodiscard]] bool operator==(const ScamDetectionInfo &other) const;
 
 private:
     ScamDetectionFields mFields;

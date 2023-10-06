@@ -44,7 +44,7 @@ public:
      * @param url
      * @return the status of url
      */
-    Q_REQUIRED_RESULT CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
+    [[nodiscard]] CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
 
     /**
      * @brief clearCache clear the cache and save result in config file.

@@ -20,7 +20,7 @@ public:
     explicit RemoteContentWidget(QWidget *parent = nullptr);
     ~RemoteContentWidget() override;
 
-    Q_REQUIRED_RESULT RemoteContentInfo info() const;
+    [[nodiscard]] RemoteContentInfo info() const;
     void setInfo(const RemoteContentInfo &info);
 
 Q_SIGNALS:

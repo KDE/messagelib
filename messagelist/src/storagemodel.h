@@ -43,33 +43,33 @@ public:
     explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent = nullptr);
     ~StorageModel() override;
 
-    Q_REQUIRED_RESULT Akonadi::Collection::List displayedCollections() const;
+    [[nodiscard]] Akonadi::Collection::List displayedCollections() const;
 
-    Q_REQUIRED_RESULT QString id() const override;
-    Q_REQUIRED_RESULT bool containsOutboundMessages() const override;
+    [[nodiscard]] QString id() const override;
+    [[nodiscard]] bool containsOutboundMessages() const override;
 
-    Q_REQUIRED_RESULT virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
+    [[nodiscard]] virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
 
-    Q_REQUIRED_RESULT int initialUnreadRowCountGuess() const override;
-    Q_REQUIRED_RESULT bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const override;
+    [[nodiscard]] int initialUnreadRowCountGuess() const override;
+    [[nodiscard]] bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const override;
     void fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const override;
     void updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const override;
     void setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status) override;
 
-    Q_REQUIRED_RESULT int columnCount(const QModelIndex &parent = QModelIndex()) const override;
-    Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    Q_REQUIRED_RESULT QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
-    Q_REQUIRED_RESULT QModelIndex parent(const QModelIndex &index) const override;
-    Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    [[nodiscard]] QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QModelIndex parent(const QModelIndex &index) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QMimeData *mimeData(const QList<MessageList::Core::MessageItem *> &) const override;
     using MessageList::Core::StorageModel::mimeData;
 
-    Q_REQUIRED_RESULT Akonadi::Item itemForRow(int row) const;
-    Q_REQUIRED_RESULT Akonadi::Collection parentCollectionForRow(int row) const;
-    Q_REQUIRED_RESULT KMime::Message::Ptr messageForRow(int row) const;
+    [[nodiscard]] Akonadi::Item itemForRow(int row) const;
+    [[nodiscard]] Akonadi::Collection parentCollectionForRow(int row) const;
+    [[nodiscard]] KMime::Message::Ptr messageForRow(int row) const;
 
-    Q_REQUIRED_RESULT Akonadi::Collection collectionForId(Akonadi::Collection::Id colId) const;
+    [[nodiscard]] Akonadi::Collection collectionForId(Akonadi::Collection::Id colId) const;
 
     void resetModelStorage();
 

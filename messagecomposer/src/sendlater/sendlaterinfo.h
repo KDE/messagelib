@@ -26,31 +26,31 @@ public:
         Years,
     };
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
     void setItemId(Akonadi::Item::Id id);
-    Q_REQUIRED_RESULT Akonadi::Item::Id itemId() const;
+    [[nodiscard]] Akonadi::Item::Id itemId() const;
 
     void setRecurrenceUnit(RecurrenceUnit unit);
-    Q_REQUIRED_RESULT RecurrenceUnit recurrenceUnit() const;
+    [[nodiscard]] RecurrenceUnit recurrenceUnit() const;
 
     void setRecurrenceEachValue(int value);
-    Q_REQUIRED_RESULT int recurrenceEachValue() const;
+    [[nodiscard]] int recurrenceEachValue() const;
 
-    Q_REQUIRED_RESULT bool isRecurrence() const;
+    [[nodiscard]] bool isRecurrence() const;
     void setRecurrence(bool b);
 
     void setDateTime(const QDateTime &time);
-    Q_REQUIRED_RESULT QDateTime dateTime() const;
+    [[nodiscard]] QDateTime dateTime() const;
 
     void setLastDateTimeSend(const QDateTime &date);
-    Q_REQUIRED_RESULT QDateTime lastDateTimeSend() const;
+    [[nodiscard]] QDateTime lastDateTimeSend() const;
 
     void setSubject(const QString &subject);
-    Q_REQUIRED_RESULT QString subject() const;
+    [[nodiscard]] QString subject() const;
 
     void setTo(const QString &to);
-    Q_REQUIRED_RESULT QString to() const;
+    [[nodiscard]] QString to() const;
 
     bool operator==(const SendLaterInfo &other) const;
     inline bool operator!=(const SendLaterInfo &other) const

@@ -25,24 +25,24 @@ public:
     ~GlobalPart() override;
 
     // default true
-    Q_REQUIRED_RESULT bool isGuiEnabled() const;
+    [[nodiscard]] bool isGuiEnabled() const;
     void setGuiEnabled(bool enabled);
-    Q_REQUIRED_RESULT QWidget *parentWidgetForGui() const;
+    [[nodiscard]] QWidget *parentWidgetForGui() const;
     void setParentWidgetForGui(QWidget *widget);
 
-    Q_REQUIRED_RESULT bool isFallbackCharsetEnabled() const;
+    [[nodiscard]] bool isFallbackCharsetEnabled() const;
     void setFallbackCharsetEnabled(bool enabled);
-    Q_REQUIRED_RESULT QList<QByteArray> charsets(bool forceFallback = false) const;
+    [[nodiscard]] QList<QByteArray> charsets(bool forceFallback = false) const;
     void setCharsets(const QList<QByteArray> &charsets);
 
-    Q_REQUIRED_RESULT bool is8BitAllowed() const;
+    [[nodiscard]] bool is8BitAllowed() const;
     void set8BitAllowed(bool allowed);
 
     // default is false
-    Q_REQUIRED_RESULT bool MDNRequested() const;
+    [[nodiscard]] bool MDNRequested() const;
     void setMDNRequested(bool requestMDN);
 
-    Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
+    [[nodiscard]] bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool value);
 
 private:

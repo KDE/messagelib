@@ -23,7 +23,7 @@ public:
     explicit MDNAdviceDialog(const QString &text, bool canDeny, QWidget *parent = nullptr);
     ~MDNAdviceDialog() override;
 
-    Q_REQUIRED_RESULT MessageComposer::MDNAdvice result() const;
+    [[nodiscard]] MessageComposer::MDNAdvice result() const;
 
 private:
     MESSAGECOMPOSER_NO_EXPORT void slotUser1Clicked();

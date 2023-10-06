@@ -22,7 +22,7 @@ public:
 
     void setKeyModel(DKIMManagerKeyModel *model);
 
-    Q_REQUIRED_RESULT QList<MessageViewer::KeyInfo> keyInfos() const;
+    [[nodiscard]] QList<MessageViewer::KeyInfo> keyInfos() const;
 
     void clear();
 

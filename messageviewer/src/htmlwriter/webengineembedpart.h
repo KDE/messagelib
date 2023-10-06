@@ -18,12 +18,12 @@ public:
     ~WebEngineEmbedPart() override;
 
     void clear();
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
-    Q_REQUIRED_RESULT QMap<QString, QString> embeddedPartMap() const;
+    [[nodiscard]] QMap<QString, QString> embeddedPartMap() const;
 
     void addEmbedPart(const QByteArray &contentId, const QString &contentURL);
-    Q_REQUIRED_RESULT QString contentUrl(const QString &contentId) const;
+    [[nodiscard]] QString contentUrl(const QString &contentId) const;
 
     static WebEngineEmbedPart *self();
 

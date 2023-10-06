@@ -18,7 +18,7 @@ public:
     static DMARCManager *self();
 
     void addNoDMarcServerAddress(const QString &address);
-    Q_REQUIRED_RESULT bool isNoDMarcServerAddress(const QString &address) const;
+    [[nodiscard]] bool isNoDMarcServerAddress(const QString &address) const;
 
 private:
     void saveNoServerKeys();

@@ -13,8 +13,8 @@ namespace TemplateParser
 {
 namespace Util
 {
-Q_REQUIRED_RESULT TEMPLATEPARSER_TESTS_EXPORT QStringList keywords();
-Q_REQUIRED_RESULT TEMPLATEPARSER_TESTS_EXPORT QStringList keywordsWithArgs();
-Q_REQUIRED_RESULT TEMPLATEPARSER_TESTS_EXPORT QString removeSpaceAtBegin(const QString &selection);
+[[nodiscard]] TEMPLATEPARSER_TESTS_EXPORT QStringList keywords();
+[[nodiscard]] TEMPLATEPARSER_TESTS_EXPORT QStringList keywordsWithArgs();
+[[nodiscard]] TEMPLATEPARSER_TESTS_EXPORT QString removeSpaceAtBegin(const QString &selection);
 }
 }

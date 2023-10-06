@@ -24,7 +24,7 @@ public:
     explicit RemoteContentDialog(QWidget *parent = nullptr);
     ~RemoteContentDialog() override;
 
-    Q_REQUIRED_RESULT RemoteContentInfo info() const;
+    [[nodiscard]] RemoteContentInfo info() const;
     void setInfo(const RemoteContentInfo &info);
 
 private:

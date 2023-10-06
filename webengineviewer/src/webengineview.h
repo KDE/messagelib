@@ -27,9 +27,9 @@ public:
 
     void clearRelativePosition();
     void saveRelativePosition();
-    Q_REQUIRED_RESULT qreal relativePosition() const;
+    [[nodiscard]] qreal relativePosition() const;
 
-    Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
+    [[nodiscard]] WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 
 Q_SIGNALS:
     void mailTrackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);

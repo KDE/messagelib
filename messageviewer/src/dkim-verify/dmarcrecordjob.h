@@ -18,11 +18,11 @@ public:
     explicit DMARCRecordJob(QObject *parent = nullptr);
     ~DMARCRecordJob() override;
 
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QString domainName() const;
+    [[nodiscard]] QString domainName() const;
     void setDomainName(const QString &domainName);
 
 Q_SIGNALS:
@@ -31,7 +31,7 @@ Q_SIGNALS:
 
 private:
     void resolvDnsDone();
-    Q_REQUIRED_RESULT QString resolvDnsValue() const;
+    [[nodiscard]] QString resolvDnsValue() const;
     QString mDomainName;
     QDnsLookup *mDnsLookup = nullptr;
 };

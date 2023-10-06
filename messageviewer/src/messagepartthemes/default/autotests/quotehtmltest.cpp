@@ -25,7 +25,7 @@ class MyRenderContext : public MessageViewer::RenderContext
 public:
     ~MyRenderContext() override = default;
 
-    Q_REQUIRED_RESULT CSSHelperBase *cssHelper() const override
+    [[nodiscard]] CSSHelperBase *cssHelper() const override
     {
         return mCssHelper;
     }
@@ -48,42 +48,42 @@ public:
         return MimeTreeParser::IconType::NoIcon;
     }
 
-    Q_REQUIRED_RESULT bool showEmoticons() const override
+    [[nodiscard]] bool showEmoticons() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT bool isPrinting() const override
+    [[nodiscard]] bool isPrinting() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT bool htmlLoadExternal() const override
+    [[nodiscard]] bool htmlLoadExternal() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT bool showExpandQuotesMark() const override
+    [[nodiscard]] bool showExpandQuotesMark() const override
     {
         return mShowExpandQuotesMark;
     }
 
-    Q_REQUIRED_RESULT bool showOnlyOneMimePart() const override
+    [[nodiscard]] bool showOnlyOneMimePart() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT bool showSignatureDetails() const override
+    [[nodiscard]] bool showSignatureDetails() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT bool showEncryptionDetails() const override
+    [[nodiscard]] bool showEncryptionDetails() const override
     {
         return false;
     }
 
-    Q_REQUIRED_RESULT int levelQuote() const override
+    [[nodiscard]] int levelQuote() const override
     {
         return mLevelQuote;
     }

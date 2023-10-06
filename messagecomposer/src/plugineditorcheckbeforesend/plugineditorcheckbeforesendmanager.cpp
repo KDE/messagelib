@@ -44,12 +44,12 @@ public:
     }
 
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
-    Q_REQUIRED_RESULT QList<PluginEditorCheckBeforeSend *> pluginsList() const;
+    [[nodiscard]] QList<PluginEditorCheckBeforeSend *> pluginsList() const;
     void initializePlugins();
     QList<PluginEditorCheckBeforeSendInfo> mPluginList;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:

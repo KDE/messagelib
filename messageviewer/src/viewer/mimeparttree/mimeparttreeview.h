@@ -24,7 +24,7 @@ public:
     void clearModel();
     void setRoot(KMime::Content *root);
 
-    Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
+    [[nodiscard]] KMime::Content::List selectedContents() const;
 
 private:
     void saveMimePartTreeConfig();

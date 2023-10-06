@@ -38,8 +38,8 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     QString domain;
     QDateTime storedAtDateTime;
     QDateTime lastUsedDateTime;
-    Q_REQUIRED_RESULT bool operator==(const KeyInfo &) const;
-    Q_REQUIRED_RESULT bool operator!=(const KeyInfo &) const;
+    [[nodiscard]] bool operator==(const KeyInfo &) const;
+    [[nodiscard]] bool operator!=(const KeyInfo &) const;
 };
 
 /**
@@ -61,15 +61,15 @@ public:
     void addKey(const KeyInfo &key);
     void removeKey(const QString &key);
 
-    Q_REQUIRED_RESULT QList<KeyInfo> keys() const;
+    [[nodiscard]] QList<KeyInfo> keys() const;
 
     void saveKeys();
-    Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
+    [[nodiscard]] QString keyValue(const QString &selector, const QString &domain);
 
     void updateLastUsed(const QString &selector, const QString &domain);
 
 private:
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QList<KeyInfo> mKeys;
     QCA::Initializer *const mQcaInitializer;
 };

@@ -27,21 +27,21 @@ public:
 
     void addRule(const DKIMRule &rule);
 
-    Q_REQUIRED_RESULT QList<DKIMRule> rules() const;
+    [[nodiscard]] QList<DKIMRule> rules() const;
 
     void saveRules(const QList<DKIMRule> &lst);
 
     void clear();
 
-    Q_REQUIRED_RESULT int importRules(const QString &fileName);
+    [[nodiscard]] int importRules(const QString &fileName);
     void exportRules(const QString &fileName, const QList<DKIMRule> &lst = {});
 
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
 private:
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT int loadRules(const QString &fileName = QString());
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int loadRules(const QString &fileName = QString());
     MESSAGEVIEWER_NO_EXPORT void save(const QString &fileName = QString(), const QList<DKIMRule> &lst = {});
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QList<DKIMRule> mRules;
 };
 }

@@ -24,7 +24,7 @@ public:
 
     void setHtmlContent(const QString &html);
 
-    Q_REQUIRED_RESULT QString plainText() const;
+    [[nodiscard]] QString plainText() const;
 
 Q_SIGNALS:
     void loadContentDone(bool success);

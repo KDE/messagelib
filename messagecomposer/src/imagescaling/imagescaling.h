@@ -28,30 +28,30 @@ public:
      * @param data
      * @return true if we can load image.
      */
-    Q_REQUIRED_RESULT bool loadImageFromData(const QByteArray &data);
+    [[nodiscard]] bool loadImageFromData(const QByteArray &data);
 
     /**
      * @brief resizeImage
      * @return true if we are able to resize image
      */
-    Q_REQUIRED_RESULT bool resizeImage();
+    [[nodiscard]] bool resizeImage();
 
     /**
      * @brief imageArray
      * @return data from image after saving
      */
-    Q_REQUIRED_RESULT QByteArray imageArray() const;
+    [[nodiscard]] QByteArray imageArray() const;
 
     /**
      * @brief mimetype
      * @return new image mimetype after saving.
      */
-    Q_REQUIRED_RESULT QByteArray mimetype() const;
+    [[nodiscard]] QByteArray mimetype() const;
     void setMimetype(const QByteArray &mimetype);
 
     void setName(const QString &name);
 
-    Q_REQUIRED_RESULT QString generateNewName();
+    [[nodiscard]] QString generateNewName();
 
 private:
     std::unique_ptr<ImageScalingPrivate> const d;

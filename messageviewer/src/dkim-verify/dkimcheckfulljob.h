@@ -24,7 +24,7 @@ public:
     void startCheckFullInfo(const KMime::Message::Ptr &message);
     void startCheckFullInfo(const Akonadi::Item &item);
 
-    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    [[nodiscard]] DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 
 Q_SIGNALS:

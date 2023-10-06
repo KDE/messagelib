@@ -21,16 +21,16 @@ public:
     ComposerAttachmentInterface();
     ~ComposerAttachmentInterface();
 
-    Q_REQUIRED_RESULT QStringList fileNames() const;
+    [[nodiscard]] QStringList fileNames() const;
     void setFileNames(const QStringList &fileName);
 
-    Q_REQUIRED_RESULT int count() const;
+    [[nodiscard]] int count() const;
     void setCount(int count);
 
-    Q_REQUIRED_RESULT QStringList namesAndSize() const;
+    [[nodiscard]] QStringList namesAndSize() const;
     void setNamesAndSize(const QStringList &nameAndSize);
 
-    Q_REQUIRED_RESULT QStringList names() const;
+    [[nodiscard]] QStringList names() const;
     void setNames(const QStringList &name);
 
 private:

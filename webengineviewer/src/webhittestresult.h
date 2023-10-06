@@ -44,20 +44,20 @@ public:
     WebHitTestResult(const WebHitTestResult &other);
     ~WebHitTestResult();
 
-    Q_REQUIRED_RESULT QString alternateText() const;
-    Q_REQUIRED_RESULT QRect boundingRect() const;
-    Q_REQUIRED_RESULT QUrl imageUrl() const;
-    Q_REQUIRED_RESULT bool isContentEditable() const;
-    Q_REQUIRED_RESULT bool isContentSelected() const;
-    Q_REQUIRED_RESULT bool isNull() const;
-    Q_REQUIRED_RESULT QString linkTitle() const;
-    Q_REQUIRED_RESULT QUrl linkUrl() const;
-    Q_REQUIRED_RESULT QUrl mediaUrl() const;
-    Q_REQUIRED_RESULT bool mediaPaused() const;
-    Q_REQUIRED_RESULT bool mediaMuted() const;
-    Q_REQUIRED_RESULT QPoint pos() const;
-    Q_REQUIRED_RESULT QString tagName() const;
-    Q_REQUIRED_RESULT QUrl pageUrl() const;
+    [[nodiscard]] QString alternateText() const;
+    [[nodiscard]] QRect boundingRect() const;
+    [[nodiscard]] QUrl imageUrl() const;
+    [[nodiscard]] bool isContentEditable() const;
+    [[nodiscard]] bool isContentSelected() const;
+    [[nodiscard]] bool isNull() const;
+    [[nodiscard]] QString linkTitle() const;
+    [[nodiscard]] QUrl linkUrl() const;
+    [[nodiscard]] QUrl mediaUrl() const;
+    [[nodiscard]] bool mediaPaused() const;
+    [[nodiscard]] bool mediaMuted() const;
+    [[nodiscard]] QPoint pos() const;
+    [[nodiscard]] QString tagName() const;
+    [[nodiscard]] QUrl pageUrl() const;
 
     WebHitTestResult &operator=(const WebHitTestResult &webHit);
 

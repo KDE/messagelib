@@ -22,17 +22,17 @@ public:
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
     ~DKIMDownloadKeyJob() override;
 
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QString domainName() const;
+    [[nodiscard]] QString domainName() const;
     void setDomainName(const QString &domainName);
 
-    Q_REQUIRED_RESULT QString selectorName() const;
+    [[nodiscard]] QString selectorName() const;
     void setSelectorName(const QString &selectorName);
 
-    Q_REQUIRED_RESULT QString resolvDnsValue() const;
+    [[nodiscard]] QString resolvDnsValue() const;
 
     QDnsLookup *dnsLookup() const;
 

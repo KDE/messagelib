@@ -26,7 +26,7 @@ public:
     explicit AttachmentJob(MessageCore::AttachmentPart::Ptr part, QObject *parent = nullptr);
     ~AttachmentJob() override;
 
-    Q_REQUIRED_RESULT MessageCore::AttachmentPart::Ptr attachmentPart() const;
+    [[nodiscard]] MessageCore::AttachmentPart::Ptr attachmentPart() const;
     void setAttachmentPart(const MessageCore::AttachmentPart::Ptr &part);
 
 protected Q_SLOTS:

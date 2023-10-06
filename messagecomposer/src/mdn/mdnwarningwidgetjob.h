@@ -23,12 +23,12 @@ public:
     explicit MDNWarningWidgetJob(QObject *parent = nullptr);
     ~MDNWarningWidgetJob() override;
 
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT const Akonadi::Item &item() const;
+    [[nodiscard]] const Akonadi::Item &item() const;
     void setItem(const Akonadi::Item &newItem);
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
     void showMdnInfo(const QPair<QString, bool> &mdnInfo, KMime::MDN::SendingMode s);

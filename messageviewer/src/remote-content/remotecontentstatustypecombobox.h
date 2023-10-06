@@ -18,6 +18,6 @@ public:
     explicit RemoteContentStatusTypeComboBox(QWidget *parent = nullptr);
     ~RemoteContentStatusTypeComboBox() override;
     void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type);
-    Q_REQUIRED_RESULT RemoteContentInfo::RemoteContentInfoStatus status() const;
+    [[nodiscard]] RemoteContentInfo::RemoteContentInfoStatus status() const;
 };
 }

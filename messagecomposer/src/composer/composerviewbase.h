@@ -108,7 +108,7 @@ public:
     /**
      * Returns true if there is at least one composer job running.
      */
-    Q_REQUIRED_RESULT bool isComposing() const;
+    [[nodiscard]] bool isComposing() const;
 
     /**
      * Add the given attachment to the message.
@@ -122,49 +122,49 @@ public:
     /**
      * Header fields in recipients editor.
      */
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString cc() const;
-    Q_REQUIRED_RESULT QString bcc() const;
-    Q_REQUIRED_RESULT QString from() const;
-    Q_REQUIRED_RESULT QString replyTo() const;
-    Q_REQUIRED_RESULT QString subject() const;
+    [[nodiscard]] QString to() const;
+    [[nodiscard]] QString cc() const;
+    [[nodiscard]] QString bcc() const;
+    [[nodiscard]] QString from() const;
+    [[nodiscard]] QString replyTo() const;
+    [[nodiscard]] QString subject() const;
 
-    Q_REQUIRED_RESULT const KIdentityManagementCore::Identity &currentIdentity() const;
-    Q_REQUIRED_RESULT bool autocryptEnabled() const;
+    [[nodiscard]] const KIdentityManagementCore::Identity &currentIdentity() const;
+    [[nodiscard]] bool autocryptEnabled() const;
 
     /**
      * The following are for setting the various options and widgets in the
      *  composer.
      */
     void setAttachmentModel(MessageComposer::AttachmentModel *model);
-    Q_REQUIRED_RESULT MessageComposer::AttachmentModel *attachmentModel();
+    [[nodiscard]] MessageComposer::AttachmentModel *attachmentModel();
 
     void setAttachmentController(MessageComposer::AttachmentControllerBase *controller);
-    Q_REQUIRED_RESULT MessageComposer::AttachmentControllerBase *attachmentController();
+    [[nodiscard]] MessageComposer::AttachmentControllerBase *attachmentController();
 
     void setRecipientsEditor(MessageComposer::RecipientsEditor *recEditor);
-    Q_REQUIRED_RESULT MessageComposer::RecipientsEditor *recipientsEditor();
+    [[nodiscard]] MessageComposer::RecipientsEditor *recipientsEditor();
 
     void setSignatureController(MessageComposer::SignatureController *sigController);
-    Q_REQUIRED_RESULT MessageComposer::SignatureController *signatureController();
+    [[nodiscard]] MessageComposer::SignatureController *signatureController();
 
     void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *identCombo);
-    Q_REQUIRED_RESULT KIdentityManagementWidgets::IdentityCombo *identityCombo();
+    [[nodiscard]] KIdentityManagementWidgets::IdentityCombo *identityCombo();
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *identMan);
-    Q_REQUIRED_RESULT KIdentityManagementCore::IdentityManager *identityManager();
+    [[nodiscard]] KIdentityManagementCore::IdentityManager *identityManager();
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);
-    Q_REQUIRED_RESULT MessageComposer::RichTextComposerNg *editor() const;
+    [[nodiscard]] MessageComposer::RichTextComposerNg *editor() const;
 
     void setTransportCombo(MailTransport::TransportComboBox *transpCombo);
-    Q_REQUIRED_RESULT MailTransport::TransportComboBox *transportComboBox() const;
+    [[nodiscard]] MailTransport::TransportComboBox *transportComboBox() const;
 
     void setFccCombo(Akonadi::CollectionComboBox *fcc);
-    Q_REQUIRED_RESULT Akonadi::CollectionComboBox *fccCombo() const;
+    [[nodiscard]] Akonadi::CollectionComboBox *fccCombo() const;
     void setFcc(const Akonadi::Collection &id);
 
-    Q_REQUIRED_RESULT Sonnet::DictionaryComboBox *dictionary() const;
+    [[nodiscard]] Sonnet::DictionaryComboBox *dictionary() const;
     void setDictionary(Sonnet::DictionaryComboBox *dictionary);
 
     /**
@@ -215,28 +215,28 @@ public:
      *         FoundMissingAttachmentAndAddedAttachment, if mail might miss attachment and we added an attachment
      *         FoundMissingAttachmentAndCancel, if mail might miss attachment and cancel sending
      */
-    Q_REQUIRED_RESULT ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
+    [[nodiscard]] ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
 
-    Q_REQUIRED_RESULT bool hasMissingAttachments(const QStringList &attachmentKeywords);
+    [[nodiscard]] bool hasMissingAttachments(const QStringList &attachmentKeywords);
 
     void setSendLaterInfo(SendLaterInfo *info);
-    Q_REQUIRED_RESULT SendLaterInfo *sendLaterInfo() const;
+    [[nodiscard]] SendLaterInfo *sendLaterInfo() const;
     void saveMailSettings();
 
-    Q_REQUIRED_RESULT QDate followUpDate() const;
+    [[nodiscard]] QDate followUpDate() const;
     void setFollowUpDate(const QDate &followUpDate);
 
     void clearFollowUp();
 
-    Q_REQUIRED_RESULT Akonadi::Collection followUpCollection() const;
+    [[nodiscard]] Akonadi::Collection followUpCollection() const;
     void setFollowUpCollection(const Akonadi::Collection &followUpCollection);
 
-    Q_REQUIRED_RESULT KMime::Message::Ptr msg() const;
+    [[nodiscard]] KMime::Message::Ptr msg() const;
 
-    Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
+    [[nodiscard]] bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
 
-    Q_REQUIRED_RESULT std::shared_ptr<Kleo::ExpiryChecker> expiryChecker();
+    [[nodiscard]] std::shared_ptr<Kleo::ExpiryChecker> expiryChecker();
 
 public Q_SLOTS:
     void identityChanged(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, bool msgCleared = false);
@@ -281,13 +281,13 @@ private Q_SLOTS:
     void slotSaveMessage(KJob *job);
 
 private:
-    Q_REQUIRED_RESULT Akonadi::Collection defaultSpecialTarget() const;
+    [[nodiscard]] Akonadi::Collection defaultSpecialTarget() const;
     /**
      * Searches the mime tree, where root is the root node, for embedded images,
      * extracts them froom the body and adds them to the editor.
      */
     void collectImages(KMime::Content *root);
-    Q_REQUIRED_RESULT bool inlineSigningEncryptionSelected() const;
+    [[nodiscard]] bool inlineSigningEncryptionSelected() const;
     /**
      * Applies the user changes to the message object of the composer
      * and signs/encrypts the message if activated.
@@ -300,7 +300,7 @@ private:
         UseUnExpandedRecipients,
     };
     void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
-    Q_REQUIRED_RESULT QList<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
+    [[nodiscard]] QList<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
     void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);

@@ -27,12 +27,12 @@ public:
 
     static PluginEditorInitManager *self();
 
-    Q_REQUIRED_RESULT QList<PluginEditorInit *> pluginsList() const;
+    [[nodiscard]] QList<PluginEditorInit *> pluginsList() const;
 
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
-    Q_REQUIRED_RESULT PluginEditorInit *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] PluginEditorInit *pluginFromIdentifier(const QString &id);
 
 private:
     std::unique_ptr<PluginEditorInitManagerPrivate> const d;

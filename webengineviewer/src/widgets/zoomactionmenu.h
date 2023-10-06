@@ -34,7 +34,7 @@ public:
     void setActionCollection(KActionCollection *ac);
 
     void setZoomFactor(qreal zoomFactor);
-    Q_REQUIRED_RESULT qreal zoomFactor() const;
+    [[nodiscard]] qreal zoomFactor() const;
 
     void setWebViewerZoomFactor(qreal zoomFactor);
 

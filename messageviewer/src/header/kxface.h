@@ -309,13 +309,13 @@ private:
 
     void RevPush(const Prob *p);
     void BigPush(Prob *p);
-    Q_REQUIRED_RESULT int BigPop(const Prob *p);
+    [[nodiscard]] int BigPop(const Prob *p);
     void BigDiv(unsigned char a, unsigned char *r);
     void BigMul(unsigned char a);
     void BigAdd(unsigned char a);
     void BigClear();
 
-    Q_REQUIRED_RESULT QByteArray WriteFace();
+    [[nodiscard]] QByteArray WriteFace();
     void UnCompAll(char *fbuf);
     void UnCompress(char *f, int wid, int hei, int lev);
     void BigWrite(char *fbuf);
@@ -327,9 +327,9 @@ private:
     void PopGreys(char *f, int wid, int hei);
     void CompAll(char *fbuf);
     void Compress(char *f, int wid, int hei, int lev);
-    Q_REQUIRED_RESULT int AllWhite(char *f, int wid, int hei);
-    Q_REQUIRED_RESULT int AllBlack(char *f, int wid, int hei);
-    Q_REQUIRED_RESULT int Same(char *f, int wid, int hei);
+    [[nodiscard]] int AllWhite(char *f, int wid, int hei);
+    [[nodiscard]] int AllBlack(char *f, int wid, int hei);
+    [[nodiscard]] int Same(char *f, int wid, int hei);
     void PushGreys(char *f, int wid, int hei);
 };
 }

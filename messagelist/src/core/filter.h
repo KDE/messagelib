@@ -41,12 +41,12 @@ public:
      * Returns true if the specified parameters match this filter and false otherwise.
      * The msg pointer must not be null.
      */
-    Q_REQUIRED_RESULT bool match(const MessageItem *item) const;
+    [[nodiscard]] bool match(const MessageItem *item) const;
 
     /**
      * Returns the currently set status mask
      */
-    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const;
+    [[nodiscard]] QList<Akonadi::MessageStatus> status() const;
 
     /**
      * Sets the status mask for this filter.
@@ -61,7 +61,7 @@ public:
     /**
      * Returns the currently set search string.
      */
-    Q_REQUIRED_RESULT const QString &searchString() const;
+    [[nodiscard]] const QString &searchString() const;
 
     /**
      * Sets the search string for this filter.
@@ -71,7 +71,7 @@ public:
     /**
      * Returns the currently set MessageItem::Tag id
      */
-    Q_REQUIRED_RESULT const QString &tagId() const;
+    [[nodiscard]] const QString &tagId() const;
 
     /**
      * Sets the id of a MessageItem::Tag that the matching messages must contain.
@@ -87,30 +87,30 @@ public:
      * Returns true if this filter is empty (0 status mask, empty search string and empty tag)
      * and it's useless to call match() that will always return true.
      */
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
-    Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] QuickSearchLine::SearchOptions currentOptions() const;
 
     void save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter = -1);
-    Q_REQUIRED_RESULT static Filter *load(const KSharedConfig::Ptr &config, int filternumber);
+    [[nodiscard]] static Filter *load(const KSharedConfig::Ptr &config, int filternumber);
     void generateRandomIdentifier();
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
-    Q_REQUIRED_RESULT const QString &filterName() const;
+    [[nodiscard]] const QString &filterName() const;
     void setFilterName(const QString &newFilterName);
 
     void setOptions(QuickSearchLine::SearchOptions newOptions);
 
-    Q_REQUIRED_RESULT static Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
-    Q_REQUIRED_RESULT const QString &iconName() const;
+    [[nodiscard]] static Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
+    [[nodiscard]] const QString &iconName() const;
     void setIconName(const QString &newIconName);
 
 Q_SIGNALS:
     void finished();
 
 private:
-    Q_REQUIRED_RESULT bool containString(const QString &searchInString) const;
+    [[nodiscard]] bool containString(const QString &searchInString) const;
     QList<Akonadi::MessageStatus> mStatus; ///< Messages must match these statuses, if non 0
     QString mSearchString; ///< Messages must match this search string, if not empty
     QString mTagId; ///< Messages must have this tag, if not empty. Contains a tag url.

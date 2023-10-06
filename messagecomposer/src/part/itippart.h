@@ -29,17 +29,17 @@ public:
     explicit ItipPart(QObject *parent = nullptr);
     ~ItipPart() override;
 
-    Q_REQUIRED_RESULT QString method() const;
+    [[nodiscard]] QString method() const;
     void setMethod(const QString &method);
 
-    Q_REQUIRED_RESULT QString invitation() const;
+    [[nodiscard]] QString invitation() const;
     void setInvitation(const QString &invitation);
 
-    Q_REQUIRED_RESULT QString invitationBody() const;
+    [[nodiscard]] QString invitationBody() const;
     void setInvitationBody(const QString &invitationBody);
 
     // default false
-    Q_REQUIRED_RESULT bool outlookConformInvitation() const;
+    [[nodiscard]] bool outlookConformInvitation() const;
     void setOutlookConformInvitation(bool enabled);
 
 Q_SIGNALS:

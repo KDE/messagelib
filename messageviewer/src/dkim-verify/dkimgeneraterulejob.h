@@ -18,10 +18,10 @@ public:
     explicit DKIMGenerateRuleJob(QObject *parent = nullptr);
     ~DKIMGenerateRuleJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool canStart() const;
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT DKIMCheckSignatureJob::CheckSignatureResult result() const;
+    [[nodiscard]] DKIMCheckSignatureJob::CheckSignatureResult result() const;
     void setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:

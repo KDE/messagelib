@@ -52,7 +52,7 @@ public:
     /**
      * Returns the collected images.
      */
-    Q_REQUIRED_RESULT const std::vector<KMime::Content *> &images() const;
+    [[nodiscard]] const std::vector<KMime::Content *> &images() const;
 
 private:
     //@cond PRIVATE

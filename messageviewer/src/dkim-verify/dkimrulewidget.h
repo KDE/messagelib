@@ -21,7 +21,7 @@ public:
     explicit DKIMRuleWidget(QWidget *parent = nullptr);
     ~DKIMRuleWidget() override;
     void loadRule(const MessageViewer::DKIMRule &rule);
-    Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
+    [[nodiscard]] MessageViewer::DKIMRule rule() const;
 
 Q_SIGNALS:
     void updateOkButtonRequested(bool enabled);

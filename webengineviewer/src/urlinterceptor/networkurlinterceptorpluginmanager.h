@@ -26,11 +26,11 @@ public:
     explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
     ~NetworkUrlInterceptorPluginManager() override;
 
-    Q_REQUIRED_RESULT QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
-    Q_REQUIRED_RESULT WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:
     std::unique_ptr<NetworkUrlInterceptorPluginManagerPrivate> const d;

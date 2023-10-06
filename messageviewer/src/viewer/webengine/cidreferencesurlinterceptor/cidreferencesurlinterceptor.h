@@ -17,6 +17,6 @@ public:
     explicit CidReferencesUrlInterceptor(QObject *parent = nullptr);
     ~CidReferencesUrlInterceptor() override;
 
-    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    [[nodiscard]] bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 };
 }

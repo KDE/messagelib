@@ -24,21 +24,21 @@ public:
     void start();
 
     void setText(const QString &str);
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
 
     MessageComposer::ComposerViewInterface *composerViewInterface() const;
     void setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface);
-    Q_REQUIRED_RESULT static QString convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text);
+    [[nodiscard]] static QString convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text);
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
-    Q_REQUIRED_RESULT static QString convertVariables(const QString &cmd, int &i, QChar c);
-    Q_REQUIRED_RESULT static QString getFirstNameFromEmail(const QString &address);
-    Q_REQUIRED_RESULT static QString getLastNameFromEmail(const QString &address);
-    Q_REQUIRED_RESULT static QString getNameFromEmail(const QString &address);
+    [[nodiscard]] static QString convertVariables(const QString &cmd, int &i, QChar c);
+    [[nodiscard]] static QString getFirstNameFromEmail(const QString &address);
+    [[nodiscard]] static QString getLastNameFromEmail(const QString &address);
+    [[nodiscard]] static QString getNameFromEmail(const QString &address);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

@@ -16,7 +16,7 @@ class ApplicationPkcs7MimeBodyPartFormatter : public Interface::BodyPartFormatte
     static const ApplicationPkcs7MimeBodyPartFormatter *self;
 
 public:
-    Q_REQUIRED_RESULT MessagePartPtr process(Interface::BodyPart &part) const override;
+    [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

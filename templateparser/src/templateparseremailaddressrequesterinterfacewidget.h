@@ -18,7 +18,7 @@ public:
     explicit TemplateParserEmailAddressRequesterInterfaceWidget(QWidget *parent = nullptr);
     ~TemplateParserEmailAddressRequesterInterfaceWidget() override = default;
 
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
     void setText(const QString &str);
     void clear();
 

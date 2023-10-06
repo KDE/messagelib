@@ -33,7 +33,7 @@ public:
     explicit DKIMManageRulesWidgetItem(QTreeWidget *parent = nullptr);
     ~DKIMManageRulesWidgetItem() override;
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
+    [[nodiscard]] MessageViewer::DKIMRule rule() const;
     void setRule(const MessageViewer::DKIMRule &rule);
 
 private:
@@ -54,11 +54,11 @@ public:
     ~DKIMManageRulesWidget() override;
     void loadSettings();
     void saveSettings();
-    Q_REQUIRED_RESULT QByteArray saveHeaders() const;
+    [[nodiscard]] QByteArray saveHeaders() const;
     void restoreHeaders(const QByteArray &header);
 
     void addRule();
-    Q_REQUIRED_RESULT QList<MessageViewer::DKIMRule> rules() const;
+    [[nodiscard]] QList<MessageViewer::DKIMRule> rules() const;
 
     void updateRules();
 Q_SIGNALS:

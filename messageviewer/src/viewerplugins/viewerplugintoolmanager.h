@@ -33,9 +33,9 @@ public:
     void setActionCollection(KActionCollection *ac);
 
     void setPluginName(const QString &pluginName);
-    Q_REQUIRED_RESULT QString pluginName() const;
-    Q_REQUIRED_RESULT bool initializePluginList();
-    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
+    [[nodiscard]] QString pluginName() const;
+    [[nodiscard]] bool initializePluginList();
+    [[nodiscard]] QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
     void updateActions(const Akonadi::Item &messageItem);
 
@@ -45,7 +45,7 @@ public:
     void refreshActionList();
 
     void setPluginDirectory(const QString &directory);
-    Q_REQUIRED_RESULT QString pluginDirectory() const;
+    [[nodiscard]] QString pluginDirectory() const;
 Q_SIGNALS:
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 

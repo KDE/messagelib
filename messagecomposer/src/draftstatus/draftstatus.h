@@ -21,8 +21,8 @@ public:
     void setState(bool encrypt);
     void removeState();
 
-    Q_REQUIRED_RESULT bool encryptionState() const;
-    Q_REQUIRED_RESULT bool isDefined() const;
+    [[nodiscard]] bool encryptionState() const;
+    [[nodiscard]] bool isDefined() const;
 
 private:
     KMime::Message::Ptr mMsg;
@@ -36,8 +36,8 @@ public:
     void setState(bool sign);
     void removeState();
 
-    Q_REQUIRED_RESULT bool signState() const;
-    Q_REQUIRED_RESULT bool isDefined() const;
+    [[nodiscard]] bool signState() const;
+    [[nodiscard]] bool isDefined() const;
 
 private:
     KMime::Message::Ptr mMsg;
@@ -51,8 +51,8 @@ public:
     void setState(Kleo::CryptoMessageFormat cryptoMessageFormat);
     void removeState();
 
-    Q_REQUIRED_RESULT Kleo::CryptoMessageFormat cryptoMessageFormatState() const;
-    Q_REQUIRED_RESULT bool isDefined() const;
+    [[nodiscard]] Kleo::CryptoMessageFormat cryptoMessageFormatState() const;
+    [[nodiscard]] bool isDefined() const;
 
 private:
     KMime::Message::Ptr mMsg;

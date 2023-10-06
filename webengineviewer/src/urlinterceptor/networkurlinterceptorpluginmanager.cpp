@@ -47,11 +47,11 @@ public:
     void initializePluginList();
 
     void loadPlugin(MailNetworkUrlInterceptorPluginInfo *item);
-    Q_REQUIRED_RESULT QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
-    Q_REQUIRED_RESULT NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:
     QList<MailNetworkUrlInterceptorPluginInfo> mPluginList;

@@ -40,7 +40,7 @@ public:
      * to a ModelInvariantRowMapper. Returns false otherwise.
      * An invalid index will always map to the current row -1 (which is invalid as QModelIndex row).
      */
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
     /**
      * Returns the current model index row for this invariant index. This function
@@ -51,7 +51,7 @@ public:
      * by calling the modelInvariantIndexToModelIndexRow() by your own. If you don't
      * own the mapper then this function is the only way to go.
      */
-    Q_REQUIRED_RESULT int currentModelIndexRow();
+    [[nodiscard]] int currentModelIndexRow();
 
 private:
     class ModelInvariantIndexPrivate;

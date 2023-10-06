@@ -23,7 +23,7 @@ public:
     ThreadingCache();
     ~ThreadingCache();
 
-    Q_REQUIRED_RESULT bool isEnabled() const;
+    [[nodiscard]] bool isEnabled() const;
     void setEnabled(bool enabled);
 
     void load(const QString &id, const Aggregation *aggregation);

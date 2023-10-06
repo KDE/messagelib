@@ -21,7 +21,7 @@ public:
     ~DKIMStoreResultJob() override;
 
     void start();
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void setItem(const Akonadi::Item &item);

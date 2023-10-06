@@ -21,12 +21,12 @@ class MESSAGECORE_EXPORT HeaderMixupNodeHelper
 public:
     HeaderMixupNodeHelper(MimeTreeParser::NodeHelper *n, KMime::Content *m);
 
-    Q_REQUIRED_RESULT bool hasMailHeader(const char *header) const;
-    Q_REQUIRED_RESULT KMime::Headers::Base const *mailHeaderAsBase(const char *header) const;
-    Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
-    Q_REQUIRED_RESULT QDateTime dateHeader() const;
-    Q_REQUIRED_RESULT QList<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
-    Q_REQUIRED_RESULT QList<KMime::Headers::Base *> headers(const char *headerType) const;
+    [[nodiscard]] bool hasMailHeader(const char *header) const;
+    [[nodiscard]] KMime::Headers::Base const *mailHeaderAsBase(const char *header) const;
+    [[nodiscard]] QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
+    [[nodiscard]] QDateTime dateHeader() const;
+    [[nodiscard]] QList<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
+    [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *headerType) const;
 
 public:
     KMime::Content *message = nullptr;
@@ -35,6 +35,6 @@ private:
     MimeTreeParser::NodeHelper *const mNodeHelper;
 };
 
-Q_REQUIRED_RESULT QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
+[[nodiscard]] QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
 MESSAGECORE_EXPORT void processAutocryptfromMail(const HeaderMixupNodeHelper &mixup);
 }

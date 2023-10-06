@@ -25,14 +25,14 @@ public:
 
     virtual bool start() = 0;
     virtual void exec() = 0;
-    Q_REQUIRED_RESULT bool isRunning() const;
+    [[nodiscard]] bool isRunning() const;
 
-    Q_REQUIRED_RESULT const QString &auditLogAsHtml() const
+    [[nodiscard]] const QString &auditLogAsHtml() const
     {
         return m_auditLog;
     }
 
-    Q_REQUIRED_RESULT GpgME::Error auditLogError() const
+    [[nodiscard]] GpgME::Error auditLogError() const
     {
         return m_auditLogError;
     }

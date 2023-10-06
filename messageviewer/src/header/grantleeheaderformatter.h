@@ -38,23 +38,23 @@ public:
     explicit GrantleeHeaderFormatter();
     ~GrantleeHeaderFormatter();
 
-    Q_REQUIRED_RESULT QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
+    [[nodiscard]] QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders,
-                                     const QString &absolutPath,
-                                     const QString &filename,
-                                     const MessageViewer::HeaderStyle *style,
-                                     KMime::Message *message,
-                                     bool isPrinting) const;
+    [[nodiscard]] QString toHtml(const QStringList &displayExtraHeaders,
+                                 const QString &absolutPath,
+                                 const QString &filename,
+                                 const MessageViewer::HeaderStyle *style,
+                                 KMime::Message *message,
+                                 bool isPrinting) const;
 
 private:
-    Q_REQUIRED_RESULT QString format(const QString &absolutePath,
-                                     const KTextTemplate::Template &headerTemplate,
-                                     const QStringList &displayExtraHeaders,
-                                     bool isPrinting,
-                                     const MessageViewer::HeaderStyle *style,
-                                     KMime::Message *message,
-                                     bool showEmoticons = true) const;
+    [[nodiscard]] QString format(const QString &absolutePath,
+                                 const KTextTemplate::Template &headerTemplate,
+                                 const QStringList &displayExtraHeaders,
+                                 bool isPrinting,
+                                 const MessageViewer::HeaderStyle *style,
+                                 KMime::Message *message,
+                                 bool showEmoticons = true) const;
     class GrantleeHeaderFormatterPrivate;
     std::unique_ptr<GrantleeHeaderFormatterPrivate> const d;
 };

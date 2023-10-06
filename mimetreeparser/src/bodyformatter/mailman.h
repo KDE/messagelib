@@ -16,10 +16,10 @@ class MailmanBodyPartFormatter : public Interface::BodyPartFormatter
     static const MailmanBodyPartFormatter *self;
 
 public:
-    Q_REQUIRED_RESULT MessagePartPtr process(Interface::BodyPart &part) const override;
+    [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 
 private:
-    Q_REQUIRED_RESULT bool isMailmanMessage(KMime::Content *curNode) const;
+    [[nodiscard]] bool isMailmanMessage(KMime::Content *curNode) const;
 };
 }

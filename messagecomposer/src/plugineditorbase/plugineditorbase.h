@@ -23,16 +23,16 @@ public:
     explicit PluginEditorBase(QObject *parent = nullptr);
     ~PluginEditorBase() override;
 
-    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
+    [[nodiscard]] virtual bool hasConfigureDialog() const;
 
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void emitConfigChanged();
 
-    Q_REQUIRED_RESULT virtual QString description() const;
+    [[nodiscard]] virtual QString description() const;
 
     void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
+    [[nodiscard]] bool isEnabled() const;
 
 Q_SIGNALS:
     void configChanged();

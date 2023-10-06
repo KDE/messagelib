@@ -16,8 +16,8 @@ using namespace WebEngineViewer;
 struct UrlCacheInfo {
     UrlCacheInfo() = default;
 
-    Q_REQUIRED_RESULT bool isMalWare() const;
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isMalWare() const;
+    [[nodiscard]] bool isValid() const;
     CheckPhishingUrlCache::UrlStatus status = CheckPhishingUrlCache::Unknown;
     uint verifyCacheAfterThisTime = 0;
 };

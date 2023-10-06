@@ -22,14 +22,14 @@ public:
     }
 
     void setPluginName(const QString &pluginName);
-    Q_REQUIRED_RESULT QString pluginDirectory() const;
-    Q_REQUIRED_RESULT QString pluginName() const;
+    [[nodiscard]] QString pluginDirectory() const;
+    [[nodiscard]] QString pluginName() const;
     void createView();
     void refreshActionList();
     void closeAllTools();
     void setActionCollection(KActionCollection *ac);
     void updateActions(const Akonadi::Item &messageItem);
-    Q_REQUIRED_RESULT QList<QAction *> actionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
+    [[nodiscard]] QList<QAction *> actionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
     QList<MessageViewer::ViewerPluginInterface *> mListInterface;
     KActionCollection *mActionCollection = nullptr;
     QWidget *mParentWidget = nullptr;

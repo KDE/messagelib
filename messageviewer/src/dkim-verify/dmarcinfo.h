@@ -18,24 +18,24 @@ class MESSAGEVIEWER_EXPORT DMARCInfo
 {
 public:
     DMARCInfo();
-    Q_REQUIRED_RESULT bool parseDMARC(const QString &key);
-    Q_REQUIRED_RESULT QString version() const;
+    [[nodiscard]] bool parseDMARC(const QString &key);
+    [[nodiscard]] QString version() const;
     void setVersion(const QString &version);
 
-    Q_REQUIRED_RESULT QString adkim() const;
+    [[nodiscard]] QString adkim() const;
     void setAdkim(const QString &adkim);
 
     // TODO enum ?
-    Q_REQUIRED_RESULT QString policy() const;
+    [[nodiscard]] QString policy() const;
     void setPolicy(const QString &policy);
 
-    Q_REQUIRED_RESULT int percentage() const;
+    [[nodiscard]] int percentage() const;
     void setPercentage(int percentage);
 
-    Q_REQUIRED_RESULT QString subDomainPolicy() const;
+    [[nodiscard]] QString subDomainPolicy() const;
     void setSubDomainPolicy(const QString &subDomainPolicy);
 
-    Q_REQUIRED_RESULT bool operator==(const DMARCInfo &other) const;
+    [[nodiscard]] bool operator==(const DMARCInfo &other) const;
 
 private:
     QString mVersion;

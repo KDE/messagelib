@@ -51,19 +51,19 @@ public:
     /**
      * Returns the original part of the compressed attachment.
      */
-    Q_REQUIRED_RESULT const AttachmentPart::Ptr originalPart() const;
+    [[nodiscard]] const AttachmentPart::Ptr originalPart() const;
 
     /**
      * Returns the compressed part of the attachment.
      *
      * @note does not delete it unless it failed...
      */
-    Q_REQUIRED_RESULT AttachmentPart::Ptr compressedPart() const;
+    [[nodiscard]] AttachmentPart::Ptr compressedPart() const;
 
     /**
      * Returns whether the compressed part is larger than the original part.
      */
-    Q_REQUIRED_RESULT bool isCompressedPartLarger() const;
+    [[nodiscard]] bool isCompressedPartLarger() const;
 
 private:
     //@cond PRIVATE

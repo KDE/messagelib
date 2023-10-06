@@ -49,7 +49,7 @@ public:
     void doStart(); // slot
     void composeStep1();
     void composeStep2();
-    Q_REQUIRED_RESULT QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
+    [[nodiscard]] QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
     void contentJobFinished(KJob *job); // slot
     void composeWithLateAttachments(KMime::Message *headers,
                                     KMime::Content *content,

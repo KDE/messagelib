@@ -23,7 +23,7 @@ public:
 
     void updateMenu();
 
-    Q_REQUIRED_RESULT QStringList urls() const;
+    [[nodiscard]] QStringList urls() const;
     void setUrls(const QStringList &urls);
 
     void clearUrls();

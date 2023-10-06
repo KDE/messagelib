@@ -19,10 +19,10 @@ public:
     explicit FilterListWidgetItem(QListWidget *parent = nullptr);
     ~FilterListWidgetItem() override;
 
-    Q_REQUIRED_RESULT const QString &identifier() const;
+    [[nodiscard]] const QString &identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
-    Q_REQUIRED_RESULT const QString &iconName() const;
+    [[nodiscard]] const QString &iconName() const;
     void setIconName(const QString &newIconName);
 
 private:

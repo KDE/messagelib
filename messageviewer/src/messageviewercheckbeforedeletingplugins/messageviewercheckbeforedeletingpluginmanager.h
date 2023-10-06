@@ -26,12 +26,12 @@ public:
     explicit MessageViewerCheckBeforeDeletingPluginManager(QObject *parent = nullptr);
     ~MessageViewerCheckBeforeDeletingPluginManager() override;
 
-    Q_REQUIRED_RESULT QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
+    [[nodiscard]] QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
 
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     std::unique_ptr<MessageViewerCheckBeforeDeletingPluginManagerPrivate> const d;

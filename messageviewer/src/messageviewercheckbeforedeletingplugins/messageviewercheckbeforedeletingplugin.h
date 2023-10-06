@@ -28,7 +28,7 @@ public:
     virtual void showConfigureDialog(QWidget *parent);
 
     void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
+    [[nodiscard]] bool isEnabled() const;
 Q_SIGNALS:
     void configChanged();
 

@@ -47,7 +47,7 @@ public:
     void setText(const QString &text);
     void setPlainText(const QString &text);
     void setFixedFont();
-    Q_REQUIRED_RESULT MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
+    [[nodiscard]] MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
 
 private:
     void slotFind();

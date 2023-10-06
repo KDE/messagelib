@@ -18,7 +18,7 @@ class WEBENGINEVIEWER_EXPORT DeveloperToolDialog : public QDialog
 public:
     explicit DeveloperToolDialog(QWidget *parent = nullptr);
     ~DeveloperToolDialog() override;
-    Q_REQUIRED_RESULT QWebEnginePage *enginePage() const;
+    [[nodiscard]] QWebEnginePage *enginePage() const;
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void readConfig();

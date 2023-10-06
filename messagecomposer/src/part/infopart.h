@@ -57,40 +57,40 @@ public:
     explicit InfoPart(QObject *parent = nullptr);
     ~InfoPart() override;
 
-    Q_REQUIRED_RESULT QString from() const;
+    [[nodiscard]] QString from() const;
     void setFrom(const QString &from);
-    Q_REQUIRED_RESULT QStringList to() const;
+    [[nodiscard]] QStringList to() const;
     void setTo(const QStringList &to);
-    Q_REQUIRED_RESULT QStringList cc() const;
+    [[nodiscard]] QStringList cc() const;
     void setCc(const QStringList &cc);
-    Q_REQUIRED_RESULT QStringList bcc() const;
+    [[nodiscard]] QStringList bcc() const;
     void setBcc(const QStringList &bcc);
 
-    Q_REQUIRED_RESULT QStringList replyTo() const;
+    [[nodiscard]] QStringList replyTo() const;
     void setReplyTo(const QStringList &replyTo);
 
-    Q_REQUIRED_RESULT QString subject() const;
+    [[nodiscard]] QString subject() const;
     void setSubject(const QString &subject);
 
-    Q_REQUIRED_RESULT QString fcc() const;
+    [[nodiscard]] QString fcc() const;
     void setFcc(const QString &fcc);
 
-    Q_REQUIRED_RESULT QString userAgent() const;
+    [[nodiscard]] QString userAgent() const;
     void setUserAgent(const QString &userAgent);
 
-    Q_REQUIRED_RESULT bool urgent() const;
+    [[nodiscard]] bool urgent() const;
     void setUrgent(bool);
 
-    Q_REQUIRED_RESULT QString inReplyTo() const;
+    [[nodiscard]] QString inReplyTo() const;
     void setInReplyTo(const QString &inReplyTo);
 
-    Q_REQUIRED_RESULT QString references() const;
+    [[nodiscard]] QString references() const;
     void setReferences(const QString &references);
 
     void setExtraHeaders(const KMime::Headers::Base::List &headers);
-    Q_REQUIRED_RESULT KMime::Headers::Base::List extraHeaders() const;
+    [[nodiscard]] KMime::Headers::Base::List extraHeaders() const;
 
-    Q_REQUIRED_RESULT int transportId() const;
+    [[nodiscard]] int transportId() const;
     void setTransportId(int tid);
 
 Q_SIGNALS:

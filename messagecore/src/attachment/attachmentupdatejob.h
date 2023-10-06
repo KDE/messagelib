@@ -24,8 +24,8 @@ public:
     ~AttachmentUpdateJob() override;
 
     void start() override;
-    Q_REQUIRED_RESULT AttachmentPart::Ptr originalPart() const;
-    Q_REQUIRED_RESULT AttachmentPart::Ptr updatedPart() const;
+    [[nodiscard]] AttachmentPart::Ptr originalPart() const;
+    [[nodiscard]] AttachmentPart::Ptr updatedPart() const;
 
 private:
     //@cond PRIVATE

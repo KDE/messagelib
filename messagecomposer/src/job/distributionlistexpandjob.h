@@ -42,12 +42,12 @@ public:
     /**
      * Returns the email addresses of the list members.
      */
-    Q_REQUIRED_RESULT QString addresses() const;
+    [[nodiscard]] QString addresses() const;
 
     /**
      * Returns whether the list of email addresses is empty.
      */
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
 private Q_SLOTS:
     void slotSearchDone(KJob *);

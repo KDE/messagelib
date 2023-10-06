@@ -30,14 +30,14 @@ namespace MessageViewer
 namespace Util
 {
 // return true if we should proceed, false if we should abort
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool containsExternalReferences(const QString &str, const QString &extraHead);
-Q_REQUIRED_RESULT bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool containsExternalReferences(const QString &str, const QString &extraHead);
+[[nodiscard]] bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool
 saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
+[[nodiscard]] MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
 /**
  * @brief Replaces the @c node message part by an empty attachment with information about deleted attachment.
  *
@@ -45,7 +45,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content
  *             filename "Deleted: <original attachment name>". Must not be @p null.
  * @return Returns whether the message was actually modified.
  */
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool deleteAttachment(KMime::Content *node);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool deleteAttachment(KMime::Content *node);
 /**
  * @brief Calls deleteAttachment() for each node in the @p contents list.
  *
@@ -53,9 +53,9 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool deleteAttachment(KMime::Content *nod
  * @return Returns number of attachments that have actually been replaced.
  * @see deleteAttachment()
  */
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT int deleteAttachments(const KMime::Content::List &contents);
+[[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const KMime::Content::List &contents);
 
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
+[[nodiscard]] MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 /** Return a QTextCodec for the specified charset.
  * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
@@ -65,16 +65,16 @@ struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;
     QString bodyStyle;
-    Q_REQUIRED_RESULT bool operator==(const HtmlMessageInfo &other) const
+    [[nodiscard]] bool operator==(const HtmlMessageInfo &other) const
     {
         return other.htmlSource == htmlSource && other.extraHead == extraHead && other.bodyStyle == bodyStyle;
     }
 };
 
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString parseBodyStyle(const QString &style);
+[[nodiscard]] MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
+[[nodiscard]] MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
+[[nodiscard]] MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
+[[nodiscard]] MESSAGEVIEWER_EXPORT QString parseBodyStyle(const QString &style);
 }
 }
 Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_RELOCATABLE_TYPE);

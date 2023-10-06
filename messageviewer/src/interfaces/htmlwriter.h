@@ -75,7 +75,7 @@ public:
     virtual void setStyleBody(const QString &styleBody) = 0;
 
     void setCodec(const QByteArray &codec);
-    Q_REQUIRED_RESULT QByteArray codec() const;
+    [[nodiscard]] QByteArray codec() const;
 
 private:
     Q_DISABLE_COPY(HtmlWriter)

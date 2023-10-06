@@ -23,13 +23,13 @@ public:
     ~WebEngineExportPdfPageJob() override;
     void start();
 
-    Q_REQUIRED_RESULT QWebEngineView *engineView() const;
+    [[nodiscard]] QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
-    Q_REQUIRED_RESULT QString pdfPath() const;
+    [[nodiscard]] QString pdfPath() const;
     void setPdfPath(const QString &pdfPath);
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
     void exportPdfFailed();

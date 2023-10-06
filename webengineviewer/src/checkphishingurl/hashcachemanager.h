@@ -32,7 +32,7 @@ public:
 
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
 
-    Q_REQUIRED_RESULT HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
+    [[nodiscard]] HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 
 private:
     std::unique_ptr<HashCacheManagerPrivate> const d;

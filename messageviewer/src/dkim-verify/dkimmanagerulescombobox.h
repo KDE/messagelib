@@ -16,7 +16,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMManageRulesComboBox : public QComboBox
 public:
     explicit DKIMManageRulesComboBox(QWidget *parent = nullptr);
     ~DKIMManageRulesComboBox() override;
-    Q_REQUIRED_RESULT MessageViewer::DKIMRule::RuleType ruleType() const;
+    [[nodiscard]] MessageViewer::DKIMRule::RuleType ruleType() const;
     void setRuleType(MessageViewer::DKIMRule::RuleType type);
 
 private:

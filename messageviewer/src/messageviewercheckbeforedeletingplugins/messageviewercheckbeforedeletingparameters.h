@@ -26,16 +26,16 @@ public:
         Delete = 2,
     };
 
-    Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingParameters::DeleteType deleteType() const;
+    [[nodiscard]] MessageViewerCheckBeforeDeletingParameters::DeleteType deleteType() const;
     void setDeleteType(MessageViewerCheckBeforeDeletingParameters::DeleteType type);
 
     MessageViewerCheckBeforeDeletingParameters &operator=(const MessageViewerCheckBeforeDeletingParameters &other);
-    Q_REQUIRED_RESULT bool operator==(const MessageViewerCheckBeforeDeletingParameters &other) const;
+    [[nodiscard]] bool operator==(const MessageViewerCheckBeforeDeletingParameters &other) const;
 
-    Q_REQUIRED_RESULT Akonadi::Item::List items() const;
+    [[nodiscard]] Akonadi::Item::List items() const;
     void setItems(const Akonadi::Item::List &items);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
 private:
     MessageViewerCheckBeforeDeletingParametersPrivate *const d;

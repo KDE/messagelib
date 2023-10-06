@@ -19,7 +19,7 @@ struct InsertCommand {
     const KLazyLocalizedString name;
     const TemplatesCommandMenu::Command command;
 
-    Q_REQUIRED_RESULT QString getLocalizedDisplayName() const
+    [[nodiscard]] QString getLocalizedDisplayName() const
     {
         return KLocalizedString(name).toString();
     }

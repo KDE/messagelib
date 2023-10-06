@@ -19,43 +19,43 @@ class MESSAGEVIEWER_EXPORT DKIMCheckPolicy
 public:
     DKIMCheckPolicy();
 
-    Q_REQUIRED_RESULT int rsaSha1Policy() const;
-    Q_REQUIRED_RESULT bool verifySignatureWhenOnlyTest() const;
+    [[nodiscard]] int rsaSha1Policy() const;
+    [[nodiscard]] bool verifySignatureWhenOnlyTest() const;
     void setRsaSha1Policy(int rsaSha1Policy);
 
     void setVerifySignatureWhenOnlyTest(bool verifySignatureWhenOnlyTest);
 
-    Q_REQUIRED_RESULT bool saveDkimResult() const;
+    [[nodiscard]] bool saveDkimResult() const;
     void setSaveDkimResult(bool saveDkimResult);
 
-    Q_REQUIRED_RESULT int saveKey() const;
+    [[nodiscard]] int saveKey() const;
     void setSaveKey(int saveKey);
 
-    Q_REQUIRED_RESULT bool autogenerateRule() const;
+    [[nodiscard]] bool autogenerateRule() const;
     void setAutogenerateRule(bool autogenerateRule);
 
-    Q_REQUIRED_RESULT bool checkIfEmailShouldBeSigned() const;
+    [[nodiscard]] bool checkIfEmailShouldBeSigned() const;
     void setCheckIfEmailShouldBeSigned(bool checkIfEmailShouldBeSigned);
 
-    Q_REQUIRED_RESULT bool useDMarc() const;
+    [[nodiscard]] bool useDMarc() const;
     void setUseDMarc(bool useDMarc);
 
-    Q_REQUIRED_RESULT bool useDefaultRules() const;
+    [[nodiscard]] bool useDefaultRules() const;
     void setUseDefaultRules(bool useDefaultRules);
 
-    Q_REQUIRED_RESULT bool useAuthenticationResults() const;
+    [[nodiscard]] bool useAuthenticationResults() const;
     void setUseAuthenticationResults(bool useAuthenticationResults);
 
-    Q_REQUIRED_RESULT bool useRelaxedParsing() const;
+    [[nodiscard]] bool useRelaxedParsing() const;
     void setUseRelaxedParsing(bool useRelaxedParsing);
 
-    Q_REQUIRED_RESULT bool useOnlyAuthenticationResults() const;
+    [[nodiscard]] bool useOnlyAuthenticationResults() const;
     void setUseOnlyAuthenticationResults(bool useOnlyAuthenticationResults);
 
-    Q_REQUIRED_RESULT bool autogenerateRuleOnlyIfSenderInSDID() const;
+    [[nodiscard]] bool autogenerateRuleOnlyIfSenderInSDID() const;
     void setAutogenerateRuleOnlyIfSenderInSDID(bool autogenerateRuleOnlyIfSenderInSDID);
 
-    Q_REQUIRED_RESULT int publicRsaTooSmallPolicy() const;
+    [[nodiscard]] int publicRsaTooSmallPolicy() const;
     void setPublicRsaTooSmallPolicy(int publicRsaTooSmallPolicy);
 
 private:

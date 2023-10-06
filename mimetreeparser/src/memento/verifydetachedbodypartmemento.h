@@ -31,7 +31,7 @@ public:
     explicit VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText);
     ~VerifyDetachedBodyPartMemento() override;
 
-    Q_REQUIRED_RESULT bool start() override;
+    [[nodiscard]] bool start() override;
     void exec() override;
 
     const GpgME::VerificationResult &verifyResult() const
@@ -51,9 +51,9 @@ private Q_SLOTS:
 
 private:
     void saveResult(const GpgME::VerificationResult &);
-    Q_REQUIRED_RESULT bool canStartKeyListJob() const;
-    Q_REQUIRED_RESULT QStringList keyListPattern() const;
-    Q_REQUIRED_RESULT bool startKeyListJob();
+    [[nodiscard]] bool canStartKeyListJob() const;
+    [[nodiscard]] QStringList keyListPattern() const;
+    [[nodiscard]] bool startKeyListJob();
 
 private:
     // input:

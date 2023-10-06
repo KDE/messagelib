@@ -75,45 +75,45 @@ public:
     ~MessagePart() override;
 
     void setParentPart(MessagePart *parentPart);
-    Q_REQUIRED_RESULT MessagePart *parentPart() const;
+    [[nodiscard]] MessagePart *parentPart() const;
 
-    Q_REQUIRED_RESULT virtual QString text() const;
+    [[nodiscard]] virtual QString text() const;
     void setText(const QString &text);
 
-    Q_REQUIRED_RESULT virtual QString plaintextContent() const;
-    Q_REQUIRED_RESULT virtual QString htmlContent() const;
+    [[nodiscard]] virtual QString plaintextContent() const;
+    [[nodiscard]] virtual QString htmlContent() const;
 
     /** The KMime::Content* node that's represented by this part.
      *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
      */
-    Q_REQUIRED_RESULT KMime::Content *content() const;
+    [[nodiscard]] KMime::Content *content() const;
     void setContent(KMime::Content *node);
 
     /** The KMime::Content* node that's the source of this part.
      *  This is not necessarily the same as content(), for example for
      *  broken-up multipart nodes.
      */
-    Q_REQUIRED_RESULT KMime::Content *attachmentContent() const;
+    [[nodiscard]] KMime::Content *attachmentContent() const;
     void setAttachmentContent(KMime::Content *node);
-    Q_REQUIRED_RESULT bool isAttachment() const;
+    [[nodiscard]] bool isAttachment() const;
     /** @see KMime::Content::index() */
-    Q_REQUIRED_RESULT QString attachmentIndex() const;
+    [[nodiscard]] QString attachmentIndex() const;
     /** @see NodeHelper::asHREF */
-    Q_REQUIRED_RESULT QString attachmentLink() const;
+    [[nodiscard]] QString attachmentLink() const;
 
     /** Returns a string representation of an URL that can be used
      *  to invoke a BodyPartURLHandler for this body part.
      */
-    Q_REQUIRED_RESULT QString makeLink(const QString &path) const;
+    [[nodiscard]] QString makeLink(const QString &path) const;
 
     void setIsRoot(bool root);
-    Q_REQUIRED_RESULT bool isRoot() const;
+    [[nodiscard]] bool isRoot() const;
 
     virtual bool isHtml() const;
 
-    Q_REQUIRED_RESULT bool neverDisplayInline() const;
+    [[nodiscard]] bool neverDisplayInline() const;
     void setNeverDisplayInline(bool displayInline);
-    Q_REQUIRED_RESULT bool isImage() const;
+    [[nodiscard]] bool isImage() const;
     void setIsImage(bool image);
 
     PartMetaData *partMetaData() const;
@@ -126,19 +126,19 @@ public:
 
     void appendSubPart(const MessagePart::Ptr &messagePart);
     const QList<MessagePart::Ptr> &subParts() const;
-    Q_REQUIRED_RESULT bool hasSubParts() const;
+    [[nodiscard]] bool hasSubParts() const;
     void clearSubParts();
 
     Interface::ObjectTreeSource *source() const;
     NodeHelper *nodeHelper() const;
 
-    Q_REQUIRED_RESULT virtual bool hasHeader(const char *headerType) const;
+    [[nodiscard]] virtual bool hasHeader(const char *headerType) const;
     virtual const KMime::Headers::Base *header(const char *headerType) const;
     virtual QList<KMime::Headers::Base *> headers(const char *headerType) const;
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
-    Q_REQUIRED_RESULT QString renderInternalText() const;
+    [[nodiscard]] QString renderInternalText() const;
 
     ObjectTreeParser *mOtp = nullptr;
 
@@ -156,10 +156,10 @@ public:
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
     ~MimeMessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
-    Q_REQUIRED_RESULT QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
 private:
     const bool mOnlyOneMimePart;
@@ -175,10 +175,10 @@ public:
     explicit MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
     ~MessagePartList() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
-    Q_REQUIRED_RESULT QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 };
 
 enum IconType { NoIcon = 0, IconExternal, IconInline };
@@ -201,18 +201,18 @@ public:
     KMMsgSignatureState signatureState() const;
     KMMsgEncryptionState encryptionState() const;
 
-    Q_REQUIRED_RESULT bool decryptMessage() const;
+    [[nodiscard]] bool decryptMessage() const;
 
-    Q_REQUIRED_RESULT bool showLink() const;
-    Q_REQUIRED_RESULT bool isFirstTextPart() const;
-    Q_REQUIRED_RESULT bool hasLabel() const;
+    [[nodiscard]] bool showLink() const;
+    [[nodiscard]] bool isFirstTextPart() const;
+    [[nodiscard]] bool hasLabel() const;
 
     /** The attachment filename, or the closest approximation thereof we have. */
-    Q_REQUIRED_RESULT QString label() const;
+    [[nodiscard]] QString label() const;
     /** A description of this attachment, if provided. */
-    Q_REQUIRED_RESULT QString comment() const;
+    [[nodiscard]] QString comment() const;
     /** Temporary file containing the part content. */
-    Q_REQUIRED_RESULT QString temporaryFilePath() const;
+    [[nodiscard]] QString temporaryFilePath() const;
 
 private:
     MIMETREEPARSER_NO_EXPORT void parseContent();
@@ -243,13 +243,13 @@ public:
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
     ~HtmlMessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
+    [[nodiscard]] QString text() const override;
+    [[nodiscard]] QString plaintextContent() const override;
 
     void fix() const override;
-    Q_REQUIRED_RESULT bool isHtml() const override;
+    [[nodiscard]] bool isHtml() const override;
 
-    Q_REQUIRED_RESULT QString bodyHtml() const;
+    [[nodiscard]] QString bodyHtml() const;
 
 private:
     Interface::ObjectTreeSource *mSource;
@@ -267,17 +267,17 @@ public:
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode);
     ~AlternativeMessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
-    Q_REQUIRED_RESULT Util::HtmlMode preferredMode() const;
+    [[nodiscard]] Util::HtmlMode preferredMode() const;
     void setPreferredMode(Util::HtmlMode preferredMode);
 
-    Q_REQUIRED_RESULT bool isHtml() const override;
+    [[nodiscard]] bool isHtml() const override;
 
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
-    Q_REQUIRED_RESULT QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
-    Q_REQUIRED_RESULT QList<Util::HtmlMode> availableModes();
+    [[nodiscard]] QList<Util::HtmlMode> availableModes();
 
     void fix() const override;
 
@@ -300,7 +300,7 @@ public:
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
     ~CertMessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
     const GpgME::ImportResult &importResult() const;
 
@@ -320,7 +320,7 @@ public:
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     ~EncapsulatedRfc822MessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
     void fix() const override;
 
@@ -345,34 +345,34 @@ public:
 
     ~EncryptedMessagePart() override;
 
-    Q_REQUIRED_RESULT QString text() const override;
+    [[nodiscard]] QString text() const override;
 
     void setDecryptMessage(bool decrypt);
-    Q_REQUIRED_RESULT bool decryptMessage() const;
+    [[nodiscard]] bool decryptMessage() const;
 
     void setIsEncrypted(bool encrypted);
-    Q_REQUIRED_RESULT bool isEncrypted() const;
+    [[nodiscard]] bool isEncrypted() const;
 
-    Q_REQUIRED_RESULT bool isDecryptable() const;
+    [[nodiscard]] bool isDecryptable() const;
 
-    Q_REQUIRED_RESULT bool isNoSecKey() const;
-    Q_REQUIRED_RESULT bool passphraseError() const;
+    [[nodiscard]] bool isNoSecKey() const;
+    [[nodiscard]] bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
     void startDecryption(KMime::Content *data = nullptr);
 
     void setMementoName(const QByteArray &name);
-    Q_REQUIRED_RESULT QByteArray mementoName() const;
+    [[nodiscard]] QByteArray mementoName() const;
 
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
-    Q_REQUIRED_RESULT QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
     const QGpgME::Protocol *cryptoProto() const;
-    Q_REQUIRED_RESULT QString fromAddress() const;
+    [[nodiscard]] QString fromAddress() const;
 
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
 
-    Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
+    [[nodiscard]] bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
     QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
@@ -383,7 +383,7 @@ private:
      * returns true if the decryption was successful
      * if used in async mode, check if mMetaData.inPogress is true, it initiates a running decryption process.
      */
-    Q_REQUIRED_RESULT bool okDecryptMIME(KMime::Content &data);
+    [[nodiscard]] bool okDecryptMIME(KMime::Content &data);
 
 protected:
     bool mPassphraseError;
@@ -412,24 +412,24 @@ public:
     ~SignedMessagePart() override;
 
     void setIsSigned(bool isSigned);
-    Q_REQUIRED_RESULT bool isSigned() const;
+    [[nodiscard]] bool isSigned() const;
 
     void startVerification(const QByteArray &text, const QTextCodec *aCodec);
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
 
     void setMementoName(const QByteArray &name);
-    Q_REQUIRED_RESULT QByteArray mementoName() const;
+    [[nodiscard]] QByteArray mementoName() const;
 
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
 
-    Q_REQUIRED_RESULT QString plaintextContent() const override;
-    Q_REQUIRED_RESULT QString htmlContent() const override;
+    [[nodiscard]] QString plaintextContent() const override;
+    [[nodiscard]] QString htmlContent() const override;
 
     const QGpgME::Protocol *cryptoProto() const;
-    Q_REQUIRED_RESULT QString fromAddress() const;
+    [[nodiscard]] QString fromAddress() const;
 
-    Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
+    [[nodiscard]] bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
     QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
@@ -439,7 +439,7 @@ private:
      * Returns true if the verification was successful and the block is signed.
      * If used in async mode, check if mMetaData.inProgress is true, it initiates a running verification process.
      */
-    Q_REQUIRED_RESULT bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
+    [[nodiscard]] bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
 
     MIMETREEPARSER_NO_EXPORT void sigStatusToMetaData();
 

@@ -31,7 +31,7 @@ public:
 
     void setInformation(const QString &str);
 
-    Q_REQUIRED_RESULT KMime::MDN::SendingMode sendingMode() const;
+    [[nodiscard]] KMime::MDN::SendingMode sendingMode() const;
     void setSendingMode(KMime::MDN::SendingMode newSendingMode);
 
 Q_SIGNALS:

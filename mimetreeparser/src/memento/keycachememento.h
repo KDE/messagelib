@@ -21,7 +21,7 @@ public:
     explicit KeyCacheMemento(const std::shared_ptr<Kleo::KeyCache> &keyCache, GpgME::Protocol protocol);
     ~KeyCacheMemento() override;
 
-    Q_REQUIRED_RESULT bool start() override;
+    [[nodiscard]] bool start() override;
     void exec() override;
 
     std::shared_ptr<const Kleo::KeyCache> keyCache() const

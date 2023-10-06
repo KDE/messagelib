@@ -34,8 +34,8 @@ public:
     PluginActionType();
 
     PluginActionType(QAction *action, Type type);
-    Q_REQUIRED_RESULT QAction *action() const;
-    Q_REQUIRED_RESULT Type type() const;
+    [[nodiscard]] QAction *action() const;
+    [[nodiscard]] Type type() const;
 
     static QString actionXmlExtension(PluginActionType::Type type);
 

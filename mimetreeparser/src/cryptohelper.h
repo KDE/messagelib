@@ -34,9 +34,9 @@ public:
 
     Block(const QByteArray &m, PGPBlockType t);
 
-    Q_REQUIRED_RESULT QByteArray text() const;
-    Q_REQUIRED_RESULT PGPBlockType type() const;
-    Q_REQUIRED_RESULT PGPBlockType determineType() const;
+    [[nodiscard]] QByteArray text() const;
+    [[nodiscard]] PGPBlockType type() const;
+    [[nodiscard]] PGPBlockType determineType() const;
 
     QByteArray msg;
     PGPBlockType mType = UnknownBlock;
@@ -45,7 +45,7 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-Q_REQUIRED_RESULT QList<Block> prepareMessageForDecryption(const QByteArray &msg);
+[[nodiscard]] QList<Block> prepareMessageForDecryption(const QByteArray &msg);
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_RELOCATABLE_TYPE);

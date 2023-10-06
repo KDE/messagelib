@@ -29,7 +29,7 @@ public:
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void slotShowDetails(const QString &content);
-    Q_REQUIRED_RESULT WEBENGINEVIEWER_NO_EXPORT QString generateDetails() const;
+    [[nodiscard]] WEBENGINEVIEWER_NO_EXPORT QString generateDetails() const;
 
     struct blackListFound {
         QString url;

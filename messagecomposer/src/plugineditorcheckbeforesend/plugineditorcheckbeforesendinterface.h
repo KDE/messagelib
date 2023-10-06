@@ -28,10 +28,10 @@ public:
     virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;
 
     void setParentWidget(QWidget *parent);
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
     void setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params);
-    Q_REQUIRED_RESULT MessageComposer::PluginEditorCheckBeforeSendParams parameters() const;
+    [[nodiscard]] MessageComposer::PluginEditorCheckBeforeSendParams parameters() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

@@ -21,8 +21,8 @@ class MESSAGEVIEWER_EXPORT IconNameCache
 {
 public:
     static IconNameCache *instance();
-    Q_REQUIRED_RESULT QString iconPath(const QString &name, int size) const;
-    Q_REQUIRED_RESULT QString iconPathFromLocal(const QString &name) const;
+    [[nodiscard]] QString iconPath(const QString &name, int size) const;
+    [[nodiscard]] QString iconPathFromLocal(const QString &name) const;
 
 private:
     QString picsPath() const;
@@ -33,7 +33,7 @@ private:
         QString fileName;
         int size;
 
-        Q_REQUIRED_RESULT bool operator<(const Entry &other) const;
+        [[nodiscard]] bool operator<(const Entry &other) const;
     };
 
     mutable QMap<Entry, QString> mCachedEntries;

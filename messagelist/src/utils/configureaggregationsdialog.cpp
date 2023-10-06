@@ -49,7 +49,7 @@ public:
     }
 
 public:
-    Q_REQUIRED_RESULT Core::Aggregation *aggregation() const
+    [[nodiscard]] Core::Aggregation *aggregation() const
     {
         return mAggregation;
     }
@@ -75,7 +75,7 @@ public:
 
 public:
     // need a larger but shorter QListWidget
-    Q_REQUIRED_RESULT QSize sizeHint() const override
+    [[nodiscard]] QSize sizeHint() const override
     {
         return {450, 128};
     }

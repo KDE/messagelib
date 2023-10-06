@@ -59,31 +59,31 @@ public:
     ~RecipientLineNG() override = default;
 
     void activate() override;
-    Q_REQUIRED_RESULT bool isActive() const override;
+    [[nodiscard]] bool isActive() const override;
 
-    Q_REQUIRED_RESULT bool isEmpty() const override;
+    [[nodiscard]] bool isEmpty() const override;
     void clear() override;
-    Q_REQUIRED_RESULT bool canDeleteLineEdit() const override;
+    [[nodiscard]] bool canDeleteLineEdit() const override;
 
-    Q_REQUIRED_RESULT bool isModified() const override;
+    [[nodiscard]] bool isModified() const override;
     void clearModified() override;
 
-    Q_REQUIRED_RESULT KPIM::MultiplyingLineData::Ptr data() const override;
+    [[nodiscard]] KPIM::MultiplyingLineData::Ptr data() const override;
     void setData(const KPIM::MultiplyingLineData::Ptr &data) override;
 
     void fixTabOrder(QWidget *previous) override;
-    Q_REQUIRED_RESULT QWidget *tabOut() const override;
+    [[nodiscard]] QWidget *tabOut() const override;
 
     void setCompletionMode(KCompletion::CompletionMode mode) override;
 
-    Q_REQUIRED_RESULT int setColumnWidth(int w) override;
+    [[nodiscard]] int setColumnWidth(int w) override;
 
     // recipient specific methods
-    Q_REQUIRED_RESULT int recipientsCount() const;
+    [[nodiscard]] int recipientsCount() const;
 
     void setRecipientType(Recipient::Type);
-    Q_REQUIRED_RESULT Recipient::Type recipientType() const;
-    Q_REQUIRED_RESULT QSharedPointer<Recipient> recipient() const;
+    [[nodiscard]] Recipient::Type recipientType() const;
+    [[nodiscard]] QSharedPointer<Recipient> recipient() const;
 
     void setIcon(const QIcon &icon, const QString &tooltip = QString());
 
@@ -93,12 +93,12 @@ public:
     void setRecentAddressConfig(KConfig *config);
 
     void setEnableIndexSearch(bool enableIndexSearch);
-    Q_REQUIRED_RESULT bool enableIndexSearch() const;
+    [[nodiscard]] bool enableIndexSearch() const;
 
     void setEnableAkonadiSearch(bool enableAkonadiSearch);
-    Q_REQUIRED_RESULT bool enableAkonadiSearch() const;
+    [[nodiscard]] bool enableAkonadiSearch() const;
 
-    Q_REQUIRED_RESULT QString rawData() const;
+    [[nodiscard]] QString rawData() const;
 
 Q_SIGNALS:
     void typeModified(RecipientLineNG *);

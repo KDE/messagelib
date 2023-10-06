@@ -21,7 +21,7 @@ public:
     explicit InvitationSettings(QWidget *parent = nullptr);
     ~InvitationSettings() override;
     void save();
-    Q_REQUIRED_RESULT QString helpAnchor() const;
+    [[nodiscard]] QString helpAnchor() const;
     void doLoadFromGlobalSettings();
     void doResetToDefaultsOther();
 

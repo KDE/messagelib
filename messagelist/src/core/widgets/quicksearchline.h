@@ -41,18 +41,18 @@ public:
     Q_ENUM(SearchOption)
     Q_DECLARE_FLAGS(SearchOptions, SearchOption)
 
-    Q_REQUIRED_RESULT SearchOptions searchOptions() const;
+    [[nodiscard]] SearchOptions searchOptions() const;
 
     void focusQuickSearch(const QString &selectedText);
 
-    Q_REQUIRED_RESULT QComboBox *tagFilterComboBox() const;
-    Q_REQUIRED_RESULT SearchLineStatus *searchEdit() const;
+    [[nodiscard]] QComboBox *tagFilterComboBox() const;
+    [[nodiscard]] SearchLineStatus *searchEdit() const;
     void resetFilter();
-    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const;
+    [[nodiscard]] QList<Akonadi::MessageStatus> status() const;
 
     void updateComboboxVisibility();
 
-    Q_REQUIRED_RESULT bool containsOutboundMessages() const;
+    [[nodiscard]] bool containsOutboundMessages() const;
     void setContainsOutboundMessages(bool containsOutboundMessages);
 
     void changeQuicksearchVisibility(bool show);

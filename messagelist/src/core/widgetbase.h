@@ -79,17 +79,17 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> currentFilterStatus() const;
+    [[nodiscard]] QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.
      */
-    Q_REQUIRED_RESULT QString currentFilterSearchString() const;
+    [[nodiscard]] QString currentFilterSearchString() const;
 
     /**
      * Returns the id of the MessageItem::Tag currently set in the quicksearch field.
      */
-    Q_REQUIRED_RESULT QString currentFilterTagId() const;
+    [[nodiscard]] QString currentFilterTagId() const;
 
     /**
      * Sets the focus on the quick search line of the currently active tab.
@@ -100,27 +100,27 @@ public:
      * Returns true if the current Aggregation is threaded, false otherwise
      * (or if there is no current Aggregation).
      */
-    Q_REQUIRED_RESULT bool isThreaded() const;
+    [[nodiscard]] bool isThreaded() const;
     /**
      * Fast function that determines if the selection is empty
      */
-    Q_REQUIRED_RESULT bool selectionEmpty() const;
+    [[nodiscard]] bool selectionEmpty() const;
 
     /**
      * Sets the current folder.
      */
     void setCurrentFolder(const Akonadi::Collection &collection);
-    Q_REQUIRED_RESULT Akonadi::Collection currentFolder() const;
+    [[nodiscard]] Akonadi::Collection currentFolder() const;
 
     void saveCurrentSelection();
 
-    Q_REQUIRED_RESULT bool searchEditHasFocus() const;
+    [[nodiscard]] bool searchEditHasFocus() const;
 
     void sortOrderMenuAboutToShow(QMenu *menu);
     void themeMenuAboutToShow(QMenu *menu);
     void aggregationMenuAboutToShow(QMenu *menu);
 
-    Q_REQUIRED_RESULT MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
     void setFilter(Filter *filter);
 public Q_SLOTS:
 
@@ -135,7 +135,7 @@ public Q_SLOTS:
     void changeQuicksearchVisibility(bool);
 
     void setLockTab(bool lock);
-    Q_REQUIRED_RESULT bool isLocked() const;
+    [[nodiscard]] bool isLocked() const;
 
 protected:
     /**

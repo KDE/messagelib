@@ -59,9 +59,9 @@ private Q_SLOTS:
     TEMPLATEPARSER_NO_EXPORT void slotDuplicateClicked();
 
 private:
-    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = nullptr);
-    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString indexToType(int index);
-    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString createUniqueName(const QString &name) const;
+    [[nodiscard]] TEMPLATEPARSER_NO_EXPORT bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = nullptr);
+    [[nodiscard]] TEMPLATEPARSER_NO_EXPORT QString indexToType(int index);
+    [[nodiscard]] TEMPLATEPARSER_NO_EXPORT QString createUniqueName(const QString &name) const;
     TEMPLATEPARSER_NO_EXPORT void iconFromType(CustomTemplates::Type type, CustomTemplateItem *item);
 
     /// These templates will be deleted when we're saving.
@@ -92,19 +92,19 @@ public:
     void setCustomType(CustomTemplates::Type type);
     CustomTemplates::Type customType() const;
 
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString cc() const;
+    [[nodiscard]] QString to() const;
+    [[nodiscard]] QString cc() const;
 
     void setTo(const QString &);
     void setCc(const QString &);
 
-    Q_REQUIRED_RESULT QString content() const;
+    [[nodiscard]] QString content() const;
     void setContent(const QString &);
 
-    Q_REQUIRED_RESULT QKeySequence shortcut() const;
+    [[nodiscard]] QKeySequence shortcut() const;
     void setShortcut(const QKeySequence &);
 
-    Q_REQUIRED_RESULT QString oldName() const;
+    [[nodiscard]] QString oldName() const;
     void setOldName(const QString &);
 
 private:

@@ -28,9 +28,9 @@ public:
     void print();
     void printPreview();
 
-    Q_REQUIRED_RESULT QString documentName() const;
+    [[nodiscard]] QString documentName() const;
 
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
     void setParentWidget(QWidget *newParentWidget);
 
 Q_SIGNALS:

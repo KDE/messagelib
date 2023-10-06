@@ -62,12 +62,12 @@ protected:
     ~IconicAttachmentStrategy() override = default;
 
 public:
-    Q_REQUIRED_RESULT const char *name() const override
+    [[nodiscard]] const char *name() const override
     {
         return "iconic";
     }
 
-    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
+    [[nodiscard]] bool inlineNestedMessages() const override
     {
         return false;
     }
@@ -103,12 +103,12 @@ protected:
     ~SmartAttachmentStrategy() override = default;
 
 public:
-    Q_REQUIRED_RESULT const char *name() const override
+    [[nodiscard]] const char *name() const override
     {
         return "smart";
     }
 
-    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
+    [[nodiscard]] bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -137,12 +137,12 @@ protected:
     ~InlinedAttachmentStrategy() override = default;
 
 public:
-    Q_REQUIRED_RESULT const char *name() const override
+    [[nodiscard]] const char *name() const override
     {
         return "inlined";
     }
 
-    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
+    [[nodiscard]] bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -171,12 +171,12 @@ protected:
     ~HiddenAttachmentStrategy() override = default;
 
 public:
-    Q_REQUIRED_RESULT const char *name() const override
+    [[nodiscard]] const char *name() const override
     {
         return "hidden";
     }
 
-    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
+    [[nodiscard]] bool inlineNestedMessages() const override
     {
         return false;
     }
@@ -213,12 +213,12 @@ protected:
     ~HeaderOnlyAttachmentStrategy() override = default;
 
 public:
-    Q_REQUIRED_RESULT const char *name() const override
+    [[nodiscard]] const char *name() const override
     {
         return "headerOnly";
     }
 
-    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
+    [[nodiscard]] bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -236,7 +236,7 @@ public:
         return smartDisplay(node);
     }
 
-    Q_REQUIRED_RESULT bool requiresAttachmentListInHeader() const override
+    [[nodiscard]] bool requiresAttachmentListInHeader() const override
     {
         return true;
     }

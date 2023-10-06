@@ -26,13 +26,13 @@ public:
     explicit ViewerPlugin(QObject *parent = nullptr);
     ~ViewerPlugin() override;
 
-    Q_REQUIRED_RESULT virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
-    Q_REQUIRED_RESULT virtual QString viewerPluginName() const = 0;
+    [[nodiscard]] virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
+    [[nodiscard]] virtual QString viewerPluginName() const = 0;
     virtual void showConfigureDialog(QWidget *parent = nullptr);
-    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
+    [[nodiscard]] virtual bool hasConfigureDialog() const;
 
     void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
+    [[nodiscard]] bool isEnabled() const;
 
 Q_SIGNALS:
     void configChanged();

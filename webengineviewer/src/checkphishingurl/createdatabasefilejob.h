@@ -25,7 +25,7 @@ public:
     ~CreateDatabaseFileJob() override;
     void start();
     void setFileName(const QString &filename);
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
     void setUpdateDataBaseInfo(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
 Q_SIGNALS:

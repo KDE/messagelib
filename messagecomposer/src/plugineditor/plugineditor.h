@@ -23,9 +23,9 @@ public:
     explicit PluginEditor(QObject *parent = nullptr);
     ~PluginEditor() override;
     void setOrder(int order);
-    Q_REQUIRED_RESULT int order() const;
+    [[nodiscard]] int order() const;
 
-    Q_REQUIRED_RESULT virtual bool canProcessKeyEvent() const;
+    [[nodiscard]] virtual bool canProcessKeyEvent() const;
 
 private:
     std::unique_ptr<PluginEditorPrivate> const d;

@@ -22,11 +22,11 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void setHeaderParser(const DKIMHeaderParser &headerParser);
 
-    Q_REQUIRED_RESULT bool useRelaxedParsing() const;
+    [[nodiscard]] bool useRelaxedParsing() const;
     void setUseRelaxedParsing(bool useRelaxedParsing);
 
 Q_SIGNALS:

@@ -110,12 +110,12 @@ public:
     /**
      * Returns the current message displayed in the viewer.
      */
-    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
 
     /**
      * Returns the current message item displayed in the viewer.
      */
-    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
+    [[nodiscard]] Akonadi::Item messageItem() const;
 
     enum DisplayFormatMessage { UseGlobalSetting = 0, Text = 1, Html = 2, Unknown = 3, ICal = 4 };
 
@@ -141,7 +141,7 @@ public:
     /**
      * The path to the message in terms of Akonadi collection hierarchy.
      */
-    Q_REQUIRED_RESULT QString messagePath() const;
+    [[nodiscard]] QString messagePath() const;
 
     /**
      * Set the path to the message in terms of Akonadi collection hierarchy.
@@ -176,7 +176,7 @@ public:
     void printPreview();
 
     /** Get the html override setting */
-    Q_REQUIRED_RESULT Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
+    [[nodiscard]] Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 
     /** Override default html mail setting */
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
@@ -199,10 +199,10 @@ public:
     void setHtmlLoadExtOverride(bool loadExtOverride);
 
     /** Is html mail to be supported? Takes into account override */
-    Q_REQUIRED_RESULT bool htmlMail() const;
+    [[nodiscard]] bool htmlMail() const;
 
     /** Is loading ext. references to be supported? Takes into account override */
-    Q_REQUIRED_RESULT bool htmlLoadExternal() const;
+    [[nodiscard]] bool htmlLoadExternal() const;
 
     /**
      * Display a generic HTML splash page instead of a message.
@@ -218,10 +218,10 @@ public:
     /** Returns true if the message view is scrolled to the bottom. */
     void atBottom();
 
-    Q_REQUIRED_RESULT bool isFixedFont() const;
+    [[nodiscard]] bool isFixedFont() const;
     void setUseFixedFont(bool useFixedFont);
 
-    Q_REQUIRED_RESULT QWidget *mainWindow();
+    [[nodiscard]] QWidget *mainWindow();
 
     /** Enforce message decryption. */
     void setDecryptMessageOverwrite(bool overwrite = true);
@@ -230,12 +230,12 @@ public:
      * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
-    Q_REQUIRED_RESULT const AttachmentStrategy *attachmentStrategy() const;
+    [[nodiscard]] const AttachmentStrategy *attachmentStrategy() const;
     void setAttachmentStrategy(const AttachmentStrategy *strategy);
 
-    Q_REQUIRED_RESULT QString overrideEncoding() const;
+    [[nodiscard]] QString overrideEncoding() const;
     void setOverrideEncoding(const QString &encoding);
-    Q_REQUIRED_RESULT CSSHelper *cssHelper() const;
+    [[nodiscard]] CSSHelper *cssHelper() const;
     void setPrinting(bool enable);
 
     void selectAll();
@@ -243,37 +243,37 @@ public:
 
     void setZoomFactor(qreal zoomFactor);
 
-    Q_REQUIRED_RESULT KToggleAction *toggleFixFontAction() const;
+    [[nodiscard]] KToggleAction *toggleFixFontAction() const;
 
-    Q_REQUIRED_RESULT KToggleAction *toggleMimePartTreeAction() const;
+    [[nodiscard]] KToggleAction *toggleMimePartTreeAction() const;
 
-    Q_REQUIRED_RESULT QAction *selectAllAction() const;
-    Q_REQUIRED_RESULT QAction *copyURLAction() const;
-    Q_REQUIRED_RESULT QAction *copyAction() const;
-    Q_REQUIRED_RESULT QAction *urlOpenAction() const;
-    Q_REQUIRED_RESULT QAction *speakTextAction() const;
-    Q_REQUIRED_RESULT QAction *copyImageLocation() const;
-    Q_REQUIRED_RESULT QAction *viewSourceAction() const;
-    Q_REQUIRED_RESULT QAction *findInMessageAction() const;
-    Q_REQUIRED_RESULT QAction *saveAsAction() const;
-    Q_REQUIRED_RESULT QAction *saveMessageDisplayFormatAction() const;
-    Q_REQUIRED_RESULT QAction *resetMessageDisplayFormatAction() const;
-    Q_REQUIRED_RESULT QAction *shareTextAction() const;
+    [[nodiscard]] QAction *selectAllAction() const;
+    [[nodiscard]] QAction *copyURLAction() const;
+    [[nodiscard]] QAction *copyAction() const;
+    [[nodiscard]] QAction *urlOpenAction() const;
+    [[nodiscard]] QAction *speakTextAction() const;
+    [[nodiscard]] QAction *copyImageLocation() const;
+    [[nodiscard]] QAction *viewSourceAction() const;
+    [[nodiscard]] QAction *findInMessageAction() const;
+    [[nodiscard]] QAction *saveAsAction() const;
+    [[nodiscard]] QAction *saveMessageDisplayFormatAction() const;
+    [[nodiscard]] QAction *resetMessageDisplayFormatAction() const;
+    [[nodiscard]] QAction *shareTextAction() const;
 
-    Q_REQUIRED_RESULT QAction *developmentToolsAction() const;
-    Q_REQUIRED_RESULT KToggleAction *disableEmoticonAction() const;
-    Q_REQUIRED_RESULT KActionMenu *shareServiceUrlMenu() const;
-    Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
-    Q_REQUIRED_RESULT MessageViewer::DKIMViewerMenu *dkimViewerMenu();
+    [[nodiscard]] QAction *developmentToolsAction() const;
+    [[nodiscard]] KToggleAction *disableEmoticonAction() const;
+    [[nodiscard]] KActionMenu *shareServiceUrlMenu() const;
+    [[nodiscard]] HeaderStylePlugin *headerStylePlugin() const;
+    [[nodiscard]] MessageViewer::DKIMViewerMenu *dkimViewerMenu();
 
-    Q_REQUIRED_RESULT MessageViewer::RemoteContentMenu *remoteContentMenu() const;
+    [[nodiscard]] MessageViewer::RemoteContentMenu *remoteContentMenu() const;
 
     void setPluginName(const QString &pluginName);
 
     void writeConfig(bool withSync = true);
 
-    Q_REQUIRED_RESULT QUrl urlClicked() const;
-    Q_REQUIRED_RESULT QUrl imageUrlClicked() const;
+    [[nodiscard]] QUrl urlClicked() const;
+    [[nodiscard]] QUrl imageUrlClicked() const;
 
     void readConfig();
 
@@ -300,32 +300,32 @@ public:
      */
     void removeMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
-    Q_REQUIRED_RESULT QString selectedText() const;
+    [[nodiscard]] QString selectedText() const;
 
     void saveMainFrameScreenshotInFile(const QString &filename);
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
-    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void runJavaScript(const QString &code);
     void setPrintElementBackground(bool printElementBackground);
 
-    Q_REQUIRED_RESULT bool printingMode() const;
+    [[nodiscard]] bool printingMode() const;
 
-    Q_REQUIRED_RESULT bool showSignatureDetails() const;
+    [[nodiscard]] bool showSignatureDetails() const;
     void setShowSignatureDetails(bool showDetails);
 
-    Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
+    [[nodiscard]] qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
 
-    Q_REQUIRED_RESULT bool showEncryptionDetails() const;
+    [[nodiscard]] bool showEncryptionDetails() const;
     void setShowEncryptionDetails(bool showDetails);
 
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
-    Q_REQUIRED_RESULT MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
+    [[nodiscard]] MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
 
     void exportToPdf(const QString &fileName);
 
@@ -333,7 +333,7 @@ public:
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
-    Q_REQUIRED_RESULT MessageViewer::MDNWarningWidget *mdnWarning() const;
+    [[nodiscard]] MessageViewer::MDNWarningWidget *mdnWarning() const;
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
@@ -407,7 +407,7 @@ protected:
     void closeEvent(QCloseEvent *) override;
     void resizeEvent(QResizeEvent *) override;
     /** Watch for palette changes */
-    Q_REQUIRED_RESULT bool event(QEvent *e) override;
+    [[nodiscard]] bool event(QEvent *e) override;
     void changeEvent(QEvent *event) override;
 
     ViewerPrivate *const d_ptr;

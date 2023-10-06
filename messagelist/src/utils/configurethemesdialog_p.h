@@ -31,7 +31,7 @@ public:
     }
 
     void fillThemeList();
-    Q_REQUIRED_RESULT QString uniqueNameForTheme(const QString &baseName, Core::Theme *skipTheme = nullptr);
+    [[nodiscard]] QString uniqueNameForTheme(const QString &baseName, Core::Theme *skipTheme = nullptr);
     ThemeListWidgetItem *findThemeItemByName(const QString &name, Core::Theme *skipTheme = nullptr);
     ThemeListWidgetItem *findThemeItemByTheme(Core::Theme *set);
     ThemeListWidgetItem *findThemeItemById(const QString &themeId);

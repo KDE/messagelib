@@ -21,7 +21,7 @@ public:
     explicit TemplateParserEmailAddressRequesterBase(QWidget *parent = nullptr);
     ~TemplateParserEmailAddressRequesterBase() override;
 
-    Q_REQUIRED_RESULT virtual QString text() const;
+    [[nodiscard]] virtual QString text() const;
     virtual void setText(const QString &str);
     virtual void clear();
 Q_SIGNALS:

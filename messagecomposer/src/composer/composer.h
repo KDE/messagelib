@@ -39,15 +39,15 @@ public:
     explicit Composer(QObject *parent = nullptr);
     ~Composer() override;
 
-    Q_REQUIRED_RESULT QList<KMime::Message::Ptr> resultMessages() const;
+    [[nodiscard]] QList<KMime::Message::Ptr> resultMessages() const;
 
-    Q_REQUIRED_RESULT GlobalPart *globalPart() const;
-    Q_REQUIRED_RESULT InfoPart *infoPart() const;
-    Q_REQUIRED_RESULT TextPart *textPart() const;
-    Q_REQUIRED_RESULT ItipPart *itipPart() const;
+    [[nodiscard]] GlobalPart *globalPart() const;
+    [[nodiscard]] InfoPart *infoPart() const;
+    [[nodiscard]] TextPart *textPart() const;
+    [[nodiscard]] ItipPart *itipPart() const;
     void clearTextPart();
     void clearItipPart();
-    Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachmentParts() const;
+    [[nodiscard]] MessageCore::AttachmentPart::List attachmentParts() const;
     void addAttachmentPart(MessageCore::AttachmentPart::Ptr part, bool autoresizeImage = false);
     void addAttachmentParts(const MessageCore::AttachmentPart::List &parts, bool autoresizeImage = false);
     void removeAttachmentPart(MessageCore::AttachmentPart::Ptr part);
@@ -63,14 +63,14 @@ public:
     void setSenderEncryptionKey(const GpgME::Key &senderKey);
 
     void setGnupgHome(const QString &path);
-    Q_REQUIRED_RESULT QString gnupgHome() const;
+    [[nodiscard]] QString gnupgHome() const;
 
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.
     void setAutoSave(bool isAutoSave);
-    Q_REQUIRED_RESULT bool autoSave() const;
+    [[nodiscard]] bool autoSave() const;
 
-    Q_REQUIRED_RESULT bool finished() const;
+    [[nodiscard]] bool finished() const;
 
 public Q_SLOTS:
     void start() override;

@@ -30,12 +30,12 @@ public:
 
     static PluginEditorGrammarManager *self();
 
-    Q_REQUIRED_RESULT QList<PimCommon::CustomToolsPlugin *> pluginsList() const;
+    [[nodiscard]] QList<PimCommon::CustomToolsPlugin *> pluginsList() const;
 
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
-    Q_REQUIRED_RESULT PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     std::unique_ptr<PluginEditorGrammarManagerPrivate> const d;

@@ -23,7 +23,7 @@ public:
     ~SendLaterTimeDateWidget() override;
 
     void setDateTime(const QDateTime &);
-    Q_REQUIRED_RESULT QDateTime dateTime() const;
+    [[nodiscard]] QDateTime dateTime() const;
 
 Q_SIGNALS:
     void dateTimeChanged(const QDateTime &);

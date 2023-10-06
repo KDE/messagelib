@@ -13,18 +13,18 @@ namespace MessageViewer
 {
 namespace DKIMUtil
 {
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationSimple(const QString &headerName, const QString &headerValue);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationRelaxed(const QString &headerName,
-                                                                               const QString &headerValue,
-                                                                               bool removeQuoteOnContentType);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString cleanString(QString str);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString emailDomain(const QString &emailDomain);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString emailSubDomain(const QString &emailDomain);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString defaultConfigFileName();
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT QString convertAuthenticationMethodEnumToString(DKIMCheckSignatureJob::AuthenticationMethod);
-Q_REQUIRED_RESULT MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodStringToEnum(const QString &str);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationSimple(const QString &headerName, const QString &headerValue);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationRelaxed(const QString &headerName,
+                                                                           const QString &headerValue,
+                                                                           bool removeQuoteOnContentType);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString cleanString(QString str);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString emailDomain(const QString &emailDomain);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString emailSubDomain(const QString &emailDomain);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString defaultConfigFileName();
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT QString convertAuthenticationMethodEnumToString(DKIMCheckSignatureJob::AuthenticationMethod);
+[[nodiscard]] MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodStringToEnum(const QString &str);
 }
 }

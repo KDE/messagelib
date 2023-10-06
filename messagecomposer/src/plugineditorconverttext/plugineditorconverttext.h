@@ -24,12 +24,12 @@ public:
 
     virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
-    Q_REQUIRED_RESULT virtual bool canWorkOnHtml() const;
+    [[nodiscard]] virtual bool canWorkOnHtml() const;
 
-    Q_REQUIRED_RESULT virtual bool hasStatusBarSupport() const;
+    [[nodiscard]] virtual bool hasStatusBarSupport() const;
 
-    Q_REQUIRED_RESULT virtual bool hasPopupMenuSupport() const;
+    [[nodiscard]] virtual bool hasPopupMenuSupport() const;
 
-    Q_REQUIRED_RESULT virtual bool hasToolBarSupport() const;
+    [[nodiscard]] virtual bool hasToolBarSupport() const;
 };
 }

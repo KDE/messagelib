@@ -34,13 +34,13 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(CheckBeforeDeletingPluginInfo *item);
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QList<PimCommon::PluginUtilData> mPluginDataList;

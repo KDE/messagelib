@@ -41,10 +41,10 @@ public:
         Hide,
     };
 
-    Q_REQUIRED_RESULT virtual QStringList headersToDisplay() const;
-    Q_REQUIRED_RESULT virtual QStringList headersToHide() const;
-    Q_REQUIRED_RESULT virtual DefaultPolicy defaultPolicy() const = 0;
-    Q_REQUIRED_RESULT virtual bool showHeader(const QString &header) const;
+    [[nodiscard]] virtual QStringList headersToDisplay() const;
+    [[nodiscard]] virtual QStringList headersToHide() const;
+    [[nodiscard]] virtual DefaultPolicy defaultPolicy() const = 0;
+    [[nodiscard]] virtual bool showHeader(const QString &header) const;
     static QStringList stringList(const char *const headers[], int numHeaders);
 };
 }

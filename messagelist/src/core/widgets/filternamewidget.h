@@ -24,10 +24,10 @@ public:
     void setFilterName(const QString &str);
     void setIconName(const QString &icon);
 
-    Q_REQUIRED_RESULT QString filterName() const;
+    [[nodiscard]] QString filterName() const;
 
     void setExistingFilterNames(const QStringList &lst);
-    Q_REQUIRED_RESULT QString iconName() const;
+    [[nodiscard]] QString iconName() const;
 Q_SIGNALS:
     void updateOkButton(bool enabled);
 

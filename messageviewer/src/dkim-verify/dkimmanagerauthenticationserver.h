@@ -22,7 +22,7 @@ public:
     ~DKIMManagerAuthenticationServer() override;
     static DKIMManagerAuthenticationServer *self();
 
-    Q_REQUIRED_RESULT QStringList serverList() const;
+    [[nodiscard]] QStringList serverList() const;
     void setServerList(const QStringList &serverList);
 
 private:

@@ -128,7 +128,7 @@ public:
                          ThreadExpandPolicy threadExpandPolicy,
                          FillViewStrategy fillViewStrategy,
                          bool readOnly);
-    Q_REQUIRED_RESULT static bool compareName(Aggregation *agg1, Aggregation *agg2)
+    [[nodiscard]] static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
         return agg1->name() < agg2->name();
     }
@@ -137,7 +137,7 @@ public:
     /**
      * Returns the currently set Grouping option.
      */
-    Q_REQUIRED_RESULT Grouping grouping() const;
+    [[nodiscard]] Grouping grouping() const;
 
     /**
      * Sets the Grouping option.
@@ -157,7 +157,7 @@ public:
     /**
      * Returns the current GroupExpandPolicy.
      */
-    Q_REQUIRED_RESULT GroupExpandPolicy groupExpandPolicy() const
+    [[nodiscard]] GroupExpandPolicy groupExpandPolicy() const
     {
         return mGroupExpandPolicy;
     }
@@ -182,7 +182,7 @@ public:
     /**
      * Returns the current threading method.
      */
-    Q_REQUIRED_RESULT Threading threading() const
+    [[nodiscard]] Threading threading() const
     {
         return mThreading;
     }
@@ -205,7 +205,7 @@ public:
     /**
      * Returns the current thread leader determination method.
      */
-    Q_REQUIRED_RESULT ThreadLeader threadLeader() const
+    [[nodiscard]] ThreadLeader threadLeader() const
     {
         return mThreadLeader;
     }
@@ -258,7 +258,7 @@ public:
     /**
      * Returns the current fill view strategy.
      */
-    Q_REQUIRED_RESULT FillViewStrategy fillViewStrategy() const
+    [[nodiscard]] FillViewStrategy fillViewStrategy() const
     {
         return mFillViewStrategy;
     }

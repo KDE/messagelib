@@ -25,19 +25,19 @@ public:
 
     void updateColors();
 
-    Q_REQUIRED_RESULT QColor misspelledDefaultTextColor() const;
-    Q_REQUIRED_RESULT QColor quoteLevel1DefaultTextColor() const;
-    Q_REQUIRED_RESULT QColor quoteLevel2DefaultTextColor() const;
-    Q_REQUIRED_RESULT QColor quoteLevel3DefaultTextColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedTrustedMessageColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedTrustedTextColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedUntrustedMessageColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedUntrustedTextColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedBadMessageColor() const;
-    Q_REQUIRED_RESULT QColor pgpSignedBadTextColor() const;
-    Q_REQUIRED_RESULT QColor pgpEncryptedMessageColor() const;
-    Q_REQUIRED_RESULT QColor pgpEncryptedTextColor() const;
-    Q_REQUIRED_RESULT QColor linkColor() const;
+    [[nodiscard]] QColor misspelledDefaultTextColor() const;
+    [[nodiscard]] QColor quoteLevel1DefaultTextColor() const;
+    [[nodiscard]] QColor quoteLevel2DefaultTextColor() const;
+    [[nodiscard]] QColor quoteLevel3DefaultTextColor() const;
+    [[nodiscard]] QColor pgpSignedTrustedMessageColor() const;
+    [[nodiscard]] QColor pgpSignedTrustedTextColor() const;
+    [[nodiscard]] QColor pgpSignedUntrustedMessageColor() const;
+    [[nodiscard]] QColor pgpSignedUntrustedTextColor() const;
+    [[nodiscard]] QColor pgpSignedBadMessageColor() const;
+    [[nodiscard]] QColor pgpSignedBadTextColor() const;
+    [[nodiscard]] QColor pgpEncryptedMessageColor() const;
+    [[nodiscard]] QColor pgpEncryptedTextColor() const;
+    [[nodiscard]] QColor linkColor() const;
 
 private:
     void initializeColors();

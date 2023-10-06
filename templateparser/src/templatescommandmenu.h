@@ -107,11 +107,11 @@ public:
         CLanguage,
     };
 
-    Q_REQUIRED_RESULT QMenu *menu() const;
+    [[nodiscard]] QMenu *menu() const;
     void fillMenu();
     void fillSubMenus();
 
-    Q_REQUIRED_RESULT MenuTypes type() const;
+    [[nodiscard]] MenuTypes type() const;
     void setType(MenuTypes type);
 
 Q_SIGNALS:

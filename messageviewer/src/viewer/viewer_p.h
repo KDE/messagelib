@@ -211,7 +211,7 @@ public:
 
     /** Returns message part from given URL or null if invalid. The URL's path is a KMime::ContentIndex path, or an index for the extra nodes,
     followed by : and the ContentIndex path. */
-    Q_REQUIRED_RESULT KMime::Content *nodeFromUrl(const QUrl &url) const;
+    [[nodiscard]] KMime::Content *nodeFromUrl(const QUrl &url) const;
 
     /** Open the attachment pointed to the node.
      * @param node the node
@@ -225,7 +225,7 @@ public:
     * @param node the node
     * @param showWarning whether some warning should be shown
     */
-    Q_REQUIRED_RESULT bool deleteAttachment(KMime::Content *node, bool showWarning = true);
+    [[nodiscard]] bool deleteAttachment(KMime::Content *node, bool showWarning = true);
 
     void attachmentProperties(KMime::Content *node);
     void attachmentCopy(const KMime::Content::List &contents);
@@ -241,8 +241,8 @@ public:
      */
     void prepareHandleAttachment(KMime::Content *node);
 
-    Q_REQUIRED_RESULT KService::Ptr getServiceOffer(KMime::Content *content);
-    Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
+    [[nodiscard]] KService::Ptr getServiceOffer(KMime::Content *content);
+    [[nodiscard]] KMime::Content::List selectedContents() const;
     void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 
@@ -257,12 +257,12 @@ public:
 
     Viewer *viewer() const;
 
-    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
+    [[nodiscard]] Akonadi::Item messageItem() const;
 
-    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
 
     /** Returns whether the message should be decrypted. */
-    Q_REQUIRED_RESULT bool decryptMessage() const;
+    [[nodiscard]] bool decryptMessage() const;
 
     /** Display a generic HTML splash page instead of a message. */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
@@ -281,7 +281,7 @@ public:
 
     /** Creates a nice mail header depending on the current selected
     header style. */
-    Q_REQUIRED_RESULT QString writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel);
+    [[nodiscard]] QString writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel);
 
     void saveMainFrameScreenshotInFile(const QString &filename);
 
@@ -310,14 +310,14 @@ public:
     /** Get selected override character encoding.
       @return The encoding selected by the user or an empty string if auto-detection
       is selected. */
-    Q_REQUIRED_RESULT QString overrideEncoding() const;
+    [[nodiscard]] QString overrideEncoding() const;
 
     /** Set the override character encoding. */
     void setOverrideEncoding(const QString &encoding);
 
     /** Set printing mode */
     void setPrinting(bool enable);
-    Q_REQUIRED_RESULT bool printingMode() const;
+    [[nodiscard]] bool printingMode() const;
 
     /** Print message. */
     void printMessage(const Akonadi::Item &msg);
@@ -367,7 +367,7 @@ public:
 
     const QStringDecoder *overrideDecoderCodec();
 
-    Q_REQUIRED_RESULT QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
+    [[nodiscard]] QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 
     KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); // TODO(Andras) move to MimeTreeParser::NodeHelper
 
@@ -375,19 +375,19 @@ public:
       if you want to preserve the current view. */
     void saveRelativePosition();
 
-    Q_REQUIRED_RESULT bool htmlMail() const;
-    Q_REQUIRED_RESULT bool htmlLoadExternal() const;
+    [[nodiscard]] bool htmlMail() const;
+    [[nodiscard]] bool htmlLoadExternal() const;
 
-    Q_REQUIRED_RESULT bool htmlMailGlobalSetting() const;
+    [[nodiscard]] bool htmlMailGlobalSetting() const;
 
     /** Get the html override setting */
-    Q_REQUIRED_RESULT Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
+    [[nodiscard]] Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 
     /** Override default html mail setting */
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
 
     /** Get the load external references override setting */
-    Q_REQUIRED_RESULT bool htmlLoadExtOverride() const;
+    [[nodiscard]] bool htmlLoadExtOverride() const;
 
     /** Default behavior for loading external references.
      *  Use this for specifying the external reference loading behavior as
@@ -407,7 +407,7 @@ public:
     void setDecryptMessageOverwrite(bool overwrite = true);
 
     /** Show signature details. */
-    Q_REQUIRED_RESULT bool showSignatureDetails() const;
+    [[nodiscard]] bool showSignatureDetails() const;
 
     /** Show signature details. */
     void setShowSignatureDetails(bool showDetails = true);
@@ -415,7 +415,7 @@ public:
     /* show or hide encryption details */
     void setShowEncryptionDetails(bool showEncDetails);
 
-    Q_REQUIRED_RESULT bool showEncryptionDetails() const;
+    [[nodiscard]] bool showEncryptionDetails() const;
 
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
@@ -429,31 +429,31 @@ public:
 
     void showSavedFileFolderWidget(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 
-    Q_REQUIRED_RESULT bool mimePartTreeIsEmpty() const;
+    [[nodiscard]] bool mimePartTreeIsEmpty() const;
 
     void setPluginName(const QString &pluginName);
 
-    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
-    Q_REQUIRED_RESULT bool showEmoticons() const;
+    [[nodiscard]] bool showEmoticons() const;
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
-    Q_REQUIRED_RESULT QUrl imageUrl() const;
-    Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
+    [[nodiscard]] QUrl imageUrl() const;
+    [[nodiscard]] qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
     void recreateCssHelper();
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
     MessageViewer::DKIMViewerMenu *dkimViewerMenu();
 
-    Q_REQUIRED_RESULT bool isAutocryptEnabled(KMime::Message *message);
+    [[nodiscard]] bool isAutocryptEnabled(KMime::Message *message);
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
 
-    Q_REQUIRED_RESULT RemoteContentMenu *remoteContentMenu() const;
-    Q_REQUIRED_RESULT MessageViewer::MDNWarningWidget *mdnWarning() const;
+    [[nodiscard]] RemoteContentMenu *remoteContentMenu() const;
+    [[nodiscard]] MessageViewer::MDNWarningWidget *mdnWarning() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -603,14 +603,14 @@ Q_SIGNALS:
     void showPreviousMessage();
 
 private:
-    Q_REQUIRED_RESULT QString attachmentHtml();
+    [[nodiscard]] QString attachmentHtml();
     void initializeColorFromScheme();
 
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
     void replyMessage(KMime::Content *atmNode, bool replyToAll);
-    Q_REQUIRED_RESULT bool urlIsAMalwareButContinue();
-    Q_REQUIRED_RESULT bool messageIsInSpecialFolder() const;
+    [[nodiscard]] bool urlIsAMalwareButContinue();
+    [[nodiscard]] bool messageIsInSpecialFolder() const;
 
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 

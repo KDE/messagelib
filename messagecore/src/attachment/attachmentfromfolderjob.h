@@ -40,7 +40,7 @@ public:
     /**
      * Returns the compression method used
      */
-    Q_REQUIRED_RESULT KZip::Compression compression() const;
+    [[nodiscard]] KZip::Compression compression() const;
 
 protected Q_SLOTS:
     void doStart() override;

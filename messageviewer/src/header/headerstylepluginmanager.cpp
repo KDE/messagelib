@@ -34,12 +34,12 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(HeaderStylePluginInfo *item);
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
     MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:

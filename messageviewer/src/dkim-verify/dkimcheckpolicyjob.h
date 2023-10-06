@@ -22,16 +22,16 @@ class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject
 public:
     explicit DKIMCheckPolicyJob(QObject *parent = nullptr);
     ~DKIMCheckPolicyJob() override;
-    Q_REQUIRED_RESULT bool canStart() const;
-    Q_REQUIRED_RESULT bool start();
+    [[nodiscard]] bool canStart() const;
+    [[nodiscard]] bool start();
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult checkResult() const;
+    [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult checkResult() const;
     void setCheckResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
-    Q_REQUIRED_RESULT QString emailAddress() const;
+    [[nodiscard]] QString emailAddress() const;
     void setEmailAddress(const QString &emailAddress);
 
-    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    [[nodiscard]] DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 
 Q_SIGNALS:

@@ -20,12 +20,12 @@ public:
         struct Property {
             QString type;
             QString value;
-            Q_REQUIRED_RESULT bool isValid() const
+            [[nodiscard]] bool isValid() const
             {
                 return !type.isEmpty() && !value.isEmpty();
             }
 
-            Q_REQUIRED_RESULT bool operator==(const Property &other) const
+            [[nodiscard]] bool operator==(const Property &other) const
             {
                 return other.type == type && other.value == value;
             }
@@ -42,28 +42,28 @@ public:
         QList<Property> body;
         QList<Property> policy;
 
-        Q_REQUIRED_RESULT bool operator==(const AuthStatusInfo &other) const;
-        Q_REQUIRED_RESULT bool isValid() const;
+        [[nodiscard]] bool operator==(const AuthStatusInfo &other) const;
+        [[nodiscard]] bool isValid() const;
     };
 
-    Q_REQUIRED_RESULT QString authservId() const;
+    [[nodiscard]] QString authservId() const;
     void setAuthservId(const QString &authservId);
 
-    Q_REQUIRED_RESULT bool parseAuthenticationStatus(const QString &key, bool relaxingParsing);
+    [[nodiscard]] bool parseAuthenticationStatus(const QString &key, bool relaxingParsing);
 
-    Q_REQUIRED_RESULT int authVersion() const;
+    [[nodiscard]] int authVersion() const;
     void setAuthVersion(int authVersion);
 
-    Q_REQUIRED_RESULT QString reasonSpec() const;
+    [[nodiscard]] QString reasonSpec() const;
     void setReasonSpec(const QString &reasonSpec);
 
-    Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
+    [[nodiscard]] bool operator==(const DKIMAuthenticationStatusInfo &other) const;
 
-    Q_REQUIRED_RESULT QList<AuthStatusInfo> listAuthStatusInfo() const;
+    [[nodiscard]] QList<AuthStatusInfo> listAuthStatusInfo() const;
     void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
-    Q_REQUIRED_RESULT AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
+    [[nodiscard]] AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
     QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;

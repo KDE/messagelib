@@ -34,8 +34,8 @@ public:
     explicit MessagePartRendererManager(QObject *parent = nullptr);
     ~MessagePartRendererManager() override;
     static MessagePartRendererManager *self();
-    Q_REQUIRED_RESULT KTextTemplate::Template loadByName(const QString &name);
-    Q_REQUIRED_RESULT KTextTemplate::Context createContext();
+    [[nodiscard]] KTextTemplate::Template loadByName(const QString &name);
+    [[nodiscard]] KTextTemplate::Context createContext();
 
 private:
     void initializeRenderer();

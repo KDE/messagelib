@@ -153,12 +153,12 @@ public:
        self. Also looks them up and complains if they're not usable or
        found.
     */
-    Q_REQUIRED_RESULT Kleo::Result setEncryptToSelfKeys(const QStringList &fingerprints);
+    [[nodiscard]] Kleo::Result setEncryptToSelfKeys(const QStringList &fingerprints);
     /**
         Set the fingerprints of keys to be used for signing. Also
         looks them up and complains if they're not usable or found.
     */
-    Q_REQUIRED_RESULT Kleo::Result setSigningKeys(const QStringList &fingerprints);
+    [[nodiscard]] Kleo::Result setSigningKeys(const QStringList &fingerprints);
     /**
        Set the list of primary (To/CC) recipient addresses. Also looks
        up possible keys, but doesn't interact with the user.
@@ -175,25 +175,25 @@ public:
        per-recipient signing preferences, as well as the availability
        of usable signing keys.
     */
-    Q_REQUIRED_RESULT Action checkSigningPreferences(bool signingRequested) const;
+    [[nodiscard]] Action checkSigningPreferences(bool signingRequested) const;
     /**
        Determine whether to encrypt or not, depending on the
        per-recipient encryption preferences, as well as the availability
        of usable encryption keys.
     */
-    Q_REQUIRED_RESULT Action checkEncryptionPreferences(bool encryptionRequested) const;
+    [[nodiscard]] Action checkEncryptionPreferences(bool encryptionRequested) const;
 
     /**
        Queries the user for missing keys and displays a key approval
        dialog if needed.
     */
-    Q_REQUIRED_RESULT Kleo::Result resolveAllKeys(bool &signingRequested, bool &encryptionRequested);
+    [[nodiscard]] Kleo::Result resolveAllKeys(bool &signingRequested, bool &encryptionRequested);
 
     /**
        @return the signing keys to use (if any) for the given message
        format.
     */
-    Q_REQUIRED_RESULT std::vector<GpgME::Key> signingKeys(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<GpgME::Key> signingKeys(CryptoMessageFormat f) const;
 
     struct SplitInfo {
         SplitInfo() = default;
@@ -216,7 +216,7 @@ public:
         returned vector will contain more than one item only if
         secondary recipients have been specified.
     */
-    Q_REQUIRED_RESULT std::vector<SplitInfo> encryptionItems(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<SplitInfo> encryptionItems(CryptoMessageFormat f) const;
 
     std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
 

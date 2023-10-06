@@ -11,6 +11,6 @@ namespace WebEngineViewer
 {
 namespace WebEngineAccessKeyUtils
 {
-Q_REQUIRED_RESULT QString script();
+[[nodiscard]] QString script();
 }
 }

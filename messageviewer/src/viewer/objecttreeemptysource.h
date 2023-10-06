@@ -28,14 +28,14 @@ class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::Objec
 public:
     EmptySource();
     ~EmptySource() override;
-    Q_REQUIRED_RESULT bool decryptMessage() const override;
+    [[nodiscard]] bool decryptMessage() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
-    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
+    [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
     const QTextCodec *overrideCodec() override;
     const QStringDecoder *overrideDecoderCodec() override;
     virtual QString createMessageHeader(KMime::Message *message);
-    Q_REQUIRED_RESULT bool autoImportKeys() const override;
+    [[nodiscard]] bool autoImportKeys() const override;
 
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
     void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart);

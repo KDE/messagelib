@@ -48,7 +48,7 @@ public:
     /**
      * Returns the mime content to load the attachment from.
      */
-    Q_REQUIRED_RESULT const KMime::Content *mimeContent() const;
+    [[nodiscard]] const KMime::Content *mimeContent() const;
 
 protected Q_SLOTS:
     void doStart() override;

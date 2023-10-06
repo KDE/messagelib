@@ -31,9 +31,9 @@ public:
     virtual bool exec() = 0;
 
     void setParentWidget(QWidget *parent);
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
-    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
 public Q_SLOTS:

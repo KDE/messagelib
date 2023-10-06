@@ -31,7 +31,7 @@ public:
     explicit RemoteContentWidgetItem(QTreeWidget *parent = nullptr);
     ~RemoteContentWidgetItem() override;
 
-    Q_REQUIRED_RESULT MessageViewer::RemoteContentInfo::RemoteContentInfoStatus status() const;
+    [[nodiscard]] MessageViewer::RemoteContentInfo::RemoteContentInfoStatus status() const;
     void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type);
 
 private:

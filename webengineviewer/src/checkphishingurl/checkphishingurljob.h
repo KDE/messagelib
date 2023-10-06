@@ -30,9 +30,9 @@ public:
     void setUrl(const QUrl &url);
 
     void start();
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QByteArray jsonRequest() const;
+    [[nodiscard]] QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
 
 Q_SIGNALS:

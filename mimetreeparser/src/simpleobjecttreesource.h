@@ -23,16 +23,16 @@ public:
     SimpleObjectTreeSource();
     ~SimpleObjectTreeSource() override;
 
-    Q_REQUIRED_RESULT bool autoImportKeys() const override;
+    [[nodiscard]] bool autoImportKeys() const override;
 
     const BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    Q_REQUIRED_RESULT bool decryptMessage() const override;
+    [[nodiscard]] bool decryptMessage() const override;
     void setDecryptMessage(bool decryptMessage);
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
 
     void setPreferredMode(MimeTreeParser::Util::HtmlMode mode);
-    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
+    [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
 
     void setOverrideCodec(QTextCodec *codec);
     const QTextCodec *overrideCodec() override;

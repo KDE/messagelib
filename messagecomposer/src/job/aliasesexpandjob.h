@@ -51,14 +51,14 @@ public:
     /**
      * Returns the expanded email addresses.
      */
-    Q_REQUIRED_RESULT QString addresses() const;
+    [[nodiscard]] QString addresses() const;
 
     /**
      * Returns the list of distribution lists that resolved to an empty member list.
      */
-    Q_REQUIRED_RESULT QStringList emptyDistributionLists() const;
+    [[nodiscard]] QStringList emptyDistributionLists() const;
 
-    Q_REQUIRED_RESULT QStringList emailAddressOnly() const;
+    [[nodiscard]] QStringList emailAddressOnly() const;
 
 private Q_SLOTS:
     MESSAGECOMPOSER_NO_EXPORT void slotDistributionListExpansionDone(KJob *);

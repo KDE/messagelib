@@ -16,9 +16,9 @@ public:
     ConvertHtmlToPlainText();
     ~ConvertHtmlToPlainText();
 
-    Q_REQUIRED_RESULT QString generatePlainText();
+    [[nodiscard]] QString generatePlainText();
 
-    Q_REQUIRED_RESULT QString htmlString() const;
+    [[nodiscard]] QString htmlString() const;
     void setHtmlString(const QString &htmlString);
 
 private:

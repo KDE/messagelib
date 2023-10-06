@@ -55,7 +55,7 @@ public:
     /**
      * Returns the modified attachment.
      */
-    Q_REQUIRED_RESULT AttachmentPart::Ptr attachmentPart() const;
+    [[nodiscard]] AttachmentPart::Ptr attachmentPart() const;
 
     /**
      * Sets whether the encryption status of the attachment can be changed.
@@ -65,7 +65,7 @@ public:
     /**
      * Returns whether the encryption status of the attachment can be changed.
      */
-    Q_REQUIRED_RESULT bool isEncryptEnabled() const;
+    [[nodiscard]] bool isEncryptEnabled() const;
 
     /**
      * Sets whether the signature status of the attachment can be changed.
@@ -75,7 +75,7 @@ public:
     /**
      * Returns whether the signature status of the attachment can be changed.
      */
-    Q_REQUIRED_RESULT bool isSignEnabled() const;
+    [[nodiscard]] bool isSignEnabled() const;
 
 public Q_SLOTS:
     void accept() override;

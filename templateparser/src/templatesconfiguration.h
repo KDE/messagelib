@@ -36,7 +36,7 @@ public:
     /**
      * Returns the template configuration identifier string for a given identity.
      */
-    Q_REQUIRED_RESULT static QString configIdString(uint id);
+    [[nodiscard]] static QString configIdString(uint id);
 
 public Q_SLOTS:
     void slotInsertCommand(const QString &cmd, int adjustCursor = 0);
@@ -47,8 +47,8 @@ Q_SIGNALS:
 
 private:
     TEMPLATEPARSER_NO_EXPORT void slotHelpLinkClicked(const QString &);
-    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QPlainTextEdit *currentTextEdit() const;
-    Q_REQUIRED_RESULT TEMPLATEPARSER_NO_EXPORT QString strOrBlank(const QString &str);
+    [[nodiscard]] TEMPLATEPARSER_NO_EXPORT QPlainTextEdit *currentTextEdit() const;
+    [[nodiscard]] TEMPLATEPARSER_NO_EXPORT QString strOrBlank(const QString &str);
     std::unique_ptr<TemplatesConfigurationPrivate> const d;
 };
 }

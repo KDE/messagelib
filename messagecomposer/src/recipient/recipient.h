@@ -41,29 +41,29 @@ public:
     Recipient(const QString &email = QString(), Type type = To); // krazy:exclude=explicit
     ~Recipient() override;
     void setType(Type type);
-    Q_REQUIRED_RESULT Type type() const;
+    [[nodiscard]] Type type() const;
 
     void setEmail(const QString &email);
-    Q_REQUIRED_RESULT QString email() const;
+    [[nodiscard]] QString email() const;
 
     void setName(const QString &name);
-    Q_REQUIRED_RESULT QString name() const;
+    [[nodiscard]] QString name() const;
 
-    Q_REQUIRED_RESULT bool isEmpty() const override;
+    [[nodiscard]] bool isEmpty() const override;
     void clear() override;
 
-    Q_REQUIRED_RESULT static int typeToId(Type type);
-    Q_REQUIRED_RESULT static Type idToType(int id);
+    [[nodiscard]] static int typeToId(Type type);
+    [[nodiscard]] static Type idToType(int id);
 
-    Q_REQUIRED_RESULT QString typeLabel() const;
-    Q_REQUIRED_RESULT static QString typeLabel(Type type);
-    Q_REQUIRED_RESULT static QStringList allTypeLabels();
+    [[nodiscard]] QString typeLabel() const;
+    [[nodiscard]] static QString typeLabel(Type type);
+    [[nodiscard]] static QStringList allTypeLabels();
 
     void setEncryptionAction(const Kleo::Action action);
-    Q_REQUIRED_RESULT Kleo::Action encryptionAction() const;
+    [[nodiscard]] Kleo::Action encryptionAction() const;
 
     void setKey(const GpgME::Key &key);
-    Q_REQUIRED_RESULT GpgME::Key key() const;
+    [[nodiscard]] GpgME::Key key() const;
 
 private:
     std::unique_ptr<RecipientPrivate> const d;

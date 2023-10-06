@@ -18,7 +18,7 @@ class WEBENGINEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
 public:
     explicit DeveloperToolWidget(QWidget *parent = nullptr);
     ~DeveloperToolWidget() override;
-    Q_REQUIRED_RESULT QWebEnginePage *enginePage() const;
+    [[nodiscard]] QWebEnginePage *enginePage() const;
 
 Q_SIGNALS:
     void closeRequested();

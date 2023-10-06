@@ -84,16 +84,16 @@ public:
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
         QString sdid; // Signing Domain Identifier
         QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
-        Q_REQUIRED_RESULT bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
-        Q_REQUIRED_RESULT bool isValid() const;
+        [[nodiscard]] bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
+        [[nodiscard]] bool isValid() const;
     };
 
     struct MESSAGEVIEWER_EXPORT CheckSignatureResult {
-        Q_REQUIRED_RESULT bool isValid() const;
+        [[nodiscard]] bool isValid() const;
 
-        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const;
+        [[nodiscard]] bool operator==(const CheckSignatureResult &other) const;
 
-        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const;
+        [[nodiscard]] bool operator!=(const CheckSignatureResult &other) const;
 
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
@@ -109,26 +109,26 @@ public:
     ~DKIMCheckSignatureJob() override;
     void start();
 
-    Q_REQUIRED_RESULT QString dkimValue() const;
+    [[nodiscard]] QString dkimValue() const;
 
-    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMStatus status() const;
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMStatus status() const;
     void setStatus(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
+    [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
 
-    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMError error() const;
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMError error() const;
 
-    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr &message);
 
-    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMWarning warning() const;
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMWarning warning() const;
     void setWarning(MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
 
-    Q_REQUIRED_RESULT QString headerCanonizationResult() const;
+    [[nodiscard]] QString headerCanonizationResult() const;
 
-    Q_REQUIRED_RESULT QString bodyCanonizationResult() const;
+    [[nodiscard]] QString bodyCanonizationResult() const;
 
-    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    [[nodiscard]] DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 
     void setHeaderParser(const DKIMHeaderParser &headerParser);
@@ -143,11 +143,11 @@ private:
     MESSAGEVIEWER_NO_EXPORT void downloadKey(const DKIMInfo &info);
     MESSAGEVIEWER_NO_EXPORT void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
     MESSAGEVIEWER_NO_EXPORT void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString headerCanonizationSimple() const;
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationRelaxed() const;
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationSimple() const;
-    Q_REQUIRED_RESULT MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString headerCanonizationSimple() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationRelaxed() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString bodyCanonizationSimple() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
     MESSAGEVIEWER_NO_EXPORT void verifySignature();
     MESSAGEVIEWER_NO_EXPORT void verifyRSASignature();
     MESSAGEVIEWER_NO_EXPORT void verifyEd25519Signature();

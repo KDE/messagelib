@@ -31,11 +31,11 @@ public:
 
     virtual ~HTMLBlock();
 
-    Q_REQUIRED_RESULT Q_REQUIRED_RESULT QString enter();
-    Q_REQUIRED_RESULT Q_REQUIRED_RESULT QString exit();
+    [[nodiscard]] Q_REQUIRED_RESULT QString enter();
+    [[nodiscard]] Q_REQUIRED_RESULT QString exit();
 
 protected:
-    Q_REQUIRED_RESULT QString dir() const;
+    [[nodiscard]] QString dir() const;
     virtual QString enterString() const = 0;
     virtual QString exitString() const = 0;
 
@@ -56,8 +56,8 @@ public:
     ~AttachmentMarkBlock() override;
 
 protected:
-    Q_REQUIRED_RESULT QString enterString() const override;
-    Q_REQUIRED_RESULT QString exitString() const override;
+    [[nodiscard]] QString enterString() const override;
+    [[nodiscard]] QString exitString() const override;
 
 private:
     void internalEnter();

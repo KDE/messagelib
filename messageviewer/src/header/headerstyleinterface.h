@@ -27,10 +27,10 @@ class MESSAGEVIEWER_EXPORT HeaderStyleInterface : public QObject
 public:
     explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = nullptr);
     ~HeaderStyleInterface() override;
-    Q_REQUIRED_RESULT QList<KToggleAction *> action() const;
+    [[nodiscard]] QList<KToggleAction *> action() const;
     virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;
     virtual void activateAction() = 0;
-    Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
+    [[nodiscard]] HeaderStylePlugin *headerStylePlugin() const;
 
 Q_SIGNALS:
     void styleChanged(MessageViewer::HeaderStylePlugin *plugin);

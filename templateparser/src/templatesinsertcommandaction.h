@@ -23,7 +23,7 @@ public:
     explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
     ~TemplatesInsertCommandAction() override;
 
-    Q_REQUIRED_RESULT TemplatesCommandMenu::MenuTypes type() const;
+    [[nodiscard]] TemplatesCommandMenu::MenuTypes type() const;
     void setType(TemplatesCommandMenu::MenuTypes type);
 
 Q_SIGNALS:

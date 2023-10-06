@@ -243,7 +243,7 @@ public:
         /**
          * Returns the type of this content item
          */
-        Q_REQUIRED_RESULT Type type() const;
+        [[nodiscard]] Type type() const;
 
         /**
          * Returns true if this ContentItem can be in a "disabled" state.
@@ -251,38 +251,38 @@ public:
          * message has no attachments. For such items the HideWhenDisabled
          * and SoftenByBlendingWhenDisabled flags are meaningful.
          */
-        Q_REQUIRED_RESULT bool canBeDisabled() const;
+        [[nodiscard]] bool canBeDisabled() const;
 
         /**
          * Returns true if this ContentItem can make use of a custom color.
          */
-        Q_REQUIRED_RESULT bool canUseCustomColor() const;
+        [[nodiscard]] bool canUseCustomColor() const;
 
         /**
          * Returns true if this item displays some kind of text.
          * Items that display text make use of the customFont() setting.
          */
-        Q_REQUIRED_RESULT bool displaysText() const;
+        [[nodiscard]] bool displaysText() const;
 
         /**
          * Returns true if this item displays a long text.
          * The returned value makes sense only if displaysText() returned true.
          */
-        Q_REQUIRED_RESULT bool displaysLongText() const;
+        [[nodiscard]] bool displaysLongText() const;
 
         /**
          * Returns true if this item displays an icon.
          */
-        Q_REQUIRED_RESULT bool isIcon() const;
+        [[nodiscard]] bool isIcon() const;
         /**
          * Returns true if clicking on this kind of item can perform an action
          */
-        Q_REQUIRED_RESULT bool isClickable() const;
+        [[nodiscard]] bool isClickable() const;
 
         /**
          * Returns true if this item is a small spacer
          */
-        Q_REQUIRED_RESULT bool isSpacer() const;
+        [[nodiscard]] bool isSpacer() const;
 
         /**
          * Static test that returns true if an instance of ContentItem with the

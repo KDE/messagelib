@@ -41,12 +41,12 @@ private:
 
 public:
     void clearAllSets();
-    Q_REQUIRED_RESULT int setCount() const;
+    [[nodiscard]] int setCount() const;
     void removeSet(MessageItemSetReference ref);
     void removeMessageItemFromAllSets(MessageItem *mi);
-    Q_REQUIRED_RESULT QList<MessageItem *> messageItems(MessageItemSetReference ref);
-    Q_REQUIRED_RESULT MessageItemSetReference createSet();
-    Q_REQUIRED_RESULT bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
+    [[nodiscard]] QList<MessageItem *> messageItems(MessageItemSetReference ref);
+    [[nodiscard]] MessageItemSetReference createSet();
+    [[nodiscard]] bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
 };
 } // namespace Core
 } // namespace MessageList

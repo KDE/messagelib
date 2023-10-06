@@ -41,12 +41,12 @@ namespace Util
  * @param fallbackFileName2 Fallback for @p fallbackFileName1.
  * @return the full file name of the icon file
  */
-Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType,
-                                                                   int iconSize,
-                                                                   const QString &fallbackFileName1 = QString(),
-                                                                   const QString &fallbackFileName2 = QString());
+[[nodiscard]] QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType,
+                                                               int iconSize,
+                                                               const QString &fallbackFileName1 = QString(),
+                                                               const QString &fallbackFileName2 = QString());
 
-Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
+[[nodiscard]] QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
 
 struct AttachmentDisplayInfo {
     QString label;
@@ -54,6 +54,6 @@ struct AttachmentDisplayInfo {
     bool displayInHeader = false;
 };
 
-Q_REQUIRED_RESULT AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
+[[nodiscard]] AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
 }
 }

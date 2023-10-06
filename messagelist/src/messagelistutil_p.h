@@ -16,16 +16,16 @@ namespace MessageList
 {
 namespace Util
 {
-Q_REQUIRED_RESULT QString messageSortingConfigName();
-Q_REQUIRED_RESULT QString messageSortDirectionConfigName();
-Q_REQUIRED_RESULT QString groupSortingConfigName();
-Q_REQUIRED_RESULT QString groupSortDirectionConfigName();
-Q_REQUIRED_RESULT QString messageUniqueIdConfigName();
-Q_REQUIRED_RESULT QString storageModelSortOrderGroup();
-Q_REQUIRED_RESULT QString storageModelThemesGroup();
-Q_REQUIRED_RESULT QString storageModelAggregationsGroup();
-Q_REQUIRED_RESULT QString setForStorageModelConfigName();
-Q_REQUIRED_RESULT QString storageModelSelectedMessageGroup();
+[[nodiscard]] QString messageSortingConfigName();
+[[nodiscard]] QString messageSortDirectionConfigName();
+[[nodiscard]] QString groupSortingConfigName();
+[[nodiscard]] QString groupSortDirectionConfigName();
+[[nodiscard]] QString messageUniqueIdConfigName();
+[[nodiscard]] QString storageModelSortOrderGroup();
+[[nodiscard]] QString storageModelThemesGroup();
+[[nodiscard]] QString storageModelAggregationsGroup();
+[[nodiscard]] QString setForStorageModelConfigName();
+[[nodiscard]] QString storageModelSelectedMessageGroup();
 void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 }

@@ -25,7 +25,7 @@ public:
     explicit ScamCheckShortUrlManager(QObject *parent = nullptr);
     ~ScamCheckShortUrlManager() override;
     static ScamCheckShortUrlManager *self();
-    Q_REQUIRED_RESULT ScamCheckShortUrl *scamCheckShortUrl() const;
+    [[nodiscard]] ScamCheckShortUrl *scamCheckShortUrl() const;
 
 private:
     std::unique_ptr<ScamCheckShortUrlManagerPrivate> const d;

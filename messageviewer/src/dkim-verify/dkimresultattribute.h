@@ -17,21 +17,21 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMResultAttribute : public Akonadi::Attribute
 public:
     DKIMResultAttribute();
     ~DKIMResultAttribute() override;
-    Q_REQUIRED_RESULT DKIMResultAttribute *clone() const override;
-    Q_REQUIRED_RESULT QByteArray type() const override;
-    Q_REQUIRED_RESULT QByteArray serialized() const override;
+    [[nodiscard]] DKIMResultAttribute *clone() const override;
+    [[nodiscard]] QByteArray type() const override;
+    [[nodiscard]] QByteArray serialized() const override;
     void deserialize(const QByteArray &data) override;
 
-    Q_REQUIRED_RESULT bool operator==(const DKIMResultAttribute &other) const;
+    [[nodiscard]] bool operator==(const DKIMResultAttribute &other) const;
 
     void setError(int err);
-    Q_REQUIRED_RESULT int error() const;
+    [[nodiscard]] int error() const;
 
     void setWarning(int err);
-    Q_REQUIRED_RESULT int warning() const;
+    [[nodiscard]] int warning() const;
 
     void setStatus(int err);
-    Q_REQUIRED_RESULT int status() const;
+    [[nodiscard]] int status() const;
 
 private:
     friend class DKIMResultAttributePrivate;

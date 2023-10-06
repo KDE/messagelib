@@ -51,7 +51,7 @@ public:
 
     void setAllowExternalContent(bool b);
 
-    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
 

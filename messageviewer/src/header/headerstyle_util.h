@@ -50,32 +50,32 @@ public:
         CustomDate
     };
 
-    Q_REQUIRED_RESULT QString directionOf(const QString &str) const;
+    [[nodiscard]] QString directionOf(const QString &str) const;
 
-    Q_REQUIRED_RESULT static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
-    Q_REQUIRED_RESULT static QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
-    Q_REQUIRED_RESULT static QString dateString(const QDateTime &date, HeaderStyleUtilDateFormat dateFormat);
+    [[nodiscard]] static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    [[nodiscard]] static QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
+    [[nodiscard]] static QString dateString(const QDateTime &date, HeaderStyleUtilDateFormat dateFormat);
 
-    Q_REQUIRED_RESULT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    [[nodiscard]] QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    Q_REQUIRED_RESULT QString subjectDirectionString(KMime::Message *message) const;
+    [[nodiscard]] QString subjectDirectionString(KMime::Message *message) const;
 
-    Q_REQUIRED_RESULT QString spamStatus(KMime::Message *message) const;
+    [[nodiscard]] QString spamStatus(KMime::Message *message) const;
 
-    Q_REQUIRED_RESULT static QString dateStr(const QDateTime &dateTime);
+    [[nodiscard]] static QString dateStr(const QDateTime &dateTime);
 
-    Q_REQUIRED_RESULT static QString dateShortStr(const QDateTime &dateTime);
+    [[nodiscard]] static QString dateShortStr(const QDateTime &dateTime);
 
-    MESSAGEVIEWER_DEPRECATED Q_REQUIRED_RESULT static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
+    MESSAGEVIEWER_DEPRECATED [[nodiscard]] static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
 
-    MESSAGEVIEWER_DEPRECATED Q_REQUIRED_RESULT static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
+    MESSAGEVIEWER_DEPRECATED [[nodiscard]] static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
-    Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
+    [[nodiscard]] xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
-    Q_REQUIRED_RESULT QString
+    [[nodiscard]] QString
     drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;
-    Q_REQUIRED_RESULT QString imgToDataUrl(const QImage &image) const;
+    [[nodiscard]] QString imgToDataUrl(const QImage &image) const;
 };
 }

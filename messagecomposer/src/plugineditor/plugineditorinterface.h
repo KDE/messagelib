@@ -43,23 +43,23 @@ public:
     ~PluginEditorInterface() override;
 
     void setActionType(PluginActionType type);
-    Q_REQUIRED_RESULT PluginActionType actionType() const;
+    [[nodiscard]] PluginActionType actionType() const;
 
-    Q_REQUIRED_RESULT TextCustomEditor::RichTextEditor *richTextEditor() const;
+    [[nodiscard]] TextCustomEditor::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(TextCustomEditor::RichTextEditor *richTextEditor);
 
     void setNeedSelectedText(bool b);
-    Q_REQUIRED_RESULT bool needSelectedText() const;
+    [[nodiscard]] bool needSelectedText() const;
 
     void setStatusBarWidget(QWidget *w);
-    Q_REQUIRED_RESULT QWidget *statusBarWidget() const;
+    [[nodiscard]] QWidget *statusBarWidget() const;
 
-    Q_REQUIRED_RESULT MessageComposer::PluginComposerInterface *composerInterface() const;
+    [[nodiscard]] MessageComposer::PluginComposerInterface *composerInterface() const;
     void setComposerInterface(MessageComposer::PluginComposerInterface *w);
 
     virtual bool processProcessKeyEvent(QKeyEvent *event);
 
-    Q_REQUIRED_RESULT PluginEditorInterface::ApplyOnFieldTypes applyOnFieldTypes() const;
+    [[nodiscard]] PluginEditorInterface::ApplyOnFieldTypes applyOnFieldTypes() const;
 
     void setApplyOnFieldTypes(PluginEditorInterface::ApplyOnFieldTypes types);
 Q_SIGNALS:

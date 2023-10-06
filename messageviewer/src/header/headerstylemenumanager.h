@@ -26,7 +26,7 @@ public:
     explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = nullptr);
     ~HeaderStyleMenuManager() override;
 
-    Q_REQUIRED_RESULT KActionMenu *menu() const;
+    [[nodiscard]] KActionMenu *menu() const;
 
     void setPluginName(const QString &pluginName);
     void readConfig();

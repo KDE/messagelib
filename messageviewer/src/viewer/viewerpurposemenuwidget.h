@@ -17,7 +17,7 @@ public:
     explicit ViewerPurposeMenuWidget(QWidget *parentWidget, QObject *parent = nullptr);
     ~ViewerPurposeMenuWidget() override;
 
-    Q_REQUIRED_RESULT QByteArray text() override;
+    [[nodiscard]] QByteArray text() override;
     void setViewer(MailWebEngineView *viewer);
 
 private:

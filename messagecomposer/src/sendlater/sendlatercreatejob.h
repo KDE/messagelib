@@ -20,8 +20,8 @@ public:
     explicit SendLaterCreateJob(const SendLaterInfo &info, QObject *parent = nullptr);
 
 protected:
-    Q_REQUIRED_RESULT QDBusPendingReply<> doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface) override;
-    Q_REQUIRED_RESULT QString getErrorString(SendLaterJob::Error code, const QString &detail) const override;
+    [[nodiscard]] QDBusPendingReply<> doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface) override;
+    [[nodiscard]] QString getErrorString(SendLaterJob::Error code, const QString &detail) const override;
 
 private:
     const SendLaterInfo mInfo;

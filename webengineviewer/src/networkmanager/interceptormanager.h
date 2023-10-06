@@ -28,7 +28,7 @@ public:
     explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~InterceptorManager() override;
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
-    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void removeInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
 
 private:

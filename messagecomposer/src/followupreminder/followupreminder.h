@@ -14,6 +14,6 @@ namespace MessageComposer
 {
 namespace FollowUpReminder
 {
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool isAvailableAndEnabled();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT bool isAvailableAndEnabled();
 }
 }

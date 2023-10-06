@@ -73,28 +73,28 @@ public:
     /**
      * Returns the expanded From field
      */
-    Q_REQUIRED_RESULT QString expandedFrom() const;
+    [[nodiscard]] QString expandedFrom() const;
 
     /**
      * Returns the expanded To field
      */
-    Q_REQUIRED_RESULT QStringList expandedTo() const;
+    [[nodiscard]] QStringList expandedTo() const;
 
     /**
      * Returns the expanded CC field
      */
-    Q_REQUIRED_RESULT QStringList expandedCc() const;
+    [[nodiscard]] QStringList expandedCc() const;
 
     /**
      * Returns the expanded Bcc field
      */
-    Q_REQUIRED_RESULT QStringList expandedBcc() const;
+    [[nodiscard]] QStringList expandedBcc() const;
 
     void setDefaultDomainName(const QString &domainName);
     /**
      * Returns the expanded Reply-To field
      */
-    Q_REQUIRED_RESULT QStringList expandedReplyTo() const;
+    [[nodiscard]] QStringList expandedReplyTo() const;
 
 private:
     MESSAGECOMPOSER_NO_EXPORT void slotAliasExpansionDone(KJob *);

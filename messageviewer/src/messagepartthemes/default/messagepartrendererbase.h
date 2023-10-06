@@ -41,19 +41,19 @@ public:
 
     virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) = 0;
 
-    Q_REQUIRED_RESULT virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
-    Q_REQUIRED_RESULT virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
-    Q_REQUIRED_RESULT virtual bool showEmoticons() const = 0;
-    Q_REQUIRED_RESULT virtual bool isPrinting() const = 0;
-    Q_REQUIRED_RESULT virtual bool htmlLoadExternal() const = 0;
-    Q_REQUIRED_RESULT virtual bool showExpandQuotesMark() const = 0;
-    Q_REQUIRED_RESULT virtual bool showOnlyOneMimePart() const = 0;
-    Q_REQUIRED_RESULT virtual bool showSignatureDetails() const = 0;
-    Q_REQUIRED_RESULT virtual bool showEncryptionDetails() const = 0;
-    Q_REQUIRED_RESULT virtual int levelQuote() const = 0;
+    [[nodiscard]] virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    [[nodiscard]] virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    [[nodiscard]] virtual bool showEmoticons() const = 0;
+    [[nodiscard]] virtual bool isPrinting() const = 0;
+    [[nodiscard]] virtual bool htmlLoadExternal() const = 0;
+    [[nodiscard]] virtual bool showExpandQuotesMark() const = 0;
+    [[nodiscard]] virtual bool showOnlyOneMimePart() const = 0;
+    [[nodiscard]] virtual bool showSignatureDetails() const = 0;
+    [[nodiscard]] virtual bool showEncryptionDetails() const = 0;
+    [[nodiscard]] virtual int levelQuote() const = 0;
 
 protected:
-    Q_REQUIRED_RESULT virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
+    [[nodiscard]] virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
 };
 /**
  * @brief The MessagePartRendererBase class
@@ -63,6 +63,6 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    Q_REQUIRED_RESULT virtual bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
+    [[nodiscard]] virtual bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
 };
 }

@@ -20,10 +20,10 @@ WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBa
 class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 {
 public:
-    Q_REQUIRED_RESULT UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
-    Q_REQUIRED_RESULT RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
-    Q_REQUIRED_RESULT QList<Removal> parseRemovals(const QVariantList &lst);
-    Q_REQUIRED_RESULT QList<Addition> parseAdditions(const QVariantList &lst);
+    [[nodiscard]] UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
+    [[nodiscard]] RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
+    [[nodiscard]] QList<Removal> parseRemovals(const QVariantList &lst);
+    [[nodiscard]] QList<Addition> parseAdditions(const QVariantList &lst);
     QString mDataBaseState;
     CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType = CreatePhishingUrlDataBaseJob::RawCompression;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded = CreatePhishingUrlDataBaseJob::FullDataBase;

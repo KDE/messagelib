@@ -58,17 +58,17 @@ public:
         setText(1, mEmail);
     }
 
-    Q_REQUIRED_RESULT KContacts::Addressee addressee() const
+    [[nodiscard]] KContacts::Addressee addressee() const
     {
         return mAddressee;
     }
 
-    Q_REQUIRED_RESULT QString email() const
+    [[nodiscard]] QString email() const
     {
         return mEmail;
     }
 
-    Q_REQUIRED_RESULT bool isTransient() const
+    [[nodiscard]] bool isTransient() const
     {
         return mId == -1;
     }
@@ -78,7 +78,7 @@ public:
         mId = id;
     }
 
-    Q_REQUIRED_RESULT Akonadi::Item::Id id() const
+    [[nodiscard]] Akonadi::Item::Id id() const
     {
         return mId;
     }

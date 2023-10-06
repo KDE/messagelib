@@ -28,7 +28,7 @@ public:
     explicit FindBarBase(QWidget *parent = nullptr);
     ~FindBarBase() override;
 
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
     void setText(const QString &text);
     void focusAndSetCursor();
 

@@ -51,37 +51,37 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QString name() const
+    [[nodiscard]] QString name() const
     {
         return mName;
     }
 
-    Q_REQUIRED_RESULT SpamAgentTypes scoreType() const
+    [[nodiscard]] SpamAgentTypes scoreType() const
     {
         return mType;
     }
 
-    Q_REQUIRED_RESULT QByteArray header() const
+    [[nodiscard]] QByteArray header() const
     {
         return mField;
     }
 
-    Q_REQUIRED_RESULT QByteArray confidenceHeader() const
+    [[nodiscard]] QByteArray confidenceHeader() const
     {
         return mConfidenceField;
     }
 
-    Q_REQUIRED_RESULT QRegularExpression scorePattern() const
+    [[nodiscard]] QRegularExpression scorePattern() const
     {
         return mScore;
     }
 
-    Q_REQUIRED_RESULT QRegularExpression thresholdPattern() const
+    [[nodiscard]] QRegularExpression thresholdPattern() const
     {
         return mThreshold;
     }
 
-    Q_REQUIRED_RESULT QRegularExpression confidencePattern() const
+    [[nodiscard]] QRegularExpression confidencePattern() const
     {
         return mConfidence;
     }

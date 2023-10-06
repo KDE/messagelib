@@ -44,12 +44,12 @@ public:
     }
 
     void loadPlugin(PluginEditorConvertTextInfo *item);
-    Q_REQUIRED_RESULT QList<PluginEditorConvertText *> pluginsList() const;
+    [[nodiscard]] QList<PluginEditorConvertText *> pluginsList() const;
     void initializePlugins();
     QList<PluginEditorConvertTextInfo> mPluginList;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:

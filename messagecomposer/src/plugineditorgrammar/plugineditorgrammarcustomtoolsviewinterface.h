@@ -26,22 +26,22 @@ class MESSAGECOMPOSER_EXPORT PluginGrammarAction
 public:
     PluginGrammarAction();
 
-    Q_REQUIRED_RESULT QString replacement() const;
+    [[nodiscard]] QString replacement() const;
     void setReplacement(const QString &replacement);
 
-    Q_REQUIRED_RESULT int start() const;
+    [[nodiscard]] int start() const;
     void setStart(int start);
 
-    Q_REQUIRED_RESULT int length() const;
+    [[nodiscard]] int length() const;
     void setLength(int length);
 
-    Q_REQUIRED_RESULT QStringList suggestions() const;
+    [[nodiscard]] QStringList suggestions() const;
     void setSuggestions(const QStringList &suggestions);
 
-    Q_REQUIRED_RESULT int blockId() const;
+    [[nodiscard]] int blockId() const;
     void setBlockId(int blockId);
 
-    Q_REQUIRED_RESULT QStringList infoUrls() const;
+    [[nodiscard]] QStringList infoUrls() const;
     void setInfoUrls(const QStringList &urls);
 
 private:
@@ -65,9 +65,9 @@ public:
     ~PluginEditorGrammarCustomToolsViewInterface() override;
 
     void setParentWidget(QWidget *parent);
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
-    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
 Q_SIGNALS:

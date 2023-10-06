@@ -61,7 +61,7 @@ public:
 
     void saveHtml(QWebEngineDownloadRequest *download);
 
-    Q_REQUIRED_RESULT QPoint mapToViewport(const QPoint &pos) const;
+    [[nodiscard]] QPoint mapToViewport(const QPoint &pos) const;
 Q_SIGNALS:
     void urlClicked(const QUrl &url);
     void showConsoleMessage(const QString &message);

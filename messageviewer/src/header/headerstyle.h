@@ -61,40 +61,40 @@ public:
     virtual QString format(KMime::Message *message) const = 0;
 
     void setHeaderStrategy(const HeaderStrategy *strategy);
-    Q_REQUIRED_RESULT const HeaderStrategy *headerStrategy() const;
+    [[nodiscard]] const HeaderStrategy *headerStrategy() const;
 
     void setVCardName(const QString &vCardName);
-    Q_REQUIRED_RESULT QString vCardName() const;
+    [[nodiscard]] QString vCardName() const;
 
     void setPrinting(bool printing);
-    Q_REQUIRED_RESULT bool isPrinting() const;
+    [[nodiscard]] bool isPrinting() const;
 
     void setTopLevel(bool topLevel);
-    Q_REQUIRED_RESULT bool isTopLevel() const;
+    [[nodiscard]] bool isTopLevel() const;
 
     void setNodeHelper(MimeTreeParser::NodeHelper *nodeHelper);
-    Q_REQUIRED_RESULT MimeTreeParser::NodeHelper *nodeHelper() const;
+    [[nodiscard]] MimeTreeParser::NodeHelper *nodeHelper() const;
 
     void setAllowAsync(bool allowAsync);
-    Q_REQUIRED_RESULT bool allowAsync() const;
+    [[nodiscard]] bool allowAsync() const;
 
     void setSourceObject(QObject *sourceObject);
     QObject *sourceObject() const;
 
     void setMessageStatus(Akonadi::MessageStatus status);
-    Q_REQUIRED_RESULT Akonadi::MessageStatus messageStatus() const;
+    [[nodiscard]] Akonadi::MessageStatus messageStatus() const;
 
     void setTheme(const GrantleeTheme::Theme &theme);
-    Q_REQUIRED_RESULT GrantleeTheme::Theme theme() const;
+    [[nodiscard]] GrantleeTheme::Theme theme() const;
 
-    Q_REQUIRED_RESULT bool readOnlyMessage() const;
+    [[nodiscard]] bool readOnlyMessage() const;
     void setReadOnlyMessage(bool readOnlyMessage);
 
-    Q_REQUIRED_RESULT bool showEmoticons() const;
+    [[nodiscard]] bool showEmoticons() const;
     void setShowEmoticons(bool b);
 
     void setAttachmentHtml(const QString &html);
-    Q_REQUIRED_RESULT QString attachmentHtml() const;
+    [[nodiscard]] QString attachmentHtml() const;
 
 private:
     std::unique_ptr<HeaderStylePrivate> const d;

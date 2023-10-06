@@ -25,18 +25,18 @@ public:
     ~ViewerPluginManager() override;
     static ViewerPluginManager *self();
 
-    Q_REQUIRED_RESULT QList<MessageViewer::ViewerPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<MessageViewer::ViewerPlugin *> pluginsList() const;
+    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
 
-    Q_REQUIRED_RESULT bool initializePluginList();
+    [[nodiscard]] bool initializePluginList();
 
-    Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
-    Q_REQUIRED_RESULT MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
-    Q_REQUIRED_RESULT QString pluginDirectory() const;
+    [[nodiscard]] QString configGroupName() const;
+    [[nodiscard]] QString configPrefixSettingKey() const;
+    [[nodiscard]] MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] QString pluginDirectory() const;
     void setPluginDirectory(const QString &directory);
     void setPluginName(const QString &pluginName);
-    Q_REQUIRED_RESULT QString pluginName() const;
+    [[nodiscard]] QString pluginName() const;
 
 private:
     Q_DISABLE_COPY(ViewerPluginManager)

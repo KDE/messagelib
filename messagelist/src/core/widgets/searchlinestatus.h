@@ -27,11 +27,11 @@ public:
     ~SearchLineStatus() override;
 
     void setLocked(bool b);
-    Q_REQUIRED_RESULT bool locked() const;
+    [[nodiscard]] bool locked() const;
 
     void setContainsOutboundMessages(bool containsOutboundMessages);
-    Q_REQUIRED_RESULT bool containsOutboundMessages() const;
-    Q_REQUIRED_RESULT QuickSearchLine::SearchOptions searchOptions() const;
+    [[nodiscard]] bool containsOutboundMessages() const;
+    [[nodiscard]] QuickSearchLine::SearchOptions searchOptions() const;
     void setSearchOptions(QuickSearchLine::SearchOptions opts);
     void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
     void addCompletionItem(const QString &str);

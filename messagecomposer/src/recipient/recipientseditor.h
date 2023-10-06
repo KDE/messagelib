@@ -50,14 +50,14 @@ public:
     explicit RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent = nullptr);
     ~RecipientsEditor() override;
 
-    Q_REQUIRED_RESULT Recipient::List recipients() const;
-    Q_REQUIRED_RESULT QSharedPointer<Recipient> activeRecipient() const;
+    [[nodiscard]] Recipient::List recipients() const;
+    [[nodiscard]] QSharedPointer<Recipient> activeRecipient() const;
 
-    Q_REQUIRED_RESULT MessageComposer::RecipientsPicker *picker() const;
+    [[nodiscard]] MessageComposer::RecipientsPicker *picker() const;
 
     bool setRecipientString(const QList<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
-    Q_REQUIRED_RESULT QString recipientString(Recipient::Type) const;
-    Q_REQUIRED_RESULT QStringList recipientStringList(Recipient::Type) const;
+    [[nodiscard]] QString recipientString(Recipient::Type) const;
+    [[nodiscard]] QStringList recipientStringList(Recipient::Type) const;
 
     /** Adds a recipient (or multiple recipients) to one line of the editor.
         @param recipient The recipient(s) you want to add.
@@ -89,7 +89,7 @@ protected Q_SLOTS:
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
-    Q_REQUIRED_RESULT RecipientLineNG *activeLine() const override;
+    [[nodiscard]] RecipientLineNG *activeLine() const override;
 
 Q_SIGNALS:
     void focusInRecipientLineEdit();

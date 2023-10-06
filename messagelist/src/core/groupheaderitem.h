@@ -22,7 +22,7 @@ public:
     explicit GroupHeaderItem(const QString &label);
     ~GroupHeaderItem() override;
 
-    Q_REQUIRED_RESULT const QString &label() const;
+    [[nodiscard]] const QString &label() const;
     void setLabel(const QString &label);
 
 private:

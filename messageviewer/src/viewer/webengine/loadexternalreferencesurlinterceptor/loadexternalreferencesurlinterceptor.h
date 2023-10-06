@@ -17,7 +17,7 @@ public:
     ~LoadExternalReferencesUrlInterceptor() override;
 
 protected:
-    Q_REQUIRED_RESULT bool urlIsAuthorized(const QUrl &requestedUrl) override;
-    Q_REQUIRED_RESULT bool urlIsBlocked(const QUrl &requestedUrl) override;
+    [[nodiscard]] bool urlIsAuthorized(const QUrl &requestedUrl) override;
+    [[nodiscard]] bool urlIsBlocked(const QUrl &requestedUrl) override;
 };
 }

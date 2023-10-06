@@ -21,16 +21,16 @@ enum UrlStatus {
     Unknown = 4,
 };
 
-Q_REQUIRED_RESULT QString apiKey();
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString versionApps();
-Q_REQUIRED_RESULT QString databaseFileName();
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString configFileName();
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT quint16 minorVersion();
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT quint16 majorVersion();
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT double convertToSecond(const QString &str);
+[[nodiscard]] QString apiKey();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT QString versionApps();
+[[nodiscard]] QString databaseFileName();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT QString configFileName();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT quint16 minorVersion();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT quint16 majorVersion();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT double convertToSecond(const QString &str);
 WEBENGINEVIEWER_EXPORT uint refreshingCacheAfterThisTime(double seconds);
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT bool cachedValueStillValid(uint seconds);
-Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT int generateRandomSecondValue(int numberOfFailed);
+[[nodiscard]] WEBENGINEVIEWER_EXPORT bool cachedValueStillValid(uint seconds);
+[[nodiscard]] WEBENGINEVIEWER_EXPORT int generateRandomSecondValue(int numberOfFailed);
 }
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus)

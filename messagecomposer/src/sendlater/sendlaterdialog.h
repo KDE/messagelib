@@ -39,7 +39,7 @@ public:
 
     SendLaterInfo *info();
 
-    Q_REQUIRED_RESULT SendLaterAction action() const;
+    [[nodiscard]] SendLaterAction action() const;
 
 private:
     MESSAGECOMPOSER_NO_EXPORT void slotRecurrenceClicked(bool);

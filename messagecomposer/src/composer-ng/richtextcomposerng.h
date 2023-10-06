@@ -31,22 +31,22 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
-    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
+    [[nodiscard]] TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
 
     void setAutocorrectionLanguage(const QString &lang);
 
     void fillComposerTextPart(MessageComposer::TextPart *textPart);
-    Q_REQUIRED_RESULT MessageComposer::RichTextComposerSignatures *composerSignature() const;
+    [[nodiscard]] MessageComposer::RichTextComposerSignatures *composerSignature() const;
 
     void insertSignature(const KIdentityManagementCore::Signature &signature,
                          KIdentityManagementCore::Signature::Placement placement,
                          KIdentityManagementCore::Signature::AddedText addedText);
-    Q_REQUIRED_RESULT QString toCleanHtml() const;
+    [[nodiscard]] QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;
 
-    Q_REQUIRED_RESULT virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
+    [[nodiscard]] virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
 protected:
     bool processModifyText(QKeyEvent *event) override;

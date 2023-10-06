@@ -47,7 +47,7 @@ public:
         delete mTheme;
     }
 
-    Q_REQUIRED_RESULT Core::Theme *theme() const
+    [[nodiscard]] Core::Theme *theme() const
     {
         return mTheme;
     }
@@ -71,7 +71,7 @@ public:
 
 public:
     // need a larger but shorter QListWidget
-    Q_REQUIRED_RESULT QSize sizeHint() const override
+    [[nodiscard]] QSize sizeHint() const override
     {
         return {450, 128};
     }

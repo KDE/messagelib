@@ -31,13 +31,13 @@ public:
     explicit SkeletonMessageJob(InfoPart *infoPart = nullptr, GlobalPart *globalPart = nullptr, QObject *parent = nullptr);
     ~SkeletonMessageJob() override;
 
-    Q_REQUIRED_RESULT InfoPart *infoPart() const;
+    [[nodiscard]] InfoPart *infoPart() const;
     void setInfoPart(InfoPart *part);
 
-    Q_REQUIRED_RESULT GlobalPart *globalPart() const;
+    [[nodiscard]] GlobalPart *globalPart() const;
     void setGlobalPart(GlobalPart *part);
 
-    Q_REQUIRED_RESULT KMime::Message *message() const;
+    [[nodiscard]] KMime::Message *message() const;
 
     void start() override;
 

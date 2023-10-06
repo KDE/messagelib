@@ -62,32 +62,32 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QString agent() const
+    [[nodiscard]] QString agent() const
     {
         return mAgent;
     }
 
-    Q_REQUIRED_RESULT float score() const
+    [[nodiscard]] float score() const
     {
         return mScore;
     }
 
-    Q_REQUIRED_RESULT float confidence() const
+    [[nodiscard]] float confidence() const
     {
         return mConfidence;
     }
 
-    Q_REQUIRED_RESULT SpamError error() const
+    [[nodiscard]] SpamError error() const
     {
         return mError;
     }
 
-    Q_REQUIRED_RESULT QString spamHeader() const
+    [[nodiscard]] QString spamHeader() const
     {
         return mHeader;
     }
 
-    Q_REQUIRED_RESULT QString confidenceHeader() const
+    [[nodiscard]] QString confidenceHeader() const
     {
         return mConfidenceHeader;
     }

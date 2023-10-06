@@ -31,11 +31,11 @@ public:
     explicit FollowUpReminderSelectDateDialog(QWidget *parent = nullptr, QAbstractItemModel *model = nullptr);
     ~FollowUpReminderSelectDateDialog() override;
 
-    Q_REQUIRED_RESULT QDate selectedDate() const;
+    [[nodiscard]] QDate selectedDate() const;
 
     void accept() override;
 
-    Q_REQUIRED_RESULT Akonadi::Collection collection() const;
+    [[nodiscard]] Akonadi::Collection collection() const;
 
 private Q_SLOTS:
     MESSAGECOMPOSER_NO_EXPORT void slotDateChanged();

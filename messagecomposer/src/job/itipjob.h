@@ -24,7 +24,7 @@ public:
     explicit ItipJob(ItipPart *itipPart = nullptr, QObject *parent = nullptr);
     ~ItipJob() override;
 
-    Q_REQUIRED_RESULT ItipPart *itipPart() const;
+    [[nodiscard]] ItipPart *itipPart() const;
     void setItipPart(ItipPart *part);
 
 protected Q_SLOTS:

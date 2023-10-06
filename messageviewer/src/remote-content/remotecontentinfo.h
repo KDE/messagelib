@@ -28,13 +28,13 @@ public:
     RemoteContentInfo();
     ~RemoteContentInfo();
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &url);
 
-    Q_REQUIRED_RESULT RemoteContentInfoStatus status() const;
+    [[nodiscard]] RemoteContentInfoStatus status() const;
     void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus status);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
 private:
     RemoteContentInfoStatus mStatus = RemoteContentInfoStatus::Unknown;

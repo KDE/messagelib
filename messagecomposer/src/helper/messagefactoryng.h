@@ -81,7 +81,7 @@ public:
      * If no list is passed, use the original message passed in the MessageFactoryNG
      *  constructor.
      */
-    Q_REQUIRED_RESULT QPair<KMime::Message::Ptr, QList<KMime::Content *>> createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
+    [[nodiscard]] QPair<KMime::Message::Ptr, QList<KMime::Content *>> createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
@@ -90,19 +90,19 @@ public:
     user, mail is not changed and the reply-to field is set to
     the email address of the original sender.
     */
-    Q_REQUIRED_RESULT KMime::Message::Ptr createRedirect(const QString &toStr,
-                                                         const QString &ccStr = QString(),
-                                                         const QString &bccStr = QString(),
-                                                         int transportId = -1,
-                                                         const QString &fcc = QString(),
-                                                         int identity = -1);
+    [[nodiscard]] KMime::Message::Ptr createRedirect(const QString &toStr,
+                                                     const QString &ccStr = QString(),
+                                                     const QString &bccStr = QString(),
+                                                     int transportId = -1,
+                                                     const QString &fcc = QString(),
+                                                     int identity = -1);
 
-    Q_REQUIRED_RESULT KMime::Message::Ptr createResend();
+    [[nodiscard]] KMime::Message::Ptr createResend();
 
     /** Create a new message that is a delivery receipt of this message,
       filling required header fields with the proper values. The
       returned message is not stored in any folder. */
-    Q_REQUIRED_RESULT KMime::Message::Ptr createDeliveryReceipt();
+    [[nodiscard]] KMime::Message::Ptr createDeliveryReceipt();
 
     /** Create a new message that is a MDN for this message, filling all
       required fields with proper values. The returned message is not
@@ -116,11 +116,11 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    Q_REQUIRED_RESULT KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a,
-                                                    KMime::MDN::DispositionType d,
-                                                    KMime::MDN::SendingMode s,
-                                                    int mdnQuoteOriginal = 0,
-                                                    const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
+    [[nodiscard]] KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a,
+                                                KMime::MDN::DispositionType d,
+                                                KMime::MDN::SendingMode s,
+                                                int mdnQuoteOriginal = 0,
+                                                const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
 
     /**
      * Create a new forwarded MIME digest. If the user is trying to forward multiple messages
@@ -132,7 +132,7 @@ public:
      *
      * @param msgs List of messages to be composed into a digest
      */
-    Q_REQUIRED_RESULT QPair<KMime::Message::Ptr, KMime::Content *> createForwardDigestMIME(const Akonadi::Item::List &items);
+    [[nodiscard]] QPair<KMime::Message::Ptr, KMime::Content *> createForwardDigestMIME(const Akonadi::Item::List &items);
 
     /**
      * Set the identity manager to be used when creating messages.
@@ -189,7 +189,7 @@ public:
      * When creating MDNs, the user needs to be asked for confirmation in specific
      *  cases according to RFC 2298.
      */
-    Q_REQUIRED_RESULT static bool MDNRequested(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNRequested(const KMime::Message::Ptr &msg);
 
     /**
      * If sending an MDN requires confirmation due to multiple addresses.
@@ -198,7 +198,7 @@ public:
      * MDN sent) ] if there is more than one distinct address in the
      * Disposition-Notification-To header.
      */
-    Q_REQUIRED_RESULT static bool MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg);
 
     /**
      *
@@ -211,15 +211,15 @@ public:
      * SHOULD be obtained (or no MDN sent) if there is no Return-Path
      * header in the message [...]
      */
-    Q_REQUIRED_RESULT static bool MDNReturnPathEmpty(const KMime::Message::Ptr &msg);
-    Q_REQUIRED_RESULT static bool MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNReturnPathEmpty(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg);
 
     /**
      * If the MDN headers contain options that KMail can't parse
      */
-    Q_REQUIRED_RESULT static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
-    Q_REQUIRED_RESULT bool replyAsHtml() const;
+    [[nodiscard]] bool replyAsHtml() const;
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
@@ -235,9 +235,9 @@ private:
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagementCore::IdentityManager::identityForAddress()
     **/
-    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const KMime::Message::Ptr &msg);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const KMime::Message::Ptr &msg);
 
-    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
 
     /*
      * If force charset option is enabled, try to set the original charset
@@ -246,7 +246,7 @@ private:
      */
     MESSAGECOMPOSER_NO_EXPORT void applyCharset(const KMime::Message::Ptr msg);
 
-    Q_REQUIRED_RESULT MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
     MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;

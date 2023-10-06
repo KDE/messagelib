@@ -28,14 +28,14 @@ public:
     ~MessageViewerCheckBeforeDeletingInterface() override;
 
     void setParentWidget(QWidget *parent);
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
-    Q_REQUIRED_RESULT virtual Akonadi::Item::List exec(const Akonadi::Item::List &list) = 0;
+    [[nodiscard]] virtual Akonadi::Item::List exec(const Akonadi::Item::List &list) = 0;
 
     void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
-    Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
+    [[nodiscard]] MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
 
-    Q_REQUIRED_RESULT virtual QList<QAction *> actions() const;
+    [[nodiscard]] virtual QList<QAction *> actions() const;
 
     virtual void createActions(KActionCollection *ac);
 

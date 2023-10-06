@@ -30,8 +30,8 @@ public:
     explicit NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~NetworkUrlInterceptorManager() override;
 
-    Q_REQUIRED_RESULT QList<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
-    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] QList<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
+    [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
 private:
     std::unique_ptr<NetworkUrlInterceptorManagerPrivate> const d;

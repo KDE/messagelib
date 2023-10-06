@@ -26,8 +26,8 @@ public:
 
     /** @return HTML head including style sheet definitions and the
     &gt;body&lt; tag */
-    Q_REQUIRED_RESULT QString htmlHead(const HtmlHeadSettings &htmlHeadSettings) const override;
-    Q_REQUIRED_RESULT QString endBodyHtml() const;
+    [[nodiscard]] QString htmlHead(const HtmlHeadSettings &htmlHeadSettings) const override;
+    [[nodiscard]] QString endBodyHtml() const;
     void updateColor();
 };
 }

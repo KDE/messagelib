@@ -22,12 +22,12 @@ public:
     ~FilterNameDialog() override;
 
     void setFilterName(const QString &str);
-    Q_REQUIRED_RESULT QString filterName() const;
+    [[nodiscard]] QString filterName() const;
 
     void setExistingFilterNames(const QStringList &lst);
 
     void setIconName(const QString &icon);
-    Q_REQUIRED_RESULT QString iconName() const;
+    [[nodiscard]] QString iconName() const;
 
 private:
     FilterNameWidget *const mFilterNameWidget;

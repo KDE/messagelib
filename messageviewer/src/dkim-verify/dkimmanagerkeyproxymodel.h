@@ -14,7 +14,7 @@ public:
     explicit DKIMManagerKeyProxyModel(QObject *parent = nullptr);
     ~DKIMManagerKeyProxyModel() override;
 
-    Q_REQUIRED_RESULT QString filterText() const;
+    [[nodiscard]] QString filterText() const;
     void setFilterText(const QString &newFilterText);
 
 protected:

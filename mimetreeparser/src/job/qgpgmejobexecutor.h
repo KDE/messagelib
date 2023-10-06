@@ -40,8 +40,8 @@ public:
     std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> exec(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText, QByteArray &plainText);
     GpgME::ImportResult exec(QGpgME::ImportJob *job, const QByteArray &certData);
 
-    Q_REQUIRED_RESULT GpgME::Error auditLogError() const;
-    Q_REQUIRED_RESULT QString auditLogAsHtml() const;
+    [[nodiscard]] GpgME::Error auditLogError() const;
+    [[nodiscard]] QString auditLogAsHtml() const;
 
 private Q_SLOTS:
     void verificationResult(const GpgME::VerificationResult &result);

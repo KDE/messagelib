@@ -41,7 +41,7 @@ public:
 
        @return true on success.
     */
-    Q_REQUIRED_RESULT bool send(const KMime::Message::Ptr &msg, SendMethod method = SendDefault)
+    [[nodiscard]] bool send(const KMime::Message::Ptr &msg, SendMethod method = SendDefault)
     {
         return doSend(msg, method);
     }
@@ -56,14 +56,14 @@ public:
 
        @return true on success.
     */
-    Q_REQUIRED_RESULT bool sendQueued(int transportId = -1)
+    [[nodiscard]] bool sendQueued(int transportId = -1)
     {
         return doSendQueued(transportId);
     }
 
 protected:
-    Q_REQUIRED_RESULT virtual bool doSend(const KMime::Message::Ptr &msg, short sendNow) = 0;
-    Q_REQUIRED_RESULT virtual bool doSendQueued(int transportId) = 0;
+    [[nodiscard]] virtual bool doSend(const KMime::Message::Ptr &msg, short sendNow) = 0;
+    [[nodiscard]] virtual bool doSendQueued(int transportId) = 0;
 };
 
 inline MessageSender::~MessageSender() = default;

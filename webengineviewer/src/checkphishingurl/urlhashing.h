@@ -19,12 +19,12 @@ public:
     explicit UrlHashing(const QUrl &url);
     ~UrlHashing();
 
-    Q_REQUIRED_RESULT static QString canonicalizeUrl(QUrl url);
-    Q_REQUIRED_RESULT static QStringList generatePathsToCheck(const QString &str, const QString &query);
-    Q_REQUIRED_RESULT static QStringList generateHostsToCheck(const QString &str);
+    [[nodiscard]] static QString canonicalizeUrl(QUrl url);
+    [[nodiscard]] static QStringList generatePathsToCheck(const QString &str, const QString &query);
+    [[nodiscard]] static QStringList generateHostsToCheck(const QString &str);
 
     /*long hash, short hash*/
-    Q_REQUIRED_RESULT QHash<QByteArray, QByteArray> hashList() const;
+    [[nodiscard]] QHash<QByteArray, QByteArray> hashList() const;
 
 private:
     const QUrl mUrl;

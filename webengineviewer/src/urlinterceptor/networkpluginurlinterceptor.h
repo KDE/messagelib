@@ -24,11 +24,11 @@ public:
     ~NetworkPluginUrlInterceptor() override;
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = nullptr) = 0;
 
-    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
+    [[nodiscard]] virtual bool hasConfigureDialog() const;
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
+    [[nodiscard]] bool isEnabled() const;
 
 private:
     bool mIsEnabled = false;

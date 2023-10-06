@@ -43,7 +43,7 @@ public:
     bool protectedHeaders = true;
 
     // copied from messagecomposer.cpp
-    Q_REQUIRED_RESULT bool binaryHint(Kleo::CryptoMessageFormat f)
+    [[nodiscard]] bool binaryHint(Kleo::CryptoMessageFormat f)
     {
         switch (f) {
         case Kleo::SMIMEFormat:
@@ -56,7 +56,7 @@ public:
         }
     }
 
-    Q_REQUIRED_RESULT GpgME::SignatureMode signingMode(Kleo::CryptoMessageFormat f)
+    [[nodiscard]] GpgME::SignatureMode signingMode(Kleo::CryptoMessageFormat f)
     {
         switch (f) {
         case Kleo::SMIMEOpaqueFormat:

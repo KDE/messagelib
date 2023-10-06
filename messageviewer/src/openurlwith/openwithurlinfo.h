@@ -20,18 +20,18 @@ public:
     OpenWithUrlInfo();
     ~OpenWithUrlInfo();
 
-    Q_REQUIRED_RESULT const QString &command() const;
+    [[nodiscard]] const QString &command() const;
     void setCommand(const QString &newCommand);
 
-    Q_REQUIRED_RESULT const QString &url() const;
+    [[nodiscard]] const QString &url() const;
     void setUrl(const QString &newUrl);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT const QString &commandLine() const;
+    [[nodiscard]] const QString &commandLine() const;
     void setCommandLine(const QString &newCommandLine);
 
-    Q_REQUIRED_RESULT bool operator==(const OpenWithUrlInfo &other) const;
+    [[nodiscard]] bool operator==(const OpenWithUrlInfo &other) const;
 
 private:
     QString mCommandLine;

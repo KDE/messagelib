@@ -40,7 +40,7 @@ class KTextTemplateTagLibrary : public QObject, public KTextTemplate::TagLibrary
     Q_PLUGIN_METADATA(IID "org.grantlee.TagLibraryInterface")
 public:
     explicit KTextTemplateTagLibrary(QObject *parent = nullptr);
-    Q_REQUIRED_RESULT QHash<QString, KTextTemplate::AbstractNodeFactory *> nodeFactories(const QString &name) override;
+    [[nodiscard]] QHash<QString, KTextTemplate::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
 }
 

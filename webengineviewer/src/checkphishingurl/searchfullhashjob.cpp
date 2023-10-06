@@ -21,7 +21,7 @@ class WebEngineViewer::SearchFullHashJobPrivate
 public:
     SearchFullHashJobPrivate() = default;
 
-    Q_REQUIRED_RESULT bool foundExactHash(const QList<QByteArray> &listLongHash);
+    [[nodiscard]] bool foundExactHash(const QList<QByteArray> &listLongHash);
     QHash<QByteArray, QByteArray> mHashs;
     QUrl mUrl;
     QStringList mDatabaseHashes;

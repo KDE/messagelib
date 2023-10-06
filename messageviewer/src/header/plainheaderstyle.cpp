@@ -25,7 +25,7 @@ class MessageViewer::PlainHeaderStylePrivate
 public:
     PlainHeaderStylePrivate() = default;
 
-    Q_REQUIRED_RESULT QString formatAllMessageHeaders(KMime::Message *message) const;
+    [[nodiscard]] QString formatAllMessageHeaders(KMime::Message *message) const;
     MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
 };
 

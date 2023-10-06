@@ -43,7 +43,7 @@ public:
     void setSkeletonMessage(KMime::Message *skeletonMessage);
     void setProtectedHeaders(bool protectedHeaders);
 
-    Q_REQUIRED_RESULT KMime::Content *origContent();
+    [[nodiscard]] KMime::Content *origContent();
 
 protected Q_SLOTS:
     void doStart() override;

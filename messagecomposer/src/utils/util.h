@@ -25,17 +25,17 @@ namespace MessageComposer
 {
 namespace Util
 {
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool sendMailDispatcherIsOnline(QWidget *parent = nullptr);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT bool sendMailDispatcherIsOnline(QWidget *parent = nullptr);
 
 /**
  * find mimetype in message
  */
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType);
 
 /**
  * Adds private headers to the given @p message that links it to the original message.
@@ -54,7 +54,7 @@ MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &messag
  * @param status Will contain the status (replied or forwarded) that linked the message to the original message.
  * @returns Whether the mail contains valid link information or not.
  */
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool
+[[nodiscard]] MESSAGECOMPOSER_EXPORT bool
 getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
 
 /**
@@ -64,19 +64,19 @@ getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id,
  * the akonadi sense, since jobs cannot sensibly use them, but they do
  * contain a valid message pointer.
  */
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
 
 /**
  * Retrieve the KMime::Message from the item, if there is one.
  * @returns A valid message pointer, or 0, is the item does not contain
  * a valid message.
  */
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
 
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanEmailList(const QStringList &emails);
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding(const QStringList &emails);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList cleanEmailList(const QStringList &emails);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding(const QStringList &emails);
 MESSAGECOMPOSER_EXPORT void addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &customHeader);
 }
 }

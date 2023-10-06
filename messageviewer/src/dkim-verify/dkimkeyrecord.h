@@ -20,30 +20,30 @@ class MESSAGEVIEWER_EXPORT DKIMKeyRecord
 {
 public:
     DKIMKeyRecord();
-    Q_REQUIRED_RESULT bool parseKey(const QString &key);
+    [[nodiscard]] bool parseKey(const QString &key);
 
-    Q_REQUIRED_RESULT QString version() const;
+    [[nodiscard]] QString version() const;
     void setVersion(const QString &version);
 
-    Q_REQUIRED_RESULT QString keyType() const;
+    [[nodiscard]] QString keyType() const;
     void setKeyType(const QString &keyType);
 
-    Q_REQUIRED_RESULT QString note() const;
+    [[nodiscard]] QString note() const;
     void setNote(const QString &note);
 
-    Q_REQUIRED_RESULT QString publicKey() const;
+    [[nodiscard]] QString publicKey() const;
     void setPublicKey(const QString &publicKey);
 
-    Q_REQUIRED_RESULT QString service() const;
+    [[nodiscard]] QString service() const;
     void setService(const QString &service);
 
-    Q_REQUIRED_RESULT QStringList hashAlgorithm() const;
+    [[nodiscard]] QStringList hashAlgorithm() const;
     void setHashAlgorithm(const QStringList &hashAlgorithm);
 
-    Q_REQUIRED_RESULT QStringList flags() const;
+    [[nodiscard]] QStringList flags() const;
     void setFlags(const QStringList &flags);
 
-    Q_REQUIRED_RESULT bool operator==(const DKIMKeyRecord &other) const;
+    [[nodiscard]] bool operator==(const DKIMKeyRecord &other) const;
 
 private:
     QString mVersion;

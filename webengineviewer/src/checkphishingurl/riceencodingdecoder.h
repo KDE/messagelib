@@ -18,11 +18,11 @@ public:
     RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData);
     ~RiceDecoder();
 
-    Q_REQUIRED_RESULT bool hasOtherEntries() const;
-    Q_REQUIRED_RESULT bool nextValue(uint32_t *value);
-    Q_REQUIRED_RESULT bool nextBits(unsigned int num_requested_bits, uint32_t *x);
-    Q_REQUIRED_RESULT uint32_t bitsFromCurrentWord(unsigned int num_requested_bits);
-    Q_REQUIRED_RESULT bool nextWord(uint32_t *word);
+    [[nodiscard]] bool hasOtherEntries() const;
+    [[nodiscard]] bool nextValue(uint32_t *value);
+    [[nodiscard]] bool nextBits(unsigned int num_requested_bits, uint32_t *x);
+    [[nodiscard]] uint32_t bitsFromCurrentWord(unsigned int num_requested_bits);
+    [[nodiscard]] bool nextWord(uint32_t *word);
 
 private:
     QByteArray mEncodingData;

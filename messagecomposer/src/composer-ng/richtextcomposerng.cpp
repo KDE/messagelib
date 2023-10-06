@@ -35,7 +35,7 @@ public:
     }
 
     void fixHtmlFontSize(QString &cleanHtml) const;
-    Q_REQUIRED_RESULT QString toCleanHtml() const;
+    [[nodiscard]] QString toCleanHtml() const;
     TextAutoCorrectionCore::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *const richTextComposerSignatures;

@@ -82,12 +82,12 @@ public:
     {
     }
 
-    Q_REQUIRED_RESULT QString layoutDirection() const
+    [[nodiscard]] QString layoutDirection() const
     {
         return QGuiApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     }
 
-    Q_REQUIRED_RESULT int iconSize() const
+    [[nodiscard]] int iconSize() const
     {
         return KIconLoader::global()->currentSize(KIconLoader::Desktop);
     }

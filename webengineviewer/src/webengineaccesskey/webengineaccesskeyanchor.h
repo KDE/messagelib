@@ -16,17 +16,17 @@ class WebEngineAccessKeyAnchor
 public:
     explicit WebEngineAccessKeyAnchor(const QVariant &result);
     WebEngineAccessKeyAnchor();
-    Q_REQUIRED_RESULT QRect boundingRect() const;
+    [[nodiscard]] QRect boundingRect() const;
 
-    Q_REQUIRED_RESULT QString accessKey() const;
+    [[nodiscard]] QString accessKey() const;
 
-    Q_REQUIRED_RESULT QString href() const;
+    [[nodiscard]] QString href() const;
 
-    Q_REQUIRED_RESULT QString target() const;
+    [[nodiscard]] QString target() const;
 
-    Q_REQUIRED_RESULT QString tagName() const;
+    [[nodiscard]] QString tagName() const;
 
-    Q_REQUIRED_RESULT QString innerText() const;
+    [[nodiscard]] QString innerText() const;
 
 private:
     void initialize(const QVariant &result);

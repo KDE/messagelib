@@ -25,7 +25,7 @@ public:
     void loadKeys();
     void saveKeys();
     void resetKeys();
-    Q_REQUIRED_RESULT QByteArray saveHeaders() const;
+    [[nodiscard]] QByteArray saveHeaders() const;
     void restoreHeaders(const QByteArray &header);
 
 private:
