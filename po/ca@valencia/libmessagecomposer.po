@@ -753,7 +753,7 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
-"Heu sol·licitat encriptar este missatge, i encriptar una còpia per a vós, "
+"Heu sol·licitat encriptar este missatge, i encriptar una còpia per a tu, "
 "però no s'ha configurat cap clau fiable d'encriptació vàlida per a esta "
 "identitat."
 
@@ -918,8 +918,8 @@ msgstr ""
 "alguns destinataris.\n"
 "Malgrat açò, no s'ha configurat cap clau d'encriptació OpenPGP de confiança "
 "i vàlida per a esta identitat.\n"
-"Podeu continuar sense encriptació per a vós mateix, però cal tindre present "
-"que no podreu llegir els vostres propis missatges si ho feu."
+"Podeu continuar sense encriptació per a tu, però cal tindre present que no "
+"podreu llegir els vostres propis missatges si ho feu."
 
 #: composer/keyresolver.cpp:1030
 #, kde-format
@@ -936,8 +936,8 @@ msgstr ""
 "alguns destinataris.\n"
 "Malgrat açò, no s'ha configurat cap certificat d'encriptació S/MIME vàlid "
 "per a esta identitat.\n"
-"Podeu continuar sense encriptació per a vós mateix, però cal tindre present "
-"que no podreu llegir els vostres propis missatges si ho feu."
+"Podeu continuar sense encriptació per a tu, però cal tindre present que no "
+"podreu llegir els vostres propis missatges si ho feu."
 
 #: composer/keyresolver.cpp:1062
 #, kde-format
@@ -1001,7 +1001,7 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
-"No heu seleccionat cap clau d'encriptació per a vós (encripta a mi mateix). "
+"No heu seleccionat cap clau d'encriptació per a tu (encripta a mi mateix). "
 "Si l'encripteu, no podreu desencriptar el vostre propi missatge."
 
 #: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
