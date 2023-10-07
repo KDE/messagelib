@@ -29,7 +29,6 @@ private:
     void readConfig();
     void writeConfig();
     MailSourceViewTextBrowserWidget *const mRawBrowser;
-    FindBarSourceView *mFindBar = nullptr;
     QTabWidget *mTabWidget = nullptr;
     MailSourceViewTextBrowserWidget *mHtmlBrowser = nullptr;
     bool mShowHtmlSource = false;
