@@ -2466,7 +2466,7 @@ msgstr "Imprimiu el document"
 #: viewer/viewer_p.cpp:2721
 #, kde-format
 msgid "URL copied to clipboard."
-msgstr "URL copiat al porta-retalls."
+msgstr "URL copiat a dins del porta-retalls."
 
 #: viewer/viewer_p.cpp:2873
 #, kde-format
