@@ -66,9 +66,9 @@ public:
 
     [[nodiscard]] static QString dateShortStr(const QDateTime &dateTime);
 
-    MESSAGEVIEWER_DEPRECATED [[nodiscard]] static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
+    [[nodiscard]] MESSAGEVIEWER_DEPRECATED static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
 
-    MESSAGEVIEWER_DEPRECATED [[nodiscard]] static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
+    [[nodiscard]] MESSAGEVIEWER_DEPRECATED static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
     [[nodiscard]] xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 
