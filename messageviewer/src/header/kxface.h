@@ -293,7 +293,6 @@ private:
 
     int NumProbs;
     int status;
-    int compface_xbitmap;
 
     char F[PIXELS];
     Prob *ProbBuf[PIXELS * 2];
