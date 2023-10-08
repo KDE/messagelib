@@ -155,7 +155,7 @@ msgstr ""
 "predeterminada, dependendo do tipo MIME; porén, ás veces, pódese reducir de "
 "maneira significativa o tamaño da mensaxe resultante, por exemplo se un "
 "ficheiro PostScript non contén datos binarios, senón que consiste só en "
-"texto -- neste caso, escoller «imprimíbel entre aspas» no canto do valor "
+"texto -- neste caso, escoller «imprimíbel entre comiñas» no canto do valor "
 "predeterminado («base64») aforra ata un 25% no tamaño da mensaxe resultante."
 "</p>"
 
