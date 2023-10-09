@@ -326,8 +326,6 @@ msgid "Signature is valid"
 msgstr "署名は有効です。"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "署名の状態は不明です"
 
@@ -2689,31 +2687,3 @@ msgstr "メッセージを保存(&S)"
 #| msgid "&Previous Card"
 msgid "Previous Message"
 msgstr "前のカード(&P)"
-
-#~ msgid "Edit with:"
-#~ msgstr "次で編集:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail は選択されたエディタが閉じられても検知できません。データの消失を避け"
-#~ "るために添付ファイルの編集を中止します。"
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "添付ファイルを編集できません"
-
-#, fuzzy
-#~| msgid "VCard Viewer"
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "VCard ビューア"
-
-#~ msgid "&Import"
-#~ msgstr "インポート(&I)"
-
-#~ msgid "&Next Card"
-#~ msgstr "次のカード(&N)"
-
-#~ msgid "&Previous Card"
-#~ msgstr "前のカード(&P)"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:59+0000\n"
-"PO-Revision-Date: 2023-10-04 19:02+0200\n"
+"PO-Revision-Date: 2023-10-08 07:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -265,6 +265,8 @@ msgid ""
 "Changing this from its default 'Auto' will force the use of the specified "
 "encoding for all emails, regardless of what they specify themselves."
 msgstr ""
+"ამის ნაგულისხმევი 'ავტომატურიდან' შეცვლა მითითებული კოდირების ყველა "
+"ელფოსტისთვის შეცვლას გამოიწვევს იმის მიუხედავად, თვითონ რა უნდათ."
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
 #: settings/messagecore.kcfg:35

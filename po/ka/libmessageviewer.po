@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2023-10-04 19:02+0200\n"
+"PO-Revision-Date: 2023-10-08 07:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -147,6 +147,8 @@ msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
+"შეტყობინების გასაშიფრი საიდუმლო გასაღები ვერ ვიპოვე. ის დაშიფრულია შემდეგი "
+"გასაღებებით:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -1311,7 +1313,7 @@ msgstr "მოკლე ბმული '%1' გადამისამარ�
 #: settings/messageviewer.kcfg.cmake:11
 #, kde-format
 msgid "Only print selected text in viewer"
-msgstr ""
+msgstr "მხოლოდ მონიშნული ტექსტის დაბეჭდვა"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.cmake:15
@@ -1355,13 +1357,13 @@ msgstr "შეტყობინების სხეულის ფონტ�
 #: settings/messageviewer.kcfg.cmake:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr ""
+msgstr "დაბეჭდვის ფონტის მითითება"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.cmake:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "დაემატა ფიშინგის ბმულის შემოწმება"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.cmake:55
@@ -1415,7 +1417,7 @@ msgstr "ნახვისას ელფოსტის ავტომატ�
 #: settings/messageviewer.kcfg.cmake:91
 #, kde-format
 msgid "Message Structure Viewer"
-msgstr ""
+msgstr "შეტყობინების სტრუქტურის ჩვენება"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.cmake:94
@@ -1777,7 +1779,7 @@ msgstr "&ციტატის ტექსტისთვის ფონტი
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr ""
+msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების ჩვენება"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -2065,7 +2067,7 @@ msgstr "ჩასმული შეტყობინება (სათაუ
 #: viewer/urlhandlermanager.cpp:807
 #, kde-format
 msgid "Encapsulated Message"
-msgstr ""
+msgstr "ჩასმული შეტყობინება"
 
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
@@ -2170,12 +2172,12 @@ msgstr "კოპირება"
 #: viewer/viewer_p.cpp:595
 #, kde-format
 msgid "Reply To Author"
-msgstr ""
+msgstr "ავტორისთვის პასუხი"
 
 #: viewer/viewer_p.cpp:603
 #, kde-format
 msgid "Reply To All"
-msgstr ""
+msgstr "ყველასთვის პასუხი"
 
 #: viewer/viewer_p.cpp:609 viewer/viewer_p.cpp:1729
 #, kde-format
@@ -2190,7 +2192,7 @@ msgstr "KMail"
 #: viewer/viewer_p.cpp:747
 #, kde-format
 msgid "The KDE Mail Client"
-msgstr ""
+msgstr "KDE-ის ელფოსტის კლიენტი"
 
 #: viewer/viewer_p.cpp:1275
 #, kde-format
@@ -2543,6 +2545,14 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+"<qt>მოსაწვევები, ჩვეულებრივ, ელფოსტაზე მიმაგრებული ფაილის სახით იგზავნება. "
+"ეს თოლია ცვლის, რომ მოსაწვევები ელფოსტის ტექსტით გაიგზავნოთ. ეს აუცილებელია, "
+"როცა მოსაწვევებს და პასუხებს Microsoft Outlook-ზე აგზავნით.<br />მაგრამ, "
+"როცა ამას გააკეთებთ, ვეღარ მიიღებთ ტექსტს, რომლებიც ელფოსტის პროგრამებს "
+"შეუძლიათ, წაიკითხონ. ასე რომ, ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამები, "
+"რომლებსაც მოსაწვევების მხარდაჭერა არ გააჩნია, ელფოსტას უცნაურად დაინახავენ. "
+"<br />ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამა, რომელსაც მოსაწვევების "
+"მხარდაჭერა გააჩნია, ამასთან მაინც იმუშავებენ.</qt>"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
