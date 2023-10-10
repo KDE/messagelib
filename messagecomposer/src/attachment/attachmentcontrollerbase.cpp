@@ -775,7 +775,7 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageC
         break;
     case MessageComposer::EditorWatcher::CannotStart:
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not start EditorWatcher.";
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     case MessageComposer::EditorWatcher::Unknown:
     case MessageComposer::EditorWatcher::Canceled:
     case MessageComposer::EditorWatcher::NoServiceFound:

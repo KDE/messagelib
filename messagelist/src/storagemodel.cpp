@@ -292,14 +292,14 @@ void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::
         mi->setSubjectIsPrefixed(subject != strippedSubject);
         // fall through
     }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     case PerfectThreadingPlusReferences: {
         const auto refs = mail->references()->identifiers();
         if (!refs.isEmpty()) {
             mi->setReferencesIdMD5(md5Encode(refs.last()));
         }
     }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     // fall through
     case PerfectThreadingOnly: {
         mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));

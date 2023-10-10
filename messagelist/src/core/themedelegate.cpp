@@ -705,7 +705,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                                       QBrush(mGroupHeaderBackgroundColor));
                 }
                 // fall through anyway
-                Q_FALLTHROUGH();
+                [[fallthrough]];
             case Theme::RoundedRect: {
                 painter->setPen(Qt::NoPen);
                 bool hadAntialiasing = painter->renderHints() & QPainter::Antialiasing;
@@ -741,7 +741,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                     painter->fillRect(QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)), QBrush(gradient));
                 }
                 // fall through anyway
-                Q_FALLTHROUGH();
+                [[fallthrough]];
             }
             case Theme::GradientRect: {
                 // FIXME: Could cache this brush

@@ -2079,7 +2079,7 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
     case Kleo::AskOpportunistic:
         opportunistic = true;
         // fall through...
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     case Kleo::Ask: {
         // the user wants to be asked or has to be asked
         KCursorSaver saver(Qt::WaitCursor);

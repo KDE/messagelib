@@ -156,7 +156,7 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         // SMIME and SMIMEOpaque, since there is no mp/encrypted for
         // S/MIME)
     }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     case Kleo::SMIMEOpaqueFormat:
 
         qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME/opaque";
@@ -194,7 +194,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
             return;
         }
     }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
     // fall through:
     default:
     case Kleo::InlineOpenPGPFormat:
