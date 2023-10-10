@@ -2630,30 +2630,3 @@ msgstr "Следващо съобщение"
 #, kde-format
 msgid "Previous Message"
 msgstr "Предишно съобщение"
-
-#~ msgid "Edit with:"
-#~ msgstr "Редактиране с:"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail не може да открие кога избраният редактор е затворен. За да се "
-#~ "избегне загуба на данни, редактирането на прикачения файл ще бъде "
-#~ "прекратено."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "Прикрепеният файл не може да бъде редактиран"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "Преглед на vCard"
-
-#~ msgid "&Import"
-#~ msgstr "&Импортиране"
-
-#~ msgid "&Next Card"
-#~ msgstr "&Следваща визитка"
-
-#~ msgid "&Previous Card"
-#~ msgstr "Предишна визитка"
