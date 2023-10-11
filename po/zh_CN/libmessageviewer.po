@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-16 10:09\n"
+"PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/messagelib/libmessageviewer.pot\n"
-"X-Crowdin-File-ID: 3760\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessageviewer.pot\n"
+"X-Crowdin-File-ID: 45487\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -311,8 +311,7 @@ msgid ""
 msgstr "已存储的 DKIM 密钥不同于当前密钥。您还想要存储这个密钥吗？"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "密钥已更改"
@@ -1763,8 +1762,7 @@ msgid ""
 msgstr "名为“%1” 的文件已经存在。您要覆盖它吗？"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "覆盖文件吗？"
@@ -1835,8 +1833,7 @@ msgid ""
 msgstr "<qt>无法写入文件<br/><filename>%1</filename><br/><br/>%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "保存附件时出错"
@@ -1873,8 +1870,7 @@ msgid "File %1 could not be loaded."
 msgstr "无法加载文件 %1。"
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "加载信件错误"
@@ -1885,8 +1881,7 @@ msgid "File %1 could not be created."
 msgstr "文件 %1 无法创建。"
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "保存信件错误"
@@ -2105,8 +2100,7 @@ msgid ""
 msgstr "删除附件可能使信件中的任何数字签名失效。"
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "删除附件"
@@ -2412,8 +2406,7 @@ msgid "The URL %1 is not valid."
 msgstr "链接 %1 无效。"
 
 #: viewer/viewer_p.cpp:1942
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "检查钓鱼链接"
@@ -2424,8 +2417,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "此网站包含恶意软件，您想要继续显示它吗？"
 
 #: viewer/viewer_p.cpp:1963
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "恶意软件"

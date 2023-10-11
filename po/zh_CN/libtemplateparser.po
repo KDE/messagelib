@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-26 01:46+0000\n"
-"PO-Revision-Date: 2023-09-16 10:09\n"
+"PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/messagelib/libtemplateparser.pot\n"
-"X-Crowdin-File-ID: 3764\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libtemplateparser.pot\n"
+"X-Crowdin-File-ID: 45767\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -79,8 +79,7 @@ msgid "A template with same name already exists."
 msgstr "已存在具有相同名称的模板。"
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "无法创建模板"
@@ -232,7 +231,7 @@ msgstr "使用智能引用(&Q)"
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
-msgstr ""
+msgstr "使用与原始消息相同的视觉格式 (纯文本或者 HTML) 回复或者转发"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -569,8 +568,7 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "您想要重置当前或全部模板为默认值吗？"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "重置为默认"

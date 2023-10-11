@@ -76,11 +76,10 @@ msgid "A template with same name already exists."
 msgstr ""
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
-msgstr "Šablonu nelze vytvořit"
+msgstr ""
 
 #: customtemplates.cpp:344
 #, kde-format
@@ -570,11 +569,10 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "Obnovit výchozí"
+msgstr ""
 
 #: templatesconfiguration.cpp:102
 #, kde-format
