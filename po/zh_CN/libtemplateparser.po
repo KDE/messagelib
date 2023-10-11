@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 00:47+0000\n"
-"PO-Revision-Date: 2023-09-16 10:11\n"
+"PO-Revision-Date: 2023-10-10 14:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -230,7 +230,7 @@ msgstr "使用智能引用(&Q)"
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
-msgstr ""
+msgstr "使用与原始消息相同的视觉格式 (纯文本或者 HTML) 回复或者转发"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
