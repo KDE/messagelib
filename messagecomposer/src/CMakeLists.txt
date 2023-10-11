@@ -268,7 +268,7 @@ else()
     set(ALLOW_SEMICOLON_AS_ADDRESS_SEPARATOR_DEFAULT false)
 endif()
 
-configure_file(settings/messagecomposer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer.kcfg)
+configure_file(settings/messagecomposer.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer.kcfg)
 
 kconfig_add_kcfg_files(KPim6MessageComposer
     settings/messagecomposersettings_base.kcfgc

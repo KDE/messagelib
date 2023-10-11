@@ -132,7 +132,7 @@ if (USE_UNITY_CMAKE_SUPPORT)
     add_definitions(-DCOMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-messagelib.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelib.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-messagelib.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-messagelib.h)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}

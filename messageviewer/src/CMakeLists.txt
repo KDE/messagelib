@@ -24,7 +24,7 @@ else()
     set(EXCHANGE_COMPATIBLE_INVITATIONS false)
 endif()
 
-configure_file(settings/messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
+configure_file(settings/messageviewer.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
 
 find_package(Qca-qt6 2.3.7 CONFIG REQUIRED)
