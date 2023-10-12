@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-09-26 20:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1967,181 +1967,6 @@ msgstr "Sendi je:"
 msgid "Repeat every:"
 msgstr "Ripeti ĉiun:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Citi nur elektitan tekston dum respondo"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr "Konservi originalan signaron dum respondado aŭ plusendado se eble"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "Aŭt&omate enigi subskribon"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Enigi subskribon super citita teksto"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Antaŭmeti apartigilon al subskribo"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Uzi adresojn indeksitajn de retpoŝtoj por aŭtomata kompletigo"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Malebligu ĉi tiun opcion se vi volas nur ke kontaktoj de viaj adreslibroj "
-"aperu en la aŭtokompleta listo en la adreskampoj de la komponisto."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr ""
-"Permesu la punktokomon (';') esti uzata kiel apartigilo en la mesaĝkomponilo"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Uzi lastatempajn adresojn por aŭtomata kompletigo"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Malebligu ĉi tiun opcion se vi ne volas, ke lastatempe uzitaj adresoj aperu "
-"en la aŭtokompleta listo en la adreskampoj de la komponisto."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Maksimuma nombro da ricevantoj:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Perspektiv-kongrua aldonaĵnomado"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Ŝaltu ĉi tiun opcion por ke Outlook ™ komprenu aldonajn nomojn enhavantajn "
-"ne-anglajn signojn"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "Vort&faldo ĉe kolumno:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Plibonigi klartekstan version de HTML-mesaĝo"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "Subskribi ĉiujn mesaĝojn, se eble"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr "Ebligi ĉifradon, se ni trovis ŝlosilojn por ĉiuj ricevantoj"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Averti antaŭ sendi neĉifritajn mesaĝojn"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Averti antaŭ sendi nesubskribitajn mesaĝojn"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr "Avertu se atestiloj/ŝlosiloj baldaŭ eksvalidiĝas (agordu sojlojn sube)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"La minimuma nombro da tagoj, kiam la ĉifratestilo devus esti valida antaŭ "
-"eldonado de averto"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"La minimuma nombro da tagoj, ke ĉiuj atestiloj en la ĉeno devus esti validaj "
-"antaŭ eldonado de averto"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"La minimuma nombro da tagoj, kiam la radika atestilo devas esti valida antaŭ "
-"eldoni averton"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-"Ĉiam montru la liston de ĉifradaj ŝlosiloj por elekti tiun, kiu estos uzata"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2418,3 +2243,108 @@ msgstr "Poŝtsendisto eksterrete."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Meti Enreta"
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Citi nur elektitan tekston dum respondo"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr "Konservi originalan signaron dum respondado aŭ plusendado se eble"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "Aŭt&omate enigi subskribon"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Enigi subskribon super citita teksto"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Antaŭmeti apartigilon al subskribo"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Uzi adresojn indeksitajn de retpoŝtoj por aŭtomata kompletigo"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Malebligu ĉi tiun opcion se vi volas nur ke kontaktoj de viaj adreslibroj "
+#~ "aperu en la aŭtokompleta listo en la adreskampoj de la komponisto."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr ""
+#~ "Permesu la punktokomon (';') esti uzata kiel apartigilo en la "
+#~ "mesaĝkomponilo"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Uzi lastatempajn adresojn por aŭtomata kompletigo"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Malebligu ĉi tiun opcion se vi ne volas, ke lastatempe uzitaj adresoj "
+#~ "aperu en la aŭtokompleta listo en la adreskampoj de la komponisto."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Maksimuma nombro da ricevantoj:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Perspektiv-kongrua aldonaĵnomado"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Ŝaltu ĉi tiun opcion por ke Outlook ™ komprenu aldonajn nomojn "
+#~ "enhavantajn ne-anglajn signojn"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Vort&faldo ĉe kolumno:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Plibonigi klartekstan version de HTML-mesaĝo"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "Subskribi ĉiujn mesaĝojn, se eble"
+
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr "Ebligi ĉifradon, se ni trovis ŝlosilojn por ĉiuj ricevantoj"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Averti antaŭ sendi neĉifritajn mesaĝojn"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Averti antaŭ sendi nesubskribitajn mesaĝojn"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Avertu se atestiloj/ŝlosiloj baldaŭ eksvalidiĝas (agordu sojlojn sube)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "La minimuma nombro da tagoj, kiam la ĉifratestilo devus esti valida antaŭ "
+#~ "eldonado de averto"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "La minimuma nombro da tagoj, ke ĉiuj atestiloj en la ĉeno devus esti "
+#~ "validaj antaŭ eldonado de averto"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "La minimuma nombro da tagoj, kiam la radika atestilo devas esti valida "
+#~ "antaŭ eldoni averton"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr ""
+#~ "Ĉiam montru la liston de ĉifradaj ŝlosiloj por elekti tiun, kiu estos "
+#~ "uzata"

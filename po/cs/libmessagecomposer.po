@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-04-18 09:11+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1934,175 +1934,6 @@ msgstr "Odeslat na:"
 msgid "Repeat every:"
 msgstr "Opakovat každých:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Citovat vybraný text pouze při odpovědi"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"Ponechat výchozí znakovou sadu při odpovědi nebo přeposlání (pokud je to "
-"možné)"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "A&utomaticky vložit podpis"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Vložit podpis nad citovaný text"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Vložit oddělovač před podpis"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Používat adresy indexované s e-mailů pro automatické doplňování"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Pokud si přejete, aby se při automatickém doplňování adres při psaní nové "
-"zprávy zobrazovaly pouze kontakty z knihy adres, zakažte tuto volbu."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr ""
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Používat nedávné adresy pro automatické doplňování"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Pokud si nepřejete, aby se při automatickém doplňování adres při psaní nové "
-"zprávy zobrazovaly nedávné adresy, zakažte tuto volbu."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Maximální počet záznamů příjemců:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Pojmenování příloh kompatibilní s Outlookem"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Zapněte tuto možnost, aby Outlook &#8482; pochopil názvy příloh obsahující "
-"neanglické znaky"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "Za&lamovat slova na sloupci:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Vylepšit prostý text HTML zprávy"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "Podepsat, pokud možno, všechny zprávy"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr "Upozornění, pokud CA certifikát brzy vyprší (nastavit práh níže)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2375,3 +2206,65 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Citovat vybraný text pouze při odpovědi"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "Ponechat výchozí znakovou sadu při odpovědi nebo přeposlání (pokud je to "
+#~ "možné)"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "A&utomaticky vložit podpis"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Vložit podpis nad citovaný text"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Vložit oddělovač před podpis"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Používat adresy indexované s e-mailů pro automatické doplňování"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Pokud si přejete, aby se při automatickém doplňování adres při psaní nové "
+#~ "zprávy zobrazovaly pouze kontakty z knihy adres, zakažte tuto volbu."
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Používat nedávné adresy pro automatické doplňování"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Pokud si nepřejete, aby se při automatickém doplňování adres při psaní "
+#~ "nové zprávy zobrazovaly nedávné adresy, zakažte tuto volbu."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Maximální počet záznamů příjemců:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Pojmenování příloh kompatibilní s Outlookem"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Zapněte tuto možnost, aby Outlook &#8482; pochopil názvy příloh "
+#~ "obsahující neanglické znaky"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Za&lamovat slova na sloupci:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Vylepšit prostý text HTML zprávy"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "Podepsat, pokud možno, všechny zprávy"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr "Upozornění, pokud CA certifikát brzy vyprší (nastavit práh níže)"

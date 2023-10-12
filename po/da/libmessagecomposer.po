@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2020-11-17 19:45+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1992,187 +1992,6 @@ msgstr "Send:"
 msgid "Repeat every:"
 msgstr "Gentag hver:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Citér kun markeret tekst ved svar"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"Behold så vidt muligt oprindeligt tegnsæt, når der svares eller videresendes"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "Indsæt signatur a&utomatisk"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Indsæt signatur over citeret tekst"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Placér adskiller før signatur"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Brug adresser der er indekseret fra e-mails til autofuldførelse"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Deaktivér denne indstilling hvis du kun ønsker at kontakter fra dine "
-"adressebøger skal dukke op i autofuldførelseslisten i brevskriverens "
-"adressefelter."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr "Tillad at semikolon (\";\") bruges som adskiller i brevskriveren"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Brug nylige adresser til autofuldførelse"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Deaktivér denne indstilling hvis du ikke ønsker, at nyligt brugte adresser "
-"skal dukke op i autofuldførelseslisten i brevskriverens adressefelter."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Maksimalt antal modtager-indgange:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Outlook-kompatibel navngivning af bilag"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Slå dette til for at få Outlook  &#8482;  til at forstå dine bilagsnavne som "
-"indeholder ikke-engelske tegn"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "Om&brydning af ord ved kolonne:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Forbedr klartekst-udgave af HTML-brev"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Der blev fundet gyldige betroede krypteringsnøgler for alle modtagere.\n"
-"Vil du kryptere dette brev?"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Advar før afsendelse af ukrypterede breve"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Advar før afsendelse af usignerede breve"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr "Advar hvis certifikater/nøgler snart udløber (indstil grænse nedenfor)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Det mindste antal dage krypteringscertifikatet skal være gyldigt, før der "
-"udstedes en advarsel"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"Det mindste antal dage alle certifikater i kæden skal være gyldige, før der "
-"udstedes en advarsel"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Det mindste antal dage rod-certifikatet skal være gyldigt, før der udstedes "
-"en advarsel"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-"Vis altid listen over krypteringsnøgler, til valg af hvilken der skal bruges"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2456,6 +2275,116 @@ msgstr "Mail-afsender offline."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Citér kun markeret tekst ved svar"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "Behold så vidt muligt oprindeligt tegnsæt, når der svares eller "
+#~ "videresendes"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "Indsæt signatur a&utomatisk"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Indsæt signatur over citeret tekst"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Placér adskiller før signatur"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Brug adresser der er indekseret fra e-mails til autofuldførelse"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Deaktivér denne indstilling hvis du kun ønsker at kontakter fra dine "
+#~ "adressebøger skal dukke op i autofuldførelseslisten i brevskriverens "
+#~ "adressefelter."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr "Tillad at semikolon (\";\") bruges som adskiller i brevskriveren"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Brug nylige adresser til autofuldførelse"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Deaktivér denne indstilling hvis du ikke ønsker, at nyligt brugte "
+#~ "adresser skal dukke op i autofuldførelseslisten i brevskriverens "
+#~ "adressefelter."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Maksimalt antal modtager-indgange:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Outlook-kompatibel navngivning af bilag"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Slå dette til for at få Outlook  &#8482;  til at forstå dine bilagsnavne "
+#~ "som indeholder ikke-engelske tegn"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Om&brydning af ord ved kolonne:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Forbedr klartekst-udgave af HTML-brev"
+
+#, fuzzy
+#~| msgid ""
+#~| "Valid trusted encryption keys were found for all recipients.\n"
+#~| "Encrypt this message?"
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr ""
+#~ "Der blev fundet gyldige betroede krypteringsnøgler for alle modtagere.\n"
+#~ "Vil du kryptere dette brev?"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Advar før afsendelse af ukrypterede breve"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Advar før afsendelse af usignerede breve"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Advar hvis certifikater/nøgler snart udløber (indstil grænse nedenfor)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Det mindste antal dage krypteringscertifikatet skal være gyldigt, før der "
+#~ "udstedes en advarsel"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Det mindste antal dage alle certifikater i kæden skal være gyldige, før "
+#~ "der udstedes en advarsel"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Det mindste antal dage rod-certifikatet skal være gyldigt, før der "
+#~ "udstedes en advarsel"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr ""
+#~ "Vis altid listen over krypteringsnøgler, til valg af hvilken der skal "
+#~ "bruges"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

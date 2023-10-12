@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-06-02 20:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1997,183 +1997,6 @@ msgstr "Lähetysaika:"
 msgid "Repeat every:"
 msgstr "Toista joka:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Lainaa vain valittu teksti vastattaessa"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"&Käytä alkuperäistä merkistöä vastattaessa tai välitettäessä, jos mahdollista"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "Lisää &allekirjoitus automaattisesti"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Lisää allekirjoitus ennen lainattua tekstiä"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Lisää erotin allekirjoituksen edelle"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Käytä viesteistä indeksoituja osoitteita automaattitäydennyksessä"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Poista tämä asetus käytöstä, jos haluat vain osoitekirjassa olevien "
-"yhteystietojen ilmestyvän viestinkirjoitusikkunan osoitekenttien "
-"automaattitäydennysluetteloon."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr "Salli puolipisteen (;) käyttö erottimena viestinkirjoitusikkunassa"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Käytä viimeaikaisia osoitteita automaattitäydennyksessä"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Poista tämä asetus käytöstä, ellet halua viimeaikaisten osoitteiden "
-"ilmestyvän viestinkirjoitusikkunan osoitekenttien "
-"automaattitäydennysluetteloon."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Vastaanottajakenttien enimmäismäärä:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Outlook-yhteensopiva liitteiden nimeäminen"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Käytä tätä asetusta jos haluat Outlookin &#8242; ymmärtävän liitteet, joiden "
-"nimissä on muita kuin englannin kielen merkkejä"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "&Rivinvaihto sarakkeessa:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Kohenna HTML-viestin tekstiversiota"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "Allekirjoita kaikki viestit, jos mahdollista"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr "Käytä salausta, jos jokaiselle vastaanottajille löytyy avain"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Varoita ennen salaamattomien viestien lähettämistä"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Varoita ennen allekirjoittamattomien viestien lähettämistä"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
-"Varoita, jos varmenteet/avaimet vanhentuvat pian (aseta kynnysarvot alla)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Salausvarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
-"antamista"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"Ketjun kaikkien varmenteiden kelpoisuuden vähimmäisaika päivinä ennen "
-"varoituksen antamista"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Juurivarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
-"antamista"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr "Näytä aina salausavainten luettelo käytettävän valitsemiseksi"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2453,6 +2276,111 @@ msgstr "Viestinvälitys ei toiminnassa."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Aseta verkkoon"
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Lainaa vain valittu teksti vastattaessa"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "&Käytä alkuperäistä merkistöä vastattaessa tai välitettäessä, jos "
+#~ "mahdollista"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "Lisää &allekirjoitus automaattisesti"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Lisää allekirjoitus ennen lainattua tekstiä"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Lisää erotin allekirjoituksen edelle"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Käytä viesteistä indeksoituja osoitteita automaattitäydennyksessä"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Poista tämä asetus käytöstä, jos haluat vain osoitekirjassa olevien "
+#~ "yhteystietojen ilmestyvän viestinkirjoitusikkunan osoitekenttien "
+#~ "automaattitäydennysluetteloon."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr "Salli puolipisteen (;) käyttö erottimena viestinkirjoitusikkunassa"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Käytä viimeaikaisia osoitteita automaattitäydennyksessä"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Poista tämä asetus käytöstä, ellet halua viimeaikaisten osoitteiden "
+#~ "ilmestyvän viestinkirjoitusikkunan osoitekenttien "
+#~ "automaattitäydennysluetteloon."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Vastaanottajakenttien enimmäismäärä:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Outlook-yhteensopiva liitteiden nimeäminen"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Käytä tätä asetusta jos haluat Outlookin &#8242; ymmärtävän liitteet, "
+#~ "joiden nimissä on muita kuin englannin kielen merkkejä"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "&Rivinvaihto sarakkeessa:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Kohenna HTML-viestin tekstiversiota"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "Allekirjoita kaikki viestit, jos mahdollista"
+
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr "Käytä salausta, jos jokaiselle vastaanottajille löytyy avain"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Varoita ennen salaamattomien viestien lähettämistä"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Varoita ennen allekirjoittamattomien viestien lähettämistä"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Varoita, jos varmenteet/avaimet vanhentuvat pian (aseta kynnysarvot alla)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Salausvarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+#~ "antamista"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Ketjun kaikkien varmenteiden kelpoisuuden vähimmäisaika päivinä ennen "
+#~ "varoituksen antamista"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Juurivarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+#~ "antamista"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr "Näytä aina salausavainten luettelo käytettävän valitsemiseksi"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

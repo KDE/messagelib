@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-05-21 14:48+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1919,172 +1919,6 @@ msgstr "அனுப்ப வேண்டிய நேரம்:"
 msgid "Repeat every:"
 msgstr "இந்த இடைவெளியில் மீளச்செய்:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "பதிலளிக்கும்போது தேர்ந்தெடுக்கப்பட்ட உரையை மட்டும் மேற்கோளிடு"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"பதிலளிக்கும்போதோ முன்னனுப்பும்போதோ முடிந்தால் முன்னிருந்த உருத்தொகுதியையே வைத்திரு"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "கையொப்பத்தை &தானாக உள்ளிடு"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "மேற்கோளிட்ட உரைக்கு மேல் கையொப்பத்தை உள்ளிடு"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "கையொப்பத்திற்கு முன் பிரிப்பானை இடு"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "தானாக நிரப்புவதற்கு, அஞ்சல்களிலுள்ள முகவரிகளையும் பயன்படுத்து"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"அஞ்சலெழுதும்போது பெறுநர்களாக உங்கள் முகவரிப்புத்தக்கத்திலுள்ள முகவரிகள் மட்டுமே நிரப்பப்பட "
-"வேண்டுமெனின் இத்தேர்வை முடக்குங்கள்."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr "அஞ்சலெழுதும் இடத்தில் அரைப்புள்ளியை (';'-ஐ) பிரிப்பானாக பயன்படுத்த அனுமதி"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "தானாக நிரப்புவதற்கு சமீப முகவரிகளை பயன்படுத்து"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"அஞ்சலெழுதும்போது பெறுநர்களாக சமீப முகவரிகள் தானாக பரிந்துரைக்கப்பட வேண்டாமெனின் "
-"இத்தேர்வை முடக்குங்கள்."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "பெறுநர்களின் அதிகபட்ச எண்ணிக்கை:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "அவுட்லுக்கில் வேலை செய்யும் உடனிணைப்புப்பெயர்கள்"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "இந்நெடுவரிசையில் &வரிமடிப்பு:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "HTML அஞ்சலின் சாதாரண-உரை வடிவத்தை மேம்படுத்து"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "முடிந்தால் அனைத்து அஞ்சல்களுக்கும் கையொப்பமிடு"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr "அனைத்து பெறுநர்களுக்குமான சாவிகள் கிடைத்தால் மறையாக்கு"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "மறையாக்கப்படாத அஞ்சல்களை அனுப்புமுன் எச்சரி"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "எண்ம கையொப்பமிடாத அஞ்சல்களை அனுப்புமுன் எச்சரி"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr "சான்றிதழ்கள் / சாவிகள் காலாவதி ஆகப்போகும்போது எச்சரி (வரம்புகளை கீழே அமைக்கலாம்)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2363,6 +2197,75 @@ msgstr "அஞ்சலனுப்பும் சேவை தொடர்ப�
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "தொடர்புள்ள நிலைக்கு மாற்று"
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "பதிலளிக்கும்போது தேர்ந்தெடுக்கப்பட்ட உரையை மட்டும் மேற்கோளிடு"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "பதிலளிக்கும்போதோ முன்னனுப்பும்போதோ முடிந்தால் முன்னிருந்த உருத்தொகுதியையே வைத்திரு"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "கையொப்பத்தை &தானாக உள்ளிடு"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "மேற்கோளிட்ட உரைக்கு மேல் கையொப்பத்தை உள்ளிடு"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "கையொப்பத்திற்கு முன் பிரிப்பானை இடு"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "தானாக நிரப்புவதற்கு, அஞ்சல்களிலுள்ள முகவரிகளையும் பயன்படுத்து"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "அஞ்சலெழுதும்போது பெறுநர்களாக உங்கள் முகவரிப்புத்தக்கத்திலுள்ள முகவரிகள் மட்டுமே "
+#~ "நிரப்பப்பட வேண்டுமெனின் இத்தேர்வை முடக்குங்கள்."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr "அஞ்சலெழுதும் இடத்தில் அரைப்புள்ளியை (';'-ஐ) பிரிப்பானாக பயன்படுத்த அனுமதி"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "தானாக நிரப்புவதற்கு சமீப முகவரிகளை பயன்படுத்து"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "அஞ்சலெழுதும்போது பெறுநர்களாக சமீப முகவரிகள் தானாக பரிந்துரைக்கப்பட வேண்டாமெனின் "
+#~ "இத்தேர்வை முடக்குங்கள்."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "பெறுநர்களின் அதிகபட்ச எண்ணிக்கை:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "அவுட்லுக்கில் வேலை செய்யும் உடனிணைப்புப்பெயர்கள்"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "இந்நெடுவரிசையில் &வரிமடிப்பு:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "HTML அஞ்சலின் சாதாரண-உரை வடிவத்தை மேம்படுத்து"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "முடிந்தால் அனைத்து அஞ்சல்களுக்கும் கையொப்பமிடு"
+
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr "அனைத்து பெறுநர்களுக்குமான சாவிகள் கிடைத்தால் மறையாக்கு"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "மறையாக்கப்படாத அஞ்சல்களை அனுப்புமுன் எச்சரி"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "எண்ம கையொப்பமிடாத அஞ்சல்களை அனுப்புமுன் எச்சரி"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "சான்றிதழ்கள் / சாவிகள் காலாவதி ஆகப்போகும்போது எச்சரி (வரம்புகளை கீழே அமைக்கலாம்)"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

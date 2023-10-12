@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1475,327 +1475,6 @@ msgstr ""
 msgid "Short url '%1' redirects to '%2'."
 msgstr ""
 
-#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
-#: settings/messageviewer.kcfg.cmake:11
-#, kde-format
-msgid "Only print selected text in viewer"
-msgstr ""
-
-#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
-#: settings/messageviewer.kcfg.cmake:15
-#, fuzzy, kde-format
-msgid ""
-"Respect expand/collapse quote mark which is defined in settings during "
-"printing."
-msgstr "Паказ/утойванне блокаў цытавання"
-
-#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
-#: settings/messageviewer.kcfg.cmake:19
-#, kde-format
-msgid ""
-"Specifies whether the background color and images are also drawn when the "
-"page is printed."
-msgstr ""
-
-#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
-#: settings/messageviewer.kcfg.cmake:23
-#, kde-format
-msgid "Always show encryption/signature details when we print message"
-msgstr ""
-
-#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:34
-#, kde-format
-msgid "When we render html do not use font size inferior to minimum size."
-msgstr ""
-
-#. i18n: ectx: label, entry (BodyFont), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:38
-#, kde-format
-msgid "Specifies the font to use for the message body"
-msgstr ""
-
-#. i18n: ectx: label, entry (PrintFont), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:42
-#, kde-format
-msgid "Specifies the font to use for printing"
-msgstr ""
-
-#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
-#: settings/messageviewer.kcfg.cmake:49
-#, kde-format
-msgid "Check if url can be a phishing"
-msgstr ""
-
-#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
-#: settings/messageviewer.kcfg.cmake:55
-#, kde-format
-msgid "Close message window after replying or forwarding"
-msgstr ""
-
-#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.cmake:72
-#, fuzzy, kde-format
-msgid "Show expand/collapse quote marks"
-msgstr "Паказ/утойванне блокаў цытавання"
-
-#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.cmake:73
-#, fuzzy, kde-format
-msgid ""
-"Enable this option to show different levels of quoted text. Disable to hide "
-"the levels of quoted text."
-msgstr ""
-"Уключыце гэты параметр для паказу рознага ўзроўня цытавання рознымі колерамі."
-
-#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
-#: settings/messageviewer.kcfg.cmake:76
-#, fuzzy, kde-format
-msgid "Automatic collapse level:"
-msgstr "Аўтаматычнае ўтойванне ўзроўняў цытавання больш:"
-
-#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.cmake:83
-#, fuzzy, kde-format
-msgid "Reduce font size for quoted text"
-msgstr "Паменшыць памер шрыфта для цытуемага тэксту"
-
-#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.cmake:84
-#, fuzzy, kde-format
-msgid "Enable this option to show quoted text with a smaller font."
-msgstr ""
-"Уключыце гэты параметр для паказу цытуемага тэксту шрыфтам меншага памеру."
-
-#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
-#: settings/messageviewer.kcfg.cmake:88
-#, kde-format
-msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr ""
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:91
-#, fuzzy, kde-format
-msgid "Message Structure Viewer"
-msgstr "Прагляд структуры паведамлення"
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:94
-#, fuzzy, kde-format
-#| msgid "Show &never"
-msgid "Show never"
-msgstr "Не паказваць &ніколі"
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:97
-#, fuzzy, kde-format
-#| msgid "Show alway&s"
-msgid "Show always"
-msgstr "Паказваць заўсё&ды"
-
-#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
-#. i18n: ectx: label, entry (headerStyle), group (Reader)
-#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
-#, kde-format
-msgid "What style of headers should be displayed"
-msgstr ""
-
-#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
-#: settings/messageviewer.kcfg.cmake:119
-#, kde-format
-msgid "How much of headers should be displayed"
-msgstr ""
-
-#. i18n: ectx: label, entry (htmlMail), group (Reader)
-#: settings/messageviewer.kcfg.cmake:123
-#, fuzzy, kde-format
-msgid "Prefer HTML to plain text"
-msgstr "Апрацоўваць HTML у паведамленнях"
-
-#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
-#: settings/messageviewer.kcfg.cmake:127
-#, fuzzy, kde-format
-msgid "Allow messages to load external references from the Internet"
-msgstr "Загружаць знешнія спасылкі з Інтэрнэт"
-
-#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
-#: settings/messageviewer.kcfg.cmake:131
-#, fuzzy, kde-format
-#| msgid "Show attachment icon"
-msgid "How attachments are shown"
-msgstr "Паказваць значку далучэння"
-
-#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
-#: settings/messageviewer.kcfg.cmake:135
-#, kde-format
-msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-msgstr ""
-
-#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:139
-#, kde-format
-msgid "Activate Access Key"
-msgstr ""
-
-#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:143
-#, kde-format
-msgid ""
-"KMail can analyze messages for suspected email scams by looking for common "
-"techniques used to deceive you"
-msgstr ""
-
-#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
-#: settings/messageviewer.kcfg.cmake:147
-#, kde-format
-msgid "List of emails in scam white list"
-msgstr ""
-
-#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:151
-#, kde-format
-msgid "Scan emails for tracking URLs"
-msgstr ""
-
-#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
-#: settings/messageviewer.kcfg.cmake:157
-#, fuzzy, kde-format
-msgid "Do not send MDNs in response to encrypted messages"
-msgstr "Не пасылаць абвяшчэнні, запытаныя зашыфраванымі паведамленнямі"
-
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.cmake:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr ""
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.cmake:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr ""
-
-#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:181
-#, fuzzy, kde-format
-msgid "Mangle From:/To: headers in replies to replies"
-msgstr "Перапісваць загалоўкі From:/To: у адказах на адказы (для Outlook)"
-
-#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:182
-#, fuzzy, kde-format
-msgid ""
-"Microsoft Outlook has a number of shortcomings in its implementation of the "
-"iCalendar standard; this option works around one of them. If you have "
-"problems with Outlook users not being able to get your replies, try setting "
-"this option."
-msgstr ""
-"Microsoft Outlook утрымоўвае шэраг недапрацовак, у прыватнасці ў рэалізацыі "
-"стандарту iCalendar. Гэтая опцыя выпраўляе гэтую памылку. Калі вам "
-"прыходзіцца перапісвацца з карыстальнікамі Outlook і яны не могуць атрымаць "
-"вашы адказы, уключыце яе."
-
-#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:187
-#, fuzzy, kde-format
-msgid "Send groupware invitations in the mail body"
-msgstr "Адпраўляць запрашэнні ў целе паведамлення"
-
-#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:188
-#, fuzzy, kde-format
-msgid ""
-"Microsoft Outlook has a number of shortcomings in its implementation of the "
-"iCalendar standard; this option works around one of them. If you have "
-"problems with Outlook users not being able to get your invitations, try "
-"setting this option."
-msgstr ""
-"Microsoft Outlook утрымоўвае шэраг недапрацовак, у прыватнасці, у рэалізацыі "
-"стандарту iCalendar. Гэтая опцыя выпраўляе гэтую памылку. Калі вам "
-"прыходзіцца перапісвацца з карыстальнікамі Outlook і яны не могуць атрымаць "
-"вашы запрашэнні, уключыце яе."
-
-#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:193
-#, fuzzy, kde-format
-msgid "Exchange-compatible invitation naming"
-msgstr "Аўтаматычнае адпраўленне запрашэнняў"
-
-#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:194
-#, kde-format
-msgid ""
-"Microsoft Outlook, when used in combination with a Microsoft Exchange "
-"server, has a problem understanding standards-compliant groupware email. "
-"Turn this option on to send groupware invitations in a way that Microsoft "
-"Exchange understands."
-msgstr ""
-
-#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:199
-#, fuzzy, kde-format
-msgid "Automatic invitation sending"
-msgstr "Аўтаматычнае адпраўленне запрашэнняў"
-
-#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:200
-#, fuzzy, kde-format
-msgid ""
-"When this is checked, you will not see the mail composer window. Instead, "
-"all invitation mails are sent automatically. If you want to see the mail "
-"before sending it, you can uncheck this option. However, be aware that the "
-"text in the composer window is in iCalendar syntax, and you should not try "
-"modifying it by hand."
-msgstr ""
-"Пры ўключэнні гэтага параметру пры адпраўцы запрашэння на сустрэчу не будзе "
-"паказана акно стварэння ліста. Калі вы жадаеце змяніць ліст перад ім "
-"адпраўкай, адключыце гэты параметр, аднак майце на ўвазе, што ў целе ліста з "
-"запрашэннем будзе знаходзіцца тэкст у фармаце iCalendar, які даволі складана "
-"змяніць уручную."
-
-#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
-
-#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:206
-#, kde-format
-msgid ""
-"When this is checked, received invitation emails that have been replied to "
-"will be moved to the Trash folder, once the reply has been successfully sent."
-msgstr ""
-
-#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
-#, fuzzy, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Фіксаваны шрыфт"
-
-#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.cmake:237
-#, fuzzy, kde-format
-msgid "The most recent selected folder using for Todo."
-msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
-
-#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.cmake:243
-#, fuzzy, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
-
-#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.cmake:249
-#, fuzzy, kde-format
-msgid "The most recent selected folder using for Notes."
-msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, fuzzy, kde-format
@@ -1869,6 +1548,12 @@ msgstr "Аўтаматычнае адпраўленне запрашэнняў"
 #| msgid "Common Options"
 msgid "Options"
 msgstr "Настаўленні"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -2531,6 +2216,11 @@ msgstr "Скапіраваць адрас спасылкі"
 msgid "Open URL"
 msgstr "Адкрыць URL"
 
+#: viewer/viewer_p.cpp:1537
+#, fuzzy, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Фіксаваны шрыфт"
+
 #: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
 msgid "Show Message Structure"
@@ -2883,6 +2573,134 @@ msgstr "&Наступнага паведамлення"
 #| msgid "Previous Unread &Message"
 msgid "Previous Message"
 msgstr "Папярэдняга непрачытанага &паведамлення"
+
+#, fuzzy
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "Паказ/утойванне блокаў цытавання"
+
+#, fuzzy
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "Паказ/утойванне блокаў цытавання"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "Уключыце гэты параметр для паказу рознага ўзроўня цытавання рознымі "
+#~ "колерамі."
+
+#, fuzzy
+#~ msgid "Automatic collapse level:"
+#~ msgstr "Аўтаматычнае ўтойванне ўзроўняў цытавання больш:"
+
+#, fuzzy
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "Паменшыць памер шрыфта для цытуемага тэксту"
+
+#, fuzzy
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr ""
+#~ "Уключыце гэты параметр для паказу цытуемага тэксту шрыфтам меншага памеру."
+
+#, fuzzy
+#~ msgid "Message Structure Viewer"
+#~ msgstr "Прагляд структуры паведамлення"
+
+#, fuzzy
+#~| msgid "Show &never"
+#~ msgid "Show never"
+#~ msgstr "Не паказваць &ніколі"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show always"
+#~ msgstr "Паказваць заўсё&ды"
+
+#, fuzzy
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Апрацоўваць HTML у паведамленнях"
+
+#, fuzzy
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "Загружаць знешнія спасылкі з Інтэрнэт"
+
+#, fuzzy
+#~| msgid "Show attachment icon"
+#~ msgid "How attachments are shown"
+#~ msgstr "Паказваць значку далучэння"
+
+#, fuzzy
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Не пасылаць абвяшчэнні, запытаныя зашыфраванымі паведамленнямі"
+
+#, fuzzy
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "Перапісваць загалоўкі From:/To: у адказах на адказы (для Outlook)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook утрымоўвае шэраг недапрацовак, у прыватнасці ў "
+#~ "рэалізацыі стандарту iCalendar. Гэтая опцыя выпраўляе гэтую памылку. Калі "
+#~ "вам прыходзіцца перапісвацца з карыстальнікамі Outlook і яны не могуць "
+#~ "атрымаць вашы адказы, уключыце яе."
+
+#, fuzzy
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "Адпраўляць запрашэнні ў целе паведамлення"
+
+#, fuzzy
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook утрымоўвае шэраг недапрацовак, у прыватнасці, у "
+#~ "рэалізацыі стандарту iCalendar. Гэтая опцыя выпраўляе гэтую памылку. Калі "
+#~ "вам прыходзіцца перапісвацца з карыстальнікамі Outlook і яны не могуць "
+#~ "атрымаць вашы запрашэнні, уключыце яе."
+
+#, fuzzy
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Аўтаматычнае адпраўленне запрашэнняў"
+
+#, fuzzy
+#~ msgid "Automatic invitation sending"
+#~ msgstr "Аўтаматычнае адпраўленне запрашэнняў"
+
+#, fuzzy
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "Пры ўключэнні гэтага параметру пры адпраўцы запрашэння на сустрэчу не "
+#~ "будзе паказана акно стварэння ліста. Калі вы жадаеце змяніць ліст перад "
+#~ "ім адпраўкай, адключыце гэты параметр, аднак майце на ўвазе, што ў целе "
+#~ "ліста з запрашэннем будзе знаходзіцца тэкст у фармаце iCalendar, які "
+#~ "даволі складана змяніць уручную."
+
+#, fuzzy
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
+
+#, fuzzy
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
+
+#, fuzzy
+#~ msgid "The most recent selected folder using for Notes."
+#~ msgstr "Паказваць часта выкарыстоўваныя тэчкі ў спісе выбару."
 
 #, fuzzy
 #~| msgid "Edit Identity"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-09-26 18:53+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2005,187 +2005,6 @@ msgstr "Надіслати:"
 msgid "Repeat every:"
 msgstr "Повторювати кожні:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Цитувати у відповіді лише позначений текст"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"Використовувати початковий набір символів при відповіді або пересиланні "
-"(якщо можливо)"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "&Автоматично додавати підпис"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Вставити підпис над цитованим текстом"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Приєднати до підпису роздільник"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Використовувати індексовані з повідомлень адреси для автодоповнення"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Зніміть позначку з цього пункту, якщо ви не хочете, щоб записи контактів з "
-"ваших адресних книг потрапляли до списку варіантів засобу автоматичного "
-"доповнення адрес у полях адрес редактора повідомлень."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr ""
-"Дозволити використання символу крапки з комою («;»), як роздільника у "
-"редакторі повідомлень"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Використовувати для автозавершення недавні адреси"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Зніміть позначку з цього пункту, якщо ви не хочете, щоб недавно використані "
-"адреси з'являлись в списку автозавершення в полі адреси."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Максимальна кількість записів отримувачів:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Надавати долученням сумісні з Outlook назви"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Позначте цей пункт, щоб програма Outlook &#8482; могла зрозуміти назви "
-"долучень, що містять нелатинські літери"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "П&ереносити слова на стовпчику:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Форматувати звичайний текст у повідомленні HTML"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "Підписати усі повідомлення, якщо це можливо"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr "Увімкнути шифрування, якщо буде знайдено ключі для усіх отримувачів"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Попереджати перед надсиланням незашифрованих повідомлень"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Попереджати перед надсиланням непідписаних повідомлень"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
-"Попереджати, якщо сертифікати/ключі скоро застаріють (вкажіть час нижче)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Мінімальна кількість днів, протягом яких має бути чинним сертифікат "
-"шифрування, для роботи без попереджень"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"Мінімальна кількість днів, протягом яких мають бути чинними всі сертифікати "
-"ланцюжка сертифікації, для роботи без попереджень"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Мінімальна кількість днів, протягом яких має бути чинним кореневий "
-"сертифікат, для роботи без попереджень"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-"Завжди показувати список ключів шифрування для вибору того з них, який буде "
-"використано"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2462,6 +2281,114 @@ msgstr "Агент розподілу пошти працює автономно
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Запустити"
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Цитувати у відповіді лише позначений текст"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "Використовувати початковий набір символів при відповіді або пересиланні "
+#~ "(якщо можливо)"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "&Автоматично додавати підпис"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Вставити підпис над цитованим текстом"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Приєднати до підпису роздільник"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Використовувати індексовані з повідомлень адреси для автодоповнення"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Зніміть позначку з цього пункту, якщо ви не хочете, щоб записи контактів "
+#~ "з ваших адресних книг потрапляли до списку варіантів засобу автоматичного "
+#~ "доповнення адрес у полях адрес редактора повідомлень."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr ""
+#~ "Дозволити використання символу крапки з комою («;»), як роздільника у "
+#~ "редакторі повідомлень"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Використовувати для автозавершення недавні адреси"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Зніміть позначку з цього пункту, якщо ви не хочете, щоб недавно "
+#~ "використані адреси з'являлись в списку автозавершення в полі адреси."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Максимальна кількість записів отримувачів:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Надавати долученням сумісні з Outlook назви"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Позначте цей пункт, щоб програма Outlook &#8482; могла зрозуміти назви "
+#~ "долучень, що містять нелатинські літери"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "П&ереносити слова на стовпчику:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Форматувати звичайний текст у повідомленні HTML"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "Підписати усі повідомлення, якщо це можливо"
+
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr "Увімкнути шифрування, якщо буде знайдено ключі для усіх отримувачів"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Попереджати перед надсиланням незашифрованих повідомлень"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Попереджати перед надсиланням непідписаних повідомлень"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Попереджати, якщо сертифікати/ключі скоро застаріють (вкажіть час нижче)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Мінімальна кількість днів, протягом яких має бути чинним сертифікат "
+#~ "шифрування, для роботи без попереджень"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Мінімальна кількість днів, протягом яких мають бути чинними всі "
+#~ "сертифікати ланцюжка сертифікації, для роботи без попереджень"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Мінімальна кількість днів, протягом яких має бути чинним кореневий "
+#~ "сертифікат, для роботи без попереджень"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr ""
+#~ "Завжди показувати список ключів шифрування для вибору того з них, який "
+#~ "буде використано"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

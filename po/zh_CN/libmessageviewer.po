@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1303,318 +1303,6 @@ msgstr ""
 msgid "Short url '%1' redirects to '%2'."
 msgstr "重定向到“%2”的短链接“%1”。"
 
-#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
-#: settings/messageviewer.kcfg.cmake:11
-#, kde-format
-msgid "Only print selected text in viewer"
-msgstr "仅打印查看器中的选中文本"
-
-#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
-#: settings/messageviewer.kcfg.cmake:15
-#, kde-format
-msgid ""
-"Respect expand/collapse quote mark which is defined in settings during "
-"printing."
-msgstr "打印时设置中定义的使用展开/折叠的引用标记。"
-
-#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
-#: settings/messageviewer.kcfg.cmake:19
-#, kde-format
-msgid ""
-"Specifies whether the background color and images are also drawn when the "
-"page is printed."
-msgstr "指定是否在打印页面时同时绘制背景颜色和图像。"
-
-#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
-#: settings/messageviewer.kcfg.cmake:23
-#, kde-format
-msgid "Always show encryption/signature details when we print message"
-msgstr ""
-
-#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:34
-#, kde-format
-msgid "When we render html do not use font size inferior to minimum size."
-msgstr "当渲染 html 时不使用小于最小大小的字体大小。"
-
-#. i18n: ectx: label, entry (BodyFont), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:38
-#, kde-format
-msgid "Specifies the font to use for the message body"
-msgstr "指定信件正文使用的字体"
-
-#. i18n: ectx: label, entry (PrintFont), group (Fonts)
-#: settings/messageviewer.kcfg.cmake:42
-#, kde-format
-msgid "Specifies the font to use for printing"
-msgstr "指定打印使用的字体"
-
-#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
-#: settings/messageviewer.kcfg.cmake:49
-#, kde-format
-msgid "Check if url can be a phishing"
-msgstr ""
-
-#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
-#: settings/messageviewer.kcfg.cmake:55
-#, kde-format
-msgid "Close message window after replying or forwarding"
-msgstr "回复或转发后关闭信件窗口"
-
-#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.cmake:72
-#, kde-format
-msgid "Show expand/collapse quote marks"
-msgstr "显示展开/折叠的引用标记"
-
-#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.cmake:73
-#, kde-format
-msgid ""
-"Enable this option to show different levels of quoted text. Disable to hide "
-"the levels of quoted text."
-msgstr "启用此项可显示出不同级别的引用文本。禁用则会隐藏引用文本的级别。"
-
-#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
-#: settings/messageviewer.kcfg.cmake:76
-#, kde-format
-msgid "Automatic collapse level:"
-msgstr "自动折叠等级："
-
-#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.cmake:83
-#, kde-format
-msgid "Reduce font size for quoted text"
-msgstr "引用的文字以较小字体显示"
-
-#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.cmake:84
-#, kde-format
-msgid "Enable this option to show quoted text with a smaller font."
-msgstr "启用此选项可以较小字体显示引用的文字。"
-
-#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
-#: settings/messageviewer.kcfg.cmake:88
-#, kde-format
-msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr "在查看密件前总是先行试图解密，还是解密前询问"
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:91
-#, kde-format
-msgid "Message Structure Viewer"
-msgstr "信件结构查看器"
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:94
-#, kde-format
-msgid "Show never"
-msgstr "从不显示"
-
-#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.cmake:97
-#, kde-format
-msgid "Show always"
-msgstr "总是显示"
-
-#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
-#. i18n: ectx: label, entry (headerStyle), group (Reader)
-#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
-#, kde-format
-msgid "What style of headers should be displayed"
-msgstr "信头显示风格"
-
-#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
-#: settings/messageviewer.kcfg.cmake:119
-#, kde-format
-msgid "How much of headers should be displayed"
-msgstr "显示的信头数量"
-
-#. i18n: ectx: label, entry (htmlMail), group (Reader)
-#: settings/messageviewer.kcfg.cmake:123
-#, kde-format
-msgid "Prefer HTML to plain text"
-msgstr "优先使用 HTML 格式"
-
-#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
-#: settings/messageviewer.kcfg.cmake:127
-#, kde-format
-msgid "Allow messages to load external references from the Internet"
-msgstr "允许信件从网络上加载外部引用"
-
-#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
-#: settings/messageviewer.kcfg.cmake:131
-#, kde-format
-msgid "How attachments are shown"
-msgstr "如何显示附件"
-
-#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
-#: settings/messageviewer.kcfg.cmake:135
-#, kde-format
-msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-msgstr "指定在第三级之外是否重用引用颜色"
-
-#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:139
-#, kde-format
-msgid "Activate Access Key"
-msgstr "启用访问键"
-
-#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:143
-#, kde-format
-msgid ""
-"KMail can analyze messages for suspected email scams by looking for common "
-"techniques used to deceive you"
-msgstr "KMail 可以使用一些常见技术为您筛选钓鱼邮件。"
-
-#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
-#: settings/messageviewer.kcfg.cmake:147
-#, kde-format
-msgid "List of emails in scam white list"
-msgstr "列出欺诈信件白名单中的电子邮件"
-
-#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
-#: settings/messageviewer.kcfg.cmake:151
-#, kde-format
-msgid "Scan emails for tracking URLs"
-msgstr ""
-
-#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
-#: settings/messageviewer.kcfg.cmake:157
-#, kde-format
-msgid "Do not send MDNs in response to encrypted messages"
-msgstr "对加密信件的响应不发送 MDNs"
-
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.cmake:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr "指定信件处理回执要使用的默认策略 (内部使用)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.cmake:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr "指定在回复信件时采用的默认引用操作 (仅供内部使用)"
-
-#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:181
-#, kde-format
-msgid "Mangle From:/To: headers in replies to replies"
-msgstr "在回复邀请时改动信头中的发件人/收件人"
-
-#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:182
-#, kde-format
-msgid ""
-"Microsoft Outlook has a number of shortcomings in its implementation of the "
-"iCalendar standard; this option works around one of them. If you have "
-"problems with Outlook users not being able to get your replies, try setting "
-"this option."
-msgstr ""
-"Microsoft Outlook 在实现 iCanlendar 标准时有很多缺陷；此选项用来解决这个问"
-"题。如果 Outlook 用户无法获得您的回复，请试着开启此选项。"
-
-#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:187
-#, kde-format
-msgid "Send groupware invitations in the mail body"
-msgstr "在邮件体中发送群件邀请"
-
-#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:188
-#, kde-format
-msgid ""
-"Microsoft Outlook has a number of shortcomings in its implementation of the "
-"iCalendar standard; this option works around one of them. If you have "
-"problems with Outlook users not being able to get your invitations, try "
-"setting this option."
-msgstr ""
-"Microsoft Outlook 在实现 iCanlendar 标准时有很多缺陷；此选项用来解决这个问"
-"题。如果 Outlook 用户无法获得您的邀请，请试着开启此选项。"
-
-#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:193
-#, kde-format
-msgid "Exchange-compatible invitation naming"
-msgstr "Exchange 兼容的邀请命名"
-
-#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:194
-#, kde-format
-msgid ""
-"Microsoft Outlook, when used in combination with a Microsoft Exchange "
-"server, has a problem understanding standards-compliant groupware email. "
-"Turn this option on to send groupware invitations in a way that Microsoft "
-"Exchange understands."
-msgstr ""
-"Microsoft Outlook 在和 Microsoft Exchange 服务器协同工作时，对标准化群件邮件"
-"的处理有个缺陷。启用此选项可发送能被 Microsoft Exchange 识别的群件邀请。"
-
-#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:199
-#, kde-format
-msgid "Automatic invitation sending"
-msgstr "自动发送邀请"
-
-#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:200
-#, kde-format
-msgid ""
-"When this is checked, you will not see the mail composer window. Instead, "
-"all invitation mails are sent automatically. If you want to see the mail "
-"before sending it, you can uncheck this option. However, be aware that the "
-"text in the composer window is in iCalendar syntax, and you should not try "
-"modifying it by hand."
-msgstr ""
-"当此项被选中时，您将看不到邮件撰写器窗口。作为替代所有邀请信件都会被自动发"
-"送。如果您想先查看要发送的邮件，可以取消此选项。然而，注意撰写器窗口中的文本"
-"采用了 iCalendar 语法，您最好不要尝试手动修改它。"
-
-#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "在寄出回复信件后删除邀请函"
-
-#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.cmake:206
-#, kde-format
-msgid ""
-"When this is checked, received invitation emails that have been replied to "
-"will be moved to the Trash folder, once the reply has been successfully sent."
-msgstr "如果选中此项，已回复过的邀请函将被移动到废件箱。"
-
-#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1537
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "使用等宽字体(&X)"
-
-#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.cmake:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
-msgstr "最近选中的待办事项文件夹。"
-
-#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.cmake:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "最近选中的事件文件夹。"
-
-#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.cmake:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
-msgstr "最近选中的笔记文件夹。"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
@@ -1688,6 +1376,12 @@ msgstr "自动发送邀请(&A)"
 #, kde-format
 msgid "Options"
 msgstr "选项"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "在寄出回复信件后删除邀请函"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -2290,6 +1984,11 @@ msgstr "复制链接地址"
 msgid "Open URL"
 msgstr "打开 URL"
 
+#: viewer/viewer_p.cpp:1537
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "使用等宽字体(&X)"
+
 #: viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Show Message Structure"
@@ -2593,3 +2292,164 @@ msgstr ""
 #, kde-format
 msgid "Previous Message"
 msgstr ""
+
+#~ msgid "Only print selected text in viewer"
+#~ msgstr "仅打印查看器中的选中文本"
+
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "打印时设置中定义的使用展开/折叠的引用标记。"
+
+#~ msgid ""
+#~ "Specifies whether the background color and images are also drawn when the "
+#~ "page is printed."
+#~ msgstr "指定是否在打印页面时同时绘制背景颜色和图像。"
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr "当渲染 html 时不使用小于最小大小的字体大小。"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "指定信件正文使用的字体"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "指定打印使用的字体"
+
+#~ msgid "Close message window after replying or forwarding"
+#~ msgstr "回复或转发后关闭信件窗口"
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "显示展开/折叠的引用标记"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr "启用此项可显示出不同级别的引用文本。禁用则会隐藏引用文本的级别。"
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "自动折叠等级："
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "引用的文字以较小字体显示"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr "启用此选项可以较小字体显示引用的文字。"
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr "在查看密件前总是先行试图解密，还是解密前询问"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "信件结构查看器"
+
+#~ msgid "Show never"
+#~ msgstr "从不显示"
+
+#~ msgid "Show always"
+#~ msgstr "总是显示"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "信头显示风格"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "显示的信头数量"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "优先使用 HTML 格式"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "允许信件从网络上加载外部引用"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "如何显示附件"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr "指定在第三级之外是否重用引用颜色"
+
+#~ msgid "Activate Access Key"
+#~ msgstr "启用访问键"
+
+#~ msgid ""
+#~ "KMail can analyze messages for suspected email scams by looking for "
+#~ "common techniques used to deceive you"
+#~ msgstr "KMail 可以使用一些常见技术为您筛选钓鱼邮件。"
+
+#~ msgid "List of emails in scam white list"
+#~ msgstr "列出欺诈信件白名单中的电子邮件"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "对加密信件的响应不发送 MDNs"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr "指定信件处理回执要使用的默认策略 (内部使用)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr "指定在回复信件时采用的默认引用操作 (仅供内部使用)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "在回复邀请时改动信头中的发件人/收件人"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook 在实现 iCanlendar 标准时有很多缺陷；此选项用来解决这个问"
+#~ "题。如果 Outlook 用户无法获得您的回复，请试着开启此选项。"
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "在邮件体中发送群件邀请"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook 在实现 iCanlendar 标准时有很多缺陷；此选项用来解决这个问"
+#~ "题。如果 Outlook 用户无法获得您的邀请，请试着开启此选项。"
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Exchange 兼容的邀请命名"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook 在和 Microsoft Exchange 服务器协同工作时，对标准化群件邮"
+#~ "件的处理有个缺陷。启用此选项可发送能被 Microsoft Exchange 识别的群件邀请。"
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "自动发送邀请"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "当此项被选中时，您将看不到邮件撰写器窗口。作为替代所有邀请信件都会被自动发"
+#~ "送。如果您想先查看要发送的邮件，可以取消此选项。然而，注意撰写器窗口中的文"
+#~ "本采用了 iCalendar 语法，您最好不要尝试手动修改它。"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr "如果选中此项，已回复过的邀请函将被移动到废件箱。"
+
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "最近选中的待办事项文件夹。"
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "最近选中的事件文件夹。"
+
+#~ msgid "The most recent selected folder using for Notes."
+#~ msgstr "最近选中的笔记文件夹。"

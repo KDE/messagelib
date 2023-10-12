@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2021-01-05 20:41+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1998,197 +1998,6 @@ msgstr "Elküldés a m&ostani állapotban"
 msgid "Repeat every:"
 msgstr ""
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Válasz esetén csak a kijelölt szöveget idézze"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"Az eredeti karakterkészlet megőrzése válasznál és továbbításnál (ha "
-"lehetséges)"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "A&utomatikus aláírásbeszúrás"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Aláírás beszúrása az idézett szöveg fölé"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Elválasztó az aláírás elé"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, fuzzy, kde-format
-#| msgid "Use recent addresses for autocompletion"
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable this option if you do not want recently used addresses to appear "
-#| "in the autocompletion list in the composer's address fields."
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
-"megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr ""
-"A pontosvessző („;”) használatának engedélyezése elválasztóként az "
-"üzenetszerkesztőben"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
-"megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "A címzett bejegyzések maximális száma:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Outlook-kompatibilis mellékletnevek"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Jelölje be ezt az opciót, ha azt szeretné, hogy az Outlook &#8482; "
-"levelezőprogram fel tudja dolgozni a mellékletnevekben a nem angol "
-"karaktereket"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "A szótör&delés oszlopa:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "A HTML üzenet egyszerű szöveges verziójának feljavítása"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr ""
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
-"Titkosítani szeretné az üzenetet?"
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Figyelmeztetés titkosítatlan üzenetek küldése előtt"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Figyelmeztetés aláíratlan üzenetek küldése előtt"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
-"Figyelmeztetés, ha egy tanúsítvány vagy kulcs rövidesen lejár (az időérték "
-"beállítása alább)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Legalább ennyi napig legyen érvényes a titkosítási tanúsítvány, mielőtt "
-"figyelmeztet"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"Legalább ennyi napig legyen érvényes az összes tanúsítvány a láncban, "
-"mielőtt figyelmeztet"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Legalább ennyi napig legyen érvényes a gyökértanúsítvány, mielőtt "
-"figyelmeztet"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-"Mindig jelenjen meg a titkosítási kulcsok listája a használandó kulcs "
-"kiválasztásához"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2468,6 +2277,124 @@ msgstr "A levélküldő ki van kapcsolva."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Válasz esetén csak a kijelölt szöveget idézze"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "Az eredeti karakterkészlet megőrzése válasznál és továbbításnál (ha "
+#~ "lehetséges)"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "A&utomatikus aláírásbeszúrás"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Aláírás beszúrása az idézett szöveg fölé"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Elválasztó az aláírás elé"
+
+#, fuzzy
+#~| msgid "Use recent addresses for autocompletion"
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+
+#, fuzzy
+#~| msgid ""
+#~| "Disable this option if you do not want recently used addresses to appear "
+#~| "in the autocompletion list in the composer's address fields."
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
+#~ "megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr ""
+#~ "A pontosvessző („;”) használatának engedélyezése elválasztóként az "
+#~ "üzenetszerkesztőben"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
+#~ "megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "A címzett bejegyzések maximális száma:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Outlook-kompatibilis mellékletnevek"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Jelölje be ezt az opciót, ha azt szeretné, hogy az Outlook &#8482; "
+#~ "levelezőprogram fel tudja dolgozni a mellékletnevekben a nem angol "
+#~ "karaktereket"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "A szótör&delés oszlopa:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "A HTML üzenet egyszerű szöveges verziójának feljavítása"
+
+#, fuzzy
+#~| msgid ""
+#~| "Valid trusted encryption keys were found for all recipients.\n"
+#~| "Encrypt this message?"
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr ""
+#~ "Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
+#~ "Titkosítani szeretné az üzenetet?"
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Figyelmeztetés titkosítatlan üzenetek küldése előtt"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Figyelmeztetés aláíratlan üzenetek küldése előtt"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Figyelmeztetés, ha egy tanúsítvány vagy kulcs rövidesen lejár (az "
+#~ "időérték beállítása alább)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Legalább ennyi napig legyen érvényes a titkosítási tanúsítvány, mielőtt "
+#~ "figyelmeztet"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Legalább ennyi napig legyen érvényes az összes tanúsítvány a láncban, "
+#~ "mielőtt figyelmeztet"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Legalább ennyi napig legyen érvényes a gyökértanúsítvány, mielőtt "
+#~ "figyelmeztet"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr ""
+#~ "Mindig jelenjen meg a titkosítási kulcsok listája a használandó kulcs "
+#~ "kiválasztásához"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

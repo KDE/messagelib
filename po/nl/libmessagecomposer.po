@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-09-26 11:04+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2002,190 +2002,6 @@ msgstr "Verzenden op:"
 msgid "Repeat every:"
 msgstr "Herhalen elke:"
 
-#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:18
-#, kde-format
-msgid "Only quote selected text when replying"
-msgstr "Alleen geselecteerde tekst aanhalen bij het antwoorden"
-
-#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:23
-#, kde-format
-msgid "Keep original charset when replying or forwarding if possible"
-msgstr ""
-"Originele tekenset behouden bij beantwoorden en doorsturen (indien mogelijk)"
-
-#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:32
-#, kde-format
-msgid "A&utomatically insert signature"
-msgstr "A&utomatisch ondertekenen"
-
-#. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:36
-#, kde-format
-msgid "Insert signature above quoted text"
-msgstr "Handtekening invoegen boven de aangehaalde tekst"
-
-#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:40
-#, kde-format
-msgid "Prepend separator to signature"
-msgstr "Scheiding invoegen voor de handtekening"
-
-#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:45
-#, kde-format
-msgid "Use addresses indexed from emails for autocompletion"
-msgstr ""
-"Geïndexeerde adressen uit e-mailberichten gebruiken voor automatische "
-"aanvulling"
-
-#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:46
-#, kde-format
-msgid ""
-"Disable this option if you only want contacts from your addressbooks to "
-"appear in the autocompletion list in the composer's address fields."
-msgstr ""
-"Schakel deze optie uit wanneer u alleen adressen uit uw adresboeken wilt "
-"gebruiken voor de automatische aanvulling van de adresvelden in de opsteller."
-
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:52
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr ""
-"Sta toe dan het puntkomma-teken (';') wordt gebruikt als scheidingsteken in "
-"het programma dat het bericht maakt"
-
-#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:55
-#, kde-format
-msgid "Use recent addresses for autocompletion"
-msgstr "Recente adressen gebruiken voor automatische aanvulling"
-
-#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:56
-#, kde-format
-msgid ""
-"Disable this option if you do not want recently used addresses to appear in "
-"the autocompletion list in the composer's address fields."
-msgstr ""
-"Schakel deze optie uit wanneer u recent gebruikte adressen niet wilt "
-"gebruiken voor de automatische aanvulling van de adresvelden in de opsteller."
-
-#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:61
-#, kde-format
-msgid "Maximum number of recipient entries:"
-msgstr "Maximaal aantal ingevoerde geadresseerden:"
-
-#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:66
-#, kde-format
-msgid "Outlook-compatible attachment naming"
-msgstr "Namen voor bijlagen compatibel met Outlook(tm)"
-
-#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:67
-#, kde-format
-msgid ""
-"Turn this option on to make Outlook &#8482; understand attachment names "
-"containing non-English characters"
-msgstr ""
-"Zet deze optie aan om ervoor te zorgen dat Outlook &#8482; bijlagenamen "
-"begrijpt die niet-West-Europese tekens bevatten"
-
-#. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:71
-#, kde-format
-msgid "Word &wrap at column:"
-msgstr "Regels a&fbreken bij kolom:"
-
-#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:81
-#, kde-format
-msgid "Improve plain text version of HTML message"
-msgstr "Platte tekst versie van HTML-bericht verbeteren"
-
-#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:85
-#, kde-format
-msgid "Sign all messages, if possible"
-msgstr "Alle berichten ondertekenen, indien mogelijk"
-
-#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
-#, kde-format
-msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Als sleutels zijn voor alle ontvangers zijn gevonden, versleuteling "
-"inschakelen."
-
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
-#, kde-format
-msgid "Warn before sending unencrypted messages"
-msgstr "Waarschuwen alvorens niet versleutelde berichten te verzenden"
-
-#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid "Warn before sending unsigned messages"
-msgstr "Waarschuwen alvorens niet ondertekende berichten te verzenden"
-
-#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
-"Waarschuwen wanneer een certificaat/sleutel binnenkort zal verlopen "
-"(drempelwaarden hieronder instellen)"
-
-#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:109
-#, kde-format
-msgid ""
-"The minimum number of days that the encryption certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Het minimum aantal dagen dat het encryption-certificaat geldig moet zijn "
-"alvorens een waarschuwing uit te geven"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:113
-#, kde-format
-msgid ""
-"The minimum number of days that all certificates in the chain should be "
-"valid before issuing a warning"
-msgstr ""
-"Het minimum aantal dagen dat alle certificaten in de ketting geldig moeten "
-"zijn alvorens een waarschuwing uit te geven"
-
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Het minimum aantal dagen dat het root-certificaat geldig moet zijn alvorens "
-"een waarschuwing uit te geven"
-
-#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
-#, kde-format
-msgid ""
-"Always show the list of encryption keys to select the one which will be used"
-msgstr ""
-"Altijd de lijst met versleutelingssleutels tonen om de te gebruiken sleutel "
-"te selecteren"
-
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2462,6 +2278,120 @@ msgstr "E-mailverzendprogramma is offline."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Online zetten"
+
+#~ msgid "Only quote selected text when replying"
+#~ msgstr "Alleen geselecteerde tekst aanhalen bij het antwoorden"
+
+#~ msgid "Keep original charset when replying or forwarding if possible"
+#~ msgstr ""
+#~ "Originele tekenset behouden bij beantwoorden en doorsturen (indien "
+#~ "mogelijk)"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "A&utomatisch ondertekenen"
+
+#~ msgid "Insert signature above quoted text"
+#~ msgstr "Handtekening invoegen boven de aangehaalde tekst"
+
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Scheiding invoegen voor de handtekening"
+
+#~ msgid "Use addresses indexed from emails for autocompletion"
+#~ msgstr ""
+#~ "Geïndexeerde adressen uit e-mailberichten gebruiken voor automatische "
+#~ "aanvulling"
+
+#~ msgid ""
+#~ "Disable this option if you only want contacts from your addressbooks to "
+#~ "appear in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Schakel deze optie uit wanneer u alleen adressen uit uw adresboeken wilt "
+#~ "gebruiken voor de automatische aanvulling van de adresvelden in de "
+#~ "opsteller."
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr ""
+#~ "Sta toe dan het puntkomma-teken (';') wordt gebruikt als scheidingsteken "
+#~ "in het programma dat het bericht maakt"
+
+#~ msgid "Use recent addresses for autocompletion"
+#~ msgstr "Recente adressen gebruiken voor automatische aanvulling"
+
+#~ msgid ""
+#~ "Disable this option if you do not want recently used addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Schakel deze optie uit wanneer u recent gebruikte adressen niet wilt "
+#~ "gebruiken voor de automatische aanvulling van de adresvelden in de "
+#~ "opsteller."
+
+#~ msgid "Maximum number of recipient entries:"
+#~ msgstr "Maximaal aantal ingevoerde geadresseerden:"
+
+#~ msgid "Outlook-compatible attachment naming"
+#~ msgstr "Namen voor bijlagen compatibel met Outlook(tm)"
+
+#~ msgid ""
+#~ "Turn this option on to make Outlook &#8482; understand attachment names "
+#~ "containing non-English characters"
+#~ msgstr ""
+#~ "Zet deze optie aan om ervoor te zorgen dat Outlook &#8482; bijlagenamen "
+#~ "begrijpt die niet-West-Europese tekens bevatten"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Regels a&fbreken bij kolom:"
+
+#~ msgid "Improve plain text version of HTML message"
+#~ msgstr "Platte tekst versie van HTML-bericht verbeteren"
+
+#~ msgid "Sign all messages, if possible"
+#~ msgstr "Alle berichten ondertekenen, indien mogelijk"
+
+#~ msgid "Enable encryption, if we found keys for all recipients"
+#~ msgstr ""
+#~ "Als sleutels zijn voor alle ontvangers zijn gevonden, versleuteling "
+#~ "inschakelen."
+
+#~ msgid "Warn before sending unencrypted messages"
+#~ msgstr "Waarschuwen alvorens niet versleutelde berichten te verzenden"
+
+#~ msgid "Warn before sending unsigned messages"
+#~ msgstr "Waarschuwen alvorens niet ondertekende berichten te verzenden"
+
+#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#~ msgstr ""
+#~ "Waarschuwen wanneer een certificaat/sleutel binnenkort zal verlopen "
+#~ "(drempelwaarden hieronder instellen)"
+
+#~ msgid ""
+#~ "The minimum number of days that the encryption certificate should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Het minimum aantal dagen dat het encryption-certificaat geldig moet zijn "
+#~ "alvorens een waarschuwing uit te geven"
+
+#~ msgid ""
+#~ "The minimum number of days that all certificates in the chain should be "
+#~ "valid before issuing a warning"
+#~ msgstr ""
+#~ "Het minimum aantal dagen dat alle certificaten in de ketting geldig "
+#~ "moeten zijn alvorens een waarschuwing uit te geven"
+
+#~ msgid ""
+#~ "The minimum number of days that the root certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Het minimum aantal dagen dat het root-certificaat geldig moet zijn "
+#~ "alvorens een waarschuwing uit te geven"
+
+#~ msgid ""
+#~ "Always show the list of encryption keys to select the one which will be "
+#~ "used"
+#~ msgstr ""
+#~ "Altijd de lijst met versleutelingssleutels tonen om de te gebruiken "
+#~ "sleutel te selecteren"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
