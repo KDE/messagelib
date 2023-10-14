@@ -1243,7 +1243,7 @@ msgstr ""
 #: scamdetection/scamdetectionwarningwidget.cpp:38
 #, kde-format
 msgid "Move to Trash"
-msgstr "Mou a la paperera"
+msgstr "Mou cap a dins de la paperera"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:43
 #, kde-format
@@ -1269,8 +1269,8 @@ msgid ""
 "recipient"
 msgstr ""
 "Este correu electrònic conté un enllaç que diu «%1» al text, però en "
-"realitat apunta a «%2». Sovint es tracta de correus electrònics fraudulents "
-"per a enganyar al destinatari"
+"realitat apunta cap a «%2». Sovint es tracta de correus electrònics "
+"fraudulents per a enganyar al destinatari"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1279,9 +1279,9 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
-"Este correu electrònic conté un enllaç que apunta a una adreça IP numèrica "
-"(%1) en lloc d'una adreça d'Internet textual típica. Sovint es tracta de "
-"correus electrònics fraudulents."
+"Este correu electrònic conté un enllaç que apunta cap a una adreça IP "
+"numèrica (%1) en lloc d'una adreça d'Internet textual típica. Sovint es "
+"tracta de correus electrònics fraudulents."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1290,7 +1290,7 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
-"Este correu electrònic conté un enllaç que apunta a una adreça IP "
+"Este correu electrònic conté un enllaç que apunta cap a una adreça IP "
 "hexadecimal (%1) en lloc d'una adreça d'Internet textual típica. Sovint es "
 "tracta de correus electrònics fraudulents."
 
@@ -1305,7 +1305,7 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
-"Este correu electrònic conté un enllaç (%1), el qual apunta a múltiples "
+"Este correu electrònic conté un enllaç (%1), el qual apunta cap a múltiples "
 "adreces http://. Sovint es tracta de correus electrònics fraudulents."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
@@ -1340,7 +1340,7 @@ msgstr "És impossible ampliar «%1»."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "L'URL curt «%1» redirigix a «%2»."
+msgstr "L'URL curt «%1» redirigix cap a «%2»."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1901,7 +1901,7 @@ msgstr "Visualitza"
 #: viewer/viewer_p.cpp:547
 #, kde-format
 msgid "Scroll To"
-msgstr "Desplaça a"
+msgstr "Desplaça cap a"
 
 #: viewer/viewer_p.cpp:552
 #, kde-format
@@ -2370,206 +2370,3 @@ msgstr "Missatge següent"
 #, kde-format
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Imprimix només el text seleccionat en el visor"
-
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "En imprimir respecta els paràmetres definits de les marques de citació "
-#~ "des/plegades."
-
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Especifica si el color de fons i les imatges també es dibuixaran quan "
-#~ "s'imprimisca la pàgina."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr ""
-#~ "Mostra sempre els detalls de l'encriptació/signatura en imprimir el "
-#~ "missatge"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "Quan es renderitze l'HTML, no utilitzar una lletra inferior a la mida "
-#~ "mínima."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "Especifica la lletra utilitzada en el cos del missatge"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Especifica la lletra utilitzada en imprimir"
-
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "Comprova si l'URL pot ser de pesca"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "Tanca la finestra de missatge després de contestar o reenviar"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Mostra les marques de plegar/desplegar les cites"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Activeu esta opció per a mostrar diferents nivells de text citat. "
-#~ "Desactiveu-la per a ocultar els nivells de text citat."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Nivell de plegat automàtic:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Reduïx la mida de la lletra per al text citat"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "Activeu esta opció per a mostrar el text citat amb una lletra més "
-#~ "xicoteta."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Desencripta sempre els missatges en llegir-los o pregunta abans de "
-#~ "desencriptar"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Visor de l'estructura dels missatges"
-
-#~ msgid "Show never"
-#~ msgstr "No mostres mai"
-
-#~ msgid "Show always"
-#~ msgstr "Mostra sempre"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Quin estil de capçaleres s'ha de mostrar"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Quantes capçaleres s'han de mostrar"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "Preferix HTML sobre text net"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Permet als missatges carregar les referències externes d'Internet"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "Com es mostren els adjunts"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr ""
-#~ "Especifica si s'ha de reutilitzar el color de citació, més enllà del 3r "
-#~ "nivell"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Activació de les tecles d'accessibilitat"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "KMail pot analitzar els missatges buscant suplantacions de correu "
-#~ "sospitoses a la busca de tècniques comunes utilitzades per a enganyar-vos"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "Llista de correus en la llista blanca de frau"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "Explora els correus per als URL de seguiment"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "No envies les MDN en resposta a missatges encriptats"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Especifica la política predeterminada que s'utilitzarà, per a les "
-#~ "notificacions de processament del missatge -MDN- (només per a ús intern)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Especifica l'acció de citació a prendre de manera predeterminada, en "
-#~ "contestar a un missatge (només per a ús intern)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "Suprimix les capçaleres De:/A: a les respostes a respostes"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
-#~ "l'estàndard iCalendar. Esta opció n'evita un. Si teniu problemes amb els "
-#~ "usuaris d'Outlook que no poden obtindre les vostres respostes, proveu "
-#~ "activant esta opció."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Envia les invitacions de treball en grup al cos del missatge"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
-#~ "l'estàndard iCalendar. Esta opció n'evita un. Si teniu problemes amb els "
-#~ "usuaris d'Outlook que no poden obtindre les vostres invitacions, proveu "
-#~ "activant esta opció."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Denominació de les invitacions compatible amb Exchange"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook, quan s'utilitza en combinació amb un servidor "
-#~ "Microsoft Exchange, té un problema en interpretar els correus electrònics "
-#~ "del treball en grup que complisquen els estàndards. Activeu esta opció "
-#~ "per a enviar les invitacions de treball en grup de manera que Microsoft "
-#~ "Exchange les comprenga."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Enviament automàtic de les invitacions"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "Quan es marca, no veureu la finestra de l'editor de correu. En lloc d'açò "
-#~ "s'enviaran automàticament tots els correus d'invitació. Si voleu veure el "
-#~ "correu abans d'enviar-lo, podeu desmarcar esta opció. Però cal tindre "
-#~ "present que el text de la finestra en l'editor té la sintaxi iCalendar i "
-#~ "no hauríeu de provar de modificar-lo a mà."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "Quan està marcada, els correus d'invitació rebuts que s'han contestat es "
-#~ "mouran a la paperera, una vegada s'haja enviat correctament la resposta."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "La carpeta seleccionada més recentment per a tasques pendents."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "La carpeta seleccionada més recentment per a esdeveniments."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "La carpeta seleccionada més recentment per a notes."

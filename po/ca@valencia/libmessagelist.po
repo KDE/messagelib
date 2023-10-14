@@ -1365,12 +1365,12 @@ msgstr "Activa la pestanya anterior"
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "Mou la pestanya a l'esquerra"
+msgstr "Mou la pestanya cap a l'esquerra"
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "Mou la pestanya a la dreta"
+msgstr "Mou la pestanya cap a la dreta"
 
 #: pane.cpp:298
 #, kde-format
@@ -1805,12 +1805,12 @@ msgstr "Elimina la columna"
 #: utils/themeeditor.cpp:1168
 #, kde-format
 msgid "Move Column to Left"
-msgstr "Mou la columna a l'esquerra"
+msgstr "Mou la columna cap a l'esquerra"
 
 #: utils/themeeditor.cpp:1172
 #, kde-format
 msgid "Move Column to Right"
-msgstr "Mou la columna a la dreta"
+msgstr "Mou la columna cap a la dreta"
 
 #: utils/themeeditor.cpp:1221
 #, kde-format
