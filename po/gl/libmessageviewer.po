@@ -13,14 +13,14 @@
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2023-08-06 05:36+0200\n"
+"PO-Revision-Date: 2023-10-13 07:09+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -28,11 +28,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
-msgstr "Desculpas, non se puido importar o certificado."
+msgstr "Non foi posíbel importar o certificado."
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "Descifrar a mensaxe"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Agarde, por favor, mentres se descifra a mensaxe…"
+msgstr "Agarde mentres se descifra a mensaxe…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -129,14 +129,13 @@ msgstr "Chave descoñecida"
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Cumprimento: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Mensaxe cifrada"
+msgstr "Mensaxe cifrada (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -178,9 +177,9 @@ msgid ""
 "activate formatted HTML display for this message <a href='kmail:showHTML'>by "
 "clicking here</a>."
 msgstr ""
-"<b>Nota:</b> Esta é unha mensaxe HTML. Por razóns de seguridade, só se "
-"mostra o código HTML en cru. Se confía no remitente da mensaxe, pode activar "
-"o formato real de HTML para esta mensaxe <a href=\"kmail:showHTML\">premendo "
+"<b>Nota:</b> Esta é unha mensaxe HTML. Por razóns de seguridade, só se amosa "
+"o código HTML en cru. Se confía no remitente da mensaxe, pode activar o "
+"formato real de HTML para esta mensaxe <a href=\"kmail:showHTML\">premendo "
 "aquí</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
@@ -198,7 +197,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Agarde, por favor, mentres se verifica a sinatura…"
+msgstr "Agarde mentres se verifica a sinatura…"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -293,43 +292,34 @@ msgstr "Advertencia: A sinatura é mala."
 #: messagepartthemes/default/templates/signedmessagepart.html:142
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Cumprimento: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "A sinatura é incorrecta."
+msgstr "A sinatura non é válida."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
 msgstr "Non hai información para comprobar a validez da sinatura."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
 msgstr "Asinado por <a href=\"mailto:%1\">%1</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "A sinatura é correcta."
+msgstr "A sinatura é válida."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
 msgid "Unknown signature state"
 msgstr "O estado da sinatura é descoñecido"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "Fallou: %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -349,11 +339,10 @@ msgid "Key Changed"
 msgstr "Cambiouse a chave"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "gardado: "
+msgstr "Almacenar"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #: dkim-verify/dkimmanageruleswidget.cpp:72
@@ -374,12 +363,12 @@ msgstr "Chave de DKIM"
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Inserida"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Último uso"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, kde-format
@@ -387,28 +376,25 @@ msgid "Copy Key"
 msgstr "Copiar a chave"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "Remove Key"
+#, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] "Retirar esta chave"
-msgstr[1] "Retirar esta chave"
+msgstr[0] "Retirar a chave"
+msgstr[1] "Retirar as chaves"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this key?"
+#, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] "Quere eliminar esta chave?"
-msgstr[1] "Quere eliminar esta chave?"
+msgstr[0] "Quere eliminar a chave?"
+msgstr[1] "Quere eliminar as chaves?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Eliminar a chave"
-msgstr[1] "Eliminar a chave"
+msgstr[1] "Eliminar as chaves"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
 #: dkim-verify/dkimmanageruleswidget.cpp:221
@@ -417,160 +403,140 @@ msgid "Delete All"
 msgstr "Eliminalas todas"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Do you want to delete all rules?"
+#, kde-format
 msgid "Do you want to delete all keys?"
-msgstr "Quere eliminar todas as regras?"
+msgstr "Quere eliminar todas as chaves?"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgid "Delete Keys"
-msgstr "Eliminar a chave"
+msgstr "Eliminar as chaves"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
-#, fuzzy, kde-format
-#| msgid "DKIM: Not signed"
+#, kde-format
 msgid "Must be signed"
-msgstr "DKIM: Non asinado"
+msgstr "Debe asinarse"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
 #, kde-format
 msgid "Can be signed"
-msgstr ""
+msgstr "Pode asinarse"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
-#, fuzzy, kde-format
-#| msgid "DKIM: Not signed"
+#, kde-format
 msgid "Ignore if not signed"
-msgstr "DKIM: Non asinado"
+msgstr "Ignorar se non está asinado"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export filters..."
+#, kde-format
 msgid "Export..."
-msgstr "Exportar filtros..."
+msgstr "Exportar…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr "Configurar…"
+msgstr "Configurar a regra"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
 msgid "Add Rule..."
-msgstr ""
+msgstr "Engadir unha regra…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgid "Import..."
-msgstr "&Importar"
+msgstr "Importar…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "Non se atopou ningunha sinatura"
+msgstr "Non se atoparon regras."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
+#, kde-format
 msgid "Export Rules"
-msgstr "Exportar filtros"
+msgstr "Exportar as regras"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgid "Import Rules"
-msgstr "Importar filtros"
+msgstr "Importar regras"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules imported."
-msgstr "Non se atopou ningunha sinatura"
+msgstr "Non se importaron regras."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #: remote-content/remotecontentconfigurewidget.cpp:51
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Dominio"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "List-Id:"
+#, kde-format
 msgid "List-ID"
-msgstr "Identificador de lista:"
+msgstr "Identificador de lista"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "From:"
+#, kde-format
 msgid "From"
-msgstr "De:"
+msgstr "De"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Rule type"
-msgstr ""
+msgstr "Tipo de regra"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:72
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "Prioridade"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:194
 #: remote-content/remotecontentconfigurewidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "A&dd..."
+#, kde-format
 msgid "Add..."
-msgstr "Enga&dir..."
+msgstr "Engadir…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:199
 #: remote-content/remotecontentconfigurewidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "&Modify..."
+#, kde-format
 msgid "Modify..."
-msgstr "&Modificar..."
+msgstr "Modificar…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "Eliminar as regras"
+msgstr "Duplicar a regra"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:207
 #: remote-content/remotecontentconfigurewidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Remove Key"
+#, kde-format
 msgid "Remove Rule"
-msgstr "Retirar esta chave"
+msgstr "Eliminar a regra"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this key?"
+#, kde-format
 msgid "Do you want to delete this rule?"
-msgstr "Quere eliminar esta chave?"
+msgstr "Quere eliminar a regra?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:210
 #: remote-content/remotecontentconfigurewidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgid "Delete Rule"
-msgstr "Eliminar as regras"
+msgstr "Eliminar a regra"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Do you want to delete all rules?"
+#, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr "Quere eliminar todas as regras?"
 
@@ -583,24 +549,23 @@ msgstr "Eliminar as regras"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "Engadir unha regra"
 
 #: dkim-verify/dkimruledialog.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr ""
+msgstr "Modificar a regra"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled ad block"
+#, kde-format
 msgid "Enabled"
-msgstr "Activar o filtro de publicidade"
+msgstr "Activada"
 
 #: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "Dominio:"
 
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:210
 #, kde-format
@@ -615,46 +580,42 @@ msgstr "De:"
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Use «*» para indicar todo o correo do dominio."
 
 #: dkim-verify/dkimrulewidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "SDID"
+#, kde-format
 msgid "SDID:"
-msgstr "SDID"
+msgstr "SDID:"
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "Rule:"
-msgstr ""
+msgstr "Regra:"
 
 #: dkim-verify/dkimrulewidget.cpp:60
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "Prioridade:"
 
 #: dkim-verify/dkimviewermenu.cpp:14
-#, fuzzy, kde-format
-#| msgid "DKIM Key"
+#, kde-format
 msgid "DKIM"
-msgstr "Chave de DKIM"
+msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
-msgstr "Manter a sinatura"
+msgstr "Comprobar de novo a sinatura de DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:39
-#, fuzzy, kde-format
-#| msgid "DKIM Key"
+#, kde-format
 msgid "Update DKIM key"
-msgstr "Chave de DKIM"
+msgstr "Actualizar a chave de DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr ""
+msgstr "Regras…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:97
 #, kde-format
@@ -799,8 +760,7 @@ msgid "Signature too small"
 msgstr "A sinatura é pequena de máis"
 
 #: dkim-verify/dkimwidgetinfo.cpp:212
-#, fuzzy, kde-format
-#| msgid "Public key is too small."
+#, kde-format
 msgid "Public Key too small"
 msgstr "A chave pública é pequena de máis."
 
@@ -808,30 +768,27 @@ msgstr "A chave pública é pequena de máis."
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:256
 #, kde-format
 msgid "%1: None"
-msgstr ""
+msgstr "%1: nada."
 
 #: dkim-verify/dkimwidgetinfo.cpp:271
-#, fuzzy, kde-format
-#| msgid "DKIM: valid (signed by %1)"
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "DKIM: Correcto (asinado por %1)"
+msgstr "%1: válido (asinado por %2)."
 
 #: dkim-verify/dkimwidgetinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "%1: "
+#, kde-format
 msgid "%1: Valid"
-msgstr "%1: "
+msgstr "%1: válido."
 
 #: dkim-verify/dkimwidgetinfo.cpp:306
-#, fuzzy, kde-format
-#| msgid "DKIM: Not signed"
+#, kde-format
 msgid "Not Signed"
-msgstr "DKIM: Non asinado"
+msgstr "Non asinado"
 
 #: header/grantleeheaderformatter.cpp:231
 #, kde-format
@@ -1039,25 +996,22 @@ msgid "Reply to: "
 msgstr "Responder a: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "&Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr "&Ignorar"
+msgstr "Ignorar"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "Remitente:"
+msgstr "Enviar"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "Remitente:"
+msgstr "Enviar a denegación"
 
 #: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
@@ -1166,7 +1120,7 @@ msgstr "Coidado:"
 #: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "O enderezo do remitente non se garda na %1 empregada para asinar."
+msgstr "O enderezo do remitente non se garda na %1 usada para asinar."
 
 #: messagepartthemes/default/defaultrenderer.cpp:618
 #, kde-format
@@ -1184,86 +1138,79 @@ msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
 "it to the sender's address %2."
 msgstr ""
-"Non se garda ningún enderezo no %1 empregado para asinar, así que non se "
-"pode comparar co enderezo do remitente %2."
+"Non se garda ningún enderezo no %1 usado para asinar, así que non se pode "
+"comparar co enderezo do remitente %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr "Configurar…"
+msgstr "Configurar o contido remoto"
 
 #: remote-content/remotecontentconfigurewidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "Estado: "
+msgstr "Estado"
 
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this key?"
+#, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr "Quere eliminar esta chave?"
+msgstr "Quere eliminar a chave «%1»?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "Editar o contido remoto"
 
 #: remote-content/remotecontentconfigurewidget.cpp:121
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr "Configurar…"
+msgstr "Engadir contido remoto"
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "Xa hai unha entrada que define este URL. Modifíquea."
 
 #: remote-content/remotecontentconfigurewidget.cpp:130
 #, kde-format
 msgid "Add new Url"
-msgstr ""
+msgstr "Engadir un novo URL"
 
 #: remote-content/remotecontentmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure"
-msgstr "Configurar…"
+msgstr "Configurar"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "Contido remoto"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "Autorizar %1"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "Autorizar todos os URL"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "Autorizado"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
-#, fuzzy, kde-format
-#| msgid "Block image"
+#, kde-format
 msgid "Blocked"
-msgstr "Bloquear a imaxe"
+msgstr "Bloqueado"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Detalles"
@@ -1387,7 +1334,7 @@ msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
-"Respectar as marcas para despregar e pregar citas de texto que se definen na "
+"Respectar as marcas para expandir e pregar citas de texto que se definen na "
 "configuración de impresión."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
@@ -1397,8 +1344,8 @@ msgid ""
 "Specifies whether the background color and images are also drawn when the "
 "page is printed."
 msgstr ""
-"Indica se se desexa que tamén se debuxen a cor e as imaxes do fondo ao "
-"imprimir a páxina."
+"Indica se quere que tamén se debuxen a cor e as imaxes do fondo ao imprimir "
+"a páxina."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.cmake:23
@@ -1442,7 +1389,7 @@ msgstr "Pechar a xanela de mensaxes despois de responder ou reenviar."
 #: settings/messageviewer.kcfg.cmake:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Amosar marcas para despregar/pregar citas de texto"
+msgstr "Amosar marcas para expandir e pregar citas de texto."
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.cmake:73
@@ -1478,7 +1425,7 @@ msgstr ""
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
 msgstr ""
-"Descifrar sempre as mensaxes ao velas ou preguntar antes de as descifrar"
+"Descifrar sempre as mensaxes ao velas ou preguntar antes de descifralas."
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.cmake:91
@@ -1549,7 +1496,7 @@ msgid ""
 "techniques used to deceive you"
 msgstr ""
 "KMail pode analizar as mensaxes por se conteñen timos de correo buscando "
-"técnicas das empregadas frecuentemente para enganar"
+"técnicas das usadas frecuentemente para enganar."
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.cmake:147
@@ -1605,15 +1552,15 @@ msgid ""
 "this option."
 msgstr ""
 "Microsoft Outlook ten un número de defectos na súa realización do estándar "
-"iCalendar; esta opción elude un deles. Se ten problemas cos usuarios de "
-"Outlook que non son quen de obter as súas respostas, intente activando esta "
-"opción."
+"iCalendar; esta opción elude un deles. Se ten problemas coas persoas "
+"usuarias de Outlook que non son quen de obter as súas respostas, intente "
+"activando esta opción."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:187
 #, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr "Enviar convites a grupos no corpo da mensaxe"
+msgstr "Enviar invitacións a grupos no corpo da mensaxe."
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:188
@@ -1625,15 +1572,15 @@ msgid ""
 "setting this option."
 msgstr ""
 "Microsoft Outlook ten un número de defectos na súa realización do estándar "
-"iCalendar; esta opción elude un deles. Se ten problemas cos usuarios de "
-"Outlook que non son quen de obter as súas invitacións, intente activando "
-"esta opción."
+"iCalendar; esta opción elude un deles. Se ten problemas coas persoas "
+"usuarias de Outlook que non son quen de obter as súas invitacións, intente "
+"activando esta opción."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:193
 #, kde-format
 msgid "Exchange-compatible invitation naming"
-msgstr "Nomes de convites compatíbeis con Exchange"
+msgstr "Nomes de invitacións compatíbeis con Exchange."
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:194
@@ -1644,16 +1591,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"O Outlook de Microsoft, empregado en combinación cun servidor Exchange de "
-"Microsoft, ten problemas para comprender o correo electrónico de grupos "
-"respectuosos co estándar. Active esta opción para enviar convites de grupos "
-"de xeito que o comprenda o Exchange de Microsoft."
+"Combinar Microsoft Outlook cun servidor de Microsoft Exchange causa "
+"problemas para comprender o correo electrónico de grupos respectuosos co "
+"estándar. Active esta opción para enviar invitacións de grupos de xeito que "
+"o comprenda Microsoft Exchange."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:199
 #, kde-format
 msgid "Automatic invitation sending"
-msgstr "Envío automático de convites"
+msgstr "Envío automático de invitacións."
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:200
@@ -1666,17 +1613,17 @@ msgid ""
 "modifying it by hand."
 msgstr ""
 "Cando se marca, non se ve a xanela de edición da mensaxe. No seu lugar, "
-"envíanse automaticamente todos os correos de convite. Se quere ver o correo "
-"antes de envialo, pode desactivar esta opción. Porén, sexa consciente de que "
-"o texto na xanela de edición da mensaxe está en sintaxe iCalendar e que non "
-"debería polo tanto intentar modificalo á man."
+"envíanse automaticamente todos os correos de invitación. Se quere ver o "
+"correo antes de envialo, pode desmarcar esta opción. Porén, sexa consciente "
+"de que o texto na xanela de edición da mensaxe está en sintaxe iCalendar e "
+"que non debería polo tanto intentar modificalo á man."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
 #: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Eliminar os correos de convite unha vez enviada a resposta."
+msgstr "Eliminar os correos de invitación unha vez enviada a resposta."
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:206
@@ -1685,8 +1632,8 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
-"Cando se marca isto, as mensaxes de convite recibidas ás que se respondeu "
-"moveranse ao cartafol do Lixo unha vez enviada satisfactoriamente a resposta."
+"Cando se marca isto, as mensaxes de invitación recibidas ás que se respondeu "
+"moveranse ao cartafol do lixo unha vez enviada satisfactoriamente a resposta."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1548
@@ -1725,14 +1672,14 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Escolla esta opción para facer que Outlook(tm) comprenda as súas respostas "
-"aos convites."
+"Escolla esta opción para facer que Outlook(tm) comprenda as súas respostas a "
+"respostas de invitacións."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
 #, kde-format
 msgid "&Mangle From:/To: headers in replies to invitations"
-msgstr "Xestionar as cabeceiras De:/Para: nas respostas aos convites."
+msgstr "Xestionar as cabeceiras De:/Para: nas respostas ás invitacións."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:33
@@ -1742,13 +1689,13 @@ msgid ""
 "invitations"
 msgstr ""
 "Escolla esta opción para facer que Outlook(tm) comprenda as súas respostas "
-"aos convites."
+"ás invitacións."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
 #, kde-format
 msgid "Send &invitations in the mail body"
-msgstr "Enviar os conv&ites no corpo da mensaxe."
+msgstr "Enviar as &invitacións no corpo da mensaxe."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:45
@@ -1760,17 +1707,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"O Outlook da Microsoft, empregado en combinación cun servidor Exchange da "
-"Microsoft,\n"
-"ten problemas para comprender o correo electrónico de grupos respectuosos co "
-"estándar. Active esta opción para enviar convites de grupos de xeito que o "
-"comprenda o Exchange de Microsoft."
+"Combinar Microsoft Outlook cun servidor de Microsoft Exchange\n"
+"causa problemas para comprender o correo electrónico de grupos respectuosos "
+"co estándar. Active esta opción para enviar invitacións de grupos de xeito "
+"que o comprenda Microsoft Exchange."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr "&Nomes de convites compatíbeis con Exchange."
+msgstr "&Nomes de invitacións compatíbeis con Exchange."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1779,14 +1725,14 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
-"Ao activar isto, o usuario non ha ver a xanela de edición dos correos. Os "
-"correos de convites hanse enviar automaticamente."
+"Ao activar isto, a persoa usuaria non ha ver a xanela de edición dos "
+"correos. Os correos de invitacións hanse enviar automaticamente."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
 #, kde-format
 msgid "&Automatic invitation sending"
-msgstr "Envío &automático de convites."
+msgstr "Envío &automático de invitacións."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: ui/invitationsettings.ui:68
@@ -1804,7 +1750,7 @@ msgstr "Imprimir só o texto seleccionado."
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr "Respectar as marcas para d&espregar/pregar as citas de texto."
+msgstr "Respectar as marcas para &expandir/pregar as citas de texto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
@@ -1828,7 +1774,7 @@ msgstr "Configuración do visualizador"
 #: ui/settings.ui:47
 #, kde-format
 msgid "O&verride character encoding:"
-msgstr "I&gnorar a codificación de caracteres:"
+msgstr "&Sobredefinir a codificación de caracteres:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
 #: ui/settings.ui:79
@@ -1846,7 +1792,7 @@ msgstr "Reducir o tama&ño de tipo de letra do texto citado."
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr "Amosar marcas para d&espregar/pregar as citas de texto."
+msgstr "Amosar marcas para &expandir/pregar as citas de texto."
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -1938,8 +1884,8 @@ msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
-"<qt>Non se puido escribir o ficheiro<br /><filename>%1</filename><br /><br />"
-"%2</qt>"
+"<qt>Non foi posíbel escribir o ficheiro<br /><filename>%1</filename><br /"
+"><br />%2</qt>"
 
 #: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:421
 #: utils/messageviewerutil.cpp:439
@@ -1950,7 +1896,7 @@ msgstr "Produciuse un erro ao gravar o anexo"
 #: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "Non se atoparon ficheiros anexos que gardar."
+msgstr "Non se atoparon anexos que gardar."
 
 #: utils/messageviewerutil.cpp:467
 #, kde-format
@@ -2125,7 +2071,7 @@ msgstr "Buscar o contacto en KAddressbook"
 #: viewer/urlhandlermanager.cpp:802
 #, kde-format
 msgid "Attachment: %1"
-msgstr "Ficheiro anexo: %1"
+msgstr "Anexo: %1"
 
 #: viewer/urlhandlermanager.cpp:805
 #, kde-format
@@ -2181,16 +2127,14 @@ msgstr ""
 #: viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Delete Attachment"
-msgstr "Eliminar o ficheiro anexo"
+msgstr "Eliminar o anexo"
 
 #: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
-msgstr ""
-"Eliminar un ficheiro anexo podería invalidar a sinatura dixital desta "
-"mensaxe."
+msgstr "Eliminar un anexo podería invalidar a sinatura dixital desta mensaxe."
 
 #: viewer/viewer_p.cpp:443
 #, kde-format
@@ -2240,7 +2184,7 @@ msgstr "Copiar"
 #: viewer/viewer_p.cpp:595
 #, kde-format
 msgid "Reply To Author"
-msgstr "Responder ao autor"
+msgstr "Responder á remitente"
 
 #: viewer/viewer_p.cpp:603
 #, kde-format
@@ -2263,11 +2207,10 @@ msgid "The KDE Mail Client"
 msgstr "O cliente de correo de KDE."
 
 #: viewer/viewer_p.cpp:1275
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr "Ver o ficheiro anexo: %1"
+msgstr "Ver o anexo: %1"
 
 #: viewer/viewer_p.cpp:1469
 #, kde-format
@@ -2278,7 +2221,7 @@ msgstr "&Anexos"
 #: viewer/viewer_p.cpp:1471
 #, kde-format
 msgid "Choose display style of attachments"
-msgstr "Escoller o estilo de exhibición dos arquivos anexos"
+msgstr "Escoller o estilo de exhibición dos anexos"
 
 #: viewer/viewer_p.cpp:1474
 #, kde-format
@@ -2322,7 +2265,7 @@ msgstr "&Agochar"
 #: viewer/viewer_p.cpp:1498
 #, kde-format
 msgid "Do not show attachments in the message viewer"
-msgstr "Non amosar os arquivos anexos na vista da mensaxe"
+msgstr "Non amosar os anexos na vista da mensaxe"
 
 #: viewer/viewer_p.cpp:1502
 #, kde-format
@@ -2338,7 +2281,7 @@ msgstr "Amosar os anexos só na cabeceira do correo"
 #: viewer/viewer_p.cpp:1510
 #, kde-format
 msgid "&Set Encoding"
-msgstr "E&stabelecer a codificación"
+msgstr "&Definir a codificación"
 
 #: viewer/viewer_p.cpp:1515 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
@@ -2377,8 +2320,7 @@ msgid "&View Source"
 msgstr "&Ver a fonte"
 
 #: viewer/viewer_p.cpp:1568
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "&Gardar a mensaxe…"
 
@@ -2415,12 +2357,12 @@ msgstr "Baixar na mensaxe (máis)"
 #: viewer/viewer_p.cpp:1610
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr "Alternar o modo de exhibición de HTML"
+msgstr "Conmutar o modo de exhibición de HTML"
 
 #: viewer/viewer_p.cpp:1614
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr "Alterar o modo de exhibición entre o texto HTML e o simple"
+msgstr "Conmutar o modo de exhibición entre o texto HTML e o simple"
 
 #: viewer/viewer_p.cpp:1617
 #, kde-format
@@ -2433,10 +2375,9 @@ msgid "Speak Text"
 msgstr "Ler o texto"
 
 #: viewer/viewer_p.cpp:1629
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgid "Share Text..."
-msgstr "Ler o texto"
+msgstr "Compartir o texto…"
 
 #: viewer/viewer_p.cpp:1635
 #, kde-format
@@ -2486,12 +2427,12 @@ msgstr "O URL %1 non é válido."
 #: viewer/viewer_p.cpp:1966
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
-msgstr "Este sitio web é software malicioso, quere amosalo de todos xeitos?"
+msgstr "Este sitio web ten código malicioso, quere amosalo aínda así?"
 
 #: viewer/viewer_p.cpp:1967
 #, kde-format
 msgid "Malware"
-msgstr "Software malicioso"
+msgstr "Código malicioso"
 
 #: viewer/viewer_p.cpp:2021
 #, kde-format
@@ -2499,15 +2440,13 @@ msgid "Copy Email Address"
 msgstr "Copiar o enderezo de correo"
 
 #: viewer/viewer_p.cpp:2102
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mensaxe como texto simple"
 
 #: viewer/viewer_p.cpp:2305
-#, fuzzy, kde-format
-#| msgid "Print Document"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Imprimir o documento"
@@ -2534,12 +2473,11 @@ msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"Quere abrir o anexo <filename>%1</filename>?<nl/>Lembre que abrir ficheiros "
-"anexos podería poñer en perigo a seguridade do sistema."
+"Quere abrir o anexo <filename>%1</filename>?<nl/>Lembre que abrir anexos "
+"podería poñer en perigo a seguridade do sistema."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Abrir o anexo?"
@@ -2550,10 +2488,9 @@ msgid "&Open With '%1'"
 msgstr "Abrir c&on «%1»"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "Abrir con…"
+msgstr "Abrir &con…"
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2605,7 +2542,7 @@ msgstr ""
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr "Prema para alternar entre o texto HTML, o simple e o calendario."
+msgstr "Prema para conmutar entre o texto HTML, o simple e o calendario."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2619,15 +2556,15 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
-"<qt>Os convites envíanse normalmente como anexos ao correo electrónico. Este "
-"cambio fai que, no canto diso, as mensaxes de convite se envíen no texto da "
-"mensaxe; isto é preciso para enviar convites e respostas ao Outlook de "
-"Microsoft. <br />Pero, cando faga isto, non terá un texto descritivo que "
-"poidan ler os programas de correo electrónico; de xeito que, para as persoas "
-"que teñan programas de correo electrónico que non entendan os convites, as "
-"mensaxes resultantes terán unha aparencia rara. <br />A xente que teña "
-"programas de correo electrónico que si entenda os convites será quen de "
-"traballar con isto.</qt>"
+"<qt>As invitacións envíanse normalmente como anexos ao correo electrónico. "
+"Este cambio fai que, no canto diso, as mensaxes de invitación se envíen no "
+"texto da mensaxe; isto é preciso para enviar invitacións e respostas a "
+"Microsoft Outlook. <br />Pero, cando faga isto, non terá un texto descritivo "
+"que poidan ler os programas de correo electrónico; de xeito que, para as "
+"persoas que teñan programas de correo electrónico que non entendan as "
+"invitacións, as mensaxes resultantes terán unha aparencia rara. <br />A "
+"xente que teña programas de correo electrónico que si entenda as invitacións "
+"será quen de traballar con isto.</qt>"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
@@ -2651,42 +2588,36 @@ msgstr "Fonte en HTML"
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr "Código HTML para lle amosar a mensaxe ao usuario"
+msgstr "Código HTML para lle amosar a mensaxe á persoa usuaria."
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "Abrir o cartafol no que se gardou o anexo"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "&Abrir con"
+msgstr "Abrir o ficheiro"
 
 #: widgets/opensavedfilefolderwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Abrir o cartafol no que se gardou o anexo"
-msgstr[1] "Abrir o cartafol no que se gardou o anexo"
+msgstr[1] "Abrir o cartafol no que se gardaron os anexos"
 
 #: widgets/opensavedfilefolderwidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr "Abrir o cartafol no que se gardou o anexo"
+msgstr "Abrir o cartafol no que se gardou o ficheiro PDF"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "Non se pode editar o anexo"
+msgstr "KMail non puido abrir o anexo."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format

@@ -1223,7 +1223,7 @@ msgstr ""
 #: scamdetection/scamdetectionwarningwidget.cpp:38
 #, kde-format
 msgid "Move to Trash"
-msgstr "Mou a la paperera"
+msgstr "Mou cap a dins de la paperera"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:43
 #, kde-format
@@ -1249,8 +1249,8 @@ msgid ""
 "recipient"
 msgstr ""
 "Este correu electrònic conté un enllaç que diu «%1» al text, però en "
-"realitat apunta a «%2». Sovint es tracta de correus electrònics fraudulents "
-"per a enganyar al destinatari"
+"realitat apunta cap a «%2». Sovint es tracta de correus electrònics "
+"fraudulents per a enganyar al destinatari"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1259,9 +1259,9 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
-"Este correu electrònic conté un enllaç que apunta a una adreça IP numèrica "
-"(%1) en lloc d'una adreça d'Internet textual típica. Sovint es tracta de "
-"correus electrònics fraudulents."
+"Este correu electrònic conté un enllaç que apunta cap a una adreça IP "
+"numèrica (%1) en lloc d'una adreça d'Internet textual típica. Sovint es "
+"tracta de correus electrònics fraudulents."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1270,7 +1270,7 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
-"Este correu electrònic conté un enllaç que apunta a una adreça IP "
+"Este correu electrònic conté un enllaç que apunta cap a una adreça IP "
 "hexadecimal (%1) en lloc d'una adreça d'Internet textual típica. Sovint es "
 "tracta de correus electrònics fraudulents."
 
@@ -1285,7 +1285,7 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
-"Este correu electrònic conté un enllaç (%1), el qual apunta a múltiples "
+"Este correu electrònic conté un enllaç (%1), el qual apunta cap a múltiples "
 "adreces http://. Sovint es tracta de correus electrònics fraudulents."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
@@ -1320,7 +1320,7 @@ msgstr "És impossible ampliar «%1»."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "L'URL curt «%1» redirigix a «%2»."
+msgstr "L'URL curt «%1» redirigix cap a «%2»."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.cmake:11
@@ -2181,7 +2181,7 @@ msgstr "Visualitza"
 #: viewer/viewer_p.cpp:562
 #, kde-format
 msgid "Scroll To"
-msgstr "Desplaça a"
+msgstr "Desplaça cap a"
 
 #: viewer/viewer_p.cpp:567
 #, kde-format
