@@ -8,8 +8,6 @@
 
 #include "messagecomposer_export.h"
 
-#include <QtGlobal>
-
 namespace MessageComposer
 {
 /** Send later utilities. */
