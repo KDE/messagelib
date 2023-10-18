@@ -34,6 +34,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     , mCompleter(new QCompleter(this))
     , mCompleterListModel(new QStringListModel(this))
 {
+    mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
     mCompleter->setModel(mCompleterListModel);
     setCompleter(mCompleter);
 
