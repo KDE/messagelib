@@ -620,14 +620,15 @@ private:
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
     void assignMessageItem(const Akonadi::Item &item);
+    void slotUrlBlocked(const QUrl &url);
+    void updateColorFromScheme();
+    void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
+    void createSubmittedFormWarning();
+
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
-    void slotUrlBlocked(const QUrl &url);
-    void updateColorFromScheme();
-
-    void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
 
 public:
     KMime::Message::Ptr mMessage; // the current message, if it was set manually

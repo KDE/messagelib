@@ -910,7 +910,12 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::popupMenu, this, &ViewerPrivate::slotUrlPopup);
     connect(mViewer, &MailWebEngineView::wheelZoomChanged, this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, mSubmittedFormWarning, &WebEngineViewer::SubmittedFormWarningWidget::showWarning);
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, [this]() {
+        if (!mSubmittedFormWarning) {
+            createSubmittedFormWarning();
+        }
+        mSubmittedFormWarning->showWarning();
+    });
     connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &WebEngineViewer::TrackingWarningWidget::addTracker);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
@@ -1135,7 +1140,9 @@ void ViewerPrivate::resetStateForNewMessage()
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
     mOpenSavedFileFolderWidget->setVisible(false);
-    mSubmittedFormWarning->setVisible(false);
+    if (mSubmittedFormWarning) {
+        mSubmittedFormWarning->setVisible(false);
+    }
     mMailTrackingWarning->hideAndClear();
     mRemoteContentMenu->clearUrls();
 
@@ -1379,10 +1386,6 @@ void ViewerPrivate::createWidgets()
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
-    mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(mReaderBox);
-    mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
-    mReaderBoxVBoxLayout->addWidget(mSubmittedFormWarning);
-
     mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(mReaderBox);
     mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
     mReaderBoxVBoxLayout->addWidget(mMailTrackingWarning);
@@ -1426,6 +1429,13 @@ void ViewerPrivate::createWidgets()
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
+}
+
+void ViewerPrivate::createSubmittedFormWarning()
+{
+    mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(mReaderBox);
+    mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
+    mReaderBoxVBoxLayout->insertWidget(0, mSubmittedFormWarning);
 }
 
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
