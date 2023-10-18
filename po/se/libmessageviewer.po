@@ -2286,15 +2286,3 @@ msgstr ""
 #, kde-format
 msgid "Previous Message"
 msgstr ""
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Čájeha reiveráhkadeami"
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Sádde joavkoprográmmabovdehusaid reivve siskkobealde"
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Exchange-heivvolaš bovdehusnammadeapmi"
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Automáhtalaš bovdehussádden"

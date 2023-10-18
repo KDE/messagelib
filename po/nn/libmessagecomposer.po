@@ -2134,6 +2134,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Siter berre den merkte teksten i svar"
