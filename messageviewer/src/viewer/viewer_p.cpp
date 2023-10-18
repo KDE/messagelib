@@ -1360,55 +1360,55 @@ void ViewerPrivate::createWidgets()
 
     mColorBar = new HtmlStatusBar(mBox);
     mBoxHBoxLayout->addWidget(mColorBar);
-    auto readerBox = new QWidget(mBox);
-    auto readerBoxVBoxLayout = new QVBoxLayout(readerBox);
-    readerBoxVBoxLayout->setContentsMargins({});
-    mBoxHBoxLayout->addWidget(readerBox);
+    mReaderBox = new QWidget(mBox);
+    mReaderBoxVBoxLayout = new QVBoxLayout(mReaderBox);
+    mReaderBoxVBoxLayout->setContentsMargins({});
+    mBoxHBoxLayout->addWidget(mReaderBox);
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
-    mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(readerBox);
+    mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(mReaderBox);
     mPurposeMenuMessageWidget->setObjectName(QStringLiteral("mPurposeMenuMessageWidget"));
-    readerBoxVBoxLayout->addWidget(mPurposeMenuMessageWidget);
+    mReaderBoxVBoxLayout->addWidget(mPurposeMenuMessageWidget);
 
-    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
+    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(mReaderBox);
     mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
-    readerBoxVBoxLayout->addWidget(mShowNextMessageWidget);
+    mReaderBoxVBoxLayout->addWidget(mShowNextMessageWidget);
     mShowNextMessageWidget->hide();
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
-    mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(readerBox);
+    mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(mReaderBox);
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
-    readerBoxVBoxLayout->addWidget(mSubmittedFormWarning);
+    mReaderBoxVBoxLayout->addWidget(mSubmittedFormWarning);
 
-    mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(readerBox);
+    mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(mReaderBox);
     mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
-    readerBoxVBoxLayout->addWidget(mMailTrackingWarning);
+    mReaderBoxVBoxLayout->addWidget(mMailTrackingWarning);
 
-    mScamDetectionWarning = new ScamDetectionWarningWidget(readerBox);
+    mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
     mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
-    readerBoxVBoxLayout->addWidget(mScamDetectionWarning);
+    mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
 
-    mMdnWarning = new MDNWarningWidget(readerBox);
+    mMdnWarning = new MDNWarningWidget(mReaderBox);
     mMdnWarning->setObjectName(QStringLiteral("mMdnWarning"));
-    readerBoxVBoxLayout->addWidget(mMdnWarning);
+    mReaderBoxVBoxLayout->addWidget(mMdnWarning);
 
-    mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(readerBox);
+    mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(mReaderBox);
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
-    readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
+    mReaderBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(readerBox);
+    mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
-    readerBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
+    mReaderBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
 #endif
-    mViewer = new MailWebEngineView(mActionCollection, readerBox);
+    mViewer = new MailWebEngineView(mActionCollection, mReaderBox);
     mViewer->setViewer(this);
-    readerBoxVBoxLayout->addWidget(mViewer);
+    mReaderBoxVBoxLayout->addWidget(mViewer);
     mViewer->setObjectName(QStringLiteral("mViewer"));
 
-    mViewerPluginToolManager = new MessageViewer::ViewerPluginToolManager(readerBox, this);
+    mViewerPluginToolManager = new MessageViewer::ViewerPluginToolManager(mReaderBox, this);
     mViewerPluginToolManager->setActionCollection(mActionCollection);
     mViewerPluginToolManager->setPluginName(QStringLiteral("messageviewer"));
     mViewerPluginToolManager->setPluginDirectory(QStringLiteral("pim6/messageviewer/viewerplugin"));
@@ -1418,9 +1418,9 @@ void ViewerPrivate::createWidgets()
     mViewerPluginToolManager->createView();
     connect(mViewerPluginToolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPrivate::slotActivatePlugin);
 
-    mSliderContainer = new TextAddonsWidgets::SlideContainer(readerBox);
+    mSliderContainer = new TextAddonsWidgets::SlideContainer(mReaderBox);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
-    readerBoxVBoxLayout->addWidget(mSliderContainer);
+    mReaderBoxVBoxLayout->addWidget(mSliderContainer);
     mFindBar = new WebEngineViewer::FindBarWebEngineView(mViewer, q);
     connect(mFindBar, &WebEngineViewer::FindBarWebEngineView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);

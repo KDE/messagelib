@@ -44,6 +44,7 @@ class KActionMenu;
 class QPoint;
 class QSplitter;
 class QModelIndex;
+class QVBoxLayout;
 
 namespace PimCommon
 {
@@ -730,5 +731,7 @@ public:
     RemoteContentMenu *mRemoteContentMenu = nullptr;
     MessageViewer::MDNWarningWidget *mMdnWarning = nullptr;
     PimCommon::PurposeMenuMessageWidget *mPurposeMenuMessageWidget = nullptr;
+    QVBoxLayout *mReaderBoxVBoxLayout = nullptr;
+    QWidget *mReaderBox = nullptr;
 };
 }
