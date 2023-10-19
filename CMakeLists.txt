@@ -119,7 +119,7 @@ find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.5  KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.6  KF 5.240.0)
 
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
