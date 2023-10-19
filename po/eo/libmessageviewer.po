@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2023-09-26 20:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1699,7 +1699,7 @@ msgstr "Presi Dokumenton"
 msgid "Turn on HTML rendering for this message."
 msgstr "Aktivigi HTML-rigardon por tiu ĉi mesaĝo."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Ŝargi eksterajn referencojn el la Reto por tiu mesaĝo."
@@ -1780,7 +1780,7 @@ msgstr "&Malfermi en Adreslibro"
 msgid "&Copy Email Address"
 msgstr "&Kopii Retadreson"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adreso kopiita al interdeponejo"
@@ -1877,13 +1877,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "M&alfermi per..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Fermi"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1899,12 +1899,12 @@ msgstr "Rulumi Al"
 msgid "Save As..."
 msgstr "Konservi kiel..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Copy"
 msgstr "Kopii"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Forigi Aldonaĵon"
@@ -1919,7 +1919,7 @@ msgstr "Respondi Al Aŭtoro"
 msgid "Reply To All"
 msgstr "Respondi Al Ĉiuj"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
 #, kde-format
 msgid "Properties"
 msgstr "Propraĵoj"
@@ -1934,268 +1934,268 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "La KDE Poŝtkliento"
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1267
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Montri kunsendaĵoj: %1"
 
-#: viewer/viewer_p.cpp:1458
+#: viewer/viewer_p.cpp:1468
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Aldonaĵoj"
 
-#: viewer/viewer_p.cpp:1460
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Agordi aplikon de aldonaĵoj"
 
-#: viewer/viewer_p.cpp:1463
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Kiel &piktogramoj"
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Montras ĉiujn aldonaĵojn kiel piktogramoj. Klaku sur ilin por rigardi."
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Inteligente"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Montras la aldonaĵon kiel proponite de la sendinto."
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Entekste"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Montras ĉiujn aldonaĵojn entekste (se eblas)"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Kaŝi"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ne vidigi kunsendaĵojn en la mesaĝa vidigilo"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Nur en kaplinio"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Montri Aldonaĵojn nur en la kaplinio de la poŝto"
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Meti &Signokodigon"
 
-#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Aŭtomate"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1524
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopii Teksto"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1531
 #, kde-format
 msgid "Select All Text"
 msgstr "Elekti kompletan tekston"
 
-#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
+#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopii ligan adreson"
 
-#: viewer/viewer_p.cpp:1532
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Open URL"
 msgstr "Malfermi URLon"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1547
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Uzi e&gallarĝan tiparon"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Montri Mesaĝan Strukturon"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "&View Source"
 msgstr "&Vidi Fontokodon"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "&Save Message..."
 msgstr "Kon&servi Mesaĝon..."
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgid "&Save Display Format"
 msgstr "Kon&servi Vidigan Formaton"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "&Restarigi Vidigan Formaton"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Rulumi Mesaĝon Supren"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Rulumi Mesaĝon Malsupren"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Rulumi Mesaĝon Supren (Pli)"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Rulumi Mesaĝon Malsupren (Pli)"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Ŝaltigi HTML-Vidigan Reĝimon"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Ŝalti ekranreĝimon inter HTML kaj simpla teksto"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1612
 #, kde-format
 msgid "Load external references"
 msgstr "Ŝargi eksterajn referencojn"
 
-#: viewer/viewer_p.cpp:1608 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Paroli Tekston"
 
-#: viewer/viewer_p.cpp:1614
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "Share Text..."
 msgstr "Kunhavigi tekston..."
 
-#: viewer/viewer_p.cpp:1622
+#: viewer/viewer_p.cpp:1632
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopii Bildan Lokon"
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Trovi en mesaĝo..."
 
-#: viewer/viewer_p.cpp:1637
+#: viewer/viewer_p.cpp:1647
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Malebligi Emoticon"
 
-#: viewer/viewer_p.cpp:1686
+#: viewer/viewer_p.cpp:1696
 #, kde-format
 msgid "Save &As..."
 msgstr "&Konservi kiel..."
 
-#: viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:1704
 #, kde-format
 msgid "Open With..."
 msgstr "Malfermi per..."
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1711
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Konservi Ĉiujn Kunsendaĵojn..."
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "The network is broken."
 msgstr "La reto estas rompita."
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Kontroli Phishing URL"
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "La URL %1 ne validas."
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Kontroli Phishing URL"
 
-#: viewer/viewer_p.cpp:1962
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Ĉi tiu retejo estas malware, ĉu vi volas daŭre montri ĝin?"
 
-#: viewer/viewer_p.cpp:1963
+#: viewer/viewer_p.cpp:1973
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2027
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopii Retadreson"
 
-#: viewer/viewer_p.cpp:2098
+#: viewer/viewer_p.cpp:2108
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mesaĝo kiel plena teksto"
 
-#: viewer/viewer_p.cpp:2668
+#: viewer/viewer_p.cpp:2678
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL kopiita al interdeponejo"
 
-#: viewer/viewer_p.cpp:2820
+#: viewer/viewer_p.cpp:2830
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Ŝargo de mesaĝo malsukcesis: %1."
 
-#: viewer/viewer_p.cpp:2825
+#: viewer/viewer_p.cpp:2835
 #, kde-format
 msgid "Message not found."
 msgstr "Mesaĝo ne trovita."

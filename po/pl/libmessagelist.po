@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2023-09-30 10:21+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1129,7 +1129,7 @@ msgstr "Pokaż kolumny domyślne"
 msgid "Display Tooltips"
 msgstr "Pokaż podpowiedzi"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:324
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1417,19 +1417,19 @@ msgstr ""
 "Niektóre z katalogów wyszukiwania w tym zapytaniu nadal są indeksowane lub "
 "zostały wykluczone z indeksowania. Wyniki mogą być niepełne."
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Nie czyść pola pola wyszukiwania przy zmianie katalogów"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Czyść pole szybkiego wyszukiwania przy zmianie katalogów"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1440,113 +1440,113 @@ msgstr ""
 "przechodzeniu do innych katalogów w celu zacieśnienia znajdywania przez stan "
 "wiadomości."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:113
 #, kde-format
 msgid "Filter Mails by Status"
 msgstr "Odfiltruj wiadomości po stanie"
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:117
 #, kde-format
 msgid "Saved Filter"
 msgstr "Zapisano filtr"
 
-#: core/widgets/searchlinestatus.cpp:215
+#: core/widgets/searchlinestatus.cpp:216
 #, kde-format
 msgid "Clear Filter"
 msgstr "Wyczyść filtr"
 
-#: core/widgets/searchlinestatus.cpp:221
+#: core/widgets/searchlinestatus.cpp:222
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Nieprzeczytana"
 
-#: core/widgets/searchlinestatus.cpp:225
+#: core/widgets/searchlinestatus.cpp:226
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Odpowiedziano"
 
-#: core/widgets/searchlinestatus.cpp:229
+#: core/widgets/searchlinestatus.cpp:230
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Przekierowana"
 
-#: core/widgets/searchlinestatus.cpp:233
+#: core/widgets/searchlinestatus.cpp:234
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Ważna"
 
-#: core/widgets/searchlinestatus.cpp:237
+#: core/widgets/searchlinestatus.cpp:238
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Element działania"
 
-#: core/widgets/searchlinestatus.cpp:241
+#: core/widgets/searchlinestatus.cpp:242
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Obserwowana"
 
-#: core/widgets/searchlinestatus.cpp:245
+#: core/widgets/searchlinestatus.cpp:246
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Pomijana"
 
-#: core/widgets/searchlinestatus.cpp:249
+#: core/widgets/searchlinestatus.cpp:250
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Ma załącznik"
 
-#: core/widgets/searchlinestatus.cpp:253
+#: core/widgets/searchlinestatus.cpp:254
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Ma zaproszenie"
 
-#: core/widgets/searchlinestatus.cpp:257
+#: core/widgets/searchlinestatus.cpp:258
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Spam"
 
-#: core/widgets/searchlinestatus.cpp:261
+#: core/widgets/searchlinestatus.cpp:262
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Nie spam"
 
-#: core/widgets/searchlinestatus.cpp:271
+#: core/widgets/searchlinestatus.cpp:272
 #, kde-format
 msgid "Full Message"
 msgstr "Cała wiadomość"
 
-#: core/widgets/searchlinestatus.cpp:278
+#: core/widgets/searchlinestatus.cpp:279
 #, kde-format
 msgid "Body"
 msgstr "Treść"
 
-#: core/widgets/searchlinestatus.cpp:283
+#: core/widgets/searchlinestatus.cpp:284
 #, kde-format
 msgid "Subject"
 msgstr "Temat"
 
-#: core/widgets/searchlinestatus.cpp:294
+#: core/widgets/searchlinestatus.cpp:295
 #, kde-format
 msgid "BCC"
 msgstr "UDW"
 
-#: core/widgets/searchlinestatus.cpp:322
+#: core/widgets/searchlinestatus.cpp:323
 #, kde-format
 msgid "To"
 msgstr "Do"
 
-#: core/widgets/searchlinestatus.cpp:404
+#: core/widgets/searchlinestatus.cpp:405
 #, kde-format
 msgid "Clear History"
 msgstr "Wyczyść historię"

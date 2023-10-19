@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2023-09-26 12:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -878,7 +878,7 @@ msgstr "Mostra les columnes predeterminades"
 msgid "Display Tooltips"
 msgstr "Mostra els consells"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:324
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
 #, kde-format
 msgid "From"
 msgstr "Des de"
@@ -1162,19 +1162,19 @@ msgstr ""
 "Algunes de les carpetes de cerca en aquesta consulta encara s'estan indexant "
 "o seran excloses. Els resultats a continuació poden estar incomplets."
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Evita que es netegi el camp de cerca ràpida en canviar de carpeta"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Neteja el camp de cerca ràpida en canviar de carpeta"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1184,113 +1184,113 @@ msgstr ""
 "Activeu aquest botó si voleu mantenir la cerca ràpida blocada en moure's cap "
 "a altres carpetes o quan refineu la cerca per a l'estat del missatge."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:113
 #, kde-format
 msgid "Filter Mails by Status"
 msgstr "Filtra el correu per l'estat"
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:117
 #, kde-format
 msgid "Saved Filter"
 msgstr "Filtre desat"
 
-#: core/widgets/searchlinestatus.cpp:215
+#: core/widgets/searchlinestatus.cpp:216
 #, kde-format
 msgid "Clear Filter"
 msgstr "Neteja el filtre"
 
-#: core/widgets/searchlinestatus.cpp:221
+#: core/widgets/searchlinestatus.cpp:222
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Sense llegir"
 
-#: core/widgets/searchlinestatus.cpp:225
+#: core/widgets/searchlinestatus.cpp:226
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Respost"
 
-#: core/widgets/searchlinestatus.cpp:229
+#: core/widgets/searchlinestatus.cpp:230
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Reenviat"
 
-#: core/widgets/searchlinestatus.cpp:233
+#: core/widgets/searchlinestatus.cpp:234
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Important"
 
-#: core/widgets/searchlinestatus.cpp:237
+#: core/widgets/searchlinestatus.cpp:238
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Element d'acció"
 
-#: core/widgets/searchlinestatus.cpp:241
+#: core/widgets/searchlinestatus.cpp:242
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Vigilat"
 
-#: core/widgets/searchlinestatus.cpp:245
+#: core/widgets/searchlinestatus.cpp:246
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ignorat"
 
-#: core/widgets/searchlinestatus.cpp:249
+#: core/widgets/searchlinestatus.cpp:250
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Té un adjunt"
 
-#: core/widgets/searchlinestatus.cpp:253
+#: core/widgets/searchlinestatus.cpp:254
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Té una invitació"
 
-#: core/widgets/searchlinestatus.cpp:257
+#: core/widgets/searchlinestatus.cpp:258
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Correu brossa"
 
-#: core/widgets/searchlinestatus.cpp:261
+#: core/widgets/searchlinestatus.cpp:262
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Correu legítim"
 
-#: core/widgets/searchlinestatus.cpp:271
+#: core/widgets/searchlinestatus.cpp:272
 #, kde-format
 msgid "Full Message"
 msgstr "Tot el missatge"
 
-#: core/widgets/searchlinestatus.cpp:278
+#: core/widgets/searchlinestatus.cpp:279
 #, kde-format
 msgid "Body"
 msgstr "Cos"
 
-#: core/widgets/searchlinestatus.cpp:283
+#: core/widgets/searchlinestatus.cpp:284
 #, kde-format
 msgid "Subject"
 msgstr "Assumpte"
 
-#: core/widgets/searchlinestatus.cpp:294
+#: core/widgets/searchlinestatus.cpp:295
 #, kde-format
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchlinestatus.cpp:322
+#: core/widgets/searchlinestatus.cpp:323
 #, kde-format
 msgid "To"
 msgstr "A"
 
-#: core/widgets/searchlinestatus.cpp:404
+#: core/widgets/searchlinestatus.cpp:405
 #, kde-format
 msgid "Clear History"
 msgstr "Neteja l'historial"

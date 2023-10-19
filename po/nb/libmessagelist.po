@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 01:46+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -872,7 +872,7 @@ msgstr "Vis standardkolonner"
 msgid "Display Tooltips"
 msgstr "Vis verktøytips"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:324
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
 #, kde-format
 msgid "From"
 msgstr "Fra"
@@ -1154,19 +1154,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Ikke tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1176,113 +1176,113 @@ msgstr ""
 "Bruk denne knappen hvis du vil beholde hurtigsøket låst mens du går til "
 "andre mapper, eller når søket innskrenkes etter meldingsstatus."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:113
 #, kde-format
 msgid "Filter Mails by Status"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:117
 #, kde-format
 msgid "Saved Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:215
+#: core/widgets/searchlinestatus.cpp:216
 #, kde-format
 msgid "Clear Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:221
+#: core/widgets/searchlinestatus.cpp:222
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Ulest"
 
-#: core/widgets/searchlinestatus.cpp:225
+#: core/widgets/searchlinestatus.cpp:226
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Besvart"
 
-#: core/widgets/searchlinestatus.cpp:229
+#: core/widgets/searchlinestatus.cpp:230
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Videresendt"
 
-#: core/widgets/searchlinestatus.cpp:233
+#: core/widgets/searchlinestatus.cpp:234
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Viktig"
 
-#: core/widgets/searchlinestatus.cpp:237
+#: core/widgets/searchlinestatus.cpp:238
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Handlingspunkt"
 
-#: core/widgets/searchlinestatus.cpp:241
+#: core/widgets/searchlinestatus.cpp:242
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Overvåket"
 
-#: core/widgets/searchlinestatus.cpp:245
+#: core/widgets/searchlinestatus.cpp:246
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ignorert"
 
-#: core/widgets/searchlinestatus.cpp:249
+#: core/widgets/searchlinestatus.cpp:250
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Har vedlegg"
 
-#: core/widgets/searchlinestatus.cpp:253
+#: core/widgets/searchlinestatus.cpp:254
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Har invitasjon"
 
-#: core/widgets/searchlinestatus.cpp:257
+#: core/widgets/searchlinestatus.cpp:258
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Søppelpost"
 
-#: core/widgets/searchlinestatus.cpp:261
+#: core/widgets/searchlinestatus.cpp:262
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Ikke-søppelpost"
 
-#: core/widgets/searchlinestatus.cpp:271
+#: core/widgets/searchlinestatus.cpp:272
 #, kde-format
 msgid "Full Message"
 msgstr "Hele meldinga"
 
-#: core/widgets/searchlinestatus.cpp:278
+#: core/widgets/searchlinestatus.cpp:279
 #, kde-format
 msgid "Body"
 msgstr "Kropp"
 
-#: core/widgets/searchlinestatus.cpp:283
+#: core/widgets/searchlinestatus.cpp:284
 #, kde-format
 msgid "Subject"
 msgstr "Emne"
 
-#: core/widgets/searchlinestatus.cpp:294
+#: core/widgets/searchlinestatus.cpp:295
 #, kde-format
 msgid "BCC"
 msgstr "Blindkopi"
 
-#: core/widgets/searchlinestatus.cpp:322
+#: core/widgets/searchlinestatus.cpp:323
 #, kde-format
 msgid "To"
 msgstr "Til"
 
-#: core/widgets/searchlinestatus.cpp:404
+#: core/widgets/searchlinestatus.cpp:405
 #, kde-format
 msgid "Clear History"
 msgstr ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1765,7 +1765,7 @@ msgstr ""
 msgid "Turn on HTML rendering for this message."
 msgstr "このメッセージについて HTML レンダリングを有効にします。"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "このメッセージについて外部参照をインターネットからロードします。"
@@ -1849,7 +1849,7 @@ msgstr "アドレス帳で開く(&O)"
 msgid "&Copy Email Address"
 msgstr "メールアドレスをコピー(&C)"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "アドレスをクリップボードにコピーしました。"
@@ -1952,13 +1952,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "アプリケーションで開く(&O)..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "開く"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1974,12 +1974,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "名前を付けて保存..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Copy"
 msgstr "コピー"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
 #, kde-format
 msgid "Delete Attachment"
 msgstr "添付ファイルを削除"
@@ -1996,7 +1996,7 @@ msgstr "返信先: "
 msgid "Reply To All"
 msgstr "返信先: "
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
 #, kde-format
 msgid "Properties"
 msgstr "プロパティ"
@@ -2012,77 +2012,77 @@ msgstr "KMail エラー"
 msgid "The KDE Mail Client"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1267
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "添付ファイルを表示: %1"
 
-#: viewer/viewer_p.cpp:1458
+#: viewer/viewer_p.cpp:1468
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "添付ファイル(&A)"
 
-#: viewer/viewer_p.cpp:1460
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "添付ファイルの表示スタイルを選択"
 
-#: viewer/viewer_p.cpp:1463
+#: viewer/viewer_p.cpp:1473
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "アイコン(&A)"
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "すべての添付ファイルをアイコンで表示します。参照するにはそれらをクリックしま"
 "す。"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "スマート(&S)"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "添付ファイルを送信者が指示した方法で表示します。"
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "インライン(&I)"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "可能であれば、すべての添付ファイルをインライン表示します。"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "隠す(&H)"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "メッセージビューアに添付ファイルを表示しません。"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1504
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
@@ -2091,201 +2091,201 @@ msgstr ""
 "す。"
 
 # ACCELERATOR changed by translator
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "&Set Encoding"
 msgstr "エンコーディング(&N)"
 
-#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "自動"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1524
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copy Text"
 msgstr "コピー"
 
 # ACCELERATOR added by translator
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1531
 #, kde-format
 msgid "Select All Text"
 msgstr "すべてのテキストを選択(&S)"
 
-#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
+#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
 #, kde-format
 msgid "Copy Link Address"
 msgstr "リンクアドレスをコピー"
 
-#: viewer/viewer_p.cpp:1532
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Open URL"
 msgstr "URL を開く"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1547
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "固定幅フォントを使う(&X)"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Show Message Structure"
 msgstr "メッセージ構造を表示"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "&View Source"
 msgstr "ソースを表示(&V)"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1563
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "&Save Message..."
 msgstr "メッセージを保存(&S)"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "メッセージを 1 行上へスクロール"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "メッセージを 1 行下へスクロール"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "メッセージを 1 画面上へスクロール"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "メッセージを 1 画面下へスクロール"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML 表示とプレーンテキスト表示を切り替え"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML 表示とプレーンテキスト表示を切り替えます"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1612
 #, kde-format
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1608 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1614
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "Share Text..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1622
+#: viewer/viewer_p.cpp:1632
 #, kde-format
 msgid "Copy Image Location"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "&Find in Message..."
 msgstr "署名付きメッセージの末尾"
 
-#: viewer/viewer_p.cpp:1637
+#: viewer/viewer_p.cpp:1647
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1686
+#: viewer/viewer_p.cpp:1696
 #, kde-format
 msgid "Save &As..."
 msgstr "名前を付けて保存(&A)..."
 
-#: viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:1704
 #, kde-format
 msgid "Open With..."
 msgstr "アプリケーションで開く..."
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1711
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "すべての添付ファイルを保存..."
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1962
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1963
+#: viewer/viewer_p.cpp:1973
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2027
 #, kde-format
 msgid "Copy Email Address"
 msgstr "メールアドレスをコピー"
 
-#: viewer/viewer_p.cpp:2098
+#: viewer/viewer_p.cpp:2108
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "メッセージをプレーンテキストとして"
 
-#: viewer/viewer_p.cpp:2668
+#: viewer/viewer_p.cpp:2678
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL をクリップボードにコピーしました。"
 
-#: viewer/viewer_p.cpp:2820
+#: viewer/viewer_p.cpp:2830
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "メッセージの読み込みに失敗しました: %1"
 
-#: viewer/viewer_p.cpp:2825
+#: viewer/viewer_p.cpp:2835
 #, kde-format
 msgid "Message not found."
 msgstr ""

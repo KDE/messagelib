@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1761,7 +1761,7 @@ msgstr "Dokumentacija"
 msgid "Turn on HTML rendering for this message."
 msgstr "Uključi iscrtavanje HTML-a za ovu poruku."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1606
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
 #, fuzzy, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Dozvoli porukama da učitaju &vanjske reference sa Interneta"
@@ -1849,7 +1849,7 @@ msgstr "Otvori u adresaru"
 msgid "&Copy Email Address"
 msgstr "Adresa e-pošte"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2662
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
 #, fuzzy, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa iskopirana na odlagalište (clipboard)."
@@ -1947,13 +1947,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otvori s …"
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1689
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
 #, fuzzy, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Pokaži"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
 #, fuzzy, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1969,12 +1969,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "Spremi pod &drugim imenom..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Kopiraj u"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
@@ -1990,7 +1990,7 @@ msgstr "Odgovori &piscu..."
 msgid "Reply To All"
 msgstr "Odgovori &svima..."
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&Svojstva"
@@ -2008,273 +2008,273 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE-ov klijent e-pošte"
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1267
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Pogledaj prilog: %1"
 
-#: viewer/viewer_p.cpp:1458
+#: viewer/viewer_p.cpp:1468
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Pri&vitci"
 
-#: viewer/viewer_p.cpp:1460
+#: viewer/viewer_p.cpp:1470
 #, fuzzy, kde-format
 msgid "Choose display style of attachments"
 msgstr "Odaberite stil prikaza priloga"
 
-#: viewer/viewer_p.cpp:1463
+#: viewer/viewer_p.cpp:1473
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Kao sličice"
 
-#: viewer/viewer_p.cpp:1466
+#: viewer/viewer_p.cpp:1476
 #, fuzzy, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Pokaži sve priloge kao sličice. Kliknite da biste ih videli."
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1480
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Pametno"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1483
 #, fuzzy, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Pokaži priloge kako je predložio pošiljatelj."
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1487
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Ugrađeno"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1490
 #, fuzzy, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Vidi priloge kao ugrađene (ako je moguće)"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1494
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Sakriveno"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1497
 #, fuzzy, kde-format
 #| msgid "Message Preview Pane"
 msgid "Do not show attachments in the message viewer"
 msgstr "Ploča za pregled poruke"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1504
 #, fuzzy, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Pokaži sve priloge kao sličice. Kliknite da biste ih videli."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, fuzzy, kde-format
 msgid "&Set Encoding"
 msgstr "&Postavi kodiranje"
 
-#: viewer/viewer_p.cpp:1504 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Auto"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1524
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Kopiraj u"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1531
 #, fuzzy, kde-format
 msgid "Select All Text"
 msgstr "Od&aberi sve poruke..."
 
-#: viewer/viewer_p.cpp:1527 viewer/viewer_p.cpp:2019
+#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
 #, fuzzy, kde-format
 msgid "Copy Link Address"
 msgstr "Otvori u adresaru"
 
-#: viewer/viewer_p.cpp:1532
+#: viewer/viewer_p.cpp:1542
 #, fuzzy, kde-format
 msgid "Open URL"
 msgstr "Otvori URL"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1547
 #, fuzzy, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Koristi pismo fiksne širine"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1553
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "Preglednik strukture poruka"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1558
 #, fuzzy, kde-format
 msgid "&View Source"
 msgstr "Pogledaj izvor …"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1563
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "%1 poruka, %2."
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 msgid "&Save Display Format"
 msgstr "&Snimi kao nedovršenu"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1573
 #, fuzzy, kde-format
 msgid "&Reset Display Format"
 msgstr "&Snimi kao nedovršenu"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1580
 #, fuzzy, kde-format
 msgid "Scroll Message Up"
 msgstr "Od&aberi sve poruke..."
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 msgid "Scroll Message Down"
 msgstr "Od&aberi sve poruke..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1590
 #, fuzzy, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Od&aberi sve poruke..."
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1595
 #, fuzzy, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Od&aberi sve poruke..."
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1612
 #, kde-format
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1608 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1614
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 msgid "Share Text..."
 msgstr "Obriši Mapu"
 
-#: viewer/viewer_p.cpp:1622
+#: viewer/viewer_p.cpp:1632
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Odaberite lokaciju"
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Nađi u poruci …"
 
-#: viewer/viewer_p.cpp:1637
+#: viewer/viewer_p.cpp:1647
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1686
+#: viewer/viewer_p.cpp:1696
 #, fuzzy, kde-format
 msgid "Save &As..."
 msgstr "Spremi pod &drugim imenom …"
 
-#: viewer/viewer_p.cpp:1694
+#: viewer/viewer_p.cpp:1704
 #, fuzzy, kde-format
 msgid "Open With..."
 msgstr "Otvori sa …"
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1711
 #, fuzzy, kde-format
 msgid "Save All Attachments..."
 msgstr "Spremanje svih privitaka …"
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1939
+#: viewer/viewer_p.cpp:1949
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Potpis je istekao."
 
-#: viewer/viewer_p.cpp:1942
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1962
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1963
+#: viewer/viewer_p.cpp:1973
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2027
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Adresa e-pošte"
 
-#: viewer/viewer_p.cpp:2098
+#: viewer/viewer_p.cpp:2108
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Poruka kao čisti tekst"
 
-#: viewer/viewer_p.cpp:2668
+#: viewer/viewer_p.cpp:2678
 #, fuzzy, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL iskopiran na odlagalište (clipboard)."
 
-#: viewer/viewer_p.cpp:2820
+#: viewer/viewer_p.cpp:2830
 #, fuzzy, kde-format
 msgid "Message loading failed: %1."
 msgstr "Poruku je potpisao"
 
-#: viewer/viewer_p.cpp:2825
+#: viewer/viewer_p.cpp:2835
 #, fuzzy, kde-format
 msgid "Message not found."
 msgstr "Poruku je potpisao"
