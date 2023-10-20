@@ -509,6 +509,44 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
                                 .arg(mLinkColor.name());
     }
 
+    const auto scrollBarCss = QStringLiteral(
+        "html::-webkit-scrollbar {\n"
+        "  /* we'll add padding as \"border\" in the thumb*/\n"
+        "    height: 20px;\n"
+        "    width: 20px;\n"
+        "    background: white;\n"
+        "    border-left: 1px solid #e5e5e5;\n"
+        "    padding-left: 1px;\n"
+        "}\n\n"
+
+        "html::-webkit-scrollbar-track {\n"
+        "    border-radius: 20px;\n"
+        "    width: 6px !important;\n"
+        "    box-sizing: content-box;\n"
+        "}\n\n"
+
+        "html::-webkit-scrollbar-thumb {\n"
+        "    background-color: #CBCDCD;\n"
+        "    border: 6px solid transparent;\n"
+        "    border-radius: 20px;\n"
+        "    background-clip: content-box;\n"
+        "    width: 8px !important; /* 20px scrollbar - 2 * 6px border */\n"
+        "    box-sizing: content-box;\n"
+        "    min-height: 30px;\n"
+        "}\n\n"
+
+        "html::-webkit-scrollbar-thumb:window-inactive {\n"
+        "   background-color: #949699; /* when window is inactive it's gray */\n"
+        "}\n\n"
+
+        "html::-webkit-scrollbar-thumb:hover {\n"
+        "    background-color: #93CEE9; /* hovered is a lighter blue */\n"
+        "}\n\n"
+
+        "html::-webkit-scrollbar-corner {\n"
+        "    background-color: white;\n"
+        "}\n\n");
+
     return QStringLiteral(
                "body {\n"
                "  font-family: \"%1\" ! important;\n"
@@ -632,7 +670,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "  text-align:center ! important;\n"
               "}\n\n")
 
-              .arg(headerFont, extraScreenCss(headerFont), pal.color(QPalette::Highlight).name(), pal.color(QPalette::Window).name())
+              .arg(headerFont, scrollBarCss, extraScreenCss(headerFont), pal.color(QPalette::Highlight).name(), pal.color(QPalette::Window).name())
         + quoteCSS + fullAddressList();
 }
 
