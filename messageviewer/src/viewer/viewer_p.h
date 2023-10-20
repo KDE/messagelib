@@ -624,6 +624,7 @@ private:
     void updateColorFromScheme();
     void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
     void createSubmittedFormWarning();
+    void createPurposeMenuMessageWidget();
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;

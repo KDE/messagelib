@@ -1375,10 +1375,6 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
-    mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(mReaderBox);
-    mPurposeMenuMessageWidget->setObjectName(QStringLiteral("mPurposeMenuMessageWidget"));
-    mReaderBoxVBoxLayout->addWidget(mPurposeMenuMessageWidget);
-
     mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(mReaderBox);
     mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
     mReaderBoxVBoxLayout->addWidget(mShowNextMessageWidget);
@@ -1626,8 +1622,18 @@ void ViewerPrivate::createActions()
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     ac->addAction(QStringLiteral("purpose_share_text_menu"), mShareTextAction);
     purposeMenuWidget->setViewer(mViewer);
-    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareError, mPurposeMenuMessageWidget, &PimCommon::PurposeMenuMessageWidget::slotShareError);
-    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareSuccess, mPurposeMenuMessageWidget, &PimCommon::PurposeMenuMessageWidget::slotShareSuccess);
+    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareError, this, [this](const QString &message) {
+        if (!mPurposeMenuMessageWidget) {
+            createPurposeMenuMessageWidget();
+        }
+        mPurposeMenuMessageWidget->slotShareError(message);
+    });
+    connect(purposeMenuWidget, &ViewerPurposeMenuWidget::shareSuccess, this, [this](const QString &message) {
+        if (!mPurposeMenuMessageWidget) {
+            createPurposeMenuMessageWidget();
+        }
+        mPurposeMenuMessageWidget->slotShareSuccess(message);
+    });
 
     mCopyImageLocation = new QAction(i18n("Copy Image Location"), this);
     mCopyImageLocation->setIcon(QIcon::fromTheme(QStringLiteral("view-media-visualization")));
@@ -1654,6 +1660,13 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(mDevelopmentToolsAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_I));
 
     connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
+}
+
+void ViewerPrivate::createPurposeMenuMessageWidget()
+{
+    mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(mReaderBox);
+    mPurposeMenuMessageWidget->setObjectName(QStringLiteral("mPurposeMenuMessageWidget"));
+    mReaderBoxVBoxLayout->insertWidget(0, mPurposeMenuMessageWidget);
 }
 
 void ViewerPrivate::slotShowDevelopmentTools()
