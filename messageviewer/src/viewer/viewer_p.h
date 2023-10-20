@@ -625,6 +625,7 @@ private:
     void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
     void createSubmittedFormWarning();
     void createPurposeMenuMessageWidget();
+    void createOpenSavedFileFolderWidget();
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;

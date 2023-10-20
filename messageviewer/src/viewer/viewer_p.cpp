@@ -1139,7 +1139,9 @@ void ViewerPrivate::resetStateForNewMessage()
     }
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
-    mOpenSavedFileFolderWidget->setVisible(false);
+    if (mOpenSavedFileFolderWidget) {
+        mOpenSavedFileFolderWidget->setVisible(false);
+    }
     if (mSubmittedFormWarning) {
         mSubmittedFormWarning->setVisible(false);
     }
@@ -1394,9 +1396,6 @@ void ViewerPrivate::createWidgets()
     mMdnWarning->setObjectName(QStringLiteral("mMdnWarning"));
     mReaderBoxVBoxLayout->addWidget(mMdnWarning);
 
-    mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(mReaderBox);
-    mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
-    mReaderBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
     mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
@@ -1425,6 +1424,13 @@ void ViewerPrivate::createWidgets()
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
+}
+
+void ViewerPrivate::createOpenSavedFileFolderWidget()
+{
+    mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(mReaderBox);
+    mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
+    mReaderBoxVBoxLayout->insertWidget(0, mOpenSavedFileFolderWidget);
 }
 
 void ViewerPrivate::createSubmittedFormWarning()
@@ -2415,6 +2421,9 @@ void ViewerPrivate::slotAttachmentOpen()
 
 void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSavedFileFolderWidget::FileType fileType)
 {
+    if (!mOpenSavedFileFolderWidget) {
+        createOpenSavedFileFolderWidget();
+    }
     mOpenSavedFileFolderWidget->setUrls(urls, fileType);
     mOpenSavedFileFolderWidget->slotShowWarning();
 }
