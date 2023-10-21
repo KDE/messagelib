@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-10-21 01:39+0000\n"
 "PO-Revision-Date: 2010-01-13 18:44+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -1822,7 +1822,7 @@ msgstr "Dokumentācija"
 msgid "Turn on HTML rendering for this message."
 msgstr "Atslēgt HTML attēlošanu šai vēstulei."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1618
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Ielādēt no Interneta šīs vēstules ārējās norādes."
@@ -1910,7 +1910,7 @@ msgstr "Atvērt adrešu grāmatā"
 msgid "&Copy Email Address"
 msgstr "E-pasta adrese"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2694
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adrese nokopēta starpliktuvē."
@@ -2013,13 +2013,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Atvērt ar..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Atvērt"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1725
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2035,12 +2035,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "Saglabāt kā.."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Copy"
 msgstr "Kopēt"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1740
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Dzēst pielikumu"
@@ -2058,7 +2058,7 @@ msgstr "Atbildēt a&uoram..."
 msgid "Reply To All"
 msgstr "Atbilde visiem"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1745
 #, kde-format
 msgid "Properties"
 msgstr "Īpašības"
@@ -2074,282 +2074,282 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE e-pasta klients"
 
-#: viewer/viewer_p.cpp:1267
+#: viewer/viewer_p.cpp:1269
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Skatīt pielikumu: %1"
 
-#: viewer/viewer_p.cpp:1468
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Pielikumi"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1472
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Izvēlieties pielikumu attēlošanas stilu"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1475
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Kā ikon&as"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Rādīt visus pielikumus kā ikonas. Nospiežot atver tos."
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Grudri"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Rādīt visus pielikumus kā to ieteicis sūtītājs."
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Iekļauti"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Iekļaut pielikumus vēstules tekstā (ja iespējams)"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Sēpt"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nerādīt pielikumus vēstules skatītājā"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1506
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Rādīt visus pielikumus kā ikonas. Nospiežot atver tos."
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Uzstādīt &kodējumu"
 
-#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1516 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automātisks"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1526
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Kopēt uz"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1533
 #, kde-format
 msgid "Select All Text"
 msgstr "Iezīmēt visu tekstu"
 
-#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
+#: viewer/viewer_p.cpp:1539 viewer/viewer_p.cpp:2048
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopēt saiti"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1544
 #, kde-format
 msgid "Open URL"
 msgstr "Atvērt URL"
 
-#: viewer/viewer_p.cpp:1547
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Lietot &fiksētu fontu"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1555
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Rādīt vēstules struktūru"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1560
 #, kde-format
 msgid "&View Source"
 msgstr "Skatīt pirm&kodu"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1565
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "&Save Message..."
 msgstr "&Saglabāt vēstuli"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1571
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Saglabāt kā melnrakstu"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Saglabāt kā melnrakstu"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1582
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Ridināt vēstuli augšup"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Ridināt vēstuli lejup"
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Ridināt vēstuli augšup (vairāk)"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1597
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Ridināt vēstuli lejup (vairāk)"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1612
+#: viewer/viewer_p.cpp:1614
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "Ielādēt ārējās saites"
 
-#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1620 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgctxt "@action:button Open recipient selection dialog."
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Izvē&lēties..."
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1644
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Izvēlēties vietu"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Meklēt vēstulē..."
 
-#: viewer/viewer_p.cpp:1647
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Save &As..."
 msgstr "Saglabāt &kā..."
 
-#: viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Open With..."
 msgstr "Atvērt ar..."
 
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:1730
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Saglabāt visus pielikumus..."
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Paraksta fails nav derīgs"
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1972
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1973
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2027
+#: viewer/viewer_p.cpp:2046
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "E-pasta adrese"
 
-#: viewer/viewer_p.cpp:2108
+#: viewer/viewer_p.cpp:2127
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Vēstuli kā vienkāršu tekstu"
 
-#: viewer/viewer_p.cpp:2678
+#: viewer/viewer_p.cpp:2700
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL nokopēts starpliktuvē."
 
-#: viewer/viewer_p.cpp:2830
+#: viewer/viewer_p.cpp:2852
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Vēstuli ir parakstījis %1."
 
-#: viewer/viewer_p.cpp:2835
+#: viewer/viewer_p.cpp:2857
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"

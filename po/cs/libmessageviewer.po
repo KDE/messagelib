@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-10-21 01:39+0000\n"
 "PO-Revision-Date: 2023-08-07 11:46+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1682,7 +1682,7 @@ msgstr "Vytisknout dokument"
 msgid "Turn on HTML rendering for this message."
 msgstr "Zapnout interpretaci HTML pro tuto zprávu."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1618
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Pro tuto zprávu načíst externí odkazy z Internetu."
@@ -1763,7 +1763,7 @@ msgstr "&Otevřít v knize adres"
 msgid "&Copy Email Address"
 msgstr "&Kopírovat e-mailovou adresu"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2694
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa zkopírována do schránky."
@@ -1858,13 +1858,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otevřít pomocí..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Otevřít"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1725
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1880,12 +1880,12 @@ msgstr "Rolovat na"
 msgid "Save As..."
 msgstr "Uložit jako..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1740
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Smazat přílohu"
@@ -1900,7 +1900,7 @@ msgstr "Odpovědět autorovi"
 msgid "Reply To All"
 msgstr "Odpověď všem"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1745
 #, kde-format
 msgid "Properties"
 msgstr "Vlastnosti"
@@ -1915,268 +1915,268 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "Poštovní klient KDE."
 
-#: viewer/viewer_p.cpp:1267
+#: viewer/viewer_p.cpp:1269
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Zobrazit přílohu: %1"
 
-#: viewer/viewer_p.cpp:1468
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Přílo&hy "
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1472
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Vybrat styl zobrazení příloh"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1475
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Jako ikony"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Zobrazit všechny přílohy jako ikony. Klikněte pro zobrazení."
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Inteligentně"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Zobrazit přílohy, jak doporučil odesilatel."
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Vl&oženě"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Zobrazit přílohy, pokud možno, vloženě"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Skrýt"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nezobrazovat přílohy v prohlížeči zpráv"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Pouze v záhlaví"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Zobrazit přílohy pouze v záhlaví emailu"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Nastavení &kódování"
 
-#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1516 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automaticky"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1526
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopírovat text"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1533
 #, kde-format
 msgid "Select All Text"
 msgstr "Vybrat všechen text"
 
-#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
+#: viewer/viewer_p.cpp:1539 viewer/viewer_p.cpp:2048
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopírovat adresu adresu"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1544
 #, kde-format
 msgid "Open URL"
 msgstr "Otevřít URL"
 
-#: viewer/viewer_p.cpp:1547
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Použít neproporcionální font"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1555
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Zobrazit strukturu zprávy"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1560
 #, kde-format
 msgid "&View Source"
 msgstr "Zobrazit zdro&j"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "&Save Message..."
 msgstr "Uložit zp&rávu..."
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1582
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Rolovat zprávu nahoru"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Rolovat zprávu dolů"
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Rolovat zprávu nahoru (více)"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1597
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Rolovat zprávu dolů (více)"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Přepnout režim HTML zobrazení"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Přepnout režim zobrazení mezi HTML a prostým textem"
 
-#: viewer/viewer_p.cpp:1612
+#: viewer/viewer_p.cpp:1614
 #, kde-format
 msgid "Load external references"
 msgstr "Načíst externí odkazy"
 
-#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1620 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Přečíst text"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Share Text..."
 msgstr "Sdílet text..."
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1644
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopírovat umístění obrázku"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Nají&t ve zprávě..."
 
-#: viewer/viewer_p.cpp:1647
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Zakázat emotikon"
 
-#: viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Save &As..."
 msgstr "Uložit j&ako..."
 
-#: viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Open With..."
 msgstr "Otevřít pomocí..."
 
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:1730
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Uložit všechny přílohy..."
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The network is broken."
 msgstr "Síť je přerušena."
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Zkontrolovat URL Phishing "
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 je neplatné."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1972
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Tato webová stránka je malware, chcete pokračovat s jejím zobrazením?"
 
-#: viewer/viewer_p.cpp:1973
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2027
+#: viewer/viewer_p.cpp:2046
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Zkopírovat e-mailovou adresu"
 
-#: viewer/viewer_p.cpp:2108
+#: viewer/viewer_p.cpp:2127
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Zpráva ve formátu čistého textu"
 
-#: viewer/viewer_p.cpp:2678
+#: viewer/viewer_p.cpp:2700
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL zkopírováno do schránky."
 
-#: viewer/viewer_p.cpp:2830
+#: viewer/viewer_p.cpp:2852
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Načtení zprávy selhalo: %1."
 
-#: viewer/viewer_p.cpp:2835
+#: viewer/viewer_p.cpp:2857
 #, kde-format
 msgid "Message not found."
 msgstr "Zpráva nenalezena."

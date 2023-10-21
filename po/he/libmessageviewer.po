@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-10-21 01:39+0000\n"
 "PO-Revision-Date: 2023-10-05 07:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,7 +28,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.08.1\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 #, fuzzy
@@ -56,6 +57,8 @@ msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
 msgstr[0] "אשף התעודות"
 msgstr[1] "אשף התעודות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, fuzzy, kde-format
@@ -63,6 +66,8 @@ msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
 msgstr[0] "מנהל תעודות..."
 msgstr[1] "מנהל תעודות..."
+msgstr[2] ""
+msgstr[3] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, fuzzy, kde-format
@@ -70,6 +75,8 @@ msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
 msgstr[0] "פג תוקף של מפתח אחד."
 msgstr[1] "פג תוקף של מפתח אחד."
+msgstr[2] ""
+msgstr[3] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, fuzzy, kde-format
@@ -77,6 +84,8 @@ msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
 msgstr[0] "מנהל תעודות..."
 msgstr[1] "מנהל תעודות..."
+msgstr[2] ""
+msgstr[3] ""
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 #, fuzzy
@@ -402,6 +411,8 @@ msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
@@ -409,6 +420,8 @@ msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, fuzzy, kde-format
@@ -417,6 +430,8 @@ msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "בחר את כל הטקסט"
 msgstr[1] "בחר את כל הטקסט"
+msgstr[2] ""
+msgstr[3] ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
@@ -1604,6 +1619,8 @@ msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "הודעה חדשה ב־%2"
 msgstr[1] "הודעה חדשה ב־%2"
+msgstr[2] ""
+msgstr[3] ""
 
 #: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
@@ -1698,7 +1715,7 @@ msgstr "תיעוד"
 msgid "Turn on HTML rendering for this message."
 msgstr "הפעלת הצגה של HTML עבור הודעה זו."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1616
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1618
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "טען הפניות חיצונית מהאינטרנט עבור הודעה זו"
@@ -1778,7 +1795,7 @@ msgstr "פתח בפנקס הכתובות"
 msgid "&Copy Email Address"
 msgstr "כתובת דוא\"ל"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2672
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2694
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "הכתובת הועתקה ללוח העריכה."
@@ -1872,13 +1889,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&פתח באמצעות..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1699
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "פתח"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1706
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1725
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1894,12 +1911,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "שמירה &בשם..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1735
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "הע&תק אל"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1721
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1740
 #, fuzzy, kde-format
 msgid "Delete Attachment"
 msgstr "ה&סר מצורף"
@@ -1914,7 +1931,7 @@ msgstr "השב ל&כותב..."
 msgid "Reply To All"
 msgstr "&השב"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1726
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1745
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&מאפיינים"
@@ -1929,270 +1946,270 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "תוכנית הדוא\"ל של KDE"
 
-#: viewer/viewer_p.cpp:1267
+#: viewer/viewer_p.cpp:1269
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "הצגת מצורף: %1"
 
-#: viewer/viewer_p.cpp:1468
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&מצורפים"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1472
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "בחירת סגנון ההצגה של מצורפים"
 
-#: viewer/viewer_p.cpp:1473
+#: viewer/viewer_p.cpp:1475
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&בצורת סמלים"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "הצגת כל המצורפים בצורת סמלים. לחץ עליהם על מנת להציגם."
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&חכמים"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "הצגת המצורפים לפי המלצת השולח."
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&מוטבעים"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "הצגת כל המצורפים בצורה מוטבעת (אם ניתן)"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&הסתר"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "אל תציג מצורפים במציג ההודעות"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1506
 #, fuzzy, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "הצגת כל המצורפים בצורת סמלים. לחץ עליהם על מנת להציגם."
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgid "&Set Encoding"
 msgstr "קבע קיד&וד"
 
-#: viewer/viewer_p.cpp:1514 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1516 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "אוטומטי"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1526
 #, fuzzy, kde-format
 msgid "Copy Text"
 msgstr "הע&תק אל"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1533
 #, kde-format
 msgid "Select All Text"
 msgstr "בחר את כל הטקסט"
 
-#: viewer/viewer_p.cpp:1537 viewer/viewer_p.cpp:2029
+#: viewer/viewer_p.cpp:1539 viewer/viewer_p.cpp:2048
 #, kde-format
 msgid "Copy Link Address"
 msgstr "העתק כתובת הקישור"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1544
 #, kde-format
 msgid "Open URL"
 msgstr "פתח כתובת"
 
-#: viewer/viewer_p.cpp:1547
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "השתמש ב&גופן ברוחב קבוע"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1555
 #, fuzzy, kde-format
 msgid "Show Message Structure"
 msgstr "הו&דעה"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1560
 #, kde-format
 msgid "&View Source"
 msgstr "הצג מ&קור"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1565
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "הודעה חדשה ב־%2"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1571
 #, fuzzy, kde-format
 msgid "&Save Display Format"
 msgstr "&שמור כטיוטה"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 msgid "&Reset Display Format"
 msgstr "&שמור כטיוטה"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1582
 #, fuzzy, kde-format
 msgid "Scroll Message Up"
 msgstr "בחר את &כל ההודעות"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 msgid "Scroll Message Down"
 msgstr "בחר את &כל ההודעות"
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "בחר את &כל ההודעות"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "בחר את &כל ההודעות"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1612
+#: viewer/viewer_p.cpp:1614
 #, fuzzy, kde-format
 msgid "Load external references"
 msgstr "טען הפניות חיצוניות"
 
-#: viewer/viewer_p.cpp:1618 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1620 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Share Text..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1644
 #, fuzzy, kde-format
 msgid "Copy Image Location"
 msgstr "בחירת מיקום"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&חיפוש בהודעה..."
 
-#: viewer/viewer_p.cpp:1647
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1696
+#: viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Save &As..."
 msgstr "שמירה &בשם..."
 
-#: viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Open With..."
 msgstr "פתיחה באמצעות..."
 
-#: viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:1730
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "שמירת כל המצורפים..."
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1949
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "קובץ החתימה לא תקף"
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1971
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1972
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1973
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2027
+#: viewer/viewer_p.cpp:2046
 #, fuzzy, kde-format
 msgid "Copy Email Address"
 msgstr "כתובת דוא\"ל"
 
-#: viewer/viewer_p.cpp:2108
+#: viewer/viewer_p.cpp:2127
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "הודעה בתור טקסט רגיל"
 
-#: viewer/viewer_p.cpp:2678
+#: viewer/viewer_p.cpp:2700
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "הכתובת הועתקה ללוח העריכה."
 
-#: viewer/viewer_p.cpp:2830
+#: viewer/viewer_p.cpp:2852
 #, fuzzy, kde-format
 msgid "Message loading failed: %1."
 msgstr "ההודעה נחתמה על ידי %1."
 
-#: viewer/viewer_p.cpp:2835
+#: viewer/viewer_p.cpp:2857
 #, fuzzy, kde-format
 msgid "Message not found."
 msgstr "ההודעה נחתמה על ידי %1."
@@ -2326,6 +2343,8 @@ msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:64
 #, kde-format

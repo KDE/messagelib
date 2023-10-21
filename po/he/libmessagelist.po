@@ -27,7 +27,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 3.9.6\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 
 #: core/aggregation.cpp:178
 #, fuzzy, kde-format
@@ -506,6 +507,8 @@ msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "&שרשר הודעות"
 msgstr[1] "&שרשר הודעות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, fuzzy, kde-format
@@ -513,6 +516,8 @@ msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "&שרשר הודעות"
 msgstr[1] "&שרשר הודעות"
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/model.cpp:3805
 #, fuzzy, kde-format
@@ -520,6 +525,8 @@ msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "&הרחב אשכול"
 msgstr[1] "&הרחב אשכול"
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/model.cpp:3811
 #, fuzzy, kde-format
@@ -527,6 +534,8 @@ msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "&הרחב אשכול"
 msgstr[1] "&הרחב אשכול"
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/model.cpp:3903
 #, fuzzy, kde-format
@@ -901,6 +910,8 @@ msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "חתימה לא תקינה."
 msgstr[1] "חתימה לא תקינה."
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/view.cpp:2300
 #, kde-format
@@ -908,6 +919,8 @@ msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/view.cpp:2337
 #, fuzzy, kde-format
@@ -1018,6 +1031,8 @@ msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "חתימה לא תקינה."
 msgstr[1] "חתימה לא תקינה."
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/view.cpp:2462
 #, kde-format
@@ -1025,6 +1040,8 @@ msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1834,6 +1851,8 @@ msgid " pixel"
 msgid_plural " pixels"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: widget.cpp:220
 #, fuzzy, kde-format
