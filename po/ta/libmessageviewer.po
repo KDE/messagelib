@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 01:39+0000\n"
-"PO-Revision-Date: 2023-09-10 17:22+0530\n"
+"PO-Revision-Date: 2023-10-22 18:01+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -2186,8 +2186,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
 #: viewer/viewer_p.cpp:1992
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "தீங்குநிரல்"
@@ -2256,7 +2255,9 @@ msgctxt ""
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
-msgstr "<qt><b><br>H<br>T<br>M<br>L<br> <br>அ<br>ஞ்<br>ச<br>ல்<br></b></qt>"
+msgstr ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />அ<br />ஞ்<br />ச<br />ல்<br /"
+"></b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
 #, kde-format
