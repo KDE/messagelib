@@ -1150,7 +1150,9 @@ void ViewerPrivate::resetStateForNewMessage()
     if (mSubmittedFormWarning) {
         mSubmittedFormWarning->setVisible(false);
     }
-    mMailTrackingWarning->hideAndClear();
+    if (mMailTrackingWarning) {
+        mMailTrackingWarning->hideAndClear();
+    }
     mRemoteContentMenu->clearUrls();
 
     if (mPrinting) {
