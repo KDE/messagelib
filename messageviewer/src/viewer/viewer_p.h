@@ -626,6 +626,7 @@ private:
     void createSubmittedFormWarning();
     void createPurposeMenuMessageWidget();
     void createOpenSavedFileFolderWidget();
+    void createTrackingWarningWidget();
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;

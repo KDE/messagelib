@@ -916,7 +916,12 @@ void ViewerPrivate::initHtmlWidget()
         }
         mSubmittedFormWarning->showWarning();
     });
-    connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &WebEngineViewer::TrackingWarningWidget::addTracker);
+    connect(mViewer, &MailWebEngineView::mailTrackingFound, this, [this](const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &lst) {
+        if (!mMailTrackingWarning) {
+            createTrackingWarningWidget();
+        }
+        mMailTrackingWarning->addTracker(lst);
+    });
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
@@ -1384,10 +1389,6 @@ void ViewerPrivate::createWidgets()
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
-    mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(mReaderBox);
-    mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
-    mReaderBoxVBoxLayout->addWidget(mMailTrackingWarning);
-
     mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
     mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
     mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
@@ -1424,6 +1425,13 @@ void ViewerPrivate::createWidgets()
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
+}
+
+void ViewerPrivate::createTrackingWarningWidget()
+{
+    mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(mReaderBox);
+    mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
+    mReaderBoxVBoxLayout->insertWidget(0, mMailTrackingWarning);
 }
 
 void ViewerPrivate::createOpenSavedFileFolderWidget()
