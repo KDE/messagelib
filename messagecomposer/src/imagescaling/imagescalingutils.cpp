@@ -43,7 +43,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
             const QStringList lstFormat = formatsType.split(QLatin1Char(';'));
             bool willResizeImage = false;
             for (const QString &type : lstFormat) {
-                if (QString::fromLatin1(part->mimeType()) == type) {
+                if (QLatin1StringView(part->mimeType()) == type) {
                     willResizeImage = true;
                     break;
                 }
