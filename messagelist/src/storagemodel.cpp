@@ -302,7 +302,7 @@ void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::
     case PerfectThreadingPlusReferences: {
         const auto refs = mail->references()->identifiers();
         if (!refs.isEmpty()) {
-            mi->setReferencesIdMD5(md5Encode(refs.last()));
+            mi->setReferencesIdMD5(md5Encode(refs.first()));
         }
     }
         [[fallthrough]];
