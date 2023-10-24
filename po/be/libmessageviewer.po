@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:39+0000\n"
+"POT-Creation-Date: 2023-10-24 01:41+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1847,7 +1847,7 @@ msgstr "Дакументацыя"
 msgid "Turn on HTML rendering for this message."
 msgstr "Уключыць паказ HTML гэтага паведамлення."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1618
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Дазволіць загружаць знешнія спасылкі з сеткі."
@@ -1938,7 +1938,7 @@ msgstr "Адкрыць у адраснай кнізе"
 msgid "&Copy Email Address"
 msgstr "Адрас электроннай пошты"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2694
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2704
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрас скапіраваны ў буфер абмену."
@@ -2040,14 +2040,14 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Адкрыць у..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1728
 #, fuzzy, kde-format
 #| msgid "Op&en"
 msgctxt "to open"
 msgid "Open"
 msgstr "Адкрыць"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1725
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1735
 #, fuzzy, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2064,13 +2064,13 @@ msgstr ""
 msgid "Save As..."
 msgstr "Запісаць як..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1745
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy"
 msgstr "Скапіраваць"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1740
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1750
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
@@ -2088,7 +2088,7 @@ msgstr "Адказаць а&ўтару(цы)..."
 msgid "Reply To All"
 msgstr "Адказаць &усім..."
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1755
 #, fuzzy, kde-format
 #| msgid "&Properties"
 msgid "Properties"
@@ -2105,288 +2105,288 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "Кліент электроннай пошты KDE"
 
-#: viewer/viewer_p.cpp:1269
+#: viewer/viewer_p.cpp:1276
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Паказаць далучэнне: %1"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1480
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Далучэн&ні"
 
-#: viewer/viewer_p.cpp:1472
+#: viewer/viewer_p.cpp:1482
 #, fuzzy, kde-format
 msgid "Choose display style of attachments"
 msgstr "Вылучыце стыль паказу ўкладанняў"
 
-#: viewer/viewer_p.cpp:1475
+#: viewer/viewer_p.cpp:1485
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Даслаць &як ёсць"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1488
 #, fuzzy, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Паказваць укладанні ў выглядзе значкоў, якія трэба націснуць для прагляду."
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1492
 #, fuzzy, kde-format
 #| msgid "&Search"
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Шукаць"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1495
 #, fuzzy, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Паказваць укладанні ў тым выглядзе, як гэта меркавалася адпраўніком"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1499
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "У паведамленні..."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1502
 #, fuzzy, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "Паказваць укладанні як тэкст, убудаваны ў паведамленне (калі гэта магчыма)"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1506
 #, fuzzy, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "С&хаваць"
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, fuzzy, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Не паказваць укладанні ў паведамленні"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1516
 #, fuzzy, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 "Паказваць укладанні ў выглядзе значкоў, якія трэба націснуць для прагляду."
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Вызначыць &знаказбор"
 
-#: viewer/viewer_p.cpp:1516 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Аўтаматычна"
 
-#: viewer/viewer_p.cpp:1526
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Капіяваць у"
 
-#: viewer/viewer_p.cpp:1533
+#: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
 msgid "Select All Text"
 msgstr "Пазначыць &усе паведамленні"
 
-#: viewer/viewer_p.cpp:1539 viewer/viewer_p.cpp:2048
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2058
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Скапіраваць адрас спасылкі"
 
-#: viewer/viewer_p.cpp:1544
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Адкрыць URL"
 
-#: viewer/viewer_p.cpp:1549
+#: viewer/viewer_p.cpp:1559
 #, fuzzy, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Фіксаваны шрыфт"
 
-#: viewer/viewer_p.cpp:1555
+#: viewer/viewer_p.cpp:1565
 #, fuzzy, kde-format
 msgid "Show Message Structure"
 msgstr "Прагляд структуры паведамлення"
 
-#: viewer/viewer_p.cpp:1560
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "&View Source"
 msgstr "&Паказаць крыніцу"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
 msgid "&Save Message..."
 msgstr " паведамленне"
 
-#: viewer/viewer_p.cpp:1571
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Захаваць як чарнавік"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Захаваць як чарнавік"
 
-#: viewer/viewer_p.cpp:1582
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "Пазначыць &усе паведамленні"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "Пазначыць &усе паведамленні"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "Пазначыць &усе паведамленні"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "Пазначыць &усе паведамленні"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1614
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 msgid "Load external references"
 msgstr "Загрузка знешніх спасылак"
 
-#: viewer/viewer_p.cpp:1620 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1630 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Вы&браць..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Выбар месцазнаходжання"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Ш&укаць у паведамленні..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1715
+#: viewer/viewer_p.cpp:1725
 #, kde-format
 msgid "Save &As..."
 msgstr "Захаваць &як..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Open With..."
 msgstr "Адкрыць у..."
 
-#: viewer/viewer_p.cpp:1730
+#: viewer/viewer_p.cpp:1740
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Захаваць усе далучэнні..."
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1978
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1978
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1981
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Несапраўдны файл подпісу"
 
-#: viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1981
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:2002
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2046
+#: viewer/viewer_p.cpp:2056
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Адрас электроннай пошты"
 
-#: viewer/viewer_p.cpp:2127
+#: viewer/viewer_p.cpp:2137
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Паведамленне ў выглядзе звычайнага тэксту"
 
-#: viewer/viewer_p.cpp:2700
+#: viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL скапіраваны ў буфер абмену."
 
-#: viewer/viewer_p.cpp:2852
+#: viewer/viewer_p.cpp:2862
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Паведамленне падпісана %1."
 
-#: viewer/viewer_p.cpp:2857
+#: viewer/viewer_p.cpp:2867
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
