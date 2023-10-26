@@ -1,0 +1,122 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"PO-Revision-Date: 2023-10-25 10:54+0200\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: \n"
+"Language: ast_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.2\n"
+
+#: developertool/developertooldialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr ""
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr ""
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr ""
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr ""
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr ""
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr ""
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr ""
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "Nun s'atopó la fras"
+
+#: webenginepage.cpp:68
+#, kde-format
+msgid "Save HTML Page"
+msgstr ""
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+
+#: widgets/tracking/trackingdetailsdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr ""
