@@ -3,14 +3,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010, 2011, 2012, 2013, 2014.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2023-08-06 05:36+0200\n"
+"PO-Revision-Date: 2023-10-31 06:34+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -277,8 +277,7 @@ msgstr "Anexar un directorio"
 
 #: attachment/attachmentcontrollerbase.cpp:849
 #: attachment/attachmentcontrollerbase.cpp:907
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Anexar"
@@ -371,10 +370,9 @@ msgid "Suggest Automatic Display"
 msgstr "Suxerir que se amose automaticamente"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Editar con…"
+msgstr "Editar con:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -382,6 +380,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail non pode detectar cando está pechado o editor escollido. Para evitar "
+"que se perdan datos hase interromper a edición do anexo."
 
 #: composer/composer.cpp:289
 #, kde-format
@@ -448,18 +448,16 @@ msgid "Auto Resize Images"
 msgstr "Axustar as imaxes"
 
 #: composer/composerviewbase.cpp:528
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr "Axustar as imaxes"
+msgstr "Axustar automaticamente"
 
 #: composer/composerviewbase.cpp:529
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr "&Non asinar"
+msgstr "Non cambiar de tamaño"
 
 #: composer/composerviewbase.cpp:729
 #, kde-format
@@ -1103,16 +1101,16 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"Non foi posíbel almacenar unha nova lembranza: produciuse un erro ao "
+"intentar crear unha nova tarefa no calendario: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr "Non se puido gardar a mensaxe: %1"
+msgstr "Non foi posíbel almacenar unha nova lembranza: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select Date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
 msgstr "Seleccione unha data"
@@ -1123,8 +1121,7 @@ msgid "Date:"
 msgstr "Data:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Store ToDo in:"
+#, kde-format
 msgid "Store to-do in:"
 msgstr "Gardar a tarefa en:"
 
@@ -1479,16 +1476,14 @@ msgid "Impossible to generate vCard."
 msgstr "Non foi posíbel xerar a vCard."
 
 #: job/autocryptheadersjob.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>An error occurred while trying to export the key from the backend:</"
-#| "p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
 "<p>Produciuse un erro ao intentar exportar a chave desde a infraestrutura:</"
-"p><p><b>%1</b></p>"
+"p><p><b>Non se atopou unha chave válida para a persoa usuaria %1 (%2).</b></"
+"p>"
 
 #: job/maintextjob.cpp:59
 #, kde-format
@@ -1563,24 +1558,22 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "Petición de confirmación de entrega da mensaxe"
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "Enviar &sen asinar"
+msgstr "Enviar «&denegado»"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "&Ignorar"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "Envi&ar como está"
+msgstr "&Enviar"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1589,6 +1582,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Esta mensaxe contén unha solicitude para que se devolva unha confirmación da "
+"recepción da mensaxe.\n"
+"Pode ignorar a petición ou permitir que o programa de correo envíe unha "
+"resposta «denegada» ou normal."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1599,6 +1596,12 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"Esta mensaxe contén unha solicitude para que se devolva unha confirmación da "
+"recepción da mensaxe.\n"
+"Contén unha instrución de procesado que se marca como «requirida», pero que "
+"resulta descoñecida para o programa de correo.\n"
+"Pode ignorar a petición ou permitir que o programa de correo envíe unha "
+"resposta «errada» ou normal."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1608,6 +1611,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Esta mensaxe contén unha solicitude para que se devolva unha confirmación da "
+"recepción da mensaxe,\n"
+"pero solicítase enviar a notificación a máis dun enderezo.\n"
+"Pode ignorar a petición ou permitir que o programa de correo envíe unha "
+"resposta «denegada» ou normal."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1617,6 +1625,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Esta mensaxe contén unha solicitude para que se devolva unha confirmación da "
+"recepción da mensaxe,\n"
+"pero non hai unha ruta de devolución estabelecida.\n"
+"Pode ignorar a petición ou permitir que o programa de correo envíe unha "
+"resposta «denegada» ou normal."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1627,6 +1640,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Esta mensaxe contén unha solicitude para que se devolva unha confirmación da "
+"recepción da mensaxe,\n"
+"pero o enderezo da ruta de devolución non coincide co enderezo ao que se "
+"solicitou enviarse a solicitude. Pode ignorar a petición ou permitir que o "
+"programa de correo envíe unha resposta «denegada» ou normal."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1647,11 +1665,9 @@ msgid "&Name:"
 msgstr "&Nome:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgid "Name of Distribution List"
-msgstr "Nova lista de distribución"
+msgstr "Nome da lista de distribución"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1828,11 +1844,10 @@ msgid "Reply-To:%1"
 msgstr "Responder a:%1"
 
 #: recipient/recipientspicker.cpp:44
-#, fuzzy, kde-format
-#| msgid "Select Recipient"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr "Escoller o destinatario"
+msgstr "Escoller unha destinataria"
 
 #: recipient/recipientspicker.cpp:56
 #, kde-format
@@ -1863,17 +1878,11 @@ msgstr "Engadir como copia &agochada"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 enderezo seleccionado"
+msgstr[1] "%1 enderezos seleccionados"
 
 #: recipient/recipientspicker.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "You selected 1 recipient. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
-#| msgid_plural ""
-#| "You selected %1 recipients. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
+#, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
 "Please adapt the selection."
@@ -1883,87 +1892,86 @@ msgid_plural ""
 "Please adapt the selection."
 msgstr[0] ""
 "Seleccionou 1 destinatario. O número máximo de destinatarios permitidos é "
-"%2. Adapte a selección."
+"%2.\n"
+"Adapte a selección."
 msgstr[1] ""
 "Seleccionou %1 destinatarios. O número máximo de destinatarios permitidos é "
-"%2. Adapte a selección."
+"%2.\n"
+"Adapte a selección."
 
 #: recipient/recipientspicker.cpp:189
-#, fuzzy, kde-format
-#| msgid "No key data for recipients found."
+#, kde-format
 msgid "You can not add more recipients."
-msgstr "Non se atoparon datos de chaves para os destinatarios."
+msgstr "Non pode engadir máis destinatarias."
 
 #: sendlater/sendlatercreatejob.cpp:33
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr "Non se puido gardar a mensaxe: %1"
+msgstr "Non foi posíbel planificar o envío posterior da mensaxe: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "Enviar máis tarde"
 
 #: sendlater/sendlaterdialog.cpp:48
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "Enviar máis tarde"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
 msgid "Delay"
-msgstr ""
+msgstr "Atraso"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Días"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "Semanas"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "Meses"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "Anos"
 
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "O axente de envío posterior non está en execución."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
+"Non foi posíbel retirar a mensaxe da planificación de envío posterior: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "The selected date must be greater than the current date."
+#, kde-format
 msgid "You cannot select a date prior to the current date."
-msgstr "A data seleccionada debe ser posterior á data actual."
+msgstr "Non se pode escoller unha data anterior á actual."
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "Envi&ar como está"
+msgstr "Enviar ás:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
 #, kde-format
 msgid "Repeat every:"
-msgstr ""
+msgstr "Repetir cada:"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:18
@@ -2079,19 +2087,13 @@ msgstr "Mellorar o texto simple das mensaxes en HTML."
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Asinar todas as mensaxes, se é posíbel."
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Atopáronse chaves de cifrado de confianza e correctas para todos os "
-"destinatarios.\n"
-"Quere cifrar a mensaxe?"
+msgstr "Activar o cifrado se hai chaves para todas as destinatarias."
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
@@ -2230,31 +2232,27 @@ msgstr "Nome para o campo Copia"
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Copia agochada"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
-#, fuzzy, kde-format
-#| msgid "CC Field Address"
+#, kde-format
 msgid "BCC Field Address"
-msgstr "Enderezo para o campo Copia"
+msgstr "Enderezo do campo de copia agochada"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
-#, fuzzy, kde-format
-#| msgid "CC Field Last Name"
+#, kde-format
 msgid "BCC Field Last Name"
-msgstr "Apelido para o campo Copia"
+msgstr "Apelido do campo de copia agochada"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
-#, fuzzy, kde-format
-#| msgid "CC Field First Name"
+#, kde-format
 msgid "BCC Field First Name"
-msgstr "Nome de pía para o campo Copia"
+msgstr "Nome de pía do campo de copia agochada"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
-#, fuzzy, kde-format
-#| msgid "CC Field Name"
+#, kde-format
 msgid "BCC Field Name"
-msgstr "Nome para o campo Copia"
+msgstr "Nome do campo de copia agochada"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
@@ -2289,10 +2287,9 @@ msgstr "Data e hora"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
 #: snippet/convertsnippetvariablemenu.cpp:151
-#, fuzzy, kde-format
-#| msgid "Day Of Week"
+#, kde-format
 msgid "Day Of Week (%1)"
-msgstr "Día da semana"
+msgstr "Día da semana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:107
 #, kde-format
@@ -2300,16 +2297,14 @@ msgid "Date (%1)"
 msgstr "Data (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:110
-#, fuzzy, kde-format
-#| msgid "Date (%1)"
+#, kde-format
 msgid "Long Date (%1)"
-msgstr "Data (%1)"
+msgstr "Data longa (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Time (%1)"
+#, kde-format
 msgid "Short Time (%1)"
-msgstr "Hora (%1)"
+msgstr "Hora curta (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2317,70 +2312,64 @@ msgid "Time (%1)"
 msgstr "Hora (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:119
-#, fuzzy, kde-format
-#| msgid "Date (%1)"
+#, kde-format
 msgid "Year (%1)"
-msgstr "Data (%1)"
+msgstr "Ano (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:127
-#, fuzzy, kde-format
-#| msgid "Date (%1)"
+#, kde-format
 msgid "Last Year (%1)"
-msgstr "Data (%1)"
+msgstr "Ano anterior (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:130
-#, fuzzy, kde-format
-#| msgid "Date (%1)"
+#, kde-format
 msgid "Next Year (%1)"
-msgstr "Data (%1)"
+msgstr "Seguinte ano (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:133
 #, kde-format
 msgid "Month Number (%1)"
-msgstr ""
+msgstr "Número de mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:136
-#, fuzzy, kde-format
-#| msgid "Day Of Week"
+#, kde-format
 msgid "Day Of Month (%1)"
-msgstr "Día da semana"
+msgstr "Día do mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
 #, kde-format
 msgid "Week Number (%1)"
-msgstr ""
+msgstr "Número da semana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
 msgid "Month Name Short (%1)"
-msgstr ""
+msgstr "Nome curto do mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:145
 #, kde-format
 msgid "Month Name Long (%1)"
-msgstr ""
+msgstr "Nome longo do mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:148
 #, kde-format
 msgid "Last Month Name Long (%1)"
-msgstr ""
+msgstr "Nome longo do mes anterior (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:154
-#, fuzzy, kde-format
-#| msgid "Day Of Week"
+#, kde-format
 msgid "Day Of Week Name Short (%1)"
-msgstr "Día da semana"
+msgstr "Nome curto do día da semana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week"
+#, kde-format
 msgid "Day Of Week Name Long (%1)"
-msgstr "Día da semana"
+msgstr "Nome longo do día da semana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "Ano do mes anterior (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:165
 #, kde-format
@@ -2415,11 +2404,10 @@ msgid "No mail dispatcher."
 msgstr "Non hai ningún axente de despacho de correo."
 
 #: utils/util.cpp:296
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr "Non hai ningún axente de despacho de correo."
+msgstr "Crear un axente de despacho de correo"
 
 #: utils/util.cpp:311
 #, kde-format
@@ -2439,7 +2427,7 @@ msgstr "O axente de despacho de correo está desconectado."
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Poñer en liña"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
