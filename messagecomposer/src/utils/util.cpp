@@ -443,7 +443,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     if (!gotMatch) {
         // check whether the non-quoted text contains one of the attachment key
         // words
-        QRegularExpression quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
+        static QRegularExpression quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
         QTextBlock end(doc->end());
         for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
             const QString line = it.text();
