@@ -40,13 +40,13 @@ void DMARCManager::addNoDMarcServerAddress(const QString &address)
 void DMARCManager::saveNoServerKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, QLatin1String("NoExistingDmarcServer"));
+    KConfigGroup grp(config, QStringLiteral("NoExistingDmarcServer"));
     grp.writeEntry("AddressList", mNoDMarcServer);
 }
 
 void DMARCManager::loadNoServerKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, QLatin1String("NoExistingDmarcServer"));
+    KConfigGroup grp(config, QStringLiteral("NoExistingDmarcServer"));
     mNoDMarcServer = grp.readEntry("AddressList", QStringList());
 }

@@ -1134,7 +1134,7 @@ void Pane::updateTagComboBox()
 
 void Pane::writeConfig(bool restoreSession)
 {
-    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QLatin1String("MessageListPane"));
+    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListPane"));
 
     // Delete list before
     const QStringList list = MessageList::MessageListSettings::self()->config()->groupList().filter(QRegularExpression(QStringLiteral("MessageListTab\\d+")));
@@ -1163,7 +1163,7 @@ void Pane::writeConfig(bool restoreSession)
 void Pane::readConfig(bool restoreSession)
 {
     if (MessageList::MessageListSettings::self()->config()->hasGroup(QStringLiteral("MessageListPane"))) {
-        KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QLatin1String("MessageListPane"));
+        KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListPane"));
         const int numberOfTab = conf.readEntry(QStringLiteral("tabNumber"), 0);
         if (numberOfTab == 0) {
             createNewTab();

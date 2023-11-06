@@ -60,7 +60,7 @@ void MailingListTest::shouldRestoreFromSettings()
     ml.setId(QStringLiteral("ID"));
     ml.setHandler(MessageCore::MailingList::Browser);
 
-    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("testsettings"));
+    KConfigGroup grp(KSharedConfig::openConfig(), QStringLiteral("testsettings"));
     ml.writeConfig(grp);
 
     MessageCore::MailingList restoreMl;

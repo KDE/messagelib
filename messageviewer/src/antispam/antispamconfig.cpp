@@ -37,7 +37,7 @@ void AntiSpamConfig::readConfig()
 {
     mAgents.clear();
     KConfig config(QStringLiteral("kmail.antispamrc"));
-    KConfigGroup general(&config, QLatin1String("General"));
+    KConfigGroup general(&config, QStringLiteral("General"));
     int totalTools = general.readEntry("tools", 0);
     for (int i = 1; i <= totalTools; ++i) {
         KConfigGroup tool(&config, QStringLiteral("Spamtool #%1").arg(i));

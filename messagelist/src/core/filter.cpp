@@ -160,7 +160,7 @@ QuickSearchLine::SearchOptions Filter::currentOptions() const
 
 void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter)
 {
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(config, QStringLiteral("General"));
     int numberFilter = (numFilter == -1) ? grp.readEntry("NumberFilter").toInt() : numFilter;
     KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
     newGroup.writeEntry("name", filtername);
@@ -185,7 +185,7 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, c
 
 Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
 {
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(config, QStringLiteral("General"));
     int numberFilter = grp.readEntry("NumberFilter").toInt();
     if (filternumber < numberFilter) {
         KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(filternumber));

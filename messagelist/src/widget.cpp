@@ -208,7 +208,7 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
     }
     auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
 
-    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QLatin1String("MessageListView"));
+    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListView"));
     const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
     if (tagSelected.isEmpty()) {
         setCurrentStatusFilterItem();
