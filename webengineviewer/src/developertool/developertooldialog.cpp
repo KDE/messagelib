@@ -52,14 +52,14 @@ void DeveloperToolDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myDeveloperToolDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myDeveloperToolDialogConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void DeveloperToolDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myDeveloperToolDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myDeveloperToolDialogConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

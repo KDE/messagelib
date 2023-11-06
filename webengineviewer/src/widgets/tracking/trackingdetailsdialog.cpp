@@ -52,14 +52,14 @@ void TrackingDetailsDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMailTrackingDetailsDialogConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void TrackingDetailsDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMailTrackingDetailsDialogConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

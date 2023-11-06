@@ -35,7 +35,7 @@ QString ThemeComboBox::currentTheme() const
 
 void ThemeComboBox::writeDefaultConfig() const
 {
-    KConfigGroup group(MessageListSettings::self()->config(), "MessageListView::StorageModelThemes");
+    KConfigGroup group(MessageListSettings::self()->config(), QLatin1String("MessageListView::StorageModelThemes"));
 
     const QString themeID = currentTheme();
     group.writeEntry(QStringLiteral("DefaultSet"), themeID);

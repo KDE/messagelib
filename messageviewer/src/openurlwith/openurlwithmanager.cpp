@@ -37,7 +37,7 @@ void OpenUrlWithManager::loadSettings()
 {
     mOpenWithUrlInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, myOpenUrlWithGroupName);
+    KConfigGroup group(config, QLatin1String(myOpenUrlWithGroupName));
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
     const QStringList commands = group.readEntry("Commands", QStringList());
     const QStringList commandLines = group.readEntry("CommandLines", QStringList());
@@ -56,7 +56,7 @@ void OpenUrlWithManager::loadSettings()
 void OpenUrlWithManager::saveRules()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, myOpenUrlWithGroupName);
+    KConfigGroup group(config, QLatin1String(myOpenUrlWithGroupName));
     QStringList openWithUrls;
     QStringList commands;
     QStringList commandLines;

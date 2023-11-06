@@ -58,7 +58,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
 
 int AttachmentDialog::exec()
 {
-    KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
+    KConfigGroup cg(KSharedConfig::openConfig().data(), QLatin1String("Notification Messages"));
     if (cg.hasKey(dontAskName)) {
         return cg.readEntry(dontAskName, 0);
     }
@@ -72,7 +72,7 @@ int AttachmentDialog::exec()
     } else {
         if (again) {
             KConfigGroup::WriteConfigFlags flags = KConfig::Persistent;
-            KConfigGroup configGroup(KSharedConfig::openConfig().data(), "Notification Messages");
+            KConfigGroup configGroup(KSharedConfig::openConfig().data(), QLatin1String("Notification Messages"));
             configGroup.writeEntry(dontAskName, static_cast<int>(ret), flags);
             configGroup.sync();
         }

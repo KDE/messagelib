@@ -143,7 +143,7 @@ QString HtmlStatusBar::toolTip() const
 
 QColor HtmlStatusBar::fgColor() const
 {
-    KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
+    KConfigGroup conf(KSharedConfig::openConfig(), QLatin1String(myHtmlStatusBarConfigGroupName));
     QColor defaultColor;
     QColor color;
     switch (mode()) {
@@ -170,7 +170,7 @@ QColor HtmlStatusBar::fgColor() const
 
 QColor HtmlStatusBar::bgColor() const
 {
-    KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
+    KConfigGroup conf(KSharedConfig::openConfig(), QLatin1String(myHtmlStatusBarConfigGroupName));
 
     QColor defaultColor;
     QColor color;

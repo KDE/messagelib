@@ -54,14 +54,14 @@ void RemoteContentConfigureDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myRemoteContentConfigureConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myRemoteContentConfigureConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void RemoteContentConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myRemoteContentConfigureConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myRemoteContentConfigureConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

@@ -43,14 +43,14 @@ void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverLis
 void DKIMManagerAuthenticationServer::load()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, myDKIMManagerAuthenticationServerConfigGroupName);
+    KConfigGroup grp(config, QLatin1String(myDKIMManagerAuthenticationServerConfigGroupName));
     mServerList = grp.readEntry("ServerList", QStringList());
 }
 
 void DKIMManagerAuthenticationServer::save()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, myDKIMManagerAuthenticationServerConfigGroupName);
+    KConfigGroup grp(config, QLatin1String(myDKIMManagerAuthenticationServerConfigGroupName));
     grp.writeEntry("ServerList", mServerList);
 }
 

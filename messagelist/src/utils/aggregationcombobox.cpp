@@ -33,7 +33,7 @@ QString AggregationComboBox::currentAggregation() const
 
 void AggregationComboBox::writeDefaultConfig() const
 {
-    KConfigGroup group(MessageListSettings::self()->config(), "MessageListView::StorageModelAggregations");
+    KConfigGroup group(MessageListSettings::self()->config(), QLatin1String("MessageListView::StorageModelAggregations"));
 
     const QString aggregationID = currentAggregation();
     group.writeEntry(QStringLiteral("DefaultSet"), aggregationID);

@@ -64,8 +64,8 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     KConfig *config = MessageViewer::MessageViewerSettings::self()->config();
 
-    KConfigGroup reader(config, "Reader");
-    KConfigGroup fonts(config, "Fonts");
+    KConfigGroup reader(config, QLatin1String("Reader"));
+    KConfigGroup fonts(config, QLatin1String("Fonts"));
 
     mRecycleQuoteColors = reader.readEntry("RecycleQuoteColors", false);
 

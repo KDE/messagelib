@@ -88,7 +88,7 @@ void RemoteContentManager::loadSettings()
 {
     mRemoveContentInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, myRemoteContentGroupName);
+    KConfigGroup group(config, QLatin1String(myRemoteContentGroupName));
     const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
     const QStringList authorizedUrl = group.readEntry("Authorized", QStringList());
     mRemoveContentInfo.reserve(blockedUrl.count() + authorizedUrl.count());
@@ -109,7 +109,7 @@ void RemoteContentManager::loadSettings()
 void RemoteContentManager::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, myRemoteContentGroupName);
+    KConfigGroup group(config, QLatin1String(myRemoteContentGroupName));
     QStringList blockedUrl;
     QStringList authorizedUrl;
     for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {

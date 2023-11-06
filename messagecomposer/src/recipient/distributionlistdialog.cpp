@@ -339,7 +339,7 @@ static const char myDistributionListDialogGroupName[] = "DistributionListDialog"
 void DistributionListDialog::readConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, myDistributionListDialogGroupName);
+    KConfigGroup group(cfg, QLatin1String(myDistributionListDialogGroupName));
     const QSize size = group.readEntry("Size", QSize());
     if (!size.isEmpty()) {
         resize(size);
@@ -350,7 +350,7 @@ void DistributionListDialog::readConfig()
 void DistributionListDialog::writeConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, myDistributionListDialogGroupName);
+    KConfigGroup group(cfg, QLatin1String(myDistributionListDialogGroupName));
     group.writeEntry("Size", size());
     group.writeEntry("Header", mRecipientsList->header()->saveState());
 }

@@ -27,7 +27,7 @@ FilterSavedManager *FilterSavedManager::self()
 QStringList FilterSavedManager::existingFilterNames() const
 {
     QStringList lst;
-    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("General"));
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     lst.reserve(numberFilter);
     for (int i = 0; i < numberFilter; ++i) {
@@ -44,7 +44,7 @@ void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QSt
 
 void FilterSavedManager::loadMenu(QMenu *menu)
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("General"));
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     for (int i = 0; i < numberFilter; ++i) {
         KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
@@ -59,7 +59,7 @@ void FilterSavedManager::loadMenu(QMenu *menu)
 
 QList<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("General"));
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     QList<FilterSavedManager::FilterInfo> lst;
     lst.reserve(numberFilter);
@@ -90,7 +90,7 @@ Filter *FilterSavedManager::loadFilter(const QString &identifier)
 
 void FilterSavedManager::removeFilter(const QString &identifier)
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("General"));
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     QList<Filter *> lst;
     lst.reserve(numberFilter);
@@ -119,7 +119,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
 
 void FilterSavedManager::updateFilter(const QString &identifier, const QString &newName, const QString &iconName)
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String("General"));
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     for (int i = 0; i < numberFilter; ++i) {
         KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));

@@ -867,7 +867,7 @@ void Manager::loadConfiguration()
     {
         // load Aggregations
 
-        KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Aggregations");
+        KConfigGroup conf(MessageListSettings::self()->config(), QLatin1String("MessageListView::Aggregations"));
 
         mAggregations.clear();
 
@@ -899,7 +899,7 @@ void Manager::loadConfiguration()
     {
         // load Themes
 
-        KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Themes");
+        KConfigGroup conf(MessageListSettings::self()->config(), QLatin1String("MessageListView::Themes"));
 
         mThemes.clear();
 
@@ -942,7 +942,7 @@ void Manager::saveConfiguration()
     {
         // store aggregations
 
-        KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Aggregations");
+        KConfigGroup conf(MessageListSettings::self()->config(), QLatin1String("MessageListView::Aggregations"));
         // conf.clear();
 
         conf.writeEntry("Count", mAggregations.count());
@@ -958,7 +958,7 @@ void Manager::saveConfiguration()
     {
         // store themes
 
-        KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Themes");
+        KConfigGroup conf(MessageListSettings::self()->config(), QLatin1String("MessageListView::Themes"));
         // conf.clear();
 
         conf.writeEntry("Count", mThemes.count());
