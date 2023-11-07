@@ -34,6 +34,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     , mCompleter(new QCompleter(this))
     , mCompleterListModel(new QStringListModel(this))
 {
+    setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
     mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
     mCompleter->setModel(mCompleterListModel);
     setCompleter(mCompleter);
