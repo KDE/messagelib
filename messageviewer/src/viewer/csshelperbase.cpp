@@ -659,11 +659,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
 
               "%2"
 
+              "%3"
+
               "div.senderpic{\n"
               "  padding: 0px ! important;\n"
               "  font-size:0.8em ! important;\n"
-              "  border:1px solid %4 ! important;\n"
-              "  background-color:%3 ! important;\n"
+              "  border:1px solid %5 ! important;\n"
+              "  background-color:%4 ! important;\n"
               "}\n\n"
 
               "div.senderstatus{\n"
