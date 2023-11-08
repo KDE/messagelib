@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -879,7 +879,7 @@ msgstr "Prikaži podrazumijevane kolone"
 msgid "Display Tooltips"
 msgstr "Prikaži savjete"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1170,19 +1170,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:79
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Spriječi da se obriše polje za brzu pretragu pri promjeni fascikli"
 
-#: core/widgets/searchlinestatus.cpp:82
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Obriši polje za brzu pretragu pri promjeni fascikli"
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1192,116 +1192,116 @@ msgstr ""
 "Preklopite ovo dugme ako želite zadržati brzu pretragu zaključanom pri "
 "kretanju u druge fascikle ili pri sužavanju pretrage statusom poruka"
 
-#: core/widgets/searchlinestatus.cpp:113
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgid "Filter Mails by Status"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:117
+#: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgid "Saved Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:216
+#: core/widgets/searchlinestatus.cpp:217
 #, kde-format
 msgid "Clear Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:222
+#: core/widgets/searchlinestatus.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinestatus.cpp:226
+#: core/widgets/searchlinestatus.cpp:227
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Odgovorena"
 
-#: core/widgets/searchlinestatus.cpp:230
+#: core/widgets/searchlinestatus.cpp:231
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Proslijeđeno"
 
-#: core/widgets/searchlinestatus.cpp:234
+#: core/widgets/searchlinestatus.cpp:235
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Važno"
 
-#: core/widgets/searchlinestatus.cpp:238
+#: core/widgets/searchlinestatus.cpp:239
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Akcijska stavka"
 
-#: core/widgets/searchlinestatus.cpp:242
+#: core/widgets/searchlinestatus.cpp:243
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Pregledana"
 
-#: core/widgets/searchlinestatus.cpp:246
+#: core/widgets/searchlinestatus.cpp:247
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ignorisana"
 
-#: core/widgets/searchlinestatus.cpp:250
+#: core/widgets/searchlinestatus.cpp:251
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Ima prilog"
 
-#: core/widgets/searchlinestatus.cpp:254
+#: core/widgets/searchlinestatus.cpp:255
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Ima poziv"
 
-#: core/widgets/searchlinestatus.cpp:258
+#: core/widgets/searchlinestatus.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Spam"
 
-#: core/widgets/searchlinestatus.cpp:262
+#: core/widgets/searchlinestatus.cpp:263
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Ham"
 
-#: core/widgets/searchlinestatus.cpp:272
+#: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
 msgid "Full Message"
 msgstr "Poruka"
 
-#: core/widgets/searchlinestatus.cpp:279
+#: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
 msgstr "Tijelo"
 
-#: core/widgets/searchlinestatus.cpp:284
+#: core/widgets/searchlinestatus.cpp:285
 #, kde-format
 msgid "Subject"
 msgstr "Tema"
 
-#: core/widgets/searchlinestatus.cpp:295
+#: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgid "BCC"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:323
+#: core/widgets/searchlinestatus.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
 #| msgid "To"
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinestatus.cpp:405
+#: core/widgets/searchlinestatus.cpp:406
 #, kde-format
 msgid "Clear History"
 msgstr ""

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -943,7 +943,7 @@ msgstr "[Iinkcukacha]"
 msgid "Display Tooltips"
 msgstr "&Ku"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
@@ -1242,19 +1242,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:79
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:82
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1262,24 +1262,24 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:113
+#: core/widgets/searchlinestatus.cpp:114
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Filter Mails by Status"
 msgstr "Imithetho Yococo lolwelo"
 
-#: core/widgets/searchlinestatus.cpp:117
+#: core/widgets/searchlinestatus.cpp:118
 #, fuzzy, kde-format
 msgid "Saved Filter"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 
-#: core/widgets/searchlinestatus.cpp:216
+#: core/widgets/searchlinestatus.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear Filter"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 
-#: core/widgets/searchlinestatus.cpp:222
+#: core/widgets/searchlinestatus.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -1287,7 +1287,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Ayifundwanga"
 
-#: core/widgets/searchlinestatus.cpp:226
+#: core/widgets/searchlinestatus.cpp:227
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -1295,7 +1295,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Iphendulwe"
 
-#: core/widgets/searchlinestatus.cpp:230
+#: core/widgets/searchlinestatus.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -1303,7 +1303,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "thunyelwe phambili"
 
-#: core/widgets/searchlinestatus.cpp:234
+#: core/widgets/searchlinestatus.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -1311,76 +1311,76 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "ibalulekile"
 
-#: core/widgets/searchlinestatus.cpp:238
+#: core/widgets/searchlinestatus.cpp:239
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Umyalezo obalulekileyo"
 
-#: core/widgets/searchlinestatus.cpp:242
+#: core/widgets/searchlinestatus.cpp:243
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Funda"
 
-#: core/widgets/searchlinestatus.cpp:246
+#: core/widgets/searchlinestatus.cpp:247
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ayifundwanga"
 
-#: core/widgets/searchlinestatus.cpp:250
+#: core/widgets/searchlinestatus.cpp:251
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Uncamathelo: "
 
-#: core/widgets/searchlinestatus.cpp:254
+#: core/widgets/searchlinestatus.cpp:255
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Iinketho Ezibhekisa phambili"
 
-#: core/widgets/searchlinestatus.cpp:258
+#: core/widgets/searchlinestatus.cpp:259
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Funda"
 
-#: core/widgets/searchlinestatus.cpp:262
+#: core/widgets/searchlinestatus.cpp:263
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Funda"
 
-#: core/widgets/searchlinestatus.cpp:272
+#: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 msgid "Full Message"
 msgstr "&Umyalezo"
 
-#: core/widgets/searchlinestatus.cpp:279
+#: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:284
+#: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgid "Subject"
 msgstr "Umxholo"
 
-#: core/widgets/searchlinestatus.cpp:295
+#: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 msgid "BCC"
 msgstr "&BCC"
 
-#: core/widgets/searchlinestatus.cpp:323
+#: core/widgets/searchlinestatus.cpp:324
 #, fuzzy, kde-format
 msgid "To"
 msgstr "&Ku"
 
-#: core/widgets/searchlinestatus.cpp:405
+#: core/widgets/searchlinestatus.cpp:406
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"

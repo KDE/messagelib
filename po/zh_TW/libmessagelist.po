@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
 "PO-Revision-Date: 2015-06-14 13:27+0800\n"
 "Last-Translator: Franklin\n"
 "Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
@@ -862,7 +862,7 @@ msgstr "顯示預設欄位"
 msgid "Display Tooltips"
 msgstr "顯示工具提示"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "寄件者"
@@ -1149,19 +1149,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:79
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "變更資料夾時避免清除快速搜尋欄位"
 
-#: core/widgets/searchlinestatus.cpp:82
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "變更資料夾時清除快速搜尋欄位"
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1171,116 +1171,116 @@ msgstr ""
 "此按鍵讓您可以在移動到其他資料夾時鎖定您的快速搜尋，或是依訊息狀態來縮小您的"
 "搜尋條件。"
 
-#: core/widgets/searchlinestatus.cpp:113
+#: core/widgets/searchlinestatus.cpp:114
 #, fuzzy, kde-format
 #| msgid "Filter by Status"
 msgid "Filter Mails by Status"
 msgstr "依狀態過濾"
 
-#: core/widgets/searchlinestatus.cpp:117
+#: core/widgets/searchlinestatus.cpp:118
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Saved Filter"
 msgstr "建立過濾器(&C)"
 
-#: core/widgets/searchlinestatus.cpp:216
+#: core/widgets/searchlinestatus.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear Filter"
 msgstr "建立過濾器(&C)"
 
-#: core/widgets/searchlinestatus.cpp:222
+#: core/widgets/searchlinestatus.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "未讀"
 
-#: core/widgets/searchlinestatus.cpp:226
+#: core/widgets/searchlinestatus.cpp:227
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "已回覆"
 
-#: core/widgets/searchlinestatus.cpp:230
+#: core/widgets/searchlinestatus.cpp:231
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "已轉寄"
 
-#: core/widgets/searchlinestatus.cpp:234
+#: core/widgets/searchlinestatus.cpp:235
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "重要"
 
-#: core/widgets/searchlinestatus.cpp:238
+#: core/widgets/searchlinestatus.cpp:239
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "動作項目"
 
-#: core/widgets/searchlinestatus.cpp:242
+#: core/widgets/searchlinestatus.cpp:243
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "已監測"
 
-#: core/widgets/searchlinestatus.cpp:246
+#: core/widgets/searchlinestatus.cpp:247
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "已忽略"
 
-#: core/widgets/searchlinestatus.cpp:250
+#: core/widgets/searchlinestatus.cpp:251
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "含附件"
 
-#: core/widgets/searchlinestatus.cpp:254
+#: core/widgets/searchlinestatus.cpp:255
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "有邀請函"
 
-#: core/widgets/searchlinestatus.cpp:258
+#: core/widgets/searchlinestatus.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "垃圾信"
 
-#: core/widgets/searchlinestatus.cpp:262
+#: core/widgets/searchlinestatus.cpp:263
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "正常信"
 
-#: core/widgets/searchlinestatus.cpp:272
+#: core/widgets/searchlinestatus.cpp:273
 #, kde-format
 msgid "Full Message"
 msgstr "全部信件內容"
 
-#: core/widgets/searchlinestatus.cpp:279
+#: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
 msgstr "本體"
 
-#: core/widgets/searchlinestatus.cpp:284
+#: core/widgets/searchlinestatus.cpp:285
 #, kde-format
 msgid "Subject"
 msgstr "主旨"
 
-#: core/widgets/searchlinestatus.cpp:295
+#: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgid "BCC"
 msgstr "密件副本"
 
-#: core/widgets/searchlinestatus.cpp:323
+#: core/widgets/searchlinestatus.cpp:324
 #, kde-format
 msgid "To"
 msgstr "收件者"
 
-#: core/widgets/searchlinestatus.cpp:405
+#: core/widgets/searchlinestatus.cpp:406
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:41+0000\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
 "PO-Revision-Date: 2021-07-12 10:21+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -886,7 +886,7 @@ msgstr "Εμφάνιση προκαθορισμένων στηλών"
 msgid "Display Tooltips"
 msgstr "Εμφάνιση υποδείξεων"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:325
+#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "Από"
@@ -1174,7 +1174,7 @@ msgstr ""
 "δεικτοδότηση ή εξαιρούνται της δεικτοδότησης πλήρως. Τα παρακάτω "
 "αποτελέσματα ίσως είναι ελλιπή."
 
-#: core/widgets/searchlinestatus.cpp:79
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
@@ -1182,13 +1182,13 @@ msgstr ""
 "Εμποδίζει τον καθαρισμό του πεδίου γρήγορης αναζήτησης όταν γίνεται αλλαγή "
 "φακέλων"
 
-#: core/widgets/searchlinestatus.cpp:82
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Καθαρίζει το πεδίο γρήγορης αναζήτησης όταν γίνεται αλλαγή φακέλων"
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1199,113 +1199,113 @@ msgstr ""
 "κλειδωμένη κατά την μετάβαση σε άλλους φακέλους ή κατά την αναζήτηση με βάση "
 "την κατάσταση του μηνύματος."
 
-#: core/widgets/searchlinestatus.cpp:113
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgid "Filter Mails by Status"
 msgstr "Φιλτράρισμα μηνυμάτων κατά κατάσταση"
 
-#: core/widgets/searchlinestatus.cpp:117
+#: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgid "Saved Filter"
 msgstr "Αποθημευμένο φίλτρο"
 
-#: core/widgets/searchlinestatus.cpp:216
+#: core/widgets/searchlinestatus.cpp:217
 #, kde-format
 msgid "Clear Filter"
 msgstr "Καθαρισμός φίλτρου"
 
-#: core/widgets/searchlinestatus.cpp:222
+#: core/widgets/searchlinestatus.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Μη αναγνωσμένο"
 
-#: core/widgets/searchlinestatus.cpp:226
+#: core/widgets/searchlinestatus.cpp:227
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Απαντημένο"
 
-#: core/widgets/searchlinestatus.cpp:230
+#: core/widgets/searchlinestatus.cpp:231
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Προωθημένο"
 
-#: core/widgets/searchlinestatus.cpp:234
+#: core/widgets/searchlinestatus.cpp:235
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Σημαντικό"
 
-#: core/widgets/searchlinestatus.cpp:238
+#: core/widgets/searchlinestatus.cpp:239
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Αντικείμενο ενέργειας"
 
-#: core/widgets/searchlinestatus.cpp:242
+#: core/widgets/searchlinestatus.cpp:243
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Παρακολουθούμενο"
 
-#: core/widgets/searchlinestatus.cpp:246
+#: core/widgets/searchlinestatus.cpp:247
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Αγνοημένο"
 
-#: core/widgets/searchlinestatus.cpp:250
+#: core/widgets/searchlinestatus.cpp:251
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Έχει συνημμένο"
 
-#: core/widgets/searchlinestatus.cpp:254
+#: core/widgets/searchlinestatus.cpp:255
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Έχει μια πρόσκληση"
 
-#: core/widgets/searchlinestatus.cpp:258
+#: core/widgets/searchlinestatus.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Ανεπιθύμητο"
 
-#: core/widgets/searchlinestatus.cpp:262
+#: core/widgets/searchlinestatus.cpp:263
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Κανονική αλληλογραφία"
 
-#: core/widgets/searchlinestatus.cpp:272
+#: core/widgets/searchlinestatus.cpp:273
 #, kde-format
 msgid "Full Message"
 msgstr "Πλήρες μήνυμα"
 
-#: core/widgets/searchlinestatus.cpp:279
+#: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
 msgstr "Κείμενο"
 
-#: core/widgets/searchlinestatus.cpp:284
+#: core/widgets/searchlinestatus.cpp:285
 #, kde-format
 msgid "Subject"
 msgstr "Θέμα"
 
-#: core/widgets/searchlinestatus.cpp:295
+#: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgid "BCC"
 msgstr "Κρυφή κοιν."
 
-#: core/widgets/searchlinestatus.cpp:323
+#: core/widgets/searchlinestatus.cpp:324
 #, kde-format
 msgid "To"
 msgstr "Προς"
 
-#: core/widgets/searchlinestatus.cpp:405
+#: core/widgets/searchlinestatus.cpp:406
 #, kde-format
 msgid "Clear History"
 msgstr "Καθαρισμός ιστορικού"
