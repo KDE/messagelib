@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023 Vít Pelčák <vit@pelcak.org>
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-24 01:41+0000\n"
-"PO-Revision-Date: 2023-08-07 11:46+0200\n"
+"PO-Revision-Date: 2023-11-09 15:46+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -327,7 +327,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "Klíč byl změněn"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
 #, kde-format
@@ -405,7 +405,7 @@ msgstr "Přejete si smazat všechny klíče?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr ""
+msgstr "Smazat klíče"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -452,7 +452,7 @@ msgstr "Nenalezeny žádná pravidla"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr ""
+msgstr "Exportovat pravidla"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
@@ -473,7 +473,7 @@ msgstr "Žádná pravidla nebyla importována."
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr ""
+msgstr "Importovat pravidla"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -539,7 +539,7 @@ msgstr "Přejete si skutečně smazat toto pravidlo?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr ""
+msgstr "Smazat pravidlo"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -550,7 +550,7 @@ msgstr "Opravdu si přejete smazat všechna pravidla?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr ""
+msgstr "Smazat pravidla"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
@@ -808,7 +808,7 @@ msgstr "Datum:"
 #: header/grantleeheaderformatter.cpp:240
 #, kde-format
 msgid "Message-Id:"
-msgstr ""
+msgstr "ID zprávy:"
 
 #: header/grantleeheaderformatter.cpp:264
 #, kde-format
@@ -1188,7 +1188,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr ""
+msgstr "Přidat novou URL"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1560,7 +1560,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr ""
+msgstr "Chyba při ukládání přílohy"
 
 #: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
@@ -1599,7 +1599,7 @@ msgstr "Soubor %1 nelze načíst."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
-msgstr ""
+msgstr "Chyba při načítání zprávy"
 
 #: utils/messageviewerutil.cpp:527
 #, kde-format
@@ -1610,7 +1610,7 @@ msgstr "Soubor %1 nelze vytvořit."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr ""
+msgstr "Chyba při ukládání zprávy"
 
 #: utils/messageviewerutil.cpp:538
 #, kde-format
@@ -1669,7 +1669,7 @@ msgstr "Velikost"
 #: viewer/printmessage.cpp:61
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "Nelze vytvořit náhled před tiskem."
 
 #: viewer/printmessage.cpp:97
 #, kde-format
@@ -1831,7 +1831,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr ""
+msgstr "Smazat přílohu"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -2142,7 +2142,7 @@ msgstr "URL %1 je neplatné."
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "Zkontrolovat URL Phishing "
 
 #: viewer/viewer_p.cpp:2001
 #, kde-format
@@ -2153,7 +2153,7 @@ msgstr "Tato webová stránka je malware, chcete pokračovat s jejím zobrazení
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "Malware"
 
 #: viewer/viewer_p.cpp:2056
 #, kde-format
