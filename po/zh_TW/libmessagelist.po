@@ -1,30 +1,31 @@
 # translation of kmail.po to Chinese Traditional
 # translation of kmail.po to
 # Copyright (C) 2002, 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
 # Eric Cheng <ericc@shinewave.com.tw>, 2001.
 # AceLan <acelan@kde.linux.org.tw>, 2002.
 # Kenduest Lee <kenduest@i18n.linux.org.tw>, 2002.
 # Chia-Lin, Kao <acelan@linux.org.tw>, 2003.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2008, 2011, 2012, 2013, 2014, 2015.
 # Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>, 2009.
-#
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2005.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2008, 2009, 2010.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007, 2008.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-08 08:47+0000\n"
-"PO-Revision-Date: 2015-06-14 13:27+0800\n"
-"Last-Translator: Franklin\n"
-"Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-11-14 02:22+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "dot tw>\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.01.75\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/aggregation.cpp:178
@@ -779,7 +780,7 @@ msgstr "邀請圖示"
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr ""
+msgstr "資料夾"
 
 #: core/theme.cpp:179
 #, kde-format
@@ -845,7 +846,7 @@ msgstr "樣式相連矩形"
 #: core/view.cpp:682
 #, kde-format
 msgid "No result found"
-msgstr ""
+msgstr "找不到結果"
 
 #: core/view.cpp:761
 #, kde-format
@@ -886,7 +887,7 @@ msgstr "大小"
 #: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Folder"
-msgstr ""
+msgstr "資料夾"
 
 #: core/view.cpp:2269 core/view.cpp:2271
 #, kde-format
@@ -1028,14 +1029,13 @@ msgstr[0] "<b>%1</b> 封信件（<b>%2</b> 封未讀） 封未讀）"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "任何已定義的過濾器。"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "建立過濾器(&C)"
+msgstr "建立過濾器"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1081,49 +1081,42 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "資料夾永遠使用此順序"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "建立過濾器(&C)"
+msgstr "設定過濾器"
 
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: core/widgets/configurefilterswidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "您要刪除 \"%1\" 嗎？"
+msgstr "您要刪除這個過濾器嗎？"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "建立過濾器(&C)"
+msgstr "移除過濾器"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "建立過濾器(&C)"
+msgstr "編輯過濾器"
 
 #: core/widgets/filternamewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgid "Name:"
 msgstr "名稱："
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Save Filter..."
-msgstr "建立過濾器(&C)"
+msgstr "儲存過濾器…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1137,10 +1130,9 @@ msgid "The words less than 3 letters are ignored."
 msgstr "少於三個字母的單字將會被忽略。"
 
 #: core/widgets/quicksearchwarning.cpp:21
-#, fuzzy, kde-format
-#| msgid "Do not ask again"
+#, kde-format
 msgid "Do not show again"
-msgstr "不要再詢問"
+msgstr "不要再顯示"
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1148,6 +1140,8 @@ msgid ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
+"這個查詢中的某些搜尋資料夾目前尚未完成索引的建立，又或是已被從索引排除。以下"
+"結果可能是不完整的。"
 
 #: core/widgets/searchlinestatus.cpp:80
 #, kde-format
@@ -1172,22 +1166,19 @@ msgstr ""
 "搜尋條件。"
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter by Status"
+#, kde-format
 msgid "Filter Mails by Status"
-msgstr "依狀態過濾"
+msgstr "依狀態過濾郵件"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Saved Filter"
-msgstr "建立過濾器(&C)"
+msgstr "已儲存的過濾器"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Clear Filter"
-msgstr "建立過濾器(&C)"
+msgstr "清除過濾器"
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
@@ -1281,21 +1272,19 @@ msgid "To"
 msgstr "收件者"
 
 #: core/widgets/searchlinestatus.cpp:406
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Clear History"
-msgstr "建立過濾器(&C)"
+msgstr "清除歷史"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr ""
+msgstr "目前分頁已鎖定。"
 
 #: core/widgets/tablockedwarning.cpp:17
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "(Unlock it)"
-msgstr "關閉分頁"
+msgstr "（解鎖它）"
 
 #: messagelistutil.cpp:104
 #, kde-format
@@ -1388,17 +1377,16 @@ msgid "Close All Other Tabs"
 msgstr "關閉所有其他分頁"
 
 #: pane.cpp:717
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "關閉分頁"
+msgstr "解鎖分頁"
 
 #: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr ""
+msgstr "鎖定分頁"
 
 #: storagemodel.cpp:219
 #, kde-format
@@ -1454,8 +1442,7 @@ msgid "Fill view strategy:"
 msgstr "填入檢視策略："
 
 #: utils/configureaggregationsdialog.cpp:100
-#, fuzzy, kde-format
-#| msgid "Customize Message Aggregation Modes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "自訂信件集合模式"
@@ -1503,14 +1490,12 @@ msgstr "匯出集合模式"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "&All Fields"
+#, kde-format
 msgid "All Files (*)"
-msgstr "全部欄位(&A)"
+msgstr "所有檔案 (*)"
 
 #: utils/configurethemesdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "Customize Themes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "自訂主題"
@@ -1687,13 +1672,13 @@ msgstr "柔和"
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
-msgstr ""
+msgstr "粗體"
 
 #: utils/themeeditor.cpp:860
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
-msgstr ""
+msgstr "斜體"
 
 #: utils/themeeditor.cpp:867
 #, kde-format
@@ -1884,16 +1869,14 @@ msgid "Collapse All Groups"
 msgstr "收起所有群組"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "展開所有群組"
+msgstr "展開所有討論串"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "收起所有群組"
+msgstr "折疊所有討論串"
 
 #: widget.cpp:419
 #, kde-format
