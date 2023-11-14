@@ -957,12 +957,12 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     infoPart->setUserAgent(QStringLiteral("KMail"));
     infoPart->setUrgent(m_urgent);
 
-    if (m_msg->inReplyTo()) {
-        infoPart->setInReplyTo(m_msg->inReplyTo()->asUnicodeString());
+    if (auto inReplyTo = m_msg->inReplyTo(false)) {
+        infoPart->setInReplyTo(inReplyTo->asUnicodeString());
     }
 
-    if (m_msg->references()) {
-        infoPart->setReferences(m_msg->references()->asUnicodeString());
+    if (auto references = m_msg->references(false)) {
+        infoPart->setReferences(references->asUnicodeString());
     }
 
     KMime::Headers::Base::List extras;

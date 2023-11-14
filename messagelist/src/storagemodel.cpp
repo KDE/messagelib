@@ -304,8 +304,10 @@ void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::
     case PerfectThreadingOnly: {
         mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));
         const auto inReplyTos = mail->inReplyTo()->identifiers();
-        if (!inReplyTos.isEmpty()) {
-            mi->setInReplyToIdMD5(md5Encode(inReplyTos.first()));
+        if (auto inReplyTos = mail->inReplyTo()) {
+            if (!inReplyTos->identifiers().isEmpty()) {
+                mi->setInReplyToIdMD5(md5Encode(inReplyTos->identifiers().constFirst()));
+            }
         }
         break;
     }
