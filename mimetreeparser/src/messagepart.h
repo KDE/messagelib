@@ -252,7 +252,6 @@ public:
     [[nodiscard]] QString bodyHtml() const;
 
 private:
-    Interface::ObjectTreeSource *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
 };

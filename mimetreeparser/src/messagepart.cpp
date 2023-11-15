@@ -464,8 +464,8 @@ AttachmentMessagePart::~AttachmentMessagePart() = default;
 
 HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, Interface::ObjectTreeSource *source)
     : MessagePart(otp, QString())
-    , mSource(source)
 {
+    Q_UNUSED(source)
     if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
