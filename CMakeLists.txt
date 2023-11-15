@@ -8,7 +8,7 @@ project(Messagelib VERSION ${PIM_VERSION})
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
-set(KF_MIN_VERSION "5.240.0")
+set(KF_MIN_VERSION "5.245.0")
 set(QT_REQUIRED_VERSION "6.5.0")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
