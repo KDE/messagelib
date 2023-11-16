@@ -1400,8 +1400,8 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
-"Activeu esta opció per a mostrar diferents nivells de text citat. Desactiveu-"
-"la per a ocultar els nivells de text citat."
+"Seleccioneu esta opció per a mostrar diferents nivells de text citat. "
+"Desactiveu-la per a ocultar els nivells de text citat."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.cmake:76
@@ -1420,8 +1420,8 @@ msgstr "Reduïx la mida del tipus de lletra per al text citat"
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Activeu esta opció per a mostrar el text citat amb un tipus de lletra més "
-"xicotet."
+"Seleccioneu esta opció per a mostrar el text citat amb un tipus de lletra "
+"més xicotet."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.cmake:88
@@ -1560,7 +1560,7 @@ msgstr ""
 "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
 "l'estàndard iCalendar. Esta opció n'evita un. Si teniu problemes amb els "
 "usuaris d'Outlook que no poden obtindre les vostres respostes, proveu "
-"activant esta opció."
+"seleccionant esta opció."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:187
@@ -1580,7 +1580,7 @@ msgstr ""
 "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
 "l'estàndard iCalendar. Esta opció n'evita un. Si teniu problemes amb els "
 "usuaris d'Outlook que no poden obtindre les vostres invitacions, proveu "
-"activant esta opció."
+"seleccionant esta opció."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.cmake:193
@@ -1599,8 +1599,8 @@ msgid ""
 msgstr ""
 "Microsoft Outlook, quan s'utilitza en combinació amb un servidor Microsoft "
 "Exchange, té un problema en interpretar els correus electrònics del treball "
-"en grup que complisquen els estàndards. Activeu esta opció per a enviar les "
-"invitacions de treball en grup de manera que Microsoft Exchange les "
+"en grup que complisquen els estàndards. Seleccioneu esta opció per a enviar "
+"les invitacions de treball en grup de manera que Microsoft Exchange les "
 "comprenga."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
@@ -1639,8 +1639,9 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
-"Quan està marcada, els correus d'invitació rebuts que s'han contestat es "
-"mouran a la paperera, una vegada s'haja enviat correctament la resposta."
+"Quan se selecciona, els correus d'invitació rebuts que s'han contestat es "
+"mouran cap a dins de la paperera, una vegada s'haja enviat correctament la "
+"resposta."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1548
@@ -1679,8 +1680,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Activeu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
-"respostes d'invitacions"
+"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
+"les respostes d'invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
@@ -1695,8 +1696,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
-"Activeu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
-"invitacions"
+"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
+"les invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
@@ -1718,8 +1719,8 @@ msgstr ""
 "Exchange,\n"
 "té un problema en interpretar els correus electrònics de treball en grup que "
 "complixen els estàndards.\n"
-"Activeu esta opció per a enviar les invitacions de treball en grup de manera "
-"que Microsoft Exchange les comprenga."
+"Seleccioneu esta opció per a enviar les invitacions de treball en grup de "
+"manera que Microsoft Exchange les comprenga."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48

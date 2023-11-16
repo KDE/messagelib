@@ -563,7 +563,7 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
-"Activeu esta opció per a mostrar els consells en passar per damunt d'un "
+"Seleccioneu esta opció per a mostrar els consells en passar per damunt d'un "
 "element en la llista de missatges."
 
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
@@ -1626,7 +1626,8 @@ msgstr "Visible de manera predeterminada"
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
-"Marqueu-la si s'ha de visualitzar esta columna quan se seleccione el tema."
+"Seleccioneu-la si s'ha de visualitzar esta columna quan se seleccione el "
+"tema."
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1639,8 +1640,8 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"Marqueu-la si l'etiqueta d'esta columna s'hauria d'actualitzar en funció del "
-"tipus d'«entrada»/«eixida» de la carpeta."
+"Seleccioneu-la si l'etiqueta d'esta columna s'hauria d'actualitzar en funció "
+"del tipus d'«entrada»/«eixida» de la carpeta."
 
 #: utils/themeeditor.cpp:108
 #, kde-format

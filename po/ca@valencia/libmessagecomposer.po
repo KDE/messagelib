@@ -2028,9 +2028,9 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Desactiveu esta opció si no voleu que les adreces de les llibretes d'adreces "
-"apareguen en la llista de compleció automàtica en els camps d'adreça de "
-"l'editor."
+"Desseleccioneu esta opció si no voleu que les adreces de les llibretes "
+"d'adreces apareguen en la llista de compleció automàtica en els camps "
+"d'adreça de l'editor."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:52
@@ -2055,7 +2055,7 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
-"Desactiveu esta opció si no voleu que les adreces utilitzades recentment "
+"Desseleccioneu esta opció si no voleu que les adreces utilitzades recentment "
 "apareguen en la llista de compleció automàtica en els camps d'adreça de "
 "l'editor."
 
@@ -2078,7 +2078,7 @@ msgid ""
 "Turn this option on to make Outlook &#8482; understand attachment names "
 "containing non-English characters"
 msgstr ""
-"Activeu esta opció per a fer que Outlook &#8482; entenga els noms dels "
+"Seleccioneu esta opció per a fer que Outlook &#8482; entenga els noms dels "
 "adjunts que continguen caràcters no anglesos"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
