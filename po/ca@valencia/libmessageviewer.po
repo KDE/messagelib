@@ -1355,8 +1355,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Activeu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
-"respostes d'invitacions"
+"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
+"les respostes d'invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
@@ -1371,8 +1371,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
-"Activeu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
-"invitacions"
+"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
+"les invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
@@ -1394,8 +1394,8 @@ msgstr ""
 "Exchange,\n"
 "té un problema en interpretar els correus electrònics de treball en grup que "
 "complixen els estàndards.\n"
-"Activeu esta opció per a enviar les invitacions de treball en grup de manera "
-"que Microsoft Exchange les comprenga."
+"Seleccioneu esta opció per a enviar les invitacions de treball en grup de "
+"manera que Microsoft Exchange les comprenga."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
