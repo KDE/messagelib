@@ -10,11 +10,12 @@
 
 #pragma once
 
-#include <KMime/Message>
-
 #include <QList>
 #include <QString>
-
+namespace KMime
+{
+class Message;
+}
 namespace MessageViewer
 {
 enum SpamError {

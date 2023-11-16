@@ -14,6 +14,7 @@
 
 #include <KMime/Headers>
 #include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <QRegularExpression>
 
