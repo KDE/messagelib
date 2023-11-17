@@ -59,3 +59,5 @@ void CompositeMemento::subMementoFinished()
         notify();
     }
 }
+
+#include "moc_compositememento.cpp"

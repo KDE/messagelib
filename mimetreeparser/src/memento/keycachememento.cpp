@@ -48,3 +48,5 @@ void KeyCacheMemento::slotKeyCacheInitialized()
     setRunning(false);
     notify();
 }
+
+#include "moc_keycachememento.cpp"
