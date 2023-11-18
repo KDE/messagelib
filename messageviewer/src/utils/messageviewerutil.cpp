@@ -34,6 +34,7 @@
 #include <QIcon>
 #include <QRegularExpression>
 #include <QTemporaryFile>
+#include <QTextCodec>
 #include <QWidget>
 
 using namespace MessageViewer;

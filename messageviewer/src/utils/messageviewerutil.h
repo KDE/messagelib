@@ -10,11 +10,11 @@
 #include <KMime/Content>
 #include <KService>
 #include <QStringConverter>
-#include <QTextCodec>
 class QUrl;
 class QWidget;
 class QActionGroup;
 class QAction;
+class QTextCodec;
 
 namespace KMime
 {
