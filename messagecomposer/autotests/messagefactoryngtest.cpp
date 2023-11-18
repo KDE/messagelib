@@ -830,7 +830,7 @@ void MessageFactoryTest::testCreateMDN()
     QString mdnContent = QString::fromLatin1(
         "The message sent on %1 to %2 with subject \"%3\" has been displayed. "
         "This is no guarantee that the message has been read or understood.");
-    mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch()))
+    mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime()))
                      .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(), mdnContent.toLatin1());

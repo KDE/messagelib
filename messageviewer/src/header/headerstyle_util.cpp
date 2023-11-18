@@ -55,16 +55,15 @@ QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDa
         return i18nc("Unknown date", "Unknown");
     }
 
-    const time_t unixTime = dateTime.toSecsSinceEpoch();
     switch (dateFormat) {
     case ShortDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, dateTime);
     case LongDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, unixTime);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, dateTime);
     case FancyShortDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, dateTime);
     case FancyLongDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime, QString(), false);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, dateTime, QString(), false);
     case CustomDate:
     default:
         return dateStr(dateTime);
@@ -202,9 +201,8 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
 {
-    const time_t unixTime = dateTime.toSecsSinceEpoch();
     return KMime::DateFormatter::formatDate(static_cast<KMime::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat()),
-                                            unixTime,
+                                            dateTime,
                                             MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 

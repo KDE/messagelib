@@ -307,7 +307,7 @@ QString Item::formattedDate() const
     if (static_cast<uint>(date()) == static_cast<uint>(-1)) {
         return Manager::instance()->cachedLocalizedUnknownText();
     } else {
-        return Manager::instance()->dateFormatter()->dateString(date());
+        return Manager::instance()->dateFormatter()->dateString(QDateTime::fromSecsSinceEpoch(date()));
     }
 }
 
@@ -316,7 +316,7 @@ QString Item::formattedMaxDate() const
     if (static_cast<uint>(maxDate()) == static_cast<uint>(-1)) {
         return Manager::instance()->cachedLocalizedUnknownText();
     } else {
-        return Manager::instance()->dateFormatter()->dateString(maxDate());
+        return Manager::instance()->dateFormatter()->dateString(QDateTime::fromSecsSinceEpoch(maxDate()));
     }
 }
 
