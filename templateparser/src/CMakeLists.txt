@@ -107,8 +107,6 @@ target_link_libraries(KPim6TemplateParser
     Gpgmepp
     )
 
-    target_link_libraries(KPim6TemplateParser PRIVATE Qt::Core5Compat)
-
 set_target_properties(KPim6TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION}
     SOVERSION ${TEMPLATEPARSER_SOVERSION}

@@ -36,7 +36,6 @@
 #include <QLocale>
 #include <QRegularExpression>
 #include <QStringDecoder>
-#include <QTextCodec>
 
 namespace
 {
@@ -45,35 +44,36 @@ Q_DECL_CONSTEXPR inline int pipeTimeout()
     return 15 * 1000;
 }
 
-static QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
+static QByteArray selectCharset(const QStringList &charsets, const QString &text)
 {
     for (const QString &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
-        bool ok = true;
-        QTextCodec *codec = nullptr;
+        QByteArray codecName;
         if (name == QLatin1String("locale")) {
-            codec = QTextCodec::codecForLocale();
+            codecName = QByteArrayLiteral("UTF-8");
         } else {
-            codec = QTextCodec::codecForName(name.toLatin1());
+            codecName = name.toLatin1();
         }
-        if (!ok || !codec) {
+        QStringEncoder codec(codecName.constData());
+        if (!codec.isValid()) {
             qCWarning(TEMPLATEPARSER_LOG) << "Could not get text codec for charset" << name;
             continue;
         }
-        if (codec->canEncode(text)) {
+        codec.encode(text);
+        if (!codec.hasError()) {
             // Special check for us-ascii (needed because us-ascii is not exactly latin1).
             if (name == QLatin1String("us-ascii") && !KMime::isUsAscii(text)) {
                 continue;
             }
-            qCDebug(TEMPLATEPARSER_LOG) << "Chosen charset" << name << codec->name();
-            return codec;
+            qCDebug(TEMPLATEPARSER_LOG) << "Chosen charset" << name << codecName;
+            return codecName;
         }
     }
     if (!charsets.isEmpty()) {
         qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
     }
-    return QTextCodec::codecForName("UTF-8");
+    return QByteArrayLiteral("UTF-8");
 }
 }
 
@@ -1212,8 +1212,7 @@ KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBo
     auto textPart = new KMime::Content(d->mMsg.data());
     auto ct = textPart->contentType(true);
     ct->setMimeType("text/plain");
-    QTextCodec *charset = selectCharset(d->mCharsets, plainBody);
-    ct->setCharset(charset->name());
+    ct->setCharset(selectCharset(d->mCharsets, plainBody));
     textPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     textPart->fromUnicodeString(plainBody);
     return textPart;
@@ -1231,8 +1230,7 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
 
     auto htmlPart = new KMime::Content(d->mMsg.data());
     htmlPart->contentType(true)->setMimeType("text/html");
-    QTextCodec *charset = selectCharset(d->mCharsets, htmlBody);
-    htmlPart->contentType(false)->setCharset(charset->name()); // Already created
+    htmlPart->contentType(false)->setCharset(selectCharset(d->mCharsets, htmlBody)); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
     multipartAlternative->addContent(htmlPart);
