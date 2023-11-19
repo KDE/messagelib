@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 01:41+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -949,8 +949,8 @@ msgstr "(revoyî d' %1)"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Li fitchî sd' sinateure n' est nén valide"
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
-#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Nou sudjet"
@@ -991,7 +991,7 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Nén cnoxhou"
 
-#: header/headerstyle_util.cpp:146
+#: header/headerstyle_util.cpp:145
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -1001,7 +1001,7 @@ msgid ""
 "Confidence=%4"
 msgstr ""
 
-#: header/headerstyle_util.cpp:155
+#: header/headerstyle_util.cpp:154
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -1010,38 +1010,38 @@ msgid ""
 "Probability=%2"
 msgstr ""
 
-#: header/headerstyle_util.cpp:164
+#: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:178
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error evaluating spam score"
 msgstr "Åk n' a nén stî come dj' eberwetéve li messaedje"
 
-#: header/headerstyle_util.cpp:184
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid ""
 "%1.\n"
@@ -1593,26 +1593,26 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "Li fitchî « %1 » egzistêye dedja. Estoz seur(e) ki vos l' voloz spotchî?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Sipotchî l' fitchî?"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, fuzzy, kde-format
 msgid "Save Attachments To"
 msgstr "Schaper et Rlomer l' Ataetchmint"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -1620,55 +1620,55 @@ msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "Ataetchmint"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "Schaper et rlomer l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, fuzzy, kde-format
 #| msgid "Attachment: %1"
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "Ataetchmint: %1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "Kesse di KMail"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Wårder ecriptaedje"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "&Ni nén wårder"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Wårder sinateure"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1678,34 +1678,34 @@ msgstr ""
 "Dji n' a savou scrire e l' fitchî:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Dji n' a trové nol ataetchmint a schaper."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, fuzzy, kde-format
 msgid "message"
 msgstr "Novea messaedje"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1714,63 +1714,63 @@ msgid_plural "Save Messages"
 msgstr[0] " messaedje"
 msgstr[1] " messaedje"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Wårder &ecriptés les messaedjes schapés"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Åk n' a nén stî come dj' eberwetéve li messaedje"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Wårder &ecriptés les messaedjes schapés"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Dji bodje les messaedjes"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Fén do messaedje siné"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Dji bodje les messaedjes"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Ridjeté: %1 "
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&Drovi avou « %1 »"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 01:41+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2014-04-19 15:12+0200\n"
 "Last-Translator: Dimitrios Glentadakis <dglent@free.fr>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -947,8 +947,8 @@ msgstr "επαναποστολή από"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Το θέμα Grantlee «%1» δεν είναι έγκυρο."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
-#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Κανένα θέμα"
@@ -985,7 +985,7 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: header/headerstyle_util.cpp:146
+#: header/headerstyle_util.cpp:145
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -1000,7 +1000,7 @@ msgstr ""
 "Πιθανότητα=%2\n"
 "Βαθμός εμπιστοσύνης=%4"
 
-#: header/headerstyle_util.cpp:155
+#: header/headerstyle_util.cpp:154
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -1013,40 +1013,40 @@ msgstr ""
 "Πλήρης αναφορά:\n"
 "Πιθανότητα=%2"
 
-#: header/headerstyle_util.cpp:164
+#: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
 msgstr "Χωρίς πρόγραμμα-πελάτη διαχωρισμού ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Η τιμή του κατωφλίου δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν αποσπάσθηκε από την "
 "επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Ο αριθμός κατωφλίου δεν αποσπάσθηκε από την επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:178
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Σφάλμα κατά τον υπολογισμό βαθμολογίας της ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:184
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid ""
 "%1.\n"
@@ -1612,43 +1612,43 @@ msgstr "Επίπεδο αυτόματης σύμπτυξης:"
 msgid "&Minimum font size:"
 msgstr "Ελάχιστο μέγεθος γραμματοσειράς:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "Ένα αρχείο με όνομα %1 υπάρχει ήδη. Επιθυμείτε σίγουρα την αντικατάστασή του;"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Αντικατάσταση του αρχείου;"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Αποθήκευση συνημμένων σε"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "συνημμένο.1"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Αποθήκευση συνημμένου"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "συνημμένο.%1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1657,22 +1657,22 @@ msgstr ""
 "Το τμήμα %1 του μηνύματος είναι κρυπτογραφημένο. Επιθυμείτε τη διατήρηση της "
 "κρυπτογράφησης κατά την αποθήκευση;"
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "Ερώτηση KMail"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Διατήρηση κρυπτογράφησης"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Να μη διατηρηθεί"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1681,13 +1681,13 @@ msgstr ""
 "Το τμήμα %1 του μηνύματος είναι υπογεγραμμένο. Επιθυμείτε τη διατήρηση της "
 "υπογραφής κατά την αποθήκευση;"
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Διατήρηση υπογραφής"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1698,29 +1698,29 @@ msgid ""
 msgstr ""
 "<qt>Αδύνατη η εγγραφή του αρχείου <br><filename>%1</filename><br><br>%2"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Σφάλμα αποθήκευσης συνημμένου"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Σφάλμα αποθήκευσης συνημμένου"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Δε βρέθηκαν συνημμένα για αποθήκευση."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, kde-format
 msgid "message"
 msgstr "μήνυμα"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.mbox|email messages (*.mbox)\n"
@@ -1730,48 +1730,48 @@ msgstr ""
 "*.mbox|μηνύματα ηλ. ταχυδρομείου (*.mbox)\n"
 "*|όλα τα αρχεία (*)"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Αποθήκευση μηνύματος"
 msgstr[1] "Αποθήκευση μηνυμάτων"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Αδύνατη η φόρτωση του αρχείου %1."
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Σφάλμα κατά τη φόρτωση του μηνύματος"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Αδύνατη η δημιουργία του αρχείου %1."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "Αδύνατη η αποθήκευση του μηνύματος."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, fuzzy, kde-format
 #| msgctxt "Not able to attend."
 #| msgid "Declined: %1"
@@ -1779,19 +1779,19 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Απορρίφθηκε: %1 "
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgid "Open &with %1"
 msgstr "Άνοιγμα &με %1"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

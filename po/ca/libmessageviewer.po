@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 01:41+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2023-09-26 12:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -854,8 +854,8 @@ msgstr "reenviat a:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "El tema Grantlee «%1» no és vàlid."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
-#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Sense assumpte"
@@ -891,7 +891,7 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: header/headerstyle_util.cpp:146
+#: header/headerstyle_util.cpp:145
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -906,7 +906,7 @@ msgstr ""
 "Probabilitat=%2\n"
 "Confiança=%4"
 
-#: header/headerstyle_util.cpp:155
+#: header/headerstyle_util.cpp:154
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -919,39 +919,39 @@ msgstr ""
 "Informe complet:\n"
 "Probabilitat=%2"
 
-#: header/headerstyle_util.cpp:164
+#: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
 msgstr "Cap agent de correu brossa"
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "El filtre de correu brossa no ha puntuat amb un número"
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "El llindar no és un número vàlid"
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "La puntuació del filtre de correu brossa no s'ha pogut extreure de la "
 "capçalera"
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "El llindar no s'ha pogut extreure de la capçalera"
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:178
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Error en avaluar la puntuació de correu brossa"
 
-#: header/headerstyle_util.cpp:184
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid ""
 "%1.\n"
@@ -1498,42 +1498,42 @@ msgstr "Nive&ll de plegat automàtic:"
 msgid "&Minimum font size:"
 msgstr "Mida &mínima de la lletra:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "Ja existeix un fitxer anomenat «%1». Esteu segur que voleu sobreescriure'l?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Sobreescriure el fitxer?"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Desa els adjunts a"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "adjunt.1"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Desa l'adjunt"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "adjunt.%1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1542,22 +1542,22 @@ msgstr ""
 "La part %1 del missatge està encriptada. Desitgeu mantenir l'encriptatge en "
 "desar-lo?"
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "Pregunta del KMail"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Mantén l'encriptatge"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "No el mantinguis"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1566,13 +1566,13 @@ msgstr ""
 "La part %1 del missatge està signada. Desitgeu mantenir la signatura en "
 "desar-lo?"
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Mantén la signatura"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1582,78 +1582,78 @@ msgstr ""
 "<qt>No s'ha pogut escriure el fitxer<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Error en desar l'adjunt"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Hi ha hagut un error en desar l'adjunt"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "No s'ha trobat cap adjunt a desar."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, kde-format
 msgid "message"
 msgstr "missatge"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "Missatges de correu (*.mbox);;Tots els fitxers (*)"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Desa el missatge"
 msgstr[1] "Desa els missatges"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "El fitxer %1 no s'ha pogut carregar."
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Error en carregar el missatge"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error en desar el missatge"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "No s'ha pogut desar el missatge."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "Error en desar el missatge"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Suprimit: %1"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1662,12 +1662,12 @@ msgstr ""
 "Heu suprimit un adjunt d'aquest missatge. Les capçaleres MIME originals de "
 "l'adjunt eren:"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgid "Open &with %1"
 msgstr "Obre a&mb %1"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

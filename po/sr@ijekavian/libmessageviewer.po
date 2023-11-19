@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 01:41+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -907,8 +907,8 @@ msgstr "поново послато из"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Грантлијева „%1 “тема није добра."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:81
-#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "без теме"
@@ -944,7 +944,7 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "непознат"
 
-#: header/headerstyle_util.cpp:146
+#: header/headerstyle_util.cpp:145
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -959,7 +959,7 @@ msgstr ""
 "Вероватноћа=%2\n"
 "Сигурност=%4"
 
-#: header/headerstyle_util.cpp:155
+#: header/headerstyle_util.cpp:154
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -972,37 +972,37 @@ msgstr ""
 "Пун извештај:\n"
 "Вероватноћа=%2"
 
-#: header/headerstyle_util.cpp:164
+#: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
 msgstr "Нема агента за спам"
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Резултат филтера спама није број"
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Праг није добар број"
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Резултат филтера спама не може да се извуче из заглавља"
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Праг не може да се извуче из заглавља"
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:178
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Грешка у израчунавању резултата спама"
 
-#: header/headerstyle_util.cpp:184
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid ""
 "%1.\n"
@@ -1552,13 +1552,13 @@ msgstr "Ниво &аутоматског сажимања:"
 msgid "&Minimum font size:"
 msgstr "&Најмања величина фонта:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Фајл по имену ‘%1’ већ постоји. Желите ли да га пребришете?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -1567,30 +1567,30 @@ msgstr "Пребрисати фајл?"
 
 # >> @title:window
 # Додатна реч пре него генитивски знак, ради контраст са доњом поруком.
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Уписивање више прилога"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "прилог.1"
 
 # >> @title:window
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Уписивање прилога"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "прилог.%1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1598,22 +1598,22 @@ msgid ""
 msgstr ""
 "%1 поруке је шифровано. Желите ли да га задржите таквим приликом уписивања?"
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "Питање К‑поште"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Очувај шифровање"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Не чувај"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1621,13 +1621,13 @@ msgid ""
 msgstr ""
 "%1 поруке је потписано. Желите ли да задржите потпис приликом уписивања?"
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Задржи потпис"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1636,34 +1636,34 @@ msgid ""
 msgstr ""
 "<qt>Не могу да пишем у фајл<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Нема прилога за уписивање."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, kde-format
 msgid "message"
 msgstr "порука"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "поруке е‑поште (*.mbox);;сви фајлови (*)"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1672,60 +1672,60 @@ msgstr[1] "&Сачувај поруке"
 msgstr[2] "&Сачувај поруке"
 msgstr[3] "&Сачувај поруку"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Фајл %1 не може да се учита."
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Грешка при учитавању поруке"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Фајл %1 не може да се направи."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "Не могу да сачувам поруку."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Изабери сав текст"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgid "Open &with %1"
 msgstr "О&твори помоћу %1|/|О&твори $[инс-п %1]“"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
