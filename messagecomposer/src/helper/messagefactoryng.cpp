@@ -28,7 +28,8 @@
 #include <MessageCore/StringUtil>
 #include <MessageCore/Util>
 #include <QRegularExpression>
-#include <QTextCodec>
+#include <QStringDecoder>
+#include <QStringEncoder>
 
 using namespace MessageComposer;
 
@@ -930,43 +931,38 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
 {
     if (MessageComposer::MessageComposerSettings::forceReplyCharset()) {
         // first convert the body from its current encoding to unicode representation
-        QTextCodec *bodyCodec = QTextCodec::codecForName(msg->contentType()->charset());
-        if (!bodyCodec) {
-            bodyCodec = QTextCodec::codecForName("UTF-8");
-            if (!bodyCodec) {
-                bodyCodec = QTextCodec::codecForLocale();
-            }
+        QStringDecoder bodyCodec(msg->contentType()->charset().constData());
+        if (!bodyCodec.isValid()) {
+            bodyCodec = QStringDecoder(QStringDecoder::Utf8);
         }
-        const QString body = bodyCodec->toUnicode(msg->body());
+        const QString body = bodyCodec.decode(msg->body());
 
         // then apply the encoding of the original message
-        QTextCodec *codec = QTextCodec::codecForName(mOrigMsg->contentType()->charset());
-        if (!codec) {
+        QStringEncoder codec(mOrigMsg->contentType()->charset().constData());
+        if (!codec.isValid()) {
             qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << mOrigMsg->contentType()->charset();
             // Don't touch the message
-        } else if (!codec->canEncode(body)) { // charset can't encode body, fall back to preferred
-            const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
-
-            QList<QByteArray> chars;
-            chars.reserve(charsets.count());
-            for (const QString &charset : charsets) {
-                chars << charset.toLatin1();
-            }
-
-            QByteArray fallbackCharset = MessageComposer::Util::selectCharset(chars, body);
-            if (fallbackCharset.isEmpty()) { // UTF-8 as fall-through
-                fallbackCharset = "UTF-8";
-            }
-
-            codec = QTextCodec::codecForName(fallbackCharset);
-            if (!codec) {
-                codec = QTextCodec::codecForLocale();
-            }
-            msg->contentType()->setCharset(codec->name());
-            msg->setBody(codec->fromUnicode(body));
         } else {
-            msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
-            msg->setBody(codec->fromUnicode(body));
+            const auto encodedBody = codec.encode(body);
+            if (codec.hasError()) { // charset can't encode body, fall back to preferred
+                const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
+
+                QList<QByteArray> chars;
+                chars.reserve(charsets.count());
+                for (const QString &charset : charsets) {
+                    chars << charset.toLatin1();
+                }
+
+                codec = QStringEncoder(MessageComposer::Util::selectCharset(chars, body).constData());
+                if (!codec.isValid()) {
+                    codec = QStringEncoder(QStringEncoder::Utf8);
+                }
+                msg->contentType()->setCharset(codec.name());
+                msg->setBody(codec.encode(body));
+            } else {
+                msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
+                msg->setBody(encodedBody);
+            }
         }
     }
 }
