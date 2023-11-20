@@ -13,10 +13,10 @@
 
 #include "composer/composer.h"
 #include "job/singlepartjob.h"
-#include <QRegularExpression>
 
+#include <QRegularExpression>
+#include <QStringEncoder>
 #include <QTextBlock>
-#include <QTextCodec>
 #include <QTextDocument>
 
 #include "messagecomposer_debug.h"
@@ -233,12 +233,12 @@ QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charset
     for (const QByteArray &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
-        QTextCodec *codec = QTextCodec::codecForName(name);
-        if (!codec) {
+        QStringEncoder codec(name.constData());
+        if (!codec.isValid()) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << name;
             continue;
         }
-        if (codec->canEncode(text)) {
+        if (codec.encode(text); !codec.hasError()) {
             // Special check for us-ascii (needed because us-ascii is not exactly latin1).
             if (name == "us-ascii" && !KMime::isUsAscii(text)) {
                 continue;

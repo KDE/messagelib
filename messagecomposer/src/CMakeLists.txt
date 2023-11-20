@@ -325,7 +325,6 @@ else()
         KF6::TextAutoCorrection
     )
 endif()
-target_link_libraries(KPim6MessageComposer PRIVATE Qt6::Core5Compat)
 
 target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
 
