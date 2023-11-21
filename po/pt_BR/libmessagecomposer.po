@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-11-14 13:53-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1169,17 +1169,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Pasta inválida"
 
-#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
 #, kde-format
 msgid "forwarded message"
 msgstr "mensagem encaminhada"
 
-#: helper/messagefactoryng.cpp:577
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Recebido: "
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:705
 #, kde-format
 msgid ""
 "\n"

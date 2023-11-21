@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2023-10-18 23:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1176,17 +1176,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ongeldige map"
 
-#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
 #, kde-format
 msgid "forwarded message"
 msgstr "verzonden berichten"
 
-#: helper/messagefactoryng.cpp:577
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Ontvangst: "
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:705
 #, kde-format
 msgid ""
 "\n"

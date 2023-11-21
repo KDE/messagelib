@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2020-11-17 19:45+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1182,17 +1182,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ugyldig mappe"
 
-#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
 #, kde-format
 msgid "forwarded message"
 msgstr "videresendt brev"
 
-#: helper/messagefactoryng.cpp:577
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Læsekvittering: "
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:705
 #, kde-format
 msgid ""
 "\n"

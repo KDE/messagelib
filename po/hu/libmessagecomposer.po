@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:42+0000\n"
+"POT-Creation-Date: 2023-11-21 01:35+0000\n"
 "PO-Revision-Date: 2021-01-05 20:41+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1177,17 +1177,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr ""
 
-#: helper/messagefactoryng.cpp:409 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
 #, kde-format
 msgid "forwarded message"
 msgstr "továbbított üzenet"
 
-#: helper/messagefactoryng.cpp:577
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Címzett: "
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:705
 #, kde-format
 msgid ""
 "\n"
