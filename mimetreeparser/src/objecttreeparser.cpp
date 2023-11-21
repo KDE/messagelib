@@ -28,7 +28,6 @@
 
 // Qt includes
 #include <QByteArray>
-#include <QTextCodec>
 
 using namespace MimeTreeParser;
 
@@ -275,13 +274,13 @@ void ObjectTreeParser::setPlainTextContent(const QString &plainTextContent)
     mPlainTextContent = plainTextContent;
 }
 
-const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
+QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
 {
     Q_ASSERT(node);
-    if (auto codec = mSource->overrideCodec()) {
-        return codec;
+    if (!mSource->overrideCodecName().isEmpty()) {
+        return mSource->overrideCodecName();
     }
-    return mNodeHelper->codec(node);
+    return mNodeHelper->codecName(node);
 }
 
 QByteArray ObjectTreeParser::plainTextContentCharset() const

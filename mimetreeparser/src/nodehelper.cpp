@@ -37,30 +37,6 @@ NodeHelper::NodeHelper()
 {
     mListAttachmentTemporaryDirs.append(mAttachmentFilesDir);
     // TODO(Andras) add methods to modify these prefixes
-
-    mLocalCodec = QTextCodec::codecForLocale();
-
-    // In the case of Japan. Japanese locale name is "eucjp" but
-    // The Japanese mail systems normally used "iso-2022-jp" of locale name.
-    // We want to change locale name from eucjp to iso-2022-jp at KMail only.
-
-    // (Introduction to i18n, 6.6 Limit of Locale technology):
-    // EUC-JP is the de-facto standard for UNIX systems, ISO 2022-JP
-    // is the standard for Internet, and Shift-JIS is the encoding
-    // for Windows and Macintosh.
-    if (mLocalCodec) {
-        const QByteArray codecNameLower = mLocalCodec->name().toLower();
-        if (codecNameLower == "eucjp"
-#if defined Q_OS_WIN || defined Q_OS_MACX
-            || codecNameLower == "shift-jis" // OK?
-#endif
-        ) {
-            mLocalCodec = QTextCodec::codecForName("jis7");
-            // QTextCodec *cdc = QTextCodec::codecForName("jis7");
-            // QTextCodec::setCodecForLocale(cdc);
-            // KLocale::global()->setEncoding(cdc->mibEnum());
-        }
-    }
 }
 
 NodeHelper::~NodeHelper()
@@ -573,7 +549,7 @@ QDateTime NodeHelper::dateHeader(KMime::Content *message) const
     return {};
 }
 
-void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
+void NodeHelper::setOverrideCodec(KMime::Content *node, const QByteArray &codec)
 {
     if (!node) {
         return;
@@ -582,43 +558,32 @@ void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
     mOverrideCodecs[node] = codec;
 }
 
-const QTextCodec *NodeHelper::codec(KMime::Content *node)
+QByteArray NodeHelper::codecName(KMime::Content *node) const
 {
     if (!node || !node->contentType()) {
-        return mLocalCodec;
+        return "utf-8";
     }
 
-    const QTextCodec *c = mOverrideCodecs.value(node, nullptr);
-    if (!c) {
+    auto c = mOverrideCodecs.value(node);
+    if (c.isEmpty()) {
         // no override-codec set for this message, try the CT charset parameter:
-        QByteArray charset = node->contentType()->charset();
+        c = node->contentType()->charset();
 
         // utf-8 is a superset of us-ascii, so we don't loose anything, if we it insead
         // utf-8 is nowadays that widely, that it is a good guess to use it to fix issus with broken clients.
-        if (charset.toLower() == "us-ascii") {
-            charset = "utf-8";
+        if (c.toLower() == "us-ascii") {
+            c = "utf-8";
         }
-        c = codecForName(charset);
+        if (QStringDecoder codec(c.constData()); !codec.isValid()) {
+            c = "utf-8";
+        }
     }
-    if (!c) {
+    if (c.isEmpty()) {
         // no charset means us-ascii (RFC 2045), so using local encoding should
         // be okay
-        c = mLocalCodec;
+        c = "UTF-8";
     }
     return c;
-}
-
-const QTextCodec *NodeHelper::codecForName(const QByteArray &_str)
-{
-    if (_str.isEmpty()) {
-        return nullptr;
-    }
-    const QByteArray codecBy = _str.toLower();
-    auto codec = QTextCodec::codecForName(codecBy);
-    if (!codec) {
-        codec = QTextCodec::codecForLocale();
-    }
-    return codec;
 }
 
 QString NodeHelper::fileName(const KMime::Content *node)

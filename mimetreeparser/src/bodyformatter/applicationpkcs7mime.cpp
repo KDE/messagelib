@@ -13,8 +13,6 @@
 
 #include <KMime/Content>
 
-#include <QTextCodec>
-
 #include "mimetreeparser_debug.h"
 
 using namespace MimeTreeParser;
@@ -127,10 +125,10 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
         }
 
-        const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signTestNode));
+        QStringDecoder aCodec(part.objectTreeParser()->codecNameFor(signTestNode).constData());
         const QByteArray signaturetext = signTestNode->decodedContent();
         auto _mp = SignedMessagePart::Ptr(
-            new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(signaturetext), smimeCrypto, part.nodeHelper()->fromAsString(node), signTestNode));
+            new SignedMessagePart(part.objectTreeParser(), aCodec.decode(signaturetext), smimeCrypto, part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;
         _mp->startVerificationDetached(signaturetext, nullptr, QByteArray());
 

@@ -763,7 +763,7 @@ void ViewerPrivate::displayMessage()
 {
     showHideMimeTree();
 
-    mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodec());
+    mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodecName());
 
     if (mMessageItem.hasAttribute<MessageViewer::MessageDisplayFormatAttribute>()) {
         const MessageViewer::MessageDisplayFormatAttribute *const attr = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>();
@@ -1179,7 +1179,7 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
     mViewerPluginToolManager->updateActions(mMessageItem);
     mMessage = message;
     if (message) {
-        mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodec());
+        mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodecName());
     }
 
     mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.data()));
@@ -1795,22 +1795,16 @@ void ViewerPrivate::readGlobalOverrideCodec()
     mOldGlobalOverrideEncoding = MessageCore::MessageCoreSettings::self()->overrideCharacterEncoding();
 }
 
-const QTextCodec *ViewerPrivate::overrideCodec() const
+QByteArray ViewerPrivate::overrideCodecName() const
 {
-    if (mOverrideEncoding.isEmpty() || mOverrideEncoding == QLatin1String("Auto")) { // Auto
-        return nullptr;
-    } else {
-        return MessageViewer::Util::codecForName(mOverrideEncoding.toLatin1());
+    if (!mOverrideEncoding.isEmpty() && mOverrideEncoding != QLatin1String("Auto")) { // Auto
+        QStringDecoder codec(mOverrideEncoding.toUtf8().constData());
+        if (!codec.isValid()) {
+            return "UTF-8";
+        }
+        return mOverrideEncoding.toUtf8();
     }
-}
-
-const QStringDecoder *ViewerPrivate::overrideDecoderCodec()
-{
-    if (mOverrideEncoding.isEmpty() || mOverrideEncoding == QLatin1String("Auto")) { // Auto
-        return {};
-    } else {
-        return MessageViewer::Util::decoderForName(mOverrideEncoding.toLatin1());
-    }
+    return {};
 }
 
 static QColor nextColor(const QColor &c)

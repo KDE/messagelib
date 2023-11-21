@@ -16,7 +16,6 @@
 
 #include <QProcess>
 #include <QTest>
-#include <QTextCodec>
 
 using namespace MimeTreeParser;
 
@@ -269,7 +268,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedOverrideEncoding()
 
     QVERIFY(otp.plainTextContent() != data); // it is not utf-8
 
-    testSource.setOverrideCodec(QTextCodec::codecForName("iso-8859-15"));
+    testSource.setOverrideCodecName("iso-8859-15");
     otp.parseObjectTree(originalMessage.data());
     QCOMPARE(otp.plainTextContent(), data);
 }

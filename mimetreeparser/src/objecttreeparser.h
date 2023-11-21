@@ -307,7 +307,7 @@ private:
     /** ctor helper */
     void init();
 
-    const QTextCodec *codecFor(KMime::Content *node) const;
+    QByteArray codecNameFor(KMime::Content *node) const;
 
 private:
     Interface::ObjectTreeSource *mSource;

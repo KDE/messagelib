@@ -34,7 +34,6 @@
 #include <QIcon>
 #include <QRegularExpression>
 #include <QTemporaryFile>
-#include <QTextCodec>
 #include <QWidget>
 
 using namespace MessageViewer;
@@ -671,34 +670,6 @@ void Util::addHelpTextAction(QAction *act, const QString &text)
     if (act->whatsThis().isEmpty()) {
         act->setWhatsThis(text);
     }
-}
-
-const QTextCodec *Util::codecForName(const QByteArray &_str)
-{
-    if (_str.isEmpty()) {
-        return nullptr;
-    }
-    const QByteArray codec = _str.toLower();
-    auto codecFromName = QTextCodec::codecForName(codec);
-    if (!codecFromName) {
-        codecFromName = QTextCodec::codecForLocale();
-    }
-    return codecFromName;
-}
-
-const QStringDecoder *Util::decoderForName(const QByteArray &_str)
-{
-    QStringDecoder *dec = nullptr;
-    if (_str.isEmpty()) {
-        return dec;
-    }
-    const QByteArray codec = _str.toLower();
-    auto codecFromName = new QStringDecoder(codec.constData());
-    if (!codecFromName->isValid()) {
-        delete codecFromName;
-        codecFromName = new QStringDecoder(QStringEncoder::System);
-    }
-    return codecFromName;
 }
 
 void Util::readGravatarConfig()

@@ -80,14 +80,9 @@ int MailViewerSource::levelQuote() const
     return mViewer->mLevelQuote;
 }
 
-const QStringDecoder *MailViewerSource::overrideDecoderCodec()
+QByteArray MailViewerSource::overrideCodecName() const
 {
-    return mViewer->overrideDecoderCodec();
-}
-
-const QTextCodec *MailViewerSource::overrideCodec()
-{
-    return mViewer->overrideCodec();
+    return mViewer->overrideCodecName();
 }
 
 QString MailViewerSource::createMessageHeader(KMime::Message *message)

@@ -32,8 +32,7 @@ public:
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
-    const QTextCodec *overrideCodec() override;
-    const QStringDecoder *overrideDecoderCodec() override;
+    QByteArray overrideCodecName() const override;
     virtual QString createMessageHeader(KMime::Message *message);
     [[nodiscard]] bool autoImportKeys() const override;
 

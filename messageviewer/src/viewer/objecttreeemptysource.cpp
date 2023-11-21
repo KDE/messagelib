@@ -64,14 +64,9 @@ void EmptySource::setAllowDecryption(bool allowDecryption)
     d->mAllowDecryption = allowDecryption;
 }
 
-const QTextCodec *EmptySource::overrideCodec()
+QByteArray EmptySource::overrideCodecName() const
 {
-    return nullptr;
-}
-
-const QStringDecoder *EmptySource::overrideDecoderCodec()
-{
-    return nullptr;
+    return {};
 }
 
 QString EmptySource::createMessageHeader(KMime::Message *message)

@@ -21,7 +21,6 @@
 #include <QSet>
 
 class QUrl;
-class QTextCodec;
 
 namespace MimeTreeParser
 {
@@ -94,11 +93,11 @@ public:
      */
     [[nodiscard]] KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
 
-    /** Get a QTextCodec suitable for this message part */
-    const QTextCodec *codec(KMime::Content *node);
+    /** Get a codec suitable for this message part */
+    QByteArray codecName(KMime::Content *node) const;
 
     /** Set the charset the user selected for the message to display */
-    void setOverrideCodec(KMime::Content *node, const QTextCodec *codec);
+    void setOverrideCodec(KMime::Content *node, const QByteArray &codec);
 
     Interface::BodyPartMemento *bodyPartMemento(KMime::Content *node, const QByteArray &which) const;
 
@@ -162,12 +161,6 @@ public:
      * for the node, the defaultCharset() is returned.
      */
     [[nodiscard]] static QByteArray charset(KMime::Content *node);
-
-    /**
-     * Return a QTextCodec for the specified charset.
-     * This function is a bit more tolerant, than QTextCodec::codecForName
-     */
-    static const QTextCodec *codecForName(const QByteArray &_str);
 
     /**
      * Returns a usable filename for a node, that can be the filename from the
@@ -255,8 +248,7 @@ private:
     QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
     QSet<KMime::Content *> mDisplayEmbeddedNodes;
     QSet<KMime::Content *> mDisplayHiddenNodes;
-    QTextCodec *mLocalCodec = nullptr;
-    QMap<KMime::Content *, const QTextCodec *> mOverrideCodecs;
+    QMap<KMime::Content *, QByteArray> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;

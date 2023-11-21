@@ -14,7 +14,6 @@ class QUrl;
 class QWidget;
 class QActionGroup;
 class QAction;
-class QTextCodec;
 
 namespace KMime
 {
@@ -58,8 +57,6 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
 [[nodiscard]] MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 /** Return a QTextCodec for the specified charset.
  * This function is a bit more tolerant, than QTextCodec::codecForName */
-MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
-MESSAGEVIEWER_EXPORT const QStringDecoder *decoderForName(const QByteArray &_str);
 MESSAGEVIEWER_EXPORT QStringConverter::Encoding htmlEncoding(const QByteArray &data, const QByteArray &codec);
 struct HtmlMessageInfo {
     QString htmlSource;

@@ -15,8 +15,6 @@
 
 #include "mimetreeparser_debug.h"
 
-#include <QTextCodec>
-
 using namespace MimeTreeParser;
 
 const MultiPartSignedBodyPartFormatter *MultiPartSignedBodyPartFormatter::self;
@@ -71,10 +69,10 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
 
     const QByteArray cleartext = KMime::LFtoCRLF(signedData->encodedContent());
-    const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signedData));
+    QStringDecoder aCodec(part.objectTreeParser()->codecNameFor(signedData).constData());
 
     SignedMessagePart::Ptr mp(
-        new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signedData));
+        new SignedMessagePart(part.objectTreeParser(), aCodec.decode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signedData));
 
     mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
     part.nodeHelper()->registerOverrideHeader(node, mp);

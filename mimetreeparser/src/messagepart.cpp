@@ -34,7 +34,6 @@
 
 #include <KLocalizedString>
 
-#include <QTextCodec>
 #include <QUrl>
 
 using namespace MimeTreeParser;
@@ -323,7 +322,8 @@ bool TextMessagePart::decryptMessage() const
 
 void TextMessagePart::parseContent()
 {
-    const auto aCodec = mOtp->codecFor(content());
+    const auto codecName = mOtp->codecNameFor(content());
+    QStringDecoder aCodec(codecName.constData());
     const QString &fromAddress = mOtp->nodeHelper()->fromAsString(content());
     mSignatureState = KMMsgNotSigned;
     mEncryptionState = KMMsgNotEncrypted;
@@ -351,7 +351,7 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
-                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
+                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec.decode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
                 EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 mp->setDecryptMessage(decryptMessage());
@@ -361,7 +361,7 @@ void TextMessagePart::parseContent()
                 if (!decryptMessage()) {
                     continue;
                 }
-                mp->startDecryption(block.text(), aCodec);
+                mp->startDecryption(block.text(), codecName);
                 if (mp->partMetaData()->inProgress) {
                     continue;
                 }
@@ -369,7 +369,7 @@ void TextMessagePart::parseContent()
                 SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit());
                 appendSubPart(mp);
-                mp->startVerification(block.text(), aCodec);
+                mp->startVerification(block.text(), codecName);
             } else {
                 continue;
             }
@@ -378,7 +378,7 @@ void TextMessagePart::parseContent()
             const PartMetaData *messagePart(mp->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
-                mp->setText(aCodec->toUnicode(block.text()));
+                mp->setText(aCodec.decode(block.text()));
             }
 
             if (messagePart->isEncrypted) {
@@ -473,7 +473,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, In
     setContent(node);
 
     const QByteArray partBody(node->decodedContent());
-    mBodyHTML = mOtp->codecFor(node)->toUnicode(partBody);
+    mBodyHTML = QStringDecoder(mOtp->codecNameFor(node).constData()).decode(partBody);
     mCharset = NodeHelper::charset(node);
 }
 
@@ -933,12 +933,13 @@ void SignedMessagePart::sigStatusToMetaData()
     }
 }
 
-void SignedMessagePart::startVerification(const QByteArray &text, const QTextCodec *aCodec)
+void SignedMessagePart::startVerification(const QByteArray &text, QByteArrayView aCodec)
 {
     startVerificationDetached(text, nullptr, QByteArray());
 
     if (!content() && partMetaData()->isSigned) {
-        setText(aCodec->toUnicode(mVerifiedText));
+        QStringDecoder codec(aCodec.constData());
+        setText(codec.decode(mVerifiedText));
     }
 }
 
@@ -1136,7 +1137,7 @@ void EncryptedMessagePart::setMementoName(const QByteArray &name)
     mMementoName = name;
 }
 
-void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
+void EncryptedMessagePart::startDecryption(const QByteArray &text, QByteArrayView aCodec)
 {
     auto content = new KMime::Content;
     content->setBody(text);
@@ -1145,15 +1146,16 @@ void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCo
     startDecryption(content);
 
     if (!partMetaData()->inProgress && partMetaData()->isDecryptable) {
+        QStringDecoder codec(aCodec.constData());
         if (hasSubParts()) {
             auto _mp = (subParts()[0]).dynamicCast<SignedMessagePart>();
             if (_mp) {
-                _mp->setText(aCodec->toUnicode(mDecryptedData));
+                _mp->setText(codec.decode(mDecryptedData));
             } else {
-                setText(aCodec->toUnicode(mDecryptedData));
+                setText(codec.decode(mDecryptedData));
             }
         } else {
-            setText(aCodec->toUnicode(mDecryptedData));
+            setText(codec.decode(mDecryptedData));
         }
     }
     delete content;

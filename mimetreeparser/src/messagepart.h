@@ -23,8 +23,6 @@
 
 #include <memory>
 
-class QTextCodec;
-
 namespace GpgME
 {
 class ImportResult;
@@ -357,7 +355,7 @@ public:
     [[nodiscard]] bool isNoSecKey() const;
     [[nodiscard]] bool passphraseError() const;
 
-    void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
+    void startDecryption(const QByteArray &text, QByteArrayView aCodec);
     void startDecryption(KMime::Content *data = nullptr);
 
     void setMementoName(const QByteArray &name);
@@ -413,7 +411,7 @@ public:
     void setIsSigned(bool isSigned);
     [[nodiscard]] bool isSigned() const;
 
-    void startVerification(const QByteArray &text, const QTextCodec *aCodec);
+    void startVerification(const QByteArray &text, QByteArrayView aCodec);
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
 
     void setMementoName(const QByteArray &name);

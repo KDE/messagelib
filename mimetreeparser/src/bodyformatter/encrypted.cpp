@@ -15,8 +15,6 @@
 #include <QGpgME/Protocol>
 #include <gpgme++/data.h>
 
-#include <QTextCodec>
-
 #include "mimetreeparser_debug.h"
 
 using namespace MimeTreeParser;
@@ -89,12 +87,11 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         // The user has the possibility to override the default charset.
 
         QByteArray codecName = "utf-8";
-        if (auto codec = part.source()->overrideCodec()) {
-            codecName = codec->name();
+        if (!part.source()->overrideCodecName().isEmpty()) {
+            codecName = part.source()->overrideCodecName();
         }
 
-        const auto codec = QTextCodec::codecForName(codecName);
-        mp->startDecryption(node->decodedContent(), codec);
+        mp->startDecryption(node->decodedContent(), codecName);
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {
