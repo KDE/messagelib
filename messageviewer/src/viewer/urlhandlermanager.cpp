@@ -519,7 +519,10 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << QStringLiteral("--query")
         << keyId;
 #ifdef Q_OS_WIN
-    const QString exec = QStandardPaths::findExecutable(QStringLiteral("Kleopatra.exe"));
+    QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"), {QCoreApplication::applicationDirPath()});
+    if (exec.isEmpty()) {
+        exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"));
+    }
 #else
     const QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra"));
 #endif
