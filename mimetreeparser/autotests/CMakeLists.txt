@@ -33,8 +33,8 @@ macro(add_mimetreeparser_crypto_unittest _source)
         KPim6::MimeTreeParser
         Qt::Test
         KPim6::Mime
+        QGpgmeQt6
     )
-    target_link_libraries(${_name} QGpgmeQt6 Qt6::Core5Compat)
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endmacro ()
 

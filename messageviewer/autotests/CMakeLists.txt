@@ -41,7 +41,6 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     if (TARGET KF6::TextEditTextToSpeech)
         target_link_libraries(${_name} KF6::TextEditTextToSpeech)
     endif()
-    target_link_libraries(${_name} Qt::Core5Compat)
 endmacro ()
 
 

@@ -32,8 +32,6 @@ macro( add_messagecomposer_test _source )
             KF6::IconThemes
             KF6::Completion
     )
-
-    target_link_libraries(${_name} Qt::Core5Compat)
 endmacro()
 
 macro( add_messagecomposer_cryptotest _source )

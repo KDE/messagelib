@@ -59,7 +59,6 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngineWidgets)
-find_package(Qt6Core5Compat)
 
 find_package(KF6CoreAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)

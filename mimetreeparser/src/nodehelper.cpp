@@ -20,7 +20,7 @@
 
 #include <QDir>
 #include <QRegularExpressionMatch>
-#include <QTextCodec>
+#include <QStringDecoder>
 #include <QUrl>
 
 #include <QFileDevice>
@@ -807,8 +807,8 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
     QMap<QString, bool> mimeNames;
     QStringList::ConstIterator constEnd(encodingNames.constEnd());
     for (QStringList::ConstIterator it = encodingNames.constBegin(); it != constEnd; ++it) {
-        QTextCodec *codec = QTextCodec::codecForName((*it).toLatin1());
-        const QString mimeName = (codec) ? QString::fromLatin1(codec->name()).toLower() : (*it);
+        QStringDecoder codec((*it).toLatin1().constData());
+        const QString mimeName = (codec.isValid()) ? QString::fromLatin1(codec.name()).toLower() : (*it);
         if (!mimeNames.contains(mimeName)) {
             encodings.append(KCharsets::charsets()->descriptionForEncoding(*it));
             mimeNames.insert(mimeName, true);
