@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2022-05-15 11:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -33,12 +33,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Adsız"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1088
+#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Yanlış Şifreleme Eklentisi."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1301
+#: src/messagepart.cpp:817 src/messagepart.cpp:1303
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Uygun bir şifreleme eklentisi bulunamadı."
@@ -62,17 +62,17 @@ msgid ""
 msgstr ""
 "Bu ileti imzalanmış; ancak imzanın geçerliliği doğrulanamadı.<br/>Neden: %1"
 
-#: src/messagepart.cpp:1303
+#: src/messagepart.cpp:1305
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "\"%1\" şifreleme eklentisi iletileri deşifre edemiyor."
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Şifreleme eklentisi \"%1\" veriyi açamadı."
 
-#: src/messagepart.cpp:1306
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Error: %1"
 msgstr "Hata: %1"

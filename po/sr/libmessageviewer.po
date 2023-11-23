@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1551,13 +1551,13 @@ msgstr "Ниво &аутоматског сажимања:"
 msgid "&Minimum font size:"
 msgstr "&Најмања величина фонта:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Фајл по имену ‘%1’ већ постоји. Желите ли да га пребришете?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -1566,30 +1566,30 @@ msgstr "Пребрисати фајл?"
 
 # >> @title:window
 # Додатна реч пре него генитивски знак, ради контраст са доњом поруком.
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Уписивање више прилога"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:193
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "прилог.1"
 
 # >> @title:window
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:199
 #, kde-format
 msgid "Save Attachment"
 msgstr "Уписивање прилога"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:223
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "прилог.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:321
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1597,22 +1597,22 @@ msgid ""
 msgstr ""
 "%1 поруке је шифровано. Желите ли да га задржите таквим приликом уписивања?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "KMail Question"
 msgstr "Питање К‑поште"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:323
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Очувај шифровање"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Не чувај"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:334
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1620,13 +1620,13 @@ msgid ""
 msgstr ""
 "%1 поруке је потписано. Желите ли да задржите потпис приликом уписивања?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "Keep Signature"
 msgstr "Задржи потпис"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1635,34 +1635,34 @@ msgid ""
 msgstr ""
 "<qt>Не могу да пишем у фајл<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:403
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Нема прилога за уписивање."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:467
 #, kde-format
 msgid "message"
 msgstr "порука"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "поруке е‑поште (*.mbox);;сви фајлови (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1671,60 +1671,60 @@ msgstr[1] "&Сачувај поруке"
 msgstr[2] "&Сачувај поруке"
 msgstr[3] "&Сачувај поруку"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Фајл %1 не може да се учита."
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Грешка при учитавању поруке"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:527
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Фајл %1 не може да се направи."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:538
 #, kde-format
 msgid "We cannot save message."
 msgstr "Не могу да сачувам поруку."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:538
 #, kde-format
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Изабери сав текст"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:613
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgid "Open &with %1"
 msgstr "О&твори помоћу %1|/|О&твори $[инс-п %1]“"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:642
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1827,78 +1827,78 @@ msgstr "Рашири сав цитирани текст."
 msgid "Collapse quoted text."
 msgstr "Сажми цитирани текст."
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:532
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Не могу да покренем менаџер сертификата. Проверите инсталацију."
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:534
 #, kde-format
 msgid "KMail Error"
 msgstr "Грешка К‑поште"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:549
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Прикажи сертификат 0x%1"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:608
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Отвори у адресару"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:610
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Копирај адресу е‑поште"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2704
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2698
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адреса копирана у клипборд."
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:634
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Потражи контакт у адресару"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:810
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Прилог: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:813
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Учаурена порука (тема: %1)"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:815
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Учаурена порука"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Неименовани прилог"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:853
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Прикажи ГнуПГ‑ов дневник ревизије за овај поступак"
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:893
 #, kde-format
 msgid "Opening URL..."
 msgstr "Отварам УРЛ..."
 
-#: viewer/urlhandlermanager.cpp:895
+#: viewer/urlhandlermanager.cpp:902
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Желите ли заиста да извршите <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:897
+#: viewer/urlhandlermanager.cpp:904
 #, kde-format
 msgid "Execute"
 msgstr "Изврши"
@@ -2109,7 +2109,7 @@ msgstr "Копирај текст"
 msgid "Select All Text"
 msgstr "Изабери сав текст"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2058
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2052
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Копирај адресу везе"
@@ -2227,63 +2227,63 @@ msgstr "Отвори помоћу..."
 msgid "Save All Attachments..."
 msgstr "Сачувај све прилоге..."
 
-#: viewer/viewer_p.cpp:1978
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "The network is broken."
 msgstr "Мрежа је покварена."
 
-#: viewer/viewer_p.cpp:1978
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Провера УРЛ‑а против преваре"
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "УРЛ %1 није добар."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1975
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Провера УРЛ‑а против преваре"
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Овај сајт садржи малвер, желите ли заиста да га посетите?"
 
-#: viewer/viewer_p.cpp:2002
+#: viewer/viewer_p.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Малвер"
 
-#: viewer/viewer_p.cpp:2056
+#: viewer/viewer_p.cpp:2050
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Копирај адресу е‑поште"
 
-#: viewer/viewer_p.cpp:2137
+#: viewer/viewer_p.cpp:2131
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Порука као обични текст"
 
-#: viewer/viewer_p.cpp:2710
+#: viewer/viewer_p.cpp:2704
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "УРЛ копиран у клипборд."
 
-#: viewer/viewer_p.cpp:2862
+#: viewer/viewer_p.cpp:2856
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Неуспешно учитавање поруке: %1."
 
-#: viewer/viewer_p.cpp:2867
+#: viewer/viewer_p.cpp:2861
 #, kde-format
 msgid "Message not found."
 msgstr "Порука није нађена."

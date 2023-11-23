@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1603,7 +1603,7 @@ msgstr "स्वचालित संक्षिप्त स्तर:"
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -1611,72 +1611,72 @@ msgstr ""
 "\"%1\" नाम गरिएको फाइल पहिला नै अवस्थित छ । के तपाईँ यसमा अधिलेखन गर्न निश्चिन्त "
 "हुनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "फाइल अधिलेखन गर्नुभयो?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgid "Save Attachments To"
 msgstr "यसमा सङ्लग्नता बचत गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:193
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "सङ्लग्नता.१"
 
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:199
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgid "Save Attachment"
 msgstr "यस रूपमा सङ्लग्नता बचत गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:223
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "सङ्लग्नता.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:321
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr "सन्देशको %1 भाग गुप्तिकृत गरिएको छ । के तपाईँ बचत गर्दा गुप्तिकरण राख्न चाहनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "KMail Question"
 msgstr "केडीई मेल प्रश्न"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:323
 #, kde-format
 msgid "Keep Encryption"
 msgstr "गुप्तिकरण राख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Do Not Keep"
 msgstr "नराख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:334
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "सन्देशको %1 भाग हस्ताक्षर गरिएको छ । के तपाईँ बचत गर्दा हस्ताक्षर राख्न चाहनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:336
 #, kde-format
 msgid "Keep Signature"
 msgstr "हस्ताक्षर राख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1690,36 +1690,36 @@ msgstr ""
 "फाइल %1 लेख्न सकेन:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:403
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "एउटा सङ्लग्नता छ"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "एउटा सङ्लग्नता छ"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:452
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "बचत गर्न सङ्लग्नता फेला पारेन ।"
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:467
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "० सन्देश"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1728,65 +1728,65 @@ msgid_plural "Save Messages"
 msgstr[0] " सन्देश"
 msgstr[1] " सन्देश"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be loaded."
 msgstr "पठइएका गुप्तिकृत सन्देश भण्डारण गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "सन्देश अद्यावधिक गर्दा त्रुटि"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:527
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be created."
 msgstr "पठइएका गुप्तिकृत सन्देश भण्डारण गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "सन्देश सार्दैछ"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:538
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "चिन्ह लगाएका सन्देशको अन्त्यमा"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:538
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "सन्देश सार्दैछ"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:602
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "घटाइएको: %1 "
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:613
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:640
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' सँग खोल्नुहोस्"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:642
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1893,85 +1893,85 @@ msgstr "सबै उद्धृत पाठ विस्तार गर्�
 msgid "Collapse quoted text."
 msgstr "उद्धृत पाठ संक्षिप्त गर्नुहोस् ।"
 
-#: viewer/urlhandlermanager.cpp:525
+#: viewer/urlhandlermanager.cpp:532
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्र प्रबन्धक सुरु गर्न सकेन । कृपया तपाईँको स्थापना जाँच गर्नुहोस् ।"
 
-#: viewer/urlhandlermanager.cpp:527
+#: viewer/urlhandlermanager.cpp:534
 #, kde-format
 msgid "KMail Error"
 msgstr "केडीई मेल त्रुटि"
 
-#: viewer/urlhandlermanager.cpp:542
+#: viewer/urlhandlermanager.cpp:549
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 प्रमाणपत्र देखाउनुहोस्"
 
-#: viewer/urlhandlermanager.cpp:601
+#: viewer/urlhandlermanager.cpp:608
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "ठेगाना पुस्तक भित्र खोल्नुहोस्"
 
-#: viewer/urlhandlermanager.cpp:603
+#: viewer/urlhandlermanager.cpp:610
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "इमेल ठेगाना"
 
-#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2704
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2698
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "क्लिपबोर्डमा ठेगाना प्रतिलिपि गरियो ।"
 
-#: viewer/urlhandlermanager.cpp:627
+#: viewer/urlhandlermanager.cpp:634
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "ठेगाना पुस्तक भित्र खोल्नुहोस्"
 
-#: viewer/urlhandlermanager.cpp:803
+#: viewer/urlhandlermanager.cpp:810
 #, kde-format
 msgid "Attachment: %1"
 msgstr "सङ्लग्नता: %1"
 
-#: viewer/urlhandlermanager.cpp:806
+#: viewer/urlhandlermanager.cpp:813
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "इनक्याप्सुलेट गरिएको सन्देश"
 
-#: viewer/urlhandlermanager.cpp:808
+#: viewer/urlhandlermanager.cpp:815
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "इनक्याप्सुलेट गरिएको सन्देश"
 
-#: viewer/urlhandlermanager.cpp:811
+#: viewer/urlhandlermanager.cpp:818
 #, fuzzy, kde-format
 #| msgid "Name of the attachment:"
 msgid "Unnamed attachment"
 msgstr "सङ्लग्नताको नाम:"
 
-#: viewer/urlhandlermanager.cpp:846
+#: viewer/urlhandlermanager.cpp:853
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:886
+#: viewer/urlhandlermanager.cpp:893
 #, kde-format
 msgid "Opening URL..."
 msgstr "यूआरएल खोल्दैछ..."
 
-#: viewer/urlhandlermanager.cpp:895
+#: viewer/urlhandlermanager.cpp:902
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>के तपाईँ वास्तवमै <b>%1</b> कार्यान्वयन गर्न चाहनुहुन्छ?</qt>"
 
-#: viewer/urlhandlermanager.cpp:897
+#: viewer/urlhandlermanager.cpp:904
 #, kde-format
 msgid "Execute"
 msgstr "कार्यान्वयन गर्नुहोस्"
@@ -2182,7 +2182,7 @@ msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 msgid "Select All Text"
 msgstr "सबै पाठ चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2058
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2052
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिङ्क ठेगाना प्रतिलिपि गर्नुहोस्"
@@ -2309,64 +2309,64 @@ msgstr "यससँग खोल्नुहोस्..."
 msgid "Save All Attachments..."
 msgstr "सबै सङ्लग्नता बचत गर्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1978
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1978
+#: viewer/viewer_p.cpp:1972
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1975
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "हस्ताक्षर फाइल वैध छैन"
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2002
+#: viewer/viewer_p.cpp:1996
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2056
+#: viewer/viewer_p.cpp:2050
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "इमेल ठेगाना"
 
-#: viewer/viewer_p.cpp:2137
+#: viewer/viewer_p.cpp:2131
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठका रूपमा सन्देश"
 
-#: viewer/viewer_p.cpp:2710
+#: viewer/viewer_p.cpp:2704
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "क्लिपबोर्डमा यूआरएल प्रतिलिपि गरियो ।"
 
-#: viewer/viewer_p.cpp:2862
+#: viewer/viewer_p.cpp:2856
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: viewer/viewer_p.cpp:2867
+#: viewer/viewer_p.cpp:2861
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

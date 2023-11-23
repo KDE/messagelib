@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2010-01-13 18:44+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -28,12 +28,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nenosaukts"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1088
+#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Nepareizs šifrēšanas spraudnis."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1301
+#: src/messagepart.cpp:817 src/messagepart.cpp:1303
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nav atrasts piemērots šifrēšanas spraudnis."
@@ -59,17 +59,17 @@ msgstr ""
 "Šī vēstule ir parakstīta, bet paraksta īstumu nevar apstiprināt. <br/"
 ">Iemesls: %1"
 
-#: src/messagepart.cpp:1303
+#: src/messagepart.cpp:1305
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Šifrēšanas spraudnis \"%1\" nespēj atšfirēt vēstules."
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifrēšanas spraudnis \"%1\" nespēja atšifrēt datus."
 
-#: src/messagepart.cpp:1306
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Error: %1"
 msgstr "Kļūda: %1"

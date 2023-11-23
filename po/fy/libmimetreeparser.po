@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-11-23 01:38+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -31,12 +31,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nammeleas"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1088
+#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Ferkearde krypto plug-in"
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1301
+#: src/messagepart.cpp:817 src/messagepart.cpp:1303
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Gjin geskikte Krypto-plugin fûn."
@@ -62,17 +62,17 @@ msgstr ""
 "It berjocht is ûndertekene, mar de jildigens fan de ûndertekening kin net "
 "kontrolearre wurde.<br />Reden: %1"
 
-#: src/messagepart.cpp:1303
+#: src/messagepart.cpp:1305
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "De Krypto-plugin \"%1\" kin hjin berjochten ûntsiferje."
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "De krypto-plugin \"%1\" koe de data net ûntsiferje."
 
-#: src/messagepart.cpp:1306
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Error: %1"
 msgstr "Flater: %1"
