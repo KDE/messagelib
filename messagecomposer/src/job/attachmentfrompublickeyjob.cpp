@@ -15,6 +15,7 @@
 #include <QGpgME/ExportJob>
 #include <QGpgME/Protocol>
 
+#include <Libkleo/Formatting>
 #include <Libkleo/ProgressDialog>
 
 using namespace MessageComposer;
@@ -29,7 +30,7 @@ public:
     void emitGpgError(const GpgME::Error &error);
 
     AttachmentFromPublicKeyJob *const q;
-    QString fingerprint;
+    GpgME::Key key;
     QByteArray data;
 };
 
@@ -47,8 +48,16 @@ void AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::exportResult
 
     // Create the AttachmentPart.
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
-    part->setName(i18n("OpenPGP key 0x%1", fingerprint.right(8)));
-    part->setFileName(QString::fromLatin1(QByteArray(QByteArray("0x") + fingerprint.toLatin1() + QByteArray(".asc"))));
+    const QString fingerprint = QLatin1String(key.primaryFingerprint());
+    const auto email = Kleo::Formatting::prettyEMail(key);
+    if (!email.isEmpty()) {
+        // Add email address when available
+        part->setName(i18n("OpenPGP Key %1 0x%2", email, fingerprint.right(8)));
+        part->setFileName(QStringLiteral("OpenPGP-Key_%1_0x%2.asc").arg(email, fingerprint.right(8)));
+    } else {
+        part->setName(i18n("OpenPGP Key 0x%1", fingerprint.right(8)));
+        part->setFileName(QStringLiteral("OpenPGP-Key_0x%1.asc").arg(fingerprint.right(8)));
+    }
     part->setMimeType("application/pgp-keys");
     part->setData(keyData);
 
@@ -69,23 +78,28 @@ void AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::emitGpgError
     q->emitResult();
 }
 
-AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent)
+AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJob(const GpgME::Key &key, QObject *parent)
     : AttachmentLoadJob(parent)
     , d(new AttachmentFromPublicKeyJobPrivate(this))
 {
-    d->fingerprint = fingerprint;
+    d->key = key;
 }
 
 AttachmentFromPublicKeyJob::~AttachmentFromPublicKeyJob() = default;
 
 QString AttachmentFromPublicKeyJob::fingerprint() const
 {
-    return d->fingerprint;
+    return QLatin1String(d->key.primaryFingerprint());
 }
 
-void AttachmentFromPublicKeyJob::setFingerprint(const QString &fingerprint)
+GpgME::Key AttachmentFromPublicKeyJob::key() const
 {
-    d->fingerprint = fingerprint;
+    return d->key;
+}
+
+void AttachmentFromPublicKeyJob::setKey(const GpgME::Key &key)
+{
+    d->key = key;
 }
 
 void AttachmentFromPublicKeyJob::doStart()
@@ -96,7 +110,7 @@ void AttachmentFromPublicKeyJob::doStart()
         d->exportResult(error, ba);
     });
 
-    const GpgME::Error error = job->start(QStringList(d->fingerprint));
+    const GpgME::Error error = job->start(QStringList(fingerprint()));
     if (error) {
         d->emitGpgError(error);
         // TODO check autodeletion policy of Kleo::Jobs...

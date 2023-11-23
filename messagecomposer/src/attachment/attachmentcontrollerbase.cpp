@@ -354,14 +354,14 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::createOpenWithMe
     }
 }
 
-void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
+void AttachmentControllerBase::exportPublicKey(const GpgME::Key &key)
 {
-    if (fingerprint.isEmpty() || !QGpgME::openpgp()) {
+    if (key.isNull() || !QGpgME::openpgp()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Tried to export key with empty fingerprint, or no OpenPGP.";
         return;
     }
 
-    auto ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
+    auto ajob = new MessageComposer::AttachmentFromPublicKeyJob(key, this);
     connect(ajob, &AttachmentFromPublicKeyJob::result, this, [this](KJob *job) {
         d->attachPublicKeyJobResult(job);
     });
@@ -971,7 +971,7 @@ void AttachmentControllerBase::showAttachPublicKeyDialog()
                                                                  d->wParent);
 
     if (dialog->exec() == QDialog::Accepted) {
-        exportPublicKey(dialog->fingerprint());
+        exportPublicKey(dialog->selectedKey());
     }
     delete dialog;
 }

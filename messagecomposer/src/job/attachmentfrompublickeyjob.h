@@ -10,6 +10,8 @@
 
 #include "messagecomposer_export.h"
 
+#include <gpgme++/key.h>
+
 namespace MessageComposer
 {
 // TODO I have no idea how to test this.  Have a fake keyring???
@@ -21,11 +23,12 @@ class MESSAGECOMPOSER_EXPORT AttachmentFromPublicKeyJob : public MessageCore::At
     Q_OBJECT
 
 public:
-    explicit AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent = nullptr);
+    explicit AttachmentFromPublicKeyJob(const GpgME::Key &key, QObject *parent = nullptr);
     ~AttachmentFromPublicKeyJob() override;
 
     [[nodiscard]] QString fingerprint() const;
-    void setFingerprint(const QString &fingerprint);
+    [[nodiscard]] GpgME::Key key() const;
+    void setKey(const GpgME::Key &key);
 
 protected Q_SLOTS:
     void doStart() override;

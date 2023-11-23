@@ -20,6 +20,8 @@
 #include <KService>
 #include <MessageCore/AttachmentPart>
 
+#include <gpgme++/key.h>
+
 class KActionCollection;
 class QAction;
 class KJob;
@@ -82,7 +84,7 @@ Q_SIGNALS:
     void fileAttached();
 
 protected:
-    void exportPublicKey(const QString &fingerprint);
+    void exportPublicKey(const GpgME::Key &key);
     void enableAttachPublicKey(bool enable);
     void enableAttachMyPublicKey(bool enable);
     void byteArrayToRemoteFile(const QByteArray &aData, const QUrl &aURL, bool overwrite = false);
