@@ -208,8 +208,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
 
     mDisplayFormatMessageOverwrite = MessageViewer::Viewer::UseGlobalSetting;
 
-    mUpdateReaderWinTimer.setObjectName(QStringLiteral("mUpdateReaderWinTimer"));
-    mResizeTimer.setObjectName(QStringLiteral("mResizeTimer"));
+    mUpdateReaderWinTimer.setObjectName(QLatin1StringView("mUpdateReaderWinTimer"));
+    mResizeTimer.setObjectName(QLatin1StringView("mResizeTimer"));
 
     createWidgets();
     createActions();
@@ -230,7 +230,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
 
     // FIXME: Don't use the full payload here when attachment loading on demand is used, just
     //        like in KMMainWidget::slotMessageActivated().
-    mMonitor.setObjectName(QStringLiteral("MessageViewerMonitor"));
+    mMonitor.setObjectName(QLatin1StringView("MessageViewerMonitor"));
     mMonitor.setSession(mSession);
     Akonadi::ItemFetchScope fs;
     fs.fetchFullPayload();
@@ -426,7 +426,7 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
 
         if (offers.count() > 1) { // submenu 'open with'
             menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
-            menu->menuAction()->setObjectName(QStringLiteral("openWith_submenu")); // for the unittest
+            menu->menuAction()->setObjectName(QLatin1StringView("openWith_submenu")); // for the unittest
             topMenu->addMenu(menu);
         }
         // qCDebug(MESSAGEVIEWER_LOG) << offers.count() << "offers" << topMenu << menu;
@@ -1362,7 +1362,7 @@ void ViewerPrivate::createWidgets()
     vlay->setContentsMargins({});
     mSplitter = new QSplitter(Qt::Vertical, q);
     connect(mSplitter, &QSplitter::splitterMoved, this, &ViewerPrivate::saveSplitterSizes);
-    mSplitter->setObjectName(QStringLiteral("mSplitter"));
+    mSplitter->setObjectName(QLatin1StringView("mSplitter"));
     mSplitter->setChildrenCollapsible(false);
     vlay->addWidget(mSplitter);
     mMimePartTree = new MimePartTreeView(mSplitter);
@@ -1381,33 +1381,33 @@ void ViewerPrivate::createWidgets()
     mReaderBoxVBoxLayout->setContentsMargins({});
     mBoxHBoxLayout->addWidget(mReaderBox);
 
-    mColorBar->setObjectName(QStringLiteral("mColorBar"));
+    mColorBar->setObjectName(QLatin1StringView("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
     mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(mReaderBox);
-    mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
+    mShowNextMessageWidget->setObjectName(QLatin1StringView("shownextmessagewidget"));
     mReaderBoxVBoxLayout->addWidget(mShowNextMessageWidget);
     mShowNextMessageWidget->hide();
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
     mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
-    mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
+    mScamDetectionWarning->setObjectName(QLatin1StringView("scandetectionwarning"));
     mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
 
     mMdnWarning = new MDNWarningWidget(mReaderBox);
-    mMdnWarning->setObjectName(QStringLiteral("mMdnWarning"));
+    mMdnWarning->setObjectName(QLatin1StringView("mMdnWarning"));
     mReaderBoxVBoxLayout->addWidget(mMdnWarning);
 
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
-    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("TextToSpeechContainerWidget"));
+    mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("TextToSpeechContainerWidget"));
     mReaderBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
 #endif
     mViewer = new MailWebEngineView(mActionCollection, mReaderBox);
     mViewer->setViewer(this);
     mReaderBoxVBoxLayout->addWidget(mViewer);
-    mViewer->setObjectName(QStringLiteral("mViewer"));
+    mViewer->setObjectName(QLatin1StringView("mViewer"));
 
     mViewerPluginToolManager = new MessageViewer::ViewerPluginToolManager(mReaderBox, this);
     mViewerPluginToolManager->setActionCollection(mActionCollection);
@@ -1420,7 +1420,7 @@ void ViewerPrivate::createWidgets()
     connect(mViewerPluginToolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPrivate::slotActivatePlugin);
 
     mSliderContainer = new TextAddonsWidgets::SlideContainer(mReaderBox);
-    mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
+    mSliderContainer->setObjectName(QLatin1StringView("slidercontainer"));
     mReaderBoxVBoxLayout->addWidget(mSliderContainer);
     mFindBar = new WebEngineViewer::FindBarWebEngineView(mViewer, q);
     connect(mFindBar, &WebEngineViewer::FindBarWebEngineView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
@@ -1432,21 +1432,21 @@ void ViewerPrivate::createWidgets()
 void ViewerPrivate::createTrackingWarningWidget()
 {
     mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(mReaderBox);
-    mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
+    mMailTrackingWarning->setObjectName(QLatin1StringView("mailtrackingwarning"));
     mReaderBoxVBoxLayout->insertWidget(0, mMailTrackingWarning);
 }
 
 void ViewerPrivate::createOpenSavedFileFolderWidget()
 {
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(mReaderBox);
-    mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
+    mOpenSavedFileFolderWidget->setObjectName(QLatin1StringView("opensavefilefolderwidget"));
     mReaderBoxVBoxLayout->insertWidget(0, mOpenSavedFileFolderWidget);
 }
 
 void ViewerPrivate::createSubmittedFormWarning()
 {
     mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(mReaderBox);
-    mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
+    mSubmittedFormWarning->setObjectName(QLatin1StringView("submittedformwarning"));
     mReaderBoxVBoxLayout->insertWidget(0, mSubmittedFormWarning);
 }
 
@@ -1681,7 +1681,7 @@ void ViewerPrivate::createActions()
 void ViewerPrivate::createPurposeMenuMessageWidget()
 {
     mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(mReaderBox);
-    mPurposeMenuMessageWidget->setObjectName(QStringLiteral("mPurposeMenuMessageWidget"));
+    mPurposeMenuMessageWidget->setObjectName(QLatin1StringView("mPurposeMenuMessageWidget"));
     mReaderBoxVBoxLayout->insertWidget(0, mPurposeMenuMessageWidget);
 }
 

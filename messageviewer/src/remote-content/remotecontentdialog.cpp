@@ -15,13 +15,13 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     , mRemoveContentWidget(new RemoteContentWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
-    mRemoveContentWidget->setObjectName(QStringLiteral("mRemoveContentWidget"));
+    mRemoveContentWidget->setObjectName(QLatin1StringView("mRemoveContentWidget"));
     mainLayout->addWidget(mRemoveContentWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentDialog::reject);
     mainLayout->addWidget(buttonBox);

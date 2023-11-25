@@ -212,7 +212,7 @@ void SearchLineStatus::clearFilterButtonClicked()
 void SearchLineStatus::createMenuSearch()
 {
     mFilterMenu = new QMenu(this);
-    mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
+    mFilterMenu->setObjectName(QLatin1StringView("filtermenu"));
     auto clearWidgetAction = new QWidgetAction(mFilterMenu);
     auto clearFilterButton = new QPushButton(i18n("Clear Filter"), mFilterMenu);
     connect(clearFilterButton, &QPushButton::clicked, this, &SearchLineStatus::clearFilterButtonClicked);

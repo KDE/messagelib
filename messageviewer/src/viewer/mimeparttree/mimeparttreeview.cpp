@@ -22,7 +22,7 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
     : QTreeView(parent)
     , mMimePartModel(new MimeTreeModel(this))
 {
-    setObjectName(QStringLiteral("mMimePartTree"));
+    setObjectName(QLatin1StringView("mMimePartTree"));
 
     setModel(mMimePartModel);
     setSelectionMode(QAbstractItemView::ExtendedSelection);

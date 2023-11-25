@@ -25,13 +25,13 @@ DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Developer Tool"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
-    mDeveloperToolWidget->setObjectName(QStringLiteral("mDeveloperToolWidget"));
+    mDeveloperToolWidget->setObjectName(QLatin1StringView("mDeveloperToolWidget"));
     mainLayout->addWidget(mDeveloperToolWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DeveloperToolDialog::reject);
     connect(mDeveloperToolWidget, &DeveloperToolWidget::closeRequested, this, &DeveloperToolDialog::reject);
     mainLayout->addWidget(buttonBox);

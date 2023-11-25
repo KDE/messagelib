@@ -18,9 +18,9 @@ ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     , mListFiltersWidget(new QListWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
-    mListFiltersWidget->setObjectName(QStringLiteral("mListFiltersWidget"));
+    mListFiltersWidget->setObjectName(QLatin1StringView("mListFiltersWidget"));
     mainLayout->addWidget(mListFiltersWidget);
     mListFiltersWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(mListFiltersWidget, &QListWidget::customContextMenuRequested, this, &ConfigureFiltersWidget::slotCustomContextMenuRequested);

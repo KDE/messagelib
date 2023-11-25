@@ -24,36 +24,36 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     , mRuleType(new DKIMManageRulesComboBox(this))
 {
     auto layout = new QFormLayout(this);
-    layout->setObjectName(QStringLiteral("layout"));
+    layout->setObjectName(QLatin1StringView("layout"));
     layout->setContentsMargins({});
 
-    mEnabled->setObjectName(QStringLiteral("enabled"));
+    mEnabled->setObjectName(QLatin1StringView("enabled"));
     mEnabled->setChecked(true);
     layout->addWidget(mEnabled);
 
-    mDomain->setObjectName(QStringLiteral("domain"));
+    mDomain->setObjectName(QLatin1StringView("domain"));
     mDomain->setClearButtonEnabled(true);
     layout->addRow(i18n("Domain:"), mDomain);
     connect(mDomain, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mListId->setObjectName(QStringLiteral("listid"));
+    mListId->setObjectName(QLatin1StringView("listid"));
     mListId->setClearButtonEnabled(true);
     layout->addRow(i18n("List-Id:"), mListId);
 
-    mFrom->setObjectName(QStringLiteral("from"));
+    mFrom->setObjectName(QLatin1StringView("from"));
     mFrom->setClearButtonEnabled(true);
     layout->addRow(i18n("From:"), mFrom);
     mFrom->setPlaceholderText(i18n("Use '*' to specify all emails from domain"));
     connect(mFrom, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mSignatureDomainIdentifier->setObjectName(QStringLiteral("signaturedomainidentifier"));
+    mSignatureDomainIdentifier->setObjectName(QLatin1StringView("signaturedomainidentifier"));
     mSignatureDomainIdentifier->setClearButtonEnabled(true);
     layout->addRow(i18n("SDID:"), mSignatureDomainIdentifier);
 
-    mRuleType->setObjectName(QStringLiteral("ruletype"));
+    mRuleType->setObjectName(QLatin1StringView("ruletype"));
     layout->addRow(i18n("Rule:"), mRuleType);
 
-    mPriority->setObjectName(QStringLiteral("priority"));
+    mPriority->setObjectName(QLatin1StringView("priority"));
     mPriority->setMinimum(1);
     mPriority->setMaximum(9999);
     mPriority->setValue(1000); // Default Value

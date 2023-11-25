@@ -46,13 +46,13 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     auto lay = new QVBoxLayout(this);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     lay->setContentsMargins({});
-    mTextToSpeechContainerWidget->setObjectName(QStringLiteral("texttospeech"));
+    mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("texttospeech"));
     lay->addWidget(mTextToSpeechContainerWidget);
     mTextBrowser = new MailSourceViewTextBrowser(mTextToSpeechContainerWidget);
 #else
     mTextBrowser = new MailSourceViewTextBrowser(this);
 #endif
-    mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
+    mTextBrowser->setObjectName(QLatin1StringView("textbrowser"));
     mTextBrowser->setLineWrapMode(QPlainTextEdit::NoWrap);
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
@@ -70,7 +70,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     lay->addWidget(mTextBrowser);
 
     mFindBar = new FindBarSourceView(mTextBrowser, this);
-    mFindBar->setObjectName(QStringLiteral("findbar"));
+    mFindBar->setObjectName(QLatin1StringView("findbar"));
     connect(mFindBar, &FindBarSourceView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 

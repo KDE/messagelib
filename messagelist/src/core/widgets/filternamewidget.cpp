@@ -19,17 +19,17 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     , mIconButton(new KIconButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mName->setObjectName(QStringLiteral("mName"));
+    mName->setObjectName(QLatin1StringView("mName"));
     mName->setClearButtonEnabled(true);
-    mIconButton->setObjectName(QStringLiteral("mIconButton"));
+    mIconButton->setObjectName(QLatin1StringView("mIconButton"));
     mIconButton->setFixedSize(32, 32);
     KLineEditEventHandler::catchReturnKey(mName);
 
     auto label = new QLabel(i18n("Name:"), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(QLatin1StringView("label"));
 
     mainLayout->addWidget(label);
     mainLayout->addWidget(mName);

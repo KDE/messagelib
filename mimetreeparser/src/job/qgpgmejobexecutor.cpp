@@ -23,7 +23,7 @@ QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent)
     : QObject(parent)
     , mEventLoop(new QEventLoop(this))
 {
-    setObjectName(QStringLiteral("KleoJobExecutor"));
+    setObjectName(QLatin1StringView("KleoJobExecutor"));
 }
 
 GpgME::VerificationResult QGpgMEJobExecutor::exec(QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)

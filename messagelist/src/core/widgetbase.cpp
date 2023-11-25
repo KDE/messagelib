@@ -112,14 +112,14 @@ Widget::Widget(QWidget *pParent)
     connect(Manager::instance(), &Manager::themesChanged, this, &Widget::themesChanged);
 
     setAutoFillBackground(true);
-    setObjectName(QStringLiteral("messagelistwidget"));
+    setObjectName(QLatin1StringView("messagelistwidget"));
 
     auto g = new QVBoxLayout(this);
     g->setContentsMargins({});
     g->setSpacing(0);
 
     d->quickSearchLine = new QuickSearchLine;
-    d->quickSearchLine->setObjectName(QStringLiteral("quicksearchline"));
+    d->quickSearchLine->setObjectName(QLatin1StringView("quicksearchline"));
     connect(d->quickSearchLine, &QuickSearchLine::clearButtonClicked, this, &Widget::searchEditClearButtonClicked);
 
     connect(d->quickSearchLine, &QuickSearchLine::searchEditTextEdited, this, &Widget::searchEditTextEdited);
@@ -145,7 +145,7 @@ Widget::Widget(QWidget *pParent)
     d->mView = new View(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
     d->mView->setSortOrder(&d->mSortOrder);
-    d->mView->setObjectName(QStringLiteral("messagealistview"));
+    d->mView->setObjectName(QLatin1StringView("messagealistview"));
     g->addWidget(d->mView, 1);
 
     connect(d->mView->header(), &QHeaderView::sectionClicked, this, &Widget::slotViewHeaderSectionClicked);

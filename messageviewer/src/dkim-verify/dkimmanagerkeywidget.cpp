@@ -21,14 +21,14 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     , mDKIMManagerKeyTreeView(new DKIMManagerKeyTreeView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
     mainLayout->setContentsMargins({});
 
-    mDKIMManagerKeyTreeView->setObjectName(QStringLiteral("mDKIMManagerKeyTreeView"));
+    mDKIMManagerKeyTreeView->setObjectName(QLatin1StringView("mDKIMManagerKeyTreeView"));
 
     auto searchLineEdit = new QLineEdit(this);
     KLineEditEventHandler::catchReturnKey(searchLineEdit);
-    searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
+    searchLineEdit->setObjectName(QLatin1StringView("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
     connect(searchLineEdit, &QLineEdit::textChanged, mDKIMManagerKeyTreeView, &DKIMManagerKeyTreeView::setFilterStr);

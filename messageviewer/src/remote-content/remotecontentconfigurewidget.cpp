@@ -44,10 +44,10 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     , mTreeWidget(new QTreeWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mTreeWidget->setObjectName(QStringLiteral("treewidget"));
+    mTreeWidget->setObjectName(QLatin1StringView("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("Domain"), i18n("Status")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -55,7 +55,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     mTreeWidget->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
-    searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
+    searchLineEdit->setObjectName(QLatin1StringView("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
     KLineEditEventHandler::catchReturnKey(searchLineEdit);

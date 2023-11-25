@@ -40,7 +40,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     , mView(new Akonadi::RecipientsPickerWidget(true, nullptr, this))
     , mSelectedLabel(new QLabel(this))
 {
-    setObjectName(QStringLiteral("RecipientsPicker"));
+    setObjectName(QLatin1StringView("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
     auto mainLayout = new QVBoxLayout(this);

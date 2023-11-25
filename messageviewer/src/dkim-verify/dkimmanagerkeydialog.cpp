@@ -22,13 +22,13 @@ DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     , mManagerWidget(new DKIMManagerKeyWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
 
-    mManagerWidget->setObjectName(QStringLiteral("managerWidget"));
+    mManagerWidget->setObjectName(QLatin1StringView("managerWidget"));
     mainLayout->addWidget(mManagerWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManagerKeyDialog::slotAccept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManagerKeyDialog::reject);
     mainLayout->addWidget(buttonBox);

@@ -19,7 +19,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     setObjectName(name);
     setText(i18n("&Insert Command"));
 
-    mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
+    mMenuCommand->setObjectName(QLatin1StringView("templatescommandmenu"));
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     setMenu(mMenuCommand->menu());

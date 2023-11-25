@@ -20,11 +20,11 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     , mLabel(new QLabel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
 
     mLabel->setAutoFillBackground(true);
-    mLabel->setObjectName(QStringLiteral("label"));
+    mLabel->setObjectName(QLatin1StringView("label"));
     mainLayout->addWidget(mLabel);
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
     connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);

@@ -14,9 +14,9 @@ TemplateParserEmailAddressRequesterLineEdit::TemplateParserEmailAddressRequester
     , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
     mainLayout->setContentsMargins({});
-    mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    mLineEdit->setObjectName(QLatin1StringView("lineedit"));
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &TemplateParserEmailAddressRequesterLineEdit::textChanged);
 }

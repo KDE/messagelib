@@ -34,7 +34,7 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     auto closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
-    closeBtn->setObjectName(QStringLiteral("close"));
+    closeBtn->setObjectName(QLatin1StringView("close"));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18n("Close"));
 
@@ -49,7 +49,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     lay->addWidget(label);
 
     mSearch = new PimCommon::LineEditWithCompleterNg(this);
-    mSearch->setObjectName(QStringLiteral("searchline"));
+    mSearch->setObjectName(QLatin1StringView("searchline"));
     mSearch->setToolTip(i18n("Text to search for"));
     mSearch->setClearButtonEnabled(true);
     label->setBuddy(mSearch);
@@ -57,13 +57,13 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     mFindNextBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this);
     mFindNextBtn->setToolTip(i18n("Jump to next match"));
-    mFindNextBtn->setObjectName(QStringLiteral("findnext"));
+    mFindNextBtn->setObjectName(QLatin1StringView("findnext"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
 
     mFindPrevBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this);
     mFindPrevBtn->setToolTip(i18n("Jump to previous match"));
-    mFindPrevBtn->setObjectName(QStringLiteral("findprevious"));
+    mFindPrevBtn->setObjectName(QLatin1StringView("findprevious"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
 
@@ -85,7 +85,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mSearch, &QLineEdit::returnPressed, this, &FindBarBase::findNext);
 
     mStatus = new QLabel(this);
-    mStatus->setObjectName(QStringLiteral("status"));
+    mStatus->setObjectName(QLatin1StringView("status"));
     mStatus->setTextFormat(Qt::PlainText);
     QFontMetrics fm(mStatus->font());
     mNotFoundString = i18n("Phrase not found");

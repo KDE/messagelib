@@ -16,7 +16,7 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 {
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
-    mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
+    mMenuCommand->setObjectName(QLatin1StringView("templatescommandmenu"));
     connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
     setMenu(mMenuCommand->menu());
 }

@@ -29,14 +29,14 @@ TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     setModal(false);
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TrackingDetailsDialog::reject);
     connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &TrackingDetailsDialog::close);
 
-    mDetails->setObjectName(QStringLiteral("detail"));
+    mDetails->setObjectName(QLatin1StringView("detail"));
     mainLayout->addWidget(mDetails);
     mainLayout->addWidget(buttonBox);
     mDetails->setReadOnly(true);

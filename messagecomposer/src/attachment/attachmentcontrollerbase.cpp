@@ -319,7 +319,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::createOpenWithMe
 
         if (offers.count() > 1) { // submenu 'open with'
             menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
-            menu->menuAction()->setObjectName(QStringLiteral("openWith_submenu")); // for the unittest
+            menu->menuAction()->setObjectName(QLatin1StringView("openWith_submenu")); // for the unittest
             topMenu->addMenu(menu);
         }
         // qCDebug(MESSAGECOMPOSER_LOG) << offers.count() << "offers" << topMenu << menu;

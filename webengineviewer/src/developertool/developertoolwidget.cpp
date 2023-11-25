@@ -16,12 +16,12 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     , mEnginePage(new QWebEnginePage(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
+    mWebEngineView->setObjectName(QLatin1StringView("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
-    mEnginePage->setObjectName(QStringLiteral("mEnginePage"));
+    mEnginePage->setObjectName(QLatin1StringView("mEnginePage"));
     mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 
     mWebEngineView->setPage(mEnginePage);

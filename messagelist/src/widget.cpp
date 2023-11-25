@@ -73,7 +73,7 @@ MessageList::Widget::Widget(QWidget *parent)
     populateStatusFilterCombo();
 
     d->mMonitor = new Akonadi::Monitor(this);
-    d->mMonitor->setObjectName(QStringLiteral("MessageListTagMonitor"));
+    d->mMonitor->setObjectName(QLatin1StringView("MessageListTagMonitor"));
     d->mMonitor->setTypeMonitored(Akonadi::Monitor::Tags);
     connect(d->mMonitor, &Akonadi::Monitor::tagAdded, this, &Widget::populateStatusFilterCombo);
     connect(d->mMonitor, &Akonadi::Monitor::tagRemoved, this, &Widget::populateStatusFilterCombo);

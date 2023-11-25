@@ -37,7 +37,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->mOkButton = buttonBox->button(QDialogButtonBox::Ok);
-    d->mOkButton->setObjectName(QStringLiteral("ok_button"));
+    d->mOkButton->setObjectName(QLatin1StringView("ok_button"));
     d->mOkButton->setDefault(true);
     d->mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &FollowUpReminderSelectDateDialog::accept);
@@ -56,7 +56,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     d->mDateComboBox = new KDateComboBox;
     QDate currentDate = QDate::currentDate().addDays(1);
     d->mDateComboBox->setMinimumDate(QDate::currentDate());
-    d->mDateComboBox->setObjectName(QStringLiteral("datecombobox"));
+    d->mDateComboBox->setObjectName(QLatin1StringView("datecombobox"));
 
     d->mDateComboBox->setDate(currentDate);
 
@@ -66,7 +66,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     d->mCollectionCombobox->setMinimumWidth(250);
     d->mCollectionCombobox->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
     d->mCollectionCombobox->setMimeTypeFilter(QStringList() << KCalendarCore::Todo::todoMimeType());
-    d->mCollectionCombobox->setObjectName(QStringLiteral("collectioncombobox"));
+    d->mCollectionCombobox->setObjectName(QLatin1StringView("collectioncombobox"));
 
     formLayout->addRow(i18n("Store to-do in:"), d->mCollectionCombobox);
 

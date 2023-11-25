@@ -30,26 +30,26 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Rule"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
 
-    mRulesWidget->setObjectName(QStringLiteral("mRulesWidget"));
+    mRulesWidget->setObjectName(QLatin1StringView("mRulesWidget"));
     mainLayout->addWidget(mRulesWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
     mainLayout->addWidget(buttonBox);
 
     auto addButton = new QPushButton(i18n("Add Rule..."), this);
-    addButton->setObjectName(QStringLiteral("addButton"));
+    addButton->setObjectName(QLatin1StringView("addButton"));
     buttonBox->addButton(addButton, QDialogButtonBox::ActionRole);
     connect(addButton, &QPushButton::clicked, mRulesWidget, &DKIMManageRulesWidget::addRule);
 
     auto importButton = new QPushButton(i18n("Import..."), this);
-    importButton->setObjectName(QStringLiteral("importButton"));
+    importButton->setObjectName(QLatin1StringView("importButton"));
     buttonBox->addButton(importButton, QDialogButtonBox::ActionRole);
     connect(importButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotImport);
 
-    mExportButton->setObjectName(QStringLiteral("mExportButton"));
+    mExportButton->setObjectName(QLatin1StringView("mExportButton"));
     buttonBox->addButton(mExportButton, QDialogButtonBox::ActionRole);
     connect(mExportButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotExport);
 

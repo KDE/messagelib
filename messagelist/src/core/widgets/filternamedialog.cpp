@@ -18,9 +18,9 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Edit Filter"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
-    mFilterNameWidget->setObjectName(QStringLiteral("mFilterNameWidget"));
+    mFilterNameWidget->setObjectName(QLatin1StringView("mFilterNameWidget"));
     mainLayout->addWidget(mFilterNameWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);

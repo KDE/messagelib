@@ -23,9 +23,9 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Filter"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
-    mConfigureFiltersWidget->setObjectName(QStringLiteral("mConfigureFiltersWidget"));
+    mConfigureFiltersWidget->setObjectName(QLatin1StringView("mConfigureFiltersWidget"));
     mainLayout->addWidget(mConfigureFiltersWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);

@@ -26,9 +26,9 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     connect(mSendDenyAction, &QAction::triggered, this, &MDNWarningWidget::slotSendDeny);
     addAction(mSendDenyAction);
     mSendDenyAction->setVisible(false); // Hidden by default
-    mIgnoreAction->setObjectName(QStringLiteral("mIgnoreAction"));
-    mSendAction->setObjectName(QStringLiteral("mSendAction"));
-    mSendDenyAction->setObjectName(QStringLiteral("mSendDenyAction"));
+    mIgnoreAction->setObjectName(QLatin1StringView("mIgnoreAction"));
+    mSendAction->setObjectName(QLatin1StringView("mSendAction"));
+    mSendDenyAction->setObjectName(QLatin1StringView("mSendDenyAction"));
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;
