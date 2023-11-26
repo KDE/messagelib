@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-08 08:47+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1019,13 +1019,13 @@ msgstr[0] "<b>%1</b> 封信件(<b>%2</b> 封未读)"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr "任意已定义的筛选"
+msgstr "任意已定义的过滤"
 
 #: core/widgetbase.cpp:186
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "创建筛选"
+msgstr "创建过滤"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1074,7 +1074,7 @@ msgstr "文件夹总是使用此排列顺序"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "配置筛选"
+msgstr "配置过滤"
 
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
@@ -1084,19 +1084,19 @@ msgstr "移除"
 #: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "您想要删除此筛选吗？"
+msgstr "您想要删除此过滤吗？"
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "移除筛选"
+msgstr "移除过滤"
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "编辑筛选"
+msgstr "编辑过滤"
 
 #: core/widgets/filternamewidget.cpp:31
 #, kde-format
@@ -1106,7 +1106,7 @@ msgstr "名称："
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "保存筛选..."
+msgstr "保存过滤..."
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1162,7 +1162,7 @@ msgstr "按状态过滤邮件"
 #: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgid "Saved Filter"
-msgstr "已保存的筛选"
+msgstr "已保存的过滤"
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
