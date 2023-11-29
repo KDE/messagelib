@@ -1393,10 +1393,6 @@ void ViewerPrivate::createWidgets()
     mScamDetectionWarning->setObjectName(QLatin1StringView("scandetectionwarning"));
     mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
 
-    mMdnWarning = new MDNWarningWidget(mReaderBox);
-    mMdnWarning->setObjectName(QLatin1StringView("mMdnWarning"));
-    mReaderBoxVBoxLayout->addWidget(mMdnWarning);
-
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
     mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("TextToSpeechContainerWidget"));
@@ -2363,13 +2359,26 @@ void ViewerPrivate::updateColorFromScheme()
     mBackgroundAttachment = scheme.background().color();
 }
 
+void ViewerPrivate::createMdnWarningWidget()
+{
+    mMdnWarning = new MDNWarningWidget(mReaderBox);
+    mMdnWarning->setObjectName(QLatin1StringView("mMdnWarning"));
+    mReaderBoxVBoxLayout->insertWidget(0, mMdnWarning);
+}
+
 void ViewerPrivate::mdnWarningAnimatedHide()
 {
+    if (!mMdnWarning) {
+        createMdnWarningWidget();
+    }
     mMdnWarning->animatedHide();
 }
 
 void ViewerPrivate::showMdnInformations(const QPair<QString, bool> &mdnInfo)
 {
+    if (!mMdnWarning) {
+        createMdnWarningWidget();
+    }
     if (!mdnInfo.first.isEmpty()) {
         mMdnWarning->setCanDeny(mdnInfo.second);
         mMdnWarning->setInformation(mdnInfo.first);
