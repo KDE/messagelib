@@ -630,6 +630,7 @@ private:
     void createTrackingWarningWidget();
     void createShowNextMessageWidget();
     void createMdnWarningWidget();
+    void createScamDetectionWarningWidget();
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;

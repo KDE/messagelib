@@ -922,10 +922,6 @@ void ViewerPrivate::initHtmlWidget()
         }
         mMailTrackingWarning->addTracker(lst);
     });
-    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
-    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
-    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
-    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
     connect(mViewer, &MailWebEngineView::pageIsScrolledToBottom, this, &ViewerPrivate::pageIsScrolledToBottom);
     connect(mViewer, &MailWebEngineView::urlBlocked, this, &ViewerPrivate::slotUrlBlocked);
 }
@@ -1146,7 +1142,9 @@ void ViewerPrivate::resetStateForNewMessage()
         setShowSignatureDetails(false);
     }
     mViewerPluginToolManager->closeAllTools();
-    mScamDetectionWarning->setVisible(false);
+    if (mScamDetectionWarning) {
+        mScamDetectionWarning->setVisible(false);
+    }
     if (mOpenSavedFileFolderWidget) {
         mOpenSavedFileFolderWidget->setVisible(false);
     }
@@ -1389,10 +1387,6 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QLatin1StringView("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
-    mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
-    mScamDetectionWarning->setObjectName(QLatin1StringView("scandetectionwarning"));
-    mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
-
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
     mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("TextToSpeechContainerWidget"));
@@ -1421,6 +1415,17 @@ void ViewerPrivate::createWidgets()
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
+}
+
+void ViewerPrivate::createScamDetectionWarningWidget()
+{
+    mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
+    mScamDetectionWarning->setObjectName(QLatin1StringView("scandetectionwarning"));
+    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
+    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
+    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
+    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
+    mReaderBoxVBoxLayout->insertWidget(0, mScamDetectionWarning);
 }
 
 void ViewerPrivate::createTrackingWarningWidget()
@@ -2092,7 +2097,9 @@ void ViewerPrivate::slotToggleHtmlMode()
     if (mColorBar->isNormal() || availableModeSize < 2) {
         return;
     }
-    mScamDetectionWarning->setVisible(false);
+    if (mScamDetectionWarning) {
+        mScamDetectionWarning->setVisible(false);
+    }
     const MimeTreeParser::Util::HtmlMode mode = mColorBar->mode();
     const int pos = (availableModes.indexOf(mode) + 1) % availableModeSize;
     setDisplayFormatMessageOverwrite(translateToDisplayFormat(availableModes[pos]));
@@ -2994,6 +3001,9 @@ void ViewerPrivate::slotMessageMayBeAScam()
                 return;
             }
         }
+    }
+    if (!mScamDetectionWarning) {
+        createScamDetectionWarningWidget();
     }
     mScamDetectionWarning->slotShowWarning();
 }
