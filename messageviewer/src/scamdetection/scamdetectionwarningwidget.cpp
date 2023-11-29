@@ -30,6 +30,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     setCloseButtonVisible(true);
     setMessageType(Warning);
     setWordWrap(true);
+    setPosition(KMessageWidget::Header);
     setText(i18n("This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"));
 
     connect(this, &ScamDetectionWarningWidget::linkActivated, this, &ScamDetectionWarningWidget::slotShowDetails);

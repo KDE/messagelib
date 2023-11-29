@@ -17,6 +17,7 @@ SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     setVisible(false);
     setCloseButtonVisible(true);
     setMessageType(Warning);
+    setPosition(KMessageWidget::Header);
     setWordWrap(true);
     setText(i18n("Submit form is not allowed in mailer. Please open url in a browser."));
 }

@@ -26,6 +26,7 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     , mShowFolderAction(new QAction(i18nc("@action", "Open folder where attachment was saved"), this))
     , mOpenFileAction(new QAction(i18nc("@action", "Open File"), this))
 {
+    setPosition(KMessageWidget::Header);
     mTimer->setSingleShot(true);
     mTimer->setInterval(5s); // 5 seconds
     connect(mTimer, &QTimer::timeout, this, &OpenSavedFileFolderWidget::slotTimeOut);

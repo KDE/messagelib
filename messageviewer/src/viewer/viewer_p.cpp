@@ -1379,6 +1379,7 @@ void ViewerPrivate::createWidgets()
     mReaderBox = new QWidget(mBox);
     mReaderBoxVBoxLayout = new QVBoxLayout(mReaderBox);
     mReaderBoxVBoxLayout->setContentsMargins({});
+    mReaderBoxVBoxLayout->setSpacing(0);
     mBoxHBoxLayout->addWidget(mReaderBox);
 
     mColorBar->setObjectName(QLatin1StringView("mColorBar"));
@@ -1681,6 +1682,7 @@ void ViewerPrivate::createActions()
 void ViewerPrivate::createPurposeMenuMessageWidget()
 {
     mPurposeMenuMessageWidget = new PimCommon::PurposeMenuMessageWidget(mReaderBox);
+    mPurposeMenuMessageWidget->setPosition(KMessageWidget::Header);
     mPurposeMenuMessageWidget->setObjectName(QLatin1StringView("mPurposeMenuMessageWidget"));
     mReaderBoxVBoxLayout->insertWidget(0, mPurposeMenuMessageWidget);
 }

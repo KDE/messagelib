@@ -16,6 +16,7 @@ TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     setCloseButtonVisible(true);
     setMessageType(Warning);
     setWordWrap(true);
+    setPosition(KMessageWidget::Header);
 
     setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)"));
     connect(this, &TrackingWarningWidget::linkActivated, this, &TrackingWarningWidget::slotShowDetails);
