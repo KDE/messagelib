@@ -1376,6 +1376,7 @@ void ViewerPrivate::createWidgets()
     mBox = new QWidget(mSplitter);
     auto mBoxHBoxLayout = new QHBoxLayout(mBox);
     mBoxHBoxLayout->setContentsMargins({});
+    mBoxHBoxLayout->setSpacing(0);
 
     mColorBar = new HtmlStatusBar(mBox);
     mBoxHBoxLayout->addWidget(mColorBar);
