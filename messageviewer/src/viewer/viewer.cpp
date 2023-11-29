@@ -90,6 +90,7 @@ void Viewer::initialize()
 
     connect(d_ptr, &ViewerPrivate::showNextMessage, this, &Viewer::showNextMessage);
     connect(d_ptr, &ViewerPrivate::showPreviousMessage, this, &Viewer::showPreviousMessage);
+    connect(d_ptr, &ViewerPrivate::sendResponse, this, &Viewer::sendResponse);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
@@ -670,10 +671,16 @@ RemoteContentMenu *Viewer::remoteContentMenu() const
     return d->remoteContentMenu();
 }
 
-MessageViewer::MDNWarningWidget *Viewer::mdnWarning() const
+void Viewer::showMdnInformations(const QPair<QString, bool> &mdnInfo)
 {
-    Q_D(const Viewer);
-    return d->mdnWarning();
+    Q_D(Viewer);
+    d->showMdnInformations(mdnInfo);
+}
+
+void Viewer::mdnWarningAnimatedHide()
+{
+    Q_D(Viewer);
+    d->mdnWarningAnimatedHide();
 }
 
 void Viewer::setPluginName(const QString &pluginName)

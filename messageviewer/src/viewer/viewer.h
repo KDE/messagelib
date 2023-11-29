@@ -13,7 +13,9 @@
 #include "messageviewer_export.h"
 #include <MimeTreeParser/Enums>
 
+#include <KMime/MDN>
 #include <KMime/Message>
+#include <MessageViewer/MDNWarningWidget>
 
 #include <QWidget>
 #include <memory>
@@ -333,7 +335,8 @@ public:
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
-    [[nodiscard]] MessageViewer::MDNWarningWidget *mdnWarning() const;
+    void showMdnInformations(const QPair<QString, bool> &mdnInfo);
+    void mdnWarningAnimatedHide();
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
@@ -374,6 +377,7 @@ Q_SIGNALS:
     void zoomChanged(qreal zoomFactor);
     void showNextMessage();
     void showPreviousMessage();
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
     void initialize();

@@ -17,8 +17,10 @@
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
 #include <KIO/Job>
+#include <KMime/MDN>
 #include <KMime/Message>
 #include <KService>
+#include <MessageViewer/MDNWarningWidget>
 #include <PimCommon/ShareServiceUrlManager>
 #include <QList>
 #include <QPointer>
@@ -451,7 +453,8 @@ public:
     void setFolderIdentity(uint folderIdentity);
 
     [[nodiscard]] RemoteContentMenu *remoteContentMenu() const;
-    [[nodiscard]] MessageViewer::MDNWarningWidget *mdnWarning() const;
+    void showMdnInformations(const QPair<QString, bool> &mdnInfo);
+    void mdnWarningAnimatedHide();
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -599,6 +602,7 @@ Q_SIGNALS:
     void zoomChanged(qreal zoomFactor);
     void showNextMessage();
     void showPreviousMessage();
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
     [[nodiscard]] QString attachmentHtml();

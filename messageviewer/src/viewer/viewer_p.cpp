@@ -2363,9 +2363,19 @@ void ViewerPrivate::updateColorFromScheme()
     mBackgroundAttachment = scheme.background().color();
 }
 
-MessageViewer::MDNWarningWidget *ViewerPrivate::mdnWarning() const
+void ViewerPrivate::mdnWarningAnimatedHide()
 {
-    return mMdnWarning;
+    mMdnWarning->animatedHide();
+}
+
+void ViewerPrivate::showMdnInformations(const QPair<QString, bool> &mdnInfo)
+{
+    if (!mdnInfo.first.isEmpty()) {
+        mMdnWarning->setCanDeny(mdnInfo.second);
+        mMdnWarning->setInformation(mdnInfo.first);
+    } else {
+        mMdnWarning->animatedHide();
+    }
 }
 
 void ViewerPrivate::initializeColorFromScheme()
