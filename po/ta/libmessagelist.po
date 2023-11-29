@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2023-01-12 19:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1135,12 +1135,12 @@ msgctxt "Search for messages."
 msgid "Search"
 msgstr "தேடு"
 
-#: core/widgets/quicksearchwarning.cpp:20
+#: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "மூன்றைவிட குறைவான எழுத்துகளுடைய சொற்கள் பொருட்படுத்தப்படா"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
 msgid "Do not show again"
 msgstr "மறுபடியும் காட்டாதே"

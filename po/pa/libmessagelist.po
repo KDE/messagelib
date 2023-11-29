@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1191,12 +1191,12 @@ msgctxt "Search for messages."
 msgid "Search"
 msgstr "ਖੋਜ"
 
-#: core/widgets/quicksearchwarning.cpp:20
+#: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr ""
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
 msgid "Do not show again"

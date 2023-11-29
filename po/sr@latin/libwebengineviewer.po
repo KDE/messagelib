@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2016-06-19 15:36+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr "Izraz nije nađen."
 msgid "Save HTML Page"
 msgstr "Upisivanje veb stranice"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
@@ -101,19 +101,19 @@ msgctxt "@title:window"
 msgid "Details"
 msgstr ""
 
-#: widgets/tracking/trackingwarningwidget.cpp:20
+#: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 msgstr ""
 
-#: widgets/tracking/trackingwarningwidget.cpp:39
+#: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
 msgid "Details:"
 msgstr ""
 
-#: widgets/tracking/trackingwarningwidget.cpp:45
+#: widgets/tracking/trackingwarningwidget.cpp:46
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

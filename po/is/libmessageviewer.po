@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1344,27 +1344,27 @@ msgctxt "@title:window"
 msgid "Details"
 msgstr "Sýna allta&f"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:33
+#: scamdetection/scamdetectionwarningwidget.cpp:34
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:38
+#: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
 msgid "Move to Trash"
 msgstr "Setja í ruslið"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:43
+#: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
 msgid "I confirm it's not a scam"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:47
+#: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
 msgid "Add email to whitelist"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:51
+#: scamdetection/scamdetectionwarningwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Delete Messages"
 msgid "Disable scam detection for all messages"
@@ -1822,7 +1822,7 @@ msgstr "Handbækur"
 msgid "Turn on HTML rendering for this message."
 msgstr "Túlka HTML upplýsingar í bréfi."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Hlaða inn utanaðkomandi tilvísunum frá Internetinu fyrir þetta bréf."
@@ -1912,7 +1912,7 @@ msgstr "Opna í vistfangaskrá"
 msgid "&Copy Email Address"
 msgstr "Netfang"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2698
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Netfang afritað á klemmuspjaldið."
@@ -1968,7 +1968,7 @@ msgstr "<qt>Viltu örugglega keyra <b>%1</b>?</qt>"
 msgid "Execute"
 msgstr "Keyra"
 
-#: viewer/viewer.cpp:134
+#: viewer/viewer.cpp:135
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2016,13 +2016,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Opna með..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1732
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Opna"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1739
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2038,12 +2038,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "Vista &sem..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1749
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Afrit til"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1754
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
@@ -2060,7 +2060,7 @@ msgstr "S&vara sendanda..."
 msgid "Reply To All"
 msgstr "&Svara"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1759
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&Eiginleikar"
@@ -2076,285 +2076,285 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE póstforrit"
 
-#: viewer/viewer_p.cpp:1276
+#: viewer/viewer_p.cpp:1279
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Skoða viðhengi: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Viðhengi"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1476
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Veldu sýnisnið viðhengja"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Sem táknmyndir"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Snjöll"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Sýna viðhengi samkv. tillögu sendanda."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Innfelld"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Sýna öll viðengi innfeld (ef hægt)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Falin"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ekki sýna viðhengi í bréfaskoðaranum"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1510
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1515
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Velja stafa&töflu"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1520 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Sjálfvirkt"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1530
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Afrit til"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Select All Text"
 msgstr "Velja allan texta"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2052
+#: viewer/viewer_p.cpp:1543 viewer/viewer_p.cpp:2056
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Afrita vistfang tengils"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgid "Open URL"
 msgstr "Opna slóð"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Nota &jafnbreitt letur"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1559
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "Spjald sem sýnir uppbyggingu bréfs"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "&View Source"
 msgstr "S&koða frumtexta"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "1 bréf, %2."
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1579
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1586
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1591
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1596
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "Velja &öll bréf"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1615
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1618
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "Hlaða inn utanaðkomandi tilvísunum"
 
-#: viewer/viewer_p.cpp:1630 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1624 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Ve&lja..."
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1648
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Veldu staðsetningu"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1654
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Leita í bréfi..."
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1663
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1725
+#: viewer/viewer_p.cpp:1729
 #, kde-format
 msgid "Save &As..."
 msgstr "Vista &sem..."
 
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:1737
 #, kde-format
 msgid "Open With..."
 msgstr "Opna með..."
 
-#: viewer/viewer_p.cpp:1740
+#: viewer/viewer_p.cpp:1744
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Vista öll viðhengi..."
 
-#: viewer/viewer_p.cpp:1972
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1972
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1979
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Undirritunarskráin er ekki gild"
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1979
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1999
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:2000
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2050
+#: viewer/viewer_p.cpp:2054
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Netfang"
 
-#: viewer/viewer_p.cpp:2131
+#: viewer/viewer_p.cpp:2135
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Bréf sem einfaldur texti"
 
-#: viewer/viewer_p.cpp:2704
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Slóð afrituð á klemmuspjaldið."
 
-#: viewer/viewer_p.cpp:2856
+#: viewer/viewer_p.cpp:2883
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Bréf var undirritað af %1."
 
-#: viewer/viewer_p.cpp:2861
+#: viewer/viewer_p.cpp:2888
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
@@ -2518,19 +2518,19 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Eyða leit"
 
-#: widgets/opensavedfilefolderwidget.cpp:61
+#: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widgets/opensavedfilefolderwidget.cpp:64
+#: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
 msgid "Open folder where PDF file was saved"
 msgstr ""
 
-#: widgets/opensavedfilefolderwidget.cpp:77
+#: widgets/opensavedfilefolderwidget.cpp:78
 #, fuzzy, kde-format
 #| msgid "Name of the attachment:"
 msgid "KMail was unable to open the attachment."

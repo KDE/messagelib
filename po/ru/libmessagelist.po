@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2023-04-24 11:23+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1174,12 +1174,12 @@ msgctxt "Search for messages."
 msgid "Search"
 msgstr "Поиск"
 
-#: core/widgets/quicksearchwarning.cpp:20
+#: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "Слова короче трёх букв игнорируются."
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
 msgid "Do not show again"
 msgstr "Больше не показывать"

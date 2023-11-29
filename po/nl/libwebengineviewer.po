@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2022-08-30 12:28+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -86,7 +86,7 @@ msgstr "Uitdrukking niet gevonden"
 msgid "Save HTML Page"
 msgstr "HTML-pagina opslaan"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
@@ -99,7 +99,7 @@ msgctxt "@title:window"
 msgid "Details"
 msgstr "Details"
 
-#: widgets/tracking/trackingwarningwidget.cpp:20
+#: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -108,12 +108,12 @@ msgstr ""
 "Een e-mailtracker is gevonden en is geblokkeerd.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:39
+#: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
 msgid "Details:"
 msgstr "Details:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:45
+#: widgets/tracking/trackingwarningwidget.cpp:46
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

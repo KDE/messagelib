@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2023-09-26 20:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1139,12 +1139,12 @@ msgctxt "Search for messages."
 msgid "Search"
 msgstr "Serĉi"
 
-#: core/widgets/quicksearchwarning.cpp:20
+#: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "La vortoj malpli ol 3 literoj estas ignorataj."
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
 msgid "Do not show again"
 msgstr "Ne montri denove"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:46+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -86,7 +86,7 @@ msgstr "词语未找到"
 msgid "Save HTML Page"
 msgstr "保存 HTML 页"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "不能在邮件程序中提交表单。请在浏览器中打开链接。"
@@ -97,7 +97,7 @@ msgctxt "@title:window"
 msgid "Details"
 msgstr "详细信息"
 
-#: widgets/tracking/trackingwarningwidget.cpp:20
+#: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -106,12 +106,12 @@ msgstr ""
 "发现了一些邮件跟踪器，它们已被屏蔽。<a href=\"mailtrackingdetails\">(详细信"
 "息...)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:39
+#: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
 msgid "Details:"
 msgstr "详细信息："
 
-#: widgets/tracking/trackingwarningwidget.cpp:45
+#: widgets/tracking/trackingwarningwidget.cpp:46
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
