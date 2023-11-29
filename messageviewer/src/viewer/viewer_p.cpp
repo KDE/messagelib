@@ -1026,7 +1026,10 @@ void ViewerPrivate::recreateCssHelper()
 
 void ViewerPrivate::hasMultiMessages(bool messages)
 {
-    mShowNextMessageWidget->setVisible(messages);
+    if (!mShowNextMessageWidget) {
+        createShowNextMessageWidget();
+        mShowNextMessageWidget->setVisible(messages);
+    }
 }
 
 void ViewerPrivate::slotGeneralFontChanged()
@@ -1385,13 +1388,6 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QLatin1StringView("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
-    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(mReaderBox);
-    mShowNextMessageWidget->setObjectName(QLatin1StringView("shownextmessagewidget"));
-    mReaderBoxVBoxLayout->addWidget(mShowNextMessageWidget);
-    mShowNextMessageWidget->hide();
-    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
-    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
-
     mScamDetectionWarning = new ScamDetectionWarningWidget(mReaderBox);
     mScamDetectionWarning->setObjectName(QLatin1StringView("scandetectionwarning"));
     mReaderBoxVBoxLayout->addWidget(mScamDetectionWarning);
@@ -1677,6 +1673,15 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(mDevelopmentToolsAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_I));
 
     connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
+}
+
+void ViewerPrivate::createShowNextMessageWidget()
+{
+    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(mReaderBox);
+    mShowNextMessageWidget->setObjectName(QLatin1StringView("shownextmessagewidget"));
+    mReaderBoxVBoxLayout->insertWidget(0, mShowNextMessageWidget);
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 }
 
 void ViewerPrivate::createPurposeMenuMessageWidget()
