@@ -119,11 +119,31 @@ public:
      */
     [[nodiscard]] Akonadi::Item messageItem() const;
 
-    enum DisplayFormatMessage { UseGlobalSetting = 0, Text = 1, Html = 2, Unknown = 3, ICal = 4 };
+    enum DisplayFormatMessage {
+        UseGlobalSetting = 0,
+        Text = 1,
+        Html = 2,
+        Unknown = 3,
+        ICal = 4,
+    };
 
-    enum AttachmentAction { Open = 1, OpenWith, View, Save, Properties, Delete, Copy, ScrollTo, ReplyMessageToAuthor, ReplyMessageToAll };
+    enum AttachmentAction {
+        Open = 1,
+        OpenWith,
+        View,
+        Save,
+        Properties,
+        Delete,
+        Copy,
+        ScrollTo,
+        ReplyMessageToAuthor,
+        ReplyMessageToAll,
+    };
 
-    enum ResourceOnlineMode { AllResources = 0, SelectedResource = 1 };
+    enum ResourceOnlineMode {
+        AllResources = 0,
+        SelectedResource = 1,
+    };
 
     /**
      * Set the message that shall be shown.
