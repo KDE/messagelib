@@ -365,7 +365,7 @@ public:
 
     /** Get codec corresponding to the currently selected override character encoding.
       @return The override codec or 0 if auto-detection is selected. */
-    QByteArray overrideCodecName() const;
+    [[nodiscard]] QByteArray overrideCodecName() const;
 
     [[nodiscard]] QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 
