@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2023-11-30 01:34+0000\n"
 "PO-Revision-Date: 2023-04-24 12:06+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1725,7 +1725,7 @@ msgstr "Печать документа"
 msgid "Turn on HTML rendering for this message."
 msgstr "Включить показ HTML этого письма."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1622
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Позволить загружать внешние ссылки из сети."
@@ -1808,7 +1808,7 @@ msgstr "&Открыть в адресной книге"
 msgid "&Copy Email Address"
 msgstr "Копировать &адрес электронной почты"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2725
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес скопирован в буфер обмена."
@@ -1907,13 +1907,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Открыть в..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1732
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Открыть"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1739
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1929,12 +1929,12 @@ msgstr "Прокрутить к"
 msgid "Save As..."
 msgstr "Сохранить как..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "Копировать"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Удалить вложение"
@@ -1949,7 +1949,7 @@ msgstr "Ответить автору"
 msgid "Reply To All"
 msgstr "Ответить всем"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
 #, kde-format
 msgid "Properties"
 msgstr "Свойства"
@@ -1964,271 +1964,271 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "Почтовый клиент от KDE"
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Просмотр вложения: %1"
 
-#: viewer/viewer_p.cpp:1474
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Вложения"
 
-#: viewer/viewer_p.cpp:1476
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Выберите стиль показа вложений"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "В виде &значков"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Показывать вложения в виде значков, которые нужно нажать для просмотра"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Интеллектуально"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Показывать вложения в том виде, как это предполагалось отправителем"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&В тексте"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Показывать содержимое вложений в тексте письма (если это возможно)"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Не показывать"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1508
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Не показывать вложения в письме"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1512
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Только в заголовках"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1515
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Показывать вложения только в заголовках письма"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Установить кодировку"
 
-#: viewer/viewer_p.cpp:1520 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Авто"
 
-#: viewer/viewer_p.cpp:1530
+#: viewer/viewer_p.cpp:1535
 #, kde-format
 msgid "Copy Text"
 msgstr "Копировать текст"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Select All Text"
 msgstr "Выделить весь текст"
 
-#: viewer/viewer_p.cpp:1543 viewer/viewer_p.cpp:2056
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Скопировать адрес ссылки"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "Открыть"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Фиксированный шрифт"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Показать структуру письма"
 
 # простой текст/исходный текст? --aspotashev
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgid "&View Source"
 msgstr "Просмотр &исходного текста письма..."
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Сохранить письмо…"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgid "&Save Display Format"
 msgstr "С&охранить формат отображения"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "С&бросить формат отображения"
 
-#: viewer/viewer_p.cpp:1586
+#: viewer/viewer_p.cpp:1591
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Прокрутить письмо вверх"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1596
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Прокрутить письмо вниз"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Прокрутить письмо вверх (с переходом)"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Прокрутить письмо вниз (с переходом)"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Переключить в режим отображения HTML"
 
-#: viewer/viewer_p.cpp:1615
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Переключить между HTML и текстовым режимами отображения"
 
-#: viewer/viewer_p.cpp:1618
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Load external references"
 msgstr "Загрузка внешних ресурсов"
 
-#: viewer/viewer_p.cpp:1624 widgets/mailsourceviewtextbrowserwidget.cpp:132
+#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Зачитать текст"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgid "Share Text..."
 msgstr "Опубликовать текст..."
 
-#: viewer/viewer_p.cpp:1648
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Выбор местоположения картинки"
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Найти в письме..."
 
-#: viewer/viewer_p.cpp:1663
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Отключить смайлики"
 
-#: viewer/viewer_p.cpp:1729
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "Сохранить &как..."
 
-#: viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Открыть в..."
 
-#: viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Сохранить все вложения..."
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "The network is broken."
 msgstr "Нет подключения к сети."
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Проверка фишинговых ссылок"
 
-#: viewer/viewer_p.cpp:1979
+#: viewer/viewer_p.cpp:1984
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Некорректная ссылка %1."
 
-#: viewer/viewer_p.cpp:1979
+#: viewer/viewer_p.cpp:1984
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Проверка фишинговых ссылок"
 
-#: viewer/viewer_p.cpp:1999
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Этот веб-сайт вредоносный, продолжить?"
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2005
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Вредоносный сайт"
 
-#: viewer/viewer_p.cpp:2054
+#: viewer/viewer_p.cpp:2059
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Копировать адрес электронной почты"
 
-#: viewer/viewer_p.cpp:2135
+#: viewer/viewer_p.cpp:2142
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Письмо в виде обычного текста"
 
-#: viewer/viewer_p.cpp:2731
+#: viewer/viewer_p.cpp:2738
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Ссылка скопирована в буфер обмена."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Не удалось загрузить письмо: %1."
 
-#: viewer/viewer_p.cpp:2888
+#: viewer/viewer_p.cpp:2895
 #, kde-format
 msgid "Message not found."
 msgstr "Письмо не найдено."
