@@ -32,13 +32,13 @@ public:
 QString PlainHeaderStylePrivate::formatAllMessageHeaders(KMime::Message *message) const
 {
     QByteArray head = message->head();
-    KMime::Headers::Base *header = KMime::HeaderParsing::extractFirstHeader(head);
+    QByteArrayView headView(head);
+    auto header = KMime::HeaderParsing::parseNextHeader(headView);
     QString result;
     while (header) {
         result += mHeaderStyleUtil.strToHtml(QLatin1String(header->type()) + QLatin1String(": ") + header->asUnicodeString());
         result += QLatin1String("<br />\n");
-        delete header;
-        header = KMime::HeaderParsing::extractFirstHeader(head);
+        header = KMime::HeaderParsing::parseNextHeader(headView);
     }
 
     return result;
