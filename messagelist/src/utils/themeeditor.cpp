@@ -242,7 +242,7 @@ ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
     setRootIsDecorated(false);
     viewport()->setAcceptDrops(true);
 
-    header()->setContextMenuPolicy(Qt::CustomContextMenu); // make sure it's true
+    header()->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(header(), &QWidget::customContextMenuRequested, this, &ThemePreviewWidget::slotHeaderContextMenuRequested);
 
     mGroupHeaderSampleItem = new QTreeWidgetItem(this);
