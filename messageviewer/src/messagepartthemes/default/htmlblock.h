@@ -31,8 +31,8 @@ public:
 
     virtual ~HTMLBlock();
 
-    [[nodiscard]] Q_REQUIRED_RESULT QString enter();
-    [[nodiscard]] Q_REQUIRED_RESULT QString exit();
+    [[nodiscard]] QString enter();
+    [[nodiscard]] QString exit();
 
 protected:
     [[nodiscard]] QString dir() const;
