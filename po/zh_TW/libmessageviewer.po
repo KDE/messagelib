@@ -1,37 +1,36 @@
 # translation of kmail.po to Chinese Traditional
 # translation of kmail.po to
 # Copyright (C) 2002, 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # Eric Cheng <ericc@shinewave.com.tw>, 2001.
 # AceLan <acelan@kde.linux.org.tw>, 2002.
 # Kenduest Lee <kenduest@i18n.linux.org.tw>, 2002.
 # Chia-Lin, Kao <acelan@linux.org.tw>, 2003.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2008, 2010, 2011, 2012, 2013, 2014, 2015.
 # Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>, 2009, 2011.
-#
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2005.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2008, 2009, 2010.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007, 2008, 2010.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-30 01:34+0000\n"
-"PO-Revision-Date: 2023-12-08 21:22+0900\n"
+"PO-Revision-Date: 2023-12-09 19:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.01.80\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
-#, fuzzy
-#| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
 msgid "Sorry, certificate could not be imported."
-msgstr "抱歉，無法匯入憑證。<br /> 原因：%1"
+msgstr "抱歉，無法匯入憑證。"
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
 #, kde-format
@@ -106,10 +105,8 @@ msgid "Please wait while the message is being decrypted..."
 msgstr "%1 封信件解密中，請稍候..."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
-#, fuzzy
-#| msgid "This message is encrypted."
 msgid "The message is encrypted for the following keys:"
-msgstr "此信件已加密。"
+msgstr "此信件已為以下金鑰加密："
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
@@ -119,24 +116,20 @@ msgstr "隱藏詳情"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
 #: messagepartthemes/default/templates/encryptedmessagepart.html:69
-#, fuzzy
-#| msgctxt "name used for a virgin filter"
-#| msgid "unknown"
 msgid "unknown key"
-msgstr "未知"
+msgstr "未知金鑰"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "合規：%1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "加密信件"
+msgstr "已加密信件 (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -152,10 +145,8 @@ msgid "Encrypted message (decryption not possible)"
 msgstr "加密信件（無法解密）"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
-#, fuzzy
-#| msgid "Reason: %1"
 msgid "Reason: "
-msgstr "理由：%1"
+msgstr "理由："
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
@@ -172,12 +163,6 @@ msgid "End of encrypted message"
 msgstr "加密信件的尾端"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
-#| "HTML code is shown. If you trust the sender of this message then you can "
-#| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
-#| "\">by clicking here</a>."
 msgid ""
 "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
 "HTML code is shown. If you trust the sender of this message then you can "
@@ -185,17 +170,10 @@ msgid ""
 "clicking here</a>."
 msgstr ""
 "<b>注意：</b>這是一封 HTML 信件。因為安全考量，目前只顯示 HTML 原始碼。如果您"
-"確信來源沒有問題，您可以<a href=\"kmail:showHTML\">按這裡</a>來顯示 HTML 格式"
-"的郵件。"
+"確信來源沒有問題，您可以<a href='kmail:showHTML'>按這裡</a>來顯示 HTML 格式的"
+"郵件。"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This HTML message may contain external references to images "
-#| "etc. For security/privacy reasons external references are not loaded. If "
-#| "you trust the sender of this message then you can load the external "
-#| "references for this message <a href=\"kmail:loadExternal\">by clicking "
-#| "here</a>."
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
@@ -204,7 +182,7 @@ msgid ""
 msgstr ""
 "<b>注意：</b>這封信件包含了要從遠端下載的連結圖片等。為了安全性與私密性的考"
 "量，這些遠端連結都沒有下載。如果您確信您可以下載這些連結不會發生問題，您可以"
-"<a href=\"kmail:loadExternal\">按這裡</a>來下載。"
+"<a href='kmail:loadExternal'>按這裡</a>來下載。"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
@@ -303,45 +281,34 @@ msgstr "警告：簽章是錯誤的"
 #: messagepartthemes/default/templates/signedmessagepart.html:142
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "合規：%1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "不合法的簽章。"
+msgstr "無效簽章"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "沒有足夠的資訊檢查簽章。"
+msgstr "沒有足夠的資訊來檢查簽章有效性"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "由 <a href=\"mailto:%1\">%2</a> 簽署。"
+msgstr "由 <a href='mailto:%1'>%1</a> 簽署"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "簽章合法。"
+msgstr "簽章有效"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
 msgstr "未知的簽章狀態"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "失敗：%1（%2）"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -358,19 +325,18 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "金鑰已變更"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "保存："
+msgstr "保存"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM 金鑰"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
 #, kde-format
@@ -391,136 +357,126 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "上次使用"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:69
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Key"
-msgstr "複製到(&C)"
+msgstr "複製金鑰"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] ""
+msgstr[0] "移除金鑰"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] ""
+msgstr[0] "您真的要刪除這些金鑰嗎？"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "選取所有文字"
+msgstr[0] "刪除金鑰"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Delete All"
-msgstr "選取所有文字"
+msgstr "全部刪除"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
-msgstr ""
+msgstr "您真的要刪除所有金鑰嗎？"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "選取所有文字"
+msgstr "刪除金鑰"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
-msgstr ""
+msgstr "必須簽署"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
 #, kde-format
 msgid "Can be signed"
-msgstr ""
+msgstr "可以簽署"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
 #, kde-format
 msgid "Ignore if not signed"
-msgstr ""
+msgstr "若未簽署則忽略"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
 msgid "Export..."
-msgstr ""
+msgstr "匯出..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr ""
+msgstr "設定規則"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
 msgid "Add Rule..."
-msgstr ""
+msgstr "新增規則..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgid "Import..."
-msgstr "匯入(&I)"
+msgstr "匯入..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "找不到簽章"
+msgstr "找不到規則"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "匯入(&I)"
+msgstr "匯出規則"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgid "Export Rules"
-msgstr ""
+msgstr "匯出規則"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgid "Import Rules"
-msgstr "匯入(&I)"
+msgstr "匯入規則"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules imported."
-msgstr "找不到簽章"
+msgstr "未匯入任何規則。"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "匯入(&I)"
+msgstr "匯入規則"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "網域"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "作用中"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -536,84 +492,80 @@ msgstr "寄件者："
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
-msgstr ""
+msgstr "規則類型"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "優先權"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:196
 #: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
-msgstr ""
+msgstr "新增..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:201
 #: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
-msgstr ""
+msgstr "變更..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "選取所有文字"
+msgstr "建立規則複本"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Remove Rule"
-msgstr "選取所有文字"
+msgstr "移除規則"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
 #, kde-format
 msgid "Do you want to delete this rule?"
-msgstr ""
+msgstr "您要刪除這個規則嗎？"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "選取所有文字"
+msgstr "刪除規則"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Do you want to delete all the rules?"
-msgstr ""
+msgstr "您真的要刪除所有規則嗎？"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "選取所有文字"
+msgstr "刪除規則"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "新增規則"
 
 #: dkim-verify/dkimruledialog.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr ""
+msgstr "變更規則"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "已啟用"
 
 #: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "網域："
 
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
@@ -638,38 +590,35 @@ msgstr ""
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "Rule:"
-msgstr ""
+msgstr "規則："
 
 #: dkim-verify/dkimrulewidget.cpp:60
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "優先權："
 
 #: dkim-verify/dkimviewermenu.cpp:14
 #, kde-format
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
-msgstr "保存簽章"
+msgstr "重新檢查 DKIM 簽章"
 
 #: dkim-verify/dkimviewermenu.cpp:39
 #, kde-format
 msgid "Update DKIM key"
-msgstr ""
+msgstr "更新 DKIM 金鑰"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr ""
+msgstr "規則..."
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "Unknown date"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "未知"
 
@@ -682,87 +631,82 @@ msgstr "信件由 %1 簽署。"
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: 無效"
 
 #: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: Not signed"
-msgstr ""
+msgstr "DKIM: 未簽署"
 
 #: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: 應由 %1 簽署"
 
 #: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "本文雜湊值已損毀。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "網域不存在。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "缺乏 From 標頭。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:140
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Missing signature."
-msgstr "好的簽章。"
+msgstr "缺乏簽章。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:143
-#, fuzzy, kde-format
-#| msgid "Invalid signature."
+#, kde-format
 msgid "Invalid query method."
-msgstr "不合法的簽章。"
+msgstr "無效的查詢方法。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "無效的標頭正規化。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "無效的本文正規化。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "未知的本文雜湊演算法。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature algorithm is invalid."
-msgstr "簽章合法。"
+msgstr "簽章演算法無效。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:158
-#, fuzzy, kde-format
-#| msgid "One key has been revoked."
+#, kde-format
 msgid "The public key was revoked."
-msgstr "已撤消一個金鑰。"
+msgstr "該公鑰已被撤銷。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature is too large."
-msgstr "簽章合法。"
+msgstr "簽章太大。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr ""
+msgstr "不支援的雜湊演算法。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "公鑰太小。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
 #, fuzzy, kde-format
@@ -789,7 +733,7 @@ msgstr "沒有公開金鑰可以驗證簽章"
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr ""
+msgstr "雜湊演算法 (sha1) 不安全。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
@@ -802,38 +746,35 @@ msgid "Problem during converting public key"
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "The signature has expired."
+#, kde-format
 msgid "Signature expired"
-msgstr "簽章已經過期。"
+msgstr "簽章已過期"
 
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "簽章建立時間於未來"
 
 #: dkim-verify/dkimwidgetinfo.cpp:203
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature too small"
-msgstr "簽章合法。"
+msgstr "簽章太小"
 
 #: dkim-verify/dkimwidgetinfo.cpp:209
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Public Key too small"
-msgstr "簽章合法。"
+msgstr "公鑰太小"
 
 #: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
 msgid "%1: None"
-msgstr ""
+msgstr "%1: 無"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
 #, fuzzy, kde-format
@@ -844,12 +785,12 @@ msgstr "信件由 %1 簽署。"
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
-msgstr ""
+msgstr "%1: 有效"
 
 #: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
-msgstr ""
+msgstr "未簽署"
 
 #: header/grantleeheaderformatter.cpp:204
 #, kde-format
@@ -909,7 +850,7 @@ msgstr "重新送出從"
 #: header/grantleeheaderformatter.cpp:359
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr "Grantlee 主題 %1 不合法。"
+msgstr "Grantlee 主題 %1 無效。"
 
 #: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
@@ -940,7 +881,7 @@ msgstr "附加檔："
 #: header/grantleeheaderformatter.cpp:544
 #, kde-format
 msgid "Security:"
-msgstr ""
+msgstr "安全性："
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -989,7 +930,7 @@ msgstr "垃圾信過濾的評分非數字"
 #: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
-msgstr "下限值非合法的數字"
+msgstr "下限值非有效的數字"
 
 #: header/headerstyle_util.cpp:172
 #, kde-format
@@ -1070,7 +1011,7 @@ msgstr "回覆給："
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: mdn/mdnwarningwidget.cpp:15
 #, fuzzy, kde-format
@@ -1220,7 +1161,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr ""
+msgstr "設定遠端內容"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, fuzzy, kde-format
@@ -1231,40 +1172,40 @@ msgstr "狀態："
 #: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr ""
+msgstr "您要刪除 '%1' 這個規則嗎？"
 
 #: remote-content/remotecontentconfigurewidget.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "編輯遠端內容"
 
 #: remote-content/remotecontentconfigurewidget.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr ""
+msgstr "新增遠端內容"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "已經有項目定義這個網址了。請修改它。"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr ""
+msgstr "新增新網址"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "設定"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "遠端內容"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
@@ -1690,11 +1631,10 @@ msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
 #: utils/messageviewerutil.cpp:602
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "選取所有文字"
+msgstr "已刪除：%1"
 
 #: utils/messageviewerutil.cpp:613
 #, kde-format
@@ -1740,11 +1680,10 @@ msgid "Could not generate print preview."
 msgstr ""
 
 #: viewer/printmessage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "文件"
+msgstr "列印文件"
 
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
@@ -1782,22 +1721,19 @@ msgid "Hide signature details."
 msgstr "隱藏簽章詳情。"
 
 #: viewer/urlhandlermanager.cpp:420
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Show encryption details."
-msgstr "顯示簽章詳情。"
+msgstr "顯示加密詳情。"
 
 #: viewer/urlhandlermanager.cpp:422
-#, fuzzy, kde-format
-#| msgid "Hide signature details."
+#, kde-format
 msgid "Hide encryption details."
-msgstr "隱藏簽章詳情。"
+msgstr "隱藏加密詳情。"
 
 #: viewer/urlhandlermanager.cpp:427
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Open Documentation"
-msgstr "文件"
+msgstr "開啟說明文件"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
@@ -1898,11 +1834,10 @@ msgid ""
 msgstr "刪除附件可能造成此信件的簽章不正確。"
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "移除附件"
+msgstr "刪除附件"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -1962,17 +1897,14 @@ msgid "Delete Attachment"
 msgstr "移除附件"
 
 #: viewer/viewer_p.cpp:580
-#, fuzzy, kde-format
-#| msgid "Reply to A&uthor..."
+#, kde-format
 msgid "Reply To Author"
-msgstr "回覆給原作者(&U)..."
+msgstr "回覆給原作者"
 
 #: viewer/viewer_p.cpp:588
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Reply to All"
+#, kde-format
 msgid "Reply To All"
-msgstr "全部回覆"
+msgstr "回覆給全部"
 
 #: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
 #, kde-format
@@ -1985,14 +1917,12 @@ msgid "KMail"
 msgstr "KMail"
 
 #: viewer/viewer_p.cpp:732
-#, fuzzy, kde-format
-#| msgid "The KDE email client."
+#, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE 信件用戶端"
 
 #: viewer/viewer_p.cpp:1277
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "檢視附件：%1"
@@ -2075,10 +2005,9 @@ msgid "Auto"
 msgstr "自動"
 
 #: viewer/viewer_p.cpp:1535
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Text"
-msgstr "複製到(&C)"
+msgstr "複製文字"
 
 #: viewer/viewer_p.cpp:1542
 #, kde-format
@@ -2111,8 +2040,7 @@ msgid "&View Source"
 msgstr "檢視來源(&V)"
 
 #: viewer/viewer_p.cpp:1574
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "儲存信件(&S)..."
 
@@ -2167,10 +2095,9 @@ msgid "Speak Text"
 msgstr "唸出文字"
 
 #: viewer/viewer_p.cpp:1635
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgid "Share Text..."
-msgstr "唸出文字"
+msgstr "分享文字..."
 
 #: viewer/viewer_p.cpp:1653
 #, kde-format
@@ -2205,35 +2132,34 @@ msgstr "儲存所有附件..."
 #: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "The network is broken."
-msgstr ""
+msgstr "網路損壞。"
 
 #: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "檢查釣魚網址"
 
 #: viewer/viewer_p.cpp:1984
-#, fuzzy, kde-format
-#| msgid "Grantlee theme \"%1\" is not valid."
+#, kde-format
 msgid "The URL %1 is not valid."
-msgstr "Grantlee 主題 %1 不合法。"
+msgstr "網址 %1 無效。"
 
 #: viewer/viewer_p.cpp:1984
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "檢查釣魚網址"
 
 #: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
-msgstr ""
+msgstr "這網站為惡意網站，你仍然要繼續顯示它嗎？"
 
 #: viewer/viewer_p.cpp:2005
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "惡意網站"
 
 #: viewer/viewer_p.cpp:2059
 #, kde-format
@@ -2263,36 +2189,30 @@ msgid "Message not found."
 msgstr "找不到信件。"
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"要開啟附件 %1 嗎？\n"
-"注意，開啟一個附件可能會危害你系統的安全！"
+"要開啟附件 <filename>%1</filename> 嗎？<nl/>請注意，開啟附件可能會危害您系統"
+"的安全。"
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "開啟附件？"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
-msgstr "用 %1 開啟附件(&O)"
+msgstr "用 '%1' 開啟附件(&O)"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "開啟用..."
+msgstr "開啟方式(&W)..."
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2339,10 +2259,9 @@ msgstr ""
 "<qt><br />非<br /> <br />H<br />T<br />M<br />L<br /> <br />信<br />件</qt>"
 
 #: widgets/htmlstatusbar.cpp:135
-#, fuzzy, kde-format
-#| msgid "Click to toggle between HTML and plain text."
+#, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr "點擊以在 HTML 與純文字間切換。"
+msgstr "點擊以在 HTML、純文字與行事曆間切換。"
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2384,19 +2303,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "顯示信件給使用者的 HTML 碼"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "開啟儲存附件的資料夾"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "開啟方式(&O)"
+msgstr "開啟檔案"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
@@ -2418,17 +2334,14 @@ msgid "KMail was unable to open the attachment."
 msgstr "無法編輯附件"
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Save Message"
-#| msgid_plural "Save Messages"
+#, kde-format
 msgid "Next Message"
-msgstr "儲存信件"
+msgstr "下一封信件"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "&Previous Card"
+#, kde-format
 msgid "Previous Message"
-msgstr "上一張名片(&P)"
+msgstr "上一封信件"
 
 #~ msgid "Only print selected text in viewer"
 #~ msgstr "檢視器中只印出選取的文字"

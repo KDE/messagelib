@@ -4,20 +4,21 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012, 2013, 2015.
 # pan93412 <pan93412@gmail.com>, 2018.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:36+0000\n"
-"PO-Revision-Date: 2018-12-21 19:37+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-12-09 19:20+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "dot tw>\n"
-"X-Generator: Lokalize 18.12.0\n"
+"X-Generator: Lokalize 24.01.80\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -81,8 +82,7 @@ msgid "A template with same name already exists."
 msgstr "已經有同名的樣本存在。"
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "無法建立樣本"
@@ -233,7 +233,7 @@ msgstr "使用智慧引言功能(&Q)"
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
-msgstr ""
+msgstr "用原信件的視覺格式（純文字還是 HTML）來回覆或轉寄"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -570,11 +570,10 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "您確定要重置目前的樣本或所有的樣本回到預設值嗎？"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "重置到預設值"
+msgstr "重設為預設值"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
@@ -800,9 +799,7 @@ msgstr "全部回覆"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "轉寄"
