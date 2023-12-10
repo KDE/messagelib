@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:49+0000\n"
-"PO-Revision-Date: 2023-11-25 02:32\n"
+"PO-Revision-Date: 2023-12-09 09:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1282,28 +1282,28 @@ msgstr "排序"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
-msgstr "在新标签中打开"
+msgstr "打开新标签页"
 
 #: pane.cpp:126
 #, kde-format
 msgid "New tab"
-msgstr "新建标签"
+msgstr "新建标签页"
 
 #: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
-msgstr "关闭当前标签"
+msgstr "关闭当前标签页"
 
 #: pane.cpp:138
 #, kde-format
 msgid "Close tab"
-msgstr "关闭标签"
+msgstr "关闭标签页"
 
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "激活第 %1 个标签"
+msgstr "激活标签页 %1"
 
 #: pane.cpp:200
 #, kde-format
@@ -1318,7 +1318,7 @@ msgstr "信件列表"
 #: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
-msgstr "创建新标签"
+msgstr "新建标签页"
 
 #: pane.cpp:258
 #, kde-format
@@ -1333,17 +1333,17 @@ msgstr "激活上一标签页"
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "向左移动标签"
+msgstr "左移标签页"
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "向右移动标签"
+msgstr "右移标签页"
 
 #: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
-msgstr "关闭标签"
+msgstr "关闭标签页"
 
 #: pane.cpp:520 pane.cpp:816
 #, kde-format
@@ -1355,7 +1355,7 @@ msgstr "空"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
-msgstr "关闭标签"
+msgstr "关闭标签页"
 
 #: pane.cpp:716
 #, kde-format
