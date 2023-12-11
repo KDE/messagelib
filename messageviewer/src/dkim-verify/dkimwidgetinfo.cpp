@@ -45,7 +45,7 @@ void DKIMWidgetInfo::initColors()
     mWarningColor = colorScheme.background(KColorScheme::NeutralBackground).color();
     mErrorColor = colorScheme.background(KColorScheme::NegativeBackground).color();
     mOkColor = colorScheme.background(KColorScheme::PositiveBackground).color();
-    mDefaultColor = colorScheme.background(KColorScheme::ActiveBackground).color();
+    mDefaultColor = Qt::transparent; // colorScheme.background(KColorScheme::ActiveBackground).color();
 }
 
 MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMWidgetInfo::result() const
