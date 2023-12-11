@@ -4,33 +4,32 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2010, 2011, 2014, 2015, 2016.
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020.
+# SPDX-FileCopyrightText: 2018, 2020, 2023 Alexander Yavorsky <kekcuha@gmail.com>
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-21 01:35+0000\n"
-"PO-Revision-Date: 2023-04-24 10:57+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2023-12-08 21:59+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "Не удалось сжать вложение"
+msgstr "Ошибка сжатия вложения"
 
 #: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
@@ -225,11 +224,10 @@ msgstr "Не удалось записать вложение во времен�
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr "Не удалось открыть вложение"
+msgstr "Ошибка открытия вложения"
 
 #: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
@@ -237,11 +235,10 @@ msgid "KMail was unable to open the attachment."
 msgstr "Не удалось открыть вложение."
 
 #: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "Не удалось изменить вложение"
+msgstr "Ошибка редактирования вложения"
 
 #: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
@@ -263,8 +260,7 @@ msgstr ""
 "Заменить его?"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Сохранение вложения в файл"
@@ -383,10 +379,9 @@ msgid "Suggest Automatic Display"
 msgstr "Предполагается автоотображение"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Редактировать в..."
+msgstr "Редактировать в:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -394,6 +389,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"Невозможно определить, что внешний редактор закрыт. Для предотвращения "
+"потери данных редактирование вложения будет прервано."
 
 #: composer/composer.cpp:288
 #, kde-format
@@ -440,8 +437,7 @@ msgstr ""
 "p><p>Удалить разметку?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Подписывание/шифрование письма"
@@ -459,8 +455,7 @@ msgid "Do you want to resize images?"
 msgstr "Изменить размер изображений?"
 
 #: composer/composerviewbase.cpp:527
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Автоизменение размера"
@@ -562,8 +557,7 @@ msgstr ""
 "Причина: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Ошибка автоматического сохранения"
@@ -585,8 +579,7 @@ msgstr ""
 "Вложить какой-либо файл в письмо?"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Напоминание о вложении"
@@ -608,8 +601,7 @@ msgstr ""
 "Подписать это письмо?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Подписать письмо?"
@@ -643,8 +635,7 @@ msgstr ""
 "Для подписи этого письма в профиле не настроены действительные ключи подписи."
 
 #: composer/composerviewbase.cpp:2013
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Отправить неподписанным?"
@@ -688,8 +679,7 @@ msgid "&Sign"
 msgstr "&Подписать"
 
 #: composer/composerviewbase.cpp:2038
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Предупреждение о неподписанном письме"
@@ -814,8 +804,7 @@ msgid "&Encrypt All Parts"
 msgstr "&Зашифровать все части"
 
 #: composer/composerviewbase.cpp:2179
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Предупреждение о незашифрованном письме"
@@ -866,8 +855,7 @@ msgstr ""
 "Следующие ключи или сертификаты <b>отозваны</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Недостаточно доверия ключам шифрования"
@@ -889,8 +877,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Невозможно использовать ключи шифрования"
@@ -911,8 +898,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Невозможно использовать ключи подписи"
@@ -994,8 +980,7 @@ msgstr ""
 "Отправить письмо без подписи?"
 
 #: composer/keyresolver.cpp:1154
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Невозможно подписать"
@@ -1011,8 +996,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
 #: composer/keyresolver.cpp:1358
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Предупреждение о потере ключа"
@@ -1163,8 +1147,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Выбранная дата должна быть позже текущей даты."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Недопустимая дата"
@@ -1175,8 +1158,7 @@ msgid "The selected folder is not valid."
 msgstr "Выбранная папка некорректна."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Недопустимая папка"
@@ -1244,8 +1226,7 @@ msgid "Please verify minimum and maximum values."
 msgstr "Проверьте минимальное и максимальное значения."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Ошибка в минимальном и/или максимальном значении"
@@ -1554,8 +1535,7 @@ msgstr ""
 "Продолжить?"
 
 #: job/maintextjob.cpp:102
-#, fuzzy, kde-format
-#| msgid "Some Characters Will Be Lost"
+#, kde-format
 msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Некоторые символы будут утеряны"
