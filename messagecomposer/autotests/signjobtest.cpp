@@ -161,8 +161,8 @@ void SignJobTest::testMixedContent()
     const QByteArray attachmentData("an attachment");
     attachment->setBody(attachmentData);
 
-    content->addContent(subcontent);
-    content->addContent(attachment);
+    content->appendContent(subcontent);
+    content->appendContent(attachment);
     content->assemble();
 
     sJob->setContent(content);

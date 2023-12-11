@@ -55,7 +55,7 @@ void MultipartJob::process()
     d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     d->resultContent->setPreamble("This is a multi-part message in MIME format.\n");
     for (KMime::Content *c : std::as_const(d->subjobContents)) {
-        d->resultContent->addContent(c);
+        d->resultContent->appendContent(c);
         if (c->contentTransferEncoding()->encoding() == KMime::Headers::CE8Bit) {
             d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
             break;

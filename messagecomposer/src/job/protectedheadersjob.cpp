@@ -83,7 +83,7 @@ void ProtectedHeadersJob::doStart()
             const QByteArray boundary = KMime::multiPartBoundary();
             mixedPart->contentType()->setMimeType("multipart/mixed");
             mixedPart->contentType(false)->setBoundary(boundary);
-            mixedPart->addContent(cjob->content());
+            mixedPart->appendContent(cjob->content());
 
             // if setContent hasn't been called, we assume that a subjob was added
             // and we want to use that
@@ -92,7 +92,7 @@ void ProtectedHeadersJob::doStart()
                 d->content = d->subjobContents.constFirst();
             }
 
-            mixedPart->addContent(d->content);
+            mixedPart->appendContent(d->content);
             d->content = mixedPart;
         });
         appendSubjob(cjob);

@@ -316,7 +316,7 @@ void MessageFactoryNG::createForwardAsync()
         // empty text part
         auto msgPart = new KMime::Content;
         msgPart->contentType()->setMimeType("text/plain");
-        msg->addContent(msgPart);
+        msg->appendContent(msgPart);
 
         // the old contents of the mail
         auto secondPart = new KMime::Content;
@@ -324,7 +324,7 @@ void MessageFactoryNG::createForwardAsync()
         secondPart->setBody(mOrigMsg->body());
         // use the headers of the original mail
         secondPart->setHead(mOrigMsg->head());
-        msg->addContent(secondPart);
+        msg->appendContent(secondPart);
         msg->assemble();
     }
     // Normal message (multipart or text/plain|html)
@@ -635,7 +635,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     firstMsgPartContentType->setCharset("utf-8");
     firstMsgPart->contentTransferEncoding(true)->setEncoding(KMime::Headers::CE7Bit);
     firstMsgPart->setBody(description.toUtf8());
-    receipt->addContent(firstMsgPart);
+    receipt->appendContent(firstMsgPart);
 
     // message/disposition-notification part:
     auto secondMsgPart = new KMime::Content(mOrigMsg.data());
@@ -654,7 +654,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
                                                                           s,
                                                                           m,
                                                                           special));
-    receipt->addContent(secondMsgPart);
+    receipt->appendContent(secondMsgPart);
 
     if ((mdnQuoteOriginal < 0) || (mdnQuoteOriginal > 2)) {
         mdnQuoteOriginal = 0;
@@ -666,12 +666,12 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     case 1:
         thirdMsgPart->contentType()->setMimeType("message/rfc822");
         thirdMsgPart->setBody(MessageCore::StringUtil::asSendableString(mOrigMsg));
-        receipt->addContent(thirdMsgPart);
+        receipt->appendContent(thirdMsgPart);
         break;
     case 2:
         thirdMsgPart->contentType()->setMimeType("text/rfc822-headers");
         thirdMsgPart->setBody(MessageCore::StringUtil::headerAsSendableString(mOrigMsg));
-        receipt->addContent(thirdMsgPart);
+        receipt->appendContent(thirdMsgPart);
         break;
     case 0:
     default:
@@ -734,7 +734,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
         MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
-        digest->addContent(part);
+        digest->appendContent(part);
     }
     digest->assemble();
 

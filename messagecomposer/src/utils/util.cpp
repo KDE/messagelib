@@ -87,8 +87,8 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 } else { // sign PGPMmime
                     setBodyAndCTE(encodedBody, orig->contentType(), code);
                 }
-                result->addContent(orig);
-                result->addContent(code);
+                result->appendContent(orig);
+                result->appendContent(code);
             } else { // enc PGPMime
                 setBodyAndCTE(encodedBody, orig->contentType(), code);
 
@@ -101,8 +101,8 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 vers->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
                 vers->setBody("Version: 1");
 
-                result->addContent(vers);
-                result->addContent(code);
+                result->appendContent(vers);
+                result->appendContent(code);
             }
         } else { // enc SMIME, sign/enc SMIMEOpaque
             result->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
