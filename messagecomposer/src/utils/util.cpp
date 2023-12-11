@@ -238,7 +238,7 @@ QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charset
             qCWarning(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << name;
             continue;
         }
-        if (codec.encode(text); !codec.hasError()) {
+        if ([[maybe_unused]] const QByteArray encoded = codec.encode(text); !codec.hasError()) {
             // Special check for us-ascii (needed because us-ascii is not exactly latin1).
             if (name == "us-ascii" && !KMime::isUsAscii(text)) {
                 continue;

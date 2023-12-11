@@ -943,7 +943,7 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
             qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << mOrigMsg->contentType()->charset();
             // Don't touch the message
         } else {
-            const auto encodedBody = codec.encode(body);
+            const QByteArray encodedBody = codec.encode(body);
             if (codec.hasError()) { // charset can't encode body, fall back to preferred
                 const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
 

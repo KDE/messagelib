@@ -60,8 +60,7 @@ static QByteArray selectCharset(const QStringList &charsets, const QString &text
             qCWarning(TEMPLATEPARSER_LOG) << "Could not get text codec for charset" << name;
             continue;
         }
-        codec.encode(text);
-        if (!codec.hasError()) {
+        if ([[maybe_unused]] const QByteArray encoded = codec.encode(text); !codec.hasError()) {
             // Special check for us-ascii (needed because us-ascii is not exactly latin1).
             if (name == QLatin1String("us-ascii") && !KMime::isUsAscii(text)) {
                 continue;
