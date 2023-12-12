@@ -3,21 +3,21 @@
 # Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
 # Richard Fric <Richard.Fric@kdemail.net>, 2006, 2007, 2009.
 # Jozef Riha <jose1711@gmail.com>, 2006, 2007.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017.
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 02:26+0000\n"
-"PO-Revision-Date: 2021-01-14 15:48+0100\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-11 18:10+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -284,15 +284,13 @@ msgid "Warning: The signature is bad."
 msgstr "Pozor: Chybný podpis."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
+#, fuzzy, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Zhoda:"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Neplatný podpis."
+msgstr "Neplatný podpis"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
 #, fuzzy
@@ -304,7 +302,7 @@ msgstr "Nedostatočné informácie pre overenie podpisu."
 #, fuzzy, kde-format
 #| msgid "Signed by <a href='mailto:%1'>%1</a>."
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Podpísal <a href='mailto:%1'>%1</a>."
+msgstr "Podpísané (kým):"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
 #, fuzzy
@@ -343,11 +341,10 @@ msgid "Key Changed"
 msgstr "Kľúč sa zmenil"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "uložené:"
+msgstr "Uložiť"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #: dkim-verify/dkimmanageruleswidget.cpp:72
@@ -373,7 +370,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeywidget.cpp:31
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Naposledy použité"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:64
 #, kde-format
@@ -404,8 +401,8 @@ msgstr[2] "Chcete tento kľúč odstrániť?"
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Vymazať kľúč"
-msgstr[1] "Vymazať kľúč"
-msgstr[2] "Vymazať kľúč"
+msgstr[1] "O&dstrániť kľúče"
+msgstr[2] "O&dstrániť kľúče"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:89
 #: dkim-verify/dkimmanageruleswidget.cpp:221
@@ -423,7 +420,7 @@ msgstr "Chcete odstrániť všetky pravidlá?"
 #, fuzzy, kde-format
 #| msgid "Delete Key"
 msgid "Delete Keys"
-msgstr "Vymazať kľúč"
+msgstr "O&dstrániť kľúče"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -1012,14 +1009,14 @@ msgstr "Adresa pre odpoveď: "
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovať"
 
 #: mdn/mdnwarningwidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "Sender:"
 msgctxt "@action"
 msgid "Send"
-msgstr "Odosielateľ:"
+msgstr "Poslať"
 
 #: mdn/mdnwarningwidget.cpp:16
 #, fuzzy, kde-format
@@ -1166,10 +1163,9 @@ msgid "Configure Remote Content"
 msgstr "Nastaviť pravidlo"
 
 #: remote-content/remotecontentconfigurewidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "Stav:"
+msgstr "Stav"
 
 #: remote-content/remotecontentconfigurewidget.cpp:87
 #, fuzzy, kde-format
@@ -1212,9 +1208,9 @@ msgid "Remote Content"
 msgstr ""
 
 #: remote-content/remotecontentmenu.cpp:50
-#, kde-format
+#, fuzzy, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "Autorizovať"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
@@ -1224,13 +1220,13 @@ msgstr ""
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "Má oprávnenie"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, fuzzy, kde-format
 #| msgid "Block image"
 msgid "Blocked"
-msgstr "Zablokovať obrázok"
+msgstr "Blokovaný"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
@@ -2334,8 +2330,7 @@ msgid "&View Source"
 msgstr "&Zobraziť zdroj"
 
 #: viewer/viewer_p.cpp:1568
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "Uložiť správu..."
 
@@ -2604,20 +2599,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML kód pre zobrazenie správy užívateľovi"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "Otvoriť priečinok, kam sa uložila príloha"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "&Otvoriť pomocou"
+msgstr "Otvoriť súbor"
 
 #: widgets/opensavedfilefolderwidget.cpp:61
 #, kde-format
@@ -2633,10 +2624,9 @@ msgid "Open folder where PDF file was saved"
 msgstr "Otvoriť priečinok, kam sa uložila PDF súbor"
 
 #: widgets/opensavedfilefolderwidget.cpp:77
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "Nepodarilo sa upraviť prílohu"
+msgstr "KMail nebol schopný otvoriť prílohu."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format

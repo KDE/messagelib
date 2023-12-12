@@ -1,20 +1,20 @@
 # translation of libmessagecomposer.po to Slovak
 # Richard Fric <Richard.Fric@kdemail.net>, 2010.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2017.
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2017, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-03 00:48+0000\n"
-"PO-Revision-Date: 2021-11-15 09:14+0100\n"
-"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-11 18:10+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
@@ -1555,13 +1555,13 @@ msgstr "Poslať &nepodpísané"
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "&Ignorovať"
 
 #: mdn/mdnadvicedialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgid "&Send"
-msgstr "&Poslať ako je"
+msgstr "&Poslať"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -2140,22 +2140,22 @@ msgstr "Pre"
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
 msgid "To Field Address"
-msgstr ""
+msgstr "Do poľa adresy"
 
 #: snippet/convertsnippetvariablemenu.cpp:31
 #, kde-format
 msgid "To Field Last Name"
-msgstr ""
+msgstr "Do poľa posledného mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:34
 #, kde-format
 msgid "To Field First Name"
-msgstr ""
+msgstr "Do poľa prvého mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:37
 #, kde-format
 msgid "To Field Name"
-msgstr ""
+msgstr "Do poľa mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:42
 #, kde-format
@@ -2165,22 +2165,22 @@ msgstr "Od"
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
 msgid "From Field Address"
-msgstr ""
+msgstr "Z poľa adresy"
 
 #: snippet/convertsnippetvariablemenu.cpp:46
 #, kde-format
 msgid "From Field Last Name"
-msgstr ""
+msgstr "Z poľa posledného mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:49
 #, kde-format
 msgid "From Field First Name"
-msgstr ""
+msgstr "Z poľa prvého mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:52
 #, kde-format
 msgid "From Field Name"
-msgstr ""
+msgstr "Z poľa mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
@@ -2190,27 +2190,27 @@ msgstr "Kópia"
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
 msgid "CC Field Address"
-msgstr ""
+msgstr "Kópia pole adresy"
 
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "Kópia pole posledného mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr ""
+msgstr "Kópia pole prvého mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr ""
+msgstr "Kópia pole mena"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
