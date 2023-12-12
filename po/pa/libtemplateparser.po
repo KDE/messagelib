@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:36+0000\n"
+"POT-Creation-Date: 2023-12-12 01:37+0000\n"
 "PO-Revision-Date: 2010-12-26 08:57+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -250,13 +250,13 @@ msgstr ""
 msgid "Quote characters"
 msgstr ""
 
-#: templateparserjob.cpp:350
+#: templateparserjob.cpp:349
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr ""
 
-#: templateparserjob.cpp:520
+#: templateparserjob.cpp:519
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox Recipient mail address"
 #| msgid "To:"
@@ -264,20 +264,20 @@ msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "ਵੱਲ:"
 
-#: templateparserjob.cpp:531
+#: templateparserjob.cpp:530
 #, fuzzy, kde-format
 #| msgid "CC:"
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1186
+#: templateparserjob.cpp:1185
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr ""
 
-#: templateparserjob.cpp:1393
+#: templateparserjob.cpp:1392
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
