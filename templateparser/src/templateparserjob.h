@@ -110,11 +110,7 @@ class TemplateParserJobPrivate;
  * In case of no attachments, the message will be a single-part message.
  * A KMime::Content containing the plainBody from processWithTemplate() is
  * created.  Then the encodedBody(), contentType (text/plain) of this
- * KMime::Content is set in the body and the header of mMsg.  The addContent()
- * method can be used for adding sub-content to content object in case of
- * attachments.  The addContent() method is not used for adding content of the
- * above mentioned single-part, as addContent() will convert single-part to
- * multipart-mixed before adding it to mMsg.
+ * KMime::Content is set in the body and the header of mMsg.
  *
  * \par Make multipart/alternative mails
  * First of all a KMime::Content (content) is created with a content-type of

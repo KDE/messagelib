@@ -1173,11 +1173,11 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Conte
     contentType->setMimeType("multipart/mixed");
     contentType->setBoundary(boundary);
     mixedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    mixedPart->addContent(textPart);
+    mixedPart->appendContent(textPart);
 
     int attachmentNumber = 1;
     for (KMime::Content *attachment : attachments) {
-        mixedPart->addContent(attachment);
+        mixedPart->appendContent(attachment);
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
         if (auto ct = attachment->contentType(false)) {
@@ -1198,10 +1198,10 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
     contentType->setMimeType("multipart/related");
     contentType->setBoundary(boundary);
     relatedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    relatedPart->addContent(mainTextPart);
+    relatedPart->appendContent(mainTextPart);
     for (KMime::Content *image : ic.images()) {
         qCWarning(TEMPLATEPARSER_LOG) << "Adding" << image->contentID() << "as an embedded image";
-        relatedPart->addContent(image);
+        relatedPart->appendContent(image);
     }
     return relatedPart;
 }
@@ -1225,14 +1225,14 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     multipartAlternative->contentType(false)->setBoundary(boundary); // Already created
 
     KMime::Content *textPart = createPlainPartContent(plainBody);
-    multipartAlternative->addContent(textPart);
+    multipartAlternative->appendContent(textPart);
 
     auto htmlPart = new KMime::Content(d->mMsg.data());
     htmlPart->contentType(true)->setMimeType("text/html");
     htmlPart->contentType(false)->setCharset(selectCharset(d->mCharsets, htmlBody)); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
-    multipartAlternative->addContent(htmlPart);
+    multipartAlternative->appendContent(htmlPart);
 
     return multipartAlternative;
 }
