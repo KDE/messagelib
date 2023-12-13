@@ -3,13 +3,13 @@
 #
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-21 01:35+0000\n"
-"PO-Revision-Date: 2023-12-09 19:25+0900\n"
+"PO-Revision-Date: 2023-12-13 01:55+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.80\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1687,7 +1687,7 @@ msgstr "密件副本"
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr ""
+msgstr "回覆地址"
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
@@ -1772,7 +1772,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr ""
+msgstr "回覆至：%1"
 
 #: recipient/recipientspicker.cpp:44
 #, kde-format
@@ -1786,10 +1786,9 @@ msgid "Search &Directory Service"
 msgstr "搜尋目錄服務(&D)"
 
 #: recipient/recipientspicker.cpp:79
-#, fuzzy, kde-format
-#| msgid "Add as &To"
+#, kde-format
 msgid "Add as &Reply-To"
-msgstr "新增成收件者(&T)"
+msgstr "新增成回覆地址(&R)"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
@@ -1830,10 +1829,9 @@ msgid_plural ""
 msgstr[0] "您選擇的 %1 個收件者，但最大只能容納 %2 個收件者。請修改。"
 
 #: recipient/recipientspicker.cpp:189
-#, fuzzy, kde-format
-#| msgid "No key data for recipients found."
+#, kde-format
 msgid "You can not add more recipients."
-msgstr "找不到收件者的金鑰資料。"
+msgstr "您無法新增更多收件者。"
 
 #: sendlater/sendlatercreatejob.cpp:33
 #, fuzzy, kde-format
@@ -1888,17 +1886,15 @@ msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
 
 #: sendlater/sendlatertimedatewidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "The selected date must be greater than the current date."
+#, kde-format
 msgid "You cannot select a date prior to the current date."
-msgstr "選取的日期必須大於目前的日期。"
+msgstr "您無法選取比今天還早的日期。"
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "就這樣送吧(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -1907,9 +1903,7 @@ msgid "Repeat every:"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Recipient of an email message."
-#| msgid "To"
+#, kde-format
 msgid "To"
 msgstr "收件者"
 
@@ -1959,9 +1953,7 @@ msgid "From Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Carbon Copy recipient of an email message."
-#| msgid "CC"
+#, kde-format
 msgid "CC"
 msgstr "副本"
 
