@@ -22,38 +22,54 @@ void NodeHelperTest::testPersistentIndex()
     auto node = new KMime::Content();
     auto node2 = new KMime::Content();
     auto node2Extra = new KMime::Content();
-    auto subNode = new KMime::Content();
-    auto subsubNode = new KMime::Content();
+    auto subNode1 = new KMime::Content();
+    auto subNode2 = new KMime::Content();
+    auto subsubNode0 = new KMime::Content();
+    auto subsubNode1 = new KMime::Content();
     auto subsubNode2 = new KMime::Content();
-    auto node2ExtraSubNode = new KMime::Content();
+    auto node2ExtraSubNode1 = new KMime::Content();
+    auto node2ExtraSubNode2 = new KMime::Content();
     auto node2ExtraSubsubNode = new KMime::Content();
     auto node2ExtraSubsubNode2 = new KMime::Content();
     auto extra = new KMime::Content();
     auto extra2 = new KMime::Content();
     auto subExtra = new KMime::Content();
     auto subsubExtra = new KMime::Content();
-    auto subsubExtraNode = new KMime::Content();
+    auto subsubExtraNode1 = new KMime::Content();
+    auto subsubExtraNode2 = new KMime::Content();
 
-    subNode->addContent(subsubNode);
-    subNode->addContent(subsubNode2);
-    node->addContent(subNode);
-    subsubExtra->addContent(subsubExtraNode);
+    subNode2->contentType()->setMimeType("multipart/mixed");
+    subNode2->appendContent(subsubNode0);
+    subNode2->appendContent(subsubNode1);
+    subNode2->appendContent(subsubNode2);
+    node->contentType()->setMimeType("multipart/mixed");
+    node->appendContent(subNode1);
+    node->appendContent(subNode2);
+    subsubExtra->contentType()->setMimeType("multipart/mixed");
+    subsubExtra->appendContent(subsubExtraNode1);
+    subsubExtra->appendContent(subsubExtraNode2);
     helper.attachExtraContent(node, extra);
     helper.attachExtraContent(node, extra2);
-    helper.attachExtraContent(subNode, subExtra);
+    helper.attachExtraContent(subNode2, subExtra);
     helper.attachExtraContent(subsubNode2, subsubExtra);
 
     // This simulates Opaque S/MIME signed and encrypted message with attachment
     // (attachment is node2SubsubNode2)
-    node2Extra->addContent(node2ExtraSubNode);
-    node2ExtraSubNode->addContent(node2ExtraSubsubNode);
-    node2ExtraSubNode->addContent(node2ExtraSubsubNode2);
+    node2Extra->contentType()->setMimeType("multipart/mixed");
+    node2Extra->appendContent(node2ExtraSubNode1);
+    node2Extra->appendContent(node2ExtraSubNode2);
+    node2ExtraSubNode2->contentType()->setMimeType("multipart/mixed");
+    node2ExtraSubNode2->appendContent(new KMime::Content);
+    node2ExtraSubNode2->appendContent(node2ExtraSubsubNode);
+    node2ExtraSubNode2->appendContent(node2ExtraSubsubNode2);
     helper.attachExtraContent(node2, node2Extra);
 
     /*  all content has a internal first child, so indexes starts at 2
      * node                 ""
-     * -> subNode           "2"
-     *    -> subsubNode     "2.2"
+     * -> subNode1          "1"
+     * -> subNode2          "2"
+     *    -> subsubNode1    "2.1"
+     *    -> subsubNode1    "2.2"
      *    -> subsubNode2    "2.3"
      *
      * node                 ""
@@ -65,7 +81,8 @@ void NodeHelperTest::testPersistentIndex()
      *
      * subsubNode2          "2.3"
      * -> subsubExtra       "2.3:e0"
-     *    -> subsubExtraNode    "2.3:e0:2"
+     *    -> subsubExtraNode1   "2.3:e0:1"
+     *    -> subsubExtraNode2   "2.3:e0:2"
      *
      * node2                ""
      *
@@ -82,11 +99,11 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(node->contents()[0]), QStringLiteral("1"));
     QCOMPARE(helper.contentFromIndex(node, QStringLiteral("1")), node->contents()[0]);
 
-    QCOMPARE(helper.persistentIndex(subNode), QStringLiteral("2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2")), subNode);
+    QCOMPARE(helper.persistentIndex(subNode2), QStringLiteral("2"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2")), subNode2);
 
-    QCOMPARE(helper.persistentIndex(subsubNode), QStringLiteral("2.2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.2")), subsubNode);
+    QCOMPARE(helper.persistentIndex(subsubNode1), QStringLiteral("2.2"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.2")), subsubNode1);
 
     QCOMPARE(helper.persistentIndex(subsubNode2), QStringLiteral("2.3"));
     QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3")), subsubNode2);
@@ -103,8 +120,8 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(subsubExtra), QStringLiteral("2.3:e0"));
     QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0")), subsubExtra);
 
-    QCOMPARE(helper.persistentIndex(subsubExtraNode), QStringLiteral("2.3:e0:2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0:2")), subsubExtraNode);
+    QCOMPARE(helper.persistentIndex(subsubExtraNode2), QStringLiteral("2.3:e0:2"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0:2")), subsubExtraNode2);
 
     QCOMPARE(helper.persistentIndex(node2ExtraSubsubNode2), QStringLiteral("e0:2.3"));
     QCOMPARE(helper.contentFromIndex(node2, QStringLiteral("e0:2.3")), node2ExtraSubsubNode2);
@@ -130,10 +147,16 @@ void NodeHelperTest::testHREF()
     auto subsubExtra = new KMime::Content();
     auto subsubExtraNode = new KMime::Content();
 
-    subNode->addContent(subsubNode);
-    subNode->addContent(subsubNode2);
-    node->addContent(subNode);
-    subsubExtra->addContent(subsubExtraNode);
+    subNode->contentType()->setMimeType("multipart/mixed");
+    subNode->appendContent(new KMime::Content);
+    subNode->appendContent(subsubNode);
+    subNode->appendContent(subsubNode2);
+    node->contentType()->setMimeType("multipart/mixed");
+    node->appendContent(new KMime::Content);
+    node->appendContent(subNode);
+    subsubExtra->contentType()->setMimeType("multipart/mixed");
+    subsubExtra->appendContent(new KMime::Content);
+    subsubExtra->appendContent(subsubExtraNode);
     helper.attachExtraContent(node, extra);
     helper.attachExtraContent(node, extra2);
     helper.attachExtraContent(subNode, subExtra);
@@ -172,10 +195,16 @@ void NodeHelperTest::testLocalFiles()
     auto subsubExtra = new KMime::Content();
     auto subsubExtraNode = new KMime::Content();
 
-    subNode->addContent(subsubNode);
-    subNode->addContent(subsubNode2);
-    node->addContent(subNode);
-    subsubExtra->addContent(subsubExtraNode);
+    subNode->contentType()->setMimeType("multipart/mixed");
+    subNode->appendContent(new KMime::Content);
+    subNode->appendContent(subsubNode);
+    subNode->appendContent(subsubNode2);
+    node->contentType()->setMimeType("multipart/mixed");
+    node->appendContent(new KMime::Content);
+    node->appendContent(subNode);
+    subsubExtra->contentType()->setMimeType("multipart/mixed");
+    subsubExtra->appendContent(new KMime::Content);
+    subsubExtra->appendContent(subsubExtraNode);
     helper.attachExtraContent(node, extra);
     helper.attachExtraContent(node, extra2);
     helper.attachExtraContent(subNode, subExtra);
@@ -246,9 +275,11 @@ void NodeHelperTest::testFromAsString()
     auto encSubNode = new KMime::Content();
     auto encSubExtra = new KMime::Content();
 
-    node->addContent(subNode);
-    node->addContent(encMsg);
-    encNode->addContent(encSubNode);
+    node->contentType()->setMimeType("multipart/mixed");
+    node->appendContent(new KMime::Content);
+    node->appendContent(subNode);
+    node->appendContent(encMsg);
+    encNode->appendContent(encSubNode);
 
     helper.attachExtraContent(subNode, subExtra);
     helper.attachExtraContent(encSubNode, encSubExtra);
