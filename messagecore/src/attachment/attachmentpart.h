@@ -194,8 +194,7 @@ private:
     //@endcond
 };
 
-// FIXME I don't understand why this doesn't work if I put it outside namespace KPIM.
-MESSAGECORE_EXPORT uint qHash(const QSharedPointer<MessageCore::AttachmentPart> &);
+MESSAGECORE_EXPORT size_t qHash(const QSharedPointer<MessageCore::AttachmentPart> &, size_t seed = 0) noexcept;
 }
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart::Ptr)
