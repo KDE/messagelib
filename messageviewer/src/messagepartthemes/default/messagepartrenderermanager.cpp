@@ -126,7 +126,7 @@ void MessagePartRendererManager::initializeRenderer()
         m_engine->addPluginPath(p + subPath);
     }
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_ktexttemplate_extension"));
-    m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
+    m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer6"));
     auto loader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>(new KTextTemplate::FileSystemTemplateLoader());
     loader->setTemplateDirs({QStringLiteral(":/")});
     m_engine->addTemplateLoader(loader);

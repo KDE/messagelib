@@ -6,7 +6,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MIMETREEPARSER
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser6\")
 
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})

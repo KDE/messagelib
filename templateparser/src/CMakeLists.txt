@@ -7,7 +7,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEMPLATEPARSER
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser6\")
 add_library(KPim6TemplateParser)
 add_library(KPim6::TemplateParser ALIAS KPim6TemplateParser)
 

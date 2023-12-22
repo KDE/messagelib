@@ -6,7 +6,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX WEBENGINEVIEWER
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer6\")
 include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
 
 add_library(KPim6WebEngineViewer)

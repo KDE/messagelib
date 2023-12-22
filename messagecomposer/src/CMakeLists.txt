@@ -7,7 +7,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer6\")
 
 if(BUILD_TESTING)
     add_subdirectory( imagescaling/autotests )

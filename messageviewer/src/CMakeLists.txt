@@ -7,7 +7,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGEVIEWER
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer6\")
 
 add_subdirectory(messagepartthemes/grantlee)
 

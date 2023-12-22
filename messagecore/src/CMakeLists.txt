@@ -7,7 +7,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECORE
     SOVERSION 6
     )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore6\")
 
 add_library(KPim6MessageCore)
 add_library(KPim6::MessageCore ALIAS KPim6MessageCore)

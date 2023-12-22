@@ -12,7 +12,7 @@ configure_file(config-messagelist.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-messag
 add_library(KPim6MessageList)
 add_library(KPim6::MessageList ALIAS KPim6MessageList)
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist6\")
 
 add_subdirectory(pics)
 if(BUILD_TESTING)

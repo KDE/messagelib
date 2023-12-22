@@ -8,5 +8,5 @@ Singleton=true
 ItemAccessors=true
 SetUserTexts=true
 IncludeFiles=qapplication.h,\"messagelist_export.h\",\"messagelistutil.h\"
-TranslationDomain=libmessagelist
+TranslationDomain=libmessagelist6
 TranslationSystem=kde
