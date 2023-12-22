@@ -13,9 +13,9 @@
 
 using namespace MessageCore;
 
-uint MessageCore::qHash(const MessageCore::AttachmentPart::Ptr &ptr)
+size_t qHash(const MessageCore::AttachmentPart::Ptr &ptr, size_t seed)
 {
-    return ::qHash(ptr.data());
+    return ::qHash(ptr.data(), seed);
 }
 
 // TODO move to kmime_util?

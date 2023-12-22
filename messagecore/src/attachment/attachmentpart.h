@@ -187,15 +187,14 @@ public:
     void setUrl(const QUrl &url);
     [[nodiscard]] QUrl url() const;
 
+    size_t qHash(const QSharedPointer<MessageCore::AttachmentPart> &, size_t seed = 0);
+
 private:
     //@cond PRIVATE
     class AttachmentPartPrivate;
     AttachmentPartPrivate *const d;
     //@endcond
 };
-
-// FIXME I don't understand why this doesn't work if I put it outside namespace KPIM.
-MESSAGECORE_EXPORT uint qHash(const QSharedPointer<MessageCore::AttachmentPart> &);
 }
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart::Ptr)
