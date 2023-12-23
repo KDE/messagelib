@@ -20,11 +20,11 @@
 # Anne-Marie Mahfouf <annemarie.mahfouf@free.fr>, 2009.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2009, 2010, 2011, 2012, 2013.
 # Sebastien Renard <Sebastien.Renard@digitalfox.org>, 2009, 2013.
-# SPDX-FileCopyrightText: 2012, 2020, 2021, 2022, 2023 xavier <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2012, 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent PINON <vpinon@kde.org>, 2013, 2014, 2015, 2016, 2017, 2018.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
 # Thomas Vergnaud <thomas.vergnaud@gmx.fr>, 2019.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
