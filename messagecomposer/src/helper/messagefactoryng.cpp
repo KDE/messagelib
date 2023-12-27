@@ -98,8 +98,6 @@ static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &ms
 
 void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll)
 {
-    applyCharset(msg);
-
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusReplied());
     if (mParentFolderId > 0) {
         auto header = new KMime::Headers::Generic("X-KMail-Fcc");
@@ -288,8 +286,6 @@ void MessageFactoryNG::createReplyAsync()
 
 void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
 {
-    applyCharset(msg);
-
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusForwarded());
     msg->assemble();
     Q_EMIT createForwardDone(msg);
@@ -388,8 +384,6 @@ QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAtta
             MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }
     }
-
-    applyCharset(msg);
 
     // msg->assemble();
     return QPair<KMime::Message::Ptr, QList<KMime::Content *>>(msg, QList<KMime::Content *>() << attachments);
@@ -925,46 +919,6 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
         }
     }
     return result;
-}
-
-void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
-{
-    if (MessageComposer::MessageComposerSettings::forceReplyCharset()) {
-        // first convert the body from its current encoding to unicode representation
-        QStringDecoder bodyCodec(msg->contentType()->charset().constData());
-        if (!bodyCodec.isValid()) {
-            bodyCodec = QStringDecoder(QStringDecoder::Utf8);
-        }
-        const QString body = bodyCodec.decode(msg->body());
-
-        // then apply the encoding of the original message
-        QStringEncoder codec(mOrigMsg->contentType()->charset().constData());
-        if (!codec.isValid()) {
-            qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << mOrigMsg->contentType()->charset();
-            // Don't touch the message
-        } else {
-            const QByteArray encodedBody = codec.encode(body);
-            if (codec.hasError()) { // charset can't encode body, fall back to preferred
-                const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
-
-                QList<QByteArray> chars;
-                chars.reserve(charsets.count());
-                for (const QString &charset : charsets) {
-                    chars << charset.toLatin1();
-                }
-
-                codec = QStringEncoder(MessageComposer::Util::selectCharset(chars, body).constData());
-                if (!codec.isValid()) {
-                    codec = QStringEncoder(QStringEncoder::Utf8);
-                }
-                msg->contentType()->setCharset(codec.name());
-                msg->setBody(codec.encode(body));
-            } else {
-                msg->contentType()->setCharset(mOrigMsg->contentType()->charset());
-                msg->setBody(encodedBody);
-            }
-        }
-    }
 }
 
 QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)

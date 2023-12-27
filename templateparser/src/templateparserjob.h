@@ -184,12 +184,6 @@ public:
      */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
-    /**
-     * Sets the list of charsets to try to use to encode the resulting text.
-     * They are tried in order until one matches, or utf-8 as a fallback.
-     */
-    void setCharsets(const QStringList &charsets);
-
     void process(const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
     void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
     void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);

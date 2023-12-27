@@ -24,7 +24,6 @@ void MessageFactoryReplyJob::start()
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryReplyJob::slotReplyDone);
     connect(parser, &TemplateParser::TemplateParserJob::parsingFailed, this, &MessageFactoryReplyJob::slotReplyDone);
     parser->setIdentityManager(mIdentityManager);
-    parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
     parser->setReplyAsHtml(mReplyAsHtml);
     if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {

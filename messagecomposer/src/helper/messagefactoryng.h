@@ -239,13 +239,6 @@ private:
 
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
 
-    /*
-     * If force charset option is enabled, try to set the original charset
-     *  in the newly created message. If unable to encode, fall back to
-     *  preferred charsets, and if all fail, use UTF-8.
-     */
-    MESSAGECOMPOSER_NO_EXPORT void applyCharset(const KMime::Message::Ptr msg);
-
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
     MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 

@@ -24,7 +24,6 @@ void MessageFactoryForwardJob::start()
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryForwardJob::slotParsingDone);
     connect(parser, &TemplateParser::TemplateParserJob::parsingFailed, this, &MessageFactoryForwardJob::slotParsingDone);
     parser->setIdentityManager(mIdentityManager);
-    parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setSelection(mSelection);
     if (!mTemplate.isEmpty()) {
         parser->process(mTemplate, mOrigMsg);

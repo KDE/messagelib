@@ -41,7 +41,6 @@ public:
     QString mTo;
     QString mCC;
     QString mHeadElement;
-    QStringList mCharsets;
     TemplateParserJob::Quotes mQuotes = TemplateParserJob::ReplyAsOriginalMessage;
     TemplateParserJob::Mode mMode;
     TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;

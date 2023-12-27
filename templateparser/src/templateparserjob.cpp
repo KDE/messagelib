@@ -43,37 +43,6 @@ Q_DECL_CONSTEXPR inline int pipeTimeout()
 {
     return 15 * 1000;
 }
-
-static QByteArray selectCharset(const QStringList &charsets, const QString &text)
-{
-    for (const QString &name : charsets) {
-        // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
-        // the former knows us-ascii is latin1.
-        QByteArray codecName;
-        if (name == QLatin1String("locale")) {
-            codecName = QByteArrayLiteral("UTF-8");
-        } else {
-            codecName = name.toLatin1();
-        }
-        QStringEncoder codec(codecName.constData());
-        if (!codec.isValid()) {
-            qCWarning(TEMPLATEPARSER_LOG) << "Could not get text codec for charset" << name;
-            continue;
-        }
-        if ([[maybe_unused]] const QByteArray encoded = codec.encode(text); !codec.hasError()) {
-            // Special check for us-ascii (needed because us-ascii is not exactly latin1).
-            if (name == QLatin1String("us-ascii") && !KMime::isUsAscii(text)) {
-                continue;
-            }
-            qCDebug(TEMPLATEPARSER_LOG) << "Chosen charset" << name << codecName;
-            return codecName;
-        }
-    }
-    if (!charsets.isEmpty()) {
-        qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
-    }
-    return QByteArrayLiteral("UTF-8");
-}
 }
 
 using namespace TemplateParser;
@@ -128,11 +97,6 @@ bool TemplateParserJob::shouldStripSignature() const
 void TemplateParserJob::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
 {
     d->m_identityManager = ident;
-}
-
-void TemplateParserJob::setCharsets(const QStringList &charsets)
-{
-    d->mCharsets = charsets;
 }
 
 int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QString &quote)
@@ -1211,7 +1175,7 @@ KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBo
     auto textPart = new KMime::Content(d->mMsg.data());
     auto ct = textPart->contentType(true);
     ct->setMimeType("text/plain");
-    ct->setCharset(selectCharset(d->mCharsets, plainBody));
+    ct->setCharset(QByteArrayLiteral("UTF-8"));
     textPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     textPart->fromUnicodeString(plainBody);
     return textPart;
@@ -1229,7 +1193,7 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
 
     auto htmlPart = new KMime::Content(d->mMsg.data());
     htmlPart->contentType(true)->setMimeType("text/html");
-    htmlPart->contentType(false)->setCharset(selectCharset(d->mCharsets, htmlBody)); // Already created
+    htmlPart->contentType(false)->setCharset(QByteArrayLiteral("UTF-8")); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
     multipartAlternative->appendContent(htmlPart);
