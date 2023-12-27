@@ -1,4 +1,4 @@
-# Translation of libmessageviewer.po to Catalan
+# Translation of libmessageviewer6.po to Catalan
 # Copyright (C) 1998-2023 This_file_is_part_of_KDE
 #
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2004, 2005, 2006.
