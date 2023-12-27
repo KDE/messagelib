@@ -24,11 +24,6 @@
 #include <QSharedPointer>
 #include <QStringList>
 
-namespace MessageComposer
-{
-class ContactPreference;
-}
-
 namespace Kleo
 {
 class ExpiryChecker;
@@ -226,19 +221,6 @@ public:
 
     std::map<QByteArray, QString> useAutocrypt() const;
 
-    /** Disable ContactSearchJob in KeyResolver.
-        A usecase is that ests won't fireup an Akonadi instance only for this feature.
-        @default is true: The ContactSearchJob is executed.
-     */
-    void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
-
-    /** Sets crypto preferences for given email address.
-     * This is an alternative to setting crypto preferences for a contact when Akonadi
-     * lookup is disabled - useful mostly for testing cases when it's not possible to
-     * index contacts on demand.
-     */
-    void setContactPreferences(const QString &address, const MessageComposer::ContactPreference &preference);
-
 private:
     void dump() const;
     std::vector<Item> getEncryptionItems(const QStringList &recipients);
@@ -260,17 +242,23 @@ private:
 
     std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 
+    class ContactPreference
+    {
+    public:
+        Kleo::EncryptionPreference encryptionPreference = Kleo::UnknownPreference;
+        Kleo::SigningPreference signingPreference = Kleo::UnknownSigningPreference;
+        Kleo::CryptoMessageFormat cryptoMessageFormat = Kleo::AutoFormat;
+        QStringList pgpKeyFingerprints;
+        QStringList smimeCertFingerprints;
+    };
+
+    ContactPreference lookupContactPreferences(const QString &address) const;
+
     std::vector<GpgME::Key>
     selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
 
-    QStringList keysForAddress(const QString &address) const;
-    void setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const;
-
     bool encryptToSelf() const;
     bool showApprovalDialog() const;
-
-    MessageComposer::ContactPreference lookupContactPreferences(const QString &address) const;
-    void saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const;
 
 private:
     class EncryptionPreferenceCounter;

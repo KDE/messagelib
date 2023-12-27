@@ -695,11 +695,6 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
     return true;
 }
 
-void ComposerViewBase::setAkonadiLookupEnabled(bool akonadiLookupEnabled)
-{
-    m_akonadiLookupEnabled = akonadiLookupEnabled;
-}
-
 QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const auto id = currentIdentity();
@@ -740,7 +735,6 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
         new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, expiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
-    keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;

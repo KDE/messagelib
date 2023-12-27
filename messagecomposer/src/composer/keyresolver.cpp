@@ -13,8 +13,6 @@
 
 #include "composer/keyresolver.h"
 
-#include "contactpreference/savecontactpreferencejob.h"
-
 #include "utils/kleo_util.h"
 #include <KCursorSaver>
 
@@ -596,7 +594,6 @@ struct FormatInfo {
 };
 
 struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
-    bool mAkonadiLookupEnabled = true;
     bool mAutocryptEnabled = false;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
@@ -612,7 +609,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
     std::map<CryptoMessageFormat, FormatInfo> mFormatInfoMap;
 
     // key=email address, value=crypto preferences for this contact (from kabc)
-    using ContactPreferencesMap = std::map<QString, MessageComposer::ContactPreference>;
+    using ContactPreferencesMap = std::map<QString, ContactPreference>;
     ContactPreferencesMap mContactPreferencesMap;
     std::map<QByteArray, QString> mAutocryptMap;
     std::shared_ptr<Kleo::ExpiryChecker> expiryChecker;
@@ -1285,30 +1282,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
 
     items = dlg->items();
     senderKeys = dlg->senderKeys();
-    const bool prefsChanged = dlg->preferencesChanged();
     delete dlg;
-
-    if (prefsChanged) {
-        for (uint i = 0, total = items.size(); i < total; ++i) {
-            auto pref = lookupContactPreferences(items[i].address);
-            pref.encryptionPreference = items[i].pref;
-            pref.pgpKeyFingerprints.clear();
-            pref.smimeCertFingerprints.clear();
-            const std::vector<GpgME::Key> &keys = items[i].keys;
-            for (auto it = keys.begin(), end = keys.end(); it != end; ++it) {
-                if (it->protocol() == GpgME::OpenPGP) {
-                    if (const char *fpr = it->primaryFingerprint()) {
-                        pref.pgpKeyFingerprints.push_back(QLatin1String(fpr));
-                    }
-                } else if (it->protocol() == GpgME::CMS) {
-                    if (const char *fpr = it->primaryFingerprint()) {
-                        pref.smimeCertFingerprints.push_back(QLatin1String(fpr));
-                    }
-                }
-            }
-            saveContactPreference(items[i].address, pref);
-        }
-    }
 
     // show a warning if the user didn't select an encryption key for
     // herself:
@@ -1404,11 +1378,6 @@ std::map<QByteArray, QString> Kleo::KeyResolver::useAutocrypt() const
     return d->mAutocryptMap;
 }
 
-void Kleo::KeyResolver::setAkonadiLookupEnabled(bool akonadiLoopkupEnabled)
-{
-    d->mAkonadiLookupEnabled = akonadiLoopkupEnabled;
-}
-
 std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const
 {
     dump();
@@ -1434,7 +1403,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(const QString &person, con
         selectedKeys,
         Kleo::KeySelectionDialog::ValidEncryptionKeys & ~(opgp ? 0 : Kleo::KeySelectionDialog::OpenPGPKeys) & ~(x509 ? 0 : Kleo::KeySelectionDialog::SMIMEKeys),
         true,
-        true); // multi-selection and "remember choice" box
+        false); // multi-selection and "remember choice" box
 
     if (dlg->exec() != QDialog::Accepted) {
         delete dlg;
@@ -1443,9 +1412,6 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(const QString &person, con
 
     std::vector<GpgME::Key> keys = dlg->selectedKeys();
     keys.erase(std::remove_if(keys.begin(), keys.end(), NotValidEncryptionKey), keys.end());
-    if (!keys.empty() && dlg->rememberSelection()) {
-        setKeysForAddress(person, dlg->pgpKeyFingerprints(), dlg->smimeFingerprints());
-    }
 
     delete dlg;
     return keys;
@@ -1455,44 +1421,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
 {
     const QString address = canonicalAddress(person).toLower();
 
-    // First look for this person's address in the address->key dictionary
-    const QStringList fingerprints = keysForAddress(address);
-
-    if (!fingerprints.empty()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x" << fingerprints.join(QLatin1String(", 0x")) << "for" << person;
-        std::vector<GpgME::Key> keys = lookup(fingerprints);
-        if (!keys.empty()) {
-            // Check if all of the keys are trusted and valid encryption keys
-            if (std::any_of(keys.begin(), keys.end(),
-                            NotValidTrustedEncryptionKey)) { // -= trusted?
-                // not ok, let the user select: this is not conditional on !quiet,
-                // since it's a bug in the configuration and the user should be
-                // notified about it as early as possible:
-                keys = selectKeys(person,
-                                  i18nc("if in your language something like "
-                                        "'certificate(s)' is not possible please "
-                                        "use the plural in the translation",
-                                        "There is a problem with the "
-                                        "encryption certificate(s) for \"%1\".\n\n"
-                                        "Please re-select the certificate(s) which should "
-                                        "be used for this recipient.",
-                                        person),
-                                  keys);
-            }
-            bool canceled = false;
-            keys = trustedOrConfirmed(keys, address, canceled);
-            if (canceled) {
-                return {};
-            }
-
-            if (!keys.empty()) {
-                return keys;
-            }
-            // keys.empty() is considered cancel by callers, so go on
-        }
-    }
-
-    // Now search all public keys for matching keys
+    // Search all public keys for matching keys
     std::vector<GpgME::Key> matchingKeys = lookup(QStringList(address));
     matchingKeys.erase(std::remove_if(matchingKeys.begin(), matchingKeys.end(), NotValidEncryptionKey), matchingKeys.end());
 
@@ -1635,67 +1564,15 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
     dump();
 }
 
-MessageComposer::ContactPreference Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
+Kleo::KeyResolver::ContactPreference Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
 {
     const auto it = d->mContactPreferencesMap.find(address);
     if (it != d->mContactPreferencesMap.end()) {
         return it->second;
     }
 
-    MessageComposer::ContactPreference pref;
-
-    if (!d->mAkonadiLookupEnabled) {
-        return pref;
-    }
-
-    auto job = new Akonadi::ContactSearchJob();
-    job->setLimit(1);
-    job->setQuery(Akonadi::ContactSearchJob::Email, address);
-    job->exec();
-
-    const KContacts::Addressee::List res = job->contacts();
-    if (!res.isEmpty()) {
-        KContacts::Addressee addr = res.at(0);
-        pref.fillFromAddressee(addr);
-    }
-
-    const_cast<KeyResolver *>(this)->setContactPreferences(address, pref);
-
-    return pref;
-}
-
-void Kleo::KeyResolver::setContactPreferences(const QString &address, const MessageComposer::ContactPreference &pref)
-{
-    d->mContactPreferencesMap.insert(std::make_pair(address, pref));
-}
-
-void Kleo::KeyResolver::saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const
-{
-    d->mContactPreferencesMap.insert(std::make_pair(email, pref));
-    auto saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
-    saveContactPreferencesJob->start();
-}
-
-QStringList Kleo::KeyResolver::keysForAddress(const QString &address) const
-{
-    if (address.isEmpty()) {
-        return {};
-    }
-    const QString addr = canonicalAddress(address).toLower();
-    const auto pref = lookupContactPreferences(addr);
-    return pref.pgpKeyFingerprints + pref.smimeCertFingerprints;
-}
-
-void Kleo::KeyResolver::setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const
-{
-    if (address.isEmpty()) {
-        return;
-    }
-    const QString addr = canonicalAddress(address).toLower();
-    auto pref = lookupContactPreferences(addr);
-    pref.pgpKeyFingerprints = pgpKeyFingerprints;
-    pref.smimeCertFingerprints = smimeCertFingerprints;
-    saveContactPreference(addr, pref);
+    // TODO remove me completely
+    return {};
 }
 
 bool Kleo::KeyResolver::encryptToSelf() const

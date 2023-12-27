@@ -342,8 +342,6 @@ private:
                           const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
                           const std::map<QByteArray, QString> &autocryptMap);
 
-    void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
-
     KMime::Message::Ptr m_msg;
     MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;
     MessageComposer::AttachmentModel *m_attachmentModel = nullptr;
@@ -369,7 +367,6 @@ private:
     bool m_mdnRequested = false;
     bool m_urgent = false;
     bool m_requestDeleveryConfirmation = false;
-    bool m_akonadiLookupEnabled = true;
     Kleo::CryptoMessageFormat m_cryptoMessageFormat;
     QString mExpandedFrom;
     QString m_from;

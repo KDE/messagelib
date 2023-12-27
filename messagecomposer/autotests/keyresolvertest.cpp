@@ -48,7 +48,6 @@ void KeyResolverTest::testAutocrypt()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     std::shared_ptr<ExpiryChecker> expiryChecker{new ExpiryChecker{ExpiryCheckerSettings{days{0}, days{0}, days{0}, days{0}}}};
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, expiryChecker);
-    keyResolver.setAkonadiLookupEnabled(false);
 
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
 

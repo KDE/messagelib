@@ -19,7 +19,6 @@ if(BUILD_TESTING)
     add_subdirectory( snippet/autotests )
     add_subdirectory( mdn/autotests )
     add_subdirectory( mdn/tests )
-    add_subdirectory( contactpreference/autotests)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -70,10 +69,6 @@ target_sources( KPim6MessageComposer PRIVATE
     composer/keyresolver.cpp
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
-    contactpreference/contactpreference.cpp
-    contactpreference/savecontactpreferencejob.cpp
-    contactpreference/contactpreference.h
-    contactpreference/savecontactpreferencejob.h
     draftstatus/draftstatus.cpp
     recipient/recipientspicker.cpp
     recipient/recipient.cpp
@@ -456,15 +451,6 @@ ecm_generate_headers(MessageComposer_Camelcasecomposerng_HEADERS
     RELATIVE composer-ng
     )
 
-ecm_generate_headers(MessageComposer_Camelcasecontactpreference_HEADERS
-    HEADER_NAMES
-    SaveContactPreferenceJob
-    ContactPreference
-    REQUIRED_HEADERS MessageComposer_contactpreference_HEADERS
-    PREFIX MessageComposer
-    RELATIVE contactpreference
-    )
-
 ecm_generate_headers(MessageComposer_Camelcasesender_HEADERS
     HEADER_NAMES
     AkonadiSender
@@ -608,7 +594,6 @@ install(FILES
     ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_Camelcasecomposer_HEADERS}
     ${MessageComposer_Camelcasecomposerng_HEADERS}
-    ${MessageComposer_Camelcasecontactpreference_HEADERS}
     ${MessageComposer_Camelcasesender_HEADERS}
     ${MessageComposer_Camelcaseutils_HEADERS}
     ${MessageComposer_Camelcasehelper_HEADERS}
@@ -641,7 +626,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
     ${MessageComposer_composer_HEADERS}
     ${MessageComposer_composerng_HEADERS}
-    ${MessageComposer_contactpreference_HEADERS}
     ${MessageComposer_sender_HEADERS}
     ${MessageComposer_utils_HEADERS}
     ${MessageComposer_helper_HEADERS}

@@ -184,7 +184,6 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
     composerViewBase.setRecipientsEditor(&recipientsEditor);
     composerViewBase.setFrom(QStringLiteral("me@me.example"));
     composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
-    composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("you@you.com");
     recipientsEditor.setRecipientString({mb}, Recipient::To);
@@ -255,7 +254,6 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
     composerViewBase.setRecipientsEditor(&recipientsEditor);
     composerViewBase.setFrom(QStringLiteral("me@me.example"));
     composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
-    composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("you@you.com");
     recipientsEditor.setRecipientString({mb}, Recipient::To);
@@ -302,7 +300,6 @@ void ComposerViewBaseTest::testAutocryptKey()
     composerViewBase.setRecipientsEditor(&recipientsEditor);
     composerViewBase.setFrom(QStringLiteral("me@me.example"));
     composerViewBase.mExpandedTo << QStringLiteral("recipient@autocrypt.example");
-    composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("recipient@autocrypt.example");
     recipientsEditor.setRecipientString({mb}, Recipient::To);
