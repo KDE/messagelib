@@ -179,15 +179,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="ReduceImageToMaximum" type="Bool" key="reduce-image-to-maximum">
       <default>false</default>
     </entry>
-    <entry name="EnlargeImageToMinimum" type="Bool" key="enlarge-image-to-minimum">
-      <default>false</default>
-    </entry>
-    <entry name="CustomMinimumHeight" type="Int" key="custom-minimum-height">
-      <default>520</default>
-    </entry>
-    <entry name="CustomMinimumWidth" type="Int" key="custom-minimum-width">
-      <default>520</default>
-    </entry>
     <entry name="CustomMaximumHeight" type="Int" key="custom-maximum-height">
       <default>520</default>
     </entry>
@@ -199,12 +190,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>0</default>
     </entry>
     <entry name="MaximumWidth" type="Int" key="maximum-width">
-      <default>0</default>
-    </entry>
-    <entry name="MinimumHeight" type="Int" key="minimum-height">
-      <default>0</default>
-    </entry>
-    <entry name="MinimumWidth" type="Int" key="minimum-width">
       <default>0</default>
     </entry>
     <entry name="WriteFormat" type="String" key="write-format">

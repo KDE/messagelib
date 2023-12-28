@@ -68,23 +68,6 @@ bool ImageScaling::resizeImage()
         newHeight = height;
         newWidth = width;
     }
-    if (MessageComposer::MessageComposerSettings::self()->enlargeImageToMinimum()) {
-        int minimumWidth = MessageComposer::MessageComposerSettings::self()->minimumWidth();
-        if (minimumWidth == -1) {
-            minimumWidth = MessageComposer::MessageComposerSettings::self()->customMinimumWidth();
-        }
-
-        int minimumHeight = MessageComposer::MessageComposerSettings::self()->minimumHeight();
-        if (minimumHeight == -1) {
-            minimumHeight = MessageComposer::MessageComposerSettings::self()->customMinimumHeight();
-        }
-        if (newWidth < minimumWidth) {
-            newWidth = minimumWidth;
-        }
-        if (newHeight < minimumHeight) {
-            newHeight = minimumHeight;
-        }
-    }
     if ((newHeight != height) || (newWidth != width)) {
         d->mBuffer.open(QIODevice::WriteOnly);
         d->mImage = d->mImage.scaled(newWidth,

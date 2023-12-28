@@ -44,8 +44,6 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     d->ui->setupUi(this);
     initComboBox(d->ui->CBMaximumWidth);
     initComboBox(d->ui->CBMaximumHeight);
-    initComboBox(d->ui->CBMinimumWidth);
-    initComboBox(d->ui->CBMinimumHeight);
 
     initWriteImageFormat();
     KLineEditEventHandler::catchReturnKey(d->ui->pattern);
@@ -56,19 +54,14 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     connect(d->ui->enabledAutoResize, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->KeepImageRatio, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->AskBeforeResizing, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
-    connect(d->ui->EnlargeImageToMinimum, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->ReduceImageToMaximum, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->customMaximumWidth, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->customMaximumHeight, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
-    connect(d->ui->customMinimumWidth, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
-    connect(d->ui->customMinimumHeight, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->imageSize, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->pattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->CBMaximumWidth, &QComboBox::currentIndexChanged, this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->CBMaximumHeight, &QComboBox::currentIndexChanged, this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->CBMinimumWidth, &QComboBox::currentIndexChanged, this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->CBMinimumHeight, &QComboBox::currentIndexChanged, this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->WriteToImageFormat, &QComboBox::activated, this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, d->ui->renameResizedImagePattern, &QLineEdit::setEnabled);
@@ -169,10 +162,6 @@ void ImageScalingWidget::slotComboboxChanged(int index)
             d->ui->customMaximumWidth->setEnabled(isCustom);
         } else if (combo == d->ui->CBMaximumHeight) {
             d->ui->customMaximumHeight->setEnabled(isCustom);
-        } else if (combo == d->ui->CBMinimumWidth) {
-            d->ui->customMinimumWidth->setEnabled(isCustom);
-        } else if (combo == d->ui->CBMinimumHeight) {
-            d->ui->customMinimumHeight->setEnabled(isCustom);
         }
         Q_EMIT changed();
     }
@@ -205,15 +194,12 @@ void ImageScalingWidget::updateSettings()
     d->ui->enabledAutoResize->setChecked(MessageComposer::MessageComposerSettings::self()->autoResizeImageEnabled());
     d->ui->KeepImageRatio->setChecked(MessageComposer::MessageComposerSettings::self()->keepImageRatio());
     d->ui->AskBeforeResizing->setChecked(MessageComposer::MessageComposerSettings::self()->askBeforeResizing());
-    d->ui->EnlargeImageToMinimum->setChecked(MessageComposer::MessageComposerSettings::self()->enlargeImageToMinimum());
     d->ui->ReduceImageToMaximum->setChecked(MessageComposer::MessageComposerSettings::self()->reduceImageToMaximum());
     d->ui->skipImageSizeLower->setChecked(MessageComposer::MessageComposerSettings::self()->skipImageLowerSizeEnabled());
     d->ui->imageSize->setValue(MessageComposer::MessageComposerSettings::self()->skipImageLowerSize());
 
     d->ui->customMaximumWidth->setValue(MessageComposer::MessageComposerSettings::self()->customMaximumWidth());
     d->ui->customMaximumHeight->setValue(MessageComposer::MessageComposerSettings::self()->customMaximumHeight());
-    d->ui->customMinimumWidth->setValue(MessageComposer::MessageComposerSettings::self()->customMinimumWidth());
-    d->ui->customMinimumHeight->setValue(MessageComposer::MessageComposerSettings::self()->customMinimumHeight());
 
     int index = qMax(0, d->ui->CBMaximumWidth->findData(MessageComposer::MessageComposerSettings::self()->maximumWidth()));
     d->ui->CBMaximumWidth->setCurrentIndex(index);
@@ -222,14 +208,6 @@ void ImageScalingWidget::updateSettings()
     index = qMax(0, d->ui->CBMaximumHeight->findData(MessageComposer::MessageComposerSettings::self()->maximumHeight()));
     d->ui->CBMaximumHeight->setCurrentIndex(index);
     d->ui->customMaximumHeight->setEnabled(d->ui->CBMaximumHeight->itemData(index) == -1);
-
-    index = qMax(0, d->ui->CBMinimumWidth->findData(MessageComposer::MessageComposerSettings::self()->minimumWidth()));
-    d->ui->CBMinimumWidth->setCurrentIndex(index);
-    d->ui->customMinimumWidth->setEnabled(d->ui->CBMinimumWidth->itemData(index) == -1);
-
-    index = qMax(0, d->ui->CBMinimumHeight->findData(MessageComposer::MessageComposerSettings::self()->minimumHeight()));
-    d->ui->CBMinimumHeight->setCurrentIndex(index);
-    d->ui->customMinimumHeight->setEnabled(d->ui->CBMinimumHeight->itemData(index) == -1);
 
     index = d->ui->WriteToImageFormat->findData(MessageComposer::MessageComposerSettings::self()->writeFormat());
     if (index == -1) {
@@ -309,28 +287,16 @@ void ImageScalingWidget::updateEmailsFilterTypeSettings()
 
 void ImageScalingWidget::writeConfig()
 {
-    if (d->ui->EnlargeImageToMinimum->isChecked() && d->ui->ReduceImageToMaximum->isChecked()) {
-        if ((d->ui->customMinimumWidth->value() >= d->ui->customMaximumWidth->value())
-            || (d->ui->customMinimumHeight->value() >= d->ui->customMaximumHeight->value())) {
-            KMessageBox::error(this, i18n("Please verify minimum and maximum values."), i18nc("@title:window", "Error in minimum Maximum value"));
-            return;
-        }
-    }
     MessageComposer::MessageComposerSettings::self()->setAutoResizeImageEnabled(d->ui->enabledAutoResize->isChecked());
     MessageComposer::MessageComposerSettings::self()->setKeepImageRatio(d->ui->KeepImageRatio->isChecked());
     MessageComposer::MessageComposerSettings::self()->setAskBeforeResizing(d->ui->AskBeforeResizing->isChecked());
-    MessageComposer::MessageComposerSettings::self()->setEnlargeImageToMinimum(d->ui->EnlargeImageToMinimum->isChecked());
     MessageComposer::MessageComposerSettings::self()->setReduceImageToMaximum(d->ui->ReduceImageToMaximum->isChecked());
 
     MessageComposer::MessageComposerSettings::self()->setCustomMaximumWidth(d->ui->customMaximumWidth->value());
     MessageComposer::MessageComposerSettings::self()->setCustomMaximumHeight(d->ui->customMaximumHeight->value());
-    MessageComposer::MessageComposerSettings::self()->setCustomMinimumWidth(d->ui->customMinimumWidth->value());
-    MessageComposer::MessageComposerSettings::self()->setCustomMinimumHeight(d->ui->customMinimumHeight->value());
 
     MessageComposer::MessageComposerSettings::self()->setMaximumWidth(d->ui->CBMaximumWidth->itemData(d->ui->CBMaximumWidth->currentIndex()).toInt());
     MessageComposer::MessageComposerSettings::self()->setMaximumHeight(d->ui->CBMaximumHeight->itemData(d->ui->CBMaximumHeight->currentIndex()).toInt());
-    MessageComposer::MessageComposerSettings::self()->setMinimumWidth(d->ui->CBMinimumWidth->itemData(d->ui->CBMinimumWidth->currentIndex()).toInt());
-    MessageComposer::MessageComposerSettings::self()->setMinimumHeight(d->ui->CBMinimumHeight->itemData(d->ui->CBMinimumHeight->currentIndex()).toInt());
 
     MessageComposer::MessageComposerSettings::self()->setWriteFormat(d->ui->WriteToImageFormat->currentText());
     MessageComposer::MessageComposerSettings::self()->setSkipImageLowerSizeEnabled(d->ui->skipImageSizeLower->isChecked());
