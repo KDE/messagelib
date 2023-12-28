@@ -26,6 +26,7 @@ div#headerbox div#subject {
     line-height: 24px;
     padding-bottom: 5px;
     padding-top: 5px;
+    width: calc(100% - var(--html-indicator-width, 120px));
 }
 div#headerbox div#photo {
     float: left;

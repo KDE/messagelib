@@ -16,22 +16,25 @@
 
 #include <KConfigGroup>
 #include <KLocalizedString>
-
 #include <KSharedConfig>
+
 #include <QMouseEvent>
+#include <WebEngineViewer/WebEngineManageScript>
+
+#include "viewer/webengine/mailwebengineview.h"
 
 using namespace MessageViewer;
 namespace
 {
 static const char myHtmlStatusBarConfigGroupName[] = "Reader";
 }
-HtmlStatusBar::HtmlStatusBar(QWidget *parent)
-    : QLabel(parent)
+HtmlStatusBar::HtmlStatusBar(MailWebEngineView *viewer, QWidget *parent)
+    : QPushButton(parent)
     , mMode(MimeTreeParser::Util::Normal)
+    , mViewer(viewer)
 {
-    setAlignment(Qt::AlignHCenter | Qt::AlignTop);
-    setAutoFillBackground(true);
     setCursor(QCursor(Qt::PointingHandCursor));
+    setContentsMargins(6, 6, 6, 6);
     update();
 }
 
@@ -60,6 +63,9 @@ void HtmlStatusBar::update()
     setPalette(pal);
     setText(message());
     setToolTip(toolTip());
+    constexpr int extraWidth = 10;
+    constexpr int overlap = 4;
+    setGeometry(parentWidget()->width() - sizeHint().width() + overlap - extraWidth, -overlap, sizeHint().width() + extraWidth, sizeHint().height());
 }
 
 void HtmlStatusBar::setNormalMode()
@@ -99,27 +105,25 @@ void HtmlStatusBar::mousePressEvent(QMouseEvent *event)
     }
 }
 
+void HtmlStatusBar::resizeEvent(QResizeEvent *event)
+{
+    const QString code = QStringLiteral("const root = document.querySelector(':root'); root.style.setProperty('--html-indicator-width', '")
+        + QString::number(width()) + QStringLiteral("px');");
+    mViewer->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
+}
+
 QString HtmlStatusBar::message() const
 {
     switch (mode()) {
     case MimeTreeParser::Util::Html: // bold: "HTML Message"
     case MimeTreeParser::Util::MultipartHtml:
-        return i18nc("'HTML Message' with html linebreaks between each letter and in bold text.",
-                     "<qt><b><br />H<br />T<br />M<br />L<br /> "
-                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>");
+        return i18nc("@label", "HTML Message");
     case MimeTreeParser::Util::Normal: // normal: "No HTML Message"
-        return i18nc("'No HTML Message' with html linebreaks between each letter.",
-                     "<qt><br />N<br />o<br /> "
-                     "<br />H<br />T<br />M<br />L<br /> "
-                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</qt>");
+        return i18nc("@label", "No HTML Message");
     case MimeTreeParser::Util::MultipartPlain: // normal: "Plain Message"
-        return i18nc("'Plain Message' with html linebreaks between each letter.",
-                     "<qt><br />P<br />l<br />a<br />i<br />n<br /> "
-                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
+        return i18nc("@label", "Plain Message");
     case MimeTreeParser::Util::MultipartIcal: // normal: "Calendar Message"
-        return i18nc("'Calendar Message' with html linebreaks between each letter.",
-                     "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> "
-                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
+        return i18nc("@label", "Calendar Message");
     default:
         return {};
     }
@@ -132,7 +136,8 @@ QString HtmlStatusBar::toolTip() const
     case MimeTreeParser::Util::MultipartHtml:
     case MimeTreeParser::Util::MultipartPlain:
     case MimeTreeParser::Util::MultipartIcal:
-        return i18n("Click to toggle between HTML, plain text and calendar.");
+        return i18n("Click to toggle between HTML, plain text and calendar.")
+            + i18nc("@info:tooltip", "Warning: HTML email content can hide or modify this email headers.");
     default:
     case MimeTreeParser::Util::Normal:
         break;
@@ -144,56 +149,36 @@ QString HtmlStatusBar::toolTip() const
 QColor HtmlStatusBar::fgColor() const
 {
     KConfigGroup conf(KSharedConfig::openConfig(), QLatin1StringView(myHtmlStatusBarConfigGroupName));
-    QColor defaultColor;
-    QColor color;
+    KColorScheme scheme;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
     case MimeTreeParser::Util::MultipartHtml:
-        defaultColor = Qt::white;
-        color = defaultColor;
-        if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-            color = conf.readEntry("ColorbarForegroundHTML", defaultColor);
-        }
-        return color;
+        return scheme.foreground(KColorScheme::NegativeText).color();
     case MimeTreeParser::Util::Normal:
     case MimeTreeParser::Util::MultipartPlain:
     case MimeTreeParser::Util::MultipartIcal:
-        defaultColor = Qt::black;
-        color = defaultColor;
-        if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-            color = conf.readEntry("ColorbarForegroundPlain", defaultColor);
-        }
-        return color;
+        return scheme.foreground(KColorScheme::NormalText).color();
+    default:
+        return scheme.foreground(KColorScheme::NormalText).color();
     }
-    return Qt::black;
 }
 
 QColor HtmlStatusBar::bgColor() const
 {
     KConfigGroup conf(KSharedConfig::openConfig(), QLatin1StringView(myHtmlStatusBarConfigGroupName));
 
-    QColor defaultColor;
-    QColor color;
+    KColorScheme scheme;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
     case MimeTreeParser::Util::MultipartHtml:
-        defaultColor = Qt::black;
-        color = defaultColor;
-        if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-            color = conf.readEntry("ColorbarBackgroundHTML", defaultColor);
-        }
-        return color;
+        return scheme.background(KColorScheme::NegativeBackground).color();
     case MimeTreeParser::Util::Normal:
     case MimeTreeParser::Util::MultipartPlain:
     case MimeTreeParser::Util::MultipartIcal:
-        defaultColor = Qt::lightGray;
-        color = defaultColor;
-        if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-            color = conf.readEntry("ColorbarBackgroundPlain", defaultColor);
-        }
-        return color;
+        return scheme.background(KColorScheme::NormalBackground).color();
+    default:
+        return scheme.background(KColorScheme::NormalBackground).color();
     }
-    return Qt::white;
 }
 
 #include "moc_htmlstatusbar.cpp"

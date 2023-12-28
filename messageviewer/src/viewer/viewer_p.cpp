@@ -64,6 +64,7 @@
 #include <QKeyCombination>
 #include <QMenu>
 #include <QMimeData>
+#include <QPushButton>
 #include <QTemporaryDir>
 
 // Qt includes
@@ -1378,16 +1379,12 @@ void ViewerPrivate::createWidgets()
     mBoxHBoxLayout->setContentsMargins({});
     mBoxHBoxLayout->setSpacing(0);
 
-    mColorBar = new HtmlStatusBar(mBox);
-    mBoxHBoxLayout->addWidget(mColorBar);
     mReaderBox = new QWidget(mBox);
     mReaderBoxVBoxLayout = new QVBoxLayout(mReaderBox);
     mReaderBoxVBoxLayout->setContentsMargins({});
     mReaderBoxVBoxLayout->setSpacing(0);
     mBoxHBoxLayout->addWidget(mReaderBox);
 
-    mColorBar->setObjectName(QLatin1StringView("mColorBar"));
-    mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
@@ -1417,6 +1414,10 @@ void ViewerPrivate::createWidgets()
     mSliderContainer->setContent(mFindBar);
 
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
+
+    mColorBar = new HtmlStatusBar(mViewer, mBox);
+    mColorBar->setObjectName(QLatin1StringView("mColorBar"));
+    mColorBar->show();
 }
 
 void ViewerPrivate::createScamDetectionWarningWidget()
@@ -2254,6 +2255,7 @@ void ViewerPrivate::attachmentView(KMime::Content *atmNode)
 void ViewerPrivate::slotDelayedResize()
 {
     mSplitter->setGeometry(0, 0, q->width(), q->height());
+    mColorBar->update();
 }
 
 void ViewerPrivate::slotPrintPreview()

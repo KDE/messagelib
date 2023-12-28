@@ -11,11 +11,13 @@
 
 #include "messageviewer/messageviewerutil.h"
 #include <MimeTreeParser/Util>
-#include <QLabel>
+#include <QPushButton>
+
 class QMouseEvent;
 
 namespace MessageViewer
 {
+class MailWebEngineView;
 /**
  * @short The HTML statusbar widget for use with the reader.
  *
@@ -37,7 +39,7 @@ namespace MessageViewer
  *
  * @author Ingo Kloecker <kloecker@kde.org>, Marc Mutz <mutz@kde.org>
  **/
-class HtmlStatusBar : public QLabel
+class HtmlStatusBar : public QPushButton
 {
     Q_OBJECT
 public:
@@ -46,7 +48,7 @@ public:
         Update,
     };
 
-    explicit HtmlStatusBar(QWidget *parent = nullptr);
+    explicit HtmlStatusBar(MailWebEngineView *viewer, QWidget *parent = nullptr);
     ~HtmlStatusBar() override;
 
     /** @return current mode. */
@@ -73,6 +75,7 @@ Q_SIGNALS:
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
 private:
     QString message() const;
@@ -82,5 +85,6 @@ private:
 
     MimeTreeParser::Util::HtmlMode mMode;
     QList<MimeTreeParser::Util::HtmlMode> mAvailableModes;
+    const MailWebEngineView *mViewer;
 };
 }
