@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-09-26 06:26+0300\n"
+"PO-Revision-Date: 2023-12-27 14:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.01.85\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -1144,7 +1144,7 @@ msgstr "Ara"
 #: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
-msgstr "Üç harften kısa sözcükler yok sayılacaktır."
+msgstr "Üç harften kısa sözcükler yok sayılır."
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
@@ -1164,13 +1164,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
-msgstr "Hızlı arama alanının klasör değişirken temizlenmesini önle"
+msgstr "Tez arama alanının klasör değişirken temizlenmesini önle"
 
 #: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr "Klasörleri değiştirirken hızlı arama alanını temizle"
+msgstr "Klasörleri değiştirirken tez arama alanını temizle"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
@@ -1180,7 +1180,7 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 "Eğer diğer klasörlere giderken veya ileti durumuna göre aramanızı "
-"daraltırken hızlı aramanın kilitli olmasını isterseniz bu düğmeyi kullanın."
+"daraltırken tez aramanın kilitli olmasını isterseniz bu düğmeyi kullanın."
 
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
@@ -1338,7 +1338,7 @@ msgstr "%1. Sekmeyi Etkinleştir"
 #: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
-msgstr "Hızlı Arama Çubuğunu Göster"
+msgstr "Tez Arama Çubuğunu Göster"
 
 #: pane.cpp:221
 #, kde-format
