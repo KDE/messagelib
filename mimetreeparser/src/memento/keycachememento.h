@@ -7,7 +7,6 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
-#include "keycachememento.h"
 #include <Libkleo/KeyCache>
 
 #include <QString>
