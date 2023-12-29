@@ -46,6 +46,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     auto lay = new QVBoxLayout(this);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     lay->setContentsMargins({});
+    lay->setSpacing(0);
     mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("texttospeech"));
     lay->addWidget(mTextToSpeechContainerWidget);
     mTextBrowser = new MailSourceViewTextBrowser(mTextToSpeechContainerWidget);
