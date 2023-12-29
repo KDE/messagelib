@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 01:35+0000\n"
+"POT-Creation-Date: 2023-12-29 01:38+0000\n"
 "PO-Revision-Date: 2023-09-30 10:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1168,17 +1168,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Nieprawidłowy katalog"
 
-#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
+#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
 #, kde-format
 msgid "forwarded message"
 msgstr "wiadomość przekierowana"
 
-#: helper/messagefactoryng.cpp:578
+#: helper/messagefactoryng.cpp:572
 #, kde-format
 msgid "Receipt: "
 msgstr "Odbiór:"
 
-#: helper/messagefactoryng.cpp:705
+#: helper/messagefactoryng.cpp:699
 #, kde-format
 msgid ""
 "\n"

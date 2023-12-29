@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 01:35+0000\n"
+"POT-Creation-Date: 2023-12-29 01:38+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1218,17 +1218,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Pasta inválida"
 
-#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
+#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
 #, kde-format
 msgid "forwarded message"
 msgstr "mensagem encaminhada"
 
-#: helper/messagefactoryng.cpp:578
+#: helper/messagefactoryng.cpp:572
 #, kde-format
 msgid "Receipt: "
 msgstr "Recebido: "
 
-#: helper/messagefactoryng.cpp:705
+#: helper/messagefactoryng.cpp:699
 #, kde-format
 msgid ""
 "\n"

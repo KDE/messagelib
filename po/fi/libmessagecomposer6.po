@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-21 01:35+0000\n"
+"POT-Creation-Date: 2023-12-29 01:38+0000\n"
 "PO-Revision-Date: 2023-06-02 20:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1182,17 +1182,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Virheellinen kansio"
 
-#: helper/messagefactoryng.cpp:410 helper/messagefactoryng.cpp:733
+#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
 #, kde-format
 msgid "forwarded message"
 msgstr "välitetty viesti"
 
-#: helper/messagefactoryng.cpp:578
+#: helper/messagefactoryng.cpp:572
 #, kde-format
 msgid "Receipt: "
 msgstr "Kuittaus: "
 
-#: helper/messagefactoryng.cpp:705
+#: helper/messagefactoryng.cpp:699
 #, kde-format
 msgid ""
 "\n"

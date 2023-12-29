@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:37+0000\n"
+"POT-Creation-Date: 2023-12-29 01:38+0000\n"
 "PO-Revision-Date: 2011-08-15 08:44+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -257,7 +257,7 @@ msgstr "Modele di messaedje po rcassaedje"
 msgid "Quote characters"
 msgstr "Wiyemets"
 
-#: templateparserjob.cpp:349
+#: templateparserjob.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Cannot insert content from file %1: %2"
@@ -265,28 +265,28 @@ msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Dji n' sai stitchî l' ådvins a pårti do fitchî %1 : %2"
 
-#: templateparserjob.cpp:519
+#: templateparserjob.cpp:483
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "A :"
 
-#: templateparserjob.cpp:530
+#: templateparserjob.cpp:494
 #, fuzzy, kde-format
 #| msgid "CC:"
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC :"
 
-#: templateparserjob.cpp:1185
+#: templateparserjob.cpp:1149
 #, fuzzy, kde-format
 #| msgid "Attachment %1"
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Ataetchmint %1"
 
-#: templateparserjob.cpp:1392
+#: templateparserjob.cpp:1356
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
