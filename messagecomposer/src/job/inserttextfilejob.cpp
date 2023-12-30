@@ -8,7 +8,7 @@
 #include <QTextEdit>
 
 #include "messagecomposer_debug.h"
-#include <KIO/Job>
+#include <KIO/TransferJob>
 
 #include <QPointer>
 #include <QStringDecoder>

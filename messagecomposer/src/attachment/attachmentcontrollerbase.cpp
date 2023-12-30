@@ -52,9 +52,9 @@
 #include "messagecore/attachmentupdatejob.h"
 #include <Akonadi/EmailAddressSelectionDialog>
 #include <Akonadi/EmailAddressSelectionWidget>
-#include <KIO/Job>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KIO/StoredTransferJob>
 #include <MessageCore/AttachmentCompressJob>
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <MessageCore/AttachmentPropertiesDialog>

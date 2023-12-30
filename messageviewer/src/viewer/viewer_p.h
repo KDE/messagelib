@@ -16,7 +16,6 @@
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
-#include <KIO/Job>
 #include <KMime/MDN>
 #include <KMime/Message>
 #include <KService>
