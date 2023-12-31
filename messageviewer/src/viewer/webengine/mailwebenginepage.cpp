@@ -41,6 +41,7 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, enableElement);
     settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::NavigateOnDropEnabled, enableElement);
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 

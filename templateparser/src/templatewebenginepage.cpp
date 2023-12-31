@@ -34,6 +34,7 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
     settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::NavigateOnDropEnabled, false);
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 }
