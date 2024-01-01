@@ -43,10 +43,10 @@ ScamDetectionInfo::ScamDetectionFields ScamDetectionInfo::scamChecks() const
 
 QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
 {
-    d << "isValid: " << t.isValid();
-    d << "Enabled " << t.enabled();
-    d << "DomainOrName " << t.domainOrEmail();
-    d << "scamChecks " << t.scamChecks();
+    d.space() << "isValid" << t.isValid();
+    d.space() << "Enabled" << t.enabled();
+    d.space() << "DomainOrName" << t.domainOrEmail();
+    d.space() << "scamChecks" << t.scamChecks();
     return d;
 }
 
