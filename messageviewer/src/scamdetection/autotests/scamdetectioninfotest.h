@@ -16,4 +16,5 @@ public:
     ~ScamDetectionInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldMakeValid();
 };

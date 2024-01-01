@@ -41,7 +41,7 @@ public:
     [[nodiscard]] bool operator==(const ScamDetectionInfo &other) const;
 
 private:
-    ScamDetectionFields mFields;
+    ScamDetectionFields mFields = None;
     QString mDomainOrEmail;
     bool mEnabled = false;
 };
