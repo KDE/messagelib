@@ -3,7 +3,7 @@
   SPDX-FileCopyrightText: 2009 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
   SPDX-FileCopyrightText: 2009 Andras Mantia <andras@kdab.net>
   SPDX-FileCopyrightText: 2010 Torgny Nyblom <nyblom@kde.org>
-  SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2011-2024 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */

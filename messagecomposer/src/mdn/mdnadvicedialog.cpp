@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel@kde.org>
   SPDX-FileCopyrightText: 2009 Michael Leupold <lemma@confuego.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
