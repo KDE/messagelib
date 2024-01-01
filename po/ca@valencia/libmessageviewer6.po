@@ -1791,7 +1791,7 @@ msgstr "&Copia l'adreça de correu"
 #: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "Address copied to clipboard."
-msgstr "Adreça copiada al porta-retalls."
+msgstr "Adreça copiada a dins del porta-retalls."
 
 #: viewer/urlhandlermanager.cpp:634
 #, kde-format
