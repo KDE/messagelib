@@ -32,8 +32,6 @@ Q_SIGNALS:
 private:
     MESSAGEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
     MESSAGEVIEWER_NO_EXPORT void slotExpandFinished(QNetworkReply *reply);
-
-private:
     std::unique_ptr<ScamExpandUrlJobPrivate> const d;
 };
 }

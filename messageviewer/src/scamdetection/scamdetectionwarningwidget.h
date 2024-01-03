@@ -37,8 +37,6 @@ private:
     void slotAddToWhiteList();
     void slotDisableScamDetection();
     void slotMessageIsNotAScam();
-
-private:
     std::unique_ptr<ScamDetectionWarningWidgetPrivate> const d;
 };
 }
