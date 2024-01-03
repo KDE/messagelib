@@ -1,4 +1,4 @@
-# Translation of libmessagecomposer to Norwegian Nynorsk
+# Translation of libmessagecomposer6 to Norwegian Nynorsk
 #
 # Karl Ove Hufthammer <karl@huftis.org>, 2010, 2019.
 msgid ""

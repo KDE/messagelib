@@ -1,4 +1,4 @@
-# Translation of libmimetreeparser to Norwegian Bokmål
+# Translation of libmimetreeparser6 to Norwegian Bokmål
 #
 # Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2009, 2010, 2011, 2012, 2013, 2014.
 msgid ""
