@@ -53,7 +53,10 @@ QList<ScamDetectionInfo> ScamDetectionWhiteListSettingsManager::scamDetectionInf
 
 void ScamDetectionWhiteListSettingsManager::setScamDetectionInfoList(const QList<ScamDetectionInfo> &newScamDetectionInfoList)
 {
-    mScamDetectionInfoList = newScamDetectionInfoList;
+    if (mScamDetectionInfoList != newScamDetectionInfoList) {
+        mScamDetectionInfoList = newScamDetectionInfoList;
+        writeSettings();
+    }
 }
 
 #include "moc_scamdetectionwhitelistsettingsmanager.cpp"
