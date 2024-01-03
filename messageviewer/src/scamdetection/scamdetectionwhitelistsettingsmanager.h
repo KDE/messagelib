@@ -22,6 +22,9 @@ public:
     ~ScamDetectionWhiteListSettingsManager() override;
     static ScamDetectionWhiteListSettingsManager *self();
 
+    [[nodiscard]] QList<ScamDetectionInfo> scamDetectionInfoList() const;
+    void setScamDetectionInfoList(const QList<ScamDetectionInfo> &newScamDetectionInfoList);
+
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
     MESSAGEVIEWER_NO_EXPORT void writeSettings();

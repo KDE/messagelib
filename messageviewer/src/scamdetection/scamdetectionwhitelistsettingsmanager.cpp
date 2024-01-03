@@ -46,4 +46,14 @@ void ScamDetectionWhiteListSettingsManager::writeSettings()
     // TODO
 }
 
+QList<ScamDetectionInfo> ScamDetectionWhiteListSettingsManager::scamDetectionInfoList() const
+{
+    return mScamDetectionInfoList;
+}
+
+void ScamDetectionWhiteListSettingsManager::setScamDetectionInfoList(const QList<ScamDetectionInfo> &newScamDetectionInfoList)
+{
+    mScamDetectionInfoList = newScamDetectionInfoList;
+}
+
 #include "moc_scamdetectionwhitelistsettingsmanager.cpp"
