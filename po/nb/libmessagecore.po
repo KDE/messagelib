@@ -1,4 +1,4 @@
-# Translation of libmessagecore to Norwegian Bokmål
+# Translation of libmessagecore6 to Norwegian Bokmål
 #
 # Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2009, 2010, 2011, 2013, 2014.
 msgid ""
