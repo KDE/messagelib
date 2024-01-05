@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-09-26 20:18+0100\n"
+"PO-Revision-Date: 2024-01-04 19:49+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1292,7 +1292,7 @@ msgstr "Al"
 #: core/widgets/searchlinestatus.cpp:406
 #, kde-format
 msgid "Clear History"
-msgstr "Klara Historio"
+msgstr "Forviŝi Historion"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
