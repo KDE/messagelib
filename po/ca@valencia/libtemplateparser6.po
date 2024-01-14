@@ -1,9 +1,9 @@
 # Translation of libtemplateparser6.po to Catalan (Valencian)
-# Copyright (C) 2011-2023 This_file_is_part_of_KDE
+# Copyright (C) 2011-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2012, 2014, 2015, 2020, 2021, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2012, 2014, 2015, 2020, 2021, 2023, 2024.
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2011.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2018, 2020, 2021.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-09-26 12:38+0200\n"
+"PO-Revision-Date: 2024-01-12 18:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -65,12 +65,12 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
-"<qt><p>Ací podeu afegir, editar i suprimir plantilles de missatge "
-"personalitzades que s'utilitzaran en redactar una resposta o en reenviar un "
-"missatge. Creeu la plantilla personalitzada escrivint el nom al quadro "
+"<qt><p>Ací podeu afegir, editar i suprimir plantilles de missatges "
+"personalitzades a utilitzar en redactar una resposta o en reenviar un "
+"missatge. Creeu la plantilla personalitzada escrivint el nom en el quadro "
 "d'entrada de text i premeu el botó «+». També podeu assignar una combinació "
 "de teclat a la plantilla per a operacions més ràpides.</p><p>Les plantilles "
-"de missatge permeten ordres de substitució, senzillament escrivint-les o "
+"de missatges permeten ordres de substitució, senzillament escrivint-les o "
 "seleccionant-les des del menú <i>Inserix ordre</i>.</p><p>Hi ha quatre tipus "
 "de plantilla personalitzada: la utilitzada per a <i>respondre</i>, "
 "<i>respondre a tots</i>, <i>reenviar</i> i la <i>universal</i> que es pot "
@@ -248,25 +248,25 @@ msgstr ""
 #: settings/templateparser.kcfg:26
 #, kde-format
 msgid "Message template for new message"
-msgstr "Plantilla de missatge per als missatges nous"
+msgstr "Plantilla de missatges per als missatges nous"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
 #: settings/templateparser.kcfg:30
 #, kde-format
 msgid "Message template for reply"
-msgstr "Plantilla de missatge per a les respostes"
+msgstr "Plantilla de missatges per a les respostes"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
 #: settings/templateparser.kcfg:34
 #, kde-format
 msgid "Message template for reply to all"
-msgstr "Plantilla de missatge per a les respostes a tots"
+msgstr "Plantilla de missatges per a les respostes a tots"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
 #: settings/templateparser.kcfg:38
 #, kde-format
 msgid "Message template for forward"
-msgstr "Plantilla de missatge per als reenviaments"
+msgstr "Plantilla de missatges per als reenviaments"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
 #: settings/templateparser.kcfg:42
@@ -549,7 +549,7 @@ msgid ""
 msgstr ""
 "<p>Ací podeu crear i gestionar les plantilles per a utilitzar-les en editar "
 "missatges nous, respostes o reenviar els missatges.</p><p> Les plantilles de "
-"missatge permeten substitució d'ordres, senzillament escrivint-les o "
+"missatges permeten substitució d'ordres, senzillament escrivint-les o "
 "seleccionant-les des del menú <i>Inserix una ordre</i>.</p>"
 
 #: templatesconfiguration.cpp:58
@@ -570,7 +570,7 @@ msgid ""
 msgstr ""
 "<p>Les plantilles especificades ací són específiques d'identitat. Només "
 "superposen les plantilles globals, però poden esdevindre superposades per "
-"les plantilles de carpeta si s'han especificat.</p>"
+"les plantilles de carpetes si s'han especificat.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
