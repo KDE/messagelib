@@ -80,7 +80,7 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
         for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
             if (p) {
-                p->removeContent(c);
+                p->takeContent(c);
             }
         }
         qDeleteAll(it.value());
@@ -130,7 +130,7 @@ void NodeHelper::clear()
         for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
             if (p) {
-                p->removeContent(c);
+                p->takeContent(c);
             }
         }
         qDeleteAll(it.value());
@@ -871,7 +871,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
         auto c = new KMime::Content(node);
         c->setContent(extra->encodedContent());
         c->parse();
-        node->addContent(c);
+        node->appendContent(c);
     }
 
     const auto contents{node->contents()};
@@ -891,7 +891,7 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
         const auto children = node->contents();
         for (KMime::Content *c : children) {
             if (c->encodedContent() == s) {
-                node->removeContent(c);
+                node->takeContent(c);
             }
         }
     }
