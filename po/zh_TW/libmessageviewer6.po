@@ -2,7 +2,7 @@
 # translation of kmail.po to
 # Copyright (C) 2002, 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 #
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # Eric Cheng <ericc@shinewave.com.tw>, 2001.
 # AceLan <acelan@kde.linux.org.tw>, 2002.
 # Kenduest Lee <kenduest@i18n.linux.org.tw>, 2002.
@@ -18,14 +18,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2023-12-12 17:41+0900\n"
+"PO-Revision-Date: 2024-01-15 19:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.90\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -152,7 +152,7 @@ msgstr "理由："
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr ""
+msgstr "找不到解密信件用的私鑰。這個信件為以下金鑰加密："
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -319,7 +319,7 @@ msgstr "已簽署信件的尾端"
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
-msgstr ""
+msgstr "已儲存的 DKIM 金鑰與目前金鑰不同。您是否要也儲存這一個金鑰？"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
@@ -341,7 +341,7 @@ msgstr "DKIM 金鑰"
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "選擇器"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #: dkim-verify/dkimmanageruleswidget.cpp:73
@@ -484,10 +484,9 @@ msgid "List-ID"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "From:"
+#, kde-format
 msgid "From"
-msgstr "寄件者："
+msgstr "寄件者"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -580,12 +579,12 @@ msgstr "寄件者："
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "使用 '*' 來指定來自網域的所有郵件"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
 msgid "SDID:"
-msgstr ""
+msgstr "SDID："
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
@@ -722,7 +721,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr ""
+msgstr "簽署網域只有測試 DKIM。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:179
 #, fuzzy, kde-format
@@ -738,12 +737,12 @@ msgstr "雜湊演算法 (sha1) 不安全。"
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
-msgstr ""
+msgstr "AUID 不在 SDID 的子網域當中"
 
 #: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
-msgstr ""
+msgstr "轉換公鑰時發生問題"
 
 #: dkim-verify/dkimwidgetinfo.cpp:197
 #, kde-format
@@ -830,10 +829,9 @@ msgid "BCC:"
 msgstr "密件副本："
 
 #: header/grantleeheaderformatter.cpp:274
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgid "Sender:"
-msgstr "寄件者"
+msgstr "寄件者："
 
 #: header/grantleeheaderformatter.cpp:276
 #, fuzzy, kde-format
@@ -1014,18 +1012,16 @@ msgid "Ignore"
 msgstr "忽略"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "寄件者"
+msgstr "送出"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "寄件者"
+msgstr "送出拒絕"
 
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
@@ -1038,10 +1034,9 @@ msgid "Good signature"
 msgstr "好的簽章"
 
 #: messagepartthemes/default/defaultrenderer.cpp:75
-#, fuzzy, kde-format
-#| msgid "Good signature"
+#, kde-format
 msgid "Bad signature"
-msgstr "好的簽章"
+msgstr "不正確的簽章"
 
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
@@ -1115,10 +1110,9 @@ msgid "One key has been revoked."
 msgstr "已撤銷一個金鑰。"
 
 #: messagepartthemes/default/defaultrenderer.cpp:205
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Bad signature."
-msgstr "好的簽章。"
+msgstr "不正確的簽章。"
 
 #: messagepartthemes/default/defaultrenderer.cpp:525
 #: messagepartthemes/default/defaultrenderer.cpp:527
@@ -1164,10 +1158,9 @@ msgid "Configure Remote Content"
 msgstr "設定遠端內容"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "狀態："
+msgstr "狀態"
 
 #: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
@@ -1210,26 +1203,25 @@ msgstr "遠端內容"
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "授權 %1"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "授權所有網址"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "已授權"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
 msgid "Blocked"
-msgstr ""
+msgstr "已封鎖"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "詳細資料"
@@ -1326,7 +1318,7 @@ msgstr "沒有偵測到網路連線，無法展開網址。"
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Impossible to expand '%1'."
-msgstr ""
+msgstr "無法展開「%1」。"
 
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
@@ -1433,10 +1425,9 @@ msgstr "印出背景顏色與影像"
 
 #. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
 #: ui/printingsettings.ui:38
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Always show encryption/signature details"
-msgstr "顯示簽章詳情。"
+msgstr "總是顯示加密/簽章詳情"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -1446,10 +1437,9 @@ msgstr "檢視器設定"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
-#, fuzzy, kde-format
-#| msgid "&Override character encoding:"
+#, kde-format
 msgid "O&verride character encoding:"
-msgstr "預設編碼設定(&O)："
+msgstr "覆寫字元編碼(&V)："
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
 #: ui/settings.ui:79
@@ -1471,17 +1461,15 @@ msgstr "顯示展開/折疊引言符號(&E)"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
-#, fuzzy, kde-format
-#| msgid "Automatic collapse level:"
+#, kde-format
 msgid "Automatic collapse &level:"
-msgstr "自動折疊層次："
+msgstr "自動折疊層次(&L)："
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
-#, fuzzy, kde-format
-#| msgid "Minimum font size:"
+#, kde-format
 msgid "&Minimum font size:"
-msgstr "最小字型大小："
+msgstr "最小字型大小(&M)："
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
@@ -1490,11 +1478,10 @@ msgid ""
 msgstr "檔案 %1 已存在，您是否要取代它？"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr "覆蓋檔案？"
+msgstr "覆寫檔案？"
 
 #: utils/messageviewerutil.cpp:176
 #, kde-format
@@ -1554,18 +1541,15 @@ msgstr "保存簽章"
 
 #: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
 #: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
-#, fuzzy, kde-kuit-format
-#| msgctxt "1 = file name, 2 = error string"
-#| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
-msgstr "<qt>無法寫入檔案<br/><filename>%1</filename><br/><br/>%2"
+msgstr "<qt>無法寫入檔案<br /><filename>%1</filename><br /><br />%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "儲存附件時發生錯誤"
@@ -1602,8 +1586,7 @@ msgid "File %1 could not be loaded."
 msgstr "檔案 %1 無法被載入。"
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "載入信件時發生錯誤"
@@ -1614,8 +1597,7 @@ msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
@@ -1677,7 +1659,7 @@ msgstr "大小"
 #: viewer/printmessage.cpp:61
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "無法產生列印預覽。"
 
 #: viewer/printmessage.cpp:97
 #, kde-format
@@ -2167,11 +2149,10 @@ msgid "Copy Email Address"
 msgstr "複製電子郵件地址"
 
 #: viewer/viewer_p.cpp:2142
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
-msgstr "純文字信件"
+msgstr "作為純文字送出信件"
 
 #: viewer/viewer_p.cpp:2738
 #, kde-format
