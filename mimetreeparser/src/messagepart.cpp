@@ -351,6 +351,7 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
+                aCodec.resetState();
                 appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec.decode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
                 EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
@@ -378,6 +379,7 @@ void TextMessagePart::parseContent()
             const PartMetaData *messagePart(mp->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
+                aCodec.resetState();
                 mp->setText(aCodec.decode(block.text()));
             }
 
