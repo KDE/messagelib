@@ -461,7 +461,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%OTOADDR") << "%OTOADDR" << fileName << "kde <foo@yoohoo.org>" << false;
     QTest::newRow("%OTOFNAME") << "%OTOFNAME" << fileName << "kde" << false;
     QTest::newRow("%OTONAME") << "%OTONAME" << fileName << "kde" << false;
-    QTest::newRow("%OTOLNAME") << "%OTOLNAME" << fileName << "" << false;
+    QTest::newRow("%OTOLNAME") << "%OTOLNAME" << fileName << "kde" << false;
     QTest::newRow("%OTOLIST") << "%OTOLIST" << fileName << "kde <foo@yoohoo.org>" << false;
     QTest::newRow("%ODOW") << "%ODOW" << fileName << QLocale().dayName(7, QLocale::LongFormat) << false;
     QTest::newRow("%BLANK") << "%BLANK" << fileName << "" << false;
