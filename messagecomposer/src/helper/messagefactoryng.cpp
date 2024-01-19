@@ -231,7 +231,7 @@ void MessageFactoryNG::createReplyAsync()
                     // "Normal" case:  reply to sender.
                     toList = stripMyAddressesFromAddressList(mOrigMsg->to()->mailboxes(), mIdentityManager);
                     const auto authors = authorMailboxes(mOrigMsg, mMailingListAddresses);
-                    if (!mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(authors))) {
+                    if (toList.isEmpty() || !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(authors))) {
                         toList += authors;
                     }
                 }
