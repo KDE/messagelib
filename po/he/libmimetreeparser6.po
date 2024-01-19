@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2024-01-06 15:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -31,51 +31,51 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
-#: src/messagepart.cpp:435
+#: src/messagepart.cpp:437
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "ללא שם"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "תוסף הצפנה שגוי."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1303
+#: src/messagepart.cpp:819 src/messagepart.cpp:1305
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "לא נמצא תוסף הצפנה מתאים."
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "לא נמצא תוסף %1."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "תוסף ההצפנה „%1” לא יכול לוודא חתימות."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr "ההודעה חתומה אך לא ניתן לאמת את תוקף החתימה. <br />סיבה: %1"
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "תוסף ההצפנה „%1” לא יכול לפענח הודעות."
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונים."
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Error: %1"
 msgstr "שגיאה: %1"

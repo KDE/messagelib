@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -22,34 +22,34 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/messagepart.cpp:435
+#: src/messagepart.cpp:437
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr ""
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "暗号化プラグインが不正です。"
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1303
+#: src/messagepart.cpp:819 src/messagepart.cpp:1305
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "適切な暗号化プラグインが見つかりません。"
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "%1 プラグインが見つかりません。"
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "暗号化プラグイン “%1” は署名を検証できません。"
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -58,17 +58,17 @@ msgstr ""
 "<qt>このメッセージは署名されていますが、署名の有効性は検証できませんでした。"
 "<br />理由: %1</qt>"
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "暗号化プラグイン “%1” はメッセージを復号できません。"
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "暗号化プラグイン “%1” はデータを復号できませんでした。"
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Error: %1"
 msgstr "エラー: %1"

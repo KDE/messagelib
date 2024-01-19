@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2018-08-04 23:36-0300\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -27,35 +27,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: src/messagepart.cpp:435
+#: src/messagepart.cpp:437
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Sem nome"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Plugin de criptografia incorreto."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1303
+#: src/messagepart.cpp:819 src/messagepart.cpp:1305
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nenhum plugin de criptografia apropriado foi encontrado."
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nenhum plugin %1 foi encontrado."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr ""
 "O plugin de criptografia \"%1\" não conseguiu verificar as assinaturas."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -64,18 +64,18 @@ msgstr ""
 "A mensagem está assinada, mas a validade da assinatura não pode ser "
 "verificada.<br />Motivo: %1"
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 "O plugin de criptografia \"%1\" não conseguiu descriptografar as mensagens."
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "O plugin de criptografia \"%1\" não pode descriptografar os dados."
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"

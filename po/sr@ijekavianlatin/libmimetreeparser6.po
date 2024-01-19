@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 01:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2017-10-06 17:14+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -22,34 +22,34 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: src/messagepart.cpp:435
+#: src/messagepart.cpp:437
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "bezimeno"
 
-#: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Pogrešan priključak za šifrovanje."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1303
+#: src/messagepart.cpp:819 src/messagepart.cpp:1305
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nije pronađen odgovarajući priključak za šifrovanje."
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nije pronađen nijedan %1 priključak."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Priključak za šifrovanje „%1“ ne može da overi potpise."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -58,17 +58,17 @@ msgstr ""
 "<html>Poruka je potpisana, ali valjanost potpisa ne može biti overena.<br /"
 ">Razlog: %1</html>"
 
-#: src/messagepart.cpp:1305
+#: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Priključak za šifrovanje „%1“ ne može da dešifruje poruke."
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Priključak za šifrovanje „%1“ ne može da dešifruje podatke."
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Error: %1"
 msgstr "Greška: %1"
