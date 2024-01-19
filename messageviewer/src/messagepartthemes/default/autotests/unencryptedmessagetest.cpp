@@ -61,7 +61,7 @@ void UnencryptedMessageTest::testNotDecrypted()
     } else {
         QVERIFY(otp.plainTextContent().toLatin1().data());
     }
-    QCOMPARE(testWriter.data().contains("<a href=\"kmail:decryptMessage\">"), decryptMessage);
+    QCOMPARE(testWriter.data().contains("<a href=\"kmail:decryptMessage\""), decryptMessage);
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE((bool)unencryptedMessage, false);
