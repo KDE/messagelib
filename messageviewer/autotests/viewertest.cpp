@@ -30,12 +30,10 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     QVERIFY(colorBar);
 
     auto scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
-    QVERIFY(scandetectionWidget);
-    QCOMPARE(scandetectionWidget->isVisible(), false);
+    QVERIFY(!scandetectionWidget); // loaded on demand
 
     auto opensavefilefolderwidget = viewer->findChild<QWidget *>(QStringLiteral("opensavefilefolderwidget"));
-    QVERIFY(opensavefilefolderwidget);
-    QCOMPARE(opensavefilefolderwidget->isVisible(), false);
+    QVERIFY(!opensavefilefolderwidget); // loaded on demand
 
     QVERIFY(viewer->toggleFixFontAction());
     QVERIFY(viewer->toggleMimePartTreeAction());
