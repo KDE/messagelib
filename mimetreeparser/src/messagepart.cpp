@@ -19,6 +19,7 @@
 #include "bodyformatter/utils.h"
 
 #include <KMime/Content>
+#include <KMime/Types>
 #include <Libkleo/Compliance>
 #include <Libkleo/KeyCache>
 
@@ -902,9 +903,10 @@ void SignedMessagePart::sigStatusToMetaData()
             // The following if /should/ always result in TRUE but we
             // won't trust implicitly the plugin that gave us these data.
             if (uid.email()) {
-                QString email = QString::fromUtf8(uid.email());
-                if (!email.isEmpty()) {
-                    partMetaData()->signerMailAddresses.append(email);
+                KMime::Types::Mailbox mbox;
+                mbox.from7BitString(uid.email());
+                if (mbox.hasAddress()) {
+                    partMetaData()->signerMailAddresses.append(mbox.addrSpec().asString());
                 }
             }
         }
