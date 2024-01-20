@@ -46,9 +46,11 @@ private Q_SLOTS:
         QVERIFY(application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("application/pgp-encrypted"));
-        QCOMPARE(l.size(), 6);
+        // shared-mime-info < 2.4 has application/pgp-encrytped as a subtype of text/plain, 2.4+ doesn't
+        // depending of that we get two additional entries for text/plain formatters here
+        QVERIFY(l.size() == 4 || l.size() == 6);
         QVERIFY(l.at(0) != application_octet_stream_f);
-        QCOMPARE(l.at(5), application_octet_stream_f);
+        QCOMPARE(l.at(l.size() - 1), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("application/unknown"));
         QCOMPARE(l.size(), 3);
