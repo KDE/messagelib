@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"POT-Creation-Date: 2024-01-20 00:37+0000\n"
 "PO-Revision-Date: 2022-01-30 19:07+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -34,51 +34,51 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.1\n"
 
-#: src/messagepart.cpp:437
+#: src/messagepart.cpp:438
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "பெயரிடப்படாதது"
 
-#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
+#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "தவறான மறையீடு செருகல்"
 
-#: src/messagepart.cpp:819 src/messagepart.cpp:1305
+#: src/messagepart.cpp:820 src/messagepart.cpp:1307
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "செருகல் காணவில்லை."
 
-#: src/messagepart.cpp:821
+#: src/messagepart.cpp:822
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "செருகு நிரல் %1 கண்டுபிடிக்க முடியவில்லை"
 
-#: src/messagepart.cpp:824
+#: src/messagepart.cpp:825
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "\"%1\" என்ற மறையாக்க செருகுநிரலால் கையொப்பங்களை சரிபார்க்க முடியாது."
 
-#: src/messagepart.cpp:827
+#: src/messagepart.cpp:828
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr "கையொப்பத்தின் செல்லுபடி சரிபார்க்க முடியவில்லை.<br />காரணம்: %1."
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "மறை செருகி \"%1\" செய்திகளை மறைவிலக்கு செய்ய முடியவில்லை"
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "மறை செருகி \"%1\" செய்திகளை மறைவிலக்கு செய்ய முடியவில்லை."
 
-#: src/messagepart.cpp:1310
+#: src/messagepart.cpp:1312
 #, kde-format
 msgid "Error: %1"
 msgstr "சிக்கல்: %1"

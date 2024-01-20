@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"POT-Creation-Date: 2024-01-20 00:37+0000\n"
 "PO-Revision-Date: 2021-07-12 10:26+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -28,34 +28,34 @@ msgstr ""
 "X-Generator: Lokalize 20.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/messagepart.cpp:437
+#: src/messagepart.cpp:438
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Χωρίς όνομα"
 
-#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
+#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Εσφαλμένο πρόσθετο κρυπτογράφησης."
 
-#: src/messagepart.cpp:819 src/messagepart.cpp:1305
+#: src/messagepart.cpp:820 src/messagepart.cpp:1307
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Δε βρέθηκε κατάλληλο πρόσθετο κρυπτογράφησης."
 
-#: src/messagepart.cpp:821
+#: src/messagepart.cpp:822
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Δε βρέθηκε πρόσθετο %1."
 
-#: src/messagepart.cpp:824
+#: src/messagepart.cpp:825
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Αδυναμία επαλήθευσης υπογραφών από το πρόσθετο κρυπτογράφησης «%1»."
 
-#: src/messagepart.cpp:827
+#: src/messagepart.cpp:828
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -64,20 +64,20 @@ msgstr ""
 "Το μήνυμα είναι υπογεγραμμένο, αλλά η εγκυρότητα της υπογραφής δεν μπορεί να "
 "επαληθευτεί. <br />Αιτία: %1"
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 "Το πρόσθετο κρυπτογράφησης \"%1\" δεν μπορεί να αποκρυπτογραφήσει μηνύματα."
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 "Το πρόσθετο κρυπτογράφησης \"%1\" δεν μπόρεσε να αποκρυπτογραφήσει τα "
 "δεδομένα."
 
-#: src/messagepart.cpp:1310
+#: src/messagepart.cpp:1312
 #, kde-format
 msgid "Error: %1"
 msgstr "Σφάλμα: %1"

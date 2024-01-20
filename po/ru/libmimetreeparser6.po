@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"POT-Creation-Date: 2024-01-20 00:37+0000\n"
 "PO-Revision-Date: 2018-10-03 22:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -29,51 +29,51 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/messagepart.cpp:437
+#: src/messagepart.cpp:438
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Безымянный"
 
-#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1091
+#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Неверный модуль шифрования."
 
-#: src/messagepart.cpp:819 src/messagepart.cpp:1305
+#: src/messagepart.cpp:820 src/messagepart.cpp:1307
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не найдено соответствующего модуля шифрования."
 
-#: src/messagepart.cpp:821
+#: src/messagepart.cpp:822
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Не найден модуль поддержки %1."
 
-#: src/messagepart.cpp:824
+#: src/messagepart.cpp:825
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Модуль шифрования «%1» не может проверить подписи."
 
-#: src/messagepart.cpp:827
+#: src/messagepart.cpp:828
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr "Не удаётся установить подлинность подписи.<br />Причина: %1"
 
-#: src/messagepart.cpp:1307
+#: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Модуль шифрования «%1» не может расшифровать письма."
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Модуль шифрования %1 не может расшифровать эти данные."
 
-#: src/messagepart.cpp:1310
+#: src/messagepart.cpp:1312
 #, kde-format
 msgid "Error: %1"
 msgstr "Ошибка: %1"
