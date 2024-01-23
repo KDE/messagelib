@@ -3,13 +3,13 @@
 #
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-12-13 01:55+0900\n"
+"PO-Revision-Date: 2024-01-22 17:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -321,7 +321,7 @@ msgstr "未命名附件"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
-msgstr ""
+msgstr "名稱：%1<br>大小：%2<br>編碼：%3<br>MIME 類型：%4"
 
 #: attachment/attachmentmodel.cpp:439
 #, kde-format
@@ -381,7 +381,7 @@ msgstr "編輯方式："
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
-msgstr ""
+msgstr "KMail 無法偵測指定編輯器何時關閉。為了避免資料遺失，將會中止附件編輯。"
 
 #: composer/composer.cpp:288
 #, kde-format
@@ -1601,11 +1601,9 @@ msgid "&Name:"
 msgstr "名稱(&N)："
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgid "Name of Distribution List"
-msgstr "新的聯絡人群組"
+msgstr "發佈清單的名稱"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1754,19 +1752,19 @@ msgstr[0] "%1 個收件者"
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr ""
+msgstr "收件者：%1"
 
 #: recipient/recipientseditorsidewidget.cpp:131
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr ""
+msgstr "副本：%1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr ""
+msgstr "密件副本：%1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
@@ -1809,7 +1807,7 @@ msgstr "新增成密件副本(&B)"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
+msgstr[0] "%1 個已選郵件"
 
 #: recipient/recipientspicker.cpp:172
 #, fuzzy, kde-format
@@ -1834,56 +1832,55 @@ msgid "You can not add more recipients."
 msgstr "您無法新增更多收件者。"
 
 #: sendlater/sendlatercreatejob.cpp:33
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr "儲存信件時失敗：%1"
+msgstr "排程稍後傳送信件時失敗：%1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "稍後傳送"
 
 #: sendlater/sendlaterdialog.cpp:48
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "稍後傳送"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
 msgid "Delay"
-msgstr ""
+msgstr "延遲"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "天"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "週"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "個月"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "稍後傳送代理程式並非執行中。"
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "從稍後傳送排程移除信件時失敗：%1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
 #, kde-format
@@ -1894,13 +1891,13 @@ msgstr "您無法選取比今天還早的日期。"
 #: sendlater/ui/sendlaterwidget.ui:29
 #, kde-format
 msgid "Send at:"
-msgstr ""
+msgstr "在何時傳送："
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
 #, kde-format
 msgid "Repeat every:"
-msgstr ""
+msgstr "重複間隔："
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
@@ -1910,22 +1907,22 @@ msgstr "收件者"
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
 msgid "To Field Address"
-msgstr ""
+msgstr "收件人地址"
 
 #: snippet/convertsnippetvariablemenu.cpp:31
 #, kde-format
 msgid "To Field Last Name"
-msgstr ""
+msgstr "收件人的姓"
 
 #: snippet/convertsnippetvariablemenu.cpp:34
 #, kde-format
 msgid "To Field First Name"
-msgstr ""
+msgstr "收件人的名"
 
 #: snippet/convertsnippetvariablemenu.cpp:37
 #, kde-format
 msgid "To Field Name"
-msgstr ""
+msgstr "收件人姓名"
 
 #: snippet/convertsnippetvariablemenu.cpp:42
 #, kde-format
@@ -1935,22 +1932,22 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
 msgid "From Field Address"
-msgstr ""
+msgstr "發信人地址"
 
 #: snippet/convertsnippetvariablemenu.cpp:46
 #, kde-format
 msgid "From Field Last Name"
-msgstr ""
+msgstr "發信人的姓"
 
 #: snippet/convertsnippetvariablemenu.cpp:49
 #, kde-format
 msgid "From Field First Name"
-msgstr ""
+msgstr "發信人的名"
 
 #: snippet/convertsnippetvariablemenu.cpp:52
 #, kde-format
 msgid "From Field Name"
-msgstr ""
+msgstr "發信人姓名"
 
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
@@ -1960,47 +1957,47 @@ msgstr "副本"
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
 msgid "CC Field Address"
-msgstr ""
+msgstr "副本地址"
 
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "副本的姓"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr ""
+msgstr "副本的名"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr ""
+msgstr "副本姓名"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "密件副本"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr ""
+msgstr "密件副本地址"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr ""
+msgstr "密件副本姓"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr ""
+msgstr "密件副本名"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr ""
+msgstr "密件副本姓名"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
@@ -2025,7 +2022,7 @@ msgstr "檔案名稱"
 #: snippet/convertsnippetvariablemenu.cpp:99
 #, kde-format
 msgid "Names and Sizes"
-msgstr ""
+msgstr "名稱和大小"
 
 #: snippet/convertsnippetvariablemenu.cpp:103
 #: snippet/convertsnippetvariablemenu.cpp:123
@@ -2117,7 +2114,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "上個月的年 (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:165
 #, kde-format
