@@ -18,14 +18,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2024-01-15 19:03+0900\n"
+"PO-Revision-Date: 2024-01-22 17:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.01.90\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -347,12 +347,12 @@ msgstr "選擇器"
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "已插入"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
@@ -622,10 +622,9 @@ msgid "Unknown"
 msgstr "未知"
 
 #: dkim-verify/dkimwidgetinfo.cpp:100
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr "信件由 %1 簽署。"
+msgstr "DKIM：有效（由 %1 簽署）"
 
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
@@ -708,15 +707,14 @@ msgid "Public key is too small."
 msgstr "公鑰太小。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to verify signature."
-msgstr "沒有公開金鑰可以驗證簽章"
+msgstr "無法驗證簽章。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
-msgstr ""
+msgstr "AUID 跟 SDID（金鑰紀錄設定的 s-flag）必須是同一個網域"
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
@@ -724,10 +722,9 @@ msgid "The signing domain is only testing DKIM."
 msgstr "簽署網域只有測試 DKIM。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:179
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to download key."
-msgstr "沒有公開金鑰可以驗證簽章"
+msgstr "無法下載金鑰。"
 
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
@@ -776,10 +773,9 @@ msgid "%1: None"
 msgstr "%1: 無"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "信件由 %1 簽署。"
+msgstr "%1：有效（由 %2 簽署）"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
@@ -802,10 +798,9 @@ msgid "Date:"
 msgstr "日期："
 
 #: header/grantleeheaderformatter.cpp:240
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
-msgstr "信件"
+msgstr "信件代碼："
 
 #: header/grantleeheaderformatter.cpp:264
 #, kde-format
@@ -813,8 +808,7 @@ msgid "To:"
 msgstr "收件者："
 
 #: header/grantleeheaderformatter.cpp:266
-#, fuzzy, kde-format
-#| msgid "Reply to:"
+#, kde-format
 msgid "Reply To:"
 msgstr "回覆給："
 
@@ -834,16 +828,14 @@ msgid "Sender:"
 msgstr "寄件者："
 
 #: header/grantleeheaderformatter.cpp:276
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent from:"
-msgstr "重新送出從"
+msgstr "重新送出從："
 
 #: header/grantleeheaderformatter.cpp:278
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent to:"
-msgstr "重新送出從"
+msgstr "重新送出到："
 
 #: header/grantleeheaderformatter.cpp:359
 #, kde-format
@@ -1623,7 +1615,7 @@ msgstr "已刪除：%1"
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
-msgstr ""
+msgstr "您已從此信件刪除了一個附件。該附件原本的 MIME 標頭為："
 
 #: utils/messageviewerutil.cpp:640
 #, kde-format
@@ -2094,7 +2086,7 @@ msgstr "在信件中尋找(&F)..."
 #: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
-msgstr ""
+msgstr "停用表情符號"
 
 #: viewer/viewer_p.cpp:1734
 #, kde-format
@@ -2227,17 +2219,12 @@ msgid ""
 msgstr "<qt><b><br />純<br />文<br />字<br />信<br />件</b></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "'No HTML Message' with html linebreaks between each letter."
-#| msgid ""
-#| "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
-#| ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
-msgstr ""
-"<qt><br />非<br /> <br />H<br />T<br />M<br />L<br /> <br />信<br />件</qt>"
+msgstr "<qt>行<br />事<br />曆<br />訊<br />息<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
@@ -2296,23 +2283,20 @@ msgid "Open File"
 msgstr "開啟檔案"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "開啟儲存附件的資料夾"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr "開啟儲存附件的資料夾"
+msgstr "開啟儲存 PDF 檔的資料夾"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "無法編輯附件"
+msgstr "KMail 無法開啟附件。"
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
