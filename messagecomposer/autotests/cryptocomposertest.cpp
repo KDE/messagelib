@@ -343,18 +343,18 @@ void CryptoComposerTest::testProtectedHeaders()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    Composer composer;
+    auto composer = new Composer;
 
-    fillComposerData(&composer, data);
-    fillComposerCryptoData(&composer);
+    fillComposerData(composer, data);
+    fillComposerCryptoData(composer);
 
-    composer.setSignAndEncrypt(sign, encrypt);
-    composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+    composer->setSignAndEncrypt(sign, encrypt);
+    composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-    VERIFYEXEC((&composer));
-    QCOMPARE(composer.resultMessages().size(), 1);
+    VERIFYEXEC(composer);
+    QCOMPARE(composer->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer.resultMessages().first();
+    KMime::Message::Ptr message = composer->resultMessages().first();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
