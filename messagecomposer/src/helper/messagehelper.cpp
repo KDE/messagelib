@@ -6,7 +6,6 @@
 */
 
 #include "messagehelper.h"
-#include "settings/messagecomposersettings.h"
 
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
