@@ -92,9 +92,9 @@ bool ImageScaling::resizeImage()
                                      MessageComposer::MessageComposerSettings::self()->keepImageRatio() ? Qt::KeepAspectRatio : Qt::IgnoreAspectRatio);
 
         QByteArray format;
-        if (d->mMimeType == "image/jpeg") {
+        if (d->mMimeType == QByteArrayLiteral("image/jpeg")) {
             format = QByteArrayLiteral("JPG");
-        } else if (d->mMimeType == "image/png") {
+        } else if (d->mMimeType == QByteArrayLiteral("image/png")) {
             format = QByteArrayLiteral("PNG");
         } else {
             format = MessageComposer::MessageComposerSettings::self()->writeFormat().toLocal8Bit();
@@ -116,15 +116,15 @@ QByteArray ImageScaling::mimetype() const
     if (d->mMimeType.isEmpty()) {
         return {};
     }
-    if ((d->mMimeType == "image/jpeg") || (d->mMimeType == "image/png")) {
+    if ((d->mMimeType == QByteArrayLiteral("image/jpeg")) || (d->mMimeType == QByteArrayLiteral("image/png"))) {
         return d->mMimeType;
     } else {
         // Add more mimetype if a day we add more saving format.
         const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
         if (type == QLatin1String("JPG")) {
-            return "image/jpeg";
+            return QByteArrayLiteral("image/jpeg");
         } else {
-            return "image/png";
+            return QByteArrayLiteral("image/png");
         }
     }
 }
@@ -151,7 +151,7 @@ QString ImageScaling::generateNewName()
     }
 
     // Don't rename it.
-    if ((d->mMimeType == "image/jpeg") || (d->mMimeType == "image/png")) {
+    if ((d->mMimeType == QByteArrayLiteral("image/jpeg")) || (d->mMimeType == QByteArrayLiteral("image/png"))) {
         return d->mName;
     }
     QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
