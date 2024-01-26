@@ -72,7 +72,7 @@ using namespace MessageCore;
 class MessageComposer::AttachmentControllerBase::AttachmentControllerBasePrivate
 {
 public:
-    AttachmentControllerBasePrivate(AttachmentControllerBase *qq);
+    explicit AttachmentControllerBasePrivate(AttachmentControllerBase *qq);
     ~AttachmentControllerBasePrivate();
 
     void attachmentRemoved(const AttachmentPart::Ptr &part); // slot

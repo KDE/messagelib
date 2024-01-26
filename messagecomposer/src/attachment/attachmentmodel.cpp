@@ -34,7 +34,7 @@ static Qt::CheckState boolToCheckState(bool checked) // local
 class MessageComposer::AttachmentModel::AttachmentModelPrivate
 {
 public:
-    AttachmentModelPrivate(AttachmentModel *qq);
+    explicit AttachmentModelPrivate(AttachmentModel *qq);
     ~AttachmentModelPrivate();
 
     AttachmentPart::List parts;
