@@ -617,16 +617,16 @@ void CryptoComposerTest::testSetGnupgHome()
     KMime::Message::Ptr message;
     QTemporaryDir dir;
     {
-        Composer composer;
+        auto composer = new Composer;
 
-        fillComposerData(&composer, data);
-        fillComposerCryptoData(&composer);
+        fillComposerData(composer, data);
+        fillComposerCryptoData(composer);
 
-        composer.setGnupgHome(dir.path());
-        composer.setSignAndEncrypt(sign, encrypt);
-        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setGnupgHome(dir.path());
+        composer->setSignAndEncrypt(sign, encrypt);
+        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-        QCOMPARE(composer.exec(), false);
+        QCOMPARE(composer->exec(), false);
     }
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
@@ -635,19 +635,19 @@ void CryptoComposerTest::testSetGnupgHome()
     }
 
     {
-        Composer composer;
+        auto composer = new Composer;
 
-        fillComposerData(&composer, data);
-        fillComposerCryptoData(&composer);
+        fillComposerData(composer, data);
+        fillComposerCryptoData(composer);
 
-        composer.setGnupgHome(dir.path());
-        composer.setSignAndEncrypt(sign, encrypt);
-        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setGnupgHome(dir.path());
+        composer->setSignAndEncrypt(sign, encrypt);
+        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((&composer));
-        QCOMPARE(composer.resultMessages().size(), 1);
+        VERIFYEXEC((composer));
+        QCOMPARE(composer->resultMessages().size(), 1);
 
-        message = composer.resultMessages().first();
+        message = composer->resultMessages().first();
     }
 
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
@@ -681,18 +681,18 @@ void CryptoComposerTest::testAutocryptHeaders()
     KMime::Message::Ptr message;
     QTemporaryDir dir;
     {
-        Composer composer;
+        auto composer = new Composer;
 
-        fillComposerData(&composer, data);
-        fillComposerCryptoData(&composer);
+        fillComposerData(composer, data);
+        fillComposerCryptoData(composer);
 
-        composer.setAutocryptEnabled(true);
-        composer.setSenderEncryptionKey(keys[0]);
-        composer.setGnupgHome(dir.path());
-        composer.setSignAndEncrypt(sign, encrypt);
-        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setAutocryptEnabled(true);
+        composer->setSenderEncryptionKey(keys[0]);
+        composer->setGnupgHome(dir.path());
+        composer->setSignAndEncrypt(sign, encrypt);
+        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-        QCOMPARE(composer.exec(), false);
+        QCOMPARE(composer->exec(), false);
     }
 
     for (const auto &key : keys) {
@@ -700,21 +700,21 @@ void CryptoComposerTest::testAutocryptHeaders()
     }
 
     {
-        Composer composer;
+        auto composer = new Composer;
 
-        fillComposerData(&composer, data);
-        fillComposerCryptoData(&composer);
+        fillComposerData(composer, data);
+        fillComposerCryptoData(composer);
 
-        composer.setAutocryptEnabled(true);
-        composer.setSenderEncryptionKey(keys[0]);
-        composer.setGnupgHome(dir.path());
-        composer.setSignAndEncrypt(sign, encrypt);
-        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setAutocryptEnabled(true);
+        composer->setSenderEncryptionKey(keys[0]);
+        composer->setGnupgHome(dir.path());
+        composer->setSignAndEncrypt(sign, encrypt);
+        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((&composer));
-        QCOMPARE(composer.resultMessages().size(), 1);
+        VERIFYEXEC((composer));
+        QCOMPARE(composer->resultMessages().size(), 1);
 
-        message = composer.resultMessages().first();
+        message = composer->resultMessages().first();
     }
 
     if (sign || encrypt) {
@@ -763,11 +763,11 @@ void CryptoComposerTest::testAutocryptGossip()
     KMime::Message::Ptr message;
 
     {
-        Composer composer;
+        auto composer = new Composer;
 
-        fillComposerData(&composer, data);
-        composer.infoPart()->setTo(recipients);
-        fillComposerCryptoData(&composer);
+        fillComposerData(composer, data);
+        composer->infoPart()->setTo(recipients);
+        fillComposerCryptoData(composer);
 
         if (recipients.size() > 1) {
             auto job = QGpgME::openpgp()->keyListJob(false);
@@ -783,17 +783,17 @@ void CryptoComposerTest::testAutocryptGossip()
             QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
             encKeys.append({recipients, eKeys});
 
-            composer.setEncryptionKeys(encKeys);
+            composer->setEncryptionKeys(encKeys);
         }
-        composer.setAutocryptEnabled(true);
-        composer.setSenderEncryptionKey(keys[0]);
-        composer.setSignAndEncrypt(sign, encrypt);
-        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setAutocryptEnabled(true);
+        composer->setSenderEncryptionKey(keys[0]);
+        composer->setSignAndEncrypt(sign, encrypt);
+        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((&composer));
-        QCOMPARE(composer.resultMessages().size(), 1);
+        VERIFYEXEC((composer));
+        QCOMPARE(composer->resultMessages().size(), 1);
 
-        message = composer.resultMessages().first();
+        message = composer->resultMessages().first();
     }
 
     if (sign || encrypt) {
