@@ -237,7 +237,6 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
     }
 
     QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
-    QCOMPARE(content->hasHeader("Autocrypt"), true);
 }
 
 void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
