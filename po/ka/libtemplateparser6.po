@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-27 00:38+0000\n"
 "PO-Revision-Date: 2023-09-28 07:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -287,13 +287,13 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "ასლი:"
 
-#: templateparserjob.cpp:1149
+#: templateparserjob.cpp:1150
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "მიმაგრება %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1357
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

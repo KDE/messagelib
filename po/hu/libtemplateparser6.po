@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-27 00:38+0000\n"
 "PO-Revision-Date: 2021-01-23 14:23+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -291,13 +291,13 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Másolat:"
 
-#: templateparserjob.cpp:1149
+#: templateparserjob.cpp:1150
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "%1 melléklet"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1357
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
