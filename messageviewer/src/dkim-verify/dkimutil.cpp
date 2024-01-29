@@ -37,7 +37,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
     body.replace(reg2, QStringLiteral(" "));
     static const QRegularExpression reg3(QStringLiteral("((\r\n)+?)$"));
     body.replace(QRegularExpression(reg3), QStringLiteral("\r\n"));
-    if (body == QLatin1String("\r\n")) {
+    if (body == QLatin1StringView("\r\n")) {
         body.clear();
     }
     return body;
@@ -58,7 +58,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
     static const QRegularExpression reg(QStringLiteral("((\r\n)+)?$"));
     body.replace(reg, QStringLiteral("\r\n"));
-    if (body.endsWith(QLatin1String("\r\n"))) { // Remove it from start
+    if (body.endsWith(QLatin1StringView("\r\n"))) { // Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {
@@ -112,8 +112,8 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(reg3, QStringLiteral("\r\n"));
     // Perhaps remove tab after headername and before value name
     // newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
-    if (newHeaderName == QLatin1String("content-type") && removeQuoteOnContentType) { // Remove quote in charset
-        if (newHeaderValue.contains(QLatin1String("charset=\""))) {
+    if (newHeaderName == QLatin1StringView("content-type") && removeQuoteOnContentType) { // Remove quote in charset
+        if (newHeaderValue.contains(QLatin1StringView("charset=\""))) {
             newHeaderValue.remove(QLatin1Char('"'));
         }
     }
@@ -185,15 +185,15 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
 
 MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(const QString &str)
 {
-    if (str == QLatin1String("dkim")) {
+    if (str == QLatin1StringView("dkim")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim;
-    } else if (str == QLatin1String("spf")) {
+    } else if (str == QLatin1StringView("spf")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf;
-    } else if (str == QLatin1String("dmarc")) {
+    } else if (str == QLatin1StringView("dmarc")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc;
-    } else if (str == QLatin1String("dkim-atps")) {
+    } else if (str == QLatin1StringView("dkim-atps")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
-    } else if (str == QLatin1String("auth")) {
+    } else if (str == QLatin1StringView("auth")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type " << str;

@@ -111,11 +111,11 @@ void CSSHelper::updateColor()
 
 QString CSSHelper::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
 {
-    return QLatin1String(
+    return QLatin1StringView(
                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
                "<html><head><title></title><style>\n")
         + cssDefinitions(htmlHeadSettings)
-        + QLatin1String(
+        + QLatin1StringView(
                "</style></head>\n"
                "<body>\n");
 }

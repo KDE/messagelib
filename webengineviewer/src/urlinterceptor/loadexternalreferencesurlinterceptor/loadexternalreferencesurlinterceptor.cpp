@@ -20,17 +20,17 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QUrl requestUrl = info.requestUrl();
     const QString scheme = requestUrl.scheme();
-    if (scheme == QLatin1String("data") || scheme == QLatin1String("file")) {
+    if (scheme == QLatin1StringView("data") || scheme == QLatin1String("file")) {
         return false;
     }
     const QWebEngineUrlRequestInfo::ResourceType resourceType{info.resourceType()};
     if (mAllowLoadExternalReference) {
-        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1String("cid"))) {
+        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1StringView("cid"))) {
             return urlIsBlocked(requestUrl);
         }
         return false;
     } else {
-        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1String("cid"))) {
+        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1StringView("cid"))) {
             return urlIsAuthorized(requestUrl);
         } else if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;

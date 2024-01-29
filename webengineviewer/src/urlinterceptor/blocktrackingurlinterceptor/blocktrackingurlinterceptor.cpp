@@ -24,7 +24,7 @@ bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
         return false;
     }
     const QUrl urlRequestUrl(info.requestUrl());
-    if (urlRequestUrl.scheme() != QLatin1String("data")) {
+    if (urlRequestUrl.scheme() != QLatin1StringView("data")) {
         qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " Tracking url " << urlRequestUrl;
     }
     for (int i = 0, total = mBackList.size(); i < total; ++i) {

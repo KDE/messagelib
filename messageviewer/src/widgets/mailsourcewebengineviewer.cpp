@@ -88,14 +88,14 @@ void MailSourceWebEngineViewer::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMailSourceWebEngineViewerConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void MailSourceWebEngineViewer::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMailSourceWebEngineViewerConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

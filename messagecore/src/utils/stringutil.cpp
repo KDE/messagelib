@@ -162,7 +162,7 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
 QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
 {
     QList<QPair<QString, QString>> values;
-    if (url.scheme() != QLatin1String("mailto")) {
+    if (url.scheme() != QLatin1StringView("mailto")) {
         return values;
     }
     QString str = url.toString();
@@ -183,7 +183,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
         QUrlQuery query(str);
         const auto listQuery = query.queryItems(QUrl::FullyDecoded);
         for (const auto &queryItem : listQuery) {
-            if (queryItem.first == QLatin1String("to")) {
+            if (queryItem.first == QLatin1StringView("to")) {
                 toStr << queryItem.second;
                 indexTo = i;
             } else {
@@ -206,7 +206,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
     if (!toStr.isEmpty()) {
         to << toStr;
     }
-    const QString fullTo = to.join(QLatin1String(", "));
+    const QString fullTo = to.join(QLatin1StringView(", "));
     if (!fullTo.isEmpty()) {
         QPair<QString, QString> pairElement;
         pairElement.first = QStringLiteral("to");
@@ -323,20 +323,20 @@ QString quoteHtmlChars(const QString &str, bool removeLineBreaks)
     for (int i = 0; i < strLength; ++i) {
         switch (str[i].toLatin1()) {
         case '<':
-            result += QLatin1String("&lt;");
+            result += QLatin1StringView("&lt;");
             break;
         case '>':
-            result += QLatin1String("&gt;");
+            result += QLatin1StringView("&gt;");
             break;
         case '&':
-            result += QLatin1String("&amp;");
+            result += QLatin1StringView("&amp;");
             break;
         case '"':
-            result += QLatin1String("&quot;");
+            result += QLatin1StringView("&quot;");
             break;
         case '\n':
             if (!removeLineBreaks) {
-                result += QLatin1String("<br>");
+                result += QLatin1StringView("<br>");
             }
             break;
         case '\r':
@@ -436,10 +436,10 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
             }
 
             if (link == ShowLink) {
-                result += QLatin1String("<a href=\"mailto:")
+                result += QLatin1StringView("<a href=\"mailto:")
                     + QString::fromLatin1(
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
-                    + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
+                    + QLatin1StringView("\" ") + cssStyle + QLatin1Char('>');
             }
             const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
 
@@ -453,7 +453,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                 result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
             }
             if (link == ShowLink) {
-                result += QLatin1String("</a>, ");
+                result += QLatin1StringView("</a>, ");
             }
         }
     }
@@ -520,7 +520,7 @@ QString guessEmailAddressFromLoginName(const QString &loginName)
     const KUser user(loginName);
     if (user.isValid()) {
         const QString fullName = user.property(KUser::FullName).toString();
-        address = KEmailAddress::quoteNameIfNecessary(fullName) + QLatin1String(" <") + address + QLatin1Char('>');
+        address = KEmailAddress::quoteNameIfNecessary(fullName) + QLatin1StringView(" <") + address + QLatin1Char('>');
     }
 
     return address;
@@ -692,7 +692,7 @@ QString cleanFileName(const QString &name)
     // We also look at the special case of ": ", since converting that to "_ "
     // would look strange, simply "_" looks better.
     // https://issues.kolab.org/issue3805
-    fileName.replace(QLatin1String(": "), QStringLiteral("_"));
+    fileName.replace(QLatin1StringView(": "), QStringLiteral("_"));
     // replace all ':' with '_' because ':' isn't allowed on FAT volumes
     fileName.replace(QLatin1Char(':'), QLatin1Char('_'));
     // better not use a dir-delimiter in a filename

@@ -44,7 +44,7 @@ void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mai
 {
     QString renderedTree = stringifyMessagePartTree(messagePart, QString());
 
-    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
+    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
     const QString outTreeFileName = mailFileName + QStringLiteral(".tree");
 
     {
@@ -516,7 +516,7 @@ void ObjectTreeParserTest::testHTML()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
-    QVERIFY(otp.htmlContent().contains(QLatin1String("Some <span style=\" font-weight:600;\">HTML</span> text")));
+    QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text")));
     QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
 
@@ -552,7 +552,7 @@ void ObjectTreeParserTest::testHTMLOnly()
     otp.parseObjectTree(msg.data());
 
     QVERIFY(otp.plainTextContent().isEmpty());
-    QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
+    QVERIFY(otp.htmlContent().contains(QLatin1StringView("<b>SOME</b> HTML text.")));
 }
 
 #include "moc_basicobjecttreeparsertest.cpp"

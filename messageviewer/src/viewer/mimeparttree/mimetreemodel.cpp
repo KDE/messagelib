@@ -92,17 +92,17 @@ public:
     QIcon iconForContent(KMime::Content *content)
     {
         if (auto ct = content->contentType(false)) {
-            auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(ct->mimeType()));
+            auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(ct->mimeType()));
 
             auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
-            if (!mimeType.isValid() || mimeType.name() == QLatin1String("application/octet-stream")) {
+            if (!mimeType.isValid() || mimeType.name() == QLatin1StringView("application/octet-stream")) {
                 const QString name = descriptionForContent(content);
                 mimeType = MimeTreeParser::Util::mimetype(name);
             }
 
-            if (mimeType.isValid() && mimeType.name().startsWith(QLatin1String("multipart/"))) {
+            if (mimeType.isValid() && mimeType.name().startsWith(QLatin1StringView("multipart/"))) {
                 return QIcon::fromTheme(QStringLiteral("folder"));
-            } else if (!iconName.isEmpty() && iconName != QLatin1String("unknown")) {
+            } else if (!iconName.isEmpty() && iconName != QLatin1StringView("unknown")) {
                 return QIcon::fromTheme(iconName);
             } else if (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
                 return QIcon::fromTheme(mimeType.iconName());

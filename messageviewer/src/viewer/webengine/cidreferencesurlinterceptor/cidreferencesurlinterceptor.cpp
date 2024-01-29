@@ -25,7 +25,7 @@ CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor() = default;
 bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
-    if (urlRequestUrl.scheme() == QLatin1String("cid")) {
+    if (urlRequestUrl.scheme() == QLatin1StringView("cid")) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path()));
             if (!newUrl.isEmpty()) {

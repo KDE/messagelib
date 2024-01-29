@@ -144,7 +144,7 @@ void SignatureController::applySignature(const KIdentityManagementCore::Signatur
         return;
     }
 
-    if (MessageComposer::MessageComposerSettings::self()->autoTextSignature() == QLatin1String("auto")) {
+    if (MessageComposer::MessageComposerSettings::self()->autoTextSignature() == QLatin1StringView("auto")) {
         KIdentityManagementCore::Signature::AddedText addedText = KIdentityManagementCore::Signature::AddNewLines;
         if (MessageComposer::MessageComposerSettings::self()->dashDashSignature()) {
             addedText |= KIdentityManagementCore::Signature::AddSeparator;

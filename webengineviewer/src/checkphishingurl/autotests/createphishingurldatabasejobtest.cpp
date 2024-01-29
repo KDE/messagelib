@@ -15,7 +15,7 @@ extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUr
 
 QByteArray readJsonFile(const QString &jsonFile)
 {
-    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = file.readAll();

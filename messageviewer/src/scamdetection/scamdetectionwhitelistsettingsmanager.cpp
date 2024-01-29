@@ -35,14 +35,14 @@ void ScamDetectionWhiteListSettingsManager::loadSettings()
 {
     mScamDetectionInfoList.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QLatin1String(myScamDetectionWhiteListGroupName));
+    KConfigGroup group(config, QLatin1StringView(myScamDetectionWhiteListGroupName));
     // TODO
 }
 
 void ScamDetectionWhiteListSettingsManager::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QLatin1String(myScamDetectionWhiteListGroupName));
+    KConfigGroup group(config, QLatin1StringView(myScamDetectionWhiteListGroupName));
     // TODO
 }
 

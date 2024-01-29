@@ -51,14 +51,14 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     qDebug() << " urlRequestUrl " << urlRequestUrl;
-    if (urlRequestUrl.scheme() == QLatin1String("cid")) {
+    if (urlRequestUrl.scheme() == QLatin1StringView("cid")) {
         qDebug() << " info.resourceType() " << info.resourceType();
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             QUrl r;
-            if (urlRequestUrl.url() == QLatin1String("cid:resource_src")) {
+            if (urlRequestUrl.url() == QLatin1StringView("cid:resource_src")) {
                 qDebug() << " from resource src";
                 r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
-            } else if (urlRequestUrl.url() == QLatin1String("cid:local_src")) {
+            } else if (urlRequestUrl.url() == QLatin1StringView("cid:local_src")) {
                 qDebug() << " from local file";
 #ifdef LOAD_FROM_FILE
                 QImage image(QStringLiteral(PICSRC "/audio-volume-medium.png"));
@@ -69,14 +69,14 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
                 buf.close();
                 r = QUrl(QString::fromUtf8(QByteArray("data:image/png;base64,") + hexed));
 #else
-                r = QUrl::fromLocalFile(QLatin1String(PICSRC "/audio-volume-medium.png"));
+                r = QUrl::fromLocalFile(QLatin1StringView(PICSRC "/audio-volume-medium.png"));
 #endif
             }
             qDebug() << "urlRequestUrl  " << urlRequestUrl;
             qDebug() << " r " << r;
             info.redirect(r);
         }
-    } else if (urlRequestUrl.scheme() == QLatin1String("file")) {
+    } else if (urlRequestUrl.scheme() == QLatin1StringView("file")) {
         // info.block(true);
     }
 }

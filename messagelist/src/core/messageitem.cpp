@@ -301,7 +301,7 @@ QString MessageItem::tagListDescription() const
     const auto tags{tagList()};
     for (const Tag *tag : tags) {
         if (!ret.isEmpty()) {
-            ret += QLatin1String(", ");
+            ret += QLatin1StringView(", ");
         }
         ret += tag->name();
     }

@@ -42,7 +42,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     setClearButtonEnabled(true);
     initializeActions();
     createMenuSearch();
-    auto act = findChild<QAction *>(QLatin1String(qLineEditclearButtonActionNameC));
+    auto act = findChild<QAction *>(QLatin1StringView(qLineEditclearButtonActionNameC));
     if (act) {
         connect(act, &QAction::triggered, this, &SearchLineStatus::slotClear);
     } else {

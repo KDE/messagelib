@@ -50,9 +50,9 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolver()
 {
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
 
-    QFile file1(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(autocryptDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(autocryptDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
 
     AutocryptKeyResolverCore resolver(/*encrypt=*/true, /*sign=*/false);
@@ -75,9 +75,9 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverSkipSender()
 {
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
 
-    QFile file1(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(autocryptDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(autocryptDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
 
     AutocryptKeyResolverCore resolver(/*encrypt=*/true, /*sign=*/false);
@@ -101,9 +101,9 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverUnresolved()
 {
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example"), QStringLiteral("unresolved@test.example")};
 
-    QFile file1(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(autocryptDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(autocryptDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
 
     AutocryptKeyResolverCore resolver(/*encrypt=*/true, /*sign=*/false);
@@ -130,9 +130,9 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverPreferNormal()
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("test@kolab.org")};
     auto key = mKeyCache->findBestByMailBox("test@kolab.org", GpgME::OpenPGP, Kleo::KeyCache::KeyUsage::Encrypt);
 
-    QFile file1(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(autocryptDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(autocryptDir.filePath(QStringLiteral("test%40kolab.org.json"))));
 
     AutocryptKeyResolverCore resolver(/*encrypt=*/true, /*sign=*/false);

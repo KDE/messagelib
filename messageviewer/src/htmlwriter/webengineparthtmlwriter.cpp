@@ -60,7 +60,7 @@ void WebEnginePartHtmlWriter::end()
     }
     if (data().size() > 2000000) {
         // qDebug() << " load big message ";
-        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".html"));
+        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/messageviewer_XXXXXX") + QLatin1String(".html"));
         mTempFile->open();
         QTextStream stream(mTempFile);
         stream.setEncoding(Util::htmlEncoding(data(), codec()));

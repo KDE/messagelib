@@ -53,12 +53,12 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
         "either simply type them or select them from "
         "the <i>Insert command</i> menu.</p>");
     const QString templateConfigurationName(name);
-    if (templateConfigurationName == QLatin1String("folder-templates")) {
+    if (templateConfigurationName == QLatin1StringView("folder-templates")) {
         d->mHelpString += i18n(
             "<p>Templates specified here are folder-specific. "
             "They override both global templates and per-identity "
             "templates.</p>");
-    } else if (templateConfigurationName == QLatin1String("identity-templates")) {
+    } else if (templateConfigurationName == QLatin1StringView("identity-templates")) {
         d->mHelpString += i18n(
             "<p>Templates specified here are identity-specific. "
             "They override global templates, but can be overridden by "
@@ -355,8 +355,8 @@ void TemplatesConfiguration::slotInsertCommand(const QString &cmd, int adjustCur
 
     // qCDebug(TEMPLATEPARSER_LOG) << "Insert command:" << cmd;
     const QString editText(edit->toPlainText());
-    if ((editText.contains(QLatin1String("%FORCEDPLAIN")) && (cmd == QLatin1String("%FORCEDHTML")))
-        || (editText.contains(QLatin1String("%FORCEDHTML")) && (cmd == QLatin1String("%FORCEDPLAIN")))) {
+    if ((editText.contains(QLatin1StringView("%FORCEDPLAIN")) && (cmd == QLatin1String("%FORCEDHTML")))
+        || (editText.contains(QLatin1StringView("%FORCEDHTML")) && (cmd == QLatin1String("%FORCEDPLAIN")))) {
         KMessageBox::error(this,
                            i18n("Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs"
                                 " is not correct. Use only one of the aforementioned commands with \" Reply as"

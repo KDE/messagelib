@@ -205,14 +205,14 @@ void RecipientsPicker::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(300, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myRecipientsPickerConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRecipientsPickerConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void RecipientsPicker::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myRecipientsPickerConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRecipientsPickerConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

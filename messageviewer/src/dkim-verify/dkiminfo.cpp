@@ -19,48 +19,48 @@ bool DKIMInfo::parseDKIM(const QString &header)
         return false;
     }
     QString newHeaders = header;
-    newHeaders.replace(QLatin1String("; "), QLatin1String(";"));
+    newHeaders.replace(QLatin1StringView("; "), QLatin1String(";"));
     const QStringList items = newHeaders.split(QLatin1Char(';'), Qt::SkipEmptyParts);
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
-        if (elem.startsWith(QLatin1String("v="))) {
+        if (elem.startsWith(QLatin1StringView("v="))) {
             mVersion = QStringView(elem).right(elem.length() - 2).toInt();
             if (mVersion != 1) {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Version is not correct " << mVersion;
             }
-        } else if (elem.startsWith(QLatin1String("a="))) {
+        } else if (elem.startsWith(QLatin1StringView("a="))) {
             // Parse it as "algorithm.signature-algorithm.hash
             parseAlgorithm(elem.right(elem.length() - 2));
-        } else if (elem.startsWith(QLatin1String("t="))) {
+        } else if (elem.startsWith(QLatin1StringView("t="))) {
             mSignatureTimeStamp = elem.right(elem.length() - 2).toLong();
-        } else if (elem.startsWith(QLatin1String("c="))) {
+        } else if (elem.startsWith(QLatin1StringView("c="))) {
             // Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
             parseCanonicalization(elem.right(elem.length() - 2));
             foundCanonizations = true;
-        } else if (elem.startsWith(QLatin1String("bh="))) {
+        } else if (elem.startsWith(QLatin1StringView("bh="))) {
             mBodyHash = elem.right(elem.length() - 3).remove(QLatin1Char(' '));
-        } else if (elem.startsWith(QLatin1String("l="))) {
+        } else if (elem.startsWith(QLatin1StringView("l="))) {
             mBodyLengthCount = QStringView(elem).right(elem.length() - 2).toInt();
-        } else if (elem.startsWith(QLatin1String("i="))) {
+        } else if (elem.startsWith(QLatin1StringView("i="))) {
             mAgentOrUserIdentifier = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("q="))) {
+        } else if (elem.startsWith(QLatin1StringView("q="))) {
             mQuery = elem.right(elem.length() - 2);
-            if (mQuery != QLatin1String("dns/txt")) {
+            if (mQuery != QLatin1StringView("dns/txt")) {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Query is not correct and not supported " << mQuery;
             }
-        } else if (elem.startsWith(QLatin1String("d="))) {
+        } else if (elem.startsWith(QLatin1StringView("d="))) {
             mDomain = elem.right(elem.length() - 2).trimmed();
-        } else if (elem.startsWith(QLatin1String("s="))) {
+        } else if (elem.startsWith(QLatin1StringView("s="))) {
             mSelector = elem.right(elem.length() - 2).trimmed();
-        } else if (elem.startsWith(QLatin1String("b="))) {
+        } else if (elem.startsWith(QLatin1StringView("b="))) {
             mSignature = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("h="))) {
+        } else if (elem.startsWith(QLatin1StringView("h="))) {
             const QString str = MessageViewer::DKIMUtil::cleanString(elem.right(elem.length() - 2));
             mListSignedHeader = str.split(QLatin1Char(':'));
-        } else if (elem.startsWith(QLatin1String("x="))) {
+        } else if (elem.startsWith(QLatin1StringView("x="))) {
             mExpireTime = elem.right(elem.length() - 2).toLong();
-        } else if (elem.startsWith(QLatin1String("z="))) {
+        } else if (elem.startsWith(QLatin1StringView("z="))) {
             mCopiedHeaderField = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Unknown element type" << elem << " : items : " << items;
@@ -101,9 +101,9 @@ void DKIMInfo::parseAlgorithm(const QString &str)
     } else {
         mSigningAlgorithm = lst.at(0);
         const QString hashStr = lst.at(1);
-        if (hashStr == QLatin1String("sha1")) {
+        if (hashStr == QLatin1StringView("sha1")) {
             mHashingAlgorithm = HashingAlgorithmType::Sha1;
-        } else if (hashStr == QLatin1String("sha256")) {
+        } else if (hashStr == QLatin1StringView("sha256")) {
             mHashingAlgorithm = HashingAlgorithmType::Sha256;
         } else {
             mHashingAlgorithm = HashingAlgorithmType::Unknown;
@@ -127,9 +127,9 @@ void DKIMInfo::parseCanonicalization(const QString &str)
         const QStringList canonicalization = str.split(QLatin1Char('/'));
         // qDebug() << " canonicalization "<< canonicalization;
         if (canonicalization.count() >= 1) {
-            if (canonicalization.at(0) == QLatin1String("relaxed")) {
+            if (canonicalization.at(0) == QLatin1StringView("relaxed")) {
                 mHeaderCanonization = DKIMInfo::Relaxed;
-            } else if (canonicalization.at(0) == QLatin1String("simple")) {
+            } else if (canonicalization.at(0) == QLatin1StringView("simple")) {
                 mHeaderCanonization = DKIMInfo::Simple;
             } else {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalization for header unknown " << canonicalization.at(0);
@@ -139,9 +139,9 @@ void DKIMInfo::parseCanonicalization(const QString &str)
             if (canonicalization.count() == 1) {
                 mBodyCanonization = DKIMInfo::Simple;
             } else if (canonicalization.count() == 2) {
-                if (canonicalization.at(1) == QLatin1String("relaxed")) {
+                if (canonicalization.at(1) == QLatin1StringView("relaxed")) {
                     mBodyCanonization = DKIMInfo::Relaxed;
-                } else if (canonicalization.at(1) == QLatin1String("simple")) {
+                } else if (canonicalization.at(1) == QLatin1StringView("simple")) {
                     mBodyCanonization = DKIMInfo::Simple;
                 } else {
                     qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalization for body unknown " << canonicalization.at(1);

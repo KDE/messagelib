@@ -123,20 +123,20 @@ void DKIMCheckSignatureJob::start()
         // truncated body to the length specified in the "l=" tag
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
-    if (mBodyCanonizationResult.startsWith(QLatin1String("\r\n"))) { // Remove it from start
+    if (mBodyCanonizationResult.startsWith(QLatin1StringView("\r\n"))) { // Remove it from start
         mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() - 2);
     }
     // It seems that kmail add a space before this line => it breaks check
-    if (mBodyCanonizationResult.startsWith(QLatin1String(" This is a multi-part message in MIME format"))) { // Remove it from start
+    if (mBodyCanonizationResult.startsWith(QLatin1StringView(" This is a multi-part message in MIME format"))) { // Remove it from start
         mBodyCanonizationResult.replace(QStringLiteral(" This is a multi-part message in MIME format"),
                                         QStringLiteral("This is a multi-part message in MIME format"));
     }
     // It seems that kmail add a space before this line => it breaks check
-    if (mBodyCanonizationResult.startsWith(QLatin1String(" This is a cryptographically signed message in MIME format."))) { // Remove it from start
+    if (mBodyCanonizationResult.startsWith(QLatin1StringView(" This is a cryptographically signed message in MIME format."))) { // Remove it from start
         mBodyCanonizationResult.replace(QStringLiteral(" This is a cryptographically signed message in MIME format."),
                                         QStringLiteral("This is a cryptographically signed message in MIME format."));
     }
-    if (mBodyCanonizationResult.startsWith(QLatin1String(" \r\n"))) { // Remove it from start
+    if (mBodyCanonizationResult.startsWith(QLatin1StringView(" \r\n"))) { // Remove it from start
         static const QRegularExpression reg{QStringLiteral("^ \r\n")};
         mBodyCanonizationResult.remove(reg);
     }
@@ -238,20 +238,21 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     // Add dkim-signature as lowercase
 
     QString dkimValue = mDkimValue;
-    dkimValue = dkimValue.left(dkimValue.indexOf(QLatin1String("b=")) + 2);
+    dkimValue = dkimValue.left(dkimValue.indexOf(QLatin1StringView("b=")) + 2);
     switch (mDkimInfo.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
-        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QStringLiteral("dkim-signature"), dkimValue);
+        mHeaderCanonizationResult += QLatin1StringView("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QStringLiteral("dkim-signature"), dkimValue);
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        mHeaderCanonizationResult +=
-            QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QStringLiteral("dkim-signature"), dkimValue, removeQuoteOnContentType);
+        mHeaderCanonizationResult += QLatin1StringView("\r\n")
+            + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QStringLiteral("dkim-signature"), dkimValue, removeQuoteOnContentType);
         break;
     }
 #ifdef DEBUG_SIGNATURE_DKIM
-    QFile headerFile(QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1String("removequote") : QLatin1String("withquote")));
+    QFile headerFile(
+        QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1StringView("removequote") : QLatin1String("withquote")));
     headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outHeaderStream(&headerFile);
     outHeaderStream << mHeaderCanonizationResult;
@@ -325,7 +326,7 @@ QString DKIMCheckSignatureJob::headerCanonizationSimple() const
         const QString str = parser.headerType(header.toLower());
         if (!str.isEmpty()) {
             if (!headers.isEmpty()) {
-                headers += QLatin1String("\r\n");
+                headers += QLatin1StringView("\r\n");
             }
             headers += MessageViewer::DKIMUtil::headerCanonizationSimple(header, str);
         }
@@ -365,7 +366,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed(bool removeQuoteOnConte
         const QString str = parser.headerType(header.toLower());
         if (!str.isEmpty()) {
             if (!headers.isEmpty()) {
-                headers += QLatin1String("\r\n");
+                headers += QLatin1StringView("\r\n");
             }
             headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str, removeQuoteOnContentType);
         }
@@ -422,7 +423,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         return;
     }
     const QString keyType{mDkimKeyRecord.keyType()};
-    if ((keyType != QLatin1String("rsa")) && (keyType != QLatin1String("ed25519"))) {
+    if ((keyType != QLatin1StringView("rsa")) && (keyType != QLatin1String("ed25519"))) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << keyType << " str " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
@@ -432,7 +433,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 
     // if s flag is set in DKIM key record
     // AUID must be from the same domain as SDID (and not a subdomain)
-    if (mDkimKeyRecord.flags().contains(QLatin1String("s"))) {
+    if (mDkimKeyRecord.flags().contains(QLatin1StringView("s"))) {
         //                  s  Any DKIM-Signature header fields using the "i=" tag MUST have
         //                     the same domain value on the right-hand side of the "@" in the
         //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
@@ -449,7 +450,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     // TODO add support for ed25119
 
     // check that the testing flag is not set
-    if (mDkimKeyRecord.flags().contains(QLatin1String("y"))) {
+    if (mDkimKeyRecord.flags().contains(QLatin1StringView("y"))) {
         if (!mPolicy.verifySignatureWhenOnlyTest()) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Testing mode!";
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::TestKeyMode;
@@ -479,9 +480,9 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 void DKIMCheckSignatureJob::verifySignature()
 {
     const QString keyType{mDkimKeyRecord.keyType()};
-    if (keyType == QLatin1String("rsa")) {
+    if (keyType == QLatin1StringView("rsa")) {
         verifyRSASignature();
-    } else if (keyType == QLatin1String("ed25519")) {
+    } else if (keyType == QLatin1StringView("ed25519")) {
         verifyEd25519Signature();
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " It's a bug " << keyType;
@@ -630,7 +631,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingSignature;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
-    if (!info.listSignedHeader().contains(QLatin1String("from"), Qt::CaseInsensitive)) {
+    if (!info.listSignedHeader().contains(QLatin1StringView("from"), Qt::CaseInsensitive)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "From is not include in headers list";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingFrom;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -640,7 +641,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::DomainNotExist;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
-    if (info.query() != QLatin1String("dns/txt")) {
+    if (info.query() != QLatin1StringView("dns/txt")) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Query is incorrect: " << info.query();
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;

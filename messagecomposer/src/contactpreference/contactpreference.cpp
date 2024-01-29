@@ -28,9 +28,13 @@ void ContactPreference::fillAddressee(KContacts::Addressee &contact) const
 {
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
                          QStringLiteral("CRYPTOENCRYPTPREF"),
-                         QLatin1String(Kleo::encryptionPreferenceToString(encryptionPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOSIGNPREF"), QLatin1String(Kleo::signingPreferenceToString(signingPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOPROTOPREF"), QLatin1String(cryptoMessageFormatToString(cryptoMessageFormat)));
+                         QLatin1StringView(Kleo::encryptionPreferenceToString(encryptionPreference)));
+    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
+                         QStringLiteral("CRYPTOSIGNPREF"),
+                         QLatin1StringView(Kleo::signingPreferenceToString(signingPreference)));
+    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
+                         QStringLiteral("CRYPTOPROTOPREF"),
+                         QLatin1StringView(cryptoMessageFormatToString(cryptoMessageFormat)));
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("OPENPGPFP"), pgpKeyFingerprints.join(QLatin1Char(',')));
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("SMIMEFP"), smimeCertFingerprints.join(QLatin1Char(',')));
 }

@@ -36,7 +36,7 @@ bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
         return true;
     }
     if (KMime::Headers::Base *header = curNode->headerByType("X-Mailer")) {
-        if (header->asUnicodeString().contains(QLatin1String("MAILMAN"), Qt::CaseInsensitive)) {
+        if (header->asUnicodeString().contains(QLatin1StringView("MAILMAN"), Qt::CaseInsensitive)) {
             return true;
         }
     }
@@ -55,10 +55,10 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     const QString str = QString::fromLatin1(curNode->decodedContent());
 
     // ###
-    const QLatin1String delim1("--__--__--\n\nMessage:");
-    const QLatin1String delim2("--__--__--\r\n\r\nMessage:");
-    const QLatin1String delimZ2("--__--__--\n\n_____________");
-    const QLatin1String delimZ1("--__--__--\r\n\r\n_____________");
+    const QLatin1StringView delim1("--__--__--\n\nMessage:");
+    const QLatin1StringView delim2("--__--__--\r\n\r\nMessage:");
+    const QLatin1StringView delimZ2("--__--__--\n\n_____________");
+    const QLatin1StringView delimZ1("--__--__--\r\n\r\n_____________");
     QString partStr;
     QString digestHeaderStr;
     int thisDelim = str.indexOf(delim1, Qt::CaseInsensitive);
@@ -97,11 +97,11 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     // to get our embedded RfC822 messages properly inserted
     curNode->contentType()->setMimeType("multipart/digest");
     while (-1 < nextDelim) {
-        int thisEoL = str.indexOf(QLatin1String("\nMessage:"), thisDelim, Qt::CaseInsensitive);
+        int thisEoL = str.indexOf(QLatin1StringView("\nMessage:"), thisDelim, Qt::CaseInsensitive);
         if (-1 < thisEoL) {
             thisDelim = thisEoL + 1;
         } else {
-            thisEoL = str.indexOf(QLatin1String("\n_____________"), thisDelim, Qt::CaseInsensitive);
+            thisEoL = str.indexOf(QLatin1StringView("\n_____________"), thisDelim, Qt::CaseInsensitive);
             if (-1 < thisEoL) {
                 thisDelim = thisEoL + 1;
             }
@@ -144,7 +144,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     }
     // reset current node's Content-Type
     curNode->contentType()->setMimeType("text/plain");
-    int thisEoL = str.indexOf(QLatin1String("_____________"), thisDelim);
+    int thisEoL = str.indexOf(QLatin1StringView("_____________"), thisDelim);
     if (-1 < thisEoL) {
         thisDelim = thisEoL;
         thisEoL = str.indexOf(QLatin1Char('\n'), thisDelim);

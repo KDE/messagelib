@@ -126,7 +126,7 @@ void AliasesExpandJob::finishExpansion()
             continue;
         }
         if (!mEmailAddresses.isEmpty()) {
-            mEmailAddresses += QLatin1String(", ");
+            mEmailAddresses += QLatin1StringView(", ");
         }
 
         const QString receiver = recipient.trimmed();

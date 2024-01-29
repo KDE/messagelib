@@ -77,27 +77,27 @@ void EmailAddressResolveJob::start()
         jobs << job;
     }
     if (containsAliases(d->mTo)) {
-        auto job = new AliasesExpandJob(d->mTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mTo.join(QLatin1StringView(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartTo"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
 
     if (containsAliases(d->mCc)) {
-        auto job = new AliasesExpandJob(d->mCc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mCc.join(QLatin1StringView(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartCc"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
 
     if (containsAliases(d->mBcc)) {
-        auto job = new AliasesExpandJob(d->mBcc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mBcc.join(QLatin1StringView(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartBcc"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
     if (containsAliases(d->mReplyTo)) {
-        auto job = new AliasesExpandJob(d->mReplyTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mReplyTo.join(QLatin1StringView(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartReplyTo"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
@@ -141,25 +141,25 @@ void EmailAddressResolveJob::setFrom(const QString &from)
 void EmailAddressResolveJob::setTo(const QStringList &to)
 {
     d->mTo = to;
-    d->mResultMap.insert(QStringLiteral("infoPartTo"), to.join(QLatin1String(", ")));
+    d->mResultMap.insert(QStringLiteral("infoPartTo"), to.join(QLatin1StringView(", ")));
 }
 
 void EmailAddressResolveJob::setCc(const QStringList &cc)
 {
     d->mCc = cc;
-    d->mResultMap.insert(QStringLiteral("infoPartCc"), cc.join(QLatin1String(", ")));
+    d->mResultMap.insert(QStringLiteral("infoPartCc"), cc.join(QLatin1StringView(", ")));
 }
 
 void EmailAddressResolveJob::setBcc(const QStringList &bcc)
 {
     d->mBcc = bcc;
-    d->mResultMap.insert(QStringLiteral("infoPartBcc"), bcc.join(QLatin1String(", ")));
+    d->mResultMap.insert(QStringLiteral("infoPartBcc"), bcc.join(QLatin1StringView(", ")));
 }
 
 void EmailAddressResolveJob::setReplyTo(const QStringList &replyTo)
 {
     d->mReplyTo = replyTo;
-    d->mResultMap.insert(QStringLiteral("infoPartReplyTo"), replyTo.join(QLatin1String(", ")));
+    d->mResultMap.insert(QStringLiteral("infoPartReplyTo"), replyTo.join(QLatin1StringView(", ")));
 }
 
 QString EmailAddressResolveJob::expandedFrom() const

@@ -143,7 +143,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
         }
     }
 
-    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave/");
+    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave/");
     auto msg = Test::loadMessage(autosavePath + fileName);
     msg->messageID()->from7BitString("<test@autotest.example>");
     msg->date()->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
@@ -283,7 +283,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 
 void ComposerViewBaseTest::testAutocryptKey()
 {
-    QFile file(QLatin1String(MESSAGECORE_DATA_DIR) + QStringLiteral("/autocrypt/recipient.json"));
+    QFile file(QLatin1StringView(MESSAGECORE_DATA_DIR) + QStringLiteral("/autocrypt/recipient.json"));
     QVERIFY(file.copy(autocryptDir.path() + QStringLiteral("/recipient%40autocrypt.example.json")));
 
     qDebug() << autocryptDir.path();

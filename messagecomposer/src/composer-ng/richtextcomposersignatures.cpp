@@ -84,13 +84,13 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagementCore::
     cursor.beginEditBlock();
 
     // Squeeze tabs and spaces
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\t ]+")), QStringLiteral(" "), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ]+")), QStringLiteral(" "), sig);
 
     // Remove trailing whitespace
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\t ][\n]")), QStringLiteral("\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ][\n]")), QStringLiteral("\n"), sig);
 
     // Single space lines
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\n]{3,}")), QStringLiteral("\n\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\n]{3,}")), QStringLiteral("\n\n"), sig);
 
     if (!d->richTextComposer->textCursor().hasSelection()) {
         d->richTextComposer->textCursor().clearSelection();
@@ -149,7 +149,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagementCore:
         // If the new signature is completely empty, we also want to remove the
         // signature separator, so include it in the selection
         int additionalMove = 0;
-        if (newSig.rawText().isEmpty() && text.mid(currentMatch - 4, 4) == QLatin1String("-- \n")) {
+        if (newSig.rawText().isEmpty() && text.mid(currentMatch - 4, 4) == QLatin1StringView("-- \n")) {
             cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
         } else if (newSig.rawText().isEmpty() && text.mid(currentMatch - 1, 1) == QLatin1Char('\n')) {

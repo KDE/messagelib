@@ -271,17 +271,17 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
 const AttachmentStrategy *AttachmentStrategy::create(const QString &type)
 {
     const QString lowerType = type.toLower();
-    if (lowerType == QLatin1String("iconic")) {
+    if (lowerType == QLatin1StringView("iconic")) {
         return iconic();
     }
     // if ( lowerType == "smart" )    return smart(); // not needed, see below
-    if (lowerType == QLatin1String("inlined")) {
+    if (lowerType == QLatin1StringView("inlined")) {
         return inlined();
     }
-    if (lowerType == QLatin1String("hidden")) {
+    if (lowerType == QLatin1StringView("hidden")) {
         return hidden();
     }
-    if (lowerType == QLatin1String("headeronly")) {
+    if (lowerType == QLatin1StringView("headeronly")) {
         return headerOnly();
     }
     // don't kFatal here, b/c the strings are user-provided

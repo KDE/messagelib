@@ -288,19 +288,19 @@ bool SortOrder::isValidMessageSorting(SortOrder::MessageSorting ms)
 const QString SortOrder::nameForSortDirection(SortDirection sortDirection)
 {
     int index = staticMetaObject.indexOfEnumerator("SortDirection");
-    return QLatin1String(staticMetaObject.enumerator(index).valueToKey(sortDirection));
+    return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(sortDirection));
 }
 
 const QString SortOrder::nameForMessageSorting(MessageSorting messageSorting)
 {
     int index = staticMetaObject.indexOfEnumerator("MessageSorting");
-    return QLatin1String(staticMetaObject.enumerator(index).valueToKey(messageSorting));
+    return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(messageSorting));
 }
 
 const QString SortOrder::nameForGroupSorting(GroupSorting groupSorting)
 {
     int index = staticMetaObject.indexOfEnumerator("GroupSorting");
-    return QLatin1String(staticMetaObject.enumerator(index).valueToKey(groupSorting));
+    return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(groupSorting));
 }
 
 SortOrder::SortDirection SortOrder::sortDirectionForName(const QString &name)

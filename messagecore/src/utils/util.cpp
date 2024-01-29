@@ -14,7 +14,7 @@ using namespace MessageCore;
 const KIdentityManagementCore::Identity &
 Util::identityForMessage(KMime::Message *msg, const KIdentityManagementCore::IdentityManager *const identMgr, uint folderIdentityId)
 {
-    const auto &identity = identMgr->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString());
+    const auto &identity = identMgr->identityForAddress(msg->to()->asUnicodeString() + QLatin1StringView(", ") + msg->cc()->asUnicodeString());
 
     if (identity.isNull()) {
         return identMgr->identityForUoidOrDefault(folderIdentityId);

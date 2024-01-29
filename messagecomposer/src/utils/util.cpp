@@ -367,9 +367,9 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
 
     message += QString::number(id);
     if (status.isReplied()) {
-        type += QLatin1String("reply");
+        type += QLatin1StringView("reply");
     } else if (status.isForwarded()) {
-        type += QLatin1String("forward");
+        type += QLatin1StringView("forward");
     }
 
     auto header = new KMime::Headers::Generic("X-KMail-Link-Message");
@@ -401,9 +401,9 @@ bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, Q
     }
 
     for (const QString &typeStr : types) {
-        if (typeStr == QLatin1String("reply")) {
+        if (typeStr == QLatin1StringView("reply")) {
             status << Akonadi::MessageStatus::statusReplied();
-        } else if (typeStr == QLatin1String("forward")) {
+        } else if (typeStr == QLatin1StringView("forward")) {
             status << Akonadi::MessageStatus::statusForwarded();
         }
     }
@@ -433,7 +433,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegularExpression rx(QLatin1String("\\b") + attachWordsList.join(QLatin1String("\\b|\\b")) + QLatin1String("\\b"),
+    QRegularExpression rx(QLatin1StringView("\\b") + attachWordsList.join(QLatin1String("\\b|\\b")) + QLatin1String("\\b"),
                           QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words

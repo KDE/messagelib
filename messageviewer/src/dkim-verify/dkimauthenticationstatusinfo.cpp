@@ -17,8 +17,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
 {
     QString valueKey = key;
     // kmime remove extra \r\n but we need it for regexp at the end.
-    if (!valueKey.endsWith(QLatin1String("\r\n"))) {
-        valueKey += QLatin1String("\r\n");
+    if (!valueKey.endsWith(QLatin1StringView("\r\n"))) {
+        valueKey += QLatin1StringView("\r\n");
     }
     // https://tools.ietf.org/html/rfc7601#section-2.2
     // authres-header = "Authentication-Results:" [CFWS] authserv-id
@@ -27,8 +27,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
 
     // 1) extract AuthservId and AuthVersion
     QRegularExpressionMatch match;
-    const QString regStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p()
-        + QLatin1String("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?");
+    const QString regStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1StringView("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p()
+        + QLatin1StringView("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?");
     // qDebug() << " regStr" << regStr;
     static const QRegularExpression regular1(regStr);
     int index = valueKey.indexOf(regular1, 0, &match);
@@ -47,8 +47,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
         return false;
     }
     // check if message authentication was performed
-    const QString authResultStr = DKIMAuthenticationStatusInfoUtil::regexMatchO(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";")
-                                                                                + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none"));
+    const QString authResultStr = DKIMAuthenticationStatusInfoUtil::regexMatchO(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1StringView(";")
+                                                                                + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView("?none"));
     // qDebug() << "authResultStr "<<authResultStr;
     static const QRegularExpression regular2(authResultStr);
     index = valueKey.indexOf(regular2, 0, &match);
@@ -71,11 +71,12 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     DKIMAuthenticationStatusInfo::AuthStatusInfo authStatusInfo;
     // 2) extract methodspec
     const QString methodVersionp =
-        DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("([0-9]+)");
-    const QString method_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1String(")(?:") + methodVersionp + QLatin1String(")?");
+        DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView("([0-9]+)");
+    const QString method_p =
+        QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1StringView(")(?:") + methodVersionp + QLatin1String(")?");
     QString Keyword_result_p = QStringLiteral("none|pass|fail|softfail|policy|neutral|temperror|permerror");
     // older SPF specs (e.g. RFC 4408) use mixed case
-    Keyword_result_p += QLatin1String("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");
+    Keyword_result_p += QLatin1StringView("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");
     const QString result_p = QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + Keyword_result_p + QLatin1Char(')');
     const QString methodspec_p =
         QLatin1Char(';') + DKIMAuthenticationStatusInfoUtil::cfws_op() + method_p + DKIMAuthenticationStatusInfoUtil::cfws_op() + result_p;
@@ -104,7 +105,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     // 3) extract reasonspec (optional)
     const QString reasonspec_p =
-        DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
+        DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1StringView("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
                                                       + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
     static const QRegularExpression reg31(reasonspec_p);
     index = valueKey.indexOf(reg31, 0, &match);
@@ -114,16 +115,16 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0))); // Improve it!
     }
     // 4) extract propspec (optional)
-    QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p()
-        + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
+    QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1StringView("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p()
+        + QLatin1StringView("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
     if (relaxingParsing) {
         // Allow "/" in the header.b (or other) property, even if it is not in a quoted-string
         pvalue_p += QStringLiteral("|[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"[\\]?=]+");
     }
 
-    const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
+    const QString property_p = QLatin1StringView("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
     const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op()
-        + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + property_p + QLatin1Char(')')
+        + QLatin1StringView("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + property_p + QLatin1Char(')')
         + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(')
         + pvalue_p /*+ QLatin1Char(')')*/;
 
@@ -141,22 +142,22 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
             // qDebug() << " value KEy " << valueKey;
             const QString &captured1 = match.captured(1);
             // qDebug() << " captured1 " << captured1;
-            if (captured1 == QLatin1String("header")) {
+            if (captured1 == QLatin1StringView("header")) {
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.header.append(prop);
-            } else if (captured1 == QLatin1String("smtp")) {
+            } else if (captured1 == QLatin1StringView("smtp")) {
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.smtp.append(prop);
-            } else if (captured1 == QLatin1String("body")) {
+            } else if (captured1 == QLatin1StringView("body")) {
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.body.append(prop);
-            } else if (captured1 == QLatin1String("policy")) {
+            } else if (captured1 == QLatin1StringView("policy")) {
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);

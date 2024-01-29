@@ -29,7 +29,7 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     auto mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
     // pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
-    const QString urlPage = QLatin1String(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
+    const QString urlPage = QLatin1StringView(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
     qDebug() << " urlPage" << urlPage;
     pageView->load(QUrl::fromLocalFile(urlPage));
     connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);

@@ -126,7 +126,7 @@ void ComposerTest::testBug271192()
     const QString mailbox = QStringLiteral("example@example.com");
     auto composer = new Composer;
     fillComposerData(composer);
-    composer->infoPart()->setTo(QStringList() << (displayName + QLatin1String(" <") + mailbox + QLatin1String(">")));
+    composer->infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1String(">")));
     QVERIFY(composer->exec());
     QCOMPARE(composer->resultMessages().size(), 1);
     const KMime::Message::Ptr message = composer->resultMessages().constFirst();

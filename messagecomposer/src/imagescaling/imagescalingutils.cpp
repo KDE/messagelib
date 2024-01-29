@@ -74,20 +74,20 @@ void Utils::changeFileName(MessageCore::AttachmentPart::Ptr part)
         QString pattern = MessageComposer::MessageComposerSettings::self()->renameResizedImagesPattern();
         if (!pattern.isEmpty()) {
             const QString filename = part->fileName();
-            pattern.replace(QLatin1String("%t"), QTime::currentTime().toString());
-            pattern.replace(QLatin1String("%d"), QDate::currentDate().toString());
-            pattern.replace(QLatin1String("%n"), filename); // Original name
-            pattern.replace(QLatin1String("%e"), QFileInfo(filename).completeSuffix()); // Original extension
+            pattern.replace(QLatin1StringView("%t"), QTime::currentTime().toString());
+            pattern.replace(QLatin1StringView("%d"), QDate::currentDate().toString());
+            pattern.replace(QLatin1StringView("%n"), filename); // Original name
+            pattern.replace(QLatin1StringView("%e"), QFileInfo(filename).completeSuffix()); // Original extension
 
             const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
             QString newExtension;
-            if (type == QLatin1String("JPG")) {
+            if (type == QLatin1StringView("JPG")) {
                 newExtension = QStringLiteral("jpg");
-            } else if (type == QLatin1String("PNG")) {
+            } else if (type == QLatin1StringView("PNG")) {
                 newExtension = QStringLiteral("png");
             }
             if (!newExtension.isEmpty()) {
-                pattern.replace(QLatin1String("%x"), newExtension); // new Extension
+                pattern.replace(QLatin1StringView("%x"), newExtension); // new Extension
             }
 
             // Need to define pattern type.

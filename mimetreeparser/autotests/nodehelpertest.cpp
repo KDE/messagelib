@@ -235,7 +235,7 @@ void NodeHelperTest::testCreateTempDir()
         NodeHelper helper;
         path = helper.createTempDir(QStringLiteral("foo"));
 
-        QVERIFY(path.endsWith(QLatin1String(".index.foo")));
+        QVERIFY(path.endsWith(QLatin1StringView(".index.foo")));
         QVERIFY(QDir(path).exists());
         QVERIFY(QFile(path).permissions() & QFileDevice::WriteUser);
         QVERIFY(QFile(path).permissions() & QFileDevice::ExeUser);

@@ -9,7 +9,7 @@
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = KMime::CRLFtoLF(file.readAll());

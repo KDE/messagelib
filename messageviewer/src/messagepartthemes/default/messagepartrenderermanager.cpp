@@ -29,7 +29,7 @@ Q_DECLARE_METATYPE(GpgME::Key)
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 KTEXTTEMPLATE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-if (property == QLatin1String("keyID")) {
+if (property == QLatin1StringView("keyID")) {
     return QString::fromLatin1(object.keyID());
 }
 KTEXTTEMPLATE_END_LOOKUP
@@ -39,9 +39,9 @@ namespace KTextTemplate
 template<>
 inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
 {
-    if (property == QLatin1String("name")) {
+    if (property == QLatin1StringView("name")) {
         return object->name();
-    } else if (property == QLatin1String("displayName")) {
+    } else if (property == QLatin1StringView("displayName")) {
         return object->displayName();
     }
     return {};
@@ -56,13 +56,13 @@ inline QVariant
 TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object,
                                                                                   const QString &property)
 {
-    if (property == QLatin1String("keyID")) {
+    if (property == QLatin1StringView("keyID")) {
         return QString::fromLatin1(object.first.keyID());
     }
-    if (property == QLatin1String("id")) {
+    if (property == QLatin1StringView("id")) {
         return QString::fromUtf8(object.second.userID(0).id());
     }
-    if (property == QLatin1String("mainID")) {
+    if (property == QLatin1StringView("mainID")) {
         return QString::fromLatin1(object.second.keyID());
     }
     return {};

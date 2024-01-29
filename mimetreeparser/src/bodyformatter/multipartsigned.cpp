@@ -45,7 +45,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     Q_ASSERT(signature);
 
     QString protocolContentType = node->contentType()->parameter(QStringLiteral("protocol")).toLower();
-    const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
+    const QString signatureContentType = QLatin1StringView(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
         qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
                                          "using content-type of the signature:"
@@ -54,9 +54,9 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     }
 
     const QGpgME::Protocol *protocol = nullptr;
-    if (protocolContentType == QLatin1String("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
+    if (protocolContentType == QLatin1StringView("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
         protocol = QGpgME::smime();
-    } else if (protocolContentType == QLatin1String("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
+    } else if (protocolContentType == QLatin1StringView("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
         protocol = QGpgME::openpgp();
     }
 

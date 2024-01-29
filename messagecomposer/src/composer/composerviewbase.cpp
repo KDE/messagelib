@@ -479,16 +479,16 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             }
         }
         auto header = new KMime::Headers::Generic("X-KMail-UnExpanded-To");
-        header->from7BitString(unExpandedTo.join(QLatin1String(", ")).toLatin1());
+        header->from7BitString(unExpandedTo.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-CC");
-        header->from7BitString(unExpandedCc.join(QLatin1String(", ")).toLatin1());
+        header->from7BitString(unExpandedCc.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-BCC");
-        header->from7BitString(unExpandedBcc.join(QLatin1String(", ")).toLatin1());
+        header->from7BitString(unExpandedBcc.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-Reply-To");
-        header->from7BitString(unExpandedReplyTo.join(QLatin1String(", ")).toLatin1());
+        header->from7BitString(unExpandedReplyTo.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(header);
         autoresizeImage = false;
     }
@@ -752,10 +752,10 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
 
     // Add encryptionkeys from id to keyResolver
     if (!id.pgpEncryptionKey().isEmpty()) {
-        encryptToSelfKeys.push_back(QLatin1String(id.pgpEncryptionKey()));
+        encryptToSelfKeys.push_back(QLatin1StringView(id.pgpEncryptionKey()));
     }
     if (!id.smimeEncryptionKey().isEmpty()) {
-        encryptToSelfKeys.push_back(QLatin1String(id.smimeEncryptionKey()));
+        encryptToSelfKeys.push_back(QLatin1StringView(id.smimeEncryptionKey()));
     }
     if (canceled || keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set encryptoToSelf keys!";
@@ -764,10 +764,10 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
 
     // Add signingkeys from id to keyResolver
     if (!id.pgpSigningKey().isEmpty()) {
-        signKeys.push_back(QLatin1String(id.pgpSigningKey()));
+        signKeys.push_back(QLatin1StringView(id.pgpSigningKey()));
     }
     if (!id.smimeSigningKey().isEmpty()) {
-        signKeys.push_back(QLatin1String(id.smimeSigningKey()));
+        signKeys.push_back(QLatin1StringView(id.smimeSigningKey()));
     }
     if (canceled || keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set signing keys!";
@@ -1080,15 +1080,15 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
     const QList<QByteArray> toAddresses = msg->to()->addresses();
     for (const QByteArray &address : toAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
     }
     const QList<QByteArray> ccAddresses = msg->cc()->addresses();
     for (const QByteArray &address : ccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
     }
     const QList<QByteArray> bccAddresses = msg->bcc()->addresses();
     for (const QByteArray &address : bccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
     }
 }
 
@@ -1178,7 +1178,7 @@ void ComposerViewBase::initAutoSave()
     qCDebug(MESSAGECOMPOSER_LOG) << "initialising autosave";
 
     // Ensure that the autosave directory exists.
-    QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/"));
+    QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/"));
     if (!dataDirectory.exists(QStringLiteral("autosave"))) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Creating autosave directory.";
         dataDirectory.mkdir(QStringLiteral("autosave"));
@@ -1248,10 +1248,10 @@ void ComposerViewBase::cleanupAutoSave()
         qCDebug(MESSAGECOMPOSER_LOG) << "deleting autosave files" << m_autoSaveUUID;
 
         // Delete the autosave files
-        QDir autoSaveDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave"));
+        QDir autoSaveDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave"));
 
         // Filter out only this composer window's autosave files
-        const QStringList autoSaveFilter{m_autoSaveUUID + QLatin1String("*")};
+        const QStringList autoSaveFilter{m_autoSaveUUID + QLatin1StringView("*")};
         autoSaveDir.setNameFilters(autoSaveFilter);
 
         // Return the files to be removed
@@ -1331,7 +1331,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
 
 void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
 {
-    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave/");
+    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave/");
     QDir().mkpath(autosavePath);
     const QString filename = autosavePath + m_autoSaveUUID;
     QSaveFile file(filename);
@@ -1898,8 +1898,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                              "attached file but you have not attached anything.\n"
                                                              "Do you want to attach a file to your message?"),
                                                         i18nc("@title:window", "File Attachment Reminder"),
-                                                        KGuiItem(i18n("&Attach File..."), QLatin1String("mail-attachment")),
-                                                        KGuiItem(i18n("&Send as Is"), QLatin1String("mail-send")));
+                                                        KGuiItem(i18n("&Attach File..."), QLatin1StringView("mail-attachment")),
+                                                        KGuiItem(i18n("&Send as Is"), QLatin1StringView("mail-send")));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }

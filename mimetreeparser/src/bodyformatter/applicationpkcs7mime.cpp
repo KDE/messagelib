@@ -45,22 +45,22 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
     const auto mt = ct->mimeType();
     const auto isCorrectMimeType = mt == QByteArrayLiteral("application/pkcs7-mime") || mt == QByteArrayLiteral("application/x-pkcs7-mime");
     const auto hasCorrectName = mt == QByteArrayLiteral("application/octet-stream")
-        && (ct->name().endsWith(QLatin1String("p7m")) || ct->name().endsWith(QLatin1String("p7s")) || ct->name().endsWith(QLatin1String("p7c")));
+        && (ct->name().endsWith(QLatin1StringView("p7m")) || ct->name().endsWith(QLatin1String("p7s")) || ct->name().endsWith(QLatin1String("p7c")));
     if (!isCorrectMimeType && !hasCorrectName) {
         return {};
     }
 
     const QString smimeType = node->contentType(false)->parameter(QStringLiteral("smime-type")).toLower();
 
-    if (smimeType == QLatin1String("certs-only")) {
+    if (smimeType == QLatin1StringView("certs-only")) {
         part.processResult()->setNeverDisplayInline(true);
 
         CertMessagePart::Ptr mp(new CertMessagePart(part.objectTreeParser(), node, smimeCrypto, part.source()->autoImportKeys()));
         return mp;
     }
 
-    bool isSigned = (smimeType == QLatin1String("signed-data"));
-    bool isEncrypted = (smimeType == QLatin1String("enveloped-data"));
+    bool isSigned = (smimeType == QLatin1StringView("signed-data"));
+    bool isEncrypted = (smimeType == QLatin1StringView("enveloped-data"));
 
     // Analyze "signTestNode" node to find/verify a signature.
     // If zero part.objectTreeParser() verification was successfully done after

@@ -385,7 +385,7 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile()
     const QString original(bodytext);
     richtextComposerNg.setPlainText(original);
 
-    KIdentityManagementCore::Signature newSignature(QLatin1String(SIGNATURE_DATA_DIR) + QLatin1Char('/') + signatureFile, false);
+    KIdentityManagementCore::Signature newSignature(QLatin1StringView(SIGNATURE_DATA_DIR) + QLatin1Char('/') + signatureFile, false);
     newSignature.setEnabledSignature(true);
     newSignature.setInlinedHtml(false);
 

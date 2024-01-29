@@ -118,7 +118,7 @@ void SearchCollectionIndexingWarning::queryIndexerStatus()
         if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
             continue;
         }
-        if (PimCommon::Util::isImapResource(col.resource()) && !col.cachePolicy().localParts().contains(QLatin1String("RFC822"))) {
+        if (PimCommon::Util::isImapResource(col.resource()) && !col.cachePolicy().localParts().contains(QLatin1StringView("RFC822"))) {
             continue;
         }
         const qlonglong result = mIndexedItems->indexedItems(col.id());

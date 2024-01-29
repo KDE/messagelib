@@ -26,7 +26,7 @@ TrackingWarningWidget::~TrackingWarningWidget() = default;
 
 void TrackingWarningWidget::slotShowDetails(const QString &content)
 {
-    if (content == QLatin1String("mailtrackingdetails")) {
+    if (content == QLatin1StringView("mailtrackingdetails")) {
         if (!mMailTrackingDetailDialog) {
             mMailTrackingDetailDialog = new WebEngineViewer::TrackingDetailsDialog;
         }
@@ -37,15 +37,15 @@ void TrackingWarningWidget::slotShowDetails(const QString &content)
 
 QString TrackingWarningWidget::generateDetails() const
 {
-    QString details = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
+    QString details = QLatin1StringView("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
 
     QMapIterator<QString, blackListFound> i(mBackLists);
     while (i.hasNext()) {
         i.next();
-        details += QLatin1String("<li>")
+        details += QLatin1StringView("<li>")
             + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", i.value().number, i.key(), i.value().url);
     }
-    details += QLatin1String("</ul>");
+    details += QLatin1StringView("</ul>");
     return details;
 }
 

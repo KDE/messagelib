@@ -38,15 +38,15 @@ template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object,
                                                                                     const QString &property)
 {
-    if (property == QLatin1String("nameOnly")) {
+    if (property == QLatin1StringView("nameOnly")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
-    } else if (property == QLatin1String("isSet")) {
+    } else if (property == QLatin1StringView("isSet")) {
         return !object->asUnicodeString().isEmpty();
-    } else if (property == QLatin1String("fullAddress")) {
+    } else if (property == QLatin1StringView("fullAddress")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
-    } else if (property == QLatin1String("str")) {
+    } else if (property == QLatin1StringView("str")) {
         return object->asUnicodeString();
-    } else if (property.startsWith(QLatin1String("expandable"))) {
+    } else if (property.startsWith(QLatin1StringView("expandable"))) {
         const auto &name = property.mid(10);
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object,
                                                                        MessageCore::StringUtil::DisplayFullAddress,
@@ -66,15 +66,15 @@ inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, con
 }
 }
 KTEXTTEMPLATE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-if (property == QLatin1String("nameOnly")) {
+if (property == QLatin1StringView("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
-} else if (property == QLatin1String("isSet")) {
+} else if (property == QLatin1StringView("isSet")) {
     return !object->asUnicodeString().isEmpty();
-} else if (property == QLatin1String("fullAddress")) {
+} else if (property == QLatin1StringView("fullAddress")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
-} else if (property == QLatin1String("str")) {
+} else if (property == QLatin1StringView("str")) {
     return object->asUnicodeString();
-} else if (property.startsWith(QLatin1String("expandable"))) {
+} else if (property.startsWith(QLatin1StringView("expandable"))) {
     const auto &name = property.mid(10);
     const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object.data(),
                                                                    MessageCore::StringUtil::DisplayFullAddress,
@@ -93,15 +93,15 @@ template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object,
                                                                                     const QString &property)
 {
-    if (property == QLatin1String("nameOnly")) {
+    if (property == QLatin1StringView("nameOnly")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
-    } else if (property == QLatin1String("isSet")) {
+    } else if (property == QLatin1StringView("isSet")) {
         return !object->asUnicodeString().isEmpty();
-    } else if (property == QLatin1String("fullAddress")) {
+    } else if (property == QLatin1StringView("fullAddress")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
-    } else if (property == QLatin1String("str")) {
+    } else if (property == QLatin1StringView("str")) {
         return object->asUnicodeString();
-    } else if (property.startsWith(QLatin1String("expandable"))) {
+    } else if (property.startsWith(QLatin1StringView("expandable"))) {
         const auto &name = property.mid(10);
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object,
                                                                        MessageCore::StringUtil::DisplayFullAddress,
@@ -115,15 +115,15 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
 }
 }
 KTEXTTEMPLATE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
-if (property == QLatin1String("nameOnly")) {
+if (property == QLatin1StringView("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
-} else if (property == QLatin1String("isSet")) {
+} else if (property == QLatin1StringView("isSet")) {
     return !object->asUnicodeString().isEmpty();
-} else if (property == QLatin1String("fullAddress")) {
+} else if (property == QLatin1StringView("fullAddress")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
-} else if (property == QLatin1String("str")) {
+} else if (property == QLatin1StringView("str")) {
     return object->asUnicodeString();
-} else if (property.startsWith(QLatin1String("expandable"))) {
+} else if (property.startsWith(QLatin1StringView("expandable"))) {
     const auto &name = property.mid(10);
     const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object.data(),
                                                                    MessageCore::StringUtil::DisplayFullAddress,
@@ -140,17 +140,17 @@ template<>
 inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
 {
     MessageViewer::HeaderStyleUtil::HeaderStyleUtilDateFormat dateFormat;
-    if (property == QLatin1String("str")) {
+    if (property == QLatin1StringView("str")) {
         return HeaderStyleUtil::dateStr(object);
-    } else if (property == QLatin1String("short")) {
+    } else if (property == QLatin1StringView("short")) {
         dateFormat = MessageViewer::HeaderStyleUtil::ShortDate;
-    } else if (property == QLatin1String("long")) {
+    } else if (property == QLatin1StringView("long")) {
         dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
-    } else if (property == QLatin1String("fancylong")) {
+    } else if (property == QLatin1StringView("fancylong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::FancyLongDate;
-    } else if (property == QLatin1String("fancyshort")) {
+    } else if (property == QLatin1StringView("fancyshort")) {
         dateFormat = MessageViewer::HeaderStyleUtil::FancyShortDate;
-    } else if (property == QLatin1String("localelong")) {
+    } else if (property == QLatin1StringView("localelong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
     } else {
         return {};

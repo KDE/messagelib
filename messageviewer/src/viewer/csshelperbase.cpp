@@ -134,7 +134,7 @@ QString CSSHelperBase::addEndBlockQuote(int numberBlock) const
 {
     QString blockQuote;
     for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += QLatin1String("</blockquote>");
+        blockQuote += QLatin1StringView("</blockquote>");
     }
     return blockQuote;
 }
@@ -143,7 +143,7 @@ QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
 {
     QString blockQuote;
     for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += QLatin1String("<blockquote>");
+        blockQuote += QLatin1StringView("<blockquote>");
     }
     return blockQuote;
 }
@@ -184,11 +184,11 @@ QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
 
 QString CSSHelperBase::cssDefinitions(const HtmlHeadSettings &htmlHeadSetting) const
 {
-    return commonCssDefinitions() + QLatin1String("@media screen {\n\n") + screenCssDefinitions(this, htmlHeadSetting)
-        + QLatin1String(
+    return commonCssDefinitions() + QLatin1StringView("@media screen {\n\n") + screenCssDefinitions(this, htmlHeadSetting)
+        + QLatin1StringView(
                "}\n"
                "@media print {\n\n")
-        + printCssDefinitions(htmlHeadSetting) + QLatin1String("}\n");
+        + printCssDefinitions(htmlHeadSetting) + QLatin1StringView("}\n");
 }
 
 QString CSSHelperBase::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
@@ -270,20 +270,20 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
     const QFont printFont = bodyFont(htmlHeadSettings.fixedFont, true /* print */);
     QString quoteCSS;
     if (printFont.italic()) {
-        quoteCSS += QLatin1String("  font-style: italic ! important;\n");
+        quoteCSS += QLatin1StringView("  font-style: italic ! important;\n");
     }
     if (printFont.bold()) {
-        quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
+        quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1String("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
+        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
     }
     quoteCSS += quoteCssDefinition();
 
     QStringList inlineMessageCss;
     inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
     for (const auto &msgStyle : inlineMessageStyles) {
-        inlineMessageCss.push_back(QLatin1String("div.") + QString::fromLatin1(msgStyle.cssName));
+        inlineMessageCss.push_back(QLatin1StringView("div.") + QString::fromLatin1(msgStyle.cssName));
     }
 
     return QStringLiteral(
@@ -331,7 +331,7 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
               "div.noprint {\n"
               "  display:none ! important;\n"
               "}\n\n")
-              .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
+              .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(QLatin1StringView(", ")))
         + quoteCSS + fullAddressList();
 }
 
@@ -433,18 +433,18 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
     const QString cPgpEncrBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpEncrB.name();
     const QString cPgpOk1BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk1B.name();
     const QString cPgpOk0BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk0B.name();
-    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1String("px");
+    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1StringView("px");
     const QPalette &pal = QApplication::palette();
 
     QString quoteCSS;
     if (bodyFont(htmlHeadSettings.fixedFont).italic()) {
-        quoteCSS += QLatin1String("  font-style: italic ! important;\n");
+        quoteCSS += QLatin1StringView("  font-style: italic ! important;\n");
     }
     if (bodyFont(htmlHeadSettings.fixedFont).bold()) {
-        quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
+        quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1String("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
+        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
     }
 
     // CSS definitions for quote levels 1-3
@@ -460,7 +460,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
             quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes) {
-            quoteCSS += QLatin1String("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1String("% ! important;\n");
+            quoteCSS += QLatin1StringView("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1String("% ! important;\n");
         }
         quoteCSS += QStringLiteral("}\n\n");
     }
@@ -480,7 +480,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
         if (mShrinkQuotes) {
             quoteCSS += QStringLiteral("  font-size: 70% ! important;\n");
         }
-        quoteCSS += QLatin1String("}\n\n");
+        quoteCSS += QLatin1StringView("}\n\n");
     }
 
     quoteCSS += quoteCssDefinition();
@@ -683,7 +683,7 @@ QString CSSHelperBase::commonCssDefinitions() const
     QStringList inlineMessageCss;
     inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
     for (const auto &msgStyle : inlineMessageStyles) {
-        inlineMessageCss.push_back(QLatin1String("div.") + QString::fromLatin1(msgStyle.cssName));
+        inlineMessageCss.push_back(QLatin1StringView("div.") + QString::fromLatin1(msgStyle.cssName));
     }
     return QStringLiteral(
                "div.header {\n"
@@ -756,7 +756,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                "  margin-left:-10px;\n"
                "}\n\n")
         .arg(extraCommonCss(headerFont))
-        .arg(inlineMessageCss.join(QLatin1String(", ")))
+        .arg(inlineMessageCss.join(QLatin1StringView(", ")))
         .arg(mForegroundColor.red())
         .arg(mForegroundColor.green())
         .arg(mForegroundColor.blue())

@@ -584,7 +584,7 @@ static QString canonicalAddress(const QString &_address)
     if (!address.contains(QLatin1Char('@'))) {
         // local address
         // return address + '@' + KNetwork::KResolver::localHostName();
-        return address + QLatin1String("@localdomain");
+        return address + QLatin1StringView("@localdomain");
     } else {
         return address;
     }
@@ -1249,7 +1249,7 @@ void Kleo::KeyResolver::dump() const
             for (auto kit = sit->keys.begin(), sitEnd = sit->keys.end(); kit != sitEnd; ++kit) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
-            qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: " << qPrintable(sit->recipients.join(QLatin1String(", ")));
+            qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: " << qPrintable(sit->recipients.join(QLatin1StringView(", ")));
         }
     }
 #endif
@@ -1298,11 +1298,11 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
             for (auto it = keys.begin(), end = keys.end(); it != end; ++it) {
                 if (it->protocol() == GpgME::OpenPGP) {
                     if (const char *fpr = it->primaryFingerprint()) {
-                        pref.pgpKeyFingerprints.push_back(QLatin1String(fpr));
+                        pref.pgpKeyFingerprints.push_back(QLatin1StringView(fpr));
                     }
                 } else if (it->protocol() == GpgME::CMS) {
                     if (const char *fpr = it->primaryFingerprint()) {
-                        pref.smimeCertFingerprints.push_back(QLatin1String(fpr));
+                        pref.smimeCertFingerprints.push_back(QLatin1StringView(fpr));
                     }
                 }
             }
@@ -1459,7 +1459,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
     const QStringList fingerprints = keysForAddress(address);
 
     if (!fingerprints.empty()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x" << fingerprints.join(QLatin1String(", 0x")) << "for" << person;
+        qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x" << fingerprints.join(QLatin1StringView(", 0x")) << "for" << person;
         std::vector<GpgME::Key> keys = lookup(fingerprints);
         if (!keys.empty()) {
             // Check if all of the keys are trusted and valid encryption keys
@@ -1570,7 +1570,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
     if (patterns.empty()) {
         return {};
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QLatin1String("\", \"")) << "\"," << secret << ")";
+    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QLatin1StringView("\", \"")) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
     if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat)) {
         if (const QGpgME::Protocol *p = QGpgME::openpgp()) {

@@ -145,18 +145,18 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
     bool mailAllowToRemoteContent = false;
     const QStringList customs = addressee.customs();
     for (const QString &custom : customs) {
-        if (custom.contains(QLatin1String("MailPreferedFormatting"))) {
+        if (custom.contains(QLatin1StringView("MailPreferedFormatting"))) {
             const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailPreferedFormatting"));
-            if (value == QLatin1String("TEXT")) {
+            if (value == QLatin1StringView("TEXT")) {
                 forceDisplayTo = Viewer::Text;
-            } else if (value == QLatin1String("HTML")) {
+            } else if (value == QLatin1StringView("HTML")) {
                 forceDisplayTo = Viewer::Html;
             } else {
                 forceDisplayTo = Viewer::UseGlobalSetting;
             }
-        } else if (custom.contains(QLatin1String("MailAllowToRemoteContent"))) {
+        } else if (custom.contains(QLatin1StringView("MailAllowToRemoteContent"))) {
             const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailAllowToRemoteContent"));
-            mailAllowToRemoteContent = (value == QLatin1String("TRUE"));
+            mailAllowToRemoteContent = (value == QLatin1StringView("TRUE"));
         }
     }
     Q_EMIT changeDisplayMail(forceDisplayTo, mailAllowToRemoteContent);

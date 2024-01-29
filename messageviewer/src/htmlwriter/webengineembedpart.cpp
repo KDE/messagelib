@@ -28,7 +28,7 @@ QString WebEngineEmbedPart::contentUrl(const QString &contentId) const
 
 void WebEngineEmbedPart::addEmbedPart(const QByteArray &contentId, const QString &contentURL)
 {
-    mEmbeddedPartMap[QLatin1String(contentId)] = contentURL;
+    mEmbeddedPartMap[QLatin1StringView(contentId)] = contentURL;
 }
 
 void WebEngineEmbedPart::clear()

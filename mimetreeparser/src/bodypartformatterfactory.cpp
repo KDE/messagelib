@@ -109,7 +109,7 @@ QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatters
         if (mt.isValid()) {
             processedTypes[i] = mt.name(); // resolve alias if necessary
         }
-        if (processedTypes[i] == QLatin1String("application/octet-stream")) { // we'll deal with that later
+        if (processedTypes[i] == QLatin1StringView("application/octet-stream")) { // we'll deal with that later
             continue;
         }
         d->appendFormattersForType(processedTypes[i], r);
@@ -124,8 +124,8 @@ QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatters
     }
 
     // make sure we always have a suitable fallback formatter
-    if (mimeType.startsWith(QLatin1String("multipart/"))) {
-        if (mimeType != QLatin1String("multipart/mixed")) {
+    if (mimeType.startsWith(QLatin1StringView("multipart/"))) {
+        if (mimeType != QLatin1StringView("multipart/mixed")) {
             d->appendFormattersForType(QStringLiteral("multipart/mixed"), r);
         }
     } else {
@@ -139,7 +139,7 @@ void BodyPartFormatterFactory::loadPlugins()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/bodypartformatter"));
     for (const auto &md : plugins) {
-        const auto formatterData = md.rawData().value(QLatin1String("formatter")).toArray();
+        const auto formatterData = md.rawData().value(QLatin1StringView("formatter")).toArray();
         if (formatterData.isEmpty()) {
             continue;
         }
@@ -152,13 +152,13 @@ void BodyPartFormatterFactory::loadPlugins()
         const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
         for (int i = 0; (bfp = plugin->bodyPartFormatter(i)) && i < formatterData.size(); ++i) {
             const auto metaData = formatterData.at(i).toObject();
-            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
+            const auto mimetype = metaData.value(QLatin1StringView("mimetype")).toString();
             if (mimetype.isEmpty()) {
                 qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << md.fileName() << "returned empty mimetype specification for index" << i;
                 break;
             }
             // priority should always be higher than the built-in ones, otherwise what's the point?
-            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
+            const auto priority = metaData.value(QLatin1StringView("priority")).toInt() + 100;
             qCDebug(MIMETREEPARSER_LOG) << "plugin for " << mimetype << priority;
             insert(mimetype, bfp, priority);
         }

@@ -54,7 +54,7 @@ DKIMRuleDialog::~DKIMRuleDialog()
 
 void DKIMRuleDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myDKIMRuleDialogConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -63,7 +63,7 @@ void DKIMRuleDialog::readConfig()
 
 void DKIMRuleDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myDKIMRuleDialogConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
     group.writeEntry("Size", size());
     group.sync();
 }

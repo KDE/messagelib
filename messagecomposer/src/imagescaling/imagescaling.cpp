@@ -121,7 +121,7 @@ QByteArray ImageScaling::mimetype() const
     } else {
         // Add more mimetype if a day we add more saving format.
         const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
-        if (type == QLatin1String("JPG")) {
+        if (type == QLatin1StringView("JPG")) {
             return QByteArrayLiteral("image/jpeg");
         } else {
             return QByteArrayLiteral("image/png");
@@ -158,19 +158,19 @@ QString ImageScaling::generateNewName()
     if (type.isEmpty()) {
         type = QStringLiteral("PNG");
     }
-    if (d->mName.endsWith(QLatin1String(".png"))) {
-        if (type != QLatin1String("PNG")) {
-            d->mName.replace(QLatin1String(".png"), QLatin1String(".jpg"));
+    if (d->mName.endsWith(QLatin1StringView(".png"))) {
+        if (type != QLatin1StringView("PNG")) {
+            d->mName.replace(QLatin1StringView(".png"), QLatin1String(".jpg"));
         }
-    } else if (d->mName.endsWith(QLatin1String(".jpg"))) {
-        if (type != QLatin1String("JPG")) {
-            d->mName.replace(QLatin1String(".jpg"), QLatin1String(".png"));
+    } else if (d->mName.endsWith(QLatin1StringView(".jpg"))) {
+        if (type != QLatin1StringView("JPG")) {
+            d->mName.replace(QLatin1StringView(".jpg"), QLatin1String(".png"));
         }
     } else {
-        if (type == QLatin1String("PNG")) {
-            d->mName += QLatin1String(".png");
+        if (type == QLatin1StringView("PNG")) {
+            d->mName += QLatin1StringView(".png");
         } else {
-            d->mName += QLatin1String(".jpg");
+            d->mName += QLatin1StringView(".jpg");
         }
     }
     return d->mName;

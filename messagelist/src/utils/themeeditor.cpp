@@ -157,7 +157,7 @@ void ThemeContentItemSourceLabel::startDrag()
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
     *((Theme::ContentItem::Type *)arry.data()) = mType;
-    data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
+    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), arry);
     auto drag = new QDrag(this);
     drag->setMimeData(data);
     // drag->setPixmap( pix );
@@ -428,7 +428,7 @@ void ThemePreviewWidget::internalHandleDragEnterEvent(QDragEnterEvent *e)
     if (!e->mimeData()) {
         return;
     }
-    if (!e->mimeData()->hasFormat(QLatin1String(gThemeContentItemTypeDndMimeDataFormat))) {
+    if (!e->mimeData()->hasFormat(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat))) {
         return;
     }
 
@@ -468,11 +468,11 @@ void ThemePreviewWidget::internalHandleDragMoveEvent(QDragMoveEvent *e)
     if (!e->mimeData()) {
         return;
     }
-    if (!e->mimeData()->hasFormat(QLatin1String(gThemeContentItemTypeDndMimeDataFormat))) {
+    if (!e->mimeData()->hasFormat(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat))) {
         return;
     }
 
-    QByteArray arry = e->mimeData()->data(QLatin1String(gThemeContentItemTypeDndMimeDataFormat));
+    QByteArray arry = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
 
     if (arry.size() != sizeof(Theme::ContentItem::Type)) {
         return; // ugh
@@ -513,11 +513,11 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
         return;
     }
 
-    if (!e->mimeData()->hasFormat(QLatin1String(gThemeContentItemTypeDndMimeDataFormat))) {
+    if (!e->mimeData()->hasFormat(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat))) {
         return;
     }
 
-    QByteArray arry = e->mimeData()->data(QLatin1String(gThemeContentItemTypeDndMimeDataFormat));
+    QByteArray arry = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
 
     if (arry.size() != sizeof(Theme::ContentItem::Type)) {
         return; // ugh
@@ -782,7 +782,7 @@ void ThemePreviewWidget::mouseMoveEvent(QMouseEvent *e)
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
     *((Theme::ContentItem::Type *)arry.data()) = mSelectedThemeContentItem->type();
-    data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
+    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), arry);
     auto drag = new QDrag(this);
     drag->setMimeData(data);
 

@@ -617,9 +617,9 @@ void AttachmentControllerBase::showContextMenu()
             if (mime.isValid()) {
                 parentMimeType = mime.allAncestors();
             }
-            if ((mimetype == QLatin1String("text/plain")) || (mimetype == QLatin1String("image/png")) || (mimetype == QLatin1String("image/jpeg"))
-                || parentMimeType.contains(QLatin1String("text/plain")) || parentMimeType.contains(QLatin1String("image/png"))
-                || parentMimeType.contains(QLatin1String("image/jpeg"))) {
+            if ((mimetype == QLatin1StringView("text/plain")) || (mimetype == QLatin1String("image/png")) || (mimetype == QLatin1String("image/jpeg"))
+                || parentMimeType.contains(QLatin1StringView("text/plain")) || parentMimeType.contains(QLatin1String("image/png"))
+                || parentMimeType.contains(QLatin1StringView("image/jpeg"))) {
                 menu.addAction(d->viewContextAction);
             }
             d->createOpenWithMenu(&menu, d->selectedParts.constFirst());
@@ -905,7 +905,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
             MessageCore::StringUtil::setEncodingFile(urlWithEncoding, encoding);
             QMimeDatabase mimeDb;
             const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
-            if (mimeType.name() == QLatin1String("inode/directory")) {
+            if (mimeType.name() == QLatin1StringView("inode/directory")) {
                 const int rc = KMessageBox::warningTwoActions(d->wParent,
                                                               i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
                                                               i18nc("@title:window", "Attach directory"),

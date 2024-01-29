@@ -47,7 +47,7 @@ QMimeType MimeTreeParser::Util::mimetype(const QString &name)
     // consider the filename if mimetype cannot be found by content-type
     const auto mimeTypes = db.mimeTypesForFileName(name);
     for (const auto &mt : mimeTypes) {
-        if (mt.name() != QLatin1String("application/octet-stream")) {
+        if (mt.name() != QLatin1StringView("application/octet-stream")) {
             return mt;
         }
     }
@@ -63,23 +63,23 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
     QString tMimeType = mimeType;
 
     // convert non-registered types to registered types
-    if (mimeType == QLatin1String("application/x-vnd.kolab.contact")) {
+    if (mimeType == QLatin1StringView("application/x-vnd.kolab.contact")) {
         tMimeType = QStringLiteral("text/x-vcard");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.event")) {
+    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.event")) {
         tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.event");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.task")) {
+    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.task")) {
         tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.todo");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.journal")) {
+    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.journal")) {
         tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.journal");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.note")) {
+    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.note")) {
         tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
-    } else if (mimeType == QLatin1String("image/jpg")) {
+    } else if (mimeType == QLatin1StringView("image/jpg")) {
         tMimeType = QStringLiteral("image/jpeg");
-    } else if (mimeType == QLatin1String("application/x-pkcs7-signature")) {
+    } else if (mimeType == QLatin1StringView("application/x-pkcs7-signature")) {
         tMimeType = QStringLiteral("application/pkcs7-signature");
-    } else if (mimeType == QLatin1String("message/global")) {
+    } else if (mimeType == QLatin1StringView("message/global")) {
         tMimeType = QStringLiteral("message/rfc822");
-    } else if (mimeType == QLatin1String("text/x-moz-deleted")) {
+    } else if (mimeType == QLatin1StringView("text/x-moz-deleted")) {
         // Avoid debug warning about unknown mimetype
         // Bug: 468801
         // We need to show unknown icon
@@ -99,7 +99,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
         }
     }
     // WorkAround for #199083
-    if (fileName == QLatin1String("text-vcard")) {
+    if (fileName == QLatin1StringView("text-vcard")) {
         fileName = QStringLiteral("text-x-vcard");
     }
 
@@ -109,7 +109,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
             fileName = fallbackFileName2;
         }
         if (!fileName.isEmpty()) {
-            fileName = mimeDb.mimeTypeForFile(QLatin1String("/tmp/") + fileName).iconName();
+            fileName = mimeDb.mimeTypeForFile(QLatin1StringView("/tmp/") + fileName).iconName();
         }
     }
 
@@ -132,7 +132,7 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
         }
     }
     mimeType = mimeType.toLower();
-    return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(), ct->name());
+    return MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(mimeType), node->contentDisposition()->filename(), ct->name());
 }
 
 QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)

@@ -43,7 +43,7 @@ void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithValidItem()
 
     QVERIFY(!part->data().isEmpty());
     QCOMPARE(part->mimeType(), QByteArray("text/x-vcard"));
-    const QString newName = name + QLatin1String(".vcf");
+    const QString newName = name + QLatin1StringView(".vcf");
     QCOMPARE(part->name(), newName);
     QVERIFY(part->description().isEmpty());
     QVERIFY(!part->isInline());

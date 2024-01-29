@@ -54,7 +54,7 @@ public:
     [[nodiscard]] bool handleClick(const QUrl &, ViewerPrivate *) const override;
     [[nodiscard]] bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const override
     {
-        return url.scheme() == QLatin1String("kmail");
+        return url.scheme() == QLatin1StringView("kmail");
     }
 
     [[nodiscard]] QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;

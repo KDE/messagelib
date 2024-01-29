@@ -36,7 +36,7 @@ bool DMARCRecordJob::start()
 
 QString DMARCRecordJob::resolvDnsValue() const
 {
-    const QString name = QLatin1String("_dmarc.") + mDomainName;
+    const QString name = QLatin1StringView("_dmarc.") + mDomainName;
     qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DMARCRecordJob::resolvDnsValue" << name;
     return name;
 }

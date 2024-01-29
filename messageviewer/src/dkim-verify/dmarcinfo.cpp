@@ -17,18 +17,18 @@ bool DMARCInfo::parseDMARC(const QString &key)
         return false;
     }
     QString cleanKey = key;
-    cleanKey.replace(QLatin1String("; "), QLatin1String(";"));
+    cleanKey.replace(QLatin1StringView("; "), QLatin1String(";"));
     const QStringList items = cleanKey.split(QLatin1Char(';'), Qt::SkipEmptyParts);
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
-        if (elem.startsWith(QLatin1String("v="))) {
+        if (elem.startsWith(QLatin1StringView("v="))) {
             // v: Version (plain-text; REQUIRED).  Identifies the record retrieved
             //      as a DMARC record.  It MUST have the value of "DMARC1".  The value
             //      of this tag MUST match precisely; if it does not or it is absent,
             //      the entire retrieved record MUST be ignored.  It MUST be the first
             //      tag in the list.
             mVersion = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("r="))) {
+        } else if (elem.startsWith(QLatin1StringView("r="))) {
             // adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
             //   strict or relaxed DKIM Identifier Alignment mode is required by
             //   the Domain Owner.  See Section 3.1.1 for details.  Valid values
@@ -36,7 +36,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //      r: relaxed mode
             //      s: strict mode
             mAdkim = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("p="))) {
+        } else if (elem.startsWith(QLatin1StringView("p="))) {
             // p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
             //                    records).  Indicates the policy to be enacted by the Receiver at
             //                    the request of the Domain Owner.  Policy applies to the domain
@@ -59,7 +59,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //                occur during the SMTP transaction.  See Section 10.3 for some
             //                discussion of SMTP rejection methods and their implications.
             mPolicy = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("ptc="))) {
+        } else if (elem.startsWith(QLatin1StringView("ptc="))) {
             // pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
             //      default is 100).  Percentage of messages from the Domain Owner's
             //      mail stream to which the DMARC policy is to be applied.  However,
@@ -78,7 +78,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //         selected = false
             // TODO verify if it's a percentage
             mPercentage = QStringView(elem).right(elem.length() - 4).toInt();
-        } else if (elem.startsWith(QLatin1String("sp="))) {
+        } else if (elem.startsWith(QLatin1StringView("sp="))) {
             // sp:  Requested Mail Receiver policy for all subdomains (plain-text;
             //   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
             //   the request of the Domain Owner.  It applies only to subdomains of
@@ -91,7 +91,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             mSubDomainPolicy = elem.right(elem.length() - 3);
         }
     }
-    if (mAdkim.isEmpty() && mVersion == QLatin1String("DMARC1")) {
+    if (mAdkim.isEmpty() && mVersion == QLatin1StringView("DMARC1")) {
         mAdkim = QLatin1Char('r');
     }
 

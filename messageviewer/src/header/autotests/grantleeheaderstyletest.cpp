@@ -36,7 +36,7 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     header.replace(QRegularExpression(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
     header.replace(QRegularExpression(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
     header.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
-    header.replace(QLatin1String("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
+    header.replace(QLatin1StringView("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
 
     QString outName = name + QStringLiteral(".out.html");
     QString fName = name + QStringLiteral(".html");

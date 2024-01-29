@@ -52,9 +52,9 @@ void KeyResolverTest::testAutocrypt()
 
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
 
-    QFile file1(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(baseDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1String(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(baseDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
 
     QCOMPARE(keyResolver.setEncryptToSelfKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), Kleo::Ok);

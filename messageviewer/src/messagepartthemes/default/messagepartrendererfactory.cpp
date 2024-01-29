@@ -50,7 +50,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
     }
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(m_pluginSubdir);
     for (const auto &md : plugins) {
-        const auto pluginData = md.rawData().value(QLatin1String("renderer")).toArray();
+        const auto pluginData = md.rawData().value(QLatin1StringView("renderer")).toArray();
         if (pluginData.isEmpty()) {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin" << md.fileName() << "has no meta data.";
             continue;
@@ -65,14 +65,14 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
         MessagePartRendererBase *renderer = nullptr;
         for (int i = 0; (renderer = plugin->renderer(i)) && i < pluginData.size(); ++i) {
             const auto metaData = pluginData.at(i).toObject();
-            const auto type = metaData.value(QLatin1String("type")).toString().toUtf8();
+            const auto type = metaData.value(QLatin1StringView("type")).toString().toUtf8();
             if (type.isEmpty()) {
                 qCWarning(MESSAGEVIEWER_LOG) << md.fileName() << "returned empty type specification for index" << i;
                 break;
             }
-            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString().toLower();
+            const auto mimetype = metaData.value(QLatin1StringView("mimetype")).toString().toLower();
             // priority should always be higher than the built-in ones, otherwise what's the point?
-            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
+            const auto priority = metaData.value(QLatin1StringView("priority")).toInt() + 100;
             qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type << mimetype << priority;
             insert(type, renderer, mimetype, priority);
         }
@@ -80,7 +80,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
         const Interface::BodyPartURLHandler *handler = nullptr;
         for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
             const auto metaData = pluginData.at(i).toObject();
-            const auto mimeType = metaData.value(QLatin1String("mimetype")).toString().toLower();
+            const auto mimeType = metaData.value(QLatin1StringView("mimetype")).toString().toLower();
             URLHandlerManager::instance()->registerHandler(handler, mimeType);
         }
     }

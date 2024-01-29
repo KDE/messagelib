@@ -16,7 +16,7 @@
 Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
 QByteArray readJsonFile(const QString &jsonFile)
 {
-    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = file.readAll();
@@ -70,7 +70,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/test.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/test.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
@@ -165,7 +165,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -299,7 +299,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 {
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -386,7 +386,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/update.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/update.db");
     // qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);

@@ -19,22 +19,22 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";
         return false;
     }
-    newKey.replace(QLatin1String("; "), QLatin1String(";"));
+    newKey.replace(QLatin1StringView("; "), QLatin1String(";"));
     const QStringList items = newKey.split(QLatin1Char(';'));
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
-        if (elem.startsWith(QLatin1String("v="))) {
+        if (elem.startsWith(QLatin1StringView("v="))) {
             mVersion = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("h="))) {
+        } else if (elem.startsWith(QLatin1StringView("h="))) {
             // Parse multi array.
             mHashAlgorithm = elem.right(elem.length() - 2).split(QLatin1Char(':'));
-        } else if (elem.startsWith(QLatin1String("k="))) { // Key type (rsa by default)
+        } else if (elem.startsWith(QLatin1StringView("k="))) { // Key type (rsa by default)
             mKeyType = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("n="))) { // Notes (optional empty by default)
+        } else if (elem.startsWith(QLatin1StringView("n="))) { // Notes (optional empty by default)
             mNote = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("p="))) { // Public key
+        } else if (elem.startsWith(QLatin1StringView("p="))) { // Public key
             mPublicKey = elem.right(elem.length() - 2).remove(QLatin1Char(' '));
-        } else if (elem.startsWith(QLatin1String("s="))) { // Service Default is "*"
+        } else if (elem.startsWith(QLatin1StringView("s="))) { // Service Default is "*"
             // Service Type (plain-text; OPTIONAL; default is "*").  A colon-
             // separated list of service types to which this record applies.
             // Verifiers for a given service type MUST ignore this record if the
@@ -42,11 +42,11 @@ bool DKIMKeyRecord::parseKey(const QString &key)
             // be ignored.  Currently defined service types are as follows:
             const QStringList lst = elem.right(elem.length() - 2).split(QLatin1Char(':'));
             for (const QString &service : lst) {
-                if (service == QLatin1Char('*') || service == QLatin1String("email")) {
+                if (service == QLatin1Char('*') || service == QLatin1StringView("email")) {
                     mService = service;
                 }
             }
-        } else if (elem.startsWith(QLatin1String("t="))) { // Flag
+        } else if (elem.startsWith(QLatin1StringView("t="))) { // Flag
             //            t= Flags, represented as a colon-separated list of names (plain-
             //                  text; OPTIONAL, default is no flags set).  Unrecognized flags MUST
             //                  be ignored.  The defined flags are as follows:

@@ -81,7 +81,7 @@ static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &e
 static void
 handleDuplicateLinkElements(const WebEngineViewer::WebEngineAccessKeyAnchor &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey, const QUrl &baseUrl)
 {
-    if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+    if (element.tagName().compare(QLatin1StringView("A"), Qt::CaseInsensitive) == 0) {
         const QString linkKey(linkElementKey(element, baseUrl));
         // qDebug() << "LINK KEY:" << linkKey;
         if (dupLinkList->contains(linkKey)) {
@@ -105,12 +105,12 @@ static bool isHiddenElement(const WebEngineViewer::WebEngineAccessKeyAnchor &ele
 #if 0
 
     // visibility set to 'hidden' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1String("hidden"), Qt::CaseInsensitive) == 0) {
+    if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1StringView("hidden"), Qt::CaseInsensitive) == 0) {
         return true;
     }
 
     // display set to 'none' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("display"), QWebElement::ComputedStyle).compare(QLatin1String("none"), Qt::CaseInsensitive) == 0) {
+    if (element.styleProperty(QStringLiteral("display"), QWebElement::ComputedStyle).compare(QLatin1StringView("none"), Qt::CaseInsensitive) == 0) {
         return true;
     }
 #endif
@@ -130,7 +130,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
     bool handled = false;
     if (mAccessKeyNodes.contains(key)) {
         WebEngineViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes.value(key);
-        if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+        if (element.tagName().compare(QLatin1StringView("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, mWebEngine->url()));
             if (!linkKey.isEmpty()) {
                 // qDebug()<<" WebEngineAccessKey::checkForAccessKey****"<<linkKey;

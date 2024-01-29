@@ -78,14 +78,14 @@ QString KXFace::fromImage(const QImage &image)
     buffer.open(QIODevice::WriteOnly);
     scaledImg.save(&buffer, "XBM");
     QString xbm(QString::fromLatin1(ba));
-    xbm.remove(0, xbm.indexOf(QLatin1String("{")) + 1);
-    xbm.truncate(xbm.indexOf(QLatin1String("}")));
+    xbm.remove(0, xbm.indexOf(QLatin1StringView("{")) + 1);
+    xbm.truncate(xbm.indexOf(QLatin1StringView("}")));
     xbm.remove(QLatin1Char(' '));
     xbm.remove(QLatin1Char(','));
     xbm.remove(QStringLiteral("0x"));
     xbm.remove(QLatin1Char('\n'));
     xbm.truncate(576);
-    QString tmp = QLatin1String(xbm.toLatin1());
+    QString tmp = QLatin1StringView(xbm.toLatin1());
     int len = tmp.length();
     for (int i = 0; i < len; ++i) {
         switch (tmp[i].toLatin1()) {

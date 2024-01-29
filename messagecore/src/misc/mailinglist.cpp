@@ -26,12 +26,12 @@ static QString check_sender(const KMime::Message::Ptr &message, QByteArray &head
         return {};
     }
 
-    if (header.left(6) == QLatin1String("owner-")) {
+    if (header.left(6) == QLatin1StringView("owner-")) {
         headerName = "Sender";
         headerValue = header;
         header = header.mid(6, header.indexOf(QLatin1Char('@')) - 6);
     } else {
-        const int index = header.indexOf(QLatin1String("-owner@ "));
+        const int index = header.indexOf(QLatin1StringView("-owner@ "));
         if (index == -1) {
             return {};
         }
@@ -69,7 +69,7 @@ static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray
     if (auto hrd = message->headerByType("Delivered-To")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull() || header.left(13) != QLatin1String("mailing list") || header.indexOf(QLatin1Char('@')) == -1) {
+    if (header.isNull() || header.left(13) != QLatin1StringView("mailing list") || header.indexOf(QLatin1Char('@')) == -1) {
         return {};
     }
 
@@ -144,7 +144,7 @@ static QString check_list_post(const KMime::Message::Ptr &message, QByteArray &h
         return {};
     }
 
-    int leftAnglePos = header.indexOf(QLatin1String("<mailto:"));
+    int leftAnglePos = header.indexOf(QLatin1StringView("<mailto:"));
     if (leftAnglePos < 0) {
         return {};
     }
@@ -168,7 +168,7 @@ static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray
         return {};
     }
 
-    if (header.left(5) != QLatin1String("list ") || header.indexOf(QLatin1Char('@')) < 5) {
+    if (header.left(5) != QLatin1StringView("list ") || header.indexOf(QLatin1Char('@')) < 5) {
         return {};
     }
 

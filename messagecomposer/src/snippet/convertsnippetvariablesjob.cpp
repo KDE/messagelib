@@ -64,43 +64,43 @@ void ConvertSnippetVariablesJob::setComposerViewInterface(MessageComposer::Compo
 QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i, QChar c)
 {
     QString result;
-    if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
+    if (cmd.startsWith(QLatin1StringView("LASTYEAR"))) {
         i += strlen("LASTYEAR");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::lastYear());
-    } else if (cmd.startsWith(QLatin1String("NEXTYEAR"))) {
+    } else if (cmd.startsWith(QLatin1StringView("NEXTYEAR"))) {
         i += strlen("NEXTYEAR");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::nextYear());
-    } else if (cmd.startsWith(QLatin1String("MONTHNUMBER"))) {
+    } else if (cmd.startsWith(QLatin1StringView("MONTHNUMBER"))) {
         i += strlen("MONTHNUMBER");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNumber());
-    } else if (cmd.startsWith(QLatin1String("DAYOFMONTH"))) {
+    } else if (cmd.startsWith(QLatin1StringView("DAYOFMONTH"))) {
         i += strlen("DAYOFMONTH");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth());
-    } else if (cmd.startsWith(QLatin1String("WEEKNUMBER"))) {
+    } else if (cmd.startsWith(QLatin1StringView("WEEKNUMBER"))) {
         i += strlen("WEEKNUMBER");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::weekNumber());
-    } else if (cmd.startsWith(QLatin1String("MONTHNAMESHORT"))) {
+    } else if (cmd.startsWith(QLatin1StringView("MONTHNAMESHORT"))) {
         i += strlen("MONTHNAMESHORT");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameShort());
-    } else if (cmd.startsWith(QLatin1String("MONTHNAMELONG"))) {
+    } else if (cmd.startsWith(QLatin1StringView("MONTHNAMELONG"))) {
         i += strlen("MONTHNAMELONG");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameLong());
-    } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
+    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEKNAMESHORT"))) {
         i += strlen("DAYOFWEEKNAMESHORT");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort());
-    } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMELONG"))) {
+    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEKNAMELONG"))) {
         i += strlen("DAYOFWEEKNAMELONG");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong());
-    } else if (cmd.startsWith(QLatin1String("YEARLASTMONTH"))) {
+    } else if (cmd.startsWith(QLatin1StringView("YEARLASTMONTH"))) {
         i += strlen("YEARLASTMONTH");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth());
-    } else if (cmd.startsWith(QLatin1String("YEAR"))) {
+    } else if (cmd.startsWith(QLatin1StringView("YEAR"))) {
         i += strlen("YEAR");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::year());
-    } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
+    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEK"))) {
         i += strlen("DAYOFWEEK");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek());
-    } else if (cmd.startsWith(QLatin1String("LASTMONTHNAMELONG"))) {
+    } else if (cmd.startsWith(QLatin1StringView("LASTMONTHNAMELONG"))) {
         i += strlen("LASTMONTHNAMELONG");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong());
     } else {
@@ -118,107 +118,107 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
         if (c == QLatin1Char('%')) {
             const QString cmd = text.mid(i + 1);
             if (composerView) {
-                if (cmd.startsWith(QLatin1String("CCADDR"))) {
+                if (cmd.startsWith(QLatin1StringView("CCADDR"))) {
                     i += strlen("CCADDR");
                     const QString str = composerView->cc();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("CCFNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("CCFNAME"))) {
                     i += strlen("CCFNAME");
                     const QString str = getFirstNameFromEmail(composerView->cc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("CCLNAME"))) {
                     i += strlen("CCLNAME");
                     const QString str = getLastNameFromEmail(composerView->cc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("CCNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("CCNAME"))) {
                     i += strlen("CCNAME");
                     const QString str = getNameFromEmail(composerView->cc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("BCCADDR"))) {
+                } else if (cmd.startsWith(QLatin1StringView("BCCADDR"))) {
                     i += strlen("BCCADDR");
                     const QString str = composerView->bcc();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("BCCFNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("BCCFNAME"))) {
                     i += strlen("BCCFNAME");
                     const QString str = getFirstNameFromEmail(composerView->bcc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("BCCLNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("BCCLNAME"))) {
                     i += strlen("BCCLNAME");
                     const QString str = getLastNameFromEmail(composerView->bcc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("BCCNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("BCCNAME"))) {
                     i += strlen("BCCNAME");
                     const QString str = getNameFromEmail(composerView->bcc());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
+                } else if (cmd.startsWith(QLatin1StringView("FULLSUBJECT"))) {
                     i += strlen("FULLSUBJECT");
                     const QString str = composerView->subject();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TOADDR"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TOADDR"))) {
                     i += strlen("TOADDR");
                     const QString str = composerView->to();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TOFNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TOFNAME"))) {
                     i += strlen("TOFNAME");
                     const QString str = getFirstNameFromEmail(composerView->to());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TOLNAME"))) {
                     i += strlen("TOLNAME");
                     const QString str = getLastNameFromEmail(composerView->to());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TONAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TONAME"))) {
                     i += strlen("TONAME");
                     const QString str = getNameFromEmail(composerView->to());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
+                } else if (cmd.startsWith(QLatin1StringView("FROMADDR"))) {
                     i += strlen("FROMADDR");
                     const QString str = composerView->from();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("FROMFNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("FROMFNAME"))) {
                     i += strlen("FROMFNAME");
                     const QString str = getFirstNameFromEmail(composerView->from());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("FROMLNAME"))) {
                     i += strlen("FROMLNAME");
                     const QString str = getLastNameFromEmail(composerView->from());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("FROMNAME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("FROMNAME"))) {
                     i += strlen("FROMNAME");
                     const QString str = getNameFromEmail(composerView->from());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("DOW"))) {
+                } else if (cmd.startsWith(QLatin1StringView("DOW"))) {
                     i += strlen("DOW");
                     const QString str = composerView->insertDayOfWeek();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("DATE"))) {
+                } else if (cmd.startsWith(QLatin1StringView("DATE"))) {
                     i += strlen("DATE");
                     const QString str = composerView->longDate();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("SHORTDATE"))) {
+                } else if (cmd.startsWith(QLatin1StringView("SHORTDATE"))) {
                     i += strlen("SHORTDATE");
                     const QString str = composerView->shortDate();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TIME"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TIME"))) {
                     i += strlen("TIME");
                     const QString str = composerView->shortTime();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("TIMELONG"))) {
+                } else if (cmd.startsWith(QLatin1StringView("TIMELONG"))) {
                     i += strlen("TIMELONG");
                     const QString str = composerView->longTime();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("ATTACHMENTCOUNT"))) {
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTCOUNT"))) {
                     i += strlen("ATTACHMENTCOUNT");
                     const QString str = QString::number(composerView->attachments().count());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMES"))) {
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMES"))) {
                     i += strlen("ATTACHMENTNAMES");
                     const QString str = composerView->attachments().names().join(QLatin1Char(','));
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("ATTACHMENTFILENAMES"))) {
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTFILENAMES"))) {
                     i += strlen("ATTACHMENTFILENAMES");
                     const QString str = composerView->attachments().fileNames().join(QLatin1Char(','));
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMESANDSIZES"))) {
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMESANDSIZES"))) {
                     i += strlen("ATTACHMENTNAMESANDSIZES");
                     const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
                     result.append(str);

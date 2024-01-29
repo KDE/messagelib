@@ -512,7 +512,7 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
     QIcon icon;
     QString toolTip;
     for (const QModelIndex &index : s->selectedRows()) {
-        label += index.data(Qt::DisplayRole).toString() + QLatin1String(", ");
+        label += index.data(Qt::DisplayRole).toString() + QLatin1StringView(", ");
     }
     label.chop(2);
 

@@ -924,7 +924,7 @@ void SignedMessagePart::sigStatusToMetaData()
                 if (partMetaData()->signer.isEmpty()) {
                     partMetaData()->signer = partMetaData()->signerMailAddresses.front();
                 } else {
-                    partMetaData()->signer += QLatin1String(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
+                    partMetaData()->signer += QLatin1StringView(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
                 }
             }
         }
@@ -1308,7 +1308,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         } else if (cannotDecrypt) {
             partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.", cryptPlugLibName);
         } else if (!passphraseError()) {
-            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1String("<br />")
+            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
                 + i18n("Error: %1", partMetaData()->errorText);
         }
     }

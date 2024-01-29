@@ -30,7 +30,7 @@ TestMailDndAttachment::~TestMailDndAttachment() = default;
 
 KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     QByteArray ba = file.readAll();
     qDebug() << ba;

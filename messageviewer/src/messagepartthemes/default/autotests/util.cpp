@@ -38,7 +38,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         content.replace(QRegularExpression(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
         content.replace(QRegularExpression(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
         content.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
-        content.replace(QLatin1String("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
+        content.replace(QLatin1StringView("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();
@@ -58,7 +58,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         f.close();
         content.replace(QRegularExpression(QStringLiteral("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
         content.replace(QRegularExpression(QStringLiteral("(file:///tmp/messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)")), QStringLiteral("\\1\\3"));
-        content.replace(QLatin1String("NBSP_ENTITY_PLACEHOLDER"), QLatin1String("&nbsp;")); // undo above transformation for xmllint
+        content.replace(QLatin1StringView("NBSP_ENTITY_PLACEHOLDER"), QLatin1String("&nbsp;")); // undo above transformation for xmllint
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();

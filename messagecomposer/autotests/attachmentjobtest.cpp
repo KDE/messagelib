@@ -22,7 +22,7 @@ using namespace MessageComposer;
 #include <MessageCore/AttachmentPart>
 using namespace MessageCore;
 
-#define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")
+#define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 
 QTEST_MAIN(AttachmentJobTest)
 

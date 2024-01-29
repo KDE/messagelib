@@ -62,9 +62,9 @@ void CreatePhisingUrlDataBaseGui::clear()
 WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType CreatePhisingUrlDataBaseGui::compressionType()
 {
     WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression;
-    if (mCompressionType->currentText() == QLatin1String("RICE")) {
+    if (mCompressionType->currentText() == QLatin1StringView("RICE")) {
         type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression;
-    } else if (mCompressionType->currentText() == QLatin1String("RAW")) {
+    } else if (mCompressionType->currentText() == QLatin1StringView("RAW")) {
         type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression;
     }
     return type;

@@ -240,7 +240,7 @@ Item *Item::topmostNonRoot()
 static inline void append_string(QString &buffer, const QString &append)
 {
     if (!buffer.isEmpty()) {
-        buffer += QLatin1String(", ");
+        buffer += QLatin1StringView(", ");
     }
     buffer += append;
 }
@@ -623,7 +623,7 @@ void Item::dump(const QString &prefix)
     qDebug(out.toUtf8().data(), this);
 
     QString nPrefix(prefix);
-    nPrefix += QLatin1String("  ");
+    nPrefix += QLatin1StringView("  ");
 
     if (!d_ptr->mChildItems) {
         return;

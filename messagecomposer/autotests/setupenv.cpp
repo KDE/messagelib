@@ -88,7 +88,7 @@ KMime::Message::Ptr Test::loadMessage(const QString &filename)
 
 KMime::Message::Ptr Test::loadMessageFromDataDir(const QString &filename)
 {
-    return loadMessage(QLatin1String(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
+    return loadMessage(QLatin1StringView(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
 }
 
 void Test::compareFile(KMime::Content *content, const QString &referenceFile)

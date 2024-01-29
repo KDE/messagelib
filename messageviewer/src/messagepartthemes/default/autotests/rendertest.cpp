@@ -92,7 +92,7 @@ void RenderTest::testRenderSmartDetails_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1String("/details/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/details/") + file + QLatin1String(".html");
         if (!QFile::exists(fname)) {
             continue;
         }
@@ -117,9 +117,9 @@ void RenderTest::testRenderInlined_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1String("/inlined/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/inlined/") + file + QLatin1String(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1String(".html");
+            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
@@ -146,9 +146,9 @@ void RenderTest::testRenderIconic_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1String("/iconic/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/iconic/") + file + QLatin1String(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1String(".html");
+            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
@@ -174,9 +174,9 @@ void RenderTest::testRenderHidden_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1String("/hidden/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/hidden/") + file + QLatin1String(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1String(".html");
+            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
@@ -202,9 +202,9 @@ void RenderTest::testRenderHeaderOnly_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1String("/headeronly/") + file + QStringLiteral(".html");
+        QString fname = dir.path() + QLatin1StringView("/headeronly/") + file + QStringLiteral(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1String(".html");
+            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
@@ -238,7 +238,7 @@ void RenderTest::testRenderTree(const MimeTreeParser::MessagePart::Ptr &messageP
 
     QFETCH(QString, mailFileName);
     QFETCH(QString, outFileName);
-    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
+    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
     const QString outTreeFileName = outFileName + QStringLiteral(".tree");
 
     {

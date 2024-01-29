@@ -54,7 +54,7 @@ void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
     }
     QTextStream stream(&temporaryFile);
     QString newText = text;
-    newText.replace(QLatin1String("<head>"), QLatin1String("<head><meta charset=\"UTF-8\">"));
+    newText.replace(QLatin1StringView("<head>"), QLatin1String("<head><meta charset=\"UTF-8\">"));
     stream << newText;
     temporaryFile.close();
     // We need to remove this temporary file

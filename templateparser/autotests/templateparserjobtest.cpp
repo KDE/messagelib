@@ -41,7 +41,7 @@ void TemplateParserJobTest::test_convertedHtml_data()
     const auto l = dir.entryList(QStringList(QStringLiteral("plain*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file)
-                                                   << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"));
+                                                   << QString(dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html"));
     }
 }
 
@@ -475,7 +475,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%REM=\"sdfsfsdsdfsdf\"") << "%REM=\"sdfsfsdsdfsdf\"" << fileName << "" << false;
     QTest::newRow("%CLEAR") << "%CLEAR" << fileName << "" << false;
     QTest::newRow("FOO foo") << "FOO foo" << fileName << "FOO foo" << false;
-    const QString insertFileName = QString(dir.path() + QLatin1Char('/') + QLatin1String("insert-file.txt"));
+    const QString insertFileName = QString(dir.path() + QLatin1Char('/') + QLatin1StringView("insert-file.txt"));
     QString insertFileNameCommand = QStringLiteral("%INSERT=\"%1\"").arg(insertFileName);
     QTest::newRow("%INSERT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
     insertFileNameCommand = QStringLiteral("%PUT=\"%1\"").arg(insertFileName);

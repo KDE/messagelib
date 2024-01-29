@@ -2218,7 +2218,7 @@ bool View::event(QEvent *e)
                    "</tr>")
                    .arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
 
-        tip += QLatin1String(
+        tip += QLatin1StringView(
             "<tr>"
             "<td align=\"center\" valign=\"middle\">"
             "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
@@ -2249,7 +2249,7 @@ bool View::event(QEvent *e)
         const QString tags = mi->tagListDescription();
         if (!tags.isEmpty()) {
             if (!status.isEmpty()) {
-                status += QLatin1String(", ");
+                status += QLatin1StringView(", ");
             }
             status += tags;
         }
@@ -2281,7 +2281,7 @@ bool View::event(QEvent *e)
             }
         }
 
-        tip += QLatin1String(
+        tip += QLatin1StringView(
             "</table>"
             "</td>"
             "</tr>");
@@ -2295,7 +2295,7 @@ bool View::event(QEvent *e)
             QString statsText;
 
             statsText = i18np("<b>%1</b> reply", "<b>%1</b> replies", mi->childItemCount());
-            statsText += QLatin1String(", ");
+            statsText += QLatin1StringView(", ");
 
             statsText += i18np("<b>%1</b> message in subtree (<b>%2</b> unread)",
                                "<b>%1</b> messages in subtree (<b>%2</b> unread)",
@@ -2455,7 +2455,7 @@ bool View::event(QEvent *e)
 
             if (d->mAggregation->threading() != Aggregation::NoThreading) {
                 statsText = i18np("<b>%1</b> thread", "<b>%1</b> threads", ghi->childItemCount());
-                statsText += QLatin1String(", ");
+                statsText += QLatin1StringView(", ");
             }
 
             statsText +=
@@ -2477,7 +2477,7 @@ bool View::event(QEvent *e)
         break;
     }
 
-    tip += QLatin1String("</table>");
+    tip += QLatin1StringView("</table>");
 
     QToolTip::showText(he->globalPos(), tip, viewport(), visualRect(idx));
 

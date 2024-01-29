@@ -44,18 +44,19 @@ using namespace MessageViewer;
 
 bool Util::containsExternalReferences(const QString &str, const QString &extraHead)
 {
-    const bool hasBaseInHeader = extraHead.contains(QLatin1String("<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QLatin1String("href=\"/"), Qt::CaseInsensitive) || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
+    const bool hasBaseInHeader = extraHead.contains(QLatin1StringView("<base href=\""), Qt::CaseInsensitive);
+    if (hasBaseInHeader
+        && (str.contains(QLatin1StringView("href=\"/"), Qt::CaseInsensitive) || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
-    int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
-    int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
+    int httpPos = str.indexOf(QLatin1StringView("\"http:"), Qt::CaseInsensitive);
+    int httpsPos = str.indexOf(QLatin1StringView("\"https:"), Qt::CaseInsensitive);
     while (httpPos >= 0 || httpsPos >= 0) {
         // pos = index of next occurrence of "http: or "https: whichever comes first
         const int pos = (httpPos < httpsPos) ? ((httpPos >= 0) ? httpPos : httpsPos) : ((httpsPos >= 0) ? httpsPos : httpPos);
         // look backwards for "href"
         if (pos > 5) {
-            int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
+            int hrefPos = str.lastIndexOf(QLatin1StringView("href"), pos - 5, Qt::CaseInsensitive);
             // if no 'href' is found or the distance between 'href' and '"http[s]:'
             // is larger than 7 (7 is the distance in 'href = "http[s]:') then
             // we assume that we have found an external reference
@@ -63,7 +64,7 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
                 // HTML messages created by KMail itself for now contain the following:
                 // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                 // Make sure not to show an external references warning for this string
-                int dtdPos = str.indexOf(QLatin1String("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
+                int dtdPos = str.indexOf(QLatin1StringView("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
                 if (dtdPos != (pos + 1)) {
                     return true;
                 }
@@ -71,14 +72,14 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
         }
         // find next occurrence of "http: or "https:
         if (pos == httpPos) {
-            httpPos = str.indexOf(QLatin1String("\"http:"), httpPos + 6, Qt::CaseInsensitive);
+            httpPos = str.indexOf(QLatin1StringView("\"http:"), httpPos + 6, Qt::CaseInsensitive);
         } else {
-            httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
+            httpsPos = str.indexOf(QLatin1StringView("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
         }
     }
     QRegularExpressionMatch rmatch;
 
-    const int startImgIndex = str.indexOf(QLatin1String("<img "));
+    const int startImgIndex = str.indexOf(QLatin1StringView("<img "));
     QString newStringImg;
     if (startImgIndex != -1) {
         for (int i = startImgIndex, total = str.length(); i < total; ++i) {
@@ -138,7 +139,7 @@ bool Util::handleUrlWithQDesktopServices(const QUrl &url)
     return true;
 #else
     // Always handle help through khelpcenter or browser
-    if (url.scheme() == QLatin1String("help")) {
+    if (url.scheme() == QLatin1StringView("help")) {
         QDesktopServices::openUrl(url);
         return true;
     }
@@ -231,7 +232,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         }
         if (!curUrl.isEmpty()) {
             // Bug #312954
-            if (multiple && (curUrl.fileName() == QLatin1String("smime.p7s"))) {
+            if (multiple && (curUrl.fileName() == QLatin1StringView("smime.p7s"))) {
                 continue;
             }
             // Rename the file if we have already saved one with the same name:
@@ -682,7 +683,7 @@ void Util::readGravatarConfig()
 
 QString Util::parseBodyStyle(const QString &style)
 {
-    const int indexStyle = style.indexOf(QLatin1String("style=\""));
+    const int indexStyle = style.indexOf(QLatin1StringView("style=\""));
     if (indexStyle != -1) {
         // qDebug() << " style " << style;
         const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
@@ -692,7 +693,7 @@ QString Util::parseBodyStyle(const QString &style)
             QStringList lst;
             for (const auto &style : lstStyle) {
                 // qDebug() << " style : " << style;
-                if (!style.trimmed().contains(QLatin1String("white-space")) && !style.trimmed().contains(QLatin1String("text-align"))) {
+                if (!style.trimmed().contains(QLatin1StringView("white-space")) && !style.trimmed().contains(QLatin1String("text-align"))) {
                     lst.append(style.toString().trimmed());
                 }
             }
@@ -730,9 +731,9 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     // head
     static QRegularExpression headEndRegularExpression = QRegularExpression(QStringLiteral("^<head/>"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(headEndRegularExpression).trimmed();
-    const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
+    const int startIndex = s.indexOf(QLatin1StringView("<head>"), Qt::CaseInsensitive);
     if (startIndex >= 0) {
-        const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
+        const auto endIndex = s.indexOf(QLatin1StringView("</head>"), Qt::CaseInsensitive);
 
         if (endIndex < 0) {
             messageInfo.htmlSource = htmlSource;
@@ -750,7 +751,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         QRegularExpressionMatch matchBodyStyle;
         const int bodyStyleStartIndex = messageInfo.extraHead.indexOf(styleBodyRegularExpression, 0, &matchBodyStyle);
         if (bodyStyleStartIndex > 0) {
-            const auto endIndex = messageInfo.extraHead.indexOf(QLatin1String("</style>"), bodyStyleStartIndex, Qt::CaseInsensitive);
+            const auto endIndex = messageInfo.extraHead.indexOf(QLatin1StringView("</style>"), bodyStyleStartIndex, Qt::CaseInsensitive);
             // qDebug() << " endIndex " << endIndex;
             messageInfo.extraHead = messageInfo.extraHead.remove(bodyStyleStartIndex, endIndex - bodyStyleStartIndex + 8);
         }

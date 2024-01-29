@@ -9,7 +9,7 @@
 #include <QTest>
 #include <attachment/attachmentupdatejob.h>
 
-#define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")
+#define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 
 AttachmentUpdateJobTest::AttachmentUpdateJobTest(QObject *parent)
     : QObject(parent)
@@ -30,7 +30,7 @@ void AttachmentUpdateJobTest::shouldHaveDefaultValue()
 
 void AttachmentUpdateJobTest::shouldUpdateAttachment()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
@@ -55,7 +55,7 @@ void AttachmentUpdateJobTest::shouldUpdateAttachment()
 
 void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
@@ -83,7 +83,7 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
@@ -110,7 +110,7 @@ void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
@@ -136,7 +136,7 @@ void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
@@ -181,7 +181,7 @@ void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
 
 void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");

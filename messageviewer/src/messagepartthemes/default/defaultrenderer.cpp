@@ -209,7 +209,7 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, G
 
             if (!result2.isEmpty()) {
                 if (!result.isEmpty()) {
-                    result.append(QLatin1String("<br />"));
+                    result.append(QLatin1StringView("<br />"));
                 }
                 result.append(result2);
             }
@@ -456,7 +456,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
             keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
         } else {
-            keyWithWithoutURL = QLatin1String("0x") + QString::fromUtf8(metaData.keyId);
+            keyWithWithoutURL = QLatin1StringView("0x") + QString::fromUtf8(metaData.keyId);
         }
         block.setProperty("keyWithWithoutURL", keyWithWithoutURL);
     }
@@ -545,7 +545,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                         QStringList::ConstIterator end(extractedEmails.constEnd());
                         for (QStringList::ConstIterator it = extractedEmails.constBegin(); it != end; ++it) {
                             if (!bStart) {
-                                greenCaseWarning.append(QLatin1String(", <br />&nbsp; &nbsp;"));
+                                greenCaseWarning.append(QLatin1StringView(", <br />&nbsp; &nbsp;"));
                             }
 
                             bStart = false;
@@ -569,7 +569,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                     if (!blockAddrs.empty()) {
                         const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
                         signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>")
-                                     .arg(QLatin1String(QUrl ::toPercentEncoding(address.path())), MessageCore::StringUtil::quoteHtmlChars(signer, true));
+                                     .arg(QLatin1StringView(QUrl ::toPercentEncoding(address.path())), MessageCore::StringUtil::quoteHtmlChars(signer, true));
                     }
                 }
             }
@@ -700,7 +700,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
         auto key(new QObject(mp.data()));
         key->setProperty("error", QString::fromLocal8Bit((*it).error().asString()));
         key->setProperty("status", (*it).status());
-        key->setProperty("fingerprint", QLatin1String((*it).fingerprint()));
+        key->setProperty("fingerprint", QLatin1StringView((*it).fingerprint()));
         keylist << QVariant::fromValue(key);
     }
 
@@ -743,42 +743,42 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         return;
     }
 
-    if (className == QLatin1String("MimeTreeParser::MessagePartList")) {
+    if (className == QLatin1StringView("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::MimeMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::MimeMessagePart")) {
         auto mp = msgPart.dynamicCast<MimeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
         auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::HtmlMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::HtmlMessagePart")) {
         auto mp = msgPart.dynamicCast<HtmlMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::SignedMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::SignedMessagePart")) {
         auto mp = msgPart.dynamicCast<SignedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::EncryptedMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::EncryptedMessagePart")) {
         auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::AlternativeMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::AlternativeMessagePart")) {
         auto mp = msgPart.dynamicCast<AlternativeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1String("MimeTreeParser::CertMessagePart")) {
+    } else if (className == QLatin1StringView("MimeTreeParser::CertMessagePart")) {
         auto mp = msgPart.dynamicCast<CertMessagePart>();
         if (mp) {
             render(mp, htmlWriter);

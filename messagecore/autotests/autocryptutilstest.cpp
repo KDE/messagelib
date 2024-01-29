@@ -23,7 +23,7 @@ QTEST_MAIN(AutocryptUtilsTest)
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
@@ -77,7 +77,7 @@ void AutocryptUtilsTest::test_header()
     QCOMPARE(storage->getRecipient(addr)->gpgKey().isNull(), false);
     QCOMPARE(storage->getRecipient(addr)->gossipKey().isNull(), true);
 
-    QFile data(QLatin1String(DATA_DIR) + QStringLiteral("/autocrypt/alice.json"));
+    QFile data(QLatin1StringView(DATA_DIR) + QStringLiteral("/autocrypt/alice.json"));
     QVERIFY(data.open(QIODevice::ReadOnly | QIODevice::Text));
     QCOMPARE(storage->getRecipient(addr)->toJson(QJsonDocument::Compact), data.readAll().trimmed());
     data.close();

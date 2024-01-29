@@ -173,7 +173,7 @@ void MainTextJobTest::testFallbackCharset()
 
 void MainTextJobTest::testHtml()
 {
-    QLatin1String originalHtml("<html><head></head><body>Test <em>with</em> formatting...<br>The end.</body></html>");
+    QLatin1StringView originalHtml("<html><head></head><body>Test <em>with</em> formatting...<br>The end.</body></html>");
     MessageComposer::RichTextComposerNg editor;
     editor.createActions(new KActionCollection(this));
     editor.setTextOrHtml(originalHtml);
@@ -210,7 +210,7 @@ void MainTextJobTest::testHtml()
             QVERIFY(html->contentType(false));
             QCOMPARE(html->contentType()->mimeType(), QByteArray("text/html"));
             // The editor adds extra Html stuff, so we can't compare to originalHtml.
-            QCOMPARE(QLatin1String(html->body()), editor.toCleanHtml());
+            QCOMPARE(QLatin1StringView(html->body()), editor.toCleanHtml());
         }
     }
     delete composer;
@@ -224,12 +224,12 @@ void MainTextJobTest::testHtmlWithImages()
 
     QImage image1(16, 16, QImage::Format_ARGB32_Premultiplied);
     image1.fill(Qt::red);
-    const QString image1Path = QCoreApplication::applicationDirPath() + QLatin1String("/image1.png");
+    const QString image1Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image1.png");
     image1.save(image1Path);
 
     QImage image2(16, 16, QImage::Format_ARGB32_Premultiplied);
     image2.fill(Qt::blue);
-    const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1String("/image2.png");
+    const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image2.png");
     image2.save(image2Path);
 
     QString data = QStringLiteral("dust in the wind");

@@ -147,7 +147,7 @@ Recipient::Ptr RecipientsEditor::activeRecipient() const
 
 QString RecipientsEditor::recipientString(Recipient::Type type) const
 {
-    return recipientStringList(type).join(QLatin1String(", "));
+    return recipientStringList(type).join(QLatin1StringView(", "));
 }
 
 QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const
@@ -285,7 +285,7 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
         // email address per line, which breaks our opportunistic crypto in composer
         if (ke->key() == Qt::Key_Comma || (ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
             auto line = qobject_cast<RecipientLineNG *>(object->parent());
-            const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1String(", "));
+            const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1StringView(", "));
             if (split.size() > 1) {
                 addRecipient(QString(), line->recipientType());
                 setFocusBottom();
