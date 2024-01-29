@@ -92,7 +92,7 @@ void RenderTest::testRenderSmartDetails_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/details/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/details/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
             continue;
         }
@@ -117,7 +117,7 @@ void RenderTest::testRenderInlined_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/inlined/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/inlined/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
@@ -146,7 +146,7 @@ void RenderTest::testRenderIconic_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/iconic/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/iconic/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
@@ -174,7 +174,7 @@ void RenderTest::testRenderHidden_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/hidden/") + file + QLatin1String(".html");
+        QString fname = dir.path() + QLatin1StringView("/hidden/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {

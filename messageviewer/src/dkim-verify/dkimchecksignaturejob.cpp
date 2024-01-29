@@ -252,7 +252,7 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     }
 #ifdef DEBUG_SIGNATURE_DKIM
     QFile headerFile(
-        QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1StringView("removequote") : QLatin1String("withquote")));
+        QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1StringView("removequote") : QLatin1StringView("withquote")));
     headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outHeaderStream(&headerFile);
     outHeaderStream << mHeaderCanonizationResult;
@@ -423,7 +423,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         return;
     }
     const QString keyType{mDkimKeyRecord.keyType()};
-    if ((keyType != QLatin1StringView("rsa")) && (keyType != QLatin1String("ed25519"))) {
+    if ((keyType != QLatin1StringView("rsa")) && (keyType != QLatin1StringView("ed25519"))) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << keyType << " str " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());

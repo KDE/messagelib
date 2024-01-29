@@ -284,7 +284,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     header->fromUnicodeString(q, "utf-8");
                     d->mMsg->setHeader(header);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("INSERT=")) || cmd.startsWith(QLatin1String("PUT="))) {
+            } else if (cmd.startsWith(QLatin1StringView("INSERT=")) || cmd.startsWith(QLatin1StringView("PUT="))) {
                 QString q;
                 int len = 0;
                 if (cmd.startsWith(QLatin1StringView("INSERT="))) {
@@ -591,7 +591,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
                 const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FULLSUBJECT")) || cmd.startsWith(QLatin1String("FULLSUBJ"))) {
+            } else if (cmd.startsWith(QLatin1StringView("FULLSUBJECT")) || cmd.startsWith(QLatin1StringView("FULLSUBJ"))) {
                 if (cmd.startsWith(QLatin1StringView("FULLSUBJ"))) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJ";
                     i += strlen("FULLSUBJ");
@@ -789,7 +789,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFULLSUBJECT")) || cmd.startsWith(QLatin1String("OFULLSUBJ"))) {
+            } else if (cmd.startsWith(QLatin1StringView("OFULLSUBJECT")) || cmd.startsWith(QLatin1StringView("OFULLSUBJ"))) {
                 if (cmd.startsWith(QLatin1StringView("OFULLSUBJECT"))) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: OFULLSUBJECT";
                     i += strlen("OFULLSUBJECT");
@@ -1440,7 +1440,7 @@ QString TemplateParserJob::quotedHtmlText(const QString &selection) const
 
     // Add blockquote tag, so that quoted message can be differentiated from normal message
     // Bug 419978 remove \n by <br>
-    content = QLatin1StringView("<blockquote>") + content.replace(QStringLiteral("\n"), QStringLiteral("<br>")) + QLatin1String("</blockquote>");
+    content = QLatin1StringView("<blockquote>") + content.replace(QStringLiteral("\n"), QStringLiteral("<br>")) + QLatin1StringView("</blockquote>");
     return content;
 }
 
@@ -1493,13 +1493,13 @@ void TemplateParserJob::makeValidHtml(QString &body)
     if (!body.contains(regEx)) {
         regEx.setPattern(QStringLiteral("<body.*?>"));
         if (!body.contains(regEx)) {
-            body = QLatin1StringView("<body>") + body + QLatin1String("<br/></body>");
+            body = QLatin1StringView("<body>") + body + QLatin1StringView("<br/></body>");
         }
         regEx.setPattern(QStringLiteral("<head.*?>"));
         if (!body.contains(regEx)) {
-            body = QLatin1StringView("<head>") + d->mHeadElement + QLatin1String("</head>") + body;
+            body = QLatin1StringView("<head>") + d->mHeadElement + QLatin1StringView("</head>") + body;
         }
-        body = QLatin1StringView("<html>") + body + QLatin1String("</html>");
+        body = QLatin1StringView("<html>") + body + QLatin1StringView("</html>");
     }
 }
 

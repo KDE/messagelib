@@ -70,7 +70,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/test.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1StringView("/test.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
@@ -165,7 +165,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/correctBinary.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1StringView("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -299,7 +299,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 {
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/correctBinary.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1StringView("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -386,7 +386,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
-        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1String("/update.db");
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/phishingurl") + QLatin1StringView("/update.db");
     // qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);

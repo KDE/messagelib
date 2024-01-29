@@ -66,21 +66,21 @@ void HeaderStyleMenuManagerPrivate::readSettings()
         const QString headerStyle = MessageViewer::MessageViewerSettings::self()->headerStyle();
         const QString headerSetDisplayed = MessageViewer::MessageViewerSettings::self()->headerSetDisplayed();
 
-        if ((headerStyle == QLatin1StringView("custom")) && (headerSetDisplayed == QLatin1String("custom"))) { // Custom
+        if ((headerStyle == QLatin1StringView("custom")) && (headerSetDisplayed == QLatin1StringView("custom"))) { // Custom
             headerStyleName = QStringLiteral("custom");
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1String("all"))) { // all
+        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("all"))) { // all
             headerStyleName = QStringLiteral("all-headers");
-        } else if ((headerStyle == QLatin1StringView("brief")) && (headerSetDisplayed == QLatin1String("brief"))) { // brief
+        } else if ((headerStyle == QLatin1StringView("brief")) && (headerSetDisplayed == QLatin1StringView("brief"))) { // brief
             headerStyleName = QStringLiteral("brief");
-        } else if ((headerStyle == QLatin1StringView("enterprise")) && (headerSetDisplayed == QLatin1String("rich"))) { // enterprise
+        } else if ((headerStyle == QLatin1StringView("enterprise")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // enterprise
             headerStyleName = QStringLiteral("enterprise");
-        } else if ((headerStyle == QLatin1StringView("fancy")) && (headerSetDisplayed == QLatin1String("rich"))) { // fancy
+        } else if ((headerStyle == QLatin1StringView("fancy")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // fancy
             headerStyleName = QStringLiteral("fancy");
-        } else if ((headerStyle == QLatin1StringView("grantlee")) && (headerSetDisplayed == QLatin1String("grantlee"))) { // grantlee
+        } else if ((headerStyle == QLatin1StringView("grantlee")) && (headerSetDisplayed == QLatin1StringView("grantlee"))) { // grantlee
             headerStyleName = QStringLiteral("grantlee");
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1String("rich"))) { // longheader
+        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // longheader
             headerStyleName = QStringLiteral("long-header");
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1String("standard"))) { // Standard
+        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("standard"))) { // Standard
             headerStyleName = QStringLiteral("standards-header");
         } else {
             qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;

@@ -20,7 +20,7 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QUrl requestUrl = info.requestUrl();
     const QString scheme = requestUrl.scheme();
-    if (scheme == QLatin1StringView("data") || scheme == QLatin1String("file")) {
+    if (scheme == QLatin1StringView("data") || scheme == QLatin1StringView("file")) {
         return false;
     }
     const QWebEngineUrlRequestInfo::ResourceType resourceType{info.resourceType()};

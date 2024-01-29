@@ -617,8 +617,8 @@ void AttachmentControllerBase::showContextMenu()
             if (mime.isValid()) {
                 parentMimeType = mime.allAncestors();
             }
-            if ((mimetype == QLatin1StringView("text/plain")) || (mimetype == QLatin1String("image/png")) || (mimetype == QLatin1String("image/jpeg"))
-                || parentMimeType.contains(QLatin1StringView("text/plain")) || parentMimeType.contains(QLatin1String("image/png"))
+            if ((mimetype == QLatin1StringView("text/plain")) || (mimetype == QLatin1StringView("image/png")) || (mimetype == QLatin1String("image/jpeg"))
+                || parentMimeType.contains(QLatin1StringView("text/plain")) || parentMimeType.contains(QLatin1StringView("image/png"))
                 || parentMimeType.contains(QLatin1StringView("image/jpeg"))) {
                 menu.addAction(d->viewContextAction);
             }

@@ -445,7 +445,7 @@ void StringUtilTest::test_parseDuplicateQueryItems()
         } else if (values.at(i).first == QLatin1StringView("cc")) {
             const QString ccVal = values.at(i).second;
             valueCC++;
-            if ((ccVal != QLatin1StringView("someone_else@example.com")) && (ccVal != QLatin1String("someone_else2@example.com"))) {
+            if ((ccVal != QLatin1StringView("someone_else@example.com")) && (ccVal != QLatin1StringView("someone_else2@example.com"))) {
                 QVERIFY(false);
             }
         }

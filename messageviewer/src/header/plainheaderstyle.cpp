@@ -36,7 +36,7 @@ QString PlainHeaderStylePrivate::formatAllMessageHeaders(KMime::Message *message
     auto header = KMime::HeaderParsing::parseNextHeader(headView);
     QString result;
     while (header) {
-        result += mHeaderStyleUtil.strToHtml(QLatin1StringView(header->type()) + QLatin1String(": ") + header->asUnicodeString());
+        result += mHeaderStyleUtil.strToHtml(QLatin1StringView(header->type()) + QLatin1StringView(": ") + header->asUnicodeString());
         result += QLatin1StringView("<br />\n");
         header = KMime::HeaderParsing::parseNextHeader(headView);
     }
@@ -106,7 +106,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     if (strategy->showHeader(QStringLiteral("from"))) {
         headerStr.append(i18n("From: ") + StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress, QString(), StringUtil::ShowLink));
         if (!vCardName().isEmpty()) {
-            headerStr.append(QLatin1StringView("&nbsp;&nbsp;<a href=\"") + vCardName() + QLatin1String("\">") + i18n("[vCard]") + QLatin1String("</a>"));
+            headerStr.append(QLatin1StringView("&nbsp;&nbsp;<a href=\"") + vCardName() + QLatin1StringView("\">") + i18n("[vCard]") + QLatin1String("</a>"));
         }
 
         if (strategy->showHeader(QStringLiteral("organization")) && message->organization(false)) {

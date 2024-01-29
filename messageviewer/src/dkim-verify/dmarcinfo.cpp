@@ -17,7 +17,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
         return false;
     }
     QString cleanKey = key;
-    cleanKey.replace(QLatin1StringView("; "), QLatin1String(";"));
+    cleanKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
     const QStringList items = cleanKey.split(QLatin1Char(';'), Qt::SkipEmptyParts);
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();

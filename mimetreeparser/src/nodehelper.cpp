@@ -268,7 +268,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 
 QString NodeHelper::createTempDir(const QString &param)
 {
-    auto tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/messageviewer_XXXXXX") + QLatin1String(".index.") + param);
+    auto tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/messageviewer_XXXXXX") + QLatin1StringView(".index.") + param);
     tempFile->open();
     const QString fname = tempFile->fileName();
     delete tempFile;

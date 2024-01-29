@@ -46,7 +46,7 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
 {
     const bool hasBaseInHeader = extraHead.contains(QLatin1StringView("<base href=\""), Qt::CaseInsensitive);
     if (hasBaseInHeader
-        && (str.contains(QLatin1StringView("href=\"/"), Qt::CaseInsensitive) || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
+        && (str.contains(QLatin1StringView("href=\"/"), Qt::CaseInsensitive) || str.contains(QLatin1StringView("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
     int httpPos = str.indexOf(QLatin1StringView("\"http:"), Qt::CaseInsensitive);
@@ -693,7 +693,7 @@ QString Util::parseBodyStyle(const QString &style)
             QStringList lst;
             for (const auto &style : lstStyle) {
                 // qDebug() << " style : " << style;
-                if (!style.trimmed().contains(QLatin1StringView("white-space")) && !style.trimmed().contains(QLatin1String("text-align"))) {
+                if (!style.trimmed().contains(QLatin1StringView("white-space")) && !style.trimmed().contains(QLatin1StringView("text-align"))) {
                     lst.append(style.toString().trimmed());
                 }
             }

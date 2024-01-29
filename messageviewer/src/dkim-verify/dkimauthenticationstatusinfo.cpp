@@ -28,7 +28,7 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
     // 1) extract AuthservId and AuthVersion
     QRegularExpressionMatch match;
     const QString regStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1StringView("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p()
-        + QLatin1StringView("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?");
+        + QLatin1StringView("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView(" )?");
     // qDebug() << " regStr" << regStr;
     static const QRegularExpression regular1(regStr);
     int index = valueKey.indexOf(regular1, 0, &match);
@@ -73,7 +73,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     const QString methodVersionp =
         DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView("([0-9]+)");
     const QString method_p =
-        QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1StringView(")(?:") + methodVersionp + QLatin1String(")?");
+        QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1StringView(")(?:") + methodVersionp + QLatin1StringView(")?");
     QString Keyword_result_p = QStringLiteral("none|pass|fail|softfail|policy|neutral|temperror|permerror");
     // older SPF specs (e.g. RFC 4408) use mixed case
     Keyword_result_p += QLatin1StringView("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");

@@ -54,9 +54,10 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     }
 
     const QGpgME::Protocol *protocol = nullptr;
-    if (protocolContentType == QLatin1StringView("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
+    if (protocolContentType == QLatin1StringView("application/pkcs7-signature") || protocolContentType == QLatin1StringView("application/x-pkcs7-signature")) {
         protocol = QGpgME::smime();
-    } else if (protocolContentType == QLatin1StringView("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
+    } else if (protocolContentType == QLatin1StringView("application/pgp-signature")
+               || protocolContentType == QLatin1StringView("application/x-pgp-signature")) {
         protocol = QGpgME::openpgp();
     }
 

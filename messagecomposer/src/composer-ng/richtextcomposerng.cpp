@@ -139,7 +139,7 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
             const double emValue = ptValue / 12;
             replacement = QString::number(emValue, 'g', 2);
             const int capLen = rmatch.capturedLength(1);
-            cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1StringView("pt").size() */, replacement + QLatin1String("em"));
+            cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1StringView("pt").size() */, replacement + QLatin1StringView("em"));
             // advance the offset to just after the last replace
             offset = rmatch.capturedEnd(0) - capLen + replacement.size();
         } else {

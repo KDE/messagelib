@@ -19,7 +19,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         return false;
     }
     QString newHeaders = header;
-    newHeaders.replace(QLatin1StringView("; "), QLatin1String(";"));
+    newHeaders.replace(QLatin1StringView("; "), QLatin1StringView(";"));
     const QStringList items = newHeaders.split(QLatin1Char(';'), Qt::SkipEmptyParts);
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {

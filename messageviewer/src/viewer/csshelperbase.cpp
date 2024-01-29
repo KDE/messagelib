@@ -276,7 +276,7 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
         quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
+        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1StringView("}\n\n");
     }
     quoteCSS += quoteCssDefinition();
 
@@ -444,7 +444,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
         quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1String("}\n\n");
+        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1StringView("}\n\n");
     }
 
     // CSS definitions for quote levels 1-3
@@ -460,7 +460,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
             quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes) {
-            quoteCSS += QLatin1StringView("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1String("% ! important;\n");
+            quoteCSS += QLatin1StringView("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1StringView("% ! important;\n");
         }
         quoteCSS += QStringLiteral("}\n\n");
     }

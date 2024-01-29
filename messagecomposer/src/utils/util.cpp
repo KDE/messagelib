@@ -433,7 +433,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegularExpression rx(QLatin1StringView("\\b") + attachWordsList.join(QLatin1String("\\b|\\b")) + QLatin1String("\\b"),
+    QRegularExpression rx(QLatin1StringView("\\b") + attachWordsList.join(QLatin1StringView("\\b|\\b")) + QLatin1String("\\b"),
                           QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words

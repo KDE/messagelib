@@ -96,7 +96,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         }
         const QUrl url(href);
         if (!title.isEmpty()) {
-            if (title.startsWith(QLatin1StringView("http:")) || title.startsWith(QLatin1String("https:")) || title.startsWith(QLatin1String("www."))) {
+            if (title.startsWith(QLatin1StringView("http:")) || title.startsWith(QLatin1StringView("https:")) || title.startsWith(QLatin1String("www."))) {
                 if (title.startsWith(QLatin1StringView("www."))) {
                     const QString completUrl = url.scheme() + QLatin1StringView("://") + title;
                     if (completUrl != href && href != (completUrl + QLatin1Char('/'))) {
@@ -183,7 +183,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             // qDebug() << "text " << text << " href "<<href << " normalizedHref " << normalizedHref;
 
             if (!text.isEmpty()) {
-                if (text.startsWith(QLatin1StringView("http:/")) || text.startsWith(QLatin1String("https:/"))) {
+                if (text.startsWith(QLatin1StringView("http:/")) || text.startsWith(QLatin1StringView("https:/"))) {
                     if (text.toLower() != normalizedHref.toLower()) {
                         if (text != normalizedHref) {
                             if (normalizedHref != (text + QLatin1Char('/'))) {
@@ -219,11 +219,11 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     }
     if (mapResult.value(QStringLiteral("forms")).toInt() > 0) {
         d->mDetails +=
-            QLatin1StringView("<li></b>") + i18n("Message contains form element. This is often the case in scam emails.") + QLatin1String("</b></li>");
+            QLatin1StringView("<li></b>") + i18n("Message contains form element. This is often the case in scam emails.") + QLatin1StringView("</b></li>");
         foundScam = true;
     }
     if (foundScam) {
-        d->mDetails.prepend(QLatin1StringView("<b>") + i18n("Details:") + QLatin1String("</b><ul>"));
+        d->mDetails.prepend(QLatin1StringView("<b>") + i18n("Details:") + QLatin1StringView("</b><ul>"));
         d->mDetails += QLatin1StringView("</ul>");
         Q_EMIT messageMayBeAScam();
     }

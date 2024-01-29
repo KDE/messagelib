@@ -37,7 +37,7 @@ void TrackingWarningWidget::slotShowDetails(const QString &content)
 
 QString TrackingWarningWidget::generateDetails() const
 {
-    QString details = QLatin1StringView("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
+    QString details = QLatin1StringView("<b>") + i18n("Details:") + QLatin1StringView("</b><ul>");
 
     QMapIterator<QString, blackListFound> i(mBackLists);
     while (i.hasNext()) {

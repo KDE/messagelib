@@ -27,7 +27,7 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QUrl &url,
         return false;
     }
     const QString scheme = url.scheme();
-    if (scheme == QLatin1StringView("data") || scheme == QLatin1String("file")) {
+    if (scheme == QLatin1StringView("data") || scheme == QLatin1StringView("file")) {
         return false;
     }
 

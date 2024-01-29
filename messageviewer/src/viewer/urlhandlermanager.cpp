@@ -433,7 +433,7 @@ bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *
 {
     //  kmail:levelquote/?num      -> the level quote to collapse.
     //  kmail:levelquote/?-num      -> expand all levels quote.
-    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1String("levelquote")) {
+    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1StringView("levelquote")) {
         const QString levelStr = url.query();
         bool isNumber = false;
         const int levelQuote = levelStr.toInt(&isNumber);
@@ -454,7 +454,7 @@ bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *w
 
 QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1String("levelquote")) {
+    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1StringView("levelquote")) {
         const QString query = url.query();
         if (query.length() >= 1) {
             if (query[0] == QLatin1Char('-')) {
@@ -820,7 +820,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
 
 static QString extractAuditLog(const QUrl &url)
 {
-    if (url.scheme() != QLatin1StringView("kmail") || url.path() != QLatin1String("showAuditLog")) {
+    if (url.scheme() != QLatin1StringView("kmail") || url.path() != QLatin1StringView("showAuditLog")) {
         return {};
     }
     QUrlQuery query(url);
@@ -874,7 +874,7 @@ bool InternalImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window)
 bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
     Q_UNUSED(window)
-    if (url.scheme() == QLatin1StringView("data") && url.path().startsWith(QLatin1String("image"))) {
+    if (url.scheme() == QLatin1StringView("data") && url.path().startsWith(QLatin1StringView("image"))) {
         return true;
     }
 
@@ -886,17 +886,18 @@ bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *win
 bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     const QString scheme(url.scheme());
-    if ((scheme == QLatin1StringView("http")) || (scheme == QLatin1String("https")) || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
-        || (scheme == QLatin1StringView("ftps")) || (scheme == QLatin1String("sftp")) || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
-        || (scheme == QLatin1StringView("smb")) || (scheme == QLatin1String("fish")) || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))
-        || (scheme == QLatin1StringView("geo")) || (scheme == QLatin1String("sms"))) {
+    if ((scheme == QLatin1StringView("http")) || (scheme == QLatin1StringView("https")) || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
+        || (scheme == QLatin1StringView("ftps")) || (scheme == QLatin1StringView("sftp")) || (scheme == QLatin1String("help"))
+        || (scheme == QLatin1String("vnc")) || (scheme == QLatin1StringView("smb")) || (scheme == QLatin1StringView("fish"))
+        || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel")) || (scheme == QLatin1StringView("geo"))
+        || (scheme == QLatin1StringView("sms"))) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2s, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
         QMimeDatabase mimeDb;
         auto mime = mimeDb.mimeTypeForUrl(url);
-        if (mime.name() == QLatin1StringView("application/x-desktop") || mime.name() == QLatin1String("application/x-executable")
-            || mime.name() == QLatin1StringView("application/x-ms-dos-executable") || mime.name() == QLatin1String("application/x-shellscript")) {
+        if (mime.name() == QLatin1StringView("application/x-desktop") || mime.name() == QLatin1StringView("application/x-executable")
+            || mime.name() == QLatin1StringView("application/x-ms-dos-executable") || mime.name() == QLatin1StringView("application/x-shellscript")) {
             if (KMessageBox::warningTwoActions(
                     nullptr,
                     xi18nc("@info", "Do you really want to execute <filename>%1</filename>?", url.toDisplayString(QUrl::PreferLocalFile)),

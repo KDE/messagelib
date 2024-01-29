@@ -19,7 +19,7 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";
         return false;
     }
-    newKey.replace(QLatin1StringView("; "), QLatin1String(";"));
+    newKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
     const QStringList items = newKey.split(QLatin1Char(';'));
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();

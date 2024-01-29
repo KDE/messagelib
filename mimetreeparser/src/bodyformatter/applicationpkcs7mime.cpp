@@ -45,7 +45,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
     const auto mt = ct->mimeType();
     const auto isCorrectMimeType = mt == QByteArrayLiteral("application/pkcs7-mime") || mt == QByteArrayLiteral("application/x-pkcs7-mime");
     const auto hasCorrectName = mt == QByteArrayLiteral("application/octet-stream")
-        && (ct->name().endsWith(QLatin1StringView("p7m")) || ct->name().endsWith(QLatin1String("p7s")) || ct->name().endsWith(QLatin1String("p7c")));
+        && (ct->name().endsWith(QLatin1StringView("p7m")) || ct->name().endsWith(QLatin1StringView("p7s")) || ct->name().endsWith(QLatin1String("p7c")));
     if (!isCorrectMimeType && !hasCorrectName) {
         return {};
     }

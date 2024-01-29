@@ -533,9 +533,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
     if (mimetype.isValid()) {
         const QStringList parentMimeType = mimetype.parentMimeTypes();
-        if ((contentTypeStr == QLatin1StringView("text/plain")) || (contentTypeStr == QLatin1String("image/png"))
-            || (contentTypeStr == QLatin1String("image/jpeg")) || parentMimeType.contains(QLatin1StringView("text/plain"))
-            || parentMimeType.contains(QLatin1String("image/png")) || parentMimeType.contains(QLatin1StringView("image/jpeg"))) {
+        if ((contentTypeStr == QLatin1StringView("text/plain")) || (contentTypeStr == QLatin1StringView("image/png"))
+            || (contentTypeStr == QLatin1StringView("image/jpeg")) || parentMimeType.contains(QLatin1StringView("text/plain"))
+            || parentMimeType.contains(QLatin1StringView("image/png")) || parentMimeType.contains(QLatin1StringView("image/jpeg"))) {
             action = menu.addAction(i18nc("to view something", "View"));
             action->setEnabled(!deletedAttachment);
             connect(action, &QAction::triggered, this, [this]() {
@@ -1865,7 +1865,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
                         .arg(bgColor.name());
             mNodeHelper->writeNodeToTempFile(node);
             const QString href = mNodeHelper->asHREF(node, QStringLiteral("header"));
-            html += QLatin1StringView("<a href=\"") + href + QLatin1String("\">");
+            html += QLatin1StringView("<a href=\"") + href + QLatin1StringView("\">");
             const QString imageMaxSize = QStringLiteral("width=\"16\" height=\"16\"");
 #if 0
             if (!info.icon.isEmpty()) {
@@ -2017,7 +2017,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     // to get the URL before WebKit managed to mangle it.
     QUrl url(link);
     const QString protocol = url.scheme();
-    if (protocol == QLatin1StringView("kmail") || protocol == QLatin1String("x-kmail") || protocol == QLatin1String("attachment")
+    if (protocol == QLatin1StringView("kmail") || protocol == QLatin1StringView("x-kmail") || protocol == QLatin1String("attachment")
         || (protocol.isEmpty() && url.path().isEmpty())) {
         mViewer->setAcceptDrops(false);
     } else {
