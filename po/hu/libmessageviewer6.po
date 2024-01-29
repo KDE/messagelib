@@ -2,26 +2,25 @@
 # Marcell Lengyel <miketkf@yahoo.com>, 1999.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2014-10-03 12:55+0200\n"
-"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"PO-Revision-Date: 2024-01-28 22:11+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
-#, fuzzy
-#| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
 msgid "Sorry, certificate could not be imported."
-msgstr "A tanúsítványt nem sikerült importálni.<br />A hiba oka: %1"
+msgstr "A tanúsítványt nem sikerült importálni."
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
 #, kde-format
@@ -100,10 +99,8 @@ msgid "Please wait while the message is being decrypted..."
 msgstr "Kis türelmet, az üzenet visszafejtése folyik…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
-#, fuzzy
-#| msgid "This message is encrypted."
 msgid "The message is encrypted for the following keys:"
-msgstr "Az üzenet titkosított."
+msgstr "Az üzenetet a következő kulcsokkal titkosították:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
@@ -113,25 +110,20 @@ msgstr "A részletek elrejtése"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
 #: messagepartthemes/default/templates/encryptedmessagepart.html:69
-#, fuzzy
-#| msgctxt "name used for a virgin filter"
-#| msgid "unknown"
 msgid "unknown key"
-msgstr "új szűrő"
+msgstr "ismeretlen kulcs"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr " Oszlop: %1 "
+msgstr "Megfelelőség: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Titkosított üzenet"
+msgstr "Titkosított üzenet (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -147,16 +139,16 @@ msgid "Encrypted message (decryption not possible)"
 msgstr "Titkosított üzenet (nem lehet dekódolni)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
-#, fuzzy
-#| msgid "Reason: %1"
 msgid "Reason: "
-msgstr "Ok: %1"
+msgstr "Ok: "
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
+"Nem található titkos kulcs az üzenet visszafejtéséhez. Az üzenetet a "
+"következő kulcsokkal titkosították:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -167,12 +159,6 @@ msgid "End of encrypted message"
 msgstr "A titkosított üzenet vége"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
-#| "HTML code is shown. If you trust the sender of this message then you can "
-#| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
-#| "\">by clicking here</a>."
 msgid ""
 "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
 "HTML code is shown. If you trust the sender of this message then you can "
@@ -181,17 +167,10 @@ msgid ""
 msgstr ""
 "<b>Megjegyzés:</b> ez egy HTML-formátumú üzenet. Biztonsági okokból egyszerű "
 "szövegként jelenik meg a HTML forráskód. Ha a feladót megbízhatónak tartja "
-"és meg szeretné tekinteni a HTML tartalmat, <a href=\"kmail:showHTML"
-"\">kattintson ide</a>."
+"és meg szeretné tekinteni a HTML tartalmat, <a href='kmail:"
+"showHTML'>kattintson ide</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This HTML message may contain external references to images "
-#| "etc. For security/privacy reasons external references are not loaded. If "
-#| "you trust the sender of this message then you can load the external "
-#| "references for this message <a href=\"kmail:loadExternal\">by clicking "
-#| "here</a>."
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
@@ -201,7 +180,7 @@ msgstr ""
 "<b>Megjegyzés:</b> Ez a HTML formátumú üzenet külső, például képekre "
 "vonatkozó hivatkozásokat tartalmazhat. Biztonsági okokból ezeket nem tölti "
 "be a program. Ha a feladót megbízhatónak tartja és be szeretné tölteni a "
-"külső hivatkozásokat, <a href=\"kmail:loadExternal\">kattintson ide</a>."
+"külső hivatkozásokat, <a href='kmail:loadExternal'>kattintson ide</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
@@ -302,47 +281,36 @@ msgid "Warning: The signature is bad."
 msgstr "Figyelem! Az elektronikus aláírás hibás."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgid "Compliance: %1"
-msgstr " Oszlop: %1 "
+msgstr "Megfelelőség: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
-msgstr "Érvénytelen aláírás."
+msgstr "Érvénytelen aláírás"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez."
+msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Aláíró: <a href=\"mailto:%1\">%2</a>"
+msgstr "Aláíró: <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "Az aláírás érvényes."
+msgstr "Az aláírás érvényes"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
-msgstr "Ismeretlen aláírási dátum"
+msgstr "Ismeretlen aláírási állapot"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "My %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "Saját %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -354,118 +322,103 @@ msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
+"A tárolt DKIM kulcs különbözik a jelenlegitől. Szeretné tárolni ezt is?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "Kulcs módosítva"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "eltárolva: "
+msgstr "Tárolás"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM kulcs"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select Folder"
+#, kde-format
 msgid "Selector"
-msgstr "Mappa kiválasztása"
+msgstr "Kiválasztó"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Insert Command"
+#, kde-format
 msgid "Inserted"
-msgstr "Parancs beszúrása"
+msgstr "Beszúrva"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#, fuzzy, kde-format
-#| msgid "Last Week"
+#, kde-format
 msgid "Last Used"
-msgstr "Múlt hét"
+msgstr "Utoljára használva"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:69
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Key"
-msgstr "Más&olás ide"
+msgstr "Kulcs másolása"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:76
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] "Eltávolítás"
-msgstr[1] "Eltávolítás"
+msgstr[0] "Kulcs eltávolítása"
+msgstr[1] "Kulcsok eltávolítása"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete list \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] "Törölni szeretné a(z) „%1” listát?"
-msgstr[1] "Törölni szeretné a(z) „%1” listát?"
+msgstr[0] "Szeretné törölni ezt a kulcsot?"
+msgstr[1] "Szeretné törölni ezeket a kulcsokat?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Delete"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "Törlés"
-msgstr[1] "Törlés"
+msgstr[0] "Kulcs törlése"
+msgstr[1] "Kulcsok törlése"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Törlés"
+msgstr "Összes törlése"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#, fuzzy, kde-format
-#| msgid "Do you want to delete list \"%1\"?"
+#, kde-format
 msgid "Do you want to delete all keys?"
-msgstr "Törölni szeretné a(z) „%1” listát?"
+msgstr "Szeretné törölni az összes kulcsot?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "Törlés"
+msgstr "Kulcsok törlése"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
-#, fuzzy, kde-format
-#| msgid "Message will be signed"
+#, kde-format
 msgid "Must be signed"
-msgstr "Az üzenet alá lesz írva"
+msgstr "Alá kell írni"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
-#, fuzzy, kde-format
-#| msgid "Message will be signed"
+#, kde-format
 msgid "Can be signed"
-msgstr "Az üzenet alá lesz írva"
+msgstr "Alá lehet írni"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
-#, fuzzy, kde-format
-#| msgid "Message will not be signed"
+#, kde-format
 msgid "Ignore if not signed"
-msgstr "Az üzenet nem lesz aláírva"
+msgstr "Mellőzés, ha nincs aláírva"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
@@ -473,17 +426,15 @@ msgid "Export..."
 msgstr "Exportálás..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Configure Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr "Postafiók beállítása"
+msgstr "Szabály beállítása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add G&roup..."
+#, kde-format
 msgid "Add Rule..."
-msgstr "&Csoport hozzáadása..."
+msgstr "Szabály hozzáadása…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
@@ -491,58 +442,52 @@ msgid "Import..."
 msgstr "Importálás..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "Nem található aláírás"
+msgstr "Nem találhatók szabályok"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "Szűrők exportálása"
+msgstr "Szabályok exportálása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
+#, kde-format
 msgid "Export Rules"
-msgstr "Szűrők exportálása"
+msgstr "Szabályok exportálása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgid "Import Rules"
-msgstr "Szűrők importálása"
+msgstr "Szabályok importálása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules imported."
-msgstr "Nem található aláírás"
+msgstr "Nem lettek importálva szabályok."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "Szűrők importálása"
+msgstr "Szabályok importálása"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Tartomány"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Aktív"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
-msgstr ""
+msgstr "Listaazonosító"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -550,15 +495,14 @@ msgid "From"
 msgstr "Feladó"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Folder List"
+#, kde-format
 msgid "Rule type"
-msgstr "Mappalista"
+msgstr "Szabálytípus"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "Prioritás"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:196
 #: remote-content/remotecontentconfigurewidget.cpp:80
@@ -573,74 +517,65 @@ msgid "Modify..."
 msgstr "Módosítás..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "Szűrési szabályok"
+msgstr "Szabály duplikálása"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remove Rule"
-msgstr "Eltávolítás"
+msgstr "Szabály eltávolítása"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "Do you want to delete list \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this rule?"
-msgstr "Törölni szeretné a(z) „%1” listát?"
+msgstr "Szeretné törölni ezt a szabályt?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "Szűrési szabályok"
+msgstr "Szabály törlése"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
-#, fuzzy, kde-format
-#| msgid "Do you want to delete list \"%1\"?"
+#, kde-format
 msgid "Do you want to delete all the rules?"
-msgstr "Törölni szeretné a(z) „%1” listát?"
+msgstr "Szeretné törölni az összes szabályt?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "Szűrési szabályok"
+msgstr "Szabályok törlése"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "Szabály hozzáadása"
 
 #: dkim-verify/dkimruledialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Modify Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr "Postafiók módosítása"
+msgstr "Szabály módosítása"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enable"
+#, kde-format
 msgid "Enabled"
-msgstr "Engedélyezem"
+msgstr "Engedélyezve"
 
 #: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Defaul&t domain:"
+#, kde-format
 msgid "Domain:"
-msgstr "Az ala&pértelmezett tartomány:"
+msgstr "Tartomány:"
 
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
-msgstr ""
+msgstr "Listaazonosító:"
 
 #: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
 #, kde-format
@@ -650,43 +585,42 @@ msgstr "Feladó:"
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Használja a „*”-ot a tartomány összes e-mailjének megadásához"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
 msgid "SDID:"
-msgstr ""
+msgstr "SDID:"
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "Rule:"
-msgstr ""
+msgstr "Szabály:"
 
 #: dkim-verify/dkimrulewidget.cpp:60
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "Prioritás:"
 
 #: dkim-verify/dkimviewermenu.cpp:14
 #, kde-format
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
-msgstr "Az aláírás megőrzése"
+msgstr "DKIM aláírás újraellenőrzése"
 
 #: dkim-verify/dkimviewermenu.cpp:39
 #, kde-format
 msgid "Update DKIM key"
-msgstr ""
+msgstr "DKIM kulcs frissítése"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr ""
+msgstr "Szabályok…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
 #, kde-format
@@ -694,189 +628,172 @@ msgid "Unknown"
 msgstr "Ismeretlen"
 
 #: dkim-verify/dkimwidgetinfo.cpp:100
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr "Az üzenet aláírója: %1."
+msgstr "DKIM: érvényes (aláíró: %1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: érvénytelen"
 
 #: dkim-verify/dkimwidgetinfo.cpp:110
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgid "DKIM: Not signed"
-msgstr "Elküldés aláírás nélkül?"
+msgstr "DKIM: nincs aláírva"
 
 #: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: %1 által aláírtnak kellene lennie"
 
 #: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "A törzs kivonata sérült."
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "A tartomány nem létezik."
 
 #: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "Hiányzó Feladó fejléc."
 
 #: dkim-verify/dkimwidgetinfo.cpp:140
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Missing signature."
-msgstr "Az aláírás hiteles."
+msgstr "Hiányzó aláírás."
 
 #: dkim-verify/dkimwidgetinfo.cpp:143
-#, fuzzy, kde-format
-#| msgid "Invalid signature."
+#, kde-format
 msgid "Invalid query method."
-msgstr "Érvénytelen aláírás."
+msgstr "Érvénytelen lekérdezési mód."
 
 #: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "Érvénytelen fejléc-kanonikalizáció."
 
 #: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "Érvénytelen törzskanonikalizáció."
 
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "A törzs hash algoritmusa ismeretlen."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature algorithm is invalid."
-msgstr "Az aláírás érvényes."
+msgstr "Az aláíró algoritmus érvénytelen."
 
 #: dkim-verify/dkimwidgetinfo.cpp:158
-#, fuzzy, kde-format
-#| msgid "One key has been revoked."
+#, kde-format
 msgid "The public key was revoked."
-msgstr "Az egyik kulcsot visszavonták."
+msgstr "A nyilvános kulcsot visszavonták."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature is too large."
-msgstr "Az aláírás érvényes."
+msgstr "Az aláírás túl nagy."
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr "Ez a karakterkészlet nem támogatott."
+msgstr "A hash algoritmus nem támogatott."
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "A nyilvános kulcs túl kicsi."
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to verify signature."
-msgstr "Nincs publikus kulcs az aláírás ellenőrzéséhez"
+msgstr "Lehetetlen ellenőrizni az aláírást."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
+"Az AUID-nak és az SDID-nek ugyanabban a tartományban kell lenniük (s-jelző "
+"beállítva a kulcsrekordban)."
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr ""
+msgstr "Az aláíró tartomány csak DKIM-et ellenőriz."
 
 #: dkim-verify/dkimwidgetinfo.cpp:179
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to download key."
-msgstr "Nincs publikus kulcs az aláírás ellenőrzéséhez"
+msgstr "Lehetetlen letölteni a kulcsot."
 
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr "Ez a karakterkészlet nem támogatott."
+msgstr "A hash algoritmus nem biztonságos (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
-msgstr ""
+msgstr "Az AUID nem az SDID egy résztartománya"
 
 #: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
-msgstr ""
+msgstr "Hiba a nyilvános kulcs átalakításakor"
 
 #: dkim-verify/dkimwidgetinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "The signature has expired."
+#, kde-format
 msgid "Signature expired"
-msgstr "Az elektronikus aláírás lejárt."
+msgstr "Lejárt aláírás"
 
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "Jövőben létrehozott aláírás"
 
 #: dkim-verify/dkimwidgetinfo.cpp:203
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature too small"
-msgstr "Az aláírás érvényes."
+msgstr "Túl kicsi aláírás"
 
 #: dkim-verify/dkimwidgetinfo.cpp:209
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Public Key too small"
-msgstr "Az aláírás érvényes."
+msgstr "Túl kicsi nyilvános kulcs"
 
 #: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "Permissions"
-#| msgid "None"
+#, kde-format
 msgid "%1: None"
-msgstr "Nincs"
+msgstr "%1: Nincs"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "Az üzenet aláírója: %1."
+msgstr "%1: Érvényes (aláíró: %2)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
-#, fuzzy, kde-format
-#| msgid "%1: "
+#, kde-format
 msgid "%1: Valid"
-msgstr "%1: "
+msgstr "%1: Érvényes"
 
 #: dkim-verify/dkimwidgetinfo.cpp:303
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgid "Not Signed"
-msgstr "A&láírás nélkül"
+msgstr "Nincs aláírva"
 
 #: header/grantleeheaderformatter.cpp:204
 #, kde-format
@@ -889,10 +806,9 @@ msgid "Date:"
 msgstr "Dátum:"
 
 #: header/grantleeheaderformatter.cpp:240
-#, fuzzy, kde-format
-#| msgid "Message Id"
+#, kde-format
 msgid "Message-Id:"
-msgstr "Üzenetazonosító"
+msgstr "Üzenetazonosító:"
 
 #: header/grantleeheaderformatter.cpp:264
 #, kde-format
@@ -900,10 +816,9 @@ msgid "To:"
 msgstr "Címzett:"
 
 #: header/grantleeheaderformatter.cpp:266
-#, fuzzy, kde-format
-#| msgid "&Reply To"
+#, kde-format
 msgid "Reply To:"
-msgstr "&Válaszcím"
+msgstr "Válaszcím:"
 
 #: header/grantleeheaderformatter.cpp:268
 #, kde-format
@@ -916,22 +831,19 @@ msgid "BCC:"
 msgstr "Titkos másolat:"
 
 #: header/grantleeheaderformatter.cpp:274
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgid "Sender:"
-msgstr "Feladó"
+msgstr "Feladó:"
 
 #: header/grantleeheaderformatter.cpp:276
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent from:"
-msgstr "újraküldte"
+msgstr "újraküldte:"
 
 #: header/grantleeheaderformatter.cpp:278
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent to:"
-msgstr "újraküldte"
+msgstr "újracímezve:"
 
 #: header/grantleeheaderformatter.cpp:359
 #, kde-format
@@ -965,10 +877,9 @@ msgid "Attachments:"
 msgstr "Mellékletek:"
 
 #: header/grantleeheaderformatter.cpp:544
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgid "Security:"
-msgstr "Biztonság"
+msgstr "Biztonság:"
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -1095,25 +1006,22 @@ msgid "Reply to: "
 msgstr "Válaszcím: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr "Figyelmen kívül hagyás"
+msgstr "Mellőzés"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "Elküldés"
+msgstr "Küldés"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Send Now"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "Küldés most"
+msgstr "Elutasítás küldése"
 
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
@@ -1126,10 +1034,9 @@ msgid "Good signature"
 msgstr "Az aláírás hiteles"
 
 #: messagepartthemes/default/defaultrenderer.cpp:75
-#, fuzzy, kde-format
-#| msgid "Good signature"
+#, kde-format
 msgid "Bad signature"
-msgstr "Az aláírás hiteles"
+msgstr "Hibás aláírás"
 
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
@@ -1203,10 +1110,9 @@ msgid "One key has been revoked."
 msgstr "Az egyik kulcsot visszavonták."
 
 #: messagepartthemes/default/defaultrenderer.cpp:205
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Bad signature."
-msgstr "Az aláírás hiteles."
+msgstr "Hibás aláírás."
 
 #: messagepartthemes/default/defaultrenderer.cpp:525
 #: messagepartthemes/default/defaultrenderer.cpp:527
@@ -1249,11 +1155,10 @@ msgstr ""
 "(%2) jött-e."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr "Sablontartalom"
+msgstr "Távoli tartalom beállítása"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
@@ -1261,73 +1166,65 @@ msgid "Status"
 msgstr "Állapot"
 
 #: remote-content/remotecontentconfigurewidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "Do you want to delete list \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr "Törölni szeretné a(z) „%1” listát?"
+msgstr "Szeretné törölni ezt a szabályt: „%1”?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr "Sablontartalom"
+msgstr "Távoli tartalom szerkesztése"
 
 #: remote-content/remotecontentconfigurewidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr "Sablontartalom"
+msgstr "Távoli tartalom hozzáadása"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "Egy bejegyzés már meghatározza ezt az URL-t. Kérjük, módosítsa azt."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "Új címke"
+msgstr "Új URL hozzáadása"
 
 #: remote-content/remotecontentmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure"
-msgstr "Beállítások..."
+msgstr "Beállítás"
 
 #: remote-content/remotecontentmenu.cpp:19
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgid "Remote Content"
-msgstr "Sablontartalom"
+msgstr "Távoli tartalom"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "%1 engedélyezése"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "Összes URL engedélyezése"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "Engedélyezve"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
-#, fuzzy, kde-format
-#| msgid "Block image"
+#, kde-format
 msgid "Blocked"
-msgstr "Kép blokkolása"
+msgstr "Tiltva"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Részletek"
@@ -1431,7 +1328,7 @@ msgstr "Nem észlelhető hálózati kapcsolat, nem lehet kibontani az URL-t."
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Impossible to expand '%1'."
-msgstr ""
+msgstr "A(z) „%1” kibontása lehetetlen."
 
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
@@ -1546,10 +1443,9 @@ msgstr "Háttérszín és képek nyomtatása"
 
 #. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
 #: ui/printingsettings.ui:38
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Always show encryption/signature details"
-msgstr "Az aláírás részleteinek megjelenítése."
+msgstr "A titkosítás/aláírás részletei mindig jelenjenek meg"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -1559,8 +1455,7 @@ msgstr "A megjelenítő beállításai"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
-#, fuzzy, kde-format
-#| msgid "&Override character encoding:"
+#, kde-format
 msgid "O&verride character encoding:"
 msgstr "A karakterkódolás fe&lülbírálása:"
 
@@ -1584,17 +1479,15 @@ msgstr "&Kibontás/összecsukás idézőjelek megjelenítése"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
-#, fuzzy, kde-format
-#| msgid "Automatic collapse level:"
+#, kde-format
 msgid "Automatic collapse &level:"
-msgstr "Automatikus összecsukási szint:"
+msgstr "Automatikus összecsukási s&zint:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
-#, fuzzy, kde-format
-#| msgid "Minimum font size:"
+#, kde-format
 msgid "&Minimum font size:"
-msgstr "Minimális betűméret:"
+msgstr "&Minimális betűméret:"
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
@@ -1603,8 +1496,7 @@ msgid ""
 msgstr "Már létezik \"%1\" nevű fájl. Felül szeretné írni?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Felülírás?"
@@ -1670,22 +1562,20 @@ msgstr "Az aláírás megőrzése"
 
 #: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
 #: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
-#, fuzzy, kde-kuit-format
-#| msgctxt "1 = file name, 2 = error string"
-#| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
-"<qt>Nem sikerült írni a következő fájlba<br><filename>%1</filename><br><br>%2"
+"<qt>Nem sikerült írni a következő fájlba<br /><filename>%1</filename><br /"
+"><br />%2<br /></qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr "Nem sikerült elmenteni a mellékletet"
+msgstr "Hiba a melléklet mentésekor"
 
 #: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
 #, kde-format
@@ -1703,14 +1593,9 @@ msgid "message"
 msgstr "üzenet"
 
 #: utils/messageviewerutil.cpp:489
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.mbox|email messages (*.mbox)\n"
-#| "*|all files (*)"
+#, kde-format
 msgid "email messages (*.mbox);;all files (*)"
-msgstr ""
-"*.mbox|e-mail üzenetek (*.mbox)\n"
-"*|minden fájl (*)"
+msgstr "e-mail üzenetek (*.mbox);;minden fájl (*)"
 
 #: utils/messageviewerutil.cpp:500
 #, kde-format
@@ -1725,8 +1610,7 @@ msgid "File %1 could not be loaded."
 msgstr "A(z) %1 fájlt nem sikerült betölteni."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Hiba az üzenet betöltése közben"
@@ -1737,8 +1621,7 @@ msgid "File %1 could not be created."
 msgstr "A(z) %1 fájlt nem sikerült létrehozni."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Hiba az üzenet mentése közben"
@@ -1754,12 +1637,10 @@ msgid "Error saving message"
 msgstr "Hiba az üzenet mentése közben"
 
 #: utils/messageviewerutil.cpp:602
-#, fuzzy, kde-format
-#| msgctxt "Not able to attend."
-#| msgid "Declined: %1"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Elutasítva: %1"
+msgstr "Törölve: %1"
 
 #: utils/messageviewerutil.cpp:613
 #, kde-format
@@ -1767,6 +1648,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Törölt egy mellékletet ebből az üzenetből. A melléklet eredeti MIME-fejlécei "
+"a következők voltak:"
 
 #: utils/messageviewerutil.cpp:640
 #, kde-format
@@ -1800,17 +1683,15 @@ msgid "Size"
 msgstr "Méret"
 
 #: viewer/printmessage.cpp:61
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "Nem sikerült írni a(z) %1 fájlba."
+msgstr "Nem sikerült nyomtatási előnézetet generálni."
 
 #: viewer/printmessage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "Dokumentáció"
+msgstr "Dokumentum nyomtatása"
 
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
@@ -1848,22 +1729,19 @@ msgid "Hide signature details."
 msgstr "Az aláírás részleteinek elrejtése."
 
 #: viewer/urlhandlermanager.cpp:420
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Show encryption details."
-msgstr "Az aláírás részleteinek megjelenítése."
+msgstr "A titkosítás részleteinek megjelenítése."
 
 #: viewer/urlhandlermanager.cpp:422
-#, fuzzy, kde-format
-#| msgid "Hide signature details."
+#, kde-format
 msgid "Hide encryption details."
-msgstr "Az aláírás részleteinek elrejtése."
+msgstr "A titkosítás részleteinek elrejtése."
 
 #: viewer/urlhandlermanager.cpp:427
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Open Documentation"
-msgstr "Dokumentáció"
+msgstr "Dokumentáció megnyitása"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
@@ -1968,11 +1846,10 @@ msgstr ""
 "digitális aláírásai."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "A melléklet törlése"
+msgstr "Melléklet törlése"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -2034,15 +1911,12 @@ msgid "Delete Attachment"
 msgstr "A melléklet törlése"
 
 #: viewer/viewer_p.cpp:580
-#, fuzzy, kde-format
-#| msgid "Reply to A&uthor..."
+#, kde-format
 msgid "Reply To Author"
-msgstr "Válasz a &feladónak..."
+msgstr "Válasz a feladónak"
 
 #: viewer/viewer_p.cpp:588
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Reply to All"
+#, kde-format
 msgid "Reply To All"
 msgstr "Válasz mindenkinek"
 
@@ -2057,14 +1931,12 @@ msgid "KMail"
 msgstr "KMail"
 
 #: viewer/viewer_p.cpp:732
-#, fuzzy, kde-format
-#| msgid "The KDE email client."
+#, kde-format
 msgid "The KDE Mail Client"
-msgstr "A KDE levelezőkliense."
+msgstr "A KDE levelezőkliense"
 
 #: viewer/viewer_p.cpp:1277
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Melléklet megtekintése: %1"
@@ -2148,10 +2020,9 @@ msgid "Auto"
 msgstr "automatikus"
 
 #: viewer/viewer_p.cpp:1535
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Text"
-msgstr "Más&olás ide"
+msgstr "Szöveg másolása"
 
 #: viewer/viewer_p.cpp:1542
 #, kde-format
@@ -2184,8 +2055,7 @@ msgid "&View Source"
 msgstr "A f&orrás megjelenítése"
 
 #: viewer/viewer_p.cpp:1574
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
@@ -2240,10 +2110,9 @@ msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
 #: viewer/viewer_p.cpp:1635
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgid "Share Text..."
-msgstr "Szöveg felolvasása"
+msgstr "Szöveg megosztása…"
 
 #: viewer/viewer_p.cpp:1653
 #, kde-format
@@ -2258,7 +2127,7 @@ msgstr "Ker&esés az üzenet szövegében..."
 #: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
-msgstr ""
+msgstr "Hangulatjelek kikapcsolása"
 
 #: viewer/viewer_p.cpp:1734
 #, kde-format
@@ -2278,35 +2147,36 @@ msgstr "Az összes melléklet mentése…"
 #: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "The network is broken."
-msgstr ""
+msgstr "A hálózat nem működik."
 
 #: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "Adathalász URL ellenőrzése"
 
 #: viewer/viewer_p.cpp:1984
-#, fuzzy, kde-format
-#| msgid "Grantlee theme \"%1\" is not valid."
+#, kde-format
 msgid "The URL %1 is not valid."
-msgstr "A(z) „%1” Grantlee téma nem érvényes."
+msgstr "A(z) %1 URL-cím érvénytelen."
 
 #: viewer/viewer_p.cpp:1984
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "Adathalász URL ellenőrzése"
 
 #: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
+"A weboldal káros tevékenységet folytat, biztosan folytatni szeretné a "
+"megjelenítését?"
 
 #: viewer/viewer_p.cpp:2005
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "Malware"
 
 #: viewer/viewer_p.cpp:2059
 #, kde-format
@@ -2314,8 +2184,7 @@ msgid "Copy Email Address"
 msgstr "E-mail cím másolása"
 
 #: viewer/viewer_p.cpp:2142
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Az üzenet egyszerű szövegként"
@@ -2336,37 +2205,30 @@ msgid "Message not found."
 msgstr "Az üzenet nem található."
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"Megnyitja a(z) „%1” mellékletet?\n"
-"Csak akkor nyissa meg a fájlt, ha biztos benne, hogy az megbízható forrásból "
-"származik."
+"Megnyitja a(z) <filename>%1</filename> mellékletet?<nl/>Csak akkor nyissa "
+"meg a fájlt, ha biztos benne, hogy az megbízható forrásból származik."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "Meg szeretné nyitni a mellékletet?"
+msgstr "Melléklet megnyitása?"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
-msgstr "Me&gnyitás ezzel: '%1'"
+msgstr "Me&gnyitás ezzel: „%1”"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "Megnyitás ezzel..."
+msgstr "Megnyitás &mással…"
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2405,25 +2267,21 @@ msgstr ""
 ">ü<br />z<br />e<br />n<br />e<br />t<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "'No HTML Message' with html linebreaks between each letter."
-#| msgid ""
-#| "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
-#| ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />N<br />e<br />m<br /> <br />H<br />T<br />M<br />L<br /> <br /"
-">ü<br />z<br />e<br />n<br />e<br />t<br /></qt>"
+"<qt><br />N<br />a<br />p<br />t<br />á<br />r<br /> <br />ü<br />z<br /"
+">e<br />n<br />e<br />t<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
-#, fuzzy, kde-format
-#| msgid "Click to toggle between HTML and plain text."
+#, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""
-"Ide kattintva lehet átváltani a HTML- és az egyszerű szöveges mód között."
+"Ide kattintva lehet átváltani a HTML-, az egyszerű szöveges és a naptár mód "
+"között."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2471,50 +2329,43 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "Mappa megnyitása, ahová a melléklet mentve lett"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Open Full Search"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Teljes keresés megnyitása"
+msgstr "Fájl megnyitása"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
-msgstr[1] "Mappa megnyitása, ahová a melléklet mentve lett"
+msgstr[1] "Mappa megnyitása, ahová a mellékletek mentve lettek"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr "Mappa megnyitása, ahová a melléklet mentve lett"
+msgstr "Mappa megnyitása, ahová a PDF-fájl mentve lett"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "A melléklet nem szerkeszthető"
+msgstr "A KMail nem tudta megnyitni a mellékletet."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "&Next Message"
+#, kde-format
 msgid "Next Message"
-msgstr "&Következő üzenet"
+msgstr "Következő üzenet"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Unread &Message"
+#, kde-format
 msgid "Previous Message"
-msgstr "Elő&ző olvasatlan üzenet"
+msgstr "Előző üzenet"
 
 #~ msgid "Only print selected text in viewer"
 #~ msgstr "Csak a megjelenítőben kijelölt szöveg nyomtatása"

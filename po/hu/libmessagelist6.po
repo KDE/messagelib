@@ -2,20 +2,21 @@
 # Marcell Lengyel <miketkf@yahoo.com>, 1999.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2012, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2014-09-04 12:28+0200\n"
-"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"PO-Revision-Date: 2024-01-28 21:08+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -375,9 +376,7 @@ msgid "Size"
 msgstr "Méret"
 
 #: core/manager.cpp:633
-#, fuzzy, kde-format
-#| msgctxt "Attachement indication"
-#| msgid "Attachment"
+#, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Melléklet"
@@ -784,8 +783,7 @@ msgid "Invitation Icon"
 msgstr "Meghívóikon"
 
 #: core/theme.cpp:177
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Mappa"
@@ -852,10 +850,9 @@ msgid "Styled Joined Rectangles"
 msgstr "Stílusos kapcsolt téglalapok"
 
 #: core/view.cpp:682
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No result found"
-msgstr "Nem található aláírás"
+msgstr "Nincs találat"
 
 #: core/view.cpp:761
 #, kde-format
@@ -1042,14 +1039,13 @@ msgstr[1] "<b>%1</b> üzenet (<b>%2</b> olvasatlan)"
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "Bármely megadott szűrő."
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "Szűrő lét&rehozása"
+msgstr "Szűrő létrehozása"
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
@@ -1095,11 +1091,10 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "A mappa mindig ezt a rendezési sorrendet használja"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Configure &Filters..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "A szűrők &beállítása..."
+msgstr "Szűrőbeállítás"
 
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
@@ -1107,39 +1102,31 @@ msgid "Remove"
 msgstr "Eltávolítás"
 
 #: core/widgets/configurefilterswidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to empty the trash folder?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "Biztosan ki szeretné üríteni a törölt üzenetek mappáját?"
+msgstr "Biztosan törölni szeretné ezt a szűrőt?"
 
 #: core/widgets/configurefilterswidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Rename Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "A szűrő átnevezése"
+msgstr "Szűrő eltávolítása"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save List..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "A lista mentése..."
+msgstr "Szűrő szerkesztése"
 
 #: core/widgets/filternamewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgid "Name:"
 msgstr "Név:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save List..."
+#, kde-format
 msgid "Save Filter..."
-msgstr "A lista mentése..."
+msgstr "Szűrő mentése…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1150,13 +1137,12 @@ msgstr "Keresés"
 #: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
-msgstr ""
+msgstr "A három betűnél rövidebb szavak mellőzve lesznek."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "&Do not show a message preview pane"
+#, kde-format
 msgid "Do not show again"
-msgstr "Ne legyen b&etekintő panel"
+msgstr "Ne jelenjen meg újra"
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1164,6 +1150,9 @@ msgid ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
+"A lekérdezésben szereplő keresési mappák némelyikét még mindig indexelik, "
+"vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
+"hiányosak lehetnek."
 
 #: core/widgets/searchlinestatus.cpp:80
 #, kde-format
@@ -1188,23 +1177,19 @@ msgstr ""
 "másik mappába lép vagy szűkíti az üzenetállapot szerinti keresést."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter by Status"
+#, kde-format
 msgid "Filter Mails by Status"
-msgstr "Szűrés állapotra"
+msgstr "Levelek szűrése állapotra"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save List..."
+#, kde-format
 msgid "Saved Filter"
-msgstr "A lista mentése..."
+msgstr "Mentett szűrő"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Clear Filter"
-msgstr "Szűrő lét&rehozása"
+msgstr "Szűrő törlése"
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
@@ -1288,11 +1273,9 @@ msgid "Subject"
 msgstr "Tárgy"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
-#| msgid "BCC"
+#, kde-format
 msgid "BCC"
-msgstr "Rejtett másolat"
+msgstr "Titkos másolat"
 
 #: core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -1300,22 +1283,19 @@ msgid "To"
 msgstr "Címzett"
 
 #: core/widgets/searchlinestatus.cpp:406
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
+#, kde-format
 msgid "Clear History"
-msgstr "Szűrő lét&rehozása"
+msgstr "Előzmények törlése"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr ""
+msgstr "A jelenlegi lap zárolt."
 
 #: core/widgets/tablockedwarning.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgid "(Unlock it)"
-msgstr "Keresés zárolása"
+msgstr "(Feloldás)"
 
 #: messagelistutil.cpp:104
 #, kde-format
@@ -1408,20 +1388,16 @@ msgid "Close All Other Tabs"
 msgstr "A többi lap bezárása"
 
 #: pane.cpp:717
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "Keresés zárolása"
+msgstr "Lap feloldása"
 
 #: pane.cpp:717
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Lock search"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr "Keresés zárolása"
+msgstr "Lap zárolása"
 
 #: storagemodel.cpp:219
 #, kde-format
@@ -1477,8 +1453,7 @@ msgid "Fill view strategy:"
 msgstr "Nézetkitöltési módszer:"
 
 #: utils/configureaggregationsdialog.cpp:100
-#, fuzzy, kde-format
-#| msgid "Customize Message Aggregation Modes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Egyedi üzenetgyűjtési módok"
@@ -1526,14 +1501,12 @@ msgstr "Összesítés exportálása"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "&All Fields"
+#, kde-format
 msgid "All Files (*)"
-msgstr "&Minden mező"
+msgstr "Minden fájl (*)"
 
 #: utils/configurethemesdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "Customize Themes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Témák testreszabása"
@@ -1576,16 +1549,15 @@ msgstr "Új oszlop"
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
-msgstr ""
+msgstr "Biztosan törölni szeretné a kijelölt témákat?"
 
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr ""
+msgstr "Biztosan törölni szeretné ezt: „%1”?"
 
 #: utils/configurethemesdialog.cpp:410
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Téma törlése"
@@ -1716,13 +1688,13 @@ msgstr "Lágyítás"
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
-msgstr ""
+msgstr "Félkövér"
 
 #: utils/themeeditor.cpp:860
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
-msgstr ""
+msgstr "Dőlt"
 
 #: utils/themeeditor.cpp:867
 #, kde-format
@@ -1890,8 +1862,7 @@ msgstr[0] " képpont"
 msgstr[1] " képpont"
 
 #: widget.cpp:220
-#, fuzzy, kde-format
-#| msgid "All"
+#, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Mind"
@@ -1917,18 +1888,14 @@ msgid "Collapse All Groups"
 msgstr "Az összes csoport összecsukása"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "Ex&pand All Threads"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Az összes szál k&ibontása"
+msgstr "Összes szál kibontása"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "C&ollapse All Threads"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Az összes szál összecs&ukása"
+msgstr "Összes szál összecsukása"
 
 #: widget.cpp:419
 #, kde-format
