@@ -18,14 +18,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2024-01-22 17:39+0900\n"
+"PO-Revision-Date: 2024-01-28 19:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.95\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -481,7 +481,7 @@ msgstr "作用中"
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
-msgstr ""
+msgstr "郵件論壇 ID (List-ID)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, fuzzy, kde-format
@@ -570,7 +570,7 @@ msgstr "網域："
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
-msgstr ""
+msgstr "郵件論壇 ID (List-Id)："
 
 #: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
 #, kde-format

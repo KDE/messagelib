@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2024-01-22 17:36+0900\n"
+"PO-Revision-Date: 2024-01-28 19:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1518,7 +1518,7 @@ msgstr "%1 內容轉換編碼（Content-Transfer-Encoding）無法正確編碼�
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "信件接受通知請求"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, fuzzy, kde-format
@@ -1543,6 +1543,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"這個信件包含希望您回傳已收到的通知的請求。\n"
+"您可以忽略該請求、讓郵件程式傳送「拒絕」或是傳送普通回應。"
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1553,6 +1555,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"這個信件包含希望您回傳已收到的通知的請求。\n"
+"它包含標記為「必須」但是郵件程式不瞭解的處理指示。\n"
+"您可以忽略該請求，或是讓郵件程式傳送「失敗」回應。"
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1562,6 +1567,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"這個信件包含希望您回傳已收到的通知的請求，\n"
+"但是請求要求傳送通知到不只一個地址。\n"
+"您可以忽略該請求、讓郵件程式傳送「拒絕」或是傳送普通回應。"
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1571,6 +1579,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"這個信件包含希望您回傳已收到的通知的請求，\n"
+"但是沒有設定回傳路徑。\n"
+"您可以忽略該請求、讓郵件程式傳送「拒絕」或是傳送普通回應。"
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1581,6 +1592,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"這個信件包含希望您回傳已收到的通知的請求，\n"
+"但是回傳路徑 (return-path) 地址與請求要求傳送通知的目的地地址不同。\n"
+"您可以忽略該請求、讓郵件程式傳送「拒絕」或是傳送普通回應。"
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format

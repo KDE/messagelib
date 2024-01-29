@@ -3,19 +3,20 @@
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2021.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2021-01-23 14:23+0100\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-01-28 21:09+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.03.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -84,11 +85,10 @@ msgid "A template with same name already exists."
 msgstr "Már létezik ugyanilyen nevű sablon."
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
-msgstr "Nem sikerült létrehozni a sablont"
+msgstr "Sablon létrehozása sikertelen"
 
 #: customtemplates.cpp:344
 #, kde-format
@@ -232,10 +232,7 @@ msgstr "Int&elligens idézés használata"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
-#, fuzzy, kde-format
-#| msgid ""
-#| "Reply or forward using the same visual format of the original message "
-#| "(plain text or HTML)"
+#, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
@@ -588,11 +585,10 @@ msgstr ""
 "alapértelmezett értékre?"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "Az alapértelmezés visszaállítása"
+msgstr "Alapértelmezés visszaállítása"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
@@ -831,9 +827,7 @@ msgstr "Válasz mindenkinek"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "Továbbítás"
