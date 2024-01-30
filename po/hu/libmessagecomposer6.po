@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2024-01-28 22:09+0100\n"
+"PO-Revision-Date: 2024-01-29 21:36+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -384,6 +384,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"A KMail nem képes érzékelni, ha a kiválasztott szerkesztő bezárásra került. "
+"Az adatvesztés elkerülése érdekében a melléklet szerkesztése megszakad."
 
 #: composer/composer.cpp:288
 #, kde-format
@@ -430,8 +432,7 @@ msgstr ""
 "titkosítani.</p><p>Szeretné eltávolítani a HTML-kódot?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Az üzenet aláírása és titkosítása?"
@@ -447,25 +448,22 @@ msgid "Do you want to resize images?"
 msgstr "Szeretné átméretezni a képeket?"
 
 #: composer/composerviewbase.cpp:527
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Képek automatikus átméretezése"
 
 #: composer/composerviewbase.cpp:528
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr "Képek automatikus átméretezése"
+msgstr "Automatikus átméretezése"
 
 #: composer/composerviewbase.cpp:529
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr "&Ne írja alá"
+msgstr "Ne méretezze át"
 
 #: composer/composerviewbase.cpp:729
 #, kde-format
@@ -549,8 +547,7 @@ msgstr ""
 "Ok: %3"
 
 #: composer/composerviewbase.cpp:1365
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Az üzenet automatikus mentése nem sikerült"
@@ -572,8 +569,7 @@ msgstr ""
 "Szeretne csatolni egy fájlt az üzenethez?"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Emlékeztető a mellékletekre"
@@ -595,8 +591,7 @@ msgstr ""
 "Alá szeretné írni az üzenetet?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Aláírja az üzenetet?"
@@ -631,8 +626,7 @@ msgstr ""
 "az azonosítóhoz."
 
 #: composer/composerviewbase.cpp:2013
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Küldés aláírás nélkül?"
@@ -675,8 +669,7 @@ msgid "&Sign"
 msgstr "&Aláírás"
 
 #: composer/composerviewbase.cpp:2038
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Figyelmeztetés - az üzenet nincs aláírva"
@@ -759,8 +752,7 @@ msgstr ""
 "kulcs."
 
 #: composer/composerviewbase.cpp:2152
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Elküldés titkosítás nélkül?"
@@ -802,8 +794,7 @@ msgid "&Encrypt All Parts"
 msgstr "Az összes üzenetrész &titkosítása"
 
 #: composer/composerviewbase.cpp:2179
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Figyelmeztetés nem titkosított üzenetre"
@@ -854,8 +845,7 @@ msgstr ""
 "A következő kulcsokat és tanúsítványokat <b>visszavonták</b>: \n"
 
 #: composer/keyresolver.cpp:334
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Nem teljesen megbízható titkosítási kulcsok"
@@ -879,8 +869,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
 #: composer/keyresolver.cpp:1040
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Nem használható titkosítási kulcsok"
@@ -903,8 +892,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Nem használható aláírási kulcsok"
@@ -992,8 +980,7 @@ msgstr ""
 "Elküldi az üzenetet aláírás nélkül?"
 
 #: composer/keyresolver.cpp:1154
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Nem lehet aláírni"
@@ -1009,8 +996,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
 #: composer/keyresolver.cpp:1358
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Figyelmeztetés – hiányzik egy kulcs"
@@ -1134,11 +1120,10 @@ msgid "Failed to store a new reminder: %1"
 msgstr "Az új emlékeztető tárolása meghiúsult: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "Kijelölés"
+msgstr "Dátumválasztás"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
@@ -1236,8 +1221,7 @@ msgid "Please verify minimum and maximum values."
 msgstr "Ellenőrizze a minimum és a maximum értékeket."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Hiba a legkisebb Maximum értékben"
@@ -1458,16 +1442,14 @@ msgid "No text found in Clipboard"
 msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgid "Define Attachment Name"
-msgstr "Emlékeztető a mellékletekre"
+msgstr "Emlékeztető nevének megadása"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgid "Attachment Name:"
-msgstr "Emlékeztető a mellékletekre"
+msgstr "Melléklet neve:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -1509,16 +1491,13 @@ msgid "Impossible to generate vCard."
 msgstr ""
 
 #: job/autocryptheadersjob.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>An error occurred while trying to export the key from the backend:</"
-#| "p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
-"<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>%1</"
-"b></p>"
+"<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>Nem "
+"található érvényes kulcs a(z) %1 felhasználóhoz (%2)</b></p>"
 
 #: job/maintextjob.cpp:59
 #, kde-format
@@ -1551,8 +1530,7 @@ msgstr ""
 "Szeretné folytatni?"
 
 #: job/maintextjob.cpp:102
-#, fuzzy, kde-format
-#| msgid "Some Characters Will Be Lost"
+#, kde-format
 msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Néhány karakter el fog veszni a szövegből"
@@ -1596,10 +1574,9 @@ msgid "Message Disposition Notification Request"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "Elkül&dés aláírás nélkül"
+msgstr "„&Elutasítás” küldése"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1607,10 +1584,9 @@ msgid "&Ignore"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "Elküldés a m&ostani állapotban"
+msgstr "&Küldés"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1677,11 +1653,9 @@ msgid "&Name:"
 msgstr "&Név:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgid "Name of Distribution List"
-msgstr "Új címlista"
+msgstr "A terjesztési lista neve"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1766,7 +1740,7 @@ msgstr "Titkos másolat"
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr ""
+msgstr "Válaszcím"
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
@@ -1835,29 +1809,28 @@ msgstr[1] "%1 címzett"
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr ""
+msgstr "Címzett: %1"
 
 #: recipient/recipientseditorsidewidget.cpp:131
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr ""
+msgstr "Másolat: %1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr ""
+msgstr "Titkos másolat: %1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr ""
+msgstr "Válaszcím: %1"
 
 #: recipient/recipientspicker.cpp:44
-#, fuzzy, kde-format
-#| msgid "Select Recipient"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Címzett kiválasztása"
@@ -1868,10 +1841,9 @@ msgid "Search &Directory Service"
 msgstr "Keresés cí&mtárszolgáltatásban"
 
 #: recipient/recipientspicker.cpp:79
-#, fuzzy, kde-format
-#| msgid "Add as &To"
+#, kde-format
 msgid "Add as &Reply-To"
-msgstr "Hozzáadás &címzettként"
+msgstr "Hozzáadás &válaszcímként"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
@@ -1896,13 +1868,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: recipient/recipientspicker.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "You selected 1 recipient. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
-#| msgid_plural ""
-#| "You selected %1 recipients. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
+#, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
 "Please adapt the selection."
@@ -1911,39 +1877,37 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
-"1 címzettet választott ki. A megengedett maximális szám azonban %2. "
+"1 címzettet választott ki. A megengedett maximális szám azonban %2.\n"
 "Módosítsa a kijelölést."
 msgstr[1] ""
-"%1 címzettet választott ki. A megengedett maximális szám azonban %2. "
+"%1 címzettet választott ki. A megengedett maximális szám azonban %2.\n"
 "Módosítsa a kijelölést."
 
 #: recipient/recipientspicker.cpp:189
-#, fuzzy, kde-format
-#| msgid "No key data for recipients found."
+#, kde-format
 msgid "You can not add more recipients."
-msgstr "Nem találhatók kulcsadatok a címzettekhez."
+msgstr "Nem adhat hozzá további címzetteket."
 
 #: sendlater/sendlatercreatejob.cpp:33
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr "Nem sikerült menteni az üzenetet: %1"
+msgstr "Nem sikerült ütemezni az üzenetet későbbi küldésre: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "Küldés később"
 
 #: sendlater/sendlaterdialog.cpp:48
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "Küldés később"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
 msgid "Delay"
-msgstr ""
+msgstr "Késleltetés"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
@@ -1982,10 +1946,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "Elküldés a m&ostani állapotban"
+msgstr "Küldés ekkor:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -2213,12 +2176,12 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:165
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Egyéb"
 
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format
 msgid "Subject"
-msgstr ""
+msgstr "Tárgy"
 
 #: utils/util.cpp:259
 #, kde-format
@@ -2238,18 +2201,16 @@ msgstr ""
 "létrehozni egy levélküldőt?"
 
 #: utils/util.cpp:294
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Nincs levélküldő."
 
 #: utils/util.cpp:296
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr "Nincs levélküldő."
+msgstr "Levélküldő létrehozása"
 
 #: utils/util.cpp:311
 #, kde-format
@@ -2261,8 +2222,7 @@ msgstr ""
 "bekapcsolni?"
 
 #: utils/util.cpp:312
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "A levélküldő ki van kapcsolva."
@@ -2271,7 +2231,7 @@ msgstr "A levélküldő ki van kapcsolva."
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Bekapcsolás"
 
 #~ msgid "Only quote selected text when replying"
 #~ msgstr "Válasz esetén csak a kijelölt szöveget idézze"
