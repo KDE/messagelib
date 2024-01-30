@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-09-27 01:11+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1266,7 +1266,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Desactivar detección de suplantaciones para todos los mensajes"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:201
+#: scamdetection/scamdetectionwebengine.cpp:202
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1320,14 +1320,14 @@ msgstr ""
 "Este mensaje contiene una URL abreviada (%1). Puede redirigir a otro "
 "servidor."
 
-#: scamdetection/scamdetectionwebengine.cpp:220
+#: scamdetection/scamdetectionwebengine.cpp:222
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "El mensaje contiene elementos de formulario. Esto es frecuentemente el caso "
 "de correos de suplantación."
 
-#: scamdetection/scamdetectionwebengine.cpp:224
+#: scamdetection/scamdetectionwebengine.cpp:226
 #, kde-format
 msgid "Details:"
 msgstr "Detalles:"
@@ -1507,42 +1507,42 @@ msgstr "Nive&l automático de contracción:"
 msgid "&Minimum font size:"
 msgstr "Tamaño &mínimo de tipo de letra:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "Ya existe un archivo llamado «%1». ¿Está seguro de que quiere sobrescribirlo?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "¿Sobrescribir el archivo?"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Guardar adjuntos como"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "adjunto.1"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Guardar adjunto"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "adjunto.%1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1551,22 +1551,22 @@ msgstr ""
 "La parte %1 del mensaje está cifrada. ¿Quiere mantener el cifrado al "
 "guardarlo?"
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "Pregunta de KMail"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Mantener el cifrado"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "No mantener"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1574,13 +1574,13 @@ msgid ""
 msgstr ""
 "La parte %1 del mensaje está firmada. ¿Quiere mantener la firma al guardar?"
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Mantener la firma"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1590,78 +1590,78 @@ msgstr ""
 "<qt>No se ha podido escribir en el archivo<br /><filename>%1</filename><br /"
 "><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Error al guardar el adjunto"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Error guardando el adjunto"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "No se encuentran adjuntos para guardar."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, kde-format
 msgid "message"
 msgstr "mensaje"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "mensajes de correo (*.mbox);;todos los archivos (*)"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Guardar mensaje"
 msgstr[1] "Guardar mensajes"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Archivo «%1» no se pudo cargar."
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Error al cargar el mensaje"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "El archivo «%1» no se pudo crear."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error al guardar el mensaje"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "No podemos guardar el mensaje."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "Error al guardar el mensaje"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Borrado: %1"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1670,12 +1670,12 @@ msgstr ""
 "Ha borrado un adjunto de este mensaje. Las cabeceras MIME originales del "
 "adjunto eran:"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgid "Open &with %1"
 msgstr "Abrir c&on %1"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1834,18 +1834,18 @@ msgstr "Adjunto sin nombre"
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Mostrar el registro de auditoría GnuPG para esta operación"
 
-#: viewer/urlhandlermanager.cpp:893
+#: viewer/urlhandlermanager.cpp:894
 #, kde-format
 msgid "Opening URL..."
 msgstr "Abriendo URL..."
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:903
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "¿Realmente desea ejecutar <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:904
+#: viewer/urlhandlermanager.cpp:905
 #, kde-format
 msgid "Execute"
 msgstr "Ejecutar"

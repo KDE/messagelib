@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -1293,7 +1293,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Powěsće zničić"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:201
+#: scamdetection/scamdetectionwebengine.cpp:202
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1334,12 +1334,12 @@ msgstr ""
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:220
+#: scamdetection/scamdetectionwebengine.cpp:222
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:224
+#: scamdetection/scamdetectionwebengine.cpp:226
 #, kde-format
 msgid "Details:"
 msgstr "Nadrobnosće:"
@@ -1506,77 +1506,77 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Dataja %1 eksistuje? Chceće ju woprawdźe přepisać?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Dataju přepisać?"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Přiwěšk zawěsćić do"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "přiwěšk. 1"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Přiwěšk zawěsćić"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "přiwěšk. %1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail prašenje"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Šifrowanje wobchować"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Njewobchować"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "Podpismo wobchować"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1586,34 +1586,34 @@ msgstr ""
 "Njemóžach do dataje pisać:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Přiwěšk: "
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Přiwěšk: "
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, fuzzy, kde-format
 msgid "Found no attachments to save."
 msgstr "Njepokazuje přiwěški w powěsći samej"
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "žane powěsće"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1622,60 +1622,60 @@ msgstr[1] "Powěsći zawěsćić"
 msgstr[2] "Powěsće zawěsćić"
 msgstr[3] "Powěsće zawěsćić"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Zmylk při pósłanju powěsće na server"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Kónc podpisaneje powěsće"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " Linka: %1"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, fuzzy, kde-format
 msgid "Open &with %1"
 msgstr "Přiwěšk %1 wočinić?"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1845,19 +1845,19 @@ msgstr "Přiwěšk: "
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:893
+#: viewer/urlhandlermanager.cpp:894
 #, kde-format
 msgid "Opening URL..."
 msgstr "Wočinjam URL..."
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:903
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Chceće woprawdźe <b>%1</b> startować?</qt>"
 
-#: viewer/urlhandlermanager.cpp:904
+#: viewer/urlhandlermanager.cpp:905
 #, kde-format
 msgid "Execute"
 msgstr "Wuwjesć"

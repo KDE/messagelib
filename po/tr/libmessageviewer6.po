@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-11-11 23:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1260,7 +1260,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Tüm iletilerde dolandırıcılık denetimini devre dışı bırak"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:201
+#: scamdetection/scamdetectionwebengine.cpp:202
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1313,14 +1313,14 @@ msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "BU e-posta bir kısa URL (%1) içeriyor. Farklı bir sunucuya yönlendirebilir."
 
-#: scamdetection/scamdetectionwebengine.cpp:220
+#: scamdetection/scamdetectionwebengine.cpp:222
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "İleti form ögesi içeriyor. Bu genellikle dolandırıcı e-postalarındaki "
 "durumdur."
 
-#: scamdetection/scamdetectionwebengine.cpp:224
+#: scamdetection/scamdetectionwebengine.cpp:226
 #, kde-format
 msgid "Details:"
 msgstr "Ayrıntılar:"
@@ -1492,41 +1492,41 @@ msgstr "Otomatik genişletme &düzeyi:"
 msgid "&Minimum font size:"
 msgstr "&En küçük yazıtipi boyutu:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "%1 adında bir dosya mevcut. Üzerine yazılsın mı?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:127
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Dosyanın Üzerine Yaz?"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Ekleri Farklı Kaydet"
 
-#: utils/messageviewerutil.cpp:193
+#: utils/messageviewerutil.cpp:194
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "ek.1"
 
-#: utils/messageviewerutil.cpp:199
+#: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
 msgstr "Eki Kaydet"
 
-#: utils/messageviewerutil.cpp:223
+#: utils/messageviewerutil.cpp:224
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "ek.%1"
 
-#: utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:322
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1535,22 +1535,22 @@ msgstr ""
 "İletinin %1 kısmı şifrelendi. Kaydederken şifrelemeyi korumak istiyor "
 "musunuz?"
 
-#: utils/messageviewerutil.cpp:323 utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
 msgstr "K Posta Sorusu"
 
-#: utils/messageviewerutil.cpp:323
+#: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Şifrelemeyi Koru"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Koruma"
 
-#: utils/messageviewerutil.cpp:334
+#: utils/messageviewerutil.cpp:335
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1559,13 +1559,13 @@ msgstr ""
 "İletinin %1 kısmı imzalanmış. Kaydederken imzayı muhafaza etmek istiyor "
 "musunuz?"
 
-#: utils/messageviewerutil.cpp:336
+#: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
 msgstr "İmzayı Koru"
 
-#: utils/messageviewerutil.cpp:400 utils/messageviewerutil.cpp:418
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
+#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1574,78 +1574,78 @@ msgid ""
 msgstr ""
 "<qt>Dosyaya yazılamadı:<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:403
+#: utils/messageviewerutil.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Eki Kaydederken Hata"
 
-#: utils/messageviewerutil.cpp:421 utils/messageviewerutil.cpp:439
+#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Eki kaydederken hata oluştu"
 
-#: utils/messageviewerutil.cpp:452
+#: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Kaydedilecek ek yok."
 
-#: utils/messageviewerutil.cpp:467
+#: utils/messageviewerutil.cpp:468
 #, kde-format
 msgid "message"
 msgstr "ileti"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "eposta iletileri (*.mbox);;tüm dosyalar (*)"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:501
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "İletiyi Kaydet"
 msgstr[1] "İletileri Kaydet"
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "%1 dosyası yüklenemedi."
 
-#: utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "İleti Yüklenirken Hata"
 
-#: utils/messageviewerutil.cpp:527
+#: utils/messageviewerutil.cpp:528
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 dosyası oluşturulamadı."
 
-#: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "İleti Kaydedilirken Hata"
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "İletiyi kaydedemiyoruz."
 
-#: utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "İleti kaydedilirken hata"
 
-#: utils/messageviewerutil.cpp:602
+#: utils/messageviewerutil.cpp:603
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Silindi: %1"
 
-#: utils/messageviewerutil.cpp:613
+#: utils/messageviewerutil.cpp:614
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1653,12 +1653,12 @@ msgid ""
 msgstr ""
 "Bu iletiden bir eki sildiniz. Bu ek için olan özgün MIME üstbilgisi şuydu:"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1 &ile Aç"
 
-#: utils/messageviewerutil.cpp:642
+#: utils/messageviewerutil.cpp:643
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1815,19 +1815,19 @@ msgstr "Adsız ek"
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Bu işlem için GnuPG Audit Günlük Kaydını göster"
 
-#: viewer/urlhandlermanager.cpp:893
+#: viewer/urlhandlermanager.cpp:894
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL açılıyor..."
 
-#: viewer/urlhandlermanager.cpp:902
+#: viewer/urlhandlermanager.cpp:903
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr ""
 "Gerçekten <filename>%1</filename> uygulamasını çalıştırmak istiyor musunuz?"
 
-#: viewer/urlhandlermanager.cpp:904
+#: viewer/urlhandlermanager.cpp:905
 #, kde-format
 msgid "Execute"
 msgstr "Komut Çalıştır"
