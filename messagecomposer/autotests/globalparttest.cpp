@@ -5,7 +5,7 @@
 */
 
 #include "globalparttest.h"
-#include <../src/part/globalpart.h>
+#include "../src/part/globalpart.h"
 #include <QTest>
 GlobalPartTest::GlobalPartTest(QObject *parent)
     : QObject(parent)

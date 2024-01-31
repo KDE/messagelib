@@ -72,12 +72,12 @@
 #include <KMessageBox>
 #include <QSaveFile>
 
+#include "followupreminder/followupremindercreatejob.h"
 #include <QDir>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QUuid>
-#include <followupreminder/followupremindercreatejob.h>
 
 using namespace MessageComposer;
 

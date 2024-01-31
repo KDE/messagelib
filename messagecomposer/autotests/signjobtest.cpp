@@ -19,8 +19,8 @@
 #include <MessageComposer/SignJob>
 #include <MessageComposer/TransparentJob>
 
+#include "setupenv.h"
 #include <MessageCore/NodeHelper>
-#include <setupenv.h>
 
 #include <cstdlib>
 

@@ -40,10 +40,10 @@
 #include <QComboBox>
 #include <QMenu>
 
+#include "core/widgets/filternamedialog.h"
 #include <Akonadi/Collection>
 #include <Akonadi/MessageStatus>
 #include <chrono>
-#include <core/widgets/filternamedialog.h>
 
 using namespace std::chrono_literals;
 

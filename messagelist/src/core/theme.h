@@ -13,8 +13,8 @@
 #include <QPair>
 #include <QString>
 
-#include <core/optionset.h>
-#include <core/sortorder.h>
+#include "core/optionset.h"
+#include "core/sortorder.h"
 
 class QPixmap;
 

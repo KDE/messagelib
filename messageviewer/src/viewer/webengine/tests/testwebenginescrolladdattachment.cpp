@@ -12,7 +12,7 @@
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
 
-#include <messageviewer/mailwebengineview.h>
+#include "messageviewer/mailwebengineview.h"
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {

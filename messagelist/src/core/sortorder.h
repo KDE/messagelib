@@ -7,7 +7,7 @@
  *******************************************************************************/
 #pragma once
 
-#include <core/aggregation.h>
+#include "core/aggregation.h"
 
 #include <KConfigGroup>
 

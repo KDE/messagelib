@@ -13,7 +13,7 @@
 #include <QList>
 #include <QMultiHash>
 
-#include <core/enums.h>
+#include "core/enums.h"
 
 #include <ctime> // time_t
 #include <memory>

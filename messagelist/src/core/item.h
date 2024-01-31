@@ -17,8 +17,8 @@
 
 #include <Akonadi/MessageStatus>
 
+#include "core/model.h"
 #include "messagelist_export.h"
-#include <core/model.h>
 
 namespace MessageList
 {

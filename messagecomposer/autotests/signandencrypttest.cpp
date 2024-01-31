@@ -22,8 +22,8 @@
 #include <MessageComposer/SignJob>
 #include <MessageComposer/TextPart>
 
+#include "setupenv.h"
 #include <MimeTreeParser/NodeHelper>
-#include <setupenv.h>
 
 #include <MessageCore/NodeHelper>
 

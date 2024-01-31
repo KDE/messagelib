@@ -6,11 +6,11 @@
 
 #pragma once
 
+#include "messagelist/enums.h"
+#include "messagelist/view.h"
 #include <QHash>
 #include <QList>
 #include <QTabWidget>
-#include <messagelist/enums.h>
-#include <messagelist/view.h>
 
 #include "messagelist_export.h"
 #include <Akonadi/Collection>

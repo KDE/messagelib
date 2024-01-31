@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <utils/optionseteditor.h>
+#include "utils/optionseteditor.h"
 
 class QComboBox;
 

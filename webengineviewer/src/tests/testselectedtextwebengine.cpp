@@ -5,12 +5,12 @@
 */
 
 #include "testselectedtextwebengine.h"
+#include "webengineview.h"
 #include <QApplication>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <WebEngineViewer/WebEnginePage>
-#include <webengineview.h>
 
 TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)

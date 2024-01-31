@@ -15,7 +15,7 @@
 
 #include <TextAutoCorrectionCore/AutoCorrection>
 
-#include <part/textpart.h>
+#include "part/textpart.h"
 
 #include <KMessageBox>
 

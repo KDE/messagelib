@@ -15,7 +15,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
-#include <viewerplugins/viewerplugininterface.h>
+#include "viewerplugins/viewerplugininterface.h"
 
 ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     : QWidget(parent)

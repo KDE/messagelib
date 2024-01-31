@@ -12,7 +12,7 @@
 #include <QList>
 #include <QObject>
 
-#include <core/modelinvariantindex.h>
+#include "core/modelinvariantindex.h"
 #include <memory>
 namespace MessageList
 {

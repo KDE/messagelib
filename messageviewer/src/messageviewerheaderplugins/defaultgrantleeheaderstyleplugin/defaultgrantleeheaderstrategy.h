@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <messageviewer/headerstrategy.h>
+#include "messageviewer/headerstrategy.h"
 
 namespace MessageViewer
 {

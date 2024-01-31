@@ -6,8 +6,8 @@
 
 #pragma once
 
+#include "messagelist/storagemodelbase.h"
 #include "messagelist_export.h"
-#include <messagelist/storagemodelbase.h>
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>

@@ -12,8 +12,8 @@
 #include <QPoint>
 #include <QTreeView>
 
-#include <messagelist/enums.h>
-#include <messagelist/quicksearchline.h>
+#include "messagelist/enums.h"
+#include "messagelist/quicksearchline.h"
 
 class QMenu;
 

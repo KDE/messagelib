@@ -30,7 +30,7 @@
 
 #include <sstream>
 
-#include <setupenv.h>
+#include "setupenv.h"
 
 QTEST_MAIN(SignEncryptTest)
 

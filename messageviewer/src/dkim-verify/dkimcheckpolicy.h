@@ -6,8 +6,8 @@
 
 #pragma once
 
+#include "messageviewer/messageviewersettings.h"
 #include "messageviewer_export.h"
-#include <messageviewer/messageviewersettings.h>
 namespace MessageViewer
 {
 /**

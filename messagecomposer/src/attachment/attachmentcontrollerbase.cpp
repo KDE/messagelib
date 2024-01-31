@@ -50,6 +50,7 @@
 
 #include "attachment/attachmentfromurljob.h"
 #include "messagecore/attachmentupdatejob.h"
+#include "settings/messagecomposersettings.h"
 #include <Akonadi/EmailAddressSelectionDialog>
 #include <Akonadi/EmailAddressSelectionWidget>
 #include <KIO/JobUiDelegate>
@@ -58,7 +59,6 @@
 #include <MessageCore/AttachmentCompressJob>
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <MessageCore/AttachmentPropertiesDialog>
-#include <settings/messagecomposersettings.h>
 
 #include <KJob>
 #include <KMime/Content>

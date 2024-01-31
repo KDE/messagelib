@@ -5,6 +5,7 @@
 */
 
 #include "testwebengine.h"
+#include "webengineviewer/webhittest.h"
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QDebug>
@@ -12,7 +13,6 @@
 #include <QWebEngineSettings>
 #include <WebEngineViewer/WebEnginePage>
 #include <WebEngineViewer/WebHitTestResult>
-#include <webengineviewer/webhittest.h>
 
 TestWebEngine::TestWebEngine(QWidget *parent)
     : QWidget(parent)

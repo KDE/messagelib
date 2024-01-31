@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 #include "attachmentupdatejobtest.h"
+#include "attachment/attachmentupdatejob.h"
 #include "qtest_messagecore.h"
 #include <MessageCore/AttachmentPart>
 #include <QTest>
-#include <attachment/attachmentupdatejob.h>
 
 #define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 

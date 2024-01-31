@@ -106,12 +106,12 @@
 #include "header/headerstylemenumanager.h"
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include "viewer/webengine/mailwebengineview.h"
+#include "widgets/mailsourcewebengineviewer.h"
 #include <WebEngineViewer/FindBarWebEngineView>
 #include <WebEngineViewer/LocalDataBaseManager>
 #include <WebEngineViewer/SubmittedFormWarningWidget>
 #include <WebEngineViewer/WebEngineExportPdfPageJob>
 #include <WebEngineViewer/WebHitTestResult>
-#include <widgets/mailsourcewebengineviewer.h>
 
 #include "interfaces/htmlwriter.h"
 #include <MimeTreeParser/BodyPart>
@@ -133,6 +133,8 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#include "header/headerstyleplugin.h"
+#include "viewerplugins/viewerplugininterface.h"
 #include <Akonadi/MDNStateAttribute>
 #include <QApplication>
 #include <QStandardPaths>
@@ -140,8 +142,6 @@
 #include <WebEngineViewer/DeveloperToolDialog>
 #include <WebEngineViewer/TrackingWarningWidget>
 #include <WebEngineViewer/ZoomActionMenu>
-#include <header/headerstyleplugin.h>
-#include <viewerplugins/viewerplugininterface.h>
 
 #include <GrantleeTheme/GrantleeTheme>
 #include <GrantleeTheme/GrantleeThemeManager>

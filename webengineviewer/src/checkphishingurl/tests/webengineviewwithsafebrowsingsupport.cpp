@@ -7,13 +7,13 @@
 #include "webengineviewwithsafebrowsingsupport.h"
 #include "../localdatabasemanager.h"
 
+#include "webenginepage.h"
+#include "webengineview.h"
 #include <QApplication>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QVBoxLayout>
-#include <webenginepage.h>
-#include <webengineview.h>
 
 WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidget *parent)
     : QWidget(parent)

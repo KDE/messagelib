@@ -6,8 +6,8 @@
 
 #pragma once
 
+#include "messageviewer/headerstyleinterface.h"
 #include <GrantleeTheme/GrantleeTheme>
-#include <messageviewer/headerstyleinterface.h>
 
 namespace MessageViewer
 {
