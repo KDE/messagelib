@@ -166,7 +166,6 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
             case ' ': // spaces and tabs are allowed between the quote markers
             case '\t':
             case '\r':
-                quoteLength = p;
                 break;
             default: // stop quoting depth calculation
                 p = numberOfCaracters;
@@ -260,7 +259,8 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                     if (rightString > 0) {
                         htmlWriter->write(QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength)));
                         htmlWriter->write(QStringLiteral("<font color=\"%1\">").arg(cssHelper->quoteColorName(actQuoteLevel)));
-                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString), convertFlags, 4096, 512));
+                        const QString str = KTextToHTML::convertToHtml(line.right(rightString), convertFlags, 4096, 512);
+                        htmlWriter->write(str);
                         htmlWriter->write(QStringLiteral("</font>"));
                     } else {
                         htmlWriter->write(QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(quoteLength)));
