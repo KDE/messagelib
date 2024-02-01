@@ -57,7 +57,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
                 convertedResult.sdid = sdid;
                 convertedResult.auid = auid;
             }
-        } else if (infoResult == QLatin1StringView("fail") || infoResult == QLatin1StringView("policy") || infoResult == QLatin1String("neutral")
+        } else if (infoResult == QLatin1StringView("fail") || infoResult == QLatin1StringView("policy") || infoResult == QLatin1StringView("neutral")
                    || infoResult == QLatin1StringView("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {

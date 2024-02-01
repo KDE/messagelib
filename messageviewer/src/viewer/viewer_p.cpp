@@ -2017,7 +2017,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     // to get the URL before WebKit managed to mangle it.
     QUrl url(link);
     const QString protocol = url.scheme();
-    if (protocol == QLatin1StringView("kmail") || protocol == QLatin1StringView("x-kmail") || protocol == QLatin1String("attachment")
+    if (protocol == QLatin1StringView("kmail") || protocol == QLatin1StringView("x-kmail") || protocol == QLatin1StringView("attachment")
         || (protocol.isEmpty() && url.path().isEmpty())) {
         mViewer->setAcceptDrops(false);
     } else {

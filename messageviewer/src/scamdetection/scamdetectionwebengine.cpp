@@ -96,7 +96,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         }
         const QUrl url(href);
         if (!title.isEmpty()) {
-            if (title.startsWith(QLatin1StringView("http:")) || title.startsWith(QLatin1StringView("https:")) || title.startsWith(QLatin1String("www."))) {
+            if (title.startsWith(QLatin1StringView("http:")) || title.startsWith(QLatin1StringView("https:")) || title.startsWith(QLatin1StringView("www."))) {
                 if (title.startsWith(QLatin1StringView("www."))) {
                     const QString completUrl = url.scheme() + QLatin1StringView("://") + title;
                     if (completUrl != href && href != (completUrl + QLatin1Char('/'))) {

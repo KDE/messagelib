@@ -106,7 +106,8 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     if (strategy->showHeader(QStringLiteral("from"))) {
         headerStr.append(i18n("From: ") + StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress, QString(), StringUtil::ShowLink));
         if (!vCardName().isEmpty()) {
-            headerStr.append(QLatin1StringView("&nbsp;&nbsp;<a href=\"") + vCardName() + QLatin1StringView("\">") + i18n("[vCard]") + QLatin1String("</a>"));
+            headerStr.append(QLatin1StringView("&nbsp;&nbsp;<a href=\"") + vCardName() + QLatin1StringView("\">") + i18n("[vCard]")
+                             + QLatin1StringView("</a>"));
         }
 
         if (strategy->showHeader(QStringLiteral("organization")) && message->organization(false)) {

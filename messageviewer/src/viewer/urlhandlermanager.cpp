@@ -886,11 +886,11 @@ bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *win
 bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     const QString scheme(url.scheme());
-    if ((scheme == QLatin1StringView("http")) || (scheme == QLatin1StringView("https")) || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
-        || (scheme == QLatin1StringView("ftps")) || (scheme == QLatin1StringView("sftp")) || (scheme == QLatin1String("help"))
-        || (scheme == QLatin1String("vnc")) || (scheme == QLatin1StringView("smb")) || (scheme == QLatin1StringView("fish"))
-        || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel")) || (scheme == QLatin1StringView("geo"))
-        || (scheme == QLatin1StringView("sms"))) {
+    if ((scheme == QLatin1StringView("http")) || (scheme == QLatin1StringView("https")) || (scheme == QLatin1StringView("ftp"))
+        || (scheme == QLatin1StringView("file")) || (scheme == QLatin1StringView("ftps")) || (scheme == QLatin1StringView("sftp"))
+        || (scheme == QLatin1StringView("help")) || (scheme == QLatin1StringView("vnc")) || (scheme == QLatin1StringView("smb"))
+        || (scheme == QLatin1StringView("fish")) || (scheme == QLatin1StringView("news")) || (scheme == QLatin1StringView("tel"))
+        || (scheme == QLatin1StringView("geo")) || (scheme == QLatin1StringView("sms"))) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2s, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 

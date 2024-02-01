@@ -13,7 +13,7 @@ using namespace TemplateParser;
 
 QString DefaultTemplates::defaultNewMessage()
 {
-    return QLatin1StringView("%REM=\"") + i18n("Default new message template") + QLatin1StringView("\"%-\n") + QLatin1String("%BLANK");
+    return QLatin1StringView("%REM=\"") + i18n("Default new message template") + QLatin1StringView("\"%-\n") + QLatin1StringView("%BLANK");
 }
 
 QString DefaultTemplates::defaultReply()
