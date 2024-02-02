@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-02-02 00:38+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1104,23 +1104,23 @@ msgstr "ਵਲੋਂ: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:119
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "ਵੱਲ: "
 
-#: header/plainheaderstyle.cpp:126
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:133
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:138
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "ਜਵਾਬ: "

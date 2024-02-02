@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-02-02 00:38+0000\n"
 "PO-Revision-Date: 2023-10-22 18:01+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1003,23 +1003,23 @@ msgstr "அனுப்புநர்: "
 msgid "[vCard]"
 msgstr "[vஅட்டை]"
 
-#: header/plainheaderstyle.cpp:119
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "பெறுநர்: "
 
-#: header/plainheaderstyle.cpp:126
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "நகல்: "
 
-#: header/plainheaderstyle.cpp:133
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "கமுக்க நகல்: "
 
-#: header/plainheaderstyle.cpp:138
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "பதில் பெறுபவர்: "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-02-02 00:38+0000\n"
 "PO-Revision-Date: 2023-09-29 07:22+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -982,23 +982,23 @@ msgstr "ვისგან: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:119
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "ვის: "
 
-#: header/plainheaderstyle.cpp:126
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "ასლი: "
 
-#: header/plainheaderstyle.cpp:133
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "ფარულიასლი: "
 
-#: header/plainheaderstyle.cpp:138
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "უპასუხეთ: "

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-02-02 00:38+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1020,23 +1020,23 @@ msgstr "Nuo: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:119
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Kam: "
 
-#: header/plainheaderstyle.cpp:126
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "Kopija: "
 
-#: header/plainheaderstyle.cpp:133
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "Slapta kopija: "
 
-#: header/plainheaderstyle.cpp:138
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "Kam atsakyti: "

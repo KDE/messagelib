@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-02-02 00:38+0000\n"
 "PO-Revision-Date: 2023-10-05 07:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1029,23 +1029,23 @@ msgstr "מאת: "
 msgid "[vCard]"
 msgstr "[כרטיס וירטואלי]"
 
-#: header/plainheaderstyle.cpp:119
+#: header/plainheaderstyle.cpp:120
 #, fuzzy, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "אל: "
 
-#: header/plainheaderstyle.cpp:126
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "עותק: "
 
-#: header/plainheaderstyle.cpp:133
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "עותק סמוי: "
 
-#: header/plainheaderstyle.cpp:138
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "השב אל: "
