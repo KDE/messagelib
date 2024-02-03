@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-23 01:38+0000\n"
-"PO-Revision-Date: 2015-12-29 23:01+0200\n"
+"PO-Revision-Date: 2024-02-02 23:57+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: src/messagepart.cpp:435
 #, kde-format
@@ -31,24 +31,23 @@ msgstr "Nepavadintas"
 #: src/messagepart.cpp:705 src/messagepart.cpp:751 src/messagepart.cpp:1089
 #, kde-format
 msgid "Wrong Crypto Plug-In."
-msgstr "Blogas šifravimo priedas."
+msgstr "Neteisingas šifravimo įskiepis."
 
 #: src/messagepart.cpp:817 src/messagepart.cpp:1303
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
-msgstr "Nerastas tinkamas šifravimo priedas."
+msgstr "Nerasta tinkamo šifravimo įskiepio."
 
 #: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
-msgstr "Nerastas %1 priedas."
+msgstr "Nerasta jokio %1 įskiepio."
 
 #: src/messagepart.cpp:822
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
-msgstr "Šifravimo priedas %1 negali patikrinti parašų."
+msgstr "Šifravimo įskiepis „%1“ negali tikrinti parašų."
 
 #: src/messagepart.cpp:825
 #, kde-format
@@ -62,12 +61,12 @@ msgstr ""
 #: src/messagepart.cpp:1305
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Šifravimo priedas „%1“ negali iššifruoti jokių laiškų."
+msgstr "Šifravimo įskiepis „%1“ negali iššifruoti laiškų."
 
 #: src/messagepart.cpp:1307
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "Šifravimo priedas „%1“ negali iššifruoti duomenų."
+msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 
 #: src/messagepart.cpp:1308
 #, kde-format
