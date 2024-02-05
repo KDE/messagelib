@@ -4,7 +4,7 @@
 
 find_package(Inotify)
 set_package_properties(Inotify PROPERTIES
-                       PURPOSE "Filesystem alteration notifications using inotify")
+    PURPOSE "Filesystem alteration notifications using inotify")
 if(Inotify_FOUND)
     set(HAVE_SYS_INOTIFY_H 1)
 else()

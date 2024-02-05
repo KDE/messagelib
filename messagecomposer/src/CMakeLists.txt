@@ -5,7 +5,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfigVersion.cmake"
     SOVERSION 6
-    )
+)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer6\")
 
@@ -272,7 +272,7 @@ configure_file(settings/messagecomposer.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/mess
 
 kconfig_add_kcfg_files(KPim6MessageComposer
     settings/messagecomposersettings_base.kcfgc
-    )
+)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageComposer PROPERTIES UNITY_BUILD ON)
@@ -313,7 +313,7 @@ target_link_libraries(KPim6MessageComposer
     KF6::GuiAddons
     KF6::Codecs
     ${Inotify_LIBRARIES}
-    )
+)
 if (TARGET KF6::TextAutoCorrectionWidgets)
     target_link_libraries(KPim6MessageComposer
         PUBLIC
@@ -332,12 +332,12 @@ set_target_properties(KPim6MessageComposer PROPERTIES
     VERSION ${MESSAGECOMPOSER_VERSION}
     SOVERSION ${MESSAGECOMPOSER_SOVERSION}
     EXPORT_NAME MessageComposer
-    )
+)
 
 install(TARGETS
     KPim6MessageComposer
     EXPORT KPim6MessageComposerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
     HEADER_NAMES
@@ -345,7 +345,7 @@ ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
     REQUIRED_HEADERS MessageComposer_statusbarwidget_HEADERS
     PREFIX MessageComposer
     RELATIVE statusbarwidget
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelsnippet_HEADERS
     HEADER_NAMES
@@ -355,7 +355,7 @@ ecm_generate_headers(MessageComposer_Camelsnippet_HEADERS
     REQUIRED_HEADERS MessageComposer_snippet_HEADERS
     PREFIX MessageComposer
     RELATIVE snippet
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     HEADER_NAMES
@@ -367,7 +367,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditor
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     HEADER_NAMES
@@ -377,7 +377,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorinit_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorinit
-    )
+)
 
 ecm_generate_headers(MessageComposer_CamelPluginEditorBase_HEADERS
     HEADER_NAMES
@@ -386,7 +386,7 @@ ecm_generate_headers(MessageComposer_CamelPluginEditorBase_HEADERS
     REQUIRED_HEADERS MessageComposer_PluginEditorBase_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorbase
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     HEADER_NAMES
@@ -398,7 +398,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorconverttext_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorconverttext
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelplugineditorgrammar_HEADERS
     HEADER_NAMES
@@ -407,7 +407,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorgrammar_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorgrammar_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorgrammar
-    )
+)
 
 
 ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
@@ -419,7 +419,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorcheckbeforesend_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorcheckbeforesend
-    )
+)
 
 
 ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
@@ -430,7 +430,7 @@ ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
     REQUIRED_HEADERS MessageComposer_attachement_HEADERS
     PREFIX MessageComposer
     RELATIVE attachment
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     HEADER_NAMES
@@ -445,7 +445,7 @@ ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     REQUIRED_HEADERS MessageComposer_composer_HEADERS
     PREFIX MessageComposer
     RELATIVE composer
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasecomposerng_HEADERS
     HEADER_NAMES
@@ -454,7 +454,7 @@ ecm_generate_headers(MessageComposer_Camelcasecomposerng_HEADERS
     REQUIRED_HEADERS MessageComposer_composerng_HEADERS
     PREFIX MessageComposer
     RELATIVE composer-ng
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasecontactpreference_HEADERS
     HEADER_NAMES
@@ -463,7 +463,7 @@ ecm_generate_headers(MessageComposer_Camelcasecontactpreference_HEADERS
     REQUIRED_HEADERS MessageComposer_contactpreference_HEADERS
     PREFIX MessageComposer
     RELATIVE contactpreference
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasesender_HEADERS
     HEADER_NAMES
@@ -472,7 +472,7 @@ ecm_generate_headers(MessageComposer_Camelcasesender_HEADERS
     REQUIRED_HEADERS MessageComposer_sender_HEADERS
     PREFIX MessageComposer
     RELATIVE sender
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcaseutils_HEADERS
     HEADER_NAMES
@@ -481,7 +481,7 @@ ecm_generate_headers(MessageComposer_Camelcaseutils_HEADERS
     REQUIRED_HEADERS MessageComposer_utils_HEADERS
     PREFIX MessageComposer
     RELATIVE utils
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasehelper_HEADERS
     HEADER_NAMES
@@ -490,7 +490,7 @@ ecm_generate_headers(MessageComposer_Camelcasehelper_HEADERS
     REQUIRED_HEADERS MessageComposer_helper_HEADERS
     PREFIX MessageComposer
     RELATIVE helper
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasesettings_HEADERS
     HEADER_NAMES
@@ -498,7 +498,7 @@ ecm_generate_headers(MessageComposer_Camelcasesettings_HEADERS
     REQUIRED_HEADERS MessageComposer_settings_HEADERS
     PREFIX MessageComposer
     RELATIVE settings
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasepart_HEADERS
     HEADER_NAMES
@@ -510,7 +510,7 @@ ecm_generate_headers(MessageComposer_Camelcasepart_HEADERS
     REQUIRED_HEADERS MessageComposer_part_HEADERS
     PREFIX MessageComposer
     RELATIVE part
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasefollowupreminder_HEADERS
     HEADER_NAMES
@@ -520,7 +520,7 @@ ecm_generate_headers(MessageComposer_Camelcasefollowupreminder_HEADERS
     REQUIRED_HEADERS MessageComposer_followupreminder_HEADERS
     PREFIX MessageComposer
     RELATIVE followupreminder
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcaserecipient_HEADERS
     HEADER_NAMES
@@ -530,7 +530,7 @@ ecm_generate_headers(MessageComposer_Camelcaserecipient_HEADERS
     REQUIRED_HEADERS MessageComposer_recipient_HEADERS
     PREFIX MessageComposer
     RELATIVE recipient
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcaseimagescaling_HEADERS
     HEADER_NAMES
@@ -538,7 +538,7 @@ ecm_generate_headers(MessageComposer_Camelcaseimagescaling_HEADERS
     REQUIRED_HEADERS MessageComposer_imagescaling_HEADERS
     PREFIX MessageComposer
     RELATIVE imagescaling
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasesendlater_HEADERS
     HEADER_NAMES
@@ -579,7 +579,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     REQUIRED_HEADERS MessageComposer_job_HEADERS
     PREFIX MessageComposer
     RELATIVE job
-    )
+)
 
 ecm_generate_headers(MessageComposer_Camelcasedraftstatus_HEADERS
     HEADER_NAMES
@@ -587,7 +587,7 @@ ecm_generate_headers(MessageComposer_Camelcasedraftstatus_HEADERS
     REQUIRED_HEADERS MessageComposer_draftstatus_HEADERS
     PREFIX MessageComposer
     RELATIVE draftstatus
-    )
+)
 
 ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     HEADER_NAMES
@@ -597,7 +597,7 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     REQUIRED_HEADERS MessageComposer_mdn_HEADERS
     PREFIX MessageComposer
     RELATIVE mdn
-    )
+)
 
 install(FILES
     ${MessageComposer_CamelcaseMdn_HEADERS}
@@ -626,7 +626,7 @@ install(FILES
     ${MessageComposer_Camelcasedraftstatus_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/MessageComposer
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${MessageComposer_mdn_HEADERS}
@@ -660,7 +660,7 @@ install(FILES
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/messagecomposer
     COMPONENT Devel
-    )
+)
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageComposer")
 
@@ -696,25 +696,25 @@ if (BUILD_QCH)
         ${MessageComposer_plugineditorgrammar_HEADERS}
         ${MessageComposer_draftstatus_HEADERS}
         LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
+        Qt6Core_QCH
+        Qt6Gui_QCH
+        Qt6Widgets_QCH
         INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            MESSAGECOMPOSER_EXPORT
+        MESSAGECOMPOSER_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
 
-    ecm_install_qch_export(
-        TARGETS KPim6MessageComposer_QCH
-        FILE KPim6MessageComposerQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerQchTargets.cmake\")")
+ecm_install_qch_export(
+    TARGETS KPim6MessageComposer_QCH
+    FILE KPim6MessageComposerQchTargets.cmake
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+)
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerQchTargets.cmake\")")
 
 endif()
 
@@ -724,18 +724,18 @@ configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageComposerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageComposerConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KPim6MessageComposerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageComposerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer COMPONENT Devel
-    )
+)

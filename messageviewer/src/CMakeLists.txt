@@ -5,7 +5,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGEVIEWER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfigVersion.cmake"
     SOVERSION 6
-    )
+)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer6\")
 
@@ -29,8 +29,8 @@ include(CheckIncludeFiles)
 
 find_package(Qca-qt6 2.3.7 CONFIG REQUIRED)
 set_package_properties(Qca-qt6 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
-                   URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
-                   PURPOSE "Needed for dkim support.")
+    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
+    PURPOSE "Needed for dkim support.")
 
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
@@ -361,28 +361,28 @@ target_sources(KPim6MessageViewer PRIVATE
 
     mdn/mdnwarningwidget.cpp
     mdn/mdnwarningwidget.h
-    )
+)
 
 ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
-        DESCRIPTION "messagelib (messageviewer)"
-        OLD_CATEGORY_NAMES log_messageviewer
-        EXPORT MESSAGELIB
-    )
+    DESCRIPTION "messagelib (messageviewer)"
+    OLD_CATEGORY_NAMES log_messageviewer
+    EXPORT MESSAGELIB
+)
 ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
-        DESCRIPTION "messagelib (messageviewer dkim support)"
-        EXPORT MESSAGELIB
-    )
+    DESCRIPTION "messagelib (messageviewer dkim support)"
+    EXPORT MESSAGELIB
+)
 
 
 kconfig_add_kcfg_files(KPim6MessageViewer
     settings/globalsettings_messageviewer.kcfgc
-    )
+)
 
 ki18n_wrap_ui(KPim6MessageViewer
     ui/settings.ui
     ui/invitationsettings.ui
     ui/printingsettings.ui
-    )
+)
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -431,27 +431,27 @@ target_link_libraries(KPim6MessageViewer
     qca-qt6
     KF6::Notifications
     KF6::TextAddonsWidgets
-    )
+)
 
 if (TARGET KF6::TextEditTextToSpeech)
-target_link_libraries(KPim6MessageViewer
-    PRIVATE
-    KF6::TextEditTextToSpeech
+    target_link_libraries(KPim6MessageViewer
+        PRIVATE
+        KF6::TextEditTextToSpeech
     )
 endif()
 
-    target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
+target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
 
 set_target_properties(KPim6MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION}
     SOVERSION ${MESSAGEVIEWER_SOVERSION}
     EXPORT_NAME MessageViewer
-    )
+)
 
 install(TARGETS
     KPim6MessageViewer
     EXPORT KPim6MessageViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
     HEADER_NAMES
@@ -461,7 +461,7 @@ ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
     REQUIRED_HEADERS MessageViewer_webengine_HEADERS
     PREFIX MessageViewer
     RELATIVE viewer/webengine
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     HEADER_NAMES
@@ -473,7 +473,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     REQUIRED_HEADERS MessageViewer_scam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
-    )
+)
 
 ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
     HEADER_NAMES
@@ -505,7 +505,7 @@ ecm_generate_headers(MessageViewer_Camelremotecontent_HEADERS
     REQUIRED_HEADERS MessageViewer_remotecontent_HEADERS
     PREFIX MessageViewer
     RELATIVE remote-content
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelopenurlwith_HEADERS
     HEADER_NAMES
@@ -514,7 +514,7 @@ ecm_generate_headers(MessageViewer_Camelopenurlwith_HEADERS
     REQUIRED_HEADERS MessageViewer_openurlwith_HEADERS
     PREFIX MessageViewer
     RELATIVE openurlwith
-    )
+)
 
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
@@ -529,7 +529,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
     RELATIVE viewer
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
     HEADER_NAMES
@@ -539,7 +539,7 @@ ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
     REQUIRED_HEADERS MessageViewer_widgets_HEADERS
     PREFIX MessageViewer
     RELATIVE widgets
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     HEADER_NAMES
@@ -550,7 +550,7 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     REQUIRED_HEADERS MessageViewer_utils_HEADERS
     PREFIX MessageViewer
     RELATIVE utils
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
     HEADER_NAMES
@@ -558,7 +558,7 @@ ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
     REQUIRED_HEADERS MessageViewer_antispam_HEADERS
     PREFIX MessageViewer
     RELATIVE antispam
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaseinterfaces_HEADERS
     HEADER_NAMES
@@ -568,7 +568,7 @@ ecm_generate_headers(MessageViewer_Camelcaseinterfaces_HEADERS
     REQUIRED_HEADERS MessageViewer_interfaces_HEADERS
     PREFIX MessageViewer
     RELATIVE interfaces
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
     HEADER_NAMES
@@ -577,7 +577,7 @@ ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
     REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
     PREFIX MessageViewer
     RELATIVE htmlwriter
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasesettings_HEADERS
     HEADER_NAMES
@@ -585,7 +585,7 @@ ecm_generate_headers(MessageViewer_Camelcasesettings_HEADERS
     REQUIRED_HEADERS MessageViewer_settings_HEADERS
     PREFIX MessageViewer
     RELATIVE settings
-    )
+)
 
 ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
     HEADER_NAMES
@@ -595,7 +595,7 @@ ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
     REQUIRED_HEADERS MessageViewer_ConfigurePlugins_HEADERS
     PREFIX MessageViewer
     RELATIVE messageviewerconfigureplugins
-    )
+)
 
 ecm_generate_headers(MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS
     HEADER_NAMES
@@ -607,7 +607,7 @@ ecm_generate_headers(MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS
     REQUIRED_HEADERS MessageViewer_CheckBeforeDeletingPlugin_HEADERS
     PREFIX MessageViewer
     RELATIVE messageviewercheckbeforedeletingplugins
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     HEADER_NAMES
@@ -626,7 +626,7 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     REQUIRED_HEADERS MessageViewer_header_HEADERS
     PREFIX MessageViewer
     RELATIVE header
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS
     HEADER_NAMES
@@ -637,7 +637,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS
     REQUIRED_HEADERS MessageViewer_viewerplugin_HEADERS
     PREFIX MessageViewer
     RELATIVE viewerplugins
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcasemdnwarningwidget_HEADERS
     HEADER_NAMES
@@ -645,7 +645,7 @@ ecm_generate_headers(MessageViewer_Camelcasemdnwarningwidget_HEADERS
     REQUIRED_HEADERS MessageViewer_mdnwarningwidget_HEADERS
     PREFIX MessageViewer
     RELATIVE mdn
-    )
+)
 
 ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     HEADER_NAMES
@@ -656,7 +656,7 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     REQUIRED_HEADERS MessageViewer_renderer_HEADERS
     PREFIX MessageViewer
     RELATIVE messagepartthemes/default
-    )
+)
 
 install(FILES
     ${MessageViewer_Cameldkimverify_HEADERS}
@@ -692,7 +692,7 @@ install(FILES
     ${MessageViewer_Camelopenurlwith_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/MessageViewer
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${MessageViewer_mdnwarningwidget_HEADERS}
@@ -719,7 +719,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/messageviewer
     COMPONENT Devel
-    )
+)
 
 install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
 
@@ -755,43 +755,43 @@ if (BUILD_QCH)
         ${MessageViewer_renderer_HEADERS}
         ${MessageViewer_remotecontent_HEADERS}
         LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
+        Qt6Core_QCH
+        Qt6Gui_QCH
+        Qt6Widgets_QCH
         INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            MESSAGEVIEWER_EXPORT
+        MESSAGEVIEWER_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
 
-    ecm_install_qch_export(
-        TARGETS KPim6MessageViewer_QCH
-        FILE KPim6MessageViewerQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageViewerQchTargets.cmake\")")
+ecm_install_qch_export(
+    TARGETS KPim6MessageViewer_QCH
+    FILE KPim6MessageViewerQchTargets.cmake
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+)
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageViewerQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KPim6MessageViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageViewerTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer COMPONENT Devel
-    )
+)
