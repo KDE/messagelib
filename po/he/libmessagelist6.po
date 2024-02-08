@@ -14,13 +14,13 @@
 # Diego Iastrubni <elcuco@kdemail.net>, 2004, 2005.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2007.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2023 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2024-01-07 22:28+0200\n"
+"PO-Revision-Date: 2024-02-07 09:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -469,22 +469,22 @@ msgstr "שבוע שעבר"
 #: core/model.cpp:334
 #, kde-format
 msgid "Two Weeks Ago"
-msgstr ""
+msgstr "לפני שבועיים"
 
 #: core/model.cpp:335
 #, kde-format
 msgid "Three Weeks Ago"
-msgstr ""
+msgstr "לפני שלושה שבועות"
 
 #: core/model.cpp:336
 #, kde-format
 msgid "Four Weeks Ago"
-msgstr ""
+msgstr "לפני ארבעה שבועות"
 
 #: core/model.cpp:337
 #, kde-format
 msgid "Five Weeks Ago"
-msgstr ""
+msgstr "לפני חמישה שבועות"
 
 #: core/model.cpp:550 utils/themeeditor.cpp:185
 #, kde-format
@@ -1058,7 +1058,7 @@ msgstr "יצירת מסנן"
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
-msgstr ""
+msgstr "ערכת עיצוב"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:74
@@ -1107,7 +1107,7 @@ msgstr "הגדרת מסנן"
 #: core/widgets/configurefilterswidget.cpp:78
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "הסרה"
 
 #: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
@@ -1258,7 +1258,7 @@ msgstr "זבל"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
-msgstr ""
+msgstr "תקין"
 
 #: core/widgets/searchlinestatus.cpp:273
 #, kde-format
@@ -1268,7 +1268,7 @@ msgstr "הודעה מלאה"
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
-msgstr ""
+msgstr "תוכן"
 
 #: core/widgets/searchlinestatus.cpp:285
 #, kde-format
@@ -1293,7 +1293,7 @@ msgstr "פינוי היסטוריה"
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr ""
+msgstr "הלשונית הנוכחית נעולה."
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -1309,7 +1309,7 @@ msgstr "מיון"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
-msgstr ""
+msgstr "פתיחה בלשונית חדשה"
 
 #: pane.cpp:126
 #, kde-format
@@ -1330,7 +1330,7 @@ msgstr "סגירת לשונית"
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr ""
+msgstr "הפעלת הלשונית %1"
 
 #: pane.cpp:200
 #, kde-format
@@ -1350,22 +1350,22 @@ msgstr "יצירת לשונית חדשה"
 #: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "הפעלת הלשונית הבאה"
 
 #: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr ""
+msgstr "הפעלת הלשונית הקודמת"
 
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr ""
+msgstr "העברת לשונית שמאלה"
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr ""
+msgstr "העברת לשונית ימינה"
 
 #: pane.cpp:298
 #, kde-format
@@ -1382,7 +1382,7 @@ msgstr "ריק"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
-msgstr ""
+msgstr "סגירת לשונית"
 
 #: pane.cpp:712
 #, kde-format
@@ -1400,7 +1400,7 @@ msgstr "שחרור נעילת לשונית"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr ""
+msgstr "נעילת לשונית"
 
 #: storagemodel.cpp:219
 #, kde-format

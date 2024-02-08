@@ -4,14 +4,14 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2010, 2011, 2014, 2015, 2016.
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
-# SPDX-FileCopyrightText: 2018, 2020, 2023 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2018, 2020, 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-12-08 21:59+0300\n"
+"PO-Revision-Date: 2024-02-07 12:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -761,11 +761,10 @@ msgstr ""
 "ключи шифрования."
 
 #: composer/composerviewbase.cpp:2152
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr "Отправить незашифрованным?"
+msgstr "Отправить без шифрования?"
 
 #: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
 #, kde-format
@@ -2231,7 +2230,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr ""
 "attachment,attached,вложение,вложении,вложенный,вложенном,прикрепляю,"
-"прикреплённом,прикрепленном,прикрепил,приложенном,приложенный"
+"прикреплённом,прикреплённом,прикрепил,приложенном,приложенный"
 
 #: utils/util.cpp:293
 #, kde-format
@@ -2243,11 +2242,10 @@ msgstr ""
 "писем?"
 
 #: utils/util.cpp:294
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr "Диспетчер писем отсутствует"
+msgstr "Отсутствует диспетчер писем"
 
 #: utils/util.cpp:296
 #, kde-format
@@ -2264,10 +2262,8 @@ msgstr ""
 "Диспетчер писем работает в автономном режиме, отправка писем невозможна. "
 "Подключиться к сети?"
 
-# BUGME: needs @title:window --aspotashev
 #: utils/util.cpp:312
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Диспетчер писем работает в автономном режиме"
