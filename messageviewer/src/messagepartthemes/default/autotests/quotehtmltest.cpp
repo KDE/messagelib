@@ -122,8 +122,8 @@ void QuoteHtmlTest::testQuoteHtml_data()
                                  << false << 1;
     QTest::newRow("doublequotewithtext") << QStringLiteral(">> sddf")
                                          << QStringLiteral(
-                                                "<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>> "
-                                                "</span><font color=\"#007000\">sddf</font></div></div></blockquote></blockquote>")
+                                                "<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>>"
+                                                "</span><font color=\"#007000\">&nbsp;sddf</font></div></div></blockquote></blockquote>")
                                          << false << 1;
     QTest::newRow("doublequote") << QStringLiteral(">>")
                                  << QStringLiteral(
@@ -219,11 +219,11 @@ void QuoteHtmlTest::testQuoteHtml_data()
         << QStringLiteral(
                "<div class=\"noquote\">"
                "<div dir=\"ltr\">test</div></div>"
-               "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">blo</font></div>"
+               "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;blo</font></div>"
                "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
                "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
                "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
-               "<div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">bla</font></div></div></blockquote>"
+               "<div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;bla</font></div></div></blockquote>"
                "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
         << false << 1;
 }
