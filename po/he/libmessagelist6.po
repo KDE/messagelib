@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2024-02-07 09:05+0200\n"
+"PO-Revision-Date: 2024-02-09 15:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -786,7 +786,7 @@ msgstr "סמל הזמנה"
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr ""
+msgstr "תיקייה"
 
 #: core/theme.cpp:179
 #, kde-format
@@ -812,17 +812,17 @@ msgstr "תמיד להציג"
 #: core/theme.cpp:1052
 #, kde-format
 msgid "Plain Rectangles"
-msgstr ""
+msgstr "מרובעים פשוטים"
 
 #: core/theme.cpp:1053
 #, kde-format
 msgid "Plain Joined Rectangle"
-msgstr ""
+msgstr "מרובעים מחוברים פשוטים"
 
 #: core/theme.cpp:1054
 #, kde-format
 msgid "Rounded Rectangles"
-msgstr ""
+msgstr "מרובעים מעוגלים"
 
 #: core/theme.cpp:1055
 #, kde-format
