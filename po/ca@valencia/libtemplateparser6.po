@@ -642,7 +642,7 @@ msgid ""
 msgstr ""
 "Passeu per este menú per a trobar una ordre que s'inserirà a la plantilla "
 "que s'està editant. L'ordre s'inserirà a la posició del cursor, per tant, "
-"abans desitjareu moure el cursor al punt d'inserció desitjat."
+"abans desitjareu moure el cursor cap al punt d'inserció desitjat."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
