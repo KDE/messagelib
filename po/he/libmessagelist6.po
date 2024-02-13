@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2024-02-09 15:33+0200\n"
+"PO-Revision-Date: 2024-02-12 22:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -40,12 +40,12 @@ msgstr "בלי"
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr ""
+msgstr "לפי תאריך מדויק (של מובילי שרשור)"
 
 #: core/aggregation.cpp:180
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
-msgstr ""
+msgstr "לפי טווח תאריכים חכם (של מובילי השרשור)"
 
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
@@ -86,17 +86,17 @@ msgstr "בלי"
 #: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect Only"
-msgstr ""
+msgstr "מושלם בלבד"
 
 #: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect and by References"
-msgstr ""
+msgstr "מושלם ולפי הפניות"
 
 #: core/aggregation.cpp:205
 #, kde-format
 msgid "Perfect, by References and by Subject"
-msgstr ""
+msgstr "מושלם, לפי הפניות ולפי נושא"
 
 #: core/aggregation.cpp:214
 #, kde-format
@@ -131,17 +131,17 @@ msgstr "תמיד להרחיב שרשורים"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Interactivity"
-msgstr ""
+msgstr "להעדיף נפח פעילות"
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Speed"
-msgstr ""
+msgstr "להעדיף מהירות"
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr ""
+msgstr "משימה כמותית (בלי נפח פעילות)"
 
 #: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
@@ -201,7 +201,7 @@ msgstr "זבל"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr ""
+msgstr "תקין"
 
 #: core/item.cpp:290
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "לא ידוע"
 #: core/manager.cpp:206
 #, kde-format
 msgid "Current Activity, Threaded"
-msgstr ""
+msgstr "פעילות נוכחית, בשרשורים"
 
 #: core/manager.cpp:207
 #, kde-format
@@ -237,7 +237,7 @@ msgstr ""
 #: core/manager.cpp:219
 #, kde-format
 msgid "Current Activity, Flat"
-msgstr ""
+msgstr "פעילות נוכחית, שטוחה"
 
 #: core/manager.cpp:220
 #, kde-format
@@ -249,7 +249,7 @@ msgstr ""
 #: core/manager.cpp:231
 #, kde-format
 msgid "Activity by Date, Threaded"
-msgstr ""
+msgstr "פעילות לפי תאריך, בשרשורים"
 
 #: core/manager.cpp:232
 #, kde-format
@@ -262,7 +262,7 @@ msgstr ""
 #: core/manager.cpp:244
 #, kde-format
 msgid "Activity by Date, Flat"
-msgstr ""
+msgstr "פעילות לפי תאריך, שטוח"
 
 #: core/manager.cpp:245
 #, kde-format
@@ -270,6 +270,8 @@ msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
+"התצוגה הזאת משתמשת בקבוצות של יום אחר יום. ההודעות לא מקובצות בשרשורים. כך "
+"שלמשל, תחת „היום” אפשר למצוא פשוט את כל ההודעות שהגיעו היום."
 
 #: core/manager.cpp:256
 #, kde-format
@@ -280,12 +282,12 @@ msgstr "רשימת דיוור רגילה"
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
-msgstr ""
+msgstr "זאת תצוגת הודעות דוא״ל ישנה ופשוטה: אין קבוצות ואין שרשורים מכבידים."
 
 #: core/manager.cpp:266
 #, kde-format
 msgid "Flat Date View"
-msgstr ""
+msgstr "תצוגת תאריכים שטוחה"
 
 #: core/manager.cpp:267
 #, kde-format
@@ -293,6 +295,7 @@ msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
+"זאת רשימת הודעה פשוטה וישנה שממוינת לפי תאריך: בלי קבוצות ובלי שרשורים."
 
 #: core/manager.cpp:278
 #, kde-format
@@ -305,6 +308,8 @@ msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
+"התצוגה הזאת מקבצת את ההודעות לפי מוענים ונמענים (כתלות בסוג התיקייה). "
+"ההודעות לא מקובצות לשרשורים."
 
 #: core/manager.cpp:290
 #, kde-format
@@ -317,17 +322,19 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
+"התצוגה הזאת מקבצת את ההודעות לשרשורים ואז מקבצת את השרשורים לפי הגורם שפתח "
+"את השרשור."
 
 #: core/manager.cpp:568
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
-msgstr ""
+msgstr "קלסית"
 
 #: core/manager.cpp:568
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
-msgstr ""
+msgstr "ערכת עיצוב פשוטה, תואמת לאחור ובשורה אחת"
 
 #: core/manager.cpp:572
 #, kde-format
@@ -429,7 +436,7 @@ msgstr "חכם"
 #: core/manager.cpp:689
 #, kde-format
 msgid "A smart multiline and multi item theme"
-msgstr ""
+msgstr "ערכת עיצוב חכמה עם ריבוי שורות ופריטים"
 
 #: core/manager.cpp:693
 #, kde-format
@@ -439,7 +446,7 @@ msgstr "הודעה"
 #: core/manager.cpp:777
 #, kde-format
 msgid "Smart with Clickable Status"
-msgstr ""
+msgstr "חכמה עם מצב שזמין ללחיצה"
 
 #: core/manager.cpp:778
 #, kde-format
@@ -557,6 +564,8 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי להציג חלוניות עצה בעת מעבר מעל פריט ברשימת "
+"ההודעות."
 
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
 #, kde-format
@@ -566,12 +575,12 @@ msgstr "בלי (סדר האחסון)"
 #: core/sortorder.cpp:64
 #, kde-format
 msgid "By Date/Time"
-msgstr ""
+msgstr "לפי תאריך/שעה"
 
 #: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
-msgstr ""
+msgstr "לפי תאריך/שעה של הפריט העדכני ביותר בתת־העץ"
 
 #: core/sortorder.cpp:71
 #, kde-format
@@ -628,7 +637,7 @@ msgstr "יורד"
 #: core/sortorder.cpp:105
 #, kde-format
 msgid "by Date/Time"
-msgstr ""
+msgstr "לפי תאריך/שעה"
 
 #: core/sortorder.cpp:108
 #, kde-format
@@ -705,12 +714,12 @@ msgstr "סמל צרופה"
 #: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
-msgstr ""
+msgstr "סמל הושב/הועבר"
 
 #: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr ""
+msgstr "סמל חדש/לא נקרא/נקרא/הושב/הועבר מאוחד"
 
 #: core/theme.cpp:137
 #, kde-format
@@ -740,7 +749,7 @@ msgstr "סמל נקראה/נתעלמה"
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr ""
+msgstr "סמל הרחבת/צמצום כותרת קבוצה"
 
 #: core/theme.cpp:155
 #, kde-format
@@ -755,7 +764,7 @@ msgstr "סמל מצב חתימה"
 #: core/theme.cpp:161
 #, kde-format
 msgid "Vertical Separation Line"
-msgstr ""
+msgstr "קו הפרדה אנכי"
 
 #: core/theme.cpp:164
 #, kde-format
@@ -827,37 +836,37 @@ msgstr "מרובעים מעוגלים"
 #: core/theme.cpp:1055
 #, kde-format
 msgid "Rounded Joined Rectangle"
-msgstr ""
+msgstr "מרובע מעוגל משולב"
 
 #: core/theme.cpp:1056
 #, kde-format
 msgid "Gradient Rectangles"
-msgstr ""
+msgstr "מרובעים מדורגים"
 
 #: core/theme.cpp:1057
 #, kde-format
 msgid "Gradient Joined Rectangle"
-msgstr ""
+msgstr "מרובע משולב מדורג"
 
 #: core/theme.cpp:1058
 #, kde-format
 msgid "Styled Rectangles"
-msgstr ""
+msgstr "מרובעים מסוגננים"
 
 #: core/theme.cpp:1059
 #, kde-format
 msgid "Styled Joined Rectangles"
-msgstr ""
+msgstr "מרובעים משולבים מסוגננים"
 
 #: core/view.cpp:682
 #, kde-format
 msgid "No result found"
-msgstr ""
+msgstr "לא נמצאו תוצאות"
 
 #: core/view.cpp:761
 #, kde-format
 msgid "Adjust Column Sizes"
-msgstr ""
+msgstr "כיוון רוחב עמודות"
 
 #: core/view.cpp:765
 #, kde-format
@@ -893,7 +902,7 @@ msgstr "גודל"
 #: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Folder"
-msgstr ""
+msgstr "תיקייה"
 
 #: core/view.cpp:2269 core/view.cpp:2271
 #, kde-format
@@ -939,7 +948,7 @@ msgstr "שרשורים שנפתחו %1"
 #: core/view.cpp:2343
 #, kde-format
 msgid "Threads with messages dated %1"
-msgstr "שרשורים עם הודעות בתאריך %1"
+msgstr "שרשורים עם הודעות מהתאריך %1"
 
 #: core/view.cpp:2353
 #, kde-format
@@ -974,7 +983,7 @@ msgstr "שרשורים שנפתחו בטווח של %1"
 #: core/view.cpp:2374
 #, kde-format
 msgid "Threads containing messages with dates within %1"
-msgstr "שרשורים שמכילים הודעות עם הודעות בטווח של %1"
+msgstr "שרשורים שמכילים הודעות עם תאריכים בטווח של %1"
 
 #: core/view.cpp:2382
 #, kde-format
@@ -1047,7 +1056,7 @@ msgstr[3] ""
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "Any filter defined."
-msgstr ""
+msgstr "כל מסנן מוגדר."
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1096,7 +1105,7 @@ msgstr "כיוון מיון קבוצה"
 #: core/widgetbase.cpp:652
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
-msgstr ""
+msgstr "תיקייה תמיד תשתמש בסדר המיון הזה"
 
 #: core/widgets/configurefiltersdialog.cpp:24
 #, kde-format
@@ -1112,7 +1121,7 @@ msgstr "הסרה"
 #: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Do you want to delete this filter?"
-msgstr ""
+msgstr "למחוק את המסנן הזה?"
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
@@ -1145,7 +1154,7 @@ msgstr "חיפוש"
 #: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
-msgstr ""
+msgstr "מילים באורך של פחות מ־3 אותיות לא נחשבות."
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
@@ -1158,18 +1167,20 @@ msgid ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
+"חלק מתיקיות החיפוש בשאילתה הזאת עדיין מסדרות את המפתח או שמוחרגות מסידור "
+"המפתח לחלוטין. התוצאות שלהלן עלולות להיות חלקיות."
 
 #: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
-msgstr ""
+msgstr "למנוע ממחיקת שדה החיפוש המהיר בעת מעבר בין תיקיות"
 
 #: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr ""
+msgstr "לפנות את שדה החיפוש המהיר בעת מעבר בין תיקיות"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
@@ -1178,6 +1189,8 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
+"יש ללחוץ על המתג הזה כדי לשמור על החיפוש המהיר נעול בעת מעבר לתיקיות אחרות "
+"או בעת צמצום החיפוש לפי מצב הודעה."
 
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
@@ -1453,13 +1466,13 @@ msgstr "מתקדם"
 #: utils/aggregationeditor.cpp:68
 #, kde-format
 msgid "Fill view strategy:"
-msgstr ""
+msgstr "אסטרטגיית מילוי תצוגה:"
 
 #: utils/configureaggregationsdialog.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
-msgstr ""
+msgstr "התאמת מצבי אגירת ההודעות"
 
 #: utils/configureaggregationsdialog.cpp:121
 #: utils/configureaggregationsdialog.cpp:360
@@ -1552,12 +1565,12 @@ msgstr "עמודה חדשה"
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
-msgstr ""
+msgstr "למחוק את ערכות העיצוב הנבחרות?"
 
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr ""
+msgstr "למחוק את „%1”?"
 
 #: utils/configurethemesdialog.cpp:410
 #, kde-format
@@ -1602,7 +1615,7 @@ msgstr "שם:"
 #: utils/themeeditor.cpp:73
 #, kde-format
 msgid "The label that will be displayed in the column header."
-msgstr ""
+msgstr "התווית שתוצג בכותרת העמודה."
 
 #: utils/themeeditor.cpp:76
 #, kde-format
@@ -1612,7 +1625,7 @@ msgstr "לחיצה על הכותרת מסדרת את ההודעות:"
 #: utils/themeeditor.cpp:80
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr ""
+msgstr "סדר המיון שאליו תועבר כותרת העמודה בלחיצה עליה."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1622,12 +1635,12 @@ msgstr "גלוי כברירת מחדל"
 #: utils/themeeditor.cpp:84
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr ""
+msgstr "יש לסמן את זה אם העמודה הזאת צריכה להיות גלויה כאשר ערכת העיצוב נבחרת."
 
 #: utils/themeeditor.cpp:87
 #, kde-format
 msgid "Contains \"Sender or Receiver\" field"
-msgstr ""
+msgstr "מכיל שדה „מוען ונמען”"
 
 #: utils/themeeditor.cpp:88
 #, kde-format
@@ -1635,6 +1648,7 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
+"יש לסמן את זה אם יש לעדכן את תווית העמודה לפי סוג „נכנס”/„יוצא” של התיקייה."
 
 #: utils/themeeditor.cpp:108
 #, kde-format
