@@ -81,7 +81,7 @@ protected:
     Akonadi::Session *session() const;
 
 private:
-    void setSession(Akonadi::Session *session);
+    MESSAGEVIEWER_NO_EXPORT void setSession(Akonadi::Session *session);
 
     friend class Viewer;
     class AbstractMessageLoadedHandlerPrivate;
@@ -400,8 +400,8 @@ Q_SIGNALS:
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
-    void initialize();
-    void slotGeneralPaletteChanged();
+    MESSAGEVIEWER_NO_EXPORT void initialize();
+    MESSAGEVIEWER_NO_EXPORT void slotGeneralPaletteChanged();
 
 public Q_SLOTS:
 

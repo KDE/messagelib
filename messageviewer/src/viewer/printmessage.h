@@ -37,8 +37,8 @@ Q_SIGNALS:
     void printingFinished();
 
 private:
-    void printDocument(QPrinter *printer);
-    void printFinished(bool success);
+    MESSAGEVIEWER_NO_EXPORT void printDocument(QPrinter *printer);
+    MESSAGEVIEWER_NO_EXPORT void printFinished(bool success);
     QString mDocumentName;
     QPrinter mPrinter;
     QEventLoop mWaitForResult;
