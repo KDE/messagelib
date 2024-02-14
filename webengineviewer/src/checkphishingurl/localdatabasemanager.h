@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "createphishingurldatabasejob.h"
 #include "searchfullhashjob.h"
 #include "webengineviewer_export.h"
 #include <QObject>
