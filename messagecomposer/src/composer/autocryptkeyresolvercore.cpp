@@ -19,7 +19,6 @@ public:
     QStringList gossip_keys;
 };
 
-
 AutocryptKeyResolverCore::AutocryptKeyResolverCore(bool encrypt, bool sign, GpgME::Protocol format)
     : Kleo::KeyResolverCore(encrypt, sign, format)
     , d(new AutocryptKeyResolverCorePrivate)
@@ -52,12 +51,12 @@ Kleo::KeyResolverCore::Result AutocryptKeyResolverCore::resolve()
 
     bool allResolved = true;
     const auto storage = MessageCore::AutocryptStorage::self();
-    for (const auto &recipient: solution->encryptionKeys.keys()) {
+    for (const auto &recipient : solution->encryptionKeys.keys()) {
         auto &keys = solution->encryptionKeys[recipient];
-        if (keys.size() > 0) {                    // already keys found
+        if (keys.size() > 0) { // already keys found
             continue;
         }
-        if (recipient == normalizedSender()) {    // Own key needs to be in normal key store (Autocrypt do not offer private keys)
+        if (recipient == normalizedSender()) { // Own key needs to be in normal key store (Autocrypt do not offer private keys)
             allResolved = false;
             continue;
         }
