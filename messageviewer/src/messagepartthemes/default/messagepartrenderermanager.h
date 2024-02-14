@@ -38,7 +38,7 @@ public:
     [[nodiscard]] KTextTemplate::Context createContext();
 
 private:
-    void initializeRenderer();
+    MESSAGEVIEWER_NO_EXPORT void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;
     GlobalContext *const m_globalContext;
 };

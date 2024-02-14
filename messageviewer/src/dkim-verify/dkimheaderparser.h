@@ -50,10 +50,10 @@ public:
     [[nodiscard]] QList<DKIMHeaderParser::Header> listHeaders() const;
 
 private:
-    [[nodiscard]] static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
     [[nodiscard]] MESSAGEVIEWER_NO_EXPORT MessageViewer::DKIMHeaderParser::Header
     extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
-    [[nodiscard]] static QByteArray unfoldHeader(const char *header, size_t headerSize);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT static QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
     QList<DKIMHeaderParser::Header> mListHeaders;
     bool mWasAlreadyParsed = false;

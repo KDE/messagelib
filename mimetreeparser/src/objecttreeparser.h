@@ -293,15 +293,15 @@ public:
     MessagePartPtr parsedPart() const;
 
 private:
-    void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
-    void setPlainTextContent(const QString &plainTextContent);
+    MIMETREEPARSER_NO_EXPORT void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
+    MIMETREEPARSER_NO_EXPORT void setPlainTextContent(const QString &plainTextContent);
 
     /**
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
-    MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType);
+    MIMETREEPARSER_NO_EXPORT MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    MIMETREEPARSER_NO_EXPORT MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType);
 
 private:
     /** ctor helper */
