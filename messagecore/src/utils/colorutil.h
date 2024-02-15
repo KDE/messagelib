@@ -40,7 +40,7 @@ public:
     [[nodiscard]] QColor linkColor() const;
 
 private:
-    void initializeColors();
+    MESSAGECORE_NO_EXPORT void initializeColors();
     QColor mMisspelledDefaultTextColor;
     QColor mQuoteLevel1DefaultTextColor;
     QColor mQuoteLevel2DefaultTextColor;
