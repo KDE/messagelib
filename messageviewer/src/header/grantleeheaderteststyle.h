@@ -24,7 +24,6 @@ public:
     GrantleeHeaderTestStyle();
     ~GrantleeHeaderTestStyle() override;
 
-public:
     const char *name() const override;
 
     [[nodiscard]] QString format(KMime::Message *message) const override;

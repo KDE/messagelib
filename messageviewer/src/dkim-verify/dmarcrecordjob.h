@@ -30,8 +30,8 @@ Q_SIGNALS:
     void error(const QString &err, const QString &domainName);
 
 private:
-    void resolvDnsDone();
-    [[nodiscard]] QString resolvDnsValue() const;
+    MESSAGEVIEWER_NO_EXPORT void resolvDnsDone();
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString resolvDnsValue() const;
     QString mDomainName;
     QDnsLookup *mDnsLookup = nullptr;
 };

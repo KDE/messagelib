@@ -45,6 +45,6 @@ public:
     [[nodiscard]] virtual QStringList headersToHide() const;
     [[nodiscard]] virtual DefaultPolicy defaultPolicy() const = 0;
     [[nodiscard]] virtual bool showHeader(const QString &header) const;
-    static QStringList stringList(const char *const headers[], int numHeaders);
+    [[nodiscard]] static QStringList stringList(const char *const headers[], int numHeaders);
 };
 }

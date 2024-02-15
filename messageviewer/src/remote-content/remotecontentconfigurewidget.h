@@ -35,7 +35,7 @@ public:
     void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type);
 
 private:
-    void updateInfo();
+    MESSAGEVIEWER_NO_EXPORT void updateInfo();
     RemoteContentStatusTypeComboBox *const mStatusTypeCombobox;
 };
 
@@ -48,12 +48,12 @@ public:
     void saveSettings();
 
 private:
-    void insertRemoteContentInfo(const RemoteContentInfo &info);
-    void slotCustomContextMenuRequested(const QPoint &);
-    void modifyRemoteContent(RemoteContentWidgetItem *rulesItem);
-    void slotAdd();
-    void fillContentInfo(const RemoteContentInfo &info, RemoteContentWidgetItem *item);
-    void readSettings();
+    MESSAGEVIEWER_NO_EXPORT void insertRemoteContentInfo(const RemoteContentInfo &info);
+    MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &);
+    MESSAGEVIEWER_NO_EXPORT void modifyRemoteContent(RemoteContentWidgetItem *rulesItem);
+    MESSAGEVIEWER_NO_EXPORT void slotAdd();
+    MESSAGEVIEWER_NO_EXPORT void fillContentInfo(const RemoteContentInfo &info, RemoteContentWidgetItem *item);
+    MESSAGEVIEWER_NO_EXPORT void readSettings();
     QTreeWidget *const mTreeWidget;
 };
 }

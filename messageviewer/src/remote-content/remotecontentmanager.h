@@ -38,8 +38,8 @@ public:
     [[nodiscard]] bool isBlocked(const QUrl &url, bool &contains) const;
 
 private:
-    void loadSettings();
-    void writeSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadSettings();
+    MESSAGEVIEWER_NO_EXPORT void writeSettings();
     QList<RemoteContentInfo> mRemoveContentInfo;
 };
 }

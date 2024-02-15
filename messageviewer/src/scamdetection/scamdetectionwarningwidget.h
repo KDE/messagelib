@@ -33,10 +33,10 @@ Q_SIGNALS:
     void addToWhiteList();
 
 private:
-    void slotShowDetails(const QString &content);
-    void slotAddToWhiteList();
-    void slotDisableScamDetection();
-    void slotMessageIsNotAScam();
+    MESSAGEVIEWER_NO_EXPORT void slotShowDetails(const QString &content);
+    MESSAGEVIEWER_NO_EXPORT void slotAddToWhiteList();
+    MESSAGEVIEWER_NO_EXPORT void slotDisableScamDetection();
+    MESSAGEVIEWER_NO_EXPORT void slotMessageIsNotAScam();
     std::unique_ptr<ScamDetectionWarningWidgetPrivate> const d;
 };
 }
