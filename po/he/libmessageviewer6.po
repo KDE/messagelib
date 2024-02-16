@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-02 00:38+0000\n"
-"PO-Revision-Date: 2024-02-07 09:06+0200\n"
+"PO-Revision-Date: 2024-02-15 23:17+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -37,9 +37,9 @@ msgid "Sorry, certificate could not be imported."
 msgstr "התעודה המשמשת לחתימה על הודעות:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reason: %1"
-msgstr "סיבה:"
+msgstr "סיבה: %1"
 
 #: messagepartthemes/default/templates/certmessagepart.html:7
 #, fuzzy
@@ -1611,16 +1611,16 @@ msgstr "0 הודעות"
 #: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
-msgstr ""
+msgstr "הודעות דוא״ל (‎*.mbox);;כל הקבצים (*)"
 
 #: utils/messageviewerutil.cpp:501
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] "הודעה חדשה ב־%2"
-msgstr[1] "הודעה חדשה ב־%2"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שמירת הודעה"
+msgstr[1] "שמירת הודעות"
+msgstr[2] "שמירת הודעות"
+msgstr[3] "שמירת הודעות"
 
 #: utils/messageviewerutil.cpp:526
 #, fuzzy, kde-format
