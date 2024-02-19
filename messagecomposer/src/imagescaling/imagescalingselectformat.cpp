@@ -72,7 +72,7 @@ QString ImageScalingSelectFormatDialog::format() const
 
 void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 {
-    const QStringList listFormat = format.split(QLatin1Char(';'));
+    const QList<QStringView> listFormat = QStringView(format).split(QLatin1Char(';'));
     const int numberOfElement(mListWidget->count());
     for (int i = 0; i < numberOfElement; ++i) {
         QListWidgetItem *item = mListWidget->item(i);
