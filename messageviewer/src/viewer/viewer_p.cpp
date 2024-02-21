@@ -75,7 +75,6 @@
 #include <QSplitter>
 #include <QTreeView>
 #include <QWheelEvent>
-#include <WebEngineViewer/WebEngineExportHtmlPageJob>
 // libkdepim
 #include <MessageCore/AttachmentPropertiesDialog>
 #include <PimCommon/BroadcastStatus>
@@ -2273,32 +2272,6 @@ void ViewerPrivate::exportToPdf(const QString &fileName)
     job->setEngineView(mViewer);
     job->setPdfPath(fileName);
     job->start();
-}
-
-void ViewerPrivate::slotOpenInBrowser()
-{
-    auto job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
-    job->setEngineView(mViewer);
-    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed, this, &ViewerPrivate::slotExportHtmlPageFailed);
-    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::success, this, &ViewerPrivate::slotExportHtmlPageSuccess);
-    job->start();
-}
-
-void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
-{
-    const QUrl url(QUrl::fromLocalFile(filename));
-    auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
-    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-    job->setDeleteTemporaryFile(true);
-    job->start();
-
-    Q_EMIT printingFinished();
-}
-
-void ViewerPrivate::slotExportHtmlPageFailed()
-{
-    qCDebug(MESSAGEVIEWER_LOG) << " Export HTML failed";
-    Q_EMIT printingFinished();
 }
 
 static QString filterCharsFromFilename(const QString &name)

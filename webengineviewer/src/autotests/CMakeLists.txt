@@ -17,13 +17,6 @@ ecm_add_test(zoomactionmenutest.cpp zoomactionmenutest.h
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer KF6::XmlGui
 )
 
-
-ecm_add_test(webengineexporthtmlpagejobtest.cpp webengineexporthtmlpagejobtest.h ${testwebengineviewer_webengine_SRCS}
-    TEST_NAME webengineexporthtmlpagejobtest
-    NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
-)
-
 ecm_add_test(webengineexportpdfpagejobtest.cpp webengineexportpdfpagejobtest.h ${testwebengineviewer_webengine_SRCS}
     TEST_NAME webengineexportpdfpagejobtest
     NAME_PREFIX "webengineviewer-"

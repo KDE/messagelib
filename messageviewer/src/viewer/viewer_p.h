@@ -485,9 +485,6 @@ private Q_SLOTS:
     void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
     void slotStyleUpdated();
     void slotWheelZoomChanged(int numSteps);
-    void slotOpenInBrowser();
-    void slotExportHtmlPageFailed();
-    void slotExportHtmlPageSuccess(const QString &filename);
     void slotToggleEmoticons();
 
 public Q_SLOTS:

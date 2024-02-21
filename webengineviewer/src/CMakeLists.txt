@@ -35,7 +35,6 @@ target_sources(KPim6WebEngineViewer PRIVATE
     webenginescript.cpp
     webengineview.cpp
     webenginemanagescript.cpp
-    webengineexporthtmlpagejob.cpp
     webenginenavigationrequestinterceptor.cpp
     webengineexportpdfpagejob.cpp
 
@@ -96,7 +95,6 @@ target_sources(KPim6WebEngineViewer PRIVATE
     webenginepage.h
     webhittest.h
     webenginescript.h
-    webengineexporthtmlpagejob.h
     webengineviewer_private_export.h
     webenginemanagescript.h
     webengineexportpdfpagejob.h
@@ -238,7 +236,6 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     WebHitTest
     WebEngineScript
     WebEngineManageScript
-    WebEngineExportHtmlPageJob
     WebEngineExportPdfPageJob
     REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS
     PREFIX WebEngineViewer
