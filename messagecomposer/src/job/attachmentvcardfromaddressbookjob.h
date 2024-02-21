@@ -26,10 +26,8 @@ public:
 protected Q_SLOTS:
     void doStart() override;
 
-private Q_SLOTS:
-    MESSAGECOMPOSER_NO_EXPORT void slotExpandGroupResult(KJob *job);
-
 private:
+    MESSAGECOMPOSER_NO_EXPORT void slotExpandGroupResult(KJob *job);
     MESSAGECOMPOSER_NO_EXPORT void invalidContact();
     MESSAGECOMPOSER_NO_EXPORT void addAttachment(const QByteArray &data, const QString &attachmentName);
     std::unique_ptr<AttachmentVcardFromAddressBookJobPrivate> const d;

@@ -37,7 +37,7 @@ public:
 
     [[nodiscard]] Akonadi::Collection collection() const;
 
-private Q_SLOTS:
+private:
     MESSAGECOMPOSER_NO_EXPORT void slotDateChanged();
     MESSAGECOMPOSER_NO_EXPORT void updateOkButton();
 
