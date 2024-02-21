@@ -74,21 +74,21 @@ public:
     explicit AttachmentControllerBasePrivate(AttachmentControllerBase *qq);
     ~AttachmentControllerBasePrivate();
 
-    void attachmentRemoved(const AttachmentPart::Ptr &part); // slot
-    void compressJobResult(KJob *job); // slot
-    void loadJobResult(KJob *job); // slot
-    void openSelectedAttachments(); // slot
-    void viewSelectedAttachments(); // slot
-    void editSelectedAttachment(); // slot
-    void editSelectedAttachmentWith(); // slot
-    void removeSelectedAttachments(); // slot
-    void saveSelectedAttachmentAs(); // slot
-    void selectedAttachmentProperties(); // slot
-    void editDone(MessageComposer::EditorWatcher *watcher); // slot
-    void attachPublicKeyJobResult(KJob *job); // slot
-    void slotAttachmentContentCreated(KJob *job); // slot
+    void attachmentRemoved(const AttachmentPart::Ptr &part);
+    void compressJobResult(KJob *job);
+    void loadJobResult(KJob *job);
+    void openSelectedAttachments();
+    void viewSelectedAttachments();
+    void editSelectedAttachment();
+    void editSelectedAttachmentWith();
+    void removeSelectedAttachments();
+    void saveSelectedAttachmentAs();
+    void selectedAttachmentProperties();
+    void editDone(MessageComposer::EditorWatcher *watcher);
+    void attachPublicKeyJobResult(KJob *job);
+    void slotAttachmentContentCreated(KJob *job);
     void addAttachmentPart(AttachmentPart::Ptr part);
-    void attachVcardFromAddressBook(KJob *job); // slot
+    void attachVcardFromAddressBook(KJob *job);
     void attachClipBoardElement(KJob *job);
     void selectedAllAttachment();
     void createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part);
