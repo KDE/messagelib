@@ -204,7 +204,7 @@ public:
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
 
     /** Get the load external references override setting */
-    bool htmlLoadExtOverride() const;
+    [[nodiscard]] bool htmlLoadExtOverride() const;
 
     /** Default behavior for loading external references.
      *  Use this for specifying the external reference loading behavior as
@@ -325,7 +325,7 @@ public:
     [[nodiscard]] QString selectedText() const;
 
     void saveMainFrameScreenshotInFile(const QString &filename);
-    bool mimePartTreeIsEmpty() const;
+    [[nodiscard]] bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
     [[nodiscard]] QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
