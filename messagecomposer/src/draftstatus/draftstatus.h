@@ -25,7 +25,7 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    KMime::Message::Ptr mMsg;
+    const KMime::Message::Ptr mMsg;
 };
 
 class MESSAGECOMPOSER_EXPORT DraftSignatureState
@@ -40,7 +40,7 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    KMime::Message::Ptr mMsg;
+    const KMime::Message::Ptr mMsg;
 };
 
 class MESSAGECOMPOSER_EXPORT DraftCryptoMessageFormatState
@@ -55,7 +55,7 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    KMime::Message::Ptr mMsg;
+    const KMime::Message::Ptr mMsg;
 };
 
 void MESSAGECOMPOSER_EXPORT removeDraftCryptoHeaders(const KMime::Message::Ptr &msg);

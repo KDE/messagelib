@@ -31,7 +31,7 @@ public:
     {
     }
 
-    SaveContactPreferenceJob *q_ptr;
+    SaveContactPreferenceJob *const q_ptr;
     Q_DECLARE_PUBLIC(SaveContactPreferenceJob)
 
     const QString mEmail;
