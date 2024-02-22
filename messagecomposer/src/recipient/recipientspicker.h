@@ -66,10 +66,10 @@ private:
     PimCommon::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
     Recipient::Type mDefaultType;
-    QPushButton *mUser4Button = nullptr;
-    QPushButton *mUser3Button = nullptr;
-    QPushButton *mUser2Button = nullptr;
-    QPushButton *mUser1Button = nullptr;
-    QLabel *const mSelectedLabel = nullptr;
+    QPushButton *const mUser1Button;
+    QPushButton *const mUser2Button;
+    QPushButton *const mUser3Button;
+    QPushButton *const mUser4Button;
+    QLabel *const mSelectedLabel;
 };
 }

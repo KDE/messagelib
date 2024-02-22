@@ -119,8 +119,8 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void dataFromFields();
     MESSAGECOMPOSER_NO_EXPORT void fieldsFromData();
     MESSAGECOMPOSER_NO_EXPORT void slotAddRecipient(const QString &);
-    RecipientComboBox *mCombo = nullptr;
-    RecipientLineEdit *mEdit = nullptr;
+    RecipientComboBox *const mCombo;
+    RecipientLineEdit *const mEdit;
     int mRecipientsCount = 0;
     bool mModified = false;
     QSharedPointer<Recipient> mData;
