@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
+"POT-Creation-Date: 2024-02-22 00:38+0000\n"
 "PO-Revision-Date: 2023-09-26 09:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1715,7 +1715,7 @@ msgstr "Natisni dokument"
 msgid "Turn on HTML rendering for this message."
 msgstr "Vklopi izrisovanje HTML za to sporočilo."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Naloži zunanje sklice z interneta za to sporočilo."
@@ -1795,7 +1795,7 @@ msgstr "&Odpri v imeniku"
 msgid "&Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2705
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Naslov kopiran na odložišče."
@@ -1851,7 +1851,7 @@ msgstr "Izvedi"
 msgid "Loading message..."
 msgstr "Nalaganje sporočila ..."
 
-#: viewer/viewer_p.cpp:344
+#: viewer/viewer_p.cpp:343
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -1860,13 +1860,13 @@ msgstr ""
 "Brisanje priloge lahko prekine veljavnost digitalnega potrdila za to "
 "sporočilo."
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:344 viewer/viewer_p.cpp:379
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Izbriši prilogo"
 
-#: viewer/viewer_p.cpp:379
+#: viewer/viewer_p.cpp:378
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -1875,345 +1875,345 @@ msgstr ""
 "Brisanje priloge iz šifriranega sporočila ali sporočila v slogu starega "
 "mailman-a ni podprto."
 
-#: viewer/viewer_p.cpp:428
+#: viewer/viewer_p.cpp:427
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Odpri z"
 
-#: viewer/viewer_p.cpp:446
+#: viewer/viewer_p.cpp:445
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Drug&o..."
 
-#: viewer/viewer_p.cpp:448 viewer/viewer_p.cpp:461
+#: viewer/viewer_p.cpp:447 viewer/viewer_p.cpp:460
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Odpri z..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:524 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Odpri"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:538 viewer/viewer_p.cpp:1743
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Pokaži"
 
-#: viewer/viewer_p.cpp:547
+#: viewer/viewer_p.cpp:546
 #, kde-format
 msgid "Scroll To"
 msgstr "Pomakni se do"
 
-#: viewer/viewer_p.cpp:552
+#: viewer/viewer_p.cpp:551
 #, kde-format
 msgid "Save As..."
 msgstr "Shrani kot ..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:557 viewer/viewer_p.cpp:1753
 #, kde-format
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:568 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Izbriši prilogo"
 
-#: viewer/viewer_p.cpp:580
+#: viewer/viewer_p.cpp:579
 #, kde-format
 msgid "Reply To Author"
 msgstr "Odgovori avtorju"
 
-#: viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:587
 #, kde-format
 msgid "Reply To All"
 msgstr "Odgovori vsem"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:593 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "Lastnosti"
 
-#: viewer/viewer_p.cpp:731
+#: viewer/viewer_p.cpp:730
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:731
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "Odjemalec e-pošte za KDE"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1276
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Pokaži prilogo: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Priloge"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Izberite slog prikaza prilog"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Kot ikone"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Pokaži vse priloge kot ikone. Kliknite nanje, da jih vidite."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "Pameten prikaz"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Pokaži priloge tako, kot je predlagal pošiljatelj."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Znotrajvrst&ično"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Pokaži vse priloge znotraj vrstic sporočila (če je mogoče)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Skrij"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ne pokaži prilog v pregledovalniku sporočil"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Samo v glavah"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Priloge pokaži samo v glavi sporočila"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Na&stavi kodiranje"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Samodejno"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopiraj besedilo"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Select All Text"
 msgstr "Izberi vse besedilo"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2060
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopiraj naslov povezave"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
 msgstr "Odpri URL"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1557
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Uporabi pisavo stalne širine"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Pokaži zgradbo sporočila"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1568
 #, kde-format
 msgid "&View Source"
 msgstr "Pokaži iz&vorno kodo"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Shrani sporočilo..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgid "&Save Display Format"
 msgstr "&Shrani vrsto prikaza"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "Ponastavi v&rsto prikaza"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Premakni sporočilo gor"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Premakni sporočilo dol"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1600
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Premakni sporočilo gor (več)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Premakni sporočilo dol (več)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1615
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Preklopi prikaz v načinu HTML"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Preklopi prikaz med načinoma HTML in navadno besedilo"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Load external references"
 msgstr "Naloži zunanje sklice"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1628 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
 msgstr "Izgovori besedilo"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1634
 #, kde-format
 msgid "Share Text..."
 msgstr "Deli besedilo..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1652
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Kopiraj mesto slike"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1658
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Najd&i v sporočilu..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1667
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Onemogoči izrazno ikono"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "Shrani kot..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "Odpri z ..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Shrani vse priloge ..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1980
 #, kde-format
 msgid "The network is broken."
 msgstr "Omrežje ni vzpostavljeno."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1980
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Preveri URL za ribarjenjem"
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1983
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Naslov URL %1 ni veljaven."
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1983
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Preveri URL za ribarjenjem"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2003
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "To spletišče vsebuje zlonamerno programsko opremo. Ali ga želite vseeno "
 "pokazati?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Zlonamerna programska oprema"
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2058
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2141
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Sporočilo kot navadno besedilo"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2711
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Naslov URL kopiran na odložišče."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2863
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nalaganje sporočila ni uspelo: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2868
 #, kde-format
 msgid "Message not found."
 msgstr "Sporočilo ni bilo najdeno."

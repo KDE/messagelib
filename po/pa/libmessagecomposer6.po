@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
+"POT-Creation-Date: 2024-02-22 00:38+0000\n"
 "PO-Revision-Date: 2010-12-26 08:52+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -17,243 +17,243 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.1\n"
 
-#: attachment/attachmentcontrollerbase.cpp:167
+#: attachment/attachmentcontrollerbase.cpp:166
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:178
+#: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:180
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "ਰੱਖੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgid "Compress"
 msgstr "ਕੰਪਰੈੱਸ"
 
-#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
 msgid "Failed to attach file"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:274
+#: attachment/attachmentcontrollerbase.cpp:273
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgid "Failed to reload attachment"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:321
+#: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:341
+#: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:343
-#: attachment/attachmentcontrollerbase.cpp:351
+#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:377
+#: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "ਪਬਲਿਕ ਕੁੰਜੀ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: attachment/attachmentcontrollerbase.cpp:391
+#: attachment/attachmentcontrollerbase.cpp:390
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgid "Failed to attach vCard"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:404
+#: attachment/attachmentcontrollerbase.cpp:403
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgid "Failed to attach text from clipboard"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:452
+#: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:455
+#: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:458
-#: attachment/attachmentcontrollerbase.cpp:463
-#: attachment/attachmentcontrollerbase.cpp:469
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:457
+#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "Attach"
 msgstr "ਅਟੈਚ"
 
-#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:461
 #: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "ਫਾਇਲ ਅਟੈਚ(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
 msgstr "ਅਟੈਚਮੈਂਟ ਸ਼ਾਮਲ..."
 
-#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:467
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgid "&Attach Directory..."
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
 msgid "Attach Own vCard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:476
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgid "&Attach vCards..."
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:480
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgid "&Attach Text From Clipboard..."
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:481
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgid "Attach Text From Clipboard"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "ਅਟੈਚਮੈਂਟ ਹਟਾਓ(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
 
-#: attachment/attachmentcontrollerbase.cpp:503
+#: attachment/attachmentcontrollerbase.cpp:502
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:508
+#: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "ਵੇਖੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:513
+#: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "ਸੋਧ"
 
-#: attachment/attachmentcontrollerbase.cpp:518
+#: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgid "Edit With..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
 msgstr "...ਵਜੋਂ ਸੰਭਾਲੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:531
 #, fuzzy, kde-format
 #| msgid "Add Attachment..."
 msgid "Attachment Pr&operties..."
 msgstr "ਅਟੈਚਮੈਂਟ ਸ਼ਾਮਲ..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Properties"
 msgstr "ਵਿਸ਼ੇਸ਼ਤਾ"
 
-#: attachment/attachmentcontrollerbase.cpp:541
+#: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgid "Select All"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:544
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:755
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:703
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:714
+#: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:797
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "ਬਿਨ-ਨਾਂ"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgid "Save Attachment As"
 msgstr "ਅਟੈਚਮੈਂਟ ਵਜੋਂ ਸੰਭਾਲੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -262,67 +262,67 @@ msgstr ""
 "ਫਾਇਲ %1 ਮੌਜੂਦ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਇਹ ਬਦਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:823
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "ਫਾਇਲ 'ਚ ਸੰਭਾਲੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgid "&Replace"
 msgstr "ਬਦਲੋ(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:909
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:912
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "ਅਟੈਚ"
 
-#: attachment/attachmentcontrollerbase.cpp:889
+#: attachment/attachmentcontrollerbase.cpp:888
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:897
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:941
+#: attachment/attachmentcontrollerbase.cpp:940
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:964
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:966
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr ""
@@ -1098,13 +1098,13 @@ msgid ""
 "\n"
 msgstr ""
 
-#: imagescaling/imagescalingselectformat.cpp:24
+#: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr ""
 
-#: imagescaling/imagescalingselectformat.cpp:94
+#: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
 msgstr ""

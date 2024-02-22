@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
+"POT-Creation-Date: 2024-02-22 00:38+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: attachment/attachmentcontrollerbase.cpp:167
+#: attachment/attachmentcontrollerbase.cpp:166
 #, fuzzy, kde-format
 #| msgid "Failed to compress attachment"
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Neuspelo kompresovanje priloga"
 
-#: attachment/attachmentcontrollerbase.cpp:178
+#: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -35,229 +35,229 @@ msgid ""
 msgstr ""
 "Kompresovani fajl je veći od originalnog. Želite li da zadržite originalni?"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:180
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Zadrži"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgid "Compress"
 msgstr "Kompresuj"
 
-#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
 msgid "Failed to attach file"
 msgstr "Ne mogu da priložim fajl"
 
-#: attachment/attachmentcontrollerbase.cpp:274
+#: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
 msgid "Failed to reload attachment"
 msgstr "Neuspelo ponovno učitavanje priloga"
 
 # >! Filtering message on items.
-#: attachment/attachmentcontrollerbase.cpp:321
+#: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Otvori pomoću"
 
-#: attachment/attachmentcontrollerbase.cpp:341
+#: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&drugog..."
 
-#: attachment/attachmentcontrollerbase.cpp:343
-#: attachment/attachmentcontrollerbase.cpp:351
+#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otvori pomoću..."
 
-#: attachment/attachmentcontrollerbase.cpp:377
+#: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "Ne mogu da priložim javni ključ"
 
-#: attachment/attachmentcontrollerbase.cpp:391
+#: attachment/attachmentcontrollerbase.cpp:390
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgid "Failed to attach vCard"
 msgstr "Ne mogu da priložim fajl"
 
-#: attachment/attachmentcontrollerbase.cpp:404
+#: attachment/attachmentcontrollerbase.cpp:403
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgid "Failed to attach text from clipboard"
 msgstr "Ne mogu da priložim fajl"
 
-#: attachment/attachmentcontrollerbase.cpp:452
+#: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr "Priloži &javni ključ..."
 
-#: attachment/attachmentcontrollerbase.cpp:455
+#: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr "Priloži &moj javni ključ"
 
-#: attachment/attachmentcontrollerbase.cpp:458
-#: attachment/attachmentcontrollerbase.cpp:463
-#: attachment/attachmentcontrollerbase.cpp:469
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:457
+#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "Attach"
 msgstr "Priloži"
 
-#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:461
 #: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Priloži fajl..."
 
-#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Dodaj prilog..."
 
-#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "&Priloži fasciklu..."
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
 msgid "Attach Own vCard"
 msgstr "Priloži moj vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
 msgstr "Moj vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Priloži vCardove..."
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:480
 #, fuzzy, kde-format
 #| msgid "&Attach vCards..."
 msgid "&Attach Text From Clipboard..."
 msgstr "&Priloži vCardove..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Ukloni prilog"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "Remove"
 msgstr "Ukloni"
 
-#: attachment/attachmentcontrollerbase.cpp:503
+#: attachment/attachmentcontrollerbase.cpp:502
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Otvori"
 
 # skip-rule: t-view_menu
-#: attachment/attachmentcontrollerbase.cpp:508
+#: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Prikaži"
 
-#: attachment/attachmentcontrollerbase.cpp:513
+#: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Uredi"
 
-#: attachment/attachmentcontrollerbase.cpp:518
+#: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgid "Edit With..."
 msgstr "Uredi pomoću..."
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Sačuvaj prilog kao..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
 msgstr "Sačuvaj kao..."
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
 msgid "Attachment Pr&operties..."
 msgstr "&Svojstva priloga..."
 
 # >> @item:inlistbox
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Properties"
 msgstr "Svojstva"
 
-#: attachment/attachmentcontrollerbase.cpp:541
+#: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: attachment/attachmentcontrollerbase.cpp:544
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
 msgstr "Učitaj ponovo"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:755
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:703
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "K‑pošta ne može da upiše prilog u privremeni fajl."
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
 #, fuzzy, kde-format
 #| msgid "Unable to open attachment"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Ne mogu da otvorim prilog"
 
-#: attachment/attachmentcontrollerbase.cpp:714
+#: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "K‑pošta ne može da otvori prilog."
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Prilog ne može biti uređen"
 
-#: attachment/attachmentcontrollerbase.cpp:797
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "neimenovan"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Upisivanje priloga kao"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -267,64 +267,64 @@ msgstr ""
 "Želite li da ga zamenite?"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:823
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Upisivanje u fajl"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgid "&Replace"
 msgstr "&Zameni"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:909
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Želite li zaista da priložite fasciklu „%1“?"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Prilaganje fascikle"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:912
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:911
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Priloži"
 
-#: attachment/attachmentcontrollerbase.cpp:889
+#: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Prilaganje fascikle"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:897
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Prilaganje fajla"
 
-#: attachment/attachmentcontrollerbase.cpp:941
+#: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Ne mogu da priložim fajl"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:964
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Prilaganje javnog OpenPGP ključa"
 
-#: attachment/attachmentcontrollerbase.cpp:966
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Izaberite javni ključ koji treba priložiti."
@@ -1231,13 +1231,13 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:24
+#: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Izbor formata slike"
 
-#: imagescaling/imagescalingselectformat.cpp:94
+#: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
 msgstr "Izaberi format..."
