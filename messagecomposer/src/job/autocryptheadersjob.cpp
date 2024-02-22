@@ -11,8 +11,6 @@
 #include "job/singlepartjob.h"
 #include "utils/util_p.h"
 
-#include "messagecomposer_debug.h"
-
 #include <QGpgME/ExportJob>
 #include <QGpgME/Protocol>
 #include <gpgme++/context.h>
