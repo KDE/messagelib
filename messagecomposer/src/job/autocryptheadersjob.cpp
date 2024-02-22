@@ -116,7 +116,7 @@ void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic *header,
         parameters += "prefer-encrypt=mutual; ";
     }
     parameters += "keydata=\n ";
-    auto encoded = KCodecs::base64Encode(keydata).replace('\n', QByteArray());
+    const auto encoded = KCodecs::base64Encode(keydata).replace('\n', QByteArray());
     const auto length = encoded.size();
     const auto lineLength = 76;
     auto start = 0;
