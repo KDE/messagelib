@@ -51,18 +51,16 @@ public:
         return m_key;
     }
 
-private Q_SLOTS:
+private:
     void slotResult(const GpgME::VerificationResult &vr, const QByteArray &plainText);
     void slotKeyListJobDone();
     void slotNextKey(const GpgME::Key &);
 
-private:
     void saveResult(const GpgME::VerificationResult &, const QByteArray &);
     [[nodiscard]] bool canStartKeyListJob() const;
     [[nodiscard]] QStringList keyListPattern() const;
     [[nodiscard]] bool startKeyListJob();
 
-private:
     // input:
     const QByteArray m_signature;
     QPointer<QGpgME::VerifyOpaqueJob> m_job;

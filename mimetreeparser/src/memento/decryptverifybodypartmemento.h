@@ -53,7 +53,6 @@ private Q_SLOTS:
 private:
     void saveResult(const GpgME::DecryptionResult &, const GpgME::VerificationResult &, const QByteArray &);
 
-private:
     // input:
     const QByteArray m_cipherText;
     QPointer<QGpgME::DecryptVerifyJob> m_job;

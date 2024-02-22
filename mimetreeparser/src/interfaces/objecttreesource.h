@@ -46,13 +46,13 @@ public:
     virtual MimeTreeParser::Util::HtmlMode preferredMode() const = 0;
 
     /** Return true if an encrypted mail should be decrypted */
-    virtual bool decryptMessage() const = 0;
+    [[nodiscard]] virtual bool decryptMessage() const = 0;
 
     /** The override codec that should be used for the mail */
-    virtual QByteArray overrideCodecName() const = 0;
+    [[nodiscard]] virtual QByteArray overrideCodecName() const = 0;
 
     /** should keys be imported automatically **/
-    virtual bool autoImportKeys() const = 0;
+    [[nodiscard]] virtual bool autoImportKeys() const = 0;
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 

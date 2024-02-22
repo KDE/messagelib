@@ -26,12 +26,12 @@ public:
 
     void addMemento(CryptoBodyPartMemento *memento);
 
-    QVector<CryptoBodyPartMemento *> mementos() const
+    [[nodiscard]] QVector<CryptoBodyPartMemento *> mementos() const
     {
         return mMementos;
     }
 
-    auto size() const
+    [[nodiscard]] auto size() const
     {
         return mMementos.size();
     }
@@ -49,10 +49,8 @@ public:
         return nullptr;
     }
 
-private Q_SLOTS:
-    void subMementoFinished();
-
 private:
+    void subMementoFinished();
     QVector<CryptoBodyPartMemento *> mMementos;
     int mRunningMementos = 0;
 };

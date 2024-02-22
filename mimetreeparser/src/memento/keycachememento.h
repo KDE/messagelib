@@ -28,10 +28,8 @@ public:
         return m_keyCache;
     }
 
-private Q_SLOTS:
-    void slotKeyCacheInitialized();
-
 private:
+    void slotKeyCacheInitialized();
     std::shared_ptr<Kleo::KeyCache> m_keyCache;
     const GpgME::Protocol m_protocol;
 };
