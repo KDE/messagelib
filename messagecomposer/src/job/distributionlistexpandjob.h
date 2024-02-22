@@ -49,11 +49,9 @@ public:
      */
     [[nodiscard]] bool isEmpty() const;
 
-private Q_SLOTS:
+private:
     void slotSearchDone(KJob *);
     void slotExpansionDone(KJob *);
-
-private:
     const QString mListName;
     QStringList mEmailAddresses;
     bool mIsEmpty = false;

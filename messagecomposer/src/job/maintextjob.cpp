@@ -31,13 +31,13 @@ public:
     {
     }
 
-    bool chooseSourcePlainText();
-    bool chooseCharsetAndEncode();
-    bool chooseCharset();
-    bool encodeTexts();
-    SinglepartJob *createPlainTextJob();
-    SinglepartJob *createHtmlJob();
-    SinglepartJob *createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image);
+    [[nodiscard]] bool chooseSourcePlainText();
+    [[nodiscard]] bool chooseCharsetAndEncode();
+    [[nodiscard]] bool chooseCharset();
+    [[nodiscard]] bool encodeTexts();
+    [[nodiscard]] SinglepartJob *createPlainTextJob();
+    [[nodiscard]] SinglepartJob *createHtmlJob();
+    [[nodiscard]] SinglepartJob *createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image);
 
     TextPart *textPart = nullptr;
     QByteArray chosenCharset;
