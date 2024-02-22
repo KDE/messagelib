@@ -40,7 +40,7 @@ protected:
     virtual void updateSensitivity(bool);
 
     void setFoundMatch(bool match);
-    QMenu *optionsMenu() const;
+    [[nodiscard]] QMenu *optionsMenu() const;
 
 public Q_SLOTS:
     void findNext();
@@ -59,6 +59,7 @@ protected Q_SLOTS:
 
 protected:
     void updatePalette();
+    void addToCompletion(const QString &text);
     QString mNotFoundString;
     QString mPositiveBackground;
     QString mNegativeBackground;
@@ -70,6 +71,5 @@ protected:
     QPushButton *mFindNextBtn = nullptr;
     QMenu *mOptionsMenu = nullptr;
     QLabel *mStatus = nullptr;
-    void addToCompletion(const QString &text);
 };
 }

@@ -25,8 +25,8 @@ public:
     ~NetworkPluginUrlInterceptorInterface() override;
 
     virtual void createActions(KActionCollection *ac);
-    virtual QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    [[nodiscard]] virtual QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
-    virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
+    [[nodiscard]] virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };
 }

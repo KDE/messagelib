@@ -57,7 +57,7 @@ public:
      **/
     ~WebEnginePage() override = default;
 
-    WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
+    [[nodiscard]] WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
     void saveHtml(QWebEngineDownloadRequest *download);
 
@@ -67,7 +67,7 @@ Q_SIGNALS:
     void showConsoleMessage(const QString &message);
 
 protected:
-    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
+    [[nodiscard]] bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
 
 private:
