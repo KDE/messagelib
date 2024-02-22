@@ -345,7 +345,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 void WebEngineAccessKey::showAccessKeys()
 {
     d->mAccessKeyActivated = WebEngineAccessKeyPrivate::Activated;
-    d->mWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(),
+    d->mWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::accessKeyScript(),
                                          WebEngineManageScript::scriptWordId(),
                                          invokeWebAccessKey(this, &WebEngineAccessKey::handleSearchAccessKey));
 }

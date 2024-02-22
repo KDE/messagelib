@@ -29,9 +29,9 @@ public:
         {
         }
 
-        QString mCompanyName;
-        QString mCompanyUrl;
-        QString mPattern;
+        const QString mCompanyName;
+        const QString mCompanyUrl;
+        const QString mPattern;
     };
 
     explicit BlockTrackingUrlInterceptor(QObject *parent = nullptr);
