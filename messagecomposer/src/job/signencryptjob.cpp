@@ -46,7 +46,7 @@ public:
     bool protectedHeadersObvoscate = false;
 
     // copied from messagecomposer.cpp
-    bool binaryHint(Kleo::CryptoMessageFormat f)
+    [[nodiscard]] bool binaryHint(Kleo::CryptoMessageFormat f)
     {
         switch (f) {
         case Kleo::SMIMEFormat:
