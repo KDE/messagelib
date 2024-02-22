@@ -76,6 +76,15 @@ MessageComposer::MDNAdvice MDNAdviceHelper::questionIgnoreSend(const QString &te
     return rc;
 }
 
+MDNAdviceHelper *MDNAdviceHelper::instance()
+{
+    if (!s_instance) {
+        s_instance = new MDNAdviceHelper;
+    }
+
+    return s_instance;
+}
+
 QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
 {
     KMime::Message::Ptr msg = MessageComposer::Util::message(item);
