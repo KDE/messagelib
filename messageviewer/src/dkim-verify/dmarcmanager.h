@@ -12,7 +12,6 @@ namespace MessageViewer
 class DMARCManager
 {
 public:
-    DMARCManager();
     ~DMARCManager();
 
     static DMARCManager *self();
@@ -21,6 +20,7 @@ public:
     [[nodiscard]] bool isNoDMarcServerAddress(const QString &address) const;
 
 private:
+    DMARCManager();
     void saveNoServerKeys();
     void loadNoServerKeys();
     QStringList mNoDMarcServer;

@@ -23,7 +23,6 @@ class MESSAGEVIEWER_EXPORT HeaderStylePluginManager : public QObject
 public:
     static HeaderStylePluginManager *self();
 
-    explicit HeaderStylePluginManager(QObject *parent = nullptr);
     ~HeaderStylePluginManager() override;
 
     [[nodiscard]] QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
@@ -35,6 +34,7 @@ public:
     [[nodiscard]] MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit HeaderStylePluginManager(QObject *parent = nullptr);
     std::unique_ptr<HeaderStylePluginManagerPrivate> const d;
 };
 }

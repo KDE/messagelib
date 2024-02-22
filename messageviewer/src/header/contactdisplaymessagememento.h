@@ -48,12 +48,9 @@ Q_SIGNALS:
     void update(MimeTreeParser::UpdateMode);
     void changeDisplayMail(Viewer::DisplayFormatMessage displayAsHtml, bool remoteContent);
 
-private Q_SLOTS:
-    void slotSearchJobFinished(KJob *job);
-
-    void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
-
 private:
+    void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
+    void slotSearchJobFinished(KJob *job);
     [[nodiscard]] bool searchPhoto(const KContacts::AddresseeList &list);
     KContacts::Picture mPhoto;
     QPixmap mGravatarPixmap;

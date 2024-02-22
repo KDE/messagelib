@@ -21,8 +21,6 @@ class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginManager : publi
 {
     Q_OBJECT
 public:
-    static MessageViewerCheckBeforeDeletingPluginManager *self();
-
     explicit MessageViewerCheckBeforeDeletingPluginManager(QObject *parent = nullptr);
     ~MessageViewerCheckBeforeDeletingPluginManager() override;
 
@@ -34,6 +32,7 @@ public:
     [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
+    static MessageViewerCheckBeforeDeletingPluginManager *self();
     std::unique_ptr<MessageViewerCheckBeforeDeletingPluginManagerPrivate> const d;
 };
 }

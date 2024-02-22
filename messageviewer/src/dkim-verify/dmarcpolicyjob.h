@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "dmarcinfo.h"
 #include "messageviewer_private_export.h"
 #include <QObject>
 namespace MessageViewer
@@ -52,12 +51,12 @@ Q_SIGNALS:
     void result(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
 
 private:
-    void checkSubDomain(const QString &domainName);
-    void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
-    void slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName);
-    [[nodiscard]] QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;
-    [[nodiscard]] QString emailDomain() const;
-    [[nodiscard]] QString emailSubDomain(const QString &domainName) const;
+    MESSAGEVIEWER_NO_EXPORT void checkSubDomain(const QString &domainName);
+    MESSAGEVIEWER_NO_EXPORT void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
+    MESSAGEVIEWER_NO_EXPORT void slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString emailDomain() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString emailSubDomain(const QString &domainName) const;
     QString mEmailAddress;
 };
 }

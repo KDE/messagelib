@@ -77,8 +77,8 @@ public:
     ~RootBlock() override;
 
 protected:
-    QString enterString() const override;
-    QString exitString() const override;
+    [[nodiscard]] QString enterString() const override;
+    [[nodiscard]] QString exitString() const override;
 
 private:
     void internalEnter();

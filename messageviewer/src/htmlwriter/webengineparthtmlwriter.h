@@ -40,7 +40,6 @@ private:
     void insertExtraHead();
     void insertBodyStyle();
 
-private:
     MailWebEngineView *const mHtmlView;
     QString mExtraHead;
     QString mStyleBody;

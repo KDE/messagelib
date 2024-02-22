@@ -27,7 +27,6 @@ private:
     void updateHighLight(bool) override;
     void updateSensitivity(bool) override;
 
-private:
     QPlainTextEdit *const mView;
 };
 }

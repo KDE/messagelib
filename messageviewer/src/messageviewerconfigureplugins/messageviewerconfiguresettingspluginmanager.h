@@ -23,7 +23,6 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public 
 public:
     static MessageViewerConfigureSettingsPluginManager *self();
 
-    explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
     ~MessageViewerConfigureSettingsPluginManager() override;
 
     [[nodiscard]] QList<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
@@ -34,6 +33,7 @@ public:
     [[nodiscard]] MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
     std::unique_ptr<MessageViewerConfigureSettingsPluginManagerPrivate> const d;
 };
 }
