@@ -34,7 +34,7 @@ public:
 
     [[nodiscard]] QString resolvDnsValue() const;
 
-    QDnsLookup *dnsLookup() const;
+    [[nodiscard]] QDnsLookup *dnsLookup() const;
 
 Q_SIGNALS:
     void error(const QString &error);

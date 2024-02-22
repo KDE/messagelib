@@ -50,7 +50,6 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMManagerKey(QObject *parent = nullptr);
     ~DKIMManagerKey() override;
 
     static DKIMManagerKey *self();
@@ -69,6 +68,7 @@ public:
     void updateLastUsed(const QString &selector, const QString &domain);
 
 private:
+    explicit DKIMManagerKey(QObject *parent = nullptr);
     [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QList<KeyInfo> mKeys;
     QCA::Initializer *const mQcaInitializer;
