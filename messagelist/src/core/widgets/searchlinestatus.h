@@ -50,23 +50,23 @@ protected:
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
-    void slotToggledLockAction();
-    void showMenu();
-    void slotFilterActionClicked(QAction *act);
-    void clearFilterAction();
-    void createFilterAction(const QIcon &icon, const QString &text, int value);
-    void createMenuSearch();
-    void updateLockAction();
-    void initializeActions();
-    void updateFilterActionIcon();
-    void updateFilters();
-    void createFilterByAction();
-    void clearFilterByAction();
-    void changeSearchAgainstFromOrToText();
-    void slotClear();
-    void showSavedFiltersMenu();
-    void slotConfigureFilters();
-    void slotActivateFilter(const QString &identifier);
+    MESSAGELIST_NO_EXPORT void slotToggledLockAction();
+    MESSAGELIST_NO_EXPORT void showMenu();
+    MESSAGELIST_NO_EXPORT void slotFilterActionClicked(QAction *act);
+    MESSAGELIST_NO_EXPORT void clearFilterAction();
+    MESSAGELIST_NO_EXPORT void createFilterAction(const QIcon &icon, const QString &text, int value);
+    MESSAGELIST_NO_EXPORT void createMenuSearch();
+    MESSAGELIST_NO_EXPORT void updateLockAction();
+    MESSAGELIST_NO_EXPORT void initializeActions();
+    MESSAGELIST_NO_EXPORT void updateFilterActionIcon();
+    MESSAGELIST_NO_EXPORT void updateFilters();
+    MESSAGELIST_NO_EXPORT void createFilterByAction();
+    MESSAGELIST_NO_EXPORT void clearFilterByAction();
+    MESSAGELIST_NO_EXPORT void changeSearchAgainstFromOrToText();
+    MESSAGELIST_NO_EXPORT void slotClear();
+    MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
+    MESSAGELIST_NO_EXPORT void slotConfigureFilters();
+    MESSAGELIST_NO_EXPORT void slotActivateFilter(const QString &identifier);
 
     bool mLocked = false;
     bool mHasFilter = false;

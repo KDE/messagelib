@@ -40,10 +40,10 @@ public:
     void setCollection(const Akonadi::Collection &collection);
 
 private:
-    void queryRootCollectionFetchFinished(KJob *job);
-    void queryCollectionFetchFinished(KJob *job);
-    Akonadi::CollectionFetchJob *fetchCollections(const Akonadi::Collection::List &cols, bool recursive);
-    void queryIndexerStatus();
+    MESSAGELIST_NO_EXPORT void queryRootCollectionFetchFinished(KJob *job);
+    MESSAGELIST_NO_EXPORT void queryCollectionFetchFinished(KJob *job);
+    MESSAGELIST_NO_EXPORT void queryIndexerStatus();
+    [[nodiscard]] MESSAGELIST_NO_EXPORT Akonadi::CollectionFetchJob *fetchCollections(const Akonadi::Collection::List &cols, bool recursive);
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;

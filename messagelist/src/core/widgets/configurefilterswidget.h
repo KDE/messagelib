@@ -38,11 +38,11 @@ public:
     ~ConfigureFiltersWidget() override;
 
 private:
-    void updateFilterInfo(const QString &identifier, const QString &newName, const QString &newIconName = {});
-    void slotCustomContextMenuRequested(const QPoint &pos);
-    void removeFilterInfo(const QString &identifier);
-    void slotConfigureFilter(QListWidgetItem *item);
-    void init();
+    MESSAGELIST_NO_EXPORT void updateFilterInfo(const QString &identifier, const QString &newName, const QString &newIconName = {});
+    MESSAGELIST_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &pos);
+    MESSAGELIST_NO_EXPORT void removeFilterInfo(const QString &identifier);
+    MESSAGELIST_NO_EXPORT void slotConfigureFilter(QListWidgetItem *item);
+    MESSAGELIST_NO_EXPORT void init();
     QListWidget *const mListFiltersWidget;
 };
 }

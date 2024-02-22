@@ -69,7 +69,7 @@ public:
      * Returns a heuristic sizeHint() for the specified item type and column.
      * The hint is based on the contents of the theme (and not of any message or group header).
      */
-    QSize sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item = nullptr) const;
+    [[nodiscard]] QSize sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item = nullptr) const;
 
     /**
      * Performs a hit test on the specified viewport point.
@@ -103,7 +103,7 @@ public:
      * within the same calling function. Please note that this rectangle refers
      * to a specific item column (and not all of the columns).
      */
-    QRect hitItemRect() const;
+    [[nodiscard]] QRect hitItemRect() const;
 
     /**
      * Returns the theme column that was reported as hit by the previous call to hitTest().
@@ -118,7 +118,7 @@ public:
      * within the same calling function.
      * This is the same as hitIndex().column().
      */
-    int hitColumnIndex() const;
+    [[nodiscard]] int hitColumnIndex() const;
 
     /**
      * Returns the theme row that was reported as hit by the previous call to hitTest().
@@ -133,7 +133,7 @@ public:
      * Returns the index of the theme row that was reported as hit by the previous call to hitTest().
      * The result of this function is valid only if hitRow() returns a non null value.
      */
-    int hitRowIndex() const;
+    [[nodiscard]] int hitRowIndex() const;
 
     /**
      * Returns the rectangle of the row that was reported as hit by the previous call to hitTest().
@@ -141,7 +141,7 @@ public:
      * within the same calling function. The result of this function is also invalid
      * if hitRow() returns 0.
      */
-    QRect hitRowRect() const;
+    [[nodiscard]] QRect hitRowRect() const;
 
     /**
      * Returns true if the hitRow() is a message row, false otherwise.
@@ -162,7 +162,7 @@ public:
      * Returns true if the hit theme content item was a right item and false otherwise.
      * The result of this function is valid only if hitContentItem() returns true.
      */
-    bool hitContentItemRight() const;
+    [[nodiscard]] bool hitContentItemRight() const;
 
     /**
      * Returns the bounding rect of the content item that was reported as hit by the previous call to hitTest().
@@ -170,7 +170,7 @@ public:
      * within the same calling function. The result of this function is to be considered
      * invalid also when hitContentItem() returns 0.
      */
-    QRect hitContentItemRect() const;
+    [[nodiscard]] QRect hitContentItemRect() const;
 
 protected:
     /**

@@ -93,7 +93,7 @@ public:
      * Packs this configuration object into a string suitable for storing
      * in a config file.
      */
-    QString saveToString() const;
+    [[nodiscard]] QString saveToString() const;
 
     /**
      * Attempts to unpack this configuration object from a string (that is
@@ -110,7 +110,7 @@ public:
      */
     void generateUniqueId();
 
-    bool readOnly() const
+    [[nodiscard]] bool readOnly() const
     {
         return mReadOnly;
     }

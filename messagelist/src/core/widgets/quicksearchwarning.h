@@ -20,8 +20,8 @@ public:
     ~QuickSearchWarning() override;
     void setSearchText(const QString &text);
 
-private Q_SLOTS:
-    void slotDoNotRememberIt();
+private:
+    MESSAGELIST_NO_EXPORT void slotDoNotRememberIt();
 };
 }
 }

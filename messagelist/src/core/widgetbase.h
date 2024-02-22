@@ -57,18 +57,18 @@ public:
     /**
      * Returns the StorageModel currently set. May be nullptr.
      */
-    StorageModel *storageModel() const;
+    [[nodiscard]] StorageModel *storageModel() const;
 
     /**
      * Returns the search line of this widget. Can be nullptr if the quick search
      * is disabled in the global configuration.
      */
-    QLineEdit *quickSearch() const;
+    [[nodiscard]] QLineEdit *quickSearch() const;
 
     /**
      * Returns the View attached to this Widget. Never nullptr.
      */
-    View *view() const;
+    [[nodiscard]] View *view() const;
 
     /**
      * Returns the current MessageItem in the current folder.

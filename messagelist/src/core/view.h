@@ -56,13 +56,13 @@ public:
      * Returns the Model attached to this View. You probably never need to manipulate
      * it directly.
      */
-    Model *model() const;
+    [[nodiscard]] Model *model() const;
 
     /**
      * Returns the Delegate attached to this View. You probably never need to manipulate
      * it directly. Model uses it to obtain size hints.
      */
-    Delegate *delegate() const;
+    [[nodiscard]] Delegate *delegate() const;
 
     /**
      * Sets the StorageModel to be displayed in this view. The StorageModel may be 0 (so no content is displayed).
@@ -77,7 +77,7 @@ public:
     /**
      * Returns the currently displayed StorageModel. May be 0.
      */
-    StorageModel *storageModel() const;
+    [[nodiscard]] StorageModel *storageModel() const;
 
     /**
      * Sets the aggregation for this view.
@@ -117,7 +117,7 @@ public:
      * If the current item isn't currently selected (so is only focused)
      * then it's selected when this function is called.
      */
-    Item *currentItem() const;
+    [[nodiscard]] Item *currentItem() const;
 
     /**
      * Sets the current message item.
@@ -160,12 +160,12 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    QList<MessageItem *> currentThreadAsMessageItemList() const;
+    [[nodiscard]] QList<MessageItem *> currentThreadAsMessageItemList() const;
 
     /**
      * Fast function that determines if the selection is empty
      */
-    bool selectionEmpty() const;
+    [[nodiscard]] bool selectionEmpty() const;
 
     /**
      * Selects the specified MessageItems. The current selection is NOT removed.
@@ -212,7 +212,7 @@ public:
      * Returns true if the current Aggregation is threaded, false otherwise
      * (or if there is no current Aggregation).
      */
-    bool isThreaded() const;
+    [[nodiscard]] bool isThreaded() const;
 
     /**
      * If expand is true then it expands the current thread, otherwise
@@ -325,12 +325,12 @@ public:
     /**
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
-    QList<Akonadi::MessageStatus> currentFilterStatus() const;
+    [[nodiscard]] QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
      * Returns the search term in the current quicksearch field.
      */
-    QString currentFilterSearchString() const;
+    [[nodiscard]] QString currentFilterSearchString() const;
 
     /**
      * Called to hide or show the specified row from the view.
@@ -349,7 +349,7 @@ public:
 
     void setQuickSearchClickMessage(const QString &msg);
 
-    MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
 
 protected:
     /**
@@ -401,7 +401,7 @@ protected:
     /**
      * Reimplemented in order to kill the QTreeView column auto-resizing
      */
-    int sizeHintForColumn(int logicalColumnIndex) const override;
+    [[nodiscard]] int sizeHintForColumn(int logicalColumnIndex) const override;
 
     /**
      * Reimplemented in order to disable update of the geometries
