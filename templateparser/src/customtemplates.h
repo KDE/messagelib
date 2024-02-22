@@ -90,7 +90,7 @@ public:
                                 const QString &cc);
     ~CustomTemplateItem() override;
     void setCustomType(CustomTemplates::Type type);
-    CustomTemplates::Type customType() const;
+    [[nodiscard]] CustomTemplates::Type customType() const;
 
     [[nodiscard]] QString to() const;
     [[nodiscard]] QString cc() const;
@@ -120,7 +120,7 @@ class CustomTemplateItemDelegate : public QStyledItemDelegate
 public:
     explicit CustomTemplateItemDelegate(QObject *parent = nullptr);
     ~CustomTemplateItemDelegate() override;
-    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    [[nodiscard]] QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 };

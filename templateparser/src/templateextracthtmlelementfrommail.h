@@ -31,9 +31,9 @@ Q_SIGNALS:
     void loadContentDone(bool success);
 
 private:
-    void clear();
-    void slotLoadFinished(bool success);
-    void handleHtmlInfo(const QVariant &result);
+    TEMPLATEPARSER_NO_EXPORT void clear();
+    TEMPLATEPARSER_NO_EXPORT void slotLoadFinished(bool success);
+    TEMPLATEPARSER_NO_EXPORT void handleHtmlInfo(const QVariant &result);
 
     QString mBodyElement;
     QString mHeaderElement;

@@ -26,7 +26,7 @@ Q_SIGNALS:
     void textChanged();
 
 private:
-    void initializeEmailWidget();
+    TEMPLATEPARSER_NO_EXPORT void initializeEmailWidget();
     TemplateParser::TemplateParserEmailAddressRequesterBase *mTemplateParserEmailBase = nullptr;
 };
 }
