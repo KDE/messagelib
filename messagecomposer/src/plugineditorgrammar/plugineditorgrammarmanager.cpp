@@ -47,10 +47,11 @@ public:
     void loadPlugin(PluginEditorGrammarInfo *item);
     [[nodiscard]] QList<PimCommon::CustomToolsPlugin *> pluginsList() const;
     void initializePlugins();
-    QList<PluginEditorGrammarInfo> mPluginList;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+
+    QList<PluginEditorGrammarInfo> mPluginList;
     PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:

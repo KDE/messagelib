@@ -28,7 +28,7 @@ public:
     explicit PluginEditorInitInterface(QObject *parent = nullptr);
     ~PluginEditorInitInterface() override;
 
-    virtual bool exec() = 0;
+    [[nodiscard]] virtual bool exec() = 0;
 
     void setParentWidget(QWidget *parent);
     [[nodiscard]] QWidget *parentWidget() const;

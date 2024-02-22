@@ -22,7 +22,7 @@ public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
     ~PluginEditorConvertText() override;
 
-    virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
+    [[nodiscard]] virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
     [[nodiscard]] virtual bool canWorkOnHtml() const;
 
