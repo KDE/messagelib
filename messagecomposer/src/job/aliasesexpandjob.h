@@ -60,11 +60,9 @@ public:
 
     [[nodiscard]] QStringList emailAddressOnly() const;
 
-private Q_SLOTS:
+private:
     MESSAGECOMPOSER_NO_EXPORT void slotDistributionListExpansionDone(KJob *);
     MESSAGECOMPOSER_NO_EXPORT void slotNicknameExpansionDone(KJob *);
-
-private:
     MESSAGECOMPOSER_NO_EXPORT void finishExpansion();
 
     QStringList mEmailAddressOnly;
