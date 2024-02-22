@@ -7,12 +7,12 @@
 #pragma once
 
 #include "contentjobbase.h"
-#include "infopart.h"
 #include "messagecomposer_export.h"
 
 namespace KMime
 {
 class Content;
+class Message;
 }
 
 namespace MessageComposer
