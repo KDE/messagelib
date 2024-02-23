@@ -367,7 +367,7 @@ protected:
      */
     void viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear) override;
 
-private Q_SLOTS:
+private:
     MESSAGELIST_NO_EXPORT void slotCollapseItem();
     MESSAGELIST_NO_EXPORT void slotExpandItem();
     MESSAGELIST_NO_EXPORT void slotTagsFetched(KJob *job);

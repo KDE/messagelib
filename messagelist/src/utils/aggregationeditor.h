@@ -85,9 +85,6 @@ private:
     void fillThreadExpandPolicyCombo();
     void fillFillViewStrategyCombo();
     void setReadOnly(bool readOnly);
-
-private Q_SLOTS:
-
     // Internal handlers for editing element interaction
 
     void groupingComboActivated(int idx);
