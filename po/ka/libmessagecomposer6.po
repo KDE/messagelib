@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2023-09-29 09:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1461,7 +1461,7 @@ msgstr "ბუფერის ტექსტი"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP გასაღები 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1489,7 +1489,7 @@ msgstr "არასწორი კონტაქტი"
 msgid "Impossible to generate vCard."
 msgstr "შეცდომა vCard-ის გენერაციისას."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1773,7 +1773,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>მიღების აღუწერელი ტიპი</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1792,23 +1792,23 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "მიმღებების სიის %1-დან %2-მდე შეკვეცა."
 msgstr[1] "მიმღებების სიის %1-დან %2-მდე შეკვეცა."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "სიის შენახვა..."
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "მიმღებების შენახვა დაგზავნის სიის სახით"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "&აირჩიეთ..."
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "მიმღებების შენახვა დაგზავნის სიის სახით"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1854,13 +1854,13 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "უპასუხეთ:%1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "აირჩიეთ მიმღები"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "&Directory -ის სერვისში ძებნა"

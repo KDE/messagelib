@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2024-02-11 22:39+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1463,7 +1463,7 @@ msgstr "Vágólapszöveg"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP kulcs - 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1492,7 +1492,7 @@ msgstr "Érvénytelen névjegy"
 msgid "Impossible to generate vCard."
 msgstr "Lehetetlen létrehozni vCardot."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1775,7 +1775,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>Nem definiált címzett-típus</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1794,23 +1794,23 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "Címzettlista csonkolása %2 / %1 bejegyzésre"
 msgstr[1] "Címzettlista csonkolása %2 / %1 bejegyzésre"
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "A lista mentése…"
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "A címzettek mentése címlistaként"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Ki&választás…"
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "A címzettek mentése címlistaként"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1856,13 +1856,13 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Válaszcím: %1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Címzett kiválasztása"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Keresés cí&mtárszolgáltatásban"

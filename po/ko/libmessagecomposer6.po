@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1440,7 +1440,7 @@ msgstr "클립보드 텍스트"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP 키 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1468,7 +1468,7 @@ msgstr "잘못된 연락처"
 msgid "Impossible to generate vCard."
 msgstr "vCard를 생성할 수 없습니다."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1739,7 +1739,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>알 수 없는 수신자 종류</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1757,23 +1757,23 @@ msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "수신자 목록을 항목 %2개 중 %1개로 자르는 중."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "목록 저장..."
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "받는 사람을 분배 목록으로 저장"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "선택(&L)..."
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "받는 사람을 분배 목록으로 저장"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1818,13 +1818,13 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "답장 주소: %1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "받는 사람 선택"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "디렉터리 서비스 검색(&D)"

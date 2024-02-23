@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1497,7 +1497,7 @@ msgstr ""
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP-Slötel 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1526,7 +1526,7 @@ msgstr ""
 msgid "Impossible to generate vCard."
 msgstr ""
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>An error occurred while trying to export the key from the backend:</"
@@ -1790,7 +1790,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>Nich fastleggt Adressaattyp</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1809,23 +1809,23 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "Adressatenlist warrt op %2 vun %1 Indrag körter maakt."
 msgstr[1] "Adressatenlist warrt op %2 vun %1 Indrääg körter maakt."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "List sekern..."
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "Adressaten as Verdeellist sekern"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "&Utsöken..."
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "Adressaten as Verdeellist sekern"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1871,14 +1871,14 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Adressaat utsöken"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "&Vertekendeenst söken"

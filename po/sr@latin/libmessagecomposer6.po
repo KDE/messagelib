@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1515,7 +1515,7 @@ msgstr ""
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP ključ 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1542,7 +1542,7 @@ msgstr "Loš kontakt"
 msgid "Impossible to generate vCard."
 msgstr "Nije moguće generisati vCard"
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>An error occurred while trying to export the key from the backend:</"
@@ -1804,7 +1804,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>Nedefinisana vrsta primaoca</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1825,23 +1825,23 @@ msgstr[1] "Skraćujem listu primalaca na %2 od %1 unosa."
 msgstr[2] "Skraćujem listu primalaca na %2 od %1 unosa."
 msgstr[3] "Skraćujem listu primalaca na %2 od %1 unosa."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Sačuvaj listu..."
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "Sačuvaj primaoce kao distribucionu listu"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Iza&beri..."
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "Sačuvaj primaoce kao distribucionu listu"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1890,14 +1890,14 @@ msgid "Reply-To:%1"
 msgstr ""
 
 # >> @title:window
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Izbor primaoca"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Servis pretrage &imenika"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-02-23 00:38+0000\n"
 "PO-Revision-Date: 2023-05-21 14:48+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1429,7 +1429,7 @@ msgstr "பிடிப்புப்பலகையிலுள்ள உர�
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP சாவி 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1457,7 +1457,7 @@ msgstr "செல்லுபடியாகாத தொடர்பு"
 msgid "Impossible to generate vCard."
 msgstr "vCard-ஐ உருவாக்க முடியவில்லை."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1710,7 +1710,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>குறிப்பிடப்படாத  வகையான பெறுநர்</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1729,23 +1729,23 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "%1 பதிவில் %2-ஆக பெறுநர்களின் பட்டியல் சுருக்கப்படுகிறது."
 msgstr[1] "%1 பதிவுகளில் %2-ஆக பெறுநர்களின் பட்டியல் சுருக்கப்படுகிறது."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "பட்டியலை சேமி..."
 
-#: recipient/recipientseditorsidewidget.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Save recipients as distribution list"
-msgstr "பெறுநர்களை பெறுநர்பட்டியலாக சேமி"
-
-#: recipient/recipientseditorsidewidget.cpp:47
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "&தேர்ந்தெடு..."
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "பெறுநர்களை பெறுநர்பட்டியலாக சேமி"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1791,13 +1791,13 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "இவருக்கு பதிலளி:%1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "பெறுநரை தேர்ந்தெடுங்கள்"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
 msgstr ""
