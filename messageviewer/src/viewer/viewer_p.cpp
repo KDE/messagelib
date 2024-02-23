@@ -1723,13 +1723,13 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             return;
         }
     }
-    const bool isAttachment = !content->contentType()->isMultipart() && !content->isTopLevel();
+    const bool isAttachment = !content->contentType()->isMultipart();
     const bool isExtraContent = !mMessage->content(content->index());
     const auto hasAttachments = KMime::hasAttachment(mMessage.data());
 
     QMenu popup;
 
-    if (!content->isTopLevel()) {
+    if (!content->isTopLevel() || isAttachment) {
         popup.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save &As..."), this, &ViewerPrivate::slotAttachmentSaveAs);
 
         if (isAttachment) {
