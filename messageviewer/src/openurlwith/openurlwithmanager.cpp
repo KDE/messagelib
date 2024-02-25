@@ -49,7 +49,7 @@ void OpenUrlWithManager::loadSettings()
         if (i < commandLines.count()) {
             info.setCommandLine(commandLines.at(i));
         }
-        mOpenWithUrlInfo.append(info);
+        mOpenWithUrlInfo.append(std::move(info));
     }
 }
 
