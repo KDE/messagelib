@@ -1,6 +1,6 @@
 # translation of kmail.po to Turkish
 # Copyright (C) 2000,2003, 2004, 2005, 2008 Free Software Foundation, Inc.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 # Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Barış Metin <baris@uludag.org.tr>, 2004.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-22 00:38+0000\n"
-"PO-Revision-Date: 2023-11-11 23:31+0300\n"
+"PO-Revision-Date: 2024-02-24 21:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.04.70\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1097,7 +1097,7 @@ msgstr "CRL hazır değil."
 #: messagepartthemes/default/defaultrenderer.cpp:159
 #, kde-format
 msgid "Available CRL is too old."
-msgstr "Bulunan CRL'ler çok eski."
+msgstr "Kullanılabilir CRL'ler pek eski."
 
 #: messagepartthemes/default/defaultrenderer.cpp:163
 #, kde-format
