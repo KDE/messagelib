@@ -41,6 +41,7 @@ void OpenUrlWithManager::loadSettings()
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
     const QStringList commands = group.readEntry("Commands", QStringList());
     const QStringList commandLines = group.readEntry("CommandLines", QStringList());
+    const QList<bool> enabledCommandLines = group.readEntry("EnabledCommandLines", QList<bool>());
     const auto nbElement{openWithUrls.count()};
     mOpenWithUrlInfo.reserve(nbElement);
     for (int i = 0; i < nbElement; ++i) {
@@ -49,6 +50,9 @@ void OpenUrlWithManager::loadSettings()
         info.setUrl(openWithUrls.at(i));
         if (i < commandLines.count()) {
             info.setCommandLine(commandLines.at(i));
+        }
+        if (i < enabledCommandLines.count()) {
+            info.setEnabled(enabledCommandLines.at(i));
         }
         mOpenWithUrlInfo.append(std::move(info));
     }
@@ -61,6 +65,7 @@ void OpenUrlWithManager::saveRules()
     QStringList openWithUrls;
     QStringList commands;
     QStringList commandLines;
+    QList<bool> enabledCommandLines;
     const auto nbElement{mOpenWithUrlInfo.count()};
     openWithUrls.reserve(nbElement);
     commands.reserve(nbElement);
@@ -70,11 +75,13 @@ void OpenUrlWithManager::saveRules()
             commands.append(openWith.command());
             openWithUrls.append(openWith.url());
             commandLines.append(openWith.commandLine());
+            enabledCommandLines.append(openWith.enabled());
         }
     }
     group.writeEntry("Urls", openWithUrls);
     group.writeEntry("Commands", commands);
     group.writeEntry("CommandLines", commandLines);
+    group.writeEntry("EnabledCommandLines", enabledCommandLines);
     group.sync();
 }
 
