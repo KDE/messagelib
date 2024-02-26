@@ -41,8 +41,9 @@ void OpenUrlWithManager::loadSettings()
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
     const QStringList commands = group.readEntry("Commands", QStringList());
     const QStringList commandLines = group.readEntry("CommandLines", QStringList());
-    mOpenWithUrlInfo.reserve(commands.count());
-    for (int i = 0; i < openWithUrls.count(); ++i) {
+    const auto nbElement{openWithUrls.count()};
+    mOpenWithUrlInfo.reserve(nbElement);
+    for (int i = 0; i < nbElement; ++i) {
         OpenWithUrlInfo info;
         info.setCommand(commands.at(i));
         info.setUrl(openWithUrls.at(i));
