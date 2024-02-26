@@ -89,8 +89,10 @@ OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
 {
     for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
         // qDebug() << " info.url()" << info.url() << " url.host() " << url.host();
-        if (QUrl(info.url()).host() == url.host()) {
-            return info;
+        if (info.enabled()) {
+            if (QUrl(info.url()).host() == url.host()) {
+                return info;
+            }
         }
     }
     return {};
