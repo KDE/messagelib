@@ -8,7 +8,9 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QSettings>
 #include <QUrl>
+
 using namespace MessageViewer;
 namespace
 {
@@ -33,9 +35,8 @@ void OpenUrlWithManager::clear()
     mOpenWithUrlInfo.clear();
 }
 
-void OpenUrlWithManager::loadSettings()
+void OpenUrlWithManager::loadUserSettings()
 {
-    mOpenWithUrlInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, QLatin1StringView(myOpenUrlWithGroupName));
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
@@ -56,6 +57,30 @@ void OpenUrlWithManager::loadSettings()
         }
         mOpenWithUrlInfo.append(std::move(info));
     }
+}
+
+void OpenUrlWithManager::loadGlobalSettings()
+{
+#if 0
+    // TODO
+    // Load files from specific folder !
+    QSettings settings(QString(), QSettings::IniFormat);
+    OpenWithUrlInfo info;
+    info.setIsLocalOpenWithInfo(false);
+    info.setCommand(settings.value("Command").toString());
+    info.setCommandLine(settings.value("CommandLine").toString());
+    info.setUrl(settings.value("Url").toString());
+    if (info.isValid()) {
+        mOpenWithUrlInfo.append(std::move(info));
+    }
+#endif
+}
+
+void OpenUrlWithManager::loadSettings()
+{
+    mOpenWithUrlInfo.clear();
+    loadUserSettings();
+    loadGlobalSettings();
 }
 
 void OpenUrlWithManager::saveRules()

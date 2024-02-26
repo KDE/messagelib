@@ -31,6 +31,8 @@ public:
 
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadUserSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadGlobalSettings();
 
     QList<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
