@@ -5,9 +5,10 @@
 */
 
 #include "openurlwithmanager.h"
-
+#include "messageviewer_debug.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDir>
 #include <QSettings>
 #include <QUrl>
 
@@ -59,13 +60,20 @@ void OpenUrlWithManager::loadUserSettings()
     }
 }
 
-void OpenUrlWithManager::loadGlobalSettings()
+QString OpenUrlWithManager::openUrlWithListPath() const
 {
     // TODO
-    // Load files from specific folder !
-    const QStringList lst;
-    for (const QString &str : lst) {
-        QSettings settings(str, QSettings::IniFormat);
+    return {};
+}
+
+void OpenUrlWithManager::loadGlobalSettings()
+{
+    const QDir dir(openUrlWithListPath());
+    const auto entries = dir.entryList({QStringLiteral("*.openurl")}, QDir::Files | QDir::NoDotAndDotDot);
+    qCDebug(MESSAGEVIEWER_LOG) << "entries: " << entries;
+    for (const auto &entry : entries) {
+        const QString path{dir.path() + QDir::separator() + entry};
+        QSettings settings(path, QSettings::IniFormat);
         OpenWithUrlInfo info;
         info.setIsLocalOpenWithInfo(false);
         info.setCommand(settings.value("Command").toString());
