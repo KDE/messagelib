@@ -55,4 +55,50 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
     }
 }
 
+void OpenUrlWithManagerTest::shouldSearchOpenWithInfoEnabled()
+{
+    QFETCH(QList<MessageViewer::OpenWithUrlInfo>, infos);
+    QFETCH(QUrl, url);
+    QFETCH(bool, openWithInfoIsValid);
+    MessageViewer::OpenUrlWithManager w;
+    w.setOpenWithUrlInfo(infos);
+    QCOMPARE(w.openWith(url).isValid(), openWithInfoIsValid);
+}
+
+void OpenUrlWithManagerTest::shouldSearchOpenWithInfoEnabled_data()
+{
+    QTest::addColumn<QList<MessageViewer::OpenWithUrlInfo>>("infos");
+    QTest::addColumn<QUrl>("url");
+    QTest::addColumn<bool>("openWithInfoIsValid");
+    {
+        QList<MessageViewer::OpenWithUrlInfo> lst;
+        QTest::newRow("empty") << lst << QUrl() << false;
+    }
+    {
+        QList<MessageViewer::OpenWithUrlInfo> lst;
+        MessageViewer::OpenWithUrlInfo i;
+        i.setUrl(QStringLiteral("http://www.kde.org"));
+        i.setCommand(QStringLiteral("bla"));
+        lst.append(i);
+
+        QTest::newRow("empty-1") << lst << QUrl() << false;
+
+        QTest::newRow("valid-1") << lst << QUrl(QStringLiteral("http://www.kde.org")) << true;
+        QTest::newRow("invalid-1") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
+    }
+    {
+        QList<MessageViewer::OpenWithUrlInfo> lst;
+        MessageViewer::OpenWithUrlInfo i;
+        i.setUrl(QStringLiteral("http://www.kde.org"));
+        i.setCommand(QStringLiteral("bla"));
+        i.setEnabled(false);
+        lst.append(i);
+
+        QTest::newRow("empty-2") << lst << QUrl() << false;
+
+        QTest::newRow("valid-2") << lst << QUrl(QStringLiteral("http://www.kde.org")) << false;
+        QTest::newRow("invalid-2") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
+    }
+}
+
 #include "moc_openurlwithmanagertest.cpp"

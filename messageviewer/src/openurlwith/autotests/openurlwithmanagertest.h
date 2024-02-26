@@ -18,4 +18,7 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSearchOpenWithInfo();
     void shouldSearchOpenWithInfo_data();
+
+    void shouldSearchOpenWithInfoEnabled();
+    void shouldSearchOpenWithInfoEnabled_data();
 };
