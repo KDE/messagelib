@@ -61,19 +61,20 @@ void OpenUrlWithManager::loadUserSettings()
 
 void OpenUrlWithManager::loadGlobalSettings()
 {
-#if 0
     // TODO
     // Load files from specific folder !
-    QSettings settings(QString(), QSettings::IniFormat);
-    OpenWithUrlInfo info;
-    info.setIsLocalOpenWithInfo(false);
-    info.setCommand(settings.value("Command").toString());
-    info.setCommandLine(settings.value("CommandLine").toString());
-    info.setUrl(settings.value("Url").toString());
-    if (info.isValid()) {
-        mOpenWithUrlInfo.append(std::move(info));
+    const QStringList lst;
+    for (const QString &str : lst) {
+        QSettings settings(str, QSettings::IniFormat);
+        OpenWithUrlInfo info;
+        info.setIsLocalOpenWithInfo(false);
+        info.setCommand(settings.value("Command").toString());
+        info.setCommandLine(settings.value("CommandLine").toString());
+        info.setUrl(settings.value("Url").toString());
+        if (info.isValid()) {
+            mOpenWithUrlInfo.append(std::move(info));
+        }
     }
-#endif
 }
 
 void OpenUrlWithManager::loadSettings()
