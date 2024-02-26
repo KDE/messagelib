@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrej Vernekar <andrej.vernekar@gmail.com>, 2012.
-# Jure Repinc <jlp@holodeck1.com>, 2013.
+# SPDX-FileCopyrightText: 2013, 2024 Jure Repinc <jlp@holodeck1.com>
 # Andrej Mernik <andrejm@ubuntu.si>, 2015, 2016, 2017, 2018.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022.
 msgid ""
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-09-26 09:33+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"PO-Revision-Date: 2024-02-25 22:16+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -66,14 +66,14 @@ msgstr "&Odpri v"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Ostalo..."
+msgstr "&Drugo …"
 
 #: attachment/attachmentcontrollerbase.cpp:343
 #: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Odpri z..."
+msgstr "&Odpri z …"
 
 #: attachment/attachmentcontrollerbase.cpp:377
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "Prilaganje besedila z odložišča ni uspelo"
 #: attachment/attachmentcontrollerbase.cpp:452
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "&Priloži javni ključ..."
+msgstr "&Priloži javni ključ …"
 
 #: attachment/attachmentcontrollerbase.cpp:455
 #, kde-format
@@ -112,17 +112,17 @@ msgstr "Priloži"
 #: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid "&Attach File..."
-msgstr "Priloži d&atoteko..."
+msgstr "Priloži d&atoteko …"
 
 #: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Dodaj prilogo..."
+msgstr "Dodaj prilogo …"
 
 #: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "Priloži m&apo..."
+msgstr "Priloži m&apo …"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -137,12 +137,12 @@ msgstr "Moj vCard"
 #: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "Priloži vC&ard-e..."
+msgstr "Priloži vC&ard-e …"
 
 #: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "Priloži besedilo z odložišča..."
+msgstr "Priloži &besedilo z odložišča …"
 
 #: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
@@ -180,22 +180,22 @@ msgstr "Uredi"
 #: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgid "Edit With..."
-msgstr "Uredi z..."
+msgstr "Uredi z …"
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "&Shrani prilogo kot..."
+msgstr "&Shrani prilogo kot …"
 
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
-msgstr "Shrani kot..."
+msgstr "Shrani kot …"
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "Lastnosti pril&oge..."
+msgstr "Lastnosti pril&oge …"
 
 #: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
@@ -271,7 +271,7 @@ msgstr "Zamenjaj"
 #: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "Ali res želite priložiti mapo \"%1\"?"
+msgstr "Ali res želite priložiti mapo »%1«?"
 
 #: attachment/attachmentcontrollerbase.cpp:853
 #: attachment/attachmentcontrollerbase.cpp:911
@@ -1194,7 +1194,7 @@ msgstr "Izberi vrsto datoteke"
 #: imagescaling/imagescalingselectformat.cpp:94
 #, kde-format
 msgid "Select Format..."
-msgstr "Izberi vrsto..."
+msgstr "Izberi vrsto …"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1477,7 +1477,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Izvažanje ključa ..."
+msgstr "Izvažanje ključa …"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1582,7 +1582,7 @@ msgstr "Zahtevek Message Disposition Notification"
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
 msgid "Send \"&denied\""
-msgstr "Pošlji \"zavrnjeno\""
+msgstr "Pošlji »&zavrnjeno«"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1601,10 +1601,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za vrnitev obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za vrnitev obvestila o vašem prejemu "
 "sporočila.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1615,12 +1615,12 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila.\n"
-"Vsebuje navodilo za obdelavo, ki je označeno kot \"zahtevano\", vendar "
+"Vsebuje navodilo za obdelavo, ki je označeno kot »zahtevano«, vendar "
 "poštnemu programu ni znano.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor "
-"\"neuspešno\"."
+"»neuspešno«."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1630,11 +1630,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
 "a zahteva pošiljanje sporočila več kot enemu naslovniku.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1644,11 +1644,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
-"a zahteva nima nastavljenega naslova za odgovor.\n"
+"a zahteva nima nastavljene povratne poti.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1659,12 +1659,12 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
-"a naslov povratne poti se razlikuje od naslova kamor obvestilo zahteva, da "
-"ga pošljete.\n"
+"a se naslov povratne poti razlikuje od naslova, kamor je bilo zahtevano "
+"pošiljanje obvestila.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1796,7 +1796,7 @@ msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
-msgstr[1] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
+msgstr[1] "Krajšanje seznama prejemnikov na %2 od %1 vnosa."
 msgstr[2] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
 msgstr[3] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
 
@@ -1804,7 +1804,7 @@ msgstr[3] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Shrani seznam ..."
+msgstr "Shrani seznam …"
 
 #: recipient/recipientseditorsidewidget.cpp:45
 #, kde-format
@@ -1816,7 +1816,7 @@ msgstr "Prejemnike shrani v seznam za razpošiljanje"
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "Izberi..."
+msgstr "&Izbor …"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1835,10 +1835,10 @@ msgstr "Ni prejemnikov"
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] "%1 prejemnik"
-msgstr[1] "%1 prejemnika"
-msgstr[2] "%1 prejemniki"
-msgstr[3] "%1 prejemnikov"
+msgstr[0] "%1 prejemnikov"
+msgstr[1] "%1 prejemnik"
+msgstr[2] "%1 prejemnika"
+msgstr[3] "%1 prejemniki"
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
@@ -1899,10 +1899,10 @@ msgstr "Dodaj kot Skp"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] "%1 izbrana e-pošta"
-msgstr[1] "%1 izbrani e-pošti"
-msgstr[2] "%1 izbrane e-pošte"
-msgstr[3] "%1 izbranih e-pošt"
+msgstr[0] "%1 izbranih e-pošt"
+msgstr[1] "%1 izbrana e-pošta"
+msgstr[2] "%1 izbrani e-pošti"
+msgstr[3] "%1 izbrane e-pošte"
 
 #: recipient/recipientspicker.cpp:172
 #, kde-format
@@ -1914,16 +1914,16 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
-"Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnikov. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[1] ""
 "Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[2] ""
-"Izbrali ste %1 prejemnike. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[3] ""
-"Izbrali ste %1 prejemnikov. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnike. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 
 #: recipient/recipientspicker.cpp:189
