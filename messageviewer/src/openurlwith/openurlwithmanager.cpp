@@ -65,9 +65,12 @@ void OpenUrlWithManager::saveRules()
     openWithUrls.reserve(nbElement);
     commands.reserve(nbElement);
     for (int i = 0; i < nbElement; ++i) {
-        commands.append(mOpenWithUrlInfo.at(i).command());
-        openWithUrls.append(mOpenWithUrlInfo.at(i).url());
-        commandLines.append(mOpenWithUrlInfo.at(i).commandLine());
+        const auto &openWith(mOpenWithUrlInfo.at(i));
+        if (openWith.localOpenWith()) {
+            commands.append(openWith.command());
+            openWithUrls.append(openWith.url());
+            commandLines.append(openWith.commandLine());
+        }
     }
     group.writeEntry("Urls", openWithUrls);
     group.writeEntry("Commands", commands);
