@@ -66,7 +66,7 @@ void OpenUrlWithManager::saveRules()
     commands.reserve(nbElement);
     for (int i = 0; i < nbElement; ++i) {
         const auto &openWith(mOpenWithUrlInfo.at(i));
-        if (openWith.localOpenWith()) {
+        if (openWith.isLocalOpenWithInfo()) {
             commands.append(openWith.command());
             openWithUrls.append(openWith.url());
             commandLines.append(openWith.commandLine());

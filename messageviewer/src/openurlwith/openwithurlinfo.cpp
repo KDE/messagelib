@@ -16,7 +16,7 @@ QDebug operator<<(QDebug d, const MessageViewer::OpenWithUrlInfo &t)
     d.space() << "command " << t.command();
     d.space() << "command line " << t.commandLine();
     d.space() << "url " << t.url();
-    d.space() << "mocalOpenWith" << t.localOpenWith();
+    d.space() << "mocalOpenWith" << t.isLocalOpenWithInfo();
     return d;
 }
 
@@ -57,17 +57,17 @@ void OpenWithUrlInfo::setCommandLine(const QString &newCommandLine)
 
 bool OpenWithUrlInfo::operator==(const OpenWithUrlInfo &other) const
 {
-    return mCommandLine == other.commandLine() && mCommand == other.command() && mUrl == other.url() && mLocalOpenWith == other.localOpenWith();
+    return mCommandLine == other.commandLine() && mCommand == other.command() && mUrl == other.url() && mIsLocalOpenWithInfo == other.isLocalOpenWithInfo();
 }
 
-bool OpenWithUrlInfo::localOpenWith() const
+bool OpenWithUrlInfo::isLocalOpenWithInfo() const
 {
-    return mLocalOpenWith;
+    return mIsLocalOpenWithInfo;
 }
 
-void OpenWithUrlInfo::setLocalOpenWith(bool newLocalOpenWith)
+void OpenWithUrlInfo::setIsLocalOpenWithInfo(bool newLocalOpenWith)
 {
-    mLocalOpenWith = newLocalOpenWith;
+    mIsLocalOpenWithInfo = newLocalOpenWith;
 }
 
 #include "moc_openwithurlinfo.cpp"
