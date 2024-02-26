@@ -33,10 +33,14 @@ public:
 
     [[nodiscard]] bool operator==(const OpenWithUrlInfo &other) const;
 
+    [[nodiscard]] bool localOpenWith() const;
+    void setLocalOpenWith(bool newLocalOpenWith);
+
 private:
     QString mCommandLine;
     QString mCommand;
     QString mUrl;
+    bool mLocalOpenWith = true;
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::OpenWithUrlInfo, Q_RELOCATABLE_TYPE);
