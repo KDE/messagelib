@@ -33,7 +33,7 @@ private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
     MESSAGEVIEWER_NO_EXPORT void loadUserSettings();
     MESSAGEVIEWER_NO_EXPORT void loadGlobalSettings();
-    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString openUrlWithListPath() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList openUrlWithListPath() const;
 
     QList<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
