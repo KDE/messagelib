@@ -63,22 +63,26 @@ void OpenUrlWithManager::loadUserSettings()
 
 QStringList OpenUrlWithManager::openUrlWithListPath() const
 {
-    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/openurlwith/"));
+    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/openurlwith/"), QStandardPaths::LocateDirectory);
 }
 
 void OpenUrlWithManager::loadGlobalSettings()
 {
     for (const QString &path : openUrlWithListPath()) {
-        qCDebug(MESSAGEVIEWER_LOG) << "files: " << path;
-        // TODO Verify that file endswith with .openurl
-        QSettings settings(path, QSettings::IniFormat);
-        OpenWithUrlInfo info;
-        info.setIsLocalOpenWithInfo(false);
-        info.setCommand(settings.value("Command").toString());
-        info.setCommandLine(settings.value("CommandLine").toString());
-        info.setUrl(settings.value("Url").toString());
-        if (info.isValid()) {
-            mOpenWithUrlInfo.append(std::move(info));
+        QDir dir(path);
+        const QStringList entries = dir.entryList({QStringLiteral("*.openurl")});
+        for (const QString &entry : entries) {
+            qCDebug(MESSAGEVIEWER_LOG) << "files: " << entry;
+            // TODO Verify that file endswith with .openurl
+            QSettings settings(path + QLatin1Char('/') + entry, QSettings::IniFormat);
+            OpenWithUrlInfo info;
+            info.setIsLocalOpenWithInfo(false);
+            info.setCommand(settings.value("Command").toString());
+            info.setCommandLine(settings.value("CommandLine").toString());
+            info.setUrl(settings.value("Url").toString());
+            if (info.isValid()) {
+                mOpenWithUrlInfo.append(std::move(info));
+            }
         }
     }
 }
