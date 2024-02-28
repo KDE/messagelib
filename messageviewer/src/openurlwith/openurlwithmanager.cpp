@@ -63,7 +63,7 @@ void OpenUrlWithManager::loadUserSettings()
 
 QStringList OpenUrlWithManager::openUrlWithListPath() const
 {
-    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/openurlwith/"));
+    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/openurlwith/"));
 }
 
 void OpenUrlWithManager::loadGlobalSettings()
