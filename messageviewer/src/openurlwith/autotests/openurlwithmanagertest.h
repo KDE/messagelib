@@ -21,4 +21,6 @@ private Q_SLOTS:
 
     void shouldSearchOpenWithInfoEnabled();
     void shouldSearchOpenWithInfoEnabled_data();
+
+    void shouldTestAlreadyRuleForHost();
 };

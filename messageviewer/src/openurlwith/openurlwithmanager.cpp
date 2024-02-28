@@ -117,6 +117,19 @@ void OpenUrlWithManager::saveRules()
     group.sync();
 }
 
+bool OpenUrlWithManager::alwaysRuleForHost(const QUrl &url)
+{
+    for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
+        // qDebug() << " info.url()" << info.url() << " url.host() " << url.host();
+        if (info.enabled()) {
+            if (QUrl(info.url()).host() == url.host()) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
 {
     for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {

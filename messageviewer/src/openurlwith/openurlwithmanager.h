@@ -28,6 +28,7 @@ public:
     void saveRules();
 
     [[nodiscard]] OpenWithUrlInfo openWith(const QUrl &url);
+    [[nodiscard]] bool alwaysRuleForHost(const QUrl &url);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
