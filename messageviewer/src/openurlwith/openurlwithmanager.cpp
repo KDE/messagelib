@@ -73,7 +73,6 @@ void OpenUrlWithManager::loadGlobalSettings()
         const QStringList entries = dir.entryList({QStringLiteral("*.openurl")});
         for (const QString &entry : entries) {
             qCDebug(MESSAGEVIEWER_LOG) << "files: " << entry;
-            // TODO Verify that file endswith with .openurl
             QSettings settings(path + QLatin1Char('/') + entry, QSettings::IniFormat);
             OpenWithUrlInfo info;
             info.setIsLocalOpenWithInfo(false);
