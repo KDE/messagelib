@@ -146,6 +146,15 @@ OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
     return {};
 }
 
+QStringList OpenUrlWithManager::hosts() const
+{
+    QStringList lst;
+    for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
+        lst.append(info.url());
+    }
+    return lst;
+}
+
 const QList<OpenWithUrlInfo> &OpenUrlWithManager::openWithUrlInfo() const
 {
     return mOpenWithUrlInfo;

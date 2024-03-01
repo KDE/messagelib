@@ -21,6 +21,7 @@ void OpenUrlWithManagerTest::shouldHaveDefaultValues()
     MessageViewer::OpenUrlWithManager w;
     QVERIFY(w.openWithUrlInfo().isEmpty());
     QVERIFY(!w.alwaysRuleForHost(QUrl(QStringLiteral("http://www.kde.org"))));
+    QVERIFY(w.hosts().isEmpty());
 }
 
 void OpenUrlWithManagerTest::shouldSearchOpenWithInfo()
