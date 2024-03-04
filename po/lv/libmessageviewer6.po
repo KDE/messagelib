@@ -6,27 +6,26 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2010.
 # Viesturs Zariņš <viesturs.zarins@algorego.com>, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-22 00:38+0000\n"
-"PO-Revision-Date: 2010-01-13 18:44+0200\n"
-"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-03-01 15:38+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
-#, fuzzy
-#| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
 msgid "Sorry, certificate could not be imported."
-msgstr "Atvainojiet, neizdevās importēt sertifikātu.<br/>Iemesls: %1"
+msgstr "Diemžēl neizdevās importēt sertifikātu."
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
 #, kde-format
@@ -35,7 +34,7 @@ msgstr "Iemesls: %1"
 
 #: messagepartthemes/default/templates/certmessagepart.html:7
 msgid "Sorry, no certificates were found in this message."
-msgstr "Atvainojiet, šajā vēstulē nav sertifikātu."
+msgstr "Diemžēl vēstule nesatur sertifikātus."
 
 #: messagepartthemes/default/templates/certmessagepart.html:9
 msgid "Certificate import status:"
@@ -45,41 +44,41 @@ msgstr "Sertifikāta importēšanas statuss:"
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] "Tika importēts %1 sertifikāts."
-msgstr[1] "Tika importēti %1 sertifikāti."
-msgstr[2] "Tika importēti %1 sertifikātu."
+msgstr[0] "Importēts %1 sertifikāts."
+msgstr[1] "Importēti %1 sertifikāti."
+msgstr[2] "Importēti %1 sertifikātu."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] "%1 sertifikāts palika nemainīts."
-msgstr[1] "%1 sertifikāti palika nemainīti."
-msgstr[2] "%1 sertifikātu palika nemainīti."
+msgstr[0] "%1 sertifikāts atstāts nemainīts."
+msgstr[1] "%1 sertifikāti atstāti nemainīti."
+msgstr[2] "%1 sertifikātu atstāti nemainīti."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] "Tika importēta %1 slepenā atslēga."
-msgstr[1] "Tika importētas %1 slepenās atslēgas."
-msgstr[2] "Tika importētas %1 slepeno atslēgu."
+msgstr[0] "Importēta %1 slepenā atslēga."
+msgstr[1] "Importētas %1 slepenās atslēgas."
+msgstr[2] "Importēts %1 slepeno atslēgu."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] "%1 slepenā atslēga palika nemainīta."
-msgstr[1] "%1 slepenās atslēgas palika nemainītas."
-msgstr[2] "%1 slepeno atslēgu palika nemainītas."
+msgstr[0] "%1 slepenā atslēga atstāta nemainīta."
+msgstr[1] "%1 slepenās atslēgas atstātas nemainītas."
+msgstr[2] "%1 slepeno atslēgu atstātas nemainītas."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
-msgstr "Atvainojiet, nav pieejama informācija par sertifikātu inportēšanu."
+msgstr "Nav pieejama informācija par sertifikātu importēšanu."
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
 msgid "Certificate import details:"
-msgstr "Sertifikāta importēšanas detaļas:"
+msgstr "Informācija par sertifikāta importēšanu:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:34
 #, kde-format
@@ -106,41 +105,34 @@ msgstr "Atšifrēt vēstuli"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Lūdzu uzgaidiet, šifrē vēstuli..."
+msgstr "Uzgaidiet, šifrē vēstuli..."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
-#, fuzzy
-#| msgid "This message is encrypted."
 msgid "The message is encrypted for the following keys:"
-msgstr "Šī vēstule ir šifrēta."
+msgstr "Vēstule ir šifrēta sekojošām atslēgām:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
 #: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
-msgstr "Slēpt detaļas"
+msgstr "Slēpt informāciju"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
 #: messagepartthemes/default/templates/encryptedmessagepart.html:69
-#, fuzzy
-#| msgctxt "name used for a virgin filter"
-#| msgid "unknown"
 msgid "unknown key"
-msgstr "nezināms"
+msgstr "nezināma atslēga"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr " Kolona: %1 "
+msgstr "Saderība: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Šifrēta vēstule"
+msgstr "Šifrēta vēstule (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -149,23 +141,23 @@ msgstr "Šifrēta vēstule"
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
-msgstr "Rādīt detaļas"
+msgstr "Rādīt informāciju"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
 msgstr "Šifrēta vēstule (nevar atšifrēt)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
-#, fuzzy
-#| msgid "Reason: %1"
 msgid "Reason: "
-msgstr "Iemesls: %1"
+msgstr "Iemesls: "
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:63
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
+"Nav atrasta slepenā atslēga šīs vēstules atšifrēšanai. Vēstule ir šifrēta "
+"šīm atslēgām:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -173,47 +165,34 @@ msgstr "Neizdevās atšifrēt datus."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
-msgstr "Šfirētās daļas beigas"
+msgstr "Šifrētās vēstules beigas"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
-#| "HTML code is shown. If you trust the sender of this message then you can "
-#| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
-#| "\">by clicking here</a>."
 msgid ""
 "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
 "HTML code is shown. If you trust the sender of this message then you can "
 "activate formatted HTML display for this message <a href='kmail:showHTML'>by "
 "clicking here</a>."
 msgstr ""
-"<b>Piezīme:</b> Šī it HTML vēstule. Drošības apsvērumu dēļ tiek rādīts HTML "
-"pirmkods. Ja jūs uzticaties vēstules sūtītājam, varat pārslēgt uz formatētu "
-"HTML skatu, <a href=\"kmail:loadExternal\">nospiežot šeit</a>."
+"<b>Piezīme:</b> šī ir HTML vēstule. Drošības apsvērumu dēļ tiek rādīts tikai "
+"neapstrādāts HTML pirmkods. Ja uzticaties vēstules sūtītājam, varat pārslēgt "
+"uz formatētu HTML skatu, <a href=\"kmail:loadExternal\">nospiežot šeit</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This HTML message may contain external references to images "
-#| "etc. For security/privacy reasons external references are not loaded. If "
-#| "you trust the sender of this message then you can load the external "
-#| "references for this message <a href=\"kmail:loadExternal\">by clicking "
-#| "here</a>."
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
 "trust the sender of this message then you can load the external references "
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
-"<b>Piezīme:</b> Šī HTML vēstule var saturēt ārējas norādes uz attēliem un "
+"<b>Piezīme:</b> šī HTML vēstule var saturēt ārējas norādes uz attēliem un "
 "citām lietām. Drošības un privātuma apsvērumu dēļ tās netika ielādētas. Ja "
-"jūs uzticaties vēstules sūtītājam, varat ielādēt vēstules ārējās norādes, <a "
+"uzticaties vēstules sūtītājam, varat ielādēt vēstules ārējās norādes, <a "
 "href=\"kmail:loadExternal\">nospiežot šeit</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Lūdzu uzgaidiet, pārbauda parakstu..."
+msgstr "Uzgaidiet, pārbauda parakstu..."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -226,7 +205,7 @@ msgstr "Nepietiek informācijas, lai pārbaudītu parakstu. %1"
 #: messagepartthemes/default/templates/signedmessagepart.html:134
 #, kde-format
 msgid "Message was signed by %1."
-msgstr "Vēstuli ir parakstījis %1."
+msgstr "Vēstuli parakstīja %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:22
 #: messagepartthemes/default/templates/signedmessagepart.html:99
@@ -238,22 +217,22 @@ msgstr "Vēstule ir parakstīta ar nezināmu atslēgu."
 #: messagepartthemes/default/templates/signedmessagepart.html:48
 #, kde-format
 msgid "Message was signed with key %1."
-msgstr "Vēstule ir parakstīta ar atslēgu %1."
+msgstr "Vēstule ir parakstīta ar atslēgu „%1“."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:31
 #, kde-format
 msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Vēstuli ir parakstījis %3, %1 ar atslēgu %2"
+msgstr "Vēstuli %1 parakstīja %3 ar atslēgu „%2“"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:39
 #, kde-format
 msgid "Message was signed on %1 with key %2."
-msgstr "Vēstule ir parakstīta %1 ar atslēgu %2."
+msgstr "Vēstuli parakstīja %1 ar atslēgu „%2“."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:45
 #, kde-format
 msgid "Message was signed by %2 with key %1."
-msgstr "Vēstuli parakstījis %2 ar atslēgu %1."
+msgstr "Vēstuli parakstīja %2 ar atslēgu „%1“."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:57
 #: messagepartthemes/default/templates/signedmessagepart.html:105
@@ -265,17 +244,17 @@ msgstr "Statuss: "
 #: messagepartthemes/default/templates/signedmessagepart.html:131
 #, kde-format
 msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Vēstuli parakstījis %2 (Atslēgas ID:%1)."
+msgstr "Vēstuli parakstīja %2 (atslēgas ID: „%1“)."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:92
 #, kde-format
 msgid "Message was signed on %1 with unknown key %2."
-msgstr "Vēstule parakstīta %1 ar neuzticamu atslēgu %2."
+msgstr "Vēstuli parakstīja %1 ar neuzticamu atslēgu „%2“."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:95
 #, kde-format
 msgid "Message was signed with unknown key %1."
-msgstr "Vēstule parakstīta ar nezināmu atslēgu %1."
+msgstr "Vēstule ir parakstīta ar nezināmu atslēgu „%1“."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:102
 msgid "The validity of the signature cannot be verified."
@@ -287,7 +266,7 @@ msgstr "Paraksts ir īsts, bet atslēgas uzticamība nav zināma."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:121
 msgid "The signature is valid and the key is marginally trusted."
-msgstr "Paraksts ir īsts, bet atslēga ir tikai nedaudz uzticama."
+msgstr "Paraksts ir īsts, bet atslēgas ir tikai daļēji uzticama."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:123
 msgid "The signature is valid and the key is fully trusted."
@@ -299,58 +278,47 @@ msgstr "Paraksts ir īsts un atslēga ir absolūti uzticama."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:127
 msgid "The signature is valid, but the key is untrusted."
-msgstr "Paraksts ir īsts, bet atslēga ir neuzticama."
+msgstr "Paraksts ir īsts, bet atslēga nav neuzticama."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:137
 msgid "Warning: The signature is bad."
-msgstr "Brīdinājums: Paraksts ir viltots."
+msgstr "Brīdinājums: paraksts ir nav derīgs."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgid "Compliance: %1"
-msgstr " Kolona: %1 "
+msgstr "Atbilstība: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
 msgid "Invalid signature"
 msgstr "Nederīgs paraksts"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
 msgid "Not enough information to check signature validity"
-msgstr "Nepietiek informācijas, lai pārbaudītu parakstu."
+msgstr "Nepietiek informācijas, lai pārbaudītu parakstu"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Parakstījis <a href=\"mailto:%1\">%2</a>."
+msgstr "Parakstīja <a href=\"mailto:%1\">%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
 msgid "Signature is valid"
-msgstr "Paraksts ir derīgs."
+msgstr "Paraksts ir derīgs"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
 msgid "Unknown signature state"
-msgstr "Nezināms paraksta stāvoklis"
+msgstr "Nezināms paraksta statuss"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "My %1 (%2)"
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "Mans %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
-msgstr "Parakstītās daļas beigas"
+msgstr "Parakstītās vēstules beigas"
 
 #: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
@@ -358,120 +326,106 @@ msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
+"Uzglabātā DKIM atslēga atšķiras no pašreizējās. Vai vēlaties uzglabāt arī šo?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "Atslēga ir mainījusies"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "saglabāts: "
+msgstr "Uzglabāt"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM atslēga"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select Folder"
+#, kde-format
 msgid "Selector"
-msgstr "Norādiet mapi"
+msgstr "Atlasītājs"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Insert Command"
+#, kde-format
 msgid "Inserted"
-msgstr "Ievietot komandu"
+msgstr "Ievietota"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#, fuzzy, kde-format
-#| msgid "Last Week"
+#, kde-format
 msgid "Last Used"
-msgstr "Iepriekšējā nedēļā"
+msgstr "Pēdējo reizi izmantota"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:69
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Key"
-msgstr "&Kopēt uz"
+msgstr "Kopēt atslēgu"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:76
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] "Izņemt"
-msgstr[1] "Izņemt"
-msgstr[2] "Izņemt"
+msgstr[0] "Noņemt atslēgu"
+msgstr[1] "Noņemt atslēgas"
+msgstr[2] "Noņemt atslēgu"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Vai vēlaties dzēst atslēgu?"
+msgstr[1] "Vai vēlaties dzēst atslēgas?"
+msgstr[2] "Vai vēlaties dzēst atslēgu?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Delete"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "Dzēst"
-msgstr[1] "Dzēst"
-msgstr[2] "Dzēst"
+msgstr[0] "Dzēst atslēgu"
+msgstr[1] "Dzēst atslēgas"
+msgstr[2] "Dzēst atslēgu"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete All"
-msgstr "Dzēst"
+msgstr "Dzēstu visu"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to expire all old messages?"
+#, kde-format
 msgid "Do you want to delete all keys?"
-msgstr "Vai tiešām vēlaties izņemt vecās vēstules?"
+msgstr "Vai tiešām vēlaties dzēst visas atslēgas?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "Dzēst"
+msgstr "Dzēst atslēgas"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
-#, fuzzy, kde-format
-#| msgid "Message will be signed"
+#, kde-format
 msgid "Must be signed"
-msgstr "Vēstule tiks parakstīta"
+msgstr "Jāparaksta"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
-#, fuzzy, kde-format
-#| msgid "Message will be signed"
+#, kde-format
 msgid "Can be signed"
-msgstr "Vēstule tiks parakstīta"
+msgstr "Var parakstīt"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
-#, fuzzy, kde-format
-#| msgid "Message will not be signed"
+#, kde-format
 msgid "Ignore if not signed"
-msgstr "Vēstule netiks parakstīta"
+msgstr "Ignorēt, ja nav parakstīta"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
@@ -479,17 +433,15 @@ msgid "Export..."
 msgstr "Eksportēt..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Configure Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr "Konfigurēt kontu"
+msgstr "Konfigurēt noteikumu"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add G&roup..."
+#, kde-format
 msgid "Add Rule..."
-msgstr "Pievienot g&rupu..."
+msgstr "Pievienot noteikumu..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
@@ -497,58 +449,52 @@ msgid "Import..."
 msgstr "Importēt..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "Paraksts nav atrasts"
+msgstr "Nav atrasti noteikumi"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "Eksportēt filtrus"
+msgstr "Eksportēt noteikumus"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
+#, kde-format
 msgid "Export Rules"
-msgstr "Eksportēt filtrus"
+msgstr "Eksportēt noteikumus"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgid "Import Rules"
-msgstr "Importēt filtrus"
+msgstr "Importēt noteikumus"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules imported."
-msgstr "Paraksts nav atrasts"
+msgstr "Noteikumi nav importēti."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "Importēt filtrus"
+msgstr "Importēt noteikumus"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "Domēns"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "Aktīvs"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
-msgstr ""
+msgstr "Parādīt ID"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -556,15 +502,14 @@ msgid "From"
 msgstr "No"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Folder List"
+#, kde-format
 msgid "Rule type"
-msgstr "Mapju saraksts"
+msgstr "Noteikuma tips"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "Prioritāte"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:196
 #: remote-content/remotecontentconfigurewidget.cpp:80
@@ -579,343 +524,308 @@ msgid "Modify..."
 msgstr "Rediģēt..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "filtru noteikumi"
+msgstr "Dublēt noteikumu"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remove Rule"
-msgstr "Izņemt"
+msgstr "Noņemt noteikumu"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to expire all old messages?"
+#, kde-format
 msgid "Do you want to delete this rule?"
-msgstr "Vai tiešām vēlaties izņemt vecās vēstules?"
+msgstr "Vai tiešām vēlaties noņemt šo noteikumu?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "filtru noteikumi"
+msgstr "Dzēst noteikumu"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to expire all old messages?"
+#, kde-format
 msgid "Do you want to delete all the rules?"
-msgstr "Vai tiešām vēlaties izņemt vecās vēstules?"
+msgstr "Vai tiešām vēlaties dzēst visus noteikumus?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "filtru noteikumi"
+msgstr "Dzēst noteikumus"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "Pievienot noteikumu"
 
 #: dkim-verify/dkimruledialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Modify Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr "Rediģēt kontu"
+msgstr "Rediģēt noteikumu"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enable"
+#, kde-format
 msgid "Enabled"
-msgstr "Ieslēgt"
+msgstr "Ieslēgts"
 
 #: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Defaul&t domain:"
+#, kde-format
 msgid "Domain:"
-msgstr "Noklusē&tais domēns:"
+msgstr "Domēns:"
 
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
-msgstr ""
+msgstr "Parādīts ID:"
 
 #: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
-#, fuzzy, kde-format
-#| msgid "From: "
+#, kde-format
 msgid "From:"
-msgstr "No: "
+msgstr "No:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Izmantojiet „*“, lai norādītu visus e-pastus no domēna"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
 msgid "SDID:"
-msgstr ""
+msgstr "SDID:"
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "Rule:"
-msgstr ""
+msgstr "Noteikums:"
 
 #: dkim-verify/dkimrulewidget.cpp:60
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "Prioritāte:"
 
 #: dkim-verify/dkimviewermenu.cpp:14
 #, kde-format
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
-msgstr "Paturēt parakstu"
+msgstr "No jauna pārbaudīt DKIM parakstu"
 
 #: dkim-verify/dkimviewermenu.cpp:39
 #, kde-format
 msgid "Update DKIM key"
-msgstr ""
+msgstr "Atjaunināt DKIM atslēgu"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr ""
+msgstr "Noteikumi..."
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "Unknown date"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "Nezināms"
 
 #: dkim-verify/dkimwidgetinfo.cpp:100
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr "Vēstuli ir parakstījis %1."
+msgstr "DKIM: derīgs (parakstīja %1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: nederīgs"
 
 #: dkim-verify/dkimwidgetinfo.cpp:110
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgid "DKIM: Not signed"
-msgstr "Sūtīt neparakstītu?"
+msgstr "DKIM: nav parakstīts"
 
 #: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: jāparaksta „%1“"
 
 #: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "Pamatteksta jaucējkods ir bojāts."
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "Domēns neeksistē."
 
 #: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "Trūkst galvenes „No“."
 
 #: dkim-verify/dkimwidgetinfo.cpp:140
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Missing signature."
-msgstr "Derīgs paraksts."
+msgstr "Trūkst paraksta."
 
 #: dkim-verify/dkimwidgetinfo.cpp:143
-#, fuzzy, kde-format
-#| msgid "Invalid signature."
+#, kde-format
 msgid "Invalid query method."
-msgstr "Nederīgs paraksts"
+msgstr "Nederīga vaicājuma metode."
 
 #: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "Nederīga galvenas kanoniskošana."
 
 #: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "Nederīga pamatteksta kanoniskošana."
 
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "Nezināms pamatteksta jaucējkoda algoritms"
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature algorithm is invalid."
-msgstr "Paraksts ir derīgs."
+msgstr "Paraksta algoritms nav derīgs."
 
 #: dkim-verify/dkimwidgetinfo.cpp:158
-#, fuzzy, kde-format
-#| msgid "One key has been revoked."
+#, kde-format
 msgid "The public key was revoked."
-msgstr "Viena atslēga ir anulēta."
+msgstr "Publiskā atslēga ir atsaukta."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature is too large."
-msgstr "Paraksts ir derīgs."
+msgstr "Paraksts ir pārāk liels."
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr "Šī rakstzīmju kopa netiek atbalstīta."
+msgstr "Jaucējkoda algoritms nav atbalstīts"
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "Publiskā atslēga ir pārāk maza"
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to verify signature."
-msgstr "Nav publiskās atslēgas, lai varētu pārbaudīt parakstu"
+msgstr "Nav iespējams pārbaudīt parakstu."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
+"AUID jābūt tajā pašā domēnā, kur SDID („s“ karodziņš ir iestatīts atslēgas "
+"ierakstā)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr ""
+msgstr "Parakstīšanas domēns DKIM tikai testē."
 
 #: dkim-verify/dkimwidgetinfo.cpp:179
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to download key."
-msgstr "Nav publiskās atslēgas, lai varētu pārbaudīt parakstu"
+msgstr "Nav iespējams lejupielādēt atslēgu."
 
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
-#, fuzzy, kde-format
-#| msgid "This charset is not supported."
+#, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr "Šī rakstzīmju kopa netiek atbalstīta."
+msgstr "Jaucējkoda algoritms nav drošs (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
-msgstr ""
+msgstr "AUID nav SDID apakšdomēns"
 
 #: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
-msgstr ""
+msgstr "Problēma, konvertējot publisko atslēgu"
 
 #: dkim-verify/dkimwidgetinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "The signature has expired."
+#, kde-format
 msgid "Signature expired"
-msgstr "Paraksta derīguma terminš beidzies."
+msgstr "Paraksta derīgums ir beidzies"
 
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "Paraksts ir izveidots nākotnē"
 
 #: dkim-verify/dkimwidgetinfo.cpp:203
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Signature too small"
-msgstr "Paraksts ir derīgs."
+msgstr "Paraksts ir par mazu"
 
 #: dkim-verify/dkimwidgetinfo.cpp:209
-#, fuzzy, kde-format
-#| msgid "Signature is valid."
+#, kde-format
 msgid "Public Key too small"
-msgstr "Paraksts ir derīgs."
+msgstr "Publiskā atslēga ir par mazu"
 
 #: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "Permissions"
-#| msgid "None"
+#, kde-format
 msgid "%1: None"
-msgstr "Nav"
+msgstr "%1: nav"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "Vēstuli ir parakstījis %1."
+msgstr "%1: derīgs (parakstīja %2)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
-msgstr ""
+msgstr "%1: derīgs"
 
 #: dkim-verify/dkimwidgetinfo.cpp:303
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgid "Not Signed"
-msgstr "&Nevajag paraksīt"
+msgstr "Nav parakstīts"
 
 #: header/grantleeheaderformatter.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Subject of email."
-#| msgid "S&ubject:"
+#, kde-format
 msgid "Subject:"
-msgstr "&Temats:"
+msgstr "Temats:"
 
 #: header/grantleeheaderformatter.cpp:224
-#, fuzzy, kde-format
-#| msgid "Date: "
+#, kde-format
 msgid "Date:"
-msgstr "Datums: "
+msgstr "Datums:"
 
 #: header/grantleeheaderformatter.cpp:240
-#, fuzzy, kde-format
-#| msgid "Message Id"
+#, kde-format
 msgid "Message-Id:"
-msgstr "Vēstules Id"
+msgstr "Vēstules ID:"
 
 #: header/grantleeheaderformatter.cpp:264
-#, fuzzy, kde-format
-#| msgid "To:"
+#, kde-format
 msgid "To:"
 msgstr "Kam:"
 
 #: header/grantleeheaderformatter.cpp:266
-#, fuzzy, kde-format
-#| msgid "&Reply To"
+#, kde-format
 msgid "Reply To:"
-msgstr "At&bildēt uz"
+msgstr "Atbildēt uz:"
 
 #: header/grantleeheaderformatter.cpp:268
 #, kde-format
@@ -923,34 +833,29 @@ msgid "CC:"
 msgstr "CC:"
 
 #: header/grantleeheaderformatter.cpp:270
-#, fuzzy, kde-format
-#| msgid "BCC: "
+#, kde-format
 msgid "BCC:"
-msgstr "BCC: "
+msgstr "BCC:"
 
 #: header/grantleeheaderformatter.cpp:274
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgid "Sender:"
-msgstr "Sūtītājs"
+msgstr "Sūtītājs:"
 
 #: header/grantleeheaderformatter.cpp:276
-#, fuzzy, kde-format
-#| msgid "(resent from %1)"
+#, kde-format
 msgid "resent from:"
-msgstr "(sūtīts no %1)"
+msgstr "atkārtoti sūtīt no:"
 
 #: header/grantleeheaderformatter.cpp:278
-#, fuzzy, kde-format
-#| msgid "(resent from %1)"
+#, kde-format
 msgid "resent to:"
-msgstr "(sūtīts no %1)"
+msgstr "atkārtoti sūtīt uz:"
 
 #: header/grantleeheaderformatter.cpp:359
-#, fuzzy, kde-format
-#| msgid "The signature file is not valid"
+#, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr "Paraksta fails nav derīgs"
+msgstr "„Grantlee“ motīvs „%1“ nav derīgs."
 
 #: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
@@ -964,16 +869,14 @@ msgid "Spam Status:"
 msgstr "Mēstules statuss:"
 
 #: header/grantleeheaderformatter.cpp:466
-#, fuzzy, kde-format
-#| msgid "Printing Output"
+#, kde-format
 msgid "Printing mode"
-msgstr "Drukas izvads"
+msgstr "Drukāšanas režīms"
 
 #: header/grantleeheaderformatter.cpp:508
-#, fuzzy, kde-format
-#| msgid "[vCard]"
+#, kde-format
 msgid "[vcard]"
-msgstr "[vCard]"
+msgstr "[vcard]"
 
 #: header/grantleeheaderformatter.cpp:515
 #, kde-format
@@ -981,10 +884,9 @@ msgid "Attachments:"
 msgstr "Pielikumi:"
 
 #: header/grantleeheaderformatter.cpp:544
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgid "Security:"
-msgstr "Drošība"
+msgstr "Drošība:"
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -1001,7 +903,7 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
-"%1% visdrīzak ir mēstule, pārliecību %3%.\n"
+"%1% mēstules varbūtība, pārliecība ir %3%.\n"
 "\n"
 "Pilna atskaite:\n"
 "Varbūtība=%2\n"
@@ -1023,12 +925,12 @@ msgstr ""
 #: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
-msgstr "No Spam aģents"
+msgstr "Nav mēstuļu aģenta"
 
 #: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
-msgstr "Mēstuļu filtra novērtījums nav skaitlis"
+msgstr "Mēstuļu filtra novērtējums nav skaitlis"
 
 #: header/headerstyle_util.cpp:169
 #, kde-format
@@ -1043,7 +945,7 @@ msgstr "Mēstuļu filtra novērtējumu neizdevās izgūt no vēstules galvenes"
 #: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr "Mēstuļu filtra slieksni neizdevās izgūt no vēstules galvenes"
+msgstr "Slieksni neizdevās izgūt no vēstules galvenes"
 
 #: header/headerstyle_util.cpp:178
 #, kde-format
@@ -1111,30 +1013,27 @@ msgid "Reply to: "
 msgstr "Atbildēt uz: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignorēt"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
 msgstr "Sūtīt"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Send Now"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "Sūtīt uzreiz"
+msgstr "Sūtīšana noraidīta"
 
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
 msgid "Error: Signature not verified"
-msgstr "Kļūda: Paraksts nav apstiprināts"
+msgstr "Kļūda: paraksts nav apstiprināts"
 
 #: messagepartthemes/default/defaultrenderer.cpp:71
 #, kde-format
@@ -1142,15 +1041,14 @@ msgid "Good signature"
 msgstr "Derīgs paraksts"
 
 #: messagepartthemes/default/defaultrenderer.cpp:75
-#, fuzzy, kde-format
-#| msgid "Good signature"
+#, kde-format
 msgid "Bad signature"
 msgstr "Derīgs paraksts"
 
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "No public key to verify the signature"
-msgstr "Nav publiskās atslēgas, lai varētu pārbaudīt parakstu"
+msgstr "Nav publiskās atslēgas, lai pārbaudītu parakstu"
 
 #: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
@@ -1160,12 +1058,12 @@ msgstr "Paraksts nav atrasts"
 #: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "Error verifying the signature"
-msgstr "Kļūda pārbaudot parakstu"
+msgstr "Kļūda, pārbaudot parakstu"
 
 #: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
 msgid "Different results for signatures"
-msgstr "Parakstiem atšķirīgi rezultāti"
+msgstr "Parakstiem ir atšķirīgi rezultāti"
 
 #: messagepartthemes/default/defaultrenderer.cpp:111
 #, kde-format
@@ -1176,7 +1074,7 @@ msgstr "Nav pieejama statusa informācija."
 #: messagepartthemes/default/defaultrenderer.cpp:203
 #, kde-format
 msgid "Good signature."
-msgstr "Derīgs paraksts."
+msgstr "Labs paraksts."
 
 #: messagepartthemes/default/defaultrenderer.cpp:139
 #, kde-format
@@ -1186,7 +1084,7 @@ msgstr "Vienai atslēgai beidzies derīguma termiņš."
 #: messagepartthemes/default/defaultrenderer.cpp:143
 #, kde-format
 msgid "The signature has expired."
-msgstr "Paraksta derīguma terminš beidzies."
+msgstr "Paraksta derīguma termiņš ir beidzies."
 
 #: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
@@ -1219,10 +1117,9 @@ msgid "One key has been revoked."
 msgstr "Viena atslēga ir anulēta."
 
 #: messagepartthemes/default/defaultrenderer.cpp:205
-#, fuzzy, kde-format
-#| msgid "Good signature."
+#, kde-format
 msgid "Bad signature."
-msgstr "Derīgs paraksts."
+msgstr "Slikts paraksts."
 
 #: messagepartthemes/default/defaultrenderer.cpp:525
 #: messagepartthemes/default/defaultrenderer.cpp:527
@@ -1240,7 +1137,7 @@ msgstr "Brīdinājums:"
 #: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
 msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "Sūtītāja e-pasta adrese nav saglabāta parakstam izmantotajā %1."
+msgstr "Sūtītāja e-pasta adrese nav saglabāta parakstam izmantotajā „%1“."
 
 #: messagepartthemes/default/defaultrenderer.cpp:538
 #, kde-format
@@ -1258,15 +1155,14 @@ msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
 "it to the sender's address %2."
 msgstr ""
-"Parakstīšanai izmantotajā %1 nav saglabāts e-pasta adrese, tāpēc nevar "
-"salīdzināt to ar sūtītāja adresi %2."
+"Parakstīšanai izmantotajā „%1“ nav saglabāta e-pasta adrese, tāpēc nevar "
+"salīdzināt to ar sūtītāja adresi „%2“."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr "Sagataves saturs"
+msgstr "Konfigurēt tiešsaistes saturu"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
@@ -1274,102 +1170,95 @@ msgid "Status"
 msgstr "Statuss"
 
 #: remote-content/remotecontentconfigurewidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to expire all old messages?"
+#, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr "Vai tiešām vēlaties izņemt vecās vēstules?"
+msgstr "Vai tiešām vēlaties dzēst noteikumu „%1“?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr "Sagataves saturs"
+msgstr "Rediģēt tiešsaistes saturu"
 
 #: remote-content/remotecontentconfigurewidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr "Sagataves saturs"
+msgstr "Pievienot tiešsaistes saturu"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "Pievienotais ierakst jau nosaka šo URL. Rediģējiet to."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "Pievienot jaunu tagu"
+msgstr "Pievienot jaunu URL"
 
 #: remote-content/remotecontentmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure"
-msgstr "Konfigurēt..."
+msgstr "Konfigurēt"
 
 #: remote-content/remotecontentmenu.cpp:19
-#, fuzzy, kde-format
-#| msgid "Template content"
+#, kde-format
 msgid "Remote Content"
-msgstr "Sagataves saturs"
+msgstr "Tiešsaistes saturs"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "Autorizēt %1"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "Autorizēt visas URL"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "Autorizēts"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
 msgid "Blocked"
-msgstr ""
+msgstr "Bloķēts"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr "Rādīt detaļas"
+msgstr "Informācija"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:34
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
+"Šis vēstule izskatās krāpnieciska. <a href=\"scamdetails\">(Informācija...)</"
+"a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
 msgid "Move to Trash"
-msgstr "Pārvietot uz miskasti"
+msgstr "Pārvietot uz atkritni"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
 msgid "I confirm it's not a scam"
-msgstr ""
+msgstr "Apstiprinu, ka tā nav krāpnieciska"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
 msgid "Add email to whitelist"
-msgstr ""
+msgstr "Pievienot e-pastu atļautajam sarakstam"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete all messages"
+#, kde-format
 msgid "Disable scam detection for all messages"
-msgstr "Dzēst visas vēstules"
+msgstr "Izslēgt krāpniecisku vēstuļu pārbaudi visām vēstulēm"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:202
@@ -1379,6 +1268,9 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
+"Šī vēstule satur saiti, kura tekstā ir norādīta kā „%1“, bet faktiski aizved "
+"uz „%2“. Šādi krāpnieki bieži dara krāpnieciskās vēstulēs, lai maldinātu "
+"saņēmēju."
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1387,6 +1279,9 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"Šī vēstule satur saiti, kas norāda uz skaitliski izteiktu IP adresi (%1), "
+"bet ne tipiski norādītu teksta veida tīmekļa vietnes adresi. Šādi krāpnieki "
+"bieži dara krāpnieciskās vēstulēs."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1395,11 +1290,14 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"Šī vēstule satur saiti, kas norāda uz heksadecimālu IP adresi (%1), bet ne "
+"tipisku teksta veida vietnes adresi. Šādi krāpnieki bieži dara krāpnieciskās "
+"vēstulēs."
 
 #: scamdetection/scamdetectionwebengine.cpp:141
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
-msgstr ""
+msgstr "Šī vēstule satur saiti (%1), kas tiek pāradresēta"
 
 #: scamdetection/scamdetectionwebengine.cpp:148
 #, kde-format
@@ -1407,43 +1305,45 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
+"Šī vēstule satur saiti (%1) ar vairākiem „http://“. Tā tas bieži ir "
+"krāpnieciskos e-pastos."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
+"Šī vēstule satur saiti (%1). Tā var apmeklētāju pāradresēt uz citu serveri."
 
 #: scamdetection/scamdetectionwebengine.cpp:222
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
-msgstr ""
+msgstr "Vēstule satur formas elementu. Tā bieži notiek krāpnieciskos e-pastos."
 
 #: scamdetection/scamdetectionwebengine.cpp:226
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgid "Details:"
-msgstr "Rādīt detaļas"
+msgstr "Informācija:"
 
 #: scamdetection/scamexpandurljob.cpp:47
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
-msgstr ""
+msgstr "Nav atrasts tīkla savienojums, tāpēc adresi nevar paplašināt."
 
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Impossible to expand '%1'."
-msgstr ""
+msgstr "Nav iespējams paplašināt „%1“."
 
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr ""
+msgstr "Īsā saita „%1“ pāradresē uz „%2“."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
 msgid "Groupware Compatibility && Legacy Options"
-msgstr "Grupdarba savietojamības un vecas iespējas"
+msgstr "Grupprogrammatūras savietojamības un vecas iespējas"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:23
@@ -1452,7 +1352,7 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Ieslēdziet šo iespēju, lai Outlook(tm) spētu saprast jūsu atbildes uz "
+"Ieslēdziet šo iespēju, lai „Outlook“(tm) spētu saprast jūsu atbildes uz "
 "ielūgumu atbildēm"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
@@ -1468,7 +1368,7 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
-"Ieslēdziet šo iespēju, lai Outlook(tm) spētu saprast jūsu atbildes uz "
+"Ieslēdziet šo iespēju, lai „Outlook“(tm) spētu saprast jūsu atbildes uz "
 "ielūgumiem"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
@@ -1487,16 +1387,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"Microsoft Outlook, strādājot kopā ar Microsoft Exchange server,\n"
-" ir problēmas saprast standartiem atbilstošu grupdarba e-pastu. \n"
-"Ieslēdziet šo iespēju, lai sūtītu grupdarba ielūgumus tā, ka Microsoft "
-"Exchange tos saprot."
+"„Microsoft Outlook“, strādājot kopā ar „Microsoft Exchange“ serveri,\n"
+" ir problēmas saprast standartiem atbilstošu grupprogrammatūras e-pastu. \n"
+"Ieslēdziet šo iespēju, lai sūtītu grupprogrammatūras ielūgumus tā, ka "
+"„Microsoft Exchange“ tos saprot."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr "Ar Exchange savietojami ielūgumu &nosaukumi"
+msgstr "Ar „Exchange“ savietojami ielūgumu &nosaukumi"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1505,54 +1405,50 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
-"Ja šīs ir ieslēgts, netiks atvērts vētules rakstīšanas logs. Ielūgums tiks "
+"Ja šis ir ieslēgts, netiks atvērts vēstules rakstīšanas logs. Ielūgums tiks "
 "nosūtīts automātiski."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
 #, kde-format
 msgid "&Automatic invitation sending"
-msgstr "&Automātiska ielūgumu izstūtīšana"
+msgstr "&Automātiska ielūgumu izsūtīšana"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: ui/invitationsettings.ui:68
-#, fuzzy, kde-format
-#| msgid "&Options"
+#, kde-format
 msgid "Options"
-msgstr "&Opcijas"
+msgstr "Opcijas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
 #: ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Dzēst ielūgumu vēstules, kad nosūtīta atbilde uz tām"
+msgstr "Dzēst ielūgumu vēstules, kad ir nosūtīta atbilde uz tām"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
 msgid "Print only selected text"
-msgstr ""
+msgstr "Drukāt tikai atlasīto tekstu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
 #: ui/printingsettings.ui:24
-#, fuzzy, kde-format
-#| msgid "Show &expand/collapse quote marks"
+#, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr "Rādīt citātu izvēršanas/savēršanas zīm&es"
+msgstr "Ievērot citātu &izvēršanas/sakļaušanas zīmju iestatījumus"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Print background color and images"
-msgstr "Fona krāsa"
+msgstr "Drukāt fona krāsu un attēlus"
 
 #. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
 #: ui/printingsettings.ui:38
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Always show encryption/signature details"
-msgstr "Parādīt paraksta detaļas."
+msgstr "Vienmēr rādīt šifrēšanas/paraksta informāciju"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -1562,18 +1458,15 @@ msgstr "Skatītāja iestatījumi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
-#, fuzzy, kde-format
-#| msgid "&Override character encoding:"
+#, kde-format
 msgid "O&verride character encoding:"
-msgstr "&Uzspiest rakstzīmju kodējumu:"
+msgstr "&Pārrakstīt rakstzīmju kodējumu:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
 #: ui/settings.ui:79
-#, fuzzy, kde-format
-#| msgctxt "shortcut"
-#| msgid "Activate Next Tab"
+#, kde-format
 msgid "Enable access key"
-msgstr "Pārslēgties uz nākamo cilni"
+msgstr "Ieslēgt piekļuves atslēgu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
 #: ui/settings.ui:86
@@ -1585,38 +1478,36 @@ msgstr "Samazināt &citētā teksta fonta izmēru"
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr "Rādīt citātu izvēršanas/savēršanas zīm&es"
+msgstr "Rādīt &citātu izvēršanas/sakļaušanas zīmes"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
-#, fuzzy, kde-format
-#| msgid "Automatic collapse level:"
+#, kde-format
 msgid "Automatic collapse &level:"
-msgstr "Automātiskās sakļaušanas līmenis:"
+msgstr "Automātiskās sakļaušanas &līmenis:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
-msgstr ""
+msgstr "&Minimālais fonta izmērs:"
 
 #: utils/messageviewerutil.cpp:124
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-msgstr "Fails ar nosaukumu \"%1\" jau pastāv. Vai vēlaties to pārrakstīt?"
+msgstr "Datne ar nosaukumu „%1“ jau pastāv. Vai vēlaties to pārrakstīt?"
 
 #: utils/messageviewerutil.cpp:127
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr "Pārrakstīt failu?"
+msgstr "Vai pārrakstīt datni?"
 
 #: utils/messageviewerutil.cpp:177
 #, kde-format
 msgid "Save Attachments To"
-msgstr "Saglabāt pielikumus iekš"
+msgstr "Saglabāt pielikumus..."
 
 #: utils/messageviewerutil.cpp:194
 #, kde-format
@@ -1627,7 +1518,7 @@ msgstr "pielikums.1"
 #: utils/messageviewerutil.cpp:200
 #, kde-format
 msgid "Save Attachment"
-msgstr "Saglabā pielikumu"
+msgstr "Saglabāt pielikumu"
 
 #: utils/messageviewerutil.cpp:224
 #, kde-format
@@ -1641,17 +1532,17 @@ msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
-"Vēstules daļa %1 ir šifrēta. Vai saglabājot vēlaties to paturēt šifrētu?"
+"Vēstules %1. daļa ir šifrēta. Vai saglabājot vēlaties to paturēt šifrētu?"
 
 #: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "KMail Question"
-msgstr "KMail jautājums"
+msgstr "„KMail“ jautājums"
 
 #: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
-msgstr "Paturēt šifrētu"
+msgstr "Paturēt šifrēšanu"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
@@ -1664,7 +1555,7 @@ msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
-"Vēstules daļa %1 ir parakstīta. Vai saglabājot vēlaties paturēt parakstu?"
+"Vēstules %1. daļa ir parakstīta. Vai saglabājot vēlaties paturēt parakstu?"
 
 #: utils/messageviewerutil.cpp:337
 #, kde-format
@@ -1673,97 +1564,85 @@ msgstr "Paturēt parakstu"
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
-#, fuzzy, kde-kuit-format
-#| msgctxt "1 = file name, 2 = error string"
-#| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
-msgstr "<qt>Neizdevās ierakstīt failā<br><filename>%1</filename><br><br>%2"
+msgstr ""
+"<qt>Neizdevās rakstīt datnē<br /><filename>%1</filename><br /><br />%2</qt>"
 
 #: utils/messageviewerutil.cpp:404
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr "Kļūda saglabājot pielikumu"
+msgstr "Kļūda, saglabājot pielikumu"
 
 #: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Error saving attachment"
-msgstr "Kļūda saglabājot pielikumu"
+msgstr "Kļūda, saglabājot pielikumu"
 
 #: utils/messageviewerutil.cpp:453
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "Nav pielikumu ko saglabāt."
+msgstr "Nav pielikumu, ko saglabāt."
 
 #: utils/messageviewerutil.cpp:468
-#, fuzzy, kde-format
-#| msgid " messages"
+#, kde-format
 msgid "message"
-msgstr " vēstules"
+msgstr "vēstule"
 
 #: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
-msgstr ""
+msgstr "e-pasta vēstule  (*.mbox);;visas datnes (*)"
 
 #: utils/messageviewerutil.cpp:501
-#, fuzzy, kde-format
-#| msgid "&Save message"
+#, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] "&Saglabāt vēstuli"
-msgstr[1] "&Saglabāt vēstuli"
-msgstr[2] "&Saglabāt vēstuli"
+msgstr[0] "Saglabāt vēstuli"
+msgstr[1] "Saglabāt vēstules"
+msgstr[2] "Saglabāt vēstules"
 
 #: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
-#| msgid "The message could not be decrypted."
+#, kde-format
 msgid "File %1 could not be loaded."
-msgstr "Nieizdevās atšifrēt vēstuli."
+msgstr "Datni „%1“ nevarēja ielādēt."
 
 #: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
-#| msgid "Error while uploading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
-msgstr "Kļūda augšupielādējot vēstuli"
+msgstr "Kļūda, ielādējot vēstuli"
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "The message could not be decrypted."
+#, kde-format
 msgid "File %1 could not be created."
-msgstr "Nieizdevās atšifrēt vēstuli."
+msgstr "Datni „%1“ neizdevās izveidot."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
-#, fuzzy, kde-format
-#| msgid "Moving messages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr "Pārvieto vēstules"
+msgstr "Kļūda, saglabājot vēstuli"
 
 #: utils/messageviewerutil.cpp:539
-#, fuzzy, kde-format
-#| msgid "End of signed message"
+#, kde-format
 msgid "We cannot save message."
-msgstr "Parakstītās daļas beigas"
+msgstr "Nevaram saglabāt vēstuli."
 
 #: utils/messageviewerutil.cpp:539
-#, fuzzy, kde-format
-#| msgid "Moving messages"
+#, kde-format
 msgid "Error saving message"
-msgstr "Pārvieto vēstules"
+msgstr "Kļūda, saglabājot vēstuli"
 
 #: utils/messageviewerutil.cpp:603
-#, fuzzy, kde-format
-#| msgctxt "Not able to attend."
-#| msgid "Declined: %1"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Noraidīts: %1"
+msgstr "Dzēsts: %1"
 
 #: utils/messageviewerutil.cpp:614
 #, kde-format
@@ -1771,24 +1650,23 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Jūs izdzēsāt šīs vēstules pielikumu. Sākotnējās pielikumu MIME galvenes bija:"
 
 #: utils/messageviewerutil.cpp:641
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "Open &with %1"
-msgstr "&Atvērt ar '%1'"
+msgstr "&Atvērt ar „%1“"
 
 #: utils/messageviewerutil.cpp:643
-#, fuzzy, kde-format
-#| msgid "%"
+#, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
-msgstr "%"
+msgstr "%1"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
 msgid "body part"
-msgstr "satura daļa"
+msgstr "pamatteksta daļa"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:262
 #, kde-format
@@ -1808,35 +1686,33 @@ msgstr "Izmērs"
 #: viewer/printmessage.cpp:61
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "Nevarēja izveidot drukāšanas priekšskatījumu."
 
 #: viewer/printmessage.cpp:97
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "Dokumentācija"
+msgstr "Drukāt dokumentu"
 
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
-msgstr "Atslēgt HTML attēlošanu šai vēstulei."
+msgstr "Šai vēstulei ieslēgt HTML renderēšanu."
 
 #: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references from the Internet for this message."
-msgstr "Ielādēt no Interneta šīs vēstules ārējās norādes."
+msgstr "Ielādēt no interneta vēstules ārējās norādes."
 
 #: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
-msgstr "Strādāt tiešsaitē."
+msgstr "Strādāt tiešsaistē."
 
 #: viewer/urlhandlermanager.cpp:412
-#, fuzzy, kde-format
-#| msgid "from checked accounts only"
+#, kde-format
 msgid "Make account online."
-msgstr "tikai no atzīmētajiem kontiem"
+msgstr "Kontam ieslēgt tiešsaisti"
 
 #: viewer/urlhandlermanager.cpp:414
 #, kde-format
@@ -1846,30 +1722,27 @@ msgstr "Atšifrēt vēstuli."
 #: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Show signature details."
-msgstr "Parādīt paraksta detaļas."
+msgstr "Parādīt paraksta informāciju."
 
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Hide signature details."
-msgstr "Slēpt paraksta detaļas."
+msgstr "Slēpt paraksta informāciju."
 
 #: viewer/urlhandlermanager.cpp:420
-#, fuzzy, kde-format
-#| msgid "Show signature details."
+#, kde-format
 msgid "Show encryption details."
-msgstr "Parādīt paraksta detaļas."
+msgstr "Parādīt šifrēšanas informāciju."
 
 #: viewer/urlhandlermanager.cpp:422
-#, fuzzy, kde-format
-#| msgid "Hide signature details."
+#, kde-format
 msgid "Hide encryption details."
-msgstr "Slēpt paraksta detaļas."
+msgstr "Slēpt šifrēšanas informāciju."
 
 #: viewer/urlhandlermanager.cpp:427
-#, fuzzy, kde-format
-#| msgid "Documentation"
+#, kde-format
 msgid "Open Documentation"
-msgstr "Dokumentācija"
+msgstr "Atvērt dokumentāciju"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
@@ -1884,31 +1757,27 @@ msgstr "Sakļaut citātu."
 #: viewer/urlhandlermanager.cpp:532
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr ""
-"Neizdevās palaist sertifikātu pārvaldnieku. Lūdzu pārbaudiet jūsu "
-"instalāciju."
+msgstr "Neizdevās palaist sertifikātu pārvaldnieku. Pārbaudiet instalāciju."
 
 #: viewer/urlhandlermanager.cpp:534
 #, kde-format
 msgid "KMail Error"
-msgstr "KMail kļūda"
+msgstr "„KMail“ kļūda"
 
 #: viewer/urlhandlermanager.cpp:549
 #, kde-format
 msgid "Show certificate 0x%1"
-msgstr "Rādīt sertifikātu 0x%1"
+msgstr "Rādīt sertifikātu 0×%1"
 
 #: viewer/urlhandlermanager.cpp:608
-#, fuzzy, kde-format
-#| msgid "Open in Address Book"
+#, kde-format
 msgid "&Open in Address Book"
-msgstr "Atvērt adrešu grāmatā"
+msgstr "&Atvērt adrešu grāmatā"
 
 #: viewer/urlhandlermanager.cpp:610
-#, fuzzy, kde-format
-#| msgid "Email Address"
+#, kde-format
 msgid "&Copy Email Address"
-msgstr "E-pasta adrese"
+msgstr "&Kopēt e-pasta adresi"
 
 #: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2705
 #, kde-format
@@ -1916,10 +1785,9 @@ msgid "Address copied to clipboard."
 msgstr "Adrese nokopēta starpliktuvē."
 
 #: viewer/urlhandlermanager.cpp:634
-#, fuzzy, kde-format
-#| msgid "Open in Address Book"
+#, kde-format
 msgid "Lookup the contact in KAddressbook"
-msgstr "Atvērt adrešu grāmatā"
+msgstr "Meklēt kontaktu „KAddressbook“"
 
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
@@ -1927,27 +1795,24 @@ msgid "Attachment: %1"
 msgstr "Pielikums: %1"
 
 #: viewer/urlhandlermanager.cpp:813
-#, fuzzy, kde-format
-#| msgid "Encapsulated message"
+#, kde-format
 msgid "Encapsulated Message (Subject: %1)"
-msgstr "Iekapsulēta vēstule"
+msgstr "Iekapsulēta vēstule (temats: %1)"
 
 #: viewer/urlhandlermanager.cpp:815
-#, fuzzy, kde-format
-#| msgid "Encapsulated message"
+#, kde-format
 msgid "Encapsulated Message"
 msgstr "Iekapsulēta vēstule"
 
 #: viewer/urlhandlermanager.cpp:818
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "Unnamed attachment"
-msgstr "Nespēj rediģēt pielikumu"
+msgstr "Nenosaukts pielikums"
 
 #: viewer/urlhandlermanager.cpp:853
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
-msgstr "Rādīt šīs darbības GnuPG analīzes žurnālu"
+msgstr "Rādīt šīs darbības „GnuPG“ analīzes žurnālu"
 
 #: viewer/urlhandlermanager.cpp:894
 #, kde-format
@@ -1966,10 +1831,9 @@ msgid "Execute"
 msgstr "Izpildīt"
 
 #: viewer/viewer.cpp:135
-#, fuzzy, kde-format
-#| msgid "Moving messages..."
+#, kde-format
 msgid "Loading message..."
-msgstr "Pārvieto vēstules..."
+msgstr "Ielādē vēstules..."
 
 #: viewer/viewer_p.cpp:343
 #, kde-format
@@ -1979,8 +1843,7 @@ msgid ""
 msgstr "Pielikuma dzēšana var padarīt nederīgu šīs vēstules parakstu."
 
 #: viewer/viewer_p.cpp:344 viewer/viewer_p.cpp:379
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Dzēst pielikumu"
@@ -1991,24 +1854,22 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
+"Pielikuma dzēšana no šifrētas vai vecā stila pasta vēstules nav atbalstīta."
 
 #: viewer/viewer_p.cpp:427
-#, fuzzy, kde-format
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Atvērt ar..."
+msgstr "&Atvērt ar"
 
 #: viewer/viewer_p.cpp:445
-#, fuzzy, kde-format
-#| msgid "Other Actio&ns"
+#, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "Citas &darbības"
+msgstr "&Citas..."
 
 #: viewer/viewer_p.cpp:447 viewer/viewer_p.cpp:460
-#, fuzzy, kde-format
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Atvērt ar..."
@@ -2028,12 +1889,12 @@ msgstr "Skatīt"
 #: viewer/viewer_p.cpp:546
 #, kde-format
 msgid "Scroll To"
-msgstr ""
+msgstr "Ritināt uz"
 
 #: viewer/viewer_p.cpp:551
 #, kde-format
 msgid "Save As..."
-msgstr "Saglabāt kā.."
+msgstr "Saglabāt kā..."
 
 #: viewer/viewer_p.cpp:557 viewer/viewer_p.cpp:1753
 #, kde-format
@@ -2046,17 +1907,14 @@ msgid "Delete Attachment"
 msgstr "Dzēst pielikumu"
 
 #: viewer/viewer_p.cpp:579
-#, fuzzy, kde-format
-#| msgid "Reply to A&uthor..."
+#, kde-format
 msgid "Reply To Author"
-msgstr "Atbildēt a&uoram..."
+msgstr "&Atbildēt autoram"
 
 #: viewer/viewer_p.cpp:587
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Reply to All"
+#, kde-format
 msgid "Reply To All"
-msgstr "Atbilde visiem"
+msgstr "Atbildēt visiem"
 
 #: viewer/viewer_p.cpp:593 viewer/viewer_p.cpp:1763
 #, kde-format
@@ -2069,14 +1927,12 @@ msgid "KMail"
 msgstr "KMail"
 
 #: viewer/viewer_p.cpp:731
-#, fuzzy, kde-format
-#| msgid "KDE Email Client"
+#, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE e-pasta klients"
 
 #: viewer/viewer_p.cpp:1276
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Skatīt pielikumu: %1"
@@ -2096,23 +1952,23 @@ msgstr "Izvēlieties pielikumu attēlošanas stilu"
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
-msgstr "Kā ikon&as"
+msgstr "&Kā ikonas"
 
 #: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
-msgstr "Rādīt visus pielikumus kā ikonas. Nospiežot atver tos."
+msgstr "Rādīt visus pielikumus kā ikonas. Jānospiež, lai redzētu."
 
 #: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
-msgstr "&Grudri"
+msgstr "&Viedi"
 
 #: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show attachments as suggested by sender."
-msgstr "Rādīt visus pielikumus kā to ieteicis sūtītājs."
+msgstr "Rādīt visus pielikumus, kā to ir ieteicis sūtītājs."
 
 #: viewer/viewer_p.cpp:1497
 #, kde-format
@@ -2129,7 +1985,7 @@ msgstr "Iekļaut pielikumus vēstules tekstā (ja iespējams)"
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
-msgstr "&Sēpt"
+msgstr "&Slēpt"
 
 #: viewer/viewer_p.cpp:1507
 #, kde-format
@@ -2140,18 +1996,17 @@ msgstr "Nerādīt pielikumus vēstules skatītājā"
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
-msgstr ""
+msgstr "Tikai galvenē"
 
 #: viewer/viewer_p.cpp:1514
-#, fuzzy, kde-format
-#| msgid "Show all attachments as icons. Click to see them."
+#, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "Rādīt visus pielikumus kā ikonas. Nospiežot atver tos."
+msgstr "Rādīt pielikumus tikai e-pasta galvenē"
 
 #: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "&Set Encoding"
-msgstr "Uzstādīt &kodējumu"
+msgstr "&Iestatīt kodējumu"
 
 #: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
@@ -2160,10 +2015,9 @@ msgid "Auto"
 msgstr "Automātisks"
 
 #: viewer/viewer_p.cpp:1534
-#, fuzzy, kde-format
-#| msgid "&Copy To"
+#, kde-format
 msgid "Copy Text"
-msgstr "&Kopēt uz"
+msgstr "Kopēt tekstu"
 
 #: viewer/viewer_p.cpp:1541
 #, kde-format
@@ -2173,7 +2027,7 @@ msgstr "Iezīmēt visu tekstu"
 #: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2060
 #, kde-format
 msgid "Copy Link Address"
-msgstr "Kopēt saiti"
+msgstr "Kopēt saites adresi"
 
 #: viewer/viewer_p.cpp:1552
 #, kde-format
@@ -2196,76 +2050,69 @@ msgid "&View Source"
 msgstr "Skatīt pirm&kodu"
 
 #: viewer/viewer_p.cpp:1573
-#, fuzzy, kde-format
-#| msgid "&Save message"
+#, kde-format
 msgid "&Save Message..."
-msgstr "&Saglabāt vēstuli"
+msgstr "&Saglabāt vēstuli..."
 
 #: viewer/viewer_p.cpp:1579
-#, fuzzy, kde-format
-#| msgid "&Save as Draft"
+#, kde-format
 msgid "&Save Display Format"
-msgstr "&Saglabāt kā melnrakstu"
+msgstr "&Saglabāt parādīšanas formātu"
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save as Draft"
+#, kde-format
 msgid "&Reset Display Format"
-msgstr "&Saglabāt kā melnrakstu"
+msgstr "&Atstatīt parādīšanas formātu"
 
 #: viewer/viewer_p.cpp:1590
 #, kde-format
 msgid "Scroll Message Up"
-msgstr "Ridināt vēstuli augšup"
+msgstr "Ritināt vēstuli augšup"
 
 #: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Scroll Message Down"
-msgstr "Ridināt vēstuli lejup"
+msgstr "Ritināt vēstuli lejup"
 
 #: viewer/viewer_p.cpp:1600
 #, kde-format
 msgid "Scroll Message Up (More)"
-msgstr "Ridināt vēstuli augšup (vairāk)"
+msgstr "Ritināt vēstuli augšup (vairāk)"
 
 #: viewer/viewer_p.cpp:1605
 #, kde-format
 msgid "Scroll Message Down (More)"
-msgstr "Ridināt vēstuli lejup (vairāk)"
+msgstr "Ritināt vēstuli lejup (vairāk)"
 
 #: viewer/viewer_p.cpp:1615
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr ""
+msgstr "Pārslēgt HMTL parādīšanas režīmu"
 
 #: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr ""
+msgstr "Pārslēgt parādīšanas režīmu starp HTML un vienkāršu tekstu"
 
 #: viewer/viewer_p.cpp:1622
-#, fuzzy, kde-format
-#| msgid "Load External References"
+#, kde-format
 msgid "Load external references"
-msgstr "Ielādēt ārējās saites"
+msgstr "Ielādēt ārējās atsauces"
 
 #: viewer/viewer_p.cpp:1628 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
-msgstr ""
+msgstr "Izrunāt tekstu"
 
 #: viewer/viewer_p.cpp:1634
-#, fuzzy, kde-format
-#| msgctxt "@action:button Open recipient selection dialog."
-#| msgid "Se&lect..."
+#, kde-format
 msgid "Share Text..."
-msgstr "Izvē&lēties..."
+msgstr "Kopīgot tekstu..."
 
 #: viewer/viewer_p.cpp:1652
-#, fuzzy, kde-format
-#| msgid "Choose Location"
+#, kde-format
 msgid "Copy Image Location"
-msgstr "Izvēlēties vietu"
+msgstr "Kopēt attēla atrašanās vietu"
 
 #: viewer/viewer_p.cpp:1658
 #, kde-format
@@ -2275,7 +2122,7 @@ msgstr "&Meklēt vēstulē..."
 #: viewer/viewer_p.cpp:1667
 #, kde-format
 msgid "Disable Emoticon"
-msgstr ""
+msgstr "Izslēgt emocijzīmes"
 
 #: viewer/viewer_p.cpp:1733
 #, kde-format
@@ -2295,48 +2142,45 @@ msgstr "Saglabāt visus pielikumus..."
 #: viewer/viewer_p.cpp:1980
 #, kde-format
 msgid "The network is broken."
-msgstr ""
+msgstr "Tīkls nedarbojas."
 
 #: viewer/viewer_p.cpp:1980
 #, kde-format
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "Pārbaudīt URL pikšķerēšanu"
 
 #: viewer/viewer_p.cpp:1983
-#, fuzzy, kde-format
-#| msgid "The signature file is not valid"
+#, kde-format
 msgid "The URL %1 is not valid."
-msgstr "Paraksta fails nav derīgs"
+msgstr "URL „%1“ nav derīga."
 
 #: viewer/viewer_p.cpp:1983
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "Pārbaudīt URL pikšķerēšanu"
 
 #: viewer/viewer_p.cpp:2003
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
-msgstr ""
+msgstr "Šī tīmekļa vietne satur ļaunatūru, vai vēlaties to atvērt?"
 
 #: viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "Ļaunatūra"
 
 #: viewer/viewer_p.cpp:2058
-#, fuzzy, kde-format
-#| msgid "Email Address"
+#, kde-format
 msgid "Copy Email Address"
-msgstr "E-pasta adrese"
+msgstr "Kopēt e-pasta adresi"
 
 #: viewer/viewer_p.cpp:2141
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
-msgstr "Vēstuli kā vienkāršu tekstu"
+msgstr "Vienkārša teksta vēstule"
 
 #: viewer/viewer_p.cpp:2711
 #, kde-format
@@ -2344,50 +2188,40 @@ msgid "URL copied to clipboard."
 msgstr "URL nokopēts starpliktuvē."
 
 #: viewer/viewer_p.cpp:2863
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "Message loading failed: %1."
-msgstr "Vēstuli ir parakstījis %1."
+msgstr "Vēstules ielādēšana neizdevās: %1"
 
 #: viewer/viewer_p.cpp:2868
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
-#| msgid "Messages sent on %1"
+#, kde-format
 msgid "Message not found."
-msgstr "Vēstules, kas nosūtītas %1"
+msgstr "Vēstule nav atrasta."
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"Atvērt pielikumu '%1'?\n"
-"Ņemiet vērā ka pielikuma atvēršana var apdraudēt jūsu sistēmas drošību."
+"Vai atvērt pielikumu <filename>%1</filename>?<nl/>Ievērojiet, ka pielikuma "
+"atvēršana var apdraudēt sistēmas drošumu."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "Atvērt pielikumu?"
+msgstr "Vai atvērt pielikumu?"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
-msgstr "&Atvērt ar '%1'"
+msgstr "&Atvērt ar „%1“"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "Atvērt ar..."
+msgstr "&Atvērt ar..."
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2395,62 +2229,51 @@ msgid "Do not ask again"
 msgstr "Turpmāk nevaicāt"
 
 #: widgets/htmlstatusbar.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
-#| ">s<br />a<br />g<br />e</b></qt>"
+#, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
 msgstr ""
-"<qt><b><br />H<br />T<br />M<br />L<br /> <br />V<br />ē<br />s<br />t<br /"
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />v<br />ē<br />s<br />t<br /"
 ">u<br />l<br />e</b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
-#| ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
-"<qt><br />N<br />a<br />v<br /><br />H<br />T<br />M<br />L<br /> <br /"
-">V<br />ē<br />s<br />t<br />u<br />l<br />e</qt>"
+"<qt><br />N<br />a<br />v<br /> <br />H<br />T<br />M<br />L<br /> <br /"
+">v<br />ē<br />s<br />t<br />u<br />l<br />e</qt>"
 
 #: widgets/htmlstatusbar.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
-#| ">s<br />a<br />g<br />e</b></qt>"
+#, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><b><br />H<br />T<br />M<br />L<br /> <br />V<br />ē<br />s<br />t<br /"
-">u<br />l<br />e</b></qt>"
+"<qt><br />V<br />i<br />e<br />n<br />k<br />ā<br />r<br />š<br />a<br /> "
+"<br />t<br />e<br />k<br />s<br />t<br />a<br /> <br />v<br />ē<br />s<br /"
+">t<br />u<br />l<br />e</qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
-#| ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />N<br />a<br />v<br /><br />H<br />T<br />M<br />L<br /> <br /"
-">V<br />ē<br />s<br />t<br />u<br />l<br />e</qt>"
+"<qt><br />K<br />a<br />l<br />e<br />n<br />d<br />ā<br />r<br />a<br /> "
+"<br />v<br />ē<br />s<br />t<br />u<br />l<br />e<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr ""
+msgstr "Spiediet, lai pārslēgtos starp HTML, vienkāršu tekstu un kalendāru."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2464,80 +2287,77 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
-"<qt>Ielūgumus parasti nosūta kā pielikumus. Šis slēdzis liek ielūgumu "
-"vēstules nosūtīt vēstules tekstā. Tas ir nepieciešams, lai nosūtītu "
-"ielūgumus un atbildes uz Microsoft Outlok.<br />Bet, darot to, netiks "
-"nosūtīts programmām saprotams ielūguma apraksts, un cilvēki, kuru programmas "
-"nesaprot šādus ielūgumus, saņems visai dīvainus ielūgumus.<br />Cilvēki, "
-"kuru programmas saprot šādus ielūgumus, joprojām spēs ar tiem strādāt.</qt>"
+"<qt>Ielūgumus parasti nosūta kā vēstules pielikumus. Šis slēdzis liek "
+"ielūgumu vēstules nosūtīt vēstules tekstā, bet ne pielikumā. Tas ir "
+"nepieciešams, lai nosūtītu ielūgumus un atbildes uz „Microsoft Outlok“.<br /"
+">Bet, darot to, netiks nosūtīts programmām saprotams ielūguma apraksts, "
+"tāpēc cilvēki, kuru programmas nesaprot šādus ielūgumus, saņems visai "
+"dīvainus ielūgumus.<br />Cilvēki, kuru programmas saprot šādus ielūgumus, "
+"joprojām spēs ar tiem strādāt.</qt>"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr "Skatīt pirm&kodu"
+msgstr "Neapstrādāts pirmkods"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
+"Neapstrādāts, nemodificēts pasts, kāds tas tiek uzglabāts datņu sistēmā vai "
+"serverī."
 
 #: widgets/mailsourcewebengineviewer.cpp:57
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr "Skatīt pirm&kodu"
+msgstr "HTML pirmkods"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr ""
+msgstr "HTML pirmkods, kas tiek izmantots vēstules atveidošanai"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "Atvērt mapi, kurā ir saglabāts pielikums"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Open Full Search"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Atvērt pilno meklēšanu"
+msgstr "Atvērt datni"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Atvērt datni, kurā ir saglabāts pielikums"
+msgstr[1] "Atvērt datni, kurā ir saglabāti pielikumi"
+msgstr[2] "Atvērt datni, kurā ir saglabāti pielikumi"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "Atvērt mapi, kurā ir saglabāta PDF datne"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "Nespēj rediģēt pielikumu"
+msgstr "„KMail“ nespēja atvērt pielikumu."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "&Next Message"
+#, kde-format
 msgid "Next Message"
-msgstr "&Nākamā vēstule"
+msgstr "Nākamā vēstule"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Unread &Message"
+#, kde-format
 msgid "Previous Message"
-msgstr "&Iepriekšējā nelasītā vēstule"
+msgstr "Iepriekšējā vēstule"
 
 #, fuzzy
 #~| msgid "Show &expand/collapse quote marks"

@@ -6,19 +6,20 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2010.
 # Viesturs Zariņš <viesturs.zarins@algorego.com>, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-20 00:37+0000\n"
-"PO-Revision-Date: 2010-01-13 18:44+0200\n"
-"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-03-01 15:41+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -42,13 +43,12 @@ msgstr "Nav atrasts piemērots šifrēšanas spraudnis."
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
-msgstr "Nav atrasts neviens %1 spraudnis."
+msgstr "Nav atrasts neviens „%1“ spraudnis."
 
 #: src/messagepart.cpp:825
-#, fuzzy, kde-format
-#| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
-msgstr "Šifrēšanas spraudnis \"%1\" nespēj pārbaudīt parakstus."
+msgstr "Šifrēšanas spraudnis „%1“ nevar pārbaudīt parakstus."
 
 #: src/messagepart.cpp:828
 #, kde-format
@@ -56,18 +56,18 @@ msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr ""
-"Šī vēstule ir parakstīta, bet paraksta īstumu nevar apstiprināt. <br/"
+"Šī vēstule ir parakstīta, bet paraksta īstumu nevar apliecināt. <br/"
 ">Iemesls: %1"
 
 #: src/messagepart.cpp:1309
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
-msgstr "Šifrēšanas spraudnis \"%1\" nespēj atšfirēt vēstules."
+msgstr "Šifrēšanas spraudnis „%1“ nespēj atšifrēt vēstules."
 
 #: src/messagepart.cpp:1311
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
-msgstr "Šifrēšanas spraudnis \"%1\" nespēja atšifrēt datus."
+msgstr "Šifrēšanas spraudnim „%1“ neizdevās atšifrēt datus."
 
 #: src/messagepart.cpp:1312
 #, kde-format

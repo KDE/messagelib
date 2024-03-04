@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-02 22:39+0200\n"
+"PO-Revision-Date: 2024-03-03 15:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -49,40 +49,40 @@ msgid "Certificate import status:"
 msgstr "מצב ייבוא אישורים:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:13
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] "אשף התעודות"
-msgstr[1] "אשף התעודות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "אישור אחד חדש יובא."
+msgstr[1] "שני אישורים חדשים יובאו."
+msgstr[2] "%1 אישורים חדשים יובאו."
+msgstr[3] "%1 אישורים חדשים יובאו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] "מנהל תעודות..."
-msgstr[1] "מנהל תעודות..."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "אישור אחד לא השתנה."
+msgstr[1] "שני אישורים לא השתנו."
+msgstr[2] "%1 אישורים לא השתנו."
+msgstr[3] "%1 אישורים לא השתנו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] "פג תוקף של מפתח אחד."
-msgstr[1] "פג תוקף של מפתח אחד."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מפתח סודי חדש אחד יובא."
+msgstr[1] "שני מפתחות סודיים חדשים יובאו."
+msgstr[2] "%1 מפתחות סודיים חדשים יובאו."
+msgstr[3] "%1 מפתחות סודיים חדשים יובאו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] "מנהל תעודות..."
-msgstr[1] "מנהל תעודות..."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מפתח סודי אחד לא השתנה."
+msgstr[1] "שני מפתחות סודיים לא השתנו."
+msgstr[2] "%1 מפתחות סודיים לא השתנו."
+msgstr[3] "%1 מפתחות סודיים לא השתנו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
@@ -189,17 +189,16 @@ msgstr ""
 "href='kmail:showHTML'>בלחיצה כאן</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
 "trust the sender of this message then you can load the external references "
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
-"<p dir=\"rtl\" align=\"right\"><b>שים לב:</b> זוהי הודעת HTML. מטעמי אבטחה, "
-"מוצג רק קוד ה־HTML הגולמי. אם אתה בוטח בשולח של הודעה זו, באפשרותך להפעיל את "
-"תצוגת ה־HTML המעוצבת עבור הודעה זו על ידי לחיצה <a href=\"kmail:showHTML"
-"\">כאן</a>."
+"<b>לתשומת ליבך:</b> הודעת ה־HTML הזאת יכולה להפנות חיצונית לתמונות וכו׳. "
+"מטעמי אבטחה/פרטיות הפניות חיצוניות לא נטענות. אם יש לך אמון במוען ההודעה "
+"אפשר לטעון את ההפניות החיצוניות להודעה הזאת <a href='kmail:"
+"loadExternal'>בלחיצה כאן</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
@@ -605,7 +604,7 @@ msgstr "מאת:"
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "יש להשתמש ב־‚*’ כדי לציין את כל כתובות הדוא״ל משם תחום מסוים"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
@@ -914,6 +913,11 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
+"%1% סבירות לספאם עם רמת ודאות %3%.\n"
+"\n"
+"דוח מלא:\n"
+"סבירות=%2\n"
+"ודאות=%4"
 
 #: header/headerstyle_util.cpp:154
 #, kde-format
@@ -923,6 +927,10 @@ msgid ""
 "Full report:\n"
 "Probability=%2"
 msgstr ""
+"%1% סבירות לספאם.\n"
+"\n"
+"דוח מלא:\n"
+"סבירות=%2"
 
 #: header/headerstyle_util.cpp:163
 #, kde-format
@@ -942,12 +950,12 @@ msgstr "הסף הוא לא מספר תקף"
 #: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
-msgstr ""
+msgstr "אי אפשר לחלץ את דירוג מסנן הספאם מהכותרת"
 
 #: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr ""
+msgstr "אי אפשר לחלץ את הסף מהכותרת"
 
 #: header/headerstyle_util.cpp:178
 #, kde-format
@@ -1027,10 +1035,10 @@ msgid "Send"
 msgstr "שליחה"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "השולח"
+msgstr "שליחת סירוב"
 
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
@@ -1212,22 +1220,22 @@ msgstr "תוכן מרוחק"
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "אישור %1"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "אישור כל הכתובות"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "אושרו"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
 msgid "Blocked"
-msgstr ""
+msgstr "נחסמו"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
@@ -1268,6 +1276,8 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שנראה כמו ‚%1’ מבחינת הטקסט, אך למעשה מצביע אל "
+"‚%2’. מצב כזה בדרך כלל מעיד על הודעות תרמית שמנסות להונות את הנמען"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -2173,16 +2183,14 @@ msgid "Message not found."
 msgstr "ההודעה לא נמצאה."
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"האם לפתוח מצורף \"%1\"? שים לב כי פתיחת מצורף עלולה לסכן את אבטחת המערכת שלך."
+"לפתוח את הקובץ המצורף <filename>%1</filename>?<nl/>נא לשים לב שפתיחת קובץ "
+"מצורף יכולה לסכן את אבטחת המערכת שלך."
 
 #: widgets/attachmentdialog.cpp:32
 #, kde-format
@@ -2243,7 +2251,7 @@ msgstr ""
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr ""
+msgstr "יש ללחוץ כדי להחליף בין HTML, טקסט פשוט ולוח שנה."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
