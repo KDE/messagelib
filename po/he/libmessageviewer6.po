@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-03 15:50+0200\n"
+"PO-Revision-Date: 2024-03-09 22:24+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1286,6 +1286,8 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שמצביע לכתובת IP מספרית (%1) במקום לכתובת אתר "
+"טקסטואלית טיפוסית. מצב כזה בדרך כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1294,11 +1296,13 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שמצביע לכתובת IP במבנה הקסדצימלי (%1) במקום "
+"לכתובת אתר טקסטואלית טיפוסית. מצב כזה בדרך כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:141
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
-msgstr ""
+msgstr "הודעת הדוא״ל הזאת מכילה קישור (%1) שמוביל להפניה"
 
 #: scamdetection/scamdetectionwebengine.cpp:148
 #, kde-format
@@ -1306,6 +1310,8 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור (%1) שמכיל http:// מספר פעמים. מצב כזה בדרך "
+"כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
 #, kde-format
@@ -1350,12 +1356,14 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לגרום ל־Outlook(tm) להבין את התשובות שלך "
+"לתגובות לזימונים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
 #, kde-format
 msgid "&Mangle From:/To: headers in replies to invitations"
-msgstr ""
+msgstr "&ניהול כותרות מאת:/אל: (From/To) בתגובות לזימונים"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:33
@@ -1364,6 +1372,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לגרום ל־Outlook(tm) להבין את התגובות שלך "
+"להזמנות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
@@ -1381,12 +1391,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
+"Microsoft Outlook, בשימוש במשולב מול שרת Microsoft Exchange,\n"
+"חווה בעיה בהבנת הודעות דוא״ל groupware תומכות תקנים.\n"
+"יש להפעיל את האפשרות הזאת כדי לשלוח הזמנות groupware באופן ש־Microsoft "
+"Exchange מבין."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr ""
+msgstr "מתן שם לה&זמנות תומך Exchange"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1395,6 +1409,8 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
+"כשהאפשרות הזאת פעילה, המשתמש לא יראה את חלון כתיבת ההודעות. הודעות הזימון "
+"תישלחנה אוטומטית."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
@@ -1424,7 +1440,7 @@ msgstr "להדפיס רק את הטקסט הנבחר"
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr ""
+msgstr "כיבוד הגדרות ה&רחבת/צמצום סימני ציטוט"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
@@ -1466,13 +1482,13 @@ msgstr "הקטנת כתב הטקסט המ&צוטט:"
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr ""
+msgstr "הצגת הרחבת/צמצום סימני &ציטוט"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
-msgstr ""
+msgstr "רמת &צמצום אוטומטית:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
@@ -1636,7 +1652,7 @@ msgstr "נמחקו: %1"
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
-msgstr ""
+msgstr "מחקת קובץ מצורף מההודעה הזאת. כותרות ה־MIME המקורית לקובץ המצורף היו:"
 
 #: utils/messageviewerutil.cpp:641
 #, kde-format
@@ -1839,7 +1855,7 @@ msgstr "מחיקת קובץ מצורף"
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
-msgstr ""
+msgstr "אין תמיכה במחיקת קובץ מצורף מהודעת mailman מוצפנת או בסגנון ישן."
 
 #: viewer/viewer_p.cpp:427
 #, kde-format
@@ -2214,39 +2230,45 @@ msgid "Do not ask again"
 msgstr "לא לשאול שוב"
 
 #: widgets/htmlstatusbar.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
-msgstr "<qt><b> <br>ה<br>ו<br>ד<br>ע<br>ת<br>  <br>H<br>T<br>M<br>L </b> </qt>"
+msgstr ""
+"<qt><b><br />ה<br />ו<br />ד<br />ע<br />ת<br />  <br />H<br />T<br />M<br /"
+">L </b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
-"<qt><br>א<br>י<br>ן<br>ה<br>ו<br>ד<br>ע<br>ת<br><br>H<br>T<br>M<br>L </qt>"
+"<qt><br />ל<br />א<br /> <br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br /"
+">H<br />T<br />M<br />L<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
-msgstr "<qt><b> <br>ה<br>ו<br>ד<br>ע<br>ת<br>  <br>H<br>T<br>M<br>L </b> </qt>"
+msgstr ""
+"<qt><br />ה<br />ו<br />ד<br />ע<br />ה<br /> <br />פ<br />ש<br />ו<br /"
+">ט<br />ה<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br>א<br>י<br>ן<br>ה<br>ו<br>ד<br>ע<br>ת<br><br>H<br>T<br>M<br>L </qt>"
+"<qt><br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br />ל<br />ו<br />ח<br /> "
+"<br />ש<br />נ<br />ה<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
@@ -2265,6 +2287,12 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+"<qt>הזמנות בדרך כלל נשלחות בצירוף להודעות דוא״ל. המתג הזה משנה את הודעות "
+"הזמנה כך שההזמנה תהיה חלק מתוכן ההודעה; הכרחי לשליחת הודעות ותגובות ל־"
+"Microsoft Outlook.<br />אבל, כשבוחרים בהגדרה הזאת, לא מקבלים טקסט מפורט "
+"שתוכניות דוא״ל יכולות לקרוא; לכן, למי שיש תוכניות דוא״ל שלא מבינות את "
+"ההזמנות, ההודעות ששתקבלנה תהיינה מוזרות מאוד.<br />למי שיש תוכניות דוא״ל "
+"שמבינות את מבנה ההזמנות הזה עדיין יוכל לעבוד עם זה.</qt>"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
