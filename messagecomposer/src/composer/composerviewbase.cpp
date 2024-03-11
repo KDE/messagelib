@@ -1154,7 +1154,7 @@ void ComposerViewBase::slotQueueResult(KJob *job)
         // There is not much we can do now, since all the MessageQueueJobs have been
         // started.  So just wait for them to finish.
         // TODO show a message box or something
-        QString msg = i18n("There were problems trying to queue the message for sending: %1", job->errorString());
+        const QString msg = i18n("There were problems trying to queue the message for sending: %1", job->errorString());
 
         if (m_pendingQueueJobs == 0) {
             Q_EMIT failed(msg);
