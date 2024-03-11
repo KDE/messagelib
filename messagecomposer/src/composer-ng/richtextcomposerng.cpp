@@ -21,8 +21,6 @@
 
 #include <QRegularExpression>
 
-#define USE_TEXTHTML_BUILDER 1
-
 using namespace MessageComposer;
 
 class MessageComposer::RichTextComposerNgPrivate
@@ -188,7 +186,6 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed() && !wasConverted) {
-#ifdef USE_TEXTHTML_BUILDER
         auto pb = new KPIMTextEdit::TextHTMLBuilder();
 
         auto pmd = new KPIMTextEdit::MarkupDirector(pb);
@@ -202,12 +199,6 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
         textPart->setCleanHtml(cleanHtml);
         // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
         // qDebug() << " d->toCleanHtml() " << d->toCleanHtml();
-#else
-        QString cleanHtml = d->toCleanHtml();
-        d->fixHtmlFontSize(cleanHtml);
-        textPart->setCleanHtml(cleanHtml);
-        qDebug() << "cleanHtml  " << cleanHtml;
-#endif
         textPart->setEmbeddedImages(composerControler()->composerImages()->embeddedImages());
     }
 }
