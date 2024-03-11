@@ -1678,16 +1678,24 @@ void ComposerViewBase::updateRecipients(const KIdentityManagementCore::Identity 
 {
     QString oldIdentList;
     QString newIdentList;
-    if (type == MessageComposer::Recipient::Bcc) {
+    switch (type) {
+    case MessageComposer::Recipient::Bcc: {
         oldIdentList = oldIdent.bcc();
         newIdentList = ident.bcc();
-    } else if (type == MessageComposer::Recipient::Cc) {
+        break;
+    }
+    case MessageComposer::Recipient::Cc: {
         oldIdentList = oldIdent.cc();
         newIdentList = ident.cc();
-    } else if (type == MessageComposer::Recipient::ReplyTo) {
+        break;
+    }
+    case MessageComposer::Recipient::ReplyTo: {
         oldIdentList = oldIdent.replyToAddr();
         newIdentList = ident.replyToAddr();
-    } else {
+        break;
+    }
+    case MessageComposer::Recipient::To:
+    case MessageComposer::Recipient::Undefined:
         return;
     }
 
