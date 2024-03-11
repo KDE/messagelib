@@ -419,12 +419,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         mExpandedBcc = resolveJob->expandedBcc();
         mExpandedReplyTo = resolveJob->expandedReplyTo();
         if (autoresizeImage) {
-            QStringList listEmails;
-            listEmails << mExpandedFrom;
-            listEmails << mExpandedTo;
-            listEmails << mExpandedCc;
-            listEmails << mExpandedBcc;
-            listEmails << mExpandedReplyTo;
+            const QStringList listEmails = QStringList() << mExpandedFrom << mExpandedTo << mExpandedCc << mExpandedBcc << mExpandedReplyTo;
             MessageComposer::Utils resizeUtils;
             autoresizeImage = resizeUtils.filterRecipients(listEmails);
         }
