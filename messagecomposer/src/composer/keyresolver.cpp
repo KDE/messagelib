@@ -292,11 +292,13 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
         if (uid.isRevoked()) {
             rewookies.push_back(key);
         }
-        if (!uid.isRevoked() && uid.validity() == GpgME::UserID::Marginal) {
-            fishies.push_back(key);
-        }
-        if (!uid.isRevoked() && uid.validity() < GpgME::UserID::Never) {
-            ickies.push_back(key);
+        if (!uid.isRevoked()) {
+            if (uid.validity() == GpgME::UserID::Marginal) {
+                fishies.push_back(key);
+            }
+            if (uid.validity() < GpgME::UserID::Never) {
+                ickies.push_back(key);
+            }
         }
     }
 
