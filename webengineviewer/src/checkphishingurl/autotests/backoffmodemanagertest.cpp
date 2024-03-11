@@ -8,6 +8,7 @@
 #include "../backoffmodemanager.h"
 #include <QStandardPaths>
 #include <QTest>
+QTEST_GUILESS_MAIN(BackOffModeManagerTest)
 BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     : QObject(parent)
 {
@@ -18,27 +19,25 @@ BackOffModeManagerTest::~BackOffModeManagerTest() = default;
 
 void BackOffModeManagerTest::shouldHaveDefaultValue()
 {
-    WebEngineViewer::BackOffModeManager manager;
-    QVERIFY(!manager.isInBackOffMode());
-    QCOMPARE(manager.numberOfHttpFailed(), 0);
+    WebEngineViewer::BackOffModeManager *manager = WebEngineViewer::BackOffModeManager::self();
+    QVERIFY(!manager->isInBackOffMode());
+    QCOMPARE(manager->numberOfHttpFailed(), 0);
 }
 
 void BackOffModeManagerTest::shouldStartBackOffMode()
 {
-    WebEngineViewer::BackOffModeManager manager;
-    manager.startOffMode();
-    QVERIFY(manager.isInBackOffMode());
+    WebEngineViewer::BackOffModeManager *manager = WebEngineViewer::BackOffModeManager::self();
+    manager->startOffMode();
+    QVERIFY(manager->isInBackOffMode());
 }
 
 void BackOffModeManagerTest::shouldIncreaseBackOff()
 {
-    WebEngineViewer::BackOffModeManager manager;
+    WebEngineViewer::BackOffModeManager *manager = WebEngineViewer::BackOffModeManager::self();
     for (int i = 0; i < 5; ++i) {
-        manager.startOffMode();
+        manager->startOffMode();
     }
-    QCOMPARE(manager.numberOfHttpFailed(), 5);
+    QCOMPARE(manager->numberOfHttpFailed(), 5);
 }
-
-QTEST_GUILESS_MAIN(BackOffModeManagerTest)
 
 #include "moc_backoffmodemanagertest.cpp"
