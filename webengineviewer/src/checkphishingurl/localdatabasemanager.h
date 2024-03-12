@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "searchfullhashjob.h"
+#include "checkphishingurl/checkphishingurlutil.h"
 #include "webengineviewer_export.h"
 #include <QObject>
 #include <QUrl>
