@@ -8,7 +8,6 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 add_definitions( -DCHECKPHISHINGURL_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 add_executable(checkphishingurlgui checkphishingurlgui.cpp checkphishingurlgui.h)
 target_link_libraries(checkphishingurlgui
-    KF6::KIOCore
     KPim6::WebEngineViewer
     
     Qt::WebEngineWidgets
@@ -17,7 +16,6 @@ target_link_libraries(checkphishingurlgui
 
 add_executable(searchfullhashgui searchfullhashgui.cpp searchfullhashgui.h)
 target_link_libraries(searchfullhashgui
-    KF6::KIOCore
     KPim6::WebEngineViewer
     
     Qt::WebEngineWidgets
@@ -26,7 +24,6 @@ target_link_libraries(searchfullhashgui
 
 add_executable(createphishingurldatabasegui createphishingurldatabasegui.cpp createphishingurldatabasegui.h)
 target_link_libraries(createphishingurldatabasegui
-    KF6::KIOCore
     KPim6::WebEngineViewer
     
     Qt::WebEngineWidgets
@@ -35,7 +32,6 @@ target_link_libraries(createphishingurldatabasegui
 
 add_executable(managelocaldatabasegui managelocaldatabasegui.cpp managelocaldatabasegui.h)
 target_link_libraries(managelocaldatabasegui
-    KF6::KIOCore
     KPim6::WebEngineViewer
     
     Qt::WebEngineWidgets
@@ -44,7 +40,6 @@ target_link_libraries(managelocaldatabasegui
 
 add_executable(webengineviewwithsafebrowsingsupport webengineviewwithsafebrowsingsupport.cpp webengineviewwithsafebrowsingsupport.h)
 target_link_libraries(webengineviewwithsafebrowsingsupport
-    KF6::KIOCore
     KPim6::WebEngineViewer
     
     Qt::WebEngineWidgets
