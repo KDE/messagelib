@@ -153,7 +153,6 @@ target_link_libraries(KPim6MessageList
     KPim6::AkonadiMime
     KPim6::Mime
     PRIVATE
-    KF6::KIOCore
     KPim6::MessageCore
     KPim6::PimCommonAkonadi
     KPim6::AkonadiSearchPIM
