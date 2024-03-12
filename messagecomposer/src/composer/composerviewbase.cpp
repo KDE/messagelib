@@ -1073,17 +1073,17 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    const QList<QByteArray> toAddresses = msg->to()->addresses();
-    for (const QByteArray &address : toAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    const auto toAddresses = msg->to()->mailboxes();
+    for (const auto &address : toAddresses) {
+        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
     }
-    const QList<QByteArray> ccAddresses = msg->cc()->addresses();
-    for (const QByteArray &address : ccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    const auto ccAddresses = msg->cc()->mailboxes();
+    for (const auto &address : ccAddresses) {
+        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
     }
-    const QList<QByteArray> bccAddresses = msg->bcc()->addresses();
-    for (const QByteArray &address : bccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    const auto bccAddresses = msg->bcc()->mailboxes();
+    for (const auto &address : bccAddresses) {
+        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
     }
 }
 
