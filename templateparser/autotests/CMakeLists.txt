@@ -17,7 +17,6 @@ macro(add_templateparser_unittest _source)
     KPim6::TemplateParser
     KPim6::MimeTreeParser
     Qt::Test
-    KF6::KIOCore
     KPim6::Mime
     KPim6::IdentityManagementCore
     KF6::XmlGui
