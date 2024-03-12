@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include "checkphishingurl/checkphishingurlutil.h"
 #include "webengineviewer_export.h"
 #include <QObject>
 #include <QUrl>
+#include <WebEngineViewer/CheckPhishingUrlUtil>
 namespace WebEngineViewer
 {
 class WebEngineView;
