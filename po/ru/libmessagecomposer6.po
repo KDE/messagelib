@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-12 00:38+0000\n"
 "PO-Revision-Date: 2024-02-07 12:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -112,7 +112,7 @@ msgid "Attach"
 msgstr "Вложить"
 
 #: attachment/attachmentcontrollerbase.cpp:461
-#: composer/composerviewbase.cpp:1901
+#: composer/composerviewbase.cpp:1904
 #, kde-format
 msgid "&Attach File..."
 msgstr "Вло&жить файл..."
@@ -444,67 +444,67 @@ msgstr "Подписывание/шифрование письма"
 
 # BUGME: What is "composer" here, may be "unable to open composer window"? What does all this mean for the user? --aspotashev
 # BUGME: "компоновщик" -- неправильный перевод, нужно исправить; please add "message composer" to Russian glossary. --aspotashev
-#: composer/composerviewbase.cpp:516
+#: composer/composerviewbase.cpp:511
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Не удалось создать окно редактора письма."
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:521
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Изменить размер изображений?"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:522
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Автоизменение размера"
 
-#: composer/composerviewbase.cpp:528
+#: composer/composerviewbase.cpp:523
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Автоматически изменить размер"
 
-#: composer/composerviewbase.cpp:529
+#: composer/composerviewbase.cpp:524
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Не изменять размер"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "Истёк срок действия ключа OpenPGP"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "Истёк срок действия сертификата S/MIME"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "Срок действия ключа OpenPGP истекает"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Срок действия сертификата S/MIME истекает"
 
-#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
-#: composer/composerviewbase.cpp:852
+#: composer/composerviewbase.cpp:801 composer/composerviewbase.cpp:815
+#: composer/composerviewbase.cpp:847
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Не удалось разобрать ключи. Сообщите об ошибке разработчикам."
 
-#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
+#: composer/composerviewbase.cpp:1053 composer/composerviewbase.cpp:1318
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Задание отменено пользователем"
 
 # BUGME: What does this mean for the user? Do computer _compose_ emails nowadays? --aspotashev
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1058
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -514,38 +514,38 @@ msgstr ""
 "Сообщите об этом разработчикам."
 
 # BUGME: What does this mean for the user? Do computer _compose_ emails nowadays? --aspotashev
-#: composer/composerviewbase.cpp:1065
+#: composer/composerviewbase.cpp:1060
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "При составлении письма произошла ошибка: %1"
 
-#: composer/composerviewbase.cpp:1162
+#: composer/composerviewbase.cpp:1157
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Не удалось поставить письмо в очередь на отправку: %1"
 
 # BUGME: What does this mean for the user? Do computer _compose_ emails nowadays? --aspotashev
-#: composer/composerviewbase.cpp:1326
+#: composer/composerviewbase.cpp:1321
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Не удалось автоматически сохранить письмо: %1"
 
-#: composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1340
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Не удалось записать все данные в файл."
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1343
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Не удалось завершить запись в файл."
 
-#: composer/composerviewbase.cpp:1352
+#: composer/composerviewbase.cpp:1347
 #, kde-format
 msgid "Could not open file."
 msgstr "Не удалось открыть файл."
 
-#: composer/composerviewbase.cpp:1359
+#: composer/composerviewbase.cpp:1354
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -556,18 +556,18 @@ msgstr ""
 "%2\n"
 "Причина: %3"
 
-#: composer/composerviewbase.cpp:1365
+#: composer/composerviewbase.cpp:1360
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Ошибка автоматического сохранения"
 
-#: composer/composerviewbase.cpp:1478
+#: composer/composerviewbase.cpp:1473
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Не удалось сохранить письмо: %1"
 
-#: composer/composerviewbase.cpp:1897
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -578,18 +578,18 @@ msgstr ""
 "его нет.\n"
 "Вложить какой-либо файл в письмо?"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1903
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Напоминание о вложении"
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid "&Send as Is"
 msgstr "Отправить &как есть"
 
-#: composer/composerviewbase.cpp:1954
+#: composer/composerviewbase.cpp:1957
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -600,24 +600,24 @@ msgstr ""
 "решить, подписывать сообщение или нет.\n"
 "Подписать это письмо?"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1991
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Подписать письмо?"
 
-#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1964 composer/composerviewbase.cpp:1992
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Подписать"
 
-#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
+#: composer/composerviewbase.cpp:1965 composer/composerviewbase.cpp:1993
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Не подписывать"
 
-#: composer/composerviewbase.cpp:1983
+#: composer/composerviewbase.cpp:1986
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -626,7 +626,7 @@ msgstr ""
 "Для этих получателей определены несогласованные параметры подписывания.\n"
 "Подписать это письмо?"
 
-#: composer/composerviewbase.cpp:2010
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -634,18 +634,18 @@ msgid ""
 msgstr ""
 "Для подписи этого письма в профиле не настроены действительные ключи подписи."
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Отправить неподписанным?"
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Отправить &неподписанным"
 
-#: composer/composerviewbase.cpp:2028
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -657,7 +657,7 @@ msgstr ""
 "правила.\n"
 "Подписать все части?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -668,28 +668,28 @@ msgstr ""
 "Отправка неподписанного письма может нарушать установленные правила.\n"
 "Подписать письмо?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Подписать все части"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign"
 msgstr "&Подписать"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Предупреждение о неподписанном письме"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid "Send &As Is"
 msgstr "Отправить &как есть"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -698,7 +698,7 @@ msgstr ""
 "Для всех получателей были найдены ключи, подходящие для шифрования.\n"
 "Зашифровать это письмо?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2093
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -709,34 +709,34 @@ msgstr ""
 "указать, следует ли шифровать данное письмо.\n"
 "Зашифровать письмо?"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Зашифровать письмо?"
 
-#: composer/composerviewbase.cpp:2097
+#: composer/composerviewbase.cpp:2100
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Подписать && &зашифровать"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
-#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1358
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2130
+#: composer/composerviewbase.cpp:2179 composer/keyresolver.cpp:1322
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgid "&Encrypt"
 msgstr "За&шифровать"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2184
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Только подписать"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2184
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Отправить &как есть"
 
-#: composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2122
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -745,12 +745,12 @@ msgstr ""
 "Для этих получателей определены несогласованные параметры шифрования.\n"
 "Зашифровать письмо?"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2131
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Не шифровать"
 
-#: composer/composerviewbase.cpp:2148
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -760,18 +760,18 @@ msgstr ""
 "Для шифрования этого письма и личной копии в профиле не настроены доверенные "
 "ключи шифрования."
 
-#: composer/composerviewbase.cpp:2152
+#: composer/composerviewbase.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Отправить без шифрования?"
 
-#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
+#: composer/composerviewbase.cpp:2155 composer/keyresolver.cpp:1345
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Отправить &незашифрованным"
 
-#: composer/composerviewbase.cpp:2167
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -784,7 +784,7 @@ msgstr ""
 "правила и/или привести к утечке важной информации.\n"
 "Зашифровать все части?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2175
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -797,18 +797,18 @@ msgstr ""
 "привести к утечке важной информации.\n"
 "Зашифровать письмо?"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Зашифровать все части"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Предупреждение о незашифрованном письме"
 
-#: composer/keyresolver.cpp:309
+#: composer/keyresolver.cpp:311
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -817,7 +817,7 @@ msgstr ""
 "Недостаточный уровень доверия для одного или нескольких указанных ключей "
 "OpenPGP или сертификатов S/MIME для шифрования."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:315
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -826,7 +826,7 @@ msgstr ""
 "Недостаточный уровень доверия для одного или нескольких указанных ключей "
 "OpenPGP или сертификатов S/MIME для шифрования писем получателю «%1»."
 
-#: composer/keyresolver.cpp:320
+#: composer/keyresolver.cpp:322
 #, kde-format
 msgid ""
 "\n"
@@ -835,7 +835,7 @@ msgstr ""
 "\n"
 "Следующие ключи обладают минимальным доверием: \n"
 
-#: composer/keyresolver.cpp:324
+#: composer/keyresolver.cpp:326
 #, kde-format
 msgid ""
 "\n"
@@ -844,7 +844,7 @@ msgstr ""
 "\n"
 "Следующие ключи или сертификаты имеют неизвестный уровень доверия: \n"
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:330
 #, kde-format
 msgid ""
 "\n"
@@ -853,13 +853,13 @@ msgstr ""
 "\n"
 "Следующие ключи или сертификаты <b>отозваны</b>: \n"
 
-#: composer/keyresolver.cpp:334
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Недостаточно доверия ключам шифрования"
 
-#: composer/keyresolver.cpp:648
+#: composer/keyresolver.cpp:650
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -874,14 +874,14 @@ msgstr ""
 "сертификаты в диалоге изменения профиля.\n"
 "При продолжении будут запрошены подходящие ключи."
 
-#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
-#: composer/keyresolver.cpp:1040
+#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Невозможно использовать ключи шифрования"
 
-#: composer/keyresolver.cpp:690
+#: composer/keyresolver.cpp:692
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -895,14 +895,14 @@ msgstr ""
 "сертификаты в диалоге изменения профиля.\n"
 "При продолжении будут запрошены подходящие ключи."
 
-#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
-#: composer/keyresolver.cpp:1087
+#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
+#: composer/keyresolver.cpp:1089
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Невозможно использовать ключи подписи"
 
-#: composer/keyresolver.cpp:1001
+#: composer/keyresolver.cpp:1003
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -918,7 +918,7 @@ msgstr ""
 "Можно продолжить без шифрования самому себе, но тогда прочитать свои "
 "собственные письма не удастся."
 
-#: composer/keyresolver.cpp:1030
+#: composer/keyresolver.cpp:1032
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -934,7 +934,7 @@ msgstr ""
 "Можно продолжить без шифрования самому себе, но тогда прочитать свои "
 "собственные письма не удастся."
 
-#: composer/keyresolver.cpp:1062
+#: composer/keyresolver.cpp:1064
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -946,12 +946,12 @@ msgstr ""
 "должно быть подписано с помощью OpenPGP, однако в текущем профиле нет "
 "настроенных проверенных ключей подписи OpenPGP."
 
-#: composer/keyresolver.cpp:1070
+#: composer/keyresolver.cpp:1072
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
 msgstr "Не подписывать OpenPGP"
 
-#: composer/keyresolver.cpp:1080
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -963,12 +963,12 @@ msgstr ""
 "должно быть подписано с помощью S/MIME, однако в текущем профиле нет "
 "настроенных сертификатов подписи S/MIME."
 
-#: composer/keyresolver.cpp:1088
+#: composer/keyresolver.cpp:1090
 #, kde-format
 msgid "Do Not S/MIME-Sign"
 msgstr "Не подписывать S/MIME"
 
-#: composer/keyresolver.cpp:1150
+#: composer/keyresolver.cpp:1152
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -978,13 +978,13 @@ msgstr ""
 "Почтовые клиенты получателей не поддерживают подписи вашими ключами.\n"
 "Отправить письмо без подписи?"
 
-#: composer/keyresolver.cpp:1154
+#: composer/keyresolver.cpp:1156
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Невозможно подписать"
 
-#: composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1319
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -993,14 +993,14 @@ msgstr ""
 "Не выбран ключ шифрования для себя. Вы не сможете прочитать письмо, если "
 "зашифруете его."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
-#: composer/keyresolver.cpp:1358
+#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Предупреждение о потере ключа"
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1338
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1009,7 +1009,7 @@ msgstr ""
 "Не выбран ключ шифрования для получателя этого письма, поэтому оно не будет "
 "зашифровано."
 
-#: composer/keyresolver.cpp:1340
+#: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1018,7 +1018,7 @@ msgstr ""
 "Не выбран ключ шифрования для одного из получателей этого письма, поэтому "
 "оно не будет зашифровано."
 
-#: composer/keyresolver.cpp:1350
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1027,7 +1027,7 @@ msgstr ""
 "Не выбран ключ шифрования для одного из получателей этого письма, этот "
 "человек не сможет расшифровать его."
 
-#: composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1036,12 +1036,12 @@ msgstr ""
 "Не выбраны ключи шифрования для нескольких получателей этого письма, эти "
 "люди не смогут расшифровать его."
 
-#: composer/keyresolver.cpp:1431
+#: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Выбор ключа шифрования"
 
-#: composer/keyresolver.cpp:1475
+#: composer/keyresolver.cpp:1477
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1056,7 +1056,7 @@ msgstr ""
 "Повторно назначьте сертификат, который должен использоваться для этого "
 "получателя."
 
-#: composer/keyresolver.cpp:1547
+#: composer/keyresolver.cpp:1549
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1073,7 +1073,7 @@ msgstr ""
 "подходящего сертификата, то можно запустить поиск внешних сертификатов, "
 "нажав кнопку «Поиск внешних сертификатов».</qt>"
 
-#: composer/keyresolver.cpp:1557
+#: composer/keyresolver.cpp:1559
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
