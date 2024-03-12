@@ -201,7 +201,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
     }
     mPhishingDatabase = new WebEngineViewer::LocalDataBaseManager(this);
-    mPhishingDatabase->initialize();
+    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()) {
+        mPhishingDatabase->initialize();
+    }
     connect(mPhishingDatabase, &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &ViewerPrivate::slotCheckedUrlFinished);
 
     mShareServiceManager = new PimCommon::ShareServiceUrlManager(this);
