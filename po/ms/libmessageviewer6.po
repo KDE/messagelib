@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2024-03-13 02:23+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1808,7 +1808,7 @@ msgstr "Dokumentasi"
 msgid "Turn on HTML rendering for this message."
 msgstr "Buka penrealisasi HTML untuk mesej ini."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1629
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Muatkan rujukan luar dari internet untuk mesej ini."
@@ -1897,7 +1897,7 @@ msgstr "Buka dalam Buku Alamat"
 msgid "&Copy Email Address"
 msgstr "Alamat E-mel"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2734
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Alamat telah disalin ke klipbod."
@@ -1959,387 +1959,387 @@ msgstr "Laksanakan Arahan"
 msgid "Loading message..."
 msgstr "Mengalihkan mesej"
 
-#: viewer/viewer_p.cpp:344
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "&Buang Lampiran"
 
-#: viewer/viewer_p.cpp:379
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:428
+#: viewer/viewer_p.cpp:430
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Buka Dengan..."
 
-#: viewer/viewer_p.cpp:446
+#: viewer/viewer_p.cpp:448
 #, fuzzy, kde-format
 #| msgid "Other Actio&ns"
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Ti&ndakan Lain"
 
-#: viewer/viewer_p.cpp:448 viewer/viewer_p.cpp:461
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Buka Dengan..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1739
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Buka"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1746
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Paparkan"
 
-#: viewer/viewer_p.cpp:547
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:552
+#: viewer/viewer_p.cpp:554
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "Simpan &Sebagai"
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1756
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Salin Ke"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1761
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
 msgstr "&Buang Lampiran"
 
-#: viewer/viewer_p.cpp:580
+#: viewer/viewer_p.cpp:582
 #, fuzzy, kde-format
 #| msgid "Reply to A&uthor..."
 msgid "Reply To Author"
 msgstr "Jawab kepada &Pengarang..."
 
-#: viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:590
 #, fuzzy, kde-format
 msgid "Reply To All"
 msgstr "&Jawab"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1766
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "&Ciri"
 
-#: viewer/viewer_p.cpp:731
+#: viewer/viewer_p.cpp:733
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:734
 #, fuzzy, kde-format
 #| msgid "KDE Email Client"
 msgid "The KDE Mail Client"
 msgstr "Pelanggan KDE E-mail "
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1279
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Paparkan Lampiran: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Lampiran"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Pilih gaya paparan lampiran"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Sebagai Ikon"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Paparkan semua lampiran sebagai ikon. Klik untuk melihatnya."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Cekap"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Paparkan lampiran seperti yang dicadangkan oleh penghantar"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Dalam garisan"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Paparkan semua lampiran baris dalam (jika boleh)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Sembunyikan"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1510
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Jangan paparkan lampiran dalam pemapar mesej"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1517
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Paparkan semua lampiran sebagai ikon. Klik untuk melihatnya."
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1522
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Setkan Pengekodan"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Auto"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1537
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Salin Ke"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1544
 #, fuzzy, kde-format
 msgid "Select All Text"
 msgstr "Pilih &Semua Mesej"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1550 viewer/viewer_p.cpp:2063
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Salin Alamat Pautan"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1555
 #, kde-format
 msgid "Open URL"
 msgstr "Buka URL"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1560
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Guna Fon Yang Di&tetapkan"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1566
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "Pemapar Sruktur Mesej"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgid "&View Source"
 msgstr "&Paparkan Sumber"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1576
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "_n: 1 mesej, %2."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1582
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Simpan Sebagai Draf"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1586
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Simpan Sebagai Draf"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1593
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "Pilih &Semua Mesej"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "Pilih &Semua Mesej"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1603
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "Pilih &Semua Mesej"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1608
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "Pilih &Semua Mesej"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1618
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1625
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "Muatkan Rujukan Luar"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1631 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1637
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Pi&lih..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1655
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Pilih Lokasi"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1661
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Cari dalam Mesej..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1670
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1736
 #, kde-format
 msgid "Save &As..."
 msgstr "Simpan &Sebagai"
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1744
 #, kde-format
 msgid "Open With..."
 msgstr "Buka Dengan..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Simpan Semua Lampiran..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1983
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1983
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1986
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Fail tandatangan  tidak sah"
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1986
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2006
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2007
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2061
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Alamat E-mel"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2144
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mesej sebagai Teks Biasa"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2740
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL telah disalin ke klipbod."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2892
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Mesej ditandatangani oleh %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2897
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
