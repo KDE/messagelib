@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-22 00:38+0000\n"
+"POT-Creation-Date: 2024-03-13 00:38+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -1834,7 +1834,7 @@ msgstr "Documentația"
 msgid "Turn on HTML rendering for this message."
 msgstr "Activează randarea HTML pentru acest mesaj."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1626
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Încarcă referințele externe din Internet pentru acest mesaj."
@@ -1922,7 +1922,7 @@ msgstr "Deschide în cartea de adrese"
 msgid "&Copy Email Address"
 msgstr "Adresă de e-mail"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2705
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Am copiat adresa în clipboard."
@@ -1983,7 +1983,7 @@ msgstr "Execută"
 msgid "Loading message..."
 msgstr "Mutare mesaje..."
 
-#: viewer/viewer_p.cpp:343
+#: viewer/viewer_p.cpp:345
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -1992,380 +1992,380 @@ msgstr ""
 "Ștergerea unui atașament ar putea invalida orice semnătură digitală de pe "
 "mesaj."
 
-#: viewer/viewer_p.cpp:344 viewer/viewer_p.cpp:379
+#: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Șterge atașamentul"
 
-#: viewer/viewer_p.cpp:378
+#: viewer/viewer_p.cpp:380
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:427
+#: viewer/viewer_p.cpp:429
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Deschidere cu..."
 
-#: viewer/viewer_p.cpp:445
+#: viewer/viewer_p.cpp:447
 #, fuzzy, kde-format
 #| msgid "Other Actio&ns..."
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Alte acțiu&ni..."
 
-#: viewer/viewer_p.cpp:447 viewer/viewer_p.cpp:460
+#: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Deschidere cu..."
 
-#: viewer/viewer_p.cpp:524 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Deschide"
 
-#: viewer/viewer_p.cpp:538 viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Vizualizează"
 
-#: viewer/viewer_p.cpp:546
+#: viewer/viewer_p.cpp:548
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:551
+#: viewer/viewer_p.cpp:553
 #, kde-format
 msgid "Save As..."
 msgstr "Salvare ca..."
 
-#: viewer/viewer_p.cpp:557 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Copiază"
 
-#: viewer/viewer_p.cpp:568 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Șterge atașamentul"
 
-#: viewer/viewer_p.cpp:579
+#: viewer/viewer_p.cpp:581
 #, fuzzy, kde-format
 #| msgid "Reply to A&uthor..."
 msgid "Reply To Author"
 msgstr "Răspunde &autorului..."
 
-#: viewer/viewer_p.cpp:587
+#: viewer/viewer_p.cpp:589
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Reply to All"
 msgid "Reply To All"
 msgstr "Răspunde la toți"
 
-#: viewer/viewer_p.cpp:593 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "Proprietăți"
 
-#: viewer/viewer_p.cpp:730
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:731
+#: viewer/viewer_p.cpp:733
 #, fuzzy, kde-format
 #| msgid "KDE Email Client"
 msgid "The KDE Mail Client"
 msgstr "Client de poștă KDE"
 
-#: viewer/viewer_p.cpp:1276
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Vizualizare atașament: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Atașamente"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Alege stilul de afișare a atașamentelor"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Ca &pictograme"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Arată toate atașamentele ca pictograme. Apăsați pentru a le vedea."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Inteligent"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Arată atașamentele așa cum este sugerat de către expeditor."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "În &linie"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Arată toate atașamentele în linie (dacă este posibil)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Ascunde"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nu arăta atașamentele în vizualizarea mesajului"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1516
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Arată toate atașamentele ca pictograme. Apăsați pentru a le vedea."
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Stabilește codarea"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automat"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Copiază în"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1543
 #, kde-format
 msgid "Select All Text"
 msgstr "Selectează tot textul"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2060
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2062
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copiază adresa legăturii"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Deschide URL-ul"
 
-#: viewer/viewer_p.cpp:1557
+#: viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Utilizează font de lățime fi&xă"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1565
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "Vizualizor structură mesaj"
 
-#: viewer/viewer_p.cpp:1568
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgid "&View Source"
 msgstr "Afișează &sursa"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
 msgid "&Save Message..."
 msgstr " mesaj"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&Salvează ca ciornă"
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&Salvează ca ciornă"
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "Derulează mesajul în sus"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1597
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "Derulează mesajul în jos"
 
-#: viewer/viewer_p.cpp:1600
+#: viewer/viewer_p.cpp:1602
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "Derulează mesajul în sus (mai mult)"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "Derulează mesajul în jos (mai mult)"
 
-#: viewer/viewer_p.cpp:1615
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1622
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "Încarcă referințele externe"
 
-#: viewer/viewer_p.cpp:1628 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1630 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1634
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgctxt "@action:button Open recipient selection dialog."
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "Se&lectare..."
 
-#: viewer/viewer_p.cpp:1652
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "Alegere locație"
 
-#: viewer/viewer_p.cpp:1658
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Caută în mesaj..."
 
-#: viewer/viewer_p.cpp:1667
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Salv&are ca..."
 
-#: viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Deschide cu..."
 
-#: viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Salvează toate atașamentele..."
 
-#: viewer/viewer_p.cpp:1980
+#: viewer/viewer_p.cpp:1982
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1980
+#: viewer/viewer_p.cpp:1982
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1983
+#: viewer/viewer_p.cpp:1985
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Fișierul semnătură nu este valid"
 
-#: viewer/viewer_p.cpp:1983
+#: viewer/viewer_p.cpp:1985
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2005
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2006
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2058
+#: viewer/viewer_p.cpp:2060
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Adresă de e-mail"
 
-#: viewer/viewer_p.cpp:2141
+#: viewer/viewer_p.cpp:2143
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mesaj ca text simplu"
 
-#: viewer/viewer_p.cpp:2711
+#: viewer/viewer_p.cpp:2713
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Am copiat URL-ul în clipboard."
 
-#: viewer/viewer_p.cpp:2863
+#: viewer/viewer_p.cpp:2865
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Mesajul a fost semnat de %1."
 
-#: viewer/viewer_p.cpp:2868
+#: viewer/viewer_p.cpp:2870
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
