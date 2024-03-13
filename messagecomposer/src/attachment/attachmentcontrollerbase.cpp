@@ -27,6 +27,7 @@
 #include <Akonadi/ItemFetchJob>
 #include <KIO/JobUiDelegateFactory>
 #include <QIcon>
+#include <QStringConverter>
 
 #include <QMenu>
 #include <QPointer>
@@ -35,7 +36,6 @@
 #include "messagecomposer_debug.h"
 #include <KActionCollection>
 #include <KActionMenu>
-#include <KEncodingFileDialog>
 #include <KFileItemActions>
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
@@ -893,15 +893,36 @@ void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()
 
 void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
-    const KEncodingFileDialog::Result result =
-        KEncodingFileDialog::getOpenUrlsAndEncoding(QString(), QUrl(), QString(), d->wParent, i18nc("@title:window", "Attach File"));
-    if (!result.URLs.isEmpty()) {
-        const QString encoding = MimeTreeParser::NodeHelper::fixEncoding(result.encoding);
-        const int numberOfFiles(result.URLs.count());
+    const auto urls = QFileDialog::getOpenFileUrls(d->wParent, i18nc("@title:window", "Attach File"));
+    if (!urls.isEmpty()) {
+        const int numberOfFiles(urls.count());
         for (int i = 0; i < numberOfFiles; ++i) {
-            const QUrl url = result.URLs.at(i);
+            const QUrl url = urls.at(i);
+            std::optional<QStringConverter::Encoding> encoding;
+
+            QFile file(url.toLocalFile());
+            if (file.open(QIODeviceBase::ReadOnly)) {
+                auto content = file.read(1024 * 1024); // only read the first 1MB
+                if (content.isEmpty()) {
+                    encoding = QStringConverter::System;
+                } else if (url.toLocalFile().endsWith(QStringLiteral("html"))) {
+                    encoding = QStringConverter::encodingForHtml(content);
+                } else {
+                    encoding = QStringConverter::encodingForData(content);
+                }
+            }
+
+            auto encodingName = QStringConverter::nameForEncoding(encoding.value_or(QStringConverter::System));
+            if (!encodingName) {
+                encodingName = "UTF-8";
+            }
+
+            if (strcmp(encodingName, "Locale") == 0) {
+                encodingName = "UTF-8";
+            }
+
             QUrl urlWithEncoding = url;
-            MessageCore::StringUtil::setEncodingFile(urlWithEncoding, encoding);
+            MessageCore::StringUtil::setEncodingFile(urlWithEncoding, QLatin1StringView(encodingName));
             QMimeDatabase mimeDb;
             const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
             if (mimeType.name() == QLatin1StringView("inode/directory")) {
