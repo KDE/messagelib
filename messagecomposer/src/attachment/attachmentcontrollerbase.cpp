@@ -163,7 +163,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachmentRemove
 void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to compress attachment"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to compress attachment"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
 
@@ -197,7 +197,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
 void AttachmentControllerBase::AttachmentControllerBasePrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach file"));
+        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach file"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
 
@@ -270,7 +270,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::reloadAttachment
 void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to reload attachment"));
+        KMessageBox::error(wParent, job->errorString(), i18n("Failed to reload attachment"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
     auto ajob = qobject_cast<AttachmentUpdateJob *>(job);
@@ -373,7 +373,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachPublicKeyJ
     // is that we want to show the proper caption ("public key" instead of "file")...
 
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach public key"));
+        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach public key"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
 
@@ -387,7 +387,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachVcardFromA
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vCard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach vCard"));
+        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach vCard"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
 
@@ -400,7 +400,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachClipBoardE
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get try to attach text from clipboard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach text from clipboard"));
+        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach text from clipboard"), KMessageBox::Notify | KMessageBox::PlainText);
         return;
     }
 
@@ -710,7 +710,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
     job->setDeleteTemporaryFile(true);
     connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
         if (job->error() == KIO::ERR_USER_CANCELED) {
-            KMessageBox::error(d->wParent, i18n("KMail was unable to open the attachment."), job->errorString());
+            KMessageBox::error(d->wParent, i18n("KMail was unable to open the attachment."), job->errorString(), KMessageBox::Notify | KMessageBox::PlainText);
             delete tempFile;
         } else {
             // The file was opened.  Delete it only when the composer is closed
@@ -821,7 +821,10 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
             if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()),
                                                    i18nc("@title:window", "Save to File"),
-                                                   KGuiItem(i18n("&Replace")))
+                                                   KGuiItem(i18n("&Replace")),
+                                                   KStandardGuiItem::cancel(),
+                                                   {},
+                                                   KMessageBox::Notify | KMessageBox::PlainText)
                 == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);
             }
@@ -937,7 +940,7 @@ void AttachmentControllerBase::addAttachmentUrlSync(const QUrl &url)
         addAttachment(part);
     } else {
         if (ajob->error()) {
-            KMessageBox::error(d->wParent, ajob->errorString(), i18nc("@title:window", "Failed to attach file"));
+            KMessageBox::error(d->wParent, ajob->errorString(), i18nc("@title:window", "Failed to attach file"), KMessageBox::Notify | KMessageBox::PlainText);
         }
     }
 }
