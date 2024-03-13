@@ -730,7 +730,11 @@ QString cleanSubject(KMime::Message *msg)
 
 QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
-    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace, newPrefix);
+    if (auto subject = msg->subject(false)) {
+        return replacePrefixes(subject->asUnicodeString(), prefixRegExps, replace, newPrefix);
+    } else {
+        return {};
+    }
 }
 
 QString forwardSubject(KMime::Message *msg)

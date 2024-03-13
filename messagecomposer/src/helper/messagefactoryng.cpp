@@ -126,7 +126,9 @@ void MessageFactoryNG::createReplyAsync()
 
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
-    replyToList = mOrigMsg->replyTo()->mailboxes();
+    if (auto replyTo = mOrigMsg->replyTo(false)) {
+        replyToList = replyTo->mailboxes();
+    }
 
     msg->contentType()->setCharset("utf-8");
 
