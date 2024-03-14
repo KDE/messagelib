@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:38+0000\n"
+"POT-Creation-Date: 2024-03-14 00:38+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1175,17 +1175,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr ""
 
-#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "басқаға жіберілген хат"
 
-#: helper/messagefactoryng.cpp:572
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Алған туралы:"
 
-#: helper/messagefactoryng.cpp:699
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"

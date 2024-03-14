@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:38+0000\n"
+"POT-Creation-Date: 2024-03-14 00:38+0000\n"
 "PO-Revision-Date: 2013-01-17 21:45+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1202,17 +1202,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Μη έγκυρος φάκελος"
 
-#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "προωθημένο μήνυμα"
 
-#: helper/messagefactoryng.cpp:572
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Απόδειξη:"
 
-#: helper/messagefactoryng.cpp:699
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
