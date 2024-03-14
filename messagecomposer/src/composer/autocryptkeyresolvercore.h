@@ -20,7 +20,7 @@ public:
     explicit AutocryptKeyResolverCore(bool encrypt, bool sign, GpgME::Protocol format = GpgME::UnknownProtocol);
     ~AutocryptKeyResolverCore();
 
-    Kleo::KeyResolverCore::Result resolve();
+    [[nodiscard]] Kleo::KeyResolverCore::Result resolve();
 
     [[nodiscard]] bool isAutocryptKey(const QString &recipient) const;
     [[nodiscard]] bool isGossipKey(const QString &recipient) const;
