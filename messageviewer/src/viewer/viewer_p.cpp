@@ -2330,6 +2330,7 @@ void ViewerPrivate::updatePalette()
     updateColorFromScheme();
     cssHelper()->updateColor();
     recreateCssHelper();
+    mDkimWidgetInfo->updatePalette();
     // update(MimeTreeParser::Force);
 }
 

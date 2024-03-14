@@ -30,15 +30,12 @@ public:
     void setCurrentItemId(Akonadi::Item::Id currentItemId);
 
     [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
-
-protected:
-    [[nodiscard]] bool event(QEvent *e) override;
+    void updatePalette();
 
 private:
     MESSAGEVIEWER_NO_EXPORT void updateInfo();
     MESSAGEVIEWER_NO_EXPORT void updateToolTip();
     MESSAGEVIEWER_NO_EXPORT void initColors();
-    MESSAGEVIEWER_NO_EXPORT void updatePalette();
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     QLabel *const mLabel;
     QColor mWarningColor;
