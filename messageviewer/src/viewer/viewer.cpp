@@ -93,6 +93,17 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::sendResponse, this, &Viewer::sendResponse);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
+    qGuiApp->installEventFilter(this);
+    slotGeneralPaletteChanged();
+}
+
+bool Viewer::eventFilter(QObject *obj, QEvent *event)
+{
+    Q_UNUSED(obj);
+    if (event->type() == QEvent::ApplicationPaletteChange) {
+        slotGeneralPaletteChanged();
+    }
+    return false;
 }
 
 void Viewer::slotGeneralPaletteChanged()
@@ -349,8 +360,6 @@ bool Viewer::event(QEvent *e)
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;
-    } else if (e->type() == QEvent::ApplicationPaletteChange) {
-        slotGeneralPaletteChanged();
     }
 
     return QWidget::event(e);

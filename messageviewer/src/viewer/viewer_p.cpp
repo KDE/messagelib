@@ -2330,7 +2330,7 @@ void ViewerPrivate::updatePalette()
     updateColorFromScheme();
     cssHelper()->updateColor();
     recreateCssHelper();
-    update(MimeTreeParser::Force);
+    // update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::updateColorFromScheme()

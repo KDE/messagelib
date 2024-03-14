@@ -432,6 +432,7 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     /** Watch for palette changes */
     [[nodiscard]] bool event(QEvent *e) override;
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
     void changeEvent(QEvent *event) override;
 
     ViewerPrivate *const d_ptr;
