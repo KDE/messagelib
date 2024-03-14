@@ -1073,17 +1073,23 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    const auto toAddresses = msg->to()->mailboxes();
-    for (const auto &address : toAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+    if (auto to = msg->to(false)) {
+        const auto toAddresses = to->mailboxes();
+        for (const auto &address : toAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
-    const auto ccAddresses = msg->cc()->mailboxes();
-    for (const auto &address : ccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+    if (auto cc = msg->cc(false)) {
+        const auto ccAddresses = cc->mailboxes();
+        for (const auto &address : ccAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
-    const auto bccAddresses = msg->bcc()->mailboxes();
-    for (const auto &address : bccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+    if (auto bcc = msg->bcc(false)) {
+        const auto bccAddresses = bcc->mailboxes();
+        for (const auto &address : bccAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
 }
 
