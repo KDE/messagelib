@@ -308,12 +308,4 @@ void DKIMWidgetInfo::updateToolTip()
     mLabel->setToolTip(tooltip);
 }
 
-bool DKIMWidgetInfo::event(QEvent *e)
-{
-    if (e->type() == QEvent::ApplicationPaletteChange) {
-        updatePalette();
-    }
-    return QWidget::event(e);
-}
-
 #include "moc_dkimwidgetinfo.cpp"
