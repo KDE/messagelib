@@ -30,6 +30,17 @@ private:
     QString mIconName;
 };
 
+class MESSAGELIST_TESTS_EXPORT ConfigureFiltersListWidget : public QListWidget
+{
+    Q_OBJECT
+public:
+    explicit ConfigureFiltersListWidget(QWidget *parent = nullptr);
+    ~ConfigureFiltersListWidget() override;
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+};
+
 class MESSAGELIST_TESTS_EXPORT ConfigureFiltersWidget : public QWidget
 {
     Q_OBJECT
@@ -43,7 +54,7 @@ private:
     MESSAGELIST_NO_EXPORT void removeFilterInfo(const QString &identifier);
     MESSAGELIST_NO_EXPORT void slotConfigureFilter(QListWidgetItem *item);
     MESSAGELIST_NO_EXPORT void init();
-    QListWidget *const mListFiltersWidget;
+    ConfigureFiltersListWidget *const mListFiltersWidget;
 };
 }
 }
