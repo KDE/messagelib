@@ -183,7 +183,7 @@ void Widget::slotSaveFilter()
         }
         delete dlg;
     } else {
-        KMessageBox::information(this, i18n("Any filter defined."), i18nc("@title:window", "Create Filter"));
+        KMessageBox::information(this, i18n("No filter defined."), i18nc("@title:window", "Create Filter"));
     }
 }
 
