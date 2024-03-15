@@ -36,7 +36,10 @@ public:
         BrokenNetwork = 3,
     };
 
-    enum ContraintsCompressionType { RawCompression = 0, RiceCompression = 1 };
+    enum ContraintsCompressionType {
+        RawCompression = 0,
+        RiceCompression = 1,
+    };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
     ~CreatePhishingUrlDataBaseJob() override;

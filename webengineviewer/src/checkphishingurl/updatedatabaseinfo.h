@@ -39,12 +39,12 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     QString newClientState;
     QByteArray sha256;
     void clear();
-    bool operator==(const UpdateDataBaseInfo &other) const;
+    [[nodiscard]] bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
 struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
     RiceDeltaEncoding();
-    bool operator==(const RiceDeltaEncoding &other) const;
+    [[nodiscard]] bool operator==(const RiceDeltaEncoding &other) const;
     [[nodiscard]] bool isValid() const;
     QByteArray firstValue;
     QByteArray encodingData;
@@ -55,9 +55,9 @@ struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
 struct WEBENGINEVIEWER_EXPORT Addition {
     Addition();
     [[nodiscard]] bool isValid() const;
-    bool operator==(const Addition &other) const;
+    [[nodiscard]] bool operator==(const Addition &other) const;
 
-    static bool lessThan(const Addition &s1, const Addition &s2);
+    [[nodiscard]] static bool lessThan(const Addition &s1, const Addition &s2);
     QByteArray hashString;
     RiceDeltaEncoding riceDeltaEncoding;
     UpdateDataBaseInfo::CompressionType compressionType;
@@ -66,7 +66,7 @@ struct WEBENGINEVIEWER_EXPORT Addition {
 
 struct WEBENGINEVIEWER_EXPORT Removal {
     Removal();
-    bool operator==(const Removal &other) const;
+    [[nodiscard]] bool operator==(const Removal &other) const;
     [[nodiscard]] bool isValid() const;
     QList<quint32> indexes;
     RiceDeltaEncoding riceDeltaEncoding;
