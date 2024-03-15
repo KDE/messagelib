@@ -33,6 +33,7 @@ public:
     void focusAndSetCursor();
 
 protected:
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
     bool event(QEvent *e) override;
     virtual void clearSelections();
     virtual void updateHighLight(bool);

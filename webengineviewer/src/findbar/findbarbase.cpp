@@ -94,6 +94,7 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
+    qGuiApp->installEventFilter(this);
 }
 
 FindBarBase::~FindBarBase() = default;
@@ -264,10 +265,16 @@ bool FindBarBase::event(QEvent *e)
             return true;
         }
     }
-    if (e->type() == QEvent::ApplicationPaletteChange) {
+    return QWidget::event(e);
+}
+
+bool FindBarBase::eventFilter(QObject *obj, QEvent *event)
+{
+    Q_UNUSED(obj);
+    if (event->type() == QEvent::ApplicationPaletteChange) {
         updatePalette();
     }
-    return QWidget::event(e);
+    return false;
 }
 
 #include "moc_findbarbase.cpp"
