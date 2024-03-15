@@ -34,6 +34,7 @@ public:
 
 protected:
     [[nodiscard]] bool event(QEvent *e) override;
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
     virtual void clearSelections();
     virtual void updateHighLight(bool);
     virtual void searchText(bool backward, bool isAutoSearch);
