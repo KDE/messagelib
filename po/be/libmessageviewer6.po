@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 02:23+0000\n"
+"POT-Creation-Date: 2024-03-15 03:04+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1938,7 +1938,7 @@ msgstr "Адкрыць у адраснай кнізе"
 msgid "&Copy Email Address"
 msgstr "Адрас электроннай пошты"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2734
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2735
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрас скапіраваны ў буфер абмену."
@@ -1992,7 +1992,7 @@ msgstr "<qt>Вы сапраўды жадаеце выканаць <b>%1</b>?</qt
 msgid "Execute"
 msgstr "Выканаць"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2375,18 +2375,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Паведамленне ў выглядзе звычайнага тэксту"
 
-#: viewer/viewer_p.cpp:2740
+#: viewer/viewer_p.cpp:2741
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL скапіраваны ў буфер абмену."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Паведамленне падпісана %1."
 
-#: viewer/viewer_p.cpp:2897
+#: viewer/viewer_p.cpp:2898
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

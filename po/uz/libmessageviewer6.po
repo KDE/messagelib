@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 02:23+0000\n"
+"POT-Creation-Date: 2024-03-15 03:04+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1856,7 +1856,7 @@ msgstr "Manzillar daftarida ochish"
 msgid "&Copy Email Address"
 msgstr "Elektron pochta"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2734
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2735
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Elektron pochta manzilidan xotiraga nusxa olindi."
@@ -1912,7 +1912,7 @@ msgstr "<qt>Rostdan <b>%1</b>'ni ishga tushirishni istaysizmi?</qt>"
 msgid "Execute"
 msgstr "Ishga tushirish"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2293,18 +2293,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Xabarlar roʻyxati"
 
-#: viewer/viewer_p.cpp:2740
+#: viewer/viewer_p.cpp:2741
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL'dan xotiraga nusxa olindi."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Xabar %1 tomonidan imzolangan."
 
-#: viewer/viewer_p.cpp:2897
+#: viewer/viewer_p.cpp:2898
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

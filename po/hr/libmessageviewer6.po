@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 02:23+0000\n"
+"POT-Creation-Date: 2024-03-15 03:04+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1849,7 +1849,7 @@ msgstr "Otvori u adresaru"
 msgid "&Copy Email Address"
 msgstr "Adresa e-pošte"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2734
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2735
 #, fuzzy, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa iskopirana na odlagalište (clipboard)."
@@ -1902,7 +1902,7 @@ msgstr "<qt>Da li zaista želite izvršiti <b>%1</b>?</qt>"
 msgid "Execute"
 msgstr "izvrši naredbu"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 msgid "Loading message..."
 msgstr "Premještanje poruka nije uspjelo."
@@ -2264,17 +2264,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Poruka kao čisti tekst"
 
-#: viewer/viewer_p.cpp:2740
+#: viewer/viewer_p.cpp:2741
 #, fuzzy, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL iskopiran na odlagalište (clipboard)."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 msgid "Message loading failed: %1."
 msgstr "Poruku je potpisao"
 
-#: viewer/viewer_p.cpp:2897
+#: viewer/viewer_p.cpp:2898
 #, fuzzy, kde-format
 msgid "Message not found."
 msgstr "Poruku je potpisao"

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 02:23+0000\n"
+"POT-Creation-Date: 2024-03-15 03:04+0000\n"
 "PO-Revision-Date: 2023-10-05 07:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1795,7 +1795,7 @@ msgstr "פתח בפנקס הכתובות"
 msgid "&Copy Email Address"
 msgstr "כתובת דוא\"ל"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2734
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2735
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "הכתובת הועתקה ללוח העריכה."
@@ -1846,7 +1846,7 @@ msgstr "<qt> האם אתה בטוח שברצונך ללהפעיל <b>%1</b>? </q
 msgid "Execute"
 msgstr "הפעל פקודה"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 msgid "Loading message..."
 msgstr "מעביר הודעות"
@@ -2199,17 +2199,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "הודעה בתור טקסט רגיל"
 
-#: viewer/viewer_p.cpp:2740
+#: viewer/viewer_p.cpp:2741
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "הכתובת הועתקה ללוח העריכה."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 msgid "Message loading failed: %1."
 msgstr "ההודעה נחתמה על ידי %1."
 
-#: viewer/viewer_p.cpp:2897
+#: viewer/viewer_p.cpp:2898
 #, fuzzy, kde-format
 msgid "Message not found."
 msgstr "ההודעה נחתמה על ידי %1."
