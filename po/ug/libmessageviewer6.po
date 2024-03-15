@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -1825,7 +1825,7 @@ msgstr "ئادرېس دەپتىرىدە ئاچ(&O)"
 msgid "&Copy Email Address"
 msgstr "ئېلخەت ئادرېسىنى كۆچۈر(&C)"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
@@ -1882,7 +1882,7 @@ msgstr ""
 msgid "Execute"
 msgstr "ئىجرا قىل"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "&Find in Message..."
 msgid "Loading message..."
@@ -2246,18 +2246,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, kde-format
 msgid "Message not found."
 msgstr ""

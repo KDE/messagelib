@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -1807,7 +1807,7 @@ msgstr "W&očinić w adresniku"
 msgid "&Copy Email Address"
 msgstr "Emailowu adresu &kopěrować"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa bu do zapisnika kopěrowana."
@@ -1862,7 +1862,7 @@ msgstr "<qt>Chceće woprawdźe <b>%1</b> startować?</qt>"
 msgid "Execute"
 msgstr "Wuwjesć"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "Čitam powěsć..."
@@ -2224,17 +2224,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Powěsć jako prosty tekst"
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL do zapisknika kopěrowany."
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Njemóžach powěsć začitać: %1."
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, kde-format
 msgid "Message not found."
 msgstr "Njejsym powěsć namakał"

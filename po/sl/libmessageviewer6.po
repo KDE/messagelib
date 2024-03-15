@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2024-03-08 17:32+0100\n"
 "Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1795,7 +1795,7 @@ msgstr "&Odpri v imeniku"
 msgid "&Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Naslov kopiran na odložišče."
@@ -1846,7 +1846,7 @@ msgstr "Ali res želite izvesti <filename>%1</filename>?"
 msgid "Execute"
 msgstr "Izvedi"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "Nalaganje sporočila …"
@@ -2203,17 +2203,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Sporočilo kot navadno besedilo"
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Naslov URL kopiran na odložišče."
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nalaganje sporočila ni uspelo: %1."
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, kde-format
 msgid "Message not found."
 msgstr "Sporočilo ni bilo najdeno."

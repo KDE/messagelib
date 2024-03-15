@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1882,7 +1882,7 @@ msgstr "Agor yn y Lyfr Cyfeiriadau"
 msgid "&Copy Email Address"
 msgstr "Cyfeiriad Ebost"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Copiwyd y cyfeiriad i'r gludfwrdd."
@@ -1937,7 +1937,7 @@ msgstr "<qt>Ydych wir eisiau gweithredu <b>%1</b>?</qt>"
 msgid "Execute"
 msgstr "Gweithredu"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 msgid "Loading message..."
 msgstr "Methwyd symud y negeseuon."
@@ -2309,18 +2309,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Neges fel Testun Plaen"
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Copiwyd yr URL i'r gludfwrdd."
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Llofnodwyd y neges gan %1."
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

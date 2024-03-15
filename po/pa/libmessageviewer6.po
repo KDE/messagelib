@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1920,7 +1920,7 @@ msgstr "ਐਡਰੈੱਸ ਬੁੱਕ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 msgid "&Copy Email Address"
 msgstr "ਈ-ਮੇਲ ਐਡਰੈੱਸ"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "ਐਡਰੈੱਸ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ।"
@@ -1976,7 +1976,7 @@ msgstr "ਕੀ ਤੁਸੀਂ <filename>%1</filename> ਨੂੰ ਚਲਾਉਣ
 msgid "Execute"
 msgstr "ਚਲਾਓ"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages..."
 msgid "Loading message..."
@@ -2351,18 +2351,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "ਪਲੇਨ ਟੈਕਸਟ ਵਾਂਗ ਸੁਨੇਹਾ"
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ।"
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "ਸੁਨੇਹਾ %1 ਰਾਹੀਂ ਸਾਇਨ ਹੈ"
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"

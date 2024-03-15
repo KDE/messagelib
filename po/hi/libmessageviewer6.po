@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1878,7 +1878,7 @@ msgstr "पता पुस्तिका में खोलें"
 msgid "&Copy Email Address"
 msgstr "ई-मेल पता"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2707
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "क्लिपबोर्ड पर पता की प्रति बनाई."
@@ -1936,7 +1936,7 @@ msgstr ""
 msgid "Execute"
 msgstr "चलाएँ"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2314,18 +2314,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "संदेश सादा पाठ में"
 
-#: viewer/viewer_p.cpp:2713
+#: viewer/viewer_p.cpp:2714
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "क्लिपबोर्ड पर यूआरएल की प्रति बनाई."
 
-#: viewer/viewer_p.cpp:2865
+#: viewer/viewer_p.cpp:2866
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "संदेश %1 के द्वारा हस्ताक्षरित है."
 
-#: viewer/viewer_p.cpp:2870
+#: viewer/viewer_p.cpp:2871
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
