@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-03-16 00:39+0000\n"
 "PO-Revision-Date: 2023-09-26 23:02+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -850,7 +850,7 @@ msgstr "Rectangulos Denominate"
 msgid "Styled Joined Rectangles"
 msgstr "Rectangulos Juncte Denominate"
 
-#: core/view.cpp:682
+#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr "Necun exito trovate"
@@ -1038,8 +1038,9 @@ msgstr[0] "<b>%1</b> message (<b>%2</b>non legite)"
 msgstr[1] "<b>%1</b> messages  (<b>%2</b>non legite)"
 
 #: core/widgetbase.cpp:186
-#, kde-format
-msgid "Any filter defined."
+#, fuzzy, kde-format
+#| msgid "Any filter defined."
+msgid "No filter defined."
 msgstr "Ulle filtro definite."
 
 #: core/widgetbase.cpp:186
@@ -1054,7 +1055,7 @@ msgid "Theme"
 msgstr "Thema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
@@ -1097,17 +1098,17 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Configura Filtro"
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, kde-format
 msgid "Remove"
 msgstr "Remove"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
 msgid "Do you want to delete this filter?"
 msgstr "Tu vole deler iste filtro?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-03-16 00:39+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -870,7 +870,7 @@ msgstr ""
 msgid "Styled Joined Rectangles"
 msgstr ""
 
-#: core/view.cpp:682
+#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
@@ -1081,9 +1081,10 @@ msgstr[0] "<b>%1</b> ਸੁਨੇਹਾ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨ�
 msgstr[1] "<b>%1</b> ਸੁਨੇਹੇ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨਾ-ਪੜ੍ਹੇ)"
 
 #: core/widgetbase.cpp:186
-#, kde-format
-msgid "Any filter defined."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Log filter actions"
+msgid "No filter defined."
+msgstr "ਲਾਗ ਫਿਲਟਰ ਕਾਰਵਾਈ"
 
 #: core/widgetbase.cpp:186
 #, fuzzy, kde-format
@@ -1098,7 +1099,7 @@ msgid "Theme"
 msgstr "ਥੀਮ"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
@@ -1145,18 +1146,18 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "ਫਿਲਟਰ ਸੰਰਚਨਾ(&F)..."
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to empty the trash folder?"
 msgid "Do you want to delete this filter?"
 msgstr "ਕੀ ਤੁਸੀਂ ਇਹ ਫੋਲਡਰ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:83
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgctxt "@title:window"
@@ -2299,9 +2300,6 @@ msgstr "ਰੱਦ ਕਰੋ(&a)"
 #, fuzzy
 #~ msgid "Log filter pattern evaluation"
 #~ msgstr "ਲਾਗ ਫਿਲਟਰ ਤਰਤੀਬ ਜਾਂਚ"
-
-#~ msgid "Log filter actions"
-#~ msgstr "ਲਾਗ ਫਿਲਟਰ ਕਾਰਵਾਈ"
 
 #~ msgid "Log size limit:"
 #~ msgstr "ਲਾਗ ਸਾਈਜ਼ ਲਿਮਟ:"

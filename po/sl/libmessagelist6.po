@@ -4,7 +4,7 @@
 #
 # Gregor Rakar <gregor.rakar@kiss.si>, 2003, 2004, 2005.
 # Andrej Vernekar <andrej.vernekar@moj.net>, 2003, 2004, 2005, 2006, 2007, 2008.
-# Jure Repinc <jlp@holodeck1.com>, 2006, 2008, 2009, 2012, 2013.
+# SPDX-FileCopyrightText: 2006, 2008, 2009, 2012, 2013, 2024 Jure Repinc <jlp@holodeck1.com>
 # Andrej Vernekar <andrej.vernerkar@moj.net>, 2008.
 # Andrej Mernik <andrejm@ubuntu.si>, 2015, 2016, 2018.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2023.
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-09-26 09:29+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"POT-Creation-Date: 2024-03-16 00:39+0000\n"
+"PO-Revision-Date: 2024-03-15 14:01+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -520,37 +520,37 @@ msgstr "%1 %2"
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "Obdelano %1 sporočilo od %2"
-msgstr[1] "Obdelani %1 sporočili od %2"
-msgstr[2] "Obdelana %1 sporočila od %2"
-msgstr[3] "Obdelanih %1 sporočil od %2"
+msgstr[0] "Obdelanih %1 sporočil od %2"
+msgstr[1] "Obdelano %1 sporočilo od %2"
+msgstr[2] "Obdelani %1 sporočili od %2"
+msgstr[3] "Obdelana %1 sporočila od %2"
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "V niti razvrščeno %1 sporočilo od %2"
-msgstr[1] "V niti razvrščeni %1 sporočili od %2"
-msgstr[2] "V niti razvrščena %1 sporočila od %2"
-msgstr[3] "V niti razvrščenih %1 sporočil od %2"
+msgstr[0] "V niti razvrščenih %1 sporočil od %2"
+msgstr[1] "V niti razvrščeno %1 sporočilo od %2"
+msgstr[2] "V niti razvrščeni %1 sporočili od %2"
+msgstr[3] "V niti razvrščena %1 sporočila od %2"
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "Združena %1 nit od %2"
-msgstr[1] "Združeni %1 niti od %2"
-msgstr[2] "Združene %1 niti od %2"
-msgstr[3] "Združenih %1 niti od %2"
+msgstr[0] "Združenih %1 niti od %2"
+msgstr[1] "Združena %1 nit od %2"
+msgstr[2] "Združeni %1 niti od %2"
+msgstr[3] "Združene %1 niti od %2"
 
 #: core/model.cpp:3811
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] "Posodobljena %1 skupina od %2"
-msgstr[1] "Posodobljeni %1 skupini od %2"
-msgstr[2] "Posodobljene %1 skupine od %2"
-msgstr[3] "Posodobljenih %1 skupin od %2"
+msgstr[0] "Posodobljenih %1 skupin od %2"
+msgstr[1] "Posodobljena %1 skupina od %2"
+msgstr[2] "Posodobljeni %1 skupini od %2"
+msgstr[3] "Posodobljene %1 skupine od %2"
 
 #: core/model.cpp:3903
 #, kde-format
@@ -865,7 +865,7 @@ msgstr "Pravokotniki s slogom"
 msgid "Styled Joined Rectangles"
 msgstr "Združen pravokotnik s slogom"
 
-#: core/view.cpp:682
+#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr "Ni zadetkov"
@@ -925,19 +925,19 @@ msgstr "Predogled"
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
-msgstr[0] "<b>%1</b> odgovor"
-msgstr[1] "<b>%1</b> odgovora"
-msgstr[2] "<b>%1</b> odgovori"
-msgstr[3] "<b>%1</b> odgovorov"
+msgstr[0] "<b>%1</b> odgovorov"
+msgstr[1] "<b>%1</b> odgovor"
+msgstr[2] "<b>%1</b> odgovora"
+msgstr[3] "<b>%1</b> odgovori"
 
 #: core/view.cpp:2300
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> sporočilo v poddrevesu (<b>%2</b> neprebranih)"
-msgstr[1] "<b>%1</b> sporočili v poddrevesu (<b>%2</b> neprebranih)"
-msgstr[2] "<b>%1</b> sporočila v poddrevesu (<b>%2</b> neprebranih)"
-msgstr[3] "<b>%1</b> sporočil v poddrevesu (<b>%2</b> neprebranih)"
+msgstr[0] "<b>%1</b> sporočil v poddrevesu (<b>%2</b> neprebranih)"
+msgstr[1] "<b>%1</b> sporočilo v poddrevesu (<b>%2</b> neprebranih)"
+msgstr[2] "<b>%1</b> sporočili v poddrevesu (<b>%2</b> neprebranih)"
+msgstr[3] "<b>%1</b> sporočila v poddrevesu (<b>%2</b> neprebranih)"
 
 #: core/view.cpp:2337
 #, kde-format
@@ -1046,8 +1046,8 @@ msgstr "Sporočila, ki jih je prejel %1"
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
-msgstr[0] "<b>%1</b> nit"
-msgstr[1] "<b>%1</b> niti"
+msgstr[0] "<b>%1</b> niti"
+msgstr[1] "<b>%1</b> nit"
 msgstr[2] "<b>%1</b> niti"
 msgstr[3] "<b>%1</b> niti"
 
@@ -1055,14 +1055,15 @@ msgstr[3] "<b>%1</b> niti"
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> sporočilo (<b>%2</b> neprebranih)"
-msgstr[1] "<b>%1</b> sporočili (<b>%2</b> neprebranih)"
-msgstr[2] "<b>%1</b> sporočila (<b>%2</b> neprebranih)"
-msgstr[3] "<b>%1</b> sporočil (<b>%2</b> neprebranih)"
+msgstr[0] "<b>%1</b> sporočil (<b>%2</b> neprebranih)"
+msgstr[1] "<b>%1</b> sporočilo (<b>%2</b> neprebranih)"
+msgstr[2] "<b>%1</b> sporočili (<b>%2</b> neprebranih)"
+msgstr[3] "<b>%1</b> sporočila (<b>%2</b> neprebranih)"
 
 #: core/widgetbase.cpp:186
-#, kde-format
-msgid "Any filter defined."
+#, fuzzy, kde-format
+#| msgid "Any filter defined."
+msgid "No filter defined."
 msgstr "Kakršenkoli določen filter."
 
 #: core/widgetbase.cpp:186
@@ -1077,12 +1078,12 @@ msgid "Theme"
 msgstr "Tema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
 msgid "Configure..."
-msgstr "Nastavi ..."
+msgstr "Nastavi …"
 
 #: core/widgetbase.cpp:498 messagelistutil.cpp:109
 #, kde-format
@@ -1120,17 +1121,17 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Nastavi filter"
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
 msgid "Do you want to delete this filter?"
 msgstr "Ali želite izbrisati ta filter?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
@@ -1150,7 +1151,7 @@ msgstr "Ime:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "Shrani filter..."
+msgstr "Shrani filter …"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1496,12 +1497,12 @@ msgstr "Podvoji združevanje"
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
-msgstr "Izvozi združevanje ..."
+msgstr "Izvozi združevanje …"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
-msgstr "Uvozi združevanje ..."
+msgstr "Uvozi združevanje …"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
@@ -1548,12 +1549,12 @@ msgstr "Podvoji temo"
 #: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
-msgstr "Izvozi temo ..."
+msgstr "Izvozi temo …"
 
 #: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
-msgstr "Uvozi temo ..."
+msgstr "Uvozi temo …"
 
 #: utils/configurethemesdialog.cpp:156
 #, kde-format
@@ -1732,7 +1733,7 @@ msgstr "Privzeta"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "Po meri ..."
+msgstr "Po meri …"
 
 #: utils/themeeditor.cpp:888
 #, kde-format
@@ -1789,7 +1790,7 @@ msgstr "Samodejno"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "Po meri ..."
+msgstr "Po meri …"
 
 #: utils/themeeditor.cpp:950
 #, kde-format
@@ -1804,12 +1805,12 @@ msgstr "Slog ozadja"
 #: utils/themeeditor.cpp:1156
 #, kde-format
 msgid "Column Properties..."
-msgstr "Lastnosti stolpca ..."
+msgstr "Lastnosti stolpca …"
 
 #: utils/themeeditor.cpp:1159
 #, kde-format
 msgid "Add Column..."
-msgstr "Dodaj stolpec ..."
+msgstr "Dodaj stolpec …"
 
 #: utils/themeeditor.cpp:1162
 #, kde-format
@@ -1878,10 +1879,10 @@ msgstr "Velikost ikon:"
 msgctxt "suffix in a spinbox"
 msgid " pixel"
 msgid_plural " pixels"
-msgstr[0] " slik. točka"
-msgstr[1] " slik. točki"
-msgstr[2] " slik. točke"
-msgstr[3] " slik. točk"
+msgstr[0] " slik. pik"
+msgstr[1] " slik. pika"
+msgstr[2] " slik. piki"
+msgstr[3] " slik. pike"
 
 #: widget.cpp:220
 #, kde-format
@@ -1927,12 +1928,12 @@ msgstr "Pre&makni sem"
 #: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
-msgstr "Kopiraj sem"
+msgstr "&Kopiraj sem"
 
 #: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
-msgstr "Prekliči"
+msgstr "&Prekliči"
 
 #~ msgid "Rename..."
 #~ msgstr "Preimenuj..."

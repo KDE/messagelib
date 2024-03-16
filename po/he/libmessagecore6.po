@@ -1,86 +1,86 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2024-03-15 21:00\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-15 17:41+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessagecore6.pot\n"
-"X-Crowdin-File-ID: 49066\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr "צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr "kde-l10n-he@kde.org"
 
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
 msgid "Could not initiate attachment compression."
-msgstr "无法初始化附件压缩操作。"
+msgstr "לא ניתן להפעיל דחיסת קבצים מצורפים."
 
 #: attachment/attachmentcompressjob.cpp:60
 #, kde-format
 msgid "Could not compress the attachment."
-msgstr "无法压缩附件。"
+msgstr "לא ניתן לדחוס את הקובץ המצורף."
 
 #: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
-msgstr "无法创建压缩文件。"
+msgstr "לא ניתן ליצור קובץ דחוס."
 
 #: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
-msgstr "最终附件将超过允许的最大大小，正在退出。"
+msgstr "הקובץ המצורף שיתקבל יהיה גדול מהגודל המרבי המותר, התהליך מבוטל."
 
 #: attachment/attachmentfromfolderjob.cpp:100
 #: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
-msgstr "无法添加 %1 到归档"
+msgstr "לא ניתן להוסיף את %1 לארכיון"
 
 #: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
-msgstr "无法打开 %1 进行读取。"
+msgstr "לא ניתן לפתוח את %1 לקריאה."
 
 #: attachment/attachmentfromurljob.cpp:68
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
-msgstr "未知%1"
+msgstr "לא_ידוע%1"
 
 #: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
-msgstr "未知"
+msgstr "לא_ידוע"
 
 #: attachment/attachmentfromurljob.cpp:102
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
-msgstr "“%1”未找到。请指定完整路径。"
+msgstr "„%1” לא נמצא. נא לציין את הנתיב המלא."
 
 #: attachment/attachmentfromurljob.cpp:111
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
-msgstr "您不能将尺寸大于 %1 的文件作为附件。请通过网络存储服务分享。"
+msgstr "אסור לצרף קבצים גדולים מ־%1. יש לשתף אותם דרך שירותי אחסון."
 
 #: attachment/attachmentpropertiesdialog.cpp:134
 #, kde-format
@@ -90,9 +90,6 @@ msgid ""
 "but, sometimes, %1 may not detect the type correctly -- here is where you "
 "can fix that.</p>"
 msgstr ""
-"<p>文件的 <em>MIME 类型</em>：</p><p>通常情况下，您不需要更改此设置，因为程序"
-"会自动检验文件的类型；但是有些时候，%1 可能无法正确检测 -- 您可以在这里进行修"
-"正。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
@@ -101,8 +98,6 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
-"<p>附件的估测大小：</p><p>要注意的是，在邮件里用 base64 编码处理过的二进制文"
-"件会比原来大四分之三。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
@@ -112,8 +107,6 @@ msgid ""
 "suggests a file name to be used by the recipient's mail agent when saving "
 "the part to disk.</p>"
 msgstr ""
-"<p>此部分的文件名：</p><p>尽管此处默认为附件的名称，但是它并不指定附加的文"
-"件；而是建议收件人的邮件程序在将该部分保存到磁盘时使用的文件名。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
@@ -123,8 +116,9 @@ msgid ""
 "most mail agents will show this information in their message previews "
 "alongside the attachment's icon.</p>"
 msgstr ""
-"<p>此部分的描述：</p><p>这只是此部分的描述性信息，与整封信件的主题类似。大多"
-"数邮件程序将把此信息显示在其信件预览中的附件图标旁。</p>"
+"<p>תיאור החלק:</p><p>זה תיאור ענייני של החלק, בדומה למה שמייצג נושא בנוגע "
+"להודעה עצמה, רוב סוכני הדוא״ל יציגו את הפרטים האלה בתצוגות המקדימות של "
+"ההודעות שלהן לצד סמל הקובץ המצורף.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
@@ -137,10 +131,6 @@ msgid ""
 "over the default \"base64\" will save up to 25% in resulting message size.</"
 "p>"
 msgstr ""
-"<p>此部分的传送编码：</p><p>通常情况下，您不必更改此设置，因为 %1 会根据 "
-"MIME 类型自动选择对应的默认编码；但是在某些时候，这样可能显著减少信件的大小，"
-"比如一个 PostScript 文件，不包含二进制数据，而由纯文本构成 -- 在这种情况下，"
-"选择“quoted-printable”而不是默认的“base64”将把结果信件的大小缩减 25%。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:172
 #, kde-format
@@ -151,9 +141,6 @@ msgid ""
 "<em>Content-Disposition</em> header field to \"inline\" instead of the "
 "default \"attachment\".</p>"
 msgstr ""
-"<p>选中此选项表明您想要建议收件人在信件预览中自动(内嵌)显示此部分，而不是显示"
-"默认的图标视图；</p><p>从技术上来讲，实现的方法是设置此部分的 <em>Content-"
-"Disposition</em> 信头字段为“inline”而不是默认的“attachment”。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
@@ -162,8 +149,6 @@ msgid ""
 "signature will be made with the key that you associated with the currently-"
 "selected identity.</p>"
 msgstr ""
-"<p>选中此选项表明您想要对此信件部分进行签名；</p><p>签名将用您当前身份所关联"
-"的密钥进行。</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format
@@ -171,20 +156,20 @@ msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
-"<p>选中此选项表明您想要将此部分加密；</p><p>此部分将为此信件的收件人加密。</"
-"p>"
+"<p>יש לסמן את האפשרות הזאת כדי שהחלק הזה בהודעה יוצפן.</p><p>החלק יוצפן "
+"לנמעני ההודעה.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:307
 #: attachment/attachmentpropertiesdialog.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
-msgstr "附件属性"
+msgstr "מאפייני קובץ מצורף"
 
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
 msgid "URL is empty."
-msgstr "链接为空。"
+msgstr "הכתובת ריקה"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: attachment/ui/attachmentpropertiesdialog.ui:39
@@ -192,7 +177,7 @@ msgstr "链接为空。"
 #, kde-format
 msgctxt "MIME type of this attachment"
 msgid "Type:"
-msgstr "类型："
+msgstr "סוג:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: attachment/ui/attachmentpropertiesdialog.ui:82
@@ -200,7 +185,7 @@ msgstr "类型："
 #, kde-format
 msgctxt "size of the attachment"
 msgid "Size:"
-msgstr "大小："
+msgstr "גודל:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: attachment/ui/attachmentpropertiesdialog.ui:109
@@ -208,7 +193,7 @@ msgstr "大小："
 #, kde-format
 msgctxt "file name of the attachment"
 msgid "Name:"
-msgstr "名称："
+msgstr "שם:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
@@ -217,7 +202,7 @@ msgstr "名称："
 #, kde-format
 msgctxt "description of the attachment"
 msgid "Description:"
-msgstr "描述："
+msgstr "תיאור:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: attachment/ui/attachmentpropertiesdialog.ui:169
@@ -225,25 +210,25 @@ msgstr "描述："
 #, kde-format
 msgctxt "encoding of the attachment"
 msgid "Encoding:"
-msgstr "编码："
+msgstr "קידוד:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
 #: attachment/ui/attachmentpropertiesdialog.ui:187
 #, kde-format
 msgid "Suggest automatic display"
-msgstr "建议自动显示"
+msgstr "הצעת תצוגה אוטומטית"
 
 #. i18n: ectx: property (text), widget (QCheckBox, encrypt)
 #: attachment/ui/attachmentpropertiesdialog.ui:194
 #, kde-format
 msgid "Encrypt this attachment"
-msgstr "加密此附件"
+msgstr "הצפנת הקובץ המצורף הזה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sign)
 #: attachment/ui/attachmentpropertiesdialog.ui:201
 #, kde-format
 msgid "Sign this attachment"
-msgstr "签名此附件"
+msgstr "חתימה על הקובץ המצורף הזה"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:32
@@ -252,38 +237,38 @@ msgid ""
 "Changing this from its default 'Auto' will force the use of the specified "
 "encoding for all emails, regardless of what they specify themselves."
 msgstr ""
-"更改默认的“自动”设定将会强制以指定编码来处理所有邮件，无论它声明自己是哪种编"
-"码。"
+"שינוי הטופס הזה מברירת המחדל ‚אוטומטית’ יכפה את השימוש בקידוד שצוין לכל "
+"ההודעות, ללא תלות באופן בו הן מציינות מה הן."
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
 #: settings/messagecore.kcfg:35
 #, kde-format
 msgid "This is the color used in the 3rd level of quoted text"
-msgstr "第 3 层引用文字的颜色"
+msgstr "זה הצבע שמשמש ברמת הטקסט המצוטט השלישית"
 
 #. i18n: ectx: label, entry (QuotedText2), group (Reader)
 #: settings/messagecore.kcfg:39
 #, kde-format
 msgid "This is the color used in the 2nd level of quoted text"
-msgstr "第 2 层引用文字的颜色"
+msgstr "זה הצבע שמשמש ברמת הטקסט המצוטט השנייה"
 
 #. i18n: ectx: label, entry (QuotedText1), group (Reader)
 #: settings/messagecore.kcfg:43
 #, kde-format
 msgid "This is the color used in the 1st level of quoted text"
-msgstr "第 1 层引用文字的颜色"
+msgstr "זה הצבע שמשמש ברמת הטקסט המצוטט הראשונה"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:54
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
-msgstr "将已识别的前缀替换为“Re:”(&X)"
+msgstr "החלפת הקידומת המו&כרת ב־„Re:‎”"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
 #: settings/messagecore.kcfg:62
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
-msgstr "将已识别的前缀替换为“Fwd:”(&F)"
+msgstr "החלפת ה&קידומת המוכרת ב־„Fwd:‎”"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
 #: settings/messagecore.kcfg:67
@@ -291,10 +276,10 @@ msgstr "将已识别的前缀替换为“Fwd:”(&F)"
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
 "no limit)"
-msgstr "邮件附件允许的最大值，单位为比特 (-1 代表不限制)"
+msgstr "הגודל המרבי המותר בסיביות לקבצים מצורפים להודעה (‎-1 לביטול ההגבלה)"
 
 #: utils/stringutil.cpp:418
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
-msgstr "我"
+msgstr "אני"

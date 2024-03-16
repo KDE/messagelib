@@ -1,50 +1,50 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-15 21:00\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-15 08:23+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libtemplateparser6.pot\n"
-"X-Crowdin-File-ID: 49098\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
-msgstr "通用"
+msgstr "אוניברסלית"
 
 #: customtemplates.cpp:73 customtemplates.cpp:129
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
-msgstr "回复"
+msgstr "תגובה"
 
 #: customtemplates.cpp:74 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
-msgstr "全部回复"
+msgstr "תגובה לכולם"
 
 #: customtemplates.cpp:75 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
-msgstr "转发"
+msgstr "העברה"
 
 #: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
-msgstr "<a href=\"whatsthis\">工作方式解释</a>"
+msgstr "<a href=\"whatsthis\">איך זה עובד?</a>"
 
 #: customtemplates.cpp:87
 #, kde-format
@@ -60,72 +60,66 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
-"<qt><p>您可以在这里添加、编辑和删除自定义邮件模板，以便在撰写回复或转发信件时"
-"使用。要创建自定义模板，请右键选中它或使用工具栏菜单。另外，为快捷操作考虑，"
-"您也可以绑定键盘组合键到任一模板上。</p><p>邮件模板支持替换命令，您可以简单地"
-"直接输入它们或在<i>插入命令</i>菜单下操作。</p><p>自定义模板共有四类：<i>回复"
-"模板</i>、<i>全部回复模板</i>、<i>转发模板</i>以及适用各种场合的<i>通用模板</"
-"i>。注意您不能对<i>通用模板</i>绑定键盘快捷键。</p></qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
-msgstr "未知"
+msgstr "לא ידוע"
 
 #: customtemplates.cpp:252
 #, kde-format
 msgid "A template with same name already exists."
-msgstr "已存在具有相同名称的模板。"
+msgstr "כבר קיימת תבנית באותו השם."
 
 #: customtemplates.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
-msgstr "无法创建模板"
+msgstr "לא ניתן ליצור תבנית"
 
 #: customtemplates.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
-msgstr "您确实要删除模板\"%1\"吗？"
+msgstr "להסיר את התבנית „%1”?"
 
 #: customtemplates.cpp:345
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
-msgstr "删除模板?"
+msgstr "להסיר את התבנית?"
 
 #: customtemplatesmenu.cpp:48
 #, kde-format
 msgid "With Custom Template"
-msgstr "使用自定义模板"
+msgstr "עם תבנית מותאמת אישית"
 
 #: customtemplatesmenu.cpp:51
 #, kde-format
 msgid "Reply With Custom Template"
-msgstr "用自定义模板回复"
+msgstr "להגיב עם תבנית מותאמת אישית"
 
 #: customtemplatesmenu.cpp:54
 #, kde-format
 msgid "Reply to All With Custom Template"
-msgstr "用自定义模板全部回复"
+msgstr "להגיב לכולם עם תבנית מותאמת אישית"
 
 #: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
 #: customtemplatesmenu.cpp:189
 #, kde-format
 msgid "(no custom templates)"
-msgstr "(无自定义模板)"
+msgstr "(אין תבניות מותאמות אישית)"
 
 #: defaulttemplates.cpp:16
 #, kde-format
 msgid "Default new message template"
-msgstr "默认新建信件模板"
+msgstr "תבנית הודעה חדשה כברירת מחדל"
 
 #: defaulttemplates.cpp:21
 #, kde-format
 msgid "Default reply template"
-msgstr "默认回复模板"
+msgstr "תבנית תגובה כברירת מחדל"
 
 #: defaulttemplates.cpp:26
 #, kde-format
@@ -137,14 +131,14 @@ msgid ""
 "%3\n"
 "%4"
 msgstr ""
-"在 %1 %2，您写道：\n"
+"ב־%1 %2 כתבת:\n"
 "%3\n"
 "%4"
 
 #: defaulttemplates.cpp:37
 #, kde-format
 msgid "Default reply all template"
-msgstr "默认全部回复模板"
+msgstr "תבנית ברירת מחדל לתגובה לכולם"
 
 #: defaulttemplates.cpp:41
 #, kde-format
@@ -156,14 +150,14 @@ msgid ""
 "%4\n"
 "%5"
 msgstr ""
-"在 %1 %2，%3 写道：\n"
+"ב־%1 %2 נכתב על ידי %3:\n"
 "%4\n"
 "%5"
 
 #: defaulttemplates.cpp:53
 #, kde-format
 msgid "Default forward template"
-msgstr "默认转发模板"
+msgstr "תבנית העברה כברירת מחדל"
 
 #: defaulttemplates.cpp:60
 #, kde-format
@@ -184,46 +178,45 @@ msgid ""
 "-----------------------------------------"
 msgstr ""
 "\n"
-"----------  转发的信件  ----------\n"
+"----------  הודעה שהועברה  ----------\n"
 "\n"
-"主题：%1\n"
-"日期：%2\n"
-"发件人：%3\n"
-"收件人：%4\n"
+"נושא: %1\n"
+"תאריך: %2, %3\n"
+"מאת: %4\n"
 "%OADDRESSEESADDR\n"
 "\n"
 "%5\n"
-"-------------------------------------------------------"
+"-----------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template content"
-msgstr "模板内容"
+msgstr "תוכן תבנית"
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template shortcut"
-msgstr "模板快捷键"
+msgstr "קיצור מקשים לתבנית"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:21
 #, kde-format
 msgid "Template type"
-msgstr "模板类型"
+msgstr "סוג תבנית"
 
 #. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
 #: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Remove the signature when replying"
-msgstr "回复时删除签名"
+msgstr "להסיר את החתימה בתגובה"
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
 #: settings/templateparser.kcfg:15
 #, kde-format
 msgid "Use smart &quoting"
-msgstr "使用智能引用(&Q)"
+msgstr "להשתמש בציטטות &חכמות"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
@@ -231,297 +224,298 @@ msgstr "使用智能引用(&Q)"
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
-msgstr "使用与原始消息相同的视觉格式 (纯文本或者 HTML) 回复或者转发"
+msgstr ""
+"להגיב או להעביר באותו סגנון חזותי כמו ההודעה המקורית (טקסט פשוט או HTML)"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
 #, kde-format
 msgid "Message template for new message"
-msgstr "新信件模板"
+msgstr "תבנית הודעה להודעה חדשה"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
 #: settings/templateparser.kcfg:30
 #, kde-format
 msgid "Message template for reply"
-msgstr "回复信件模板"
+msgstr "תבנית הודעה לתגובה"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
 #: settings/templateparser.kcfg:34
 #, kde-format
 msgid "Message template for reply to all"
-msgstr "回复全部信件模板"
+msgstr "תבנית הודעה לתגובה לכולם"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
 #: settings/templateparser.kcfg:38
 #, kde-format
 msgid "Message template for forward"
-msgstr "转发信件模板"
+msgstr "תבנית הודעה להעברה"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
 #: settings/templateparser.kcfg:42
 #, kde-format
 msgid "Quote characters"
-msgstr "引用字符"
+msgstr "תווי ציטוט"
 
 #: templateparserjob.cpp:313
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
-msgstr "无法从文件“%1”插入内容：%2"
+msgstr "לא ניתן להוסיף תוכן מהקובץ %1: %2"
 
 #: templateparserjob.cpp:483
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
-msgstr "至："
+msgstr "אל:"
 
 #: templateparserjob.cpp:494
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
-msgstr "抄送："
+msgstr "עותק:"
 
 #: templateparserjob.cpp:1150
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
-msgstr "附件 %1"
+msgstr "קובץ מצורף %1"
 
 #: templateparserjob.cpp:1357
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr "管道命令 <command>%1</command> 失败。"
+msgstr ""
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
-msgstr "引用的信件内容"
+msgstr "טקסט הודעה מצוטט"
 
 #: templatescommandmenu.cpp:30
 msgid "Message Text as Is"
-msgstr "信件原文"
+msgstr "טקסט ההודעה כפי שהוא"
 
 #: templatescommandmenu.cpp:32
 msgid "Message Id"
-msgstr "信件编号"
+msgstr "מזהה הודעה"
 
 #: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
 msgid "Date"
-msgstr "日期"
+msgstr "תאריך"
 
 #: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
 msgid "Date in Short Format"
-msgstr "短格式日期"
+msgstr "תאריך מקוצר"
 
 #: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
 msgid "Date in C Locale"
-msgstr "C 语言环境日期"
+msgstr "תאריך בתצורת אזור C"
 
 #: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
 msgid "Day of Week"
-msgstr "周中的日"
+msgstr "יום בשבוע"
 
 #: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
 msgid "Time"
-msgstr "时间"
+msgstr "שעה"
 
 #: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
 msgid "Time in Long Format"
-msgstr "长格式时间"
+msgstr "שעה מלאה"
 
 #: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
 msgid "Time in C Locale"
-msgstr "C 语言环境时间"
+msgstr "שעה בתצורת אזור C"
 
 #: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
 msgid "To Field Address"
-msgstr "收件人字段邮件地址"
+msgstr "כתובת שדה אל"
 
 #: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
 msgid "To Field Name"
-msgstr "收件人字段姓名"
+msgstr "שם שדה אל"
 
 #: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
 msgid "To Field First Name"
-msgstr "收件人字段姓"
+msgstr "שם פרטי שדה אל"
 
 #: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
 msgid "To Field Last Name"
-msgstr "收件人字段名"
+msgstr "שם משפחה שדה אל"
 
 #: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
 msgid "CC Field Address"
-msgstr "抄送字段地址"
+msgstr "כתובת שדה עותק"
 
 #: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
 msgid "CC Field Name"
-msgstr "抄送字段姓名"
+msgstr "שם שדה עותק"
 
 #: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
 msgid "CC Field First Name"
-msgstr "抄送字段姓"
+msgstr "שם פרטי שדה עותק"
 
 #: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
 msgid "CC Field Last Name"
-msgstr "抄送字段名"
+msgstr "שם משפחה שדה עותק"
 
 #: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
 msgid "From Field Address"
-msgstr "发件人字段邮件地址"
+msgstr "כתובת שדה מאת"
 
 #: templatescommandmenu.cpp:66
 msgid "From Field Name"
-msgstr "发件人字段姓名"
+msgstr "שם שדה מאת"
 
 #: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
 msgid "From Field First Name"
-msgstr "发件人字段姓"
+msgstr "שם פרטי שדה מאת"
 
 #: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
 msgid "From Field Last Name"
-msgstr "发件人字段名"
+msgstr "שם משפחה שדה מאת"
 
 #: templatescommandmenu.cpp:72
 msgid "Addresses of all recipients"
-msgstr "全部收件人的地址"
+msgstr "כתובת כל הנמענים"
 
 #: templatescommandmenu.cpp:74
 msgctxt "Template value for subject of the message"
 msgid "Subject"
-msgstr "主题"
+msgstr "נושא"
 
 #: templatescommandmenu.cpp:76
 msgid "Quoted Headers"
-msgstr "引用信头"
+msgstr "כותרות מצוטטות"
 
 #: templatescommandmenu.cpp:78
 msgid "Headers as Is"
-msgstr "信头原文"
+msgstr "כותרות כפי שהן"
 
 #: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
 msgid "Header Content"
-msgstr "信头内容"
+msgstr "תוכן הכותרת"
 
 #: templatescommandmenu.cpp:82
 msgid "Reply as Quoted Plain Text"
-msgstr "作为引用的纯文本答复"
+msgstr "תגובה כטקסט פשוט מצוטט"
 
 #: templatescommandmenu.cpp:84
 msgid "Reply as Quoted HTML Text"
-msgstr "作为引用的 HTML 答复"
+msgstr "תגובה כטקסט HTML מצוטט"
 
 #: templatescommandmenu.cpp:118
 msgid "From field Name"
-msgstr "收件人字段姓名"
+msgstr "שם שדה מאת"
 
 #: templatescommandmenu.cpp:124
 msgctxt "Template subject command."
 msgid "Subject"
-msgstr "主题"
+msgstr "נושא"
 
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
-msgstr "管道输送原始信件正文并以引用文本形式插入处理后的输出"
+msgstr ""
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
-msgstr "管道输送原始信件正文并按原格式插入处理后的输出"
+msgstr ""
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
-msgstr "管道输送带信头的原始信件正文并按原格式插入处理后的输出"
+msgstr ""
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
-msgstr "管道输送当前信件正文并按原格式插入处理后的输出"
+msgstr ""
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr "管道输送当前信件正文并将其替换为处理后的输出"
+msgstr ""
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
-msgstr "签名"
+msgstr "חתימה"
 
 #: templatescommandmenu.cpp:144
 msgid "Insert File Content"
-msgstr "插入文件内容"
+msgstr "הוספת תוכן קובץ"
 
 #: templatescommandmenu.cpp:148
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
-msgstr "丢至下一行"
+msgstr "התעלמות עד השורה הבאה"
 
 #: templatescommandmenu.cpp:151
 msgid "Template Comment"
-msgstr "模板注释"
+msgstr "תגובת הערה"
 
 #: templatescommandmenu.cpp:153
 msgid "No Operation"
-msgstr "不作操作"
+msgstr "ללא פעולה"
 
 #: templatescommandmenu.cpp:155
 msgid "Clear Generated Message"
-msgstr "清除生成的信件"
+msgstr "פינוי ההודעה שנוצרה"
 
 #: templatescommandmenu.cpp:156
 msgid "Cursor position"
-msgstr "光标位置"
+msgstr "מקום סמן"
 
 #: templatescommandmenu.cpp:158
 msgid "Blank text"
-msgstr "空白的文本"
+msgstr "טקסט ריק"
 
 #: templatescommandmenu.cpp:160
 msgid "Dictionary Language"
-msgstr "词典语言"
+msgstr "שפת מילון"
 
 #: templatescommandmenu.cpp:161
 msgid "Language"
-msgstr "语言"
+msgstr "שפה"
 
 #: templatescommandmenu.cpp:166
 msgid "Turn Debug On"
-msgstr "启用调试模式"
+msgstr "הפעלת ניפוי תקלות"
 
 #: templatescommandmenu.cpp:168
 msgid "Turn Debug Off"
-msgstr "关闭调试模式"
+msgstr "כיבוי ניפוי תקלות"
 
 #: templatescommandmenu.cpp:201
 #, kde-format
 msgid "Insert Command"
-msgstr "插入命令"
+msgstr "הוספת פקודה"
 
 #: templatescommandmenu.cpp:214
 #, kde-format
 msgid "Original Message"
-msgstr "原始信件"
+msgstr "ההודעה המקורית"
 
 #: templatescommandmenu.cpp:228
 #, kde-format
 msgid "Current Message"
-msgstr "当前信件"
+msgstr "ההודעה הנוכחית"
 
 #: templatescommandmenu.cpp:241
 #, kde-format
 msgid "Process with External Programs"
-msgstr "用外部程序处理"
+msgstr "עיבוד עם תוכניות חיצוניות"
 
 #: templatescommandmenu.cpp:254
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
-msgstr "杂项"
+msgstr "שונות"
 
 #: templatescommandmenu.cpp:268
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
-msgstr "调试"
+msgstr "ניפוי תקלות"
 
 #: templatesconfiguration.cpp:50
 #, kde-format
@@ -531,9 +525,6 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
-"<p>您可以在这里创建和管理邮件模板，以便在撰写新邮件、回复或转发件时使用。</"
-"p><p>邮件模板支持替换命令，您可以简单地直接输入它们或在<i>插入命令</i>菜单下"
-"操作。</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -541,7 +532,6 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>在此指定的模板都是文件夹对应的。它们会覆盖全局模板和身份对应模板。</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -550,8 +540,6 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>在此指定的模板都是身份对应的。它们会覆盖全局模板，但会被文件夹对应的模板覆"
-"盖(如果指定了的话)。</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -559,29 +547,27 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>这些是默认全局模板。它们会被身份对应的模板或文件夹对应的模板覆盖(如果指定"
-"了的话)。</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
-msgstr "您想要重置当前或全部模板为默认值吗？"
+msgstr "לאפס את התבנית הנוכחית או את כל התבניות לברירת המחדל?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "重置为默认"
+msgstr "איפוס לברירת המחדל"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
-msgstr "重置当前模板"
+msgstr "איפוס התבנית הנוכחית"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
-msgstr "重置所有模板"
+msgstr "איפוס כל התבניות"
 
 #: templatesconfiguration.cpp:361
 #, kde-format
@@ -592,21 +578,17 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
-"同时使用“以纯文本回复”和“以 HTML 文本回复”是不正确的。请按照您的需要，仅使用"
-"前面所提方式的其中一个作为“作为引用消息回复命令”\n"
-"(a) 以纯文本回复，引用将被限制为纯文本\n"
-"(b) 以 HTML 文本回复，如果有则使用 HTML 格式的引用"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
 msgid "&Insert Command"
-msgstr "插入命令(&I)"
+msgstr "הוספת &פקודה"
 
 #: templatesinsertcommandpushbutton.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr "选择要插入模板中的命令"
+msgstr "נא לבחור פקודה להוספה לתבנית"
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -616,15 +598,13 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
-"遍历此菜单以找到一个命令插入当前正在编辑的模板。 命令将被插入到光标位置，所以"
-"您想先移动光标到所需的插入点。"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter a name for the custom template"
-msgstr "给自定义模板输入名字"
+msgstr "נא למלא שם לתבנית המותאמת אישית"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:89
@@ -633,14 +613,15 @@ msgctxt "@info:whatsthis"
 msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
-msgstr "若要创建自定义模板，首先输入该模板的名称，然后按“+”按钮。"
+msgstr ""
+"כדי ליצור תבנית מותאמת אישית, נא למלא שם לתבנית הזאת וללחוץ על הכפתור ‚+’."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new custom template"
-msgstr "添加新的自定义模板"
+msgstr "הוספת תבנית מותאמת אישית חדשה"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:99
@@ -649,14 +630,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
-msgstr "如果您想以指定名称创建新的自定义模板，请按此按钮"
+msgstr "לחיצה על הכפתור הזה תיצור תבנית מותאמת אישית חדשה בשם שצוין"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove the selected custom template"
-msgstr "移除选定的自定义模板"
+msgstr "הסרת התבנית המותאמת אישית הנבחרת"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:109
@@ -665,14 +646,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
-msgstr "如果您想要删除当前选定的自定义模板，请按此按钮"
+msgstr "לחיצה על הכפתור הזה תסיר את התבנית המותאמת אישית הנבחרת מהרשימה"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Duplicate the selected custom template"
-msgstr "复制选中的自定义模板"
+msgstr "שכפול התבנית המותאמת אישית הנבחרת"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:119
@@ -681,56 +662,56 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
-msgstr "如果您想要复制当前选定的自定义模板，请按此按钮"
+msgstr "לחיצה על הכפתור הזה תשכפל את התבנית המותאמת אישית הנבחרת מהרשימה"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "List of custom templates available"
-msgstr "可用自定义模板列表"
+msgstr "רשימת תבניות מותאמות אישית זמינות"
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is a list of all the custom templates available."
-msgstr "这是所有可用的自定义模板的列表。"
+msgstr "זאת רשימת כל התבניות המותאמות אישית הזמינות."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:147
 #, kde-format
 msgctxt "@title:column Type of custom template"
 msgid "Type"
-msgstr "文件系统"
+msgstr "סוג"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:152
 #, kde-format
 msgctxt "@title:column Name of the custom template."
 msgid "Name"
-msgstr "名称"
+msgstr "שם"
 
 #. i18n: ectx: property (text), widget (QLabel, mToLabel)
 #: ui/customtemplates_base.ui:195
 #, kde-format
 msgctxt "@label:textbox Recipient mail address"
 msgid "To:"
-msgstr "收件人："
+msgstr "אל:"
 
 #. i18n: ectx: property (text), widget (QLabel, mCCLabel)
 #: ui/customtemplates_base.ui:202
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "抄送："
+msgstr "עותק:"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients of the message"
-msgstr "信件的附加收件人"
+msgstr "נמענים נוספים להודעה"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:222
@@ -740,15 +721,13 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
-"当使用此模板时，您在这里输入的收件人将会是默认收件人，多个邮件地址之间用逗号"
-"分隔。"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients who get a copy of the message"
-msgstr "附加收件人会收到此信件的副本"
+msgstr "נמענים נוספים שזכאים לעותק של ההודעה"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:238
@@ -758,85 +737,83 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
-"当使用此模板进行时，您在这里输入的收件人将默认会收到这封信件的抄送副本。多个"
-"邮件地址之间用逗号分隔。"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The custom template"
-msgstr "自定义模板"
+msgstr "התבנית המותאמת אישית"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:258
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This area contains the associated custom template."
-msgstr "此区域包含关联的自定义模板。"
+msgstr "אזור זה מגיל את התבנית המותאמת אישית המשויכת."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:283
 #, kde-format
 msgctxt "@item:inlistbox Universal custom template type."
 msgid "Universal"
-msgstr "通用"
+msgstr "אוניברסלית"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:288
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for message replies"
 msgid "Reply"
-msgstr "回复"
+msgstr "תגובה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:293
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
 msgid "Reply to All"
-msgstr "全部回复"
+msgstr "תגובה לכולם"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "转发"
+msgstr "העברה"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr "快捷键(&U)："
+msgstr "&קיצור מקשים:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
 #, kde-format
 msgctxt "@label"
 msgid "&Template type:"
-msgstr "模板类型(&T)："
+msgstr "&סוג תבנית:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
 #: ui/templatesconfiguration_base.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Template Configuration"
-msgstr "模板配置"
+msgstr "הגדרות תבנית"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_new)
 #: ui/templatesconfiguration_base.ui:77
 #, kde-format
 msgctxt "@title Message template"
 msgid "New Message"
-msgstr "新信件"
+msgstr "הודעה חדשה"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for new messages"
-msgstr "为新信件创建模板"
+msgstr "יצירת התבנית להודעות חדשות"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:92
@@ -847,22 +824,22 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"在这里您创建新信件的模板。 欲了解如何创建模板的更多信息，请点击此对话框上"
-"的“如何工作？”链接。"
+"באזור הזה אפשר ליצור תבנית להודעות דוא״ל חדשות. למידע נוסף על יצירת התבנית, "
+"יש ללחוץ על הקישור „איך זה עובד?” שבחלונית הזאת."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to Sender"
-msgstr "回复给发件人"
+msgstr "להגיב למוען"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:146
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message replies"
-msgstr "为回复信件创建模板"
+msgstr "יצירת התבנית לתגובות להודעות"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:149
@@ -873,22 +850,22 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"在这里您创建回复消息的模板。 欲了解如何创建模板的更多信息，请点击此对话框上"
-"的“如何工作？”链接。"
+"באזור הזה אפשר ליצור תבנית להודעות תגובה. למידע נוסף על יצירת התבנית, יש "
+"ללחוץ על הקישור „איך זה עובד?” שבחלונית הזאת."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to All / Reply to List"
-msgstr "回复所有人/回复到邮件列表"
+msgstr "להגיב לכולם / להגיב לרשימה"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for replying to all recipients or to a mailing list"
-msgstr "为回复所有或回复邮件列表创建模板"
+msgstr "יצירת התבנית לתגובה לכל הנמענים ברשימת דיוור"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:206
@@ -899,22 +876,22 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
-"在这里您创建了回复所有人信件或回复邮件列表的模板。 欲了解如何创建模板的更多信"
-"息，请点击此对话框上的“如何工作？”链接。"
+"באזור הזה אפשר ליצור תבנית להודעות תגובה לכולם או תגובות לרשימות דיוור. "
+"למידע נוסף על יצירת התבנית, יש ללחוץ על הקישור „איך זה עובד?” שבחלונית הזאת."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
 #, kde-format
 msgctxt "@title Message template"
 msgid "Forward Message"
-msgstr "转发的信件"
+msgstr "העברת הודעה"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message forwards"
-msgstr "为转发信件创建模板"
+msgstr "יצירת התבנית להודעות מועברות"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:263
@@ -925,22 +902,22 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"在这里您创建转发信件的模板。 欲了解如何创建模板的更多信息，请点击此对话框上"
-"的“如何工作？”链接。"
+"באזור הזה אפשר ליצור תבנית להודעות מועברות. למידע נוסף על יצירת התבנית, יש "
+"ללחוץ על הקישור „איך זה עובד?” שבחלונית הזאת."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr "引文符号(&Q)："
+msgstr "מ&חוון ציטוט:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr "设置引用行的前缀"
+msgstr "הגדרת הקידומת לשורות הודעה מצוטטות"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326
@@ -958,10 +935,10 @@ msgid ""
 "           "
 msgstr ""
 "\n"
-"             <qt>引文中支持以下占位符：\n"
+"             <qt>ממלאי המקום הבאים נתמכים במחוון הציטוט:\n"
 "             <ul>\n"
-"             <li>%f: 发件人姓名首字母</li>\n"
-"             <li>%%: 百分号</li>\n"
-"             <li>%_: 空格</li>\n"
+"             <li>%f: ראשי תיבות המוען</li>\n"
+"             <li>%%: סימן אחוז</li>\n"
+"             <li>%_: רווח</li>\n"
 "             </ul></qt>\n"
 "           "
