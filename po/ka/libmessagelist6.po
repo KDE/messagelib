@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2023-09-29 07:55+0200\n"
+"PO-Revision-Date: 2024-03-16 04:18+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1036,10 +1036,9 @@ msgstr[0] "<b>%1</b> შეტყობინება (<b>%2</b> წაუკ�
 msgstr[1] "<b>%1</b> შეტყობინება (<b>%2</b> წაუკითხავი)"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "ნებისმიერი აღწერილი ფილტრი."
+msgstr "ფილტრი აღწერილი არაა."
 
 #: core/widgetbase.cpp:186
 #, kde-format
