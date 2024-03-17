@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2024-03-01 15:49+0300\n"
+"PO-Revision-Date: 2024-03-16 13:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -28,7 +28,7 @@ msgstr ""
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/aggregation.cpp:179
 #, kde-format
@@ -84,12 +84,12 @@ msgstr "Yalnızca Eksiksiz"
 #: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect and by References"
-msgstr "Eksiksiz ve Referanslara göre"
+msgstr "Eksiksiz ve Başvurulara Göre"
 
 #: core/aggregation.cpp:205
 #, kde-format
 msgid "Perfect, by References and by Subject"
-msgstr "Eksiksiz, Referanslara ve Konuya göre"
+msgstr "Eksiksiz, Başvurulara ve Konuya Göre"
 
 #: core/aggregation.cpp:214
 #, kde-format
@@ -140,7 +140,7 @@ msgstr "Toplu Görevler (Etkileşim Yok)"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
-msgstr "Okunan"
+msgstr "Okunmuş"
 
 #: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
@@ -226,9 +226,9 @@ msgid ""
 "example, in \"Today\" you will find all the messages arrived today and all "
 "the threads that have been active today."
 msgstr ""
-"Bu görünüm, akıllı tarih aralıklı grupları kullanır. İletiler konulara "
-"ayrılır. Örneğin, \"Bugün\" başlığı altında bugün ulaşan bütün iletileri ve "
-"bugün etkin olan tüm ilmekleri bulabilirsiniz."
+"Bu görünüm, akıllı tarih erimli grupları kullanır. İletiler konulara "
+"ayrılır. Örneğin, ‘Bugün’ başlığı altında bugün gelen tüm iletileri ve etkin "
+"olan ileti dizilerini bulacaksınız."
 
 #: core/manager.cpp:219
 #, kde-format
@@ -241,9 +241,8 @@ msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
-"Bu görünüm, akıllı tarih aralıklı grupları kullanır. İletiler konulara "
-"ayrılmaz. Örneğin, \"Bugün\" içinde, bugün ulaşan bütün iletileri "
-"bulacaksınız."
+"Bu görünüm, akıllı tarih erimli grupları kullanır. İletiler konulara "
+"ayrılmaz. Örneğin, ‘Bugün’ içinde, bugün gelen tüm iletileri bulacaksınız."
 
 #: core/manager.cpp:231
 #, kde-format
@@ -258,8 +257,8 @@ msgid ""
 "that have been active today."
 msgstr ""
 "Bu görünüm, grupları günbegün gösterir. İletiler konu başlıklarına ayrılır. "
-"Örneğin, \"Bugün\" başlığı altında bugün ulaşan bütün iletileri ve bugün "
-"etkin olan bütün başlıkları bulabilirsiniz."
+"Örneğin, ‘Bugün’ başlığı altında bugün gelen tüm iletileri ve etkin olan "
+"başlıkları bulacaksınız."
 
 #: core/manager.cpp:244
 #, kde-format
@@ -273,7 +272,7 @@ msgid ""
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 "Bu görünüm, grupları günbegün gösterir. İletiler konulara ayrılmaz. Örneğin, "
-"\"Bugün\" içinde, bugün ulaşan bütün iletileri bulacaksınız."
+"‘Bugün’ içinde, bugün gelen tüm iletileri bulacaksınız."
 
 #: core/manager.cpp:256
 #, kde-format
@@ -519,29 +518,29 @@ msgstr "%1 %2"
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "%2 İletinin 1 Tanesi İşlendi"
-msgstr[1] "%2 İletinin %1 Tanesi İşlendi"
+msgstr[0] "1/%2 ileti işlendi"
+msgstr[1] "%1/%2 ileti işlendi"
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "1/%2 İleti Konulara Ayrıldı"
-msgstr[1] "%1/%2 İleti Konulara Ayrıldı"
+msgstr[0] "1/%2 ileti konulara ayrıldı"
+msgstr[1] "%1/%2 ileti konulara ayrıldı"
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "1/%2 Konu Gruplandı"
-msgstr[1] "%1/%2 Konu Gruplandı"
+msgstr[0] "1/%2 konu gruplandı"
+msgstr[1] "%1/%2 konu gruplandı"
 
 #: core/model.cpp:3811
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] "%2 Grubun 1 Tanesi Güncellendi"
-msgstr[1] "%2 Grubun %1 Tanesi Güncellendi"
+msgstr[0] "1/%2 grup güncellendi"
+msgstr[1] "%1/%2 grup güncellendi"
 
 #: core/model.cpp:3903
 #, kde-format
@@ -1065,7 +1064,7 @@ msgstr "Tema"
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
 msgid "Configure..."
-msgstr "Yapılandır..."
+msgstr "Yapılandır…"
 
 #: core/widgetbase.cpp:498 messagelistutil.cpp:109
 #, kde-format
@@ -1133,7 +1132,7 @@ msgstr "Ad:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "Süzgeci Kaydet..."
+msgstr "Süzgeci Kaydet…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1478,12 +1477,12 @@ msgstr "Toplama Biçimini Kopyala"
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
-msgstr "Toplamayı Dışa Aktar..."
+msgstr "Toplamayı Dışa Aktar…"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
-msgstr "Toplamayı İçe Aktar..."
+msgstr "Toplamayı İçe Aktar…"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
@@ -1530,12 +1529,12 @@ msgstr "Temayı Kopyala"
 #: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
-msgstr "Temayı Dışa Aktar..."
+msgstr "Temayı Dışa Aktar…"
 
 #: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
-msgstr "Tema Al..."
+msgstr "Tema Al…"
 
 #: utils/configurethemesdialog.cpp:156
 #, kde-format
@@ -1560,7 +1559,7 @@ msgstr "Seçilen temaları silmek istiyor musunuz?"
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr "\"%1\" temasını silmek istiyor musunuz?"
+msgstr "“%1” temasını silmek istiyor musunuz?"
 
 #: utils/configurethemesdialog.cpp:410
 #, kde-format
@@ -1632,7 +1631,7 @@ msgstr ""
 #: utils/themeeditor.cpp:87
 #, kde-format
 msgid "Contains \"Sender or Receiver\" field"
-msgstr "\"Gönderen veya Alıcı\" alanı içerir"
+msgstr "“Gönderen veya Alıcı” alanı içerir"
 
 #: utils/themeeditor.cpp:88
 #, kde-format
@@ -1640,8 +1639,8 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"\"gelen\"/\"giden\" tipinden, dizine göre sütun etiketinin güncellenmesini "
-"istiyorsanız bunu tıklayın."
+"“Gelen/Giden” türüne göre sütun etiketinin güncellenmesini istiyorsanız buna "
+"tıklayın."
 
 #: utils/themeeditor.cpp:108
 #, kde-format
@@ -1716,7 +1715,7 @@ msgstr "Öntanımlı"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "Özel..."
+msgstr "Özel…"
 
 #: utils/themeeditor.cpp:888
 #, kde-format
@@ -1773,7 +1772,7 @@ msgstr "Otomatik"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "Özel..."
+msgstr "Özel…"
 
 #: utils/themeeditor.cpp:950
 #, kde-format
@@ -1788,12 +1787,12 @@ msgstr "Arka Plan Biçimi"
 #: utils/themeeditor.cpp:1156
 #, kde-format
 msgid "Column Properties..."
-msgstr "Sütun Özellikleri..."
+msgstr "Sütun Özellikleri…"
 
 #: utils/themeeditor.cpp:1159
 #, kde-format
 msgid "Add Column..."
-msgstr "Sütun Ekle..."
+msgstr "Sütun Ekle…"
 
 #: utils/themeeditor.cpp:1162
 #, kde-format
