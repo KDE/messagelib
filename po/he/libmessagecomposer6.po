@@ -7,15 +7,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-15 00:38+0000\n"
-"PO-Revision-Date: 2024-03-15 08:42+0200\n"
+"PO-Revision-Date: 2024-03-17 09:54+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.4\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -213,19 +212,19 @@ msgstr "רענון"
 #: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr ""
+msgstr "KMail לא הצליח לכתוב את הקובץ המצורף לקובץ זמני."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr ""
+msgstr "לא ניתן לפתוח צרופה"
 
 #: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr ""
+msgstr "KMail לא הצליח לפתוח את הקובץ המצורף."
 
 #: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -236,12 +235,12 @@ msgstr "לא ניתן לערוך קובץ מצורף"
 #: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
-msgstr ""
+msgstr "ללא_שם"
 
 #: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgid "Save Attachment As"
-msgstr ""
+msgstr "שמירת הצרופה בשם"
 
 #: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
@@ -249,129 +248,131 @@ msgid ""
 "File %1 exists.\n"
 "Do you want to replace it?"
 msgstr ""
+"הקובץ %1 קיים.\n"
+"להחליף אותו?"
 
 #: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr ""
+msgstr "שמירה לקובץ"
 
 #: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgid "&Replace"
-msgstr ""
+msgstr "ה&חלפה"
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:909
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr ""
+msgstr "לצרף את התיקייה „%1”?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
 #: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr ""
+msgstr "צירוף תיקייה"
 
 #: attachment/attachmentcontrollerbase.cpp:853
 #: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
-msgstr ""
+msgstr "צירוף"
 
 #: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr ""
+msgstr "צירוף תיקייה"
 
 #: attachment/attachmentcontrollerbase.cpp:897
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr ""
+msgstr "צירוף קובץ"
 
 #: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr ""
+msgstr "צירוף הקובץ נכשל"
 
 #: attachment/attachmentcontrollerbase.cpp:964
 #, kde-format
 msgid "Attach Public OpenPGP Key"
-msgstr ""
+msgstr "צירוף מפתח OpenPGP ציבורי"
 
 #: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Select the public key which should be attached."
-msgstr ""
+msgstr "נא לבחור את המפתח הציבורי לצירוף."
 
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
 msgid "unnamed attachment"
-msgstr ""
+msgstr "קובץ מצורף ללא שם"
 
 #: attachment/attachmentmodel.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
-msgstr ""
+msgstr "שם: %1<br>גודל: %2<br>קידוד: %3<br>סוג תוכן/MIME‏=%4"
 
 #: attachment/attachmentmodel.cpp:439
 #, kde-format
 msgctxt "@title column attachment name."
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: attachment/attachmentmodel.cpp:441
 #, kde-format
 msgctxt "@title column attachment size."
 msgid "Size"
-msgstr ""
+msgstr "גודל"
 
 #: attachment/attachmentmodel.cpp:443
 #, kde-format
 msgctxt "@title column attachment encoding."
 msgid "Encoding"
-msgstr ""
+msgstr "קידוד"
 
 #: attachment/attachmentmodel.cpp:445
 #, kde-format
 msgctxt "@title column attachment type."
 msgid "Type"
-msgstr ""
+msgstr "סוג"
 
 #: attachment/attachmentmodel.cpp:447
 #, kde-format
 msgctxt "@title column attachment compression checkbox."
 msgid "Compress"
-msgstr ""
+msgstr "דחיסה"
 
 #: attachment/attachmentmodel.cpp:449
 #, kde-format
 msgctxt "@title column attachment encryption checkbox."
 msgid "Encrypt"
-msgstr ""
+msgstr "הצפנה"
 
 #: attachment/attachmentmodel.cpp:451
 #, kde-format
 msgctxt "@title column attachment signed checkbox."
 msgid "Sign"
-msgstr ""
+msgstr "חתימה"
 
 #: attachment/attachmentmodel.cpp:453
 #, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
-msgstr ""
+msgstr "הצעת תצוגה אוטומטית"
 
 #: attachment/editorwatcher.cpp:60
 #, kde-format
 msgid "Edit with:"
-msgstr ""
+msgstr "עריכה עם:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -379,41 +380,43 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail לא הצליח לזהות מתי העורך הנבחר סגור. כדי להימנע מאובדן מידע, עריכת "
+"הקובץ המצורף מבוטלת."
 
 #: composer/composer.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
-msgstr ""
+msgstr "לא נמצאו נתוני מפתחות לנמענים."
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr ""
+msgstr "&להשאיר את הסימון, לא לחתום/להצפין"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr ""
+msgstr "&להשאיר את הסימון, לא להצפין"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr ""
+msgstr "&להשאיר את הסימון, לא לחתום"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr ""
+msgstr "חתימה/הצפנה (מחיקת הסימון)"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr ""
+msgstr "הצפנה (מחיקת הסימון)"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr ""
+msgstr "חתימה (מחיקת הסימון)"
 
 #: composer/composerviewbase.cpp:333
 #, kde-format
@@ -421,71 +424,73 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
+"<qt><p>אי אפשר לחתום/להצפין הודעת HTML כחלק מההודעה;</p><p>למחוק את הסימון "
+"שלך?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
-msgstr ""
+msgstr "לחתום/להצפין את ההודעה?"
 
 #: composer/composerviewbase.cpp:511
 #, kde-format
 msgid "It was not possible to create a message composer."
-msgstr ""
+msgstr "יצירת מחבר הודעות לא התאפשרה."
 
 #: composer/composerviewbase.cpp:521
 #, kde-format
 msgid "Do you want to resize images?"
-msgstr ""
+msgstr "לשנות את גודל התמונות?"
 
 #: composer/composerviewbase.cpp:522
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr ""
+msgstr "לשנות גודל תמונות אוטומטית"
 
 #: composer/composerviewbase.cpp:523
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr ""
+msgstr "לשנות גודל אוטומטית"
 
 #: composer/composerviewbase.cpp:524
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr ""
+msgstr "לא לשנות את הגודל"
 
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "OpenPGP Key Expired"
-msgstr ""
+msgstr "תוקף מפתח ה־OpenPGP פג"
 
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "S/MIME Certificate Expired"
-msgstr ""
+msgstr "תוקף אישור ה־S/MIME פג"
 
 #: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
-msgstr ""
+msgstr "תוקף מפתח ה־OpenPGP יפוג בקרוב"
 
 #: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
-msgstr ""
+msgstr "תוקף אישור ה־S/MIME יפוג בקרוב"
 
 #: composer/composerviewbase.cpp:801 composer/composerviewbase.cpp:815
 #: composer/composerviewbase.cpp:847
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr ""
+msgstr "פתרון המפתחות נכשל. נא לדווח על תקלה."
 
 #: composer/composerviewbase.cpp:1053 composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Job cancelled by the user"
-msgstr ""
+msgstr "המשימה בוטלה על ידי המשתמש"
 
 #: composer/composerviewbase.cpp:1058
 #, kde-format
@@ -493,36 +498,38 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
+"לא ניתן לכתוב הודעה: %1 \n"
+" נא לדווח על התקלה הזאת."
 
 #: composer/composerviewbase.cpp:1060
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr ""
+msgstr "לא ניתן לכתוב הודעה: %1"
 
 #: composer/composerviewbase.cpp:1163
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
-msgstr ""
+msgstr "קרו כל מיני בעיות בניסיון להוסיף את ההודעה בתור לשליחה: %1"
 
 #: composer/composerviewbase.cpp:1327
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr ""
+msgstr "לא ניתן לשמור הודעה אוטומטית: %1"
 
 #: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not write all data to file."
-msgstr ""
+msgstr "לא ניתן לכתוב את כל הנתונים לקובץ."
 
 #: composer/composerviewbase.cpp:1349
 #, kde-format
 msgid "Could not finalize the file."
-msgstr ""
+msgstr "לא ניתן לסיים את הטיפול בהקובץ."
 
 #: composer/composerviewbase.cpp:1353
 #, kde-format
 msgid "Could not open file."
-msgstr ""
+msgstr "לא ניתן לפתוח קובץ."
 
 #: composer/composerviewbase.cpp:1360
 #, kde-format
@@ -531,17 +538,20 @@ msgid ""
 "%2\n"
 "Reason: %3"
 msgstr ""
+"שמירת ההודעה בתור %1 אוטומטית נכשלה.\n"
+"%2\n"
+"סיבה: %3"
 
 #: composer/composerviewbase.cpp:1366
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
-msgstr ""
+msgstr "שמירת ההודעה אוטומטית נכשלה"
 
 #: composer/composerviewbase.cpp:1479
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr ""
+msgstr "שמירת ההודעה נכשלה: %1"
 
 #: composer/composerviewbase.cpp:1906
 #, kde-format
@@ -550,12 +560,14 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
+"נראה שההודעה שכתבת מתייחסת לקובץ מצורף אבל לא צירפת שום דבר.\n"
+"לצרף קובץ להודעה שלך?"
 
 #: composer/composerviewbase.cpp:1909
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr ""
+msgstr "תזכורת צרופות"
 
 #: composer/composerviewbase.cpp:1911
 #, kde-format
@@ -574,18 +586,18 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
-msgstr ""
+msgstr "לחתום על ההודעה?"
 
 #: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
-msgstr ""
+msgstr "ל&חתום"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
 #, kde-format
 msgid "Do &Not Sign"
-msgstr ""
+msgstr "&לא לחתום"
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format

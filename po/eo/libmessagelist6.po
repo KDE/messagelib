@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 19:49+0100\n"
+"PO-Revision-Date: 2024-03-17 05:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1042,10 +1042,9 @@ msgstr[0] "<b>%1</b> mesaĝo (<b>%2</b> nelegitaj)"
 msgstr[1] "<b>%1</b> mesaĝoj (<b>%2</b> nelegitaj)"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "Ajna filtrilo difinita."
+msgstr "Neniu filtrilo difinita."
 
 #: core/widgetbase.cpp:186
 #, kde-format

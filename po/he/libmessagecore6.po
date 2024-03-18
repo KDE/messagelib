@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2024-03-15 17:41+0200\n"
+"PO-Revision-Date: 2024-03-17 09:18+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -99,6 +99,8 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
+"<p>גודל הצרופה המשוערך:</p><p>כדאי לשים לב שבכל הודעת דוא״ל, קובץ בינרי "
+"בקידוד base64 יתפוס שלושה רבעים מגודל הקובץ בפועל.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
@@ -108,6 +110,9 @@ msgid ""
 "suggests a file name to be used by the recipient's mail agent when saving "
 "the part to disk.</p>"
 msgstr ""
+"<p>שם קובץ החלק:</p><p>למרות שברירת המחדל של הגדרה זו היא שם הקובץ המצורף, "
+"היא לא מציינת את הקובץ לצירוף; במקום, היא היא מציעה שם קובץ לשימוש על ידי "
+"סוכן הדוא״ל של הנמעןבעת שמירת החלק לכונן.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
@@ -150,6 +155,8 @@ msgid ""
 "signature will be made with the key that you associated with the currently-"
 "selected identity.</p>"
 msgstr ""
+"<p>יש לסמן את האפשרות הזאת כדי שהחלק הזה בהודעה ייחתם.</p><p>החתימה החתימה "
+"תתבצע באמצעות המפתח ששייכת לזהות הנבחרת הנוכחית.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:186
 #, kde-format

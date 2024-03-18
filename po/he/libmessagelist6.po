@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-02-23 14:44+0200\n"
+"PO-Revision-Date: 2024-03-17 09:14+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1062,10 +1062,9 @@ msgstr[2] "<b>%1</b> הודעות (<b>%2</b> לא נקראו)"
 msgstr[3] "<b>%1</b> הודעות (<b>%2</b> לא נקראו)"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "כל מסנן מוגדר."
+msgstr "לא מוגדר מסנן."
 
 #: core/widgetbase.cpp:186
 #, kde-format
