@@ -111,7 +111,8 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
         }
 
         if (strategy->showHeader(QStringLiteral("organization")) && message->organization(false)) {
-            headerStr.append(QLatin1StringView("&nbsp;&nbsp;(") + d->mHeaderStyleUtil.strToHtml(message->organization()->asUnicodeString()) + QLatin1Char(')'));
+            headerStr.append(QLatin1StringView("&nbsp;&nbsp;(") + d->mHeaderStyleUtil.strToHtml(message->organization(false)->asUnicodeString())
+                             + QLatin1Char(')'));
         }
         headerStr.append(QLatin1StringView("<br/>\n"));
     }
@@ -122,21 +123,22 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     }
 
     if (strategy->showHeader(QStringLiteral("cc")) && message->cc(false)) {
-        const QString str = StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayFullAddress);
+        const QString str = StringUtil::emailAddrAsAnchor(message->cc(false), StringUtil::DisplayFullAddress);
         if (!str.isEmpty()) {
             headerStr.append(i18n("CC: ") + str + QLatin1StringView("<br/>\n"));
         }
     }
 
     if (strategy->showHeader(QStringLiteral("bcc")) && message->bcc(false)) {
-        const QString str = StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayFullAddress);
+        const QString str = StringUtil::emailAddrAsAnchor(message->bcc(false), StringUtil::DisplayFullAddress);
         if (!str.isEmpty()) {
             headerStr.append(i18n("BCC: ") + str + QLatin1StringView("<br/>\n"));
         }
     }
 
     if (strategy->showHeader(QStringLiteral("reply-to")) && message->replyTo(false)) {
-        headerStr.append(i18n("Reply to: ") + StringUtil::emailAddrAsAnchor(message->replyTo(), StringUtil::DisplayFullAddress) + QLatin1StringView("<br/>\n"));
+        headerStr.append(i18n("Reply to: ") + StringUtil::emailAddrAsAnchor(message->replyTo(false), StringUtil::DisplayFullAddress)
+                         + QLatin1StringView("<br/>\n"));
     }
 
     headerStr += QLatin1StringView("</div>\n");

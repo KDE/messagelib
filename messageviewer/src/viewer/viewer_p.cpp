@@ -777,7 +777,9 @@ void ViewerPrivate::displayMessage()
     htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
     if (!mMainWindow) {
-        q->setWindowTitle(mMessage->subject()->asUnicodeString());
+        if (auto subject = mMessage->subject(false)) {
+            q->setWindowTitle(subject->asUnicodeString());
+        }
     }
 
     // Don't update here, parseMsg() can overwrite the HTML mode, which would lead to flicker.
