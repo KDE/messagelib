@@ -271,7 +271,7 @@ Q_SIGNALS:
     void enableHtml();
     void tooManyRecipient(bool);
 
-private Q_SLOTS:
+private:
     void slotEmailAddressResolved(KJob *);
     void slotSendComposeResult(KJob *);
     void slotQueueResult(KJob *job);
@@ -280,7 +280,6 @@ private Q_SLOTS:
     void slotFccCollectionCheckResult(KJob *job);
     void slotSaveMessage(KJob *job);
 
-private:
     [[nodiscard]] Akonadi::Collection defaultSpecialTarget() const;
     /**
      * Searches the mime tree, where root is the root node, for embedded images,
