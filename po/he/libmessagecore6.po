@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2024-03-17 09:18+0200\n"
+"PO-Revision-Date: 2024-03-18 09:35+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -91,6 +91,9 @@ msgid ""
 "but, sometimes, %1 may not detect the type correctly -- here is where you "
 "can fix that.</p>"
 msgstr ""
+"<p><em>סוג התוכן/MIME</em> של הקובץ:</p><p>בדרך כלל, לא צריך לגעת בהגדרה "
+"הזאת, כיוון שסוג הקובץ נבדק אוטומטית; אבל, לפעמים, הזיהוי של %1 לא נכון -- "
+"כאן אפשר לתקן את זה.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:142
 #, kde-format
@@ -147,6 +150,10 @@ msgid ""
 "<em>Content-Disposition</em> header field to \"inline\" instead of the "
 "default \"attachment\".</p>"
 msgstr ""
+"<p>יש לסמן את האפשרות הזאת כדי להציע לנמען את התצוגה האוטומטית (הפנימית) של "
+"החלק הזה בתצוגה המקדימה של ההודעה, במקום תצוגת הסמל כברירת מחדל;</"
+"p><p>טכנית, זה מטופל על ידי הגדרת שדה הכותרת <em>Content-Disposition</em> של "
+"החלק הזה ל־„inline” (פנימי) במקום ברירת המחדל „attachment” (צרופה).</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
