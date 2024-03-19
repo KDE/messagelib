@@ -44,10 +44,8 @@ public:
 
     void start() override;
 
-private Q_SLOTS:
-    void slotCreateNewTodo(KJob *job);
-
 private:
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateNewTodo(KJob *job);
     MESSAGECOMPOSER_NO_EXPORT void writeFollowupReminderInfo();
 
     std::unique_ptr<FollowupReminderCreateJobPrivate> const d;
