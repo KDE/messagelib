@@ -179,7 +179,7 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
     }
     fname += QLatin1Char('/') + filename;
     QFile f(fname);
-    if (!f.open(QIODevice::ReadWrite)) {
+    if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
         return {};
@@ -227,7 +227,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
         data = KMime::CRLFtoLF(data);
     }
     QFile f(fname);
-    if (!f.open(QIODevice::ReadWrite)) {
+    if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
         return {};
