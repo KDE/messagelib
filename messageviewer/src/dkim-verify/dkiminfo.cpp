@@ -124,7 +124,7 @@ void DKIMInfo::setIDomain(const QString &iDomain)
 void DKIMInfo::parseCanonicalization(const QString &str)
 {
     if (!str.isEmpty()) {
-        const QStringList canonicalization = str.split(QLatin1Char('/'));
+        const QList<QStringView> canonicalization = QStringView(str).split(QLatin1Char('/'));
         // qDebug() << " canonicalization "<< canonicalization;
         if (canonicalization.count() >= 1) {
             if (canonicalization.at(0) == QLatin1StringView("relaxed")) {
