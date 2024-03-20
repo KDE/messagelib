@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-20 00:38+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -461,6 +461,12 @@ msgstr "مطمئن هستید که می‌خواهید تمام پیامهای �
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "حذف"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "جستجو"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, fuzzy, kde-format
@@ -1104,24 +1110,24 @@ msgstr "از: "
 msgid "[vCard]"
 msgstr ""
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "به: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "ر.ن: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "ر.ن.م: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "پاسخ به: "
@@ -1848,7 +1854,7 @@ msgstr "مستندات"
 msgid "Turn on HTML rendering for this message."
 msgstr "روشن کردن پرداخت زنگام برای این پیام."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "بار کردن مرجعهای خارجی از اینترنت برای این پیام."
@@ -1938,7 +1944,7 @@ msgstr "باز کردن در کتاب نشانی"
 msgid "&Copy Email Address"
 msgstr "نشانی رایانامه"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "نشانی رونوشت‌شده در تخته یادداشت."
@@ -2042,13 +2048,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&باز کردن با...‌"
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1740
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "باز کردن"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1747
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2064,12 +2070,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "ذخیره به عنوان..."
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Copy"
 msgstr "رونوشت"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1762
 #, kde-format
 msgid "Delete Attachment"
 msgstr "حذف پیوست"
@@ -2087,7 +2093,7 @@ msgstr "پاسخ به &نویسنده...‌"
 msgid "Reply To All"
 msgstr "پاسخ به همه"
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1767
 #, kde-format
 msgid "Properties"
 msgstr "ویژگیها"
@@ -2104,287 +2110,287 @@ msgstr "نامه"
 msgid "The KDE Mail Client"
 msgstr "کارخواه رایانامه KDE"
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1280
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "نمای پیوست: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&پیوستها‌"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "انتخاب سبک نمایش پیوستها"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&به عنوان شمایلها‌"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "نمایش همه پیوستها به عنوان شمایلها. فشار دهید تا آنها را ببینید."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&هوشمند‌"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "نمایش پیوستها به عنوان پیشنهادشده توسط فرستنده."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&درون‌برنامه‌ای‌"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "نمایش همه پیوستهای درون‌برنامه‌ای )در صورت امکان("
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1508
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&مخفی کردن‌"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "عدم نمایش پیوستها در مشاهده‌گر پیام"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1515
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1518
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "نمایش همه پیوستها به عنوان شمایلها. فشار دهید تا آنها را ببینید."
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1523
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&تنظیم رمزبندی‌"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1528 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "خودکار"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1538
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&رونوشت در‌"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1545
 #, kde-format
 msgid "Select All Text"
 msgstr "برگزیدن کل متن"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2062
+#: viewer/viewer_p.cpp:1551 viewer/viewer_p.cpp:2064
 #, kde-format
 msgid "Copy Link Address"
 msgstr "رونوشت نشانی پیوند"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgid "Open URL"
 msgstr "باز کردن نشانی وب"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "استفاده از قلم &ثابت‌"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1567
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "مشاهده‌گر ساختار پیام"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
 msgstr "&مشاهده متن‌"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1577
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
 msgid "&Save Message..."
 msgstr " پیام"
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1583
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "&ذخیره به عنوان پیش‌نویس‌"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "&ذخیره به عنوان پیش‌نویس‌"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "برگزیدن &تمام پیامها‌"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1599
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "برگزیدن &تمام پیامها‌"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1604
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "برگزیدن &تمام پیامها‌"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1609
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "برگزیدن &تمام پیامها‌"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgid "Load external references"
 msgstr "بارگذاری مرجعهای خارجی"
 
-#: viewer/viewer_p.cpp:1630 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgid "Share Text..."
 msgstr "&برگزیدن...‌"
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1656
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgid "Copy Image Location"
 msgstr "انتخاب محل"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1662
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&یافتن در پیام...‌"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1671
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1737
 #, kde-format
 msgid "Save &As..."
 msgstr "ذخیره &به عنوان...‌"
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1745
 #, kde-format
 msgid "Open With..."
 msgstr "باز کردن با..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1752
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "ذخیره همه پیوستها..."
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1984
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1984
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1985
+#: viewer/viewer_p.cpp:1987
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "پرونده امضا معتبر نیست"
 
-#: viewer/viewer_p.cpp:1985
+#: viewer/viewer_p.cpp:1987
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2007
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2006
+#: viewer/viewer_p.cpp:2008
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2060
+#: viewer/viewer_p.cpp:2062
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "نشانی رایانامه"
 
-#: viewer/viewer_p.cpp:2143
+#: viewer/viewer_p.cpp:2145
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "پیام به عنوان متن ساده"
 
-#: viewer/viewer_p.cpp:2714
+#: viewer/viewer_p.cpp:2716
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "نشانی وب رونوشت‌شده در تخته یادداشت."
 
-#: viewer/viewer_p.cpp:2866
+#: viewer/viewer_p.cpp:2868
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "پیام، توسط %1 امضا شد."
 
-#: viewer/viewer_p.cpp:2871
+#: viewer/viewer_p.cpp:2873
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
@@ -2979,11 +2985,6 @@ msgstr "&پیام خوانده‌نشده قبلی‌"
 #~| msgid "&Address Book"
 #~ msgid "Address"
 #~ msgstr "کتاب &نشانی‌"
-
-#, fuzzy
-#~| msgid "Search"
-#~ msgid "Search..."
-#~ msgstr "جستجو"
 
 #, fuzzy
 #~| msgid "Delete Script"

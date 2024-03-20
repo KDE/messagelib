@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-20 00:38+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -424,6 +424,11 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "چىقىرىۋەت(&V)"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgid "Search..."
+msgstr ""
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -1023,23 +1028,23 @@ msgstr "ئەۋەتكۈچى: "
 msgid "[vCard]"
 msgstr ""
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "خەت تاپشۇرۇۋالغۇچى： "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, fuzzy, kde-format
 #| msgid "Appl&y to All"
 msgid "Reply to: "
@@ -1739,7 +1744,7 @@ msgstr ""
 msgid "Turn on HTML rendering for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
@@ -1825,7 +1830,7 @@ msgstr "ئادرېس دەپتىرىدە ئاچ(&O)"
 msgid "&Copy Email Address"
 msgstr "ئېلخەت ئادرېسىنى كۆچۈر(&C)"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2708
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
@@ -1927,13 +1932,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "بۇنىڭدا ئاچ(&O)…"
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1740
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "ئاچ"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1747
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1949,12 +1954,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "باشقا ئاتتا ساقلا…"
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Copy"
 msgstr "كۆچۈر"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1762
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Delete Attachment"
@@ -1971,7 +1976,7 @@ msgstr "ھەممىگە قوللان(&Y)"
 msgid "Reply To All"
 msgstr ""
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1767
 #, kde-format
 msgid "Properties"
 msgstr "خاسلىق"
@@ -1987,277 +1992,277 @@ msgstr "KMail  خاتالىقى"
 msgid "The KDE Mail Client"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1280
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "قوشۇلمىلار:"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "قوشۇلمىلار(&A)"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "سىڭدۈر(&I)"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1508
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "يوشۇر(&H)"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1515
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1523
 #, kde-format
 msgid "&Set Encoding"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1528 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "ئاپتوماتىك"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1538
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Copy Text"
 msgstr "تېكىستنى ئوقۇ"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1545
 #, kde-format
 msgid "Select All Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2062
+#: viewer/viewer_p.cpp:1551 viewer/viewer_p.cpp:2064
 #, kde-format
 msgid "Copy Link Address"
 msgstr "ئۇلانما ئادرېسىنى كۆچۈر"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgid "Open URL"
 msgstr "URL ئاچ"
 
-#: viewer/viewer_p.cpp:1559
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "تەڭ كەڭلىكتىكى خەت نۇسخىسى(&X)"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1567
 #, kde-format
 msgid "Show Message Structure"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
 msgstr "مەنبەنى كۆرۈش(&V)"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1577
 #, fuzzy, kde-format
 #| msgid "Save Message"
 #| msgid_plural "Save Messages"
 msgid "&Save Message..."
 msgstr "ئۇچۇر ساقلا"
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Encrypted message"
 msgid "Scroll Message Up"
 msgstr "شىفىرلانغان ئۇچۇر"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Scroll Message Down"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1604
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1630 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
 msgid "Speak Text"
 msgstr "تېكىستنى ئوقۇ"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Share Text..."
 msgstr "تېكىستنى ئوقۇ"
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1656
 #, kde-format
 msgid "Copy Image Location"
 msgstr "سۈرەت ئورنىنى كۆچۈر"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1662
 #, kde-format
 msgid "&Find in Message..."
 msgstr "خەتتىن تاپ(&F)…"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1671
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1737
 #, kde-format
 msgid "Save &As..."
 msgstr "باشقا ئاتتا ساقلا(&A)…"
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1745
 #, kde-format
 msgid "Open With..."
 msgstr "بۇنىڭدا ئېچىش…"
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1752
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Save All Attachments..."
 msgstr "قوشۇلمىنى ساقلا"
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1984
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1982
+#: viewer/viewer_p.cpp:1984
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1985
+#: viewer/viewer_p.cpp:1987
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1985
+#: viewer/viewer_p.cpp:1987
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2007
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2006
+#: viewer/viewer_p.cpp:2008
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2060
+#: viewer/viewer_p.cpp:2062
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ئېلخەت ئادرېسنى كۆچۈر"
 
-#: viewer/viewer_p.cpp:2143
+#: viewer/viewer_p.cpp:2145
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
 
-#: viewer/viewer_p.cpp:2714
+#: viewer/viewer_p.cpp:2716
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2866
+#: viewer/viewer_p.cpp:2868
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
 
-#: viewer/viewer_p.cpp:2871
+#: viewer/viewer_p.cpp:2873
 #, kde-format
 msgid "Message not found."
 msgstr ""
