@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-15 03:04+0000\n"
-"PO-Revision-Date: 2024-03-10 12:41+0100\n"
+"PO-Revision-Date: 2024-03-20 09:41+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1768,7 +1768,7 @@ msgstr "Plega el text citat."
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
-"No s'ha pogut iniciar el gestor de certificats. Si us plau, comproveu la "
+"No s'ha pogut iniciar el gestor de certificats. Comproveu aquesta "
 "instal·lació."
 
 #: viewer/urlhandlermanager.cpp:534
