@@ -421,7 +421,8 @@ msgid "Delete Keys"
 msgstr "Schlüssel löschen"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
 msgid "Search..."
 msgstr "Suchen ..."
 

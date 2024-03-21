@@ -11,13 +11,13 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2005.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2008, 2009, 2010.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007, 2008.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2023-11-14 02:22+0900\n"
+"PO-Revision-Date: 2024-03-20 18:08+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "dot tw>\n"
-"X-Generator: Lokalize 24.01.75\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/aggregation.cpp:178
@@ -1027,10 +1027,9 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> 封信件（<b>%2</b> 封未讀） 封未讀）"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "任何已定義的過濾器。"
+msgstr "沒有定義過濾器。"
 
 #: core/widgetbase.cpp:186
 #, kde-format
