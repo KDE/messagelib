@@ -25,6 +25,7 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     mName->setObjectName(QLatin1StringView("mName"));
     mName->setClearButtonEnabled(true);
     mIconButton->setObjectName(QLatin1StringView("mIconButton"));
+    mIconButton->setButtonIconSize(24);
     mIconButton->setFixedSize(32, 32);
     KLineEditEventHandler::catchReturnKey(mName);
 
