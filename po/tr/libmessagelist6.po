@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-03-16 13:48+0300\n"
+"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"PO-Revision-Date: 2024-03-21 23:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -164,19 +164,19 @@ msgstr "Eylem Ögesi"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
-msgstr "Yanıtlanan"
+msgstr "Yanıtlandı"
 
 #: core/item.cpp:270
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
-msgstr "Yönlendirilen"
+msgstr "İletildi"
 
 #: core/item.cpp:274
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
-msgstr "Gönderilen"
+msgstr "Gönderildi"
 
 #: core/item.cpp:278
 #, kde-format
@@ -194,19 +194,19 @@ msgstr "İstenmeyen"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr "İşlenmeyen"
+msgstr "İşlenmedi"
 
 #: core/item.cpp:290
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
-msgstr "İzlenen"
+msgstr "İzlendi"
 
 #: core/item.cpp:294
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
-msgstr "Yok Sayılan"
+msgstr "Yok Sayıldı"
 
 #: core/manager.cpp:35 core/model.cpp:332
 #, kde-format
@@ -217,7 +217,7 @@ msgstr "Bilinmeyen"
 #: core/manager.cpp:206
 #, kde-format
 msgid "Current Activity, Threaded"
-msgstr "Geçerli Etkinlik, Konu Biçiminde"
+msgstr "Geçerli etkinlik, konulara ayrılmış"
 
 #: core/manager.cpp:207
 #, kde-format
@@ -233,7 +233,7 @@ msgstr ""
 #: core/manager.cpp:219
 #, kde-format
 msgid "Current Activity, Flat"
-msgstr "Geçerli Etkinlik, Düz"
+msgstr "Geçerli etkinlik, düz"
 
 #: core/manager.cpp:220
 #, kde-format
@@ -247,7 +247,7 @@ msgstr ""
 #: core/manager.cpp:231
 #, kde-format
 msgid "Activity by Date, Threaded"
-msgstr "Tarihe göre Etkinlik, Konulara Ayrılmış"
+msgstr "Tarihe göre etkinlik, konulara ayrılmış"
 
 #: core/manager.cpp:232
 #, kde-format
@@ -263,7 +263,7 @@ msgstr ""
 #: core/manager.cpp:244
 #, kde-format
 msgid "Activity by Date, Flat"
-msgstr "Tarihe göre Etkinlik, Düz"
+msgstr "Tarihe göre etkinlik, düz"
 
 #: core/manager.cpp:245
 #, kde-format
@@ -277,7 +277,7 @@ msgstr ""
 #: core/manager.cpp:256
 #, kde-format
 msgid "Standard Mailing List"
-msgstr "Standart E-posta Listesi"
+msgstr "Standart e-posta listesi"
 
 #: core/manager.cpp:257
 #, kde-format
@@ -290,7 +290,7 @@ msgstr ""
 #: core/manager.cpp:266
 #, kde-format
 msgid "Flat Date View"
-msgstr "Düz Tarih Görünümü"
+msgstr "Düz tarih görünümü"
 
 #: core/manager.cpp:267
 #, kde-format
@@ -304,7 +304,7 @@ msgstr ""
 #: core/manager.cpp:278
 #, kde-format
 msgid "Senders/Receivers, Flat"
-msgstr "Gönderenler/Alıcılar, Düz"
+msgstr "Gönderenler/Alıcılar, düz"
 
 #: core/manager.cpp:279
 #, kde-format
@@ -318,7 +318,7 @@ msgstr ""
 #: core/manager.cpp:290
 #, kde-format
 msgid "Thread Starters"
-msgstr "Konu Başlatıcılar"
+msgstr "Konu başlatıcılar"
 
 #: core/manager.cpp:291
 #, kde-format
@@ -450,7 +450,7 @@ msgstr "İleti"
 #: core/manager.cpp:777
 #, kde-format
 msgid "Smart with Clickable Status"
-msgstr "Tıklanabilir Durum ile Akıllı"
+msgstr "Tıklanabilir durum ile akıllı"
 
 #: core/manager.cpp:778
 #, kde-format
@@ -572,7 +572,7 @@ msgstr "Hiçbiri (Depolama Düzeni)"
 #: core/sortorder.cpp:64
 #, kde-format
 msgid "By Date/Time"
-msgstr "Tarih/Saat Göre"
+msgstr "Tarihe/Saate Göre"
 
 #: core/sortorder.cpp:66
 #, kde-format
@@ -701,7 +701,7 @@ msgstr "Boyut"
 #: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
-msgstr "Okunan/Okunmamış Simgesi"
+msgstr "Okundu/Okunmadı Simgesi"
 
 #: core/theme.cpp:128
 #, kde-format
@@ -711,12 +711,12 @@ msgstr "Ek Simgesi"
 #: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
-msgstr "Yanıtlanmış/Yönlendirilmiş Simgesi"
+msgstr "Yanıtlandı/İletildi Simgesi"
 
 #: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr "Birleşik Yeni/Okunmamış/Okunan/Yanıtlanan/İletilen simgesi"
+msgstr "Birleşik Yeni/Okunmadı/Okundu/Yanıtlandı/İletildi Simgesi"
 
 #: core/theme.cpp:137
 #, kde-format
@@ -1124,7 +1124,7 @@ msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Süzgeci Düzenle"
 
-#: core/widgets/filternamewidget.cpp:31
+#: core/widgets/filternamewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
@@ -1212,7 +1212,7 @@ msgstr "Yanıtlanan"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
-msgstr "Yönlendirilen"
+msgstr "İletildi"
 
 #: core/widgets/searchlinestatus.cpp:235
 #, kde-format

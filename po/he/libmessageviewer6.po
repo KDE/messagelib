@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:38+0000\n"
-"PO-Revision-Date: 2024-03-10 15:23+0200\n"
+"PO-Revision-Date: 2024-03-21 13:32+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -427,7 +427,7 @@ msgstr "מחיקת מפתחות"
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "חיפוש…"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
