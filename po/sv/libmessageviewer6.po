@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 03:04+0000\n"
+"POT-Creation-Date: 2024-03-23 02:27+0000\n"
 "PO-Revision-Date: 2023-09-07 21:34+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1341,6 +1341,344 @@ msgstr "Omöjligt att expandera '%1'."
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Kort webbadress '%1' dirigerar om till '%2'."
 
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Skriv bara ut markerad text som visas"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Följ definierade inställningar av expandera och komprimera citationstecken "
+"vid utskrift."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr "Anger om bakgrundsfärg och bilder också återges när sidan skrivs ut."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"Visa alltid detaljinformation om kryptering och signatur vid brevutskrift"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"När HTML återges, använd inte en teckenstorlek mindre än minimistorleken."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Anger teckensnitt att använda för brevtexten"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Anger teckensnitt att använda för utskrift"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Kontrollera om webbadressen kan vara nätfiske"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Stäng brevfönster efter svar eller vidarebefordran"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Visa citationstecken för expandera och komprimera"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Aktivera alternativet för att visa olika nivåer av\n"
+"citerad text. Inaktivera för att dölja nivåerna\n"
+"med citerad text."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Komprimera automatiskt nivå:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Reducera teckenstorlek för citerad text"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Aktivera alternativet för att visa citerad text\n"
+"med ett mindre teckensnitt."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Avkoda alltid brev när de visas, eller fråga\n"
+"innan avkodning"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Brevstrukturvisning"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "Visa aldrig"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "Visa alltid"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Vilken rubrikstil som ska visas"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Hur mycket av rubrikerna ska visas"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Föredra HTML före vanlig text"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Tillåt brev att ladda externa referenser från Internet"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Hur bilagor visas"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "Anger om citationsfärgen ska återanvändas efter den tredje nivån"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Aktivera åtkomstnyckel"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"Kmail kan analysera brev för att hitta misstänkta e-postbedrägerier genom "
+"att leta efter vanliga tekniker som används för att lura dig"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Lista över brev i vitlistan för bedrägeribrev"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Sök igenom e-post för att spåra webbadresser"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Skicka inte brevhanteringsbekräftelser som svar på krypterade brev"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.in:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Anger standardpolicy att använda för brevhanteringsbekräftelser (bara för "
+"intern användning)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.in:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Anger standardåtgärden för citering vid svar på ett brev (bara för intern "
+"användning)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Behandla Från:/Till:-huvuden i svar på inbjudningar"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook har ett antal tillkortakommanden i sin implementering av "
+"iCalendar-standarden. Det här alternativet gör att det går att komma förbi "
+"ett av dem. Om du har problem med att användare av Outlook inte kan ta emot "
+"dina svar, pröva att aktivera alternativet."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Skicka grupprograminbjudningar i brevets text"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook har ett antal tillkortakommanden i sin implementering av "
+"iCalendar-standarden. Det här alternativet gör att det går att komma förbi "
+"ett av dem. Om du har problem med att användare av Outlook inte kan ta emot "
+"dina svar, pröva att aktivera alternativet."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Namngivning av inbjudningar som fungerar med Exchange"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook har problem att förstå e-post från grupprogram som följer "
+"standard, vid användning tillsammans med en Microsoft Exchange server.\n"
+"Aktivera det här alternativet för att skicka grupprograminbjudningar på ett "
+"sätt som Microsoft Exchange förstår."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatisk skickning av inbjudning"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"När det här är markerat ser du inte brevfönstret. Istället skickas alla "
+"inbjudningsbrev automatiskt. Om du vill se brevet innan det skickas, kan du "
+"avmarkera alternativet. Var dock medveten om att texten i brevfönstret har "
+"kalendersyntax, och du bör inte försöka ändra det manuellt."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Ta bort inbjudningsbrev efter svaret till dem har skickats"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"När det här är markerat, flyttas mottagna inbjudningsbrev som har besvarats "
+"till papperskorgen, så fort svaret har skickats med lyckat resultat."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Använd teckensnitt med fast &breddsteg"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "Den senast valda korgen använd för uppgifter."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "Den senast valda korgen använd för händelser."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "Den senast valda korgen använd för anteckningar."
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
@@ -1421,12 +1759,6 @@ msgstr "&Automatisk skickning av inbjudning"
 #, kde-format
 msgid "Options"
 msgstr "Alternativ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Ta bort inbjudningsbrev efter svaret till dem har skickats"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -2045,11 +2377,6 @@ msgstr "Kopiera länkadress"
 msgid "Open URL"
 msgstr "Öppna webbadress"
 
-#: viewer/viewer_p.cpp:1560
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Använd teckensnitt med fast &breddsteg"
-
 #: viewer/viewer_p.cpp:1566
 #, kde-format
 msgid "Show Message Structure"
@@ -2369,205 +2696,6 @@ msgstr "Nästa brev"
 #, kde-format
 msgid "Previous Message"
 msgstr "Föregående brev"
-
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Skriv bara ut markerad text som visas"
-
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "Följ definierade inställningar av expandera och komprimera "
-#~ "citationstecken vid utskrift."
-
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Anger om bakgrundsfärg och bilder också återges när sidan skrivs ut."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr ""
-#~ "Visa alltid detaljinformation om kryptering och signatur vid brevutskrift"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "När HTML återges, använd inte en teckenstorlek mindre än minimistorleken."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "Anger teckensnitt att använda för brevtexten"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Anger teckensnitt att använda för utskrift"
-
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "Kontrollera om webbadressen kan vara nätfiske"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "Stäng brevfönster efter svar eller vidarebefordran"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Visa citationstecken för expandera och komprimera"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Aktivera alternativet för att visa olika nivåer av\n"
-#~ "citerad text. Inaktivera för att dölja nivåerna\n"
-#~ "med citerad text."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Komprimera automatiskt nivå:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Reducera teckenstorlek för citerad text"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "Aktivera alternativet för att visa citerad text\n"
-#~ "med ett mindre teckensnitt."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Avkoda alltid brev när de visas, eller fråga\n"
-#~ "innan avkodning"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Brevstrukturvisning"
-
-#~ msgid "Show never"
-#~ msgstr "Visa aldrig"
-
-#~ msgid "Show always"
-#~ msgstr "Visa alltid"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Vilken rubrikstil som ska visas"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Hur mycket av rubrikerna ska visas"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "Föredra HTML före vanlig text"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Tillåt brev att ladda externa referenser från Internet"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "Hur bilagor visas"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr "Anger om citationsfärgen ska återanvändas efter den tredje nivån"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Aktivera åtkomstnyckel"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "Kmail kan analysera brev för att hitta misstänkta e-postbedrägerier genom "
-#~ "att leta efter vanliga tekniker som används för att lura dig"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "Lista över brev i vitlistan för bedrägeribrev"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "Sök igenom e-post för att spåra webbadresser"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "Skicka inte brevhanteringsbekräftelser som svar på krypterade brev"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Anger standardpolicy att använda för brevhanteringsbekräftelser (bara för "
-#~ "intern användning)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Anger standardåtgärden för citering vid svar på ett brev (bara för intern "
-#~ "användning)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "Behandla Från:/Till:-huvuden i svar på inbjudningar"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook har ett antal tillkortakommanden i sin implementering "
-#~ "av iCalendar-standarden. Det här alternativet gör att det går att komma "
-#~ "förbi ett av dem. Om du har problem med att användare av Outlook inte kan "
-#~ "ta emot dina svar, pröva att aktivera alternativet."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Skicka grupprograminbjudningar i brevets text"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook har ett antal tillkortakommanden i sin implementering "
-#~ "av iCalendar-standarden. Det här alternativet gör att det går att komma "
-#~ "förbi ett av dem. Om du har problem med att användare av Outlook inte kan "
-#~ "ta emot dina svar, pröva att aktivera alternativet."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Namngivning av inbjudningar som fungerar med Exchange"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook har problem att förstå e-post från grupprogram som "
-#~ "följer standard, vid användning tillsammans med en Microsoft Exchange "
-#~ "server.\n"
-#~ "Aktivera det här alternativet för att skicka grupprograminbjudningar på "
-#~ "ett sätt som Microsoft Exchange förstår."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Automatisk skickning av inbjudning"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "När det här är markerat ser du inte brevfönstret. Istället skickas alla "
-#~ "inbjudningsbrev automatiskt. Om du vill se brevet innan det skickas, kan "
-#~ "du avmarkera alternativet. Var dock medveten om att texten i brevfönstret "
-#~ "har kalendersyntax, och du bör inte försöka ändra det manuellt."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "När det här är markerat, flyttas mottagna inbjudningsbrev som har "
-#~ "besvarats till papperskorgen, så fort svaret har skickats med lyckat "
-#~ "resultat."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "Den senast valda korgen använd för uppgifter."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "Den senast valda korgen använd för händelser."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "Den senast valda korgen använd för anteckningar."
 
 #~ msgid "Edit with:"
 #~ msgstr "Redigera med:"

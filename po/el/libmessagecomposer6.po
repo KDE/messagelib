@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
+"POT-Creation-Date: 2024-03-23 02:27+0000\n"
 "PO-Revision-Date: 2013-01-17 21:45+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2032,6 +2032,169 @@ msgstr "Αποστολή στο:"
 msgid "Repeat every:"
 msgstr "Επανάληψη κάθε:"
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Παράθεση μόνο επιλεγμένου κειμένου κατά την απάντηση"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Εισαγωγή υπογραφής αυτόματα"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Εισαγωγή υπογραφής πάνω από το κείμενο σε παράθεση"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Το διαχωριστικό να προηγείται της υπογραφής"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Χρήση διευθύνσεων που προέρχονται από μηνύματα για αυτόματη συμπλήρωση"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Απενεργοποιήστε αυτή την επιλογή αν θέλετε μόνο οι επαφές από τα βιβλία "
+"διευθύνσεων να εμφανίζονται στην λίστα αυτόματης συμπλήρωσης στα πεδία "
+"λίστας διευθύνσεων του συνθέτη μηνυμάτων."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Επιτρέψτε το ελληνικό ερωτηματικό (';') να χρησιμοποιηθεί ως διαχωριστικό "
+"στον συνθέτη μηνυμάτων"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Χρήση των πρόσφατων διευθύνσεων για αυτόματη συμπλήρωση"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Απενεργοποιήστε αυτή την επιλογή αν δεν θέλετε οι πρόσφατα χρησιμοποιημένες "
+"διευθύνσεις να εμφανίζονται στην λίστα αυτόματης συμπλήρωσης στα πεδία "
+"λίστας διευθύνσεων του συνθέτη μηνυμάτων."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Μέγιστος αριθμός καταχωρήσεων παραληπτών."
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Αναδίπλωση λέξεων στη στήλη:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Βελτίωση απλού κειμένου σε HTML μήνυμα"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, fuzzy, kde-format
+#| msgid ""
+#| "Valid trusted encryption keys were found for all recipients.\n"
+#| "Encrypt this message?"
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+"Έγκυρα έμπιστα κλειδιά κρυπτογράφησης βρέθηκαν για όλους τους παραλήπτες.\n"
+"Να κρυπτογραφηθεί αυτό το μήνυμα;"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Προειδοποίηση πριν την αποστολή μη κρυπτογραφημένων μηνυμάτων"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Προειδοποίηση πριν την αποστολή ανυπόγραφων μηνυμάτων"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Προειδοποίηση αν τα πιστοποιητικά/κλειδιά λήγουν σύντομα (ρύθμιση χρονικών "
+"ορίων παρακάτω)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Ο ελάχιστος αριθμός ημερών που το πιστοποιητικό κρυπτογράφησης θα πρέπει να "
+"είναι έγκυρο πριν την μετάδοση μιας προειδοποίησης"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Ο ελάχιστος αριθμός ημερών που όλα τα πιστοποιητικά στην αλυσίδα θα πρέπει "
+"να είναι έγκυρα πριν την μετάδοση μιας προειδοποίησης"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Ο ελάχιστος αριθμός ημερών που το πιστοποιητικό root θα πρέπει να είναι "
+"έγκυρο πριν την μετάδοση μιας προειδοποίησης"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Να εμφανίζεται πάντα η λίστα των κλειδιών κρυπτογράφησης για να επιλέξετε "
+"αυτό που θα χρησιμοποιηθεί"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2313,55 +2476,10 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Παράθεση μόνο επιλεγμένου κειμένου κατά την απάντηση"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "Διατήρηση αυθεντικού συνόλου χαρακτήρων σε απαντήσεις ή προωθήσεις αν "
 #~ "είναι δυνατό"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "Εισαγωγή υπογραφής αυτόματα"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Εισαγωγή υπογραφής πάνω από το κείμενο σε παράθεση"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Το διαχωριστικό να προηγείται της υπογραφής"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr ""
-#~ "Χρήση διευθύνσεων που προέρχονται από μηνύματα για αυτόματη συμπλήρωση"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Απενεργοποιήστε αυτή την επιλογή αν θέλετε μόνο οι επαφές από τα βιβλία "
-#~ "διευθύνσεων να εμφανίζονται στην λίστα αυτόματης συμπλήρωσης στα πεδία "
-#~ "λίστας διευθύνσεων του συνθέτη μηνυμάτων."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "Επιτρέψτε το ελληνικό ερωτηματικό (';') να χρησιμοποιηθεί ως διαχωριστικό "
-#~ "στον συνθέτη μηνυμάτων"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Χρήση των πρόσφατων διευθύνσεων για αυτόματη συμπλήρωση"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Απενεργοποιήστε αυτή την επιλογή αν δεν θέλετε οι πρόσφατα "
-#~ "χρησιμοποιημένες διευθύνσεις να εμφανίζονται στην λίστα αυτόματης "
-#~ "συμπλήρωσης στα πεδία λίστας διευθύνσεων του συνθέτη μηνυμάτων."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Μέγιστος αριθμός καταχωρήσεων παραληπτών."
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Ονομασία συνημμένων συμβατή με το Outlook"
@@ -2372,61 +2490,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Ενεργοποιήστε αυτή την επιλογή για να κάνετε το Outlook &#8482; να "
 #~ "καταλαβαίνει ονόματα συνημμένων με μη αγγλικούς χαρακτήρες"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "Αναδίπλωση λέξεων στη στήλη:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Βελτίωση απλού κειμένου σε HTML μήνυμα"
-
-#, fuzzy
-#~| msgid ""
-#~| "Valid trusted encryption keys were found for all recipients.\n"
-#~| "Encrypt this message?"
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr ""
-#~ "Έγκυρα έμπιστα κλειδιά κρυπτογράφησης βρέθηκαν για όλους τους "
-#~ "παραλήπτες.\n"
-#~ "Να κρυπτογραφηθεί αυτό το μήνυμα;"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Προειδοποίηση πριν την αποστολή μη κρυπτογραφημένων μηνυμάτων"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Προειδοποίηση πριν την αποστολή ανυπόγραφων μηνυμάτων"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Προειδοποίηση αν τα πιστοποιητικά/κλειδιά λήγουν σύντομα (ρύθμιση "
-#~ "χρονικών ορίων παρακάτω)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Ο ελάχιστος αριθμός ημερών που το πιστοποιητικό κρυπτογράφησης θα πρέπει "
-#~ "να είναι έγκυρο πριν την μετάδοση μιας προειδοποίησης"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Ο ελάχιστος αριθμός ημερών που όλα τα πιστοποιητικά στην αλυσίδα θα "
-#~ "πρέπει να είναι έγκυρα πριν την μετάδοση μιας προειδοποίησης"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Ο ελάχιστος αριθμός ημερών που το πιστοποιητικό root θα πρέπει να είναι "
-#~ "έγκυρο πριν την μετάδοση μιας προειδοποίησης"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr ""
-#~ "Να εμφανίζεται πάντα η λίστα των κλειδιών κρυπτογράφησης για να επιλέξετε "
-#~ "αυτό που θα χρησιμοποιηθεί"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
