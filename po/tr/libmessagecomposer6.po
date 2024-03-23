@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2024-03-21 23:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1976,6 +1976,162 @@ msgstr "Şurada gönder:"
 msgid "Repeat every:"
 msgstr "Yineleme aralığı:"
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Yanıtlarken yalnızca seçili metni alıntıla"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "&Otomatik olarak imza ekle"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Alıntılanan metnin üzerine imza ekle"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "İmzanın önüne ayraç ekle"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Otomatik tamamlama için indekslenmiş adresleri kullan"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde yalnızca "
+"adres defterindeki kişileri görmek istiyorsanız bu seçeneği devre dışı "
+"bırakın."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"İleti düzenlerken noktalı virgül karakterini (';') ayırıcı olarak kullanmaya "
+"izin ver"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Otomatik tamamlama için son kullanılan adresleri kullan"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde en son "
+"kullanılan adreslerin görülmesini istemiyorsanız bu seçeneği devre dışı "
+"bırakın."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "En yüksek alıcı girdisi sayısı:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Sözcüğü şu sütunda &kaydır:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "HTML iletisinin düz metin sürümünü iyileştir"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Olanaklıysa tüm iletileri imzala"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "Tüm alıcılar için anahtarlar varsa şifrelemeyi etkinleştir"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Şifrelenmemiş ileti göndermeden önce uyar"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "İmzalanmamış ileti göndermeden önce uyar"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Sertifika yakın tarihte sona eriyorsa uyar (aşağıdan tarihleri ayarlayın)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Şifreleme sertifikasının bir uyarı göstermemesi için geçerli olması gereken "
+"asgari gün sayısını seçin"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Tüm sertifikaların bir uyarı göstermemesi için geçerli olması gereken asgari "
+"gün sayısını seçin"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Kök sertifikasının bir uyarı göstermemesi için geçerli olması gereken asgari "
+"gün sayısını seçin"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Kullanılacak şifreleme anahtarlarını onaylamak için listeyi her zaman göster"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2255,52 +2411,8 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Çevrimiçi Ol"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Yanıtlarken yalnızca seçili metni alıntıla"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr "Yanıtlarken veya yönlendirirken özgün karakter setine dokunma"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "&Otomatik olarak imza ekle"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Alıntılanan metnin üzerine imza ekle"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "İmzanın önüne ayraç ekle"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "Otomatik tamamlama için indekslenmiş adresleri kullan"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde "
-#~ "yalnızca adres defterindeki kişileri görmek istiyorsanız bu seçeneği "
-#~ "devre dışı bırakın."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "İleti düzenlerken noktalı virgül karakterini (';') ayırıcı olarak "
-#~ "kullanmaya izin ver"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Otomatik tamamlama için son kullanılan adresleri kullan"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Eğer ileti yazma adres alanlarındaki otomatik tamamlama listesinde en son "
-#~ "kullanılan adreslerin görülmesini istemiyorsanız bu seçeneği devre dışı "
-#~ "bırakın."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "En yüksek alıcı girdisi sayısı:"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Outlook-uyumlu ek adlandırması"
@@ -2311,56 +2423,6 @@ msgstr "Çevrimiçi Ol"
 #~ msgstr ""
 #~ "Outlook'un İngilizce olmayan ek adlarını anlayabilmesi için bu seçeneği "
 #~ "etkinleştirin"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "Sözcüğü şu sütunda &kaydır:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "HTML iletisinin düz metin sürümünü iyileştir"
-
-#~ msgid "Sign all messages, if possible"
-#~ msgstr "Olanaklıysa tüm iletileri imzala"
-
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr "Tüm alıcılar için anahtarlar varsa şifrelemeyi etkinleştir"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Şifrelenmemiş ileti göndermeden önce uyar"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "İmzalanmamış ileti göndermeden önce uyar"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Sertifika yakın tarihte sona eriyorsa uyar (aşağıdan tarihleri ayarlayın)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Şifreleme sertifikasının bir uyarı göstermemesi için geçerli olması "
-#~ "gereken asgari gün sayısını seçin"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Tüm sertifikaların bir uyarı göstermemesi için geçerli olması gereken "
-#~ "asgari gün sayısını seçin"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Kök sertifikasının bir uyarı göstermemesi için geçerli olması gereken "
-#~ "asgari gün sayısını seçin"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr ""
-#~ "Kullanılacak şifreleme anahtarlarını onaylamak için listeyi her zaman "
-#~ "göster"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

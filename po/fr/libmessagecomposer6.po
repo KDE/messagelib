@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2023-11-01 14:39+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -2017,6 +2017,166 @@ msgstr "Envoyer à :"
 msgid "Repeat every:"
 msgstr " Répéter chaque :"
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Ne citer que le texte sélectionné lors de réponses"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Insérer a&utomatiquement la signature"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Insérer la signature au dessus du texte cité"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Faire précéder le séparateur à la signature"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr ""
+"Utiliser les adresses indexées à partir des messages pour l'auto-complètement"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Désactivez cette option si vous voulez que seules les adresses de votre "
+"carnet apparaissent dans la liste d'auto-complètement dans le champs "
+"d'adresses de l'éditeur."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Autoriser le point- virgule (« ; ») à être utilisé comme séparateur dans "
+"l'éditeur de messages"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Utiliser les adresses récentes pour l'auto-complètement"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Désactivez cette option si vous ne voulez pas que les adresses récemment "
+"utilisés apparaissent dans la liste d'auto-complètement dans le champs "
+"d'adresses de l'éditeur."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Nombre maximum d'entrées de destinataires :"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "&Passage à la ligne à la colonne :"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Améliorer la version du texte brut du message HTML"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Signer tous les messages, si possible"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+"Activer le chiffrement si des clés sont trouvées pour tous les destinataires."
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Avertir avant d'envoyer des messages non chiffrés"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Avertir avant d'envoyer des messages non signés"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Avertir si les certificats ou les clés expire bientôt (configurez le seuil "
+"ci-dessous)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat de chiffrage devrait "
+"être valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels tous les certificats de la chaîne "
+"devrait être valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat racine devrait être "
+"valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Toujours afficher la liste des clés de chiffrement pour choisir celle que "
+"vous voudrez utiliser"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2294,56 +2454,10 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Définir en ligne"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Ne citer que le texte sélectionné lors de réponses"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "Conserver la table de caractère originale en répondant ou en faisant "
 #~ "suivre quand cela est possible"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "Insérer a&utomatiquement la signature"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Insérer la signature au dessus du texte cité"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Faire précéder le séparateur à la signature"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr ""
-#~ "Utiliser les adresses indexées à partir des messages pour l'auto-"
-#~ "complètement"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Désactivez cette option si vous voulez que seules les adresses de votre "
-#~ "carnet apparaissent dans la liste d'auto-complètement dans le champs "
-#~ "d'adresses de l'éditeur."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "Autoriser le point- virgule (« ; ») à être utilisé comme séparateur dans "
-#~ "l'éditeur de messages"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Utiliser les adresses récentes pour l'auto-complètement"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Désactivez cette option si vous ne voulez pas que les adresses récemment "
-#~ "utilisés apparaissent dans la liste d'auto-complètement dans le champs "
-#~ "d'adresses de l'éditeur."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Nombre maximum d'entrées de destinataires :"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Nom des pièces jointes compatible avec Outlook"
@@ -2354,59 +2468,6 @@ msgstr "Définir en ligne"
 #~ msgstr ""
 #~ "Activez cette option pour que Outlook &#8482; comprenne les noms des "
 #~ "pièces jointes qui contiennent des caractères non anglais"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "&Passage à la ligne à la colonne :"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Améliorer la version du texte brut du message HTML"
-
-#~ msgid "Sign all messages, if possible"
-#~ msgstr "Signer tous les messages, si possible"
-
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr ""
-#~ "Activer le chiffrement si des clés sont trouvées pour tous les "
-#~ "destinataires."
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Avertir avant d'envoyer des messages non chiffrés"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Avertir avant d'envoyer des messages non signés"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Avertir si les certificats ou les clés expire bientôt (configurez le "
-#~ "seuil ci-dessous)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Le nombre minimum de jours pour lesquels le certificat de chiffrage "
-#~ "devrait être valable avant l'émission d'un avertissement"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Le nombre minimum de jours pour lesquels tous les certificats de la "
-#~ "chaîne devrait être valable avant l'émission d'un avertissement"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Le nombre minimum de jours pour lesquels le certificat racine devrait "
-#~ "être valable avant l'émission d'un avertissement"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr ""
-#~ "Toujours afficher la liste des clés de chiffrement pour choisir celle que "
-#~ "vous voudrez utiliser"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

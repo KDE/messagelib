@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2014-04-09 11:08+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1896,6 +1896,159 @@ msgstr "Trimite așa cum e&ste"
 msgid "Repeat every:"
 msgstr ""
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "La răspuns citează numai textul ales"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Inserează semnătura a&utomat"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Inserează semnătura deasupra textului citat"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Inserează separator înaintea semnăturii"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, fuzzy, kde-format
+#| msgid "Use recent addresses for autocompletion"
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Folosește adrese recente pentru completare automată"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Permite folosirea punctului și virgulei (;) ca separator în compozitorul de "
+"mesaje"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Folosește adrese recente pentru completare automată"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Număr maxim de înregistrări de destinatari:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "&Limitare cuvinte la coloana:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Îmbunătățește versiunea în text simplu a mesajului HTML"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Avertizează înainte de exepdierea mesajelor necriptate"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Avertizează înainte de exepdierea mesajelor nesemnate"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, fuzzy, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Avertizare înainte de expirarea mesajelor (configurați reținerile mai jos)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Numărul minim de zile în care certificatul de criptare trebuie să fie valid "
+"înainte de a emite o avertizare"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, fuzzy, kde-format
+#| msgid ""
+#| "The minimum number of days that the CA certificate should be valid before "
+#| "issuing a warning"
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Numărul minim de zile în care certificatul AC trebuie să fie valid înainte "
+"de a emite o avertizare"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Numărul minim de zile în care certificatul-rădăcină trebuie să fie valid "
+"înainte de a emite o avertizare"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox Recipient of an email message."
@@ -2178,40 +2331,10 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "La răspuns citează numai textul ales"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "La răspuns sau înaintare păstrează setul de caractere original dacă e "
 #~ "posibil"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "Inserează semnătura a&utomat"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Inserează semnătura deasupra textului citat"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Inserează separator înaintea semnăturii"
-
-#, fuzzy
-#~| msgid "Use recent addresses for autocompletion"
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "Folosește adrese recente pentru completare automată"
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "Permite folosirea punctului și virgulei (;) ca separator în compozitorul "
-#~ "de mesaje"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Folosește adrese recente pentru completare automată"
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Număr maxim de înregistrări de destinatari:"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Atașamente denumite în mod compatibil cu Outlook"
@@ -2223,50 +2346,12 @@ msgstr ""
 #~ "Activați această opțiune pentru a permite Outlook &#8482; să înțeleagă "
 #~ "denumirile de atașamente ce conțin caractere non-ASCII"
 
-#~ msgid "Word &wrap at column:"
-#~ msgstr "&Limitare cuvinte la coloana:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Îmbunătățește versiunea în text simplu a mesajului HTML"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Avertizează înainte de exepdierea mesajelor necriptate"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Avertizează înainte de exepdierea mesajelor nesemnate"
-
-#, fuzzy
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Avertizare înainte de expirarea mesajelor (configurați reținerile mai jos)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Numărul minim de zile în care certificatul de criptare trebuie să fie "
-#~ "valid înainte de a emite o avertizare"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Numărul minim de zile în care certificatul-rădăcină trebuie să fie valid "
-#~ "înainte de a emite o avertizare"
-
 #~ msgid ""
 #~ "The minimum number of days that the signature certificate should be valid "
 #~ "before issuing a warning"
 #~ msgstr ""
 #~ "Numărul minim de zile în care certificatul semnăturii trebuie să fie "
 #~ "valid înainte de a emite o avertizare"
-
-#~ msgid ""
-#~ "The minimum number of days that the CA certificate should be valid before "
-#~ "issuing a warning"
-#~ msgstr ""
-#~ "Numărul minim de zile în care certificatul AC trebuie să fie valid "
-#~ "înainte de a emite o avertizare"
 
 #, fuzzy
 #~| msgctxt "@info:status"

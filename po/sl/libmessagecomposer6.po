@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2024-02-25 22:16+0100\n"
 "Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2001,6 +2001,158 @@ msgstr "Pošlji ob:"
 msgid "Repeat every:"
 msgstr "Ponavljaj vsak:"
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Pri odgovarjanju navajaj samo izbrano besedilo"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Samodejno vstavi podpis"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Podpis vstavi nad navedeno besedilo"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Pred podpis dodaj ločilnik"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Za samodejno dopolnjevanje uporabi naslove najdene v e-sporočilih"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Onemogočite to možnost, če želite v seznamu samodejnega dopolnjevanja v "
+"naslovnih poljih sestavljalnika videti le naslove iz imenikov."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "V sestavljalniku sporočila za ločilnik dovoli uporabo podpičja (';')"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Za samodejno dopolnjevanje uporabi nedavne naslove"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"To možnost onemogočite, če v seznamu samodejnega dopolnjevanja v naslovnih "
+"poljih sestavljalnika ne želite videti nedavno uporabljenih naslovov."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Največje število vnosov prejemnikov:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Besedno previj vrstico pri stolpcu:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Izboljšaj navadno besedilo sporočila HTML"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Podpiši vsa sporočila, če je mogoče"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "Omogoči šifriranje, če smo našli ključe za vse prejemnike"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Opozori pred pošiljanjem nešifriranih sporočil"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Opozori pred pošiljanjem nepodpisanih sporočil"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Opozori, če potrdila/ključi pretečejo v kratkem (spodaj nastavite pragove)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti šifrirnega potrdila preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti vseh potrdil v verigi preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti korenskega potrdila preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Vedno prikaži seznam šifrirnih ključev, s katerega je mogoče tudi izbirati"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2280,52 +2432,10 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Nastavi v mrežo"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Pri odgovarjanju navajaj samo izbrano besedilo"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "Pri odgovarjanju ali posredovanju ohrani prvotni nabor znakov (če je "
 #~ "mogoče)"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "Samodejno vstavi podpis"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Podpis vstavi nad navedeno besedilo"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Pred podpis dodaj ločilnik"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "Za samodejno dopolnjevanje uporabi naslove najdene v e-sporočilih"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Onemogočite to možnost, če želite v seznamu samodejnega dopolnjevanja v "
-#~ "naslovnih poljih sestavljalnika videti le naslove iz imenikov."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "V sestavljalniku sporočila za ločilnik dovoli uporabo podpičja (';')"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Za samodejno dopolnjevanje uporabi nedavne naslove"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "To možnost onemogočite, če v seznamu samodejnega dopolnjevanja v "
-#~ "naslovnih poljih sestavljalnika ne želite videti nedavno uporabljenih "
-#~ "naslovov."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Največje število vnosov prejemnikov:"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Z Outlookom združljivo poimenovanje prilog"
@@ -2336,55 +2446,6 @@ msgstr "Nastavi v mrežo"
 #~ msgstr ""
 #~ "Vklopite to možnost, da bo Outlook(tm) razumel imena prilog, ki vsebujejo "
 #~ "neangleške znake"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "Besedno previj vrstico pri stolpcu:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Izboljšaj navadno besedilo sporočila HTML"
-
-#~ msgid "Sign all messages, if possible"
-#~ msgstr "Podpiši vsa sporočila, če je mogoče"
-
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr "Omogoči šifriranje, če smo našli ključe za vse prejemnike"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Opozori pred pošiljanjem nešifriranih sporočil"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Opozori pred pošiljanjem nepodpisanih sporočil"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Opozori, če potrdila/ključi pretečejo v kratkem (spodaj nastavite pragove)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti šifrirnega potrdila preden bo prikazano "
-#~ "opozorilo"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti vseh potrdil v verigi preden bo "
-#~ "prikazano opozorilo"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti korenskega potrdila preden bo prikazano "
-#~ "opozorilo"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr ""
-#~ "Vedno prikaži seznam šifrirnih ključev, s katerega je mogoče tudi izbirati"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

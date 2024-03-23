@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2023-09-26 23:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1980,6 +1980,160 @@ msgstr "Noiz bidali:"
 msgid "Repeat every:"
 msgstr "Errepikatu hainbestero:"
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Erantzutean hautatutako testua bakarrik aipatu"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "A&utomatikoki txertatu sinadura"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Sartu sinadura aipua duen testuaren gainetik"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Ipini banatzekoa sinaduraren aurretik"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Erabili e-postetatik indexatutako helbideak osatze automatikorako"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Ezgaitu aukera hori, konposatzailearen helbide-eremuan osatze-automatikoren "
+"zerrendan bakarrik zure helbide-liburuko kontaktuak agertzea nahi baduzu."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Baimendu, mezu konposatzailean puntu eta koma (';') karakterea bereizle gisa "
+"erabiltzea"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Erabili azken aldiko helbideak osatze automatikorako"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Ezgaitu aukera hori azken aldian erabilitako helbideak konposatzailearen "
+"helbide-eremuko osatze-automatikoren zerrendan agertzerik nahi ez baduzu."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Gehienezko hartzaile kopurua:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Itzul&bira zutabean:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Hobetu HTML mezuaren testu soileko bertsioa"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Sinatu mezu guztiak, ahal bada"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "Gaitu zifratzea, hartzaile guztientzako gakoak aurkitzen badira"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Abisatu zifratu gabeko mezuak bidali aurretik"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Abisatu sinatu gabeko mezuak bidali aurretik"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Abisatu ziurtagiriak/gakoak iraungitzear badaude (konfiguratu atalaseak "
+"behean)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Abisu bat eman aurretik zifratze-ziurtagiriari baliozkoa izateari uzteko "
+"gelditu behar zaion gutxieneko egun kopurua"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Abisu bat eman aurretik kateko ziurtagiriari denek baliozkoa izateari uzteko "
+"gelditu behar zaien gutxieneko egun kopurua"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Abisu bat eman aurretik erro ziurtagiriari baliozkoa izateari uzteko gelditu "
+"behar zaion gutxieneko egun kopurua"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "Beti erakutsi zifratze-gakoen zerrenda, erabiliko dena hautatzeko"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2257,53 +2411,10 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Ezarri Lerroan4"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Erantzutean hautatutako testua bakarrik aipatu"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "Mantendu jatorrizko karaktere-multzoa erantzutean edo birbidaltzean, "
 #~ "posiblea bada"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "A&utomatikoki txertatu sinadura"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Sartu sinadura aipua duen testuaren gainetik"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Ipini banatzekoa sinaduraren aurretik"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "Erabili e-postetatik indexatutako helbideak osatze automatikorako"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Ezgaitu aukera hori, konposatzailearen helbide-eremuan osatze-"
-#~ "automatikoren zerrendan bakarrik zure helbide-liburuko kontaktuak "
-#~ "agertzea nahi baduzu."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "Baimendu, mezu konposatzailean puntu eta koma (';') karakterea bereizle "
-#~ "gisa erabiltzea"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Erabili azken aldiko helbideak osatze automatikorako"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Ezgaitu aukera hori azken aldian erabilitako helbideak konposatzailearen "
-#~ "helbide-eremuko osatze-automatikoren zerrendan agertzerik nahi ez baduzu."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Gehienezko hartzaile kopurua:"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "«Outlook»ekin bateragarria den eranskin izendapena"
@@ -2314,55 +2425,6 @@ msgstr "Ezarri Lerroan4"
 #~ msgstr ""
 #~ "Piztu aukera hau «Outlook»ek &#8482; ingelesekoak ez diren karaktereak "
 #~ "dituzten eranskin-izenak uler ditzan"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "Itzul&bira zutabean:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Hobetu HTML mezuaren testu soileko bertsioa"
-
-#~ msgid "Sign all messages, if possible"
-#~ msgstr "Sinatu mezu guztiak, ahal bada"
-
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr "Gaitu zifratzea, hartzaile guztientzako gakoak aurkitzen badira"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Abisatu zifratu gabeko mezuak bidali aurretik"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Abisatu sinatu gabeko mezuak bidali aurretik"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Abisatu ziurtagiriak/gakoak iraungitzear badaude (konfiguratu atalaseak "
-#~ "behean)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Abisu bat eman aurretik zifratze-ziurtagiriari baliozkoa izateari uzteko "
-#~ "gelditu behar zaion gutxieneko egun kopurua"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Abisu bat eman aurretik kateko ziurtagiriari denek baliozkoa izateari "
-#~ "uzteko gelditu behar zaien gutxieneko egun kopurua"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Abisu bat eman aurretik erro ziurtagiriari baliozkoa izateari uzteko "
-#~ "gelditu behar zaion gutxieneko egun kopurua"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr "Beti erakutsi zifratze-gakoen zerrenda, erabiliko dena hautatzeko"
 
 #~ msgid ""
 #~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "

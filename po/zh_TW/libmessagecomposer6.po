@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2024-01-28 19:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1906,6 +1906,159 @@ msgstr "在何時傳送："
 msgid "Repeat every:"
 msgstr "重複間隔："
 
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "回覆時只引入選取的文字"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "自動插入簽名(&U)"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "將簽名插在引言文字前"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "在簽名前加上分隔符"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, fuzzy, kde-format
+#| msgid "Use recent addresses for autocompletion"
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "自動補完時使用最近使用的地址"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, fuzzy, kde-format
+#| msgid ""
+#| "Disable this option if you do not want recently used addresses to appear "
+#| "in the autocompletion list in the composer's address fields."
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"若您不想在信件編輯器中輸入地址時，讓最近使用的地址出現在自動補完清單中，則關"
+"閉此選項。"
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "允許分號 (;) 在信件編輯器中做為分隔符"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "自動補完時使用最近使用的地址"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"若您不想在信件編輯器中輸入地址時，讓最近使用的地址出現在自動補完清單中，則關"
+"閉此選項。"
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "最大收件者項目："
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "自動換行在欄位(&W)："
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "改進 HTML 信件的純文字版本的顯示"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, fuzzy, kde-format
+#| msgid ""
+#| "Valid trusted encryption keys were found for all recipients.\n"
+#| "Encrypt this message?"
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+"所有的收件人都有合法受信任的加密金鑰。\n"
+"要加密此信件嗎？"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "送出未加密信件時提出警告"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "送出未簽署信件時提出警告。"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr "憑證或金鑰即將到期時提出警告（於下方設定）"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr "加密憑證到期前幾天提出警告"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr "憑證鍊內的所有憑證到期前幾天提出警告"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr "根憑證到期前幾天提出警告"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "總是顯示加密金鑰清單來讓我選擇要使用哪一個"
+
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
@@ -2179,54 +2332,8 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr "設為線上"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "回覆時只引入選取的文字"
-
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr "當回覆或轉寄時使用原本的字元集"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "自動插入簽名(&U)"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "將簽名插在引言文字前"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "在簽名前加上分隔符"
-
-#, fuzzy
-#~| msgid "Use recent addresses for autocompletion"
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "自動補完時使用最近使用的地址"
-
-#, fuzzy
-#~| msgid ""
-#~| "Disable this option if you do not want recently used addresses to appear "
-#~| "in the autocompletion list in the composer's address fields."
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "若您不想在信件編輯器中輸入地址時，讓最近使用的地址出現在自動補完清單中，則"
-#~ "關閉此選項。"
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr "允許分號 (;) 在信件編輯器中做為分隔符"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "自動補完時使用最近使用的地址"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "若您不想在信件編輯器中輸入地址時，讓最近使用的地址出現在自動補完清單中，則"
-#~ "關閉此選項。"
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "最大收件者項目："
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "與 Outlook 相容的附檔命名方式"
@@ -2235,50 +2342,6 @@ msgstr "設為線上"
 #~ "Turn this option on to make Outlook &#8482; understand attachment names "
 #~ "containing non-English characters"
 #~ msgstr "這個選項是確保 Outlook &#8482; 在非英語字元集的信件中認得附檔。"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "自動換行在欄位(&W)："
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "改進 HTML 信件的純文字版本的顯示"
-
-#, fuzzy
-#~| msgid ""
-#~| "Valid trusted encryption keys were found for all recipients.\n"
-#~| "Encrypt this message?"
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr ""
-#~ "所有的收件人都有合法受信任的加密金鑰。\n"
-#~ "要加密此信件嗎？"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "送出未加密信件時提出警告"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "送出未簽署信件時提出警告。"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr "憑證或金鑰即將到期時提出警告（於下方設定）"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr "加密憑證到期前幾天提出警告"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr "憑證鍊內的所有憑證到期前幾天提出警告"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr "根憑證到期前幾天提出警告"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr "總是顯示加密金鑰清單來讓我選擇要使用哪一個"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

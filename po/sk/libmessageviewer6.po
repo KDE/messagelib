@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1370,6 +1370,341 @@ msgstr "Nemožno rozšíriť '%1'."
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Krátke url '%1' presmeruje na '%2'."
 
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Vytlačiť len vybraný text v prehliadači"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Rešpektovať značku rozvinutia/zbalenia, ktorá je definovaná v nastaveniach "
+"počas tlače"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr "Určuje, či sa vykreslia aj farby pozadia a obrázky pri tlači stránky."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr "Pri tlači správy vždy zobrazovať podrobnosti o šifrovaní/podpise"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"Keď vykresľujeme html, nepoužívať veľkosť písma nižšiu, ako je minimálna "
+"veľkosť."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Určuje písmo na použitie v tele správy"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Určite písmo použité na tlač"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Skontrolujte, či webová adresa môže byť phishingom"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Po odpovedaní alebo preposielaní zatvoriť okno správy"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Ukázať značky pre rozbalenie/zbalenie citátov"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Povoliť túto voľbu pre ukazovanie rôznych úrovní citovaného textu. Zakázať "
+"pre skrytie úrovní citovaného textu."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatické zbalenie úrovne:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Zmenšiť veľkosť písma pre citovaný text"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr "Povoliť túto voľbu pre ukazovanie citovaného textu s menším písmom."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "Vždy dešifrovať správy pri zobrazení alebo sa spýtať pred dešifrovaním"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Prehliadač štruktúry správy"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "Nikdy nezobraziť"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "Vždy zobraziť"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Aký štýl hlavičiek by mal byť zobrazený"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Koľko hlavičiek by malo byť zobrazených"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Preferovať HTML pred čistým textom"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Načítať e&xterné referencie správ zo siete"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Ako sú ukázané prílohy"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "Určuje, či sa má znova použiť farba citácie za 3. úrovňou"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Aktivovať prístupový kľúč"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail môže analyzovať správy pre správy podozrivé zo scamu pomocou bežných "
+"techník použitých a vašu ochranu"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Zoznam e-mailov vo whiteliste scamu"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Skontrolovať emaily na sledovacie URL adresy"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Neposielať potvrdenia pre šifrované správy"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.in:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Určuje predvolenú politiku na použitie, pre notifikácie o prijatí správy "
+"(iba na vnútorné použitie)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.in:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Určuje predvolenú akciu citácie, pri odpovedaní na správu (len pre vnútorné "
+"použitie)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Rozhádzať Od:/Pre: hlavičky v odpovediach na odpovede"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook má množstvo nedostatkov vo svojej implementácii štandardu "
+"iCalendar; táto voľba rieši jeden z nich. Ak máte problémy s používateľmi "
+"Outlook, ktorí nie sú schopní dostať vaše odpovede, skúste nastaviť túto "
+"voľbu."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Poslať groupware pozvánky v tele správy"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook má množstvo nedostatkov vo svojej implementácii štandardu "
+"iCalendar; táto voľba rieši jeden z nich. Ak máte problémy s používateľmi "
+"Outlook, ktorí nie sú schopní dostať vaše pozvánky, skúste nastaviť túto "
+"voľbu."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Exchange kompatibilné pomenovanie pozvania"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook má pri použití v kombinácii so serverom Microsoft Exchange "
+"problém porozumieť groupware e-mailu kompatibilnému so štandardmi. Zapnite "
+"túto možnosť na odoslanie pozvánok groupware spôsobom, ktorému Microsoft "
+"Exchange rozumie."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatické posielanie pozvánok"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Ak je toto zaškrtnuté, nebudete vidieť okno e-mailového editora správ. "
+"Namiesto toho sú e-maily pozvánok odosielané automaticky. Ak chcete vidieť e-"
+"mail pred odoslaním, môžete túto voľbu odškrtnúť. Avšak, buďte si vedomí, že "
+"text v okne editora správ je v syntaxe iCalendar a nemali by ste ho skúšať "
+"meniť ručne."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Odstrániť e-maily pozvánok potom, čo bola odpoveď na ne odoslaná"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Ak je táto voľba zaškrtnutá, obdržané pozvánkové e-maily, na ktoré sa "
+"odpovedalo, budú presunuté do priečinka Kôš, akonáhle bola odpoveď úspešne "
+"odoslaná."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1561
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Použiť písmo s pe&vnou šírkou"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "Najnovší vybraný priečinok pre úlohu."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "Najnovší vybraný priečinok pre úlohu."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "Najnovší vybraný priečinok pre Notes."
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
@@ -1450,12 +1785,6 @@ msgstr "Automatické posielanie pozvánok"
 #, kde-format
 msgid "Options"
 msgstr "Možnosti"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Odstrániť e-maily pozvánok potom, čo bola odpoveď na ne odoslaná"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -2072,11 +2401,6 @@ msgstr "Kopírovať adresu odkazu"
 msgid "Open URL"
 msgstr "Otvoriť URL"
 
-#: viewer/viewer_p.cpp:1561
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Použiť písmo s pe&vnou šírkou"
-
 #: viewer/viewer_p.cpp:1567
 #, kde-format
 msgid "Show Message Structure"
@@ -2404,201 +2728,6 @@ msgstr "Nasledujúca správa"
 #, kde-format
 msgid "Previous Message"
 msgstr "Predchádzajúca správa"
-
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Vytlačiť len vybraný text v prehliadači"
-
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "Rešpektovať značku rozvinutia/zbalenia, ktorá je definovaná v "
-#~ "nastaveniach počas tlače"
-
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Určuje, či sa vykreslia aj farby pozadia a obrázky pri tlači stránky."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr "Pri tlači správy vždy zobrazovať podrobnosti o šifrovaní/podpise"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "Keď vykresľujeme html, nepoužívať veľkosť písma nižšiu, ako je minimálna "
-#~ "veľkosť."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "Určuje písmo na použitie v tele správy"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Určite písmo použité na tlač"
-
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "Skontrolujte, či webová adresa môže byť phishingom"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "Po odpovedaní alebo preposielaní zatvoriť okno správy"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Ukázať značky pre rozbalenie/zbalenie citátov"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Povoliť túto voľbu pre ukazovanie rôznych úrovní citovaného textu. "
-#~ "Zakázať pre skrytie úrovní citovaného textu."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Automatické zbalenie úrovne:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Zmenšiť veľkosť písma pre citovaný text"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr "Povoliť túto voľbu pre ukazovanie citovaného textu s menším písmom."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Vždy dešifrovať správy pri zobrazení alebo sa spýtať pred dešifrovaním"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Prehliadač štruktúry správy"
-
-#~ msgid "Show never"
-#~ msgstr "Nikdy nezobraziť"
-
-#~ msgid "Show always"
-#~ msgstr "Vždy zobraziť"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Aký štýl hlavičiek by mal byť zobrazený"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Koľko hlavičiek by malo byť zobrazených"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "Preferovať HTML pred čistým textom"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Načítať e&xterné referencie správ zo siete"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "Ako sú ukázané prílohy"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr "Určuje, či sa má znova použiť farba citácie za 3. úrovňou"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Aktivovať prístupový kľúč"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "KMail môže analyzovať správy pre správy podozrivé zo scamu pomocou "
-#~ "bežných techník použitých a vašu ochranu"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "Zoznam e-mailov vo whiteliste scamu"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "Skontrolovať emaily na sledovacie URL adresy"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "Neposielať potvrdenia pre šifrované správy"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Určuje predvolenú politiku na použitie, pre notifikácie o prijatí správy "
-#~ "(iba na vnútorné použitie)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Určuje predvolenú akciu citácie, pri odpovedaní na správu (len pre "
-#~ "vnútorné použitie)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "Rozhádzať Od:/Pre: hlavičky v odpovediach na odpovede"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook má množstvo nedostatkov vo svojej implementácii "
-#~ "štandardu iCalendar; táto voľba rieši jeden z nich. Ak máte problémy s "
-#~ "používateľmi Outlook, ktorí nie sú schopní dostať vaše odpovede, skúste "
-#~ "nastaviť túto voľbu."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Poslať groupware pozvánky v tele správy"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook má množstvo nedostatkov vo svojej implementácii "
-#~ "štandardu iCalendar; táto voľba rieši jeden z nich. Ak máte problémy s "
-#~ "používateľmi Outlook, ktorí nie sú schopní dostať vaše pozvánky, skúste "
-#~ "nastaviť túto voľbu."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Exchange kompatibilné pomenovanie pozvania"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook má pri použití v kombinácii so serverom Microsoft "
-#~ "Exchange problém porozumieť groupware e-mailu kompatibilnému so "
-#~ "štandardmi. Zapnite túto možnosť na odoslanie pozvánok groupware "
-#~ "spôsobom, ktorému Microsoft Exchange rozumie."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Automatické posielanie pozvánok"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "Ak je toto zaškrtnuté, nebudete vidieť okno e-mailového editora správ. "
-#~ "Namiesto toho sú e-maily pozvánok odosielané automaticky. Ak chcete "
-#~ "vidieť e-mail pred odoslaním, môžete túto voľbu odškrtnúť. Avšak, buďte "
-#~ "si vedomí, že text v okne editora správ je v syntaxe iCalendar a nemali "
-#~ "by ste ho skúšať meniť ručne."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "Ak je táto voľba zaškrtnutá, obdržané pozvánkové e-maily, na ktoré sa "
-#~ "odpovedalo, budú presunuté do priečinka Kôš, akonáhle bola odpoveď "
-#~ "úspešne odoslaná."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "Najnovší vybraný priečinok pre úlohu."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "Najnovší vybraný priečinok pre úlohu."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "Najnovší vybraný priečinok pre Notes."
 
 #~ msgid "Edit with:"
 #~ msgstr "Upraviť pomocou:"

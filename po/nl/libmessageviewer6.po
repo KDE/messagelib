@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:38+0000\n"
+"POT-Creation-Date: 2024-03-23 00:38+0000\n"
 "PO-Revision-Date: 2023-09-26 11:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1358,6 +1358,353 @@ msgstr "Uitvouwen van '%1' is niet mogelijk."
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Korte URL '%1' verwijst naar '%2'."
 
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Alleen in viewer geselecteerde tekst afdrukken"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Respecteer gedefinieerde instellingen van invouw/uitklapmarkeringen bij "
+"afdrukken."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"Specificeert of de achtergrondkleuren en afbeeldingen ook getekend worden "
+"indien de pagina afgedrukt wordt."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"Altijd details van versleuteling/ondertekening tonen wanneer we het bericht "
+"afdrukken"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"Bij het gebruiken van html gebruik dan geen grootte van lettertypen minder "
+"dan de minimum grootte."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Specificeert het te gebruiken lettertype voor het eigenlijke bericht"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Specificeer het te gebruiken lettertype voor afdrukken"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Controleren of URL phishing kan zijn"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+"Sluit het berichtenvenster na beantwoorden of doorsturen van het bericht"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Invouw/uitklapmarkeringen tonen"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Schakel deze optie in om de verschillende niveaus van aangehaalde tekst te "
+"tonen. Schakel deze optie uit om de verschillende niveaus te verbergen."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatisch invouwen bij niveau:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Lettergrootte verkleinen van aangehaalde tekst"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Schakel deze optie in om aangehaalde tekst te tonen in een kleiner "
+"lettertype."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Berichten altijd ontcijferen bij het bekijken of vragen voordat er wordt "
+"ontcijferd"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Berichtenstructuurweergave"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "Nooit tonen"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "Altijd tonen"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Welke kopstijlen er getoond moeten worden"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Hoeveel van de koppen er getoond moeten worden"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "HTML boven platte tekst verkiezen"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Externe verwijzingen voor dit bericht ophalen van het internet."
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "De wijze waarop bijlagen worden getoond"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+"Specificeert of kleur voor aanhalen hergebruikt moet worden verder dan het "
+"3de niveau"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Toegangsleutel activeren"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail kan verdachte e-mailberichten analyseren op e-mail-scams door te "
+"kijken naar algemeen gebruikte technieken om u misleiden"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Lijst met e-mailberichten in witte lijst van scams"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "E-mails scannen voor volgen van URL's"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Stuur geen MDN's in antwoord op versleutelde berichten"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.in:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Specificeert het standaard te gebruiken beleid voor de meldingen over wat er "
+"met berichten moet worden gedaan (alleen voor intern gebruik)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.in:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Specificeert de standaard te gebruiken actie bij het antwoorden op een "
+"bericht (alleen voor intern gebruik)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "De berichtkoppen Van:/Aan: aanpassen in antwoorden op antwoorden"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie van "
+"de iCalendar-standaard; deze optie omzeilt één daarvan. Als u ondervindt dat "
+"Outlookgebruikers uw antwoorden niet kunnen ontvangen, probeer dan deze "
+"optie in te stellen."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Uitnodigingen in het tekstdeel van het bericht sturen"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie van "
+"de iCalendar-standaard; deze optie omzeilt één daarvan. Als u ondervindt dat "
+"Outlookgebruikers uw uitnodigingen niet kunnen ontvangen, probeer dan deze "
+"optie in te stellen."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Exchange-compatibele uitnodigingbenaming"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, indien gebruikt in combinatie met een Microsoft Exchange-"
+"server, kan niet overweg met norm-conforme groupware-e-mailberichten. "
+"Activeer deze optie om groupware-uitnodigingen zo te versturen dat Microsoft "
+"Exchange ermee overweg kan."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Uitnodiging automatisch verzenden"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Indien dit aangevinkt is, dan ziet u het venster \"Bericht opstellen\" niet. "
+"In plaatst daarvan zullen alle uitnodigingen automatisch verstuurd worden. "
+"Als u het bericht wilt zien voordat het verzonden wordt, dan kunt u het "
+"vinkje bij deze optie weghalen. Wees er wel van bewust dat de tekst in het "
+"venster \"Bericht opstellen\" in iCalendar-stijl staat; probeer hem niet met "
+"de hand te wijzigen."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Uitnodigingsberichten verwijderen nadat het antwoord erop is verstuurd"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Wanneer dit aangevinkt is, zullen ontvangen uitnodigingsberichten waarop "
+"geantwoord is, naar de prullenbak worden verplaatst nadat het antwoord met "
+"succes is verzonden."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1561
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Vast lettertype gebr&uiken"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "De meest recent geselecteerde map gebruikt voor een te-doen."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "De meest recent geselecteerde map gebruikt voor een gebeurtenis."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "De meest recent geselecteerde map gebruikt voor notities."
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
@@ -1438,12 +1785,6 @@ msgstr "Uitnodiging &Automatisch versturen"
 #, kde-format
 msgid "Options"
 msgstr "Opties"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Uitnodigingsberichten verwijderen nadat het antwoord erop is verstuurd"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -2060,11 +2401,6 @@ msgstr "Koppelingslocatie kopiëren"
 msgid "Open URL"
 msgstr "URL-adres openen"
 
-#: viewer/viewer_p.cpp:1561
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Vast lettertype gebr&uiken"
-
 #: viewer/viewer_p.cpp:1567
 #, kde-format
 msgid "Show Message Structure"
@@ -2387,212 +2723,6 @@ msgstr "Volgende bericht"
 #, kde-format
 msgid "Previous Message"
 msgstr "Vorige bericht"
-
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Alleen in viewer geselecteerde tekst afdrukken"
-
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "Respecteer gedefinieerde instellingen van invouw/uitklapmarkeringen bij "
-#~ "afdrukken."
-
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Specificeert of de achtergrondkleuren en afbeeldingen ook getekend worden "
-#~ "indien de pagina afgedrukt wordt."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr ""
-#~ "Altijd details van versleuteling/ondertekening tonen wanneer we het "
-#~ "bericht afdrukken"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "Bij het gebruiken van html gebruik dan geen grootte van lettertypen "
-#~ "minder dan de minimum grootte."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr ""
-#~ "Specificeert het te gebruiken lettertype voor het eigenlijke bericht"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Specificeer het te gebruiken lettertype voor afdrukken"
-
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "Controleren of URL phishing kan zijn"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr ""
-#~ "Sluit het berichtenvenster na beantwoorden of doorsturen van het bericht"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Invouw/uitklapmarkeringen tonen"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Schakel deze optie in om de verschillende niveaus van aangehaalde tekst "
-#~ "te tonen. Schakel deze optie uit om de verschillende niveaus te verbergen."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Automatisch invouwen bij niveau:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Lettergrootte verkleinen van aangehaalde tekst"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "Schakel deze optie in om aangehaalde tekst te tonen in een kleiner "
-#~ "lettertype."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Berichten altijd ontcijferen bij het bekijken of vragen voordat er wordt "
-#~ "ontcijferd"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Berichtenstructuurweergave"
-
-#~ msgid "Show never"
-#~ msgstr "Nooit tonen"
-
-#~ msgid "Show always"
-#~ msgstr "Altijd tonen"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Welke kopstijlen er getoond moeten worden"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Hoeveel van de koppen er getoond moeten worden"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "HTML boven platte tekst verkiezen"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Externe verwijzingen voor dit bericht ophalen van het internet."
-
-#~ msgid "How attachments are shown"
-#~ msgstr "De wijze waarop bijlagen worden getoond"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr ""
-#~ "Specificeert of kleur voor aanhalen hergebruikt moet worden verder dan "
-#~ "het 3de niveau"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Toegangsleutel activeren"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "KMail kan verdachte e-mailberichten analyseren op e-mail-scams door te "
-#~ "kijken naar algemeen gebruikte technieken om u misleiden"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "Lijst met e-mailberichten in witte lijst van scams"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "E-mails scannen voor volgen van URL's"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "Stuur geen MDN's in antwoord op versleutelde berichten"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Specificeert het standaard te gebruiken beleid voor de meldingen over wat "
-#~ "er met berichten moet worden gedaan (alleen voor intern gebruik)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Specificeert de standaard te gebruiken actie bij het antwoorden op een "
-#~ "bericht (alleen voor intern gebruik)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "De berichtkoppen Van:/Aan: aanpassen in antwoorden op antwoorden"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie "
-#~ "van de iCalendar-standaard; deze optie omzeilt één daarvan. Als u "
-#~ "ondervindt dat Outlookgebruikers uw antwoorden niet kunnen ontvangen, "
-#~ "probeer dan deze optie in te stellen."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Uitnodigingen in het tekstdeel van het bericht sturen"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie "
-#~ "van de iCalendar-standaard; deze optie omzeilt één daarvan. Als u "
-#~ "ondervindt dat Outlookgebruikers uw uitnodigingen niet kunnen ontvangen, "
-#~ "probeer dan deze optie in te stellen."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Exchange-compatibele uitnodigingbenaming"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook, indien gebruikt in combinatie met een Microsoft "
-#~ "Exchange-server, kan niet overweg met norm-conforme groupware-e-"
-#~ "mailberichten. Activeer deze optie om groupware-uitnodigingen zo te "
-#~ "versturen dat Microsoft Exchange ermee overweg kan."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Uitnodiging automatisch verzenden"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "Indien dit aangevinkt is, dan ziet u het venster \"Bericht opstellen\" "
-#~ "niet. In plaatst daarvan zullen alle uitnodigingen automatisch verstuurd "
-#~ "worden. Als u het bericht wilt zien voordat het verzonden wordt, dan kunt "
-#~ "u het vinkje bij deze optie weghalen. Wees er wel van bewust dat de tekst "
-#~ "in het venster \"Bericht opstellen\" in iCalendar-stijl staat; probeer "
-#~ "hem niet met de hand te wijzigen."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "Wanneer dit aangevinkt is, zullen ontvangen uitnodigingsberichten waarop "
-#~ "geantwoord is, naar de prullenbak worden verplaatst nadat het antwoord "
-#~ "met succes is verzonden."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "De meest recent geselecteerde map gebruikt voor een te-doen."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "De meest recent geselecteerde map gebruikt voor een gebeurtenis."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "De meest recent geselecteerde map gebruikt voor notities."
 
 #~ msgid "Edit with:"
 #~ msgstr "Bewerken met:"
