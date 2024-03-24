@@ -1364,14 +1364,13 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "Lukk skrivevindauget etter svar eller vidaresending"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
-#, fuzzy, kde-format
-#| msgid "Show &expand/collapse quote marks"
+#, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Vis &merke for samanfalding/utviding av sitert tekst"
+msgstr "Vis merke for samanfalding/utviding av sitert tekst"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:73
@@ -1380,6 +1379,8 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
+"Kryss av her viss du sjå fleire nivå med sitert tekst. Slå av valet viss du "
+"heller vil gøyma ulike nivå med sitert tekst."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
@@ -1389,49 +1390,46 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Reduce font size for &quoted text"
+#, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Vis &sitert tekst med mindre skrift"
+msgstr "Vis sitert tekst med mindre skrift"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
-msgstr ""
+msgstr "Kryss av her viss du vil sjå sitert tekst med mindre skrift."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr ""
+msgstr "Krypter alltid meldingar ved vising, eller spør for dekryptering"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
-#, fuzzy, kde-format
-#| msgid "Show Message Structure"
+#, kde-format
 msgid "Message Structure Viewer"
-msgstr "Vis meldingsstruktur"
+msgstr "Visar for meldingsstruktur"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:94
 #, kde-format
 msgid "Show never"
-msgstr ""
+msgstr "Aldri vis"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:97
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgid "Show always"
-msgstr "Vis detaljar"
+msgstr "Alltid vis"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
 #: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr ""
+msgstr "Kva type meldingshovud skal visast"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg.in:119
@@ -1443,14 +1441,13 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:123
 #, kde-format
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Føretrekk HTML framfor reintekst"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
-#, fuzzy, kde-format
-#| msgid "Load external references from the Internet for this message."
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "Last eksterne referansar frå Internett for denne meldinga."
+msgstr "La meldingar lasta eksterne referansar frå Internett"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
@@ -1495,7 +1492,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
-msgstr ""
+msgstr "Ikkje send meldingskvitteringar som svar på krypterte meldingar"
 
 #. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
 #: settings/messageviewer.kcfg.in:161

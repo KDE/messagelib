@@ -13,22 +13,22 @@
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 02:27+0000\n"
-"PO-Revision-Date: 2023-10-13 07:09+0200\n"
+"PO-Revision-Date: 2024-03-23 20:54+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1354,7 +1354,7 @@ msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
-"Respectar as marcas para despregar e pregar citas de texto que se definen na "
+"Respectar as marcas para expandir e pregar citas de texto que se definen na "
 "configuración de impresión."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
@@ -1364,8 +1364,8 @@ msgid ""
 "Specifies whether the background color and images are also drawn when the "
 "page is printed."
 msgstr ""
-"Indica se se desexa que tamén se debuxen a cor e as imaxes do fondo ao "
-"imprimir a páxina."
+"Indica se quere que tamén se debuxen a cor e as imaxes do fondo ao imprimir "
+"a páxina."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
@@ -1409,7 +1409,7 @@ msgstr "Pechar a xanela de mensaxes despois de responder ou reenviar."
 #: settings/messageviewer.kcfg.in:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Amosar marcas para despregar/pregar citas de texto"
+msgstr "Amosar marcas para expandir e pregar citas de texto."
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:73
@@ -1445,7 +1445,7 @@ msgstr ""
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
 msgstr ""
-"Descifrar sempre as mensaxes ao velas ou preguntar antes de as descifrar"
+"Descifrar sempre as mensaxes ao velas ou preguntar antes de descifralas."
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
@@ -1516,7 +1516,7 @@ msgid ""
 "techniques used to deceive you"
 msgstr ""
 "KMail pode analizar as mensaxes por se conteñen timos de correo buscando "
-"técnicas das empregadas frecuentemente para enganar"
+"técnicas das usadas frecuentemente para enganar."
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.in:147
@@ -1572,15 +1572,15 @@ msgid ""
 "this option."
 msgstr ""
 "Microsoft Outlook ten un número de defectos na súa realización do estándar "
-"iCalendar; esta opción elude un deles. Se ten problemas cos usuarios de "
-"Outlook que non son quen de obter as súas respostas, intente activando esta "
-"opción."
+"iCalendar; esta opción elude un deles. Se ten problemas coas persoas "
+"usuarias de Outlook que non son quen de obter as súas respostas, intente "
+"activando esta opción."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
 #, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr "Enviar convites a grupos no corpo da mensaxe"
+msgstr "Enviar invitacións a grupos no corpo da mensaxe."
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:188
@@ -1592,15 +1592,15 @@ msgid ""
 "setting this option."
 msgstr ""
 "Microsoft Outlook ten un número de defectos na súa realización do estándar "
-"iCalendar; esta opción elude un deles. Se ten problemas cos usuarios de "
-"Outlook que non son quen de obter as súas invitacións, intente activando "
-"esta opción."
+"iCalendar; esta opción elude un deles. Se ten problemas coas persoas "
+"usuarias de Outlook que non son quen de obter as súas invitacións, intente "
+"activando esta opción."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:193
 #, kde-format
 msgid "Exchange-compatible invitation naming"
-msgstr "Nomes de convites compatíbeis con Exchange"
+msgstr "Nomes de invitacións compatíbeis con Exchange."
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:194
@@ -1611,16 +1611,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"O Outlook de Microsoft, empregado en combinación cun servidor Exchange de "
-"Microsoft, ten problemas para comprender o correo electrónico de grupos "
-"respectuosos co estándar. Active esta opción para enviar convites de grupos "
-"de xeito que o comprenda o Exchange de Microsoft."
+"Combinar Microsoft Outlook cun servidor de Microsoft Exchange causa "
+"problemas para comprender o correo electrónico de grupos respectuosos co "
+"estándar. Active esta opción para enviar invitacións de grupos de xeito que "
+"o comprenda Microsoft Exchange."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:199
 #, kde-format
 msgid "Automatic invitation sending"
-msgstr "Envío automático de convites"
+msgstr "Envío automático de invitacións."
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:200
@@ -1633,10 +1633,10 @@ msgid ""
 "modifying it by hand."
 msgstr ""
 "Cando se marca, non se ve a xanela de edición da mensaxe. No seu lugar, "
-"envíanse automaticamente todos os correos de convite. Se quere ver o correo "
-"antes de envialo, pode desactivar esta opción. Porén, sexa consciente de que "
-"o texto na xanela de edición da mensaxe está en sintaxe iCalendar e que non "
-"debería polo tanto intentar modificalo á man."
+"envíanse automaticamente todos os correos de invitación. Se quere ver o "
+"correo antes de envialo, pode desmarcar esta opción. Porén, sexa consciente "
+"de que o texto na xanela de edición da mensaxe está en sintaxe iCalendar e "
+"que non debería polo tanto intentar modificalo á man."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
@@ -1652,8 +1652,8 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
-"Cando se marca isto, as mensaxes de convite recibidas ás que se respondeu "
-"moveranse ao cartafol do Lixo unha vez enviada satisfactoriamente a resposta."
+"Cando se marca isto, as mensaxes de invitación recibidas ás que se respondeu "
+"moveranse ao cartafol do lixo unha vez enviada satisfactoriamente a resposta."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1560

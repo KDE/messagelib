@@ -2085,19 +2085,13 @@ msgstr "Mellorar o texto simple das mensaxes en HTML."
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Asinar todas as mensaxes, se é posíbel."
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Atopáronse chaves de cifrado de confianza e correctas para todos os "
-"destinatarios.\n"
-"Quere cifrar a mensaxe?"
+msgstr "Activar o cifrado se hai chaves para todas as destinatarias."
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
