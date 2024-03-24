@@ -1866,7 +1866,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:18
 #, kde-format
 msgid "Only quote selected text when replying"
-msgstr ""
+msgstr "Siter berre den merkte teksten i svar"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:23

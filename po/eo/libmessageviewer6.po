@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-21 09:47+0100\n"
+"PO-Revision-Date: 2024-03-23 17:06+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1342,19 +1342,19 @@ msgstr "Mallonga URL '%1' alidirektas al '%2'."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.in:11
-#, fuzzy, kde-format
-#| msgid "Print only selected text"
+#, kde-format
 msgid "Only print selected text in viewer"
-msgstr "Presi nur elektitan tekston"
+msgstr "Presi nur elektitan tekston en vidilo"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
-#, fuzzy, kde-format
-#| msgid "Respect &expand/collapse quote marks settings"
+#, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
-msgstr "Resp&ekti vastigi/malpliigi citilojn"
+msgstr ""
+"Respekti vastigi/malvastigi citilsignon kiu estas difinita en agordoj dum "
+"presado."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.in:19
@@ -1366,10 +1366,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Always show encryption/signature details"
+#, kde-format
 msgid "Always show encryption/signature details when we print message"
-msgstr "Ĉiam montri detalojn pri ĉifrado/subskribo"
+msgstr "Ĉiam montri detalojn pri ĉifrado/subskribo kiam ni presas mesaĝon"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
@@ -1403,10 +1402,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
-#, fuzzy, kde-format
-#| msgid "Show &expand/collapse quote marks"
+#, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Montri &etendajn/maletendajn citilojn"
+msgstr "Montri vastigajn/malvastigajn citilojn"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:73
@@ -1418,17 +1416,15 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
-#, fuzzy, kde-format
-#| msgid "Automatic collapse &level:"
+#, kde-format
 msgid "Automatic collapse level:"
-msgstr "Aŭtomata maletend-nive&lo:"
+msgstr "Aŭtomata malvastig-nivelo:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Reduce font size for &quoted text"
+#, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Redukti tipargrandon por &citita teksto"
+msgstr "Redukti tipargrandon por citita teksto"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:84
@@ -1444,56 +1440,52 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
-#, fuzzy, kde-format
-#| msgid "Show Message Structure"
+#, kde-format
 msgid "Message Structure Viewer"
-msgstr "Montri Mesaĝan Strukturon"
+msgstr "Vidilo por Mesaĝa Strukturo"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:94
 #, kde-format
 msgid "Show never"
-msgstr ""
+msgstr "Neniam montri"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:97
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgid "Show always"
-msgstr "Montri Detalojn"
+msgstr "Montri ĉiam"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
 #: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr ""
+msgstr "Kiu stilo de kaplinioj estu montrata"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg.in:119
 #, kde-format
 msgid "How much of headers should be displayed"
-msgstr ""
+msgstr "Kiom da kaplinioj estu montrataj"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg.in:123
 #, kde-format
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Preferi HTML al plata teksto"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
-#, fuzzy, kde-format
-#| msgid "Load external references from the Internet for this message."
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "Ŝargi eksterajn referencojn el la Reto por tiu mesaĝo."
+msgstr "Permesi al mesaĝoj ŝargi eksterajn referencojn el la Reto"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
-#, fuzzy, kde-format
-#| msgid "Show attachments as suggested by sender."
+#, kde-format
 msgid "How attachments are shown"
-msgstr "Montras la aldonaĵon kiel proponite de la sendinto."
+msgstr "Kiel kunsendaĵoj estas montrataj"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg.in:135
@@ -1503,10 +1495,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:139
-#, fuzzy, kde-format
-#| msgid "Enable access key"
+#, kde-format
 msgid "Activate Access Key"
-msgstr "Ebligi alirŝlosilon"
+msgstr "Aktivigi Alirŝlosilon"
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:143
@@ -1553,10 +1544,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:181
-#, fuzzy, kde-format
-#| msgid "&Mangle From:/To: headers in replies to invitations"
+#, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "&Mallegebligi From:/To: kapliniojn en respondoj al invitoj"
+msgstr "Mallegebligi From:/To: kapliniojn en respondoj al respondoj"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
@@ -1570,10 +1560,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
-#, fuzzy, kde-format
-#| msgid "Send &invitations in the mail body"
+#, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr "Sendi &invitojn en la tekstparto"
+msgstr "Sendi grupvar-invitojn en la tekstokorpo"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:188
@@ -1615,10 +1604,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:199
-#, fuzzy, kde-format
-#| msgid "&Automatic invitation sending"
+#, kde-format
 msgid "Automatic invitation sending"
-msgstr "&Aŭtomata invitosendo"
+msgstr "Aŭtomata invitosendo"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:200
