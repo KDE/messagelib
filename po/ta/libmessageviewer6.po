@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 02:27+0000\n"
-"PO-Revision-Date: 2023-10-22 18:01+0530\n"
+"PO-Revision-Date: 2024-03-24 17:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -339,8 +339,7 @@ msgstr ""
 "சேமித்துள்ள DKIM சாவி, தற்போதையதிலிருந்து மாறுபடுகிறது. இதையும் செமிக்க வேண்டுமா?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "சாவி மாறியுள்ளது"
@@ -415,8 +414,7 @@ msgid "Do you want to delete all keys?"
 msgstr "அனைத்து சாவிகளையும் நீக்க வேண்டுமா?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "சாவிகளை நீக்குவது"
@@ -463,11 +461,10 @@ msgid "No rules found"
 msgstr "எந்த விதிமுறைகளும் கண்டுபிடிக்கப்படவில்லை"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
+msgstr "விதிமுறைகளை ஏற்றுமதி செய்வது"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
@@ -485,11 +482,10 @@ msgid "No rules imported."
 msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "விதிமுறைகளை இறக்குமதி செய்"
+msgstr "விதிமுறைகளை இறக்குமதி செய்வது"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -552,11 +548,10 @@ msgstr "உறுதியாக இந்த விதிமுறையை ந
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "விதிமுறையை நீக்கு"
+msgstr "விதிமுறையை நீக்குவது"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -564,11 +559,10 @@ msgid "Do you want to delete all the rules?"
 msgstr "உறுதியாக அனைத்து விதிமுறைகளையும் நீக்க விரும்புகிறீர்களா?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "விதிமுறைகளை நீக்கு"
+msgstr "விதிமுறைகளை நீக்குவது"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
@@ -1119,7 +1113,7 @@ msgid "A policy was not met."
 msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
 
 #: messagepartthemes/default/defaultrenderer.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "A system error occurred."
 msgstr "கணினி சிக்கல் நேர்ந்தது."
 
@@ -1204,11 +1198,10 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "இம்முகவிரிக்கு ஏற்கனவே ஓர் பதிவுள்ளது. அப்பதிவையே மாற்றுங்கள்."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "புதிய முகவரியை சேர்"
+msgstr "புதிய முகவரியை சேர்ப்பது"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1357,12 +1350,11 @@ msgstr "காட்டியில் தேர்ந்தெடுக்க�
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
-#, fuzzy, kde-format
-#| msgid "Respect &expand/collapse quote marks settings"
+#, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
-msgstr "மேற்கோள்களை &விரிப்பதற்கான/சுருக்குவதற்கான அமைப்புகளை பின்பற்று"
+msgstr "அச்சிடும்போதும் மேற்கோள்களை விரிப்பதற்கான/சுருக்குவதற்கான அமைப்புகளை பின்பற்று"
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.in:19
@@ -1370,32 +1362,31 @@ msgstr "மேற்கோள்களை &விரிப்பதற்கா�
 msgid ""
 "Specifies whether the background color and images are also drawn when the "
 "page is printed."
-msgstr ""
+msgstr "அச்சிடும்போது பின்புல நிறத்தையும் படங்களையும் உட்படுத்த வேண்டுமா."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Always show encryption/signature details"
+#, kde-format
 msgid "Always show encryption/signature details when we print message"
-msgstr "கையொப்ப/மறையாக்க விவரங்களை எப்போதும் காட்டு"
+msgstr "அச்சிடும்போது மறையாக்க/கையொப்ப விவரங்களை எப்போதும் காட்டு"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
-#, kde-format
+#, fuzzy, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr ""
+msgstr "HTML "
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
-msgstr ""
+msgstr "உடல் பகுதிக்கு பயன்படுத்த வேண்டிய எழுத்துருவைக் குறிப்பிடும்"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr ""
+msgstr "அச்சிடும்போது பயன்படுத்த வேண்டிய எழுத்துருவைக் குறிப்பிடும்"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.in:49
@@ -1831,8 +1822,7 @@ msgid ""
 msgstr "'%1' என்ற கோப்பு ஏற்கனவே உள்ளது. உறுதியாக அதை மேலெழுத வேண்டுமா?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "கோப்பை மேலெழுதலாமா?"
@@ -1909,8 +1899,7 @@ msgstr ""
 "%2</qt>"
 
 #: utils/messageviewerutil.cpp:403
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
@@ -1948,8 +1937,7 @@ msgid "File %1 could not be loaded."
 msgstr "%1 எனும் கோப்பை ஏற்ற முடியவில்லை."
 
 #: utils/messageviewerutil.cpp:525
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
@@ -1960,8 +1948,7 @@ msgid "File %1 could not be created."
 msgstr "%1 எனும் கோப்பை உருவாக்க முடியவில்லை."
 
 #: utils/messageviewerutil.cpp:527 utils/messageviewerutil.cpp:558
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
@@ -2023,10 +2010,9 @@ msgid "Size"
 msgstr "அளவு"
 
 #: viewer/printmessage.cpp:61
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "%1கோப்பை எழுதமுடியாது"
+msgstr "அச்சின் முன்னோட்டத்தை உருவாக்க முடியவில்லை."
 
 #: viewer/printmessage.cpp:97
 #, kde-format
@@ -2126,10 +2112,9 @@ msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
 #: viewer/urlhandlermanager.cpp:634
-#, fuzzy, kde-format
-#| msgid "Open in Address Book"
+#, kde-format
 msgid "Lookup the contact in KAddressbook"
-msgstr "&முகவரிபுத்தகத்தில் திற"
+msgstr "தொடர்பை KAddressbook-இல் காட்டு"
 
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
@@ -2187,11 +2172,10 @@ msgstr ""
 "தாகலாம்."
 
 #: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "உடனிணைப்பை நீக்கு"
+msgstr "உடனிணைப்பை நீக்குவது"
 
 #: viewer/viewer_p.cpp:381
 #, kde-format
@@ -2199,6 +2183,8 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
+"மறையாக்கப்பட்டுள்ள அல்லது பழையவகை mailman அஞ்சலிலிருந்து உடனிணைப்பை நீக்குவது "
+"ஆதரிக்கப்படாத‍து."
 
 #: viewer/viewer_p.cpp:430
 #, kde-format
@@ -2494,8 +2480,7 @@ msgid "The URL %1 is not valid."
 msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
 
 #: viewer/viewer_p.cpp:1986
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
@@ -2635,7 +2620,7 @@ msgstr "வடிவமைக்கப்படா மூலம்"
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
-msgstr ""
+msgstr "கோப்பகத்திலோ சேவையகத்திலோ சேமிக்கப்பட்டுள்ளவாறே அஞ்சலை காட்டும்"
 
 #: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
