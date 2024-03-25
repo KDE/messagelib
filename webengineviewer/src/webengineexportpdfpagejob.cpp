@@ -6,6 +6,9 @@
 
 #include "webengineexportpdfpagejob.h"
 #include "webengineviewer_debug.h"
+#include <KLocalizedString>
+#include <QPageSetupDialog>
+#include <QPrinter>
 #include <QWebEngineView>
 
 using namespace WebEngineViewer;
@@ -24,8 +27,19 @@ void WebEngineExportPdfPageJob::start()
         deleteLater();
         return;
     }
+    auto *printer = new QPrinter();
+    printer->setOutputFormat(QPrinter::PdfFormat);
+    printer->setOutputFileName(mPdfPath);
+
+    auto dialog = new QPageSetupDialog(printer, mWebEngineView);
     connect(mWebEngineView->page(), &QWebEnginePage::pdfPrintingFinished, this, &WebEngineExportPdfPageJob::slotExportPdfFinished);
-    mWebEngineView->page()->printToPdf(mPdfPath);
+    if (dialog->exec() == QDialog::Accepted) {
+        if (dialog->printer()->outputFormat() == QPrinter::PdfFormat) {
+            mWebEngineView->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
+            delete dialog;
+            delete printer;
+        }
+    }
 }
 
 void WebEngineExportPdfPageJob::slotExportPdfFinished(const QString &filePath, bool success)
