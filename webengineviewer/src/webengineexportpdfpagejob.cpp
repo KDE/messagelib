@@ -24,11 +24,11 @@ void WebEngineExportPdfPageJob::start()
         deleteLater();
         return;
     }
-    connect(mWebEngineView->page(), &QWebEnginePage::pdfPrintingFinished, this, &WebEngineExportPdfPageJob::slotPdfPrintingFinished);
+    connect(mWebEngineView->page(), &QWebEnginePage::pdfPrintingFinished, this, &WebEngineExportPdfPageJob::slotExportPdfFinished);
     mWebEngineView->page()->printToPdf(mPdfPath);
 }
 
-void WebEngineExportPdfPageJob::slotPdfPrintingFinished(const QString &filePath, bool success)
+void WebEngineExportPdfPageJob::slotExportPdfFinished(const QString &filePath, bool success)
 {
     if (success) {
         Q_EMIT exportToPdfSuccess();
