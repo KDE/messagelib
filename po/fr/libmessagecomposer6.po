@@ -2019,46 +2019,38 @@ msgstr " Répéter chaque :"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:18
-#, fuzzy, kde-format
-#| msgid "Only quote selected text when replying"
+#, kde-format
 msgid "Only quote selected text when replying"
 msgstr "Ne citer que le texte sélectionné lors de réponses"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "A&utomatically insert signature"
+#, kde-format
 msgid "A&utomatically insert signature"
 msgstr "Insérer a&utomatiquement la signature"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:27
-#, fuzzy, kde-format
-#| msgid "Insert signature above quoted text"
+#, kde-format
 msgid "Insert signature above quoted text"
 msgstr "Insérer la signature au dessus du texte cité"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:31
-#, fuzzy, kde-format
-#| msgid "Prepend separator to signature"
+#, kde-format
 msgid "Prepend separator to signature"
 msgstr "Faire précéder le séparateur à la signature"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
-#, fuzzy, kde-format
-#| msgid "Use addresses indexed from emails for autocompletion"
+#, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr ""
 "Utiliser les adresses indexées à partir des messages pour l'auto-complètement"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable this option if you only want contacts from your addressbooks to "
-#| "appear in the autocompletion list in the composer's address fields."
+#, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
@@ -2069,10 +2061,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow the semicolon character (';') to be used as separator in the "
-#| "message composer"
+#, kde-format
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
@@ -2082,17 +2071,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:46
-#, fuzzy, kde-format
-#| msgid "Use recent addresses for autocompletion"
+#, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "Utiliser les adresses récentes pour l'auto-complètement"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable this option if you do not want recently used addresses to appear "
-#| "in the autocompletion list in the composer's address fields."
+#, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
@@ -2103,58 +2088,50 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
-#, fuzzy, kde-format
-#| msgid "Maximum number of recipient entries:"
+#, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "Nombre maximum d'entrées de destinataires :"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
-#, fuzzy, kde-format
-#| msgid "Word &wrap at column:"
+#, kde-format
 msgid "Word &wrap at column:"
 msgstr "&Passage à la ligne à la colonne :"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.in:67
-#, fuzzy, kde-format
-#| msgid "Improve plain text version of HTML message"
+#, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "Améliorer la version du texte brut du message HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.in:71
-#, fuzzy, kde-format
-#| msgid "Sign all messages, if possible"
+#, kde-format
 msgid "Sign all messages, if possible"
 msgstr "Signer tous les messages, si possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid "Enable encryption, if we found keys for all recipients"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Activer le chiffrement si des clés sont trouvées pour tous les destinataires."
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
-#, fuzzy, kde-format
-#| msgid "Warn before sending unencrypted messages"
+#, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Avertir avant d'envoyer des messages non chiffrés"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Warn before sending unsigned messages"
+#, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Avertir avant d'envoyer des messages non signés"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.in:87
-#, fuzzy, kde-format
-#| msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+#, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 "Avertir si les certificats ou les clés expire bientôt (configurez le seuil "
@@ -2163,10 +2140,7 @@ msgstr ""
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "The minimum number of days that the encryption certificate should be "
-#| "valid before issuing a warning"
+#, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
@@ -2176,10 +2150,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "The minimum number of days that all certificates in the chain should be "
-#| "valid before issuing a warning"
+#, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
@@ -2189,10 +2160,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "The minimum number of days that the root certificate should be valid "
-#| "before issuing a warning"
+#, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
@@ -2202,10 +2170,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.in:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Always show the list of encryption keys to select the one which will be "
-#| "used"
+#, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
 msgstr ""

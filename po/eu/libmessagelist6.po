@@ -1,7 +1,7 @@
 # Translation for libmessagelist.po to Euskara/Basque (eu).
-# Copyright (C) 2003-2023 This file is Copyright:
+# Copyright (C) 2003-2024 This file is Copyright:
 # This file is distributed under the same license as the messagelib package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Tranlators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2004, 2005.
@@ -9,20 +9,20 @@
 # Marcos <marcos@euskalgnu.org>, 2005.
 # marcos <marcos@euskalgnu.org>, 2006.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2023-09-26 23:33+0200\n"
+"PO-Revision-Date: 2024-03-24 10:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/aggregation.cpp:178
@@ -1048,10 +1048,9 @@ msgstr[0] "mezu <b>%1</b> (<b>%2</b> irakurri gabe)"
 msgstr[1] "<b>%1</b> mezu (<b>%2</b> irakurri gabe)"
 
 #: core/widgetbase.cpp:186
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "Definitutako edozein iragazki."
+msgstr "Ez da iragazkirik definitu."
 
 #: core/widgetbase.cpp:186
 #, kde-format

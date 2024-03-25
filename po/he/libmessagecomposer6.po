@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-21 13:37+0200\n"
+"PO-Revision-Date: 2024-03-24 22:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -949,7 +949,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr ""
+msgstr "בחירת מפתח הצפנה"
 
 #: composer/keyresolver.cpp:1477
 #, kde-format
@@ -989,7 +989,7 @@ msgstr ""
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgid "Name Selection"
-msgstr ""
+msgstr "בחירת שם"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1022,44 +1022,44 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr ""
+msgstr "בחירת תאריך"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "תאריך:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
 msgid "Store to-do in:"
-msgstr ""
+msgstr "אחסון מטלה בתוך:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr ""
+msgstr "התאריך הנבחר חייב להיות גדול מהתאריך הנוכחי."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr ""
+msgstr "תאריך שגוי"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr ""
+msgstr "התיקייה הנבחרת שגויה."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
-msgstr ""
+msgstr "תיקייה שגויה"
 
 #: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
-msgstr ""
+msgstr "הודעה שהועברה"
 
 #: helper/messagefactoryng.cpp:574
 #, kde-format
@@ -1080,17 +1080,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr ""
+msgstr "בחירת סוג תמונה"
 
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
-msgstr ""
+msgstr "בחירת סוג…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
-msgstr ""
+msgstr "<a href=\"whatsthis\">איך זה עובד?</a>"
 
 #: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
@@ -1103,7 +1103,7 @@ msgstr ""
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
-msgstr ""
+msgstr "מותאם אישית"
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
@@ -1114,61 +1114,61 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "שגיאה בערך מזערי מרבי"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr ""
+msgstr "שינוי גודל תמונות אוטומטית"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "כללי"
 
 #. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
 #: imagescaling/ui/imagescalingwidget.ui:34
 #, kde-format
 msgid "Keep ratio"
-msgstr ""
+msgstr "שימור יחס"
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41
 #, kde-format
 msgid "Ask before resizing"
-msgstr ""
+msgstr "לשאול לפני שינוי הגודל"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr ""
+msgstr "תצורת גיבוי:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "תמונה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
 #: imagescaling/ui/imagescalingwidget.ui:95
 #, kde-format
 msgid "Reduce image to maximum dimension:"
-msgstr ""
+msgstr "צמצום התמונה לממד המרבי:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: imagescaling/ui/imagescalingwidget.ui:109
 #, kde-format
 msgid "Maximum width:"
-msgstr ""
+msgstr "רוחב מרבי:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: imagescaling/ui/imagescalingwidget.ui:116
 #, kde-format
 msgid "Maximum height:"
-msgstr ""
+msgstr "גובה מרבי:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
@@ -1180,79 +1180,79 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:211
 #, kde-format
 msgid " px"
-msgstr ""
+msgstr " פיקסלים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr ""
+msgstr "הגדלת התמונה לממד המזערי"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
 #, kde-format
 msgid "Minimum width:"
-msgstr ""
+msgstr "רוחב מזערי:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: imagescaling/ui/imagescalingwidget.ui:181
 #, kde-format
 msgid "Minimum height:"
-msgstr ""
+msgstr "גובה מזערי:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
 #: imagescaling/ui/imagescalingwidget.ui:230
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
-msgstr ""
+msgstr "דילוג על תמונה שגודל קובץ המקור שלה קטן מאשר:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
 #, kde-format
 msgid " KiB"
-msgstr ""
+msgstr " KiB"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: imagescaling/ui/imagescalingwidget.ui:263
 #, kde-format
 msgid "Filename"
-msgstr ""
+msgstr "שם הקובץ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
 #: imagescaling/ui/imagescalingwidget.ui:269
 #, kde-format
 msgid "Source filter"
-msgstr ""
+msgstr "מסנן מקור"
 
 #. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr ""
+msgstr "לא לסנן (כל הקבצים כלולים)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr ""
+msgstr "לכלול קבצים שהשמות שלהם מכילים אחת מהתבניות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
-msgstr ""
+msgstr "להחריג קבצים שהשמות שלהם מכילים אחת מהתבניות"
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
 #, kde-format
 msgid "Pattern:"
-msgstr ""
+msgstr "תבנית:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr ""
+msgstr "השורה הזאת מאפשרת להגדיר כמה תבניות. יש להפריד ביניהן ב־‚;’."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1262,13 +1262,13 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr ""
+msgstr "ציון תבניות עם ‚;’ ביניהן"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
 #, kde-format
 msgid "Image Format"
-msgstr ""
+msgstr "תבנית תמונה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
 #: imagescaling/ui/imagescalingwidget.ui:332
@@ -1292,7 +1292,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:389
 #, kde-format
 msgid "Recipients"
-msgstr ""
+msgstr "נמענים"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
 #: imagescaling/ui/imagescalingwidget.ui:395
@@ -1421,7 +1421,7 @@ msgstr ""
 #: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
-msgstr ""
+msgstr "החלפת קידוד"
 
 #: job/maintextjob.cpp:107
 #, kde-format
@@ -1457,12 +1457,12 @@ msgstr ""
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "הת&עלמות"
 
 #: mdn/mdnadvicedialog.cpp:34
 #, kde-format
 msgid "&Send"
-msgstr ""
+msgstr "&שליחה"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1514,36 +1514,36 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr ""
+msgstr "שמירת רשימת תפוצה"
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List"
-msgstr ""
+msgstr "שמירת רשימה"
 
 #: recipient/distributionlistdialog.cpp:121
 #, kde-format
 msgctxt "@label:textbox Name of the distribution list."
 msgid "&Name:"
-msgstr ""
+msgstr "&שם:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
 msgid "Name of Distribution List"
-msgstr ""
+msgstr "שם רשימת התפוצה"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
 msgctxt "@title:column Name of the recipient"
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: recipient/distributionlistdialog.cpp:133
 #, kde-format
 msgctxt "@title:column Email of the recipient"
 msgid "Email"
-msgstr ""
+msgstr "דוא״ל"
 
 #: recipient/distributionlistdialog.cpp:240
 #, kde-format
@@ -1551,19 +1551,19 @@ msgctxt "@info"
 msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
-msgstr ""
+msgstr "אין נמענים ברשימה שלך. נא לבחור כמה נמענים ואז לנסות שוב."
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr ""
+msgstr "רשימת תפוצה חדשה"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr ""
+msgstr "נא למלא שם:"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1577,58 +1577,58 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr ""
+msgstr "בחירת פנקס כתובת"
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
-msgstr ""
+msgstr "בחירת תיקיית פנקס כתובות לאחסון קבוצת אנשי הקשר:"
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr ""
+msgstr "לא ניתן ליצור רשימת תפוגה: %1"
 
 #: recipient/recipient.cpp:99
 #, kde-format
 msgctxt "@label:listbox Recipient of an email message."
 msgid "To"
-msgstr ""
+msgstr "אל"
 
 #: recipient/recipient.cpp:101
 #, kde-format
 msgctxt "@label:listbox Carbon Copy recipient of an email message."
 msgid "CC"
-msgstr ""
+msgstr "עותק"
 
 #: recipient/recipient.cpp:103
 #, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
-msgstr ""
+msgstr "עותק סמוי"
 
 #: recipient/recipient.cpp:105
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr ""
+msgstr "תגובה אל"
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
 msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
-msgstr ""
+msgstr "<placeholder>סוג נמען לא מוגדר</placeholder>"
 
 #: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
-msgstr ""
+msgstr "בחירת סוג הנמען"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
 msgid "Set the list of email addresses to receive this message"
-msgstr ""
+msgstr "רשימת כתובת הדוא״ל לקבלת ההודעה הזאת"
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
@@ -1644,96 +1644,96 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr ""
+msgstr "שמירת הרשימה…"
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr ""
+msgstr "&בחירה…"
 
 #: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr ""
+msgstr "שמירת נמענים כרשימת תפוצה"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr ""
+msgstr "בחירת נמענים מפנקס הכתובות"
 
 #: recipient/recipientseditorsidewidget.cpp:77
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
-msgstr ""
+msgstr "אין נמענים"
 
 #: recipient/recipientseditorsidewidget.cpp:79
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "נמען"
+msgstr[1] "שני נמענים"
+msgstr[2] "%1 נמענים"
+msgstr[3] "%1 נמענים"
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr ""
+msgstr "אל:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:131
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr ""
+msgstr "עותק:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr ""
+msgstr "עותק סמוי:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr ""
+msgstr "תגובה אל:%1"
 
 #: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr ""
+msgstr "בחירת נמען"
 
 #: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
-msgstr ""
+msgstr "&שירות ספרייה לחיפוש"
 
 #: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as &Reply-To"
-msgstr ""
+msgstr "הוספה כ&תגובה אל"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
-msgstr ""
+msgstr "הוספה כ&אל"
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
-msgstr ""
+msgstr "הוספה כעותק"
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
-msgstr ""
+msgstr "הוספה כעותק סמוי"
 
 #: recipient/recipientspicker.cpp:105
 #, kde-format
@@ -1761,53 +1761,53 @@ msgstr[3] ""
 #: recipient/recipientspicker.cpp:189
 #, kde-format
 msgid "You can not add more recipients."
-msgstr ""
+msgstr "אי אפשר להוסיף עוד נמענים."
 
 #: sendlater/sendlatercreatejob.cpp:33
 #, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr ""
+msgstr "תזמון הודעה לשליחה בעיכוב נכשלה: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "שליחה בעיכוב"
 
 #: sendlater/sendlaterdialog.cpp:48
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "שליחה בעיכוב"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
 msgid "Delay"
-msgstr ""
+msgstr "עיכוב"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "ימים"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "שבועות"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "חודשים"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "שנים"
 
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "סוכן שליחה בעיכוב לא פעיל."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
@@ -1937,7 +1937,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:87
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
+msgstr "להזהיר אם תוקף של אישורים/מפתחות פג בקרוב (להגדיר ספים להלן)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
@@ -1946,7 +1946,7 @@ msgstr ""
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
-msgstr ""
+msgstr "מספר הימים המזערי שאישורי ההצפנה אמורים להיות תקפים לפני הצגת אזהרה"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:99
@@ -1955,6 +1955,7 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
+"מספר הימים המזערי שכל האישורים בשרשרת אמורים להיות תקפים לפני הצגת אזהרה"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:103
@@ -1962,119 +1963,119 @@ msgstr ""
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
-msgstr ""
+msgstr "מספר הימים המזערי שאישורי העל אמורים להיות תקפים לפני הצגת אזהרה"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.in:107
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
-msgstr ""
+msgstr "תמיד להציג את רשימת מפתחות ההצפנה כדי לבחור במי מהם להשתמש"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
-msgstr ""
+msgstr "אל"
 
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
 msgid "To Field Address"
-msgstr ""
+msgstr "כתובת שדה אל"
 
 #: snippet/convertsnippetvariablemenu.cpp:31
 #, kde-format
 msgid "To Field Last Name"
-msgstr ""
+msgstr "שם משפחה שדה אל"
 
 #: snippet/convertsnippetvariablemenu.cpp:34
 #, kde-format
 msgid "To Field First Name"
-msgstr ""
+msgstr "שם פרטי שדה אל"
 
 #: snippet/convertsnippetvariablemenu.cpp:37
 #, kde-format
 msgid "To Field Name"
-msgstr ""
+msgstr "שם שדה אל"
 
 #: snippet/convertsnippetvariablemenu.cpp:42
 #, kde-format
 msgid "From"
-msgstr ""
+msgstr "מאת"
 
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
 msgid "From Field Address"
-msgstr ""
+msgstr "כתובת שדה מאת"
 
 #: snippet/convertsnippetvariablemenu.cpp:46
 #, kde-format
 msgid "From Field Last Name"
-msgstr ""
+msgstr "שם משפחה שדה מאת"
 
 #: snippet/convertsnippetvariablemenu.cpp:49
 #, kde-format
 msgid "From Field First Name"
-msgstr ""
+msgstr "שם פרטי שדה מאת"
 
 #: snippet/convertsnippetvariablemenu.cpp:52
 #, kde-format
 msgid "From Field Name"
-msgstr ""
+msgstr "שם שדה מאת"
 
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
 msgid "CC"
-msgstr ""
+msgstr "עותק"
 
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
 msgid "CC Field Address"
-msgstr ""
+msgstr "כתובת שדה עותק"
 
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "שם משפחה שדה עותק"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr ""
+msgstr "שם פרטי שדה עותק"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr ""
+msgstr "שם שדה עותק"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "עותק סמוי"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr ""
+msgstr "כתובת שדה עותק סמוי"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr ""
+msgstr "שם משפחה שדה עותק סמוי"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr ""
+msgstr "שם פרטי שדה עותק סמוי"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr ""
+msgstr "שם שדה עותק סמוי"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
 msgid "Attachment"
-msgstr ""
+msgstr "צרופה"
 
 #: snippet/convertsnippetvariablemenu.cpp:90
 #, kde-format
