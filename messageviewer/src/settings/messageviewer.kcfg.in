@@ -234,19 +234,19 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
 
     <group name="Todo">
       <entry name="LastSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Todo.</whatsthis>
+        <whatsthis>The most recent selected folder used for Todo.</whatsthis>
         <default>-1</default>
       </entry>
     </group>
     <group name="Event">
       <entry name="LastEventSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Event.</whatsthis>
+        <whatsthis>The most recent selected folder used for Event.</whatsthis>
         <default>-1</default>
       </entry>
     </group>
     <group name="Note">
       <entry name="LastNoteSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Notes.</whatsthis>
+        <whatsthis>The most recent selected folder used for Notes.</whatsthis>
         <default>-1</default>
       </entry>
     </group>
