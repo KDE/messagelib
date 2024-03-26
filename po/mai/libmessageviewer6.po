@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1995,12 +1995,12 @@ msgstr "प्रकार"
 msgid "Size"
 msgstr "आकार"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"

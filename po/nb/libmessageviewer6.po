@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1993,12 +1993,12 @@ msgstr "Type "
 msgid "Size"
 msgstr "Størrelse"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2046,12 +2046,12 @@ msgstr "Tüüp"
 msgid "Size"
 msgstr "Suurus"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"

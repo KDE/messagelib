@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2024-03-01 15:38+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2014,12 +2014,12 @@ msgstr "Tips"
 msgid "Size"
 msgstr "Izmērs"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr "Nevarēja izveidot drukāšanas priekšskatījumu."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"

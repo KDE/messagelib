@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -2072,13 +2072,13 @@ msgstr "Seurt"
 msgid "Size"
 msgstr "Ment"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Could not write the file %1."
 msgid "Could not generate print preview."
 msgstr "Ne m'eus ket gallet skrivañ ar restr %1."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"

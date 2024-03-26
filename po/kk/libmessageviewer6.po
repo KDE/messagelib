@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -2103,13 +2103,13 @@ msgstr "Түрі"
 msgid "Size"
 msgstr "Өлшемі"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Could not write the file %1."
 msgid "Could not generate print preview."
 msgstr "%1 деген файл жазылмады."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"

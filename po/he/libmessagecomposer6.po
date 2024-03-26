@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-24 22:50+0200\n"
+"PO-Revision-Date: 2024-03-26 00:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -573,7 +573,7 @@ msgstr "תזכורת צרופות"
 #: composer/composerviewbase.cpp:1911
 #, kde-format
 msgid "&Send as Is"
-msgstr ""
+msgstr "&שליחה ללא שינוי"
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -1823,13 +1823,13 @@ msgstr ""
 #: sendlater/ui/sendlaterwidget.ui:29
 #, kde-format
 msgid "Send at:"
-msgstr ""
+msgstr "נשלח ב־:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
 #, kde-format
 msgid "Repeat every:"
-msgstr ""
+msgstr "לחזור כל:"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:18
@@ -1875,13 +1875,13 @@ msgstr ""
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
-msgstr ""
+msgstr "לאפשר להשתמש בתו נקודה פסיק (‚;’) כמפריד בחלונית כתיבת ההודעות"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:46
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "להשתמש בכתובות אחרונות להשלמה אוטומטית"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
@@ -1890,48 +1890,50 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
+"יש להשבית את האפשרות הזאת כדי שכתובות שהשתמשת בהן לאחרונה לא תופענה ברשימת "
+"ההשלמה האוטומטית בשדות הכתובות של חלונית כתיבת ההודעות."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "כמות רשומות הנמענים המרבית:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "&גלישת שורות בעמודה:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.in:67
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "שיפור גרסת טקסט פשוט של הודעת HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "לחתום על כל ההודעות, אם אפשר"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
+msgstr "הפעלת הצפנה, אם מצאנו מפתחות לכל הנמענים"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "להזהיר בטרם שליחת הודעות לא מוצפנות"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.in:83
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "להזהיר בטרם שליחת הודעות לא חתומות"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.in:87

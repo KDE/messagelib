@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-03-26 00:38+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -2134,12 +2134,12 @@ msgstr "ਟਾਈਪ"
 msgid "Size"
 msgstr "ਸਾਈਜ਼"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"

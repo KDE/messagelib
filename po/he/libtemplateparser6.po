@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-18 09:37+0200\n"
+"PO-Revision-Date: 2024-03-25 23:52+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -61,6 +61,14 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
+"<qt><p>כאן אפשר להוסיף, לערוך ולמחוק תבניות הודעות מותאמות אישית לשימוש "
+"לשימוש בעת כתיבת תגובה או העברת הודעה. אפשר ליצור תבנית מותאמת אישית על ידי "
+"הקלדת השם לתיבת הקלט ולחיצה על הכפתור ‚+’. בנוסף, אפשר לאגד צירוףמקשים "
+"לתבנית כדי לתפעל אותה מהר יותר.</p><p>תבניות הודעות תומכות בפקודות החלפה, יש "
+"פשוט להקליד או לבחור אותן מתפריט <i>הוספת פקודה</i>.</p><p>יש ארבעה סוגים של "
+"תבניות מותאמות אישית: משמשות ל<i>תגובה</i>, <i>תגובה לכולם</i>, <i>העברה</"
+"i>, ו<i>אוניברסלי</i> שיכולה לשמש לכל מיני פעולות. אי אפשר לאגד קיצורי מקשים "
+"לתבניות <i>אוניברסליות</i>.</p></qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -286,7 +294,7 @@ msgstr "קובץ מצורף %1"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr ""
+msgstr "פקודת השרשור <command>%1</command> נכשלה."
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
@@ -416,23 +424,23 @@ msgstr "נושא"
 
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
-msgstr ""
+msgstr "שרשור תוכן ההודעה המקורית והוספת התוצאה כטקסט מצוטט"
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
-msgstr ""
+msgstr "שרשור תוכן ההודעה המקורית והוספת התוצאה כמו שהיא"
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
-msgstr ""
+msgstr "שרשור ההודעה המקורית עם הכותרות והוספת התוצאה כמו שהיא"
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
-msgstr ""
+msgstr "שרשור תוכן ההודעה הנוכחית והוספת התוצאה כמו שהיא"
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr ""
+msgstr "שרשור תוכן ההודעה הנוכחית והחלפה בתוצאה"
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
@@ -526,6 +534,9 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
+"<p>כאן ניתן לייצר ולנהל תבניות לשימוש בכתיבת הודעות חדשות, תגובות או הודעות "
+"שמועברות.</p><p>תבניות ההודעות תומכות בפקודות החלפה, אפשר להקליד אותן או "
+"לבחור בהן מתפריט <i>הוספת פקודה</i>.</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -543,6 +554,8 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
+"<p>התבניות שמצוינות כאן הן נקודתיות לזהות. הן דורסות את התבניות הכלליות,אך "
+"ניתן לדרוס אותן עם תבניות לפי תיקייה אם צוינו כאלו.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -550,6 +563,8 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
+"<p>אלו תבניות כלליות (ברירת מחדל). אפשר לדרוס אותן עםתבניות נקודתיות לזהות "
+"או תבניות נקודתיות לתיקייה אם צוינו כאלה.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
@@ -581,6 +596,11 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
+"השימוש ב„תגובה בטקסט פשוט” או „תגובה בטקסט משולב HTML” בצמדים הוא שגוי. "
+"להשתמש רק באחת מהפקודות שהוזכרו לעיל עם „פקודת תגובה כהודעה מצוטטת” לפי "
+"הצורך.\n"
+"(א)להגיב בטקסט פשוט לציטוט כדי שיהיה לחלוטין בטקסט פשוט\n"
+"(ב)להגיב בטקסט משולב HTML לציטוטים בתצורת HTML אם יש כאלה"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
@@ -601,6 +621,8 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
+"נא לנסות לאתר בתפריט הזה פקודה להוספה לתבנית שנערכת כרגע. הפקודה תתווסף "
+"במקום של הסמן, כך שכדאי קודם להזיז את הסמן לנקודת ההוספה הרצויה."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
@@ -724,6 +746,8 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
+"בעת שימוש בתבנית, נמעני ברירת המחדל הם אלו שמסופקים כאן. זאת רשימה של כתובות "
+"דוא״ל מופרדות בפסיקים."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
@@ -740,6 +764,8 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
+"בעת שימוש בתבנית הזאת, הנמענים שמסופקים כאן יקבלו עותק מההודעה אוטומטית. זאת "
+"רשימה של כתובות דוא״ל מופרדות בפסיקים."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
