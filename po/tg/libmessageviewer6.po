@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2019-09-29 12:28+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1734,7 +1734,7 @@ msgstr "Истифода аз &ҳуруфи қалбакӣ"
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr ""
 "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
 "мебошанд."
@@ -1743,7 +1743,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr ""
 "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
 "мебошанд."
@@ -1752,7 +1752,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr ""
 "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
 "мебошанд."
@@ -2855,6 +2855,20 @@ msgid "Previous Message"
 msgstr "&Хонданашудаи қаблӣ"
 
 #, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr ""
+#~ "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
+#~ "мебошанд."
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr ""
+#~ "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
+#~ "мебошанд."
+
+#, fuzzy
 #~| msgid "Edit Identity"
 #~ msgid "Edit with:"
 #~ msgstr "Тағйири ихтисосот"
@@ -3547,20 +3561,6 @@ msgstr "&Хонданашудаи қаблӣ"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "&Барҳам додан"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr ""
-#~ "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
-#~ "мебошанд."
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr ""
-#~ "Аксарияти пӯшаҳои бори охирин интихобшуда дар пӯшаи муколламаи интихобӣ "
-#~ "мебошанд."
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

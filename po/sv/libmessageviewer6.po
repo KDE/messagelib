@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2023-09-07 21:34+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1668,20 +1668,23 @@ msgstr "Använd teckensnitt med fast &breddsteg"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
 msgstr "Den senast valda korgen använd för uppgifter."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Events."
+msgid "The most recent selected folder used for Event."
 msgstr "Den senast valda korgen använd för händelser."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Den senast valda korgen använd för anteckningar."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2702,6 +2705,12 @@ msgstr "Nästa brev"
 msgid "Previous Message"
 msgstr "Föregående brev"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Den senast valda korgen använd för uppgifter."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Den senast valda korgen använd för händelser."
+
 #~ msgid "Edit with:"
 #~ msgstr "Redigera med:"
 
@@ -3678,12 +3687,6 @@ msgstr "Föregående brev"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Avbryt"
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Den senast valda korgen använd för händelser."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Den senast valda korgen använd för uppgifter."
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Välj samling där uppgiften ska lagras."

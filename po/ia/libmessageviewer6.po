@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2023-09-28 10:49+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1665,20 +1665,23 @@ msgstr "Usar Font Fi&xate"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "Le dossier plus recente seligite usante per Evento."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Le dossier plus recente seligite usante per Notes"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2701,6 +2704,9 @@ msgstr "Message Proxime"
 msgid "Previous Message"
 msgstr "Message Previe"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
+
 #~ msgid "Edit with:"
 #~ msgstr "Edita con:"
 
@@ -3629,11 +3635,6 @@ msgstr "Message Previe"
 #~ msgstr ""
 #~ "Fin de message attingite.\n"
 #~ "Phrase '%1' non poteva esser trovate."
-
-#, fuzzy
-#~| msgid "The most recent selected folder using for Todo."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
 
 #~ msgid "The message could not be decrypted."
 #~ msgstr "Le message non poteva esser decryptate."

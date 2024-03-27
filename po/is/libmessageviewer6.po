@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1761,21 +1761,21 @@ msgstr "Nota &jafnbreitt letur"
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "Seinast valda mappan í möppulistanum."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "Seinast valda mappan í möppulistanum."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Seinast valda mappan í möppulistanum."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2878,6 +2878,16 @@ msgid "Previous Message"
 msgstr "Fy&rra ólesið bréf"
 
 #, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Seinast valda mappan í möppulistanum."
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Seinast valda mappan í möppulistanum."
+
+#, fuzzy
 #~| msgid "Edit Identity"
 #~ msgid "Edit with:"
 #~ msgstr "Sýsla með auðkenni"
@@ -3685,16 +3695,6 @@ msgstr "Fy&rra ólesið bréf"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "&Hætta við"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Seinast valda mappan í möppulistanum."
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Seinast valda mappan í möppulistanum."
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

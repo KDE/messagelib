@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2024-03-24 10:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1661,20 +1661,23 @@ msgstr "Erabili zabalera &finkoko letra-tipoak"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
-msgstr "Erabilitako azken karpeta Zereginetarako erabiltzea."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Todo."
+msgstr "Hautatutako azken karpeta (karpetak hautatzeko elkarrizketa-koadroan)."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "Erabilitako azken karpeta Ekitaldietarako erabiltzea."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Event."
+msgstr "Hautatutako azken karpeta (karpetak hautatzeko elkarrizketa-koadroan)."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Erabilitako azken karpeta Oharretarako erabiltzea."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2695,6 +2698,12 @@ msgstr "Hurrengo mezua"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Erabilitako azken karpeta Zereginetarako erabiltzea."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Erabilitako azken karpeta Ekitaldietarako erabiltzea."
+
 #~ msgid "Edit with:"
 #~ msgstr "Editatu honekin:"
 
@@ -3483,18 +3492,6 @@ msgstr "Aurreko mezua"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "&Utzi"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr ""
-#~ "Hautatutako azken karpeta (karpetak hautatzeko elkarrizketa-koadroan)."
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr ""
-#~ "Hautatutako azken karpeta (karpetak hautatzeko elkarrizketa-koadroan)."
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

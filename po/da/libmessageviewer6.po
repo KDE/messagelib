@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1695,20 +1695,23 @@ msgstr "Brug fast&bredde-skrifttype"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
 msgstr "Den mest nylige valgte mappe til gøremål."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "Den mest nylige valgte mappe til begivenheder."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Event."
+msgstr "Den mest nylige valgte mappe til gøremål."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Den mest nylige valgte mappe til noter."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2732,6 +2735,12 @@ msgstr "Næste brev"
 msgid "Previous Message"
 msgstr "Forrige brev"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Den mest nylige valgte mappe til gøremål."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Den mest nylige valgte mappe til begivenheder."
+
 #~ msgid "Edit with:"
 #~ msgstr "Redigér med:"
 
@@ -3746,14 +3755,6 @@ msgstr "Forrige brev"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Annullér"
-
-#, fuzzy
-#~| msgid "The most recent selected folder using for Todo."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Den mest nylige valgte mappe til gøremål."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Den mest nylige valgte mappe til gøremål."
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Vælg samling hvor gøremålet skal gemmes."

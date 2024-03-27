@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2023-11-22 18:51+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1661,20 +1661,23 @@ msgstr "K&äytä tasavälistä fonttia"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
 msgstr "Viimeksi valittu kansio tehtäville."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Events."
+msgid "The most recent selected folder used for Event."
 msgstr "Viimeksi valittu kansio tapahtumille."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Viimeksi valittu kansio muistiinpanoille."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2693,6 +2696,12 @@ msgstr "Seuraava viesti"
 msgid "Previous Message"
 msgstr "Edellinen viesti"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Viimeksi valittu kansio tehtäville."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Viimeksi valittu kansio tapahtumille."
+
 #~ msgid "Edit with:"
 #~ msgstr "Muokkaa ohjelmalla:"
 
@@ -3620,12 +3629,6 @@ msgstr "Edellinen viesti"
 #~ msgstr ""
 #~ "Viestin loppu saavutettu.\n"
 #~ "Lauseketta ”%1” ei löytynyt."
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Viimeksi valittu kansio tapahtumille."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Viimeksi valittu kansio tehtäville."
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Valitse kokoelma, johon tehtävä tallennetaan"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2023-09-30 10:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1917,20 +1917,23 @@ msgstr "Czcionka &stałej szerokości"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
-msgstr "Ostatnio wybrany katalog używany do zadania-do-zrobienia."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
+msgstr "Ostatnio wybrany katalog używany do zadań."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "Ostatnio wybrany katalog używany do wydarzenia."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Events."
+msgid "The most recent selected folder used for Event."
+msgstr "Ostatnio wybrany katalog używany do wydarzeń."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, kde-format
-msgid "The most recent selected folder using for Notes."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Ostatnio wybrany katalog używany dla notatek."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2948,6 +2951,12 @@ msgstr "Następna wiadomość"
 msgid "Previous Message"
 msgstr "Poprzednia wiadomość"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Ostatnio wybrany katalog używany do zadania-do-zrobienia."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Ostatnio wybrany katalog używany do wydarzenia."
+
 #~ msgid "Edit with:"
 #~ msgstr "Edytuj w:"
 
@@ -3918,12 +3927,6 @@ msgstr "Poprzednia wiadomość"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Anuluj"
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Ostatnio wybrany katalog używany do wydarzeń."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Ostatnio wybrany katalog używany do zadań."
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Wybierz zbiór, w którym będą przechowywane zadania."

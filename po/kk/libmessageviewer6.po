@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1737,21 +1737,21 @@ msgstr "Ені б&ірыңғай қаріп"
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2797,6 +2797,16 @@ msgstr "&Келесі хат"
 msgid "Previous Message"
 msgstr "Алдыңғы оқылмаған &хат"
 
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
+
 #~ msgid "Edit with:"
 #~ msgstr "Мынамен өңдеу:"
 
@@ -3719,16 +3729,6 @@ msgstr "Алдыңғы оқылмаған &хат"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "Қ&айту"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Қапшық таңдау диалогындағы ең жиі таңдалған қапшық."
 
 #~ msgid "The message could not be decrypted."
 #~ msgstr "Хаттың шифры шешілмейді."

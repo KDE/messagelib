@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1758,21 +1758,21 @@ msgstr "ਸਥਿਰ ਫੋਂਟ ਵਰਤੋਂ(&x)"
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2857,6 +2857,16 @@ msgstr "ਅੱਗੇ ਸੁਨੇਹਾ(&N)"
 msgid "Previous Message"
 msgstr "ਪਿਛਲੇ ਨਾ-ਪੜ੍ਹੇ ਸੁਨੇਹੇ ਉੱਤੇ ਜਾਓ(&M)"
 
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
+
 #~ msgid "Edit with:"
 #~ msgstr "ਇਸ ਨਾਲ ਸੋਧ:"
 
@@ -3642,16 +3652,6 @@ msgstr "ਪਿਛਲੇ ਨਾ-ਪੜ੍ਹੇ ਸੁਨੇਹੇ ਉੱਤੇ �
 
 #~ msgid "&Cancel"
 #~ msgstr "ਰੱਦ ਕਰੋ(&C)"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "ਫੋਲਡਰ ਚੋਣ ਡਾਈਲਾਗ ਵਿੱਚ ਤਾਜ਼ਾ ਵਰਤਿਆ ਫੋਲਡਰ।"
 
 #, fuzzy
 #~| msgid "Message will not be encrypted"

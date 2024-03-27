@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2024-03-24 17:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1656,7 +1656,7 @@ msgstr "சம &அகல எழுத்துருவை பயன்பட�
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr ""
 "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
@@ -1664,7 +1664,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr ""
 "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
@@ -1672,7 +1672,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr ""
 "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
@@ -2677,6 +2677,18 @@ msgstr "அடுத்த அஞ்சல்"
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
 
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr ""
+#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr ""
+#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+
 #~ msgid "Edit with:"
 #~ msgstr "இதனால் திருத்து:"
 
@@ -3386,18 +3398,6 @@ msgstr "முந்தைய அஞ்சல்"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "நிறுத்தப்பட்டது"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr ""
-#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr ""
-#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

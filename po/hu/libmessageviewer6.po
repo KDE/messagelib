@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
-"PO-Revision-Date: 2024-01-28 22:11+0100\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
+"PO-Revision-Date: 2024-03-26 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1348,14 +1348,13 @@ msgstr "Csak a megjelenítőben kijelölt szöveg nyomtatása"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
-#, fuzzy, kde-format
-#| msgid "Respect expand collapse quote mark defined settings when printing"
+#, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
-"Az összecsukott idézőjelek által meghatározott beállítások kinyitásának "
-"figyelembe vétele nyomtatáskor"
+"Kibontás/összecsukás idézőjelek beállításainak tiszteletben tartása "
+"nyomtatáskor."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.in:19
@@ -1369,10 +1368,10 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Always show encryption/signature details"
+#, kde-format
 msgid "Always show encryption/signature details when we print message"
-msgstr "A titkosítás/aláírás részletei mindig jelenjenek meg"
+msgstr ""
+"A titkosítás/aláírás részletei mindig jelenjenek meg az üzenet nyomtatásakor"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
@@ -1384,25 +1383,25 @@ msgstr "A html renderelésekor ne használjon a minimálisnál kisebb betűmére
 #: settings/messageviewer.kcfg.in:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
-msgstr ""
+msgstr "Az üzenet törzséhez használt betűtípus megadása"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr ""
+msgstr "A nyomtatáshoz használt betűtípus megadása"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.in:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "URL ellenőrzése, hogy nem-e adathalász"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.in:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "Üzenetablak bezárása az üzenet megválaszolása vagy továbbítása után"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
@@ -1527,7 +1526,7 @@ msgstr "Levelek listája a becsapós fehér listán"
 #: settings/messageviewer.kcfg.in:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr ""
+msgstr "Követő URL-ek keresése az e-mailekben"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.in:157
@@ -1661,22 +1660,24 @@ msgstr "Állandó szé&lességű betűtípus"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
-msgstr "A legutoljára kiválasztott mappa használva a feladathoz."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
+msgstr "A legutoljára kiválasztott mappa használva a teendőkhöz."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
-msgstr "A legutoljára kiválasztott mappa használva az eseményhez."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Events."
+msgid "The most recent selected folder used for Event."
+msgstr "A legutoljára kiválasztott mappa használva a eseményekhez."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
-msgid "The most recent selected folder using for Notes."
-msgstr "A legutoljára kiválasztott mappa használva a feladathoz."
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
+msgstr "A legutoljára kiválasztott mappa használva a jegyzetekhez."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -2699,6 +2700,12 @@ msgstr "Következő üzenet"
 msgid "Previous Message"
 msgstr "Előző üzenet"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "A legutoljára kiválasztott mappa használva a feladathoz."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "A legutoljára kiválasztott mappa használva az eseményhez."
+
 #~ msgid "Edit with:"
 #~ msgstr "Szerkesztés ezzel:"
 
@@ -3720,12 +3727,6 @@ msgstr "Előző üzenet"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Mégsem"
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "A legutoljára kiválasztott mappa használva a eseményekhez."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "A legutoljára kiválasztott mappa használva a teendőkhöz."
 
 #~ msgid "The message could not be decrypted."
 #~ msgstr "Az üzenetet nem sikerült visszafejteni."

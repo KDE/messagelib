@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2014-04-19 15:12+0200\n"
 "Last-Translator: Dimitrios Glentadakis <dglent@free.fr>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1792,8 +1792,9 @@ msgstr "Χρήση γραμματοσειράς &σταθερού πλάτους
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr ""
 "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
@@ -1801,7 +1802,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr ""
 "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
@@ -1809,7 +1810,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr ""
 "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
@@ -2878,6 +2879,16 @@ msgstr "Επόμε&νο μήνυμα"
 msgid "Previous Message"
 msgstr "Προηγούμενο μη αναγνωσμένο &μήνυμα"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr ""
+#~ "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr ""
+#~ "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
+
 #~ msgid "Edit with:"
 #~ msgstr "Επεξεργασία με:"
 
@@ -3893,18 +3904,6 @@ msgstr "Προηγούμενο μη αναγνωσμένο &μήνυμα"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Ακύρωση"
-
-#, fuzzy
-#~| msgid "The most recent selected folder using for Todo."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr ""
-#~ "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
-
-#, fuzzy
-#~| msgid "The most recent selected folder using for Todo."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr ""
-#~ "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Επιλέξτε τη συλλογή αποθήκευσης των εργασιών προς υλοποίηση."

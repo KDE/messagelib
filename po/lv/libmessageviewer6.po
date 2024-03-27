@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2024-03-01 15:38+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1659,21 +1659,21 @@ msgstr "Lietot &fiksētu fontu"
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2685,6 +2685,16 @@ msgstr "Nākamā vēstule"
 msgid "Previous Message"
 msgstr "Iepriekšējā vēstule"
 
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
+
 #~ msgid "Edit with:"
 #~ msgstr "Rediģēt ar:"
 
@@ -3562,16 +3572,6 @@ msgstr "Iepriekšējā vēstule"
 
 #~ msgid "&Cancel"
 #~ msgstr "At&celt"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "Pēdējā mapju izvēles logā izvēlētā mape."
 
 #~ msgid "The message could not be decrypted."
 #~ msgstr "Nieizdevās atšifrēt vēstuli."

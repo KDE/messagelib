@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1755,21 +1755,23 @@ msgstr "&Fastbreed Schriftoort bruken"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, kde-format
-msgid "The most recent selected folder using for Todo."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Todos."
+msgid "The most recent selected folder used for Todo."
 msgstr "De tolest för en Opgaav bruukte Orner"
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, kde-format
-msgid "The most recent selected folder using for Event."
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder used for Events."
+msgid "The most recent selected folder used for Event."
 msgstr "De tolest för en Begeefnis bruukte Orner"
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "De tolest för en Opgaav bruukte Orner"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2837,6 +2839,12 @@ msgstr "&Nakamen Naricht"
 msgid "Previous Message"
 msgstr "Ve&rleden nich leest Naricht"
 
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "De tolest för en Opgaav bruukte Orner"
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "De tolest för en Begeefnis bruukte Orner"
+
 #~ msgid "Edit with:"
 #~ msgstr "Bewerken mit:"
 
@@ -3860,12 +3868,6 @@ msgstr "Ve&rleden nich leest Naricht"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Afbreken"
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "De tolest för en Begeefnis bruukte Orner"
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "De tolest för en Opgaav bruukte Orner"
 
 #~ msgid "Select collection where Todo will stored."
 #~ msgstr "Sammeln utsöken, binnen de de Opgaav sekert warrt"

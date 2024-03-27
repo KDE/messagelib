@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-02-11 22:39+0100\n"
+"PO-Revision-Date: 2024-03-26 10:28+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -2009,23 +2009,20 @@ msgstr "Elválasztó az aláírás elé"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
-#, fuzzy, kde-format
-#| msgid "Use recent addresses for autocompletion"
+#, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+msgstr "E-mailekből indexelt címek használata automatikus kiegészítéshez"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable this option if you do not want recently used addresses to appear "
-#| "in the autocompletion list in the composer's address fields."
+#, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
-"megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+"Kapcsolja ki ezt az opciót, ha azt szeretné, hogy csak a címjegyzékből "
+"származó névjegyek jelenjenek meg az üzenetszerkesztő címmezőinél a "
+"kiegészítési listában."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2075,18 +2072,13 @@ msgstr "A HTML üzenet egyszerű szöveges verziójának feljavítása"
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Minden üzenet aláírása, ha lehetséges"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
-"Titkosítani szeretné az üzenetet?"
+msgstr "Titkosítás bekapcsolása, ha minden címzetthez található kulcs"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79

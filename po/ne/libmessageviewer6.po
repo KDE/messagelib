@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:38+0000\n"
+"POT-Creation-Date: 2024-03-27 00:38+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1765,21 +1765,21 @@ msgstr "निश्चित फन्ट प्रयोग गर्नुह
 #: settings/messageviewer.kcfg.in:237
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
 msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
 msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, fuzzy, kde-format
 #| msgid "The most recently selected folder in the folder selection dialog."
-msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
 msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -2888,6 +2888,16 @@ msgid "Previous Message"
 msgstr "अघिल्लो नपढिएको सन्देश"
 
 #, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
+
+#, fuzzy
+#~| msgid "The most recently selected folder in the folder selection dialog."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
+
+#, fuzzy
 #~| msgid "Edit Identity"
 #~ msgid "Edit with:"
 #~ msgstr "परिचय सम्पादन गर्नुहोस्"
@@ -3714,16 +3724,6 @@ msgstr "अघिल्लो नपढिएको सन्देश"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "रद्द गर्नुहोस्"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"
