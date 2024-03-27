@@ -3,20 +3,20 @@
 #
 # Krasimir Arnaudov <texas_kia@yahoo.com>, 2005.
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2005, 2006, 2007, 2008.
-# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-26 02:53+0000\n"
-"PO-Revision-Date: 2023-09-30 10:54+0200\n"
+"PO-Revision-Date: 2024-03-26 22:43+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: \n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1335,20 +1335,19 @@ msgstr "Съкратен URL адрес \"%1\" пренасочва към \"%2\
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.in:11
-#, fuzzy, kde-format
-#| msgid "Print only selected text"
+#, kde-format
 msgid "Only print selected text in viewer"
-msgstr "Печат само на избран текст"
+msgstr "Отпечатване само на избран текст в визуализатора"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
-#, fuzzy, kde-format
-#| msgid "Respect &expand/collapse quote marks settings"
+#, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
 msgstr ""
-"Зачитане на настройките на маркерите за  разгъване/сгъване на кавичките"
+"Зачитане на разгъване/сгъване на кавичка, която е дефинирана в настройките "
+"по време на печат."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.in:19
@@ -1357,50 +1356,53 @@ msgid ""
 "Specifies whether the background color and images are also drawn when the "
 "page is printed."
 msgstr ""
+"Определя дали цветът на фона и изображенията също се изчертават при "
+"отпечатване на страницата."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Always show encryption/signature details"
+#, kde-format
 msgid "Always show encryption/signature details when we print message"
-msgstr "Винаги да се показват подробности за криптиране/подпис"
+msgstr ""
+"Винаги да се показват данни за криптиране/подпис при отпечатване на съобщение"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
+"При рендериране на html, да не се използва размер на шрифта по-малък от "
+"минималния размер."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
-msgstr ""
+msgstr "Указва шрифта, който да се използва за тялото на съобщението"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr ""
+msgstr "Указва шрифта, който да се използва за печат"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.in:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "Проверка за фишинг URL"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.in:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "Затваряне на прозореца на съобщението след отговор или препращане"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
-#, fuzzy, kde-format
-#| msgid "Show &expand/collapse quote marks"
+#, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "Показване на маркери за &разширяване/свиване на кавички"
+msgstr "Показване на отварящи/затварящи кавички"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:73
@@ -1409,98 +1411,97 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
+"Активирайте тази опция, за да се показват различни нива на цитиран текст. "
+"Деактивирайте, за да скриете нивата на цитирания текст."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
-#, fuzzy, kde-format
-#| msgid "Automatic collapse &level:"
+#, kde-format
 msgid "Automatic collapse level:"
-msgstr "Автоматично &свиване на ниво:"
+msgstr "Ниво на автоматично сгъване:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Reduce font size for &quoted text"
+#, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Намаляване на размера на шрифта за &цитирания текст"
+msgstr "Намаляване на размера на шрифт на цитиран текст"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
+"Активирайте тази опция, за да показвате цитирания текст с по-малък шрифт."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
 msgstr ""
+"Винаги дешифриране на съобщения при преглеждане или запитване преди "
+"дешифриране"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
-#, fuzzy, kde-format
-#| msgid "Show Message Structure"
+#, kde-format
 msgid "Message Structure Viewer"
-msgstr "Показване на структурата на съобщенията"
+msgstr "Преглед структурата на съобщение"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:94
 #, kde-format
 msgid "Show never"
-msgstr ""
+msgstr "Без показване"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:97
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgid "Show always"
-msgstr "Показване на подробности"
+msgstr "Показване винаги"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
 #: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr ""
+msgstr "Какъв стил заглавни части трябва да се показват"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg.in:119
 #, kde-format
 msgid "How much of headers should be displayed"
-msgstr ""
+msgstr "Колко заглавни части трябва да бъдат показани"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg.in:123
 #, kde-format
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Предпочитане на HTML пред обикновен текст"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
-#, fuzzy, kde-format
-#| msgid "Load external references from the Internet for this message."
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "Зареждане на външни препратки от Интернет за това съобщение."
+msgstr "Писмата да зареждат външни препратки от Интернет"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
-#, fuzzy, kde-format
-#| msgid "Show attachments as suggested by sender."
+#, kde-format
 msgid "How attachments are shown"
-msgstr "Показване на прикрепените файлове както е предложено от подателя."
+msgstr "Как се показват прикачените файлове"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg.in:135
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
 msgstr ""
+"Указва дали да се използва повторно цвета на кавичките, извън третото ниво"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:139
-#, fuzzy, kde-format
-#| msgid "Enable access key"
+#, kde-format
 msgid "Activate Access Key"
-msgstr "Активиране ключ за достъп"
+msgstr "Активиране на ключ за достъп"
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:143
@@ -1509,25 +1510,26 @@ msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
 "techniques used to deceive you"
 msgstr ""
+"KMail може да анализира съобщения за предполагаеми измами с имейли, като "
+"търси често използвани техники, използвани за да ви заблудят"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.in:147
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgid "List of emails in scam white list"
-msgstr "Добавяне на имейл към белия списък"
+msgstr "Списък на имейлите в белия списък с измами"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr ""
+msgstr "Сканиране на имейли за проследяване на URL адреси"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.in:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
-msgstr ""
+msgstr "Без изпращане на ИДС в отговор на шифровани съобщения"
 
 #. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
 #: settings/messageviewer.kcfg.in:161
@@ -1536,6 +1538,8 @@ msgid ""
 "Specifies the default policy to use, for the Message Disposition "
 "Notifications (for internal use only)"
 msgstr ""
+"Указва политиката по подразбиране, която да се използва за Известия за "
+"разположение на съобщения (само за вътрешна употреба)"
 
 #. i18n: ectx: label, entry (QuoteMessage), group (MDN)
 #: settings/messageviewer.kcfg.in:165
@@ -1544,13 +1548,14 @@ msgid ""
 "Specifies the default quoting action to take, when replying to a message "
 "(for internal use only)"
 msgstr ""
+"Посочва действието по подразбиране при цитиране, което да се предприеме при "
+"отговор на съобщение (само за вътрешна употреба)"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:181
-#, fuzzy, kde-format
-#| msgid "&Mangle From:/To: headers in replies to invitations"
+#, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "&Прехвърляне на заглавни части \"От:/До:\" от отговор в покани"
+msgstr "Прехвърляне на заглавни части \"От:/До:\" от отговор в отговор"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
@@ -1561,13 +1566,15 @@ msgid ""
 "problems with Outlook users not being able to get your replies, try setting "
 "this option."
 msgstr ""
+"Microsoft Outlook има известен брой слабости в изпълнението си на iCalendar "
+"стандарта; тази опция се справя с една от тях. Ако имате проблеми с Outlook "
+"потребители, които не могат да получат отговорите ви, опитайте с тази опция."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
-#, fuzzy, kde-format
-#| msgid "Send &invitations in the mail body"
+#, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr "Изпращане на &покани в тялото на пощата"
+msgstr "Изпращане на групови покани в тялото на съобщение"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:188
@@ -1578,23 +1585,20 @@ msgid ""
 "problems with Outlook users not being able to get your invitations, try "
 "setting this option."
 msgstr ""
+"Microsoft Outlook има редица недостатъци при изпълнението на стандарта "
+"iCalendar; тази опция оправя една от тях. Ако имате проблеми с това, че "
+"потребителите на Outlook не могат да получат вашите покани, опитайте да "
+"зададете тази опция."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:193
-#, fuzzy, kde-format
-#| msgid "Exchange-compatible invitation &naming"
+#, kde-format
 msgid "Exchange-compatible invitation naming"
-msgstr "&Имена на покани, съвместими с Exchange"
+msgstr "Имена на покани, съвместими с Exchange"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:194
-#, fuzzy, kde-format
-#| msgid ""
-#| "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#| "server,\n"
-#| "has a problem understanding standards-compliant groupware email.\n"
-#| "Turn this option on to send groupware invitations in a way that Microsoft "
-#| "Exchange understands."
+#, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
 "server, has a problem understanding standards-compliant groupware email. "
@@ -1602,18 +1606,15 @@ msgid ""
 "Exchange understands."
 msgstr ""
 "Microsoft Outlook, когато се използва в комбинация със сървър на Microsoft "
-"Exchange, \n"
-"има проблем с разбирането на съвместим със стандартите имейл за групов "
-"софтуер. \n"
-"Включете тази опция, за да изпращате покани за групов софтуер по начин, "
-"който Microsoft Exchange разбира."
+"Exchange, има проблем с разбирането на съвместим със стандартите имейл за "
+"групов софтуер. Включете тази опция, за да изпращате покани за групов "
+"софтуер по начин, който Microsoft Exchange разбира."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:199
-#, fuzzy, kde-format
-#| msgid "&Automatic invitation sending"
+#, kde-format
 msgid "Automatic invitation sending"
-msgstr "Имена на покани, съвместими с Exchange"
+msgstr "Автоматично изпращане на покана"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:200
@@ -1625,6 +1626,11 @@ msgid ""
 "text in the composer window is in iCalendar syntax, and you should not try "
 "modifying it by hand."
 msgstr ""
+"Ако е включена тази отметка, няма да виждате прозореца за съчиняване на "
+"съобщения. Вместо това всички покани се изпращат автоматично. Ако искате да "
+"видите съобщението преди изпращането му, изключете опцията. Но имайте "
+"предвид, че текстът в прозореца за съчиняване е с iCalendar синтаксис и не "
+"трябва да се опитвате да го променяте на ръка."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
@@ -1640,6 +1646,8 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
+"Ако е включена тази отметка, поканите на които е било отговорено ще бъдат "
+"преместени в папка \"Кошче\" веднага след изпращането на отговора."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1560
@@ -1651,19 +1659,19 @@ msgstr "&Равноширок шрифт"
 #: settings/messageviewer.kcfg.in:237
 #, kde-format
 msgid "The most recent selected folder using for Todo."
-msgstr ""
+msgstr "Последно избрана папка, използвана за Todo."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
 #, kde-format
 msgid "The most recent selected folder using for Event."
-msgstr ""
+msgstr "Последно избрана папка, използвана за Събитие."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
 #, kde-format
 msgid "The most recent selected folder using for Notes."
-msgstr ""
+msgstr "Последно избрана папка, използвана за Бележки."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17

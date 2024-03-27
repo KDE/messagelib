@@ -1511,7 +1511,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:187
 #, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr ""
+msgstr "Sádde joavkoprográmmabovdehusaid reivve siskkobealde"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:188
