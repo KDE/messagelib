@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-24 06:06+0100\n"
+"PO-Revision-Date: 2024-03-27 09:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1660,22 +1660,19 @@ msgstr "Uzi E&gallarĝan Tiparon"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "La plej lastatempe elektita dosierujo uzata por Todo."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Event."
+#, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "La plej lastatempa elektita dosierujo uzata por Evento."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "La plej lasttempe elektita dosierujo uzata por Notoj."
 
