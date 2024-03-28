@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 02:27+0000\n"
-"PO-Revision-Date: 2024-03-21 23:01+0300\n"
+"PO-Revision-Date: 2024-03-27 14:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2375,20 +2375,20 @@ msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr ""
-"Posta gönderici ayarlanmadığından postalar gönderilemiyor. Bir posta "
-"gönderici oluşturmak istiyor musunuz?"
+"Posta göndericisi ayarlı olmadığından postalar gönderilemiyor. Bir posta "
+"göndericisi oluşturmak istiyor musunuz?"
 
 #: utils/util.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr "Posta Gönderici Yok"
+msgstr "Posta Göndericisi Yok"
 
 #: utils/util.cpp:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr "Posta Gönderici Oluştur"
+msgstr "Posta Göndericisi Oluştur"
 
 #: utils/util.cpp:311
 #, kde-format
@@ -2396,7 +2396,7 @@ msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr ""
-"Posta gönderici çevrimdışı olduğundan postalar gönderilemiyor. Çevrimiçi "
+"Posta göndericisi çevrimdışı olduğundan postalar gönderilemiyor. Çevrimiçi "
 "yapmak istiyor musunuz?"
 
 #: utils/util.cpp:312
