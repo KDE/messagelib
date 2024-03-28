@@ -1,99 +1,99 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:34+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessagecomposer6.pot\n"
-"X-Crowdin-File-ID: 49058\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "无法压缩附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
-msgstr "压缩后的文件比原来还大。您想要保留原始文件吗？"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:180
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
-msgstr "不压缩"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgid "Compress"
-msgstr "压缩"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
 msgid "Failed to attach file"
-msgstr "无法附加文件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
 msgid "Failed to reload attachment"
-msgstr "无法重新加载附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "打开方式(&O)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "其他(&O)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "打开方式(&O)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
 msgid "Failed to attach public key"
-msgstr "无法附加公钥"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
 msgid "Failed to attach vCard"
-msgstr "无法附加 vCard"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
 msgid "Failed to attach text from clipboard"
-msgstr "无法从剪贴板附加文本"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "附加公钥(&P)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgid "Attach &My Public Key"
-msgstr "附加我的公钥(&M)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -101,146 +101,146 @@ msgstr "附加我的公钥(&M)"
 #: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "Attach"
-msgstr "附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:461
 #: composer/composerviewbase.cpp:1910
 #, kde-format
 msgid "&Attach File..."
-msgstr "附加文件(&A)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "添加附件..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "附加目录(&A)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
 msgid "Attach Own vCard"
-msgstr "附加自己的 vCard"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
-msgstr "自己的 vcard"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "附加 vCard(&A)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:480
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "从剪贴板附加文本... （&A）"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "Attach Text From Clipboard"
-msgstr "从剪贴板附加文本"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
-msgstr "删除附件(&R)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "Remove"
-msgstr "删除"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:502
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr "打开"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
-msgstr "查看"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgid "Edit With..."
-msgstr "编辑方式..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "附件另存为(&S)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
-msgstr "另存为..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "附件属性(&O)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Properties"
-msgstr "属性"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgid "Select All"
-msgstr "全部选中"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
-msgstr "重新加载"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:677
 #: attachment/attachmentcontrollerbase.cpp:703
 #: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr "KMail 无法将附件写入临时文件。"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr "无法打开附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "KMail 无法打开附件。"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "无法编辑附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
-msgstr "未命名"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgid "Save Attachment As"
-msgstr "附件另存为"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
@@ -248,126 +248,124 @@ msgid ""
 "File %1 exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"文件 %1 已经存在。\n"
-"您要替换它吗？"
 
 #: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr "保存到文件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgid "&Replace"
-msgstr "替换(&R)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:909
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "您真的想要附加目录“%1”吗？"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:852
 #: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr "附加目录"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:853
 #: attachment/attachmentcontrollerbase.cpp:911
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
-msgstr "附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr "附加目录"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:897
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr "附加文件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "无法附加文件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:964
 #, kde-format
 msgid "Attach Public OpenPGP Key"
-msgstr "附加 OpenPGP 公钥"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgid "Select the public key which should be attached."
-msgstr "请选择需要附加的公钥。"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
 msgid "unnamed attachment"
-msgstr "未命名附件"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
-msgstr "名称：%1<br>大小：%2<br>编码：%3<br>MimeType=%4"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:439
 #, kde-format
 msgctxt "@title column attachment name."
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:441
 #, kde-format
 msgctxt "@title column attachment size."
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:443
 #, kde-format
 msgctxt "@title column attachment encoding."
 msgid "Encoding"
-msgstr "编码"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:445
 #, kde-format
 msgctxt "@title column attachment type."
 msgid "Type"
-msgstr "类型"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:447
 #, kde-format
 msgctxt "@title column attachment compression checkbox."
 msgid "Compress"
-msgstr "压缩"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:449
 #, kde-format
 msgctxt "@title column attachment encryption checkbox."
 msgid "Encrypt"
-msgstr "加密"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:451
 #, kde-format
 msgctxt "@title column attachment signed checkbox."
 msgid "Sign"
-msgstr "签名"
+msgstr ""
 
 #: attachment/attachmentmodel.cpp:453
 #, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
-msgstr "建议自动显示"
+msgstr ""
 
 #: attachment/editorwatcher.cpp:60
 #, kde-format
@@ -384,37 +382,37 @@ msgstr ""
 #: composer/composer.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
-msgstr "没有找到收件人的密钥数据。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr "保留标记，不签名/加密(&K)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr "保留标记，不加密(&K)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr "保留标记，不签名(&K)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr "签名/加密(删除标记)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr "加密(删除标记)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr "签名(删除标记)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:333
 #, kde-format
@@ -422,30 +420,28 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
-"<qt><p>无法对 HTML 信件进行嵌入式签名/加密；</p><p>您想要删除信件中的 HTML 标"
-"记吗？</p></qt>"
 
 #: composer/composerviewbase.cpp:335
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
-msgstr "签名/加密信件吗？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:511
 #, kde-format
 msgid "It was not possible to create a message composer."
-msgstr "无法创建新建编辑器。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:521
 #, kde-format
 msgid "Do you want to resize images?"
-msgstr "您是否想要调整图像大小？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:522
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr "自动调整图像大小"
+msgstr ""
 
 #: composer/composerviewbase.cpp:523
 #, kde-format
@@ -462,33 +458,33 @@ msgstr ""
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "OpenPGP Key Expired"
-msgstr "OpenPGP 密钥已过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "S/MIME Certificate Expired"
-msgstr "S/MIME 证书已过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
-msgstr "OpenPGP 密钥即将过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:726
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
-msgstr "S/MIME 证书即将过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:801 composer/composerviewbase.cpp:815
 #: composer/composerviewbase.cpp:847
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr "无法解析密钥。请报告程序缺陷。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1053 composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Job cancelled by the user"
-msgstr "任务已被用户取消"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1058
 #, kde-format
@@ -496,38 +492,36 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
-"无法编辑信件：%1\n"
-" 请报告错误。"
 
 #: composer/composerviewbase.cpp:1060
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr "无法编辑信件：%1"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1163
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
-msgstr "队列待发信件时出错：%1"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1327
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr "无法自动保存信件：%1"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not write all data to file."
-msgstr "无法将全部数据写入到文件。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1349
 #, kde-format
 msgid "Could not finalize the file."
-msgstr "无法完成该文件。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1353
 #, kde-format
 msgid "Could not open file."
-msgstr "无法打开文件。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1360
 #, kde-format
@@ -536,20 +530,17 @@ msgid ""
 "%2\n"
 "Reason: %3"
 msgstr ""
-"自动将信件保存为 %1 失败。\n"
-"%2\n"
-"原因：%3"
 
 #: composer/composerviewbase.cpp:1366
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
-msgstr "自动保存信件失败"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1479
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr "保存信件失败：%1"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1906
 #, kde-format
@@ -558,19 +549,17 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
-"您撰写的邮件似乎提到了附件，但您尚未附加任何内容。\n"
-"您要将文件附加到邮件吗？"
 
 #: composer/composerviewbase.cpp:1909
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr "文件附件提醒"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1911
 #, kde-format
 msgid "&Send as Is"
-msgstr "原样发送(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -579,25 +568,23 @@ msgid ""
 "whether or not to sign this message.\n"
 "Sign this message?"
 msgstr ""
-"对收件人签名首选项的检查显示没有与您可用的签名密钥相匹配的公共类型。\n"
-"不签名而发送信件吗？"
 
 #: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
-msgstr "签名信件吗？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
-msgstr "签名(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
 #, kde-format
 msgid "Do &Not Sign"
-msgstr "不签名(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format
@@ -605,26 +592,24 @@ msgid ""
 "There are conflicting signing preferences for these recipients.\n"
 "Sign this message?"
 msgstr ""
-"这些收件人的签名偏好设置有冲突。\n"
-"要签名此信件吗？"
 
 #: composer/composerviewbase.cpp:2019
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
-msgstr "您请求签名此信件，但是没有为此身份设置有效的签名密钥。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr "不签名发送？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2022
 #, kde-format
 msgid "Send &Unsigned"
-msgstr "不签名发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2037
 #, kde-format
@@ -633,9 +618,6 @@ msgid ""
 "Sending only partially signed messages might violate site policy.\n"
 "Sign all parts instead?"
 msgstr ""
-"此信件的部分内容将不被签名。\n"
-"发送部分签名的信件可能违反站点守则。\n"
-"要改为签名全部内容吗？"
 
 #: composer/composerviewbase.cpp:2041
 #, kde-format
@@ -644,30 +626,27 @@ msgid ""
 "Sending unsigned message might violate site policy.\n"
 "Sign message instead?"
 msgstr ""
-"此信息将不会被签名。\n"
-"发送未签名的信息可能违反站点守则。\n"
-"您要改为签名信件吗？"
 
 #: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign All Parts"
-msgstr "签名所有部分(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign"
-msgstr "签名(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2047
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr "未签名信件警告"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2049
 #, kde-format
 msgid "Send &As Is"
-msgstr "原样发送(&A)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2096
 #, kde-format
@@ -675,8 +654,6 @@ msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
-"找到了所有收件人的有效且信任的加密密钥。\n"
-"要加密此信件吗？"
 
 #: composer/composerviewbase.cpp:2099
 #, kde-format
@@ -685,35 +662,33 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
-"检查收件人的加密首选项将导致您被询问是否加密此邮件。\n"
-"要加密此信件吗？"
 
 #: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
 #, kde-format
 msgid "Encrypt Message?"
-msgstr "加密信件吗？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2106
 #, kde-format
 msgid "Sign && &Encrypt"
-msgstr "签名 && 加密(&E)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2136
 #: composer/composerviewbase.cpp:2185 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgid "&Encrypt"
-msgstr "加密(&E)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Sign Only"
-msgstr "仅签名(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Send As-Is"
-msgstr "原样发送(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2128
 #, kde-format
@@ -721,13 +696,11 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
-"这些收件人的加密偏好设置有冲突。\n"
-"要加密此信件吗？"
 
 #: composer/composerviewbase.cpp:2137
 #, kde-format
 msgid "Do &Not Encrypt"
-msgstr "不加密(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2157
 #, kde-format
@@ -735,18 +708,18 @@ msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
-msgstr "您请求加密此信件，但是没有为此身份设置有效且信任的加密密钥。"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2161
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr "不加密发送吗？"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2161 composer/keyresolver.cpp:1345
 #, kde-format
 msgid "Send &Unencrypted"
-msgstr "不加密发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2176
 #, kde-format
@@ -756,9 +729,6 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
-"此信件的部分内容将不被加密。\n"
-"发送部分加密的信件可能违反站点守则或泄露敏感信息。\n"
-"要改为加密全部内容吗？"
 
 #: composer/composerviewbase.cpp:2181
 #, kde-format
@@ -768,27 +738,24 @@ msgid ""
 "information.\n"
 "Encrypt messages instead?"
 msgstr ""
-"此信件将不被加密。\n"
-"发送不加密的信件可能违反站点守则或泄露敏感信息。\n"
-"要改为加密信件吗？"
 
 #: composer/composerviewbase.cpp:2185
 #, kde-format
 msgid "&Encrypt All Parts"
-msgstr "加密所有部分(&E)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2188
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
-msgstr "未加密信件警告"
+msgstr ""
 
 #: composer/keyresolver.cpp:311
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
-msgstr "有一个和多个已配置的 OpenPGP 加密密钥或 S/MIME 证书不是受完全信任的。"
+msgstr ""
 
 #: composer/keyresolver.cpp:315
 #, kde-format
@@ -796,7 +763,6 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
-"有一个和多个收件人“%1”的 OpenPGP 加密密钥或 S/MIME 证书不是受完全信任的。"
 
 #: composer/keyresolver.cpp:322
 #, kde-format
@@ -804,8 +770,6 @@ msgid ""
 "\n"
 "The following keys are only marginally trusted: \n"
 msgstr ""
-"\n"
-"以下密钥是勉强信任状态：\n"
 
 #: composer/keyresolver.cpp:326
 #, kde-format
@@ -813,8 +777,6 @@ msgid ""
 "\n"
 "The following keys or certificates have unknown trust level: \n"
 msgstr ""
-"\n"
-"以下密钥或证书的信任等级未知：\n"
 
 #: composer/keyresolver.cpp:330
 #, kde-format
@@ -822,14 +784,12 @@ msgid ""
 "\n"
 "The following keys or certificates are <b>revoked</b>: \n"
 msgstr ""
-"\n"
-"以下密钥或证书已被<b>吊销</b>：\n"
 
 #: composer/keyresolver.cpp:336
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
-msgstr "不完全信任的加密密钥"
+msgstr ""
 
 #: composer/keyresolver.cpp:650
 #, kde-format
@@ -841,16 +801,13 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
-"您所配置的 OpenPGP 加密密钥或 S/MIME 证书之一不可用于加密。请在身份配置对话框"
-"中重新配置您为此身份指定的加密密钥以及证书。\n"
-"如果您选择继续的话，而稍后会用到密钥，您将需要指定要使用哪个密钥。"
 
 #: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
 #: composer/keyresolver.cpp:1042
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
-msgstr "不可用的加密密钥"
+msgstr ""
 
 #: composer/keyresolver.cpp:692
 #, kde-format
@@ -861,16 +818,13 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
-"您所配置的 OpenPGP 签名密钥或 S/MIME 签名证书之一不可用于签名。请在身份配置对"
-"话框中重新配置您为此身份指定的签名密钥以及证书。\n"
-"如果您选择继续的话，而稍后会用到密钥，您将需要指定要使用哪个密钥。"
 
 #: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
 #: composer/keyresolver.cpp:1089
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
-msgstr "不可用的签名密钥"
+msgstr ""
 
 #: composer/keyresolver.cpp:1003
 #, kde-format
@@ -882,10 +836,6 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
-"对收件人加密首选项的检查要求信件使用 OpenPGP 加密，至少某些收件人是这么要求"
-"的；\n"
-"但是，您没有为此身份配置有效的可信 OpenPGP 加密密钥。\n"
-"您仍然可以继续，而不对自己加密。但请注意，您以后将无法阅读您自己的信件。"
 
 #: composer/keyresolver.cpp:1032
 #, kde-format
@@ -897,10 +847,6 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
-"对收件人加密首选项的检查要求信件使用 S/MIME 加密，至少某些收件人是这么要求"
-"的；\n"
-"但是，您没有为此身份配置有效的可信 S/MIME 加密证书。\n"
-"您仍然可以继续，而不对自己加密。但请注意，您以后将无法阅读您自己的信件。"
 
 #: composer/keyresolver.cpp:1064
 #, kde-format
@@ -910,14 +856,11 @@ msgid ""
 "however, you have not configured valid OpenPGP signing certificates for this "
 "identity."
 msgstr ""
-"对收件人签名首选项的检查要求信件使用 OpenPGP 签名，至少某些收件人是这么要求"
-"的；\n"
-"但是，您没有为此身份配置有效的可信 OpenPGP 签名密钥。"
 
 #: composer/keyresolver.cpp:1072
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
-msgstr "不使用 OpenPGP 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -927,14 +870,11 @@ msgid ""
 "however, you have not configured valid S/MIME signing certificates for this "
 "identity."
 msgstr ""
-"对收件人签名首选项的检查要求信件使用 S/MIME 签名，至少某些收件人是这么要求"
-"的；\n"
-"但是，您没有为此身份配置有效的可信 S/MIME 签名证书。"
 
 #: composer/keyresolver.cpp:1090
 #, kde-format
 msgid "Do Not S/MIME-Sign"
-msgstr "不使用 S/MIME 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -943,14 +883,12 @@ msgid ""
 "signature matching your available signing keys.\n"
 "Send message without signing?"
 msgstr ""
-"对收件人签名首选项的检查显示没有与您可用的签名密钥相匹配的公共类型。\n"
-"不签名而发送信件吗？"
 
 #: composer/keyresolver.cpp:1156
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr "没有可用的签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1319
 #, kde-format
@@ -958,29 +896,27 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
-"您没有为您自己选择加密密钥(对自己加密)。如果您对信件加密的话，您自己将无法解"
-"密信件。"
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
-msgstr "缺少密钥警告"
+msgstr ""
 
 #: composer/keyresolver.cpp:1338
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
-msgstr "您没有为此信件的收件人选择加密密钥；因此，无法加密此信件。"
+msgstr ""
 
 #: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
-msgstr "您没有为此信件的任何一个收件人选择加密密钥；因此，无法加密此信件。"
+msgstr ""
 
 #: composer/keyresolver.cpp:1352
 #, kde-format
@@ -988,8 +924,6 @@ msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
-"您没有为此信件的收件人之一选择加密密钥；因此，如果您加密的话，该收件人将无法"
-"解密此信件。"
 
 #: composer/keyresolver.cpp:1356
 #, kde-format
@@ -997,13 +931,11 @@ msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
-"您没有为此信件的某些收件人选择加密密钥；因此，如果您加密的话，这些收件人将无"
-"法解密此信件。"
 
 #: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr "加密密钥选择"
+msgstr ""
 
 #: composer/keyresolver.cpp:1477
 #, kde-format
@@ -1015,9 +947,6 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
-"“%1”的加密密证书在问题。\n"
-"\n"
-"请重新选择应为此收件人使用的证书。"
 
 #: composer/keyresolver.cpp:1549
 #, kde-format
@@ -1031,8 +960,6 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
-"<qt>未找到“%1”的有效且可信任的加密密钥。<br/><br/>请选择应为此收件人使用的密"
-"钥。如果列表中没有合适的密钥，您还可以点击按钮：搜索外部密钥。</qt>"
 
 #: composer/keyresolver.cpp:1559
 #, kde-format
@@ -1044,29 +971,26 @@ msgid ""
 "\n"
 "Select the certificate(s) which should be used for this recipient."
 msgstr ""
-"多个证书匹配“%1”。\n"
-"\n"
-"请选择应为此收件人使用的证书。"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgid "Name Selection"
-msgstr "姓名选择"
+msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr "联系人“%1”要在地址簿中以什么名字出现？"
+msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
-msgstr "选择要将新联系人保存到的地址簿文件夹："
+msgstr ""
 
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr "等待“%1”发给“%2”的回复"
+msgstr ""
 
 #: followupreminder/followupremindercreatejob.cpp:99
 #, kde-format
@@ -1078,18 +1002,18 @@ msgstr ""
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr "保存新建提醒失败：%1"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "选择日期"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
 msgid "Date:"
-msgstr "日期："
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
@@ -1099,34 +1023,34 @@ msgstr ""
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr "所选日期必须大于当前日期。"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr "无效的日期"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr "所选的文件夹无效。"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
-msgstr "无效的文件夹"
+msgstr ""
 
 #: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
-msgstr "转发的信件"
+msgstr ""
 
 #: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
-msgstr "收件人："
+msgstr ""
 
 #: helper/messagefactoryng.cpp:701
 #, kde-format
@@ -1137,26 +1061,22 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"\n"
-"这是转发的 MIME 摘要。信件的内容包含在附件中。\n"
-"\n"
-"\n"
 
 #: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr "选择图片格式"
+msgstr ""
 
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
-msgstr "选择格式..."
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
-msgstr "<a href=\"whatsthis\">工作方式解释</a>"
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:117
 #, kde-format
@@ -1165,79 +1085,76 @@ msgid ""
 "current time</li><li>%d set current date</li><li>%n original filename</"
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
-"<qt><p>您可以在这里定义图像文件名。您可以用</p><ul><li>%t 当前时间</li><li>"
-"%d 当前日期</li><li>%n 原始文件名</li><li>%e 原始扩展名</li><li>%x 新扩展名</"
-"li></ul></qt>"
 
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
 msgid "Custom"
-msgstr "自定义"
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr "请检查最小和最大值。"
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr "最大值最小值错误"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr "自动调整图像大小"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
 #, kde-format
 msgid "General"
-msgstr "常规"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
 #: imagescaling/ui/imagescalingwidget.ui:34
 #, kde-format
 msgid "Keep ratio"
-msgstr "保持比例"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41
 #, kde-format
 msgid "Ask before resizing"
-msgstr "调整大小前询问"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr "后备格式："
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
 #, kde-format
 msgid "Image"
-msgstr "图像"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
 #: imagescaling/ui/imagescalingwidget.ui:95
 #, kde-format
 msgid "Reduce image to maximum dimension:"
-msgstr "缩减图像到最大尺寸："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: imagescaling/ui/imagescalingwidget.ui:109
 #, kde-format
 msgid "Maximum width:"
-msgstr "最大宽度："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: imagescaling/ui/imagescalingwidget.ui:116
 #, kde-format
 msgid "Maximum height:"
-msgstr "最大高度："
+msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
@@ -1249,79 +1166,79 @@ msgstr "最大高度："
 #: imagescaling/ui/imagescalingwidget.ui:211
 #, kde-format
 msgid " px"
-msgstr " 像素"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr "放大图像到最小尺寸"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
 #, kde-format
 msgid "Minimum width:"
-msgstr "最小宽度："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: imagescaling/ui/imagescalingwidget.ui:181
 #, kde-format
 msgid "Minimum height:"
-msgstr "最小高度："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
 #: imagescaling/ui/imagescalingwidget.ui:230
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
-msgstr "跳过小于此大小的图片："
+msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
 #, kde-format
 msgid " KiB"
-msgstr " KiB"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: imagescaling/ui/imagescalingwidget.ui:263
 #, kde-format
 msgid "Filename"
-msgstr "文件名"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
 #: imagescaling/ui/imagescalingwidget.ui:269
 #, kde-format
 msgid "Source filter"
-msgstr "源过滤器"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr "不过滤 (包含所有文件)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr "包括文件名匹配模式之一的所有文件"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
-msgstr "排除文件名匹配模式之一的所有文件"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
 #, kde-format
 msgid "Pattern:"
-msgstr "模式："
+msgstr "Patrón:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr "此行允许定义多个模式。使用英文分号“ ; ”分割。"
+msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1331,119 +1248,119 @@ msgstr "此行允许定义多个模式。使用英文分号“ ; ”分割。"
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr "指定用英文分号“ ; ”分割的模式"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
 #, kde-format
 msgid "Image Format"
-msgstr "图像格式"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr "调整具有下列格式之一的全部图片的大小"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr "调整大小后的文件名"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr "用以下模式重命名调整大小后的图片："
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
 #, kde-format
 msgid "Recipients"
-msgstr "收件人"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr "不过滤 (包含所有收件人)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
-msgstr "如果每个邮件地址都包含模式之一则调整大小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
-msgstr "如果某个邮件地址包含模式之一则调整大小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr "如果每个邮件地址都包含模式之一则不要调整大小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
-msgstr "如果某个邮件地址都包含模式之一则不要调整大小"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
 msgid "No text found in Clipboard"
-msgstr "剪贴板中未发现文本"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr "定义附件名"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr "附件名:"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
 msgid "Clipboard Text"
-msgstr "剪贴板文本"
+msgstr ""
 
 #: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
-msgstr "OpenPGP 密钥 0x%1"
+msgstr ""
 
 #: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
-msgstr "<p>试图从后端导出密钥时发生了错误：</p><p><b>%1</b></p>"
+msgstr ""
 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "正在导出密钥..."
+msgstr ""
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr "位置的联系人类型"
+msgstr ""
 
 #: job/attachmentvcardfromaddressbookjob.cpp:86
 #, kde-format
 msgid "Invalid Contact"
-msgstr "无效的联系人"
+msgstr ""
 
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr "无法生成 vCard。"
+msgstr ""
 
 #: job/autocryptheadersjob.cpp:102
 #, kde-format
@@ -1455,12 +1372,12 @@ msgstr ""
 #: job/maintextjob.cpp:59
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
-msgstr "请求使用自动换行，但没有给出自动换行的纯文本。"
+msgstr ""
 
 #: job/maintextjob.cpp:66
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
-msgstr "请求不使用自动换行，但没有给出干净的纯文本。"
+msgstr ""
 
 #: job/maintextjob.cpp:81
 #, kde-format
@@ -1468,8 +1385,6 @@ msgid ""
 "No charsets were available for encoding. Please check your configuration and "
 "make sure it contains at least one charset for sending."
 msgstr ""
-"没有可用于编码的字符集。 请检查您的配置，并确保它包含至少一个用于发送的字符"
-"集。"
 
 #: job/maintextjob.cpp:99
 #, kde-format
@@ -1477,44 +1392,42 @@ msgid ""
 "Encoding the message with %1 will lose some characters.\n"
 "Do you want to continue?"
 msgstr ""
-"使用 %1 编码将丢失一些字符。\n"
-"您想要继续吗？"
 
 #: job/maintextjob.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
-msgstr "某些字符将会丢失"
+msgstr ""
 
 #: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
-msgstr "丢失字符"
+msgstr ""
 
 #: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
-msgstr "更改编码"
+msgstr ""
 
 #: job/maintextjob.cpp:107
 #, kde-format
 msgid "User decided to change the encoding."
-msgstr "用户决定修改字符编码。"
+msgstr ""
 
 #: job/maintextjob.cpp:117
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr "所选的编码(%1)无法完整编码此信件。"
+msgstr ""
 
 #: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr "无法获取字符集“%1”的文本编解码器。"
+msgstr ""
 
 #: job/singlepartjob.cpp:67
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr "%1 内容传输编码(Content-Transfer-Encoding)无法正确编码此信件。"
+msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
@@ -1530,12 +1443,12 @@ msgstr ""
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr "&忽略"
+msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:34
 #, kde-format
 msgid "&Send"
-msgstr "&发送"
+msgstr ""
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1587,19 +1500,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr "保存分发列表"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List"
-msgstr "保存列表"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:121
 #, kde-format
 msgctxt "@label:textbox Name of the distribution list."
 msgid "&Name:"
-msgstr "名称(&N)："
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
@@ -1610,13 +1523,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column Name of the recipient"
 msgid "Name"
-msgstr "姓名"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:133
 #, kde-format
 msgctxt "@title:column Email of the recipient"
 msgid "Email"
-msgstr "邮件地址"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:240
 #, kde-format
@@ -1624,19 +1537,19 @@ msgctxt "@info"
 msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
-msgstr "您的列表中没有收件人。请先选择一些收件人，然后再试一次。"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr "新建分发列表"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr "请输入姓名："
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1645,170 +1558,171 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
-"<para>已经存在和 <resource>%1</resource> 同名的分发列表。请选择不同的名称。</"
-"para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr "选择地址簿"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
-msgstr "选择要用来保存联系人组的地址簿文件夹："
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr "无法创建分发列表：%1"
+msgstr ""
 
 #: recipient/recipient.cpp:99
 #, kde-format
 msgctxt "@label:listbox Recipient of an email message."
 msgid "To"
-msgstr "收件人"
+msgstr ""
 
 #: recipient/recipient.cpp:101
 #, kde-format
 msgctxt "@label:listbox Carbon Copy recipient of an email message."
 msgid "CC"
-msgstr "抄送"
+msgstr ""
 
 #: recipient/recipient.cpp:103
 #, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
-msgstr "密送"
+msgstr ""
 
 #: recipient/recipient.cpp:105
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr "回复地址（Reply-To）"
+msgstr ""
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
 msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
-msgstr "<placeholder>未定义收件人类型</placeholder>"
+msgstr ""
 
 #: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
-msgstr "选择收件人类型"
+msgstr ""
 
 #: recipient/recipientline.cpp:72
 #, kde-format
 msgid "Set the list of email addresses to receive this message"
-msgstr "设置接收此消息的电子邮件地址列表"
+msgstr ""
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
-msgstr[0] "将收件人列表截断到 %2/%1 个条目。"
+msgstr[0] ""
+msgstr[1] ""
 
 #: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "保存列表..."
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "选择(&L)..."
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr "将收件人另存为分发列表"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr "从地址簿中选择收件人"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:77
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
-msgstr "无收件人"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:79
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] "%1 名收件人"
+msgstr[0] ""
+msgstr[1] ""
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr "收件人：%1"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:131
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr "抄送（CC）：%1"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr "密送（BCC）：%1"
+msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr "回复地址（Reply-To）：%1"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr "选择收件人"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
-msgstr "搜索目录服务(&D)"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as &Reply-To"
-msgstr "添加为回复地址（Reply-To）（&R）"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &To"
-msgstr "添加为收件人(&T)"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as CC"
-msgstr "添加为抄送对象"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &BCC"
-msgstr "添加为密送对象(&B)"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:105
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] ""
+msgstr[1] ""
 
 #: recipient/recipientspicker.cpp:172
 #, kde-format
@@ -1820,6 +1734,7 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
+msgstr[1] ""
 
 #: recipient/recipientspicker.cpp:189
 #, kde-format
@@ -2037,7 +1952,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
 msgid "To"
-msgstr "收件人"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
@@ -2087,7 +2002,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
 msgid "CC"
-msgstr "抄送"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
@@ -2267,20 +2182,20 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr "attachment,attached,附件,附加"
+msgstr ""
 
 #: utils/util.cpp:293
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
-msgstr "邮件签发器未设置，无法发送邮件。您想要创建一个邮件签发器吗？"
+msgstr ""
 
 #: utils/util.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr "无邮件签发器。"
+msgstr ""
 
 #: utils/util.cpp:296
 #, kde-format
@@ -2293,13 +2208,13 @@ msgstr ""
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
-msgstr "邮件签发器已离线，无法发送邮件。您想要让它在线吗？"
+msgstr ""
 
 #: utils/util.cpp:312
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
-msgstr "邮件签发器离线。"
+msgstr ""
 
 #: utils/util.cpp:313
 #, kde-format

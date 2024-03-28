@@ -12,7 +12,7 @@
 # Antoon Tolboom <atolboo@casema.nl>, 2008.
 # Antoon Tolboom <atolboo@gmail.com>, 2008.
 # Kristof Bal <kristof.bal@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2009, 2023 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2023, 2024 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Jaap Woldringh <jjh punt woldringh op planet punt nl>, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010.
 # Hannie Dumoleyn <hannie@kde.nl>, 2010.
@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-27 00:38+0000\n"
-"PO-Revision-Date: 2023-09-26 11:05+0200\n"
+"PO-Revision-Date: 2024-03-27 15:22+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1689,24 +1689,21 @@ msgstr "Vast lettertype gebr&uiken"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Todos."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "De meest recent geselecteerde map gebruikt voor Te-doen's."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Events."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr "De meest recent geselecteerde map gebruikt voor gebeurtenissen."
+msgstr "De meest recent geselecteerde map gebruikt voor Gebeurtenis."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr "De meest recent geselecteerde map gebruikt voor notities."
+msgstr "De meest recent geselecteerde map gebruikt voor Notities."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17

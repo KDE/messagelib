@@ -1,216 +1,216 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-27 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-27 23:36+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessagelist6.pot\n"
-"X-Crowdin-File-ID: 49082\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr "根据精确日期(线索发起人)"
+msgstr ""
 
 #: core/aggregation.cpp:180
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
-msgstr "根据智能判断的日期范围(线索发起人)"
+msgstr ""
 
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
-msgstr "根据智能判断的发件人/收件人"
+msgstr ""
 
 #: core/aggregation.cpp:182 core/sortorder.cpp:68
 #, kde-format
 msgid "By Sender"
-msgstr "根据发件人"
+msgstr ""
 
 #: core/aggregation.cpp:183 core/sortorder.cpp:69
 #, kde-format
 msgid "By Receiver"
-msgstr "根据收件人"
+msgstr ""
 
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr "从不展开分组"
+msgstr ""
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr "展开最新分组"
+msgstr ""
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr "总是展开分组"
+msgstr ""
 
 #: core/aggregation.cpp:202
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect Only"
-msgstr "只有完整的"
+msgstr ""
 
 #: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect and by References"
-msgstr "完整的，根据索引"
+msgstr ""
 
 #: core/aggregation.cpp:205
 #, kde-format
 msgid "Perfect, by References and by Subject"
-msgstr "完整的，根据索引和主题"
+msgstr ""
 
 #: core/aggregation.cpp:214
 #, kde-format
 msgid "Topmost Message"
-msgstr "最顶端的信件"
+msgstr ""
 
 #: core/aggregation.cpp:218
 #, kde-format
 msgid "Most Recent Message"
-msgstr "最新的信件"
+msgstr ""
 
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr "从不展开线索"
+msgstr ""
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "展开含有未读信件的线索"
+msgstr ""
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr "展开含有未读或重要信件的线索"
+msgstr ""
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr "总是展开线索"
+msgstr ""
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Interactivity"
-msgstr "易交互性优先"
+msgstr ""
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Favor Speed"
-msgstr "速度优先"
+msgstr ""
 
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr "批处理任务(无交互)"
+msgstr ""
 
 #: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
-msgstr "已读"
+msgstr ""
 
 #: core/item.cpp:254 core/messageitem.cpp:536
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
-msgstr "未读"
+msgstr ""
 
 #: core/item.cpp:258
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
-msgstr "有附件"
+msgstr ""
 
 #: core/item.cpp:262
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
-msgstr "活动"
+msgstr ""
 
 #: core/item.cpp:266 core/messageitem.cpp:534
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
-msgstr "已回复"
+msgstr ""
 
 #: core/item.cpp:270
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
-msgstr "已转发"
+msgstr ""
 
 #: core/item.cpp:274
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
-msgstr "已发送"
+msgstr ""
 
 #: core/item.cpp:278
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
-msgstr "重要"
+msgstr ""
 
 #: core/item.cpp:282
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
-msgstr "垃圾信"
+msgstr ""
 
 #: core/item.cpp:286
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr "非垃圾邮件"
+msgstr ""
 
 #: core/item.cpp:290
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
-msgstr "已监视"
+msgstr ""
 
 #: core/item.cpp:294
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
-msgstr "已忽略"
+msgstr ""
 
 #: core/manager.cpp:35 core/model.cpp:332
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: core/manager.cpp:206
 #, kde-format
 msgid "Current Activity, Threaded"
-msgstr "当前，线索模式"
+msgstr ""
 
 #: core/manager.cpp:207
 #, kde-format
@@ -219,13 +219,11 @@ msgid ""
 "example, in \"Today\" you will find all the messages arrived today and all "
 "the threads that have been active today."
 msgstr ""
-"此视图会智能地根据日期范围对信件进行线索化分组。例如：在“今日”组内，您会找到"
-"所有今天收到的信件，以及所有在今天发起的线索。"
 
 #: core/manager.cpp:219
 #, kde-format
 msgid "Current Activity, Flat"
-msgstr "当前，平坦模式"
+msgstr ""
 
 #: core/manager.cpp:220
 #, kde-format
@@ -233,13 +231,11 @@ msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
-"此视图会智能地根据日期范围对信件进行分组，不过信件并不会按照线索方式编排。例"
-"如：在“今日”组内，您会找到所有今天收到的信件。"
 
 #: core/manager.cpp:231
 #, kde-format
 msgid "Activity by Date, Threaded"
-msgstr "按日期，线索模式"
+msgstr ""
 
 #: core/manager.cpp:232
 #, kde-format
@@ -248,13 +244,11 @@ msgid ""
 "\"Today\" you will find all the messages arrived today and all the threads "
 "that have been active today."
 msgstr ""
-"此视图会按日对信件进行线索化分组，例如：在“今日”组内，您会找到所有今天收到的"
-"信件，以及所有在今天发起的线索。"
 
 #: core/manager.cpp:244
 #, kde-format
 msgid "Activity by Date, Flat"
-msgstr "按日期，平坦模式"
+msgstr ""
 
 #: core/manager.cpp:245
 #, kde-format
@@ -262,36 +256,34 @@ msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
-"此视图会按日对信件进行分组，信件并不会按照线索方式编排。例如：在“今日”组内，"
-"您会找到所有今天收到的信件。"
 
 #: core/manager.cpp:256
 #, kde-format
 msgid "Standard Mailing List"
-msgstr "标准邮件列表"
+msgstr ""
 
 #: core/manager.cpp:257
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
-msgstr "这是简单传统的邮件列表视图：没有分组和热门线索特性。"
+msgstr ""
 
 #: core/manager.cpp:266
 #, kde-format
 msgid "Flat Date View"
-msgstr "平坦日期视图"
+msgstr ""
 
 #: core/manager.cpp:267
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
-msgstr "这是简单传统的按日期查看邮件视图：没有分组和线索特性。"
+msgstr ""
 
 #: core/manager.cpp:278
 #, kde-format
 msgid "Senders/Receivers, Flat"
-msgstr "发件人/收件人，平坦"
+msgstr ""
 
 #: core/manager.cpp:279
 #, kde-format
@@ -299,240 +291,242 @@ msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
-"在此视图下，程序会根据发件人或收件人对信件进行分组(具体取决于文件夹类型)，信"
-"件不会按线索形式显示。"
 
 #: core/manager.cpp:290
 #, kde-format
 msgid "Thread Starters"
-msgstr "线索发起者"
+msgstr ""
 
 #: core/manager.cpp:291
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
-msgstr "在此视图下，信件会按线索形式显示，并根据线索的发起者进行分组。"
+msgstr ""
 
 #: core/manager.cpp:568
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
-msgstr "经典"
+msgstr ""
 
 #: core/manager.cpp:568
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
-msgstr "简单，向后兼容的单排风格主题"
+msgstr ""
 
 #: core/manager.cpp:572
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
-msgstr "主题"
+msgstr ""
 
 #: core/manager.cpp:608 core/theme.cpp:113
 #, kde-format
 msgid "Sender/Receiver"
-msgstr "发件人/收件人"
+msgstr ""
 
 #: core/manager.cpp:615
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
-msgstr "发件人"
+msgstr ""
 
 #: core/manager.cpp:617
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
-msgstr "收件人"
+msgstr ""
 
 #: core/manager.cpp:623
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #: core/manager.cpp:625
 #, kde-format
 msgid "Most Recent Date"
-msgstr "最近日期"
+msgstr ""
 
 #: core/manager.cpp:631
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: core/manager.cpp:633
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
-msgstr "附件"
+msgstr ""
 
 #: core/manager.cpp:639
 #, kde-format
 msgid "Read/Unread"
-msgstr "已读/未读"
+msgstr ""
 
 #: core/manager.cpp:644
 #, kde-format
 msgid "Replied"
-msgstr "已回复"
+msgstr ""
 
 #: core/manager.cpp:646
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
-msgstr "重要"
+msgstr ""
 
 #: core/manager.cpp:652
 #, kde-format
 msgid "Action Item"
-msgstr "活动"
+msgstr ""
 
 #: core/manager.cpp:658
 #, kde-format
 msgid "Spam/Ham"
-msgstr "垃圾/有害"
+msgstr ""
 
 #: core/manager.cpp:664
 #, kde-format
 msgid "Watched/Ignored"
-msgstr "监视/忽略"
+msgstr ""
 
 #: core/manager.cpp:670
 #, kde-format
 msgid "Encryption"
-msgstr "加密"
+msgstr ""
 
 #: core/manager.cpp:676
 #, kde-format
 msgid "Signature"
-msgstr "签名"
+msgstr ""
 
 #: core/manager.cpp:681
 #, kde-format
 msgid "Tag List"
-msgstr "标签列表"
+msgstr ""
 
 #: core/manager.cpp:689
 #, kde-format
 msgid "Smart"
-msgstr "智能"
+msgstr ""
 
 #: core/manager.cpp:689
 #, kde-format
 msgid "A smart multiline and multi item theme"
-msgstr "智能的多行多项目风格主题"
+msgstr ""
 
 #: core/manager.cpp:693
 #, kde-format
 msgid "Message"
-msgstr "信件"
+msgstr ""
 
 #: core/manager.cpp:777
 #, kde-format
 msgid "Smart with Clickable Status"
-msgstr "智能(状态可点击)"
+msgstr ""
 
 #: core/manager.cpp:778
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
-msgstr "智能的多行多项目风格主题，含有可点击的状态栏"
+msgstr ""
 
 #: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
-msgstr "状态"
+msgstr ""
 
 #: core/model.cpp:330
 #, kde-format
 msgid "Today"
-msgstr "今日"
+msgstr ""
 
 #: core/model.cpp:331
 #, kde-format
 msgid "Yesterday"
-msgstr "昨天"
+msgstr ""
 
 #: core/model.cpp:333
 #, kde-format
 msgid "Last Week"
-msgstr "上周"
+msgstr ""
 
 #: core/model.cpp:334
 #, kde-format
 msgid "Two Weeks Ago"
-msgstr "两周前"
+msgstr ""
 
 #: core/model.cpp:335
 #, kde-format
 msgid "Three Weeks Ago"
-msgstr "三周前"
+msgstr ""
 
 #: core/model.cpp:336
 #, kde-format
 msgid "Four Weeks Ago"
-msgstr "四周前"
+msgstr ""
 
 #: core/model.cpp:337
 #, kde-format
 msgid "Five Weeks Ago"
-msgstr "五周前"
+msgstr ""
 
 #: core/model.cpp:550 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Receiver"
-msgstr "收件人"
+msgstr ""
 
 #: core/model.cpp:552 utils/themeeditor.cpp:184
 #, kde-format
 msgid "Sender"
-msgstr "发件人"
+msgstr ""
 
 #: core/model.cpp:1367
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
-msgstr "%1 %2"
+msgstr ""
 
 #: core/model.cpp:3787
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "已处理 %1 封信件，共 %2 封"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] "已线索处理 %1 封信件，共 %2 封"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/model.cpp:3805
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] "已分组 %1 个线索，共 %2 个"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/model.cpp:3811
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] "已更新 %1 组，共 %2 组"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/model.cpp:3903
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
-msgstr "就绪"
+msgstr ""
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:11
 #, kde-format
 msgid "Display tooltips for messages and group headers"
-msgstr "显示信件和组头的工具提示"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:12
@@ -540,481 +534,485 @@ msgstr "显示信件和组头的工具提示"
 msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
-msgstr "如果想要当鼠标悬停在信件列表的某个条目上时显示工具提示，请启用此选项。"
+msgstr ""
 
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
 #, kde-format
 msgid "None (Storage Order)"
-msgstr "无(按存储顺序)"
+msgstr ""
 
 #: core/sortorder.cpp:64
 #, kde-format
 msgid "By Date/Time"
-msgstr "根据日期/时间"
+msgstr ""
 
 #: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
-msgstr "根据子树内最近的日期/时间"
+msgstr ""
 
 #: core/sortorder.cpp:71
 #, kde-format
 msgid "By Subject"
-msgstr "按主题"
+msgstr ""
 
 #: core/sortorder.cpp:72
 #, kde-format
 msgid "By Size"
-msgstr "按大小"
+msgstr ""
 
 #: core/sortorder.cpp:73
 #, kde-format
 msgid "By Action Item Status"
-msgstr "按活动状态"
+msgstr ""
 
 #: core/sortorder.cpp:74
 #, kde-format
 msgid "By Unread Status"
-msgstr "按是否读取过的状态"
+msgstr ""
 
 #: core/sortorder.cpp:75
 #, kde-format
 msgid "By Important Status"
-msgstr "按是否重要的状态"
+msgstr ""
 
 #: core/sortorder.cpp:76
 #, kde-format
 msgid "By Attachment Status"
-msgstr "按是否有附件的状态"
+msgstr ""
 
 #: core/sortorder.cpp:88 core/sortorder.cpp:130
 #, kde-format
 msgid "Least Recent on Top"
-msgstr "最早的在顶部"
+msgstr ""
 
 #: core/sortorder.cpp:89 core/sortorder.cpp:131
 #, kde-format
 msgid "Most Recent on Top"
-msgstr "最新的在顶部"
+msgstr ""
 
 #: core/sortorder.cpp:93
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
-msgstr "升序"
+msgstr ""
 
 #: core/sortorder.cpp:94
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
-msgstr "降序"
+msgstr ""
 
 #: core/sortorder.cpp:105
 #, kde-format
 msgid "by Date/Time"
-msgstr "根据日期/时间"
+msgstr ""
 
 #: core/sortorder.cpp:108
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
-msgstr "根据组内最新信件的日期/时间"
+msgstr ""
 
 #: core/sortorder.cpp:112
 #, kde-format
 msgid "by Sender/Receiver"
-msgstr "根据发件人/收件人"
+msgstr ""
 
 #: core/sortorder.cpp:114
 #, kde-format
 msgid "by Sender"
-msgstr "根据发件人"
+msgstr ""
 
 #: core/sortorder.cpp:116
 #, kde-format
 msgid "by Receiver"
-msgstr "根据收件人"
+msgstr ""
 
 #: core/sortorder.cpp:134
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
-msgstr "升序"
+msgstr ""
 
 #: core/sortorder.cpp:135
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
-msgstr "降序"
+msgstr ""
 
 #: core/theme.cpp:107
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
-msgstr "主题"
+msgstr ""
 
 #: core/theme.cpp:110
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #: core/theme.cpp:116
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
-msgstr "发件人"
+msgstr ""
 
 #: core/theme.cpp:119
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
-msgstr "收件人"
+msgstr ""
 
 #: core/theme.cpp:122
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
-msgstr "未读/已读图标"
+msgstr ""
 
 #: core/theme.cpp:128
 #, kde-format
 msgid "Attachment Icon"
-msgstr "附件图标"
+msgstr ""
 
 #: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
-msgstr "已回复/已转发图标"
+msgstr ""
 
 #: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr "联合的新/未读/已读/已回复/已转发图标"
+msgstr ""
 
 #: core/theme.cpp:137
 #, kde-format
 msgid "Action Item Icon"
-msgstr "活动项图标"
+msgstr ""
 
 #: core/theme.cpp:140
 #, kde-format
 msgid "Important Icon"
-msgstr "重要信件图标"
+msgstr ""
 
 #: core/theme.cpp:143
 #, kde-format
 msgid "Group Header Label"
-msgstr "分组信头标签"
+msgstr ""
 
 #: core/theme.cpp:146
 #, kde-format
 msgid "Spam/Ham Icon"
-msgstr "垃圾/非垃圾邮件图标"
+msgstr ""
 
 #: core/theme.cpp:149
 #, kde-format
 msgid "Watched/Ignored Icon"
-msgstr "监视/忽略信件图标"
+msgstr ""
 
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr "分组信头展开/折叠图标"
+msgstr ""
 
 #: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
-msgstr "加密状态图标"
+msgstr ""
 
 #: core/theme.cpp:158
 #, kde-format
 msgid "Signature State Icon"
-msgstr "签名状态图标"
+msgstr ""
 
 #: core/theme.cpp:161
 #, kde-format
 msgid "Vertical Separation Line"
-msgstr "垂直折叠行"
+msgstr ""
 
 #: core/theme.cpp:164
 #, kde-format
 msgid "Horizontal Spacer"
-msgstr "水平间距"
+msgstr ""
 
 #: core/theme.cpp:167
 #, kde-format
 msgid "Max Date"
-msgstr "最大日期"
+msgstr ""
 
 #: core/theme.cpp:170
 #, kde-format
 msgid "Message Tags"
-msgstr "信件标签"
+msgstr ""
 
 #: core/theme.cpp:173
 #, kde-format
 msgid "Note Icon"
-msgstr "便笺图标"
+msgstr ""
 
 #: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
-msgstr "邀请选项"
+msgstr ""
 
 #: core/theme.cpp:177
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr "文件夹"
+msgstr ""
 
 #: core/theme.cpp:179
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: core/theme.cpp:853
 #, kde-format
 msgid "Unread"
-msgstr "未读"
+msgstr ""
 
 #: core/theme.cpp:1047
 #, kde-format
 msgid "Never Show"
-msgstr "从不显示"
+msgstr ""
 
 #: core/theme.cpp:1047
 #, kde-format
 msgid "Always Show"
-msgstr "总是显示"
+msgstr ""
 
 #: core/theme.cpp:1052
 #, kde-format
 msgid "Plain Rectangles"
-msgstr "常规矩形"
+msgstr ""
 
 #: core/theme.cpp:1053
 #, kde-format
 msgid "Plain Joined Rectangle"
-msgstr "常规相连矩形"
+msgstr ""
 
 #: core/theme.cpp:1054
 #, kde-format
 msgid "Rounded Rectangles"
-msgstr "圆角矩形"
+msgstr ""
 
 #: core/theme.cpp:1055
 #, kde-format
 msgid "Rounded Joined Rectangle"
-msgstr "圆角相连矩形"
+msgstr ""
 
 #: core/theme.cpp:1056
 #, kde-format
 msgid "Gradient Rectangles"
-msgstr "渐变矩形"
+msgstr ""
 
 #: core/theme.cpp:1057
 #, kde-format
 msgid "Gradient Joined Rectangle"
-msgstr "渐变相连矩形"
+msgstr ""
 
 #: core/theme.cpp:1058
 #, kde-format
 msgid "Styled Rectangles"
-msgstr "风格化矩形"
+msgstr ""
 
 #: core/theme.cpp:1059
 #, kde-format
 msgid "Styled Joined Rectangles"
-msgstr "风格化相连矩形"
+msgstr ""
 
 #: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
-msgstr "没有找到结果"
+msgstr ""
 
 #: core/view.cpp:761
 #, kde-format
 msgid "Adjust Column Sizes"
-msgstr "调整列大小"
+msgstr ""
 
 #: core/view.cpp:765
 #, kde-format
 msgid "Show Default Columns"
-msgstr "显示默认列"
+msgstr ""
 
 #: core/view.cpp:770
 #, kde-format
 msgid "Display Tooltips"
-msgstr "显示工具提示"
+msgstr ""
 
 #: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
-msgstr "发件人"
+msgstr ""
 
 #: core/view.cpp:2240 core/view.cpp:2244
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
-msgstr "收件人"
+msgstr ""
 
 #: core/view.cpp:2241 core/view.cpp:2245
 #, kde-format
 msgid "Date"
-msgstr "日期"
+msgstr ""
 
 #: core/view.cpp:2259 core/view.cpp:2263
 #, kde-format
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Folder"
-msgstr "文件夹"
+msgstr ""
 
 #: core/view.cpp:2269 core/view.cpp:2271
 #, kde-format
 msgid "Note"
-msgstr "便笺"
+msgstr ""
 
 #: core/view.cpp:2278 core/view.cpp:2280
 #, kde-format
 msgid "Preview"
-msgstr "预览"
+msgstr ""
 
 #: core/view.cpp:2297
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
-msgstr[0] "<b>%1</b> 个回复"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/view.cpp:2300
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "在子树下有 <b>%1</b> 封信件(<b>%2</b> 封未读)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/view.cpp:2337
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
-msgstr "开始于 %1 的线索"
+msgstr ""
 
 #: core/view.cpp:2339
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
-msgstr "开始于 %1 的线索"
+msgstr ""
 
 #: core/view.cpp:2343
 #, kde-format
 msgid "Threads with messages dated %1"
-msgstr "日期为 %1 的信件线索"
+msgstr ""
 
 #: core/view.cpp:2353
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
-msgstr "发送于 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2356
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
-msgstr "接收于 %1 的线索"
+msgstr ""
 
 #: core/view.cpp:2360
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
-msgstr "发送于 %1 的线索"
+msgstr ""
 
 #: core/view.cpp:2362
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
-msgstr "接收于 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2371
 #, kde-format
 msgid "Threads started within %1"
-msgstr "线索开始于 %1"
+msgstr ""
 
 #: core/view.cpp:2374
 #, kde-format
 msgid "Threads containing messages with dates within %1"
-msgstr "线索中包含创建于 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2382
 #, kde-format
 msgid "Messages sent within %1"
-msgstr "信件由密钥 %1 签名。"
+msgstr ""
 
 #: core/view.cpp:2384
 #, kde-format
 msgid "Messages received within %1"
-msgstr "接收于 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2393
 #, kde-format
 msgid "Threads started by %1"
-msgstr "线索由 %1 发起"
+msgstr ""
 
 #: core/view.cpp:2396
 #, kde-format
 msgid "Threads with most recent message by %1"
-msgstr "包含最新信件的线索由 %1 发起"
+msgstr ""
 
 #: core/view.cpp:2405 core/view.cpp:2429
 #, kde-format
 msgid "Messages sent to %1"
-msgstr "发送到 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2407
 #, kde-format
 msgid "Messages sent by %1"
-msgstr "由 %1 发送的信件"
+msgstr ""
 
 #: core/view.cpp:2410
 #, kde-format
 msgid "Messages received from %1"
-msgstr "接收自 %1 的信件"
+msgstr ""
 
 #: core/view.cpp:2418
 #, kde-format
 msgid "Threads directed to %1"
-msgstr "跳转到 %1 的线索"
+msgstr ""
 
 #: core/view.cpp:2421
 #, kde-format
 msgid "Threads with most recent message directed to %1"
-msgstr "包含最新信件的线索跳转到 %1"
+msgstr ""
 
 #: core/view.cpp:2431
 #, kde-format
 msgid "Messages received by %1"
-msgstr "由 %1 接收的信件"
+msgstr ""
 
 #: core/view.cpp:2457
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
-msgstr[0] "<b>%1</b> 个线索"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/view.cpp:2462
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> 封信件(<b>%2</b> 封未读)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1025,12 +1023,12 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "创建过滤"
+msgstr ""
 
 #: core/widgetbase.cpp:408 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
-msgstr "主题"
+msgstr ""
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
@@ -1038,91 +1036,91 @@ msgstr "主题"
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
 msgid "Configure..."
-msgstr "配置..."
+msgstr ""
 
 #: core/widgetbase.cpp:498 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
-msgstr "聚合"
+msgstr ""
 
 #: core/widgetbase.cpp:581
 #, kde-format
 msgid "Message Sort Order"
-msgstr "信件排列顺序"
+msgstr ""
 
 #: core/widgetbase.cpp:603
 #, kde-format
 msgid "Message Sort Direction"
-msgstr "信件排列方向"
+msgstr ""
 
 #: core/widgetbase.cpp:620
 #, kde-format
 msgid "Group Sort Order"
-msgstr "分组排列顺序"
+msgstr ""
 
 #: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Direction"
-msgstr "分组排列方向"
+msgstr ""
 
 #: core/widgetbase.cpp:652
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
-msgstr "文件夹总是使用此排列顺序"
+msgstr ""
 
 #: core/widgets/configurefiltersdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "配置过滤"
+msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:79
 #, kde-format
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:82
 #, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "您想要删除此过滤吗？"
+msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "移除过滤"
+msgstr ""
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr "编辑过滤"
+msgstr ""
 
 #: core/widgets/filternamewidget.cpp:32
 #, kde-format
 msgid "Name:"
-msgstr "名称："
+msgstr ""
 
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "保存过滤..."
+msgstr ""
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
-msgstr "搜索"
+msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:21
 #, kde-format
 msgid "The words less than 3 letters are ignored."
-msgstr "少于 3 个字母的词将被忽略。"
+msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
 msgid "Do not show again"
-msgstr "不再显示"
+msgstr ""
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1130,19 +1128,18 @@ msgid ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
-"搜索的文件夹有些还在被索引中，或者完全被排除在索引之外。因此结果可能不完整。"
 
 #: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
-msgstr "阻止快速搜索框在变更文件夹时被清空"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr "在变更文件夹时情况快速搜索框"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
@@ -1151,458 +1148,456 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
-"如果您想要在移动到其他文件夹或者用信件状态缩小搜索范围时保持您的快速搜索锁"
-"定，切换这个按钮。"
 
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgid "Filter Mails by Status"
-msgstr "按状态过滤邮件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgid "Saved Filter"
-msgstr "已保存的过滤"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
 msgid "Clear Filter"
-msgstr "清除过滤器"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
-msgstr "未读"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:227
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
-msgstr "已回复"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:231
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
-msgstr "已转发"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:235
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
-msgstr "重要"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:239
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
-msgstr "活动"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:243
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
-msgstr "已监视"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:247
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
-msgstr "已忽略"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:251
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
-msgstr "有附件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:255
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
-msgstr "有邀请"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:259
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
-msgstr "垃圾信"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:263
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
-msgstr "非垃圾邮件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:273
 #, kde-format
 msgid "Full Message"
-msgstr "完整信件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
-msgstr "正文"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, kde-format
 msgid "Subject"
-msgstr "主题"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgid "BCC"
-msgstr "密送"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:324
 #, kde-format
 msgid "To"
-msgstr "收件人"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:406
 #, kde-format
 msgid "Clear History"
-msgstr "清除历史"
+msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "Current Tab is locked."
-msgstr "当前标签页已锁定。"
+msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
 msgid "(Unlock it)"
-msgstr "(解锁)"
+msgstr ""
 
 #: messagelistutil.cpp:104
 #, kde-format
 msgid "Sorting"
-msgstr "排序"
+msgstr ""
 
 #: pane.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
-msgstr "打开新标签页"
+msgstr ""
 
 #: pane.cpp:126
 #, kde-format
 msgid "New tab"
-msgstr "新建标签页"
+msgstr ""
 
 #: pane.cpp:136
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
-msgstr "关闭当前标签页"
+msgstr ""
 
 #: pane.cpp:138
 #, kde-format
 msgid "Close tab"
-msgstr "关闭标签页"
+msgstr ""
 
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "激活标签页 %1"
+msgstr ""
 
 #: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
-msgstr "显示快速搜索栏"
+msgstr ""
 
 #: pane.cpp:221
 #, kde-format
 msgid "Message List"
-msgstr "信件列表"
+msgstr ""
 
 #: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
-msgstr "新建标签页"
+msgstr ""
 
 #: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "激活下一标签页"
+msgstr ""
 
 #: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "激活上一标签页"
+msgstr ""
 
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "左移标签页"
+msgstr ""
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "右移标签页"
+msgstr ""
 
 #: pane.cpp:298
 #, kde-format
 msgid "Close Tab"
-msgstr "关闭标签页"
+msgstr ""
 
 #: pane.cpp:520 pane.cpp:812
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
-msgstr "空"
+msgstr ""
 
 #: pane.cpp:708
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
-msgstr "关闭标签页"
+msgstr ""
 
 #: pane.cpp:712
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
-msgstr "关闭全部其他标签页"
+msgstr ""
 
 #: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "解锁标签页"
+msgstr ""
 
 #: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
-msgstr "锁定标签页"
+msgstr ""
 
 #: storagemodel.cpp:219
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
-msgstr "无主题"
+msgstr ""
 
 #: storagemodel.cpp:220
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
-msgstr "分组和线索"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
 msgid "Grouping:"
-msgstr "分组："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:41
 #, kde-format
 msgid "Group expand policy:"
-msgstr "分组展开策略："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
 msgid "Threading:"
-msgstr "线索："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:51
 #, kde-format
 msgid "Thread leader:"
-msgstr "线索发起人："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:55
 #, kde-format
 msgid "Thread expand policy:"
-msgstr "线索展开策略："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
 msgctxt "@title:tab Advanced settings tab for aggregation mode"
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
 msgid "Fill view strategy:"
-msgstr "视图填充策略："
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
-msgstr "自定义信件聚合模式"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
 #: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
-msgstr "新建聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:129
 #, kde-format
 msgid "Clone Aggregation"
-msgstr "复制聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
-msgstr "导出聚合..."
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
-msgstr "导入聚合..."
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
 msgid "Delete Aggregation"
-msgstr "删除聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
-msgstr "未命名的聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
 msgid "Import Aggregation"
-msgstr "导入聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
-msgstr "导出聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "All Files (*)"
-msgstr "所有文件(*)"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
-msgstr "自定义主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
-msgstr "新建主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:125
 #, kde-format
 msgid "Clone Theme"
-msgstr "复制主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
-msgstr "导出主题..."
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
-msgstr "导入主题..."
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:156
 #, kde-format
 msgid "Delete Theme"
-msgstr "删除主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
-msgstr "未命名的主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
 #, kde-format
 msgid "New Column"
-msgstr "新建列"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete selected themes?"
-msgstr "您是否想要删除选中主题？"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:408
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr "您是否想要删除“%1”？"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
-msgstr "删除主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:436
 #, kde-format
 msgid "Import Theme"
-msgstr "导入主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:470
 #, kde-format
 msgid "Export Theme"
-msgstr "导出主题"
+msgstr ""
 
 #: utils/optionseteditor.cpp:27
 #, kde-format
 msgctxt "@title:tab General options of a view mode"
 msgid "General"
-msgstr "常规"
+msgstr ""
 
 #: utils/optionseteditor.cpp:31
 #, kde-format
 msgctxt "@label:textbox Name of the option"
 msgid "Name:"
-msgstr "名称："
+msgstr ""
 
 #: utils/optionseteditor.cpp:40
 #, kde-format
 msgctxt "@label:textbox Description of the option"
 msgid "Description:"
-msgstr "描述："
+msgstr ""
 
 #: utils/themeeditor.cpp:69
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
-msgstr "名称："
+msgstr ""
 
 #: utils/themeeditor.cpp:73
 #, kde-format
 msgid "The label that will be displayed in the column header."
-msgstr "这里的标签会显示在列头内。"
+msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, kde-format
 msgid "Header click sorts messages:"
-msgstr "点击列头时排序信件："
+msgstr ""
 
 #: utils/themeeditor.cpp:80
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr "当点击列头时要切换到的排列顺序"
+msgstr ""
 
 #: utils/themeeditor.cpp:83
 #, kde-format
 msgid "Visible by default"
-msgstr "默认可见"
+msgstr ""
 
 #: utils/themeeditor.cpp:84
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "如果希望此列默认可见，请选中此项。"
+msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
 msgid "Contains \"Sender or Receiver\" field"
-msgstr "包含“发件人或收件人”字段"
+msgstr ""
 
 #: utils/themeeditor.cpp:88
 #, kde-format
@@ -1610,18 +1605,16 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"如果希望此列标签的具体内容要根据文件夹的“接收”或“发送”类型来决定，请选中此"
-"项。"
 
 #: utils/themeeditor.cpp:108
 #, kde-format
 msgid "Unnamed Column"
-msgstr "未读列"
+msgstr ""
 
 #: utils/themeeditor.cpp:173
 #, kde-format
 msgid "Message Group"
-msgstr "信件分组"
+msgstr ""
 
 #: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
 #, kde-format
@@ -1629,69 +1622,67 @@ msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
-"超长主题超长主题超长主题超长主题超长主题超长主题超长主题超长主题超长主题超长"
-"主题超长主题超长主题超长主题"
 
 #: utils/themeeditor.cpp:192
 #, kde-format
 msgid "Sample Tag 1"
-msgstr "范例标签 1"
+msgstr ""
 
 #: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 2"
-msgstr "范例标签 2"
+msgstr ""
 
 #: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 3"
-msgstr "范例标签 3"
+msgstr ""
 
 #: utils/themeeditor.cpp:409
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
-msgstr "可见"
+msgstr ""
 
 #: utils/themeeditor.cpp:849
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
-msgstr "柔和"
+msgstr ""
 
 #: utils/themeeditor.cpp:856
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
-msgstr "粗体"
+msgstr ""
 
 #: utils/themeeditor.cpp:860
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
-msgstr "斜体"
+msgstr ""
 
 #: utils/themeeditor.cpp:867
 #, kde-format
 msgid "Font"
-msgstr "字体"
+msgstr ""
 
 #: utils/themeeditor.cpp:875
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
-msgstr "默认"
+msgstr ""
 
 #: utils/themeeditor.cpp:880
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "自定义..."
+msgstr ""
 
 #: utils/themeeditor.cpp:888
 #, kde-format
 msgid "Foreground Color"
-msgstr "前景颜色"
+msgstr ""
 
 #: utils/themeeditor.cpp:897
 #, kde-format
@@ -1699,7 +1690,7 @@ msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
 "a non important mail"
 msgid "Hide"
-msgstr "隐藏"
+msgstr ""
 
 #: utils/themeeditor.cpp:904
 #, kde-format
@@ -1707,7 +1698,7 @@ msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
 "Important mark on a non important mail"
 msgid "Keep Empty Space"
-msgstr "保留空白区间"
+msgstr ""
 
 #: utils/themeeditor.cpp:911
 #, kde-format
@@ -1715,90 +1706,90 @@ msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
 "e.g. Important mark on a non important mail"
 msgid "Keep Softened Icon"
-msgstr "保留柔和图标"
+msgstr ""
 
 #: utils/themeeditor.cpp:919
 #, kde-format
 msgid "When Disabled"
-msgstr "当禁用时"
+msgstr ""
 
 #: utils/themeeditor.cpp:925
 #, kde-format
 msgid "Group Header"
-msgstr "分组信头"
+msgstr ""
 
 #: utils/themeeditor.cpp:932
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
-msgstr "无"
+msgstr ""
 
 #: utils/themeeditor.cpp:937
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
-msgstr "自动"
+msgstr ""
 
 #: utils/themeeditor.cpp:942
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "自定义..."
+msgstr ""
 
 #: utils/themeeditor.cpp:950
 #, kde-format
 msgid "Background Color"
-msgstr "背景颜色"
+msgstr ""
 
 #: utils/themeeditor.cpp:970
 #, kde-format
 msgid "Background Style"
-msgstr "背景风格"
+msgstr ""
 
 #: utils/themeeditor.cpp:1156
 #, kde-format
 msgid "Column Properties..."
-msgstr "列属性..."
+msgstr ""
 
 #: utils/themeeditor.cpp:1159
 #, kde-format
 msgid "Add Column..."
-msgstr "添加列..."
+msgstr ""
 
 #: utils/themeeditor.cpp:1162
 #, kde-format
 msgid "Delete Column"
-msgstr "删除列"
+msgstr ""
 
 #: utils/themeeditor.cpp:1168
 #, kde-format
 msgid "Move Column to Left"
-msgstr "向左移动列"
+msgstr ""
 
 #: utils/themeeditor.cpp:1172
 #, kde-format
 msgid "Move Column to Right"
-msgstr "向右移动列"
+msgstr ""
 
 #: utils/themeeditor.cpp:1221
 #, kde-format
 msgid "Add New Column"
-msgstr "添加新列"
+msgstr ""
 
 #: utils/themeeditor.cpp:1245
 #, kde-format
 msgid "Column Properties"
-msgstr "列属性"
+msgstr ""
 
 #: utils/themeeditor.cpp:1287
 #, kde-format
 msgid "Appearance"
-msgstr "外观"
+msgstr ""
 
 #: utils/themeeditor.cpp:1291
 #, kde-format
 msgid "Content Items"
-msgstr "内容项目"
+msgstr ""
 
 #: utils/themeeditor.cpp:1423
 #, kde-format
@@ -1807,79 +1798,78 @@ msgid ""
 "and drop them on the columns in order to compose your theme. Right click on "
 "the items inside the view for more options."
 msgstr ""
-"在信头上单击鼠标右键可以添加或修改栏目。将内容项目拖放到上面即可定义您自己的"
-"主题。在视图里的项目上单击鼠标右键可以看到更多选项。"
 
 #: utils/themeeditor.cpp:1433
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: utils/themeeditor.cpp:1437
 #, kde-format
 msgid "Header:"
-msgstr "信头："
+msgstr ""
 
 #: utils/themeeditor.cpp:1443
 #, kde-format
 msgid "Icon size:"
-msgstr "图标大小："
+msgstr ""
 
 #: utils/themeeditor.cpp:1449
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
 msgid_plural " pixels"
-msgstr[0] " 像素"
+msgstr[0] ""
+msgstr[1] ""
 
 #: widget.cpp:220
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
-msgstr "全部"
+msgstr ""
 
 #: widget.cpp:345
 #, kde-format
 msgid "Collapse Group"
-msgstr "折叠分组"
+msgstr ""
 
 #: widget.cpp:348
 #, kde-format
 msgid "Expand Group"
-msgstr "展开分组"
+msgstr ""
 
 #: widget.cpp:354
 #, kde-format
 msgid "Expand All Groups"
-msgstr "展开全部分组"
+msgstr ""
 
 #: widget.cpp:357
 #, kde-format
 msgid "Collapse All Groups"
-msgstr "折叠全部分组"
+msgstr ""
 
 #: widget.cpp:361
 #, kde-format
 msgid "Expand All Threads"
-msgstr "展开全部消息串"
+msgstr ""
 
 #: widget.cpp:363
 #, kde-format
 msgid "Collapse All Threads"
-msgstr "折叠全部消息串"
+msgstr ""
 
 #: widget.cpp:419
 #, kde-format
 msgid "&Move Here"
-msgstr "移至此处(&M)"
+msgstr ""
 
 #: widget.cpp:420
 #, kde-format
 msgid "&Copy Here"
-msgstr "复制到此处(&C)"
+msgstr ""
 
 #: widget.cpp:422
 #, kde-format
 msgid "C&ancel"
-msgstr "取消(&A)"
+msgstr ""

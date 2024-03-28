@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-20 12:35+0100\n"
+"PO-Revision-Date: 2024-03-27 16:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jaime Robles <jaime@kde.org>\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1679,24 +1679,21 @@ msgstr "Tipo de letra de ancho &fijo"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
-msgstr "La carpeta más recientemente seleccionada para tareas pendientes."
+msgstr "La carpeta seleccionada más recientemente para tareas pendientes."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Event."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr "La carpeta más recientemente seleccionada para eventos."
+msgstr "La carpeta seleccionada más recientemente para eventos."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr "La carpeta más recientemente seleccionada para notas."
+msgstr "La carpeta seleccionada más recientemente para notas."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
