@@ -18,14 +18,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-26 02:53+0000\n"
-"PO-Revision-Date: 2024-01-28 19:32+0900\n"
+"PO-Revision-Date: 2024-03-29 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1364,25 +1364,25 @@ msgstr "繪製 html 時，不要用比最小字型還小的字型大小。"
 #: settings/messageviewer.kcfg.in:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
-msgstr ""
+msgstr "指定信件本文要用的字型"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:42
 #, kde-format
 msgid "Specifies the font to use for printing"
-msgstr ""
+msgstr "指定列印時使用的字型"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
 #: settings/messageviewer.kcfg.in:49
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "檢查網址有沒有可能是釣魚網址"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg.in:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr ""
+msgstr "在回覆或轉寄之後關閉信件視窗"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
@@ -1503,7 +1503,7 @@ msgstr "在詐騙白名單裡的電子郵件地址清單"
 #: settings/messageviewer.kcfg.in:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr ""
+msgstr "掃描郵件是否有追蹤 URL"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.in:157

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 02:27+0000\n"
-"PO-Revision-Date: 2024-01-28 19:53+0900\n"
+"PO-Revision-Date: 2024-03-29 21:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1939,23 +1939,18 @@ msgstr "在簽名前加上分隔符"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
-#, fuzzy, kde-format
-#| msgid "Use recent addresses for autocompletion"
+#, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr "自動補完時使用最近使用的地址"
+msgstr "自動補完時使用從郵件索引而來的地址"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable this option if you do not want recently used addresses to appear "
-#| "in the autocompletion list in the composer's address fields."
+#, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"若您不想在信件編輯器中輸入地址時，讓最近使用的地址出現在自動補完清單中，則關"
-"閉此選項。"
+"若您希望信件編輯器中的地址欄位在自動補完時只顯示您的聯絡人，請停用此選項。"
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2003,18 +1998,13 @@ msgstr "改進 HTML 信件的純文字版本的顯示"
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "可以的話簽署所有信件"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"所有的收件人都有合法受信任的加密金鑰。\n"
-"要加密此信件嗎？"
+msgstr "找到所有收件者的金鑰時就啟用加密"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
