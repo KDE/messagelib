@@ -20,7 +20,7 @@
 # Anne-Marie Mahfouf <annemarie.mahfouf@free.fr>, 2009.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2009, 2010, 2011, 2012, 2013.
 # Sebastien Renard <Sebastien.Renard@digitalfox.org>, 2009, 2013.
-# SPDX-FileCopyrightText: 2012, 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent PINON <vpinon@kde.org>, 2013, 2014, 2015, 2016, 2017, 2018.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
 # Thomas Vergnaud <thomas.vergnaud@gmx.fr>, 2019.
@@ -30,15 +30,15 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-27 00:38+0000\n"
-"PO-Revision-Date: 2023-10-07 15:50+0200\n"
+"PO-Revision-Date: 2024-03-28 09:08+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1707,24 +1707,21 @@ msgstr "Utiliser une police à largeur fi&xe"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Todos."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
-msgstr "Dossier dernièrement sélectionné pour les tâches"
+msgstr "Le dossier le plus récemment sélectionné pour les tâches à faire."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Events."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr "Dossier dernièrement sélectionné pour les évènements"
+msgstr "Le dossier le plus récemment sélectionné pour les évènements."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr "Dossier dernièrement sélectionné pour les notes."
+msgstr "Le dossier le plus récemment sélectionné pour les notes."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17

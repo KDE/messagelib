@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-26 22:12+0200\n"
+"PO-Revision-Date: 2024-03-29 08:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -686,6 +686,8 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
+"חקירת העדפות ההצפנה של הנמען מראה שתופיע שאלה האם להצפין את ההודעה או לא.\n"
+"להצפין את ההודעה?"
 
 #: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
 #, kde-format
@@ -720,6 +722,8 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"יש העדפות הצפנה סותרות לנמענים האלה.\n"
+"להצפין את ההודעה הזאת?"
 
 #: composer/composerviewbase.cpp:2137
 #, kde-format
@@ -733,6 +737,8 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
+"ביקשת להצפין את ההודעה הזאת ולהצפין עותק לעצמך, אך לא נמצאו מפתחות הצפנה "
+"אמינים לזהות הזאת."
 
 #: composer/composerviewbase.cpp:2161
 #, kde-format
@@ -753,6 +759,9 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
+"חלקים מההודעה הזאת לא יוצפנו.\n"
+"שליחת הודעה מוצפנת חלקית יכולה להפר את מדיניות האתר ו/או להדליף מידע רגיש.\n"
+"להצפין את כל החלקים במקום?"
 
 #: composer/composerviewbase.cpp:2181
 #, kde-format
@@ -783,6 +792,8 @@ msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr ""
+"אחד או יותר ממפתחות ההצפנה מסוג OpenPGP או אישורי ה־S/MIME המוגדרים שלך אינו "
+"אמין לחלוטין להצפנה."
 
 #: composer/keyresolver.cpp:315
 #, kde-format
@@ -790,6 +801,8 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
+"אחד או יותר ממפתחות ההצפנה מסוג OpenPGP או אישורי ה־S/MIME לנמען „%1” אינו "
+"אמין לחלוטין להצפנה."
 
 #: composer/keyresolver.cpp:322
 #, kde-format
@@ -822,7 +835,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
-msgstr ""
+msgstr "מפתחות הצפנה שאינם אמינים לחלוטין"
 
 #: composer/keyresolver.cpp:650
 #, kde-format
@@ -840,7 +853,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
-msgstr ""
+msgstr "מפתחות הצפנה בלתי שמישים"
 
 #: composer/keyresolver.cpp:692
 #, kde-format
@@ -857,7 +870,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
-msgstr ""
+msgstr "מפתחות חתימה בלתי שמישים"
 
 #: composer/keyresolver.cpp:1003
 #, kde-format
@@ -907,7 +920,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1090
 #, kde-format
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "לא לחתום עם S/MIME"
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -921,7 +934,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr ""
+msgstr "אין אפשרות לחתום"
 
 #: composer/keyresolver.cpp:1319
 #, kde-format
@@ -929,13 +942,15 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
+"לא בחרת מפתח הצפנה לעצמך (הצפנה עצמית). לא תהיה לך אפשרות לפענח את ההודעה אם "
+"היא תוצפן."
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
-msgstr ""
+msgstr "אזהרת מפתח חסר"
 
 #: composer/keyresolver.cpp:1338
 #, kde-format
@@ -943,6 +958,7 @@ msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
 msgstr ""
+"לא בחרת מפתח הצפנה לנמען או הנמענת של ההודעה הזאת, לכן ההודעה לא תוצפן."
 
 #: composer/keyresolver.cpp:1342
 #, kde-format
@@ -950,6 +966,7 @@ msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr ""
+"לא בחרת מפתח הצפנה לאף אחד מהנמענים של ההודעה הזאת, לכן ההודעה לא תוצפן."
 
 #: composer/keyresolver.cpp:1352
 #, kde-format
@@ -957,6 +974,8 @@ msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"לא בחרת מפתח הצפנה לאחד מהנמענים: הוא או היא לא יוכלו לפענח את ההודעה אם היא "
+"תוצפן."
 
 #: composer/keyresolver.cpp:1356
 #, kde-format
@@ -964,6 +983,7 @@ msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"לא בחרת מפתחות הצפנה לחלק מהנמענים: הם לא יוכלו לפענח את ההודעה אם תוצפן."
 
 #: composer/keyresolver.cpp:1433
 #, kde-format
@@ -993,6 +1013,9 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
+"<qt>לא נמצא אישור הצפנה אמין עבור „%1”.<br/><br/>נא לבחור את האישורים לשימוש "
+"לנמען הזה. אם אין אישור מתאים ברשימה שלך אפשר גם לחפש אישורים חיצוניים "
+"בלחיצה על הכפתור: חיפוש אחר אישורים חיצוניים.</qt>"
 
 #: composer/keyresolver.cpp:1559
 #, kde-format
@@ -1034,11 +1057,12 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"אחסון תזכורת חדשה נכשל: אירעה שגיאה בניסיון ליצור מטלה חדשה בלוח השנה שלך: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr ""
+msgstr "אחסון תזכורת חדשה נכשל: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
 #, kde-format
@@ -1097,6 +1121,10 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"\n"
+"זאת העברת תמצית MIME/סוג תוכן. תוכן ההודעה נמצא בקובץ או הקבצים המצורפים.\n"
+"\n"
+"\n"
 
 #: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
@@ -1121,6 +1149,9 @@ msgid ""
 "current time</li><li>%d set current date</li><li>%n original filename</"
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
+"<qt><p>כאן אפשר להגדיר שם לקובץ התמונה. אפשר להשתמש ב־:</p><ul><li>%t הגדרת "
+"השעה הנוכחית</li><li>%d הגדרת התאריך הנוכחי</li><li>%n שם הקובץ המקורי</"
+"li><li>%e הרחבה מקורית</li><li>%x הרחבה חדשה</li></ul></qt>"
 
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
@@ -1130,7 +1161,7 @@ msgstr "מותאם אישית"
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr ""
+msgstr "נא לאמת את הערכים המזערי והמרבי."
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
@@ -1296,19 +1327,19 @@ msgstr "תבנית תמונה"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr ""
+msgstr "שינוי הגודל של כל התמונות מאחד מהסוגים הבאים"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr ""
+msgstr "שם קובץ לאחר שינוי גודל"
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr ""
+msgstr "שינוי שם של תמונות שגודלן השתנה לפי התבנית הבאה:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1320,31 +1351,31 @@ msgstr "נמענים"
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr ""
+msgstr "לא לסנן (כל הנמענים מורשים)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "לשנות את הגודל אם כל כתובות הדוא״ל מכילות את אחת התבניות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "לשנות את הגודל אם אחת מכתובות הדוא״ל מכילה את אחת התבניות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "לא לשנות את הגודל אם כל כתובות הדוא״ל מכילות את אחת התבניות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "לא לשנות את הגודל אם אחת מכתובות הדוא״ל מכילה את אחת התבניות"
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
@@ -1354,7 +1385,7 @@ msgstr "לא נמצא טקסט בלוח הגזירים"
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "הגדרת שם צרופה"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1369,34 +1400,34 @@ msgstr "טקסט מלוח הגזירים"
 #: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
-msgstr ""
+msgstr "מפתח OpenPGP‏ 0x%1"
 
 #: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
-msgstr ""
+msgstr "<p>אירעה שגיאה בניסיון לייצא את המפתח מהמנגנון:</p><p><b>%1</b></p>"
 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr ""
+msgstr "המפתח מיוצא…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr ""
+msgstr "סוג איש הקשר לא ידוע"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:86
 #, kde-format
 msgid "Invalid Contact"
-msgstr ""
+msgstr "איש קשר שגוי"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr ""
+msgstr "אי אפשר לייצר כרטיס ביקור (vCard)."
 
 #: job/autocryptheadersjob.cpp:102
 #, kde-format
@@ -1404,6 +1435,8 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
+"<p>אירעה שגיאה בניסיון לייצא את המפתח מהמנגנון:</p><p><b>לא נמצא מפתח תקף "
+"למשתמש %1 (%2)</b></p>"
 
 #: job/maintextjob.cpp:59
 #, kde-format
@@ -1511,6 +1544,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"ההודעה הזאת מכילה בקשה לשלוח התראה על כך שקיבלת את ההודעה,\n"
+"היא מכילה הנחיות עיבוד שמסומנות כ„הכרחיות”, אך תוכנת הדוא״ל לא מזהה אותן.\n"
+"אפשר להתעלם מהבקשה או לאפשר לתוכנית הדוא״ל לשלוח תגובת „נדחה”."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1520,6 +1556,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"ההודעה הזאת מכילה בקשה לשלוח התראה על כך שקיבלת את ההודעה,\n"
+"אבל היא ביקשה לשלוח אותה ליותר מכתובת אחת.\n"
+"אפשר להתעלם מהבקשה או לאפשר לתוכנית הדוא״ל לשלוח „נדחה” או תגובה רגילה."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1529,6 +1568,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"ההודעה הזאת מכילה בקשה לשלוח התראה על כך שקיבלת את ההודעה\n"
+"אפשר להתעלם מהבקשה או לאפשר לתוכנית הדוא״ל לשלוח „נדחה” או תגובה רגילה."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1539,6 +1580,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"ההודעה הזאת מכילה בקשה לשלוח התראה על כך שקיבלת את ההודעה\n"
+"אפשר להתעלם מהבקשה או לאפשר לתוכנית הדוא״ל לשלוח „נדחה” או תגובה רגילה."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1602,6 +1645,8 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
+"<para>כבר קיימת רשימת תפוצה עם השם הנתון<resource>%1</resource>.נא לבחור שם "
+"אחר.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
