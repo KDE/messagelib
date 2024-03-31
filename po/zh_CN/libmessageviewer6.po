@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-26 02:53+0000\n"
-"PO-Revision-Date: 2024-01-06 03:32\n"
+"PO-Revision-Date: 2024-03-30 19:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessageviewer6.pot\n"
-"X-Crowdin-File-ID: 49106\n"
+"X-Crowdin-File: /kf6-stable/messages/messagelib/libmessageviewer6.pot\n"
+"X-Crowdin-File-ID: 50334\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1305,19 +1305,17 @@ msgstr "重定向到“%2”的短链接“%1”。"
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.in:11
-#, fuzzy, kde-format
-#| msgid "Print only selected text"
+#, kde-format
 msgid "Only print selected text in viewer"
-msgstr "仅打印选中文本"
+msgstr ""
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
-#, fuzzy, kde-format
-#| msgid "Respect &expand/collapse quote marks settings"
+#, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
-msgstr "使用展开/折叠的引用标记设置(&E)"
+msgstr ""
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
 #: settings/messageviewer.kcfg.in:19
@@ -1329,10 +1327,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
 #: settings/messageviewer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Always show encryption/signature details"
+#, kde-format
 msgid "Always show encryption/signature details when we print message"
-msgstr "始终显示加密/签名详细信息"
+msgstr ""
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
@@ -1366,10 +1363,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
-#, fuzzy, kde-format
-#| msgid "Show &expand/collapse quote marks"
+#, kde-format
 msgid "Show expand/collapse quote marks"
-msgstr "显示展开/折叠的引用标记(&E)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:73
@@ -1381,17 +1377,15 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
-#, fuzzy, kde-format
-#| msgid "Automatic collapse &level:"
+#, kde-format
 msgid "Automatic collapse level:"
-msgstr "自动折叠等级(&L)："
+msgstr ""
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Reduce font size for &quoted text"
+#, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "引用的文字以较小字体显示(&Q)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:84
@@ -1407,10 +1401,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
-#, fuzzy, kde-format
-#| msgid "Show Message Structure"
+#, kde-format
 msgid "Message Structure Viewer"
-msgstr "显示信件结构"
+msgstr ""
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:94
@@ -1420,10 +1413,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:97
-#, fuzzy, kde-format
-#| msgid "Show Details"
+#, kde-format
 msgid "Show always"
-msgstr "显示细节"
+msgstr ""
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
@@ -1446,17 +1438,15 @@ msgstr ""
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
-#, fuzzy, kde-format
-#| msgid "Load external references from the Internet for this message."
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "允许在这封信中加载 Internet 的外部引用。"
+msgstr ""
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
-#, fuzzy, kde-format
-#| msgid "Show attachments as suggested by sender."
+#, kde-format
 msgid "How attachments are shown"
-msgstr "附件以发件人建议的方式显示。"
+msgstr ""
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg.in:135
@@ -1466,10 +1456,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:139
-#, fuzzy, kde-format
-#| msgid "Enable access key"
+#, kde-format
 msgid "Activate Access Key"
-msgstr "启用访问键"
+msgstr ""
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:143
@@ -1481,10 +1470,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
 #: settings/messageviewer.kcfg.in:147
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgid "List of emails in scam white list"
-msgstr "添加电子邮件地址到白名单"
+msgstr ""
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:151
@@ -1516,10 +1504,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:181
-#, fuzzy, kde-format
-#| msgid "&Mangle From:/To: headers in replies to invitations"
+#, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "在回复邀请时改动信头中的发件人/收件人(&M)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
@@ -1533,10 +1520,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
-#, fuzzy, kde-format
-#| msgid "Send &invitations in the mail body"
+#, kde-format
 msgid "Send groupware invitations in the mail body"
-msgstr "在邮件正文中发送邀请(&I)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:188
@@ -1550,36 +1536,25 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:193
-#, fuzzy, kde-format
-#| msgid "Exchange-compatible invitation &naming"
+#, kde-format
 msgid "Exchange-compatible invitation naming"
-msgstr "Exchange 兼容的邀请名(&N)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:194
-#, fuzzy, kde-format
-#| msgid ""
-#| "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#| "server,\n"
-#| "has a problem understanding standards-compliant groupware email.\n"
-#| "Turn this option on to send groupware invitations in a way that Microsoft "
-#| "Exchange understands."
+#, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
 "server, has a problem understanding standards-compliant groupware email. "
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"Microsoft Outlook 在和 Microsoft Exchange 服务器协同工作时，对标准群件邮件\n"
-"的处理有个缺陷。\n"
-"启用此选项可发送能被 Microsoft Exchange 识别的群件邀请。"
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:199
-#, fuzzy, kde-format
-#| msgid "&Automatic invitation sending"
+#, kde-format
 msgid "Automatic invitation sending"
-msgstr "自动发送邀请(&A)"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:200
