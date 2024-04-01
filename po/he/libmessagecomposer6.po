@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 08:41+0300\n"
+"PO-Revision-Date: 2024-03-31 08:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -582,6 +582,9 @@ msgid ""
 "whether or not to sign this message.\n"
 "Sign this message?"
 msgstr ""
+"חקירת העדפות החתימה של הנמען הובילה לכך שתופיע בקשה האם לחתום על ההודעה הזאת "
+"או לא.\n"
+"לחתום על ההודעה הזאת?"
 
 #: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
@@ -847,6 +850,11 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"אחד יותר ממפתחות ההצפנה מסוג OpenPGP או אישורי ה־S/MIME שלך לא שמישים "
+"להצפנה. נא להגדיר את מפתחות ההצפנה ואת האישורים שלך מחדש לזהות הזאת דרך "
+"חלונית הגדרות הזהות.\n"
+"אם בחירתך היא להמשיך, ובהמשך יידרשו המפתחות, תופיע בקשה לציין באילו מפתחות "
+"להשתמש."
 
 #: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
 #: composer/keyresolver.cpp:1042
@@ -864,6 +872,11 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"אחד יותר ממפתחות החתימה מסוג OpenPGP או אישורי חתימת ה־S/MIME שלך לא שמישים "
+"לחתימה נא להגדיר את מפתחות החתימה ואת האישורים שלך מחדש לזהות הזאת דרך "
+"חלונית הגדרות הזהות.\n"
+"אם בחירתך היא להמשיך, ובהמשך יידרשו המפתחות, תופיע בקשה לציין באילו מפתחות "
+"להשתמש."
 
 #: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
 #: composer/keyresolver.cpp:1089
@@ -929,6 +942,9 @@ msgid ""
 "signature matching your available signing keys.\n"
 "Send message without signing?"
 msgstr ""
+"חקירת העדפות החתימה של הנמען לא העלתה סוג נפוץ של חתימה שתואמת אתמפתחות "
+"החתימה הזמינים שלך.\n"
+"לשלוח את ההודעה לא חתומה?"
 
 #: composer/keyresolver.cpp:1156
 #, kde-format
@@ -1000,6 +1016,9 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
+"יש בעיה עם אישורי ההצפנה עבור „%1”.\n"
+"\n"
+"נא לבחור את האישורים לשימוש לנמען הזה מחדש."
 
 #: composer/keyresolver.cpp:1549
 #, kde-format
