@@ -1938,32 +1938,31 @@ msgstr "Opakovat každých:"
 #: settings/messagecomposer.kcfg.in:18
 #, kde-format
 msgid "Only quote selected text when replying"
-msgstr ""
+msgstr "Citovat vybraný text pouze při odpovědi"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Automatically resize images"
+#, kde-format
 msgid "A&utomatically insert signature"
-msgstr "Automaticky změnit velikost obrázků"
+msgstr "A&utomaticky vložit podpis"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:27
 #, kde-format
 msgid "Insert signature above quoted text"
-msgstr ""
+msgstr "Vložit podpis nad citovaný text"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:31
 #, kde-format
 msgid "Prepend separator to signature"
-msgstr ""
+msgstr "Vložit oddělovač před podpis"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr ""
+msgstr "Používat adresy indexované s e-mailů pro automatické doplňování"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
@@ -1972,6 +1971,8 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
+"Pokud si přejete, aby se při automatickém doplňování adres při psaní nové "
+"zprávy zobrazovaly pouze kontakty z knihy adres, zakažte tuto volbu."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -1985,7 +1986,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:46
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "Používat nedávné adresy pro automatické doplňování"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
@@ -1994,30 +1995,32 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
+"Pokud si nepřejete, aby se při automatickém doplňování adres při psaní nové "
+"zprávy zobrazovaly nedávné adresy, zakažte tuto volbu."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "Maximální počet záznamů příjemců:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "Za&lamovat slova na sloupci:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.in:67
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "Vylepšit prostý text HTML zprávy"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Podepsat, pokud možno, všechny zprávy"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
@@ -2041,7 +2044,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:87
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-msgstr ""
+msgstr "Upozornění, pokud CA certifikát brzy vyprší (nastavit práh níže)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
