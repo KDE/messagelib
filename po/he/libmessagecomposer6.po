@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-31 08:45+0300\n"
+"PO-Revision-Date: 2024-04-03 22:03+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -915,6 +915,9 @@ msgid ""
 "however, you have not configured valid OpenPGP signing certificates for this "
 "identity."
 msgstr ""
+"חקירת העדפות החתימה של הנמען העלתה שיש לחתום על הודעה באמצעות OpenPGP, לפחות "
+"עבור חלק מהנמענים.\n"
+"עם זאת, לא הגדרת אישורי חתימות OpenPGP תקפים לזהות הזאת."
 
 #: composer/keyresolver.cpp:1072
 #, kde-format
@@ -929,6 +932,9 @@ msgid ""
 "however, you have not configured valid S/MIME signing certificates for this "
 "identity."
 msgstr ""
+"חקירת העדפות החתימה של הנמען העלתה שיש לחתום על הודעה באמצעות S/MIME, לפחות "
+"עבור חלק מהנמענים.\n"
+"עם זאת, לא הגדרת אישורי חתימות S/MIME תקפים לזהות הזאת."
 
 #: composer/keyresolver.cpp:1090
 #, kde-format
