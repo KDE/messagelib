@@ -2009,32 +2009,32 @@ msgstr "Repetix cada:"
 #: settings/messagecomposer.kcfg.in:18
 #, kde-format
 msgid "Only quote selected text when replying"
-msgstr ""
+msgstr "Cita només el text seleccionat en contestar"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:23
-#, fuzzy, kde-format
-#| msgid "Automatically resize images"
+#, kde-format
 msgid "A&utomatically insert signature"
-msgstr "Redimensiona automàticament les imatges"
+msgstr "Inserix a&utomàticament la signatura"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:27
 #, kde-format
 msgid "Insert signature above quoted text"
-msgstr ""
+msgstr "Afig la signatura dalt del text citat"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:31
 #, kde-format
 msgid "Prepend separator to signature"
-msgstr ""
+msgstr "Preposa un separador a la signatura"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr ""
+"Utilitza les adreces indexades dels correus per a la compleció automàtica"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
@@ -2043,6 +2043,9 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
+"Desseleccioneu esta opció si no voleu que les adreces de les llibretes "
+"d'adreces apareguen en la llista de compleció automàtica en els camps "
+"d'adreça de l'editor."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2051,12 +2054,14 @@ msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
 msgstr ""
+"Permet que s'utilitze el caràcter de punt i coma (;) com a separador en "
+"l'editor de missatges"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:46
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "Utilitza les adreces recents per a la compleció automàtica"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
@@ -2065,59 +2070,60 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
+"Desseleccioneu esta opció si no voleu que les adreces utilitzades recentment "
+"apareguen en la llista de compleció automàtica en els camps d'adreça de "
+"l'editor."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "Nombre màxim d'entrades de destinatari:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "Ajusta &les paraules a la columna:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.in:67
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "Millora la versió de text net del missatge en HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Signa tots els missatges, si és possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"S'han trobat claus d'encriptació vàlides per a tots els destinataris.\n"
-"Voleu encriptar este missatge?"
+"Activa l'encriptació, si s'han trobat les claus de tots els destinataris"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "Avisa abans d'enviar missatges sense encriptar"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.in:83
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "Avisa abans d'enviar missatges sense signar"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.in:87
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
+"Avisa si els certificats/claus caduquen prompte (configureu els llindars "
+"davall)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
@@ -2127,6 +2133,8 @@ msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
 msgstr ""
+"El nombre mínim de dies que el certificat d'encriptació hauria de ser vàlid "
+"abans d'emetre un avís"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:99
@@ -2135,6 +2143,8 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
+"El nombre mínim de dies que haurien de ser vàlids tots els certificats de la "
+"cadena abans d'emetre un avís"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:103
@@ -2143,6 +2153,8 @@ msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
 msgstr ""
+"El nombre mínim de dies que el certificat arrel hauria de ser vàlid abans "
+"d'emetre un avís"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.in:107
@@ -2150,6 +2162,8 @@ msgstr ""
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
 msgstr ""
+"Mostra sempre la llista de claus d'encriptació per a seleccionar la que "
+"s'utilitzarà"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
