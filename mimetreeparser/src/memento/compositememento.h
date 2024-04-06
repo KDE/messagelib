@@ -26,7 +26,7 @@ public:
 
     void addMemento(CryptoBodyPartMemento *memento);
 
-    [[nodiscard]] QVector<CryptoBodyPartMemento *> mementos() const
+    [[nodiscard]] QList<CryptoBodyPartMemento *> mementos() const
     {
         return mMementos;
     }
@@ -51,7 +51,7 @@ public:
 
 private:
     void subMementoFinished();
-    QVector<CryptoBodyPartMemento *> mMementos;
+    QList<CryptoBodyPartMemento *> mMementos;
     int mRunningMementos = 0;
 };
 
