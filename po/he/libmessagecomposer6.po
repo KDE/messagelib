@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-04-03 22:03+0300\n"
+"PO-Revision-Date: 2024-04-05 22:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -895,6 +895,11 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"חקירת העדפות ההצפנה של הנמען העלו שיש להצפין את ההודעה באמצעות OpenPGP, "
+"לפחות לחלק מהנמענים.\n"
+"עם זאת, לא הגדרת מפתחות הצפנת OpenPGP תקפים לזהות הזאת.\n"
+"אפשר להמשיך בלי להצפין לעצמך, אך חשוב לשים לב שגם לך לא תהיה אפשרות לקרוא את "
+"ההודעות שלך."
 
 #: composer/keyresolver.cpp:1032
 #, kde-format
@@ -906,6 +911,11 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"חקירת העדפות ההצפנה של הנמען העלו שיש להצפין את ההודעה באמצעות S/MIME, לפחות "
+"לחלק מהנמענים.\n"
+"עם זאת, לא הגדרת אישורי הצפנת S/MIME תקפים לזהות הזאת.\n"
+"אפשר להמשיך בלי להצפין לעצמך, אך חשוב לשים לב שגם לך לא תהיה אפשרות לקרוא את "
+"ההודעות שלך."
 
 #: composer/keyresolver.cpp:1064
 #, kde-format
