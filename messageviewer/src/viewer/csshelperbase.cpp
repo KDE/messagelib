@@ -422,6 +422,11 @@ bool CSSHelperBase::useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) co
     return mUseBrowserColor && htmlHeadSettings.htmlFormat;
 }
 
+const HeaderStylePlugin *CSSHelperBase::headerPlugin() const
+{
+    return mHeaderPlugin;
+}
+
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &htmlHeadSettings) const
 {
     const QString bgColor = mBackgroundColor.name();

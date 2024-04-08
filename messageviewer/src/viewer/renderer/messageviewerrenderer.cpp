@@ -34,6 +34,13 @@ void MessageViewerRenderer::setCurrentWidget(QWidget *currentWidget)
 
 void MessageViewerRenderer::recreateCssHelper()
 {
+    const HeaderStylePlugin *oldHeaderStylePlugin = nullptr;
+    if (mCSSHelper) {
+        oldHeaderStylePlugin = mCSSHelper->headerPlugin();
+    }
     delete mCSSHelper;
     mCSSHelper = new CSSHelper(mCurrentWidget);
+    if (oldHeaderStylePlugin) {
+        mCSSHelper->setHeaderPlugin(oldHeaderStylePlugin);
+    }
 }

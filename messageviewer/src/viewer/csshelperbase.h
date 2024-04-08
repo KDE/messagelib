@@ -73,6 +73,8 @@ public:
 
     enum InlineMessageType { Positive, Information, Warning, Error, MESSAGE_TYPE_COUNT };
 
+    [[nodiscard]] const HeaderStylePlugin *headerPlugin() const;
+
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
         color settings) */
