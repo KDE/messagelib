@@ -55,7 +55,7 @@ public:
     // if the message and attachments should not be encrypted regardless of settings
     void setNoCrypto(bool noCrypto);
     void setSignAndEncrypt(const bool doSign, const bool doEncrypt);
-    void setMessageCryptoFormat(Kleo::CryptoMessageFormat format);
+    void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(const std::vector<GpgME::Key> &signers);
     void setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 

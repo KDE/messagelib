@@ -600,7 +600,7 @@ void Composer::setSignAndEncrypt(const bool doSign, const bool doEncrypt)
     d->encrypt = doEncrypt;
 }
 
-void Composer::setMessageCryptoFormat(Kleo::CryptoMessageFormat format)
+void Composer::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
 {
     Q_D(Composer);
 
