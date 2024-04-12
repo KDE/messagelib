@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-12 00:38+0000\n"
 "PO-Revision-Date: 2024-03-29 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2540,7 +2540,7 @@ msgstr "<qt>行<br />事<br />曆<br />訊<br />息<br /></qt>"
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "點擊以在 HTML、純文字與行事曆間切換。"
 
-#: widgets/invitationsettings.cpp:70
+#: widgets/invitationsettings.cpp:86
 #, kde-format
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
