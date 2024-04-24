@@ -6,9 +6,11 @@
 
 #include "webengineexportpdfpagejobtest.h"
 #include "webengineexportpdfpagejob.h"
+#include <QDialog>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
+#include <QTimer>
 #include <QWebEngineView>
 QTEST_MAIN(WebEngineExportPdfPageJobTest)
 WebEngineExportPdfPageJobTest::WebEngineExportPdfPageJobTest(QObject *parent)
@@ -57,6 +59,12 @@ void WebEngineExportPdfPageJobTest::shouldEmitSignalSuccess()
     job.setPdfPath(QDir::tempPath() + QStringLiteral("/test-webengine-export-test.pdf"));
     auto webEngine = new QWebEngineView;
     job.setEngineView(webEngine);
+
+    // close the preview dialog start() will show
+    QTimer::singleShot(500, this, [webEngine]() {
+        auto previewDialog = webEngine->findChild<QDialog *>();
+        QTest::keyClick(previewDialog, Qt::Key_Return);
+    });
 
     job.start();
     QVERIFY(spySuccess.wait());
