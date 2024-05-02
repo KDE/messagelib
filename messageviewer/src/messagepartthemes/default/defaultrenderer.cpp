@@ -42,6 +42,8 @@
 
 using namespace MimeTreeParser;
 using namespace MessageViewer;
+using namespace Qt::StringLiterals;
+
 #ifndef COMPILE_WITH_UNITY_CMAKE_SUPPORT
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(GpgME::Key)
@@ -327,7 +329,11 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         }
 
         block.setProperty("containsExternalReferences", Util::containsExternalReferences(messageInfo.htmlSource, messageInfo.extraHead));
-        c.insert(QStringLiteral("content"), messageInfo.htmlSource);
+
+        QString htmlSource = messageInfo.htmlSource;
+        const QString iframeContent =
+            (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + htmlSource.replace(u'"', u"&quot;"_s) + u"\"></iframe>"_s);
+        c.insert(QStringLiteral("content"), iframeContent);
     }
 
     {
