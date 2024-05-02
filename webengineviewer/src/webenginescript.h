@@ -27,5 +27,6 @@ namespace WebEngineScript
 [[nodiscard]] WEBENGINEVIEWER_EXPORT QString scrollToRelativePosition(qreal pos);
 [[nodiscard]] WEBENGINEVIEWER_EXPORT QString removeStyleToElement(const QString &element);
 [[nodiscard]] WEBENGINEVIEWER_EXPORT QString isScrolledToBottom();
+[[nodiscard]] WEBENGINEVIEWER_EXPORT QString moveContentToIframe();
 }
 }

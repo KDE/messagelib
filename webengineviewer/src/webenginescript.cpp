@@ -197,3 +197,116 @@ QString WebEngineScript::isScrolledToBottom()
                "return Boolean(isAtBottom); "
                "}());");
 }
+
+QString WebEngineScript::moveContentToIframe()
+{
+    return QStringLiteral(R"RAW(
+const MESSAGE_IFRAME_ROOT_ID = 'kmail-root';
+const ALLOWED_PX_INTERVAL = 10;
+
+let cssStyles = '';
+
+const locateHead = (inputDocument) => {
+    if (!inputDocument) {
+        return undefined;
+    }
+
+    const head = inputDocument.querySelector('head');
+
+    return head?.innerHTML;
+};
+
+document.querySelectorAll('style').forEach((style) => {
+    cssStyles += style.innerHTML;
+})
+
+const getIframeHtml = ({ emailContent, messageDocument }) => {
+    const messageHead = locateHead(messageDocument) || '';
+    const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
+    const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
+
+    return `
+      <html>
+        <head>
+          <meta name="viewport" content="width=device-width">
+          <style>
+            ${cssStyles}
+            body {
+              margin: 0;
+            }
+          </style>
+          ${messageHead}
+        </head>
+        <div id="${MESSAGE_IFRAME_ROOT_ID}">
+          <div style="width: 100% !important;padding-bottom:10px;!important">
+            ${bodyStyles || bodyClasses ? `<div class="${bodyClasses}" style="${bodyStyles}">` : ''}
+            ${emailContent}
+            ${bodyStyles || bodyClasses ? '</div>' : ''}
+          </div>
+          </div>
+        </div>
+        </body>
+      </html>
+    `;
+};
+
+const previousHeights = {};
+
+const setIframeHeight = (iframeRef) => {
+
+    if (!iframeRef) {
+        return;
+    }
+
+    if (!previousHeights[iframeRef]) {
+        previousHeights[iframeRef] = 0;
+    }
+
+    const emailContentRoot = iframeRef.contentDocument.getElementById(MESSAGE_IFRAME_ROOT_ID);
+    const prevHeight = previousHeights[iframeRef];
+    const height = emailContentRoot?.scrollHeight + 20;
+
+    if (!emailContentRoot || height === undefined) {
+        return;
+    }
+
+    const heightIsOutOfBoudaries =
+        height && (height > prevHeight + ALLOWED_PX_INTERVAL || height < prevHeight - ALLOWED_PX_INTERVAL);
+
+    if (heightIsOutOfBoudaries) {
+        previousHeights[iframeRef] = height;
+        iframeRef.style.height = `${height}px`;
+    }
+};
+
+document.querySelectorAll('iframe').forEach((iframe) => {
+    const content = iframe.dataset.content;
+
+    let emailContent = content;
+
+    iframe.style.borderWidth = 0;
+
+    const parser = new DOMParser();
+    const messageDocument = parser.parseFromString(emailContent, 'text/html')
+
+    const doc = iframe.contentDocument;
+    doc.open();
+    doc.write(getIframeHtml({
+        emailContent,
+        messageDocument,
+    }));
+    doc.close();
+
+    setIframeHeight(iframe);
+
+    const resizeObserver = new ResizeObserver(() => {
+        setIframeHeight(iframe);
+    });
+
+    const iframeRootDiv = doc.getElementById(
+        MESSAGE_IFRAME_ROOT_ID
+    );
+    resizeObserver.observe(iframeRootDiv)
+})
+    )RAW");
+}

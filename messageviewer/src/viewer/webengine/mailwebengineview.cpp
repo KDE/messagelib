@@ -340,6 +340,7 @@ QList<QAction *> MailWebEngineView::interceptorUrlActions(const WebEngineViewer:
 
 void MailWebEngineView::slotLoadFinished()
 {
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::moveContentToIframe());
     scamCheck();
 }
 
