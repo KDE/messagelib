@@ -10,9 +10,11 @@
 
 #include "../htmlblock.h"
 
+#include "htmlwriter/bufferedhtmlwriter.h"
 #include "interfaces/htmlwriter.h"
 
 using namespace MessageViewer;
+using namespace Qt::StringLiterals;
 
 MessagePartRenderer::MessagePartRenderer() = default;
 
@@ -24,7 +26,15 @@ bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, 
     if (msgPart->isAttachment()) {
         htmlWriter->write(block.enter());
     }
-    quotedHTML(msgPart->text(), context, htmlWriter);
+    BufferedHtmlWriter bufferedWriter;
+    bufferedWriter.begin();
+    quotedHTML(msgPart->text(), context, &bufferedWriter);
+    bufferedWriter.end();
+
+    const auto content = bufferedWriter.data();
+    const QString iframeContent =
+        (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + QString::fromUtf8(content).replace(u'"', u"&quot;"_s) + u"\"></iframe>"_s);
+    htmlWriter->write(iframeContent);
     htmlWriter->write(block.exit());
     return true;
 }
