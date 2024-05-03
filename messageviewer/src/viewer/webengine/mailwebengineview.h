@@ -8,7 +8,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/BlockTrackingUrlInterceptor>
 #include <WebEngineViewer/WebEngineView>
-class QPrinter;
+
 class KActionCollection;
 namespace WebEngineViewer
 {
@@ -60,7 +60,7 @@ public:
     void readConfig();
 
     static void initializeCustomScheme();
-    void printPreviewPage(QPrinter *printer);
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

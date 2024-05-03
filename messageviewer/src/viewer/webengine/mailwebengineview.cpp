@@ -22,7 +22,6 @@
 #include <WebEngineViewer/WebHitTest>
 
 #include <QPainter>
-#include <QPrinter>
 #include <QWebEngineUrlScheme>
 
 #include <WebEngineViewer/WebHitTestResult>
@@ -348,11 +347,6 @@ void MailWebEngineView::slotLoadFinished()
 void MailWebEngineView::setPrintElementBackground(bool printElementBackground)
 {
     d->mPageEngine->setPrintElementBackground(printElementBackground);
-}
-
-void MailWebEngineView::printPreviewPage(QPrinter *printer)
-{
-    print(printer);
 }
 
 void MailWebEngineView::initializeCustomScheme()
