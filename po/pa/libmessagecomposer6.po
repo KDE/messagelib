@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2010-12-26 08:52+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -275,13 +275,13 @@ msgid "&Replace"
 msgstr "ਬਦਲੋ(&R)"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
@@ -289,7 +289,7 @@ msgid "Attach directory"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
@@ -303,26 +303,26 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰੋ"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr ""

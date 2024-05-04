@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -278,14 +278,14 @@ msgid "&Replace"
 msgstr "&Utwesseln"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, fuzzy, kde-format
 #| msgid "Do you really want to attach this directory \"%1\" ?"
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Wullt Du redig dissen Orner \"%1\" bileggen?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
@@ -293,7 +293,7 @@ msgid "Attach directory"
 msgstr "Orner bileggen"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
@@ -307,26 +307,26 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Datei bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Datei lett sik nich bileggen."
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Apen OpenPGP-Slötel bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Söök den apen Slötel ut, den Du bileggen wullt."

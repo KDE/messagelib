@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2021-11-06 15:11+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -268,20 +268,20 @@ msgid "&Replace"
 msgstr "&Narunać"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Chceće woprawdźe zapisk \"%1\" připowěsnyć?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Zapisk připowěsnyć"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
@@ -294,24 +294,24 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Zapisk připowěsnyć"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Dataju připowěsnyć"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Njemóžach dataju přiwěsnyć"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Zjawny OpenPGP-kluč připowěsnyć"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Wuzwolće zjawny kluč, kiž ma so připowěsnyć."

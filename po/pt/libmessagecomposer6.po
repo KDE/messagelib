@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -304,20 +304,20 @@ msgid "&Replace"
 msgstr "Substitui&r"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Deseja mesmo anexar esta pasta \"%1\"?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Anexar a pasta"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -329,24 +329,24 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Anexar a Pasta"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Anexar um Ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Não foi possível anexar o ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Anexar Uma Chave Pública de OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Seleccione a chave pública que deve ser anexada."

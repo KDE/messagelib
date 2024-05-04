@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2023-09-26 18:53+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -267,20 +267,20 @@ msgid "&Replace"
 msgstr "З&амінити"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Ви справді бажаєте долучити цей каталог, «%1»?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Долучення каталогу"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -292,24 +292,24 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Долучення каталогу"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Долучення файла"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Не вдалося долучити файл"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Долучення відкритого ключа OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Виберіть відкритий ключ, який потрібно долучити."

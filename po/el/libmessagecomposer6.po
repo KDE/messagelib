@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2013-01-17 21:45+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -271,20 +271,20 @@ msgid "&Replace"
 msgstr "&Αντικατάσταση"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Θέλετε πραγματικά να επισυνάψετε αυτόν τον κατάλογο «%1»;"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Επισύναψη καταλόγου"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
@@ -297,24 +297,24 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Επισύναψη καταλόγου"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Επισύναψη αρχείου"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Αποτυχία επισύναψης του αρχείου"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Επισύναψη δημοσίου OpenPGP κλειδιού"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Επιλέξτε το δημόσιο κλειδί που πρέπει να επισυναφθεί."

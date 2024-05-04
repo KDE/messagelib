@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 00:38+0000\n"
+"POT-Creation-Date: 2024-05-04 00:41+0000\n"
 "PO-Revision-Date: 2023-05-18 20:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -273,20 +273,20 @@ msgid "&Replace"
 msgstr "&Ersetzen"
 
 #: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:909
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Möchten Sie diesen Ordner „%1“ wirklich anhängen?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Ordner anhängen"
 
 #: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -298,24 +298,24 @@ msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Ordner anhängen"
 
-#: attachment/attachmentcontrollerbase.cpp:897
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Datei anhängen"
 
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Das Anhängen der Datei ist fehlgeschlagen"
 
-#: attachment/attachmentcontrollerbase.cpp:964
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Öffentlichen OpenPGP-Schlüssel anhängen"
 
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Wählen Sie den öffentlichen Schlüssel, der angehängt werden soll."
