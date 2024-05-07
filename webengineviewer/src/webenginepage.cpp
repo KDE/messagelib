@@ -76,7 +76,7 @@ void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    if (isMainFrame && type == NavigationTypeLinkClicked) {
+    if (type == NavigationTypeLinkClicked) {
         Q_EMIT urlClicked(url);
         return false;
     }
