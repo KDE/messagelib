@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:38+0000\n"
-"PO-Revision-Date: 2024-03-27 07:04+0200\n"
+"PO-Revision-Date: 2024-05-05 11:56+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1826,7 +1826,7 @@ msgstr "גודל כתב מ&זערי:"
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-msgstr "כבר קיים קובץ תחת שם \"%1\". האם ברצונך לכתוב אותו?"
+msgstr "כבר קיים קובץ בשם „%1”. לשכתב אותו?"
 
 #: utils/messageviewerutil.cpp:127
 #, kde-format
