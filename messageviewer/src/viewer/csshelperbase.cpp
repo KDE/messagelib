@@ -329,7 +329,23 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
 
               "div.noprint {\n"
               "  display:none ! important;\n"
-              "}\n\n")
+              "}\n\n"
+              "iframe {"
+              "  background-color: white;"
+              "  background-image: none;"
+              "  border: 0;"
+              "  box-shadow: none;"
+              "  color: black;"
+              "  float: none;"
+              "  margin: 0;"
+              "  max-inline-size: 100%;"
+              "  min-block-size: 0;"
+              "  padding: 0;"
+              "  opacity: 1;"
+              "  visibility: visible;"
+              "  max-block-size: none;"
+              "  overflow: visible;"
+              "}")
               .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(QLatin1StringView(", ")))
         + quoteCSS + fullAddressList();
 }
