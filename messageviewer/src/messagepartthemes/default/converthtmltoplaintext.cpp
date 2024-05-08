@@ -53,6 +53,8 @@ void ConvertHtmlToPlainText::toCleanPlainText(QString &text)
     // "Inline images are represented by an object replacement character (0xFFFC in Unicode) "
     text.remove(QChar(0xFFFC));
 
+    text = text.trimmed();
+
     // In plaintext mode, each space is non-breaking.
     text.replace(QChar::Nbsp, QChar::fromLatin1(' '));
 }
