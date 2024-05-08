@@ -512,9 +512,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
         inlineMessageCss += QStringLiteral(
                                 R"(
             div.%1 {
-                border: 1px solid rgba(%2, %3, %4) ! important;
-                border-radius: 2px;
-                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+                border-bottom: 1px solid rgba(%2, %3, %4) ! important;
                 background-color: rgba(%2, %3, %4, 0.2) ! important;
             }
             div.%1 a:link {
@@ -758,7 +756,6 @@ QString CSSHelperBase::commonCssDefinitions() const
                "%1"
 
                "%2 {\n"
-               "  margin: 0px 5% 10px 5% ! important;\n"
                "  padding: 10px ! important;\n"
                "  text-align: left ! important;\n"
                "  line-height: normal;\n"

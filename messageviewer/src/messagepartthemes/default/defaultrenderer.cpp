@@ -331,7 +331,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         block.setProperty("containsExternalReferences", Util::containsExternalReferences(messageInfo.htmlSource, messageInfo.extraHead));
 
         QString htmlSource = messageInfo.htmlSource;
-        const QString iframeContent = (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + htmlSource.toHtmlEscaped() + u"\"></iframe>"_s);
+        const QString iframeContent = (u"<iframe src=\"about:blank\" data-content=\""_s + htmlSource.toHtmlEscaped() + u"\"></iframe>"_s);
         c.insert(QStringLiteral("content"), iframeContent);
     }
 
@@ -340,6 +340,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         convert.setHtmlString(mp->bodyHtml());
         QString plaintext = convert.generatePlainText();
         plaintext.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
+        plaintext = QStringLiteral("<div class='plaintext-content'>") + plaintext + QStringLiteral("</div>");
         c.insert(QStringLiteral("plaintext"), plaintext);
     }
     mp->source()->setHtmlMode(MimeTreeParser::Util::Html,

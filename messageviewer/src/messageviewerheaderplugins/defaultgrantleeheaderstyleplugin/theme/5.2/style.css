@@ -73,7 +73,9 @@ div#headerbox div.theactionbigcell{
 
 #kmailContent {
     clear: both;
-    margin-top: 10px;
-    padding: 20px;
 }
 
+iframe, .plaintext-content {
+    width: calc(100% - 40px);
+    padding: 20px;
+}
