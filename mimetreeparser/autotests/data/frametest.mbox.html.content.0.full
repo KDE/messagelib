@@ -4,9 +4,7 @@
   <body>
     <a name="att1"/>
     <div id="attachmentDiv1">
-      <div class="noquote">
-        <div dir="ltr">hello, this is the body</div>
-      </div>
+      <iframe style="width: 100%" src="about:blank" data-content="&lt;div class=&quot;noquote&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;hello, this is the body&lt;/div&gt;&lt;/div&gt;"/>
     </div>
     <a name="att2"/>
     <div id="attachmentDiv2">
@@ -18,31 +16,14 @@
         </tr>
         <tr class="textAtmB">
           <td>
-            <div class="noquote">
-              <div dir="ltr">#! /bin/sh</div>
-              <div dir="ltr">$XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libmimetreeparser.pot</div>
-            </div>
+            <iframe style="width: 100%" src="about:blank" data-content="&lt;div class=&quot;noquote&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;#! /bin/sh&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;$XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libmimetreeparser.pot&lt;/div&gt;&lt;/div&gt;"/>
           </td>
         </tr>
       </table>
     </div>
     <a name="att3"/>
     <div id="attachmentDiv3">
-      <div class="noquote">
-        <div dir="ltr">maintainer:</div>
-        <div dir="ltr">description: MimeTreeParser Library&nbsp;</div>
-        <div dir="ltr">tier: 3</div>
-        <div dir="ltr">type: functional</div>
-        <div dir="ltr">platforms:</div>
-        <div dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;- name: All</div>
-        <div dir="ltr">portingAid: false</div>
-        <div dir="ltr">deprecated: false</div>
-        <div dir="ltr">release: false</div>
-        <div dir="ltr">libraries:</div>
-        <div dir="ltr">&nbsp;- qmake: MimeTreeParser</div>
-        <div dir="ltr">&nbsp;&nbsp;&nbsp;cmake: "KF5::MimeTreeParser"</div>
-        <div dir="ltr">&nbsp;&nbsp;&nbsp;cmakename: KF5MimeTreeParser</div>
-      </div>
+      <iframe style="width: 100%" src="about:blank" data-content="&lt;div class=&quot;noquote&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;maintainer:&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;description: MimeTreeParser Library&amp;nbsp;&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;tier: 3&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;type: functional&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;platforms:&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- name: All&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;portingAid: false&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;deprecated: false&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;release: false&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;libraries:&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;&amp;nbsp;- qmake: MimeTreeParser&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;cmake: &amp;quot;KF5::MimeTreeParser&amp;quot;&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;cmakename: KF5MimeTreeParser&lt;/div&gt;&lt;/div&gt;"/>
     </div>
   </body>
 </html>

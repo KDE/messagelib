@@ -33,7 +33,7 @@ bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, 
 
     const auto content = bufferedWriter.data();
     const QString iframeContent =
-        (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + QString::fromUtf8(content).replace(u'"', u"&quot;"_s) + u"\"></iframe>"_s);
+        (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + QString::fromUtf8(content).toHtmlEscaped() + u"\"></iframe>"_s);
     htmlWriter->write(iframeContent);
     htmlWriter->write(block.exit());
     return true;
