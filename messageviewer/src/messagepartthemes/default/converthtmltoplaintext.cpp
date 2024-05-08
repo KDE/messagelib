@@ -26,18 +26,14 @@ QString ConvertHtmlToPlainText::generatePlainText()
     if (mHtmlString.isEmpty()) {
         return {};
     }
-    auto pb = new KPIMTextEdit::PlainTextMarkupBuilder();
+    KPIMTextEdit::PlainTextMarkupBuilder pb;
+    KPIMTextEdit::MarkupDirector pmd(&pb);
+    QTextDocument doc;
 
-    auto pmd = new KPIMTextEdit::MarkupDirector(pb);
-    auto doc = new QTextDocument;
-    doc->setHtml(mHtmlString);
+    doc.setHtml(mHtmlString);
+    pmd.processDocument(&doc);
+    QString plainText = pb.getResult();
 
-    pmd->processDocument(doc);
-    QString plainText = pb->getResult();
-
-    delete doc;
-    delete pmd;
-    delete pb;
     toCleanPlainText(plainText);
     return plainText;
 }
