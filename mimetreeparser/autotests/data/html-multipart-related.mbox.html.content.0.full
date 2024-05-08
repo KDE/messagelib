@@ -5,7 +5,7 @@
     <a name="att1"/>
     <div id="attachmentDiv1">
       <div style="position: relative">
-        <p> some random text :) <img src="cid:uniqueid"/> </p>
+        <iframe style="width: 100%" src="about:blank" data-content="&lt;p&gt; some random text :) &lt;img src=&quot;cid:uniqueid&quot; /&gt; &lt;/p&gt;"/>
       </div>
     </div>
     <!-- embedPart(contentID=uniqueid, url=file:///tmp/messageviewer.index.2/image.png) -->

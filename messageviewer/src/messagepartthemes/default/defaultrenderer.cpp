@@ -331,8 +331,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         block.setProperty("containsExternalReferences", Util::containsExternalReferences(messageInfo.htmlSource, messageInfo.extraHead));
 
         QString htmlSource = messageInfo.htmlSource;
-        const QString iframeContent =
-            (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + htmlSource.replace(u'"', u"&quot;"_s) + u"\"></iframe>"_s);
+        const QString iframeContent = (u"<iframe style=\"width: 100%\" src=\"about:blank\" data-content=\""_s + htmlSource.toHtmlEscaped() + u"\"></iframe>"_s);
         c.insert(QStringLiteral("content"), iframeContent);
     }
 

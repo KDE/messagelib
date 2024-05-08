@@ -79,12 +79,17 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
 
     QCOMPARE(pStdOut.size(), 0);
 #else
+    // Uncommment to update test data
+    // proc.start(QStringLiteral("cp"), {htmlFile, referenceFile});
+    // QVERIFY(proc.waitForFinished());
+
     // compare to reference file
     args = QStringList() << QStringLiteral("-u") << referenceFile << htmlFile;
 
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
     QVERIFY(proc.waitForFinished());
+
     QCOMPARE(proc.exitCode(), 0);
 #endif
 }
