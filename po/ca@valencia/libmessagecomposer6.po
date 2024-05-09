@@ -67,14 +67,14 @@ msgstr "O&bri amb"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "Al&tres..."
+msgstr "Al&tres…"
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "O&bri amb..."
+msgstr "O&bri amb…"
 
 #: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
@@ -94,7 +94,7 @@ msgstr "No s'ha pogut adjuntar el text des del porta-retalls"
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "Adjunta la clau &pública..."
+msgstr "Adjunta la clau &pública…"
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
@@ -113,17 +113,17 @@ msgstr "Adjunta"
 #: composer/composerviewbase.cpp:1910
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Adjunta un fitxer..."
+msgstr "&Adjunta un fitxer…"
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Afig un adjunt..."
+msgstr "Afig un adjunt…"
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "&Adjunta un directori..."
+msgstr "&Adjunta un directori…"
 
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
@@ -138,12 +138,12 @@ msgstr "vCard pròpia"
 #: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "&Adjunta unes quantes vCard..."
+msgstr "&Adjunta unes quantes vCard…"
 
 #: attachment/attachmentcontrollerbase.cpp:480
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "&Adjunta el text des del porta-retalls..."
+msgstr "&Adjunta el text des del porta-retalls…"
 
 #: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
@@ -181,22 +181,22 @@ msgstr "Edita"
 #: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgid "Edit With..."
-msgstr "Edita amb..."
+msgstr "Edita amb…"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Guar&da l'adjunt com a..."
+msgstr "Guar&da l'adjunt com a…"
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
-msgstr "Anomena i guarda..."
+msgstr "Anomena i guarda…"
 
 #: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "Pr&opietats de l'adjunt..."
+msgstr "Pr&opietats de l'adjunt…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
@@ -412,7 +412,7 @@ msgstr "Man&tín els marcadors, no signes"
 #: composer/composerviewbase.cpp:331
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr "Signa/encripta (elimina els marcadors)"
+msgstr "Signa i encripta (elimina els marcadors)"
 
 #: composer/composerviewbase.cpp:331
 #, kde-format
@@ -1207,7 +1207,7 @@ msgstr "Seleccioneu el format de la imatge"
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
-msgstr "Selecciona el format..."
+msgstr "Selecciona el format…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1489,7 +1489,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "S'està exportant la clau..."
+msgstr "S'està exportant la clau…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1817,13 +1817,13 @@ msgstr[1] "S'està truncant la llista de destinataris de %2 a %1 entrades."
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Guarda la llista..."
+msgstr "Guarda la llista…"
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "Se&lecciona..."
+msgstr "Se&lecciona…"
 
 #: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
@@ -2043,9 +2043,9 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Desseleccioneu esta opció si no voleu que les adreces de les llibretes "
-"d'adreces apareguen en la llista de compleció automàtica en els camps "
-"d'adreça de l'editor."
+"Desmarqueu esta opció si no voleu que les adreces de les llibretes d'adreces "
+"apareguen en la llista de compleció automàtica en els camps d'adreça de "
+"l'editor."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2070,7 +2070,7 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
-"Desseleccioneu esta opció si no voleu que les adreces utilitzades recentment "
+"Desmarqueu esta opció si no voleu que les adreces utilitzades recentment "
 "apareguen en la llista de compleció automàtica en els camps d'adreça de "
 "l'editor."
 
