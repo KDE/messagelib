@@ -102,7 +102,7 @@ msgstr "Desencripta el missatge"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Espereu mentre es desencripta el missatge..."
+msgstr "Espereu mentre es desencripta el missatge…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Espereu mentre es verifica la signatura..."
+msgstr "Espereu mentre es verifica la signatura…"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -412,7 +412,7 @@ msgstr "Suprimix les claus"
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, kde-format
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -432,7 +432,7 @@ msgstr "Ignora si no està signada"
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
 msgid "Export..."
-msgstr "Exporta..."
+msgstr "Exporta…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -443,12 +443,12 @@ msgstr "Configureu la regla"
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
 msgid "Add Rule..."
-msgstr "Afig una regla..."
+msgstr "Afig una regla…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
 msgid "Import..."
-msgstr "Importa..."
+msgstr "Importa…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -517,13 +517,13 @@ msgstr "Prioritat"
 #: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
-msgstr "Afig..."
+msgstr "Afig…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:201
 #: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
-msgstr "Modifica..."
+msgstr "Modifica…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
 #, kde-format
@@ -546,7 +546,7 @@ msgstr "Voleu suprimir esta regla?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "Supressió de regla"
+msgstr "Suprimiu la regla"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -557,7 +557,7 @@ msgstr "Voleu suprimir totes les regles?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "Supressió de regles"
+msgstr "Suprimiu les regles"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
@@ -629,7 +629,7 @@ msgstr "Actualitza la clau DKIM"
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr "Regles..."
+msgstr "Regles…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
 #, kde-format
@@ -1243,7 +1243,7 @@ msgstr "Detalls"
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
-"Este missatge podria ser fraudulent. <a href=\"scamdetails\">(Detalls...)</a>"
+"Este missatge podria ser fraudulent. <a href=\"scamdetails\">(Detalls…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
@@ -1426,7 +1426,7 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
-"Seleccioneu esta opció per a mostrar nivells diferents de text citat. "
+"Marqueu esta opció per a mostrar nivells diferents de text citat. "
 "Desseleccioneu-la per a ocultar els nivells de text citat."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
@@ -1446,8 +1446,7 @@ msgstr "Reduïx la mida de la lletra per al text citat"
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Seleccioneu esta opció per a mostrar el text citat amb una lletra més "
-"xicoteta."
+"Marqueu esta opció per a mostrar el text citat amb una lletra més xicoteta."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
@@ -1586,7 +1585,7 @@ msgstr ""
 "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
 "l'estàndard iCalendar. Esta opció evita un d'ells. Si teniu problemes amb "
 "què els usuaris d'Outlook no poden obtindre les vostres respostes, proveu "
-"seleccionant esta opció."
+"marcant esta opció."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
@@ -1606,7 +1605,7 @@ msgstr ""
 "Microsoft Outlook té una sèrie de defectes en la seua implementació de "
 "l'estàndard iCalendar. Esta opció evita un d'ells. Si teniu problemes amb "
 "què els usuaris d'Outlook no poden obtindre les vostres invitacions, proveu "
-"seleccionant esta opció."
+"marcant esta opció."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:193
@@ -1625,8 +1624,8 @@ msgid ""
 msgstr ""
 "Microsoft Outlook, quan s'utilitza en combinació d'un servidor Microsoft "
 "Exchange, té un problema en interpretar els correus electrònics de treball "
-"en grup que complixen els estàndards. Seleccioneu esta opció per a enviar "
-"les invitacions de treball en grup de manera que Microsoft Exchange les "
+"en grup que complixen els estàndards. Marqueu esta opció per a enviar les "
+"invitacions de treball en grup de manera que Microsoft Exchange les "
 "comprenga."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
@@ -1645,11 +1644,11 @@ msgid ""
 "text in the composer window is in iCalendar syntax, and you should not try "
 "modifying it by hand."
 msgstr ""
-"Quan se selecciona, no veureu la finestra de l'editor de correu. En canvi, "
-"tots els correus d'invitació s'envien automàticament. Si voleu veure el "
-"correu abans d'enviar-lo, podeu desseleccionar esta opció. No obstant açò, "
-"cal tindre en compte que el text de la finestra de l'editor està en sintaxi "
-"iCalendar, i no hauríeu d'intentar modificar-lo a mà."
+"Quan es marca, no veureu la finestra de l'editor de correu. En canvi, tots "
+"els correus d'invitació s'envien automàticament. Si voleu veure el correu "
+"abans d'enviar-lo, podeu desmarcar esta opció. No obstant açò, cal tindre en "
+"compte que el text de la finestra de l'editor està en sintaxi iCalendar, i "
+"no hauríeu d'intentar modificar-lo a mà."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
@@ -1665,7 +1664,7 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
-"Quan se selecciona, els correus d'invitació rebuts als quals s'ha respost es "
+"Quan es marca, els correus d'invitació rebuts als quals s'ha respost es "
 "mouran a la carpeta Paperera, una vegada que la resposta s'haja enviat "
 "correctament."
 
@@ -1707,8 +1706,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
-"les respostes d'invitacions"
+"Marqueu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
+"respostes d'invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
@@ -1723,8 +1722,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
-"Seleccioneu esta opció per a fer que Outlook(tm) comprenga les respostes a "
-"les invitacions"
+"Marqueu esta opció per a fer que Outlook(tm) comprenga les respostes a les "
+"invitacions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
@@ -1746,8 +1745,8 @@ msgstr ""
 "Exchange,\n"
 "té un problema en interpretar els correus electrònics de treball en grup que "
 "complixen els estàndards.\n"
-"Seleccioneu esta opció per a enviar les invitacions de treball en grup de "
-"manera que Microsoft Exchange les comprenga."
+"Marqueu esta opció per a enviar les invitacions de treball en grup de manera "
+"que Microsoft Exchange les comprenga."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
@@ -1762,7 +1761,7 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
-"Quan esta opció està marcada, l'usuari no veurà la finestra de l'editor del "
+"Quan es marca esta opció, l'usuari no veurà la finestra de l'editor del "
 "correu. Els missatges d'invitació seran enviats automàticament."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
@@ -2172,7 +2171,7 @@ msgstr "Mostra el registre d'auditoria de GnuPG per a esta operació"
 #: viewer/urlhandlermanager.cpp:894
 #, kde-format
 msgid "Opening URL..."
-msgstr "S'està obrint l'URL..."
+msgstr "S'està obrint l'URL…"
 
 #: viewer/urlhandlermanager.cpp:903
 #, kde-kuit-format
@@ -2188,7 +2187,7 @@ msgstr "Executa"
 #: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
-msgstr "S'està carregant el missatge..."
+msgstr "S'està carregant el missatge…"
 
 #: viewer/viewer_p.cpp:345
 #, kde-format
@@ -2203,7 +2202,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "Supressió d'adjunt"
+msgstr "Suprimiu l'adjunt"
 
 #: viewer/viewer_p.cpp:380
 #, kde-format
@@ -2224,13 +2223,13 @@ msgstr "O&bri amb"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "Al&tres..."
+msgstr "Al&tres…"
 
 #: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "O&bri amb..."
+msgstr "O&bri amb…"
 
 #: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1740
 #, kde-format
@@ -2252,7 +2251,7 @@ msgstr "Desplaça cap a"
 #: viewer/viewer_p.cpp:553
 #, kde-format
 msgid "Save As..."
-msgstr "Anomena i guarda..."
+msgstr "Anomena i guarda…"
 
 #: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1757
 #, kde-format
@@ -2405,7 +2404,7 @@ msgstr "&Mostra el codi font"
 #: viewer/viewer_p.cpp:1577
 #, kde-format
 msgid "&Save Message..."
-msgstr "Guar&da el missatge..."
+msgstr "Guar&da el missatge…"
 
 #: viewer/viewer_p.cpp:1583
 #, kde-format
@@ -2460,7 +2459,7 @@ msgstr "Llig el text"
 #: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "Share Text..."
-msgstr "Compartix el text..."
+msgstr "Compartix el text…"
 
 #: viewer/viewer_p.cpp:1656
 #, kde-format
@@ -2470,7 +2469,7 @@ msgstr "Copia la ubicació de la imatge"
 #: viewer/viewer_p.cpp:1662
 #, kde-format
 msgid "&Find in Message..."
-msgstr "Bu&sca en el missatge..."
+msgstr "Bu&sca en el missatge…"
 
 #: viewer/viewer_p.cpp:1671
 #, kde-format
@@ -2480,17 +2479,17 @@ msgstr "Desactiva les emoticones"
 #: viewer/viewer_p.cpp:1737
 #, kde-format
 msgid "Save &As..."
-msgstr "Anomena i gu&arda..."
+msgstr "Anomena i gu&arda…"
 
 #: viewer/viewer_p.cpp:1745
 #, kde-format
 msgid "Open With..."
-msgstr "Obri amb..."
+msgstr "Obri amb…"
 
 #: viewer/viewer_p.cpp:1752
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "Guarda tots els adjunts..."
+msgstr "Guarda tots els adjunts…"
 
 #: viewer/viewer_p.cpp:1984
 #, kde-format
@@ -2574,7 +2573,7 @@ msgstr "O&bri amb «%1»"
 #: widgets/attachmentdialog.cpp:46
 #, kde-format
 msgid "Open &With..."
-msgstr "Obri &amb..."
+msgstr "Obri &amb…"
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format

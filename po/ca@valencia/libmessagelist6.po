@@ -563,7 +563,7 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
-"Seleccioneu esta opció per a mostrar els consells en passar per damunt d'un "
+"Marqueu esta opció per a mostrar els consells en passar per damunt d'un "
 "element en la llista de missatges."
 
 #: core/sortorder.cpp:63 core/sortorder.cpp:107
@@ -1067,7 +1067,7 @@ msgstr "Tema"
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: core/widgetbase.cpp:498 messagelistutil.cpp:109
 #, kde-format
@@ -1135,7 +1135,7 @@ msgstr "Nom:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "Guarda el filtre..."
+msgstr "Guarda el filtre…"
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
@@ -1181,8 +1181,8 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
-"Activeu este botó si voleu mantindre la busca ràpida blocada en moure's cap "
-"a altres carpetes o quan refineu la busca per a l'estat del missatge."
+"Utilitzeu este botó si voleu mantindre la busca ràpida blocada en moure's "
+"cap a altres carpetes o quan refineu la busca per a l'estat del missatge."
 
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
@@ -1480,12 +1480,12 @@ msgstr "Clona l'agregació"
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
-msgstr "Exporta l'agregació..."
+msgstr "Exporta l'agregació…"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
 msgid "Import Aggregation..."
-msgstr "Importa l'agregació..."
+msgstr "Importa l'agregació…"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
@@ -1532,12 +1532,12 @@ msgstr "Clona el tema"
 #: utils/configurethemesdialog.cpp:138
 #, kde-format
 msgid "Export Theme..."
-msgstr "Exporta el tema..."
+msgstr "Exporta el tema…"
 
 #: utils/configurethemesdialog.cpp:145
 #, kde-format
 msgid "Import Theme..."
-msgstr "Importa un tema..."
+msgstr "Importa un tema…"
 
 #: utils/configurethemesdialog.cpp:156
 #, kde-format
@@ -1629,8 +1629,7 @@ msgstr "Visible de manera predeterminada"
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
-"Seleccioneu-la si s'ha de visualitzar esta columna quan se seleccione el "
-"tema."
+"Marqueu-la si s'ha de visualitzar esta columna quan se seleccione el tema."
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1643,8 +1642,8 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"Seleccioneu-la si l'etiqueta d'esta columna s'hauria d'actualitzar en funció "
-"del tipus d'«entrada»/«eixida» de la carpeta."
+"Marqueu-la si l'etiqueta d'esta columna s'hauria d'actualitzar en funció del "
+"tipus d'«entrada»/«eixida» de la carpeta."
 
 #: utils/themeeditor.cpp:108
 #, kde-format
@@ -1719,7 +1718,7 @@ msgstr "Predeterminat"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "Personalitza..."
+msgstr "Personalitza…"
 
 #: utils/themeeditor.cpp:888
 #, kde-format
@@ -1776,7 +1775,7 @@ msgstr "Automàtic"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "Personalitza..."
+msgstr "Personalitza…"
 
 #: utils/themeeditor.cpp:950
 #, kde-format
@@ -1791,12 +1790,12 @@ msgstr "Estil del fons"
 #: utils/themeeditor.cpp:1156
 #, kde-format
 msgid "Column Properties..."
-msgstr "Propietats de la columna..."
+msgstr "Propietats de la columna…"
 
 #: utils/themeeditor.cpp:1159
 #, kde-format
 msgid "Add Column..."
-msgstr "Afig una columna..."
+msgstr "Afig una columna…"
 
 #: utils/themeeditor.cpp:1162
 #, kde-format
