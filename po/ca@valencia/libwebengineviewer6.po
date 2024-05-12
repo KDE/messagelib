@@ -113,7 +113,7 @@ msgid ""
 "\">(Details...)"
 msgstr ""
 "S'ha trobat algun seguidor de correu i s'ha bloquejat.<a href="
-"\"mailtrackingdetails\">(Detalls...)"
+"\"mailtrackingdetails\">(Detalls…)"
 
 #: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
