@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:38+0000\n"
-"PO-Revision-Date: 2024-03-26 11:33+0100\n"
+"PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1660,22 +1660,19 @@ msgstr "Állandó szé&lességű betűtípus"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Todos."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "A legutoljára kiválasztott mappa használva a teendőkhöz."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Events."
+#, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "A legutoljára kiválasztott mappa használva a eseményekhez."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "A legutoljára kiválasztott mappa használva a jegyzetekhez."
 
