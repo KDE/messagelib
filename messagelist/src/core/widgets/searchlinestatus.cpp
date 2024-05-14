@@ -270,19 +270,19 @@ void SearchLineStatus::createFilterByAction()
     mFilterMenu->addSeparator();
     auto grp = new QActionGroup(mFilterMenu);
 
-    mSearchEveryWhereAction = new QAction(i18n("Full Message"), mFilterMenu);
+    mSearchEveryWhereAction = new QAction(i18nc("@action", "Full Message"), mFilterMenu);
     mSearchEveryWhereAction->setCheckable(true);
     mSearchEveryWhereAction->setChecked(true);
 
     mFilterMenu->addAction(mSearchEveryWhereAction);
     grp->addAction(mSearchEveryWhereAction);
 
-    mSearchAgainstBodyAction = new QAction(i18n("Body"), mFilterMenu);
+    mSearchAgainstBodyAction = new QAction(i18nc("@action", "Body"), mFilterMenu);
     grp->addAction(mSearchAgainstBodyAction);
     mFilterMenu->addAction(mSearchAgainstBodyAction);
     mSearchAgainstBodyAction->setCheckable(true);
 
-    mSearchAgainstSubjectAction = new QAction(i18n("Subject"), mFilterMenu);
+    mSearchAgainstSubjectAction = new QAction(i18nc("@action", "Subject"), mFilterMenu);
     grp->addAction(mSearchAgainstSubjectAction);
     mFilterMenu->addAction(mSearchAgainstSubjectAction);
     mSearchAgainstSubjectAction->setCheckable(true);
@@ -293,7 +293,7 @@ void SearchLineStatus::createFilterByAction()
     mFilterMenu->addAction(mSearchAgainstFromOrToAction);
     mSearchAgainstFromOrToAction->setCheckable(true);
 
-    mSearchAgainstBccAction = new QAction(i18n("BCC"), mFilterMenu);
+    mSearchAgainstBccAction = new QAction(i18nc("@action", "BCC"), mFilterMenu);
     grp->addAction(mSearchAgainstBccAction);
     mFilterMenu->addAction(mSearchAgainstBccAction);
     mSearchAgainstBccAction->setCheckable(true);

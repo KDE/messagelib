@@ -448,10 +448,10 @@ AttachmentControllerBase::~AttachmentControllerBase() = default;
 void AttachmentControllerBase::createActions()
 {
     // Create the actions.
-    d->attachPublicKeyAction = new QAction(i18n("Attach &Public Key..."), this);
+    d->attachPublicKeyAction = new QAction(i18nc("@action", "Attach &Public Key..."), this);
     connect(d->attachPublicKeyAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachPublicKeyDialog);
 
-    d->attachMyPublicKeyAction = new QAction(i18n("Attach &My Public Key"), this);
+    d->attachMyPublicKeyAction = new QAction(i18nc("@action", "Attach &My Public Key"), this);
     connect(d->attachMyPublicKeyAction, &QAction::triggered, this, &AttachmentControllerBase::attachMyPublicKey);
 
     d->attachmentMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("Attach"), this);
@@ -468,7 +468,7 @@ void AttachmentControllerBase::createActions()
     d->addAttachmentDirectoryAction->setIconText(i18n("Attach"));
     connect(d->addAttachmentDirectoryAction, &QAction::triggered, this, &AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog);
 
-    d->addOwnVcardAction = new QAction(i18n("Attach Own vCard"), this);
+    d->addOwnVcardAction = new QAction(i18nc("@action", "Attach Own vCard"), this);
     d->addOwnVcardAction->setIconText(i18n("Own vCard"));
     d->addOwnVcardAction->setCheckable(true);
     connect(d->addOwnVcardAction, &QAction::triggered, this, &AttachmentControllerBase::addOwnVcard);
@@ -514,7 +514,7 @@ void AttachmentControllerBase::createActions()
         d->editSelectedAttachment();
     });
 
-    d->editWithContextAction = new QAction(i18n("Edit With..."), this);
+    d->editWithContextAction = new QAction(i18nc("@action", "Edit With..."), this);
     connect(d->editWithContextAction, &QAction::triggered, this, [this]() {
         d->editSelectedAttachmentWith();
     });
@@ -528,8 +528,8 @@ void AttachmentControllerBase::createActions()
         d->saveSelectedAttachmentAs();
     });
 
-    d->propertiesAction = new QAction(i18n("Attachment Pr&operties..."), this);
-    d->propertiesContextAction = new QAction(i18n("Properties"), this);
+    d->propertiesAction = new QAction(i18nc("@action", "Attachment Pr&operties..."), this);
+    d->propertiesContextAction = new QAction(i18nc("@action", "Properties"), this);
     connect(d->propertiesAction, &QAction::triggered, this, [this]() {
         d->selectedAttachmentProperties();
     });
@@ -537,7 +537,7 @@ void AttachmentControllerBase::createActions()
         d->selectedAttachmentProperties();
     });
 
-    d->selectAllAction = new QAction(i18n("Select All"), this);
+    d->selectAllAction = new QAction(i18nc("@action", "Select All"), this);
     connect(d->selectAllAction, &QAction::triggered, this, &AttachmentControllerBase::selectedAllAttachment);
 
     d->reloadAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("Reload"), this);

@@ -177,7 +177,7 @@ Pane::~Pane()
 void Pane::PanePrivate::addActivateTabAction(int i)
 {
     const QString actionname = QString::asprintf("activate_tab_%02d", i);
-    auto action = new QAction(i18n("Activate Tab %1", i), q);
+    auto action = new QAction(i18nc("@action", "Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
     mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("Alt+%1").arg(i)));
     connect(action, &QAction::triggered, q, [this]() {
@@ -224,7 +224,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mActionMenu->addSeparator();
 
-        auto action = new QAction(i18n("Create New Tab"), this);
+        auto action = new QAction(i18nc("@action", "Create New Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("create_new_tab"), action);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_O));
         connect(action, &QAction::triggered, this, [this]() {
@@ -255,7 +255,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
             prevIcon = QStringLiteral("go-previous-view");
         }
 
-        d->mActivateNextTabAction = new QAction(i18n("Activate Next Tab"), this);
+        d->mActivateNextTabAction = new QAction(i18nc("@action", "Activate Next Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
         d->mActivateNextTabAction->setEnabled(false);
         d->mActivateNextTabAction->setIcon(QIcon::fromTheme(nextIcon));
@@ -265,7 +265,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         });
         d->mActionMenu->addAction(d->mActivateNextTabAction);
 
-        d->mActivatePreviousTabAction = new QAction(i18n("Activate Previous Tab"), this);
+        d->mActivatePreviousTabAction = new QAction(i18nc("@action", "Activate Previous Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_previous_tab"), d->mActivatePreviousTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivatePreviousTabAction, prevShortcut);
         d->mActivatePreviousTabAction->setIcon(QIcon::fromTheme(prevIcon));
@@ -277,7 +277,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mActionMenu->addSeparator();
 
-        d->mMoveTabLeftAction = new QAction(i18n("Move Tab Left"), this);
+        d->mMoveTabLeftAction = new QAction(i18nc("@action", "Move Tab Left"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_left"), d->mMoveTabLeftAction);
         d->mMoveTabLeftAction->setEnabled(false);
         connect(d->mMoveTabLeftAction, &QAction::triggered, this, [this]() {
@@ -285,7 +285,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         });
         d->mActionMenu->addAction(d->mMoveTabLeftAction);
 
-        d->mMoveTabRightAction = new QAction(i18n("Move Tab Right"), this);
+        d->mMoveTabRightAction = new QAction(i18nc("@action", "Move Tab Right"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_right"), d->mMoveTabRightAction);
         d->mMoveTabRightAction->setEnabled(false);
         connect(d->mMoveTabRightAction, &QAction::triggered, this, [this]() {
@@ -295,7 +295,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mActionMenu->addSeparator();
 
-        d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
+        d->mCloseTabAction = new QAction(i18nc("@action", "Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction,
                                                                   QList<QKeySequence>()

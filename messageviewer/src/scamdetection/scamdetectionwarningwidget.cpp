@@ -36,20 +36,20 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     connect(this, &ScamDetectionWarningWidget::linkActivated, this, &ScamDetectionWarningWidget::slotShowDetails);
 
     auto menu = new QMenu(this);
-    auto action = new QAction(i18n("Move to Trash"), this);
+    auto action = new QAction(i18nc("@action", "Move to Trash"), this);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::moveMessageToTrash);
     action->setMenu(menu);
     addAction(action);
 
-    action = new QAction(i18n("I confirm it's not a scam"), this);
+    action = new QAction(i18nc("@action", "I confirm it's not a scam"), this);
     menu->addAction(action);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::slotMessageIsNotAScam);
 
-    action = new QAction(i18n("Add email to whitelist"), this);
+    action = new QAction(i18nc("@action", "Add email to whitelist"), this);
     menu->addAction(action);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::slotAddToWhiteList);
 
-    action = new QAction(i18n("Disable scam detection for all messages"), this);
+    action = new QAction(i18nc("@action", "Disable scam detection for all messages"), this);
     menu->addAction(action);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::slotDisableScamDetection);
 }

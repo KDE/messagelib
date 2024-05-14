@@ -1542,7 +1542,7 @@ void ViewerPrivate::createActions()
     viewerSelectionChanged();
 
     // copy all text to clipboard
-    mSelectAllAction = new QAction(i18n("Select All Text"), this);
+    mSelectAllAction = new QAction(i18nc("@action", "Select All Text"), this);
     ac->addAction(QStringLiteral("mark_all_text"), mSelectAllAction);
     connect(mSelectAllAction, &QAction::triggered, this, &ViewerPrivate::selectAll);
     ac->setDefaultShortcut(mSelectAllAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_A));
@@ -1569,7 +1569,7 @@ void ViewerPrivate::createActions()
     connect(mToggleMimePartTreeAction, &QAction::toggled, this, &ViewerPrivate::slotToggleMimePartTree);
     QKeyCombination combinationKeys(Qt::CTRL | Qt::ALT, Qt::Key_D);
     ac->setDefaultShortcut(mToggleMimePartTreeAction, combinationKeys);
-    mViewSourceAction = new QAction(i18n("&View Source"), this);
+    mViewSourceAction = new QAction(i18nc("@action", "&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
     connect(mViewSourceAction, &QAction::triggered, this, &ViewerPrivate::slotShowMessageSource);
     ac->setDefaultShortcut(mViewSourceAction, QKeySequence(Qt::Key_V));
@@ -1580,33 +1580,33 @@ void ViewerPrivate::createActions()
     // Laurent: conflict with kmail shortcut
     // mSaveMessageAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_S));
 
-    mSaveMessageDisplayFormat = new QAction(i18n("&Save Display Format"), this);
+    mSaveMessageDisplayFormat = new QAction(i18nc("@action", "&Save Display Format"), this);
     ac->addAction(QStringLiteral("save_message_display_format"), mSaveMessageDisplayFormat);
     connect(mSaveMessageDisplayFormat, &QAction::triggered, this, &ViewerPrivate::slotSaveMessageDisplayFormat);
 
-    mResetMessageDisplayFormat = new QAction(i18n("&Reset Display Format"), this);
+    mResetMessageDisplayFormat = new QAction(i18nc("@action", "&Reset Display Format"), this);
     ac->addAction(QStringLiteral("reset_message_display_format"), mResetMessageDisplayFormat);
     connect(mResetMessageDisplayFormat, &QAction::triggered, this, &ViewerPrivate::slotResetMessageDisplayFormat);
 
     //
     // Scroll actions
     //
-    mScrollUpAction = new QAction(i18n("Scroll Message Up"), this);
+    mScrollUpAction = new QAction(i18nc("@action", "Scroll Message Up"), this);
     ac->setDefaultShortcut(mScrollUpAction, QKeySequence(Qt::Key_Up));
     ac->addAction(QStringLiteral("scroll_up"), mScrollUpAction);
     connect(mScrollUpAction, &QAction::triggered, q, &Viewer::slotScrollUp);
 
-    mScrollDownAction = new QAction(i18n("Scroll Message Down"), this);
+    mScrollDownAction = new QAction(i18nc("@action", "Scroll Message Down"), this);
     ac->setDefaultShortcut(mScrollDownAction, QKeySequence(Qt::Key_Down));
     ac->addAction(QStringLiteral("scroll_down"), mScrollDownAction);
     connect(mScrollDownAction, &QAction::triggered, q, &Viewer::slotScrollDown);
 
-    mScrollUpMoreAction = new QAction(i18n("Scroll Message Up (More)"), this);
+    mScrollUpMoreAction = new QAction(i18nc("@action", "Scroll Message Up (More)"), this);
     ac->setDefaultShortcut(mScrollUpMoreAction, QKeySequence(Qt::Key_PageUp));
     ac->addAction(QStringLiteral("scroll_up_more"), mScrollUpMoreAction);
     connect(mScrollUpMoreAction, &QAction::triggered, q, &Viewer::slotScrollPrior);
 
-    mScrollDownMoreAction = new QAction(i18n("Scroll Message Down (More)"), this);
+    mScrollDownMoreAction = new QAction(i18nc("@action", "Scroll Message Down (More)"), this);
     ac->setDefaultShortcut(mScrollDownMoreAction, QKeySequence(Qt::Key_PageDown));
     ac->addAction(QStringLiteral("scroll_down_more"), mScrollDownMoreAction);
     connect(mScrollDownMoreAction, &QAction::triggered, q, &Viewer::slotScrollNext);
@@ -1623,19 +1623,19 @@ void ViewerPrivate::createActions()
     MessageViewer::Util::addHelpTextAction(mToggleDisplayModeAction, i18n("Toggle display mode between HTML and plain text"));
 
     // Load external reference
-    auto loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
+    auto loadExternalReferenceAction = new QAction(i18nc("@action", "Load external references"), this);
     ac->addAction(QStringLiteral("load_external_reference"), loadExternalReferenceAction);
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    mSpeakTextAction = new QAction(i18n("Speak Text"), this);
+    mSpeakTextAction = new QAction(i18nc("@action", "Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
     connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
 #endif
     auto purposeMenuWidget = new ViewerPurposeMenuWidget(mViewer, this);
-    mShareTextAction = new QAction(i18n("Share Text..."), this);
+    mShareTextAction = new QAction(i18nc("@action", "Share Text..."), this);
     mShareTextAction->setMenu(purposeMenuWidget->menu());
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     ac->addAction(QStringLiteral("purpose_share_text_menu"), mShareTextAction);
@@ -1653,7 +1653,7 @@ void ViewerPrivate::createActions()
         mPurposeMenuMessageWidget->slotShareSuccess(message);
     });
 
-    mCopyImageLocation = new QAction(i18n("Copy Image Location"), this);
+    mCopyImageLocation = new QAction(i18nc("@action", "Copy Image Location"), this);
     mCopyImageLocation->setIcon(QIcon::fromTheme(QStringLiteral("view-media-visualization")));
     ac->addAction(QStringLiteral("copy_image_location"), mCopyImageLocation);
     ac->setShortcutsConfigurable(mCopyImageLocation, false);
