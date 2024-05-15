@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1240,22 +1240,30 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "A levél becsapós lehet. <a href=\"scamdetails\">(Részletek…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Áthelyezés a törölt üzenetek közé"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Megerősítem, ez nem becsapós"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "E-mail hozzáadása az engedélyezési listához"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Becsapásészlelés letiltása minden levélnél"
 
@@ -2360,7 +2368,9 @@ msgid "Copy Text"
 msgstr "Szöveg másolása"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Az összes szöveg kijelölése"
 
@@ -2380,7 +2390,9 @@ msgid "Show Message Structure"
 msgstr "Üzenetstruktúra megjelenítése"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "A f&orrás megjelenítése"
 
@@ -2390,32 +2402,44 @@ msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Megjelenítési formátum mentése"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Megjelenítési formátum &visszaállítása"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Felfelé görrgetés"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Lefelé görgetés"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Felfelé görgetés (többet)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Lefelé görgetés (többet)"
 
@@ -2430,22 +2454,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Megjelenítési mód váltása HTML és egyszerű szöveg között"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Külső hivatkozások betöltése"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
 #: viewer/viewer_p.cpp:1638
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Share Text..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Szöveg megosztása…"
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "A kép címének másolása"
 
@@ -2633,6 +2665,11 @@ msgstr ""
 "meghívókat kezelni nem tudó programokat használó címzettek „furcsa” szövegű "
 "üzeneteket fognak kapni.<br />A szabványos meghívókat kezelni tudó programok "
 "az opció bejelölésekor is használhatók maradnak.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Szöveg felolvasása"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

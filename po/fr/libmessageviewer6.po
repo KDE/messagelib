@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-28 09:08+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1269,22 +1269,30 @@ msgstr ""
 "Ce message est peut-être frauduleux. <a href=\"scamdetails\">(Détails...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Mettre à la corbeille"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Je confirme qu'il n'est pas frauduleux"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Ajouter à la liste blanche"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Désactiver la détection de l'aspect frauduleux pour tous les messages"
 
@@ -2411,7 +2419,9 @@ msgid "Copy Text"
 msgstr "Copier du texte"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Sélectionner tout le texte"
 
@@ -2431,7 +2441,9 @@ msgid "Show Message Structure"
 msgstr "Afficher la structure du message"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "Afficher la sour&ce"
 
@@ -2441,32 +2453,44 @@ msgid "&Save Message..."
 msgstr "Enregi&strer le message..."
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Enregi&strer le format d'affichage"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Réinitialiser le format d'affichage"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Remonter dans le message"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Descendre dans le message"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Remonter dans le message (plus)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Descendre dans le message (plus)"
 
@@ -2481,22 +2505,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Échange le mode d'affichage entre le HTML et le texte brut"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Charger des références externes"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Énoncer le texte"
 
 #: viewer/viewer_p.cpp:1638
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Share Text..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Partager du texte..."
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copier l'emplacement de l'image"
 
@@ -2682,6 +2714,11 @@ msgstr ""
 "apparence très étrange.<br /> Cependant, les personnes ayant des clients de "
 "messagerie comprenant les invitations seront encore en mesure de travailler "
 "avec.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Énoncer le texte"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

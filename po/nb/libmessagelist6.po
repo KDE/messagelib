@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1143,7 +1143,9 @@ msgid "The words less than 3 letters are ignored."
 msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not show again"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ikke vis igjen"
 
@@ -1258,22 +1260,30 @@ msgid "Ham"
 msgstr "Ikke-søppelpost"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Full Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Hele meldinga"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "Kropp"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Emne"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "Blindkopi"
 
@@ -1325,7 +1335,9 @@ msgid "Close tab"
 msgstr "Lukk fane"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Gå til fane %1"
 
@@ -1340,32 +1352,44 @@ msgid "Message List"
 msgstr "Meldingsliste"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opprett et nytt faneblad"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Gå til neste fane"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Gå til forrige fane"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Flytt fane til venstre"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Flytt fane til høyre"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Lukk fane"
 

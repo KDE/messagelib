@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1271,22 +1271,30 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "See võib olla petukiri. <a href=\"scamdetails\">(Üksikasjad...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Liiguta prügikasti"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Ma kinnitan, et see ei ole petukiri"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Lisa kiri valgesse nimekirja"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Keela petukirjade tuvastamine kõigi kirjade puhul"
 
@@ -2388,7 +2396,9 @@ msgid "Copy Text"
 msgstr "Kopeeri tekst"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Vali kogu tekst"
 
@@ -2408,7 +2418,9 @@ msgid "Show Message Structure"
 msgstr "Näita kirja struktuuri"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "Vaa&ta lähteteksti"
 
@@ -2419,32 +2431,44 @@ msgid "&Save Message..."
 msgstr "&Salvesta kiri..."
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Salvesta näitamisviis"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Lä&htesta näitamisviis"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Keri kirja üles"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Keri kirja alla"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Keri kirja rohkem üles"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Keri kirja rohkem alla"
 
@@ -2459,23 +2483,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Klõpsa liht- ja HTML-vaate lülitamiseks"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Laadi välised viited"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Loe tekst ette"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Speak Text"
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Loe tekst ette"
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopeeri pildi asukoht"
 
@@ -2661,6 +2692,11 @@ msgstr ""
 "kutseid lugeda, paistab kiri päris veider.<br />Need, kelle e-posti "
 "programmid suudavad kutseid lugeda, võivad siiski ka sellise kirjaga üht-"
 "teist peale hakata.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Loe tekst ette"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

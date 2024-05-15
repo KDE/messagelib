@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 10:06+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1175,7 +1175,9 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Les mots de moins de 3 lettres sont ignorés."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not show again"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ne plus afficher"
 
@@ -1296,22 +1298,30 @@ msgid "Ham"
 msgstr "Courriel normal"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Full Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Message entier"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "Corps"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Sujet"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1363,7 +1373,9 @@ msgid "Close tab"
 msgstr "Fermer l'onglet"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activer l'onglet %1"
 
@@ -1378,32 +1390,44 @@ msgid "Message List"
 msgstr "Liste des messages"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Créer un nouvel onglet"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activer l'onglet suivant"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activer l'onglet précédent"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Déplacer l'onglet à gauche"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Déplacer l'onglet à droite"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Fermer l'onglet"
 

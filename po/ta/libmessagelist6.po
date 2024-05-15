@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 17:42+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1141,7 +1141,9 @@ msgid "The words less than 3 letters are ignored."
 msgstr "மூன்றைவிட குறைவான எழுத்துகளுடைய சொற்கள் பொருட்படுத்தப்படா"
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not show again"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "மறுபடியும் காட்டாதே"
 
@@ -1257,22 +1259,30 @@ msgid "Ham"
 msgstr "தேவையற்ற மின்னஞ்சல்"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Full Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "முழு அஞ்சல்"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "உடல்"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "தலைப்பு"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "மறைநகல்"
 
@@ -1324,7 +1334,9 @@ msgid "Close tab"
 msgstr "கீற்றை மூடு"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "%1 கீற்றை செயல்படுத்து"
 
@@ -1339,32 +1351,44 @@ msgid "Message List"
 msgstr "செய்தி பட்டியல்"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "புதிய கீற்றை உருவாக்கு"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "அடுத்த கீற்றை செயல்படுத்து"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "முந்தைய கீற்றை செயல்படுத்து"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "கீற்றை இடப்புறமாக நகர்த்து"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "கீற்றை வலப்புறமாக நகர்த்து"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "கீற்றை மூடு"
 

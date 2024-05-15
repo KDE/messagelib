@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1287,6 +1287,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "सन्देश पूर्वावलोकन फलक नदेखाउनुहोस्"
 
@@ -1421,23 +1422,27 @@ msgstr "हाम"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "पूरा सन्देश"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "विषयवस्तु"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "गुप्त बोधार्थ प्रतिलिपि"
 
@@ -1498,6 +1503,7 @@ msgstr "सबै थ्रेड संक्षिप्त गर्नुह
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1515,26 +1521,32 @@ msgstr "सन्देश सूची"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "प्रेषक परिचय:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "प्रेषक परिचय:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1542,6 +1554,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "सबै थ्रेड संक्षिप्त गर्नुहोस्"
 

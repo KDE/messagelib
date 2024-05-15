@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2012-01-28 16:26-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -91,12 +91,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "ファイルの添付に失敗しました"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "公開鍵を添付(&P)..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "自分の公開鍵を添付(&M)"
 
@@ -126,9 +130,11 @@ msgid "&Attach Directory..."
 msgstr "ディレクトリを添付"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "ディレクトリを添付"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -182,7 +188,9 @@ msgid "Edit"
 msgstr "編集"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "アプリケーションで編集..."
 
@@ -199,18 +207,24 @@ msgstr "名前を付けて保存..."
 #: attachment/attachmentcontrollerbase.cpp:531
 #, fuzzy, kde-format
 #| msgid "Attachment Pr&operties"
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "添付ファイルのプロパティ(&O)"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "プロパティ"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button Open recipient selection dialog."
+#| msgid "Se&lect..."
+msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "選択(&L)..."
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format

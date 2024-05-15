@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -1173,6 +1173,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Nu mai întreba"
 
@@ -1289,22 +1290,30 @@ msgid "Ham"
 msgstr "Solicitat"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Full Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Tot mesajul"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "Corp"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Subiect"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "Copie oarbă"
 
@@ -1359,7 +1368,9 @@ msgid "Close tab"
 msgstr "Închide fila"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activează fila %1"
 
@@ -1374,32 +1385,44 @@ msgid "Message List"
 msgstr "Lista de mesaje"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Creează o filă nouă"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activează fila următoare"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activează fila precedentă"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Mută fila la stânga"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Mută fila la dreapta"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Închide fila"
 

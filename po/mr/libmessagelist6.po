@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-04-12 16:41+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1127,6 +1127,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1241,11 +1242,13 @@ msgstr "हैम"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "संदेश"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1253,11 +1256,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "विषय"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1313,7 +1318,9 @@ msgid "Close tab"
 msgstr "टॅब बंद करा"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "टॅब %1 सक्रिय करा"
 
@@ -1330,26 +1337,35 @@ msgstr ""
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "Create new tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "नवीन टॅब निर्माण करा :"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "पुढील टॅब सक्रिय करा"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "मागील टॅब सक्रिय करा"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "टॅब डावीकडे हलवा"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "टॅब उजवीकडे हलवा"
 
@@ -1357,6 +1373,7 @@ msgstr "टॅब उजवीकडे हलवा"
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "टॅब बंद करा"
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -94,12 +94,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "Не могу да приложим фајл"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Приложи &јавни кључ..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Приложи &мој јавни кључ"
 
@@ -128,7 +132,9 @@ msgid "&Attach Directory..."
 msgstr "&Приложи фасциклу..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Own vCard"
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Приложи мој в‑кард"
 
@@ -183,7 +189,9 @@ msgid "Edit"
 msgstr "Уреди"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Уреди помоћу..."
 
@@ -198,18 +206,24 @@ msgid "Save As..."
 msgstr "Сачувај као..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "&Својства прилога..."
 
 # >> @item:inlistbox
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "Својства"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "Изабери све"
 

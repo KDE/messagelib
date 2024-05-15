@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1338,22 +1338,30 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "Dit mag en Bedrog wesen.  <a href=\"scamdetails\">(Enkelheiten...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Na Affalltünn verschuven"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Ik weet, dat is keen Bedrog."
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Nettpostadress de Göödlist tofögen"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Bedrog-Opspören för all Narichten utmaken"
 
@@ -2486,7 +2494,9 @@ msgid "Copy Text"
 msgstr "&Koperen na"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Heel Text utsöken"
 
@@ -2506,7 +2516,9 @@ msgid "Show Message Structure"
 msgstr "Narichten-Struktuur wiesen"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&Born ankieken"
 
@@ -2517,32 +2529,44 @@ msgid "&Save Message..."
 msgstr "Naricht &sekern..."
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Wiesformaat &sekern"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Wiesformaat &torüchsetten"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Naricht na baven rullen"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Naricht na nerrn rullen"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Naricht na baven rullen (wieder)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Naricht na nerrn rullen (wieder)"
 
@@ -2557,23 +2581,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML- un Text-Ansicht wesseln"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Extern Dateien laden"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Text vörlesen"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Speak Text"
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Text vörlesen"
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Bildadress koperen"
 
@@ -2769,6 +2800,11 @@ msgstr ""
 "Lüüd mit Nettpostprogrammen, de disse Inladen nich verstaht, seht de "
 "Narichten bannig snaaksch ut.<br />Lüüd, de ehr Nettpostprogramm de Inladen "
 "versteiht, köönt ok mit disse Inladen arbeiden.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Text vörlesen"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

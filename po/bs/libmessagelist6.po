@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1160,6 +1160,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1276,21 +1277,27 @@ msgstr "Ham"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Poruka"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "Tijelo"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Tema"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1346,7 +1353,9 @@ msgid "Close tab"
 msgstr "Zatvori karticu"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktiviraj karticu %1"
 
@@ -1361,32 +1370,44 @@ msgid "Message List"
 msgstr "Popis poruka"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Napravi novu karticu"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktiviraj sljedeću karticu"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktiviraj prethodnu karticu"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Pomakni karticu ulijevo"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Pomakni karticu udesno"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Zatvori karticu"
 

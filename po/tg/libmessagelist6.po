@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1262,6 +1262,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "&Тасвир надодан"
 
@@ -1392,22 +1393,26 @@ msgstr "муфид"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "&Тамоми иттилоот"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Мавзӯъ"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr "&Нусхаи пинҳонӣ"
 
@@ -1467,6 +1472,7 @@ msgstr "П&инҳон кардани тамоми мунозирот"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1483,26 +1489,31 @@ msgstr "Рӯйхати иттилоот"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Ихтисоси &фиристонанда:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Ихтисоси &фиристонанда:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1510,6 +1521,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "П&инҳон кардани тамоми мунозирот"
 

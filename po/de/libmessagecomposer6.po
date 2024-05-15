@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2023-05-18 20:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -93,12 +93,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "Das Anhängen von Text aus der Zwischenablage ist fehlgeschlagen"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Öff&entlichen Schlüssel anhängen ..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "&Eigenen öffentlichen Schlüssel anhängen"
 
@@ -127,7 +131,9 @@ msgid "&Attach Directory..."
 msgstr "Ordner &anhängen ..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Own vCard"
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Eigene vCard anhängen"
 
@@ -180,7 +186,9 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Bearbeiten mit ..."
 
@@ -195,17 +203,23 @@ msgid "Save As..."
 msgstr "Speichern unter ..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Ei&genschaften des Anhangs ..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "Eigenschaften"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "Alles auswählen"
 

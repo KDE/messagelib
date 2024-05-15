@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2019-05-01 11:43+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -89,11 +89,13 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr ""
 
@@ -123,6 +125,7 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr ""
 
@@ -175,9 +178,12 @@ msgid "Edit"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With..."
+msgctxt "@action"
 msgid "Edit With..."
-msgstr ""
+msgstr "O&pna med …"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -191,16 +197,19 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
+msgctxt "@action"
 msgid "Properties"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
+msgctxt "@action"
 msgid "Select All"
 msgstr ""
 

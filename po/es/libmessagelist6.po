@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 02:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1149,7 +1149,9 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Las palabras de menos de tres letras se ignoran."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not show again"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "No mostrarlo de nuevo"
 
@@ -1268,22 +1270,30 @@ msgid "Ham"
 msgstr "Correo válido"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Full Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Mensaje completo"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Body"
+msgctxt "@action"
 msgid "Body"
 msgstr "Cuerpo"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Asunto"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "Cco"
 
@@ -1335,7 +1345,9 @@ msgid "Close tab"
 msgstr "Cerrar pestaña"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activar tabulador %1"
 
@@ -1350,32 +1362,44 @@ msgid "Message List"
 msgstr "Lista de mensajes"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Crear pestaña nueva"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activar siguiente tabulador"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activar anterior tabulador"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Mover tabulador a la izquierda"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Mover tabulador a la derecha"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 

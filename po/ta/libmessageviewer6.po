@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-24 17:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1251,22 +1251,30 @@ msgstr ""
 "இந்த அஞ்சல் ஏமாற்ற முயற்சிப்பதாக இருக்கலாம். <a href=\"scamdetails\">(விவரங்கள்…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "அகற்றிடத்துக்கு நகர்த்து"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "இது ஏமாற்றுவேலை இல்லை"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "மின்னஞ்சலை அனுமதிப்பட்டியலில் சேர்"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "மோசடிகளை கண்டறியும் கூறை அனைத்து அஞ்சல்களுக்கும் முடக்கு"
 
@@ -2355,7 +2363,9 @@ msgid "Copy Text"
 msgstr "உரையை நகலெடு"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "எல்லா உரையையும் தேர்ந்தெடு"
 
@@ -2375,7 +2385,9 @@ msgid "Show Message Structure"
 msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&மூலத்தைக் காட்டு"
 
@@ -2385,32 +2397,44 @@ msgid "&Save Message..."
 msgstr "&அஞ்சலை சேமி..."
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&காட்சி முறையை சேமி"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "கா&ட்சி முறையை மீட்டமை"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "அஞ்சலில் மேலே உருள்"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "அஞ்சலில் கீழே உருள்"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "அஞ்சலில் மேலே உருள் (அதிகமாக)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "அஞ்சலில் கீழே உருள் (அதிகமாக)"
 
@@ -2425,22 +2449,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML முற்றும் சாதாரண உரை காட்சிமுறைகளுக்கிடையே மாறும்"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "வெளி இணைப்புகளை ஏற்று"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
 #: viewer/viewer_p.cpp:1638
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Share Text..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "உரையைப் பகிர்..."
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "படத்தின் முகவரியை நகலெடு"
 
@@ -2615,6 +2647,11 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "உரையைப் பேச்சாக்கு"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

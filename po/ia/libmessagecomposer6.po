@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2023-09-26 23:01+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -89,12 +89,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "Falleva a attachar texto ex area de transferentia"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Attacha clave &public..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Attacha &mi clave public"
 
@@ -123,7 +127,9 @@ msgid "&Attach Directory..."
 msgstr "&Attacha Directorio..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Own vCard"
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Attacha propie VCard"
 
@@ -176,7 +182,9 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Modifica con..."
 
@@ -191,17 +199,23 @@ msgid "Save As..."
 msgstr "Salveguarda como..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Pr&oprietates de attachamento"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "Proprietates"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "Selige toto"
 

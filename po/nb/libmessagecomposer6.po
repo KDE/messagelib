@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -91,12 +91,16 @@ msgid "Failed to attach text from clipboard"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Legg ved &offentlig nøkkel …"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Legg ved &min offentlige nøkkel"
 
@@ -125,7 +129,9 @@ msgid "&Attach Directory..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Own vCard"
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Legg ved eget vCard"
 
@@ -178,7 +184,9 @@ msgid "Edit"
 msgstr "Rediger"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Rediger med …"
 
@@ -193,17 +201,23 @@ msgid "Save As..."
 msgstr "Lagre som …"
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "&Egenskaper for vedlegg …"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "Egenskaper"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "Velg alt"
 

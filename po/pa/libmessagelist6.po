@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1200,6 +1200,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "ਸੁਨੇਹਾ ਝਲਕ ਬਾਹੀ ਨਾ ਵੇਖੋ(&D)"
 
@@ -1325,11 +1326,13 @@ msgstr "ਹਮ"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "ਪੂਰਾ ਸੁਨੇਹਾ"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1337,6 +1340,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "ਵਿਸ਼ਾ"
 
@@ -1344,6 +1348,7 @@ msgstr "ਵਿਸ਼ਾ"
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1406,6 +1411,7 @@ msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "ਅਗਲੀ ਟੈਬ ਐਕਟੀਵੇਟ"
 
@@ -1424,6 +1430,7 @@ msgstr "ਸੁਨੇਹਾ ਲਿਸਟ"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open a new tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "ਇੱਕ ਨਵੀਂ ਟੈਬ ਖੋਲ੍ਹੋ"
 
@@ -1431,6 +1438,7 @@ msgstr "ਇੱਕ ਨਵੀਂ ਟੈਬ ਖੋਲ੍ਹੋ"
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "ਅਗਲੀ ਟੈਬ ਐਕਟੀਵੇਟ"
 
@@ -1438,16 +1446,19 @@ msgstr "ਅਗਲੀ ਟੈਬ ਐਕਟੀਵੇਟ"
 #, fuzzy, kde-format
 #| msgctxt "shortcut"
 #| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "ਪਿਛਲੀ ਟੈਬ ਐਕਟੀਵੇਟ"
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1455,6 +1466,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 

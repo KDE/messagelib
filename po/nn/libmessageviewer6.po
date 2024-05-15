@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-05-12 14:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1227,22 +1227,27 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Flytt til papirkorga"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
@@ -2289,7 +2294,9 @@ msgid "Copy Text"
 msgstr "Kopier tekst"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merk all tekst"
 
@@ -2309,7 +2316,9 @@ msgid "Show Message Structure"
 msgstr "Vis meldingsstruktur"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "Vis k&jeldekode"
 
@@ -2320,31 +2329,41 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1583
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1587
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Rull oppover i melding"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Rull nedover i melding"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Rull oppover i melding (meir)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Rull nedover i melding (meir)"
 
@@ -2360,21 +2379,27 @@ msgstr "Slå av/på vising av horisontlinja"
 
 #: viewer/viewer_p.cpp:1626
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Copy Text"
+msgctxt "@action"
 msgid "Speak Text"
-msgstr ""
+msgstr "Kopier tekst"
 
 #: viewer/viewer_p.cpp:1638
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr ""
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopier biletadresse"
 
@@ -2543,6 +2568,11 @@ msgid ""
 "understand the invitations, the resulting messages look very odd.<br /"
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
+msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
 msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53

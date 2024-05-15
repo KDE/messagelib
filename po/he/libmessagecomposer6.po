@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-04-05 22:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -87,12 +87,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "צירוף טקסט מלוח הגזירים נכשל"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &Public Key..."
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "צירוף מפתח &ציבורי…"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach &My Public Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "צירוף המפתח הציבורי &שלי"
 
@@ -121,7 +125,9 @@ msgid "&Attach Directory..."
 msgstr "צירוף &תיקייה"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Own vCard"
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "צירוף כרטיס הביקור שלי"
 
@@ -174,7 +180,9 @@ msgid "Edit"
 msgstr "עריכה"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "עריכה עם…"
 
@@ -189,17 +197,23 @@ msgid "Save As..."
 msgstr "שמירה בשם…"
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "מ&אפייני קובץ מצורף..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "מאפיינים"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "בחירה בהכול"
 

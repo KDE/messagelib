@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1232,6 +1232,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Sukubonisa izincamathiselo kumbonisi womyalezo"
 
@@ -1356,22 +1357,26 @@ msgstr "Funda"
 
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Full Message"
 msgstr "&Umyalezo"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Umxholo"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
@@ -1428,6 +1433,7 @@ msgstr "Wi&sa Yonke Imisonto"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1443,26 +1449,31 @@ msgstr "Uluhlu Lomyalezo"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Isazisi Esitsha"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Isazisi Esitsha"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1470,6 +1481,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Wi&sa Yonke Imisonto"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -91,11 +91,13 @@ msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr ""
 
@@ -124,9 +126,11 @@ msgid "&Attach Directory..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Attachment As..."
+msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -180,9 +184,12 @@ msgid "Edit"
 msgstr "تەھرىرلەش"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With..."
+msgctxt "@action"
 msgid "Edit With..."
-msgstr ""
+msgstr "بۇنىڭدا ئاچ(&O)…"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -195,17 +202,23 @@ msgid "Save As..."
 msgstr "باشقا ئاتتا ساقلا…"
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Attachment As..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr ""
+msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "خاسلىق"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "ھەممىنى تاللا"
 

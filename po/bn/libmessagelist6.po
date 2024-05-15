@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1271,6 +1271,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "বার্তা প্রাকদর্শ&ন ক্ষেত্র দেখিও না"
 
@@ -1402,23 +1403,27 @@ msgstr "হ্যাম"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "পূর্ণ বার্তা (&প)"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "বিষয়"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "&BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
@@ -1479,6 +1484,7 @@ msgstr "স&ব সূত্র গুটিয়ে নাও"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1496,26 +1502,32 @@ msgstr "বার্তা তালিকা"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "প্রেরক &পরিচিতি:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "প্রেরক &পরিচিতি:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1523,6 +1535,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 

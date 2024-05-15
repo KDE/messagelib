@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -1195,6 +1195,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "Do not show attachments in the message viewer"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Moet nie aanhangsels indie boodskap venster vertoon nie"
 
@@ -1317,22 +1318,26 @@ msgstr "Ham"
 
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Full Message"
 msgstr "1 boodskap, %2"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Onderwerp"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1392,6 +1397,7 @@ msgstr "Vou alle gesprekslyne in"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1408,26 +1414,31 @@ msgstr "Boodskap"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Redigeer Identiteit"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Redigeer Identiteit"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1435,6 +1446,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Vou alle gesprekslyne in"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -1119,6 +1119,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1233,11 +1234,13 @@ msgstr "Ham"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "ئۇچۇر"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1245,11 +1248,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "تېما"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1304,7 +1309,9 @@ msgid "Close tab"
 msgstr "بەتكۈچ ياپ"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "بەتكۈچ %1 نى ئاكتىپلا"
 
@@ -1319,32 +1326,44 @@ msgid "Message List"
 msgstr "ئۇچۇر تىزىمى"
 
 #: pane.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Create New Tab"
-msgstr ""
+msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "ئالدىنقى بەتكۈچنى ئاكتىپلا"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "بەتكۈچنى سولغا يۆتكە"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "بەتكۈچنى ئوڭغا يۆتكە"
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "بەتكۈچ ياپ"
 

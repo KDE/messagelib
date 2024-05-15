@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1135,6 +1135,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1249,11 +1250,13 @@ msgstr ""
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "संदेश"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1261,11 +1264,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "विषय"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1324,6 +1329,7 @@ msgstr "टैब बन्न करू"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1341,26 +1347,33 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open a new tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "नवीन टैब खोलू"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Open a new tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "नवीन टैब खोलू"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1368,6 +1381,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "टैब बन्न करू"
 

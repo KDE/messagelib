@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1119,6 +1119,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1232,21 +1233,25 @@ msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:273
 #, kde-format
+msgctxt "@action"
 msgid "Full Message"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, kde-format
+msgctxt "@action"
 msgid "Subject"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1299,6 +1304,7 @@ msgstr ""
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1314,31 +1320,37 @@ msgstr ""
 
 #: pane.cpp:227
 #, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr ""
 
 #: pane.cpp:258
 #, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr ""
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
 #: pane.cpp:298
 #, kde-format
+msgctxt "@action"
 msgid "Close Tab"
 msgstr ""
 

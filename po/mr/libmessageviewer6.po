@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-04-12 15:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1274,21 +1274,25 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
@@ -2354,7 +2358,9 @@ msgid "Copy Text"
 msgstr "मजकूर बोला"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "सर्व मजकूर निवडा"
 
@@ -2374,7 +2380,9 @@ msgid "Show Message Structure"
 msgstr "संदेश रचना दर्शवा"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "स्रोत पहा (&V)"
 
@@ -2386,34 +2394,43 @@ msgstr "संदेश साठवा (&S)..."
 
 #: viewer/viewer_p.cpp:1583
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1587
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "message"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "संदेश"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message"
+msgctxt "@action"
 msgid "Scroll Message Down"
-msgstr ""
+msgstr "संदेश"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
-msgstr ""
+msgstr "संदेश"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
-msgstr ""
+msgstr "संदेश"
 
 #: viewer/viewer_p.cpp:1619
 #, kde-format
@@ -2427,22 +2444,28 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1626
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "मजकूर बोला"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Speak Text"
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "मजकूर बोला"
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "प्रतिमेच्या ठिकाणाची प्रत करा"
 
@@ -2612,6 +2635,11 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "मजकूर बोला"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

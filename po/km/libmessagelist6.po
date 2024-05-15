@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1140,6 +1140,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
@@ -1256,11 +1257,13 @@ msgstr "បន្លំ"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "សារ"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1268,11 +1271,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "ប្រធាន​បទ"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
@@ -1328,7 +1333,9 @@ msgid "Close tab"
 msgstr "បិទ​ផ្ទាំង"
 
 #: pane.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Tab %1"
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "ធ្វើឲ្យ​ផ្ទាំង %1 សកម្ម"
 
@@ -1345,26 +1352,35 @@ msgstr "បញ្ជី​សារ"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "Create new tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "បង្កើរ​ផ្ទាំង​ថ្មី"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Next Tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "ធ្វើឲ្យ​ផ្ទាំង​បន្ទាប់​សកម្ម"
 
 #: pane.cpp:268
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Activate Previous Tab"
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "ធ្វើឲ្យ​ផ្ទាំង​មិន​សកម្ម"
 
 #: pane.cpp:280
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Left"
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "ផ្លាស់ទី​ផ្ទាំង​ទៅ​ឆ្វេង"
 
 #: pane.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Tab Right"
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "ផ្លាស់ទី​ផ្ទាំង​ទៅ​ស្ដាំ"
 
@@ -1372,6 +1388,7 @@ msgstr "ផ្លាស់ទី​ផ្ទាំង​ទៅ​ស្ដាំ
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "បិទ​ផ្ទាំង"
 

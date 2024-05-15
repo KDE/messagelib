@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2010-03-18 00:57-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -90,14 +90,18 @@ msgid "Failed to attach text from clipboard"
 msgstr "Ní féidir an t-iatán a chur in eagar"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Public OpenPGP Key"
+msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr ""
+msgstr "Ceangail Eochair Phoiblí OpenPGP"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach Public OpenPGP Key"
+msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr ""
+msgstr "Ceangail Eochair Phoiblí OpenPGP"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -125,9 +129,11 @@ msgid "&Attach Directory..."
 msgstr "Ceangail comhadlann"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "Ceangail comhadlann"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -181,7 +187,9 @@ msgid "Edit"
 msgstr "Eagar"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit With..."
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Cuir in Eagar le..."
 
@@ -196,17 +204,23 @@ msgid "Save As..."
 msgstr "Sábháil Mar..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Attachment Pr&operties..."
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Airíonna an &Iatáin..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Properties"
+msgctxt "@action"
 msgid "Properties"
 msgstr "Airíonna"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action"
 msgid "Select All"
 msgstr "Roghnaigh Uile"
 

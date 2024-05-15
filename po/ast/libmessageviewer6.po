@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1205,21 +1205,25 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
@@ -2253,6 +2257,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1545
 #, kde-format
+msgctxt "@action"
 msgid "Select All Text"
 msgstr ""
 
@@ -2273,6 +2278,7 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1572
 #, kde-format
+msgctxt "@action"
 msgid "&View Source"
 msgstr ""
 
@@ -2283,31 +2289,37 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1583
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1587
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1594
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1599
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1604
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1609
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr ""
 
@@ -2323,21 +2335,25 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1626
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1632
 #, kde-format
+msgctxt "@action"
 msgid "Speak Text"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1638
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr ""
 
 #: viewer/viewer_p.cpp:1656
 #, kde-format
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr ""
 
@@ -2502,6 +2518,11 @@ msgid ""
 "understand the invitations, the resulting messages look very odd.<br /"
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
+msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
 msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53

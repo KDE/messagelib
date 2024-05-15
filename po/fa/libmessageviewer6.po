@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -1374,23 +1374,28 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "حرکت به زباله"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Delete Messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "حذف پیامها"
 
@@ -2530,7 +2535,9 @@ msgid "Copy Text"
 msgstr "&رونوشت در‌"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "برگزیدن کل متن"
 
@@ -2551,7 +2558,9 @@ msgid "Show Message Structure"
 msgstr "مشاهده‌گر ساختار پیام"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&مشاهده متن‌"
 
@@ -2565,36 +2574,42 @@ msgstr " پیام"
 #: viewer/viewer_p.cpp:1583
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&ذخیره به عنوان پیش‌نویس‌"
 
 #: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&ذخیره به عنوان پیش‌نویس‌"
 
 #: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "برگزیدن &تمام پیامها‌"
 
 #: viewer/viewer_p.cpp:1599
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "برگزیدن &تمام پیامها‌"
 
 #: viewer/viewer_p.cpp:1604
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "برگزیدن &تمام پیامها‌"
 
 #: viewer/viewer_p.cpp:1609
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "برگزیدن &تمام پیامها‌"
 
@@ -2611,23 +2626,28 @@ msgstr ""
 #: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgid "Load External References"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "بارگذاری مرجعهای خارجی"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgctxt "@action"
 msgid "Speak Text"
-msgstr ""
+msgstr "&رونوشت در‌"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "&برگزیدن...‌"
 
 #: viewer/viewer_p.cpp:1656
 #, fuzzy, kde-format
 #| msgid "Choose Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "انتخاب محل"
 
@@ -2814,6 +2834,11 @@ msgstr ""
 "رایانامه‌ای دارند و دعوت‌نامه‌ها را درک نمی‌کنند، پیامهای منتج خیلی عجیب به نظر "
 "می‌آیند.<br />افرادی که برنامه‌های رایانامه‌ای دارند و مسلماً دعوت‌نامه‌ها را درک "
 "می‌کنند، هنوز قادر به کار کردن با این هستند.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format

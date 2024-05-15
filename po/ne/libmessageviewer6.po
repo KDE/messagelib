@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1362,23 +1362,28 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Delete Messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "सन्देश मेट्नुहोस्"
 
@@ -2510,7 +2515,9 @@ msgid "Copy Text"
 msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "सबै पाठ चयन गर्नुहोस्"
 
@@ -2531,7 +2538,9 @@ msgid "Show Message Structure"
 msgstr "सन्देश संरचना दर्शक"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "स्रोत हेर्नुहोस्"
 
@@ -2545,36 +2554,42 @@ msgstr " सन्देश"
 #: viewer/viewer_p.cpp:1583
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "ड्राफ्टका रूपमा बचत गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "ड्राफ्टका रूपमा बचत गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1599
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1604
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1609
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
@@ -2591,23 +2606,28 @@ msgstr ""
 #: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgid "Load External References"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "बाह्य सन्दर्भ लोड गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgctxt "@action"
 msgid "Speak Text"
-msgstr ""
+msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "चयन गर्नुहोस्..."
 
 #: viewer/viewer_p.cpp:1656
 #, fuzzy, kde-format
 #| msgid "Choose Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "स्थान रोज्नुहोस्"
 
@@ -2819,6 +2839,11 @@ msgstr ""
 "प्राप्त गर्न सक्नुहुन्छ; त्यसैले, इमेल कार्यक्रम भएका निमन्त्रण कार्यक्रम नबुझ्ने मानिसलाई, "
 "परिणाम सन्देश ज्यादै बिषम देखिन्छ ।<br> निमन्त्रणा बुझ्ने इमेल कार्यक्रम भएका मानिस अझै "
 "यससँग कार्य गर्न योग्य देखिन्छन् ।</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format

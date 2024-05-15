@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1237,22 +1237,30 @@ msgstr ""
 "ეს შეტყობინება, შეიძლება, ფიშინგია. <a href=\"scamdetails\">(დეტალები...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "ნაგავში გადატანა"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "ვადასტურებ, რომ ეს სპამი არაა"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "ელფოსტის თეთრ სიაში ჩამატება"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "ფიშინგის ამოცნობის გამორთვა ყველა შეტყობინებისთვის"
 
@@ -2352,7 +2360,9 @@ msgid "Copy Text"
 msgstr "ტექსტის კოპირება"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "ტექსტის სრულად მონიშვნა"
 
@@ -2372,7 +2382,9 @@ msgid "Show Message Structure"
 msgstr "შეტყობინების სტრუქტურის ჩვენება"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&წყაროს ნახვა"
 
@@ -2382,32 +2394,44 @@ msgid "&Save Message..."
 msgstr "&შეტყობინების შენახვა..."
 
 #: viewer/viewer_p.cpp:1583
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&ჩვენების ფორმატის შენახვა"
 
 #: viewer/viewer_p.cpp:1587
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&ჩვენების ფორმატის დაბრუნება"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "შეტყობინების ზემოთ ახვევა"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "შეტყობინების ზემოთ ახვევა (მეტი)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა (მეტი)"
 
@@ -2422,22 +2446,30 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "ჩვენების რეჟიმის ტექსტისა და HTML-ის შორის გადართვა"
 
 #: viewer/viewer_p.cpp:1626
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "გარე მიმართვების ჩატვირთვა"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "ტექსტის წაკითხვა"
 
 #: viewer/viewer_p.cpp:1638
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Share Text..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "ტექსტის გაზიარება..."
 
 #: viewer/viewer_p.cpp:1656
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "ნახატის ბმის კოპირება"
 
@@ -2622,6 +2654,11 @@ msgstr ""
 "რომლებსაც მოსაწვევების მხარდაჭერა არ გააჩნია, ელფოსტას უცნაურად დაინახავენ."
 "<br />ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამა, რომელსაც მოსაწვევების "
 "მხარდაჭერა გააჩნია, ამასთან მაინც იმუშავებენ.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "ტექსტის წაკითხვა"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format

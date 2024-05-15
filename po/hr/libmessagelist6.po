@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1174,6 +1174,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "Message Preview Pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ploča za pregled poruke"
 
@@ -1290,11 +1291,13 @@ msgstr "Ham"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "&Cijela poruka"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1302,11 +1305,13 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Description of Type Subject"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Tema"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
@@ -1366,6 +1371,7 @@ msgstr "Zatvori karticu"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1382,26 +1388,32 @@ msgstr "Lista poruka"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "Create new tab"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Napravi novu karticu"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create new tab"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Napravi novu karticu"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1409,6 +1421,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Zatvori karticu"
 

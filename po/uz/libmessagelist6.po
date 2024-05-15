@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1234,6 +1234,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "Do not show attachments in the message viewer"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ilovalarni xabar koʻruvchida bekitish"
 
@@ -1367,23 +1368,27 @@ msgstr "Xem"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "&Butun xabar"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Mavzu"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1441,6 +1446,7 @@ msgstr ""
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1458,33 +1464,41 @@ msgstr "Xabarlar roʻyxati"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "&Joʻnatuvchi shaxsiyati:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "&Joʻnatuvchi shaxsiyati:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgctxt "@action"
 msgid "Close Tab"
-msgstr ""
+msgstr "Oxirgi qidiruv"
 
 #: pane.cpp:520 pane.cpp:812
 #, fuzzy, kde-format

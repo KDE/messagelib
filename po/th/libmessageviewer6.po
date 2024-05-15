@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1326,17 +1326,21 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "ทิ้งลงถังขยะ"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
@@ -1344,6 +1348,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Delete all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "ลบจดหมายทั้งหมด"
 
@@ -2447,7 +2452,9 @@ msgid "Copy Text"
 msgstr "ทำสำเนาไปยัง"
 
 #: viewer/viewer_p.cpp:1545
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "เลือกข้อความทั้งหมด"
 
@@ -2467,7 +2474,9 @@ msgid "Show Message Structure"
 msgstr "แสดงโครงสร้างของจดหมาย"
 
 #: viewer/viewer_p.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "แสดงต้นฉบับ"
 
@@ -2480,32 +2489,42 @@ msgstr "&บันทึกจดหมาย"
 #: viewer/viewer_p.cpp:1583
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "บันทึกเป็นฉบับร่าง"
 
 #: viewer/viewer_p.cpp:1587
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "บันทึกเป็นฉบับร่าง"
 
 #: viewer/viewer_p.cpp:1594
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "เลื่อนจดหมายขึ้น"
 
 #: viewer/viewer_p.cpp:1599
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "เลื่อนจดหมายลง"
 
 #: viewer/viewer_p.cpp:1604
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "เลื่อนจดหมายขึ้น (มากกว่าเดิม)"
 
 #: viewer/viewer_p.cpp:1609
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "เลื่อนจดหมายลง (มากกว่าเดิม)"
 
@@ -2522,23 +2541,28 @@ msgstr "สลับโหมดการแสดงผลระหว่าง
 #: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgid "Load External References"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "เรียกส่วนที่อ้างถึงจากภายนอก"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1632
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgctxt "@action"
 msgid "Speak Text"
-msgstr ""
+msgstr "ทำสำเนาไปยัง"
 
 #: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "เลือก..."
 
 #: viewer/viewer_p.cpp:1656
 #, fuzzy, kde-format
 #| msgid "Choose Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "เลือกตำแหน่ง"
 
@@ -2737,6 +2761,11 @@ msgid ""
 "understand the invitations, the resulting messages look very odd.<br /"
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
+msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
 msgstr ""
 
 #: widgets/mailsourcewebengineviewer.cpp:53

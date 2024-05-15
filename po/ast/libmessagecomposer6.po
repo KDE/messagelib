@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:41+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 23:34+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -87,11 +87,13 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr ""
 
@@ -121,6 +123,7 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr ""
 
@@ -174,6 +177,7 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
+msgctxt "@action"
 msgid "Edit With..."
 msgstr ""
 
@@ -189,16 +193,19 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
+msgctxt "@action"
 msgid "Properties"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
+msgctxt "@action"
 msgid "Select All"
 msgstr ""
 

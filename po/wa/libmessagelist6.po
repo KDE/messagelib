@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -1232,6 +1232,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "&Ni nén mostrer on panea d' prévoeyaedje des messaedjes"
 
@@ -1355,11 +1356,13 @@ msgstr "Normå emilaedje"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Messaedje en etir"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
@@ -1367,12 +1370,14 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Sudjet"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1429,6 +1434,7 @@ msgstr ""
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1445,33 +1451,40 @@ msgstr "Djivêye des messaedjes"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "&Novele Idintité:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "&Novele Idintité:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
 #: pane.cpp:298
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgctxt "@action"
 msgid "Close Tab"
-msgstr ""
+msgstr "Dierin cweraedje"
 
 #: pane.cpp:520 pane.cpp:812
 #, fuzzy, kde-format

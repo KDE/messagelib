@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1289,6 +1289,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ekki sýna bréfas&koðarann"
 
@@ -1423,23 +1424,27 @@ msgstr "Ekki ruslpóstur"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Allt &bréfið"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Viðfangsefni"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
@@ -1498,6 +1503,7 @@ msgstr "Loka flipa"
 
 #: pane.cpp:180
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Virkja næsta flipa"
 
@@ -1514,31 +1520,37 @@ msgstr "Bréfalisti"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opna nýjan flipa"
 
 #: pane.cpp:258
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Virkja næsta flipa"
 
 #: pane.cpp:268
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Virkja fyrri flipa"
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
 #: pane.cpp:298
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Loka flipa"
 

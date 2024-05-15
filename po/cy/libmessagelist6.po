@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:38+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1258,6 +1258,7 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "&Peidio â dangos cwarel rhagolwg y neges"
 
@@ -1390,23 +1391,27 @@ msgstr "Ebost iawn"
 #: core/widgets/searchlinestatus.cpp:273
 #, fuzzy, kde-format
 #| msgid "&Full message"
+msgctxt "@action"
 msgid "Full Message"
 msgstr "Ne&ges gyfan"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action"
 msgid "Subject"
 msgstr "Pwnc"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, fuzzy, kde-format
 #| msgid "BCC"
+msgctxt "@action"
 msgid "BCC"
 msgstr "CCD (BCC)"
 
@@ -1467,6 +1472,7 @@ msgstr "Dad-ehangu Po&b Edefyn"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1482,26 +1488,31 @@ msgstr "Rhestr Negeseuon"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Dynodiad yr &Anfonwr:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Dynodiad yr &Anfonwr:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1509,6 +1520,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "Dad-ehangu Po&b Edefyn"
 
