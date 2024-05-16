@@ -321,8 +321,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
                                        i18n(
                                            "The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Encryption")),
-                                       KGuiItem(i18n("Do Not Keep")))
+                                       i18n("KMail Question"), KGuiItem(i18nc("@action:button", "Keep Encryption")),
+                                       KGuiItem(i18nc("@action:button", "Do Not Keep")))
             == KMessageBox::ButtonCode::PrimaryAction) {
             bSaveEncrypted = true;
         }
@@ -334,8 +334,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
                                        i18n(
                                            "The part %1 of the message is signed. Do you want to keep the signature when saving?",
                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Signature")),
-                                       KGuiItem(i18n("Do Not Keep")))
+                                       i18n("KMail Question"), KGuiItem(i18nc("@action:button", "Keep Signature")),
+                                       KGuiItem(i18nc("@action:button", "Do Not Keep")))
             != KMessageBox::Yes) {
             bSaveWithSig = false;
         }

@@ -178,7 +178,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
                                                                 "Do you want to keep the original one?"),
                                                            QString(/*caption*/),
                                                            KGuiItem(i18nc("Do not compress", "Keep")),
-                                                           KGuiItem(i18n("Compress")));
+                                                           KGuiItem(i18nc("@action:button", "Compress")));
         if (result == KMessageBox::ButtonCode::PrimaryAction) {
             // The user has chosen to keep the uncompressed file.
             return;
@@ -821,7 +821,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
             if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()),
                                                    i18nc("@title:window", "Save to File"),
-                                                   KGuiItem(i18n("&Replace")))
+                                                   KGuiItem(i18nc("@action:button", "&Replace")))
                 == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);
             }

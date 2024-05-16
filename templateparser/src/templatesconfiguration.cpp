@@ -99,8 +99,8 @@ void TemplatesConfiguration::resetToDefault()
     const int choice = KMessageBox::questionTwoActionsCancel(nullptr,
                                                              i18n("Do you want to reset current template or all templates to default?"),
                                                              i18nc("@title:window", "Reset to default"),
-                                                             KGuiItem(i18n("Reset Current Template")),
-                                                             KGuiItem(i18n("Reset All Templates")),
+                                                             KGuiItem(i18nc("@action:button", "Reset Current Template")),
+                                                             KGuiItem(i18nc("@action:button", "Reset All Templates")),
                                                              KStandardGuiItem::cancel());
 
     if (choice == KMessageBox::Cancel) {

@@ -100,8 +100,8 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
                                                              "Do you want to continue?",
                                                              QString::fromLatin1(charsets.first())),
                                                         i18nc("@title:window", "Some Characters Will Be Lost"),
-                                                        KGuiItem(i18n("Lose Characters")),
-                                                        KGuiItem(i18n("Change Encoding")));
+                                                        KGuiItem(i18nc("@action:button", "Lose Characters")),
+                                                        KGuiItem(i18nc("@action:button", "Change Encoding")));
             if (result == KMessageBox::ButtonCode::SecondaryAction) {
                 q->setError(JobBase::UserCancelledError);
                 q->setErrorText(i18n("User decided to change the encoding."));

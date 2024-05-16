@@ -1907,8 +1907,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                              "attached file but you have not attached anything.\n"
                                                              "Do you want to attach a file to your message?"),
                                                         i18nc("@title:window", "File Attachment Reminder"),
-                                                        KGuiItem(i18n("&Attach File..."), QLatin1StringView("mail-attachment")),
-                                                        KGuiItem(i18n("&Send as Is"), QLatin1StringView("mail-send")));
+                                                        KGuiItem(i18nc("@action:button", "&Attach File..."), QLatin1StringView("mail-attachment")),
+                                                        KGuiItem(i18nc("@action:button", "&Send as Is"), QLatin1StringView("mail-send")));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }
@@ -1968,7 +1968,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                      msg,
                                                      i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
-                                                     KGuiItem(i18n("Do &Not Sign")))) {
+                                                     KGuiItem(i18nc("@action:button", "Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -1996,7 +1996,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                      msg,
                                                      i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
-                                                     KGuiItem(i18n("Do &Not Sign")))) {
+                                                     KGuiItem(i18nc("@action:button", "Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -2019,7 +2019,10 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "You have requested to sign this message, "
             "but no valid signing keys have been configured "
             "for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unsigned?"), KGuiItem(i18n("Send &Unsigned")))
+        if (KMessageBox::warningContinueCancel(m_parentWidget,
+                                               msg,
+                                               i18nc("@title:window", "Send Unsigned?"),
+                                               KGuiItem(i18nc("@action:button", "Send &Unsigned")))
             == KMessageBox::Cancel) {
             result = false;
             return false;
@@ -2046,7 +2049,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                          msg,
                                                          i18nc("@title:window", "Unsigned-Message Warning"),
                                                          KGuiItem(buttonText),
-                                                         KGuiItem(i18n("Send &As Is")))) {
+                                                         KGuiItem(i18nc("@action:button", "Send &As Is")))) {
             case KMessageBox::Cancel:
                 result = false;
                 canceled = true;
@@ -2133,8 +2136,8 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             m_parentWidget,
             msg,
             i18n("Encrypt Message?"),
-            KGuiItem(i18n("&Encrypt")),
-            KGuiItem(i18n("Do &Not Encrypt")))) {
+            KGuiItem(i18nc("@action:button", "&Encrypt")),
+            KGuiItem(i18nc("@action:button", "Do &Not Encrypt")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -2158,7 +2161,10 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             "and to encrypt a copy to yourself, "
             "but no valid trusted encryption keys have been "
             "configured for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unencrypted?"), KGuiItem(i18n("Send &Unencrypted")))
+        if (KMessageBox::warningContinueCancel(m_parentWidget,
+                                               msg,
+                                               i18nc("@title:window", "Send Unencrypted?"),
+                                               KGuiItem(i18nc("@action:button", "Send &Unencrypted")))
             == KMessageBox::Cancel) {
             result = false;
             return false;
