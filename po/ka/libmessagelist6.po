@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-16 04:18+0100\n"
+"PO-Revision-Date: 2024-05-15 06:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1139,8 +1139,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "სამ სიმბოლოზე ნაკლების შემცველი სიტყვები გამოტოვებულია."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "აღარ მაჩვენო"
@@ -1258,29 +1257,25 @@ msgid "Ham"
 msgstr "ლორი"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "სრული შეტყობინება"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "სხეული"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "თემა"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "ფარული ასლი"
@@ -1333,8 +1328,7 @@ msgid "Close tab"
 msgstr "ჩანართის დახურვა"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "%1-ე ჩანართის გააქტიურება"
@@ -1350,43 +1344,37 @@ msgid "Message List"
 msgstr "შეტყობინებების სია"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "ახალი ჩანართის შექმნა"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "შემდეგი ჩანართის გააქტიურება"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "წინა ჩანართის გააქტიურება"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "ჩანართის მარცხნივ გადატანა"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "ჩანართის მარჯვნივ გადატანა"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "ჩანართის დახურვა"

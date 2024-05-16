@@ -1129,11 +1129,10 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Slova kratší než 3 znaky jsou ignorována."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
-msgstr "Znovu nezobrazovat"
+msgstr ""
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1244,32 +1243,28 @@ msgid "Ham"
 msgstr "Ham"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
-msgstr "Celá zpráva"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
-msgstr "Tělo"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
-msgstr "Předmět"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
-msgstr "Skrytá kopie"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -1319,11 +1314,10 @@ msgid "Close tab"
 msgstr "Zavřít kartu"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
-msgstr "Aktivovat kartu %1"
+msgstr ""
 
 #: pane.cpp:200
 #, kde-format
@@ -1336,46 +1330,40 @@ msgid "Message List"
 msgstr "Seznam zpráv"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
-msgstr "Vytvořit novu kartu"
+msgstr ""
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivovat následující kartu"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivovat předchozí kartu"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
-msgstr "Přesunout kartu doleva"
+msgstr ""
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
-msgstr "Přesunout kartu doprava"
+msgstr ""
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
-msgstr "Zavřít kartu"
+msgstr ""
 
 #: pane.cpp:520 pane.cpp:812
 #, kde-format

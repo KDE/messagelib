@@ -1,17 +1,17 @@
 # Translation of libmessagecomposer6.po to Catalan
-# Copyright (C) 2010-2023 This_file_is_part_of_KDE
+# Copyright (C) 2010-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2010, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2023-09-26 12:34+0200\n"
+"PO-Revision-Date: 2024-05-15 11:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -92,15 +92,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Ha fallat en adjuntar el text des del porta-retalls"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Adjunta la clau &pública..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Adjunta la &meva clau pública"
@@ -130,8 +128,7 @@ msgid "&Attach Directory..."
 msgstr "&Adjunta un directori..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Adjunta la vCard pròpia"
@@ -185,8 +182,7 @@ msgid "Edit"
 msgstr "Edita"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Edita amb..."
@@ -202,22 +198,19 @@ msgid "Save As..."
 msgstr "Desa com a..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Pr&opietats de l'adjunt..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Propietats"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Selecciona-ho tot"

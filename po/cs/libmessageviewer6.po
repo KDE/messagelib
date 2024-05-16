@@ -1238,32 +1238,28 @@ msgstr ""
 "Toto může být podvodná zpráva <a href=\"scamdetails\">(Podrobnosti...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
-msgstr "Přesunout do koše"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
-msgstr "Potvrzuji, že nejde o podvodnou zprávu"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
-msgstr "Přidat e-mail na bílou listinu"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr "Úplně vypnout detekci podvodných zpráv"
+msgstr ""
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:202
@@ -2337,11 +2333,10 @@ msgid "Copy Text"
 msgstr "Kopírovat text"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr "Vybrat všechen text"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1551 viewer/viewer_p.cpp:2064
 #, kde-format
@@ -2359,11 +2354,10 @@ msgid "Show Message Structure"
 msgstr "Zobrazit strukturu zprávy"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "Zobrazit zdro&j"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1577
 #, kde-format
@@ -2383,32 +2377,28 @@ msgid "&Reset Display Format"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
-msgstr "Rolovat zprávu nahoru"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
-msgstr "Rolovat zprávu dolů"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
-msgstr "Rolovat zprávu nahoru (více)"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
-msgstr "Rolovat zprávu dolů (více)"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1619
 #, kde-format
@@ -2421,32 +2411,28 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Přepnout režim zobrazení mezi HTML a prostým textem"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
-msgstr "Načíst externí odkazy"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
-msgstr "Přečíst text"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "Sdílet text..."
+msgstr ""
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "Kopírovat umístění obrázku"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1662
 #, kde-format

@@ -1,26 +1,27 @@
 # Translation of libmessageviewer6.po to Catalan (Valencian)
 # Copyright (C) 1998-2024 This_file_is_part_of_KDE
 #
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2004, 2005, 2006.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2002, 2003, 2004, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2009.
 # David Gil <al016950@yahoo.es>, 2005.
-# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Joan Maspons <joanmaspons@gmail.com>, 2009.
 # Manuel Tortosa Moreno <manutortosa@chakra-project.org>, 2009, 2010.
+# Josep M. Ferrer <txemaq@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-27 20:08+0100\n"
+"PO-Revision-Date: 2024-05-15 11:37+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -1246,29 +1247,25 @@ msgstr ""
 "Este missatge podria ser fraudulent. <a href=\"scamdetails\">(Detalls…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Mou cap a dins de la paperera"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Voleu confirmar que no és fraudulent"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Afig el correu a la llista blanca"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Desactiva la detecció de frau per a tots els missatges"
@@ -1281,7 +1278,7 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
-"Este correu electrònic conté un enllaç que diu «%1» al text, però en "
+"Este correu electrònic conté un enllaç que diu «%1» en el text, però en "
 "realitat apunta cap a «%2». Sovint es tracta de correus electrònics "
 "fraudulents per a enganyar al destinatari"
 
@@ -2385,8 +2382,7 @@ msgid "Copy Text"
 msgstr "Copia el text"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Selecciona tot el text"
@@ -2407,8 +2403,7 @@ msgid "Show Message Structure"
 msgstr "Mostra l'estructura del missatge"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Mostra el codi font"
@@ -2419,43 +2414,37 @@ msgid "&Save Message..."
 msgstr "Guar&da el missatge…"
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Guar&da el format de visualització"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Reinicia el format de visualització"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Desplaça el missatge cap amunt"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Desplaça el missatge cap avall"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Desplaça el missatge cap amunt (més)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Desplaça el missatge cap avall (més)"
@@ -2471,29 +2460,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Canvia el mode de visualització entre HTML i text net"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Carrega les referències externes"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Llig el text"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Compartix el text…"
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copia la ubicació de la imatge"

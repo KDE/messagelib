@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-27 06:42+0100\n"
+"PO-Revision-Date: 2024-05-15 10:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1257,29 +1257,25 @@ msgstr ""
 "Sporočilo je morda prevara. <a href=\"scamdetails\">(Podrobnosti …)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Premakni v smeti"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
-msgstr "Potrjujem, da ni prevara"
+msgstr "Potrjujem, da to ni prevara"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Dodaj e-pošto na beli seznam"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Onemogoči zaznavanje prevar za vsa sporočila"
@@ -2377,8 +2373,7 @@ msgid "Copy Text"
 msgstr "Kopiraj besedilo"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Izberi vse besedilo"
@@ -2399,8 +2394,7 @@ msgid "Show Message Structure"
 msgstr "Pokaži zgradbo sporočila"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Pokaži iz&vorno kodo"
@@ -2411,43 +2405,37 @@ msgid "&Save Message..."
 msgstr "&Shrani sporočilo …"
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Shrani vrsto prikaza"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Ponastavi v&rsto prikaza"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Premakni sporočilo gor"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Premakni sporočilo dol"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Premakni sporočilo gor (več)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Premakni sporočilo dol (več)"
@@ -2463,29 +2451,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Preklopi prikaz med načinoma HTML in navadno besedilo"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Naloži zunanje sklice"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Izgovori besedilo"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "Deli besedilo …"
+msgstr "Deli besedilo..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopiraj mesto slike"

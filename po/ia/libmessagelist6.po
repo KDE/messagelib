@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-04-18 11:31+0200\n"
+"PO-Revision-Date: 2024-05-15 10:34+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1142,8 +1142,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Le parolas con minus de 3 litteras es ignorate."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Non monstra de nove"
@@ -1263,29 +1262,25 @@ msgid "Ham"
 msgstr "Ham"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Message Complete"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Corpore"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Subjecto"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
@@ -1338,8 +1333,7 @@ msgid "Close tab"
 msgstr "Claude scheda"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activa Scheda %1"
@@ -1355,43 +1349,37 @@ msgid "Message List"
 msgstr "Lista de Message"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Crea nove scheda"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activa proxime scheda"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activa previe scheda"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Move scheda a sinistra"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Move scheda a dextera"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Claude scheda"

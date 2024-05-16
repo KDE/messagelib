@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-27 16:09+0100\n"
+"PO-Revision-Date: 2024-05-16 00:20+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jaime Robles <jaime@kde.org>\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1251,29 +1251,25 @@ msgstr ""
 "\">(Detalles...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Mover a la papelera"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Confirmo que no es una suplantación"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Añadir correo a la lista blanca"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Desactivar detección de suplantaciones para todos los mensajes"
@@ -2389,8 +2385,7 @@ msgid "Copy Text"
 msgstr "Copiar texto"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Seleccionar todo el texto"
@@ -2411,8 +2406,7 @@ msgid "Show Message Structure"
 msgstr "Mostrar estructura del mensaje"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Ver fuente"
@@ -2423,43 +2417,37 @@ msgid "&Save Message..."
 msgstr "&Guardar mensaje..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Guardar formato de vi&sualización"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Reiniciar formato de visualización"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Desplazar el mensaje hacia arriba"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Desplazar el mensaje hacia abajo"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Desplazar el mensaje hacia arriba (más)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Desplazar el mensaje hacia abajo (más)"
@@ -2475,29 +2463,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Cambiar modo de visualización entre HTML y texto sin formato"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Cargar referencias externas"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Leer texto"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Compartir texto..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copiar ubicación de la imagen"

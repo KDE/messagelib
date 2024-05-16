@@ -90,18 +90,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "Přiložení textu ze schránky selhalo"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "Přiložit &veřejný klíč..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr "Přiložit &můj veřejný klíč"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -128,11 +126,10 @@ msgid "&Attach Directory..."
 msgstr "Přiložit &adresář..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr "Přiložit vlastní vizitku"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -183,11 +180,10 @@ msgid "Edit"
 msgstr "Upravit"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Upravit pomocí..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -200,22 +196,19 @@ msgid "Save As..."
 msgstr "Uložit jako..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Vlastn&osti přílohy..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Vlastnosti"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Vybrat vše"

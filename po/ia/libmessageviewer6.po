@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-28 15:36+0100\n"
+"PO-Revision-Date: 2024-05-15 10:34+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1239,29 +1239,25 @@ msgstr ""
 "Iste message poterea esser un scam. <a href=\"scamdetails\">(Detalios...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Move a corbe"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Io confirma que isto non es un scam"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Adde message de e-posta a lista blanc"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Dishabilita discoperta de scam pro omne messages"
@@ -2377,8 +2373,7 @@ msgid "Copy Text"
 msgstr "Copia texto"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Seliger omne texto"
@@ -2399,8 +2394,7 @@ msgid "Show Message Structure"
 msgstr "Monstrar Structura de Message"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Vider Fonte"
@@ -2411,43 +2405,37 @@ msgid "&Save Message..."
 msgstr "&Salveguarda message..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Salveguarda formato de monstrar"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Refixa formato de monstrar"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Rolar Message in alto"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Rolar Message a Basso"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Rolar Message in alto (altere)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Rolar Message a Basso (altere)"
@@ -2463,29 +2451,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Alternar modo de Monstrator inter texto plan e HTML"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Carga referentias externe"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Pronuncia texto"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Compartir texto..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copia location del imagine"

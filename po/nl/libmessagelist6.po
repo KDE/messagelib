@@ -21,14 +21,14 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-16 15:11+0100\n"
+"PO-Revision-Date: 2024-05-15 10:55+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/aggregation.cpp:178
@@ -1161,8 +1161,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "De woorden met minder dan 3 letters worden genegeerd."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Niet meer tonen"
@@ -1282,29 +1281,25 @@ msgid "Ham"
 msgstr "Gewenste post"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Volledig bericht"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Inhoud"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Onderwerp"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
@@ -1357,8 +1352,7 @@ msgid "Close tab"
 msgstr "Tabblad sluiten"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Tabblad %1 activeren"
@@ -1374,43 +1368,37 @@ msgid "Message List"
 msgstr "Berichtenlijst"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Nieuw tabblad maken"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Volgend tabblad activeren"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Vorig tabblad activeren"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Tabblad naar links verplaatsen"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Tabblad naar rechts verplaatsen"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Tabblad sluiten"

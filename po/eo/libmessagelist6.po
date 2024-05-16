@@ -3,7 +3,7 @@
 # Copyright (C) 1998, 2004 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 # Matthias Peick <matthias@peick.de>, 2004.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 # Minuskloj: ĉ ĝ ĵ ĥ ŝ ŭ   Majuskloj: Ĉ Ĝ Ĵ Ĥ Ŝ Ŭ
 #
@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-03-17 05:34+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -1145,8 +1145,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "La vortoj malpli ol 3 literoj estas ignorataj."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ne montri denove"
@@ -1267,29 +1266,25 @@ msgid "Ham"
 msgstr "Fimesaĝa"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Plena Mesaĝo"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Korpo"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Temo"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
@@ -1342,8 +1337,7 @@ msgid "Close tab"
 msgstr "Fermi langeton"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktivigi la langeton %1"
@@ -1359,43 +1353,37 @@ msgid "Message List"
 msgstr "Mesaĝolisto"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Krei novan langeton"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivigi Sekvan Langeton"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivigi Antaŭan Langeton"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Movi Tab Maldekstren"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Movi Tab Dekstren"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Fermi la langeton"

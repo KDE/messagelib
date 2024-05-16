@@ -2,15 +2,15 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the messagelib package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2010.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 17:19+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -90,15 +90,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Malsukcesis alligi tekston el tondujo"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Aldoni &publikan ŝlosilon..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Aldoni &mian publikan ŝlosilon"
@@ -128,8 +126,7 @@ msgid "&Attach Directory..."
 msgstr "&Aldoni dosierujon..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Aldoni Propran vCard"
@@ -183,8 +180,7 @@ msgid "Edit"
 msgstr "Redakti"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Redakti Per..."
@@ -200,22 +196,19 @@ msgid "Save As..."
 msgstr "Konservi kiel..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Ald&onaĵaj Trajtoj..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Ecoj"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Elekti ĉiujn"
@@ -2409,16 +2402,3 @@ msgstr "Poŝtsendisto eksterrete."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Meti Enreta"
-
-#~ msgid "Keep original charset when replying or forwarding if possible"
-#~ msgstr "Konservi originalan signaron dum respondado aŭ plusendado se eble"
-
-#~ msgid "Outlook-compatible attachment naming"
-#~ msgstr "Perspektiv-kongrua aldonaĵnomado"
-
-#~ msgid ""
-#~ "Turn this option on to make Outlook &#8482; understand attachment names "
-#~ "containing non-English characters"
-#~ msgstr ""
-#~ "Ŝaltu ĉi tiun opcion por ke Outlook ™ komprenu aldonajn nomojn "
-#~ "enhavantajn ne-anglajn signojn"

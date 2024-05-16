@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2023-09-29 09:38+0200\n"
+"PO-Revision-Date: 2024-05-15 06:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -88,15 +88,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "ბუფერიდან ტექსტის მიმაგრების შეცდომა"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&საჯარო გასაღების მიმაგრება..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "&ჩემი საჯარო გასაღების მიმაგრება"
@@ -126,8 +124,7 @@ msgid "&Attach Directory..."
 msgstr "&საქაღალდის მიმაგრება..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "საკუთარი vCard-ის მიმაგრება"
@@ -181,8 +178,7 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "ჩასწორება…"
@@ -198,22 +194,19 @@ msgid "Save As..."
 msgstr "შენახვა, როგორც..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "მიმაგრებული ფაილის &თვისებები..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
-msgstr "პარამეტრები"
+msgstr "თვისებები"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
