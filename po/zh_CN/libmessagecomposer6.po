@@ -88,12 +88,12 @@ msgstr "无法从剪贴板附加文本"
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgid "Attach &Public Key..."
-msgstr "附加公钥(&P)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgid "Attach &My Public Key"
-msgstr "附加我的公钥(&M)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -122,7 +122,7 @@ msgstr "附加目录(&A)..."
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
 msgid "Attach Own vCard"
-msgstr "附加自己的 vCard"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "编辑"
 #: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgid "Edit With..."
-msgstr "编辑方式..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -190,17 +190,17 @@ msgstr "另存为..."
 #: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
 msgid "Attachment Pr&operties..."
-msgstr "附件属性(&O)..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgid "Properties"
-msgstr "属性"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgid "Select All"
-msgstr "全部选中"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format

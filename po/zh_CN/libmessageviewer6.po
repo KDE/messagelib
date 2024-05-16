@@ -1219,22 +1219,22 @@ msgstr "此信件可能是欺诈信件。<a href=\"scamdetails\">(细节...)</a>
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
 msgid "Move to Trash"
-msgstr "移动到回收站"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
 msgid "I confirm it's not a scam"
-msgstr "我确认它不是欺诈信件"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
 msgid "Add email to whitelist"
-msgstr "添加电子邮件地址到白名单"
+msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
 msgid "Disable scam detection for all messages"
-msgstr "对所有信件禁用欺诈检测"
+msgstr ""
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:202
@@ -2274,7 +2274,7 @@ msgstr "复制文本"
 #: viewer/viewer_p.cpp:1545
 #, kde-format
 msgid "Select All Text"
-msgstr "选中所有文本"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1551 viewer/viewer_p.cpp:2064
 #, kde-format
@@ -2294,7 +2294,7 @@ msgstr "显示信件结构"
 #: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
-msgstr "查看源文件(&V)"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1577
 #, kde-format
@@ -2304,32 +2304,32 @@ msgstr ""
 #: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "&Save Display Format"
-msgstr "保存显示格式(&S)..."
+msgstr ""
 
 #: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "&Reset Display Format"
-msgstr "重置显示格式(&S)..."
+msgstr ""
 
 #: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "Scroll Message Up"
-msgstr "向上滚动信件"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Scroll Message Down"
-msgstr "向下滚动信件"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1604
 #, kde-format
 msgid "Scroll Message Up (More)"
-msgstr "向上滚动信件(较大幅度)"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Scroll Message Down (More)"
-msgstr "向下滚动信件(较大幅度)"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1619
 #, kde-format
@@ -2344,7 +2344,7 @@ msgstr "在 HTML 和纯文本之间切换显示模式"
 #: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
-msgstr "加载外部引用"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:133
 #, kde-format
@@ -2359,7 +2359,7 @@ msgstr ""
 #: viewer/viewer_p.cpp:1656
 #, kde-format
 msgid "Copy Image Location"
-msgstr "复制图像位置"
+msgstr ""
 
 #: viewer/viewer_p.cpp:1662
 #, kde-format

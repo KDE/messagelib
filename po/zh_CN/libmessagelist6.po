@@ -1122,7 +1122,7 @@ msgstr "少于 3 个字母的词将被忽略。"
 #: core/widgets/quicksearchwarning.cpp:22
 #, kde-format
 msgid "Do not show again"
-msgstr "不再显示"
+msgstr ""
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1238,12 +1238,12 @@ msgstr "非垃圾邮件"
 #: core/widgets/searchlinestatus.cpp:273
 #, kde-format
 msgid "Full Message"
-msgstr "完整信件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgid "Body"
-msgstr "正文"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
 #, kde-format
@@ -1253,7 +1253,7 @@ msgstr "主题"
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgid "BCC"
-msgstr "密送"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -1305,7 +1305,7 @@ msgstr "关闭标签页"
 #: pane.cpp:180
 #, kde-format
 msgid "Activate Tab %1"
-msgstr "激活标签页 %1"
+msgstr ""
 
 #: pane.cpp:200
 #, kde-format
@@ -1320,27 +1320,27 @@ msgstr "信件列表"
 #: pane.cpp:227
 #, kde-format
 msgid "Create New Tab"
-msgstr "新建标签页"
+msgstr ""
 
 #: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "激活下一标签页"
+msgstr ""
 
 #: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "激活上一标签页"
+msgstr ""
 
 #: pane.cpp:280
 #, kde-format
 msgid "Move Tab Left"
-msgstr "左移标签页"
+msgstr ""
 
 #: pane.cpp:288
 #, kde-format
 msgid "Move Tab Right"
-msgstr "右移标签页"
+msgstr ""
 
 #: pane.cpp:298
 #, kde-format
