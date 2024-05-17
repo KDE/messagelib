@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2013-04-12 15:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1861,11 +1861,13 @@ msgstr ""
 #: utils/messageviewerutil.cpp:324
 #, fuzzy, kde-format
 #| msgid "Description"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "वर्णन"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr ""
 
@@ -1878,6 +1880,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:337
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr ""
 
@@ -2157,7 +2160,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "तुम्हाला नक्की '<filename>%1</filename> कार्यान्वित करायचे आहे का?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "कार्यान्वित करा"
 

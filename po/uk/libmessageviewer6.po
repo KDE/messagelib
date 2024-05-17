@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2024-05-15 12:57+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -1898,12 +1898,16 @@ msgid "KMail Question"
 msgstr "Питання KMail"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Зберегти шифрування"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Не шифрувати"
 
@@ -1915,7 +1919,9 @@ msgid ""
 msgstr "Частину %1 повідомлення підписано. Зберегти підпис при збереженні?"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Зберегти підпис"
 
@@ -2188,7 +2194,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ви дійсно хочете виконати <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Виконати"
 

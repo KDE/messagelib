@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1960,12 +1960,16 @@ msgid "KMail Question"
 msgstr "KMail сұрағы"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Шифрлауды сақтау"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Шифрлауды сақтамау"
 
@@ -1978,7 +1982,9 @@ msgstr ""
 "Хаттың %1 бөлігі қолтаңбаланған. Қолтаңбаланған хатты сақтағыңыз келе ме?"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Қолтаңбалауды сақтау"
 
@@ -2259,7 +2265,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Шынымен <filename>%1</filename> дегенді орындауды қалайсыз ба?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Орындау"
 

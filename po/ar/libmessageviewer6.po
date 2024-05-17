@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -1947,12 +1947,16 @@ msgid "KMail Question"
 msgstr "سؤال «بريدك»"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "أبقِ التّعمية"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "لا تُبقها"
 
@@ -1964,7 +1968,9 @@ msgid ""
 msgstr "الجزء %1 من الرّسالة موقّعة. أتريد إبقاء التّوقيع عند الحفظ؟"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "أبقِ التّوقيع"
 
@@ -2241,7 +2247,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "أمتأكّد من تنفيذ <filename>%1</filename>؟"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "نفّذ"
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1956,12 +1956,16 @@ msgid "KMail Question"
 msgstr "Прашање на КПошта"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Задржи го криптирањето"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Не задржувај"
 
@@ -1975,7 +1979,9 @@ msgstr ""
 "зачувувањето?"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Задржи го потписот"
 
@@ -2280,7 +2286,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Дали навистина сакате да ја извршите <b>%1</b>?</qt>"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Изврши"
 

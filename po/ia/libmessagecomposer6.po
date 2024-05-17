@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2024-05-15 10:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -41,7 +41,9 @@ msgid "Keep"
 msgstr "Mantene"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Compress"
+msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprime"
 
@@ -110,7 +112,6 @@ msgid "Attach"
 msgstr "Attacha"
 
 #: attachment/attachmentcontrollerbase.cpp:461
-#: composer/composerviewbase.cpp:1910
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Attacha File..."
@@ -269,7 +270,9 @@ msgid "Save to File"
 msgstr "Salveguarda a File"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Replace"
+msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Reimplacia"
 
@@ -583,8 +586,17 @@ msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Memento de attachamento de file"
 
+#: composer/composerviewbase.cpp:1910
+#, fuzzy, kde-format
+#| msgid "&Attach File..."
+msgctxt "@action:button"
+msgid "&Attach File..."
+msgstr "&Attacha File..."
+
 #: composer/composerviewbase.cpp:1911
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Invia como es"
 
@@ -612,7 +624,9 @@ msgid "&Sign"
 msgstr "&Signa"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do &Not Sign"
+msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Non signa"
 
@@ -634,18 +648,20 @@ msgstr ""
 "Tu ha requirite signar iste message, ma necun valide clave de signatura ha "
 "essite configurate pro iste identitate."
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2024
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Invia non signate?"
 
-#: composer/composerviewbase.cpp:2022
-#, kde-format
+#: composer/composerviewbase.cpp:2025
+#, fuzzy, kde-format
+#| msgid "Send &Unsigned"
+msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Invia non signate"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -656,7 +672,7 @@ msgstr ""
 "Inviar message solmente in parte signate poterea violar politica de sito.\n"
 "In su loco tu signa omne partes?"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -667,28 +683,30 @@ msgstr ""
 "Inviar message non signate poterea violar le politica del sito.\n"
 "In su loco tu signa le message?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Signa omne partes"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgid "&Sign"
 msgstr "&Signa"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2050
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Aviso de message non signate"
 
-#: composer/composerviewbase.cpp:2049
-#, kde-format
+#: composer/composerviewbase.cpp:2052
+#, fuzzy, kde-format
+#| msgid "Send &As Is"
+msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Invi&a como es"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -698,7 +716,7 @@ msgstr ""
 "destinatarios.\n"
 " Tu crypta iste message?"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2102
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -709,34 +727,32 @@ msgstr ""
 "esseva demandate de cryptar o non cryptar iste message.\n"
 "Tu crypta iste message?"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2138
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Crypta message?"
 
-#: composer/composerviewbase.cpp:2106
+#: composer/composerviewbase.cpp:2109
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Signa && &Crypta"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2136
-#: composer/composerviewbase.cpp:2185 composer/keyresolver.cpp:1322
-#: composer/keyresolver.cpp:1360
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2191
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Crypta"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Sign Only"
 msgstr "&signa solmente"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Invia como es"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2131
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -745,12 +761,22 @@ msgstr ""
 "Il ha preferentias decryptation confligente pro iste destinatarios.\n"
 "Crypta iste message?"
 
-#: composer/composerviewbase.cpp:2137
-#, kde-format
+#: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
+#: composer/keyresolver.cpp:1363
+#, fuzzy, kde-format
+#| msgid "&Encrypt"
+msgctxt "@action:button"
+msgid "&Encrypt"
+msgstr "&Crypta"
+
+#: composer/composerviewbase.cpp:2140
+#, fuzzy, kde-format
+#| msgid "Do &Not Encrypt"
+msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "No&n Crypta"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2160
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -760,18 +786,20 @@ msgstr ""
 "Tu ha requirite cryptar iste message, e cryptar un copia pro te mesme, ma "
 "necun valide clave de cryptation ha essite configurate pro iste identitate."
 
-#: composer/composerviewbase.cpp:2161
+#: composer/composerviewbase.cpp:2166
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Invia non cryptate?"
 
-#: composer/composerviewbase.cpp:2161 composer/keyresolver.cpp:1345
-#, kde-format
+#: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
+#, fuzzy, kde-format
+#| msgid "Send &Unencrypted"
+msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Invia &sin cryptation"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -784,7 +812,7 @@ msgstr ""
 "o causar un perdita de information sensibile.\n"
 "In su loco tu crypta omne partes?"
 
-#: composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2187
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -797,12 +825,12 @@ msgstr ""
 "perdita de information sensibile.\n"
 "In su loco tu crypta messages?"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2191
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Cr&ypta omne partes"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -957,7 +985,9 @@ msgstr ""
 "per iste identitate."
 
 #: composer/keyresolver.cpp:1072
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not OpenPGP-Sign"
+msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Non signa con OpenPGP"
 
@@ -976,7 +1006,9 @@ msgstr ""
 "per iste identitate."
 
 #: composer/keyresolver.cpp:1090
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not S/MIME-Sign"
+msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Non signa con S/MIME"
 
@@ -1006,8 +1038,8 @@ msgstr ""
 "Tu non seligeva un clave de cryptation per te mesme (crypta a te mesme). Tu "
 "non potera de-cryptar tu proprie message si to crypta lo."
 
-#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
@@ -1031,7 +1063,7 @@ msgstr ""
 "Tu non selectionava un clave de cryptation per ulle destinatarios de iste "
 "message; quindi, le message non essera cryptate."
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1355
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1040,7 +1072,7 @@ msgstr ""
 "Tu non selectionava un clave de cryptation per un del destinatarios: iste "
 "persona non potera decryptar le message si tu encrypta lo."
 
-#: composer/keyresolver.cpp:1356
+#: composer/keyresolver.cpp:1359
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1049,12 +1081,12 @@ msgstr ""
 "Tu non selectionava claves de cryptation per alcun del destinatarios: iste "
 "personas non potera decryptar le message si tu encrypta lo."
 
-#: composer/keyresolver.cpp:1433
+#: composer/keyresolver.cpp:1436
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Selection de clave de cryptation"
 
-#: composer/keyresolver.cpp:1477
+#: composer/keyresolver.cpp:1480
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1069,7 +1101,7 @@ msgstr ""
 "Pro favor, re-selectiona le certificato(s) que deberea esser usate per iste "
 "destinatario."
 
-#: composer/keyresolver.cpp:1549
+#: composer/keyresolver.cpp:1552
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1087,7 +1119,7 @@ msgstr ""
 "pote cercar certificatos externe per pulsa sur le button: cerca certificatos "
 "externe.</qt>"
 
-#: composer/keyresolver.cpp:1559
+#: composer/keyresolver.cpp:1562
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1551,12 +1583,16 @@ msgid "Some Characters Will Be Lost"
 msgstr "Alcun characteres essera perdite"
 
 #: job/maintextjob.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Lose Characters"
+msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Perde characteres"
 
 #: job/maintextjob.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Change Encoding"
+msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Cambia codifica"
 

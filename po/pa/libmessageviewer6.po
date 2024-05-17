@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1978,12 +1978,16 @@ msgid "KMail Question"
 msgstr "ਕੇ-ਮੇਲ ਸਵਾਲ"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਰੱਖੋ"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "ਨਾ ਰੱਖੋ"
 
@@ -1996,7 +2000,9 @@ msgstr ""
 "ਸੁਨੇਹੇ ਦਾ ਭਾਗ %1 ਦਸਤਖਤੀ ਹੈ। ਕੀ ਤੁਸੀਂ ਸੁਨੇਹੇ ਨੂੰ ਸੰਭਾਲਣ ਸਮੇਂ ਦਸਤਖਤਾਂ ਸਮੇਤ ਹੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "ਦਸਤਖਤ ਰੱਖੋ"
 
@@ -2294,7 +2300,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "ਕੀ ਤੁਸੀਂ <filename>%1</filename> ਨੂੰ ਚਲਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? "
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "ਚਲਾਓ"
 

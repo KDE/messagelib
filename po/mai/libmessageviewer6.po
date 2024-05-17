@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1853,11 +1853,13 @@ msgstr ""
 #: utils/messageviewerutil.cpp:324
 #, fuzzy, kde-format
 #| msgid "Description"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "विवरण"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr ""
 
@@ -1869,9 +1871,11 @@ msgid ""
 msgstr ""
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Details"
+msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr ""
+msgstr "विवरण देखाबू"
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2155,7 +2159,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr ""
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "चलाउ"
 

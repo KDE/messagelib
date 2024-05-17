@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2021-11-15 09:14+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -38,7 +38,9 @@ msgid "Keep"
 msgstr "Ponechať"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Compress"
+msgctxt "@action:button"
 msgid "Compress"
 msgstr "Komprimovať"
 
@@ -109,7 +111,6 @@ msgid "Attach"
 msgstr "Pripojiť"
 
 #: attachment/attachmentcontrollerbase.cpp:461
-#: composer/composerviewbase.cpp:1910
 #, kde-format
 msgid "&Attach File..."
 msgstr "Pripojiť &súbor..."
@@ -276,7 +277,9 @@ msgid "Save to File"
 msgstr "Uložiť do súboru"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Replace"
+msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Nahradiť"
 
@@ -591,8 +594,17 @@ msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Pripomenutie súboru prílohyu"
 
+#: composer/composerviewbase.cpp:1910
+#, fuzzy, kde-format
+#| msgid "&Attach File..."
+msgctxt "@action:button"
+msgid "&Attach File..."
+msgstr "Pripojiť &súbor..."
+
 #: composer/composerviewbase.cpp:1911
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Poslať ako je"
 
@@ -621,7 +633,9 @@ msgid "&Sign"
 msgstr "Podpis"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do &Not Sign"
+msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Nepodpisovať"
 
@@ -643,19 +657,21 @@ msgstr ""
 "Vyžadujete podpísať túto správu, ale žiadne platné podpisové kľúče nie sú "
 "nastavené pre túto identitu."
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2024
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Poslať &nepodpísané?"
 
-#: composer/composerviewbase.cpp:2022
-#, kde-format
+#: composer/composerviewbase.cpp:2025
+#, fuzzy, kde-format
+#| msgid "Send &Unsigned"
+msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Poslať &nepodpísané"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -666,7 +682,7 @@ msgstr ""
 "Posielanie iba čiastočne podpísanej správy môže porušovať politiku servera.\n"
 "Podpísať všetky časti?"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -677,29 +693,31 @@ msgstr ""
 "Posielanie nepodpísanej správy môže porušovať politiku servera.\n"
 "Podpísať správu?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Podpísať všetky časti"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgid "&Sign"
 msgstr "Podpis"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2050
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Upozornenie nepodpísanej správy"
 
-#: composer/composerviewbase.cpp:2049
-#, kde-format
+#: composer/composerviewbase.cpp:2052
+#, fuzzy, kde-format
+#| msgid "Send &As Is"
+msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Poslať ako je"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -709,7 +727,7 @@ msgstr ""
 "prijímateľov.\n"
 "Zašifrovať túto správu?"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2102
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -720,34 +738,32 @@ msgstr ""
 "či zašifrovať túto správu alebo nie.\n"
 "Zašifrovať túto správu?"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2138
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Zašifrovať správu?"
 
-#: composer/composerviewbase.cpp:2106
+#: composer/composerviewbase.cpp:2109
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Podpíš && &zašifruj"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2136
-#: composer/composerviewbase.cpp:2185 composer/keyresolver.cpp:1322
-#: composer/keyresolver.cpp:1360
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2191
 #, kde-format
 msgid "&Encrypt"
 msgstr "Šifrovať"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Sign Only"
 msgstr "Iba podpísať"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Po&slat ako je"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2131
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -756,12 +772,22 @@ msgstr ""
 "Sú konfliktné nastavenia šifrovania pre týchto príjemcov.\n"
 "Zašifrovať túto správu?"
 
-#: composer/composerviewbase.cpp:2137
-#, kde-format
+#: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
+#: composer/keyresolver.cpp:1363
+#, fuzzy, kde-format
+#| msgid "&Encrypt"
+msgctxt "@action:button"
+msgid "&Encrypt"
+msgstr "Šifrovať"
+
+#: composer/composerviewbase.cpp:2140
+#, fuzzy, kde-format
+#| msgid "Do &Not Encrypt"
+msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Nešifrovať"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2160
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -771,19 +797,21 @@ msgstr ""
 "Vyžadujete zašifrovať túto správu a zašifrovať kópiu pre vás, ale žiadny "
 "platný dôveryhodný šifrovací kľúč nebol nastavený pre túto identitu."
 
-#: composer/composerviewbase.cpp:2161
+#: composer/composerviewbase.cpp:2166
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Poslať nezašifrované?"
 
-#: composer/composerviewbase.cpp:2161 composer/keyresolver.cpp:1345
-#, kde-format
+#: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
+#, fuzzy, kde-format
+#| msgid "Send &Unencrypted"
+msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Poslať &nezašifrované"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -796,7 +824,7 @@ msgstr ""
 "a/alebo viesť k úniku citlivých informácií.\n"
 "Zašifrovať všetky časti?"
 
-#: composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2187
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -809,12 +837,12 @@ msgstr ""
 "uniknúť citlivé informácie.\n"
 "Chcete zašifrovať správy?"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2191
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Šifrovať všetky časti"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2194
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
@@ -970,7 +998,9 @@ msgstr ""
 "identitu."
 
 #: composer/keyresolver.cpp:1072
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not OpenPGP-Sign"
+msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nepoužiť OpenPGP podpis"
 
@@ -988,7 +1018,9 @@ msgstr ""
 "identitu."
 
 #: composer/keyresolver.cpp:1090
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not S/MIME-Sign"
+msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nepoužiť S/MIME podpis"
 
@@ -1019,8 +1051,8 @@ msgstr ""
 "Nevybrali ste šifrovací kľúč pre seba (šifrovať sebe). Nebudete môcť "
 "dešifrovať vašu vlastnú správu, ak ju zašifrujete."
 
-#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
-#: composer/keyresolver.cpp:1360
+#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
 #| msgid "Missing Key Warning"
 msgctxt "@title:window"
@@ -1045,7 +1077,7 @@ msgstr ""
 "Nevybrali ste kľúč šifrovania pre žiadneho prijímateľa tejto správy, preto "
 "správa nebude zašifrovaná."
 
-#: composer/keyresolver.cpp:1352
+#: composer/keyresolver.cpp:1355
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1054,7 +1086,7 @@ msgstr ""
 "Nevybrali ste kľúč šifrovania pre jedného z prijímateľov, táto osoba nebude "
 "môcť dešifrovať správu ak ju zašifrujete."
 
-#: composer/keyresolver.cpp:1356
+#: composer/keyresolver.cpp:1359
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1063,12 +1095,12 @@ msgstr ""
 "Nevybrali ste kľúč šifrovania pre niektorých prijímateľov, tieto osoby "
 "nebudú môcť dešifrovať správu ak ju zašifrujete."
 
-#: composer/keyresolver.cpp:1433
+#: composer/keyresolver.cpp:1436
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Voľba kľúča šifrovania"
 
-#: composer/keyresolver.cpp:1477
+#: composer/keyresolver.cpp:1480
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1083,7 +1115,7 @@ msgstr ""
 "Prosím, znovu vyberte certifikát(y), ktoré by mali byť použité pre tohto "
 "príjemcu."
 
-#: composer/keyresolver.cpp:1549
+#: composer/keyresolver.cpp:1552
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1100,7 +1132,7 @@ msgstr ""
 "príjemcu. Ak nie je žiadny vhodný certifikát v zozname, môžete tiež vyhľadať "
 "externé certifikáty kliknutím na tlačidlo: vyhľadať externé certifikáty.</qt>"
 
-#: composer/keyresolver.cpp:1559
+#: composer/keyresolver.cpp:1562
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1569,12 +1601,16 @@ msgid "Some Characters Will Be Lost"
 msgstr "Niektoré znaky sa stratia"
 
 #: job/maintextjob.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Lose Characters"
+msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Stratiť znaky"
 
 #: job/maintextjob.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Change Encoding"
+msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Zmeniť kódovanie"
 

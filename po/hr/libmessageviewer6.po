@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1911,11 +1911,13 @@ msgstr "KMail pitanje"
 
 #: utils/messageviewerutil.cpp:324
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Ši&firiraj"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "&Kriptiraj"
 
@@ -1929,6 +1931,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:337
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Signatures"
 
@@ -2210,6 +2213,7 @@ msgstr "<qt>Da li zaista želite izvršiti <b>%1</b>?</qt>"
 
 #: viewer/urlhandlermanager.cpp:905
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "izvrši naredbu"
 

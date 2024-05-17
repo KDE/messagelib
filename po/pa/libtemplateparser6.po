@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2010-12-26 08:57+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -557,11 +557,13 @@ msgstr ""
 
 #: templatesconfiguration.cpp:102
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr ""
 
 #: templatesconfiguration.cpp:103
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr ""
 

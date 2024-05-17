@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2011-08-15 08:44+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -575,12 +575,14 @@ msgstr ""
 #: templatesconfiguration.cpp:102
 #, fuzzy, kde-format
 #| msgid "With Custom Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Avou modele a vosse môde"
 
 #: templatesconfiguration.cpp:103
 #, fuzzy, kde-format
 #| msgid "Reply to All With Custom Template"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Responde a tertos avou on modele a vosse môde"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1938,12 +1938,16 @@ msgid "KMail Question"
 msgstr "คำถามของ จัดการจดหมาย K"
 
 #: utils/messageviewerutil.cpp:324
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "เก็บการเข้ารหัส"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "ไม่ต้องเก็บ"
 
@@ -1955,7 +1959,9 @@ msgid ""
 msgstr "ส่วน %1 นี้ของจดหมายมีการเซ็นตไว้ คุณต้องการรักษาลายเซ็นนี้ไว้ เมื่อมีการบันทึกหรือไม่ ?"
 
 #: utils/messageviewerutil.cpp:337
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "คงลายเซ็นไว้"
 
@@ -2247,7 +2253,9 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "คุณต้องการประมวลผล <filename>%1</<filename> จริงหรือไม่ ?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "ประมวลผล"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1782,11 +1782,13 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:324
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr ""
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr ""
 
@@ -1799,6 +1801,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:337
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr ""
 
@@ -2064,6 +2067,7 @@ msgstr ""
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr ""
 

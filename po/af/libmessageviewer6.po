@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -1874,11 +1874,13 @@ msgstr "KMail Inleiding"
 
 #: utils/messageviewerutil.cpp:324
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Enkripteer"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr ""
 
@@ -1891,6 +1893,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:337
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Heg Handtekening Aan"
 
@@ -2176,6 +2179,7 @@ msgstr ""
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr ""
 

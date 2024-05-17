@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1976,11 +1976,13 @@ msgstr "Soalan KMail"
 
 #: utils/messageviewerutil.cpp:324
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Penyulitan"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ja&ngan Sulitkan"
 
@@ -1995,6 +1997,7 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:337
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Tandatangan"
 
@@ -2293,6 +2296,7 @@ msgstr "<qt>Anda pasti inigin melaksanakan <b>%1</b>?</qt>"
 
 #: viewer/urlhandlermanager.cpp:905
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Laksanakan Arahan"
 
