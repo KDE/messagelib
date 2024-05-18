@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"PO-Revision-Date: 2024-05-17 06:24+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Bonvolu atendi dum la subskribo estas kontrolita..."
+msgstr "Bonvolu atendi dum la subskribo estas konfirmita..."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -255,7 +255,7 @@ msgstr "Mesaĝo estis subskribita kun nekonata ŝlosilo %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:102
 msgid "The validity of the signature cannot be verified."
-msgstr "La valideco de la subskribo ne estis kontrolebla."
+msgstr "La valideco de la subskribo ne estis konfirmebla."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:119
 msgid "The signature is valid, but the key's validity is unknown."
@@ -293,7 +293,7 @@ msgstr "Nevalida subskribo"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity"
-msgstr "Ne sufiĉas informoj por kontroli subskriban validecon"
+msgstr "Ne sufiĉas informoj por konfirmi subskriban validecon"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
@@ -693,7 +693,7 @@ msgstr "Nevalida korpkanonigo."
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr "Nekonata Korpa Haŝiga Algoritmo."
+msgstr "Nekonata Korp-Haketa Algoritmo."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
@@ -723,7 +723,7 @@ msgstr "Publika ŝlosilo estas tro malgranda."
 #: dkim-verify/dkimwidgetinfo.cpp:170
 #, kde-format
 msgid "Impossible to verify signature."
-msgstr "Neeble kontroli subskribon."
+msgstr "Neeble konfirmi subskribon."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
@@ -1034,7 +1034,7 @@ msgstr "Sendi Neon"
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
 msgid "Error: Signature not verified"
-msgstr "Eraro: subskribo ne kontrolata"
+msgstr "Eraro: subskribo ne konfirmata"
 
 #: messagepartthemes/default/defaultrenderer.cpp:71
 #, kde-format
@@ -1049,7 +1049,7 @@ msgstr "Malbona subskribo"
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
 msgid "No public key to verify the signature"
-msgstr "Neniu publikŝlosilo por kontroli la subskribon"
+msgstr "Neniu publikŝlosilo por konfirmi la subskribon"
 
 #: messagepartthemes/default/defaultrenderer.cpp:83
 #, kde-format
@@ -1059,7 +1059,7 @@ msgstr "Subskribo ne trovita."
 #: messagepartthemes/default/defaultrenderer.cpp:87
 #, kde-format
 msgid "Error verifying the signature"
-msgstr "Eraro dum kontrolo de subskribo"
+msgstr "Eraro dum konfirmo de subskribo"
 
 #: messagepartthemes/default/defaultrenderer.cpp:91
 #, kde-format
@@ -1090,7 +1090,7 @@ msgstr "La subskribo malvalidiĝis."
 #: messagepartthemes/default/defaultrenderer.cpp:148
 #, kde-format
 msgid "Unable to verify: key missing."
-msgstr "Ne eblas kontroli: Ŝlosilo mankas."
+msgstr "Ne eblas konfirmi: Ŝlosilo mankas."
 
 #: messagepartthemes/default/defaultrenderer.cpp:155
 #, kde-format
@@ -1419,7 +1419,7 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
-"Ebligu ĉi tiun opcion por montri malsamajn nivelojn de citita teksto. "
+"Ŝaltu ĉi tiun elekteblon por montri malsamajn nivelojn de citita teksto. "
 "Malebligu por kaŝi la nivelojn de citita teksto."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
@@ -1439,7 +1439,7 @@ msgstr "Redukti tipargrandon por citita teksto"
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Ebligu ĉi tiun opcion por montri cititan tekston kun pli malgranda tiparo."
+"Ŝaltu ĉi tiun elekteblon por montri cititan tekston kun pli malgranda tiparo."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
@@ -1572,9 +1572,9 @@ msgid ""
 "this option."
 msgstr ""
 "Microsoft Outlook havas kelkajn mankojn en ĝia efektivigo de la iCalendar "
-"normo; ĉi tiu opcio ĉirkaŭiras unu el ili. Se vi havas problemojn kun "
+"normo; ĉi tiu elekteblo ĉirkaŭiras unu el ili. Se vi havas problemojn kun "
 "Outlook-uzantoj ne kapablaj ricevi viajn respondojn, provu agordi ĉi tiun "
-"opcion."
+"elekteblon."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
@@ -1592,9 +1592,9 @@ msgid ""
 "setting this option."
 msgstr ""
 "Microsoft Outlook havas kelkajn mankojn en ĝia efektivigo de la iCalendar "
-"normo; ĉi tiu opcio ĉirkaŭiras unu el ili. Se vi havas problemojn, ke "
+"normo; ĉi tiu elekteblo ĉirkaŭiras unu el ili. Se vi havas problemojn, ke "
 "uzantoj de Outlook ne povas ricevi viajn invitojn, provu agordi ĉi tiun "
-"opcion."
+"elekteblon."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
 #: settings/messageviewer.kcfg.in:193
@@ -1613,7 +1613,7 @@ msgid ""
 msgstr ""
 "Microsoft Outlook, kiam ĝi estas uzata en kombinaĵo kun Microsoft Exchange-"
 "servilo, havas problemon komprenante normkonforman grupvaron retpoŝton. "
-"Ŝaltu ĉi tiun opcion por sendi invitojn pri grupvaroj laŭ maniero, kiun "
+"Ŝaltu ĉi tiun elekteblon por sendi invitojn pri grupvaroj laŭ maniero, kiun "
 "Microsoft Exchange komprenas."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
@@ -1632,11 +1632,11 @@ msgid ""
 "text in the composer window is in iCalendar syntax, and you should not try "
 "modifying it by hand."
 msgstr ""
-"Kiam ĉi tio estas kontrolita, vi ne vidos la fenestron de poŝtkomponisto. "
+"Kiam ĉi tio estas markita, vi ne vidos la fenestron de poŝtkomponisto. "
 "Anstataŭe, ĉiuj invitmesaĝoj estas senditaj aŭtomate. Se vi volas vidi la "
-"poŝton antaŭ sendi ĝin, vi povas malmarki ĉi tiun opcion. Tamen, konsciu, ke "
-"la teksto en la komponista fenestro estas en iCalendar-sintakso, kaj vi ne "
-"provu modifi ĝin mane."
+"poŝton antaŭ sendi ĝin, vi povas malmarki ĉi tiun elekteblon. Tamen, "
+"konsciu, ke la teksto en la komponista fenestro estas en iCalendar-sintakso, "
+"kaj vi ne provu modifi ĝin mane."
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
@@ -1652,7 +1652,7 @@ msgid ""
 "When this is checked, received invitation emails that have been replied to "
 "will be moved to the Trash folder, once the reply has been successfully sent."
 msgstr ""
-"Kiam ĉi tio estas kontrolita, ricevitaj invitretmesaĝoj al kiuj estis "
+"Kiam ĉi tio estas markita, ricevitaj invitretmesaĝoj al kiuj estis "
 "responditaj estos movitaj al la Rubujo-dosierujo, post kiam la respondo "
 "estas sukcese sendita."
 
@@ -1684,7 +1684,7 @@ msgstr "La plej lasttempe elektita dosierujo uzata por Notoj."
 #: ui/invitationsettings.ui:17
 #, kde-format
 msgid "Groupware Compatibility && Legacy Options"
-msgstr "Grupprograma kongrueco kaj heredaj opcioj"
+msgstr "Grupprograma Kongrueco && Heredaj Elektebloj"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:23
@@ -1693,8 +1693,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
-"Ŝaltu tiun opcion por certigi, ke MS-Outlook komprenas viajn respondojn pri "
-"invitoj"
+"Ŝaltu tiun elekteblon por certigi, ke MS-Outlook komprenas viajn respondojn "
+"pri invitoj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
@@ -1709,8 +1709,8 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
-"Ŝaltu tiun opcion por certigi, ke MS-Outlook komprenas viajn respondojn pri "
-"invitoj"
+"Ŝaltu tiun elekteblon por certigi, ke MS-Outlook komprenas viajn respondojn "
+"pri invitoj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
@@ -1731,7 +1731,7 @@ msgstr ""
 "Microsoft Outlook, kiam ĝi estas uzata en kombinaĵo kun Microsoft Exchange-"
 "servilo,\n"
 "havas problemon pri kompreno de normkonforma grupvara retpoŝto.\n"
-"Enŝaltu ĉi tiun opcion por sendi grupvarajn invitojn en maniero kiel "
+"Enŝaltu ĉi tiun elekteblon por sendi grupvarajn invitojn en maniero kiel "
 "Microsoft Exchange komprenas."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
@@ -1760,7 +1760,7 @@ msgstr "&Aŭtomata invitosendo"
 #: ui/invitationsettings.ui:68
 #, kde-format
 msgid "Options"
-msgstr "Opcioj"
+msgstr "Elektebloj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
@@ -1877,15 +1877,13 @@ msgid "KMail Question"
 msgstr "KMail-demando"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Konservi ĉifradon"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ne konservi"
@@ -1900,8 +1898,7 @@ msgstr ""
 "subskribita ĉe konservo?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Konservi subskribon"
@@ -2172,8 +2169,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ĉu vi vere volas plenumi <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Lanĉi"

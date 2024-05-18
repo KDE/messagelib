@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2023-09-26 09:25+0200\n"
+"PO-Revision-Date: 2024-05-17 07:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -585,15 +585,13 @@ msgid "Reset to default"
 msgstr "Ponastavi na privzeto"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Ponastavi trenutno predlogo"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Ponastavi vse predloge"

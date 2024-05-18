@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 10:54+0200\n"
+"PO-Revision-Date: 2024-05-17 10:32+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -41,8 +41,7 @@ msgid "Keep"
 msgstr "Behouden"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprimeren"
@@ -270,11 +269,10 @@ msgid "Save to File"
 msgstr "Naar bestand opslaan"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "&Vervangen"
+msgstr "Ve&rvangen"
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:930
@@ -586,15 +584,13 @@ msgid "File Attachment Reminder"
 msgstr "Herinnering voor bijlage toevoegen"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Bestand bijvoegen..."
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Zo &verzenden"
@@ -623,8 +619,7 @@ msgid "&Sign"
 msgstr "&Ondertekenen"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Niet ondertekenen"
@@ -655,8 +650,7 @@ msgid "Send Unsigned?"
 msgstr "Niet-ondertekend verzenden?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&Niet-ondertekend verzenden"
@@ -702,8 +696,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Waarschuwing voor niet-ondertekend"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Zo &verzenden"
@@ -765,15 +758,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr "&Versleutelen"
+msgstr "V&ersleutelen"
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Niet versleutelen"
@@ -796,8 +787,7 @@ msgid "Send Unencrypted?"
 msgstr "Onversleuteld verzenden?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Onversleuteld verzenden"
@@ -991,8 +981,7 @@ msgstr ""
 "identiteit ingesteld."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Niet OpenPGP-ondertekenen"
@@ -1012,8 +1001,7 @@ msgstr ""
 "identiteit ingesteld."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Niet S/MIME-ondertekenen"
@@ -1601,15 +1589,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "Sommige tekens zullen verloren gaan"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Lettertekens verliezen"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Codering veranderen"

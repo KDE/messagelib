@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 22:57+0200\n"
+"PO-Revision-Date: 2024-05-17 21:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -39,8 +39,7 @@ msgid "Keep"
 msgstr "Без компресиране"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Компресиране"
@@ -268,8 +267,7 @@ msgid "Save to File"
 msgstr "Запазване във файл"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Заместване"
@@ -584,15 +582,13 @@ msgid "File Attachment Reminder"
 msgstr "Напомняне за прикачен файл"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "&Прикачване файл..."
+msgstr "&Прикачване на файл..."
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Изпращане &както си е"
@@ -621,11 +617,10 @@ msgid "&Sign"
 msgstr "&Подписване"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr "Без подписване"
+msgstr "&Без подписване"
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format
@@ -652,11 +647,10 @@ msgid "Send Unsigned?"
 msgstr "Изпращане без подпис?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "Изпращане и неподписано"
+msgstr "Изпращане &неподписано"
 
 #: composer/composerviewbase.cpp:2040
 #, kde-format
@@ -698,8 +692,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Предупреждение за неподписано съобщение"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Изпращане &както е"
@@ -760,18 +753,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Шифроване"
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "Без &криптиране"
+msgstr "Без &шифриране"
 
 #: composer/composerviewbase.cpp:2160
 #, kde-format
@@ -790,11 +781,10 @@ msgid "Send Unencrypted?"
 msgstr "Изпращане на нешифровано?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr "Изпращане и нешифровано"
+msgstr "Изпращане &нешифровано"
 
 #: composer/composerviewbase.cpp:2182
 #, kde-format
@@ -979,8 +969,7 @@ msgstr ""
 "тази самоличност."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Без отваряне на PGP-подпис"
@@ -999,8 +988,7 @@ msgstr ""
 "тази самоличност."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Без S/MIME-подпис"
@@ -1585,15 +1573,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "Някои символи ще бъдат изгубени"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Загуба на символи"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Промяна на кодирането"

@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 06:56+0300\n"
+"PO-Revision-Date: 2024-05-17 12:53+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1873,15 +1873,13 @@ msgid "KMail Question"
 msgstr "שאלה מ־KMail"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "להשאיר את ההצפנה"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "לא להשאיר"
@@ -1894,11 +1892,10 @@ msgid ""
 msgstr "החלק %1 של ההודעה חתום. לשמור על החתימה בעת השמירה?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "שמירת החתימה"
+msgstr "להשאיר את החתימה"
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2164,11 +2161,10 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "להפעיל את <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
-msgstr "הרצת פקודה"
+msgstr "להריץ"
 
 #: viewer/viewer.cpp:146
 #, kde-format

@@ -3,22 +3,22 @@
 # Xosé <xosecalvo@gmail.com>, 2011, 2012, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
 # Marce Villarino <mvillarino@kde-espana.org>, 2013.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2023-09-30 12:40+0200\n"
+"PO-Revision-Date: 2024-05-17 21:03+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -589,15 +589,13 @@ msgid "Reset to default"
 msgstr "Restaurar os valores predeterminados"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Restablecer este modelo"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Restabelecer todos os modelos"

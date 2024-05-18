@@ -596,15 +596,13 @@ msgid "Reset to default"
 msgstr "Restablix als valors predeterminats"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Restaura la plantilla personalitzada"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Restaura totes les plantilles"
