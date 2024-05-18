@@ -2,15 +2,15 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the messagelib package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2010.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-01-04 17:19+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-17 06:24+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -1229,7 +1229,7 @@ msgstr "Aŭtomate regrandigi bildojn"
 #: imagescaling/ui/imagescalingwidget.ui:28
 #, kde-format
 msgid "General"
-msgstr "Generalo"
+msgstr "Ĝenerala"
 
 #. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
 #: imagescaling/ui/imagescalingwidget.ui:34
@@ -1507,7 +1507,7 @@ msgid ""
 "No charsets were available for encoding. Please check your configuration and "
 "make sure it contains at least one charset for sending."
 msgstr ""
-"Neniuj signoroj estis disponeblaj por kodigo. Bonvolu kontroli vian agordon "
+"Neniuj signaroj estis disponeblaj por kodigo. Bonvolu kontroli vian agordon "
 "kaj certigi, ke ĝi enhavas almenaŭ unu signaron por sendo."
 
 #: job/maintextjob.cpp:99
@@ -2004,7 +2004,7 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
-"Malebligu ĉi tiun opcion se vi volas nur ke kontaktoj de viaj adreslibroj "
+"Malŝaltu ĉi tiun elekteblon se vi volas nur ke kontaktoj de viaj adreslibroj "
 "aperu en la aŭtokompleta listo en la adreskampoj de la komponisto."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
@@ -2029,8 +2029,8 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
-"Malebligu ĉi tiun opcion se vi ne volas, ke lastatempe uzitaj adresoj aperu "
-"en la aŭtokompleta listo en la adreskampoj de la komponisto."
+"Malŝaltu ĉi tiun elekteblon se vi ne volas, ke lastatempe uzitaj adresoj "
+"aperu en la aŭtokompleta listo en la adreskampoj de la komponisto."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
@@ -2395,16 +2395,3 @@ msgstr "Poŝtsendisto eksterrete."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Meti Enreta"
-
-#~ msgid "Keep original charset when replying or forwarding if possible"
-#~ msgstr "Konservi originalan signaron dum respondado aŭ plusendado se eble"
-
-#~ msgid "Outlook-compatible attachment naming"
-#~ msgstr "Perspektiv-kongrua aldonaĵnomado"
-
-#~ msgid ""
-#~ "Turn this option on to make Outlook &#8482; understand attachment names "
-#~ "containing non-English characters"
-#~ msgstr ""
-#~ "Ŝaltu ĉi tiun opcion por ke Outlook ™ komprenu aldonajn nomojn "
-#~ "enhavantajn ne-anglajn signojn"
