@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-03-29 21:30+0900\n"
+"PO-Revision-Date: 2024-05-18 16:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1229,32 +1229,28 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "此信件可能是詐騙信件。<a href=\"scamdetails\">（詳情...）</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "移到垃圾桶"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "我確信它不是詐騙信件"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "新增電子郵件到白名單上"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr "關閉對所有信件偵測詐騙信件的功能"
+msgstr "為所有信件關閉偵測詐騙信件的功能"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:202
@@ -1535,7 +1531,7 @@ msgstr "指定回覆信件時預設的引言動作（只內部使用）"
 #: settings/messageviewer.kcfg.in:181
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "在回覆回信時 Mangle From/To headers"
+msgstr "回覆回信時打亂寄件者/收件者標頭"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
@@ -1832,18 +1828,16 @@ msgid "KMail Question"
 msgstr "KMail 問題"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "保持加密"
+msgstr "保留加密"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr "不要加密"
+msgstr "不要保留"
 
 #: utils/messageviewerutil.cpp:335
 #, kde-format
@@ -1853,11 +1847,10 @@ msgid ""
 msgstr "%1 這部份的信件有簽署。你想要存檔時保存原先的簽章嗎？"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "保存簽章"
+msgstr "保留簽章"
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2119,8 +2112,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "您確定要執行 <filename>%1</filename> 嗎？"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "執行"
@@ -2314,8 +2306,7 @@ msgid "Copy Text"
 msgstr "複製文字"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "選取所有文字"
@@ -2336,11 +2327,10 @@ msgid "Show Message Structure"
 msgstr "信件結構列表"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "檢視來源(&V)"
+msgstr "檢視原始碼(&V)"
 
 #: viewer/viewer_p.cpp:1577
 #, kde-format
@@ -2348,43 +2338,37 @@ msgid "&Save Message..."
 msgstr "儲存信件(&S)..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "儲存顯示格式(&S)"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
-msgstr "重置顯示格式(&R)"
+msgstr "重設顯示格式(&R)"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "將信件上捲"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "將信件下捲"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "將信件上捲更多"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "將信件下捲更多"
@@ -2400,29 +2384,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "在 HTML 與純文字顯示模式間切換"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
-msgstr "從遠端下載連結"
+msgstr "載入遠端參考"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "唸出文字"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "分享文字..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "複製影像位置"

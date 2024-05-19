@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-03-27 14:55+0300\n"
+"PO-Revision-Date: 2024-05-18 21:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -42,8 +42,7 @@ msgid "Keep"
 msgstr "Tut"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Sıkıştır"
@@ -68,14 +67,14 @@ msgstr "&Birlikte Aç"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Diğer..."
+msgstr "&Diğer…"
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Birlikte Aç..."
+msgstr "&Birlikte Aç…"
 
 #: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
@@ -93,15 +92,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Panodan metin iliştirme başarısız oldu"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "&Genel Anahtar İliştir..."
+msgstr "&Genel Anahtar İliştir…"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "G&enel Anahtarımı İliştir"
@@ -117,39 +114,38 @@ msgstr "İliştir"
 #: attachment/attachmentcontrollerbase.cpp:461
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Dosya İliştir..."
+msgstr "&Dosya İliştir…"
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Ek Ekle..."
+msgstr "Ek Ekle…"
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "&Dizin İliştir..."
+msgstr "&Dizin İliştir…"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr "Kendi vCard'ımı İliştir"
+msgstr "Kendi vCard’ımı İliştir"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
-msgstr "Kendi vCard'ım"
+msgstr "Kendi vCard’ım"
 
 #: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "&vCard'lar İliştir..."
+msgstr "&vCard’lar İliştir…"
 
 #: attachment/attachmentcontrollerbase.cpp:480
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "&Panodan Metin İliştir..."
+msgstr "&Panodan Metin İliştir…"
 
 #: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
@@ -185,39 +181,35 @@ msgid "Edit"
 msgstr "Düzenle"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Şununla Düzenle..."
+msgstr "Şununla Düzenle…"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Eki &Farklı Kaydet..."
+msgstr "Eki &Farklı Kaydet…"
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
-msgstr "Farklı Kaydet..."
+msgstr "Farklı Kaydet…"
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Ek &Özellikleri..."
+msgstr "Ek &Özellikleri…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Özellikler"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Tümünü Seç"
@@ -278,8 +270,7 @@ msgid "Save to File"
 msgstr "Dosyaya Kaydet"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Değiştir"
@@ -288,7 +279,7 @@ msgstr "&Değiştir"
 #: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "\"%1\" dizinini gerçekten iliştirmek istiyor musunuz?"
+msgstr "“%1” dizinini iliştirmeyi gerçekten istiyor musunuz?"
 
 #: attachment/attachmentcontrollerbase.cpp:852
 #: attachment/attachmentcontrollerbase.cpp:931
@@ -394,7 +385,7 @@ msgstr "Otomatik Görüntülemeyi Öner"
 #: attachment/editorwatcher.cpp:60
 #, kde-format
 msgid "Edit with:"
-msgstr "Şununla düzenle..."
+msgstr "Şununla Düzenle…"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -593,15 +584,13 @@ msgid "File Attachment Reminder"
 msgstr "Dosya Ekleme Anımsatıcısı"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "&Dosya İliştir..."
+msgstr "&Dosya İliştir…"
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Olduğu Gibi Gönder"
@@ -630,8 +619,7 @@ msgid "&Sign"
 msgstr "&İmzala"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "İ&mzalama"
@@ -661,8 +649,7 @@ msgid "Send Unsigned?"
 msgstr "İmzasız Gönder?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "İ&mzalamadan Gönder"
@@ -706,8 +693,7 @@ msgid "Unsigned-Message Warning"
 msgstr "İmzalanmamış İleti Uyarısı"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Olduğu Gibi Gönder"
@@ -768,18 +754,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Şifrele"
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "&Şifreleme Yapma"
+msgstr "&Şifreleme"
 
 #: composer/composerviewbase.cpp:2160
 #, kde-format
@@ -798,8 +782,7 @@ msgid "Send Unencrypted?"
 msgstr "Şifrelemeden Gönder?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Şifrelemeden Gönder"
@@ -856,7 +839,7 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
-"\"%1\" alıcısı için OpenPGP şifreleme anahtarlarından veya S/MIME "
+"“%1” alıcısı için OpenPGP şifreleme anahtarlarından veya S/MIME "
 "sertifikalarından bir veya birkaçı şifrelemek için güvenilmez."
 
 #: composer/keyresolver.cpp:322
@@ -986,11 +969,10 @@ msgstr ""
 "ancak bu kimlik için güvenilir OpenPGP şifreleme anahtarı yapılandırmadınız."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr "OpenPGP-İmzası Kullanma"
+msgstr "OpenPGP İmzası Kullanma"
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -1006,11 +988,10 @@ msgstr ""
 "yapılandırmadınız."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr "S/MIME-İmzası Kullanma"
+msgstr "S/MIME İmzası Kullanma"
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -1097,7 +1078,7 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
-"\"%1\" için kullanılacak şifreleme sertifikalarında sorun var.\n"
+"“%1” için kullanılacak şifreleme sertifikalarında sorun var.\n"
 "\n"
 "Lütfen bu alıcı için kullanılacak sertifikaları yeniden seçin."
 
@@ -1113,10 +1094,10 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
-"<qt>\"%1\" için geçerli ve güvenilir şifreleme sertifikası bulunamadı.<br/"
-"><br/>Bu alıcı için kullanılması gereken sertifikayı/sertifikaları seçin. "
-"Eğer listede uygun bir sertifika yoksa ayrıca şu düğme ile dış sertifikaları "
-"da arayabilirsiniz: harici sertifikaları ara.</qt>"
+"<qt>“%1” için geçerli ve güvenilir şifreleme sertifikası bulunamadı.<br/><br/"
+">Bu alıcı için kullanılması gereken sertifikayı/sertifikaları seçin. Eğer "
+"listede uygun bir sertifika yoksa ayrıca şu düğme ile dış sertifikaları da "
+"arayabilirsiniz: Dış sertifikaları ara.</qt>"
 
 #: composer/keyresolver.cpp:1562
 #, kde-format
@@ -1128,7 +1109,7 @@ msgid ""
 "\n"
 "Select the certificate(s) which should be used for this recipient."
 msgstr ""
-"Birden fazla sertifika \"%1\" ile eşleşiyor.\n"
+"“%1” ile birden fazla sertifika eşleşiyor.\n"
 "\n"
 "Bu alıcı için kullanılması gereken sertifikayı/sertifikaları seçin."
 
@@ -1140,7 +1121,7 @@ msgstr "Ad Seçimi"
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr "'%1' kişisi adres defterinizde hangi adı kullanmalı?"
+msgstr "“%1” kişisi adres defterinizde hangi adı kullanmalı?"
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
@@ -1150,7 +1131,7 @@ msgstr "Yeni kişinin ekleneceği adres defterini seçin:"
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr "\"%2\" aygıtına göndermek için \"%1\" yanıtını bekle"
+msgstr "“%2” aygıtına göndermek için “%1” yanıtını bekle"
 
 #: followupreminder/followupremindercreatejob.cpp:99
 #, kde-format
@@ -1237,7 +1218,7 @@ msgstr "Görsel Biçimini Seç"
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
-msgstr "Biçim Seç..."
+msgstr "Biçim Seç…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1408,7 +1389,7 @@ msgstr "Dizgi:"
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. ';' ile ayırın."
+msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. ‘;’ ile ayırın."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1418,7 +1399,7 @@ msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. ';' ile ayırın
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr "Belirtilen dizgileri ';' ile ayırın"
+msgstr "Belirtilen dizgileri ‘;’ ile ayırın"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -1517,7 +1498,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Anahtar dışa aktarılıyor..."
+msgstr "Anahtar dışa aktarılıyor…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1580,15 +1561,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "Bazı Karakterler Kaybolacak"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
-msgstr "Kayıp Karakterler"
+msgstr "Karakterleri Kaybet"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Kodlamayı Değiştir"
@@ -1606,7 +1585,7 @@ msgstr "Seçilen kodlama (%1) iletiyi tamamen kodlayamıyor."
 #: job/maintextjob.cpp:142
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr "\"%1\" karakter kümesi için metin kodeği alınamadı."
+msgstr "“%1” karakter kümesi için metin kodlayıcısı alınamadı."
 
 #: job/singlepartjob.cpp:67
 #, kde-format
@@ -1622,7 +1601,7 @@ msgstr "İleti Eğilimi Bildirimi İsteği"
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
 msgid "Send \"&denied\""
-msgstr "\"&Reddedildi\" Gönder"
+msgstr "“&Reddedildi” Gönder"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1643,8 +1622,8 @@ msgid ""
 msgstr ""
 "Bu ileti, iletiyi kabulunuzle ilgili olarak bir bildirim döndürme isteği "
 "içeriyor.\n"
-"İsteği yok sayabilir veya posta programının bir \"reddedildi\" veya olağan "
-"bir yanıt göndermesine izin verebilirsiniz."
+"İsteği yok sayabilir veya posta programının bir “reddedildi” veya olağan bir "
+"yanıt göndermesine izin verebilirsiniz."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1657,9 +1636,9 @@ msgid ""
 msgstr ""
 "Bu ileti, iletiyi kabulunuzle ilgili olarak bir bildirim döndürme isteği "
 "içeriyor.\n"
-"İçinde, \"gerekli\" olarak imlenen bir işleme yönergesi mevcut; ancak posta "
+"İçinde, “gerekli” olarak imlenen bir işleme yönergesi var; ancak posta "
 "programı bunun ne olduğunu anlamıyor.\n"
-"İsteği yok sayabilir veya posta programının bir \"başarısız oldu\" yanıtı "
+"İsteği yok sayabilir veya posta programının bir “başarısız oldu” yanıtı "
 "göndermesine izin verebilirsiniz."
 
 #: mdn/mdnadvicehelper.cpp:41
@@ -1673,8 +1652,8 @@ msgstr ""
 "Bu ileti, iletiyi kabulunuzle ilgili olarak bir bildirim döndürme isteği "
 "içeriyor;\n"
 "ancak bildirimin birden çok adrese gönderilmesi zorunlu.\n"
-"İsteği yok sayabilir veya posta programının bir \"reddedildi\" veya olağan "
-"bir yanıt göndermesine izin verebilirsiniz."
+"İsteği yok sayabilir veya posta programının bir “reddedildi” veya olağan bir "
+"yanıt göndermesine izin verebilirsiniz."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1687,8 +1666,8 @@ msgstr ""
 "Bu ileti, iletiyi kabulunuzle ilgili olarak bir bildirim döndürme isteği "
 "içeriyor;\n"
 "ancak bir dönüş yolu ayarlanmamış.\n"
-"İsteği yok sayabilir veya posta programının bir \"reddedildi\" veya olağan "
-"bir yanıt göndermesine izin verebilirsiniz."
+"İsteği yok sayabilir veya posta programının bir “reddedildi” veya olağan bir "
+"yanıt göndermesine izin verebilirsiniz."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1703,8 +1682,8 @@ msgstr ""
 "içeriyor;\n"
 "ancak dönüş yolu adresi, bildirimin gönderilmesinin istendiği adresten "
 "ayrımlı.\n"
-"İsteği yok sayabilir veya posta programının bir \"reddedildi\" veya olağan "
-"bir yanıt göndermesine izin verebilirsiniz."
+"İsteği yok sayabilir veya posta programının bir “reddedildi” veya olağan bir "
+"yanıt göndermesine izin verebilirsiniz."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1841,13 +1820,13 @@ msgstr[1] "Alıcı listesi %2 girdiden %1 girdiye kırpılıyor."
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Listeyi Kaydet..."
+msgstr "Listeyi Kaydet…"
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "&Seç..."
+msgstr "&Seç…"
 
 #: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
@@ -2074,7 +2053,7 @@ msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
 msgstr ""
-"İleti düzenlerken noktalı virgül karakterini (';') ayırıcı olarak kullanmaya "
+"İleti düzenlerken noktalı virgül karakterini (‘;’) ayırıcı olarak kullanmaya "
 "izin ver"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)

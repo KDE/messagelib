@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 01:42+0300\n"
+"PO-Revision-Date: 2024-05-18 21:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1883,18 +1883,16 @@ msgid "KMail Question"
 msgstr "K Posta Sorusu"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "Şifrelemeyi Koru"
+msgstr "Şifrelemeyi Tut"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr "Koruma"
+msgstr "Tutma"
 
 #: utils/messageviewerutil.cpp:335
 #, kde-format
@@ -1906,11 +1904,10 @@ msgstr ""
 "musunuz?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "İmzayı Koru"
+msgstr "İmzayı Tut"
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2176,11 +2173,10 @@ msgstr ""
 "<filename>%1</filename> uygulamasını çalıştırmayı gerçekten istiyor musunuz?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
-msgstr "Komut Çalıştır"
+msgstr "Yürüt"
 
 #: viewer/viewer.cpp:146
 #, kde-format
