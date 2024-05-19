@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-21 22:49+0300\n"
+"PO-Revision-Date: 2024-05-18 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
@@ -95,7 +95,7 @@ msgstr "Şablon Oluşturulamıyor"
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
-msgstr "\"%1\" şablonunu gerçekten kaldırmak istiyor musunuz?"
+msgstr "“%1” şablonunu kaldırmayı gerçekten istiyor musunuz?"
 
 #: customtemplates.cpp:345
 #, kde-format
@@ -604,12 +604,12 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
-"\"Düz metin kullanarak yanıtla\" ve \"HTML metni kullanarak yanıtla\" "
-"çiftleri geçerli değil. Yalnızca gereksiniminize göre \"Alıntılanmış komut "
-"Olarak Yanıtla\" kullanabilmek için yukarıdaki komutlardan birini seçin.\n"
-"(a)Alıntıların katı bir şekilde kullanılması için düz metin kullanılarak "
+"‘Düz metin kullanarak yanıtla’ ve ‘HTML metni kullanarak yanıtla’ çiftleri "
+"geçerli değil. Yalnızca gereksiniminize göre \"Alıntılanmış komut Olarak "
+"Yanıtla\" kullanabilmek için yukarıdaki komutlardan birini seçin.\n"
+"(a) Alıntıların katı bir şekilde kullanılması için düz metin kullanılarak "
 "yanıtla\n"
-"(b)Eğer varsa, alıntıların HTML biçiminde kullanılması için HTML metni "
+"(b) Eğer varsa alıntıların HTML biçiminde kullanılması için HTML metni "
 "kullanılarak yanıtla"
 
 #: templatesinsertcommandpushbutton.cpp:20
@@ -650,8 +650,8 @@ msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
 msgstr ""
-"Özel bir şablon oluşturmak için ilk olarak bu şablon için bir isim girin ve "
-"'+' düğmesine basın."
+"Özel bir şablon oluşturmak üzere ilk olarak bu şablon için bir ad girin ve "
+"‘+’ düğmesine basın."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
@@ -870,8 +870,8 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "Bu alanda yeni e-posta iletileri için şablon oluşturursunuz. Şablon "
-"oluşturma hakkında daha fazla bilgi için, bu iletişim penceresindeki \"Bu "
-"nasıl çalışır?\" bağlantısına basın."
+"oluşturma hakkında daha fazla bilgi için bu iletişim penceresindeki “Bu "
+"nasıl çalışır?” bağlantısına basın."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
@@ -897,8 +897,8 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "Bu alanda ileti yanıtları için şablon oluşturursunuz. Şablon oluşturma "
-"hakkında daha fazla bilgi için, bu iletişim penceresindeki \"Bu nasıl "
-"çalışır?\" bağlantısına basın."
+"hakkında daha fazla bilgi için bu iletişim penceresindeki “Bu nasıl "
+"çalışır?” bağlantısına basın."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
@@ -923,9 +923,9 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
-"Bu alanda tümüne yanıtlamak veya bir posta listesine yanıt göndermek için "
-"şablon oluşturursunuz. Şablon oluşturma hakkında daha fazla bilgi için, bu "
-"iletişim penceresindeki \"Bu nasıl çalışır?\" bağlantısına basın."
+"Bu alanda tümünü yanıtlamak veya bir posta listesine yanıt göndermek için "
+"şablon oluşturursunuz. Şablon oluşturma hakkında daha fazla bilgi için bu "
+"iletişim penceresindeki “Bu nasıl çalışır?” bağlantısına basın."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
@@ -951,15 +951,15 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "Bu alanda ileti iletimleri için şablon oluşturursunuz. Şablon oluşturma "
-"hakkında daha fazla bilgi için, bu iletişim penceresindeki \"Bu nasıl "
-"çalışır?\" bağlantısına basın."
+"hakkında daha fazla bilgi için bu iletişim penceresindeki “Bu nasıl "
+"çalışır?” bağlantısına basın."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr "&Alıntılama işareti:"
+msgstr "&Alıntı göstergesi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 21:30+0900\n"
+"PO-Revision-Date: 2024-05-18 16:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1527,7 +1527,7 @@ msgstr "指定回覆信件時預設的引言動作（只內部使用）"
 #: settings/messageviewer.kcfg.in:181
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "在回覆回信時 Mangle From/To headers"
+msgstr "回覆回信時打亂寄件者/收件者標頭"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
