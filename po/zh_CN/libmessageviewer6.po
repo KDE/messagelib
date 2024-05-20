@@ -1800,12 +1800,12 @@ msgstr "KMail 提问"
 #: utils/messageviewerutil.cpp:324
 #, kde-format
 msgid "Keep Encryption"
-msgstr "保持加密"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
 #, kde-format
 msgid "Do Not Keep"
-msgstr "不保持"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:335
 #, kde-format
@@ -1817,7 +1817,7 @@ msgstr "信件的第 %1 部分经过签名。您想要在保存时保留签名�
 #: utils/messageviewerutil.cpp:337
 #, kde-format
 msgid "Keep Signature"
-msgstr "保持签名"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2081,7 +2081,7 @@ msgstr "您真的要执行 <filename>%1</filename> 吗？"
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
 msgid "Execute"
-msgstr "执行"
+msgstr ""
 
 #: viewer/viewer.cpp:146
 #, kde-format

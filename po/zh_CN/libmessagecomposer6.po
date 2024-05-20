@@ -260,7 +260,7 @@ msgstr "保存到文件"
 #: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgid "&Replace"
-msgstr "替换(&R)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:909
@@ -570,7 +570,7 @@ msgstr "文件附件提醒"
 #: composer/composerviewbase.cpp:1911
 #, kde-format
 msgid "&Send as Is"
-msgstr "原样发送(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -597,7 +597,7 @@ msgstr "签名(&S)"
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
 #, kde-format
 msgid "Do &Not Sign"
-msgstr "不签名(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format
@@ -624,7 +624,7 @@ msgstr "不签名发送？"
 #: composer/composerviewbase.cpp:2022
 #, kde-format
 msgid "Send &Unsigned"
-msgstr "不签名发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2037
 #, kde-format
@@ -667,7 +667,7 @@ msgstr "未签名信件警告"
 #: composer/composerviewbase.cpp:2049
 #, kde-format
 msgid "Send &As Is"
-msgstr "原样发送(&A)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2096
 #, kde-format
@@ -727,7 +727,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2137
 #, kde-format
 msgid "Do &Not Encrypt"
-msgstr "不加密(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2157
 #, kde-format
@@ -746,7 +746,7 @@ msgstr "不加密发送吗？"
 #: composer/composerviewbase.cpp:2161 composer/keyresolver.cpp:1345
 #, kde-format
 msgid "Send &Unencrypted"
-msgstr "不加密发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2176
 #, kde-format
@@ -917,7 +917,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1072
 #, kde-format
 msgid "Do Not OpenPGP-Sign"
-msgstr "不使用 OpenPGP 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -934,7 +934,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1090
 #, kde-format
 msgid "Do Not S/MIME-Sign"
-msgstr "不使用 S/MIME 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -1489,12 +1489,12 @@ msgstr "某些字符将会丢失"
 #: job/maintextjob.cpp:103
 #, kde-format
 msgid "Lose Characters"
-msgstr "丢失字符"
+msgstr ""
 
 #: job/maintextjob.cpp:104
 #, kde-format
 msgid "Change Encoding"
-msgstr "更改编码"
+msgstr ""
 
 #: job/maintextjob.cpp:107
 #, kde-format

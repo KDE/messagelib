@@ -576,12 +576,12 @@ msgstr "重置为默认"
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Reset Current Template"
-msgstr "重置当前模板"
+msgstr ""
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Reset All Templates"
-msgstr "重置所有模板"
+msgstr ""
 
 #: templatesconfiguration.cpp:361
 #, kde-format

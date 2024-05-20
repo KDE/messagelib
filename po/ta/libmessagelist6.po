@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-17 17:42+0530\n"
+"PO-Revision-Date: 2024-05-19 15:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1619,6 +1619,8 @@ msgstr "இயல்பிருப்பாக காட்டு"
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
+"இந்த காட்சிமுறை செயலிலுள்ளபோது இந்த நெடுவரிசையை காட்ட வேண்டுமெனில் இதைத் தேர்வு "
+"செய்யவும்."
 
 #: utils/themeeditor.cpp:87
 #, kde-format

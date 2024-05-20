@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2024-03-24 17:52+0530\n"
+"PO-Revision-Date: 2024-05-19 15:36+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "உடனிணை"
 #: composer/composerviewbase.cpp:1910
 #, kde-format
 msgid "&Attach File..."
-msgstr "&கோப்பை இணை..."
+msgstr "&கோப்பை உடனிணை..."
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "&உடனிணைப்பை சேர்..."
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "அடைவை &இணை…"
+msgstr "அடைவை &உடனிணை…"
 
 #: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
@@ -952,6 +952,8 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
+"உங்களுக்கான மறையாக்க சாவியை நீங்கள் தேர்ந்தெடுக்கவில்லை. இருந்தும் அஞ்சலை மறையாக்கினால் அதை "
+"நீங்கள் மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
 #: composer/keyresolver.cpp:1360
@@ -965,14 +967,14 @@ msgstr "காணாத சாவியைக் குறித்த எச்
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
-msgstr ""
+msgstr "பெறுநருக்கான மறையாக்க சாவி தேர்ந்தெடுக்கப்படாததால் அஞ்சல் மறையாக்கப்படாது."
 
 #: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
-msgstr ""
+msgstr "எந்த பெறுநருக்குமான மறையாக்க சாவி தேர்ந்தெடுக்கப்படாததால் அஞ்சல் மறையாக்கப்படாது."
 
 #: composer/keyresolver.cpp:1352
 #, kde-format
@@ -980,6 +982,8 @@ msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"ஒரு பெறுநருக்கான மறையாக்க சாவியை நீங்கள் தேர்ந்தெடுக்கவில்லை: இருந்தும் மறையாக்கினால் "
+"அவரால் இந்த அஞ்சலை மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1356
 #, kde-format
@@ -987,6 +991,8 @@ msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"சில பெறுநர்களுக்கான மறையாக்க சாவிகளை நீங்கள் தேர்ந்தெடுக்கவில்லை: இருந்தும் மறையாக்கினால் "
+"அவர்களால் இந்த அஞ்சலை மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1433
 #, kde-format
@@ -1513,7 +1519,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "அஞ்சலைக் கையாண்டதைத் தெரிவிக்குமாறு கோரிக்கை"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1537,6 +1543,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"நீங்கள் இந்த அஞ்சலை எப்படி கையாண்டீர்கள் என்பதைத் தெரிவிக்குமாறு அஞ்சலின் அனுப்புநர் "
+"கோரியுள்ளார்.\n"
+"இக்கோரிக்கையை நீங்கள் பொருட்படுத்தாமல் இருக்கலாம், மறுத்ததாக பதிலனுப்பலாம், அல்லது "
+"பதிலளிக்க இந்த மின்னஞ்சல் செயலியை அனுமதிக்கலாம்."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -2039,7 +2049,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
-msgstr ""
+msgstr "எந்த மறையாக்க சாவியைப் பயன்படுத்த வேண்டும் என்று எப்போதும் கேள்"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format

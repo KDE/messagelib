@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# Kishore G <kishore96@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2022-05-08 15:44+0530\n"
+"PO-Revision-Date: 2024-05-19 15:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -73,8 +73,7 @@ msgid "A template with same name already exists."
 msgstr "இப்பெயரில் ஏற்கனவே ஓர் வார்ப்புரு உள்ளது."
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "வார்ப்புருவை உருவாக்க முடியவில்லை"
@@ -287,7 +286,7 @@ msgstr "உடனிணைப்பு %1"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr ""
+msgstr "இடைநிலை கட்டளை <command>%1</command> தோல்வியடைந்தது."
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
@@ -481,11 +480,11 @@ msgstr "மொழி"
 
 #: templatescommandmenu.cpp:166
 msgid "Turn Debug On"
-msgstr ""
+msgstr "பிழைநீக்கத்தை இயக்கு"
 
 #: templatescommandmenu.cpp:168
 msgid "Turn Debug Off"
-msgstr ""
+msgstr "பிழைநீக்கத்தை முடக்கு"
 
 #: templatescommandmenu.cpp:201
 #, kde-format
@@ -517,7 +516,7 @@ msgstr "மற்றவை"
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
-msgstr ""
+msgstr "பிழைநீக்கம்"
 
 #: templatesconfiguration.cpp:50
 #, kde-format
@@ -558,8 +557,7 @@ msgstr ""
 "வார்ப்புருக்களுக்குமா?"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "இயல்பிருப்பை மீட்டமைப்பது"
