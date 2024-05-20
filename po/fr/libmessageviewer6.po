@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-16 18:52+0200\n"
+"PO-Revision-Date: 2024-05-18 09:49+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1927,15 +1927,13 @@ msgid "KMail Question"
 msgstr "KMail - Question"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Conserver le chiffrement"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ne pas conserver"
@@ -1950,8 +1948,7 @@ msgstr ""
 "enregistrant ?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Conserver la signature"
@@ -2223,8 +2220,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Voulez-vous vraiment exécuter la commande <filename>%1</filename> ?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Exécuter"

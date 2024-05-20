@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-03-24 17:47+0530\n"
+"PO-Revision-Date: 2024-05-19 15:23+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -704,7 +704,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "உடற்பகுதிக்கான சரிகாண்தொகை படிமுறை தெரியாதது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
@@ -1251,29 +1251,25 @@ msgstr ""
 "இந்த அஞ்சல் ஏமாற்ற முயற்சிப்பதாக இருக்கலாம். <a href=\"scamdetails\">(விவரங்கள்…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "அகற்றிடத்துக்கு நகர்த்து"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "இது ஏமாற்றுவேலை இல்லை"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "மின்னஞ்சலை அனுமதிப்பட்டியலில் சேர்"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "மோசடிகளை கண்டறியும் கூறை அனைத்து அஞ்சல்களுக்கும் முடக்கு"
@@ -1385,9 +1381,10 @@ msgstr "அச்சிடும்போது மறையாக்க/கை�
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
 #: settings/messageviewer.kcfg.in:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr "HTML "
+msgstr ""
+"HTML-ஐக் காட்டும்போது குறைந்தபட்ச அளவைவிட சிறிய எழுத்துருக்களைப் பயன்படுத்த வேண்டாம்."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:38
@@ -1426,6 +1423,8 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
+"மேற்கோளுக்குள் உள்ள மேற்கோள்களை வெவ்வேறு அடுக்குகளாக காட்ட இத்தேர்வை இயக்கலாம். இத்தேர்வு "
+"முடக்கப்பட்டிருந்தால், அனைத்து மேற்கோள்களும் ஒரே மாதிரி காட்டப்படும்."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
@@ -1443,13 +1442,13 @@ msgstr "மேற்கோளிட்ட உரைக்கான எழுத�
 #: settings/messageviewer.kcfg.in:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
-msgstr ""
+msgstr "மேற்கோளிடப்பட்டுள்ள உரையை சிறியதாக்கி காட்ட இத்தேர்வை இயக்கலாம்."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr ""
+msgstr "அஞ்சல்களைத் திறக்கும்போதே மறைநீக்க வேண்டுமா அல்லது ஒவ்வொரு முறையும் கேட்க வேண்டுமா"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
@@ -1474,13 +1473,13 @@ msgstr "எப்போதும் காட்டு"
 #: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr ""
+msgstr "தலைப்புப்புலங்கள் காட்டப்படும் முறை"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg.in:119
 #, kde-format
 msgid "How much of headers should be displayed"
-msgstr ""
+msgstr "எந்த தலைப்புப்புலங்களைக் காட்ட வேண்டும்"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg.in:123
@@ -1505,6 +1504,8 @@ msgstr "உடனிணைப்புகள் காட்டப்படு�
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
 msgstr ""
+"மூன்றாம் மட்டத்திற்கு மேலான மேற்கோள்களுக்கு முன்பு பயன்படுத்திய நிறங்களை மறுபடியும் "
+"பயன்படுத்தலாமா"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:139
@@ -1559,9 +1560,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
-msgstr "பாரம்பரிய வகை: அனுப்புநர்/பெறுநர்:தலைப்புகளின் அழைப்புகளுக்குப் பதில் அழைப்புகள்."
+msgstr "பதில்களுக்கான பதில்களில் அனுப்புநர்/பெறுநர் புலங்களை முறையற்றவையாக மாற்று"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg.in:182
@@ -1580,8 +1581,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
 #: settings/messageviewer.kcfg.in:187
-#, fuzzy, kde-format
-#| msgid "Send &invitations in the mail body"
+#, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "அஞ்சலின் உடலில் &அழைப்புகளை அனுப்பு"
 
@@ -1644,7 +1644,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
+msgstr "அழைப்பிதழ்களுக்கு பதிலளித்த பின் அவற்றை நீக்கு"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #: settings/messageviewer.kcfg.in:206
@@ -1877,15 +1877,13 @@ msgid "KMail Question"
 msgstr "கேமெயில் கேள்வி"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "மறையாக்கத்தை வைத்திரு"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "வைத்திருக்காதே"
@@ -1900,8 +1898,7 @@ msgstr ""
 "வைத்து கொள்ள விரும்புகிறீர்களா?."
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "கையொப்பதை வைத்திரு"
@@ -2172,8 +2169,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename> தனை உறுதியாக இயக்க வேண்டுமா?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "இயக்கு"
@@ -2371,8 +2367,7 @@ msgid "Copy Text"
 msgstr "உரையை நகலெடு"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "எல்லா உரையையும் தேர்ந்தெடு"
@@ -2393,8 +2388,7 @@ msgid "Show Message Structure"
 msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&மூலத்தைக் காட்டு"
@@ -2405,43 +2399,37 @@ msgid "&Save Message..."
 msgstr "&அஞ்சலை சேமி..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&காட்சி முறையை சேமி"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "கா&ட்சி முறையை மீட்டமை"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "அஞ்சலில் மேலே உருள்"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "அஞ்சலில் கீழே உருள்"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "அஞ்சலில் மேலே உருள் (அதிகமாக)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "அஞ்சலில் கீழே உருள் (அதிகமாக)"
@@ -2457,29 +2445,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML முற்றும் சாதாரண உரை காட்சிமுறைகளுக்கிடையே மாறும்"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "வெளி இணைப்புகளை ஏற்று"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "உரையைப் பகிர்..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "படத்தின் முகவரியை நகலெடு"

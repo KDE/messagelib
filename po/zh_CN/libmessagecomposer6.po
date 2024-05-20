@@ -37,11 +37,10 @@ msgid "Keep"
 msgstr "不压缩"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "压缩"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
@@ -266,11 +265,10 @@ msgid "Save to File"
 msgstr "保存到文件"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "替换(&R)"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:930
@@ -578,18 +576,16 @@ msgid "File Attachment Reminder"
 msgstr "文件附件提醒"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "附加文件(&A)..."
+msgstr ""
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "原样发送(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -614,11 +610,10 @@ msgid "&Sign"
 msgstr "签名(&S)"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr "不签名(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format
@@ -643,11 +638,10 @@ msgid "Send Unsigned?"
 msgstr "不签名发送？"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "不签名发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2040
 #, kde-format
@@ -688,11 +682,10 @@ msgid "Unsigned-Message Warning"
 msgstr "未签名信件警告"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "原样发送(&A)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2099
 #, kde-format
@@ -749,18 +742,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr "加密(&E)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "不加密(&N)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2160
 #, kde-format
@@ -777,11 +768,10 @@ msgid "Send Unencrypted?"
 msgstr "不加密发送吗？"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr "不加密发送(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2182
 #, kde-format
@@ -950,11 +940,10 @@ msgstr ""
 "但是，您没有为此身份配置有效的可信 OpenPGP 签名密钥。"
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr "不使用 OpenPGP 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -969,11 +958,10 @@ msgstr ""
 "但是，您没有为此身份配置有效的可信 S/MIME 签名证书。"
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr "不使用 S/MIME 签名"
+msgstr ""
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -1526,18 +1514,16 @@ msgid "Some Characters Will Be Lost"
 msgstr "某些字符将会丢失"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
-msgstr "丢失字符"
+msgstr ""
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
-msgstr "更改编码"
+msgstr ""
 
 #: job/maintextjob.cpp:107
 #, kde-format

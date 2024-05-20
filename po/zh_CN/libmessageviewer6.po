@@ -1802,18 +1802,16 @@ msgid "KMail Question"
 msgstr "KMail 提问"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "保持加密"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr "不保持"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:335
 #, kde-format
@@ -1823,11 +1821,10 @@ msgid ""
 msgstr "信件的第 %1 部分经过签名。您想要在保存时保留签名吗？"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "保持签名"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
 #: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
@@ -2089,11 +2086,10 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "您真的要执行 <filename>%1</filename> 吗？"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
-msgstr "执行"
+msgstr ""
 
 #: viewer/viewer.cpp:146
 #, kde-format

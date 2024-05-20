@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-03-24 17:52+0530\n"
+"PO-Revision-Date: 2024-05-19 15:36+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -39,8 +39,7 @@ msgid "Keep"
 msgstr "வைத்திரு"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "சுருக்கு"
@@ -90,18 +89,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "பிடிப்புப்பலகையிலிருந்து உரையை இணைத்தல் தோல்வியடைந்தது"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "&பொது சாவியை இணை…"
+msgstr "&பொது சாவியை உடனிணை…"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr "&என் பொது சாவியை இணை…"
+msgstr "&என் பொது சாவியை உடனிணை…"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -114,7 +111,7 @@ msgstr "உடனிணை"
 #: attachment/attachmentcontrollerbase.cpp:461
 #, kde-format
 msgid "&Attach File..."
-msgstr "&கோப்பை இணை..."
+msgstr "&கோப்பை உடனிணை..."
 
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
@@ -124,11 +121,10 @@ msgstr "&உடனிணைப்பை சேர்..."
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "அடைவை &இணை…"
+msgstr "அடைவை &உடனிணை…"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "சொந்த vCard-ஐ இணை"
@@ -182,11 +178,10 @@ msgid "Edit"
 msgstr "திருத்து"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "இதனால் திருத்து…"
+msgstr "வேறு செயலியில் திருத்து…"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -199,22 +194,19 @@ msgid "Save As..."
 msgstr "இவ்வாறு சேமி..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "உடனிணைப்பின் &பண்புகள்…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "பண்புகள்"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "அனைத்தையும் தேர்ந்தெடு"
@@ -275,11 +267,10 @@ msgid "Save to File"
 msgstr "கோப்புக்கு சேமிப்பது"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "மேலெழுது"
+msgstr "&மேலெழுது"
 
 #: attachment/attachmentcontrollerbase.cpp:851
 #: attachment/attachmentcontrollerbase.cpp:930
@@ -590,15 +581,13 @@ msgid "File Attachment Reminder"
 msgstr "கோப்பு உடனிணைப்பு நினைவூட்டல்"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "&கோப்பை இணை..."
+msgstr "&கோப்பை உடனிணை..."
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&அப்படியே அனுப்பு"
@@ -627,8 +616,7 @@ msgid "&Sign"
 msgstr "&கையொப்பமிடு"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "கை&யொப்பமிடாதே"
@@ -658,8 +646,7 @@ msgid "Send Unsigned?"
 msgstr "கையொப்பமிடாமல் அனுப்பலாமா?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&கையொப்பமிடாமல் அனுப்பு"
@@ -703,8 +690,7 @@ msgid "Unsigned-Message Warning"
 msgstr "கையொப்பமிடாத அஞ்சலைப் பற்றிய எச்சரிக்கை"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&அப்படியே அனுப்பு"
@@ -765,15 +751,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&மறையாக்கு"
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "மறையாக்கா&தே"
@@ -795,8 +779,7 @@ msgid "Send Unencrypted?"
 msgstr "மறையாக்காமல் அனுப்பலாமா?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&மறையாக்காமல் அனுப்பு"
@@ -956,8 +939,7 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "OpenPGP-ஆல் கையொப்பமிடாதே"
@@ -972,8 +954,7 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "S/MIME-ஆல் கையொப்பமிடாதே"
@@ -998,6 +979,8 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
+"உங்களுக்கான மறையாக்க சாவியை நீங்கள் தேர்ந்தெடுக்கவில்லை. இருந்தும் அஞ்சலை மறையாக்கினால் அதை "
+"நீங்கள் மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
 #: composer/keyresolver.cpp:1363
@@ -1011,14 +994,14 @@ msgstr "காணாத சாவியைக் குறித்த எச்
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
-msgstr ""
+msgstr "பெறுநருக்கான மறையாக்க சாவி தேர்ந்தெடுக்கப்படாததால் அஞ்சல் மறையாக்கப்படாது."
 
 #: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
-msgstr ""
+msgstr "எந்த பெறுநருக்குமான மறையாக்க சாவி தேர்ந்தெடுக்கப்படாததால் அஞ்சல் மறையாக்கப்படாது."
 
 #: composer/keyresolver.cpp:1355
 #, kde-format
@@ -1026,6 +1009,8 @@ msgid ""
 "You did not select an encryption key for one of the recipients: this person "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"ஒரு பெறுநருக்கான மறையாக்க சாவியை நீங்கள் தேர்ந்தெடுக்கவில்லை: இருந்தும் மறையாக்கினால் "
+"அவரால் இந்த அஞ்சலை மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1359
 #, kde-format
@@ -1033,6 +1018,8 @@ msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
 "will not be able to decrypt the message if you encrypt it."
 msgstr ""
+"சில பெறுநர்களுக்கான மறையாக்க சாவிகளை நீங்கள் தேர்ந்தெடுக்கவில்லை: இருந்தும் மறையாக்கினால் "
+"அவர்களால் இந்த அஞ்சலை மறைநீக்க முடியாமல் போகும்."
 
 #: composer/keyresolver.cpp:1436
 #, kde-format
@@ -1526,15 +1513,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "சில எழுத்தகள் காணாமல் போகலாம்"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "எழுத்துகளை இழ"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "குறிமுறையை மாற்று"
@@ -1563,7 +1548,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "அஞ்சலைக் கையாண்டதைத் தெரிவிக்குமாறு கோரிக்கை"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1587,6 +1572,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"நீங்கள் இந்த அஞ்சலை எப்படி கையாண்டீர்கள் என்பதைத் தெரிவிக்குமாறு அஞ்சலின் அனுப்புநர் "
+"கோரியுள்ளார்.\n"
+"இக்கோரிக்கையை நீங்கள் பொருட்படுத்தாமல் இருக்கலாம், மறுத்ததாக பதிலனுப்பலாம், அல்லது "
+"பதிலளிக்க இந்த மின்னஞ்சல் செயலியை அனுமதிக்கலாம்."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -2089,7 +2078,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
-msgstr ""
+msgstr "எந்த மறையாக்க சாவியைப் பயன்படுத்த வேண்டும் என்று எப்போதும் கேள்"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format

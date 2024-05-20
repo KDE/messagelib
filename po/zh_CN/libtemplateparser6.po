@@ -574,18 +574,16 @@ msgid "Reset to default"
 msgstr "重置为默认"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
-msgstr "重置当前模板"
+msgstr ""
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
-msgstr "重置所有模板"
+msgstr ""
 
 #: templatesconfiguration.cpp:361
 #, kde-format
