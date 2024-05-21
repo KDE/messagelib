@@ -41,11 +41,10 @@ msgid "Keep"
 msgstr "Ponechat"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "Zkomprimovat"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
@@ -270,8 +269,7 @@ msgid "Save to File"
 msgstr "Uložit do souboru"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Nah&radit"
@@ -583,18 +581,16 @@ msgid "File Attachment Reminder"
 msgstr "Upozornění na přílohu"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "Při&ložit soubor..."
+msgstr ""
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "Po&slat tak, jak je"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -620,11 +616,10 @@ msgid "&Sign"
 msgstr "Podep&sat"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr "&Nepodepisovat"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1992
 #, kde-format
@@ -647,11 +642,10 @@ msgid "Send Unsigned?"
 msgstr "Odeslat nepodepsané?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "Od&eslat nepodepsané"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2040
 #, kde-format
@@ -686,11 +680,10 @@ msgid "Unsigned-Message Warning"
 msgstr "Varování na nepodepsanou zprávu"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "Posl&at tak, jak je"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2099
 #, kde-format
@@ -741,18 +734,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr "Šif&rovat"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "&Nešifrovat"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2160
 #, kde-format
@@ -769,11 +760,10 @@ msgid "Send Unencrypted?"
 msgstr "Odeslat nešifrovaně?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr "Odeslat neši&frovaně"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2182
 #, kde-format
@@ -949,11 +939,10 @@ msgstr ""
 "certifikáty."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr "Nepodepisovat pomocí OpenPGP"
+msgstr ""
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -969,11 +958,10 @@ msgstr ""
 "certifikáty."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr "Nepodepisovat pomocí S/MIME"
+msgstr ""
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -1530,18 +1518,16 @@ msgid "Some Characters Will Be Lost"
 msgstr "Budou ztraceny některé znaky"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
-msgstr "Ztratit znaky"
+msgstr ""
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
-msgstr "Změnit kódování"
+msgstr ""
 
 #: job/maintextjob.cpp:107
 #, kde-format

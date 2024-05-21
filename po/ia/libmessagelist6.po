@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 10:34+0200\n"
+"PO-Revision-Date: 2024-05-20 14:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -415,7 +415,7 @@ msgstr "Observate/Ignorate"
 #: core/manager.cpp:670
 #, kde-format
 msgid "Encryption"
-msgstr "Encryption"
+msgstr "Cryptation"
 
 #: core/manager.cpp:676
 #, kde-format
@@ -747,7 +747,7 @@ msgstr "Icone de Expander/Plicar Capite de Gruppo"
 #: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
-msgstr "Icone de Stato de Cryption"
+msgstr "Icone de Stato de Cryptation"
 
 #: core/theme.cpp:158
 #, kde-format

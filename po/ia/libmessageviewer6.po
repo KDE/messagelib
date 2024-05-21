@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 10:34+0200\n"
+"PO-Revision-Date: 2024-05-20 15:02+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -137,7 +137,7 @@ msgstr "Monstrar Detalios"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
-msgstr "Message Cryptate(decryption non es possibile)"
+msgstr "Message Cryptate(decryptation non es possibile)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
@@ -1886,15 +1886,13 @@ msgid "KMail Question"
 msgstr "Demanda de KMail"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "Mantener Cryption"
+msgstr "Mantener Cryptation"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Non mantener"
@@ -1909,8 +1907,7 @@ msgstr ""
 "salva?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "mantener Signatura"
@@ -2182,8 +2179,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Tu realmente vole executar <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Executar"

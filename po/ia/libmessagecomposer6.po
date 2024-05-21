@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 10:33+0200\n"
+"PO-Revision-Date: 2024-05-20 15:04+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -41,8 +41,7 @@ msgid "Keep"
 msgstr "Mantene"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprime"
@@ -270,8 +269,7 @@ msgid "Save to File"
 msgstr "Salveguarda a File"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Reimplacia"
@@ -587,18 +585,16 @@ msgid "File Attachment Reminder"
 msgstr "Memento de attachamento de file"
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Attacha File..."
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "&Invia como es"
+msgstr "Invia  como e&s"
 
 #: composer/composerviewbase.cpp:1963
 #, kde-format
@@ -624,8 +620,7 @@ msgid "&Sign"
 msgstr "&Signa"
 
 #: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Non signa"
@@ -655,11 +650,10 @@ msgid "Send Unsigned?"
 msgstr "Invia non signate?"
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "Invia non signate"
+msgstr "Invia n&on signate"
 
 #: composer/composerviewbase.cpp:2040
 #, kde-format
@@ -700,8 +694,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Aviso de message non signate"
 
 #: composer/composerviewbase.cpp:2052
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Invi&a como es"
@@ -763,15 +756,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Crypta"
 
 #: composer/composerviewbase.cpp:2140
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "No&n Crypta"
@@ -793,8 +784,7 @@ msgid "Send Unencrypted?"
 msgstr "Invia non cryptate?"
 
 #: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Invia &sin cryptation"
@@ -842,7 +832,7 @@ msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr ""
-"Un o plure de tu claves de encryption configurate  de OpenPGP o certificatos "
+"Un o plure de tu claves de cryptation configurate  de OpenPGP o certificatos "
 "S/MIME non es plenmente confidente per cryptation."
 
 #: composer/keyresolver.cpp:315
@@ -851,7 +841,7 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
-"Un o plure del claves de encryption de OpenPGP o de certificatos S/MIME per "
+"Un o plure del claves de cryptation de OpenPGP o de certificatos S/MIME per "
 "destinatario \"%1\" non es plenmente confidente per cryptation."
 
 #: composer/keyresolver.cpp:322
@@ -985,8 +975,7 @@ msgstr ""
 "per iste identitate."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Non signa con OpenPGP"
@@ -1006,8 +995,7 @@ msgstr ""
 "per iste identitate."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Non signa con S/MIME"
@@ -1096,7 +1084,7 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
-"On ha un problema con le certificato(s) de cryptatio per \"%1\".\n"
+"On ha un problema con le certificato(s) de cryptation per \"%1\".\n"
 "\n"
 "Pro favor, re-selectiona le certificato(s) que deberea esser usate per iste "
 "destinatario."
@@ -1583,15 +1571,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "Alcun characteres essera perdite"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Perde characteres"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Cambia codifica"
