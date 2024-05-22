@@ -55,7 +55,7 @@ public:
      * Destructor.  If there is a private QWebEngineProfile then it will also
      * be destroyed.
      **/
-    ~WebEnginePage() override = default;
+    ~WebEnginePage() override;
 
     [[nodiscard]] WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
@@ -69,8 +69,12 @@ Q_SIGNALS:
 protected:
     [[nodiscard]] bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
+    [[nodiscard]] QString refreshCssVariablesScript();
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void init();
+    class Private;
+    std::unique_ptr<Private> d;
 };
 }
