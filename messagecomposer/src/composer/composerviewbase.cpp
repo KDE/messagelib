@@ -179,20 +179,20 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto msgContent = new KMime::Content;
-    msgContent->setContent(m_msg->encodedContent());
-    msgContent->parse();
+    KMime::Content msgContent;
+    msgContent.setContent(m_msg->encodedContent());
+    msgContent.parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource); // All default are ok
     emptySource.setDecryptMessage(allowDecryption);
-    otp.parseObjectTree(msgContent);
+    otp.parseObjectTree(&msgContent);
 
     // Load the attachments
     const auto attachmentsOfExtraContents{otp.nodeHelper()->attachmentsOfExtraContents()};
     for (const auto &att : attachmentsOfExtraContents) {
         addAttachmentPart(att);
     }
-    const auto attachments{msgContent->attachments()};
+    const auto attachments{msgContent.attachments()};
     for (const auto &att : attachments) {
         addAttachmentPart(att);
     }
@@ -226,7 +226,6 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     if (auto hdr = m_msg->headerByType("X-KMail-CursorPos")) {
         m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toUInt());
     }
-    delete msgContent;
 }
 
 void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
@@ -234,12 +233,12 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto msgContent = new KMime::Content;
-    msgContent->setContent(msg->encodedContent());
-    msgContent->parse();
+    KMime::Content msgContent;
+    msgContent.setContent(msg->encodedContent());
+    msgContent.parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource); // All default are ok
-    otp.parseObjectTree(msgContent);
+    otp.parseObjectTree(&msgContent);
     // Set the HTML text and collect HTML images
     if (!otp.htmlContent().isEmpty()) {
         m_editor->setHtml(otp.htmlContent());
@@ -252,7 +251,6 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     if (auto hdr = msg->headerByType("X-KMail-CursorPos")) {
         m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toInt());
     }
-    delete msgContent;
 }
 
 void ComposerViewBase::saveMailSettings()
