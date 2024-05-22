@@ -111,11 +111,11 @@ void SearchLineStatus::initializeActions()
     mWithFilter = QIcon(new KIconEngine(QStringLiteral("view-filter"), KIconLoader::global(), overlays));
     mWithoutFilter = QIcon::fromTheme(QStringLiteral("view-filter"));
     mFiltersAction = addAction(mWithoutFilter, QLineEdit::LeadingPosition);
-    mFiltersAction->setToolTip(i18n("Filter Mails by Status"));
+    mFiltersAction->setToolTip(i18nc("@info:tooltip", "Filter Mails by Status"));
     connect(mFiltersAction, &QAction::triggered, this, &SearchLineStatus::showMenu);
 
     mSaveFilterAction = addAction(QIcon::fromTheme(QStringLiteral("edit-find")), QLineEdit::LeadingPosition);
-    mSaveFilterAction->setToolTip(i18n("Saved Filter"));
+    mSaveFilterAction->setToolTip(i18nc("@info:tooltip", "Saved Filter"));
     mFilterSavedMenu = new FilterSavedMenu(this);
     mSaveFilterAction->setMenu(mFilterSavedMenu);
     connect(mSaveFilterAction, &QAction::triggered, this, &SearchLineStatus::showSavedFiltersMenu);

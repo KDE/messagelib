@@ -69,7 +69,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     mCombo->addItems(recipientTypes);
     topLayout->addWidget(mCombo);
     mCombo->setToolTip(i18nc("@label:listbox", "Select type of recipient"));
-    mEdit->setToolTip(i18n("Set the list of email addresses to receive this message"));
+    mEdit->setToolTip(i18nc("@info:tooltip", "Set the list of email addresses to receive this message"));
     mEdit->setClearButtonEnabled(true);
     topLayout->addWidget(mEdit);
     mEdit->installEventFilter(this);

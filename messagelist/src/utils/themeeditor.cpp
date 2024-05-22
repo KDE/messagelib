@@ -70,22 +70,23 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     g->addWidget(l, 0, 0);
 
     mNameEdit = new QLineEdit(base);
-    mNameEdit->setToolTip(i18n("The label that will be displayed in the column header."));
+    mNameEdit->setToolTip(i18nc("@info:tooltip", "The label that will be displayed in the column header."));
     g->addWidget(mNameEdit, 0, 1);
 
     l = new QLabel(i18n("Header click sorts messages:"), base);
     g->addWidget(l, 1, 0);
 
     mMessageSortingCombo = new QComboBox(base);
-    mMessageSortingCombo->setToolTip(i18n("The sorting order that clicking on this column header will switch to."));
+    mMessageSortingCombo->setToolTip(i18nc("@info:tooltip", "The sorting order that clicking on this column header will switch to."));
     g->addWidget(mMessageSortingCombo, 1, 1);
 
     mVisibleByDefaultCheck = new QCheckBox(i18n("Visible by default"), base);
-    mVisibleByDefaultCheck->setToolTip(i18n("Check this if this column should be visible when the theme is selected."));
+    mVisibleByDefaultCheck->setToolTip(i18nc("@info:tooltip", "Check this if this column should be visible when the theme is selected."));
     g->addWidget(mVisibleByDefaultCheck, 2, 1);
 
     mIsSenderOrReceiverCheck = new QCheckBox(i18n("Contains \"Sender or Receiver\" field"), base);
-    mIsSenderOrReceiverCheck->setToolTip(i18n("Check this if this column label should be updated depending on the folder \"inbound\"/\"outbound\" type."));
+    mIsSenderOrReceiverCheck->setToolTip(
+        i18nc("@info:tooltip", "Check this if this column label should be updated depending on the folder \"inbound\"/\"outbound\" type."));
     g->addWidget(mIsSenderOrReceiverCheck, 3, 1);
 
     g->setColumnStretch(1, 1);
