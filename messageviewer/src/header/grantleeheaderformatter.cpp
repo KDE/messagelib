@@ -516,8 +516,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
 
     if (messageHasAttachment) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
-        const QString html =
-            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 
@@ -525,8 +524,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     headerObject.insert(QStringLiteral("messageIsSigned"), messageIsSigned);
     if (messageIsSigned) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-signed"), KIconLoader::Toolbar);
-        const QString html =
-            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("signedIcon"), html);
     }
 
@@ -534,8 +532,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     headerObject.insert(QStringLiteral("messageIsEncrypted"), messageIsEncrypted);
     if (messageIsEncrypted) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-encrypted"), KIconLoader::Toolbar);
-        const QString html =
-            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("encryptedIcon"), html);
     }
 
