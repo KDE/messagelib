@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -477,12 +477,12 @@ msgstr ""
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:185
+#: core/model.cpp:550 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Receiver"
 msgstr "पएनिहार"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:184
+#: core/model.cpp:552 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "प्रेषक"
@@ -879,7 +879,7 @@ msgstr "दिनांक"
 msgid "Size"
 msgstr "आकार"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr ""
@@ -1168,13 +1168,16 @@ msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr ""
+msgstr "कान्फिगर..."
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1559,7 +1562,7 @@ msgstr ""
 msgid "Unnamed Theme"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format
 msgid "New Column"
 msgstr ""
@@ -1617,6 +1620,7 @@ msgstr "नाम:"
 
 #: utils/themeeditor.cpp:73
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr ""
 
@@ -1627,6 +1631,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:80
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 
@@ -1637,6 +1642,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:84
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 
@@ -1645,92 +1651,93 @@ msgstr ""
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 
-#: utils/themeeditor.cpp:88
+#: utils/themeeditor.cpp:89
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
 
-#: utils/themeeditor.cpp:108
+#: utils/themeeditor.cpp:109
 #, kde-format
 msgid "Unnamed Column"
 msgstr ""
 
-#: utils/themeeditor.cpp:173
+#: utils/themeeditor.cpp:174
 #, kde-format
 msgid "Message Group"
 msgstr ""
 
-#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
 
-#: utils/themeeditor.cpp:192
+#: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 1"
 msgstr ""
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 2"
 msgstr ""
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 3"
 msgstr ""
 
-#: utils/themeeditor.cpp:409
+#: utils/themeeditor.cpp:410
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "दृष्टिगोचर"
 
-#: utils/themeeditor.cpp:849
+#: utils/themeeditor.cpp:850
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr ""
 
-#: utils/themeeditor.cpp:856
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:861
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:867
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgid "Font"
 msgstr "फोन्ट"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:876
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "मूलभूत"
 
-#: utils/themeeditor.cpp:880
+#: utils/themeeditor.cpp:881
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "मनपसिन्न..."
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:889
 #, kde-format
 msgid "Foreground Color"
 msgstr "अग्रभूमि रँग"
 
-#: utils/themeeditor.cpp:897
+#: utils/themeeditor.cpp:898
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1738,7 +1745,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "नुकाबू"
 
-#: utils/themeeditor.cpp:904
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1746,7 +1753,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:911
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1754,90 +1761,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:920
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:925
+#: utils/themeeditor.cpp:926
 #, kde-format
 msgid "Group Header"
 msgstr "समूह शीर्षिका"
 
-#: utils/themeeditor.cpp:932
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "किछु नहि"
 
-#: utils/themeeditor.cpp:937
+#: utils/themeeditor.cpp:938
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "स्वचालित"
 
-#: utils/themeeditor.cpp:942
+#: utils/themeeditor.cpp:943
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "मनपसिन्न..."
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:951
 #, kde-format
 msgid "Background Color"
 msgstr "पृष्ठभूमि रँग"
 
-#: utils/themeeditor.cpp:970
+#: utils/themeeditor.cpp:971
 #, kde-format
 msgid "Background Style"
 msgstr ""
 
-#: utils/themeeditor.cpp:1156
+#: utils/themeeditor.cpp:1157
 #, kde-format
 msgid "Column Properties..."
 msgstr ""
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Add Column..."
 msgstr ""
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Delete Column"
 msgstr "कालम मेटाउ"
 
-#: utils/themeeditor.cpp:1168
+#: utils/themeeditor.cpp:1169
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1173
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1221
+#: utils/themeeditor.cpp:1222
 #, kde-format
 msgid "Add New Column"
 msgstr ""
 
-#: utils/themeeditor.cpp:1245
+#: utils/themeeditor.cpp:1246
 #, kde-format
 msgid "Column Properties"
 msgstr ""
 
-#: utils/themeeditor.cpp:1287
+#: utils/themeeditor.cpp:1288
 #, kde-format
 msgid "Appearance"
 msgstr "प्रकटन"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1292
 #, kde-format
 msgid "Content Items"
 msgstr ""
 
-#: utils/themeeditor.cpp:1423
+#: utils/themeeditor.cpp:1424
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1845,23 +1852,23 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1434
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: utils/themeeditor.cpp:1437
+#: utils/themeeditor.cpp:1438
 #, kde-format
 msgid "Header:"
 msgstr ""
 
-#: utils/themeeditor.cpp:1443
+#: utils/themeeditor.cpp:1444
 #, kde-format
 msgid "Icon size:"
 msgstr "चिह्न आकार:"
 
-#: utils/themeeditor.cpp:1449
+#: utils/themeeditor.cpp:1450
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

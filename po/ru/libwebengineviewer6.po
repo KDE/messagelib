@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2023-04-24 11:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -36,7 +36,14 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Инструмент для разработки"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Закрыть"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Закрыть"
@@ -48,7 +55,9 @@ msgid "F&ind:"
 msgstr "&Искать:"
 
 #: findbar/findbarbase.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Текст для поиска"
 
@@ -59,7 +68,9 @@ msgid "Next"
 msgstr "Следующее"
 
 #: findbar/findbarbase.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Перейти к следующему вхождению"
 
@@ -70,7 +81,9 @@ msgid "Previous"
 msgstr "Предыдущее"
 
 #: findbar/findbarbase.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Перейти к предыдущему вхождению"
 
@@ -80,7 +93,9 @@ msgid "Options"
 msgstr "Параметры"
 
 #: findbar/findbarbase.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Изменить параметры поиска"
 

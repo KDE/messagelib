@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -496,12 +496,12 @@ msgstr "สี่อาทิตย์ก่อน"
 msgid "Five Weeks Ago"
 msgstr "ห้าอาทิตย์ก่อน"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:185
+#: core/model.cpp:550 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Receiver"
 msgstr "ผู้รับ"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:184
+#: core/model.cpp:552 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "ผู้ส่ง"
@@ -901,7 +901,7 @@ msgstr "วันที่"
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "โฟลเดอร์"
@@ -1199,12 +1199,14 @@ msgstr ""
 #: core/widgets/searchlinestatus.cpp:114
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
+msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "กฎการกรอง"
 
 #: core/widgets/searchlinestatus.cpp:118
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "บันทึกรายการ..."
 
@@ -1611,7 +1613,7 @@ msgstr "ลบชุดตกแต่ง"
 msgid "Unnamed Theme"
 msgstr "ชุดตกแต่งที่ยังไม่มีชื่อ"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format
 msgid "New Column"
 msgstr "คอลัมน์ใหม่"
@@ -1670,7 +1672,9 @@ msgid "Name:"
 msgstr "ชื่อ:"
 
 #: utils/themeeditor.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The label that will be displayed in the column header."
+msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "ป้ายที่จะถูกแสดงในหัวคอลัมน์"
 
@@ -1680,7 +1684,10 @@ msgid "Header click sorts messages:"
 msgstr "เมื่อคลิกที่ส่วนหัวให้เรียงลำดับจดหมาย:"
 
 #: utils/themeeditor.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The sorting order that clicking on this column header will switch to."
+msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "จะมีการเปลี่ยนการเรียงลำดับตามส่วนหัวเมื่อมีการคลิกที่หัวคอลัมน์"
 
@@ -1690,7 +1697,10 @@ msgid "Visible by default"
 msgstr "มองเห็นได้โดยปริยาย"
 
 #: utils/themeeditor.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column should be visible when the theme is selected."
+msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "กาเลือกตัวเลือกนี้หากต้องการให้มองเห็นคอลัมน์ได้เมื่อมีการเลือกชุดตกแต่งแล้ว"
 
@@ -1699,8 +1709,12 @@ msgstr "กาเลือกตัวเลือกนี้หากต้อ
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "มีช่องข้อมูล \"ผู้ส่งหรือผู้รับ\""
 
-#: utils/themeeditor.cpp:88
-#, kde-format
+#: utils/themeeditor.cpp:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column label should be updated depending on the folder "
+#| "\"inbound\"/\"outbound\" type."
+msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
@@ -1708,17 +1722,17 @@ msgstr ""
 "กาเลือกตัวเลือกนี้ หากต้องการให้มีการปรับปรุงป้ายของคอลัมน์ โดยขึ้นอยู่กับประเภทโฟลเดอร์ "
 "\"เข้ามาภายใน\"/\"ส่งออกภายนอก\""
 
-#: utils/themeeditor.cpp:108
+#: utils/themeeditor.cpp:109
 #, kde-format
 msgid "Unnamed Column"
 msgstr "คอลัมน์ที่ยังไม่มีชื่อ"
 
-#: utils/themeeditor.cpp:173
+#: utils/themeeditor.cpp:174
 #, kde-format
 msgid "Message Group"
 msgstr "กลุ่มจดหมาย"
 
-#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1727,70 +1741,70 @@ msgstr ""
 "ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก "
 "ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก"
 
-#: utils/themeeditor.cpp:192
+#: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "ป้ายตัวอย่าง 1"
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "ป้ายตัวอย่าง 2"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "ป้ายตัวอย่าง 3"
 
-#: utils/themeeditor.cpp:409
+#: utils/themeeditor.cpp:410
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "มองเห็นได้"
 
-#: utils/themeeditor.cpp:849
+#: utils/themeeditor.cpp:850
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "นุ่มนวล"
 
-#: utils/themeeditor.cpp:856
+#: utils/themeeditor.cpp:857
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "ตัวหนา"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:861
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "ตัวเอียง"
 
-#: utils/themeeditor.cpp:867
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgid "Font"
 msgstr "แบบอักษร"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:876
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "ค่าปริยาย"
 
-#: utils/themeeditor.cpp:880
+#: utils/themeeditor.cpp:881
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "กำหนดเอง..."
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:889
 #, kde-format
 msgid "Foreground Color"
 msgstr "สีพื้นหน้า"
 
-#: utils/themeeditor.cpp:897
+#: utils/themeeditor.cpp:898
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1798,7 +1812,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "ซ่อน"
 
-#: utils/themeeditor.cpp:904
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1806,7 +1820,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "คงช่องว่างไว้"
 
-#: utils/themeeditor.cpp:911
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1814,91 +1828,91 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "คงไอคอนที่ถูกทำให้นุ่มนวลไว้"
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:920
 #, kde-format
 msgid "When Disabled"
 msgstr "เมื่อถูกปิดการใช้งาน"
 
-#: utils/themeeditor.cpp:925
+#: utils/themeeditor.cpp:926
 #, kde-format
 msgid "Group Header"
 msgstr "ส่วนหัวของกลุ่ม"
 
-#: utils/themeeditor.cpp:932
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "ไม่มี"
 
-#: utils/themeeditor.cpp:937
+#: utils/themeeditor.cpp:938
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "อัตโนมัติ"
 
-#: utils/themeeditor.cpp:942
+#: utils/themeeditor.cpp:943
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "กำหนดเอง..."
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:951
 #, kde-format
 msgid "Background Color"
 msgstr "สีพื้นหลัง"
 
-#: utils/themeeditor.cpp:970
+#: utils/themeeditor.cpp:971
 #, kde-format
 msgid "Background Style"
 msgstr "รูปแบบของพื้นหลัง"
 
-#: utils/themeeditor.cpp:1156
+#: utils/themeeditor.cpp:1157
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgid "Column Properties..."
 msgstr "คุณสมบัติ"
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Add Column..."
 msgstr "เพิ่มคอลัมน์..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Delete Column"
 msgstr "ลบคอลัมน์"
 
-#: utils/themeeditor.cpp:1168
+#: utils/themeeditor.cpp:1169
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1173
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1221
+#: utils/themeeditor.cpp:1222
 #, kde-format
 msgid "Add New Column"
 msgstr "เพิ่มคอลัมน์ใหม่"
 
-#: utils/themeeditor.cpp:1245
+#: utils/themeeditor.cpp:1246
 #, kde-format
 msgid "Column Properties"
 msgstr "คุณสมบัติของคอลัมน์"
 
-#: utils/themeeditor.cpp:1287
+#: utils/themeeditor.cpp:1288
 #, kde-format
 msgid "Appearance"
 msgstr "รูปลักษณ์"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1292
 #, kde-format
 msgid "Content Items"
 msgstr "รายการต่าง ๆ ของเนื้อหา"
 
-#: utils/themeeditor.cpp:1423
+#: utils/themeeditor.cpp:1424
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1909,23 +1923,23 @@ msgstr ""
 "และหย่อนพวกมันไปบนคอลัมน์เพื่อประกอบเป็นชุดตกแต่งของคุณเอง "
 "คลิกเมาส์ปุ่มขวาบนรายการภายในมุมมองเพื่อดูตัวเลือกอื่น ๆ เพิ่มเติม"
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1434
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "ตั้งค่าขั้นสูง"
 
-#: utils/themeeditor.cpp:1437
+#: utils/themeeditor.cpp:1438
 #, kde-format
 msgid "Header:"
 msgstr "ส่วนหัว:"
 
-#: utils/themeeditor.cpp:1443
+#: utils/themeeditor.cpp:1444
 #, kde-format
 msgid "Icon size:"
 msgstr "ขนาดไอคอน:"
 
-#: utils/themeeditor.cpp:1449
+#: utils/themeeditor.cpp:1450
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

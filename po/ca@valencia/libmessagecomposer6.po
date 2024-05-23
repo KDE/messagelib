@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2024-05-17 09:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -402,37 +402,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "No s'han trobat dades de les claus per als destinataris."
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "Man&tín els marcadors, no signes/encriptes"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "Man&tín els marcadors, no encriptes"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "Man&tín els marcadors, no signes"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Signa i encripta (elimina els marcadors)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Encripta (elimina els marcadors)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Signa (elimina els marcadors)"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:331
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -441,72 +441,72 @@ msgstr ""
 "<qt><p>No és possible la signatura/encriptació inclosa dels missatges HTML.</"
 "p><p>Voleu eliminar els marcadors?</p></qt>"
 
-#: composer/composerviewbase.cpp:335
+#: composer/composerviewbase.cpp:333
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Voleu signar/encriptar el missatge?"
 
-#: composer/composerviewbase.cpp:511
+#: composer/composerviewbase.cpp:509
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "No s'ha pogut crear un editor de missatges."
 
-#: composer/composerviewbase.cpp:521
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Voleu redimensionar les imatges?"
 
-#: composer/composerviewbase.cpp:522
+#: composer/composerviewbase.cpp:520
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Redimensió automàtica de les imatges"
 
-#: composer/composerviewbase.cpp:523
+#: composer/composerviewbase.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Redimensiona automàticament"
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:522
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "No redimensiones"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "Clau OpenPGP vençuda"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "Certificat S/MIME vençut"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "La clau OpenPGP venç prompte"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "El certificat S/MIME venç prompte"
 
-#: composer/composerviewbase.cpp:801 composer/composerviewbase.cpp:815
-#: composer/composerviewbase.cpp:847
+#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
+#: composer/composerviewbase.cpp:845
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "No s'ha pogut resoldre les claus. Informeu de l'error."
 
-#: composer/composerviewbase.cpp:1053 composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1051 composer/composerviewbase.cpp:1322
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Treball cancel·lat per l'usuari"
 
-#: composer/composerviewbase.cpp:1058
+#: composer/composerviewbase.cpp:1056
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -515,39 +515,39 @@ msgstr ""
 "No s'ha pogut editar el missatge: %1 \n"
 " Informeu d'este error."
 
-#: composer/composerviewbase.cpp:1060
+#: composer/composerviewbase.cpp:1058
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "No s'ha pogut editar el missatge: %1"
 
-#: composer/composerviewbase.cpp:1163
+#: composer/composerviewbase.cpp:1161
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "S'han produït errors en intentar posar el missatge a la cua per al seu "
 "enviament: %1"
 
-#: composer/composerviewbase.cpp:1327
+#: composer/composerviewbase.cpp:1325
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "No s'ha pogut autodesar el missatge: %1"
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1344
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "No s'han pogut escriure totes les dades en el fitxer."
 
-#: composer/composerviewbase.cpp:1349
+#: composer/composerviewbase.cpp:1347
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "No s'ha pogut finalitzar el fitxer."
 
-#: composer/composerviewbase.cpp:1353
+#: composer/composerviewbase.cpp:1351
 #, kde-format
 msgid "Could not open file."
 msgstr "No s'ha pogut obrir el fitxer."
 
-#: composer/composerviewbase.cpp:1360
+#: composer/composerviewbase.cpp:1358
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -558,18 +558,18 @@ msgstr ""
 "%2\n"
 "Motiu: %3"
 
-#: composer/composerviewbase.cpp:1366
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "La guardada automàtica del missatge ha fallat"
 
-#: composer/composerviewbase.cpp:1479
+#: composer/composerviewbase.cpp:1477
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "No s'ha pogut guardar el missatge: %1"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1904
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -580,25 +580,25 @@ msgstr ""
 "però no heu adjuntat res.\n"
 "Voleu adjuntar un fitxer al missatge?"
 
-#: composer/composerviewbase.cpp:1909
+#: composer/composerviewbase.cpp:1907
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Recordatori de fitxer adjunt"
 
-#: composer/composerviewbase.cpp:1910
+#: composer/composerviewbase.cpp:1908
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Adjunta un fitxer…"
 
-#: composer/composerviewbase.cpp:1911
+#: composer/composerviewbase.cpp:1909
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Envia t&al qual"
 
-#: composer/composerviewbase.cpp:1963
+#: composer/composerviewbase.cpp:1961
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -609,25 +609,25 @@ msgstr ""
 "que s'ha de preguntar si se signa o no este missatge.\n"
 "Voleu signar este missatge?"
 
-#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
+#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Voleu signar el missatge?"
 
-#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Signa"
 
-#: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
+#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&No signes"
 
-#: composer/composerviewbase.cpp:1992
+#: composer/composerviewbase.cpp:1990
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -636,7 +636,7 @@ msgstr ""
 "Hi ha conflictes de preferència de signatura per a estos destinataris.\n"
 "Voleu signar este missatge?"
 
-#: composer/composerviewbase.cpp:2019
+#: composer/composerviewbase.cpp:2017
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -645,19 +645,19 @@ msgstr ""
 "Heu sol·licitat signar este missatge, però no s'ha configurat cap clau de "
 "signatura vàlida per a esta identitat."
 
-#: composer/composerviewbase.cpp:2024
+#: composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Voleu enviar sense signar?"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2023
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Envia &sense signar"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -669,7 +669,7 @@ msgstr ""
 "política del lloc.\n"
 "Voleu signar totes les parts?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2042
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -681,29 +681,29 @@ msgstr ""
 "lloc.\n"
 "Voleu signar el missatge?"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2045
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Signa totes les parts"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2045
 #, kde-format
 msgid "&Sign"
 msgstr "&Signa"
 
-#: composer/composerviewbase.cpp:2050
+#: composer/composerviewbase.cpp:2048
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Avís de missatge sense signar"
 
-#: composer/composerviewbase.cpp:2052
+#: composer/composerviewbase.cpp:2050
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Envia t&al qual"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2097
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -712,7 +712,7 @@ msgstr ""
 "S'han trobat claus d'encriptació vàlides per a tots els destinataris.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2102
+#: composer/composerviewbase.cpp:2100
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -723,32 +723,32 @@ msgstr ""
 "que s'ha de preguntar si s'encripta o no este missatge.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2138
+#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2136
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Voleu encriptar el missatge?"
 
-#: composer/composerviewbase.cpp:2109
+#: composer/composerviewbase.cpp:2107
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Signa i &encripta"
 
-#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2189
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Encripta"
 
-#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2194
 #, kde-format
 msgid "&Sign Only"
 msgstr "Només &signa"
 
-#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2196
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2194
 #, kde-format
 msgid "&Send As-Is"
 msgstr "En&via tal qual"
 
-#: composer/composerviewbase.cpp:2131
+#: composer/composerviewbase.cpp:2129
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -757,20 +757,20 @@ msgstr ""
 "Hi ha conflictes de preferència de l'encriptació per a estos destinataris.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2139 composer/keyresolver.cpp:1322
+#: composer/composerviewbase.cpp:2137 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Encripta"
 
-#: composer/composerviewbase.cpp:2140
+#: composer/composerviewbase.cpp:2138
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&No l'encriptes"
 
-#: composer/composerviewbase.cpp:2160
+#: composer/composerviewbase.cpp:2158
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -781,19 +781,19 @@ msgstr ""
 "però no s'ha configurat cap clau fiable d'encriptació vàlida per a esta "
 "identitat."
 
-#: composer/composerviewbase.cpp:2166
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Voleu enviar sense encriptar?"
 
-#: composer/composerviewbase.cpp:2167 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2165 composer/keyresolver.cpp:1348
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Envia se&nse encriptar"
 
-#: composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2180
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -806,7 +806,7 @@ msgstr ""
 "política del lloc.\n"
 "Voleu encriptar totes les parts?"
 
-#: composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2185
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -819,12 +819,12 @@ msgstr ""
 "lloc i/o perdre informació confidencial.\n"
 "Voleu encriptar totes les parts?"
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2189
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Encripta totes les parts"
 
-#: composer/composerviewbase.cpp:2194
+#: composer/composerviewbase.cpp:2192
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1830,7 +1830,9 @@ msgid "Select type of recipient"
 msgstr "Seleccioneu el tipus de destinatari"
 
 #: recipient/recipientline.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set the list of email addresses to receive this message"
+msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Indiqueu la llista d'adreces de correu que rebran este missatge"
 

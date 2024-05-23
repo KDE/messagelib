@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2023-03-31 09:16+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -25,7 +25,14 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Razvojno orodje"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Zapri"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
@@ -37,7 +44,9 @@ msgid "F&ind:"
 msgstr "Najd&i:"
 
 #: findbar/findbarbase.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Besedilo, ki naj se išče"
 
@@ -48,7 +57,9 @@ msgid "Next"
 msgstr "Naslednje"
 
 #: findbar/findbarbase.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Pojdi na naslednje ujemanje"
 
@@ -59,7 +70,9 @@ msgid "Previous"
 msgstr "Predhodno"
 
 #: findbar/findbarbase.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Pojdi na predhodno ujemanje"
 
@@ -69,7 +82,9 @@ msgid "Options"
 msgstr "Možnosti"
 
 #: findbar/findbarbase.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Spremeni obnašanje iskanja"
 

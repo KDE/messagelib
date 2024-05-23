@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2024-05-15 23:03+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -494,12 +494,12 @@ msgstr "Четири седмици преди"
 msgid "Five Weeks Ago"
 msgstr "Преди пет седмици"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:185
+#: core/model.cpp:550 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Receiver"
 msgstr "Получател"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:184
+#: core/model.cpp:552 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "Подател"
@@ -892,7 +892,7 @@ msgstr "Дата"
 msgid "Size"
 msgstr "Размер"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "Папка"
@@ -1181,12 +1181,16 @@ msgstr ""
 "състоянието на съобщението."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Filter Mails by Status"
+msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "Филтриране на пощата по състояние"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Saved Filter"
+msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Изпращане на файл"
 
@@ -1556,7 +1560,7 @@ msgstr "Изтриване на тема"
 msgid "Unnamed Theme"
 msgstr "Неозаглавена тема"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format
 msgid "New Column"
 msgstr "Нова колона"
@@ -1612,7 +1616,9 @@ msgid "Name:"
 msgstr "Име:"
 
 #: utils/themeeditor.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The label that will be displayed in the column header."
+msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Етикетът, който ще се покаже в заглавката на колоната."
 
@@ -1622,7 +1628,10 @@ msgid "Header click sorts messages:"
 msgstr "Щракване върху заглавието сортира съобщения:"
 
 #: utils/themeeditor.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The sorting order that clicking on this column header will switch to."
+msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 "Редът за сортиране, към който ще се премине при кликване върху заглавката на "
@@ -1634,7 +1643,10 @@ msgid "Visible by default"
 msgstr "Показва се по подразбиране"
 
 #: utils/themeeditor.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column should be visible when the theme is selected."
+msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 "Изберете това, ако тази колона трябва да се вижда, когато е избрана темата."
@@ -1644,8 +1656,12 @@ msgstr ""
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Съдържа поле \"Подател или получател\""
 
-#: utils/themeeditor.cpp:88
-#, kde-format
+#: utils/themeeditor.cpp:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column label should be updated depending on the folder "
+#| "\"inbound\"/\"outbound\" type."
+msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
@@ -1653,17 +1669,17 @@ msgstr ""
 "Изберете това, ако етикетът на тази колона трябва да се актуализира в "
 "зависимост от типа \"входящ\"/\"изходящ\" на папката."
 
-#: utils/themeeditor.cpp:108
+#: utils/themeeditor.cpp:109
 #, kde-format
 msgid "Unnamed Column"
 msgstr "Неозаглавена колона"
 
-#: utils/themeeditor.cpp:173
+#: utils/themeeditor.cpp:174
 #, kde-format
 msgid "Message Group"
 msgstr "Група съобщения"
 
-#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1672,68 +1688,68 @@ msgstr ""
 "Много дълъг обект много дълъг обект много дълъг обект много дълъг обект "
 "много дълъг обект много дълъг обект"
 
-#: utils/themeeditor.cpp:192
+#: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "Примерен етикет 1"
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "Примерен етикет 2"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "Примерен етикет 3"
 
-#: utils/themeeditor.cpp:409
+#: utils/themeeditor.cpp:410
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Видимо"
 
-#: utils/themeeditor.cpp:849
+#: utils/themeeditor.cpp:850
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Омекотяване"
 
-#: utils/themeeditor.cpp:856
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Получер"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:861
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Курсив"
 
-#: utils/themeeditor.cpp:867
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgid "Font"
 msgstr "Шрифт"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:876
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "По подразбиране"
 
-#: utils/themeeditor.cpp:880
+#: utils/themeeditor.cpp:881
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Потребителски..."
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:889
 #, kde-format
 msgid "Foreground Color"
 msgstr "Цвят на преден план"
 
-#: utils/themeeditor.cpp:897
+#: utils/themeeditor.cpp:898
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1741,7 +1757,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Скриване"
 
-#: utils/themeeditor.cpp:904
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1749,7 +1765,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Запазване на празно пространство"
 
-#: utils/themeeditor.cpp:911
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1757,90 +1773,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Запази омекотената икона"
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:920
 #, kde-format
 msgid "When Disabled"
 msgstr "Когато е деактивирано"
 
-#: utils/themeeditor.cpp:925
+#: utils/themeeditor.cpp:926
 #, kde-format
 msgid "Group Header"
 msgstr "Заглавна част на група"
 
-#: utils/themeeditor.cpp:932
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Без"
 
-#: utils/themeeditor.cpp:937
+#: utils/themeeditor.cpp:938
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Автоматично"
 
-#: utils/themeeditor.cpp:942
+#: utils/themeeditor.cpp:943
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Потребителски..."
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:951
 #, kde-format
 msgid "Background Color"
 msgstr "Цвят на фона"
 
-#: utils/themeeditor.cpp:970
+#: utils/themeeditor.cpp:971
 #, kde-format
 msgid "Background Style"
 msgstr "Стил на фона"
 
-#: utils/themeeditor.cpp:1156
+#: utils/themeeditor.cpp:1157
 #, kde-format
 msgid "Column Properties..."
 msgstr "Свойства на колона..."
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Add Column..."
 msgstr "Добавяне на колона..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Delete Column"
 msgstr "Изтриване на колона"
 
-#: utils/themeeditor.cpp:1168
+#: utils/themeeditor.cpp:1169
 #, kde-format
 msgid "Move Column to Left"
 msgstr "Преместване на колона наляво"
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1173
 #, kde-format
 msgid "Move Column to Right"
 msgstr "Преместване на колона надясно"
 
-#: utils/themeeditor.cpp:1221
+#: utils/themeeditor.cpp:1222
 #, kde-format
 msgid "Add New Column"
 msgstr "Добавяне на нова колона"
 
-#: utils/themeeditor.cpp:1245
+#: utils/themeeditor.cpp:1246
 #, kde-format
 msgid "Column Properties"
 msgstr "Свойства на колона"
 
-#: utils/themeeditor.cpp:1287
+#: utils/themeeditor.cpp:1288
 #, kde-format
 msgid "Appearance"
 msgstr "Външен вид"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1292
 #, kde-format
 msgid "Content Items"
 msgstr "Елементи на съдържанието"
 
-#: utils/themeeditor.cpp:1423
+#: utils/themeeditor.cpp:1424
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1852,23 +1868,23 @@ msgstr ""
 "да съставите вашата тема. Щракнете с десния бутон върху елементите в изгледа "
 "за повече опции."
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1434
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Допълнителни"
 
-#: utils/themeeditor.cpp:1437
+#: utils/themeeditor.cpp:1438
 #, kde-format
 msgid "Header:"
 msgstr "Заглавна част:"
 
-#: utils/themeeditor.cpp:1443
+#: utils/themeeditor.cpp:1444
 #, kde-format
 msgid "Icon size:"
 msgstr "Размер на икона:"
 
-#: utils/themeeditor.cpp:1449
+#: utils/themeeditor.cpp:1450
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

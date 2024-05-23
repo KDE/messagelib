@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2022-08-31 07:17+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -27,7 +27,14 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Outil de développement"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Fermer"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Fermer"
@@ -39,7 +46,9 @@ msgid "F&ind:"
 msgstr "T&rouver :"
 
 #: findbar/findbarbase.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Texte à chercher"
 
@@ -50,7 +59,9 @@ msgid "Next"
 msgstr "Suivant"
 
 #: findbar/findbarbase.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Aller à la correspondance suivante"
 
@@ -62,7 +73,9 @@ msgstr "Précédent"
 
 # | msgid "Go to the previous bookmark."
 #: findbar/findbarbase.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Aller à la correspondance précédente"
 
@@ -72,7 +85,9 @@ msgid "Options"
 msgstr "Options"
 
 #: findbar/findbarbase.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modifier le comportement de la recherche"
 

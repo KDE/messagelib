@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2024-05-15 06:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -491,12 +491,12 @@ msgstr "ოთხი კვირის წინ"
 msgid "Five Weeks Ago"
 msgstr "ხუთი კვირის წინ"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:185
+#: core/model.cpp:550 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Receiver"
 msgstr "მიმღები"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:184
+#: core/model.cpp:552 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "გამგზავნი"
@@ -889,7 +889,7 @@ msgstr "თარიღი"
 msgid "Size"
 msgstr "ზომა"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "საქაღალდე"
@@ -1176,12 +1176,16 @@ msgstr ""
 "საქაღალდეებზე გადადიხართ ან როცა ავიწროებთ ძებნას შეტყობინების სტატუსით."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Filter Mails by Status"
+msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "ელფოსტის სტატუსით გაფილტვრა"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Saved Filter"
+msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "შენახული ფილტრი"
 
@@ -1551,7 +1555,7 @@ msgstr "თემის წაშლა"
 msgid "Unnamed Theme"
 msgstr "უსახელო თემა"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format
 msgid "New Column"
 msgstr "ახალი სვეტი"
@@ -1607,7 +1611,9 @@ msgid "Name:"
 msgstr "სახელი:"
 
 #: utils/themeeditor.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The label that will be displayed in the column header."
+msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "ჭდე, რომელიც სვეტის თავსართში გამოჩნდება."
 
@@ -1617,7 +1623,10 @@ msgid "Header click sorts messages:"
 msgstr "თავსართზე დაწკაპუნება შეტყობინებებს ალაგებს:"
 
 #: utils/themeeditor.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The sorting order that clicking on this column header will switch to."
+msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 "დალაგების მიმდევრობა, რომელზეც ამ სვეტის თავსართზე დაწკაპუნება გადართავს."
@@ -1628,7 +1637,10 @@ msgid "Visible by default"
 msgstr "ნაგულისხმევად ხილული"
 
 #: utils/themeeditor.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column should be visible when the theme is selected."
+msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "ჩართეთ ეს, თუ ეს სვეტი ხილული უნდა იყოს, როცა თემა მონიშნულია."
 
@@ -1637,8 +1649,12 @@ msgstr "ჩართეთ ეს, თუ ეს სვეტი ხილულ
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "შეიცავს ველს \"Sender or Receiver\""
 
-#: utils/themeeditor.cpp:88
-#, kde-format
+#: utils/themeeditor.cpp:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Check this if this column label should be updated depending on the folder "
+#| "\"inbound\"/\"outbound\" type."
+msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
@@ -1646,17 +1662,17 @@ msgstr ""
 "ჩართეთ ეს, თუ ამ სვეტის ჭდე უნდა განახლდეს საქაღალდის \"შემომავალი\"/"
 "\"გამავალი\" ტიპთან ერთად."
 
-#: utils/themeeditor.cpp:108
+#: utils/themeeditor.cpp:109
 #, kde-format
 msgid "Unnamed Column"
 msgstr "უსახელო სვეტი"
 
-#: utils/themeeditor.cpp:173
+#: utils/themeeditor.cpp:174
 #, kde-format
 msgid "Message Group"
 msgstr "შეტყობინებების ჯგუფი"
 
-#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1665,68 +1681,68 @@ msgstr ""
 "ძალიან გრძელი სათაური ძალიან გრძელი სათაური ძალიან გრძელი სათაური ძალიან "
 "გრძელი სათაური ძალიან გრძელი სათაური"
 
-#: utils/themeeditor.cpp:192
+#: utils/themeeditor.cpp:193
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "მაგალითი ჭდე 1"
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "მაგალითი ჭდე 2"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "მაგალითი ჭდე 3"
 
-#: utils/themeeditor.cpp:409
+#: utils/themeeditor.cpp:410
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "ხილული"
 
-#: utils/themeeditor.cpp:849
+#: utils/themeeditor.cpp:850
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "დარბილება"
 
-#: utils/themeeditor.cpp:856
+#: utils/themeeditor.cpp:857
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "გასქელება"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:861
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "დახრა"
 
-#: utils/themeeditor.cpp:867
+#: utils/themeeditor.cpp:868
 #, kde-format
 msgid "Font"
 msgstr "შრიფტი"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:876
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "ნაგულისხმები"
 
-#: utils/themeeditor.cpp:880
+#: utils/themeeditor.cpp:881
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "ხელით..."
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:889
 #, kde-format
 msgid "Foreground Color"
 msgstr "წინა პლანის ფერი"
 
-#: utils/themeeditor.cpp:897
+#: utils/themeeditor.cpp:898
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1734,7 +1750,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "დამალვა"
 
-#: utils/themeeditor.cpp:904
+#: utils/themeeditor.cpp:905
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1742,7 +1758,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "ცარიელი სივრცის შენარჩუნება"
 
-#: utils/themeeditor.cpp:911
+#: utils/themeeditor.cpp:912
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1750,90 +1766,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "დარბილებული ხატულის შენარჩუნება"
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:920
 #, kde-format
 msgid "When Disabled"
 msgstr "როცა გათიშულია"
 
-#: utils/themeeditor.cpp:925
+#: utils/themeeditor.cpp:926
 #, kde-format
 msgid "Group Header"
 msgstr "ჯგუფის თავსართი"
 
-#: utils/themeeditor.cpp:932
+#: utils/themeeditor.cpp:933
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "არაფერი"
 
-#: utils/themeeditor.cpp:937
+#: utils/themeeditor.cpp:938
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "ავტომატური"
 
-#: utils/themeeditor.cpp:942
+#: utils/themeeditor.cpp:943
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "ხელით..."
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:951
 #, kde-format
 msgid "Background Color"
 msgstr "ფონის ფერი"
 
-#: utils/themeeditor.cpp:970
+#: utils/themeeditor.cpp:971
 #, kde-format
 msgid "Background Style"
 msgstr "ფონის სტილი"
 
-#: utils/themeeditor.cpp:1156
+#: utils/themeeditor.cpp:1157
 #, kde-format
 msgid "Column Properties..."
 msgstr "სვეტის თვისებები..."
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Add Column..."
 msgstr "სვეტის დამატება..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Delete Column"
 msgstr "სვეტის წაშლა"
 
-#: utils/themeeditor.cpp:1168
+#: utils/themeeditor.cpp:1169
 #, kde-format
 msgid "Move Column to Left"
 msgstr "სვეტის მარცხნივ გაწევა"
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1173
 #, kde-format
 msgid "Move Column to Right"
 msgstr "სვეტის მარჯვენივ გაწევა"
 
-#: utils/themeeditor.cpp:1221
+#: utils/themeeditor.cpp:1222
 #, kde-format
 msgid "Add New Column"
 msgstr "ახალი სვეტის დამატება"
 
-#: utils/themeeditor.cpp:1245
+#: utils/themeeditor.cpp:1246
 #, kde-format
 msgid "Column Properties"
 msgstr "სვეტის თვისებები"
 
-#: utils/themeeditor.cpp:1287
+#: utils/themeeditor.cpp:1288
 #, kde-format
 msgid "Appearance"
 msgstr "გარემოს იერსახე"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1292
 #, kde-format
 msgid "Content Items"
 msgstr "შემცველობის ელემენტები"
 
-#: utils/themeeditor.cpp:1423
+#: utils/themeeditor.cpp:1424
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1845,23 +1861,23 @@ msgstr ""
 "სვეტებზე იმისთვის, რომ თქვენი თემა ააწყოთ. მარჯვენა წკაპი ელემენტებზე ხედის "
 "შიგნით მეტი პარამეტრებისთვის."
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1434
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "დაწინაურებული"
 
-#: utils/themeeditor.cpp:1437
+#: utils/themeeditor.cpp:1438
 #, kde-format
 msgid "Header:"
 msgstr "ჰედერი:"
 
-#: utils/themeeditor.cpp:1443
+#: utils/themeeditor.cpp:1444
 #, kde-format
 msgid "Icon size:"
 msgstr "ხატულების ზომა:"
 
-#: utils/themeeditor.cpp:1449
+#: utils/themeeditor.cpp:1450
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

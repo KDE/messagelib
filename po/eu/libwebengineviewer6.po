@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2023-08-17 23:46+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -26,7 +26,14 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Garatzailearen tresna"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Itxi"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Itxi"
@@ -38,7 +45,9 @@ msgid "F&ind:"
 msgstr "B&ilatu:"
 
 #: findbar/findbarbase.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Bilatu beharreko testua"
 
@@ -49,7 +58,9 @@ msgid "Next"
 msgstr "Hurrengoa"
 
 #: findbar/findbarbase.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Joan hurrengo bat-etortzera"
 
@@ -60,7 +71,9 @@ msgid "Previous"
 msgstr "Aurrekoa"
 
 #: findbar/findbarbase.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Joan aurreko bat-etortzera"
 
@@ -70,7 +83,9 @@ msgid "Options"
 msgstr "Aukerak"
 
 #: findbar/findbarbase.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Aldatu bilaketaren jokabidea"
 
