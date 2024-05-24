@@ -1829,8 +1829,7 @@ msgid "Select type of recipient"
 msgstr "Selecció del tipus de destinatari"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Indiqueu la llista d'adreces de correu que rebran aquest missatge"

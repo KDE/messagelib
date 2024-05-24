@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 12:57+0300\n"
+"PO-Revision-Date: 2024-05-23 06:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -1206,15 +1206,13 @@ msgstr ""
 "повідомлень."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "Фільтрувати повідомлення за станом"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Збережений фільтр"
@@ -1641,8 +1639,7 @@ msgid "Name:"
 msgstr "Назва:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Напис, який буде показано у заголовку стовпчика."
@@ -1653,9 +1650,7 @@ msgid "Header click sorts messages:"
 msgstr "Натискання заголовка впорядковує повідомлення:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Порядок сортування, який перемикатиме натискання заголовка стовпчика."
@@ -1666,9 +1661,7 @@ msgid "Visible by default"
 msgstr "Типово видимий"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Позначте цей пункт, якщо стовпчик слід показувати, коли обрано тему."
@@ -1679,10 +1672,7 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "містить поле «Відправник або Отримувач»"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "

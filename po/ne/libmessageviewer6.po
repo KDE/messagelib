@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-24 00:39+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -986,7 +986,7 @@ msgstr "[vCard]"
 msgid "Attachments:"
 msgstr "सङ्लग्नता"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:541
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

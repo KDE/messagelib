@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-24 00:39+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1013,7 +1013,7 @@ msgstr "[Fisitekaartsje]"
 msgid "Attachments:"
 msgstr "Tahea&ksels"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:541
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

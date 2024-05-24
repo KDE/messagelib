@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-24 00:39+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -997,7 +997,7 @@ msgstr "[vCard]"
 msgid "Attachments:"
 msgstr "П&рилози"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:541
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

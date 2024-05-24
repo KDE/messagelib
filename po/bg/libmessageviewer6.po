@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-24 00:39+0000\n"
 "PO-Revision-Date: 2024-05-17 21:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -879,7 +879,7 @@ msgstr "[vcard]"
 msgid "Attachments:"
 msgstr "Прикачени файлове:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:541
 #, kde-format
 msgid "Security:"
 msgstr "Сигурност:"

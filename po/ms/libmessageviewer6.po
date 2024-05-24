@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2024-05-24 00:39+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -976,7 +976,7 @@ msgstr "[vCard]"
 msgid "Attachments:"
 msgstr "Lam&piran"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:541
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

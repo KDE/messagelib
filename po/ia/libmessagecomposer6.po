@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-20 15:04+0200\n"
+"PO-Revision-Date: 2024-05-23 10:17+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 21.12.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -1818,11 +1818,10 @@ msgid "Select type of recipient"
 msgstr "Selige typo de destinatario"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr "Fixa le lista de adresses de e-posta de reciper iste message"
+msgstr "Fixa le lista de adresses de e-posta a reciper iste message"
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 10:18+0200\n"
+"PO-Revision-Date: 2024-05-23 09:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1202,18 +1202,16 @@ msgstr ""
 "mape ali pri zoževanju iskanja po stanju besedila zaklenjeno."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
-msgstr "Filtriraj e-pošto po stanju"
+msgstr "Filter e-pošte po stanju"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr "Shranjen filter"
+msgstr "Shranjeni filter"
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1637,8 +1635,7 @@ msgid "Name:"
 msgstr "Ime:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Oznaka, ki bo prikazana v naslovu stolpca."
@@ -1649,12 +1646,10 @@ msgid "Header click sorts messages:"
 msgstr "Klik na naslov razvrsti sporočila:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr "Vrstni red razvrščanja po kliku na ta naslov stolpca."
+msgstr "Vrstni red razvrščanja, ki se preklopi po kliku na ta naslov stolpca."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1662,12 +1657,10 @@ msgid "Visible by default"
 msgstr "Privzeto je viden"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "Označite to možnost, če naj bo ta stolpec po izbiri teme viden."
+msgstr "Označite to možnost, če naj bo ta stolpec viden po izbiri teme."
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1675,17 +1668,14 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "Vsebuje polje »Pošiljatelj ali prejemnik«"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"Označite to možnost, če naj bo oznaka tega stolpca odvisna od vrste mape (za "
-"prejemanje ali za pošiljanje)."
+"Označite to možnost, če naj bo oznaka tega stolpca posodobljena odvisno od "
+"vrste mape (za prejemanje ali za pošiljanje)."
 
 #: utils/themeeditor.cpp:109
 #, kde-format

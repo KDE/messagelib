@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# giovanni <g.sora@tiscali.it>, 2020, 2021, 2023.
+# giovanni <g.sora@tiscali.it>, 2020, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2023-02-01 17:59+0100\n"
+"PO-Revision-Date: 2024-05-23 10:19+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 21.12.1\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Developer Tool"
 msgstr "Instrumento de Disveloppator"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
@@ -42,8 +41,7 @@ msgid "F&ind:"
 msgstr "T&rova:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Texto de cercar"
@@ -55,11 +53,10 @@ msgid "Next"
 msgstr "Proxime"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Salta al proxime objecto coincidente"
+msgstr "Salta al proxime correspondentia"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -68,11 +65,10 @@ msgid "Previous"
 msgstr "Previe"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "Salta al previe objecto coincidente"
+msgstr "Salta al previe correspondentia"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -80,8 +76,7 @@ msgid "Options"
 msgstr "Optiones"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modificar comportamento de cerca"

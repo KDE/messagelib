@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 10:32+0200\n"
+"PO-Revision-Date: 2024-05-23 10:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1827,11 +1827,10 @@ msgid "Select type of recipient"
 msgstr "Selecteer type ontvanger"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr "Stel de lijst met e-mailadressen waar dit bericht naartoe moet samen."
+msgstr "Stel de lijst met e-mailadressen waar dit bericht naartoe moet samen"
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
