@@ -913,7 +913,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::popupMenu, this, &ViewerPrivate::slotUrlPopup);
     connect(mViewer, &MailWebEngineView::wheelZoomChanged, this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, [this]() {
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, this, [this]() {
         if (!mSubmittedFormWarning) {
             createSubmittedFormWarning();
         }

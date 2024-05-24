@@ -131,7 +131,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
         for (const auto composer : composerViewBase.m_composers) {
             if (!composer->finished()) {
                 notFinished = true;
-                connect(composer, &MessageComposer::Composer::result, [&composerViewBase, &loop]() {
+                connect(composer, &MessageComposer::Composer::result, this, [&composerViewBase, &loop]() {
                     if (composerViewBase.m_composers.size() < 1) {
                         loop.quit();
                     }

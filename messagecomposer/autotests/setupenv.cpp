@@ -128,6 +128,7 @@ void Test::populateKeyring(const QString &gnupgHome, const GpgME::Key &key)
     QObject::connect(
         exportJob,
         &QGpgME::ExportJob::result,
+        exportJob,
         [&gnupgHome, &loop](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
             Q_UNUSED(auditLogAsHtml);
             Q_UNUSED(auditLogError);

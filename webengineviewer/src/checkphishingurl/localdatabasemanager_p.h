@@ -82,12 +82,13 @@ public:
         downloadLocalDatabaseThread = new WebEngineViewer::DownloadLocalDatabaseThread;
         downloadLocalDatabaseThread->setDatabaseFullPath(databaseFullPath());
         downloadLocalDatabaseThread->setDataBaseState(clientState);
-        QObject::connect(downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFailed, [this]() {
+        QObject::connect(downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFailed, downloadLocalDatabaseThread.data(), [this]() {
             mDataBaseOk = false;
             mDownloadProgress = false;
         });
         QObject::connect(downloadLocalDatabaseThread.data(),
                          &DownloadLocalDatabaseThread::createDataBaseFinished,
+                         downloadLocalDatabaseThread.data(),
                          [this](bool success, const QString &newClientState, const QString &minWaitDurationStr) {
                              mDataBaseOk = success;
                              mDownloadProgress = false;
