@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-25 00:39+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -502,38 +502,38 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "&Nich ünnerschrieven"
 
-#: composer/composerviewbase.cpp:722
+#: composer/composerviewbase.cpp:723
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-Slötel is aflopen"
 
-#: composer/composerviewbase.cpp:722
+#: composer/composerviewbase.cpp:723
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-Zertifikaat is aflopen"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:725
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-Slötel löppt neegst af"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:725
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-Zertifikaat löppt neegst af"
 
-#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
-#: composer/composerviewbase.cpp:845
+#: composer/composerviewbase.cpp:800 composer/composerviewbase.cpp:814
+#: composer/composerviewbase.cpp:846
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Slötels laat sik nich oplösen. Bitte en Fehlerbericht loosstüern."
 
-#: composer/composerviewbase.cpp:1051 composer/composerviewbase.cpp:1322
+#: composer/composerviewbase.cpp:1052 composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Bruker hett Opgaav afbraken"
 
-#: composer/composerviewbase.cpp:1056
+#: composer/composerviewbase.cpp:1057
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -542,37 +542,37 @@ msgstr ""
 "Naricht lett sik nich opstellen: %1 \n"
 " Bitte bericht dissen Fehler."
 
-#: composer/composerviewbase.cpp:1058
+#: composer/composerviewbase.cpp:1059
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Naricht lett sik nich opstellen: %1"
 
-#: composer/composerviewbase.cpp:1161
+#: composer/composerviewbase.cpp:1162
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "De Nettbreef lett sik nich ahn Problemen för't Loosstüern inregen: %1"
 
-#: composer/composerviewbase.cpp:1325
+#: composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Naricht \"%1\" lett sik nich automaatsch sekern."
 
-#: composer/composerviewbase.cpp:1344
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Nich all Daten laat sik na Datei schrieven."
 
-#: composer/composerviewbase.cpp:1347
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "De Datei lett sik nich to Enn afarbeiden."
 
-#: composer/composerviewbase.cpp:1351
+#: composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Could not open file."
 msgstr "Datei lett sik nich opmaken."
 
-#: composer/composerviewbase.cpp:1358
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -583,19 +583,19 @@ msgstr ""
 "%2\n"
 "Grund: %3"
 
-#: composer/composerviewbase.cpp:1364
+#: composer/composerviewbase.cpp:1365
 #, fuzzy, kde-format
 #| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Naricht lett sik nich automaatsch sekern."
 
-#: composer/composerviewbase.cpp:1477
+#: composer/composerviewbase.cpp:1478
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Naricht lett sik nich sekern: %1"
 
-#: composer/composerviewbase.cpp:1904
+#: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -606,28 +606,28 @@ msgstr ""
 "man bileggt is dor nix.\n"
 "Wullt Du de Naricht en Datei bileggen?"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1908
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Bilagen-Anstoot"
 
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1909
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Datei bileggen..."
 
-#: composer/composerviewbase.cpp:1909
+#: composer/composerviewbase.cpp:1910
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Ahn Ännern &loosstüern"
 
-#: composer/composerviewbase.cpp:1961
+#: composer/composerviewbase.cpp:1962
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -638,27 +638,27 @@ msgstr ""
 "Naricht ünnerschrieven wullt.\n"
 "Wullt Du ehr ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
+#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Ünner&schrieven"
 
-#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
+#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Nich ünnerschrieven"
 
-#: composer/composerviewbase.cpp:1990
+#: composer/composerviewbase.cpp:1991
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -667,7 +667,7 @@ msgstr ""
 "De Instellen för disse Adressaten för't Ünnerschrieven passt nich tosamen.\n"
 "Wullt Du de Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2017
+#: composer/composerviewbase.cpp:2018
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -676,21 +676,21 @@ msgstr ""
 "Du wullt disse Naricht ünnerschrieven, man för disse Identiteet is keen "
 "gellen Ünnerschriftslötel fastleggt."
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2023
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Ahn Ünnerschrift loosstüern?"
 
-#: composer/composerviewbase.cpp:2023
+#: composer/composerviewbase.cpp:2024
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&Ahn Ünnerschrift loosstüern"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -702,7 +702,7 @@ msgstr ""
 "Huusregeln wesen.\n"
 "Wullt Du ansteed all Delen ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2042
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -713,31 +713,31 @@ msgstr ""
 "Loosstüern vun nich ünnerschreven Narichten mag gegen de Huusregeln wesen.\n"
 "Wullt Du ansteed de Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2045
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "All Delen ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2045
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign"
 msgstr "Ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2049
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Wohrschoen: Keen Ünnerschrift"
 
-#: composer/composerviewbase.cpp:2050
+#: composer/composerviewbase.cpp:2051
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Ahn Ännern loosstüern"
 
-#: composer/composerviewbase.cpp:2097
+#: composer/composerviewbase.cpp:2098
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -746,7 +746,7 @@ msgstr ""
 "Dat gifft för all Adressaten Verslötelslötels, de Du troost.\n"
 "Wullt Du disse Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2101
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -757,32 +757,32 @@ msgstr ""
 "Naricht verslöteln wullt.\n"
 "Wullt Du ehr verslöteln?"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2136
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2137
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2107
+#: composer/composerviewbase.cpp:2108
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Ünnerschrieven && &verslöteln"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2189
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Verslöteln"
 
-#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2194
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Sign Only"
 msgstr "Bloots ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2194
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Ahn Ännern &loosstüern"
 
-#: composer/composerviewbase.cpp:2129
+#: composer/composerviewbase.cpp:2130
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -791,7 +791,7 @@ msgstr ""
 "De Instellen för't Verslöteln passt för disse Adressaten nich tosamen.\n"
 "Wullt Du de Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2137 composer/keyresolver.cpp:1322
+#: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -799,14 +799,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Verslöteln"
 
-#: composer/composerviewbase.cpp:2138
+#: composer/composerviewbase.cpp:2139
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nich verslöteln"
 
-#: composer/composerviewbase.cpp:2158
+#: composer/composerviewbase.cpp:2159
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -816,21 +816,21 @@ msgstr ""
 "Du wullt disse Naricht verslöteln, un ok en Kopie för Di sülven maken, man "
 "för disse Identiteet is keen Verslötelslötel fastleggt, den Du troost."
 
-#: composer/composerviewbase.cpp:2164
+#: composer/composerviewbase.cpp:2165
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Ahn Verslöteln loosstüern?"
 
-#: composer/composerviewbase.cpp:2165 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1348
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Ahn Verslöteln loosstüern"
 
-#: composer/composerviewbase.cpp:2180
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -843,7 +843,7 @@ msgstr ""
 "wesen un/oder schuulsam Daten apenmaken.\n"
 "Wullt Du ansteed all Delen verslöteln?"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2186
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -856,12 +856,12 @@ msgstr ""
 "oder schuulsam Daten apenmaken.\n"
 "Wullt Du ansteed de Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2189
+#: composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "All Delen &verslöteln"
 
-#: composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2193
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"

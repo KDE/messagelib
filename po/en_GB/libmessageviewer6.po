@@ -4,13 +4,13 @@
 # Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2002,2003,2004, 2005, 2006, 2009.
 # Jonathan Riddell <kde-en-gb@jriddell.org>, 2003.
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2009, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:39+0000\n"
-"PO-Revision-Date: 2023-03-10 17:33+0000\n"
+"PO-Revision-Date: 2024-05-24 17:03+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -324,8 +324,7 @@ msgstr ""
 "one too?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Key Changed"
@@ -400,8 +399,7 @@ msgid "Do you want to delete all keys?"
 msgstr "Do you want to delete all keys?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Delete Keys"
@@ -453,8 +451,7 @@ msgid "No rules found"
 msgstr "No rules found"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Export Rules"
@@ -475,8 +472,7 @@ msgid "No rules imported."
 msgstr "No rules imported."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Import Rules"
@@ -542,8 +538,7 @@ msgstr "Do you want to delete this rule?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Delete Rule"
@@ -554,8 +549,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "Do you want to delete all the rules?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Delete Rules"
@@ -814,10 +808,9 @@ msgid "Date:"
 msgstr "Date:"
 
 #: header/grantleeheaderformatter.cpp:240
-#, fuzzy, kde-format
-#| msgid "Message Id"
+#, kde-format
 msgid "Message-Id:"
-msgstr "Message Id"
+msgstr "Message-ID:"
 
 #: header/grantleeheaderformatter.cpp:264
 #, kde-format
@@ -1194,8 +1187,7 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "An entry already defines this URL. Please modify it."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Add new URL"
@@ -1242,29 +1234,25 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Move to Wastebin"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "I confirm it's not a scam"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Add email to whitelist"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Disable scam detection for all messages"
@@ -1667,24 +1655,21 @@ msgstr "Use Fi&xed Font"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder in the folder selection dialog."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
-msgstr "The most recently selected folder in the folder selection dialogue."
+msgstr "The most recent selected folder used for Todo."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder in the folder selection dialog."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr "The most recently selected folder in the folder selection dialogue."
+msgstr "The most recent selected folder used for Event."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr "The most recent selected folder using for Notes."
+msgstr "The most recent selected folder used for Notes."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1842,8 +1827,7 @@ msgstr ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 
 #: utils/messageviewerutil.cpp:127
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Overwrite File?"
@@ -1885,15 +1869,13 @@ msgid "KMail Question"
 msgstr "KMail Question"
 
 #: utils/messageviewerutil.cpp:324
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Keep Encryption"
 
 #: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Do Not Keep"
@@ -1908,8 +1890,7 @@ msgstr ""
 "saving?"
 
 #: utils/messageviewerutil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Keep Signature"
@@ -1926,8 +1907,7 @@ msgstr ""
 "qt>"
 
 #: utils/messageviewerutil.cpp:404
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Error saving attachment"
@@ -1965,8 +1945,7 @@ msgid "File %1 could not be loaded."
 msgstr "File %1 could not be loaded."
 
 #: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Error loading message"
@@ -1977,8 +1956,7 @@ msgid "File %1 could not be created."
 msgstr "File %1 could not be created."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Error saving message"
@@ -1994,12 +1972,10 @@ msgid "Error saving message"
 msgstr "Error saving message"
 
 #: utils/messageviewerutil.cpp:603
-#, fuzzy, kde-format
-#| msgctxt "Not able to attend."
-#| msgid "Declined: %1"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Declined: %1"
+msgstr "Deleted: %1"
 
 #: utils/messageviewerutil.cpp:614
 #, kde-format
@@ -2007,6 +1983,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"You deleted an attachment from this message. The original MIME headers for "
+"the attachment were:"
 
 #: utils/messageviewerutil.cpp:641
 #, kde-format
@@ -2040,10 +2018,9 @@ msgid "Size"
 msgstr "Size"
 
 #: viewer/printmessage.cpp:68
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "Could not write the file %1."
+msgstr "Could not generate print preview."
 
 #: viewer/printmessage.cpp:104
 #, kde-format
@@ -2183,8 +2160,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Do you really want to execute <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Execute"
@@ -2204,8 +2180,7 @@ msgstr ""
 "message."
 
 #: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Delete Attachment"
@@ -2383,8 +2358,7 @@ msgid "Copy Text"
 msgstr "Copy Text"
 
 #: viewer/viewer_p.cpp:1545
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Select All Text"
@@ -2405,8 +2379,7 @@ msgid "Show Message Structure"
 msgstr "Show Message Structure"
 
 #: viewer/viewer_p.cpp:1572
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&View Source"
@@ -2417,43 +2390,37 @@ msgid "&Save Message..."
 msgstr "&Save Message..."
 
 #: viewer/viewer_p.cpp:1583
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Save Display Format"
 
 #: viewer/viewer_p.cpp:1587
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Reset Display Format"
 
 #: viewer/viewer_p.cpp:1594
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Scroll Message Up"
 
 #: viewer/viewer_p.cpp:1599
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Scroll Message Down"
 
 #: viewer/viewer_p.cpp:1604
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Scroll Message Up (More)"
 
 #: viewer/viewer_p.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Scroll Message Down (More)"
@@ -2469,29 +2436,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Toggle display mode between HTML and plain text"
 
 #: viewer/viewer_p.cpp:1626
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Load external references"
 
 #: viewer/viewer_p.cpp:1632
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Speak Text"
 
 #: viewer/viewer_p.cpp:1638
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Share Text..."
 
 #: viewer/viewer_p.cpp:1656
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copy Image Location"
@@ -2537,8 +2500,7 @@ msgid "The URL %1 is not valid."
 msgstr "The URL %1 is not valid."
 
 #: viewer/viewer_p.cpp:1987
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Check Phishing URL"
@@ -2549,8 +2511,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "This web site is a malware, do you want to continue to show it?"
 
 #: viewer/viewer_p.cpp:2008
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"

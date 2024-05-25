@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 06:04+0200\n"
+"PO-Revision-Date: 2024-05-24 16:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1176,15 +1176,13 @@ msgstr ""
 "საქაღალდეებზე გადადიხართ ან როცა ავიწროებთ ძებნას შეტყობინების სტატუსით."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "ელფოსტის სტატუსით გაფილტვრა"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "შენახული ფილტრი"
@@ -1611,8 +1609,7 @@ msgid "Name:"
 msgstr "სახელი:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "ჭდე, რომელიც სვეტის თავსართში გამოჩნდება."
@@ -1623,9 +1620,7 @@ msgid "Header click sorts messages:"
 msgstr "თავსართზე დაწკაპუნება შეტყობინებებს ალაგებს:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
@@ -1637,9 +1632,7 @@ msgid "Visible by default"
 msgstr "ნაგულისხმევად ხილული"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "ჩართეთ ეს, თუ ეს სვეტი ხილული უნდა იყოს, როცა თემა მონიშნულია."
@@ -1650,10 +1643,7 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "შეიცავს ველს \"Sender or Receiver\""
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
