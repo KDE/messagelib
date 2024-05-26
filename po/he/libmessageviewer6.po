@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 12:53+0300\n"
+"PO-Revision-Date: 2024-05-25 07:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -884,7 +884,7 @@ msgstr "ללא נושא"
 #: header/grantleeheaderformatter.cpp:454
 #, kde-format
 msgid "Spam Status:"
-msgstr "מצב דוא\"ל זבל"
+msgstr "מצב דוא״ל זבל:"
 
 #: header/grantleeheaderformatter.cpp:466
 #, kde-format

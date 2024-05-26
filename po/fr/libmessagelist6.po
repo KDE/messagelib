@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-16 18:54+0200\n"
+"PO-Revision-Date: 2024-05-24 10:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1216,15 +1216,13 @@ msgstr ""
 "arrondissez votre recherche par état de message."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "Filtrer les messages par état"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtre enregistré"
@@ -1651,8 +1649,7 @@ msgid "Name:"
 msgstr "Nom :"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Le libellé qui sera affiché dans l'en-tête de la colonne."
@@ -1663,13 +1660,11 @@ msgid "Header click sorts messages:"
 msgstr "Un clic sur une en-tête trie les messages :"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
-"L'ordre de tri sera utilisé lors d'un clic sur cette en-tête de colonne."
+"L'ordre de tri qui sera utilisé lors d'un clic sur cette en-tête de colonne."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1677,14 +1672,12 @@ msgid "Visible by default"
 msgstr "Visible par défaut"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
-"Cochez cette option si cette colonne doit être visible lorsque le thème est "
-"sélectionné."
+"Sélectionnez cette option si cette colonne doit être visible lorsque le "
+"thème est sélectionné."
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1692,16 +1685,13 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "Contient le champ « expéditeur ou destinataire »"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"Cochez cette option si le libellé de la colonne doit être actualisé en "
+"Sélectionnez cette option si le libellé de la colonne doit être actualisé en "
 "fonction du type « sortant » ou « entrant » du dossier."
 
 #: utils/themeeditor.cpp:109

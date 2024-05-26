@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-18 09:51+0200\n"
+"PO-Revision-Date: 2024-05-24 10:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1842,11 +1842,10 @@ msgid "Select type of recipient"
 msgstr "Sélectionnez le type de destinataire"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr "Faites la liste des adresses de courriel pour réception de ce message"
+msgstr "Définissez la liste des adresses de courriel pour recevoir ce message"
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
