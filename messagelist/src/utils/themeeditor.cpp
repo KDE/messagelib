@@ -73,7 +73,7 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     mNameEdit->setToolTip(i18nc("@info:tooltip", "The label that will be displayed in the column header."));
     g->addWidget(mNameEdit, 0, 1);
 
-    l = new QLabel(i18n("Header click sorts messages:"), base);
+    l = new QLabel(i18nc("@label:textbox", "Header click sorts messages:"), base);
     g->addWidget(l, 1, 0);
 
     mMessageSortingCombo = new QComboBox(base);
@@ -1435,13 +1435,13 @@ ThemeEditor::ThemeEditor(QWidget *parent)
 
     tabg = new QGridLayout(tab);
 
-    l = new QLabel(i18n("Header:"), tab);
+    l = new QLabel(i18nc("@label:textbox", "Header:"), tab);
     tabg->addWidget(l, 0, 0);
 
     mViewHeaderPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mViewHeaderPolicyCombo, 0, 1);
 
-    l = new QLabel(i18n("Icon size:"), tab);
+    l = new QLabel(i18nc("@label:textbox", "Icon size:"), tab);
     tabg->addWidget(l, 1, 0);
 
     mIconSizeSpinBox = new KPluralHandlingSpinBox(tab);

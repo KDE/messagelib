@@ -29,7 +29,7 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     mIconButton->setFixedSize(32, 32);
     KLineEditEventHandler::catchReturnKey(mName);
 
-    auto label = new QLabel(i18n("Name:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Name:"), this);
     label->setObjectName(QLatin1StringView("label"));
 
     mainLayout->addWidget(label);

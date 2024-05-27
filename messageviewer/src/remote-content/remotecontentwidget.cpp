@@ -25,7 +25,7 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
 
     mLineEdit->setObjectName(QLatin1StringView("mLineEdit"));
     mLineEdit->setClearButtonEnabled(true);
-    auto label = new QLabel(i18n("Domain:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Domain:"), this);
     mainLayout->addWidget(label);
     mainLayout->addWidget(mLineEdit);
 
