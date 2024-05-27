@@ -37,7 +37,7 @@ msgstr "查找(&I)："
 #: findbar/findbarbase.cpp:53
 #, kde-format
 msgid "Text to search for"
-msgstr "要搜索的文本"
+msgstr ""
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -48,7 +48,7 @@ msgstr "下一个"
 #: findbar/findbarbase.cpp:59
 #, kde-format
 msgid "Jump to next match"
-msgstr "跳到下一个匹配"
+msgstr ""
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -59,7 +59,7 @@ msgstr "上一个"
 #: findbar/findbarbase.cpp:65
 #, kde-format
 msgid "Jump to previous match"
-msgstr "跳到上一个匹配"
+msgstr ""
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -69,7 +69,7 @@ msgstr "选项"
 #: findbar/findbarbase.cpp:72
 #, kde-format
 msgid "Modify search behavior"
-msgstr "修改搜索行为"
+msgstr ""
 
 #: findbar/findbarbase.cpp:74
 #, kde-format

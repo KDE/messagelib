@@ -1157,12 +1157,12 @@ msgstr ""
 #: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgid "Filter Mails by Status"
-msgstr "按状态过滤邮件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgid "Saved Filter"
-msgstr "已保存的过滤"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1577,7 +1577,7 @@ msgstr "名称："
 #: utils/themeeditor.cpp:73
 #, kde-format
 msgid "The label that will be displayed in the column header."
-msgstr "这里的标签会显示在列头内。"
+msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, kde-format
@@ -1587,7 +1587,7 @@ msgstr "点击列头时排序信件："
 #: utils/themeeditor.cpp:80
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr "当点击列头时要切换到的排列顺序"
+msgstr ""
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1597,7 +1597,7 @@ msgstr "默认可见"
 #: utils/themeeditor.cpp:84
 #, kde-format
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "如果希望此列默认可见，请选中此项。"
+msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1610,8 +1610,6 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"如果希望此列标签的具体内容要根据文件夹的“接收”或“发送”类型来决定，请选中此"
-"项。"
 
 #: utils/themeeditor.cpp:108
 #, kde-format

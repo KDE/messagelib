@@ -1703,7 +1703,7 @@ msgstr "选择收件人类型"
 #: recipient/recipientline.cpp:72
 #, kde-format
 msgid "Set the list of email addresses to receive this message"
-msgstr "设置接收此消息的电子邮件地址列表"
+msgstr ""
 
 #: recipient/recipientseditor.cpp:115
 #, kde-format
