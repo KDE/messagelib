@@ -1156,18 +1156,16 @@ msgstr ""
 "定，切换这个按钮。"
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
-msgstr "按状态过滤邮件"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr "已保存的过滤"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1591,11 +1589,10 @@ msgid "Name:"
 msgstr "名称："
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
-msgstr "这里的标签会显示在列头内。"
+msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, kde-format
@@ -1603,12 +1600,10 @@ msgid "Header click sorts messages:"
 msgstr "点击列头时排序信件："
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr "当点击列头时要切换到的排列顺序"
+msgstr ""
 
 #: utils/themeeditor.cpp:83
 #, kde-format
@@ -1616,12 +1611,10 @@ msgid "Visible by default"
 msgstr "默认可见"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "如果希望此列默认可见，请选中此项。"
+msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
@@ -1629,17 +1622,12 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "包含“发件人或收件人”字段"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"如果希望此列标签的具体内容要根据文件夹的“接收”或“发送”类型来决定，请选中此"
-"项。"
 
 #: utils/themeeditor.cpp:109
 #, kde-format

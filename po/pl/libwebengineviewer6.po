@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2016, 2017, 2021, 2022.
+# SPDX-FileCopyrightText: 2016, 2017, 2021, 2022, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2022-09-23 10:12+0200\n"
+"PO-Revision-Date: 2024-05-26 12:07+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.04.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -25,7 +25,7 @@ msgid "Developer Tool"
 msgstr "Narzędzia programistyczne"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
@@ -43,7 +43,7 @@ msgid "F&ind:"
 msgstr "Z&najdź:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
@@ -56,7 +56,7 @@ msgid "Next"
 msgstr "Następne"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
@@ -69,7 +69,7 @@ msgid "Previous"
 msgstr "Poprzednie"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
@@ -81,7 +81,7 @@ msgid "Options"
 msgstr "Opcje"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
@@ -205,3 +205,4 @@ msgstr "Powiększenie"
 
 #~ msgid "Printing WebEngine is limited for the moment."
 #~ msgstr "SilnikSieciowy drukowania jest w tej chwili ograniczony."
+

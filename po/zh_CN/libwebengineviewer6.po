@@ -24,11 +24,10 @@ msgid "Developer Tool"
 msgstr "开发者工具"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: findbar/findbarbase.cpp:42
 #, kde-format
@@ -42,11 +41,10 @@ msgid "F&ind:"
 msgstr "查找(&I)："
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "要搜索的文本"
+msgstr ""
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -55,11 +53,10 @@ msgid "Next"
 msgstr "下一个"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "跳到下一个匹配"
+msgstr ""
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -68,11 +65,10 @@ msgid "Previous"
 msgstr "上一个"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "跳到上一个匹配"
+msgstr ""
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -80,11 +76,10 @@ msgid "Options"
 msgstr "选项"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr "修改搜索行为"
+msgstr ""
 
 #: findbar/findbarbase.cpp:74
 #, kde-format
