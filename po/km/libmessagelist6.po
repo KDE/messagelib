@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1119,6 +1119,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox Name of the option"
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "ឈ្មោះ ៖"
 
@@ -1447,27 +1448,37 @@ msgid "Groups && Threading"
 msgstr "ដាក់​ក្រុម និង​ក្រង​ជា​ខ្សែ​ស្រឡាយ"
 
 #: utils/aggregationeditor.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grouping:"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "ដាក់ក្រុម ៖"
 
 #: utils/aggregationeditor.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Group expand policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "គោលការណ៍​ពន្លា​ក្រុម ៖"
 
 #: utils/aggregationeditor.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Threading:"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "ការ​ចង​ខ្សែ​ស្រឡាយ "
 
 #: utils/aggregationeditor.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "ក្បាល​ខ្សែ​ស្រឡាយ ៖"
 
 #: utils/aggregationeditor.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread expand policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "គោលការណ៍​ពន្លា​ខ្សែ​ស្រឡាយ ៖"
 
@@ -1478,7 +1489,9 @@ msgid "Advanced"
 msgstr "​កម្រិត​ខ្ពស់"
 
 #: utils/aggregationeditor.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Fill view strategy:"
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "បំពេញ​យុទ្ធសាស្ដ្រ​ទិដ្ឋភាព ៖"
 
@@ -1637,7 +1650,9 @@ msgid "The label that will be displayed in the column header."
 msgstr "ស្លាក​ដែល​នឹង​ត្រូវបាន​បង្ហាញ​​នៅ​ក្នុង​បឋមកថា​ជួរ​ឈរ ។"
 
 #: utils/themeeditor.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header click sorts messages:"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "សារ​តម្រៀប​តាម​ការ​ចុច​បឋមកថា ៖"
 
@@ -1882,12 +1897,16 @@ msgid "Advanced"
 msgstr "​កម្រិត​ខ្ពស់"
 
 #: utils/themeeditor.cpp:1438
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header:"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "បឋមកថា ៖"
 
 #: utils/themeeditor.cpp:1444
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icon size:"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "ទំហំ​រូបតំណាង ៖"
 

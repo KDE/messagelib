@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2008-01-20 16:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -1259,6 +1259,7 @@ msgstr "फ़ाइल का संपादन करें (&F)"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "&Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "नाम: (&N)"
 
@@ -1613,30 +1614,35 @@ msgstr "लड़ी फैलाएँ (&E)"
 
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "ग्रुपवेयर (&G)"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "प्रेषण नीतिः"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "पढ़ा जा रहा है (&R)"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "संदेश लड़ी बनाएँ (&T)"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "प्रेषण नीतिः"
 
@@ -1649,6 +1655,7 @@ msgstr "विस्तृत (&A)"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1827,6 +1834,7 @@ msgstr ""
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "दोबारा आए संदेशों को हटाएँ"
 
@@ -2086,12 +2094,14 @@ msgstr "विस्तृत (&A)"
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "शीर्षक (&e)"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "आकार"
 

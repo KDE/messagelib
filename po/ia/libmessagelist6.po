@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-05-23 10:19+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1121,7 +1121,9 @@ msgid "Edit Filter"
 msgstr "Modifica filtro"
 
 #: core/widgets/filternamewidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nomine:"
 
@@ -1434,27 +1436,37 @@ msgid "Groups && Threading"
 msgstr "Gruppos && Topicos"
 
 #: utils/aggregationeditor.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grouping:"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Gruppar:"
 
 #: utils/aggregationeditor.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Group expand policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Politic de expander Gruppo:"
 
 #: utils/aggregationeditor.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Threading:"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Topicos:"
 
 #: utils/aggregationeditor.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Conductor de topico:"
 
 #: utils/aggregationeditor.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread expand policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Politic de expander Topicos:"
 
@@ -1465,7 +1477,9 @@ msgid "Advanced"
 msgstr "Avantiate"
 
 #: utils/aggregationeditor.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Fill view strategy:"
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Strategia de vista de reimpler:"
 
@@ -1620,7 +1634,9 @@ msgid "The label that will be displayed in the column header."
 msgstr "Le etiquetta que essera monstrate in le capite de columna."
 
 #: utils/themeeditor.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header click sorts messages:"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Pulsar sur le capite per ordinar messages:"
 
@@ -1864,12 +1880,16 @@ msgid "Advanced"
 msgstr "Avantiate"
 
 #: utils/themeeditor.cpp:1438
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header:"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Capite:"
 
 #: utils/themeeditor.cpp:1444
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icon size:"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Dimension de Icone:"
 

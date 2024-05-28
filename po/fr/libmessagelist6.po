@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-05-24 10:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1154,7 +1154,9 @@ msgid "Edit Filter"
 msgstr "Modifier un filtre"
 
 #: core/widgets/filternamewidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nom :"
 
@@ -1469,27 +1471,37 @@ msgid "Groups && Threading"
 msgstr "Groupes et fils de discussion"
 
 #: utils/aggregationeditor.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grouping:"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Regroupement :"
 
 #: utils/aggregationeditor.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Group expand policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Politique de dépliage des groupes :"
 
 #: utils/aggregationeditor.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Threading:"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Fils de discussion :"
 
 #: utils/aggregationeditor.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Origine du fil de discussion :"
 
 #: utils/aggregationeditor.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread expand policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Politique de dépliage des fils de discussion :"
 
@@ -1500,7 +1512,9 @@ msgid "Advanced"
 msgstr "Avancé"
 
 #: utils/aggregationeditor.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Fill view strategy:"
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Stratégie de remplissage de l'affichage :"
 
@@ -1655,7 +1669,9 @@ msgid "The label that will be displayed in the column header."
 msgstr "Le libellé qui sera affiché dans l'en-tête de la colonne."
 
 #: utils/themeeditor.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header click sorts messages:"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Un clic sur une en-tête trie les messages :"
 
@@ -1900,12 +1916,16 @@ msgid "Advanced"
 msgstr "Avancé"
 
 #: utils/themeeditor.cpp:1438
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header:"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "En-tête :"
 
 #: utils/themeeditor.cpp:1444
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icon size:"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Taille des icônes :"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2013-04-12 16:41+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1106,6 +1106,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox Name of the option"
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "नाव :"
 
@@ -1430,29 +1431,38 @@ msgid "Groups && Threading"
 msgstr "समूह व थ्रेडिंग"
 
 #: utils/aggregationeditor.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grouping:"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "समूह करणे :"
 
 #: utils/aggregationeditor.cpp:41
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Threading:"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "थ्रेडिंग :"
 
 #: utils/aggregationeditor.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "थ्रेड नेता :"
 
 #: utils/aggregationeditor.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr ""
+msgstr "थ्रेड नेता :"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1462,6 +1472,7 @@ msgstr "प्रगत"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1618,6 +1629,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr ""
 
@@ -1851,12 +1863,16 @@ msgid "Advanced"
 msgstr "प्रगत"
 
 #: utils/themeeditor.cpp:1438
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header:"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "शिर्षक :"
 
 #: utils/themeeditor.cpp:1444
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icon size:"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "चिन्ह आकार :"
 

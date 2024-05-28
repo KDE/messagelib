@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1211,6 +1211,7 @@ msgstr "Hlela &Ifayile"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Igama:"
 
@@ -1542,27 +1543,32 @@ msgstr "&Yandisa Umsonto"
 
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Qwalasela i Akhawunti"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Thumela ngoku"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "&Funda"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "&Thungela Imiyalezo"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Thumela ngoku"
 
@@ -1574,6 +1580,7 @@ msgstr "&Ukubheka phambili"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1736,6 +1743,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Cima Imiyalezo"
 
@@ -1978,12 +1986,14 @@ msgstr "&Ukubheka phambili"
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Oku&bhalwe phezu ephepheni"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ubungakanani"
 

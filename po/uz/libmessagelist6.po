@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1211,6 +1211,7 @@ msgstr "&Faylni tahrirlash"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nomi:"
 
@@ -1558,30 +1559,35 @@ msgstr "Oʻq&ish"
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
 #| msgid "Add Account"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Hisobni qoʻshish"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Joʻnatish qoidasi:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Oʻq&ish"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Trash folder:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "&Chiqindilar qutisi:"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Joʻnatish qoidasi:"
 
@@ -1594,6 +1600,7 @@ msgstr "Qoʻshimcha"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1770,6 +1777,7 @@ msgstr ""
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Bir hil xabarlarni oʻchirish"
 
@@ -2026,12 +2034,14 @@ msgstr "Qoʻshimcha"
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "&Sarlavhalar"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Hajmi"
 

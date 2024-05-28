@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2022-08-31 19:28+0200\n"
+"PO-Revision-Date: 2024-05-27 14:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Developer Tool"
 msgstr "Инструмент за разработка"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Затваряне"
@@ -42,8 +41,7 @@ msgid "F&ind:"
 msgstr "&Намиране:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Текст за търсене"
@@ -55,8 +53,7 @@ msgid "Next"
 msgstr "Следващ"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Преминаване към следващото съвпадение"
@@ -68,8 +65,7 @@ msgid "Previous"
 msgstr "Предишно"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Преминаване към предишното съвпадение"
@@ -80,8 +76,7 @@ msgid "Options"
 msgstr "Опции"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Промяна на поведение на търсене"

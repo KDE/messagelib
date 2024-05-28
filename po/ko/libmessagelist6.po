@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1110,7 +1110,9 @@ msgid "Edit Filter"
 msgstr "필터 편집"
 
 #: core/widgets/filternamewidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "이름:"
 
@@ -1435,27 +1437,37 @@ msgid "Groups && Threading"
 msgstr "그룹 및 스레드"
 
 #: utils/aggregationeditor.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grouping:"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "그룹:"
 
 #: utils/aggregationeditor.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Group expand policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "그룹 확장 정책:"
 
 #: utils/aggregationeditor.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Threading:"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "스레드:"
 
 #: utils/aggregationeditor.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread leader:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "스레드 첫 글:"
 
 #: utils/aggregationeditor.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Thread expand policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "스레드 확장 정책:"
 
@@ -1466,7 +1478,9 @@ msgid "Advanced"
 msgstr "고급"
 
 #: utils/aggregationeditor.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Fill view strategy:"
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "보기 채움 정책:"
 
@@ -1622,7 +1636,9 @@ msgid "The label that will be displayed in the column header."
 msgstr "열 머리글에 표시할 이름표입니다."
 
 #: utils/themeeditor.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header click sorts messages:"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "머리글을 클릭했을 때 메시지 정렬:"
 
@@ -1869,12 +1885,16 @@ msgid "Advanced"
 msgstr "고급"
 
 #: utils/themeeditor.cpp:1438
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Header:"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "헤더:"
 
 #: utils/themeeditor.cpp:1444
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icon size:"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "아이콘 크기:"
 

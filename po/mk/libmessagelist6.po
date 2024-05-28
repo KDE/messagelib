@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1259,6 +1259,7 @@ msgstr "Зачувај листа"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Име:"
 
@@ -1604,30 +1605,35 @@ msgstr "&Читање"
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
 #| msgid "Add Account"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Додајте сметка"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Политика за испраќање:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "&Читање"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Trash folder:"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "&Корпа за отпадоци:"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Политика за испраќање:"
 
@@ -1640,6 +1646,7 @@ msgstr "Напредно"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1816,6 +1823,7 @@ msgstr ""
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Отстрани ги дупликатите на пораки"
 
@@ -2074,12 +2082,14 @@ msgstr "Напредно"
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Заглав&ија"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Големина"
 

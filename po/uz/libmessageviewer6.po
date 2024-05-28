@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-24 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -624,7 +624,7 @@ msgstr "Hisobni oʻzgartirish"
 msgid "Enabled"
 msgstr "Yoqish"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Defaul&t domain:"
 msgid "Domain:"
@@ -1308,6 +1308,13 @@ msgstr ""
 #, kde-format
 msgid "Blocked"
 msgstr ""
+
+#: remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Defaul&t domain:"
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "Ando&za domen:"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format

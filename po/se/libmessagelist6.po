@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2009-06-03 01:28+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -1124,6 +1124,7 @@ msgstr ""
 
 #: core/widgets/filternamewidget.cpp:32
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr ""
 
@@ -1448,26 +1449,31 @@ msgstr ""
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:41
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:51
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:55
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr ""
 
@@ -1479,6 +1485,7 @@ msgstr ""
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1635,6 +1642,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:76
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr ""
 
@@ -1870,11 +1878,13 @@ msgstr ""
 
 #: utils/themeeditor.cpp:1438
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr ""
 
 #: utils/themeeditor.cpp:1444
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr ""
 

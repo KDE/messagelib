@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1253,6 +1253,7 @@ msgstr "Edit &Fail"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nama:"
 
@@ -1608,30 +1609,35 @@ msgstr "&Kembangkan rantaian"
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
 #| msgid "&Groupware"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "&Groupware"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Hantar dasar:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "&Membaca"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "&Rantaikan Mesej"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Hantar dasar:"
 
@@ -1644,6 +1650,7 @@ msgstr "Lanjutan"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1820,6 +1827,7 @@ msgstr ""
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Buang Mesej Duplikasi"
 
@@ -2077,12 +2085,14 @@ msgstr "Lanjutan"
 
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Tambahkan Pengepala"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Saiz"
 

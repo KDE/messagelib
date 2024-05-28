@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1274,6 +1274,7 @@ msgstr "Triem be&wurkje"
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Namme:"
 
@@ -1630,30 +1631,35 @@ msgstr "Diskusje útfâldzj&e"
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
 #| msgid "&Groupware"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "&Groupware"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Ferstjoerbelied:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "&Lêzen"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Diskusje &groepearje"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Ferstjoerbelied:"
 
@@ -1666,6 +1672,7 @@ msgstr "Avansearre"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1846,6 +1853,7 @@ msgstr ""
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Dûbele berjochten fuortsmite"
 
@@ -2109,12 +2117,14 @@ msgstr "Avansearre"
 #: utils/themeeditor.cpp:1438
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "B&erjochtkoppen"
 
 #: utils/themeeditor.cpp:1444
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Grutte"
 

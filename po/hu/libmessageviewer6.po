@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-24 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -572,7 +572,7 @@ msgstr "Szabály módosítása"
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
 msgstr "Tartomány:"
@@ -1227,6 +1227,13 @@ msgstr "Engedélyezve"
 #, kde-format
 msgid "Blocked"
 msgstr "Tiltva"
+
+#: remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Domain:"
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "Tartomány:"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format

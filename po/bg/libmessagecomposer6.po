@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 21:33+0200\n"
+"PO-Revision-Date: 2024-05-27 14:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1818,8 +1818,7 @@ msgid "Select type of recipient"
 msgstr "Избор на тип получател"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Задайте списъка с имейл адреси за получаване на това съобщение"
