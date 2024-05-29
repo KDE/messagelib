@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
-" || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -26,7 +25,6 @@ msgstr "Narzędzia programistyczne"
 
 #: findbar/findbarbase.cpp:39
 #, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zamknij"
@@ -44,7 +42,6 @@ msgstr "Z&najdź:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
-#| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Tekst do wyszukania"
@@ -57,7 +54,6 @@ msgstr "Następne"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
-#| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Idź do następnego pasującego wyrażenia"
@@ -70,7 +66,6 @@ msgstr "Poprzednie"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
-#| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Idź do poprzedniego pasującego wyrażenia"
@@ -82,7 +77,6 @@ msgstr "Opcje"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
-#| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Zmień zachowanie wyszukiwania"
@@ -205,4 +199,3 @@ msgstr "Powiększenie"
 
 #~ msgid "Printing WebEngine is limited for the moment."
 #~ msgstr "SilnikSieciowy drukowania jest w tej chwili ograniczony."
-

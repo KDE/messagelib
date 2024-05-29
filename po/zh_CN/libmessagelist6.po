@@ -1099,11 +1099,10 @@ msgid "Edit Filter"
 msgstr "编辑过滤"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "名称："
+msgstr ""
 
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
@@ -1411,39 +1410,34 @@ msgid "Groups && Threading"
 msgstr "分组和线索"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
-msgstr "分组："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
-msgstr "分组展开策略："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
-msgstr "线索："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
-msgstr "线索发起人："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr "线索展开策略："
+msgstr ""
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1452,11 +1446,10 @@ msgid "Advanced"
 msgstr "高级"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
-msgstr "视图填充策略："
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:100
 #, kde-format
@@ -1609,11 +1602,10 @@ msgid "The label that will be displayed in the column header."
 msgstr ""
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
-msgstr "点击列头时排序信件："
+msgstr ""
 
 #: utils/themeeditor.cpp:80
 #, kde-format
@@ -1849,18 +1841,16 @@ msgid "Advanced"
 msgstr "高级"
 
 #: utils/themeeditor.cpp:1438
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr "信头："
+msgstr ""
 
 #: utils/themeeditor.cpp:1444
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
-msgstr "图标大小："
+msgstr ""
 
 #: utils/themeeditor.cpp:1450
 #, kde-format
