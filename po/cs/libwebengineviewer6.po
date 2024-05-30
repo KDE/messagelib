@@ -25,8 +25,7 @@ msgid "Developer Tool"
 msgstr "Vývojový nástroj"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavřít"
@@ -43,11 +42,10 @@ msgid "F&ind:"
 msgstr "Na&jít:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "Text k vyhledání"
+msgstr ""
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -56,8 +54,7 @@ msgid "Next"
 msgstr "Následující"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Přejít na následující výskyt"
@@ -69,8 +66,7 @@ msgid "Previous"
 msgstr "Předchozí"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Přejít na předchozí výskyt"
@@ -81,11 +77,10 @@ msgid "Options"
 msgstr "Možnosti"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr "Změnit chování vyhledávání"
+msgstr ""
 
 #: findbar/findbarbase.cpp:74
 #, kde-format

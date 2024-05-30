@@ -1108,8 +1108,7 @@ msgid "Edit Filter"
 msgstr "Upravit filtr"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Název:"
@@ -1170,11 +1169,10 @@ msgid "Filter Mails by Status"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr "Uložený filtr"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1418,39 +1416,34 @@ msgid "Groups && Threading"
 msgstr "Seskupování a vlákna"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
-msgstr "Seskupování:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
-msgstr "Chování rozbalování skupin:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
-msgstr "Vlákna:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
-msgstr "Iniciátor vlákna:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr "Chování rozbalování vláken:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1459,11 +1452,10 @@ msgid "Advanced"
 msgstr "Rozšířené"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
-msgstr "Strategie naplnění pohledu:"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:100
 #, kde-format
@@ -1616,11 +1608,10 @@ msgid "The label that will be displayed in the column header."
 msgstr ""
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
-msgstr "Kliknutí na záhlaví třídí zprávy:"
+msgstr ""
 
 #: utils/themeeditor.cpp:80
 #, kde-format
@@ -1852,18 +1843,16 @@ msgid "Advanced"
 msgstr "Pokročilé"
 
 #: utils/themeeditor.cpp:1438
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr "Hlavička:"
+msgstr ""
 
 #: utils/themeeditor.cpp:1444
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
-msgstr "Velikost ikony:"
+msgstr ""
 
 #: utils/themeeditor.cpp:1450
 #, kde-format

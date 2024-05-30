@@ -1226,11 +1226,10 @@ msgid "Blocked"
 msgstr "Blokován"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
-msgstr "Doména:"
+msgstr ""
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
