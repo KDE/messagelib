@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:38+0000\n"
-"PO-Revision-Date: 2024-04-02 12:36+0200\n"
+"PO-Revision-Date: 2024-05-30 18:11+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -2579,7 +2579,7 @@ msgid ""
 ">a<br />g<br />e</b></qt>"
 msgstr ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />С<br />ъ<br />о<br />б<br /"
-">щ<br />е<br />н<br />и<br />e<br /></qt>"
+">щ<br />е<br />н<br />и<br />e</b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
 #, kde-format
@@ -2588,7 +2588,7 @@ msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
-"<qt><br />Н<br />я<br />м<br />а<br /> <br />H<br />T<br />M<br />L<br /> "
+"<qt><br />Н<br />я<br />м<br />а<br /><br />H<br />T<br />M<br />L<br /> "
 "<br />С<br />ъ<br />о<br />б<br />щ<br />е<br />н<br />и<br />e</qt>"
 
 #: widgets/htmlstatusbar.cpp:117
@@ -2608,7 +2608,7 @@ msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />К<br />а<br />л<br />e<br />н<br />д<br />a<br />р<br /> <br /"
+"<qt><br />К<br />а<br />л<br />e<br />н<br />д<br />a<br />р<br /><br /"
 ">С<br />ъ<br />о<br />б<br />щ<br />е<br />н<br />и<br />e<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135

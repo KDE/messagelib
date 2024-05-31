@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-18 23:44+0100\n"
+"PO-Revision-Date: 2024-05-28 22:58+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1359,12 +1359,12 @@ msgstr "Crea una nuova scheda"
 #: pane.cpp:258
 #, kde-format
 msgid "Activate Next Tab"
-msgstr "Attiva scheda successiva"
+msgstr "Attiva la scheda successiva"
 
 #: pane.cpp:268
 #, kde-format
 msgid "Activate Previous Tab"
-msgstr "Attiva scheda precedente"
+msgstr "Attiva la scheda precedente"
 
 #: pane.cpp:280
 #, kde-format
