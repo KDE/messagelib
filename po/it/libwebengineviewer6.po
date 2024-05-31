@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2016, 2021, 2022.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2016, 2021, 2022, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2022-09-12 00:50+0200\n"
+"PO-Revision-Date: 2024-05-23 21:20+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Developer Tool"
 msgstr "Strumenti per sviluppatori"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Chiudi"
@@ -42,8 +41,7 @@ msgid "F&ind:"
 msgstr "&Trova:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Testo da cercare"
@@ -55,8 +53,7 @@ msgid "Next"
 msgstr "Successiva"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Passa alla corrispondenza successiva"
@@ -68,8 +65,7 @@ msgid "Previous"
 msgstr "Precedente"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Passa alla corrispondenza precedente"
@@ -80,8 +76,7 @@ msgid "Options"
 msgstr "Opzioni"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modifica il comportamento della ricerca"

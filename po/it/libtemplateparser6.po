@@ -6,13 +6,13 @@
 # Alessandro Pasotti <ale.pas@tiscalinet.it>, 2006.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2007, 2008, 2010.
 # Nicola Ruggero <nicola@nxnt.org>, 2007.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2012, 2013, 2015, 2018, 2020, 2021, 2023.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2012, 2013, 2015, 2018, 2020, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2023-09-27 01:12+0200\n"
+"PO-Revision-Date: 2024-05-21 16:06+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -599,15 +599,13 @@ msgid "Reset to default"
 msgstr "Ripristina ai valori predefiniti"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Reimposta il modello attuale"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Reimposta tutti i modelli"

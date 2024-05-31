@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-03-18 23:44+0100\n"
+"PO-Revision-Date: 2024-05-28 22:58+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1128,8 +1128,7 @@ msgid "Edit Filter"
 msgstr "Modifica filtro"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nome:"
@@ -1151,8 +1150,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Le parole più corte di tre lettere sono ignorate."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Non mostrare di nuovo"
@@ -1193,15 +1191,13 @@ msgstr ""
 "del messaggio."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "Filtra messaggi per stato"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtro salvato"
@@ -1278,29 +1274,25 @@ msgid "Ham"
 msgstr "Ham"
 
 #: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Messaggio completo"
 
 #: core/widgets/searchlinestatus.cpp:280
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Corpo"
 
 #: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Oggetto"
 
 #: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "CCN"
@@ -1353,8 +1345,7 @@ msgid "Close tab"
 msgstr "Chiudi scheda"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Attiva la scheda %1"
@@ -1370,43 +1361,37 @@ msgid "Message List"
 msgstr "Elenco dei messaggi"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Crea una nuova scheda"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr "Attiva scheda successiva"
+msgstr "Attiva la scheda successiva"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
-msgstr "Attiva scheda precedente"
+msgstr "Attiva la scheda precedente"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Sposta la scheda a sinistra"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Sposta la scheda a destra"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Chiudi scheda"
@@ -1459,36 +1444,31 @@ msgid "Groups && Threading"
 msgstr "Gruppi e conversazioni"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Raggruppamento:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Politica di espansione gruppi:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Raggruppamento per conversazione:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Messaggio di riferimento conversazione:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Politica di espansione conversazioni:"
@@ -1500,8 +1480,7 @@ msgid "Advanced"
 msgstr "Avanzate"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Strategia riempimento vista:"
@@ -1651,23 +1630,19 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "L'etichetta che sarà mostrata nell'intestazione di colonna."
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Un clic sull'intestazione ordina i messaggi:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
@@ -1680,9 +1655,7 @@ msgid "Visible by default"
 msgstr "Visibile in modo predefinito"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
@@ -1695,10 +1668,7 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "Contiene campo \"Mittente o destinatario\""
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
@@ -1913,16 +1883,14 @@ msgid "Advanced"
 msgstr "Avanzate"
 
 #: utils/themeeditor.cpp:1438
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Intestazione:"
 
 # XXX Icona o icone? ML
 #: utils/themeeditor.cpp:1444
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Dimensione icona:"

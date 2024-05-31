@@ -6,13 +6,13 @@
 # Alessandro Pasotti <ale.pas@tiscalinet.it>, 2006.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2007, 2008, 2010, 2022.
 # Nicola Ruggero <nicola@nxnt.org>, 2007.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-25 00:39+0000\n"
-"PO-Revision-Date: 2023-09-27 01:16+0200\n"
+"PO-Revision-Date: 2024-05-23 21:19+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -44,8 +44,7 @@ msgid "Keep"
 msgstr "Mantieni"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprimi"
@@ -95,15 +94,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Impossibile allegare del testo dagli appunti"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Allega chiave &pubblica..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Allega la &mia chiave pubblica"
@@ -132,8 +129,7 @@ msgid "&Attach Directory..."
 msgstr "&Allega cartella..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Allega la propria vCard"
@@ -187,8 +183,7 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Modifica con..."
@@ -204,22 +199,19 @@ msgid "Save As..."
 msgstr "Salva come..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Pr&oprietà allegato..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Proprietà"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Seleziona tutti"
@@ -280,8 +272,7 @@ msgid "Save to File"
 msgstr "Salva su file"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Sostituisci"
@@ -598,15 +589,13 @@ msgid "File Attachment Reminder"
 msgstr "Promemoria file allegato"
 
 #: composer/composerviewbase.cpp:1909
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Allega file..."
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Spedisci così com'è"
@@ -635,8 +624,7 @@ msgid "&Sign"
 msgstr "&Firma"
 
 #: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Non firmare"
@@ -666,8 +654,7 @@ msgid "Send Unsigned?"
 msgstr "Spedisci senza firma?"
 
 #: composer/composerviewbase.cpp:2024
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Spedisci &senza firma"
@@ -712,8 +699,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Avviso di messaggio non firmato"
 
 #: composer/composerviewbase.cpp:2051
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Spedisci così &com'è"
@@ -775,15 +761,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Cifra"
 
 #: composer/composerviewbase.cpp:2139
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Non cifrare"
@@ -806,8 +790,7 @@ msgid "Send Unencrypted?"
 msgstr "Spedisci senza cifratura?"
 
 #: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Spedisci &non cifrato"
@@ -995,8 +978,7 @@ msgstr ""
 "per questa identità."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Non firmare con OpenPGP"
@@ -1015,8 +997,7 @@ msgstr ""
 "questa identità."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Non firmare con S/MIME"
@@ -1601,15 +1582,13 @@ msgid "Some Characters Will Be Lost"
 msgstr "Alcuni caratteri andranno perduti"
 
 #: job/maintextjob.cpp:103
-#, fuzzy, kde-format
-#| msgid "Lose Characters"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
 msgstr "Perdi i caratteri"
 
 #: job/maintextjob.cpp:104
-#, fuzzy, kde-format
-#| msgid "Change Encoding"
+#, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
 msgstr "Cambia codifica"
@@ -1851,8 +1830,7 @@ msgid "Select type of recipient"
 msgstr "Seleziona il tipo del destinatario"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr ""

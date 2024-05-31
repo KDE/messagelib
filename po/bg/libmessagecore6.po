@@ -1,21 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2022-01-25 18:11+0100\n"
-"Last-Translator: mkkDr2010 <mkondarev@yahoo.de>\n"
+"PO-Revision-Date: 2024-05-30 20:40+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -106,7 +105,7 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
-"<p>Очакваният размер на прикачения файл: </p><p> Обърнете внимание, че в "
+"<p>Очакваният размер на прикачения файл:</p><p> Обърнете внимание, че в "
 "имейл съобщение, двоичен файл, кодиран с base64, ще отнеме четири трети от "
 "действителния размер на файла.</p>"
 
@@ -118,10 +117,10 @@ msgid ""
 "suggests a file name to be used by the recipient's mail agent when saving "
 "the part to disk.</p>"
 msgstr ""
-"<p>Името на файла на частта: </p><p>, въпреки че това по подразбиране е "
-"името на прикачения файл, той не уточнява файла, който трябва да бъде "
-"прикачен; по-скоро предполага име на файл, което да се използва от агента на "
-"получателя, когато записва частта на диска.</p>"
+"<p>Името на файла на частта:</p><p>, въпреки че това по подразбиране е името "
+"на прикачения файл, той не уточнява файла, който трябва да бъде прикачен; по-"
+"скоро предполага име на файл, което да се използва от агента на получателя, "
+"когато записва частта на диска.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:154
 #, kde-format
@@ -131,7 +130,7 @@ msgid ""
 "most mail agents will show this information in their message previews "
 "alongside the attachment's icon.</p>"
 msgstr ""
-"<p>Описание на частта: </p><p> Това е просто информационно описание на "
+"<p>Описание на частта:</p><p> Това е просто информационно описание на "
 "частта, подобно на Темата за цялото съобщение; Повечето пощенски агенти ще "
 "покажат тази информация в техните прегледи на съобщението заедно с иконата "
 "на прикачения файл.</p>"
@@ -168,7 +167,7 @@ msgstr ""
 "(вградено) представяне на тази част във визуализацията на съобщението, "
 "вместо иконата по подразбиране;</p><p> технически, това се извършва чрез "
 "настройка тази част <em> Content-Disposition </em> заглавното поле \"inline"
-"\" вместо по подразбиране \"attachment\". </ p>"
+"\" вместо по подразбиране \"attachment\".</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format

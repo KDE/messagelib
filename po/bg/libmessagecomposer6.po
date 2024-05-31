@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-27 14:12+0200\n"
+"PO-Revision-Date: 2024-05-30 20:52+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -434,8 +434,8 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
-"<qt> <p> Вграденото подписване/криптиране на HTML съобщения не е възможно; </"
-"p> <p> искате ли да изтриете маркировката си? </p> </qt>"
+"<qt><p> Вграденото подписване/криптиране на HTML съобщения не е възможно; </"
+"p><p> искате ли да изтриете маркировката си?</p></qt>"
 
 #: composer/composerviewbase.cpp:333
 #, kde-format
@@ -725,7 +725,7 @@ msgstr "Шифроване на писмото?"
 #: composer/composerviewbase.cpp:2108
 #, kde-format
 msgid "Sign && &Encrypt"
-msgstr "Подписване &&& криптиране"
+msgstr "Подписване и &криптиране"
 
 #: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2190
 #, kde-format
@@ -1094,11 +1094,11 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
-"<qt> Не бе намерен валиден и надежден сертификат за криптиране за \"%1 \". "
-"<br/> <br/> Изберете сертификата/сертификатите, които трябва да се използват "
+"<qt>Не бе намерен валиден и надежден сертификат за криптиране за \"%1 \". "
+"<br/><br/> Изберете сертификата/сертификатите, които трябва да се използват "
 "за този получател. Ако няма подходящ сертификат в списък можете също да "
 "търсите външни сертификати, като щракнете върху бутона: търсене на външни "
-"сертификати. </qt>"
+"сертификати.</qt>"
 
 #: composer/keyresolver.cpp:1562
 #, kde-format
@@ -1235,10 +1235,10 @@ msgid ""
 "current time</li><li>%d set current date</li><li>%n original filename</"
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
-"<qt> <p> Тук можете да дефинирате име на файл с изображение. Можете да "
-"използвате: </p> <ul> <li> %t задайте текущото време </li> <li> %d задайте "
-"текущата дата </li> < li> %n оригинално име на файл </li> <li> %e оригинално "
-"разширение </li> <li> %x ново разширение </li> </ul> </qt>"
+"<qt><p> Тук можете да дефинирате име на файл с изображение. Можете да "
+"използвате:</p><ul><li> %t задайте текущото време </li><li> %d задайте "
+"текущата дата </li><li> %n оригинално име на файл </li><li> %e оригинално "
+"разширение </li><li> %x ново разширение </li></ul></qt>"
 
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
@@ -1502,8 +1502,8 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
 msgstr ""
-"<p> Възникна грешка при опит за експортиране на ключа от бекенда: </p><p> "
-"<b> %1 </b></p>"
+"<p> Възникна грешка при опит за експортиране на ключа от бекенда:</p><p> <b> "
+"%1 </b></p>"
 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format

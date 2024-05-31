@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-24 10:31+0200\n"
+"PO-Revision-Date: 2024-05-29 09:30+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1154,8 +1154,7 @@ msgid "Edit Filter"
 msgstr "Modifier un filtre"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nom :"
@@ -1471,39 +1470,34 @@ msgid "Groups && Threading"
 msgstr "Groupes et fils de discussion"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Regroupement :"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Politique de dépliage des groupes :"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
-msgstr "Fils de discussion :"
+msgstr "Fils de discussions :"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
-msgstr "Origine du fil de discussion :"
+msgstr "Origine du fil de discussions :"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr "Politique de dépliage des fils de discussion :"
+msgstr "Politique de dépliage des fils de discussions :"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1512,8 +1506,7 @@ msgid "Advanced"
 msgstr "Avancé"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Stratégie de remplissage de l'affichage :"
@@ -1669,8 +1662,7 @@ msgid "The label that will be displayed in the column header."
 msgstr "Le libellé qui sera affiché dans l'en-tête de la colonne."
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Un clic sur une en-tête trie les messages :"
@@ -1916,18 +1908,16 @@ msgid "Advanced"
 msgstr "Avancé"
 
 #: utils/themeeditor.cpp:1438
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "En-tête :"
 
 #: utils/themeeditor.cpp:1444
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
-msgstr "Taille des icônes :"
+msgstr "Taille d'icônes :"
 
 #: utils/themeeditor.cpp:1450
 #, kde-format
