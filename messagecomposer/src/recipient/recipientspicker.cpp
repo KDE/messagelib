@@ -44,6 +44,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     , mUser4Button(new QPushButton(this))
     , mSelectedLabel(new QLabel(this))
 {
+    // TODO add accountactivitiesabstract
     setObjectName(QLatin1StringView("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
