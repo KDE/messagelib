@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-08 00:40+0000\n"
 "PO-Revision-Date: 2014-04-09 11:08+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1805,40 +1805,40 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:48
+#: recipient/recipientspicker.cpp:49
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Alegeți destinatarul"
 
-#: recipient/recipientspicker.cpp:60
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Caută serviciul de &directoriu"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, fuzzy, kde-format
 #| msgid "Add as &To"
 msgid "Add as &Reply-To"
 msgstr "Adaugă la Că&tre"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "Adaugă la Că&tre"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "Adaugă la Copie"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Adaugă la Copie oar&bă"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1846,7 +1846,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1871,7 +1871,7 @@ msgstr[2] ""
 "Ați ales %1 de destinatari. Numărul maxim susținut de destinatari este %2. "
 "Adaptați alegerea."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, kde-format
 msgid "You can not add more recipients."
 msgstr ""

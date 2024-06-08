@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-08 00:40+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1942,40 +1942,40 @@ msgid "Reply-To:%1"
 msgstr ""
 
 # >> @title:window
-#: recipient/recipientspicker.cpp:48
+#: recipient/recipientspicker.cpp:49
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Izbor primaoca"
 
-#: recipient/recipientspicker.cpp:60
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "Servis pretrage &imenika"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, fuzzy, kde-format
 #| msgid "Add as &To"
 msgid "Add as &Reply-To"
 msgstr "Dodaj pod &za"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "Dodaj pod &za"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "Dodaj pod CC"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Dodaj pod BCC"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1984,7 +1984,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -2012,7 +2012,7 @@ msgstr[3] ""
 "Izabrali ste jednog primaoca, a podržano je maksimalno %2. Prilagodite svoj "
 "izbor."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, fuzzy, kde-format
 #| msgid "No key data for recipients found."
 msgid "You can not add more recipients."

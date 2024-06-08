@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-08 00:40+0000\n"
 "PO-Revision-Date: 2024-05-23 08:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1844,38 +1844,38 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "תגובה אל:%1"
 
-#: recipient/recipientspicker.cpp:48
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "בחירת נמען"
 
-#: recipient/recipientspicker.cpp:60
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "&שירות ספרייה לחיפוש"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "הוספה כ&תגובה אל"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "הוספה כ&אל"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "הוספה כעותק"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "הוספה כעותק סמוי"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1884,7 +1884,7 @@ msgstr[1] "שתי הודעות דוא״ל נבחרו"
 msgstr[2] "%1 הודעות דוא״ל נבחרו"
 msgstr[3] "%1 הודעות דוא״ל נבחרו"
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1906,7 +1906,7 @@ msgstr[3] ""
 "בחרת %1 נמענים. מספר הנמענים המרבי הוא %2.\n"
 "נא להתאים את הבחירה."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "אי אפשר להוסיף עוד נמענים."

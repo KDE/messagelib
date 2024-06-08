@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-08 00:40+0000\n"
 "PO-Revision-Date: 2024-05-23 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1813,44 +1813,44 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "回覆至：%1"
 
-#: recipient/recipientspicker.cpp:48
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "選擇收件者"
 
-#: recipient/recipientspicker.cpp:60
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgid "Search &Directory Service"
 msgstr "搜尋目錄服務(&D)"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "新增成回覆地址(&R)"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "新增成收件者(&T)"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "新增成副本"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "新增成密件副本(&B)"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 個已選郵件"
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1863,7 +1863,7 @@ msgstr[0] ""
 "您選擇了 %1 個收件者，但最大只能容納 %2 個收件者。\n"
 "請修改您的選取。"
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "您無法新增更多收件者。"

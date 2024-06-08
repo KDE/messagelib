@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-08 00:40+0000\n"
 "PO-Revision-Date: 2021-12-19 19:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1819,7 +1819,7 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "ردّ على: "
 
-#: recipient/recipientspicker.cpp:48
+#: recipient/recipientspicker.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Select type of recipient"
@@ -1827,32 +1827,32 @@ msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "اختر المستلم:"
 
-#: recipient/recipientspicker.cpp:60
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgid "Search &Directory Service"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr ""
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1863,7 +1863,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1890,7 +1890,7 @@ msgstr[4] ""
 "حدّدت %1 مستلمًا. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
 msgstr[5] "حدّدت %1 مستلم. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, fuzzy, kde-format
 #| msgid "No key data for recipients found."
 msgid "You can not add more recipients."
