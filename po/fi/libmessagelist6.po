@@ -12,14 +12,14 @@
 # Santtu Pajukanta <santtu@pajukanta.fi>, 2006.
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2007.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2023-11-22 21:25+0200\n"
+"PO-Revision-Date: 2024-03-20 16:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -525,8 +525,8 @@ msgstr "%1 %2"
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
-msgstr[0] "Käsitelty 1 viesti %2:sta"
-msgstr[1] "Käsitelty %1 viestiä %2:sta"
+msgstr[0] "Käsitelty 1/%2 viesti"
+msgstr[1] "Käsitelty %1/%2 viestiä"
 
 #: core/model.cpp:3793 core/model.cpp:3799
 #, kde-format
