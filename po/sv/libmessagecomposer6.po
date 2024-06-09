@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2010.
+# SPDX-FileCopyrightText: 2010, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 # Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Arve Eriksson <031299870@telia.com>, 2011.
 msgid ""
@@ -9,19 +9,18 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-23 00:38+0000\n"
-"PO-Revision-Date: 2023-07-25 09:05+0200\n"
+"PO-Revision-Date: 2024-06-08 21:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Misslyckades komprimera bilaga"
@@ -220,8 +219,7 @@ msgstr "Kmail kunde inte skriva bilagan i en tillfällig fil."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Kan inte öppna bilaga"
@@ -232,11 +230,10 @@ msgid "KMail was unable to open the attachment."
 msgstr "Kmail kunde inte öppna bilagan."
 
 #: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "Kan inte redigera bilagan"
+msgstr "Kan inte redigera bilaga"
 
 #: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
@@ -258,8 +255,7 @@ msgstr ""
 "Vill du ersätta den?"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Spara till fil"
@@ -435,8 +431,7 @@ msgstr ""
 "p><p>Vill du ta bort taggar?</p></qt>"
 
 #: composer/composerviewbase.cpp:335
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Signera och kryptera brev?"
@@ -452,8 +447,7 @@ msgid "Do you want to resize images?"
 msgstr "Vill du ändra bildernas storlek?"
 
 #: composer/composerviewbase.cpp:522
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Ändra bildstorlek automatiskt"
@@ -552,8 +546,7 @@ msgstr ""
 "Orsak: %3"
 
 #: composer/composerviewbase.cpp:1366
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Misslyckades spara brev automatiskt"
@@ -575,11 +568,10 @@ msgstr ""
 "Vill du bilägga en fil till ditt brev?"
 
 #: composer/composerviewbase.cpp:1909
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr "Påminnelse filbilaga"
+msgstr "Påminnelse om filbilaga"
 
 #: composer/composerviewbase.cpp:1911
 #, kde-format
@@ -598,8 +590,7 @@ msgstr ""
 "Signera brevet?"
 
 #: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Signera brev?"
@@ -634,8 +625,7 @@ msgstr ""
 "ställts in för den här identiteten."
 
 #: composer/composerviewbase.cpp:2022
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Skicka osignerat?"
@@ -678,8 +668,7 @@ msgid "&Sign"
 msgstr "&Signera"
 
 #: composer/composerviewbase.cpp:2047
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Varning om osignerat brev"
@@ -761,8 +750,7 @@ msgstr ""
 "men inga giltiga krypteringsnycklar har ställts in för den här identiteten."
 
 #: composer/composerviewbase.cpp:2161
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Skicka okrypterat?"
@@ -804,8 +792,7 @@ msgid "&Encrypt All Parts"
 msgstr "Krypt&era alla delar"
 
 #: composer/composerviewbase.cpp:2188
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Varning om okrypterat brev"
@@ -856,8 +843,7 @@ msgstr ""
 "Följande nycklar eller certifikat är <b>återkallade</b>: \n"
 
 #: composer/keyresolver.cpp:336
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Inte pålitliga krypteringsnycklar"
@@ -881,8 +867,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
 #: composer/keyresolver.cpp:1042
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Oanvändbara krypteringsnycklar"
@@ -905,8 +890,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
 #: composer/keyresolver.cpp:1089
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Oanvändbara signeringsnycklar"
@@ -993,8 +977,7 @@ msgstr ""
 "Skicka brevet utan att signera?"
 
 #: composer/keyresolver.cpp:1156
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Signering inte möjlig"
@@ -1010,8 +993,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1345
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Varning om saknad nyckel"
@@ -1158,8 +1140,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Det valda datumet måste vara senare än dagens datum."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Ogiltigt datum"
@@ -1170,8 +1151,7 @@ msgid "The selected folder is not valid."
 msgstr "Den valda korgen är inte giltig."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ogiltig korg"
@@ -1240,8 +1220,7 @@ msgid "Please verify minimum and maximum values."
 msgstr "Verifiera minimala och maximala värden."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Fel i minimalt eller maximalt värde"
@@ -1553,8 +1532,7 @@ msgstr ""
 "Vill du fortsätta?"
 
 #: job/maintextjob.cpp:102
-#, fuzzy, kde-format
-#| msgid "Some Characters Will Be Lost"
+#, kde-format
 msgctxt "@title:window"
 msgid "Some Characters Will Be Lost"
 msgstr "Vissa tecken kommer att gå förlorade"
@@ -2401,11 +2379,10 @@ msgstr ""
 "du skapa en e-postsändningsmodul?"
 
 #: utils/util.cpp:294
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr "Ingen e-postsändningsmodul"
+msgstr "Ingen e-postsändningsmodul."
 
 #: utils/util.cpp:296
 #, kde-format
@@ -2423,8 +2400,7 @@ msgstr ""
 "koppla upp den?"
 
 #: utils/util.cpp:312
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "E-postsändningsmodulen nerkopplad."

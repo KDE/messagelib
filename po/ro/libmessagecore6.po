@@ -1,5 +1,5 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the messagelib package.
 # Sergiu Bivol <sergiu@cip.md>, 2011, 2013.
 #
 msgid ""
@@ -280,51 +280,3 @@ msgstr ""
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
 msgstr ""
-
-#~ msgid "TextLabel"
-#~ msgstr "EtichetăTextuală"
-
-#~ msgid "This is the color used to highlight misspelled words"
-#~ msgstr ""
-#~ "Aceasta este culoarea folosită pentru a evidenția cuvintele scrise greșit"
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "Specifică fontul de folosit pentru corpul mesajului"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Specifică fontul de folosit pentru tipar"
-
-#~ msgid "This is the color used for highlighting all signed messages"
-#~ msgstr ""
-#~ "Aceasta e culoarea folosită pentru evidențierea tuturor mesajelor semnate"
-
-#~ msgid "This is the color used for highlighting all encrypted messages"
-#~ msgstr ""
-#~ "Aceasta e culoarea folosită pentru evidențierea tuturor mesajelor criptate"
-
-#~ msgid "Could not read file %1."
-#~ msgstr "Nu s-a putut citi fișierul %1."
-
-#~ msgid "Edit Note"
-#~ msgstr "Modifică nota"
-
-#~ msgid "Delete Note"
-#~ msgstr "Șterge notița"
-
-#~ msgid "Add Note"
-#~ msgstr "Adaugă notă"
-
-#~ msgid "Enter the text that should be stored as a note to the mail:"
-#~ msgstr "Introduceți textul ce trebuie păstrat ca notă la scrisoare:"
-
-#~ msgid "Do you really want to delete this note?"
-#~ msgstr "Sigur ștergeți această notă?"
-
-#~ msgid "Delete Note?"
-#~ msgstr "Ștergeți notița?"
-
-#~ msgid "Delete"
-#~ msgstr "Șterge"
-
-#~ msgid "Open Address Book"
-#~ msgstr "Deschide cartea de adrese"
