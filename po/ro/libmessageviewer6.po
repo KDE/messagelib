@@ -1516,8 +1516,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg.in:72
-#, fuzzy, kde-format
-#| msgid "Show expand/collapse quote marks"
+#, kde-format
 msgid "Show expand/collapse quote marks"
 msgstr "Arată semnele de desfășurare/restrângere a citatului"
 
@@ -1531,15 +1530,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
 #: settings/messageviewer.kcfg.in:76
-#, fuzzy, kde-format
-#| msgid "Automatic collapse level:"
+#, kde-format
 msgid "Automatic collapse level:"
 msgstr "Nivel automat de desfășurare:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
-#, fuzzy, kde-format
-#| msgid "Reduce font size for quoted text"
+#, kde-format
 msgid "Reduce font size for quoted text"
 msgstr "Reduce dimensiunea fontului pentru text citat"
 
@@ -1557,8 +1554,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg.in:91
-#, fuzzy, kde-format
-#| msgid "Message Structure Viewer"
+#, kde-format
 msgid "Message Structure Viewer"
 msgstr "Vizualizor structură mesaj"
 
@@ -1592,14 +1588,13 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:123
 #, kde-format
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Preferă HTML în loc de text simplu"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
-#, fuzzy, kde-format
-#| msgid "Load external references from the Internet for this message."
+#, kde-format
 msgid "Allow messages to load external references from the Internet"
-msgstr "Încarcă referințele externe din Internet pentru acest mesaj."
+msgstr "Permite mesajelor să încarce referințe externe din Internet"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
@@ -1646,7 +1641,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
-msgstr ""
+msgstr "La mesaje criptate nu trimite MDN-uri în răspuns"
 
 #. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
 #: settings/messageviewer.kcfg.in:161
@@ -1717,8 +1712,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:199
-#, fuzzy, kde-format
-#| msgid "Automatic invitation sending"
+#, kde-format
 msgid "Automatic invitation sending"
 msgstr "Trimitere automată a invitațiilor"
 
