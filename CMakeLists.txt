@@ -113,7 +113,7 @@ find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
-ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.3.0)
+ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
