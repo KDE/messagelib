@@ -3,22 +3,22 @@
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2023 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2023-11-09 15:46+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-06-05 15:08+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1025,10 +1025,11 @@ msgstr[0] "<b>%1</b> zpráva (<b>%2</b> nepřečteno)"
 msgstr[1] "<b>%1</b> zprávy (<b>%2</b> nepřečteno)"
 msgstr[2] "<b>%1</b> zpráv (<b>%2</b> nepřečteno)"
 
+# %s is e.g. ext3 or reiserfs
 #: core/widgetbase.cpp:186
 #, kde-format
 msgid "No filter defined."
-msgstr ""
+msgstr "Nebyl určen žádný filtr."
 
 #: core/widgetbase.cpp:186
 #, kde-format
@@ -1133,7 +1134,7 @@ msgstr "Slova kratší než 3 znaky jsou ignorována."
 #, kde-format
 msgctxt "@action"
 msgid "Do not show again"
-msgstr ""
+msgstr "Znovu nezobrazovat"
 
 #: core/widgets/searchcollectionindexingwarning.cpp:33
 #, kde-format
@@ -1166,13 +1167,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
-msgstr ""
+msgstr "Filtrovat poštu podle stavu"
 
 #: core/widgets/searchlinestatus.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr ""
+msgstr "Uložený filtr"
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
@@ -1249,25 +1250,25 @@ msgstr "Ham"
 #, kde-format
 msgctxt "@action"
 msgid "Full Message"
-msgstr ""
+msgstr "Celá zpráva"
 
 #: core/widgets/searchlinestatus.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Body"
-msgstr ""
+msgstr "Tělo"
 
 #: core/widgets/searchlinestatus.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Subject"
-msgstr ""
+msgstr "Předmět"
 
 #: core/widgets/searchlinestatus.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
-msgstr ""
+msgstr "Skrytá kopie"
 
 #: core/widgets/searchlinestatus.cpp:324
 #, kde-format
@@ -1320,7 +1321,7 @@ msgstr "Zavřít kartu"
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
-msgstr ""
+msgstr "Aktivovat kartu %1"
 
 #: pane.cpp:200
 #, kde-format
@@ -1336,7 +1337,7 @@ msgstr "Seznam zpráv"
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
-msgstr ""
+msgstr "Vytvořit novu kartu"
 
 #: pane.cpp:258
 #, kde-format
@@ -1354,19 +1355,19 @@ msgstr "Aktivovat předchozí kartu"
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
-msgstr ""
+msgstr "Přesunout kartu doleva"
 
 #: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
-msgstr ""
+msgstr "Přesunout kartu doprava"
 
 #: pane.cpp:298
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
-msgstr ""
+msgstr "Zavřít kartu"
 
 #: pane.cpp:520 pane.cpp:812
 #, kde-format
@@ -1419,31 +1420,31 @@ msgstr "Seskupování a vlákna"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
-msgstr ""
+msgstr "Seskupování:"
 
 #: utils/aggregationeditor.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
-msgstr ""
+msgstr "Chování rozbalování skupin:"
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
-msgstr ""
+msgstr "Vlákna:"
 
 #: utils/aggregationeditor.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
-msgstr ""
+msgstr "Iniciátor vlákna:"
 
 #: utils/aggregationeditor.cpp:55
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr ""
+msgstr "Chování rozbalování vláken:"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1455,7 +1456,7 @@ msgstr "Rozšířené"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
-msgstr ""
+msgstr "Strategie naplnění pohledu:"
 
 #: utils/configureaggregationsdialog.cpp:100
 #, kde-format
@@ -1611,7 +1612,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
-msgstr ""
+msgstr "Kliknutí na záhlaví třídí zprávy:"
 
 #: utils/themeeditor.cpp:80
 #, kde-format
@@ -1846,13 +1847,13 @@ msgstr "Pokročilé"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr ""
+msgstr "Hlavička:"
 
 #: utils/themeeditor.cpp:1444
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
-msgstr ""
+msgstr "Velikost ikony:"
 
 #: utils/themeeditor.cpp:1450
 #, kde-format

@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-08 00:40+0000\n"
-"PO-Revision-Date: 2024-04-26 10:58+0200\n"
+"PO-Revision-Date: 2024-06-05 09:25+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -44,7 +44,7 @@ msgstr "Ponechat"
 #, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr ""
+msgstr "Zkomprimovat"
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
@@ -94,13 +94,13 @@ msgstr "Přiložení textu ze schránky selhalo"
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr ""
+msgstr "Přiložit &veřejný klíč..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr ""
+msgstr "Přiložit &můj veřejný klíč"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -129,7 +129,7 @@ msgstr "Přiložit &adresář..."
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "Přiložit vlastní vizitku"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -183,7 +183,7 @@ msgstr "Upravit"
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr ""
+msgstr "Upravit pomocí..."
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -199,7 +199,7 @@ msgstr "Uložit jako..."
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr ""
+msgstr "Vlastn&osti přílohy..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
@@ -584,13 +584,13 @@ msgstr "Upozornění na přílohu"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr ""
+msgstr "Při&ložit soubor..."
 
 #: composer/composerviewbase.cpp:1910
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr ""
+msgstr "Po&slat tak, jak je"
 
 #: composer/composerviewbase.cpp:1962
 #, kde-format
@@ -619,7 +619,7 @@ msgstr "Podep&sat"
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr ""
+msgstr "&Nepodepisovat"
 
 #: composer/composerviewbase.cpp:1991
 #, kde-format
@@ -645,7 +645,7 @@ msgstr "Odeslat nepodepsané?"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr ""
+msgstr "Od&eslat nepodepsané"
 
 #: composer/composerviewbase.cpp:2039
 #, kde-format
@@ -683,7 +683,7 @@ msgstr "Varování na nepodepsanou zprávu"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr ""
+msgstr "Posl&at tak, jak je"
 
 #: composer/composerviewbase.cpp:2098
 #, kde-format
@@ -737,13 +737,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr ""
+msgstr "&Zašifrovat"
 
 #: composer/composerviewbase.cpp:2139
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr ""
+msgstr "&Nešifrovat"
 
 #: composer/composerviewbase.cpp:2159
 #, kde-format
@@ -763,7 +763,7 @@ msgstr "Odeslat nešifrovaně?"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr ""
+msgstr "Odeslat neši&frovaně"
 
 #: composer/composerviewbase.cpp:2181
 #, kde-format
@@ -942,7 +942,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr ""
+msgstr "Nepodepisovat pomocí OpenPGP"
 
 #: composer/keyresolver.cpp:1082
 #, kde-format
@@ -961,7 +961,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "Nepodepisovat pomocí S/MIME"
 
 #: composer/keyresolver.cpp:1152
 #, kde-format
@@ -1521,13 +1521,13 @@ msgstr "Budou ztraceny některé znaky"
 #, kde-format
 msgctxt "@action:button"
 msgid "Lose Characters"
-msgstr ""
+msgstr "Ztratit znaky"
 
 #: job/maintextjob.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Change Encoding"
-msgstr ""
+msgstr "Změnit kódování"
 
 #: job/maintextjob.cpp:107
 #, kde-format
@@ -2062,13 +2062,13 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:79
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "Upozornit při pokusu o odeslání nešifrované zprávy"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.in:83
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "Upozornit při pokusu o odeslání nepodepsané zprávy"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.in:87
