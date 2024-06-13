@@ -800,7 +800,7 @@ QString NodeHelper::encodingForName(const QString &descriptiveName)
     return NodeHelper::fixEncoding(encoding);
 }
 
-QStringList NodeHelper::supportedEncodings(bool usAscii)
+QStringList NodeHelper::supportedEncodings()
 {
     QStringList encodingNames = KCharsets::charsets()->availableEncodingNames();
     QStringList encodings;
@@ -815,9 +815,6 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
         }
     }
     encodings.sort();
-    if (usAscii) {
-        encodings.prepend(KCharsets::charsets()->descriptionForEncoding(QStringLiteral("us-ascii")));
-    }
     return encodings;
 }
 

@@ -186,9 +186,8 @@ public:
 
     /**
      * Return a list of the supported encodings
-     * @param usAscii if true, US-Ascii encoding will be prepended to the list.
      */
-    [[nodiscard]] static QStringList supportedEncodings(bool usAscii); // TODO(Andras) move to a utility class?
+    [[nodiscard]] static QStringList supportedEncodings(); // TODO(Andras) move to a utility class?
 
     [[nodiscard]] QString fromAsString(KMime::Content *node) const;
 

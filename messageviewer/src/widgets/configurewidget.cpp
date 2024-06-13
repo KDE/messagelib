@@ -39,7 +39,7 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     d->mSettingsUi->setupUi(this);
     layout()->setContentsMargins({});
 
-    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings();
     encodings.prepend(i18n("Auto"));
     d->mSettingsUi->overrideCharacterEncoding->addItems(encodings);
     d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
@@ -73,7 +73,7 @@ void ConfigureWidget::readCurrentOverrideCodec()
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         return;
     }
-    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings();
     encodings.prepend(i18n("Auto"));
     QStringList::ConstIterator it(encodings.constBegin());
     const QStringList::ConstIterator end(encodings.constEnd());
