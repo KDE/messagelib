@@ -7,7 +7,6 @@
 #include "stringutil.h"
 
 #include "MessageCore/MessageCoreSettings"
-#include "config-enterprise.h"
 
 #include <KEmailAddress>
 #include <KLocalizedString>
@@ -699,7 +698,7 @@ QString cleanFileName(const QString &name)
     fileName.replace(QLatin1Char('/'), QLatin1Char('_'));
     fileName.replace(QLatin1Char('\\'), QLatin1Char('_'));
 
-#ifdef KDEPIM_ENTERPRISE_BUILD
+#ifdef Q_OS_WINDOWS
     // replace all '.' with '_', not just at the start of the filename
     // but don't replace the last '.' before the file extension.
     int i = fileName.lastIndexOf(QLatin1Char('.'));
