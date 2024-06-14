@@ -43,7 +43,7 @@ public:
     /**
      * Destroys the attachment part.
      */
-    virtual ~AttachmentPart();
+    ~AttachmentPart();
 
     /**
      * Sets the @p name of the attachment.
