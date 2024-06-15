@@ -74,12 +74,8 @@ public:
 
     virtual void setStyleBody(const QString &styleBody) = 0;
 
-    void setCodec(const QByteArray &codec);
-    [[nodiscard]] QByteArray codec() const;
-
 private:
     Q_DISABLE_COPY(HtmlWriter)
-    QByteArray mCodec = QByteArrayLiteral("UTF-8");
     mutable std::unique_ptr<QTextStream> m_stream;
 };
 }

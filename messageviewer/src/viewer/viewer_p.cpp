@@ -842,7 +842,6 @@ void ViewerPrivate::parseContent(KMime::Content *content)
 
     otp.setAllowAsync(!mPrinting);
     otp.parseObjectTree(content, onlySingleNode);
-    htmlWriter()->setCodec(otp.plainTextContentCharset());
     if (message) {
         htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
     }

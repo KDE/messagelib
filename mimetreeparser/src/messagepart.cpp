@@ -485,7 +485,6 @@ HtmlMessagePart::~HtmlMessagePart() = default;
 void HtmlMessagePart::fix() const
 {
     mOtp->mHtmlContent += mBodyHTML;
-    mOtp->mHtmlContentCharset = mCharset;
 }
 
 QString HtmlMessagePart::text() const

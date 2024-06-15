@@ -778,40 +778,6 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     return messageInfo;
 }
 
-QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
-{
-    QByteArray currentCodec = codec;
-    if (currentCodec.isEmpty()) {
-        currentCodec = QByteArray("UTF-8");
-    }
-    if (currentCodec == QByteArray("us-ascii")) {
-        currentCodec = QByteArray("iso-8859-1");
-    }
-    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
-        currentCodec = QByteArray("UTF-8");
-    }
-
-    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
-    return currentCodec;
-}
-QStringConverter::Encoding Util::htmlEncoding(const QByteArray &data, const QByteArray &codec)
-{
-    QByteArray currentCodec = codec;
-    if (currentCodec.isEmpty()) {
-        return QStringConverter::Utf8;
-    }
-    if (currentCodec == QByteArray("us-ascii")) {
-        return QStringConverter::Latin1;
-    }
-    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
-        return QStringConverter::Utf8;
-    }
-
-    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
-    // TODO verify
-    return QStringConverter::System;
-}
-
 QDebug operator<<(QDebug d, const Util::HtmlMessageInfo &t)
 {
     d << " htmlSource " << t.htmlSource;

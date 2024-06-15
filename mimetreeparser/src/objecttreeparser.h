@@ -276,15 +276,6 @@ public:
      */
     [[nodiscard]] QString htmlContent() const;
 
-    /**
-     * The original charset of MIME part the plain text was extracted from.
-     *
-     * If there were more than one text/plain MIME parts in the mail, the this is the charset
-     * of the last MIME part processed.
-     */
-    [[nodiscard]] QByteArray plainTextContentCharset() const;
-    [[nodiscard]] QByteArray htmlContentCharset() const;
-
     [[nodiscard]] NodeHelper *nodeHelper() const;
 
     /** Parse beginning at a given node and recursively parsing
@@ -312,8 +303,6 @@ private:
 private:
     Interface::ObjectTreeSource *mSource = nullptr;
     NodeHelper *mNodeHelper = nullptr;
-    QByteArray mPlainTextContentCharset;
-    QByteArray mHtmlContentCharset;
     QString mPlainTextContent;
     QString mHtmlContent;
     KMime::Content *mTopLevelContent = nullptr;

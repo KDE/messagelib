@@ -265,7 +265,6 @@ void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTex
 {
     if (isFirstTextPart) {
         mPlainTextContent += curNode->decodedText();
-        mPlainTextContentCharset += NodeHelper::charset(curNode);
     }
 }
 
@@ -281,16 +280,6 @@ QByteArray ObjectTreeParser::codecNameFor(KMime::Content *node) const
         return mSource->overrideCodecName();
     }
     return mNodeHelper->codecName(node);
-}
-
-QByteArray ObjectTreeParser::plainTextContentCharset() const
-{
-    return mPlainTextContentCharset;
-}
-
-QByteArray ObjectTreeParser::htmlContentCharset() const
-{
-    return mHtmlContentCharset;
 }
 
 MimeTreeParser::NodeHelper *ObjectTreeParser::nodeHelper() const
