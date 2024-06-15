@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -309,7 +309,7 @@ msgstr ""
 "Najveća veličina u bitovima koju prilozi e‑pošte smeju da imaju (-1 za "
 "neograničeno)"
 
-#: utils/stringutil.cpp:418
+#: utils/stringutil.cpp:417
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

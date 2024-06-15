@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2013-07-10 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -301,7 +301,7 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/stringutil.cpp:418
+#: utils/stringutil.cpp:417
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

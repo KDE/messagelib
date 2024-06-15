@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2020-04-24 13:51+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -318,7 +318,7 @@ msgstr ""
 "Максимальный размер вложений в письме в битах (-1 означает отсутствие "
 "ограничения)"
 
-#: utils/stringutil.cpp:418
+#: utils/stringutil.cpp:417
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

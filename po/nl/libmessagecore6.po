@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2019-12-18 00:25+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -314,7 +314,7 @@ msgstr ""
 "De maximale grootte in bits die bijlagen in e-mail mogen hebben (-1 voor "
 "geen limiet)"
 
-#: utils/stringutil.cpp:418
+#: utils/stringutil.cpp:417
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

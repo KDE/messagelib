@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-06-15 00:39+0000\n"
 "PO-Revision-Date: 2020-10-04 18:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -296,7 +296,7 @@ msgid ""
 "no limit)"
 msgstr "비트 단위의 최대 이메일 첨부 파일 크기입니다(-1은 무제한)"
 
-#: utils/stringutil.cpp:418
+#: utils/stringutil.cpp:417
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
