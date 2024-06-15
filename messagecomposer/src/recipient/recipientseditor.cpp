@@ -356,10 +356,4 @@ void RecipientsEditor::slotCalculateTotal()
     d->mSideWidget->setTotal(count, lines().count());
 }
 
-RecipientLineNG *RecipientsEditor::activeLine() const
-{
-    MultiplyingLine *line = MultiplyingLineEditor::activeLine();
-    return qobject_cast<RecipientLineNG *>(line);
-}
-
 #include "moc_recipientseditor.cpp"

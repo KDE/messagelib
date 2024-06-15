@@ -89,7 +89,6 @@ protected Q_SLOTS:
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
-    [[nodiscard]] RecipientLineNG *activeLine() const override;
 
 Q_SIGNALS:
     void focusInRecipientLineEdit();
