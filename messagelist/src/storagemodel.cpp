@@ -7,7 +7,6 @@
 #include "storagemodel.h"
 
 #include <MessageCore/MessageCoreSettings>
-#include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/AttributeFactory>

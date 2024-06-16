@@ -120,7 +120,6 @@
 #include <MessageCore/StringUtil>
 
 #include <MessageCore/MessageCoreSettings>
-#include <MessageCore/NodeHelper>
 
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentManager>
@@ -1827,6 +1826,18 @@ static QColor nextColor(const QColor &c)
     return QColor::fromHsv((h + 50) % 360, qMax(s, 64), v);
 }
 
+[[nodiscard]] static KMime::Content *nextSibling(KMime::Content *node)
+{
+    if (KMime::Content *parent = node->parent()) {
+        const auto contents = parent->contents();
+        const int index = contents.indexOf(node) + 1;
+        if (index < contents.size()) { // next on the same level
+            return contents.at(index);
+        }
+    }
+    return nullptr;
+}
+
 QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgColor) const
 {
     if (!node) {
@@ -1834,7 +1845,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     }
 
     QString html;
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
+    KMime::Content *child = node->hasContent() ? node->contents().at(0) : nullptr;
 
     if (child) {
         const QString subHtml = renderAttachments(child, nextColor(bgColor));
@@ -1894,7 +1905,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         html += renderAttachments(extraNode, bgColor);
     }
 
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(node);
+    KMime::Content *next = nextSibling(node);
     if (next) {
         html += renderAttachments(next, nextColor(bgColor));
     }
