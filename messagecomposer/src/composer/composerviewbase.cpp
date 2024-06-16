@@ -40,7 +40,6 @@
 #include <Sonnet/DictionaryComboBox>
 
 #include <MessageCore/AutocryptStorage>
-#include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/MessageQueueJob>
@@ -1857,8 +1856,8 @@ void ComposerViewBase::collectImages(KMime::Content *root)
     if (KMime::Content *n = Util::findTypeInMessage(root, "multipart", "alternative")) {
         KMime::Content *parentnode = n->parent();
         if (parentnode && parentnode->contentType()->isMultipart() && parentnode->contentType()->subType() == "related") {
-            KMime::Content *node = MessageCore::NodeHelper::nextSibling(n);
-            while (node) {
+            const auto nodes = parentnode->contents();
+            for (auto node : nodes) {
                 if (node->contentType()->isImage()) {
                     qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << node->contentType()->name();
                     QImage img;
@@ -1868,7 +1867,6 @@ void ComposerViewBase::collectImages(KMime::Content *root)
                         QString::fromLatin1(QByteArray(QByteArrayLiteral("cid:") + node->contentID()->identifier())),
                         node->contentType()->name());
                 }
-                node = MessageCore::NodeHelper::nextSibling(node);
             }
         }
     }
