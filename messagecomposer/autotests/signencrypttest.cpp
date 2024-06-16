@@ -62,9 +62,6 @@ void SignEncryptTest::testContent()
 
     Composer composer;
 
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
-
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(data);

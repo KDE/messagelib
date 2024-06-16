@@ -39,10 +39,6 @@ void MainTextJobTest::testPlainText()
 {
     auto composer = Composer();
     composer.globalPart()->setGuiEnabled(false);
-    QList<QByteArray> charsets;
-    charsets << "us-ascii"
-             << "utf-8";
-    composer.globalPart()->setCharsets(charsets);
     auto textPart = new TextPart;
     QString data = QStringLiteral("they said their never they slept their dream");
     textPart->setWrappedPlainText(data);
@@ -92,8 +88,6 @@ void MainTextJobTest::testCustomCharset()
 {
     auto composer = Composer();
     composer.globalPart()->setGuiEnabled(false);
-    QByteArray charset("iso-8859-2");
-    composer.globalPart()->setCharsets(QList<QByteArray>() << charset);
     auto textPart = new TextPart;
     QString data = QStringLiteral("şi el o să se-nchidă cu o frunză de pelin");
     textPart->setWrappedPlainText(data);
@@ -104,14 +98,9 @@ void MainTextJobTest::testCustomCharset()
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
-    QCOMPARE(result->contentType()->charset(), charset);
+    QCOMPARE(result->contentType()->charset(), "utf-8");
     QByteArray outData = result->body();
-#if 0 // Remove when we remove all QTextCodec support
-    QTextCodec *codec = QTextCodec::codecForName(charset);
-    QVERIFY(codec);
-    QCOMPARE(codec->toUnicode(outData), data);
-#endif
-    QStringDecoder dec(charset.constData());
+    QStringDecoder dec(QStringDecoder::Utf8);
     QVERIFY(dec.isValid());
     QCOMPARE(dec.decode(outData), data);
 
@@ -138,8 +127,6 @@ void MainTextJobTest::testBadCharset()
 {
     auto composer = Composer();
     composer.globalPart()->setGuiEnabled(false);
-    QByteArray charset("us-ascii"); // Cannot handle Romanian chars.
-    composer.globalPart()->setCharsets(QList<QByteArray>() << charset);
     auto textPart = new TextPart;
     QString data = QStringLiteral("el a plâns peste ţară cu lacrima limbii noastre");
     textPart->setWrappedPlainText(data);

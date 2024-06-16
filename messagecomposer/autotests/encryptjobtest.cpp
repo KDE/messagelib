@@ -49,8 +49,6 @@ void EncryptJobTest::initTestCase()
 void EncryptJobTest::testContentDirect()
 {
     Composer composer;
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
@@ -81,8 +79,6 @@ void EncryptJobTest::testContentDirect()
 void EncryptJobTest::testContentChained()
 {
     Composer composer;
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
