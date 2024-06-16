@@ -110,11 +110,7 @@ There are various smaller and unimportant classes in this library.
 PartNodeBodyPart is an implementation of the BodyPart interface. It is used by plugins to gain
 access to various properties of the MIME part the plugins are supposed to handle.
 
-NodeHelper currently is a big mess that consists of mainly two things: First, it provides
-convenience methods for operations related to the MIME part class KMime::Content, such as
-nextSibling() or charset(). All these methods should eventually be moved away from here, either to
-kdepim/messagecore or to kdpimlibs/kmime.
-Secondly, it provides lists and maps which are used by the ObjectTreeParser and the Viewer during
+NodeHelper provides lists and maps which are used by the ObjectTreeParser and the Viewer during
 processing. Such can include a list of all KMime::Content that are currently being processed, a map
 of KMime::Content to their signature or encryption state, a map of KMime::Content to PartMetaData,
 and so on.

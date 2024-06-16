@@ -32,8 +32,6 @@ target_sources(KPim6MessageCore PRIVATE
     misc/imagecollector.cpp
     misc/mailinglist.cpp
 
-    helpers/nodehelper.cpp
-
     utils/stringutil.cpp
     utils/util.cpp
     utils/colorutil.cpp
@@ -60,7 +58,6 @@ target_sources(KPim6MessageCore PRIVATE
     autocrypt/autocryptstorage_p.h
     autocrypt/autocryptrecipient.h
     autocrypt/autocryptrecipient_p.h
-    helpers/nodehelper.h
     settings/messagecoresettings.h
 )
 
@@ -170,14 +167,6 @@ ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
     RELATIVE attachment
 )
 
-ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
-    HEADER_NAMES
-    NodeHelper
-    REQUIRED_HEADERS MessageCore_helpers_HEADERS
-    PREFIX MessageCore
-    RELATIVE helpers
-)
-
 ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     HEADER_NAMES
     AutocryptRecipient
@@ -190,7 +179,6 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
 
 install(FILES
     ${MessageCore_Camelcaseautocrypt_HEADERS}
-    ${MessageCore_Camelcasehelpers_HEADERS}
     ${MessageCore_Camelcasesettings_HEADERS}
     ${MessageCore_Camelcaseutils_HEADERS}
     ${MessageCore_Camelcaseattachment_HEADERS}
@@ -201,7 +189,6 @@ install(FILES
 
 install(FILES
     ${MessageCore_autocrypt_HEADERS}
-    ${MessageCore_helpers_HEADERS}
     ${MessageCore_settings_HEADERS}
     ${MessageCore_utils_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
@@ -224,7 +211,6 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${MessageCore_autocrypt_HEADERS}
-        ${MessageCore_helpers_HEADERS}
         ${MessageCore_settings_HEADERS}
         ${MessageCore_utils_HEADERS}
         LINK_QCHS

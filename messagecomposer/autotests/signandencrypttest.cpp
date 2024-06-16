@@ -25,8 +25,6 @@
 #include "setupenv.h"
 #include <MimeTreeParser/NodeHelper>
 
-#include <MessageCore/NodeHelper>
-
 QTEST_MAIN(SignAndEncryptTest)
 
 using namespace MessageComposer;
