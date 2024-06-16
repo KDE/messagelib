@@ -20,8 +20,6 @@ namespace Util
 {
 [[nodiscard]] bool handleUrlWithQDesktopServices(const QUrl &url);
 
-[[nodiscard]] KMime::Content::List allContents(const KMime::Content *message);
-
 [[nodiscard]] bool saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList);
 [[nodiscard]] bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 void addHelpTextAction(QAction *act, const QString &text);

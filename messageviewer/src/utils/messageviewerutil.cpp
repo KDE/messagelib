@@ -147,23 +147,6 @@ bool Util::handleUrlWithQDesktopServices(const QUrl &url)
 #endif
 }
 
-KMime::Content::List Util::allContents(const KMime::Content *message)
-{
-    KMime::Content::List result;
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(message);
-    if (child) {
-        result += child;
-        result += allContents(child);
-    }
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(message);
-    if (next) {
-        result += next;
-        result += allContents(next);
-    }
-
-    return result;
-}
-
 bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList)
 {
     QUrl url;

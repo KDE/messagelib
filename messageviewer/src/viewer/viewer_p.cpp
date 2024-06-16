@@ -2824,6 +2824,17 @@ bool ViewerPrivate::showEncryptionDetails() const
     return mShowEncryptionDetails;
 }
 
+[[nodiscard]] static int countNodes(const KMime::Content *node)
+{
+    int count = 1;
+
+    const auto children = node->contents();
+    for (const auto child : children) {
+        count += countNodes(child);
+    }
+    return count;
+}
+
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 {
     const QString indexStr = node->index().toString();
@@ -2831,8 +2842,7 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
     mViewer->scrollToAnchor(QLatin1StringView("attachmentDiv") + indexStr);
 
     // Remove any old color markings which might be there
-    const KMime::Content *root = node->topLevel();
-    const int totalChildCount = Util::allContents(root).size();
+    const int totalChildCount = countNodes(node->topLevel());
     for (int i = 0; i < totalChildCount + 1; ++i) {
         // Not optimal I need to optimize it. But for the moment it removes yellow mark
         mViewer->removeAttachmentMarking(QStringLiteral("attachmentDiv%1").arg(i + 1));
