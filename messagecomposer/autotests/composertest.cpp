@@ -138,7 +138,6 @@ void ComposerTest::testBug271192()
 
 void ComposerTest::fillComposerData(Composer *composer)
 {
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));

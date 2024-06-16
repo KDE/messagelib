@@ -30,14 +30,6 @@ public:
     [[nodiscard]] QWidget *parentWidgetForGui() const;
     void setParentWidgetForGui(QWidget *widget);
 
-    [[nodiscard]] bool isFallbackCharsetEnabled() const;
-    void setFallbackCharsetEnabled(bool enabled);
-    [[nodiscard]] QList<QByteArray> charsets(bool forceFallback = false) const;
-    void setCharsets(const QList<QByteArray> &charsets);
-
-    [[nodiscard]] bool is8BitAllowed() const;
-    void set8BitAllowed(bool allowed);
-
     // default is false
     [[nodiscard]] bool MDNRequested() const;
     void setMDNRequested(bool requestMDN);

@@ -724,7 +724,6 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 {
     auto composer = new MessageComposer::Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     auto attachmentJob = new MessageComposer::AttachmentJob(part, composer);
     connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) {
         d->slotAttachmentContentCreated(job);

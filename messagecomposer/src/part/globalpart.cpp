@@ -13,11 +13,8 @@ class GlobalPart::GlobalPartPrivate
 public:
     GlobalPartPrivate() = default;
 
-    QList<QByteArray> charsets;
     QWidget *parentWidgetForGui = nullptr;
     bool guiEnabled = true;
-    bool fallbackCharsetEnabled = false;
-    bool allow8Bit = false;
     bool MDNRequested = false;
     bool requestDeleveryConfirmation = false;
 };
@@ -48,41 +45,6 @@ QWidget *GlobalPart::parentWidgetForGui() const
 void GlobalPart::setParentWidgetForGui(QWidget *widget)
 {
     d->parentWidgetForGui = widget;
-}
-
-bool GlobalPart::isFallbackCharsetEnabled() const
-{
-    return d->fallbackCharsetEnabled;
-}
-
-void GlobalPart::setFallbackCharsetEnabled(bool enabled)
-{
-    d->fallbackCharsetEnabled = enabled;
-}
-
-QList<QByteArray> GlobalPart::charsets(bool forceFallback) const
-{
-    QList<QByteArray> ret = d->charsets;
-    if (d->fallbackCharsetEnabled || forceFallback) {
-        ret << "us-ascii";
-        ret << "utf-8";
-    }
-    return ret;
-}
-
-void GlobalPart::setCharsets(const QList<QByteArray> &charsets)
-{
-    d->charsets = charsets;
-}
-
-bool GlobalPart::is8BitAllowed() const
-{
-    return d->allow8Bit;
-}
-
-void GlobalPart::set8BitAllowed(bool allowed)
-{
-    d->allow8Bit = allowed;
 }
 
 bool GlobalPart::MDNRequested() const

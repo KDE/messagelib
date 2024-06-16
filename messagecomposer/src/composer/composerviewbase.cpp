@@ -87,8 +87,6 @@ ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
     , m_autoSaveInterval(60000) // default of 1 min
 {
-    m_charsets << "utf-8"; // default, so we have a backup in case client code forgot to set.
-
     initAutoSave();
 }
 
@@ -914,7 +912,6 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
 void ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
 {
     globalPart->setParentWidgetForGui(m_parentWidget);
-    globalPart->setCharsets(m_charsets);
     globalPart->setMDNRequested(m_mdnRequested);
     globalPart->setRequestDeleveryConfirmation(m_requestDeleveryConfirmation);
 }
@@ -1828,11 +1825,6 @@ void ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMes
     m_encrypt = encrypt;
     m_cryptoMessageFormat = format;
     m_neverEncrypt = neverEncryptDrafts;
-}
-
-void ComposerViewBase::setCharsets(const QList<QByteArray> &charsets)
-{
-    m_charsets = charsets;
 }
 
 void ComposerViewBase::setMDNRequested(bool mdnRequested)

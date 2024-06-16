@@ -49,7 +49,7 @@ void MainTextJobTest::testPlainText()
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
-    QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii"));
+    QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
     delete textPart;
 }
@@ -59,7 +59,6 @@ void MainTextJobTest::testWrappingErrors()
     {
         auto composer = Composer();
         composer.globalPart()->setGuiEnabled(false);
-        composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
         QString data = QStringLiteral("they said their never they slept their dream");
         textPart->setWordWrappingEnabled(false);
@@ -72,7 +71,6 @@ void MainTextJobTest::testWrappingErrors()
     {
         auto composer = Composer();
         composer.globalPart()->setGuiEnabled(false);
-        composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
         textPart->setWordWrappingEnabled(true);
         QString data = QStringLiteral("they said their never they slept their dream");
@@ -110,7 +108,6 @@ void MainTextJobTest::testCustomCharset()
 void MainTextJobTest::testNoCharset()
 {
     auto composer = Composer();
-    QVERIFY(!composer.globalPart()->isFallbackCharsetEnabled());
     composer.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
     QString data = QStringLiteral("do you still play the accordion?");
@@ -142,7 +139,6 @@ void MainTextJobTest::testFallbackCharset()
 {
     auto composer = Composer();
     composer.globalPart()->setGuiEnabled(false);
-    composer.globalPart()->setFallbackCharsetEnabled(true);
     auto textPart = new TextPart;
     QString data = QStringLiteral("and when he falleth...");
     textPart->setWrappedPlainText(data);
@@ -153,7 +149,7 @@ void MainTextJobTest::testFallbackCharset()
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
-    QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii")); // Fallback is us-ascii or utf8.
+    QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
     delete textPart;
 }
@@ -168,7 +164,6 @@ void MainTextJobTest::testHtml()
 
     auto composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     auto textPart = new TextPart;
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
@@ -228,7 +223,6 @@ void MainTextJobTest::testHtmlWithImages()
 
     auto composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     auto textPart = new TextPart;
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());

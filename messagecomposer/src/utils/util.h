@@ -25,8 +25,6 @@ namespace MessageComposer
 {
 namespace Util
 {
-[[nodiscard]] MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
-
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
 

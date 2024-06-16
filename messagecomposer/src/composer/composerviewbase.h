@@ -179,7 +179,6 @@ public:
      *  the default values will be used.
      */
     void setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMessageFormat format, bool neverEncryptDrafts = false);
-    void setCharsets(const QList<QByteArray> &charsets);
     void setMDNRequested(bool mdnRequested);
     void setUrgent(bool urgent);
 
@@ -374,7 +373,6 @@ private:
     QString m_from;
     QString m_subject;
     QStringList mExpandedTo, mExpandedCc, mExpandedBcc, mExpandedReplyTo;
-    QList<QByteArray> m_charsets;
     QMap<QByteArray, QString> m_customHeader;
 
     int m_pendingQueueJobs = 0;

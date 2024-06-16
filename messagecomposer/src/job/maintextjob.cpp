@@ -17,7 +17,6 @@
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
-#include <KMessageBox>
 
 #include <KMime/Content>
 
@@ -74,62 +73,13 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
 {
     Q_Q(MainTextJob);
 
-    const QList<QByteArray> charsets = q->globalPart()->charsets(true);
-    if (charsets.isEmpty()) {
-        q->setError(JobBase::BugError);
-        q->setErrorText(
-            i18n("No charsets were available for encoding. Please check your configuration and make sure it contains at least one charset for sending."));
-        return false;
-    }
-
     Q_ASSERT(textPart);
     QString toTry = sourcePlainText;
     if (textPart->isHtmlUsed()) {
         toTry = textPart->cleanHtml();
     }
-    chosenCharset = MessageComposer::Util::selectCharset(charsets, toTry);
-    if (!chosenCharset.isEmpty()) {
-        // Good, found a charset that encodes the data without loss.
-        return encodeTexts();
-    } else {
-        // No good charset was found.
-        if (q->globalPart()->isGuiEnabled() && textPart->warnBadCharset()) {
-            // Warn the user and give them a chance to go back.
-            int result = KMessageBox::warningTwoActions(q->globalPart()->parentWidgetForGui(),
-                                                        i18n("Encoding the message with %1 will lose some characters.\n"
-                                                             "Do you want to continue?",
-                                                             QString::fromLatin1(charsets.first())),
-                                                        i18nc("@title:window", "Some Characters Will Be Lost"),
-                                                        KGuiItem(i18nc("@action:button", "Lose Characters")),
-                                                        KGuiItem(i18nc("@action:button", "Change Encoding")));
-            if (result == KMessageBox::ButtonCode::SecondaryAction) {
-                q->setError(JobBase::UserCancelledError);
-                q->setErrorText(i18n("User decided to change the encoding."));
-                return false;
-            } else {
-                chosenCharset = charsets.first();
-                return encodeTexts();
-            }
-        } else if (textPart->warnBadCharset()) {
-            // Should warn user but no Gui available.
-            qCDebug(MESSAGECOMPOSER_LOG) << "warnBadCharset but Gui is disabled.";
-            q->setError(JobBase::UserError);
-            q->setErrorText(i18n("The selected encoding (%1) cannot fully encode the message.", QString::fromLatin1(charsets.first())));
-            return false;
-        } else {
-            // OK to go ahead with a bad charset.
-            chosenCharset = charsets.first();
-            return encodeTexts();
-
-            // FIXME: This is based on the assumption that QTextCodec will replace
-            // unknown characters with '?' or some other meaningful thing.  The code in
-            // QTextCodec indeed uses '?', but this behaviour is not documented.
-        }
-    }
-
-    // Should not reach here.
-    Q_ASSERT(false);
-    return false;
+    chosenCharset = "utf-8";
+    return encodeTexts();
 }
 
 bool MainTextJobPrivate::encodeTexts()
@@ -178,9 +128,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     // The image is a PNG encoded with base64.
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("image/png");
-    const QByteArray charset = MessageComposer::Util::selectCharset(q->globalPart()->charsets(true), image->imageName);
-    Q_ASSERT(!charset.isEmpty());
-    cjob->contentType()->setName(image->imageName, charset);
+    cjob->contentType()->setName(image->imageName, "utf-8");
     cjob->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
     cjob->contentTransferEncoding()->setDecoded(false); // It is already encoded.
     cjob->contentID()->setIdentifier(image->contentID.toLatin1());

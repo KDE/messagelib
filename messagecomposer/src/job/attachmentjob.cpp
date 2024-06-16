@@ -74,10 +74,6 @@ void AttachmentJob::doStart()
     auto sjob = new SinglepartJob(this);
     sjob->setData(d->part->data());
 
-    // Figure out a charset to encode parts of the headers with.
-    const QString dataToEncode = d->part->name() + d->part->description() + d->part->fileName();
-    const QByteArray charset = MessageComposer::Util::selectCharset(globalPart()->charsets(true), dataToEncode);
-
     // Set up the headers.
     // rfc822 forwarded messages have 7bit CTE, the message itself will have
     //  its own CTE for the content
@@ -89,7 +85,7 @@ void AttachmentJob::doStart()
 
     auto ct = sjob->contentType();
     ct->setMimeType(d->part->mimeType()); // setMimeType() clears all other params.
-    ct->setName(d->part->name(), charset);
+    ct->setName(d->part->name(), "utf-8");
     if (ct->isText()) {
         // If it is a text file, detect its charset.
         // sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );
@@ -105,11 +101,11 @@ void AttachmentJob::doStart()
         ct->setCharset(textCharset);
     }
 
-    sjob->contentDescription()->fromUnicodeString(d->part->description(), charset);
+    sjob->contentDescription()->fromUnicodeString(d->part->description(), "utf-8");
 
     auto contentDisposition = sjob->contentDisposition();
     contentDisposition->setFilename(d->part->fileName());
-    contentDisposition->setRFC2047Charset(charset);
+    contentDisposition->setRFC2047Charset("utf-8");
     if (d->part->isInline()) {
         contentDisposition->setDisposition(KMime::Headers::CDinline);
     } else {

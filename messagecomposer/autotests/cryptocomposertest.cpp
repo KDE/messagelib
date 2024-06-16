@@ -831,7 +831,6 @@ void CryptoComposerTest::testAutocryptGossip()
 // Helper methods
 void CryptoComposerTest::fillComposerData(Composer *composer, const QString &data)
 {
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->textPart()->setWrappedPlainText(data);

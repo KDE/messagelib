@@ -228,29 +228,6 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
     }
 }
 
-QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charsets, const QString &text)
-{
-    for (const QByteArray &name : charsets) {
-        // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
-        // the former knows us-ascii is latin1.
-        QStringEncoder codec(name.constData());
-        if (!codec.isValid()) {
-            qCWarning(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << name;
-            continue;
-        }
-        if ([[maybe_unused]] const QByteArray encoded = codec.encode(text); !codec.hasError()) {
-            // Special check for us-ascii (needed because us-ascii is not exactly latin1).
-            if (name == "us-ascii" && !KMime::isUsAscii(text)) {
-                continue;
-            }
-            qCDebug(MESSAGECOMPOSER_LOG) << "Chosen charset" << name;
-            return name;
-        }
-    }
-    qCDebug(MESSAGECOMPOSER_LOG) << "No appropriate charset found.";
-    return {};
-}
-
 QStringList MessageComposer::Util::AttachmentKeywords()
 {
     return i18nc(

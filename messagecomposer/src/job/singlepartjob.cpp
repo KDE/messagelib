@@ -42,10 +42,7 @@ bool SinglepartJobPrivate::chooseCTE()
     Q_Q(SinglepartJob);
 
     auto allowed = KMime::encodingsForData(data);
-
-    if (!q->globalPart()->is8BitAllowed()) {
-        allowed.removeAll(KMime::Headers::CE8Bit);
-    }
+    allowed.removeAll(KMime::Headers::CE8Bit);
 
 #if 0 // TODO signing
       // In the following cases only QP and Base64 are allowed:

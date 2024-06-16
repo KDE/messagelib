@@ -19,8 +19,6 @@ void GlobalPartTest::shouldHaveDefaultValue()
     MessageComposer::GlobalPart globalpart;
     QVERIFY(globalpart.isGuiEnabled());
     QVERIFY(!globalpart.parentWidgetForGui());
-    QVERIFY(!globalpart.isFallbackCharsetEnabled());
-    QVERIFY(!globalpart.is8BitAllowed());
     QVERIFY(!globalpart.MDNRequested());
     QVERIFY(!globalpart.requestDeleveryConfirmation());
 }

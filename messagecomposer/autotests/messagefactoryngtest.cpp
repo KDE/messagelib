@@ -654,7 +654,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -706,7 +706,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -755,7 +755,7 @@ void MessageFactoryTest::testCreateRedirect()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -803,7 +803,7 @@ void MessageFactoryTest::testCreateResend()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "\n"
         "All happy families are alike; each unhappy family is unhappy in its own way.");
     baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageidMatch.captured(1));
@@ -838,7 +838,6 @@ void MessageFactoryTest::testCreateMDN()
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 {
     auto composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->infoPart()->setCc(QStringList(QStringLiteral("cc@cc.cc")));
@@ -857,7 +856,6 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
     auto composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
     composer->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));

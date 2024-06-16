@@ -22,43 +22,6 @@ UtilTest::UtilTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void UtilTest::testSelectCharset()
-{
-    // Pick a charset that actually works.
-    {
-        QString text = QStringLiteral("text 123 ăîşţâ");
-        QList<QByteArray> charsets;
-        charsets << "us-ascii";
-        charsets << "iso-8859-1";
-        charsets << "iso-8859-2"; // This one works.
-        QByteArray choice = Util::selectCharset(charsets, text);
-        QCOMPARE(choice, QByteArrayLiteral("iso-8859-2"));
-    }
-
-    // Pick as simple a charset as possible.
-    {
-        QString text = QStringLiteral("plain English text");
-        QList<QByteArray> charsets;
-        charsets << "us-ascii"; // This one works.
-        charsets << "iso-8859-1";
-        charsets << "utf-8";
-        QByteArray choice = Util::selectCharset(charsets, text);
-        QCOMPARE(choice, QByteArrayLiteral("us-ascii"));
-    }
-
-    // Return empty charset if none works.
-    {
-        QString text = QStringLiteral("text 123 ăîşţâ");
-        QList<QByteArray> charsets;
-        QByteArray choice = Util::selectCharset(charsets, text);
-        QVERIFY(choice.isEmpty());
-        charsets << "us-ascii";
-        charsets << "iso-8859-1";
-        choice = Util::selectCharset(charsets, text);
-        QVERIFY(choice.isEmpty());
-    }
-}
-
 void UtilTest::shouldTestHasMissingAttachment_data()
 {
     QTest::addColumn<QStringList>("attachmentKeywords");
