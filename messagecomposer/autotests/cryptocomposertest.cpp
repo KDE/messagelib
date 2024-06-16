@@ -29,7 +29,6 @@ using namespace KMime;
 using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
-#include <MessageCore/NodeHelper>
 using namespace MessageCore;
 
 #include <MimeTreeParser/ObjectTreeParser>
@@ -312,14 +311,15 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     composer = nullptr;
 
     // as we have an additional attachment, just ignore it when checking for sign/encrypt
-    KMime::Content *b = MessageCore::NodeHelper::firstChild(message.data());
+    QVERIFY(message->contents().size() >= 2);
+    KMime::Content *b = message->contents().at(0);
     ComposerTestUtil::verifySignatureAndEncryption(b, data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
     // now check the attachment separately
-    QCOMPARE(QString::fromLatin1(MessageCore::NodeHelper::nextSibling(b)->body()), QString::fromLatin1("abc"));
+    QCOMPARE(QString::fromLatin1(message->contents().at(1)->body()), QString::fromLatin1("abc"));
 }
 
 // protected headers

@@ -17,8 +17,6 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <MessageCore/NodeHelper>
-
 #include <QTest>
 #include <cstdlib>
 #include <gpgme++/keylistresult.h>
@@ -68,7 +66,8 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
 
         // Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
 
-        QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
+        QVERIFY(!resultMessage->contents().isEmpty());
+        QCOMPARE(resultMessage->contents().at(0)->contentTransferEncoding()->encoding(), encoding);
     } else if (f & Kleo::InlineOpenPGPFormat) {
         // process the result..
         otp.parseObjectTree(resultMessage);
@@ -86,7 +85,8 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
             QCOMPARE(signedPart->contentDisposition()->filename(), QStringLiteral("smime.p7s"));
             Q_UNUSED(signedPart)
 
-            QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
+            QVERIFY(!resultMessage->contents().isEmpty());
+            QCOMPARE(resultMessage->contents().at(0)->contentTransferEncoding()->encoding(), encoding);
 
             QCOMPARE(resultMessage->contentType()->mimeType(), QByteArray("multipart/signed"));
             QCOMPARE(resultMessage->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pkcs7-signature"));
@@ -138,7 +138,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     } else if (f & Kleo::InlineOpenPGPFormat) {
         if (withAttachment) {
             // Only first MimePart is the encrypted Text
-            KMime::Content *cContent = MessageCore::NodeHelper::firstChild(resultMessage.data());
+            KMime::Content *cContent = resultMessage->contents().at(0);
             resultMessage->setContent(cContent->encodedContent());
             resultMessage->parse();
         }

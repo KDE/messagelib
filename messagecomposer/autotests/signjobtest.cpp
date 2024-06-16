@@ -20,7 +20,6 @@
 #include <MessageComposer/TransparentJob>
 
 #include "setupenv.h"
-#include <MessageCore/NodeHelper>
 
 #include <cstdlib>
 
@@ -133,7 +132,8 @@ void SignJobTest::testRecommentationRFC3156()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    const QByteArray body = MessageCore::NodeHelper::firstChild(result)->body();
+    QVERIFY(!result->contents().isEmpty());
+    const QByteArray body = result->contents().at(0)->body();
     QCOMPARE(QString::fromUtf8(body), QStringLiteral("=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"));
 
     ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
@@ -175,8 +175,8 @@ void SignJobTest::testMixedContent()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    KMime::Content *firstChild = MessageCore::NodeHelper::firstChild(result);
     QCOMPARE(result->contents().count(), 2);
+    KMime::Content *firstChild = result->contents().at(0);
     QCOMPARE(firstChild->contents().count(), 2);
     QCOMPARE(firstChild->body(), QByteArray());
     QCOMPARE(firstChild->contentType()->mimeType(), QByteArrayLiteral("multipart/mixed"));
