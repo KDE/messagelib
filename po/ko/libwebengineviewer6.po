@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-06-16 00:39+0000\n"
 "PO-Revision-Date: 2022-10-03 16:03+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr "대소문자 구분"
 msgid "Phrase not found"
 msgstr "검색어를 찾을 수 없음"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:159
 #, kde-format
 msgid "Save HTML Page"
 msgstr "HTML 페이지 저장"

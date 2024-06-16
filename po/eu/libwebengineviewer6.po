@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-06-16 00:39+0000\n"
 "PO-Revision-Date: 2023-08-17 23:46+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -99,7 +99,7 @@ msgstr "Bereizi maiuskulak"
 msgid "Phrase not found"
 msgstr "Esaldia ez da aurkitu"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:159
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Gorde HTML orria"

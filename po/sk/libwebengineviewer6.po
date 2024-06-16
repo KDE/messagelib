@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-06-16 00:39+0000\n"
 "PO-Revision-Date: 2016-06-15 19:19+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -94,7 +94,7 @@ msgstr "Rozlišovať veľkosť písmen"
 msgid "Phrase not found"
 msgstr "Fráza sa nenašla"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:159
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Uložiť HTML stránku"

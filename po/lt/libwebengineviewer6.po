@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-06-16 00:39+0000\n"
 "PO-Revision-Date: 2019-03-13 03:38+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Phrase not found"
 msgstr ""
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:159
 #, kde-format
 msgid "Save HTML Page"
 msgstr ""
