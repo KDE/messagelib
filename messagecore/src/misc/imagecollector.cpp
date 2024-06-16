@@ -10,28 +10,8 @@
 
 #include "imagecollector.h"
 
-#include "MessageCore/NodeHelper"
-
 #include "messagecore_debug.h"
 #include <KMime/Content>
-
-static bool isInExclusionList(KMime::Content *node)
-{
-    if (!node) {
-        return true;
-    }
-
-    auto ct = node->contentType(); // Create if necessary
-    if (ct->mediaType() != "image") {
-        return true;
-    }
-
-    if (ct->isMultipart()) {
-        return true;
-    }
-
-    return false;
-}
 
 class MessageCore::ImageCollector::ImageCollectorPrivate
 {
@@ -48,29 +28,21 @@ MessageCore::ImageCollector::~ImageCollector() = default;
 
 void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
 {
-    KMime::Content *parent = nullptr;
+    if (!node) {
+        return;
+    }
 
-    while (node) {
-        parent = node->parent();
-
-        if (node->topLevel()->textContent() == node) {
-            node = MessageCore::NodeHelper::next(node);
-            continue;
-        }
-
-        if (isInExclusionList(node)) {
-            node = MessageCore::NodeHelper::next(node);
-            continue;
-        }
-
-        if (parent && parent->contentType()->isMultipart() && parent->contentType(false)->subType() == "related") {
-            qCWarning(MESSAGECORE_LOG) << "Adding image" << node->contentID();
+    if (const auto ct = node->contentType(false); ct->isImage() && node->parent()) {
+        const KMime::Content *parent = node->parent();
+        if (const auto parentCt = parent->contentType(); parentCt->isMultipart() && parentCt->isSubtype("related")) {
+            qCWarning(MESSAGECORE_LOG) << "Adding image" << node->contentID(false);
             d->mImages.push_back(node);
-            node = MessageCore::NodeHelper::next(node); // skip embedded images
-            continue;
         }
+    }
 
-        node = MessageCore::NodeHelper::next(node);
+    const auto children = node->contents();
+    for (const auto child : children) {
+        collectImagesFrom(child);
     }
 }
 
