@@ -114,7 +114,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
         d->themeListItemClicked(item);
     });
 
-    d->mNewThemeButton = new QPushButton(i18n("New Theme"), base);
+    d->mNewThemeButton = new QPushButton(i18nc("@action:button", "New Theme"), base);
     d->mNewThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     g->addWidget(d->mNewThemeButton, 0, 1);
 
@@ -122,7 +122,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
         d->newThemeButtonClicked();
     });
 
-    d->mCloneThemeButton = new QPushButton(i18n("Clone Theme"), base);
+    d->mCloneThemeButton = new QPushButton(i18nc("@action:button", "Clone Theme"), base);
     d->mCloneThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
     g->addWidget(d->mCloneThemeButton, 1, 1);
 
@@ -135,14 +135,14 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     f->setMinimumHeight(24);
     g->addWidget(f, 2, 1, Qt::AlignVCenter);
 
-    d->mExportThemeButton = new QPushButton(i18n("Export Theme..."), base);
+    d->mExportThemeButton = new QPushButton(i18nc("@action:button", "Export Theme..."), base);
     g->addWidget(d->mExportThemeButton, 3, 1);
 
     connect(d->mExportThemeButton, &QPushButton::clicked, this, [this]() {
         d->exportThemeButtonClicked();
     });
 
-    d->mImportThemeButton = new QPushButton(i18n("Import Theme..."), base);
+    d->mImportThemeButton = new QPushButton(i18nc("@action:button", "Import Theme..."), base);
     g->addWidget(d->mImportThemeButton, 4, 1);
     connect(d->mImportThemeButton, &QPushButton::clicked, this, [this]() {
         d->importThemeButtonClicked();
@@ -153,7 +153,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     f->setMinimumHeight(24);
     g->addWidget(f, 5, 1, Qt::AlignVCenter);
 
-    d->mDeleteThemeButton = new QPushButton(i18n("Delete Theme"), base);
+    d->mDeleteThemeButton = new QPushButton(i18nc("@action:button", "Delete Theme"), base);
     d->mDeleteThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     g->addWidget(d->mDeleteThemeButton, 6, 1);
 

@@ -58,7 +58,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     mainLayout->addWidget(mSelectedLabel);
 
-    auto searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
+    auto searchLDAPButton = new QPushButton(i18nc("@action:button", "Search &Directory Service"), this);
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
     mainLayout->addWidget(searchLDAPButton);
 

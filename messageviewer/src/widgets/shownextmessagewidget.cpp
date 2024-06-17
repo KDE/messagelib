@@ -12,8 +12,8 @@
 using namespace MessageViewer;
 ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     : QWidget(parent)
-    , mNextMessage(new QPushButton(i18n("Next Message"), this))
-    , mPreviousMessage(new QPushButton(i18n("Previous Message"), this))
+    , mNextMessage(new QPushButton(i18nc("@action:button", "Next Message"), this))
+    , mPreviousMessage(new QPushButton(i18nc("@action:button", "Previous Message"), this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QLatin1StringView("mainlayout"));

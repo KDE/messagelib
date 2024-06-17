@@ -85,7 +85,7 @@ void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
     : QWidget(parent)
     , mFormat(new QLineEdit(this))
-    , mSelectFormat(new QPushButton(i18n("Select Format..."), this))
+    , mSelectFormat(new QPushButton(i18nc("@action:button", "Select Format..."), this))
 {
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});

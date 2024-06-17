@@ -26,7 +26,7 @@ using namespace MessageViewer;
 DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     : QDialog(parent)
     , mRulesWidget(new DKIMManageRulesWidget(this))
-    , mExportButton(new QPushButton(i18n("Export..."), this))
+    , mExportButton(new QPushButton(i18nc("@action:button", "Export..."), this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Rule"));
     auto mainLayout = new QVBoxLayout(this);
@@ -39,12 +39,12 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     buttonBox->setObjectName(QLatin1StringView("buttonBox"));
     mainLayout->addWidget(buttonBox);
 
-    auto addButton = new QPushButton(i18n("Add Rule..."), this);
+    auto addButton = new QPushButton(i18nc("@action:button", "Add Rule..."), this);
     addButton->setObjectName(QLatin1StringView("addButton"));
     buttonBox->addButton(addButton, QDialogButtonBox::ActionRole);
     connect(addButton, &QPushButton::clicked, mRulesWidget, &DKIMManageRulesWidget::addRule);
 
-    auto importButton = new QPushButton(i18n("Import..."), this);
+    auto importButton = new QPushButton(i18nc("@action:button", "Import..."), this);
     importButton->setObjectName(QLatin1StringView("importButton"));
     buttonBox->addButton(importButton, QDialogButtonBox::ActionRole);
     connect(importButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotImport);
