@@ -1845,7 +1845,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     }
 
     QString html;
-    KMime::Content *child = node->hasContent() ? node->contents().at(0) : nullptr;
+    KMime::Content *child = node->contents().isEmpty() ? nullptr : node->contents().at(0);
 
     if (child) {
         const QString subHtml = renderAttachments(child, nextColor(bgColor));
