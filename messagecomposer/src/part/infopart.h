@@ -11,7 +11,7 @@
 #include <QStringList>
 
 #include <KMime/Headers>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <memory>
 namespace MessageComposer
 {

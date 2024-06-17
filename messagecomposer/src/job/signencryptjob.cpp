@@ -17,7 +17,7 @@
 #include "messagecomposer_debug.h"
 #include <KMime/Content>
 #include <KMime/Headers>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>

@@ -11,7 +11,7 @@
 
 #include <Akonadi/Item>
 #include <KMime/Headers>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 namespace KIdentityManagementCore
 {

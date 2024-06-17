@@ -12,7 +12,7 @@
 
 #include <Akonadi/Item>
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include "messagelist_export.h"
 #include <QList>

@@ -12,7 +12,7 @@
 
 #include "messageviewer/spamheaderanalyzer.h"
 #include <KMime/DateFormatter>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/viewer.h"

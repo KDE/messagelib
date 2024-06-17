@@ -10,7 +10,7 @@
 #include "job/singlepartjob.h"
 
 #include <KMime/Content>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 using namespace MessageComposer;
 

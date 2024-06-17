@@ -15,7 +15,7 @@
 #include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 class KXMLGUIClient;
 class QAbstractItemModel;

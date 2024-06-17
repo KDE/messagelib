@@ -13,7 +13,7 @@
 #include <MessageCore/StringUtil>
 
 #include <KLocalizedString>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <QApplication>
 
 using namespace MessageCore;

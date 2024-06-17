@@ -13,7 +13,7 @@
 #include <MimeTreeParser/NodeHelper>
 
 #include <KMime/DateFormatter>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <KColorScheme>
 #include <KIconLoader>

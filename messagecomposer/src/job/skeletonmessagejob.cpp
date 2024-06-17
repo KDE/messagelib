@@ -17,7 +17,7 @@
 #include "messagecomposer_debug.h"
 
 #include <KEmailAddress>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 using namespace MessageComposer;
 

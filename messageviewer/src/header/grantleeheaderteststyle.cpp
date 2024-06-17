@@ -8,7 +8,7 @@
 
 #include "header/grantleeheaderformatter.h"
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 using namespace MessageViewer;
 
