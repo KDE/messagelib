@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -405,37 +405,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "받는 사람의 키를 찾을 수 없습니다."
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "마크업 유지, 서명/암호화하지 않음(&K)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "마크업 유지, 암호화하지 않음(&K)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "마크업 유지, 서명하지 않음(&K)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "서명/암호화(마크업 삭제)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "암호화(마크업 삭제)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "서명(마크업 삭제)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -444,72 +444,72 @@ msgstr ""
 "<qt><p>HTML 메시지의 인라인 서명/암호화는 불가능합니다.</p><p>마크업을 삭제하"
 "시겠습니까?</p></qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:332
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "메시지 서명/암호화?"
 
-#: composer/composerviewbase.cpp:509
+#: composer/composerviewbase.cpp:508
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "메시지 작성기를 만들 수 없습니다."
 
-#: composer/composerviewbase.cpp:519
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "그림 크기를 조정하시겠습니까?"
 
-#: composer/composerviewbase.cpp:520
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "그림 크기 자동 조절"
 
-#: composer/composerviewbase.cpp:521
+#: composer/composerviewbase.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "자동 크기 조정"
 
-#: composer/composerviewbase.cpp:522
+#: composer/composerviewbase.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "크기 조정하지 않음"
 
-#: composer/composerviewbase.cpp:723
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP 키 만료됨"
 
-#: composer/composerviewbase.cpp:723
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME 인증서 만료됨"
 
-#: composer/composerviewbase.cpp:725
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP 키가 곧 만료됨"
 
-#: composer/composerviewbase.cpp:725
+#: composer/composerviewbase.cpp:724
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME 인증서가 곧 만료됨"
 
-#: composer/composerviewbase.cpp:800 composer/composerviewbase.cpp:814
-#: composer/composerviewbase.cpp:846
+#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
+#: composer/composerviewbase.cpp:845
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "키를 찾을 수 없습니다. 버그를 보고해 주십시오."
 
-#: composer/composerviewbase.cpp:1052 composer/composerviewbase.cpp:1323
+#: composer/composerviewbase.cpp:1051 composer/composerviewbase.cpp:1322
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "사용자가 작업을 취소함"
 
-#: composer/composerviewbase.cpp:1057
+#: composer/composerviewbase.cpp:1056
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -518,37 +518,37 @@ msgstr ""
 "메시지를 작성할 수 없음: %1\n"
 " 버그를 보고해 주십시오."
 
-#: composer/composerviewbase.cpp:1059
+#: composer/composerviewbase.cpp:1058
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "메시지를 작성할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1162
+#: composer/composerviewbase.cpp:1161
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "보낼 메시지를 대기열에 등록할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1326
+#: composer/composerviewbase.cpp:1325
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "메시지를 자동으로 저장할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1344
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "모든 데이터를 파일로 저장할 수 없습니다."
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1347
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "파일을 끝마칠 수 없습니다."
 
-#: composer/composerviewbase.cpp:1352
+#: composer/composerviewbase.cpp:1351
 #, kde-format
 msgid "Could not open file."
 msgstr "파일을 열 수 없습니다."
 
-#: composer/composerviewbase.cpp:1359
+#: composer/composerviewbase.cpp:1358
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -559,18 +559,18 @@ msgstr ""
 "%2\n"
 "이유: %3"
 
-#: composer/composerviewbase.cpp:1365
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "메시지를 자동으로 저장할 수 없음"
 
-#: composer/composerviewbase.cpp:1478
+#: composer/composerviewbase.cpp:1477
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "메시지를 저장할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1905
+#: composer/composerviewbase.cpp:1903
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -580,27 +580,27 @@ msgstr ""
 "작성한 메시지에서 첨부 파일을 언급했으나 실제 첨부된 파일이 없습니다.\n"
 "메시지에 파일을 첨부하시겠습니까?"
 
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1906
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "파일 첨부 알림"
 
-#: composer/composerviewbase.cpp:1909
+#: composer/composerviewbase.cpp:1907
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "파일 첨부(&A)..."
 
-#: composer/composerviewbase.cpp:1910
+#: composer/composerviewbase.cpp:1908
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "그대로 보내기(&S)"
 
-#: composer/composerviewbase.cpp:1962
+#: composer/composerviewbase.cpp:1960
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -610,26 +610,26 @@ msgstr ""
 "받는 사람의 서명 선호도 검사 결과, 메시지에 서명 여부를 선택할 수 있습니다.\n"
 "이 메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "메시지에 서명하기?"
 
-#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
+#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "서명(&S)"
 
-#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "서명하지 않음(&N)"
 
-#: composer/composerviewbase.cpp:1991
+#: composer/composerviewbase.cpp:1989
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -638,27 +638,27 @@ msgstr ""
 "다음 수신자에 대한 서명 선호가 충돌합니다.\n"
 "이 메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2018
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr "메시지 서명을 요청했지만 프로필에 대한 올바른 서명 키가 없습니다."
 
-#: composer/composerviewbase.cpp:2023
+#: composer/composerviewbase.cpp:2021
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "서명하지 않고 보내기?"
 
-#: composer/composerviewbase.cpp:2024
+#: composer/composerviewbase.cpp:2022
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "서명하지 않고 보내기(&U)"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -669,7 +669,7 @@ msgstr ""
 "부분적으로 서명한 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
 "모든 부분에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -680,30 +680,30 @@ msgstr ""
 "서명하지 않은 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
 "메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2046
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "모두 서명하기(&S)"
 
-#: composer/composerviewbase.cpp:2046
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign"
 msgstr "서명(&S)"
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "서명 없는 메시지 경고"
 
-#: composer/composerviewbase.cpp:2051
+#: composer/composerviewbase.cpp:2049
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "그대로 보내기(&A)"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -712,7 +712,7 @@ msgstr ""
 "모든 수신자의 올바른 신뢰할 수 있는 암호 키를 찾았습니다.\n"
 "메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2101
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -722,32 +722,32 @@ msgstr ""
 "받는 사람의 암호화 선호도 검사 결과, 암호화 여부를 선택할 수 있습니다.\n"
 "이 메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2137
+#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "메시지 암호화?"
 
-#: composer/composerviewbase.cpp:2108
+#: composer/composerviewbase.cpp:2106
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "서명 및 암호화(&E)"
 
-#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt"
 msgstr "암호화(&E)"
 
-#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Sign Only"
 msgstr "서명만(&S)"
 
-#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Send As-Is"
 msgstr "그대로 보내기(&S)"
 
-#: composer/composerviewbase.cpp:2130
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -756,7 +756,7 @@ msgstr ""
 "다음 수신자에 대한 암호화 선호가 충돌합니다.\n"
 "이 메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1322
+#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -764,14 +764,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "암호화(&E)"
 
-#: composer/composerviewbase.cpp:2139
+#: composer/composerviewbase.cpp:2137
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "암호화하지 않음(&N)"
 
-#: composer/composerviewbase.cpp:2159
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -781,20 +781,20 @@ msgstr ""
 "메시지 암호화를 요청했고 자기 자신에게 복사본을 보내기로 했지만 이 프로필에 "
 "대한 올바른 신뢰할 수 있는 암호화 키를 찾지 못했습니다."
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2163
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "암호화하지 않고 보내기?"
 
-#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1348
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "암호화하지 않고 보냄(&U)"
 
-#: composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2179
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -807,7 +807,7 @@ msgstr ""
 "수 있습니다.\n"
 "모든 부분을 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2186
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -820,12 +820,12 @@ msgstr ""
 "있습니다.\n"
 "메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "모두 암호화(&E)"
 
-#: composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2191
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1802,7 +1802,7 @@ msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "이 메시지를 받을 이메일 주소 목록 선택"
 
-#: recipient/recipientseditor.cpp:115
+#: recipient/recipientseditor.cpp:112
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."

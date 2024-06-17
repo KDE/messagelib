@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2024-05-26 12:07+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1669,7 +1669,7 @@ msgstr ""
 "wysłaniu odpowiedzi."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1561
+#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Czcionka &stałej szerokości"
@@ -1838,41 +1838,41 @@ msgstr "&Poziom samoczynnego zwijania:"
 msgid "&Minimum font size:"
 msgstr "&Minimalny rozmiar czcionki:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Plik o nazwie \"%1\" już istnieje. Zastąpić go?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Czy zastąpić plik?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Zapisz załącznik do"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "załącznik.1"
 
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:182
 #, kde-format
 msgid "Save Attachment"
 msgstr "Zapisz załącznik"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "załącznik.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1880,38 +1880,38 @@ msgid ""
 msgstr ""
 "Część %1 wiadomości jest zaszyfrowana. Zachować szyfrowanie przy zapisie?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "Pytanie programu KMail"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:306
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Zachowaj szyfrowanie"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Nie zachowuj"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "Część %1 wiadomości jest podpisana. Zachować podpis przy zapisie?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:319
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Zachowaj podpis"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1920,33 +1920,33 @@ msgid ""
 msgstr ""
 "<qt>Nie można zapisać pliku<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Błąd podczas zapisywania załącznika"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Błąd podczas zapisywania załącznika"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Brak załączników do zapisania."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, kde-format
 msgid "message"
 msgstr "wiadomość"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "wiadomości email (*.mbox);;wszystkie pliki (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1954,45 +1954,45 @@ msgstr[0] "Zapisz wiadomość"
 msgstr[1] "Zapisz wiadomości"
 msgstr[2] "Zapisz wiadomości"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Nie można wczytać pliku %1."
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Błąd wczytywania wiadomości"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Nie można utworzyć pliku %1."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Błąd zapisywania wiadomości"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "We cannot save message."
 msgstr "Nie możemy zapisać wiadomości."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
 msgstr "Błąd zapisywania wiadomości"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Usunięty: %1"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -2001,12 +2001,12 @@ msgstr ""
 "Usunąłeś załącznik z tej wiadomości. Pierwotne nagłówki MIME dla tego "
 "załącznika to:"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, kde-format
 msgid "Open &with %1"
 msgstr "Otwórz &w %1"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -2048,7 +2048,7 @@ msgstr "Wydrukuj dokument"
 msgid "Turn on HTML rendering for this message."
 msgstr "Włącz wyświetlanie HTML dla tej wiadomości."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Wczytaj zewnętrzne odnośniki dla tej wiadomości."
@@ -2130,7 +2130,7 @@ msgstr "&Otwórz w książce adresowej"
 msgid "&Copy Email Address"
 msgstr "S&kopiuj adres e-mail"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2710
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adres skopiowano do schowka."
@@ -2187,20 +2187,20 @@ msgstr "Wykonaj"
 msgid "Loading message..."
 msgstr "Wczytywanie wiadomości..."
 
-#: viewer/viewer_p.cpp:345
+#: viewer/viewer_p.cpp:344
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "Usunięcie załącznika może unieważnić podpis cyfrowy tej wiadomości."
 
-#: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Usuń załącznik"
 
-#: viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:379
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2209,354 +2209,354 @@ msgstr ""
 "Usuwanie załącznika z zaszyfrowanej wiadomości lub ze starego stylu "
 "wiadomości jest nieobsługiwane."
 
-#: viewer/viewer_p.cpp:429
+#: viewer/viewer_p.cpp:428
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Otwórz w"
 
-#: viewer/viewer_p.cpp:447
+#: viewer/viewer_p.cpp:446
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Inne..."
 
-#: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
+#: viewer/viewer_p.cpp:448 viewer/viewer_p.cpp:461
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otwórz w..."
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1740
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Otwórz"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1747
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Pokaż"
 
-#: viewer/viewer_p.cpp:548
+#: viewer/viewer_p.cpp:547
 #, kde-format
 msgid "Scroll To"
 msgstr "Przewiń do"
 
-#: viewer/viewer_p.cpp:553
+#: viewer/viewer_p.cpp:552
 #, kde-format
 msgid "Save As..."
 msgstr "Zapisz jako..."
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1757
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1762
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Usuń załącznik"
 
-#: viewer/viewer_p.cpp:581
+#: viewer/viewer_p.cpp:580
 #, kde-format
 msgid "Reply To Author"
 msgstr "Odpowiedz autorowi"
 
-#: viewer/viewer_p.cpp:589
+#: viewer/viewer_p.cpp:588
 #, kde-format
 msgid "Reply To All"
 msgstr "Odpowiedz wszystkim"
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1767
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "Właściwości"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:731
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "Program pocztowy KDE"
 
-#: viewer/viewer_p.cpp:1280
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Obejrzyj załącznik: %1"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Z&ałączniki"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Wybierz styl wyświetlania załączników"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "J&ako ikony"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Pokaż wszystkie załączniki jako ikony. Ich zawartość będzie wyświetlana po "
 "naciśnięciu na ikonę."
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Mądrze"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Pokaż załączniki zgodnie z zaleceniami nadawcy."
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "W treśc&i"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "Pokaż wszystkie załączniki bezpośrednio w wiadomości (jeśli to możliwe)"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Ukryj"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nie pokazuj załączników przy przeglądaniu wiadomości"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Tylko w nagłówku"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Pokaż załączniki tylko w nagłówku wiadomości pocztowej"
 
-#: viewer/viewer_p.cpp:1523
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "U&staw kodowanie"
 
-#: viewer/viewer_p.cpp:1528 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Samoczynnie"
 
-#: viewer/viewer_p.cpp:1538
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "Skopiuj tekst"
 
-#: viewer/viewer_p.cpp:1545
+#: viewer/viewer_p.cpp:1543
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Zaznacz cały tekst"
 
-#: viewer/viewer_p.cpp:1551 viewer/viewer_p.cpp:2064
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Skopiuj adres odnośnika"
 
-#: viewer/viewer_p.cpp:1556
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Otwórz adres URL"
 
-#: viewer/viewer_p.cpp:1567
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Pokaż strukturę wiadomości"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1570
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Pokaż źródło"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
 msgstr "Zapi&sz wiadomość..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1581
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Zapi&sz format wyświetlania"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Wyze&ruj format wyświetlania"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1592
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Przewiń wiadomość w górę"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1597
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Przewiń wiadomość w dół"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1602
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Przewiń wiadomość w górę (dalej)"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1607
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Przewiń wiadomość w dół (dalej)"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Przełącz tryb wyświetlania HTML"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Przełącz tryb wyświetlania pomiędzy HTML i zwykłym tekstem"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Wczytaj zewnętrzne odnośniki"
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Wypowiedz tekst"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1636
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Udostępnij tekst..."
 
-#: viewer/viewer_p.cpp:1656
+#: viewer/viewer_p.cpp:1654
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Skopiuj położenie obrazu"
 
-#: viewer/viewer_p.cpp:1662
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Znajdź w wiadomości..."
 
-#: viewer/viewer_p.cpp:1671
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Wyłącz emotikony"
 
-#: viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Zapisz j&ako..."
 
-#: viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Otwórz w..."
 
-#: viewer/viewer_p.cpp:1752
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Zapisz wszystkie załączniki..."
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "Sieć jest uszkodzona."
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "Sprawdź adres URL na phishing"
 
-#: viewer/viewer_p.cpp:1987
+#: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Adres URL %1 nie jest prawidłowy."
 
-#: viewer/viewer_p.cpp:1987
+#: viewer/viewer_p.cpp:1997
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Sprawdź adres URL na phishing"
 
-#: viewer/viewer_p.cpp:2007
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Ta strona internetowa jest oszustwem, czy chcesz ją wyświetlić mimo tego?"
 
-#: viewer/viewer_p.cpp:2008
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Szkodliwa"
 
-#: viewer/viewer_p.cpp:2062
+#: viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Skopiuj adres pocztowy"
 
-#: viewer/viewer_p.cpp:2145
+#: viewer/viewer_p.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Wiadomość jako zwykły tekst"
 
-#: viewer/viewer_p.cpp:2716
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Adres URL skopiowano do schowka."
 
-#: viewer/viewer_p.cpp:2868
+#: viewer/viewer_p.cpp:2888
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nieudane wczytywanie wiadomości: %1."
 
-#: viewer/viewer_p.cpp:2873
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message not found."
 msgstr "Nie znaleziono wiadomości."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-20 00:37+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2021-01-23 14:24+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -23,30 +23,30 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Névtelen"
 
-#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Nem megfelelő titkosítási bővítőmodul."
 
-#: src/messagepart.cpp:820 src/messagepart.cpp:1307
+#: src/messagepart.cpp:819 src/messagepart.cpp:1306
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nem található megfelelő titkosítási bővítőmodul."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nem található %1 bővítőmodul."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr ""
 "A(z) „%1” titkosítási bővítőmodul nem tud elektronikus aláírásokat "
 "ellenőrizni."
 
-#: src/messagepart.cpp:828
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -55,17 +55,17 @@ msgstr ""
 "Az üzenet elektronikusan alá van írva, de az aláírás hitelessége nem "
 "ellenőrizhető.<br />A hiba oka: %1"
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "A(z) „%1” titkosítási bővítőmodul nem tud üzeneteket dekódolni."
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "A(z) „%1” titkosítási bővítőmodul nem tudta dekódolni az adatokat."
 
-#: src/messagepart.cpp:1312
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Error: %1"
 msgstr "Hiba: %1"

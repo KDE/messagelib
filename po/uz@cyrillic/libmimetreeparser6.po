@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-20 00:37+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -25,28 +25,28 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Номсиз"
 
-#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:820 src/messagepart.cpp:1307
+#: src/messagepart.cpp:819 src/messagepart.cpp:1306
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:824
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
 
-#: src/messagepart.cpp:828
+#: src/messagepart.cpp:827
 #, fuzzy, kde-format
 #| msgid "The validity of the signature cannot be verified."
 msgid ""
@@ -54,17 +54,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Имзонинг ҳақиқийлигини текшириб бўлмади."
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1308
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1310
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
 
-#: src/messagepart.cpp:1312
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Error: %1"
 msgstr "Хато: %1"

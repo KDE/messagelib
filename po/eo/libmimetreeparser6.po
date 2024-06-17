@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-20 00:37+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2023-04-18 06:31+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -28,28 +28,28 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Sennoma"
 
-#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Malkorekta ĉifrokromprogramo."
 
-#: src/messagepart.cpp:820 src/messagepart.cpp:1307
+#: src/messagepart.cpp:819 src/messagepart.cpp:1306
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Neniu taŭga kromaĵo estas trovita."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Kromaĵo por %1 ne estas trovita."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:824
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Ĉifrokromaĵo \"%1\" ne povas kontroli subskribojn."
 
-#: src/messagepart.cpp:828
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -58,17 +58,17 @@ msgstr ""
 "La mesaĝo estas subskribita, sed la valideco de la subskribo ne estis "
 "kontrolebla. <br />Kaŭzo: %1"
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Ĉifrokromaĵo \"%1\" ne povas deĉifri mesaĝojn."
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Ĉifrokromaĵo %1 ne povis deĉifri la datumojn."
 
-#: src/messagepart.cpp:1312
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"

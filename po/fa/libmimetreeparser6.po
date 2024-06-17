@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-20 00:37+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -31,29 +31,29 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "بدون نام"
 
-#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "وصله رمز نادرست."
 
-#: src/messagepart.cpp:820 src/messagepart.cpp:1307
+#: src/messagepart.cpp:819 src/messagepart.cpp:1306
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "وصله رمز مناسبی یافت نشد."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "وصله %1 یافت نشد."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:824
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "وصله رمز »%1«، نمی‌تواند امضاها را وارسی کند."
 
-#: src/messagepart.cpp:828
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -61,17 +61,17 @@ msgid ""
 msgstr ""
 "پیام امضا نشده است، اما اعتبار امضا را نمی‌توان وارسی کرد. <br />دلیل: %1"
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1308
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "وصله رمز »%1« نمی‌تواند پیامها را سرگشایی کند."
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1310
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "وصله رمز »%1« نمی‌تواند داده را سرگشایی کند."
 
-#: src/messagepart.cpp:1312
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Error: %1"
 msgstr "خطا: %1"
