@@ -315,8 +315,7 @@ bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
     const KMime::Content *const topLevel = node->topLevel();
     const KMime::Content *cur = node;
     while (cur && cur != topLevel) {
-        const bool parentIsMessage =
-            cur->parent() && cur->parent()->contentType(false) && cur->parent()->contentType(false)->mimeType().toLower() == "message/rfc822";
+        const bool parentIsMessage = cur->parent() && cur->parent()->contentType() && cur->parent()->contentType()->mimeType().toLower() == "message/rfc822";
         if (parentIsMessage && cur->parent() != topLevel) {
             return true;
         }
