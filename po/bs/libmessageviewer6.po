@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2014-01-31 19:13+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -473,6 +473,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Export filters..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Izvezi filtere..."
 
@@ -485,12 +486,14 @@ msgstr "Konfiguracija vlastitog zaglavlja ..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "&Uvezi"
 
@@ -2863,12 +2866,14 @@ msgstr "Ne mogu da uredim prilog"
 #, fuzzy, kde-format
 #| msgid "Save Message"
 #| msgid_plural "Save Messages"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Snimi poruku"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Decrypt Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Dešifruj poruku"
 

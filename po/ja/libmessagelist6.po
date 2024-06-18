@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1067,8 +1067,7 @@ msgstr "テーマ"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "設定..."
@@ -1204,9 +1203,11 @@ msgid "Saved Filter"
 msgstr "設定..."
 
 #: core/widgets/searchlinestatus.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
 msgid "Clear Filter"
-msgstr ""
+msgstr "設定..."
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
@@ -1454,6 +1455,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "不明"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "設定..."
+
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
@@ -1515,30 +1523,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr "メッセージの集約方法をカスタマイズ"
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Aggregation"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "新しい集約方法"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Aggregation"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "集約方法を複製"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "集約方法"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "集約方法"
 
 #: utils/configureaggregationsdialog.cpp:160
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Aggregation"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "集約方法を削除"
 
@@ -1546,6 +1561,11 @@ msgstr "集約方法を削除"
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "名前のない集約方法"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
+msgstr "新しい集約方法"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
@@ -1572,28 +1592,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "テーマをカスタマイズ"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "新しいテーマ"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "テーマを複製"
 
 #: utils/configurethemesdialog.cpp:138
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Export Theme..."
-msgstr ""
+msgstr "テーマを複製"
 
 #: utils/configurethemesdialog.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Import Theme..."
-msgstr ""
+msgstr "テーマを複製"
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "テーマを削除"
 
@@ -1601,6 +1631,11 @@ msgstr "テーマを削除"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "名前のないテーマ"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "新しいテーマ"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

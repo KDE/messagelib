@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -487,6 +487,7 @@ msgstr "বার্তা তালিকা - তারিখ"
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "&আমদানি"
 
@@ -500,12 +501,14 @@ msgstr "অ্যাকাউন্ট কনফিগার করো"
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add Entry..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "এন্ট্রি যোগ করো..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "&আমদানি"
 
@@ -2841,12 +2844,14 @@ msgstr "অ্যাটাচমেন্ট-এর নাম:"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "&Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "পরবর্তী বার্তা (&ন)"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "পূর্ববর্তী &অপঠিত বার্তা"
 

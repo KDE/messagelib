@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-30 19:21+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -424,7 +424,9 @@ msgid "Ignore if not signed"
 msgstr "Игнориране, ако не е подписано"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Експортиране..."
 
@@ -435,12 +437,16 @@ msgid "Configure Rule"
 msgstr "Конфигуриране на правило"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Rule..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Добавяне на правило..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Импортиране..."
 
@@ -2722,11 +2728,15 @@ msgid "KMail was unable to open the attachment."
 msgstr "KMail не можа да отвори прикачения файл."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Следващо съобщение"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Previous Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"

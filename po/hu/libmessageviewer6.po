@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -426,7 +426,9 @@ msgid "Ignore if not signed"
 msgstr "Mellőzés, ha nincs aláírva"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Exportálás..."
 
@@ -437,12 +439,16 @@ msgid "Configure Rule"
 msgstr "Szabály beállítása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Rule..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Szabály hozzáadása…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importálás..."
 
@@ -2740,12 +2746,16 @@ msgid "KMail was unable to open the attachment."
 msgstr "A KMail nem tudta megnyitni a mellékletet."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Következő üzenet"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Previous Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
 

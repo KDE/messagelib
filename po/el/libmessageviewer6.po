@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2014-04-19 15:12+0200\n"
 "Last-Translator: Dimitrios Glentadakis <dglent@free.fr>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -482,7 +482,9 @@ msgid "Ignore if not signed"
 msgstr "Το μήνυμα δεν θα έχει υπογραφή"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Εξαγωγή..."
 
@@ -496,11 +498,14 @@ msgstr "Ρύθμιση λογαριασμού"
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add G&roup..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Προσθήκη ομά&δας..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Εισαγωγή..."
 
@@ -2921,12 +2926,14 @@ msgstr "Αδυναμία επεξεργασίας συνημμένου"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "&Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Επόμε&νο μήνυμα"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Προηγούμενο μη αναγνωσμένο &μήνυμα"
 

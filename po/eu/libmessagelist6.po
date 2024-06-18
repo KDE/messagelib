@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-03-24 10:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1065,8 +1065,7 @@ msgstr "Gaia"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Konfiguratu..."
@@ -1207,7 +1206,9 @@ msgid "Saved Filter"
 msgstr "Gordetako iragazkia"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "Hustu iragazkia"
 
@@ -1453,6 +1454,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "Konfiguratu..."
+
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
@@ -1513,28 +1521,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr "mezuak multzokatzeko moduak norbere erara egokitu"
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Aggregation"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Multzokatze berria"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Aggregation"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Klonatu multzokatzea"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation..."
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Esportatu multzokatzea..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation..."
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Inportatu multzokatzea..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Aggregation"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Ezabatu multzokatzea"
 
@@ -1542,6 +1559,11 @@ msgstr "Ezabatu multzokatzea"
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Izengabeko multzokatzea"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
+msgstr "Multzokatze berria"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
@@ -1565,28 +1587,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Gaiak norbere erara egokitu"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Gai berria"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Klonatu gaia"
 
 #: utils/configurethemesdialog.cpp:138
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme..."
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Esportatu gaia..."
 
 #: utils/configurethemesdialog.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme..."
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Inportatu gaia..."
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Ezabatu gaia"
 
@@ -1594,6 +1626,11 @@ msgstr "Ezabatu gaia"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Gai izengabea"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "Gai berria"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

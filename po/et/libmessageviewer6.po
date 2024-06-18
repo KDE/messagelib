@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -442,7 +442,9 @@ msgid "Ignore if not signed"
 msgstr "Eiramine, kui on allkirjastamata"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Ekspordi..."
 
@@ -453,12 +455,16 @@ msgid "Configure Rule"
 msgstr "Reegli seadistamine"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Rule..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Lisa reegel ..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Impordi..."
 
@@ -2769,12 +2775,16 @@ msgid "KMail was unable to open the attachment."
 msgstr "Kaasatud faili muutmine ei ole võimalik"
 
 #: widgets/shownextmessagewidget.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Järgmine kiri"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Previous Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Eelmine kiri"
 

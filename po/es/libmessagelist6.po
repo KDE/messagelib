@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-28 16:13+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1063,8 +1063,7 @@ msgstr "Tema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Configurar..."
@@ -1201,7 +1200,9 @@ msgid "Saved Filter"
 msgstr "Filtro guardado"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "Despejar filtro"
 
@@ -1436,6 +1437,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Desconocida"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "Configurar..."
+
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
@@ -1490,28 +1498,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Personalizar modos de agregación de mensajes"
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Aggregation"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Nueva agregación"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Aggregation"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Clonar agregación"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation..."
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Exportar agregación..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation..."
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Importar agregación..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Aggregation"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Borrar agregación"
 
@@ -1519,6 +1536,11 @@ msgstr "Borrar agregación"
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Agregación sin nombre"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
+msgstr "Nueva agregación"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
@@ -1542,28 +1564,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Personalizar temas"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nuevo tema"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Clonar tema"
 
 #: utils/configurethemesdialog.cpp:138
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme..."
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Exportar tema..."
 
 #: utils/configurethemesdialog.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme..."
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Importar tema..."
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Borrar tema"
 
@@ -1571,6 +1603,11 @@ msgstr "Borrar tema"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Tema sin nombre"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "Nuevo tema"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

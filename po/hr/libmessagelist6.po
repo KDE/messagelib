@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -1080,8 +1080,7 @@ msgstr "Tema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Podesi…"
@@ -1222,6 +1221,7 @@ msgstr "&Napravi filtar"
 #: core/widgets/searchlinestatus.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "&Napravi filtar"
 
@@ -1472,6 +1472,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Nepoznato"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "Podesi…"
+
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
@@ -1533,30 +1540,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Prilagodi načine agregacija poruka"
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Aggregation"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Nova agregacija"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Aggregation"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Kopiraj agregaciju"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Agregacija"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Agregacija"
 
 #: utils/configureaggregationsdialog.cpp:160
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Aggregation"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Izbriši agregaciju"
 
@@ -1564,6 +1578,11 @@ msgstr "Izbriši agregaciju"
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Neimenovana agregacija"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
+msgstr "Nova agregacija"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
@@ -1591,30 +1610,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Prilagodi teme"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nova tema"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Kopiraj temu"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Expire"
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Izbaci stare poruke"
 
 #: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "&Uvezi"
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Izbriši temu"
 
@@ -1622,6 +1649,11 @@ msgstr "Izbriši temu"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Neimenovana tema"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "Nova tema"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

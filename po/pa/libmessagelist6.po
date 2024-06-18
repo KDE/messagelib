@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1100,8 +1100,7 @@ msgstr "ਥੀਮ"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "ਸੰਰਚਨਾ..."
@@ -1250,6 +1249,7 @@ msgstr "ਲਿਸਟ ਸੰਭਾਲੋ..."
 #: core/widgets/searchlinestatus.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "ਫਿਲਟਰ ਬਣਾਓ(&C)"
 
@@ -1517,6 +1517,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "ਸੰਰਚਨਾ..."
+
 #: utils/aggregationeditor.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "View->"
@@ -1578,33 +1585,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
 #| msgid "No Suggestions"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
 
 #: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
 #| msgid "No Suggestions"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "No Suggestions"
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "No Suggestions"
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "ਮਾਮਲਾ ਹਟਾਓ(&h)"
 
@@ -1612,6 +1623,12 @@ msgstr "ਮਾਮਲਾ ਹਟਾਓ(&h)"
 #, fuzzy, kde-format
 #| msgid "No Suggestions"
 msgid "Unnamed Aggregation"
+msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, fuzzy, kde-format
+#| msgid "No Suggestions"
+msgid "New Aggregation"
 msgstr "ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ"
 
 #: utils/configureaggregationsdialog.cpp:413
@@ -1640,30 +1657,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "ਕਸਟਮਾਈਜ਼ ਥੀਮ"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "ਨਵਾਂ ਥੀਮ"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "ਥੀਮ ਕਲੋਨ  ਕਰੋ"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "ਐਕਸਪੋਰਟ..."
 
 #: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "ਇੰਪੋਰਟ..."
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "ਥੀਮ ਹਟਾਓ"
 
@@ -1671,6 +1696,11 @@ msgstr "ਥੀਮ ਹਟਾਓ"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "ਬੇਨਾਮ ਥੀਮ"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "ਨਵਾਂ ਥੀਮ"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

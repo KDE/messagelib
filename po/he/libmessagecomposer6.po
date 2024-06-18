@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-05-23 08:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -217,7 +217,7 @@ msgstr "רענון"
 
 #: attachment/attachmentcontrollerbase.cpp:677
 #: attachment/attachmentcontrollerbase.cpp:703
-#: attachment/attachmentcontrollerbase.cpp:754
+#: attachment/attachmentcontrollerbase.cpp:753
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail לא הצליח לכתוב את הקובץ המצורף לקובץ זמני."
@@ -234,23 +234,23 @@ msgstr "לא ניתן לפתוח צרופה"
 msgid "KMail was unable to open the attachment."
 msgstr "KMail לא הצליח לפתוח את הקובץ המצורף."
 
-#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "לא ניתן לערוך קובץ מצורף"
 
-#: attachment/attachmentcontrollerbase.cpp:796
+#: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
 msgid "unnamed"
 msgstr "ללא_שם"
 
-#: attachment/attachmentcontrollerbase.cpp:799
+#: attachment/attachmentcontrollerbase.cpp:798
 #, kde-format
 msgid "Save Attachment As"
 msgstr "שמירת הצרופה בשם"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -259,62 +259,62 @@ msgstr ""
 "הקובץ %1 קיים.\n"
 "להחליף אותו?"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "שמירה לקובץ"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "ה&חלפה"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:850
+#: attachment/attachmentcontrollerbase.cpp:929
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "לצרף את התיקייה „%1”?"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "צירוף תיקייה"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "צירוף"
 
-#: attachment/attachmentcontrollerbase.cpp:888
+#: attachment/attachmentcontrollerbase.cpp:887
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "צירוף תיקייה"
 
-#: attachment/attachmentcontrollerbase.cpp:896
+#: attachment/attachmentcontrollerbase.cpp:895
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "צירוף קובץ"
 
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "צירוף הקובץ נכשל"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:984
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "צירוף מפתח OpenPGP ציבורי"
 
-#: attachment/attachmentcontrollerbase.cpp:986
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "נא לבחור את המפתח הציבורי לצירוף."
@@ -397,37 +397,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "לא נמצאו נתוני מפתחות לנמענים."
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&להשאיר את הסימון, לא לחתום/להצפין"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&להשאיר את הסימון, לא להצפין"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&להשאיר את הסימון, לא לחתום"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "חתימה/הצפנה (מחיקת הסימון)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "הצפנה (מחיקת הסימון)"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "חתימה (מחיקת הסימון)"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -436,72 +436,72 @@ msgstr ""
 "<qt><p>אי אפשר לחתום/להצפין הודעת HTML כחלק מההודעה;</p><p>למחוק את הסימון "
 "שלך?</p></qt>"
 
-#: composer/composerviewbase.cpp:332
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "לחתום/להצפין את ההודעה?"
 
-#: composer/composerviewbase.cpp:508
+#: composer/composerviewbase.cpp:506
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "יצירת מחבר הודעות לא התאפשרה."
 
-#: composer/composerviewbase.cpp:518
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "לשנות את גודל התמונות?"
 
-#: composer/composerviewbase.cpp:519
+#: composer/composerviewbase.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "לשנות גודל תמונות אוטומטית"
 
-#: composer/composerviewbase.cpp:520
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "לשנות גודל אוטומטית"
 
-#: composer/composerviewbase.cpp:521
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "לא לשנות את הגודל"
 
-#: composer/composerviewbase.cpp:722
+#: composer/composerviewbase.cpp:720
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "תוקף מפתח ה־OpenPGP פג"
 
-#: composer/composerviewbase.cpp:722
+#: composer/composerviewbase.cpp:720
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "תוקף אישור ה־S/MIME פג"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "תוקף מפתח ה־OpenPGP יפוג בקרוב"
 
-#: composer/composerviewbase.cpp:724
+#: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "תוקף אישור ה־S/MIME יפוג בקרוב"
 
-#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
-#: composer/composerviewbase.cpp:845
+#: composer/composerviewbase.cpp:797 composer/composerviewbase.cpp:811
+#: composer/composerviewbase.cpp:843
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "פתרון המפתחות נכשל. נא לדווח על תקלה."
 
-#: composer/composerviewbase.cpp:1051 composer/composerviewbase.cpp:1322
+#: composer/composerviewbase.cpp:1048 composer/composerviewbase.cpp:1319
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "המשימה בוטלה על ידי המשתמש"
 
-#: composer/composerviewbase.cpp:1056
+#: composer/composerviewbase.cpp:1053
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -510,37 +510,37 @@ msgstr ""
 "לא ניתן לכתוב הודעה: %1 \n"
 " נא לדווח על התקלה הזאת."
 
-#: composer/composerviewbase.cpp:1058
+#: composer/composerviewbase.cpp:1055
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "לא ניתן לכתוב הודעה: %1"
 
-#: composer/composerviewbase.cpp:1161
+#: composer/composerviewbase.cpp:1158
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "קרו כל מיני בעיות בניסיון להוסיף את ההודעה בתור לשליחה: %1"
 
-#: composer/composerviewbase.cpp:1325
+#: composer/composerviewbase.cpp:1322
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "לא ניתן לשמור הודעה אוטומטית: %1"
 
-#: composer/composerviewbase.cpp:1344
+#: composer/composerviewbase.cpp:1341
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "לא ניתן לכתוב את כל הנתונים לקובץ."
 
-#: composer/composerviewbase.cpp:1347
+#: composer/composerviewbase.cpp:1344
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "לא ניתן לסיים את הטיפול בהקובץ."
 
-#: composer/composerviewbase.cpp:1351
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not open file."
 msgstr "לא ניתן לפתוח קובץ."
 
-#: composer/composerviewbase.cpp:1358
+#: composer/composerviewbase.cpp:1355
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -551,18 +551,18 @@ msgstr ""
 "%2\n"
 "סיבה: %3"
 
-#: composer/composerviewbase.cpp:1364
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "שמירת ההודעה אוטומטית נכשלה"
 
-#: composer/composerviewbase.cpp:1477
+#: composer/composerviewbase.cpp:1474
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "שמירת ההודעה נכשלה: %1"
 
-#: composer/composerviewbase.cpp:1903
+#: composer/composerviewbase.cpp:1895
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -572,25 +572,25 @@ msgstr ""
 "נראה שההודעה שכתבת מתייחסת לקובץ מצורף אבל לא צירפת שום דבר.\n"
 "לצרף קובץ להודעה שלך?"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1898
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "תזכורת צרופות"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1899
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "צירוף &קובץ…"
 
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&שליחה ללא שינוי"
 
-#: composer/composerviewbase.cpp:1960
+#: composer/composerviewbase.cpp:1952
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -601,25 +601,25 @@ msgstr ""
 "או לא.\n"
 "לחתום על ההודעה הזאת?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
+#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "לחתום על ההודעה?"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "ל&חתום"
 
-#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&לא לחתום"
 
-#: composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1981
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -628,26 +628,26 @@ msgstr ""
 "יש העדפות חתימה סותרות לנמענים האלה.\n"
 "לחתום על ההודעה הזאת?"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2008
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr "ביקשת לחתום על ההודעה הזאת אך לא הוגדרו מפתחות חתימה תקפים לזהות הזאת."
 
-#: composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2013
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "לשלוח ללא חתימה?"
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2014
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "שליחה ללא ח&תימה"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2029
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -658,7 +658,7 @@ msgstr ""
 "שליחת הודעה חתומה באופן חלקי עלולה להפר את מדיניות האתר.\n"
 "לחתום על כל החלקים במקום?"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2033
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -669,29 +669,29 @@ msgstr ""
 "שליחת הודעה לא חתומה עלולה להפר את מדיניות האתר.\n"
 "לחתום על ההודעה במקום?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2036
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "חתימה על &כל החלקים"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2036
 #, kde-format
 msgid "&Sign"
 msgstr "&חתימה"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "אזהרת הודעה לא חתומה"
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "שליחה &ללא שינוי"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2088
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -700,7 +700,7 @@ msgstr ""
 "מפתחות הצפנה תקפים ואמינים נמצאו לכל הנמענים.\n"
 "להצפין את ההודעה הזאת?"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2091
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -710,32 +710,32 @@ msgstr ""
 "חקירת העדפות ההצפנה של הנמען מראה שתופיע שאלה האם להצפין את ההודעה או לא.\n"
 "להצפין את ההודעה?"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
+#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "להצפין את ההודעה?"
 
-#: composer/composerviewbase.cpp:2106
+#: composer/composerviewbase.cpp:2098
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "חתימה וה&צפנה"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2180
 #, kde-format
 msgid "&Encrypt"
 msgstr "ה&צפנה"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2185
 #, kde-format
 msgid "&Sign Only"
 msgstr "חתימה &בלבד"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2185
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&שליחה ללא שינוי"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2120
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -744,20 +744,20 @@ msgstr ""
 "יש העדפות הצפנה סותרות לנמענים האלה.\n"
 "להצפין את ההודעה הזאת?"
 
-#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1322
+#: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "לה&צפין"
 
-#: composer/composerviewbase.cpp:2137
+#: composer/composerviewbase.cpp:2129
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&לא להצפין"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2149
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -767,19 +767,19 @@ msgstr ""
 "ביקשת להצפין את ההודעה הזאת ולהצפין עותק לעצמך, אך לא נמצאו מפתחות הצפנה "
 "אמינים לזהות הזאת."
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "לשלוח ללא הצפנה?"
 
-#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "לשלוח ל&לא הצפנה"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2171
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -791,7 +791,7 @@ msgstr ""
 "שליחת הודעה מוצפנת חלקית יכולה להפר את מדיניות האתר ו/או להדליף מידע רגיש.\n"
 "להצפין את כל החלקים במקום?"
 
-#: composer/composerviewbase.cpp:2184
+#: composer/composerviewbase.cpp:2176
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -803,12 +803,12 @@ msgstr ""
 "שליחת הודעות לא מוצפות עלולה להפר את מדיניות האתר ו/או להדליף מידע רגיש.\n"
 "להצפין את ההודעות במקום?"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2180
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "להצפין את &כל החלקים"
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2183
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1195,7 +1195,9 @@ msgid "Select Image Format"
 msgstr "בחירת סוג תמונה"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Format..."
+msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "בחירת סוג…"
 
@@ -1500,68 +1502,22 @@ msgstr ""
 "<p>אירעה שגיאה בניסיון לייצא את המפתח מהמנגנון:</p><p><b>לא נמצא מפתח תקף "
 "למשתמש %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:59
+#: job/maintextjob.cpp:58
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr "התקבלה בקשה להשתמש בגלישת שורות, אך לא ויתור על טקסט פשוט גולש."
 
-#: job/maintextjob.cpp:66
+#: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "התקבלה בקשה לא להשתמש בגלישת שורות, אך לא ויתור על טקסט פשוט נקי."
 
-#: job/maintextjob.cpp:81
-#, kde-format
-msgid ""
-"No charsets were available for encoding. Please check your configuration and "
-"make sure it contains at least one charset for sending."
-msgstr ""
-"לא נמצאו ערכות תווים לקידוד. נא לבדוק את ההגדרות שלך ולוודא שהן מכילות לפחות "
-"ערכת תווים אחת לשליחה."
-
-#: job/maintextjob.cpp:99
-#, kde-format
-msgid ""
-"Encoding the message with %1 will lose some characters.\n"
-"Do you want to continue?"
-msgstr ""
-"קידוד ההודעה עם %1 יאבד כמה מהתווים.\n"
-"להמשיך?"
-
-#: job/maintextjob.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Some Characters Will Be Lost"
-msgstr "חלק מהתווים יאבדו"
-
-#: job/maintextjob.cpp:103
-#, kde-format
-msgctxt "@action:button"
-msgid "Lose Characters"
-msgstr "אובדן תווים"
-
-#: job/maintextjob.cpp:104
-#, kde-format
-msgctxt "@action:button"
-msgid "Change Encoding"
-msgstr "החלפת קידוד"
-
-#: job/maintextjob.cpp:107
-#, kde-format
-msgid "User decided to change the encoding."
-msgstr "המשתמש החליט לשנות את הקידוד."
-
-#: job/maintextjob.cpp:117
-#, kde-format
-msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr "ההצפנה הנבחרת (%1) לא יכולה לקודד את ההודעה באופן מלא."
-
-#: job/maintextjob.cpp:142
+#: job/maintextjob.cpp:92
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "לא ניתן לקבל מקודד טקסט לערכת התווים „%1”."
 
-#: job/singlepartjob.cpp:67
+#: job/singlepartjob.cpp:64
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -1851,7 +1807,9 @@ msgid "Select Recipient"
 msgstr "בחירת נמען"
 
 #: recipient/recipientspicker.cpp:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search &Directory Service"
+msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "&שירות ספרייה לחיפוש"
 
@@ -2351,7 +2309,7 @@ msgstr "שונות"
 msgid "Subject"
 msgstr "נושא"
 
-#: utils/util.cpp:259
+#: utils/util.cpp:236
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2359,40 +2317,72 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "צירפתי,מצרף,מצרפת,מצורף,הוספתי,קובץ,צרפתי,מצ״ב,מצ\"ב,הקובץ,מצורף"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:270
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr "משלח הדוא״ל לא הוגדר, לכן לא ניתן לשלוח הודעות. ליצור משלח דוא״ל?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "אין משלח דוא״ל"
 
-#: utils/util.cpp:296
+#: utils/util.cpp:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "יצירת משלח דוא״ל"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:288
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr "משלח הדוא״ל מנותק, לכן לא ניתן לשלוח הודעות. להפעיל אותו?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "משלח הדוא״ל מנותק."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:290
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "הפעלה"
+
+#~ msgid ""
+#~ "No charsets were available for encoding. Please check your configuration "
+#~ "and make sure it contains at least one charset for sending."
+#~ msgstr ""
+#~ "לא נמצאו ערכות תווים לקידוד. נא לבדוק את ההגדרות שלך ולוודא שהן מכילות "
+#~ "לפחות ערכת תווים אחת לשליחה."
+
+#~ msgid ""
+#~ "Encoding the message with %1 will lose some characters.\n"
+#~ "Do you want to continue?"
+#~ msgstr ""
+#~ "קידוד ההודעה עם %1 יאבד כמה מהתווים.\n"
+#~ "להמשיך?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Some Characters Will Be Lost"
+#~ msgstr "חלק מהתווים יאבדו"
+
+#~ msgctxt "@action:button"
+#~ msgid "Lose Characters"
+#~ msgstr "אובדן תווים"
+
+#~ msgctxt "@action:button"
+#~ msgid "Change Encoding"
+#~ msgstr "החלפת קידוד"
+
+#~ msgid "User decided to change the encoding."
+#~ msgstr "המשתמש החליט לשנות את הקידוד."
+
+#~ msgid "The selected encoding (%1) cannot fully encode the message."
+#~ msgstr "ההצפנה הנבחרת (%1) לא יכולה לקודד את ההודעה באופן מלא."

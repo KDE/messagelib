@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -452,6 +452,7 @@ msgstr "Boodskap met onderwerp: "
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "&Expire"
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Verstryk"
 
@@ -464,12 +465,14 @@ msgstr "Stel KMail op..."
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add Attachment..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Voeg aangangesl by..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "&Expire"
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Verstryk"
 
@@ -2744,12 +2747,14 @@ msgstr "Verwyder lêer aanhangsel"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "New Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Nuwe boodskap"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Vorige ongeleesde boodskap"
 

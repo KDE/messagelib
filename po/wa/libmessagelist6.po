@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -1136,8 +1136,7 @@ msgstr "Tinme"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Apontyî..."
@@ -1280,6 +1279,7 @@ msgstr "Sch&aper et rlomer hårdêye..."
 #: core/widgets/searchlinestatus.cpp:217
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "Fé 'ne &passete"
 
@@ -1536,6 +1536,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Nén cnoxhou"
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "Apontyî..."
+
 #: utils/aggregationeditor.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "View->"
@@ -1598,35 +1605,44 @@ msgid "Customize Message Aggregation Modes"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Disfacer li f&yis di messaedjes"
 
 #: utils/configureaggregationsdialog.cpp:343
 #, fuzzy, kde-format
 msgid "Unnamed Aggregation"
+msgstr "Novea"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, fuzzy, kde-format
+msgid "New Aggregation"
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:413
@@ -1653,30 +1669,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Tinmes a vosse môde"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
-#, kde-format
+#: utils/configurethemesdialog.cpp:117
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Novea tinme"
 
 #: utils/configurethemesdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Clôner tinme"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Eberweter..."
 
 #: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Aberweter..."
 
 #: utils/configurethemesdialog.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Disfacer tinme"
 
@@ -1684,6 +1708,11 @@ msgstr "Disfacer tinme"
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Tinme sins no"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "Novea tinme"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
 #, kde-format

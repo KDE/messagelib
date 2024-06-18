@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -492,7 +492,9 @@ msgid "Ignore if not signed"
 msgstr "ਸੁਨੇਹਾ ਸਾਈਨ ਨਹੀਂ ਹੋਵੇਗਾ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "ਐਕਸਪੋਰਟ..."
 
@@ -506,11 +508,14 @@ msgstr "ਅਕਾਊਂਟ ਸੰਰਚਨਾ"
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add G&roup..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "ਗਰੁੱਪ ਸ਼ਾਮਲ(&r)..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "ਇੰਪੋਰਟ..."
 
@@ -2892,12 +2897,14 @@ msgstr "ਅਟੈਚ ਸੋਧਣ ਤੋਂ ਅਸਮੱਰਥ"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "&Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "ਅੱਗੇ ਸੁਨੇਹਾ(&N)"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ਪਿਛਲੇ ਨਾ-ਪੜ੍ਹੇ ਸੁਨੇਹੇ ਉੱਤੇ ਜਾਓ(&M)"
 

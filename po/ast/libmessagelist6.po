@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1032,8 +1032,7 @@ msgstr ""
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr ""
@@ -1165,6 +1164,7 @@ msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
+msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr ""
 
@@ -1399,6 +1399,12 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr ""
 
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr ""
+
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
@@ -1453,34 +1459,43 @@ msgid "Customize Message Aggregation Modes"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
 #, kde-format
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:129
 #, kde-format
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:413
@@ -1505,34 +1520,44 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
+#: utils/configurethemesdialog.cpp:117
 #, kde-format
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:125
 #, kde-format
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:138
 #, kde-format
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:145
 #, kde-format
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:156
 #, kde-format
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216

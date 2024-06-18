@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -410,6 +410,7 @@ msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Export..."
 msgstr ""
 
@@ -420,12 +421,16 @@ msgid "Configure Rule"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Rule"
+msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr ""
+msgstr "添加规则"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Import..."
 msgstr ""
 
@@ -2612,11 +2617,17 @@ msgid "KMail was unable to open the attachment."
 msgstr ""
 
 #: widgets/shownextmessagewidget.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Message"
+#| msgid_plural "Save Messages"
+msgctxt "@action:button"
 msgid "Next Message"
-msgstr ""
+msgstr "保存信件"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Message"
+#| msgid_plural "Save Messages"
+msgctxt "@action:button"
 msgid "Previous Message"
-msgstr ""
+msgstr "保存信件"

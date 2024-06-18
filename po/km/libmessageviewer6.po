@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -451,9 +451,11 @@ msgid "Ignore if not signed"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Import"
+msgctxt "@action:button"
 msgid "Export..."
-msgstr ""
+msgstr "នាំចូល"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, fuzzy, kde-format
@@ -465,12 +467,14 @@ msgstr "បឋមកថា​វែង"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "នាំចូល"
 
@@ -2800,12 +2804,14 @@ msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ
 #, fuzzy, kde-format
 #| msgid "Save Message"
 #| msgid_plural "Save Messages"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "រក្សា​ទុក​សារ​"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Decrypt Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ឌិគ្រីប​សារ"
 
