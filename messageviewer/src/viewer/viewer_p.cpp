@@ -1540,7 +1540,7 @@ void ViewerPrivate::createActions()
     viewerSelectionChanged();
 
     // copy all text to clipboard
-    mSelectAllAction = new QAction(i18nc("@action", "Select All Text"), this);
+    mSelectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All Text"), this);
     ac->addAction(QStringLiteral("mark_all_text"), mSelectAllAction);
     connect(mSelectAllAction, &QAction::triggered, this, &ViewerPrivate::selectAll);
     ac->setDefaultShortcut(mSelectAllAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_A));
