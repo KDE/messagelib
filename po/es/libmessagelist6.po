@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2024-05-28 16:13+0200\n"
+"PO-Revision-Date: 2024-06-18 03:41+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1199,7 +1199,7 @@ msgstr "Filtro guardado"
 #: core/widgets/searchlinestatus.cpp:217
 #, kde-format
 msgid "Clear Filter"
-msgstr "Despejar filtro"
+msgstr "Limpiar filtro"
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format

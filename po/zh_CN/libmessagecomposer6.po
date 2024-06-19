@@ -1151,7 +1151,7 @@ msgstr "选择图片格式"
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgid "Select Format..."
-msgstr "选择格式..."
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1782,7 +1782,7 @@ msgstr "选择收件人"
 #: recipient/recipientspicker.cpp:60
 #, kde-format
 msgid "Search &Directory Service"
-msgstr "搜索目录服务(&D)"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:79
 #, kde-format
