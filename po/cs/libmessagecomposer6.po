@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-06-05 09:25+0200\n"
+"PO-Revision-Date: 2024-06-18 16:09+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -1180,8 +1180,7 @@ msgid "Select Image Format"
 msgstr "Vyberte formát obrázku"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Vyberte formát..."
@@ -1800,8 +1799,7 @@ msgid "Select Recipient"
 msgstr "Vyberte příjemce"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Prohledat a&dresářovou službu"
@@ -2342,15 +2340,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Nastavit na připojen"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Budou ztraceny některé znaky"
-
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Ztratit znaky"
-
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Změnit kódování"

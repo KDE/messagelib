@@ -421,12 +421,10 @@ msgid "Configure Rule"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Rule"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr "添加规则"
+msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
@@ -2617,17 +2615,13 @@ msgid "KMail was unable to open the attachment."
 msgstr ""
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Save Message"
-#| msgid_plural "Save Messages"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
-msgstr "保存信件"
+msgstr ""
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Message"
-#| msgid_plural "Save Messages"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
-msgstr "保存信件"
+msgstr ""

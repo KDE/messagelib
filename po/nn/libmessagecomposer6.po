@@ -2277,35 +2277,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Viss du kodar meldinga i %1, vil nokre av teikna i teksten ikkje komma "
-#~ "med.\n"
-#~ "Er du sikker på at du vil halda fram?"
-
-#, fuzzy
-#~| msgid "Some Characters Will Be Lost"
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Nokre teikn vil ikkje komma med"
-
-#, fuzzy
-#~| msgid "Lose Characters"
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Mist teikn"
-
-#, fuzzy
-#~| msgid "Change Encoding"
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Byt teiknkoding"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "Brukaren valde å byta teiknkodinga."
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr "Kan ikkje koda heile meldinga med den valde teiknkodinga (%1)."

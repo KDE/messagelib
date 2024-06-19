@@ -1232,8 +1232,7 @@ msgid "Select Image Format"
 msgstr "Selecció del format de la imatge"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Selecciona el format..."
@@ -1865,8 +1864,7 @@ msgid "Select Recipient"
 msgstr "Selecció del destinatari"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Cerca al servei de &directori"

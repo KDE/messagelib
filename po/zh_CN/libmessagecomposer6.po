@@ -1176,11 +1176,10 @@ msgid "Select Image Format"
 msgstr "选择图片格式"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "选择格式..."
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1766,11 +1765,10 @@ msgid "Select Recipient"
 msgstr "选择收件人"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "搜索目录服务(&D)"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
@@ -2294,27 +2292,3 @@ msgstr "邮件签发器离线。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgid ""
-#~ "No charsets were available for encoding. Please check your configuration "
-#~ "and make sure it contains at least one charset for sending."
-#~ msgstr ""
-#~ "没有可用于编码的字符集。 请检查您的配置，并确保它包含至少一个用于发送的字"
-#~ "符集。"
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "使用 %1 编码将丢失一些字符。\n"
-#~ "您想要继续吗？"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "某些字符将会丢失"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "用户决定修改字符编码。"
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr "所选的编码(%1)无法完整编码此信件。"

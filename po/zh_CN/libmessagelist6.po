@@ -1168,11 +1168,10 @@ msgid "Saved Filter"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear Filter"
-msgstr "清除过滤器"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
@@ -1406,11 +1405,10 @@ msgid "Unknown"
 msgstr "未知"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "配置..."
+msgstr ""
 
 #: utils/aggregationeditor.cpp:31
 #, kde-format
@@ -1466,39 +1464,34 @@ msgid "Customize Message Aggregation Modes"
 msgstr "自定义信件聚合模式"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
-msgstr "新建聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
-msgstr "复制聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "导出聚合..."
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
-msgstr "导入聚合..."
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
-msgstr "删除聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
@@ -1533,39 +1526,34 @@ msgid "Customize Themes"
 msgstr "自定义主题"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
-msgstr "新建主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "复制主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
-msgstr "导出主题..."
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
-msgstr "导入主题..."
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
-msgstr "删除主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format

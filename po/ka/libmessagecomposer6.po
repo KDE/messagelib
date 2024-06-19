@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-24 16:37+0200\n"
+"PO-Revision-Date: 2024-06-18 06:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1213,8 +1213,7 @@ msgid "Select Image Format"
 msgstr "აირჩიეთ გამოსახულების ფორმატი"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "აირჩიეთ ფორმატი..."
@@ -1846,11 +1845,10 @@ msgid "Select Recipient"
 msgstr "აირჩიეთ მიმღები"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "&Directory -ის სერვისში ძებნა"
+msgstr "&ძებნა კატალოგის სერვისში"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format

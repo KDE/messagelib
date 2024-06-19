@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-23 08:36+0200\n"
+"PO-Revision-Date: 2024-06-18 19:54+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -1224,11 +1224,10 @@ msgid "Select Image Format"
 msgstr "Escoller o formato da imaxe"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Escoller o formato…"
+msgstr "Seleccionar o formato…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1856,11 +1855,10 @@ msgid "Select Recipient"
 msgstr "Escoller unha destinataria"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "Buscar no &Servizo de Directorio"
+msgstr "Buscar no &servizo de directorios"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format

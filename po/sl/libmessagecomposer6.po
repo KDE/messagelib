@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-23 09:08+0200\n"
+"PO-Revision-Date: 2024-06-18 09:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1219,11 +1219,10 @@ msgid "Select Image Format"
 msgstr "Izberi vrsto datoteke"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Izberi vrsto …"
+msgstr "Izberi format…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1856,11 +1855,10 @@ msgid "Select Recipient"
 msgstr "Izberite prejemnika"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "Storitev iskanja po imeniku"
+msgstr "Iskalna storitev imenika"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
