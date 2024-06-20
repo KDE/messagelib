@@ -5,12 +5,12 @@ include(ECMAddTests)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
-include ( ${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake )
+include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 # convenience macro to add qtest unit tests
 macro(add_templateparser_unittest _source)
   set(_test ${_source})
   get_filename_component(_name ${_source} NAME_WE)
-  add_executable( ${_name} ${_test} ${_name}.h)
+  add_executable(${_name} ${_test} ${_name}.h)
   ecm_mark_as_test(templateparser-${_name})
   target_link_libraries(${_name}
     KPim6::Libkleo
@@ -22,7 +22,7 @@ macro(add_templateparser_unittest _source)
     KF6::XmlGui
     KF6::IconThemes
     Qt::WebEngineWidgets
-  )
+)
   add_gpg_crypto_test(${_name} templateparser-${_name})
   # needed for the CI to run webengine-related tests
   # the CI runs as root, and webengine insists on disabling sandboxing in that case

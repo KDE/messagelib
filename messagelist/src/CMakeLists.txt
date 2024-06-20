@@ -133,7 +133,7 @@ kconfig_add_kcfg_files(KPim6MessageList
     core/messagelistsettings.kcfgc
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -242,7 +242,7 @@ install(FILES
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageList")
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageList_QCH
         NAME KPim6MessageList
@@ -265,7 +265,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageList_QCH

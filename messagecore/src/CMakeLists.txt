@@ -81,7 +81,7 @@ ecm_qt_declare_logging_category(KPim6MessageCore HEADER autocrypt_debug.h IDENTI
     EXPORT MESSAGELIB
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -202,7 +202,7 @@ install(FILES
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageCore_QCH
         NAME KPim6MessageCore
@@ -224,7 +224,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageCore_QCH

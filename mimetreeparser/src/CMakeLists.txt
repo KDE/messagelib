@@ -4,7 +4,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MIMETREEPARSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserConfigVersion.cmake"
     SOVERSION 6
-    )
+)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser6\")
 
@@ -81,7 +81,7 @@ target_sources(KPim6MimeTreeParser PRIVATE
     bodypartformatterfactory_p.h
     nodehelper.h
     objecttreeparser.h
-    )
+)
 
 ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
     HEADER_NAMES
@@ -95,7 +95,7 @@ ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
     SimpleObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_main_HEADERS
     PREFIX MimeTreeParser
-    )
+)
 
 ecm_generate_headers(MimeTreeParser_Camelcaseutils_HEADERS
     HEADER_NAMES
@@ -103,7 +103,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseutils_HEADERS
     REQUIRED_HEADERS MimeTreeParser_utils_HEADERS
     PREFIX MimeTreeParser
     RELATIVE utils
-    )
+)
 
 ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     HEADER_NAMES
@@ -113,7 +113,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser
     RELATIVE interfaces
-    )
+)
 
 ecm_generate_headers(MimeTreeParser_Camelcasetemporaryfile_HEADERS
     HEADER_NAMES
@@ -121,7 +121,7 @@ ecm_generate_headers(MimeTreeParser_Camelcasetemporaryfile_HEADERS
     REQUIRED_HEADERS MimeTreeParser_temporaryfile_HEADERS
     PREFIX MimeTreeParser
     RELATIVE temporaryfile
-    )
+)
 
 install(FILES
     ${MimeTreeParser_Camelcaseutils_HEADERS}
@@ -130,7 +130,7 @@ install(FILES
     ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser/MimeTreeParser
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${MimeTreeParser_utils_HEADERS}
@@ -141,16 +141,16 @@ install(FILES
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser/mimetreeparser
     COMPONENT Devel
-    )
+)
 
 ecm_qt_declare_logging_category(KPim6MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
         DESCRIPTION "messagelib (mimetreeparser)"
         OLD_CATEGORY_NAMES log_mimetreeparser
         EXPORT MESSAGELIB
-    )
+)
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MimeTreeParser PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -171,24 +171,24 @@ target_link_libraries(KPim6MimeTreeParser
     KPim6::Mime
     Qt::Gui
     QGpgmeQt6
-    )
+)
 
 install(TARGETS
     KPim6MimeTreeParser
     EXPORT KPim6MimeTreeParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    )
+)
 
 set_target_properties(KPim6MimeTreeParser PROPERTIES
     VERSION ${MIMETREEPARSER_VERSION}
     SOVERSION ${MIMETREEPARSER_SOVERSION}
     EXPORT_NAME MimeTreeParser
-    )
+)
 
 target_include_directories(KPim6MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser/>")
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MimeTreeParser")
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MimeTreeParser_QCH
         NAME KPim6MimeTreeParser
@@ -211,14 +211,14 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
     ecm_install_qch_export(
         TARGETS KPim6MimeTreeParser_QCH
         FILE KPim6MimeTreeParserQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MimeTreeParserQchTargets.cmake\")")
 endif()
 
@@ -226,18 +226,18 @@ configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMimeTreeParserConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KPim6MimeTreeParserTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MimeTreeParserTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser COMPONENT Devel
-    )
+)

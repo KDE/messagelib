@@ -137,7 +137,7 @@ ecm_qt_declare_logging_category(KPim6WebEngineViewer HEADER webengineviewer_bloc
 )
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6WebEngineViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -163,7 +163,7 @@ target_link_libraries(KPim6WebEngineViewer
     KF6::ConfigCore
 )
 
-if (WIN32)
+if(WIN32)
     target_link_libraries(KPim6WebEngineViewer PRIVATE Ws2_32)
 endif()
 
@@ -348,7 +348,7 @@ install(FILES
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6WebEngineViewer")
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6WebEngineViewer_QCH
         NAME KPim6WebEngineViewer
@@ -381,7 +381,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6WebEngineViewer_QCH

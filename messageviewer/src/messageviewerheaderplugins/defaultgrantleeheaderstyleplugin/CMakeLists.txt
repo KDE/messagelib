@@ -23,4 +23,4 @@ target_link_libraries(messageviewer_defaultgrantleeheaderstyleplugin
   KF6::XmlGui
 )
 
-install(DIRECTORY theme/5.2 DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer/defaultthemes/ )
+install(DIRECTORY theme/5.2 DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer/defaultthemes/)

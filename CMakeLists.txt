@@ -101,7 +101,7 @@ find_package(KPim6TextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
 
@@ -122,7 +122,7 @@ endif()
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
-if (USE_UNITY_CMAKE_SUPPORT)
+if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
     add_definitions(-DCOMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()

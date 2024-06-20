@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-add_definitions( -DDKIM_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
+add_definitions(-DDKIM_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
 macro(add_messageviewer_dkim_verify_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
@@ -8,8 +8,8 @@ macro(add_messageviewer_dkim_verify_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test qca-qt6 KF6::ItemViews
-    )
-endmacro ()
+)
+endmacro()
 
 add_messageviewer_dkim_verify_unittest(dkiminfotest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerkeytest.cpp)

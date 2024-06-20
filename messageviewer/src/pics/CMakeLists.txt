@@ -22,4 +22,4 @@ enterprise_top_right.png
 enterprise_w.png
 )
 
-install( FILES ${pics} DESTINATION ${KDE_INSTALL_DATADIR}/libmessageviewer/pics)
+install(FILES ${pics} DESTINATION ${KDE_INSTALL_DATADIR}/libmessageviewer/pics)

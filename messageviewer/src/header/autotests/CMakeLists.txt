@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions( -DHEADER_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
-add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_SOURCE_DIR}/messageviewer/src/messageviewerheaderplugins/defaultgrantleeheaderstyleplugin/theme/" )
+add_definitions(-DHEADER_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+add_definitions(-DGRANTLEETHEME_DATA_DIR="${CMAKE_SOURCE_DIR}/messageviewer/src/messageviewerheaderplugins/defaultgrantleeheaderstyleplugin/theme/")
 
 ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
     TEST_NAME grantleeheaderstyletest
