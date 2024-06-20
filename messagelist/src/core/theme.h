@@ -193,11 +193,6 @@ public:
              */
             TagList = 22 | ApplicableToMessageItems | IsIcon,
             /**
-             * Whether the message has a annotation/note
-             */
-            AnnotationIcon = 23 | ApplicableToMessageItems | IsIcon | CanBeDisabled | IsClickable,
-
-            /**
              * Whether the message is an invitation
              */
             InvitationIcon = 24 | ApplicableToMessageItems | IsIcon,

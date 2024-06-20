@@ -10,7 +10,6 @@
 #include "messageitem_p.h"
 
 #include "messagelist_debug.h"
-#include <Akonadi/EntityAnnotationsAttribute>
 #include <Akonadi/Item>
 #include <Akonadi/TagAttribute>
 #include <Akonadi/TagFetchJob>
@@ -150,10 +149,6 @@ void MessageItemPrivate::invalidateTagCache()
     }
 }
 
-void MessageItemPrivate::invalidateAnnotationCache()
-{
-}
-
 const MessageItem::Tag *MessageItemPrivate::bestTag() const
 {
     const MessageItem::Tag *best = nullptr;
@@ -241,42 +236,6 @@ QList<MessageItem::Tag *> MessageItem::tagList() const
     return d->getTagList();
 }
 
-bool MessageItem::hasAnnotation() const
-{
-    Q_D(const MessageItem);
-    // TODO check for note entry?
-    return d->mAkonadiItem.hasAttribute<Akonadi::EntityAnnotationsAttribute>();
-}
-
-QString MessageItem::annotation() const
-{
-    Q_D(const MessageItem);
-    if (d->mAkonadiItem.hasAttribute<Akonadi::EntityAnnotationsAttribute>()) {
-        auto attr = d->mAkonadiItem.attribute<Akonadi::EntityAnnotationsAttribute>();
-        const auto annotations = attr->annotations();
-        QByteArray annot = annotations.value("/private/comment");
-        if (!annot.isEmpty()) {
-            return QString::fromLatin1(annot);
-        }
-        annot = annotations.value("/shared/comment");
-        if (!annot.isEmpty()) {
-            return QString::fromLatin1(annot);
-        }
-    }
-    return {};
-}
-
-void MessageItem::editAnnotation(QWidget *parent)
-{
-    Q_D(MessageItem);
-    QPointer<PimCommon::AnnotationEditDialog> mAnnotationDialog = new PimCommon::AnnotationEditDialog(d->mAkonadiItem, parent);
-    // FIXME make async
-    if (mAnnotationDialog->exec()) {
-        // invalidate the cached mHasAnnotation value
-    }
-    delete mAnnotationDialog;
-}
-
 const MessageItem::Tag *MessageItemPrivate::findTagInternal(const QString &szTagId) const
 {
     const auto tagList{getTagList()};
@@ -313,12 +272,6 @@ void MessageItem::invalidateTagCache()
 {
     Q_D(MessageItem);
     d->invalidateTagCache();
-}
-
-void MessageItem::invalidateAnnotationCache()
-{
-    Q_D(MessageItem);
-    d->invalidateAnnotationCache();
 }
 
 const QColor &MessageItem::textColor() const
@@ -642,11 +595,6 @@ void FakeItem::setFakeTags(const QList<MessageItem::Tag *> &tagList)
 {
     Q_D(FakeItem);
     d->mFakeTags = tagList;
-}
-
-bool FakeItem::hasAnnotation() const
-{
-    return true;
 }
 
 TagCache::TagCache()

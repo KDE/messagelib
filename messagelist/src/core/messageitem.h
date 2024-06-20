@@ -75,15 +75,6 @@ public:
     /// Returns the list of tags for this item.
     virtual QList<Tag *> tagList() const;
 
-    /// Returns true if this message has an annotation.
-    virtual bool hasAnnotation() const;
-
-    /// Returns the annotation of the message, given that hasAnnotation() is true
-    [[nodiscard]] QString annotation() const;
-
-    /// Shows a dialog to edit or delete the annotation
-    void editAnnotation(QWidget *parent);
-
     /**
      * Returns Tag associated to this message that has the specified id or 0
      * if no such tag exists. mTagList will be 0 in 99% of the cases.
@@ -95,9 +86,6 @@ public:
     /// Deletes all cached tags. The next time someone asks this item for the tags, they are
     /// fetched again
     void invalidateTagCache();
-
-    /// Same as invalidateTagCache(), only for the annotation
-    void invalidateAnnotationCache();
 
     const QColor &textColor() const;
 
@@ -203,9 +191,6 @@ public:
 
     /// Sets a list of fake tags for this item
     void setFakeTags(const QList<Tag *> &tagList);
-
-    /// Reimplemented to always return true
-    bool hasAnnotation() const override;
 
 private:
     Q_DECLARE_PRIVATE(FakeItem)

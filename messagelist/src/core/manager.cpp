@@ -586,9 +586,6 @@ void Manager::createDefaultThemes()
     i = new Theme::ContentItem(Theme::ContentItem::AttachmentStateIcon);
     i->setHideWhenDisabled(true);
     r->addLeftItem(i);
-    i = new Theme::ContentItem(Theme::ContentItem::AnnotationIcon);
-    i->setHideWhenDisabled(true);
-    r->addLeftItem(i);
     i = new Theme::ContentItem(Theme::ContentItem::InvitationIcon);
     i->setHideWhenDisabled(true);
     r->addLeftItem(i);
@@ -709,9 +706,6 @@ void Manager::createDefaultThemes()
     i->setHideWhenDisabled(true);
     r->addRightItem(i);
     i = new Theme::ContentItem(Theme::ContentItem::AttachmentStateIcon);
-    i->setHideWhenDisabled(true);
-    r->addRightItem(i);
-    i = new Theme::ContentItem(Theme::ContentItem::AnnotationIcon);
     i->setHideWhenDisabled(true);
     r->addRightItem(i);
     i = new Theme::ContentItem(Theme::ContentItem::InvitationIcon);

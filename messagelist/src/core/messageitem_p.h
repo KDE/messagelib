@@ -45,9 +45,6 @@ public:
     /// Deletes the internal list of tags
     void invalidateTagCache();
 
-    /// Deletes the cache of the annotation
-    void invalidateAnnotationCache();
-
     // This creates mTagList and fills it with useful data
     void fillTagList(const Akonadi::Tag::List &taglist);
 

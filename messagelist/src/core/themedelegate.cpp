@@ -963,19 +963,6 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                                              mTheme->iconSize());
                 }
                 break;
-            case Theme::ContentItem::AnnotationIcon:
-                if (messageItem) {
-                    paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             mTheme->pixmap(Theme::IconAnnotation),
-                                             ci,
-                                             painter,
-                                             l,
-                                             top,
-                                             r,
-                                             layoutDir == Qt::LeftToRight,
-                                             mTheme->iconSize());
-                }
-                break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasInvitation(),
@@ -1174,19 +1161,6 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasAttachment(),
                                              mTheme->pixmap(Theme::IconAttachment),
-                                             ci,
-                                             painter,
-                                             l,
-                                             top,
-                                             r,
-                                             layoutDir != Qt::LeftToRight,
-                                             mTheme->iconSize());
-                }
-                break;
-            case Theme::ContentItem::AnnotationIcon:
-                if (messageItem) {
-                    paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             mTheme->pixmap(Theme::IconAnnotation),
                                              ci,
                                              painter,
                                              l,
@@ -1481,18 +1455,6 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                                                                  mTheme->iconSize());
                 }
                 break;
-            case Theme::ContentItem::AnnotationIcon:
-                if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(),
-                                                                 ci,
-                                                                 l,
-                                                                 top,
-                                                                 r,
-                                                                 mHitContentItemRect,
-                                                                 layoutDir == Qt::LeftToRight,
-                                                                 mTheme->iconSize());
-                }
-                break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
                     compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasInvitation(),
@@ -1681,18 +1643,6 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem) {
                     compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasAttachment(),
-                                                                 ci,
-                                                                 l,
-                                                                 top,
-                                                                 r,
-                                                                 mHitContentItemRect,
-                                                                 layoutDir != Qt::LeftToRight,
-                                                                 mTheme->iconSize());
-                }
-                break;
-            case Theme::ContentItem::AnnotationIcon:
-                if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(),
                                                                  ci,
                                                                  l,
                                                                  top,

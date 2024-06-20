@@ -342,7 +342,6 @@ void MessageList::StorageModel::updateMessageItemData(MessageList::Core::Message
     }
 
     mi->invalidateTagCache();
-    mi->invalidateAnnotationCache();
 }
 
 void MessageList::StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)
