@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-23 05:51+0100\n"
+"PO-Revision-Date: 2024-06-19 22:33+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1209,8 +1209,7 @@ msgid "Select Image Format"
 msgstr "Elekti Bildan Formaton"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Elekti Formaton..."
@@ -1831,8 +1830,7 @@ msgid "Select Recipient"
 msgstr "Elekti ricevanton"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Serĉi A&dresaran Servon"
@@ -2383,35 +2381,3 @@ msgstr "Poŝtsendisto eksterrete."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Meti Enreta"
-
-#~ msgid ""
-#~ "No charsets were available for encoding. Please check your configuration "
-#~ "and make sure it contains at least one charset for sending."
-#~ msgstr ""
-#~ "Neniuj signaroj estis disponeblaj por kodigo. Bonvolu kontroli vian "
-#~ "agordon kaj certigi, ke ĝi enhavas almenaŭ unu signaron por sendo."
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Kodi la mesaĝon per %1 perdos kelkajn signojn.\n"
-#~ "Ĉu vi volas daŭrigi?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Kelkaj signoj perdiĝos"
-
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Perdi signojn"
-
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Ŝanĝi Kodigon"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "Uzanto decidis ŝanĝi la kodigon."
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr "La elektita kodigo (%1) ne povas plene kodi la mesaĝon."

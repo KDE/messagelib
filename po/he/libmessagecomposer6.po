@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-23 08:14+0300\n"
+"PO-Revision-Date: 2024-06-18 08:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1195,8 +1195,7 @@ msgid "Select Image Format"
 msgstr "בחירת סוג תמונה"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "בחירת סוג…"
@@ -1807,11 +1806,10 @@ msgid "Select Recipient"
 msgstr "בחירת נמען"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "&שירות ספרייה לחיפוש"
+msgstr "חיפוש בשירות &ספרייה"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format

@@ -1232,8 +1232,7 @@ msgid "Select Image Format"
 msgstr "Seleccioneu el format de la imatge"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Selecciona el format…"
@@ -1705,7 +1704,7 @@ msgid ""
 "again."
 msgstr ""
 "No hi ha cap destinatari en la llista. Primer seleccioneu alguns "
-"destinataris, després torneu-ho a intentar."
+"destinataris, després torneu-ho a provar."
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
@@ -1866,8 +1865,7 @@ msgid "Select Recipient"
 msgstr "Seleccioneu el destinatari"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Busca al servei de &directori"
@@ -2427,38 +2425,3 @@ msgstr "El distribuïdor de correu està fora de línia."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Connecta"
-
-#~ msgid ""
-#~ "No charsets were available for encoding. Please check your configuration "
-#~ "and make sure it contains at least one charset for sending."
-#~ msgstr ""
-#~ "No hi ha jocs de caràcters disponibles per a la codificació. Comproveu la "
-#~ "configuració i assegureu-vos que conté com a mínim un joc de caràcters "
-#~ "per a l'enviament."
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Codificant el missatge amb %1 es perdran alguns caràcters.\n"
-#~ "Voleu continuar?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Es perdran alguns caràcters"
-
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Perd caràcters"
-
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Canvia la codificació"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "L'usuari ha decidit canviar la codificació."
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr ""
-#~ "La codificació seleccionada (%1) no pot codificar completament el "
-#~ "missatge."
