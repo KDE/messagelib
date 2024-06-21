@@ -14,7 +14,6 @@
 #include <Akonadi/Monitor>
 #include <Akonadi/Tag>
 #include <KJob>
-#include <PimCommonAkonadi/AnnotationDialog>
 #include <QCache>
 
 namespace MessageList
