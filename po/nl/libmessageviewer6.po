@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-28 10:04+0200\n"
+"PO-Revision-Date: 2024-06-19 11:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -441,8 +441,7 @@ msgid "Ignore if not signed"
 msgstr "Negeren indien niet ondertekend"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Exporteren..."
@@ -454,15 +453,13 @@ msgid "Configure Rule"
 msgstr "Regel configureren"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Regel toevoegen..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importeren..."
@@ -2752,15 +2749,13 @@ msgid "KMail was unable to open the attachment."
 msgstr "Kmail kon de bijlage niet openen."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Volgende bericht"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Vorige bericht"

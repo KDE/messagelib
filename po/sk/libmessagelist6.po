@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -132,13 +132,13 @@ msgstr "Uprednostniť rýchlosť"
 msgid "Batch Job (No Interactivity)"
 msgstr "Dávková úloha (žiadna interaktivita)"
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Prečítané"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -156,7 +156,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Akčná položka"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -343,119 +343,119 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Predmet"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Odosielateľ/prijímateľ"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Odosielateľ"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Príjemca"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Najnovší dátum"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Príloha"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, kde-format
 msgid "Read/Unread"
 msgstr "Prečítané/neprečítané"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, kde-format
 msgid "Replied"
 msgstr "Odpovedané"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Dôležité"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, kde-format
 msgid "Action Item"
 msgstr "Akčná položka"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Spam/Ham"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Sledované/Ignorované"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "Šifrovanie"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "Podpis"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, kde-format
 msgid "Tag List"
 msgstr "Zoznam značiek"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "Smart"
 msgstr "Inteligentné"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Inteligentná viacriadková a viacpoložková téma"
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, kde-format
 msgid "Message"
 msgstr "Správa"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Inteligentné s klikateľným stavom"
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Inteligentná viacriadková a viacpoložková téma s klikateľným stavovým stĺpcom"
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "Stav"
@@ -669,189 +669,184 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Zostupne"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Predmet"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Odosielateľ"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Príjemca"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "Ikona neprečítaná/prečítaná"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, kde-format
 msgid "Attachment Icon"
 msgstr "Ikona prílohy"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "Ikona odpovedaná/preposlaná"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "Združená ikona nová/neprečítaná/čítaná/odpovedaná/preposlaná"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, kde-format
 msgid "Action Item Icon"
 msgstr "Ikona akčnej položky"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, kde-format
 msgid "Important Icon"
 msgstr "Ikona dôležité"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, kde-format
 msgid "Group Header Label"
 msgstr "Popis hlavičky skupiny"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "Ikona spam/ham"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "Ikona sledované/ignorované"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "Ikona rozvinúť/zbaleliť hlavičku skupiny"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "Ikona stavu šifrovania"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, kde-format
 msgid "Signature State Icon"
 msgstr "Ikona stavu podpisu"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "Zvislá oddeľovacia čiara"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "Vodorovná medzera"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, kde-format
 msgid "Max Date"
 msgstr "Maximálny dátum"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, kde-format
 msgid "Message Tags"
 msgstr "Značky správ"
 
-#: core/theme.cpp:173
-#, kde-format
-msgid "Note Icon"
-msgstr "Ikona poznámky"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, kde-format
 msgid "Invitation Icon"
 msgstr "Ikona pozvánky"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Priečinok"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Neprečítané"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Never Show"
 msgstr "Nikdy nezobraziť"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Always Show"
 msgstr "Vždy zobraziť"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "Jednoduché obdĺžniky"
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "Jednoduchý pripojený obdĺžnik"
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "Zaoblené obdĺžniky"
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "Zaoblený pripojený obdĺžnik"
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "Obdĺžniky s prechodom"
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "Pripojený obdĺžnik s prechodom"
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "Štylizované obdĺžniky"
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "Štylizovaný pripojený obdĺžnik"
@@ -902,17 +897,12 @@ msgstr "Veľkosť"
 msgid "Folder"
 msgstr "Priečinok"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, kde-format
-msgid "Note"
-msgstr "Poznámka"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "Náhľad"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -920,7 +910,7 @@ msgstr[0] "<b>%1</b> odpoveď"
 msgstr[1] "<b>%1</b> odpovede"
 msgstr[2] "<b>%1</b> odpovedí"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -928,110 +918,110 @@ msgstr[0] "<b>%1</b> správa v podstrome (<b>%2</b> neprečítaná)"
 msgstr[1] "<b>%1</b> správy v podstrome (<b>%2</b> neprečítané)"
 msgstr[2] "<b>%1</b> správ v podstrome (<b>%2</b> neprečítaných)"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Vlákna začínajúce na %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Vlákna začínajúce %1"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Vlákna so správami datovanými %1"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Správy poslané %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Správy prijaté %1"
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Správy poslané %1"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Správy prijaté %1"
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Vlákna začínajúce od %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Vlákna obsahujúce správy s dátumami od %1"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Správy poslané od %1"
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Správy prijaté od %1"
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Vlákna začínajúce %1"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Vlákna s najnovšou správou od %1"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Správy poslané do %1"
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Správy poslané %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Správy prijaté od %1"
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Vlákna smerujúce do %1"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Vlákna s najnovšou správou smerujúce do %1"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Správy prijaté %1"
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1039,7 +1029,7 @@ msgstr[0] "<b>%1</b> vlákno"
 msgstr[1] "%1 vlákna"
 msgstr[2] "%1 vlákien"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1937,7 +1927,7 @@ msgstr "Vzhľad"
 msgid "Content Items"
 msgstr "Položky obsahu"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1949,27 +1939,27 @@ msgstr ""
 "témy. Pre viac možností kliknite pravým tlačidlom myši na položky vo vnútri "
 "zobrazenia."
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: utils/themeeditor.cpp:1438
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Hlavička:"
 
-#: utils/themeeditor.cpp:1444
+#: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Veľkosť ikon:"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2030,6 +2020,12 @@ msgstr "&Kopírovať sem"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Zrušiť"
+
+#~ msgid "Note Icon"
+#~ msgstr "Ikona poznámky"
+
+#~ msgid "Note"
+#~ msgstr "Poznámka"
 
 #, fuzzy
 #~| msgid "Clear Filter"

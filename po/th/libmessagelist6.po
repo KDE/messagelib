@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -132,13 +132,13 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "อ่านแล้ว"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -156,7 +156,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "รายการการกระทำ"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -336,41 +336,41 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "เรื่อง"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "ผู้ส่ง/ผู้รับ"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "ผู้ส่ง"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "ผู้รับ"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "วันที่"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, kde-format
 msgid "Most Recent Date"
 msgstr "วันที่เมื่อไม่นานนี้"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -378,85 +378,85 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "สิ่งที่แนบมาด้วย"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, fuzzy, kde-format
 #| msgid "New/Unread"
 msgid "Read/Unread"
 msgstr "ใหม่/ยังไม่ได้อ่าน"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, kde-format
 msgid "Replied"
 msgstr "ตอบกลับแล้ว"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "จดหมายสำคัญ"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, kde-format
 msgid "Action Item"
 msgstr "รายการการกระทำ"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "สแปม/อาจเป็นสแปม"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "ติดตามดู/ไม่สนใจ"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "การเข้ารหัส"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "ลายเซ็น"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, kde-format
 msgid "Tag List"
 msgstr "รายการป้ายกำกับ"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "ตามแบบที่กำหนด"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, fuzzy, kde-format
 #| msgid "A fancy multiline and multi item theme"
 msgid "A smart multiline and multi item theme"
 msgstr "ชุดตกแต่งแฟนซีแบบหลายบรรทัดและหลายรายการ"
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, kde-format
 msgid "Message"
 msgstr "จดหมาย"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, fuzzy, kde-format
 #| msgid "Fancy with Clickable Status"
 msgid "Smart with Clickable Status"
 msgstr "แฟนซีพร้อมด้วยสถานะที่คลิกได้"
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, fuzzy, kde-format
 #| msgid ""
 #| "A fancy multiline and multi item theme with a clickable status column"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "ชุดตกแต่งแฟนซีแบบหลายบรรทัดและหลายรายการ พร้อมด้วยคอลัมน์สถานะที่สามารถคลิกได้"
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "สถานะ"
@@ -665,194 +665,189 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "เรียงจากมากไปหาน้อย"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "เรื่อง"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "วันที่"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "ผู้ส่ง"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "ผู้รับ"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, fuzzy, kde-format
 #| msgid "New/Unread/Read Icon"
 msgid "Unread/Read Icon"
 msgstr "ใหม่/ยังไม่ได้อ่าน"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, kde-format
 msgid "Attachment Icon"
 msgstr "ไอคอนสิ่งที่แนบมาด้วย"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "ไอคอนตอบกลับแล้ว/ส่งต่อแล้ว"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "ไอคอนแสดงถึงการรวมกันของจดหมายใหม่/ยังไม่ได้อ่าน/อ่านแล้ว/ตอบกลับแล้ว/ส่งต่อแล้ว"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, kde-format
 msgid "Action Item Icon"
 msgstr "ไอคอนรายการการกระทำ"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, kde-format
 msgid "Important Icon"
 msgstr "ไอคอนจดหมายสำคัญ"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, kde-format
 msgid "Group Header Label"
 msgstr "ป้ายส่วนหัวของกรุ๊ปแวร์"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "ไอคอนสแปม/อาจเป็นสแปม"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "ไอคอนติดตามดู/ไม่สนใจ"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "ไอคอนขยาย/ยุบรายการของส่วนหัวของกลุ่ม"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "ไอคอนสถานะการเข้ารหัส"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, kde-format
 msgid "Signature State Icon"
 msgstr "ไอคอนสถานะลายเซ็น"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "เส้นแบ่งแนวตั้ง"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "ช่องว่างแนวนอน"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, kde-format
 msgid "Max Date"
 msgstr "วันที่สูงสุด"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, kde-format
 msgid "Message Tags"
 msgstr "ป้ายจดหมาย"
 
-#: core/theme.cpp:173
-#, kde-format
-msgid "Note Icon"
-msgstr "ไอคอนบันทึกย่อ"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Invitation Icon"
 msgstr "ตัวเลือกขั้นสูง"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "โฟลเดอร์"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Unread"
 msgid "Unread"
 msgstr "ยังไม่ได้อ่าน"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Never Show"
 msgstr "ไม่ต้องแสดง"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Always Show"
 msgstr "แสดงเสมอ"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "สี่เหลี่ยมธรรมดา"
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "สี่เหลี่ยมธรรมดาที่เชื่อมกัน"
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "สี่เหลี่ยมมุมมน"
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "สี่เหลี่ยมมุมมนที่เชื่อมกัน"
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "สี่เหลี่ยมไล่ระดับสี"
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "สี่เหลี่ยมไล่ระดับสีที่เชื่อมกัน"
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "สี่เหลี่ยมแบบมีรูปแบบ"
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "สี่เหลี่ยมแบบมีรูปแบบที่เชื่อมกัน"
@@ -906,23 +901,18 @@ msgstr "ขนาด"
 msgid "Folder"
 msgstr "โฟลเดอร์"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, kde-format
-msgid "Note"
-msgstr "บันทึกช่วยจำ"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "แสดงตัวอย่าง"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "ตอบกลับ <b>%1</b> ฉบับ"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message in subtree (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural ""
@@ -933,116 +923,116 @@ msgstr[0] ""
 "จดหมาย <b>%1</b> ฉบับในผังต้นไม้ย่อย (จดหมายใหม่ <b>%2</b> ฉบับ + ยังไม่อ่าน<b>%3</b> "
 "ฉบับ)"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มเมื่อ %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มเมื่อ %1"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายของวันที่ %1"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งเมื่อ %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับเมื่อ %1"
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งเมื่อ %1"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "จดหมายต่าง ๆ ได้รับเมื่อ %1"
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มในช่วง %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายที่มีวันที่ต่าง ๆ ในช่วง %1"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งในช่วง %1"
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับในช่วง %1"
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "เธรดต่าง ๆ  ที่เริ่มโดย %1"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายล่าสุดโดย %1 มากที่สุด"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งไปยัง %1"
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งโดย %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับจาก %1"
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "เธรดต่าง ๆ ที่ส่งตรงไปยัง %1"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายที่ส่งตรงไปยัง %1 มากที่สุด"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับโดย %1"
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "เธรด <b>%1</b> เธรด"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural "<b>%1</b> messages (<b>%2</b> new + <b>%3</b> unread)"
@@ -1959,7 +1949,7 @@ msgstr "รูปลักษณ์"
 msgid "Content Items"
 msgstr "รายการต่าง ๆ ของเนื้อหา"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1970,27 +1960,27 @@ msgstr ""
 "และหย่อนพวกมันไปบนคอลัมน์เพื่อประกอบเป็นชุดตกแต่งของคุณเอง "
 "คลิกเมาส์ปุ่มขวาบนรายการภายในมุมมองเพื่อดูตัวเลือกอื่น ๆ เพิ่มเติม"
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "ตั้งค่าขั้นสูง"
 
-#: utils/themeeditor.cpp:1438
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "ส่วนหัว:"
 
-#: utils/themeeditor.cpp:1444
+#: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "ขนาดไอคอน:"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2055,6 +2045,12 @@ msgstr "&คัดลอกไว้ที่นี่"
 #, kde-format
 msgid "C&ancel"
 msgstr "&ยกเลิก"
+
+#~ msgid "Note Icon"
+#~ msgstr "ไอคอนบันทึกย่อ"
+
+#~ msgid "Note"
+#~ msgstr "บันทึกช่วยจำ"
 
 #~ msgid "Rename..."
 #~ msgstr "เปลี่ยนชื่อ..."

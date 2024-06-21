@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
 "PO-Revision-Date: 2024-03-03 19:28+0200\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: \n"
@@ -135,13 +135,13 @@ msgstr "Priekšroka ātrumam"
 msgid "Batch Job (No Interactivity)"
 msgstr "Masveida darbs (bez interaktivitātes)"
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Lasīta"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -159,7 +159,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Veicama darbība"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -342,118 +342,118 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Temats"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Sūtītājs/saņēmējs"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Sūtītājs"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Saņēmējs"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Datums"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Nesenākais datums"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Izmērs"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Pielikums"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, kde-format
 msgid "Read/Unread"
 msgstr "Jauna/nelasīta"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, kde-format
 msgid "Replied"
 msgstr "Atbildēta"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Svarīga"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, kde-format
 msgid "Action Item"
 msgstr "Veicama darbība"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Mēstule/nav mēstule"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Uzraudzīta/ignorēts"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "Šifrēšana"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "Paraksts"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, kde-format
 msgid "Tag List"
 msgstr "Birku saraksts"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "Smart"
 msgstr "Gudri"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Vieds daudzrindu un daudzelementu motīvs"
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, kde-format
 msgid "Message"
 msgstr "Vēstule"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Gudrs ar klikšķināmu statusu"
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "Gudrs daudzrindu un daudzelementu motīvs ar klikšķināmu statusa kolonu"
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "Statuss"
@@ -667,190 +667,185 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Dilstoši"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Temats"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Datums"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Sūtītājs"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Saņēmējs"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Izmērs"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "Nelasītas/lasītas vēstules ikona"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, kde-format
 msgid "Attachment Icon"
 msgstr "Pielikuma ikona"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "Atbildētas/pārsūtītas vēstules ikona"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr ""
 "Kombinēta jaunas/nelasītas/lasītas/atbildētas/pārsūtītas vēstules ikona"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, kde-format
 msgid "Action Item Icon"
 msgstr "„Nepieciešama darbība“ ikona"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, kde-format
 msgid "Important Icon"
 msgstr "Svarīgas vēstules ikona"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, kde-format
 msgid "Group Header Label"
 msgstr "Grupas galvenes etiķete"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "Mēstule/nav mēstule statusa ikona"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "Uzraudzītas/ignorētas vēstules ikona"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "Grupas galvenes izvēršanas/sakļaušanas ikona"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "Šifrēšanas stāvokļa ikona"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, kde-format
 msgid "Signature State Icon"
 msgstr "Paraksta stāvokļa ikona"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "Vertikāla atdalīšanas līnija"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "Horizontāla atstarpe"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, kde-format
 msgid "Max Date"
 msgstr "Maks. datums"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, kde-format
 msgid "Message Tags"
 msgstr "Vēstules birkas"
 
-#: core/theme.cpp:173
-#, kde-format
-msgid "Note Icon"
-msgstr "Piezīmes ikona"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, kde-format
 msgid "Invitation Icon"
 msgstr "Uzaicinājuma ikona"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Mape"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Nelasīta"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Never Show"
 msgstr "Nekad nerādīt"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Always Show"
 msgstr "Vienmēr rādīt"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "Vienkārši taisnstūri"
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "Vienkāršs apvienots taisnstūris"
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "Noapaļoti taisnstūri"
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "Noapaļots apvienots taisnstūris"
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "Tonēti taisnstūri"
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "Tonēts apvienots taisnstūris"
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "Stilizēti taisnstūri"
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "Stilizēts apvienots taisnstūris"
@@ -901,17 +896,12 @@ msgstr "Izmērs"
 msgid "Folder"
 msgstr "Mape"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, kde-format
-msgid "Note"
-msgstr "Piezīme"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -919,7 +909,7 @@ msgstr[0] "<b>%1</b> atbilde"
 msgstr[1] "<b>%1</b> atbildes"
 msgstr[2] "<b>%1</b> atbilžu"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -927,110 +917,110 @@ msgstr[0] "<b>%1</b> vēstule apakškokā (<b>%2</b> nelasītas)"
 msgstr[1] "<b>%1</b> vēstules apakškokā (<b>%2</b> nelasītas)"
 msgstr[2] "<b>%1</b> vēstuļu apakškokā (<b>%2</b> nelasītas)"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Pavedieni, kas sākti %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "%1 sākti pavedieni"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Pavedieni ar jaunām vēstulēm %1"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Vēstules, kas nosūtītas %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Vēstules, kas saņemtas %1"
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 nosūtītas vēstules"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 saņemtas vēstules"
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Pavedieni, kas sākti %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Pavedieni, kas satur jaunas vēstules %1"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Vēstules, kas nosūtītas %1"
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Vēstules, kas saņemtas %1"
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Pavedieni, kas sākti %1"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Pavedieni ar jaunāko vēstuli  no %1"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Vēstules, kas nosūtītas %1"
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Vēstules, ko nosūtīja %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Vēstules, kas saņemtas no %1"
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Pavedieni, kas adresēti %1"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Pavedieni ar jaunāko vēstuli adresētu %1"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Vēstulies, kas saņemtas no %1"
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1038,7 +1028,7 @@ msgstr[0] "<b>%1</b> pavediens"
 msgstr[1] "<b>%1</b> pavedieni"
 msgstr[2] "<b>%1</b> pavedienu"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1926,7 +1916,7 @@ msgstr "Izskats"
 msgid "Content Items"
 msgstr "Satura vienības"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1937,27 +1927,27 @@ msgstr ""
 "satura vienības un nometiet uz kolonnām, lai pievienotu tās motīvam. Labais "
 "klikšķis uz skatā esošās vienības piedāvās vairāk opciju."
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Paplašināti"
 
-#: utils/themeeditor.cpp:1438
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Galvene:"
 
-#: utils/themeeditor.cpp:1444
+#: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ikonu izmērs:"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2016,6 +2006,12 @@ msgstr "&Kopēt šeit"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Atcelt"
+
+#~ msgid "Note Icon"
+#~ msgstr "Piezīmes ikona"
+
+#~ msgid "Note"
+#~ msgstr "Piezīme"
 
 #~ msgid "Rename..."
 #~ msgstr "Pārdēvēt..."

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-06-16 23:00+0530\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
+"PO-Revision-Date: 2024-06-20 21:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -146,13 +146,13 @@ msgstr "வேகத்தை முன்னிலைப்படுத்த�
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "படித்த‍து"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -170,7 +170,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "செயலுக்கான ஒன்று"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -339,120 +339,120 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "தலைப்பு"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "அனுப்புநர்/பெறுநர்"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "அனுப்புநர்"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "பெறுநர்"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "தேதி"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, kde-format
 msgid "Most Recent Date"
 msgstr "இருப்பதில் சமீபமான தேதி"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "அளவு"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "உடனிணைப்பு"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, kde-format
 msgid "Read/Unread"
 msgstr "படித்த‍து/படிக்காத‍து"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, kde-format
 msgid "Replied"
 msgstr "பதிலளிக்கப்பட்டது"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "முக்கியமானது"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, kde-format
 msgid "Action Item"
 msgstr "செயலுக்கான ஒன்று"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "ஸ்பேம்"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "கவனிக்கப்படுவது/பொருட்படுத்தப்படாத‍து"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "மறையாக்கம்"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "கையொப்பம்"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, kde-format
 msgid "Tag List"
 msgstr "குறிச்சொற்களின் வரிசை"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "சூட்டிகை"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, kde-format
 msgid "Message"
 msgstr "அஞ்சல்"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "நிலை"
@@ -662,190 +662,185 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "இறங்குவரிசை"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "தலைப்பு"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "தேதி"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "அனுப்புநர்"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "பெறுநர்"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "அளவு"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "படித்த‍தன்/படிக்காத‍தன் சின்னம்"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, kde-format
 msgid "Attachment Icon"
 msgstr "உடனிணைப்புக்கான சின்னம்"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "பதிலளிக்கப்பட்டதன்/முன்னனுப்பப்பட்டதன் சின்னம்"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr ""
 "புதிய/படிக்காத/படித்த/பதிலளித்த/முன்ன‍னுப்பிய நிலையை குறிக்கும் ஒருங்கிணைந்த சின்னம்"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, kde-format
 msgid "Action Item Icon"
 msgstr "செயலுக்கானவற்றைக் குறிக்கும் சின்னம்"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, kde-format
 msgid "Important Icon"
 msgstr "முக்கியமானத‍ன் சின்னம்"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, kde-format
 msgid "Group Header Label"
 msgstr "தொகுப்பின் தலை உருப்படியை குறிப்பது"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "ஸ்பேமை குறிக்கும் சின்னம்"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "கவனிக்கப்படும்/பொருட்படுத்தப்படாத நிலையை குறிக்கும் சின்னம்"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "தொகுப்பை விரிக்க/சுருக்க உதவும் சின்னம்"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "மறையாக்க நிலைக்கான சின்னம்"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, kde-format
 msgid "Signature State Icon"
 msgstr "கையொப்ப நிலைக்கான சின்னம்"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "நெடுக்கான பிரிப்புக்கோடு"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "கிடைமட்டமான இடைவெளி"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, kde-format
 msgid "Max Date"
 msgstr "அதிகபட்ச தேதி"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, kde-format
 msgid "Message Tags"
 msgstr "அஞ்சலுக்கான குறிச்சொற்கள்"
 
-#: core/theme.cpp:173
-#, kde-format
-msgid "Note Icon"
-msgstr "குறிப்புக்கான சின்னம்"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, kde-format
 msgid "Invitation Icon"
 msgstr "அழைப்பிதழுக்கான சின்னம்"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "அடைவு"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "தெரியாதது"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "படிக்காத‍து"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Never Show"
 msgstr "ஒருபோதும் காட்டாதே"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Always Show"
 msgstr "எப்போதும் காட்டு"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "சாதாரண செவ்வகங்கள்"
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "மழுக்கப்பட்ட செவ்வகங்கள்"
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr ""
@@ -896,141 +891,136 @@ msgstr "அளவு"
 msgid "Folder"
 msgstr "அடைவு"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, kde-format
-msgid "Note"
-msgstr "குறிப்பு"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "முன்னோட்டம்"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> பதில்"
 msgstr[1] "<b>%1</b> பதில்கள்"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "தொகுப்பில் <b>%1</b> அஞ்சல் (படிக்காதவை <b>%2</b>)"
 msgstr[1] "தொகுப்பில் <b>%1</b> அஞ்சல்கள் (படிக்காதவை <b>%2</b>)"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "தொடர்கள் %1 அன்று தொடங்கியன"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "தொடர்கள் %1 தொடங்கியன"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "%1 அன்று வந்த அஞ்சல்களைக் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1 அன்று அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1 அன்று பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "%1-க்குள் துவக்கிய தொடர்கள்"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "%1-க்குள் உட்பட்ட தேதிகளிலான அஞ்சல்களைக் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "%1-க்குள் அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "%1-க்குள் பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1 தொடக்கிய தொடர்கள்"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "எத்தொடர்களின் மிகச்சமீபமான அஞ்சலை %1 எழுதினார்"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1-க்கு அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1 அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1-இலிருந்து பெறப்பட்ட அஞ்சல்கள்"
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "%1 பெறவேண்டிய தொடர்கள்"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "%1 பெற வேண்டிய அஞ்சலை மிகச்சமீபமானதாக‍க் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "%1 பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> தொடர்"
 msgstr[1] "<b>%1</b> தொடர்கள்"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1176,22 +1166,19 @@ msgid ""
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Filter Mails by Status"
 msgstr "அஞ்சல்களை அவற்றின் நிலையை பொறுத்து வடிகட்டு"
 
 #: core/widgets/searchlinestatus.cpp:118
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "சேமிக்கப்பட்டுள்ள வடிகட்டி"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "வடிகட்டியை காலியாக்கு"
@@ -1429,8 +1416,7 @@ msgid "Unknown"
 msgstr "தெரியாது"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "அமை..."
@@ -1441,36 +1427,31 @@ msgid "Groups && Threading"
 msgstr "தொகுத்தலும் தொடராக்கலும்"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "தொகுத்தல்:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "தொகுப்புகளை விரிப்பது:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "தொடராக்கம்:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "தொடரின் தலையுருப்படி:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "தொடர்களை விரிப்பது:"
@@ -1482,8 +1463,7 @@ msgid "Advanced"
 msgstr "மேம்பட்டவை"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "காட்சிப்பகுதியை நிரப்பும் முறை:"
@@ -1495,36 +1475,31 @@ msgid "Customize Message Aggregation Modes"
 msgstr "தொகுப்புமுறைகளை தனிப்பயனாக்குதல்"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "புதிய தொகுப்புமுறை"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "தொகுப்புமுறையை நகலெடு"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "தொகுப்புமுறையை ஏற்றுமதி செய்..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "தொகுப்புமுறையை இறக்குமதி செய்..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "தொகுப்புமுறையை நீக்கு"
@@ -1562,36 +1537,31 @@ msgid "Customize Themes"
 msgstr "தோற்றத்திட்டங்களை திருத்துவது"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "புதிய தோற்றத்திட்டம்"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "தோற்றத்திட்டத்தை நகலெடு"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "தோற்றத்திட்டத்தை ஏற்றுமதி செய்..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "தோற்றத்திட்டத்தை இறக்குமதி செய்..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "தோற்றத்திட்டத்தை நீக்கு"
@@ -1662,23 +1632,19 @@ msgid "Name:"
 msgstr "பெயர்:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
-msgstr "நெடுவரிசையின் தலைப்புப்புலத்தில் காட்டவேண்டிய பெயர்"
+msgstr "நெடுவரிசையின் தலைப்புப்புலத்தில் காட்டவேண்டிய பெயர்."
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "தலைப்புவரியில் கிளிக் செய்தல் அஞ்சல்களை வரிசைப்படுத்தும்:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "இத்தலைப்பை கிளிக் செய்தால் எந்த வரிசைமுறை பயன்படுத்தப்படும்."
@@ -1689,9 +1655,7 @@ msgid "Visible by default"
 msgstr "இயல்பிருப்பாக காட்டு"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
@@ -1902,7 +1866,7 @@ msgstr "தோற்றம்"
 msgid "Content Items"
 msgstr "உள்ளடக்க உருப்படிகள்"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1910,27 +1874,25 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "மேம்பட்டவை"
 
-#: utils/themeeditor.cpp:1438
-#, fuzzy, kde-format
-#| msgid "Header:"
+#: utils/themeeditor.cpp:1433
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "தலைப்புப்புலம்:"
 
-#: utils/themeeditor.cpp:1444
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#: utils/themeeditor.cpp:1439
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "சின்னத்தின் அளவு:"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -1988,6 +1950,12 @@ msgstr "&இதற்கு நகலெடுக்கவும்"
 #, kde-format
 msgid "C&ancel"
 msgstr "நிறுத்தப்பட்டது"
+
+#~ msgid "Note Icon"
+#~ msgstr "குறிப்புக்கான சின்னம்"
+
+#~ msgid "Note"
+#~ msgstr "குறிப்பு"
 
 #~ msgid "Rename..."
 #~ msgstr "மறுபெயரிடு..."

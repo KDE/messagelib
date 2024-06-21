@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -131,13 +131,13 @@ msgstr "Vektlegg hastighet"
 msgid "Batch Job (No Interactivity)"
 msgstr "Sats-jobb (ingen interaktivitet)"
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Lest"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -155,7 +155,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Handlingspunkt"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -342,120 +342,120 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Emne"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Sender/mottaker"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Sender"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Mottaker"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Dato"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Nyeste dato"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Størrelse"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr ""
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, kde-format
 msgid "Read/Unread"
 msgstr "Lest/ulest"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, kde-format
 msgid "Replied"
 msgstr "Besvart"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Viktig"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, kde-format
 msgid "Action Item"
 msgstr "Handlingspunkt"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Søppel/Ikke-søppel"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Overvåket/Ignorert"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "Kryptering"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "Signatur"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, kde-format
 msgid "Tag List"
 msgstr "Taggliste"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "Smart"
 msgstr "Smart"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Et smart tema med flere linjer og flere elementer"
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, kde-format
 msgid "Message"
 msgstr "Melding"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Smart tema med klikkbar status"
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Et smart tema med flere linjer og flere elementer, med en klikkbar kolonne "
 "for status"
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "Status"
@@ -665,189 +665,184 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Synkende"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Emne"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Dato"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Sender"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Mottaker"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Størrelse"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "Ulest/lest-ikon"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, kde-format
 msgid "Attachment Icon"
 msgstr "Vedleggsikon"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "Besvart/videresendt-ikon"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "Kombinert ikon for ny/ulest/lest/besvart/videresendt"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, kde-format
 msgid "Action Item Icon"
 msgstr "Handlingspunkt-ikon"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, kde-format
 msgid "Important Icon"
 msgstr "Viktig-ikon"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, kde-format
 msgid "Group Header Label"
 msgstr "Merkelapp for gruppehode"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "Søppel/Ikke-søppel-ikon"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "Overvåket/ignorert-ikon"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "Ikon for sammen/utfolding av gruppehode"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "Ikon for krypteringstilstand"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, kde-format
 msgid "Signature State Icon"
 msgstr "Ikon for signaturtilstand"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "Loddrett skillelinje"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "Vannrett avstandsholder"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, kde-format
 msgid "Max Date"
 msgstr "Maks dato"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, kde-format
 msgid "Message Tags"
 msgstr "Meldingstagger"
 
-#: core/theme.cpp:173
-#, kde-format
-msgid "Note Icon"
-msgstr "Notatikon"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, kde-format
 msgid "Invitation Icon"
 msgstr "Invitasjons-ikon"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr ""
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Ukjent"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Ulest"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Never Show"
 msgstr "Vis aldri"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, kde-format
 msgid "Always Show"
 msgstr "Vis alltid"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "Enkle rektangler"
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "Enkelt  rektangel med gjæringshjørner"
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "Avrundete rektangler"
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "Avrundet rektangel med gjæringshjørner"
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "Gradient-rektangler"
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "Gradientrektangel med gjæringshjørner"
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "Rektangler med stil"
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "Rektangler med stil og gjæringshjørner"
@@ -898,141 +893,136 @@ msgstr "Størrelse"
 msgid "Folder"
 msgstr ""
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, kde-format
-msgid "Note"
-msgstr "Merknad"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> svar"
 msgstr[1] "<b>%1</b> svar"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> melding i deltre (<b>%2</b> ulest)"
 msgstr[1] "<b>%1</b> meldinger i deltre (<b>%2</b> uleste)"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Tråder startet %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Tråder startet %1"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Tråder med meldinger datert %1"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Meldinger sendt %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Meldinger mottatt %1"
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Meldinger sendt %1"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Meldinger mottatt %1"
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Tråder startet innenfor %1 "
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Tråder som inneholder meldinger med datoer innenfor %1"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Meldinger sendt innenfor  %1"
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Meldinger mottatt innenfor %1"
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Tråder startet av %1"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Tråder med nyeste melding innen %1"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Meldinger sendt til %1"
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Meldinger sendt innen %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Meldinger mottatt fra %1"
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Tråder dirigert til %1"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Tråder med nyeste melding dirigert til %1"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Meldinger mottatt av %1"
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> tråd"
 msgstr[1] "<b>%1</b> tråder"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1915,7 +1905,7 @@ msgstr "Utseende"
 msgid "Content Items"
 msgstr "Innholdselementer"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1926,27 +1916,27 @@ msgstr ""
 "innholdselementene og slipp dem på kolonnene for å sette sammen temaet ditt. "
 "Høyreklikk på elementene i visningen for å få flere valg."
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Avansert"
 
-#: utils/themeeditor.cpp:1438
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Overskrift:"
 
-#: utils/themeeditor.cpp:1444
+#: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ikonstørrelse:"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2004,3 +1994,9 @@ msgstr "&Kopier hit"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Avbryt"
+
+#~ msgid "Note Icon"
+#~ msgstr "Notatikon"
+
+#~ msgid "Note"
+#~ msgstr "Merknad"

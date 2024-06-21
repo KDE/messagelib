@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:39+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -153,7 +153,7 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:252 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Read"
@@ -161,7 +161,7 @@ msgctxt "Status of an item"
 msgid "Read"
 msgstr "خواندن"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:254 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -183,7 +183,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "پیام مهم"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:266 core/messageitem.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -369,68 +369,68 @@ msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "موضوع"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:605 core/theme.cpp:112
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Sender/Receiver"
 msgstr "فرستنده/گیرنده"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:612
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "فرستنده"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:614
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "گیرنده"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:620
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "تاریخ"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:622
 #, fuzzy, kde-format
 #| msgid "Redirect Message"
 msgid "Most Recent Date"
 msgstr "تغییر جهت پیام"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:628
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "اندازه"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:630
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "پیوست"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:636
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Read/Unread"
 msgstr "خوانده‌نشده"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:641
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
 msgid "Replied"
 msgstr "پاسخ داده شده"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:643
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -438,67 +438,67 @@ msgctxt "Message importance indication"
 msgid "Important"
 msgstr "مهم"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:649
 #, fuzzy, kde-format
 #| msgid "Important Message"
 msgid "Action Item"
 msgstr "پیام مهم"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:655
 #, kde-format
 msgid "Spam/Ham"
 msgstr "هرزنامه/Ham"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:661
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "پایش‌شده/چشم‌پوشی شده"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:667
 #, kde-format
 msgid "Encryption"
 msgstr "رمزبندی"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:673
 #, kde-format
 msgid "Signature"
 msgstr "امضا"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:678
 #, fuzzy, kde-format
 #| msgid "Save List"
 msgid "Tag List"
 msgstr "ذخیره فهرست"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "&هوشمند‌"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:686
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:693
+#: core/manager.cpp:690
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Message"
 msgstr "&پیام‌"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:771
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:778
+#: core/manager.cpp:772
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "وضعیت"
@@ -740,155 +740,149 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "&ارسال‌"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "موضوع"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "تاریخ"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "فرستنده"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "گیرنده"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "اندازه"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Unread/Read Icon"
 msgstr "خوانده‌نشده"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgid "Attachment Icon"
 msgstr "پیوست"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr ""
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr ""
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, fuzzy, kde-format
 #| msgid "Important Message"
 msgid "Action Item Icon"
 msgstr "پیام مهم"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
 msgid "Important Icon"
 msgstr "مهم"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header Label"
 msgstr "&گروه‌افزار‌"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, fuzzy, kde-format
 #| msgid "Spam/Ham"
 msgid "Spam/Ham Icon"
 msgstr "هرزنامه/Ham"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, fuzzy, kde-format
 #| msgid "Watched/Ignored"
 msgid "Watched/Ignored Icon"
 msgstr "پایش‌شده/چشم‌پوشی شده"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr ""
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, fuzzy, kde-format
 #| msgid "Encryption Key Selection"
 msgid "Encryption State Icon"
 msgstr "گزینش کلید رمزبندی"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, fuzzy, kde-format
 #| msgid "Signature"
 msgid "Signature State Icon"
 msgstr "امضا"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr ""
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, fuzzy, kde-format
 #| msgid "internal part"
 msgid "Horizontal Spacer"
 msgstr "جزء درونی"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, fuzzy, kde-format
 #| msgid "Date"
 msgid "Max Date"
 msgstr "تاریخ"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, fuzzy, kde-format
 #| msgid "&Message Tags"
 msgid "Message Tags"
 msgstr "برچسبهای &پیام‌"
 
-#: core/theme.cpp:173
-#, fuzzy, kde-format
-#| msgid "Important Message"
-msgid "Note Icon"
-msgstr "پیام مهم"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Invitation Icon"
 msgstr "گزینه‌های پیشرفته"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "پوشه"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Unknown"
@@ -896,61 +890,61 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Unread"
 msgstr "خوانده‌نشده"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Never Show"
 msgstr "گیرنده"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Always send"
 msgid "Always Show"
 msgstr "ارسال همیشگی"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr ""
@@ -1006,19 +1000,13 @@ msgstr "اندازه"
 msgid "Folder"
 msgstr "پوشه"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, fuzzy, kde-format
-#| msgid "Notes"
-msgid "Note"
-msgstr "یادداشتها"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2270 core/view.cpp:2272
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgid "Preview"
 msgstr "قبلی‌"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2289
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1026,14 +1014,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "امضای <b>بد</b>"
 msgstr[1] ""
 
-#: core/view.cpp:2300
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2337
+#: core/view.cpp:2329
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -1041,27 +1029,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2331
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2335
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2345
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2356
+#: core/view.cpp:2348
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1069,93 +1057,93 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2360
+#: core/view.cpp:2352
 #, fuzzy, kde-format
 #| msgid "&Message Tags"
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "برچسبهای &پیام‌"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2354
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2371
+#: core/view.cpp:2363
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2366
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2374
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "پیام، با کلید %1 امضا شد."
 
-#: core/view.cpp:2384
+#: core/view.cpp:2376
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "پیام، با کلید %1 امضا شد."
 
-#: core/view.cpp:2393
+#: core/view.cpp:2385
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2388
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2397 core/view.cpp:2421
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2407
+#: core/view.cpp:2399
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2410
+#: core/view.cpp:2402
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2418
+#: core/view.cpp:2410
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2413
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2423
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2457
+#: core/view.cpp:2449
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1163,7 +1151,7 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "امضای <b>بد</b>"
 msgstr[1] ""
 
-#: core/view.cpp:2462
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -2121,7 +2109,7 @@ msgstr "پیوست"
 msgid "Content Items"
 msgstr "تماسها"
 
-#: utils/themeeditor.cpp:1424
+#: utils/themeeditor.cpp:1419
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2129,28 +2117,28 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1429
 #, fuzzy, kde-format
 #| msgid "&Advanced"
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "&پیشرفته‌"
 
-#: utils/themeeditor.cpp:1438
+#: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
 #| msgid "H&eaders"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "&سرآیندها‌"
 
-#: utils/themeeditor.cpp:1444
+#: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "اندازه"
 
-#: utils/themeeditor.cpp:1450
+#: utils/themeeditor.cpp:1445
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2222,6 +2210,16 @@ msgstr "&رونوشت در اینجا‌"
 #, kde-format
 msgid "C&ancel"
 msgstr "&لغو‌"
+
+#, fuzzy
+#~| msgid "Important Message"
+#~ msgid "Note Icon"
+#~ msgstr "پیام مهم"
+
+#, fuzzy
+#~| msgid "Notes"
+#~ msgid "Note"
+#~ msgstr "یادداشتها"
 
 #~ msgid "Rename..."
 #~ msgstr "تغییر نام..."
