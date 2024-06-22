@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-05-28 22:58+0200\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"PO-Revision-Date: 2024-06-18 17:52+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -430,8 +430,7 @@ msgid "Ignore if not signed"
 msgstr "Ignora se non firmato"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Esporta..."
@@ -443,15 +442,13 @@ msgid "Configure Rule"
 msgstr "Configura regola"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Aggiungi regola..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importa..."
@@ -1564,34 +1561,14 @@ msgstr "Cerca URL di localizzazione nei messaggi di posta"
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "Non spedire MDN in risposta a messaggi cifrati"
 
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.in:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr ""
-"Specifica la politica predefinita da usare per le notifiche delle "
-"disposizioni sul messaggio (solo per uso interno)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.in:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr ""
-"Specifica l'azione predefinita da effettuare per il testo citato quando si "
-"risponde ad un messaggio (solo per uso interno)"
-
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:181
+#: settings/messageviewer.kcfg.in:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Modifica intestazioni Da: / A: nelle risposte agli inviti"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:182
+#: settings/messageviewer.kcfg.in:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1605,13 +1582,13 @@ msgstr ""
 "attivare questa opzione."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:187
+#: settings/messageviewer.kcfg.in:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Spedisci inviti di groupware nel corpo del messaggio"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:188
+#: settings/messageviewer.kcfg.in:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1625,13 +1602,13 @@ msgstr ""
 "ad attivare questa opzione."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:193
+#: settings/messageviewer.kcfg.in:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Nomi inviti compatibili con Exchange"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:194
+#: settings/messageviewer.kcfg.in:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1645,13 +1622,13 @@ msgstr ""
 "Exchange non dia problemi."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:199
+#: settings/messageviewer.kcfg.in:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Invio automatico degli inviti"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:200
+#: settings/messageviewer.kcfg.in:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1669,13 +1646,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "Elimina i messaggi di invito dopo che è stata inviata la risposta"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:206
+#: settings/messageviewer.kcfg.in:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1685,25 +1662,25 @@ msgstr ""
 "cestinati dopo che la risposta è stata inviata con successo."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Utilizza caratteri a dimensione &fissa"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:237
+#: settings/messageviewer.kcfg.in:235
 #, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "La cartella selezionata più recentemente usata per le cose da fare."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:243
+#: settings/messageviewer.kcfg.in:241
 #, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "La cartella selezionata più recentemente usata per gli eventi."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:249
+#: settings/messageviewer.kcfg.in:247
 #, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "La cartella selezionata più recentemente usata per le note."
@@ -2738,18 +2715,30 @@ msgid "KMail was unable to open the attachment."
 msgstr "KMail non è riuscito ad aprire l'allegato."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Messaggio successivo"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Messaggio precedente"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Specifica la politica predefinita da usare per le notifiche delle "
+#~ "disposizioni sul messaggio (solo per uso interno)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Specifica l'azione predefinita da effettuare per il testo citato quando "
+#~ "si risponde ad un messaggio (solo per uso interno)"
 
 #~ msgid "The most recent selected folder using for Todo."
 #~ msgstr "La cartella selezionata più recentemente per le cose da fare."

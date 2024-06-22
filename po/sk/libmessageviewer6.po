@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1582,34 +1582,14 @@ msgstr "Skontrolovať emaily na sledovacie URL adresy"
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "Neposielať potvrdenia pre šifrované správy"
 
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.in:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr ""
-"Určuje predvolenú politiku na použitie, pre notifikácie o prijatí správy "
-"(iba na vnútorné použitie)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.in:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr ""
-"Určuje predvolenú akciu citácie, pri odpovedaní na správu (len pre vnútorné "
-"použitie)"
-
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:181
+#: settings/messageviewer.kcfg.in:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Rozhádzať Od:/Pre: hlavičky v odpovediach na odpovede"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:182
+#: settings/messageviewer.kcfg.in:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1623,13 +1603,13 @@ msgstr ""
 "voľbu."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:187
+#: settings/messageviewer.kcfg.in:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Poslať groupware pozvánky v tele správy"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:188
+#: settings/messageviewer.kcfg.in:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1643,13 +1623,13 @@ msgstr ""
 "voľbu."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:193
+#: settings/messageviewer.kcfg.in:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Exchange kompatibilné pomenovanie pozvania"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:194
+#: settings/messageviewer.kcfg.in:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1663,13 +1643,13 @@ msgstr ""
 "Exchange rozumie."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:199
+#: settings/messageviewer.kcfg.in:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Automatické posielanie pozvánok"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:200
+#: settings/messageviewer.kcfg.in:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1686,13 +1666,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "Odstrániť e-maily pozvánok potom, čo bola odpoveď na ne odoslaná"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:206
+#: settings/messageviewer.kcfg.in:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1703,27 +1683,27 @@ msgstr ""
 "odoslaná."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Použiť písmo s pe&vnou šírkou"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:237
+#: settings/messageviewer.kcfg.in:235
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Todo."
 msgstr "Najnovší vybraný priečinok pre úlohu."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:243
+#: settings/messageviewer.kcfg.in:241
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Event."
 msgid "The most recent selected folder used for Event."
 msgstr "Najnovší vybraný priečinok pre úlohu."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:249
+#: settings/messageviewer.kcfg.in:247
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Notes."
 msgid "The most recent selected folder used for Notes."
@@ -2793,6 +2773,20 @@ msgstr "Nasledujúca správa"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Predchádzajúca správa"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Určuje predvolenú politiku na použitie, pre notifikácie o prijatí správy "
+#~ "(iba na vnútorné použitie)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Určuje predvolenú akciu citácie, pri odpovedaní na správu (len pre "
+#~ "vnútorné použitie)"
 
 #~ msgid "Edit with:"
 #~ msgstr "Upraviť pomocou:"

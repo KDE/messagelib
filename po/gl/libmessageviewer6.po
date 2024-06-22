@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
 "PO-Revision-Date: 2024-06-18 19:58+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1554,34 +1554,14 @@ msgstr "Examinar as mensaxes en busca de URL de seguimento"
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "Non enviar MDN en resposta a mensaxes cifradas"
 
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.in:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr ""
-"Indica a política predeterminada que usar para as Notificacións de Entrega "
-"de Mensaxes (só para uso interno)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.in:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr ""
-"Indica a acción predeterminada que tomar sobre as citas ao responder a unha "
-"mensaxes (só para uso interno)"
-
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:181
+#: settings/messageviewer.kcfg.in:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Xestionar cabeceiras De:/Para: nas respostas a respostas"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:182
+#: settings/messageviewer.kcfg.in:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1595,13 +1575,13 @@ msgstr ""
 "activando esta opción."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:187
+#: settings/messageviewer.kcfg.in:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Enviar invitacións a grupos no corpo da mensaxe."
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:188
+#: settings/messageviewer.kcfg.in:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1615,13 +1595,13 @@ msgstr ""
 "activando esta opción."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:193
+#: settings/messageviewer.kcfg.in:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Nomes de invitacións compatíbeis con Exchange."
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:194
+#: settings/messageviewer.kcfg.in:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1635,13 +1615,13 @@ msgstr ""
 "o comprenda Microsoft Exchange."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:199
+#: settings/messageviewer.kcfg.in:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Envío automático de invitacións."
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:200
+#: settings/messageviewer.kcfg.in:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1658,13 +1638,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "Eliminar os correos de invitación unha vez enviada a resposta."
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:206
+#: settings/messageviewer.kcfg.in:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1674,25 +1654,25 @@ msgstr ""
 "moveranse ao cartafol do lixo unha vez enviada satisfactoriamente a resposta."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Usar unha fonte monoespa&zo"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:237
+#: settings/messageviewer.kcfg.in:235
 #, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "O cartafol seleccionado máis recentemente para tarefas pendentes."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:243
+#: settings/messageviewer.kcfg.in:241
 #, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "O cartafol seleccionado máis recentemente para eventos."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:249
+#: settings/messageviewer.kcfg.in:247
 #, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "O cartafol seleccionado máis recentemente para notas."
@@ -2732,6 +2712,20 @@ msgstr "Seguinte mensaxe"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensaxe anterior"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Indica a política predeterminada que usar para as Notificacións de "
+#~ "Entrega de Mensaxes (só para uso interno)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Indica a acción predeterminada que tomar sobre as citas ao responder a "
+#~ "unha mensaxes (só para uso interno)"
 
 #~ msgid "Edit with:"
 #~ msgstr "Editar con:"

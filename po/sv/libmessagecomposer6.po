@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2010, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Arve Eriksson <031299870@telia.com>, 2011.
 msgid ""
@@ -9,19 +9,18 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2023-07-25 09:05+0200\n"
+"PO-Revision-Date: 2024-06-21 10:16+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Misslyckades komprimera bilaga"
@@ -41,8 +40,7 @@ msgid "Keep"
 msgstr "Behåll"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Komprimera"
@@ -92,15 +90,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Misslyckades bifoga text från klippbordet"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Bifoga ö&ppen nyckel..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Bifoga &min öppna nyckel"
@@ -129,8 +125,7 @@ msgid "&Attach Directory..."
 msgstr "Bifoga k&atalog..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Bifoga eget visitkort"
@@ -184,8 +179,7 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Redigera med..."
@@ -201,22 +195,19 @@ msgid "Save As..."
 msgstr "Spara som..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "&Egenskaper hos bilaga..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Egenskaper"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Markera alla"
@@ -235,8 +226,7 @@ msgstr "Kmail kunde inte skriva bilagan i en tillfällig fil."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Kan inte öppna bilaga"
@@ -247,11 +237,10 @@ msgid "KMail was unable to open the attachment."
 msgstr "Kmail kunde inte öppna bilagan."
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "Kan inte redigera bilagan"
+msgstr "Kan inte redigera bilaga"
 
 #: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
@@ -273,15 +262,13 @@ msgstr ""
 "Vill du ersätta den?"
 
 #: attachment/attachmentcontrollerbase.cpp:822
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Spara till fil"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "E&rsätt"
@@ -452,8 +439,7 @@ msgstr ""
 "p><p>Vill du ta bort taggar?</p></qt>"
 
 #: composer/composerviewbase.cpp:330
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Signera och kryptera brev?"
@@ -469,8 +455,7 @@ msgid "Do you want to resize images?"
 msgstr "Vill du ändra bildernas storlek?"
 
 #: composer/composerviewbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Ändra bildstorlek automatiskt"
@@ -569,8 +554,7 @@ msgstr ""
 "Orsak: %3"
 
 #: composer/composerviewbase.cpp:1361
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Misslyckades spara brev automatiskt"
@@ -592,22 +576,19 @@ msgstr ""
 "Vill du bilägga en fil till ditt brev?"
 
 #: composer/composerviewbase.cpp:1898
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr "Påminnelse filbilaga"
+msgstr "Påminnelse om filbilaga"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Bifog&a fil..."
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Ski&cka som det är"
@@ -624,8 +605,7 @@ msgstr ""
 "Signera brevet?"
 
 #: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Signera brev?"
@@ -637,8 +617,7 @@ msgid "&Sign"
 msgstr "&Signera"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Signera i&nte"
@@ -662,15 +641,13 @@ msgstr ""
 "ställts in för den här identiteten."
 
 #: composer/composerviewbase.cpp:2013
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Skicka osignerat?"
 
 #: composer/composerviewbase.cpp:2014
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Skicka &osignerat"
@@ -708,15 +685,13 @@ msgid "&Sign"
 msgstr "&Signera"
 
 #: composer/composerviewbase.cpp:2039
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Varning om osignerat brev"
 
 #: composer/composerviewbase.cpp:2041
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Skick&a som det är"
@@ -777,15 +752,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "Krypt&era"
 
 #: composer/composerviewbase.cpp:2129
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Kryptera i&nte"
@@ -801,15 +774,13 @@ msgstr ""
 "men inga giltiga krypteringsnycklar har ställts in för den här identiteten."
 
 #: composer/composerviewbase.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Skicka okrypterat?"
 
 #: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Skicka &okrypterat"
@@ -846,8 +817,7 @@ msgid "&Encrypt All Parts"
 msgstr "Krypt&era alla delar"
 
 #: composer/composerviewbase.cpp:2183
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Varning om okrypterat brev"
@@ -898,8 +868,7 @@ msgstr ""
 "Följande nycklar eller certifikat är <b>återkallade</b>: \n"
 
 #: composer/keyresolver.cpp:336
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Inte pålitliga krypteringsnycklar"
@@ -923,8 +892,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
 #: composer/keyresolver.cpp:1042
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Oanvändbara krypteringsnycklar"
@@ -947,8 +915,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
 #: composer/keyresolver.cpp:1089
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Oanvändbara signeringsnycklar"
@@ -1001,8 +968,7 @@ msgstr ""
 "identiteten."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Signera inte med OpenPGP"
@@ -1021,8 +987,7 @@ msgstr ""
 "identiteten."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Signera inte med S/MIME"
@@ -1039,8 +1004,7 @@ msgstr ""
 "Skicka brevet utan att signera?"
 
 #: composer/keyresolver.cpp:1156
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Signering inte möjlig"
@@ -1056,8 +1020,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Varning om saknad nyckel"
@@ -1204,8 +1167,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Det valda datumet måste vara senare än dagens datum."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Ogiltigt datum"
@@ -1216,8 +1178,7 @@ msgid "The selected folder is not valid."
 msgstr "Den valda korgen är inte giltig."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ogiltig korg"
@@ -1254,8 +1215,7 @@ msgid "Select Image Format"
 msgstr "Välj bildformat"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Välj format..."
@@ -1288,8 +1248,7 @@ msgid "Please verify minimum and maximum values."
 msgstr "Verifiera minimala och maximala värden."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Fel i minimalt eller maximalt värde"
@@ -1804,8 +1763,7 @@ msgid "Select type of recipient"
 msgstr "Välj typ av mottagare"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Ange listan av e-postadresser som ska ta emot brevet"
@@ -1887,8 +1845,7 @@ msgid "Select Recipient"
 msgstr "Välj mottagare"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Sök i &katalogtjänst"
@@ -2407,11 +2364,10 @@ msgstr ""
 "du skapa en e-postsändningsmodul?"
 
 #: utils/util.cpp:271
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr "Ingen e-postsändningsmodul"
+msgstr "Ingen e-postsändningsmodul."
 
 #: utils/util.cpp:273
 #, kde-format
@@ -2429,8 +2385,7 @@ msgstr ""
 "koppla upp den?"
 
 #: utils/util.cpp:289
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "E-postsändningsmodulen nerkopplad."

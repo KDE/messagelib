@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1530,30 +1530,14 @@ msgstr "이메일에서 추적기 URL 검색"
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "암호화된 메시지에는 읽음 확인을 보내지 않음"
 
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.in:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr "메시지 읽음 확인에 대한 기본 정책을 지정합니다 (내부용)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.in:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr "메시지에 답장할 때 취할 기본 인용 동작을 지정합니다 (내부용)"
-
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:181
+#: settings/messageviewer.kcfg.in:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "답장에 대한 답장의 From:/To: 헤더 변형"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:182
+#: settings/messageviewer.kcfg.in:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1566,13 +1550,13 @@ msgstr ""
 "션을 사용해 보십시오."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:187
+#: settings/messageviewer.kcfg.in:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "메일 본문으로 그룹웨어 초대장 보내기"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:188
+#: settings/messageviewer.kcfg.in:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1585,13 +1569,13 @@ msgstr ""
 "옵션을 사용해 보십시오."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:193
+#: settings/messageviewer.kcfg.in:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Exchange 호환 초대장 이름 사용"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:194
+#: settings/messageviewer.kcfg.in:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1604,13 +1588,13 @@ msgstr ""
 "Microsoft Exchange가 이해하는 형태로 그룹웨어 초대장을 보냅니다."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:199
+#: settings/messageviewer.kcfg.in:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "자동으로 초대장 보내기"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:200
+#: settings/messageviewer.kcfg.in:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1626,13 +1610,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "답장한 후 초대장 메일을 삭제합니다"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:206
+#: settings/messageviewer.kcfg.in:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1642,27 +1626,27 @@ msgstr ""
 "으로 이동합니다."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "고정폭 글꼴 사용하기(&X)"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:237
+#: settings/messageviewer.kcfg.in:235
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Todo."
 msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:243
+#: settings/messageviewer.kcfg.in:241
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Event."
 msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:249
+#: settings/messageviewer.kcfg.in:247
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Notes."
 msgid "The most recent selected folder used for Notes."
@@ -2700,6 +2684,16 @@ msgstr "다음 메시지"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "이전 메시지"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr "메시지 읽음 확인에 대한 기본 정책을 지정합니다 (내부용)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr "메시지에 답장할 때 취할 기본 인용 동작을 지정합니다 (내부용)"
 
 #~ msgid "The most recent selected folder using for Todo."
 #~ msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."

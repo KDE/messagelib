@@ -1924,9 +1924,3 @@ msgstr "复制到此处(&C)"
 #, kde-format
 msgid "C&ancel"
 msgstr "取消(&A)"
-
-#~ msgid "Note Icon"
-#~ msgstr "便笺图标"
-
-#~ msgid "Note"
-#~ msgstr "便笺"

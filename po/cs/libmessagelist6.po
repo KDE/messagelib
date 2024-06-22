@@ -1929,9 +1929,3 @@ msgstr "&Kopírovat sem"
 #, kde-format
 msgid "C&ancel"
 msgstr "Z&rušit"
-
-#~ msgid "Note Icon"
-#~ msgstr "Ikona poznámky"
-
-#~ msgid "Note"
-#~ msgstr "Poznámka"

@@ -6,21 +6,21 @@
 # Mattias Newzella <newzella@linux.nu>, 2000, 2001, 2002,2003, 2004, 2005.
 # Anders Widell <awl@hem.passagen.se>, 2000.
 # Daniel Karlsson <chaotica@home.se>, 2001.
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# SPDX-FileCopyrightText: 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2005, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2023-09-07 21:34+0200\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"PO-Revision-Date: 2024-06-21 10:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -327,8 +327,7 @@ msgstr ""
 "här?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Nyckel ändrad"
@@ -403,8 +402,7 @@ msgid "Do you want to delete all keys?"
 msgstr "Vill du ta bort alla nycklar?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Ta bort nycklar"
@@ -430,8 +428,7 @@ msgid "Ignore if not signed"
 msgstr "Ignorera om ej signerat"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Exportera..."
@@ -443,15 +440,13 @@ msgid "Configure Rule"
 msgstr "Anpassa regel"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Lägg till regel..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importera..."
@@ -462,8 +457,7 @@ msgid "No rules found"
 msgstr "Inga regler funna"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportera regler"
@@ -484,8 +478,7 @@ msgid "No rules imported."
 msgstr "Inga regler importerade."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importera regler"
@@ -551,8 +544,7 @@ msgstr "Vill du ta bort regeln?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Ta bort regel"
@@ -563,8 +555,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "Vill du ta bort alla reglerna?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Ta bort regler"
@@ -1204,8 +1195,7 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "En post definierar redan webbadressen. Ändra den."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Lägg till ny webbadress"
@@ -1241,8 +1231,7 @@ msgid "Blocked"
 msgstr "Blockerad"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domän:"
@@ -1261,29 +1250,25 @@ msgstr ""
 "a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Flytta till papperskorg"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Jag bekräftar ett det inte är ett bedrägeribrev"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Lägg till brev i vitlistan"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Inaktivera detektering av bedrägerier för alla brev"
@@ -1563,34 +1548,14 @@ msgstr "Sök igenom e-post för att spåra webbadresser"
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "Skicka inte brevhanteringsbekräftelser som svar på krypterade brev"
 
-#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
-#: settings/messageviewer.kcfg.in:161
-#, kde-format
-msgid ""
-"Specifies the default policy to use, for the Message Disposition "
-"Notifications (for internal use only)"
-msgstr ""
-"Anger standardpolicy att använda för brevhanteringsbekräftelser (bara för "
-"intern användning)"
-
-#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
-#: settings/messageviewer.kcfg.in:165
-#, kde-format
-msgid ""
-"Specifies the default quoting action to take, when replying to a message "
-"(for internal use only)"
-msgstr ""
-"Anger standardåtgärden för citering vid svar på ett brev (bara för intern "
-"användning)"
-
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:181
+#: settings/messageviewer.kcfg.in:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Behandla Från:/Till:-huvuden i svar på inbjudningar"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:182
+#: settings/messageviewer.kcfg.in:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1604,13 +1569,13 @@ msgstr ""
 "dina svar, pröva att aktivera alternativet."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:187
+#: settings/messageviewer.kcfg.in:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Skicka grupprograminbjudningar i brevets text"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:188
+#: settings/messageviewer.kcfg.in:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1624,13 +1589,13 @@ msgstr ""
 "dina svar, pröva att aktivera alternativet."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:193
+#: settings/messageviewer.kcfg.in:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Namngivning av inbjudningar som fungerar med Exchange"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:194
+#: settings/messageviewer.kcfg.in:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1644,13 +1609,13 @@ msgstr ""
 "sätt som Microsoft Exchange förstår."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:199
+#: settings/messageviewer.kcfg.in:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Automatisk skickning av inbjudning"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:200
+#: settings/messageviewer.kcfg.in:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1666,13 +1631,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:205 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "Ta bort inbjudningsbrev efter svaret till dem har skickats"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:206
+#: settings/messageviewer.kcfg.in:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1682,29 +1647,26 @@ msgstr ""
 "till papperskorgen, så fort svaret har skickats med lyckat resultat."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:230 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Använd teckensnitt med fast &breddsteg"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:237
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Todos."
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "Den senast valda korgen använd för uppgifter."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:243
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Events."
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "Den senast valda korgen använd för händelser."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:249
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "Den senast valda korgen använd för anteckningar."
 
@@ -1864,8 +1826,7 @@ msgstr ""
 "den?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Skriv över fil?"
@@ -1906,15 +1867,13 @@ msgid "KMail Question"
 msgstr "Kmail-fråga"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Behåll kryptering"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Behåll inte"
@@ -1928,8 +1887,7 @@ msgstr ""
 "Del %1 av brevet är signerad. Vill du behålla signaturen när du sparar?"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Behåll signatur"
@@ -1946,8 +1904,7 @@ msgstr ""
 "qt>"
 
 #: utils/messageviewerutil.cpp:386
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Fel när bilagan skulle sparas"
@@ -1985,8 +1942,7 @@ msgid "File %1 could not be loaded."
 msgstr "Filen %1 kunde inte läsas in."
 
 #: utils/messageviewerutil.cpp:508
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Fel vid inläsning av brev"
@@ -1997,8 +1953,7 @@ msgid "File %1 could not be created."
 msgstr "Filen %1 kunde inte skapas."
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Fel när brev skulle sparas"
@@ -2061,7 +2016,7 @@ msgstr "Storlek"
 #: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "Kunde inte skapa förhandsgranskning av utskrift."
 
 #: viewer/printmessage.cpp:104
 #, kde-format
@@ -2201,8 +2156,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Vill du verkligen köra <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Kör"
@@ -2221,8 +2175,7 @@ msgstr ""
 "Att ta bort en bilaga kan göra eventuell digital signatur av brevet ogiltig."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Ta bort bilaga"
@@ -2400,8 +2353,7 @@ msgid "Copy Text"
 msgstr "Kopiera text"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Markera all text"
@@ -2422,8 +2374,7 @@ msgid "Show Message Structure"
 msgstr "Visa brevstruktur"
 
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Visa k&ällkoden"
@@ -2434,43 +2385,37 @@ msgid "&Save Message..."
 msgstr "&Spara brev..."
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Spara visningsformat"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Åte&rställ visningsformat"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Panorera uppåt i brev"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Panorera neråt i brev"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Panorera uppåt i brev (mer)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Panorera neråt i brev (mer)"
@@ -2486,29 +2431,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Växla visningsläge mellan HTML och vanlig text"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Ladda externa referenser"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Läs upp text"
 
 #: viewer/viewer_p.cpp:1636
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Dela text..."
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopiera bildplats"
@@ -2554,8 +2495,7 @@ msgid "The URL %1 is not valid."
 msgstr "Webbadressen %1 är inte giltig."
 
 #: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Kontrollera nätfiskewebbadress"
@@ -2567,8 +2507,7 @@ msgstr ""
 "Webbplatsen innehåller skadlig programvara, vill du fortsätta att visa den?"
 
 #: viewer/viewer_p.cpp:2018
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Skadlig programvara"
@@ -2754,18 +2693,30 @@ msgid "KMail was unable to open the attachment."
 msgstr "Kmail kunde inte öppna bilagan."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Nästa brev"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Föregående brev"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Anger standardpolicy att använda för brevhanteringsbekräftelser (bara för "
+#~ "intern användning)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Anger standardåtgärden för citering vid svar på ett brev (bara för intern "
+#~ "användning)"
 
 #~ msgid "The most recent selected folder using for Todo."
 #~ msgstr "Den senast valda korgen använd för uppgifter."
