@@ -244,8 +244,7 @@ void SignJob::process()
 
             if (changed) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "Content changed";
-                d->content->setBody(body);
-                d->content->contentTransferEncoding()->setDecoded(false);
+                d->content->setEncodedBody(body);
             }
         }
 

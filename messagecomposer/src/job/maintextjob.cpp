@@ -130,7 +130,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     cjob->contentType()->setMimeType("image/png");
     cjob->contentType()->setName(image->imageName, "utf-8");
     cjob->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-    cjob->contentTransferEncoding()->setDecoded(false); // It is already encoded.
+    cjob->setDataIsEncoded(true); // It is already encoded.
     cjob->contentID()->setIdentifier(image->contentID.toLatin1());
     qCDebug(MESSAGECOMPOSER_LOG) << "cid" << cjob->contentID()->identifier();
     cjob->setData(image->image);

@@ -28,6 +28,7 @@ public:
     bool chooseCTE();
 
     QByteArray data;
+    bool dataEncoded = false;
     KMime::Headers::ContentDescription *contentDescription = nullptr;
     KMime::Headers::ContentDisposition *contentDisposition = nullptr;
     KMime::Headers::ContentID *contentID = nullptr;
@@ -92,6 +93,12 @@ void SinglepartJob::setData(const QByteArray &data)
 {
     Q_D(SinglepartJob);
     d->data = data;
+}
+
+void SinglepartJob::setDataIsEncoded(bool encoded)
+{
+    Q_D(SinglepartJob);
+    d->dataEncoded = encoded;
 }
 
 KMime::Headers::ContentDescription *SinglepartJob::contentDescription()
@@ -170,7 +177,11 @@ void SinglepartJob::process()
     }
 
     // Set data.
-    d->resultContent->setBody(d->data);
+    if (d->dataEncoded) {
+        d->resultContent->setEncodedBody(d->data);
+    } else {
+        d->resultContent->setBody(d->data);
+    }
 
     emitResult();
 }
