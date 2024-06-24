@@ -82,7 +82,6 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 if (format & Kleo::AnySMIME) { // sign SMIME
                     auto ct = code->contentTransferEncoding(); // create
                     ct->setEncoding(KMime::Headers::CEbase64);
-                    ct->needToEncode();
                     code->setBody(encodedBody);
                 } else { // sign PGPMmime
                     setBodyAndCTE(encodedBody, orig->contentType(), code);
