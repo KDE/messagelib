@@ -20,9 +20,7 @@
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
-#include "MessageCore/StringUtil"
-
-#include <KMime/DateFormatter> // kdepimlibs
+#include <MessageCore/StringUtil>
 
 #include <Akonadi/Item>
 #include <KTwoFingerTap>

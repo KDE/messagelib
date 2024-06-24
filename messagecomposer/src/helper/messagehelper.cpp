@@ -12,7 +12,6 @@
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
-#include <KMime/DateFormatter>
 #include <KMime/MDN>
 #include <KMime/Message>
 

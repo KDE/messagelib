@@ -11,12 +11,12 @@
 #include <QVariantHash>
 
 #include "messageviewer/spamheaderanalyzer.h"
-#include <KMime/DateFormatter>
 #include <KMime/Message>
 
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
+
 namespace MessageViewer
 {
 /**

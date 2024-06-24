@@ -12,7 +12,6 @@
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
 
-#include <KMime/DateFormatter>
 #include <KMime/Message>
 
 #include <KColorScheme>

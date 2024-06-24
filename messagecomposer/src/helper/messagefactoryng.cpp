@@ -23,7 +23,7 @@
 #include "messagecomposer_debug.h"
 #include <KEmailAddress>
 #include <KLocalizedString>
-#include <KMime/DateFormatter>
+#include <MessageCore/DateFormatter>
 #include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>
 #include <MessageCore/Util>
@@ -903,7 +903,7 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     QString result = s;
     static QRegularExpression rx{QStringLiteral("\\$\\{([a-z0-9-]+)\\}"), QRegularExpression::CaseInsensitiveOption};
 
-    const QString sDate = KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime());
+    const QString sDate = MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Localized, msg->date()->dateTime());
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toSecsSinceEpoch() << sDate;
 
     result.replace(QStringLiteral("${date}"), sDate);

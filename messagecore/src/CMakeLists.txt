@@ -35,11 +35,13 @@ target_sources(KPim6MessageCore PRIVATE
     utils/stringutil.cpp
     utils/util.cpp
     utils/colorutil.cpp
+    utils/dateformatter.cpp
 
     settings/messagecoresettings.cpp
     misc/imagecollector.h
     misc/mailinglist.h
     utils/colorutil.h
+    utils/dateformatter.h
     utils/stringutil.h
     utils/util.h
     attachment/attachmentloadjob.h
@@ -138,6 +140,7 @@ ecm_generate_headers(MessageCore_Camelcaseutils_HEADERS
     ColorUtil
     StringUtil
     Util
+    DateFormatter
     REQUIRED_HEADERS MessageCore_utils_HEADERS
     PREFIX MessageCore
     RELATIVE utils

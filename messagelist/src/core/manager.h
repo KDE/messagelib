@@ -15,7 +15,7 @@
 
 #include <Akonadi/Collection>
 
-namespace KMime
+namespace MessageCore
 {
 class DateFormatter;
 }
@@ -53,7 +53,7 @@ private:
     QList<Widget *> mWidgetList;
     QMap<QString, Aggregation *> mAggregations;
     QMap<QString, Theme *> mThemes;
-    KMime::DateFormatter *const mDateFormatter;
+    MessageCore::DateFormatter *const mDateFormatter;
     const QString mCachedLocalizedUnknownText;
 
 public:
@@ -67,7 +67,7 @@ public:
     static void registerWidget(Widget *pWidget);
     static void unregisterWidget(Widget *pWidget);
 
-    const KMime::DateFormatter *dateFormatter() const
+    const MessageCore::DateFormatter *dateFormatter() const
     {
         return mDateFormatter;
     }

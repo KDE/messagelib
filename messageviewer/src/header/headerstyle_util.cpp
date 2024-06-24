@@ -57,13 +57,13 @@ QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDa
 
     switch (dateFormat) {
     case ShortDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, dateTime.toLocalTime());
+        return MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Localized, dateTime.toLocalTime());
     case LongDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, dateTime.toLocalTime());
+        return MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::CTime, dateTime.toLocalTime());
     case FancyShortDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, dateTime.toLocalTime());
+        return MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Fancy, dateTime.toLocalTime());
     case FancyLongDate:
-        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, dateTime.toLocalTime(), QString(), false);
+        return MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Fancy, dateTime.toLocalTime(), QString(), false);
     case CustomDate:
     default:
         return dateStr(dateTime);
@@ -201,14 +201,14 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
 {
-    return KMime::DateFormatter::formatDate(static_cast<KMime::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat()),
-                                            dateTime.toLocalTime(),
-                                            MessageCore::MessageCoreSettings::self()->customDateFormat());
+    return MessageCore::DateFormatter::formatDate(static_cast<MessageCore::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat()),
+                                                  dateTime.toLocalTime(),
+                                                  MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
 QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
 {
-    KMime::DateFormatter formatter(KMime::DateFormatter::Fancy);
+    MessageCore::DateFormatter formatter(MessageCore::DateFormatter::Fancy);
     return formatter.dateString(dateTime);
 }
 

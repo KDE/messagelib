@@ -15,11 +15,10 @@
 #include "core/widgetbase.h"
 #include "messagelistsettings.h"
 
-#include "MessageCore/MessageCoreSettings"
+#include <MessageCore/DateFormatter>
+#include <MessageCore/MessageCoreSettings>
 
 #include "messagelistutil_p.h"
-
-#include <KMime/DateFormatter> // kdepimlibs
 
 #include "messagelist_debug.h"
 #include <KConfig>
@@ -31,7 +30,7 @@ Manager *Manager::mInstance = nullptr;
 
 Manager::Manager()
     : QObject()
-    , mDateFormatter(new KMime::DateFormatter())
+    , mDateFormatter(new MessageCore::DateFormatter())
     , mCachedLocalizedUnknownText(i18nc("Unknown date", "Unknown"))
 {
     mInstance = this;
@@ -849,7 +848,7 @@ void Manager::reloadGlobalConfiguration()
 void Manager::loadGlobalConfiguration()
 {
     // Load the date format
-    const auto type = static_cast<KMime::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat());
+    const auto type = static_cast<MessageCore::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat());
     mDateFormatter->setCustomFormat(MessageCore::MessageCoreSettings::self()->customDateFormat());
     mDateFormatter->setFormat(type);
 }

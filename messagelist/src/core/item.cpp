@@ -12,7 +12,7 @@
 #include "core/model.h"
 
 #include <KFormat>
-#include <KMime/DateFormatter>
+#include <MessageCore/DateFormatter>
 
 #include <KLocalizedString>
 
