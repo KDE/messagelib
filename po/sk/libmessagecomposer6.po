@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2021-11-15 09:14+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1581,7 +1581,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Nemožno získať textový kodek pre znakovú sadu \"%1\"."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 kódovanie prevodu obsahu nemôže správne kódovať túto správu."
@@ -2384,7 +2384,7 @@ msgstr "Rôzne"
 msgid "Subject"
 msgstr "Predmet"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2392,7 +2392,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "príloha, pripojená"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2401,21 +2401,21 @@ msgstr ""
 "Spracovanie pošty nie je nastavené, takže e-maily nemôžu byť zaslané. Chcete "
 "vytvoriť spracovač pošty?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Žiadny spracovač pošty."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Žiadny spracovač pošty."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2424,14 +2424,14 @@ msgstr ""
 "Spracovanie pošty je v režime offline, takže e-maily nemôžu byť zaslané. "
 "Chcete, aby bolo v režme online?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Spracovanie pošty v režime offline."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

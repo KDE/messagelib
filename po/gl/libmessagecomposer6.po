@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 19:54+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1552,7 +1552,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Non foi posíbel obter o códec de texto do conxunto de caracteres «%1»."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -2362,7 +2362,7 @@ msgstr "Varios"
 msgid "Subject"
 msgstr "Asunto"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2370,7 +2370,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "anexo,anexado"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2379,19 +2379,19 @@ msgstr ""
 "O axente de despacho de correo non está configurado, polo que non se poden "
 "enviar mensaxes. Quere crear un axente de despacho de correo?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Non hai ningún axente de despacho de correo."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crear un axente de despacho de correo"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2400,13 +2400,13 @@ msgstr ""
 "O axente de despacho de correo está desconectado, polo que non se poden "
 "enviar mensaxes. Quere poñelo en liña?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "O axente de despacho de correo está desconectado."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

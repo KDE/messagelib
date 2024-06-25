@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-06-19 22:33+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1534,7 +1534,7 @@ msgstr "Oni petis ne uzi vortvolvadon, sed ne ricevis puran simplan tekston."
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Ne eblis akiri tekstkodekon por signaro \"%1\"."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 Content-Transfer-Encoding ne povas ĝuste kodi ĉi tiun mesaĝon."
@@ -2332,7 +2332,7 @@ msgstr "Misc"
 msgid "Subject"
 msgstr "Subjekto"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2340,7 +2340,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "alfikso, alfiksita"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2349,19 +2349,19 @@ msgstr ""
 "La poŝtsendisto ne estas starigita, do retpoŝtoj ne povas esti senditaj. Ĉu "
 "vi volas krei poŝtsendilon?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Neniu poŝtsendisto."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Krei Poŝt-Sendilon"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2370,13 +2370,13 @@ msgstr ""
 "La poŝtsendisto estas eksterrete, do retpoŝtoj ne povas esti senditaj. Ĉu vi "
 "volas fari ĝin interrete?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Poŝtsendisto eksterrete."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

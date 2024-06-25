@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 09:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1550,7 +1550,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Besedilnega kodeka za nabor znakov »%1« ni bilo mogoče pridobiti."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -2365,7 +2365,7 @@ msgstr "Razno"
 msgid "Subject"
 msgstr "Zadeva"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2375,7 +2375,7 @@ msgstr ""
 "priloga,priponka,priloženo,priložil,priložila,pripel,pripela,pripet,pripeta,"
 "pripete,pripeti,priložena,priložen,priloženi,priložene"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2384,19 +2384,19 @@ msgstr ""
 "Odpravnik pošte ni nastavljen, zato pošte ni mogoče pošiljati. Ali želite "
 "ustvariti odpravnika pošte?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ni odpravnika pošte."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Ustvari odpravnika pošte"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2405,13 +2405,13 @@ msgstr ""
 "Odpravnik pošte ni povezan, zato pošte ni mogoče pošiljati. Ali želite da "
 "odpravnik vzpostavi povezavo?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Odpravnik pošte ni povezan."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

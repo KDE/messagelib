@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1574,7 +1574,7 @@ msgstr "Bedt om ikke å bruke ordbryting, men fikk ikke ren klartekst."
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Klarte ikke skaffe tekstkodek for tegnsett «%1»."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 Content-Transfer-Encoding kan ikke kode denne meldinga korrekt."
@@ -2348,7 +2348,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2358,7 +2358,7 @@ msgstr ""
 "vedlegg,vedlegga,vedleggene,vedlegget,vedlagt,vedlagte,lagt ved,attachment,"
 "attached"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2367,20 +2367,20 @@ msgstr ""
 "E-postsenderen er ikke satt opp, e-poster kan ikke sendes. Vil du opprette "
 "en e-postsender?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ingen e-postsender."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr ""
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2389,14 +2389,14 @@ msgstr ""
 "E-postsenderen er frakoblet, e-poster kan ikke sendes. Vil du sette den "
 "tilkoblet?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "E.postsender frakoblet."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-05-17 09:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1562,7 +1562,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "No s'ha pogut obtindre el còdec de text del joc de caràcters «%1»."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -2376,7 +2376,7 @@ msgstr "Miscel·lània"
 msgid "Subject"
 msgstr "Assumpte"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2384,7 +2384,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "adjunt,adjuntat,annex,annexat"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2393,19 +2393,19 @@ msgstr ""
 "El distribuïdor de correu està sense configurar, i no pot enviar els "
 "correus. Voleu crear ara un distribuïdor de correu?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Sense distribuïdor de correu."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crea un distribuïdor de correu"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2414,13 +2414,13 @@ msgstr ""
 "El distribuïdor de correu està fora de línia, i no pot enviar els correus. "
 "Voleu posar-lo en línia?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "El distribuïdor de correu està fora de línia."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

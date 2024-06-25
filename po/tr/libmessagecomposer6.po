@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 13:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1541,7 +1541,7 @@ msgstr "Sözcük kaydırma kullanılmaması seçildi fakat düz metin verilmedi.
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "“%1” karakter kümesi için metin kodlayıcısı alınamadı."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 Content-Transfer-Encoding bu iletiyi düzgün kodlayamıyor."
@@ -2344,7 +2344,7 @@ msgstr "Çeşitli"
 msgid "Subject"
 msgstr "Konu"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2354,7 +2354,7 @@ msgstr ""
 "eklenti,ekteki,ek,ekli,eklenmiş,ilişik,iliştiriyorum,ekliyorum,eklidir,"
 "ektedir"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2363,19 +2363,19 @@ msgstr ""
 "Posta göndericisi ayarlı olmadığından postalar gönderilemiyor. Bir posta "
 "göndericisi oluşturmak istiyor musunuz?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Posta Göndericisi Yok"
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Posta Göndericisi Oluştur"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2384,13 +2384,13 @@ msgstr ""
 "Posta göndericisi çevrimdışı olduğundan postalar gönderilemiyor. Çevrimiçi "
 "yapmak istiyor musunuz?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Posta Göndericisi Çevrimdışı"
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1588,7 +1588,7 @@ msgstr "Paluti mitte kasutada reamurdmist, kuid vastavat lihtteksti pole."
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Märgistiku \"%1\" tekstikoodeki hankimine nurjus."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 Content-Transfer-Encoding ei suuda kirja korrektselt kodeerida."
@@ -2401,7 +2401,7 @@ msgstr "Muu"
 msgid "Subject"
 msgstr "Teema"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2409,7 +2409,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "manus,manusena,kaasatud,manustatud"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2418,21 +2418,21 @@ msgstr ""
 "Kirjade edastamise agent ei ole seadistatud, kirju ei saa saata. Kas luua "
 "agent?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Kirjade edastamise agent puudub."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Kirjade edastamise agent puudub."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2441,14 +2441,14 @@ msgstr ""
 "Kirjade edastamise agent ei ole võrgus, kirju ei saa saata. Kas ühendada "
 "agent võrku?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Kirjade edastamise agent ei ole võrgus."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-06-20 21:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1498,7 +1498,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr ""
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -2270,7 +2270,7 @@ msgstr "மற்றவை"
 msgid "Subject"
 msgstr "தலைப்பு"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2278,7 +2278,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,உடனிணைப்பு,இணைப்பு,இணை,இணைத்துள்ளேன்,இணைக்கிறேன்"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2287,19 +2287,19 @@ msgstr ""
 "அஞ்சலனுப்புவதற்கான பின்னணி சேவை அமைக்கப்படாத‍தால், அஞ்சலனுப்ப முடியாது. அஞ்சலனுப்பும் "
 "பின்னணி சேவையை உருவாக்க விரும்புகிறீர்களா?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "அஞ்சனுப்பும் பின்னணி சேவை இல்லை."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "அஞ்சனுப்பும் சேவையை உருவாக்கு"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2308,13 +2308,13 @@ msgstr ""
 "அஞ்சலனுப்புவதற்கான பின்னணி சேவை தொடர்பற்று உள்ளதால், அஞ்சலனுப்ப முடியாது. அஞ்சலனுப்பும் "
 "பின்னணி சேவையை தொடர்புள்ள நிலைக்கு மாற்ற விரும்புகிறீர்களா?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "அஞ்சலனுப்பும் சேவை தொடர்பற்று உள்ளது."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

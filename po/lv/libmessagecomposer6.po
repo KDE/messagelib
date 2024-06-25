@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2024-03-03 19:24+0200\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: \n"
@@ -1561,7 +1561,7 @@ msgstr "Lūdza neizmantot teksta aplaušanu, bet nav dots tīrs vienkāršs teks
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Nevarēja iegūt teksta kodētāju rakstzīmju kopai „%1“."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "„%1“ satura nodošanas kodējums neļauj pareizi kodēt šo vēstuli."
@@ -2356,7 +2356,7 @@ msgstr "Dažādi"
 msgid "Subject"
 msgstr "Temats"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2364,7 +2364,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "pielikums,pievienots"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2373,19 +2373,19 @@ msgstr ""
 "Pasta sūtītājs nav iestatīts, tāpēc pastu nevar nosūtīt. Vai vēlaties "
 "izveidot pasta nosūtītāju?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Nav pasta nosūtītāja."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Izveidot pasta nosūtītāju"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2394,13 +2394,13 @@ msgstr ""
 "Pasta nosūtītājs atrodas bezsaistē, tāpēc pastu nevar nosūtīt. Vai vēlaties "
 "ieslēgt tiešsaisti?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Pasta nosūtītājs ir bezsaistē."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

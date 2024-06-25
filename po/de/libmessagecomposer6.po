@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-06-25 00:39+0000\n"
 "PO-Revision-Date: 2023-05-18 20:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1613,7 +1613,7 @@ msgid "Could not get text codec for charset \"%1\"."
 msgstr ""
 "Die Text-Kodierung für den Zeichensatz „%1“ kann nicht ermittelt werden."
 
-#: job/singlepartjob.cpp:64
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -2425,7 +2425,7 @@ msgstr "Verschiedenes"
 msgid "Subject"
 msgstr "Betreff"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2433,7 +2433,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "Anhang,hängt an,angehängt,Anlage"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2442,21 +2442,21 @@ msgstr ""
 "Der Agent zur Nachrichten-Auslieferung ist nicht eingerichtet. Daher können "
 "keine E-Mails versendet werden. Möchten Sie den Agenten einrichten?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Kein Agent zur Nachrichten-Auslieferung."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Kein Agent zur Nachrichten-Auslieferung."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2465,14 +2465,14 @@ msgstr ""
 "Der Agent zur Nachrichten-Auslieferung ist offline. Daher können keine E-"
 "Mails versendet werden. Möchten Sie den Agenten online schalten?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Agent zur Nachrichten-Auslieferung ist offline."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
