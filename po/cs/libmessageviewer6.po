@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-06-18 16:09+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -582,12 +582,12 @@ msgstr "Povoleno"
 msgid "Domain:"
 msgstr "Doména:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "Seznam ID:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "Z:"
@@ -803,88 +803,88 @@ msgstr "%1: Platný"
 msgid "Not Signed"
 msgstr "Nepodepsán"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "Předmět:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
 msgstr "ID zprávy:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "Do:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "Odpovědět komu:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "Kopie: "
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "Skrytá kopie:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "Odesílatel:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "přeposláno od:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "přeposlat komu:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Žádný předmět"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Stav spamu:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "Režim tisku"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[Vizitka]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "Přílohy:"
 
-#: header/grantleeheaderformatter.cpp:541
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "Zabezpečení:"

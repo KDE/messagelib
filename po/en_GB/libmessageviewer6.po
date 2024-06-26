@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-06-22 12:59+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -579,12 +579,12 @@ msgstr "Enabled"
 msgid "Domain:"
 msgstr "Domain:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "List-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "From:"
@@ -800,88 +800,88 @@ msgstr "%1: Valid"
 msgid "Not Signed"
 msgstr "Not Signed"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "Subject:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "Date:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
 msgstr "Message-ID:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "To:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "Reply To:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "Sender:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "resent from:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "resent to:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee theme \"%1\" is not valid."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "No Subject"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Spam Status:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "Printing mode"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "Attachments:"
 
-#: header/grantleeheaderformatter.cpp:541
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "Security:"

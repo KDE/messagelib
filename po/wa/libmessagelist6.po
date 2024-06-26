@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -243,18 +243,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Passé houte"
 
-#: core/manager.cpp:35 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:332
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Nén cnoxhou"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:205
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr ""
 
-#: core/manager.cpp:207
+#: core/manager.cpp:206
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -262,24 +262,24 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 
-#: core/manager.cpp:219
+#: core/manager.cpp:218
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr ""
 
-#: core/manager.cpp:220
+#: core/manager.cpp:219
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:231
+#: core/manager.cpp:230
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr ""
 
-#: core/manager.cpp:232
+#: core/manager.cpp:231
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -287,120 +287,120 @@ msgid ""
 "that have been active today."
 msgstr ""
 
-#: core/manager.cpp:244
+#: core/manager.cpp:243
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr ""
 
-#: core/manager.cpp:245
+#: core/manager.cpp:244
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:256
+#: core/manager.cpp:255
 #, fuzzy, kde-format
 #| msgid "Associated Mailing List"
 msgid "Standard Mailing List"
 msgstr "Djåspinreye ki va avou li ridant"
 
-#: core/manager.cpp:257
+#: core/manager.cpp:256
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 
-#: core/manager.cpp:266
+#: core/manager.cpp:265
 #, kde-format
 msgid "Flat Date View"
 msgstr ""
 
-#: core/manager.cpp:267
+#: core/manager.cpp:266
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
 
-#: core/manager.cpp:278
+#: core/manager.cpp:277
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Senders/Receivers, Flat"
 msgstr "Evoyeu/riçuveu"
 
-#: core/manager.cpp:279
+#: core/manager.cpp:278
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
 
-#: core/manager.cpp:290
+#: core/manager.cpp:289
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Thread Starters"
 msgstr "Ralo&yî les messaedjes sorlon leus sudjets (lignoûle)"
 
-#: core/manager.cpp:291
+#: core/manager.cpp:290
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Classike"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:572
+#: core/manager.cpp:571
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Sudjet"
 
-#: core/manager.cpp:605 core/theme.cpp:112
+#: core/manager.cpp:604 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Evoyeu/riçuveu"
 
-#: core/manager.cpp:612
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Evoyeu"
 
-#: core/manager.cpp:614
+#: core/manager.cpp:613
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Riçuveu"
 
-#: core/manager.cpp:620
+#: core/manager.cpp:619
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Date"
 
-#: core/manager.cpp:622
+#: core/manager.cpp:621
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Li tote dierinne date"
 
-#: core/manager.cpp:628
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Grandeu"
 
-#: core/manager.cpp:630
+#: core/manager.cpp:629
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -408,81 +408,81 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Ataetchmint"
 
-#: core/manager.cpp:636
+#: core/manager.cpp:635
 #, fuzzy, kde-format
 #| msgid "New/Unread"
 msgid "Read/Unread"
 msgstr "Novea/Nén léjhou"
 
-#: core/manager.cpp:641
+#: core/manager.cpp:640
 #, kde-format
 msgid "Replied"
 msgstr "Respondou"
 
-#: core/manager.cpp:643
+#: core/manager.cpp:642
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Impôrtant"
 
-#: core/manager.cpp:649
+#: core/manager.cpp:648
 #, kde-format
 msgid "Action Item"
 msgstr "Cayet di faitindje"
 
-#: core/manager.cpp:655
+#: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Sipam/normå emile"
 
-#: core/manager.cpp:661
+#: core/manager.cpp:660
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Racassî/passé houte"
 
-#: core/manager.cpp:667
+#: core/manager.cpp:666
 #, kde-format
 msgid "Encryption"
 msgstr "Ecriptaedje"
 
-#: core/manager.cpp:673
+#: core/manager.cpp:672
 #, kde-format
 msgid "Signature"
 msgstr "Sinateure"
 
-#: core/manager.cpp:678
+#: core/manager.cpp:677
 #, kde-format
 msgid "Tag List"
 msgstr "Djivêye des etiketes"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "&Maléns"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:690
+#: core/manager.cpp:689
 #, kde-format
 msgid "Message"
 msgstr "Messaedje"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:770
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:772
+#: core/manager.cpp:771
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Estat"
@@ -898,78 +898,78 @@ msgstr ""
 msgid "Styled Joined Rectangles"
 msgstr ""
 
-#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
 msgstr "Nole sinateure di trovêye"
 
-#: core/view.cpp:761
+#: core/view.cpp:759
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr ""
 
-#: core/view.cpp:765
+#: core/view.cpp:763
 #, fuzzy, kde-format
 #| msgctxt "EMAIL OF TRANSLATORS"
 #| msgid "Your emails"
 msgid "Show Default Columns"
 msgstr "lorint.hendschel@skynet.be"
 
-#: core/view.cpp:770
+#: core/view.cpp:768
 #, kde-format
 msgid "Display Tooltips"
 msgstr ""
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
+#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&Di"
 
-#: core/view.cpp:2240 core/view.cpp:2244
+#: core/view.cpp:2238 core/view.cpp:2242
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Po"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2239 core/view.cpp:2243
 #, kde-format
 msgid "Date"
 msgstr "Date"
 
-#: core/view.cpp:2259 core/view.cpp:2263
+#: core/view.cpp:2257 core/view.cpp:2261
 #, kde-format
 msgid "Size"
 msgstr "Grandeu"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "Ridant"
 
-#: core/view.cpp:2270 core/view.cpp:2272
+#: core/view.cpp:2268 core/view.cpp:2270
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgid "Preview"
 msgstr "Di dvant"
 
-#: core/view.cpp:2289
+#: core/view.cpp:2287
 #, fuzzy, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "Mwaijhe sinateure."
 msgstr[1] "Mwaijhe sinateure."
 
-#: core/view.cpp:2292
+#: core/view.cpp:2290
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2329
+#: core/view.cpp:2327
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -977,27 +977,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "Lignoûles prémetou so d&rovi"
 
-#: core/view.cpp:2331
+#: core/view.cpp:2329
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Lignoûles prémetou so d&rovi"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "Ralo&yî les messaedjes sorlon leus sudjets (lignoûle)"
 
-#: core/view.cpp:2345
+#: core/view.cpp:2343
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2348
+#: core/view.cpp:2346
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1005,99 +1005,99 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, fuzzy, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Djivêye des Messaedjes"
 
-#: core/view.cpp:2354
+#: core/view.cpp:2352
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2363
+#: core/view.cpp:2361
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "Lignoûles prémetou so d&rovi"
 
-#: core/view.cpp:2366
+#: core/view.cpp:2364
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "Ralo&yî les messaedjes sorlon leus sudjets (lignoûle)"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2372
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "Li messaedje a stî siné avou l' clé %1."
 
-#: core/view.cpp:2376
+#: core/view.cpp:2374
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "Li messaedje a stî siné avou l' clé %1."
 
-#: core/view.cpp:2385
+#: core/view.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "Lignoûles prémetou so d&rovi"
 
-#: core/view.cpp:2388
+#: core/view.cpp:2386
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "Ralo&yî les messaedjes sorlon leus sudjets (lignoûle)"
 
-#: core/view.cpp:2397 core/view.cpp:2421
+#: core/view.cpp:2395 core/view.cpp:2419
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2399
+#: core/view.cpp:2397
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2402
+#: core/view.cpp:2400
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2410
+#: core/view.cpp:2408
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "Lignoûles prémetou so d&rovi"
 
-#: core/view.cpp:2413
+#: core/view.cpp:2411
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "Ralo&yî les messaedjes sorlon leus sudjets (lignoûle)"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2421
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "Li messaedje a stî siné di %1."
 
-#: core/view.cpp:2449
+#: core/view.cpp:2447
 #, fuzzy, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "Mwaijhe sinateure."
 msgstr[1] "Mwaijhe sinateure."
 
-#: core/view.cpp:2454
+#: core/view.cpp:2452
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

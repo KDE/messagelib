@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -677,12 +677,12 @@ msgstr "Ynskeakelje"
 msgid "Domain:"
 msgstr "S&tandertdomein:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -920,103 +920,103 @@ msgstr ""
 msgid "Not Signed"
 msgstr "&Net ûndertekenje"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "&Underwerp: "
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "Datum: "
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 #| msgid "Message Id"
 msgid "Message-Id:"
 msgstr "Berjocht-id"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "Oan:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "&Beäntwurdzje-nei"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "Stjoerder"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(opnij ferstjoerd troch %1)"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(opnij ferstjoerd troch %1)"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "De hântekeningstriem is ûnjildich"
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Gjin ûnderwerp"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Unposttastân:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "Printúrfier"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[Fisitekaartsje]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "Config->Composer->Attachments"
 #| msgid "A&ttachments"
 msgid "Attachments:"
 msgstr "Tahea&ksels"
 
-#: header/grantleeheaderformatter.cpp:541
+#: header/grantleeheaderformatter.cpp:540
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

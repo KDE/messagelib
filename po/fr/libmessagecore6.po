@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2023-01-12 18:14+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -323,6 +323,30 @@ msgid ""
 msgstr ""
 "La taille maximale en octets autorisée pour les pièces jointes (-1 pour "
 "illimité)"
+
+#: utils/dateformatter.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown'"
+#| msgid "unknown"
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "inconnu"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr ""
 
 #: utils/stringutil.cpp:417
 #, kde-format

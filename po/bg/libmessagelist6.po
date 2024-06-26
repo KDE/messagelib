@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 21:11+0200\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"PO-Revision-Date: 2024-06-25 17:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/aggregation.cpp:178
@@ -203,18 +203,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Игнориран"
 
-#: core/manager.cpp:35 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:332
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:205
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Текуща активност, в нишки"
 
-#: core/manager.cpp:207
+#: core/manager.cpp:206
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -225,12 +225,12 @@ msgstr ""
 "в нишки. Така например в \"Днес\" ще намерите всички съобщения, пристигнали "
 "днес, и всички нишки, които са били активни днес."
 
-#: core/manager.cpp:219
+#: core/manager.cpp:218
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Текуща активност, плоско"
 
-#: core/manager.cpp:220
+#: core/manager.cpp:219
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -240,12 +240,12 @@ msgstr ""
 "са в нишки. Така например в \"Днес\" просто ще намерите всички съобщения, "
 "пристигнали днес."
 
-#: core/manager.cpp:231
+#: core/manager.cpp:230
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Активност по дата, в нишка"
 
-#: core/manager.cpp:232
+#: core/manager.cpp:231
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -256,12 +256,12 @@ msgstr ""
 "в \"Днес\" ще намерите всички съобщения, пристигнали днес, и всички нишки, "
 "които са били активни днес."
 
-#: core/manager.cpp:244
+#: core/manager.cpp:243
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Активност по дата, плоско"
 
-#: core/manager.cpp:245
+#: core/manager.cpp:244
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -270,24 +270,24 @@ msgstr ""
 "Този изглед използва групи ден за ден. Съобщенията не са в нишки. Така "
 "например в \"Днес\" просто ще намерите всички съобщения, пристигнали днес."
 
-#: core/manager.cpp:256
+#: core/manager.cpp:255
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Стандартен пощенски списък"
 
-#: core/manager.cpp:257
+#: core/manager.cpp:256
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 "Това е обикновен и стар изглед на пощенски списък: без групи и сложни нишки."
 
-#: core/manager.cpp:266
+#: core/manager.cpp:265
 #, kde-format
 msgid "Flat Date View"
 msgstr "Плосък изглед на дата"
 
-#: core/manager.cpp:267
+#: core/manager.cpp:266
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -296,12 +296,12 @@ msgstr ""
 "Това е обикновен и стар списък със съобщения, сортирани по дата: без групи и "
 "без нишки."
 
-#: core/manager.cpp:278
+#: core/manager.cpp:277
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Податели/приемници, плоски"
 
-#: core/manager.cpp:279
+#: core/manager.cpp:278
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -310,12 +310,12 @@ msgstr ""
 "Този изглед групира съобщенията по податели или получатели (в зависимост от "
 "типа на папката). Съобщенията не са в нишки."
 
-#: core/manager.cpp:290
+#: core/manager.cpp:289
 #, kde-format
 msgid "Thread Starters"
 msgstr "Стартери на нишки"
 
-#: core/manager.cpp:291
+#: core/manager.cpp:290
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -324,137 +324,137 @@ msgstr ""
 "Този изглед групира съобщенията в нишки и след това групира нишките от "
 "стартиращия потребител."
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Класически"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Една проста, с обратна съвместимост, едноредова тема"
 
-#: core/manager.cpp:572
+#: core/manager.cpp:571
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Тема"
 
-#: core/manager.cpp:605 core/theme.cpp:112
+#: core/manager.cpp:604 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Подател/получател"
 
-#: core/manager.cpp:612
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Подател"
 
-#: core/manager.cpp:614
+#: core/manager.cpp:613
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Получател"
 
-#: core/manager.cpp:620
+#: core/manager.cpp:619
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Дата"
 
-#: core/manager.cpp:622
+#: core/manager.cpp:621
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Последна дата"
 
-#: core/manager.cpp:628
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Размер"
 
-#: core/manager.cpp:630
+#: core/manager.cpp:629
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Прикачен файл"
 
-#: core/manager.cpp:636
+#: core/manager.cpp:635
 #, kde-format
 msgid "Read/Unread"
 msgstr "Прочетени/непрочетени"
 
-#: core/manager.cpp:641
+#: core/manager.cpp:640
 #, kde-format
 msgid "Replied"
 msgstr "Отговорени"
 
-#: core/manager.cpp:643
+#: core/manager.cpp:642
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Важно"
 
-#: core/manager.cpp:649
+#: core/manager.cpp:648
 #, kde-format
 msgid "Action Item"
 msgstr "Действие"
 
-#: core/manager.cpp:655
+#: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Нежелана/Желана поща"
 
-#: core/manager.cpp:661
+#: core/manager.cpp:660
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Следени/Игнорирани"
 
-#: core/manager.cpp:667
+#: core/manager.cpp:666
 #, kde-format
 msgid "Encryption"
 msgstr "Шифроване"
 
-#: core/manager.cpp:673
+#: core/manager.cpp:672
 #, kde-format
 msgid "Signature"
 msgstr "Подпис"
 
-#: core/manager.cpp:678
+#: core/manager.cpp:677
 #, kde-format
 msgid "Tag List"
 msgstr "Списък с етикети"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "Smart"
 msgstr "Интелигентно"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Интелигентна многоредова и многоелементна тема"
 
-#: core/manager.cpp:690
+#: core/manager.cpp:689
 #, kde-format
 msgid "Message"
 msgstr "Съобщение"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:770
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Интелигентно със състояние на кликване"
 
-#: core/manager.cpp:772
+#: core/manager.cpp:771
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Интелигентна многоредова и многоелементна тема с колонка за състояние, върху "
 "която може да се кликне"
 
-#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Състояние"
@@ -846,182 +846,182 @@ msgstr "Стилизирани правоъгълници"
 msgid "Styled Joined Rectangles"
 msgstr "Стилизирани съединени правоъгълници"
 
-#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr "Няма намерен резултат"
 
-#: core/view.cpp:761
+#: core/view.cpp:759
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Коригиране на размерите на колони"
 
-#: core/view.cpp:765
+#: core/view.cpp:763
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Показване на колони по подразбиране"
 
-#: core/view.cpp:770
+#: core/view.cpp:768
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Показване на подсказки"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
+#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "От"
 
-#: core/view.cpp:2240 core/view.cpp:2244
+#: core/view.cpp:2238 core/view.cpp:2242
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "До"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2239 core/view.cpp:2243
 #, kde-format
 msgid "Date"
 msgstr "Дата"
 
-#: core/view.cpp:2259 core/view.cpp:2263
+#: core/view.cpp:2257 core/view.cpp:2261
 #, kde-format
 msgid "Size"
 msgstr "Размер"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "Папка"
 
-#: core/view.cpp:2270 core/view.cpp:2272
+#: core/view.cpp:2268 core/view.cpp:2270
 #, kde-format
 msgid "Preview"
 msgstr "Преглед"
 
-#: core/view.cpp:2289
+#: core/view.cpp:2287
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b> %1 </b> отговор"
 msgstr[1] "<b> %1 </b> отговора"
 
-#: core/view.cpp:2292
+#: core/view.cpp:2290
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b> %1 </b> съобщение в подпапки (<b> %2 </b> непрочетено)"
 msgstr[1] "<b> %1 </b> съобщения в подпапки (<b> %2 </b> непрочетени)"
 
-#: core/view.cpp:2329
+#: core/view.cpp:2327
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Нишки, започнати на %1"
 
-#: core/view.cpp:2331
+#: core/view.cpp:2329
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Нишки, започнати %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Нишки със съобщения от %1"
 
-#: core/view.cpp:2345
+#: core/view.cpp:2343
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Съобщения, изпратени на %1"
 
-#: core/view.cpp:2348
+#: core/view.cpp:2346
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Съобщения, получени на %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Изпратени съобщения %1"
 
-#: core/view.cpp:2354
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Получени съобщения %1"
 
-#: core/view.cpp:2363
+#: core/view.cpp:2361
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Нишки, започнати в рамките на %1"
 
-#: core/view.cpp:2366
+#: core/view.cpp:2364
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Нишки, съдържащи съобщения с дати в рамките на %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2372
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Съобщения, изпратени в рамките на %1"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Съобщения, получени в рамките на %1"
 
-#: core/view.cpp:2385
+#: core/view.cpp:2383
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Нишки, стартирани от %1"
 
-#: core/view.cpp:2388
+#: core/view.cpp:2386
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Нишки с последно съобщение от %1"
 
-#: core/view.cpp:2397 core/view.cpp:2421
+#: core/view.cpp:2395 core/view.cpp:2419
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Съобщения, изпратени до %1"
 
-#: core/view.cpp:2399
+#: core/view.cpp:2397
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Съобщения, изпратени от %1"
 
-#: core/view.cpp:2402
+#: core/view.cpp:2400
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Съобщения, получени от %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2408
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Нишки, насочени към %1"
 
-#: core/view.cpp:2413
+#: core/view.cpp:2411
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Нишки с последно съобщение, насочено към %1"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2421
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Съобщения, получени от %1"
 
-#: core/view.cpp:2449
+#: core/view.cpp:2447
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b> %1 </b> нишка"
 msgstr[1] "<b> %1 </b> нишки"
 
-#: core/view.cpp:2454
+#: core/view.cpp:2452
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1183,8 +1183,7 @@ msgid "Saved Filter"
 msgstr "Запазен филтър"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear Filter"
 msgstr "Изчистване на филтъра"
@@ -1421,8 +1420,7 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Конфигуриране..."
@@ -1481,36 +1479,31 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Персонализиране на режимите за групиране на съобщения"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Ново групиране"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Копиране на групиране"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Експортиране на групиране..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Импортиране на групиране..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Изтриване на групиране"
@@ -1548,36 +1541,31 @@ msgid "Customize Themes"
 msgstr "Персонализиране на теми"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Нова тема"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Клониране на тема"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Експортиране на тема..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Импортиране на тема..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Изтриване на тема"

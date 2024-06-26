@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-25 00:39+0000\n"
-"PO-Revision-Date: 2024-06-18 16:09+0200\n"
+"PO-Revision-Date: 2024-06-25 10:54+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -699,6 +699,9 @@ msgid ""
 "asked whether or not to encrypt this message.\n"
 "Encrypt this message?"
 msgstr ""
+"Z nastavení šifrování příjemce vyplývá, že jste dotázáni, zda zprávu "
+"zašifrovat nebo ne.\n"
+"Zašifrovat tuto zprávu?"
 
 #: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
 #, kde-format

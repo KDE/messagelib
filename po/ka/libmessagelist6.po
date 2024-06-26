@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-06-18 06:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -202,18 +202,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "იგნორირებულია"
 
-#: core/manager.cpp:35 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:332
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:205
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "დისკუსიების აქტივობები"
 
-#: core/manager.cpp:207
+#: core/manager.cpp:206
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -224,12 +224,12 @@ msgstr ""
 "მაგალითად, 'დღეს'-ში იპოვით შეტყობინებებს, რომლებიც დღეს მიიღეთ და ყველა "
 "დისკუსია, რომელიც დღეს აქტიური იყო."
 
-#: core/manager.cpp:219
+#: core/manager.cpp:218
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "მიმდინარე აქტივობა, ბრტყელი"
 
-#: core/manager.cpp:220
+#: core/manager.cpp:219
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -238,12 +238,12 @@ msgstr ""
 "ეს ხედი ჭკვიან თარიღის შუალედის ჯგუფებს იყენებს. შეტყობინებები არ დალაგდება. "
 "მაგალითად, 'დღეს' უბრალოდ დღეს მოსულ ყველა შეტყობინებას გაჩვენებთ."
 
-#: core/manager.cpp:231
+#: core/manager.cpp:230
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "თარიღით და დისკუსიებით"
 
-#: core/manager.cpp:232
+#: core/manager.cpp:231
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -254,12 +254,12 @@ msgstr ""
 "'დღეს'-ში იპოვით შეტყობინებებს, რომლებიც დღეს მიიღეთ და ყველა დისკუსია, "
 "რომელიც დღეს აქტიური იყო."
 
-#: core/manager.cpp:244
+#: core/manager.cpp:243
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "აქტივობა თარიღის მიხედვით, ბრტყელი"
 
-#: core/manager.cpp:245
+#: core/manager.cpp:244
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -268,24 +268,24 @@ msgstr ""
 "ეს ხედი დღიდან-დღემდე ჯგუფებს იყენებს. შეტყობინებები არ დალაგდება. "
 "მაგალითად, 'დღეს' უბრალოდ დღეს მოსულ ყველა შეტყობინებას გაჩვენებთ."
 
-#: core/manager.cpp:256
+#: core/manager.cpp:255
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "სტანდარტული ელფოსტის დაგზავნის სია"
 
-#: core/manager.cpp:257
+#: core/manager.cpp:256
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 "ეს უბრალო და ძველი დაგზავნის სიის ხედია: ჯგუფების და ღრმა დისკუსიების გარეშე."
 
-#: core/manager.cpp:266
+#: core/manager.cpp:265
 #, kde-format
 msgid "Flat Date View"
 msgstr "ბრტყელი თარიღის ხედი"
 
-#: core/manager.cpp:267
+#: core/manager.cpp:266
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -294,12 +294,12 @@ msgstr ""
 "ეს უბრალოდ და ძველი თარიღით დალაგებული შეტყობინებების სია: დაჯგუფებების და "
 "დისკუსიების გარეშე."
 
-#: core/manager.cpp:278
+#: core/manager.cpp:277
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "გამგზავნები/მიმღებები, ბრტყელი"
 
-#: core/manager.cpp:279
+#: core/manager.cpp:278
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -308,12 +308,12 @@ msgstr ""
 "ეს ხედი შეტყობინებებს (საქაღალდის ტიპის მიხედვით) გამომგზავნების ან "
 "მიმღებების მიხედვით დააჯგუფებს. შეტყობინებები დისკუსიით არ დაჯგუფდება."
 
-#: core/manager.cpp:290
+#: core/manager.cpp:289
 #, kde-format
 msgid "Thread Starters"
 msgstr "დისკუსიის დამწყებები"
 
-#: core/manager.cpp:291
+#: core/manager.cpp:290
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -322,136 +322,136 @@ msgstr ""
 "ეს ხედი შეტყობინებებს დისკუსიებში აჯგუფებს და შემდეგ დისკუსიებს დამწყები "
 "მომხმარებლით."
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "კლასიკური"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "მარტივი, უკუთავსებადი, ერთმწკრივიანი თემა"
 
-#: core/manager.cpp:572
+#: core/manager.cpp:571
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "თემა"
 
-#: core/manager.cpp:605 core/theme.cpp:112
+#: core/manager.cpp:604 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "გამგზავნი/მიმღები"
 
-#: core/manager.cpp:612
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "გამგზავნი"
 
-#: core/manager.cpp:614
+#: core/manager.cpp:613
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "მიმღები"
 
-#: core/manager.cpp:620
+#: core/manager.cpp:619
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "თარიღი"
 
-#: core/manager.cpp:622
+#: core/manager.cpp:621
 #, kde-format
 msgid "Most Recent Date"
 msgstr "უახლესი თარიღი"
 
-#: core/manager.cpp:628
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "ზომა"
 
-#: core/manager.cpp:630
+#: core/manager.cpp:629
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "დანართი"
 
-#: core/manager.cpp:636
+#: core/manager.cpp:635
 #, kde-format
 msgid "Read/Unread"
 msgstr "წაკითხული/წაუკითხავი"
 
-#: core/manager.cpp:641
+#: core/manager.cpp:640
 #, kde-format
 msgid "Replied"
 msgstr "ნაპასუხები"
 
-#: core/manager.cpp:643
+#: core/manager.cpp:642
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "მნიშვნელოვანი"
 
-#: core/manager.cpp:649
+#: core/manager.cpp:648
 #, kde-format
 msgid "Action Item"
 msgstr "ქმედების ელემენტი"
 
-#: core/manager.cpp:655
+#: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
 msgstr "სპამი/არასპამი"
 
-#: core/manager.cpp:661
+#: core/manager.cpp:660
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "თვალყური/გამოტოვება"
 
-#: core/manager.cpp:667
+#: core/manager.cpp:666
 #, kde-format
 msgid "Encryption"
 msgstr "დაშიფვრა"
 
-#: core/manager.cpp:673
+#: core/manager.cpp:672
 #, kde-format
 msgid "Signature"
 msgstr "ხელმოწერა"
 
-#: core/manager.cpp:678
+#: core/manager.cpp:677
 #, kde-format
 msgid "Tag List"
 msgstr "ჭდეების სია"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "Smart"
 msgstr "ჭკვიანი"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "ჭკვიანი მრავალხაზიანი და მრავალელემენტიანი თემა"
 
-#: core/manager.cpp:690
+#: core/manager.cpp:689
 #, kde-format
 msgid "Message"
 msgstr "შეტყობინება"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:770
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "ჭკვიანი დაწკაპუნებადი სტატუსით"
 
-#: core/manager.cpp:772
+#: core/manager.cpp:771
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "ჭკვიანი მრავალხაზიანი და მრავალელემენტიანი თემა დაწკაპუნებადი სტატუსის სვეტით"
 
-#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "სტატუსი"
@@ -843,182 +843,182 @@ msgstr "სტილიზებული ოთხკუთხედები"
 msgid "Styled Joined Rectangles"
 msgstr "სტილიზებული შეერთებული ოთხკუთხედები"
 
-#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr "შედეგი ვერ მოიძებნა"
 
-#: core/view.cpp:761
+#: core/view.cpp:759
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "სვეტის ზომების გასწორება"
 
-#: core/view.cpp:765
+#: core/view.cpp:763
 #, kde-format
 msgid "Show Default Columns"
 msgstr "ნაგულისხმევი სვეტების ჩვენება"
 
-#: core/view.cpp:770
+#: core/view.cpp:768
 #, kde-format
 msgid "Display Tooltips"
 msgstr "მინიშნებების ჩვენება"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
+#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "ვისგან"
 
-#: core/view.cpp:2240 core/view.cpp:2244
+#: core/view.cpp:2238 core/view.cpp:2242
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "ვის"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2239 core/view.cpp:2243
 #, kde-format
 msgid "Date"
 msgstr "თარიღი"
 
-#: core/view.cpp:2259 core/view.cpp:2263
+#: core/view.cpp:2257 core/view.cpp:2261
 #, kde-format
 msgid "Size"
 msgstr "ზომა"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "საქაღალდე"
 
-#: core/view.cpp:2270 core/view.cpp:2272
+#: core/view.cpp:2268 core/view.cpp:2270
 #, kde-format
 msgid "Preview"
 msgstr "მინიატურა"
 
-#: core/view.cpp:2289
+#: core/view.cpp:2287
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> პასუხი"
 msgstr[1] "<b>%1</b> პასუხი"
 
-#: core/view.cpp:2292
+#: core/view.cpp:2290
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> შეტყობინება ქვეხეში (<b>%2</b> წაუკთხავია)"
 msgstr[1] "<b>%1</b> შეტყობინება ქვეხეში (<b>%2</b> წაუკთხავია)"
 
-#: core/view.cpp:2329
+#: core/view.cpp:2327
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "დისკუსიის დაწყების თარიღი %1"
 
-#: core/view.cpp:2331
+#: core/view.cpp:2329
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "დისკუსიის დაწყების თარიღი %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "დისკუსიები შეტყობინებებით, რომლების თარიღია %1"
 
-#: core/view.cpp:2345
+#: core/view.cpp:2343
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1-ზე გამოგზავნილი შეტყობინებები"
 
-#: core/view.cpp:2348
+#: core/view.cpp:2346
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1-ზე მიღებული შეტყობინებები"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 გამოგზავნილი შეტყობინებები"
 
-#: core/view.cpp:2354
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 მიღებული შეტყობინებები"
 
-#: core/view.cpp:2363
+#: core/view.cpp:2361
 #, kde-format
 msgid "Threads started within %1"
 msgstr "დისკუსიის დაწყების შუალედია %1"
 
-#: core/view.cpp:2366
+#: core/view.cpp:2364
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "დისკუსიები, რომლებიც შეიცავენ შეტყობინებებს შუალედიდან %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2372
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "შეტყობინებები, რომლებიც გაგზავნის შუალედია %1"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages received within %1"
 msgstr "შეტყობინებები, რომლების მიღების შუალედია %1"
 
-#: core/view.cpp:2385
+#: core/view.cpp:2383
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1-ის მიერ დაიწყებული დისკუსიები"
 
-#: core/view.cpp:2388
+#: core/view.cpp:2386
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "დისკუსიები, რომლებშიც უკანასკნელი პასუხის ავტორია %1"
 
-#: core/view.cpp:2397 core/view.cpp:2421
+#: core/view.cpp:2395 core/view.cpp:2419
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1-სთან გაგზავნილი შეტყობინებები"
 
-#: core/view.cpp:2399
+#: core/view.cpp:2397
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1-ის მიერ გაგზავნილი შეტყობინებები"
 
-#: core/view.cpp:2402
+#: core/view.cpp:2400
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1-სგან მიღებული შეტყობინებები"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2408
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "დისკუსიები, რომლებიც მიმართულია %1-სკენ"
 
-#: core/view.cpp:2413
+#: core/view.cpp:2411
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "დისკუსიები, რომლის უკანასკნელი შეტყობინება მიმართულია %1-სკენ"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2421
 #, kde-format
 msgid "Messages received by %1"
 msgstr "შეტყობინება მიღებულია %1-ის მიერ"
 
-#: core/view.cpp:2449
+#: core/view.cpp:2447
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> ნაკადი"
 msgstr[1] "<b>%1</b> ნაკადი"
 
-#: core/view.cpp:2454
+#: core/view.cpp:2452
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -202,18 +202,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Nem figyelt"
 
-#: core/manager.cpp:35 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:332
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:205
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Jelenlegi aktivitás (szálakra bontva)"
 
-#: core/manager.cpp:207
+#: core/manager.cpp:206
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -224,12 +224,12 @@ msgstr ""
 "szálakra vannak bontva. Tehát például a „Ma” csoportban a mai napon érkezett "
 "üzenetek és a mai napon aktív szálak találhatók."
 
-#: core/manager.cpp:219
+#: core/manager.cpp:218
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Jelenlegi aktivitás (egyszerű)"
 
-#: core/manager.cpp:220
+#: core/manager.cpp:219
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -239,12 +239,12 @@ msgstr ""
 "nincsenek szálakra bontva. Tehát például a „Ma” csoportban a mai napon "
 "érkezett üzenetek találhatók."
 
-#: core/manager.cpp:231
+#: core/manager.cpp:230
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Aktivitás dátum alapján, szálakkal"
 
-#: core/manager.cpp:232
+#: core/manager.cpp:231
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -255,12 +255,12 @@ msgstr ""
 "bontva. Például a „Ma” csoportban a mai napon érkezett üzenetek és a mai "
 "napon aktív szálak találhatók."
 
-#: core/manager.cpp:244
+#: core/manager.cpp:243
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Aktivitás dátum szerint, egyszerű"
 
-#: core/manager.cpp:245
+#: core/manager.cpp:244
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -269,12 +269,12 @@ msgstr ""
 "Ez a nézet napi bontású csoportokat használ. Az üzenetek nincsenek szálakra "
 "bontva. Például a „Ma” csoportban a mai napon érkezett üzenetek találhatók."
 
-#: core/manager.cpp:256
+#: core/manager.cpp:255
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Normál levelezőlista"
 
-#: core/manager.cpp:257
+#: core/manager.cpp:256
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -282,12 +282,12 @@ msgstr ""
 "Egyszerű, hagyományos nézet levelezőlistákhoz. Nincsenek csoportok vagy "
 "összetett szálkezelés."
 
-#: core/manager.cpp:266
+#: core/manager.cpp:265
 #, kde-format
 msgid "Flat Date View"
 msgstr "Egyszerű dátum szerinti nézet"
 
-#: core/manager.cpp:267
+#: core/manager.cpp:266
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -296,12 +296,12 @@ msgstr ""
 "Egyszerű, hagyományos nézet dátum szerint rendezve. Nincsenek csoportok, "
 "nincs szálkezelés."
 
-#: core/manager.cpp:278
+#: core/manager.cpp:277
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Feladó vagy címzett, egyszerű"
 
-#: core/manager.cpp:279
+#: core/manager.cpp:278
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -310,12 +310,12 @@ msgstr ""
 "Ebben a nézetben a üzenetek a feladó vagy a címzett szerint vannak rendezve "
 "(a mappa típusától függően). Nincsenek szálak."
 
-#: core/manager.cpp:290
+#: core/manager.cpp:289
 #, kde-format
 msgid "Thread Starters"
 msgstr "Szálkezdők"
 
-#: core/manager.cpp:291
+#: core/manager.cpp:290
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -324,136 +324,136 @@ msgstr ""
 "Ebben a nézetben az üzenetek szálakra vannak bontva, a szálak a kezdő "
 "felhasználó neve szerint vannak csoportosítva."
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Klasszikus"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Egyszerű, visszafelé kompatibilis, egysoros téma"
 
-#: core/manager.cpp:572
+#: core/manager.cpp:571
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Tárgy"
 
-#: core/manager.cpp:605 core/theme.cpp:112
+#: core/manager.cpp:604 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Feladó/címzett"
 
-#: core/manager.cpp:612
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Feladó"
 
-#: core/manager.cpp:614
+#: core/manager.cpp:613
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Címzett"
 
-#: core/manager.cpp:620
+#: core/manager.cpp:619
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/manager.cpp:622
+#: core/manager.cpp:621
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Legfrissebb dátum"
 
-#: core/manager.cpp:628
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Méret"
 
-#: core/manager.cpp:630
+#: core/manager.cpp:629
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Melléklet"
 
-#: core/manager.cpp:636
+#: core/manager.cpp:635
 #, kde-format
 msgid "Read/Unread"
 msgstr "Olvasott/olvasatlan"
 
-#: core/manager.cpp:641
+#: core/manager.cpp:640
 #, kde-format
 msgid "Replied"
 msgstr "Megválaszolt"
 
-#: core/manager.cpp:643
+#: core/manager.cpp:642
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Fontos"
 
-#: core/manager.cpp:649
+#: core/manager.cpp:648
 #, kde-format
 msgid "Action Item"
 msgstr "Műveletelem"
 
-#: core/manager.cpp:655
+#: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Kéretlen/ál-kéretlen"
 
-#: core/manager.cpp:661
+#: core/manager.cpp:660
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Figyelt/nem figyelt"
 
-#: core/manager.cpp:667
+#: core/manager.cpp:666
 #, kde-format
 msgid "Encryption"
 msgstr "Titkosítás"
 
-#: core/manager.cpp:673
+#: core/manager.cpp:672
 #, kde-format
 msgid "Signature"
 msgstr "Aláírás"
 
-#: core/manager.cpp:678
+#: core/manager.cpp:677
 #, kde-format
 msgid "Tag List"
 msgstr "A lista felcímkézése"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "Smart"
 msgstr "Intelligens"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:685
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Intelligens, több sort és elemet használó téma"
 
-#: core/manager.cpp:690
+#: core/manager.cpp:689
 #, kde-format
 msgid "Message"
 msgstr "Üzenet"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:770
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Intelligens, kattintható állapottal"
 
-#: core/manager.cpp:772
+#: core/manager.cpp:771
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Intelligens, több sort és elemet használó téma, kattintható állapotoszloppal"
 
-#: core/manager.cpp:776 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Állapot"
@@ -844,182 +844,182 @@ msgstr "Stílusos téglalapok"
 msgid "Styled Joined Rectangles"
 msgstr "Stílusos kapcsolt téglalapok"
 
-#: core/view.cpp:682 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr "Nincs találat"
 
-#: core/view.cpp:761
+#: core/view.cpp:759
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Oszlopméret-állítás"
 
-#: core/view.cpp:765
+#: core/view.cpp:763
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Az alapértelmezett oszlopok megjelenítése"
 
-#: core/view.cpp:770
+#: core/view.cpp:768
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Tippek megjelenítése"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
+#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
 #, kde-format
 msgid "From"
 msgstr "Feladó"
 
-#: core/view.cpp:2240 core/view.cpp:2244
+#: core/view.cpp:2238 core/view.cpp:2242
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Címzett"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2239 core/view.cpp:2243
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
 
-#: core/view.cpp:2259 core/view.cpp:2263
+#: core/view.cpp:2257 core/view.cpp:2261
 #, kde-format
 msgid "Size"
 msgstr "Méret"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Folder"
 msgstr "Mappa"
 
-#: core/view.cpp:2270 core/view.cpp:2272
+#: core/view.cpp:2268 core/view.cpp:2270
 #, kde-format
 msgid "Preview"
 msgstr "Előnézet"
 
-#: core/view.cpp:2289
+#: core/view.cpp:2287
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> válasz"
 msgstr[1] "<b>%1</b> válasz"
 
-#: core/view.cpp:2292
+#: core/view.cpp:2290
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> üzenet van az ágban (<b>%2</b> olvasatlan)"
 msgstr[1] "<b>%1</b> üzenet van az ágban (<b>%2</b> olvasatlan)"
 
-#: core/view.cpp:2329
+#: core/view.cpp:2327
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "A szálak kezdete: %1"
 
-#: core/view.cpp:2331
+#: core/view.cpp:2329
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "A szálak kezdete: %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "A következő dátumú szálak: %1"
 
-#: core/view.cpp:2345
+#: core/view.cpp:2343
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "A következő dátummal elküldött üzenetek: %1"
 
-#: core/view.cpp:2348
+#: core/view.cpp:2346
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "A következő dátummal érkezett üzenetek: %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Elküldött üzentek: %1"
 
-#: core/view.cpp:2354
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Érkezett üzenetek: %1"
 
-#: core/view.cpp:2363
+#: core/view.cpp:2361
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Szálak ebben a dátumtartományban: %1"
 
-#: core/view.cpp:2366
+#: core/view.cpp:2364
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Szálak a következő dátumtartományba eső dátumú üzenetekkel: %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2372
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Ezen belül elküldött üzenetek: %1"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Ezen belül érkezett üzenetek: %1"
 
-#: core/view.cpp:2385
+#: core/view.cpp:2383
 #, kde-format
 msgid "Threads started by %1"
 msgstr "A következő által indított szálak: %1"
 
-#: core/view.cpp:2388
+#: core/view.cpp:2386
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "A legfrissebb üzeneteket tartalmazó szálak a következőtől: %1"
 
-#: core/view.cpp:2397 core/view.cpp:2421
+#: core/view.cpp:2395 core/view.cpp:2419
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "A következőnek elküldött üzenetek: %1"
 
-#: core/view.cpp:2399
+#: core/view.cpp:2397
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "A következő által elküldött üzenetek: %1"
 
-#: core/view.cpp:2402
+#: core/view.cpp:2400
 #, kde-format
 msgid "Messages received from %1"
 msgstr "A következőtől érkezett üzenetek: %1"
 
-#: core/view.cpp:2410
+#: core/view.cpp:2408
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "A következőhöz irányított szálak: %1"
 
-#: core/view.cpp:2413
+#: core/view.cpp:2411
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Olyan szálak, amelyekben a legfrissebb üzenet ide irányított: %1"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2421
 #, kde-format
 msgid "Messages received by %1"
 msgstr "A következő által fogadott üzenetek: %1"
 
-#: core/view.cpp:2449
+#: core/view.cpp:2447
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> szál"
 msgstr[1] "<b>%1</b> szál"
 
-#: core/view.cpp:2454
+#: core/view.cpp:2452
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

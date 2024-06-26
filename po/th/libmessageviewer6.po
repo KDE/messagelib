@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -634,12 +634,12 @@ msgstr "เปิดใช้"
 msgid "Domain:"
 msgstr "โดเมนปริยาย:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -877,101 +877,101 @@ msgstr ""
 msgid "Not Signed"
 msgstr "ไม่ต้องเซ็น"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "เรื่อง:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "วันที่: "
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 #| msgid "Message Id"
 msgid "Message-Id:"
 msgstr "หมายเลขจดหมาย"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "ถึง: "
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "ตอบกลับไปยัง"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "สำเนาถึง: "
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "ซ่อนสำเนาถึง: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "ผู้ส่ง"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(ถูกส่งใหม่จาก %1)"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(ถูกส่งใหม่จาก %1)"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "แฟ้มลายเซ็นใช้งานไม่ได้"
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "ไม่มีชื่อเรื่อง"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "สถานะสแปม: "
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "ส่งออกการพิมพ์"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "สิ่งที่แนบมาด้วย:"
 
-#: header/grantleeheaderformatter.cpp:541
+#: header/grantleeheaderformatter.cpp:540
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"

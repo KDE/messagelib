@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2021-07-12 08:12+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -318,6 +318,30 @@ msgid ""
 msgstr ""
 "Το μέγιστο μέγεθος σε bit που επιτρέπεται να έχει η επισύναψη σε μηνύματα "
 "αλληλογραφίας (-1 για χωρίς όριο)"
+
+#: utils/dateformatter.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown'"
+#| msgid "unknown"
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "άγνωστο"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr ""
 
 #: utils/stringutil.cpp:417
 #, kde-format

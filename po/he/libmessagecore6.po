@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-03-24 22:18+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -298,6 +298,30 @@ msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
 "no limit)"
 msgstr "הגודל המרבי המותר בסיביות לקבצים מצורפים להודעה (‎-1 לביטול ההגבלה)"
+
+#: utils/dateformatter.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown'"
+#| msgid "unknown"
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "לא_ידוע"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr ""
 
 #: utils/stringutil.cpp:417
 #, kde-format

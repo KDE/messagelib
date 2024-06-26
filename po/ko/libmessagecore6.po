@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2020-10-04 18:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -295,6 +295,30 @@ msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
 "no limit)"
 msgstr "비트 단위의 최대 이메일 첨부 파일 크기입니다(-1은 무제한)"
+
+#: utils/dateformatter.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown'"
+#| msgid "unknown"
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "알 수 없음"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr ""
 
 #: utils/stringutil.cpp:417
 #, kde-format

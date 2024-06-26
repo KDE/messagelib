@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-15 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2023-08-18 14:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -310,6 +310,30 @@ msgid ""
 "no limit)"
 msgstr ""
 "E-posta eranskinek izan dezaketen neurri maximoa bitetan (-1 mugagaberako)"
+
+#: utils/dateformatter.cpp:158
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown'"
+#| msgid "unknown"
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "ezezaguna"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr ""
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr ""
 
 #: utils/stringutil.cpp:417
 #, kde-format

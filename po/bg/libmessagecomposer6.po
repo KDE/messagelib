@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-25 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 20:52+0200\n"
+"PO-Revision-Date: 2024-06-25 17:47+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -1219,8 +1219,7 @@ msgid "Select Image Format"
 msgstr "Избор на формат на изображението"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Избор на формат..."
@@ -1856,11 +1855,10 @@ msgid "Select Recipient"
 msgstr "Избиране на получател"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "Услуга търсене в &директории"
+msgstr "Търсене &Directory Service"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
