@@ -13,6 +13,13 @@
 
 using namespace MessageCore;
 
+void initLocale()
+{
+    qputenv("LANG", "en_US.utf-8");
+}
+
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+
 class DateFormatterTest : public QObject
 {
     Q_OBJECT
