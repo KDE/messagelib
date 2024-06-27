@@ -8,13 +8,13 @@
 # Alessandro Pasotti <ale.pas@tiscalinet.it>, 2006.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2007, 2008.
 # Nicola Ruggero <nicola@nxnt.org>, 2007.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-26 00:40+0000\n"
-"PO-Revision-Date: 2019-12-24 21:54+0100\n"
+"PO-Revision-Date: 2024-06-26 14:25+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -321,9 +321,7 @@ msgstr ""
 "(-1 per nessun limite)"
 
 #: utils/dateformatter.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "sconosciuto"
@@ -331,18 +329,18 @@ msgstr "sconosciuto"
 #: utils/dateformatter.cpp:172
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Oggi %1"
 
 #: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Ieri %1"
 
 #: utils/dateformatter.cpp:180
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:417
 #, kde-format

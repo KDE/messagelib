@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-26 00:40+0000\n"
-"PO-Revision-Date: 2024-05-30 20:40+0200\n"
+"PO-Revision-Date: 2024-06-26 20:20+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -312,28 +312,26 @@ msgstr ""
 "ограничения)"
 
 #: utils/dateformatter.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
-msgstr "неизвестен"
+msgstr "неизвестно"
 
 #: utils/dateformatter.cpp:172
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Днес %1"
 
 #: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Вчера %1"
 
 #: utils/dateformatter.cpp:180
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:417
 #, kde-format

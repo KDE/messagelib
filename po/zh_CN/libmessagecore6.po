@@ -294,12 +294,10 @@ msgid ""
 msgstr "邮件附件允许的最大值，单位为比特 (-1 代表不限制)"
 
 #: utils/dateformatter.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
-msgstr "未知"
+msgstr ""
 
 #: utils/dateformatter.cpp:172
 #, kde-format

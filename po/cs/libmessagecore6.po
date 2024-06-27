@@ -308,28 +308,26 @@ msgstr ""
 "velikost)"
 
 #: utils/dateformatter.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
-msgstr "neznámé"
+msgstr "neznámý"
 
 #: utils/dateformatter.cpp:172
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Dnes %1"
 
 #: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Včera %1"
 
 #: utils/dateformatter.cpp:180
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:417
 #, kde-format
