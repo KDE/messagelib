@@ -324,13 +324,12 @@ bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
     return false;
 }
 
-QByteArray NodeHelper::charset(KMime::Content *node)
+QByteArray NodeHelper::charset(const KMime::Content *node)
 {
-    if (node->contentType(false)) {
-        return node->contentType(false)->charset();
-    } else {
-        return node->defaultCharset();
+    if (const auto ct = node->contentType(); ct) {
+        return ct->charset();
     }
+    return QByteArrayLiteral("utf-8");
 }
 
 KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) const

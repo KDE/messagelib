@@ -160,7 +160,7 @@ public:
      * Returns the charset for the given node. If no charset is specified
      * for the node, the defaultCharset() is returned.
      */
-    [[nodiscard]] static QByteArray charset(KMime::Content *node);
+    [[nodiscard]] static QByteArray charset(const KMime::Content *node);
 
     /**
      * Returns a usable filename for a node, that can be the filename from the
