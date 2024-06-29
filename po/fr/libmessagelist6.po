@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-26 00:40+0000\n"
-"PO-Revision-Date: 2024-05-29 09:30+0200\n"
+"PO-Revision-Date: 2024-06-26 20:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -50,13 +50,14 @@ msgstr "Aucun"
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr "Par date exacte (de l'origine des fils de discussions)"
+msgstr "Par date exacte (Par l'origine des fils de discussions)"
 
 #: core/aggregation.cpp:180
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr ""
-"Intelligemment par intervalle de temps (de l'origine des fils de discussions)"
+"Intelligemment par intervalle de temps (A partir de l'origine des fils de "
+"discussions)"
 
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
@@ -76,17 +77,17 @@ msgstr "Par destinataire"
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr "Ne jamais déplier les groupes"
+msgstr "Ne jamais développer les groupes"
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr "Déplier les groupes récents"
+msgstr "Développer les groupes récents"
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr "Toujours déplier les groupes"
+msgstr "Toujours développer les groupes"
 
 #: core/aggregation.cpp:202
 #, kde-format
@@ -102,12 +103,12 @@ msgstr "Parfait uniquement"
 #: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect and by References"
-msgstr "Parfait et par références"
+msgstr "Parfait et par référence"
 
 #: core/aggregation.cpp:205
 #, kde-format
 msgid "Perfect, by References and by Subject"
-msgstr "Parfait, par références et par sujet"
+msgstr "Parfait, par référence et par sujet"
 
 #: core/aggregation.cpp:214
 #, kde-format
@@ -117,28 +118,29 @@ msgstr "Message le plus haut"
 #: core/aggregation.cpp:218
 #, kde-format
 msgid "Most Recent Message"
-msgstr "Le message le plus récent"
+msgstr "Message le plus récent"
 
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr "Ne jamais déplier les fils de discussion"
+msgstr "Ne jamais développer les fils de discussions"
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "Déplier les fils de discussion contenant des messages non lus"
+msgstr "développer les fils de discussions contenant des messages non lus"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr ""
-"Déplier les fils de discussion contenant des messages non lus ou importants"
+"Développer les fils de discussions contenant des messages non lus ou "
+"importants"
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr "Toujours déplier les fils de discussion"
+msgstr "Toujours développer les fils de discussions"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -153,7 +155,7 @@ msgstr "Privilégier la vitesse"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr "Tâche de fond (aucune interactivité)"
+msgstr "Tâche de fond (Aucune interactivité)"
 
 #: core/item.cpp:252 core/messageitem.cpp:489
 #, kde-format
@@ -1218,11 +1220,10 @@ msgid "Saved Filter"
 msgstr "Filtre enregistré"
 
 #: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear Filter"
-msgstr "Vider le filtre"
+msgstr "Effacer un filtre"
 
 #: core/widgets/searchlinestatus.cpp:223
 #, kde-format
@@ -1456,8 +1457,7 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Configurer..."
@@ -1465,7 +1465,7 @@ msgstr "Configurer..."
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
-msgstr "Groupes et fils de discussion"
+msgstr "Groupes et fils de discussions"
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
@@ -1477,7 +1477,7 @@ msgstr "Regroupement :"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
-msgstr "Politique de dépliage des groupes :"
+msgstr "Politique de développement des groupes :"
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
@@ -1495,7 +1495,7 @@ msgstr "Origine du fil de discussions :"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
-msgstr "Politique de dépliage des fils de discussions :"
+msgstr "Politique de développement des fils de discussions :"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1516,49 +1516,44 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Personnaliser les modes d'agrégat de messages"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
-msgstr "Nouvelle agrégation"
+msgstr "Nouvel agrégat"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
-msgstr "Cloner l'agrégation"
+msgstr "Cloner un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "Exporter l'agrégat..."
+msgstr "Exporter un agrégat..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Importer un agrégat..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
-msgstr "Supprimer l'agrégation"
+msgstr "Supprimer un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
-msgstr "Agrégation sans nom"
+msgstr "Agrégat sans nom"
 
 #: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
-msgstr "Nouvelle agrégation"
+msgstr "Nouvel agrégat"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
@@ -1568,7 +1563,7 @@ msgstr "Importer un agrégat"
 #: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
-msgstr "Exporter l'agrégat"
+msgstr "Exporter un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1583,39 +1578,34 @@ msgid "Customize Themes"
 msgstr "Personnaliser les thèmes"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nouveau thème"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "Cloner le thème"
+msgstr "Cloner un thème"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
-msgstr "Exporter le thème..."
+msgstr "Exporter un thème..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Importer un thème..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
-msgstr "Supprimer le thème"
+msgstr "Supprimer un thème"
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format
