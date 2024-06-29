@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:38+0000\n"
-"PO-Revision-Date: 2024-03-17 10:06+0100\n"
+"PO-Revision-Date: 2024-06-26 20:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -50,13 +50,14 @@ msgstr "Aucun"
 #: core/aggregation.cpp:179
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
-msgstr "Par date exacte (de l'origine des fils de discussions)"
+msgstr "Par date exacte (Par l'origine des fils de discussions)"
 
 #: core/aggregation.cpp:180
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr ""
-"Intelligemment par intervalle de temps (de l'origine des fils de discussions)"
+"Intelligemment par intervalle de temps (A partir de l'origine des fils de "
+"discussions)"
 
 #: core/aggregation.cpp:181 core/sortorder.cpp:70
 #, kde-format
@@ -76,17 +77,17 @@ msgstr "Par destinataire"
 #: core/aggregation.cpp:192
 #, kde-format
 msgid "Never Expand Groups"
-msgstr "Ne jamais déplier les groupes"
+msgstr "Ne jamais développer les groupes"
 
 #: core/aggregation.cpp:194
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr "Déplier les groupes récents"
+msgstr "Développer les groupes récents"
 
 #: core/aggregation.cpp:196
 #, kde-format
 msgid "Always Expand Groups"
-msgstr "Toujours déplier les groupes"
+msgstr "Toujours développer les groupes"
 
 #: core/aggregation.cpp:202
 #, kde-format
@@ -102,12 +103,12 @@ msgstr "Parfait uniquement"
 #: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect and by References"
-msgstr "Parfait et par références"
+msgstr "Parfait et par référence"
 
 #: core/aggregation.cpp:205
 #, kde-format
 msgid "Perfect, by References and by Subject"
-msgstr "Parfait, par références et par sujet"
+msgstr "Parfait, par référence et par sujet"
 
 #: core/aggregation.cpp:214
 #, kde-format
@@ -117,28 +118,29 @@ msgstr "Message le plus haut"
 #: core/aggregation.cpp:218
 #, kde-format
 msgid "Most Recent Message"
-msgstr "Le message le plus récent"
+msgstr "Message le plus récent"
 
 #: core/aggregation.cpp:228
 #, kde-format
 msgid "Never Expand Threads"
-msgstr "Ne jamais déplier les fils de discussion"
+msgstr "Ne jamais développer les fils de discussions"
 
 #: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread Messages"
-msgstr "Déplier les fils de discussion contenant des messages non lus"
+msgstr "développer les fils de discussions contenant des messages non lus"
 
 #: core/aggregation.cpp:230
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr ""
-"Déplier les fils de discussion contenant des messages non lus ou importants"
+"Développer les fils de discussions contenant des messages non lus ou "
+"importants"
 
 #: core/aggregation.cpp:231
 #, kde-format
 msgid "Always Expand Threads"
-msgstr "Toujours déplier les fils de discussion"
+msgstr "Toujours développer les fils de discussions"
 
 #: core/aggregation.cpp:236
 #, kde-format
@@ -153,7 +155,7 @@ msgstr "Privilégier la vitesse"
 #: core/aggregation.cpp:236
 #, kde-format
 msgid "Batch Job (No Interactivity)"
-msgstr "Tâche de fond (aucune interactivité)"
+msgstr "Tâche de fond (Aucune interactivité)"
 
 #: core/item.cpp:252 core/messageitem.cpp:536
 #, kde-format
@@ -1452,7 +1454,7 @@ msgstr "Inconnu"
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
-msgstr "Groupes et fils de discussion"
+msgstr "Groupes et fils de discussions"
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
@@ -1462,7 +1464,7 @@ msgstr "Regroupement :"
 #: utils/aggregationeditor.cpp:41
 #, kde-format
 msgid "Group expand policy:"
-msgstr "Politique de dépliage des groupes :"
+msgstr "Politique de développement des groupes :"
 
 #: utils/aggregationeditor.cpp:45
 #, kde-format
@@ -1477,7 +1479,7 @@ msgstr "Origine du fil de discussion :"
 #: utils/aggregationeditor.cpp:55
 #, kde-format
 msgid "Thread expand policy:"
-msgstr "Politique de dépliage des fils de discussion :"
+msgstr "Politique de développement des fils de discussions :"
 
 #: utils/aggregationeditor.cpp:64
 #, kde-format
@@ -1500,17 +1502,17 @@ msgstr "Personnaliser les modes d'agrégat de messages"
 #: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
-msgstr "Nouvelle agrégation"
+msgstr "Nouvel agrégat"
 
 #: utils/configureaggregationsdialog.cpp:129
 #, kde-format
 msgid "Clone Aggregation"
-msgstr "Cloner l'agrégation"
+msgstr "Cloner un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, kde-format
 msgid "Export Aggregation..."
-msgstr "Exporter l'agrégat..."
+msgstr "Exporter un agrégat..."
 
 #: utils/configureaggregationsdialog.cpp:149
 #, kde-format
@@ -1520,12 +1522,12 @@ msgstr "Importer un agrégat..."
 #: utils/configureaggregationsdialog.cpp:160
 #, kde-format
 msgid "Delete Aggregation"
-msgstr "Supprimer l'agrégation"
+msgstr "Supprimer un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
-msgstr "Agrégation sans nom"
+msgstr "Agrégat sans nom"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
@@ -1535,7 +1537,7 @@ msgstr "Importer un agrégat"
 #: utils/configureaggregationsdialog.cpp:446
 #, kde-format
 msgid "Export Aggregation"
-msgstr "Exporter l'agrégat"
+msgstr "Exporter un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
