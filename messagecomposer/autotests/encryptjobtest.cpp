@@ -153,14 +153,13 @@ void EncryptJobTest::testHeaders()
     VERIFYEXEC(eJob);
 
     QByteArray mimeType("multipart/encrypted");
-    QByteArray charset("ISO-8859-1");
 
     KMime::Content *result = eJob->content();
     result->assemble();
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
-    QCOMPARE(result->contentType(false)->charset(), charset);
+    QCOMPARE(result->contentType(false)->charset(), "UTF-8");
     QCOMPARE(result->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
