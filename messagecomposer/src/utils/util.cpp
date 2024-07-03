@@ -44,7 +44,7 @@ KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentTy
     cteJob.content()->assemble();
 
     ret->contentTransferEncoding()->setEncoding(cteJob.contentTransferEncoding()->encoding());
-    ret->setBody(cteJob.content()->encodedBody());
+    ret->setEncodedBody(cteJob.content()->encodedBody());
 
     return ret;
 }
