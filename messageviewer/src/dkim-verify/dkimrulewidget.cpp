@@ -43,7 +43,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mFrom->setObjectName(QLatin1StringView("from"));
     mFrom->setClearButtonEnabled(true);
     layout->addRow(i18n("From:"), mFrom);
-    mFrom->setPlaceholderText(i18n("Use '*' to specify all emails from domain"));
+    mFrom->setPlaceholderText(i18nc("@info:placeholder", "Use '*' to specify all emails from domain"));
     connect(mFrom, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
     mSignatureDomainIdentifier->setObjectName(QLatin1StringView("signaturedomainidentifier"));

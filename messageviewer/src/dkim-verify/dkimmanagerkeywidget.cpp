@@ -30,7 +30,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(searchLineEdit);
     searchLineEdit->setObjectName(QLatin1StringView("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
-    searchLineEdit->setPlaceholderText(i18n("Search..."));
+    searchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search..."));
     mainLayout->addWidget(searchLineEdit);
     connect(searchLineEdit, &QLineEdit::textChanged, mDKIMManagerKeyTreeView, &DKIMManagerKeyTreeView::setFilterStr);
 
