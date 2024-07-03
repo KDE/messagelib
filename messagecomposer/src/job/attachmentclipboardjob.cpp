@@ -43,7 +43,7 @@ void AttachmentClipBoardJob::doStart()
         emitResult();
     } else {
         bool ok = false;
-        QString attachmentName = QInputDialog::getText(nullptr, i18n("Define Attachment Name"), i18n("Attachment Name:"), {}, {}, &ok);
+        QString attachmentName = QInputDialog::getText(nullptr, i18nc("@title:window", "Define Attachment Name"), i18n("Attachment Name:"), {}, {}, &ok);
         if (ok) {
             if (attachmentName.isEmpty()) {
                 attachmentName = i18n("Clipboard Text");
