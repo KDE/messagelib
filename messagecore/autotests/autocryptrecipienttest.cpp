@@ -149,7 +149,7 @@ void AutocryptRecipientTest::test_fromJsonGossip()
         "x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH"
         "4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL");
 
-    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n" + keydata);
+    gossipHeader.from7BitString(QByteArray("addr=bob@autocrypt.example; keydata=\n" + keydata));
     auto other = AutocryptRecipient();
     other.updateFromGossip(mixin, &gossipHeader);
 
@@ -429,8 +429,8 @@ void AutocryptRecipientTest::test_gossipUpdateLogic()
 
     QByteArray keydata2 = "second";
 
-    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n" + keydata);
-    gossipHeader2.from7BitString("addr=bob@autocrypt.example; keydata=\n" + keydata2);
+    gossipHeader.from7BitString(QByteArray("addr=bob@autocrypt.example; keydata=\n" + keydata));
+    gossipHeader2.from7BitString(QByteArray("addr=bob@autocrypt.example; keydata=\n" + keydata2));
 
     // Set a date header, that we know to pass the update logic
     auto messageDate = QDateTime::currentDateTime().addYears(-1);
@@ -525,7 +525,7 @@ void AutocryptRecipientTest::test_changedLogicGossip()
         "x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH"
         "4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL");
 
-    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n" + keydata);
+    gossipHeader.from7BitString(QByteArray("addr=bob@autocrypt.example; keydata=\n" + keydata));
 
     // Set a date header, that we know to pass the update logic
     auto messageDate = QDateTime::currentDateTime().addYears(-1);
