@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 08:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1094,7 +1094,9 @@ msgstr ""
 "נא לבחור אישור או אישורים שישמשו לנמען הזה ."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "בחירת שם"
 
@@ -1446,7 +1448,9 @@ msgid "No text found in Clipboard"
 msgstr "לא נמצא טקסט בלוח הגזירים"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "הגדרת שם צרופה"
 
@@ -1621,7 +1625,9 @@ msgid "&Name:"
 msgstr "&שם:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "שם רשימת התפוצה"
 

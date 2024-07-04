@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -428,6 +428,7 @@ msgstr "Vee Uit"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, fuzzy, kde-format
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Soek:"
 
@@ -630,6 +631,7 @@ msgstr "Vanaf: "
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 

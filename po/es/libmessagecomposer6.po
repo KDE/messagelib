@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 23:18+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1122,7 +1122,9 @@ msgstr ""
 "Seleccione los certificados que se deben usar para este destinatario."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Selección de nombre"
 
@@ -1487,7 +1489,9 @@ msgid "No text found in Clipboard"
 msgstr "No se ha encontrado texto en el portapapeles"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Definir el nombre del adjunto"
 
@@ -1684,7 +1688,9 @@ msgid "&Name:"
 msgstr "&Nombre:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nombre de la lista de distribución"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -475,6 +475,7 @@ msgstr "Scrios"
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Search"
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Cuardach"
 
@@ -683,6 +684,7 @@ msgstr "Ó: "
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1148,7 +1148,9 @@ msgstr ""
 "Velg hvilke(t) sertifikat(er) som skal brukes for denne mottakeren."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Navnevalg"
 
@@ -1505,9 +1507,11 @@ msgid "No text found in Clipboard"
 msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "Påminnelse om filvedlegg"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1665,9 +1669,12 @@ msgid "&Name:"
 msgstr "&Navn:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr ""
+msgstr "Ny distribusjonsliste"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format

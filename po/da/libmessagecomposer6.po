@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2020-11-17 19:45+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1151,7 +1151,9 @@ msgstr ""
 "Vælg de certifikater der skal bruges for denne modtager."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Valg af navn"
 
@@ -1515,7 +1517,9 @@ msgid "No text found in Clipboard"
 msgstr "Ingen tekst fundet i udklipsholderen"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Angiv navn på bilag"
 
@@ -1687,6 +1691,7 @@ msgstr "&Navn:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Ny distributionsliste"
 

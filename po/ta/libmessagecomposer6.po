@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-20 21:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1068,7 +1068,9 @@ msgstr ""
 "இப்பெறுநருக்கு பயன்படுத்த வேண்டிய சான்றிதழ்களைத் தேர்ந்தெடுங்கள்."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "பெயர் தேர்வு"
 
@@ -1427,7 +1429,9 @@ msgid "No text found in Clipboard"
 msgstr "பிடிப்புப்பலகையில் உரையேதும் இல்லை"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "உடனிணைப்பின் பெயரை உள்ளிடுங்கள்"
 
@@ -1593,7 +1597,9 @@ msgid "&Name:"
 msgstr "&பெயர்:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "பெறுநர்பட்டியலின் பெயர்"
 

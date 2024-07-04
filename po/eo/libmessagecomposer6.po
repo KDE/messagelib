@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-19 22:33+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1106,7 +1106,9 @@ msgstr ""
 "Elektu la atestilon(j)n kiuj devus esti uzataj por ĉi tiu ricevanto."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Nomelekto"
 
@@ -1462,7 +1464,9 @@ msgid "No text found in Clipboard"
 msgstr "Neniu teksto trovita en Clipboard"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Difini Aldonan Nomon"
 
@@ -1647,7 +1651,9 @@ msgid "&Name:"
 msgstr "&Nomo:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name of Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nomo de Distribua Listo"
 

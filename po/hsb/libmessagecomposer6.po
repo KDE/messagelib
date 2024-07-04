@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2021-11-06 15:11+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -1064,6 +1064,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr ""
 
@@ -1411,9 +1412,11 @@ msgid "No text found in Clipboard"
 msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "Dopominanje na přiwěšk"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1573,6 +1576,7 @@ msgstr "&Mjeno:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr ""
 

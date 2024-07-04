@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -460,6 +460,7 @@ msgstr "Wedi'u dileu"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, fuzzy, kde-format
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "&Chwilio"
 
@@ -669,6 +670,7 @@ msgstr "Oddiwrth:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 

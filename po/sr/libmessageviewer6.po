@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -439,6 +439,7 @@ msgstr "Изабери сав текст"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr ""
 
@@ -634,6 +635,7 @@ msgstr "Од:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 

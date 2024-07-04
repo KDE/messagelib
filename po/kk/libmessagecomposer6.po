@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1149,7 +1149,9 @@ msgstr ""
 "Осы алушы үшін қай кілтт(ерд)і қолданатынын таңдаңыз."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Атауын таңдау"
 
@@ -1507,6 +1509,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Файлды тіркемелеуді еске салу"
 
@@ -1682,6 +1685,7 @@ msgstr "&Атауы:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Жаңа тарату тізімі"
 

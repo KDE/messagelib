@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2012-01-28 16:26-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1054,6 +1054,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr ""
 
@@ -1405,6 +1406,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "添付ファイルに名前を付けて保存"
 
@@ -1566,6 +1568,7 @@ msgstr "名前(&N):"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr ""
 

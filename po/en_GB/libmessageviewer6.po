@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-22 12:59+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -405,7 +405,9 @@ msgid "Delete Keys"
 msgstr "Delete Keys"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Search..."
 
@@ -590,7 +592,9 @@ msgid "From:"
 msgstr "From:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Use '*' to specify all emails from domain"
 

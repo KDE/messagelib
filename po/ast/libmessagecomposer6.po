@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-03-27 23:34+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1001,6 +1001,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr ""
 
@@ -1345,6 +1346,7 @@ msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr ""
 
@@ -1504,6 +1506,7 @@ msgstr ""
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr ""
 

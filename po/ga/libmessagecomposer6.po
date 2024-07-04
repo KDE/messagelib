@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2010-03-18 00:57-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1053,7 +1053,9 @@ msgid ""
 msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Roghnú Ainm"
 
@@ -1406,6 +1408,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Sábháil an tIatán Mar"
 
@@ -1570,6 +1573,7 @@ msgstr "Ai&nm:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Liosta Dáilte Nua"
 

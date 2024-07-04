@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-19 22:33+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -409,7 +409,9 @@ msgid "Delete Keys"
 msgstr "Forigi Ŝlosilojn"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Serĉi..."
 
@@ -594,7 +596,9 @@ msgid "From:"
 msgstr "De:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Uzi '*' por specifi ĉiujn retpoŝtojn de domajno"
 

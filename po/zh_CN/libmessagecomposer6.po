@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1076,7 +1076,9 @@ msgstr ""
 "请选择应为此收件人使用的证书。"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "姓名选择"
 
@@ -1427,7 +1429,9 @@ msgid "No text found in Clipboard"
 msgstr "剪贴板中未发现文本"
 
 #: job/attachmentclipboardjob.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Attachment Name"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "定义附件名"
 
@@ -1586,9 +1590,12 @@ msgid "&Name:"
 msgstr "名称(&N)："
 
 #: recipient/distributionlistdialog.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr ""
+msgstr "新建分发列表"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format

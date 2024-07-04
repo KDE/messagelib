@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2021-12-19 19:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1077,6 +1077,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr ""
 
@@ -1428,6 +1429,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "تذكير بإرفاق الملفّات"
 
@@ -1594,6 +1596,7 @@ msgstr "الا&سم:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Save Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "احفظ قائمة التّوزيع"
 

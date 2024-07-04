@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1164,7 +1164,9 @@ msgstr ""
 "Söök bitte de Zertifikaten för dissen Adressaat ut."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Naam utsöken"
 
@@ -1526,6 +1528,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Bilagen-Anstoot"
 
@@ -1700,6 +1703,7 @@ msgstr "&Naam:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nieg Verdeellist"
 

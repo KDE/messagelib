@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-20 02:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -400,7 +400,9 @@ msgid "Delete Keys"
 msgstr "刪除金鑰"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "搜尋…"
 
@@ -585,7 +587,9 @@ msgid "From:"
 msgstr "寄件者："
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "使用 '*' 來指定來自網域的所有郵件"
 

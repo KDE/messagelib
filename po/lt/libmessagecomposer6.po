@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2014-11-10 19:34+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1067,7 +1067,9 @@ msgid ""
 msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name Selection"
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Vardo parinkimas"
 
@@ -1416,6 +1418,7 @@ msgstr ""
 #: job/attachmentclipboardjob.cpp:46
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Failų pridėjimo priminimas"
 
@@ -1580,6 +1583,7 @@ msgstr "&Vardas:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Distribution List"
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Naujas platinimo sąrašas"
 

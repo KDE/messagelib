@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -406,7 +406,9 @@ msgid "Delete Keys"
 msgstr "Kulcsok törlése"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Keresés…"
 
@@ -594,7 +596,9 @@ msgid "From:"
 msgstr "Feladó:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Használja a „*”-ot a tartomány összes e-mailjének megadásához"
 

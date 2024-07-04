@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 17:52+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -410,7 +410,9 @@ msgid "Delete Keys"
 msgstr "Elimina chiavi"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Cerca..."
 
@@ -595,7 +597,9 @@ msgid "From:"
 msgstr "Da:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Usa «*» per indicare tutti gli indirizzi di posta del dominio"
 
