@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 09:51+0200\n"
+"PO-Revision-Date: 2024-07-04 14:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1128,8 +1128,7 @@ msgstr ""
 "Escolliu el/s certificat/s que s'han d'usar per a aquest destinatari."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Selecció del nom"
@@ -1487,8 +1486,7 @@ msgid "No text found in Clipboard"
 msgstr "No s'ha trobat cap text al porta-retalls"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Defineix el nom de l'adjunt"
@@ -1683,8 +1681,7 @@ msgid "&Name:"
 msgstr "&Nom:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nom de la llista de distribució"

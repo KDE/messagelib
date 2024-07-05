@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-19 22:33+0200\n"
+"PO-Revision-Date: 2024-07-04 21:35+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -409,8 +409,7 @@ msgid "Delete Keys"
 msgstr "Forigi Ŝlosilojn"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Serĉi..."
@@ -596,8 +595,7 @@ msgid "From:"
 msgstr "De:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Uzi '*' por specifi ĉiujn retpoŝtojn de domajno"
@@ -2710,17 +2708,3 @@ msgstr "Sekva Mesaĝo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Specifas la defaŭltan politpiktogram por uzi, por la Mesaĝaj Dispozicioj "
-#~ "(nur por interna uzo)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Specifas la defaŭltan agon de citado farendan, kiam vi respondas al "
-#~ "mesaĝo (nur por interna uzo)"

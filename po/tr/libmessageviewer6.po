@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-18 13:02+0300\n"
+"PO-Revision-Date: 2024-07-04 13:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -414,8 +414,7 @@ msgid "Delete Keys"
 msgstr "Anahtarları Sil"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Ara…"
@@ -601,11 +600,10 @@ msgid "From:"
 msgstr "Kimden:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr "Alan adındaki tüm e-postaları belirtmek için ‘*’ kullanın"
+msgstr "Alan adındaki tüm e-postaları belirtmek için “*” kullanın"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format

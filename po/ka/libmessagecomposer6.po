@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-18 06:07+0200\n"
+"PO-Revision-Date: 2024-07-04 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1111,8 +1111,7 @@ msgstr ""
 "აირჩიეთ სერტიფიკატ(ებ)-ი, რომლებც ამ მიმღებისთვის უნდა გამოვიყენო."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "სახელის არჩევანი"
@@ -1472,8 +1471,7 @@ msgid "No text found in Clipboard"
 msgstr "ბუფერში ტექსტი ვერ ვიპოვე"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "მიმაგრებული ფაილის სახელის აღწერა"
@@ -1665,8 +1663,7 @@ msgid "&Name:"
 msgstr "&სახელი:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "დაგზავნის სიის სახელი"

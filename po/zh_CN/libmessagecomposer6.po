@@ -1076,11 +1076,10 @@ msgstr ""
 "请选择应为此收件人使用的证书。"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr "姓名选择"
+msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1429,11 +1428,10 @@ msgid "No text found in Clipboard"
 msgstr "剪贴板中未发现文本"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "定义附件名"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1590,12 +1588,10 @@ msgid "&Name:"
 msgstr "名称(&N)："
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "新建分发列表"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
