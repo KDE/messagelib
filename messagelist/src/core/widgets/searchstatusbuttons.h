@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "messagelist_export.h"
+#include "messagelist_private_export.h"
 #include <QWidget>
 class QButtonGroup;
 class QHBoxLayout;
@@ -13,8 +13,7 @@ namespace MessageList
 {
 namespace Core
 {
-// TODO use private export symbol
-class MESSAGELIST_EXPORT SearchStatusButtons : public QWidget
+class MESSAGELIST_TESTS_EXPORT SearchStatusButtons : public QWidget
 {
     Q_OBJECT
 public:
