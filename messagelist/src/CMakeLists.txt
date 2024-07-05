@@ -50,6 +50,9 @@ target_sources(KPim6MessageList PRIVATE
     core/widgets/filternamedialog.cpp
     core/widgets/filternamewidget.cpp
 
+    core/widgets/searchstatusbuttons.h
+    core/widgets/searchstatusbuttons.cpp
+
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp
     utils/aggregationeditor.cpp
