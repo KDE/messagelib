@@ -30,7 +30,6 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     mainLayout->addWidget(button);
-    connect(button, &QDialogButtonBox::accepted, this, &ConfigureFiltersDialog::accept);
     connect(button, &QDialogButtonBox::rejected, this, &ConfigureFiltersDialog::reject);
     readConfig();
 }
