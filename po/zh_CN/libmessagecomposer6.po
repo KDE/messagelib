@@ -1051,7 +1051,7 @@ msgstr ""
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgid "Name Selection"
-msgstr "姓名选择"
+msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1401,7 +1401,7 @@ msgstr "剪贴板中未发现文本"
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Define Attachment Name"
-msgstr "定义附件名"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
