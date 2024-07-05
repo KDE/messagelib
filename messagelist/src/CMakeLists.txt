@@ -53,6 +53,9 @@ target_sources(KPim6MessageList PRIVATE
     core/widgets/searchstatusbuttons.h
     core/widgets/searchstatusbuttons.cpp
 
+    core/widgets/searchmessagebybuttons.h
+    core/widgets/searchmessagebybuttons.cpp
+
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp
     utils/aggregationeditor.cpp
