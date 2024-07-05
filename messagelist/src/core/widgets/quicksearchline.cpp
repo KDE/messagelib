@@ -11,6 +11,7 @@
 
 #include "core/filter.h"
 #include "searchlinestatus.h"
+#include "searchstatusbuttons.h"
 #include <KLocalizedString>
 
 #include <QComboBox>
@@ -22,6 +23,7 @@ using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
     , mSearchEdit(new SearchLineStatus(this))
+    , mSearchStatusButtons(new SearchStatusButtons(this))
     , mTagFilterCombo(new QComboBox(this))
 {
     auto vbox = new QVBoxLayout(this);
@@ -47,6 +49,8 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::activateFilter, this, &QuickSearchLine::activateFilter);
 
     hbox->addWidget(mSearchEdit);
+    mSearchStatusButtons->setObjectName(QLatin1StringView("mSearchStatusButtons"));
+    hbox->addWidget(mSearchStatusButtons);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
     mTagFilterCombo->setMaximumWidth(300);
@@ -172,6 +176,7 @@ void QuickSearchLine::changeQuicksearchVisibility(bool show)
 {
     mSearchEdit->setVisible(show);
     mTagFilterCombo->setVisible(show && mTagFilterCombo->count());
+    mSearchStatusButtons->setVisible(show);
 }
 
 void QuickSearchLine::addCompletionItem(const QString &str)
