@@ -36,11 +36,12 @@ void SearchMessageByButtons::createButtons()
     createFilterButton(i18nc("@action", "Full Message"), SearchEveryWhere);
     createFilterButton(i18nc("@action", "Body"), SearchAgainstBody);
     createFilterButton(i18nc("@action", "Subject"), SearchAgainstSubject);
-    createFilterButton(QString(), SearchAgainstTo); // TODO update text
+    mSearchAgainstFromOrToButton = createFilterButton(QString(), SearchAgainstTo); // TODO update text
     createFilterButton(i18nc("@action", "BCC"), SearchAgainstBcc);
+    changeSearchAgainstFromOrToText();
 }
 
-void SearchMessageByButtons::createFilterButton(const QString &text, SearchOption option)
+QToolButton *SearchMessageByButtons::createFilterButton(const QString &text, SearchOption option)
 {
     auto toolButton = new QToolButton(this);
     toolButton->setText(text);
@@ -48,6 +49,7 @@ void SearchMessageByButtons::createFilterButton(const QString &text, SearchOptio
     toolButton->setAutoRaise(true);
     mButtonGroup->addButton(toolButton, option);
     mMainLayout->addWidget(toolButton, 0, Qt::AlignTop);
+    return toolButton;
 }
 
 bool SearchMessageByButtons::containsOutboundMessages() const
@@ -65,11 +67,10 @@ void SearchMessageByButtons::setContainsOutboundMessages(bool containsOutboundMe
 
 void SearchMessageByButtons::changeSearchAgainstFromOrToText()
 {
-    // TODO
     if (mContainsOutboundMessages) {
-        // mSearchAgainstFromOrToAction->setText(i18n("To"));
+        mSearchAgainstFromOrToButton->setText(i18n("To"));
     } else {
-        // mSearchAgainstFromOrToAction->setText(i18n("From"));
+        mSearchAgainstFromOrToButton->setText(i18n("From"));
     }
 }
 

@@ -162,6 +162,7 @@ bool QuickSearchLine::containsOutboundMessages() const
 void QuickSearchLine::setContainsOutboundMessages(bool containsOutboundMessages)
 {
     mSearchEdit->setContainsOutboundMessages(containsOutboundMessages);
+    mSearchMessageByButtons->setContainsOutboundMessages(containsOutboundMessages);
 }
 
 void QuickSearchLine::updateComboboxVisibility()
