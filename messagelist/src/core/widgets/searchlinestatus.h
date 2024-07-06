@@ -32,6 +32,7 @@ public:
     void addCompletionItem(const QString &str);
     void slotClearHistory();
     void clearFilterButtonClicked();
+    void filterAdded();
 Q_SIGNALS:
     void clearButtonClicked();
     void forceLostFocus();
@@ -48,7 +49,6 @@ private:
     MESSAGELIST_NO_EXPORT void updateLockAction();
     MESSAGELIST_NO_EXPORT void initializeActions();
     MESSAGELIST_NO_EXPORT void updateFilterLineEditBackgroundColor();
-    MESSAGELIST_NO_EXPORT void updateFilters();
     MESSAGELIST_NO_EXPORT void slotClear();
     MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
     MESSAGELIST_NO_EXPORT void slotConfigureFilters();

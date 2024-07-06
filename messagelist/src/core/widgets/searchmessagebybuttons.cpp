@@ -111,4 +111,9 @@ void SearchMessageByButtons::setFilterMessageStatus(const QList<Akonadi::Message
     }
 }
 
+void SearchMessageByButtons::clearFilter()
+{
+    mButtonGroup->button(SearchMessageByButtons::SearchEveryWhere)->setChecked(true);
+}
+
 #include "moc_searchmessagebybuttons.cpp"

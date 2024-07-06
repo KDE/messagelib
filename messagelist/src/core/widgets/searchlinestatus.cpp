@@ -135,13 +135,6 @@ void SearchLineStatus::slotToggledLockAction()
     updateLockAction();
 }
 
-void SearchLineStatus::updateFilters()
-{
-    // mHasFilter = !lstStatus.isEmpty();
-    // Q_EMIT filterActionChanged(lstStatus);
-    updateFilterLineEditBackgroundColor();
-}
-
 void SearchLineStatus::showSavedFiltersMenu()
 {
     mFilterSavedMenu->exec(mapToGlobal(QPoint(0, height())));
@@ -165,7 +158,14 @@ void SearchLineStatus::updateFilterLineEditBackgroundColor()
 
 void SearchLineStatus::clearFilterButtonClicked()
 {
-    updateFilters();
+    mHasFilter = false;
+    updateFilterLineEditBackgroundColor();
+}
+
+void SearchLineStatus::filterAdded()
+{
+    mHasFilter = true;
+    updateFilterLineEditBackgroundColor();
 }
 
 void SearchLineStatus::addCompletionItem(const QString &str)

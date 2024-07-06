@@ -45,7 +45,10 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
     mSearchEdit->setObjectName(QLatin1StringView("quicksearch"));
     mSearchEdit->setClearButtonEnabled(true);
-    connect(mSearchMessageByButtons, &SearchMessageByButtons::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
+    connect(mSearchMessageByButtons, &SearchMessageByButtons::searchOptionChanged, this, [this]() {
+        mSearchEdit->filterAdded();
+        Q_EMIT searchOptionChanged();
+    });
 
     connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
     connect(mSearchEdit, &SearchLineStatus::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
@@ -97,6 +100,7 @@ void QuickSearchLine::slotClearButtonClicked()
     }
     mSearchEdit->clearFilterButtonClicked();
     mSearchStatusButtons->clearFilter();
+    mSearchMessageByButtons->clearFilter();
     mSearchMessageByButtons->setVisible(false);
     Q_EMIT clearButtonClicked();
 }
@@ -104,6 +108,7 @@ void QuickSearchLine::slotClearButtonClicked()
 void QuickSearchLine::setSearchOptions(SearchMessageByButtons::SearchOptions opts)
 {
     mSearchMessageByButtons->setSearchOptions(opts);
+    mSearchEdit->filterAdded();
 }
 
 SearchMessageByButtons::SearchOptions QuickSearchLine::searchOptions() const
@@ -142,12 +147,14 @@ void QuickSearchLine::resetFilter()
 void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)
 {
     mLstStatus = lst;
+    mSearchEdit->filterAdded();
     Q_EMIT statusButtonsClicked();
 }
 
 void QuickSearchLine::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
     mLstStatus = newLstStatus;
+    mSearchEdit->filterAdded();
     mSearchMessageByButtons->setFilterMessageStatus(mLstStatus);
 }
 
