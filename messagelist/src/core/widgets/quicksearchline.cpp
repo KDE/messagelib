@@ -11,6 +11,7 @@
 
 #include "core/filter.h"
 #include "searchlinestatus.h"
+#include "searchmessagebybuttons.h"
 #include "searchstatusbuttons.h"
 #include <KLocalizedString>
 
@@ -24,6 +25,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
     , mSearchEdit(new SearchLineStatus(this))
     , mSearchStatusButtons(new SearchStatusButtons(this))
+    , mSearchMessageByButtons(new SearchMessageByButtons(this))
     , mTagFilterCombo(new QComboBox(this))
 {
     auto vbox = new QVBoxLayout(this);
@@ -35,6 +37,8 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->setContentsMargins({});
     hbox->setSpacing(0);
     vbox->addWidget(w);
+
+    vbox->addWidget(mSearchMessageByButtons);
 
     connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
     connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);

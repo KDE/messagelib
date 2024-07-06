@@ -19,6 +19,7 @@ namespace Core
 class SearchLineStatus;
 class Filter;
 class SearchStatusButtons;
+class SearchMessageByButtons;
 /**
  * @brief The QuickSearchLine class
  * @author Laurent Montel <montel@kde.org>
@@ -81,6 +82,7 @@ private Q_SLOTS:
 private:
     SearchLineStatus *const mSearchEdit;
     SearchStatusButtons *const mSearchStatusButtons;
+    SearchMessageByButtons *const mSearchMessageByButtons;
     QComboBox *const mTagFilterCombo;
     QList<Akonadi::MessageStatus> mLstStatus;
 };

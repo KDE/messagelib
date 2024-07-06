@@ -25,6 +25,7 @@ SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
     connect(mButtonGroup, &QButtonGroup::idClicked, this, [this](int index) {
         // TODO
     });
+    createButtons();
 }
 
 SearchMessageByButtons::~SearchMessageByButtons() = default;
