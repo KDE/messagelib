@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-06 00:39+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -954,6 +954,7 @@ msgid "Display Tooltips"
 msgstr "&I"
 
 #: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
+#: core/widgets/searchmessagebybuttons.cpp:55
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
@@ -1234,7 +1235,7 @@ msgstr "Enw:"
 msgid "Save Filter..."
 msgstr "&Creu Hidlen"
 
-#: core/widgets/quicksearchline.cpp:40
+#: core/widgets/quicksearchline.cpp:42
 #, fuzzy, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1299,6 +1300,7 @@ msgid "Clear Filter"
 msgstr "&Creu Hidlen"
 
 #: core/widgets/searchlinestatus.cpp:223
+#: core/widgets/searchstatusbuttons.cpp:37
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -1307,6 +1309,7 @@ msgid "Unread"
 msgstr "Heb ei ddarllen"
 
 #: core/widgets/searchlinestatus.cpp:227
+#: core/widgets/searchstatusbuttons.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -1315,6 +1318,7 @@ msgid "Replied"
 msgstr "Wedi ateb"
 
 #: core/widgets/searchlinestatus.cpp:231
+#: core/widgets/searchstatusbuttons.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -1323,6 +1327,7 @@ msgid "Forwarded"
 msgstr "Wedi'i flaenyrru"
 
 #: core/widgets/searchlinestatus.cpp:235
+#: core/widgets/searchstatusbuttons.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -1331,12 +1336,14 @@ msgid "Important"
 msgstr "Pwysig"
 
 #: core/widgets/searchlinestatus.cpp:239
+#: core/widgets/searchstatusbuttons.cpp:53
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Neges bwysig"
 
 #: core/widgets/searchlinestatus.cpp:243
+#: core/widgets/searchstatusbuttons.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
@@ -1345,6 +1352,7 @@ msgid "Watched"
 msgstr "Gwylir"
 
 #: core/widgets/searchlinestatus.cpp:247
+#: core/widgets/searchstatusbuttons.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
@@ -1353,6 +1361,7 @@ msgid "Ignored"
 msgstr "Anwybyddir"
 
 #: core/widgets/searchlinestatus.cpp:251
+#: core/widgets/searchstatusbuttons.cpp:65
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
 msgctxt "@action:inmenu Status of a message"
@@ -1360,6 +1369,7 @@ msgid "Has Attachment"
 msgstr "Efo Atodiad"
 
 #: core/widgets/searchlinestatus.cpp:255
+#: core/widgets/searchstatusbuttons.cpp:69
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:inmenu Status of a message"
@@ -1367,6 +1377,7 @@ msgid "Has Invitation"
 msgstr "Dewisiadau Uwch"
 
 #: core/widgets/searchlinestatus.cpp:259
+#: core/widgets/searchstatusbuttons.cpp:73
 #, fuzzy, kde-format
 #| msgid "Spam"
 msgctxt "@action:inmenu Status of a message"
@@ -1374,6 +1385,7 @@ msgid "Spam"
 msgstr "Ebostach"
 
 #: core/widgets/searchlinestatus.cpp:263
+#: core/widgets/searchstatusbuttons.cpp:77
 #, fuzzy, kde-format
 #| msgid "Ham"
 msgctxt "@action:inmenu Status of a message"
@@ -1381,6 +1393,7 @@ msgid "Ham"
 msgstr "Ebost iawn"
 
 #: core/widgets/searchlinestatus.cpp:273
+#: core/widgets/searchmessagebybuttons.cpp:35
 #, fuzzy, kde-format
 #| msgid "&Full message"
 msgctxt "@action"
@@ -1388,12 +1401,14 @@ msgid "Full Message"
 msgstr "Ne&ges gyfan"
 
 #: core/widgets/searchlinestatus.cpp:280
+#: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:285
+#: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "@action"
@@ -1401,6 +1416,7 @@ msgid "Subject"
 msgstr "Pwnc"
 
 #: core/widgets/searchlinestatus.cpp:296
+#: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 #| msgid "BCC"
 msgctxt "@action"
@@ -1408,6 +1424,7 @@ msgid "BCC"
 msgstr "CCD (BCC)"
 
 #: core/widgets/searchlinestatus.cpp:324
+#: core/widgets/searchmessagebybuttons.cpp:53
 #, fuzzy, kde-format
 #| msgid "To"
 msgid "To"

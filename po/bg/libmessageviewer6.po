@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-25 17:47+0200\n"
+"PO-Revision-Date: 2024-07-05 15:51+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -404,8 +404,7 @@ msgid "Delete Keys"
 msgstr "Изтриване на ключове"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Търсене..."
@@ -591,8 +590,7 @@ msgid "From:"
 msgstr "От:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Използвайте\" * \", за да посочите всички имейли от домейна"

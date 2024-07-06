@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-07-06 00:39+0000\n"
 "PO-Revision-Date: 2014-08-14 15:43+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -871,6 +871,7 @@ msgid "Display Tooltips"
 msgstr "Kortinformatschonen wiesen"
 
 #: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
+#: core/widgets/searchmessagebybuttons.cpp:55
 #, kde-format
 msgid "From"
 msgstr "Vun"
@@ -1130,7 +1131,7 @@ msgstr "Naam:"
 msgid "Save Filter..."
 msgstr ""
 
-#: core/widgets/quicksearchline.cpp:40
+#: core/widgets/quicksearchline.cpp:42
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1197,72 +1198,84 @@ msgid "Clear Filter"
 msgstr "Instellen..."
 
 #: core/widgets/searchlinestatus.cpp:223
+#: core/widgets/searchstatusbuttons.cpp:37
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Nich leest"
 
 #: core/widgets/searchlinestatus.cpp:227
+#: core/widgets/searchstatusbuttons.cpp:41
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Antert"
 
 #: core/widgets/searchlinestatus.cpp:231
+#: core/widgets/searchstatusbuttons.cpp:45
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Wiederleddt"
 
 #: core/widgets/searchlinestatus.cpp:235
+#: core/widgets/searchstatusbuttons.cpp:49
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Wichtig"
 
 #: core/widgets/searchlinestatus.cpp:239
+#: core/widgets/searchstatusbuttons.cpp:53
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Akschoon"
 
 #: core/widgets/searchlinestatus.cpp:243
+#: core/widgets/searchstatusbuttons.cpp:57
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Beluert"
 
 #: core/widgets/searchlinestatus.cpp:247
+#: core/widgets/searchstatusbuttons.cpp:61
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Övergahn"
 
 #: core/widgets/searchlinestatus.cpp:251
+#: core/widgets/searchstatusbuttons.cpp:65
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Bargt Bilaag"
 
 #: core/widgets/searchlinestatus.cpp:255
+#: core/widgets/searchstatusbuttons.cpp:69
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Bargt Inladen"
 
 #: core/widgets/searchlinestatus.cpp:259
+#: core/widgets/searchstatusbuttons.cpp:73
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Warven"
 
 #: core/widgets/searchlinestatus.cpp:263
+#: core/widgets/searchstatusbuttons.cpp:77
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Keen Warven"
 
 #: core/widgets/searchlinestatus.cpp:273
+#: core/widgets/searchmessagebybuttons.cpp:35
 #, fuzzy, kde-format
 #| msgid "Full Message"
 msgctxt "@action"
@@ -1270,6 +1283,7 @@ msgid "Full Message"
 msgstr "Heel Naricht"
 
 #: core/widgets/searchlinestatus.cpp:280
+#: core/widgets/searchmessagebybuttons.cpp:36
 #, fuzzy, kde-format
 #| msgid "Body"
 msgctxt "@action"
@@ -1277,6 +1291,7 @@ msgid "Body"
 msgstr "Hööftdeel"
 
 #: core/widgets/searchlinestatus.cpp:285
+#: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "@action"
@@ -1284,12 +1299,14 @@ msgid "Subject"
 msgstr "Bedraap"
 
 #: core/widgets/searchlinestatus.cpp:296
+#: core/widgets/searchmessagebybuttons.cpp:39
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:324
+#: core/widgets/searchmessagebybuttons.cpp:53
 #, kde-format
 msgid "To"
 msgstr "Na"

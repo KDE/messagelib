@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-22 13:06+0100\n"
+"PO-Revision-Date: 2024-07-05 13:51+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -1113,8 +1113,7 @@ msgstr ""
 "Select the certificate(s) which should be used for this recipient."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Name Selection"
@@ -1469,8 +1468,7 @@ msgid "No text found in Clipboard"
 msgstr "No text found in Clipboard"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Define Attachment Name"
@@ -1660,8 +1658,7 @@ msgid "&Name:"
 msgstr "&Name:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Name of Distribution List"

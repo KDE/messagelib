@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-25 17:47+0200\n"
+"PO-Revision-Date: 2024-07-05 15:52+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1116,8 +1116,7 @@ msgstr ""
 "получател."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Избор на име"
@@ -1480,8 +1479,7 @@ msgid "No text found in Clipboard"
 msgstr "Не е намерен текст в клипборда"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Определяне на името на прикачения файл"
@@ -1676,8 +1674,7 @@ msgid "&Name:"
 msgstr "&Име:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Име на списък за разпространение"
