@@ -51,6 +51,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->addWidget(mSearchEdit);
     mSearchStatusButtons->setObjectName(QLatin1StringView("mSearchStatusButtons"));
     hbox->addWidget(mSearchStatusButtons);
+    connect(mSearchStatusButtons, &SearchStatusButtons::filterStatusChanged, this, &QuickSearchLine::slotFilterActionChanged);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
     mTagFilterCombo->setMaximumWidth(300);
