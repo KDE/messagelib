@@ -90,6 +90,7 @@ void QuickSearchLine::slotClearButtonClicked()
         mTagFilterCombo->setCurrentIndex(0);
     }
     mSearchEdit->clearFilterButtonClicked();
+    mSearchStatusButtons->clearFilter();
     Q_EMIT clearButtonClicked();
 }
 
@@ -128,6 +129,7 @@ void QuickSearchLine::resetFilter()
     }
     mSearchEdit->clearFilterButtonClicked();
     mSearchEdit->setLocked(false);
+    mSearchStatusButtons->clearFilter();
 }
 
 void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)

@@ -6,6 +6,7 @@
 
 #pragma once
 #include "messagelist_private_export.h"
+#include <Akonadi/MessageStatus>
 #include <QWidget>
 class QButtonGroup;
 class QHBoxLayout;
@@ -20,9 +21,14 @@ public:
     explicit SearchStatusButtons(QWidget *parent = nullptr);
     ~SearchStatusButtons() override;
 
+    void clearFilter();
+Q_SIGNALS:
+    void filterStatusChanged(const QList<Akonadi::MessageStatus> &lst);
+
 private:
     MESSAGELIST_NO_EXPORT void createAction();
     MESSAGELIST_NO_EXPORT void createFilterAction(const QIcon &icon, const QString &text, int value);
+    MESSAGELIST_NO_EXPORT void updateFilters();
     QButtonGroup *const mButtonGroup;
     QHBoxLayout *const mMainLayout;
 };

@@ -23,9 +23,7 @@ SearchStatusButtons::SearchStatusButtons(QWidget *parent)
     mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
     mButtonGroup->setExclusive(false);
 
-    connect(mButtonGroup, &QButtonGroup::idClicked, this, [this](int index) {
-        // TODO
-    });
+    connect(mButtonGroup, &QButtonGroup::idClicked, this, &SearchStatusButtons::updateFilters);
     createAction();
 }
 
@@ -89,4 +87,24 @@ void SearchStatusButtons::createFilterAction(const QIcon &icon, const QString &t
     mMainLayout->addWidget(toolButton, 0, Qt::AlignTop);
 }
 
+void SearchStatusButtons::clearFilter()
+{
+    for (auto button : mButtonGroup->buttons()) {
+        button->setChecked(false);
+    }
+}
+
+void SearchStatusButtons::updateFilters()
+{
+    QList<Akonadi::MessageStatus> lstStatus;
+
+    for (auto button : mButtonGroup->buttons()) {
+        if (button->isChecked()) {
+            Akonadi::MessageStatus status;
+            status.fromQInt32(static_cast<qint32>(mButtonGroup->id(button)));
+            lstStatus.append(status);
+        }
+    }
+    Q_EMIT filterStatusChanged(lstStatus);
+}
 #include "moc_searchstatusbuttons.cpp"
