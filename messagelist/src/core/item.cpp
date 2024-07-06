@@ -9,7 +9,6 @@
 #include "core/item.h"
 #include "core/item_p.h"
 #include "core/manager.h"
-#include "core/model.h"
 
 #include <KFormat>
 #include <MessageCore/DateFormatter>

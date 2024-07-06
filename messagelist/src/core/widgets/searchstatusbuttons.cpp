@@ -5,7 +5,6 @@
 */
 
 #include "searchstatusbuttons.h"
-#include <Akonadi/MessageStatus>
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
