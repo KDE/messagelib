@@ -33,7 +33,8 @@ SearchMessageByButtons::~SearchMessageByButtons() = default;
 
 void SearchMessageByButtons::createButtons()
 {
-    createFilterButton(i18nc("@action", "Full Message"), SearchEveryWhere);
+    auto button = createFilterButton(i18nc("@action", "Full Message"), SearchEveryWhere);
+    button->setChecked(true); // Enable by default
     createFilterButton(i18nc("@action", "Body"), SearchAgainstBody);
     createFilterButton(i18nc("@action", "Subject"), SearchAgainstSubject);
     mSearchAgainstFromOrToButton = createFilterButton(QString(), SearchAgainstTo); // TODO update text
@@ -71,6 +72,37 @@ void SearchMessageByButtons::changeSearchAgainstFromOrToText()
         mSearchAgainstFromOrToButton->setText(i18n("To"));
     } else {
         mSearchAgainstFromOrToButton->setText(i18n("From"));
+    }
+}
+
+SearchMessageByButtons::SearchOptions SearchMessageByButtons::searchOptions() const
+{
+    SearchMessageByButtons::SearchOptions searchOptions;
+    const int checked = mButtonGroup->checkedId();
+    if (checked == SearchAgainstTo) {
+        if (mContainsOutboundMessages) {
+            searchOptions |= SearchMessageByButtons::SearchAgainstTo;
+        } else {
+            searchOptions |= SearchMessageByButtons::SearchAgainstFrom;
+        }
+    } else {
+        searchOptions |= static_cast<SearchMessageByButtons::SearchOption>(checked);
+    }
+    return searchOptions;
+}
+
+void SearchMessageByButtons::setSearchOptions(SearchMessageByButtons::SearchOptions opts)
+{
+    mButtonGroup->button(SearchMessageByButtons::SearchEveryWhere)->setChecked(opts & SearchMessageByButtons::SearchEveryWhere);
+    mButtonGroup->button(SearchMessageByButtons::SearchAgainstBody)->setChecked(opts & SearchMessageByButtons::SearchAgainstBody);
+    mButtonGroup->button(SearchMessageByButtons::SearchAgainstSubject)->setChecked(opts & SearchMessageByButtons::SearchAgainstSubject);
+    mButtonGroup->button(SearchMessageByButtons::SearchAgainstBcc)->setChecked(opts & SearchMessageByButtons::SearchAgainstBcc);
+    mButtonGroup->button(SearchMessageByButtons::SearchEveryWhere)->setChecked(opts & SearchMessageByButtons::SearchEveryWhere);
+
+    if (mContainsOutboundMessages) {
+        mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstTo);
+    } else {
+        mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstFrom);
     }
 }
 
