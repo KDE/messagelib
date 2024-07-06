@@ -17,3 +17,4 @@ add_messagelist_widget_unittest(configurefilterswidgettest.cpp)
 add_messagelist_widget_unittest(filternamewidgettest.cpp)
 
 add_messagelist_widget_unittest(searchstatusbuttonstest.cpp)
+add_messagelist_widget_unittest(searchmessagebybuttonstest.cpp)

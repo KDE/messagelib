@@ -22,7 +22,6 @@ SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
     mMainLayout->setSpacing(0);
 
     mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
-    // TODO
     connect(mButtonGroup, &QButtonGroup::idClicked, this, [this](int index) {
         // TODO
     });
