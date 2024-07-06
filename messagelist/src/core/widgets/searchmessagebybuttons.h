@@ -30,11 +30,15 @@ public:
 
     void changeSearchAgainstFromOrToText();
 
+    void setContainsOutboundMessages(bool containsOutboundMessages);
+    [[nodiscard]] bool containsOutboundMessages() const;
+
 private:
     MESSAGELIST_NO_EXPORT void createFilterButton(const QString &text, SearchOption option);
     MESSAGELIST_NO_EXPORT void createButtons();
     QHBoxLayout *const mMainLayout;
     QButtonGroup *const mButtonGroup;
+    bool mContainsOutboundMessages = false;
 };
 }
 }

@@ -50,26 +50,27 @@ void SearchMessageByButtons::createFilterButton(const QString &text, SearchOptio
     mMainLayout->addWidget(toolButton, 0, Qt::AlignTop);
 }
 
-void SearchMessageByButtons::changeSearchAgainstFromOrToText()
+bool SearchMessageByButtons::containsOutboundMessages() const
 {
-#if 0
-    if (mContainsOutboundMessages) {
-        mSearchAgainstFromOrToAction->setText(i18n("To"));
-    } else {
-        mSearchAgainstFromOrToAction->setText(i18n("From"));
-    }
-#endif
+    return mContainsOutboundMessages;
 }
 
-#if 0
+void SearchMessageByButtons::setContainsOutboundMessages(bool containsOutboundMessages)
+{
+    if (mContainsOutboundMessages != containsOutboundMessages) {
+        mContainsOutboundMessages = containsOutboundMessages;
+        changeSearchAgainstFromOrToText();
+    }
+}
 
-mSearchAgainstFromOrToAction = new QAction(mFilterMenu);
-changeSearchAgainstFromOrToText();
-grp->addAction(mSearchAgainstFromOrToAction);
-mFilterMenu->addAction(mSearchAgainstFromOrToAction);
-mSearchAgainstFromOrToAction->setCheckable(true);
-
-connect(grp, &QActionGroup::triggered, this, &SearchLineStatus::slotFilterActionClicked);
-#endif
+void SearchMessageByButtons::changeSearchAgainstFromOrToText()
+{
+    // TODO
+    if (mContainsOutboundMessages) {
+        // mSearchAgainstFromOrToAction->setText(i18n("To"));
+    } else {
+        // mSearchAgainstFromOrToAction->setText(i18n("From"));
+    }
+}
 
 #include "moc_searchmessagebybuttons.cpp"
