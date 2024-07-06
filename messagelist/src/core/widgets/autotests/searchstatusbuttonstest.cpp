@@ -30,3 +30,5 @@ void SearchStatusButtonsTest::shouldHaveDefaultValues()
 
     QCOMPARE(mButtonGroup->buttons().count(), 11);
 }
+
+#include "moc_searchstatusbuttonstest.cpp"

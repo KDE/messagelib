@@ -27,3 +27,5 @@ void SearchMessageByButtonsTest::shouldHaveDefaultValues()
     QCOMPARE(mMainLayout->spacing(), 0);
     QCOMPARE(mMainLayout->contentsMargins(), QMargins{});
 }
+
+#include "moc_searchmessagebybuttonstest.cpp"

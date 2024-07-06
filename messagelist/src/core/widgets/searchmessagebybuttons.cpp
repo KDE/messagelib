@@ -66,3 +66,5 @@ mSearchAgainstFromOrToAction->setCheckable(true);
 
 connect(grp, &QActionGroup::triggered, this, &SearchLineStatus::slotFilterActionClicked);
 #endif
+
+#include "moc_searchmessagebybuttons.cpp"
