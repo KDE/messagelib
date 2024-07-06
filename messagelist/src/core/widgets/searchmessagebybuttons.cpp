@@ -106,23 +106,9 @@ void SearchMessageByButtons::setSearchOptions(SearchMessageByButtons::SearchOpti
 
 void SearchMessageByButtons::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
-#if 0
-        clearFilterAction();
-        clearFilterByAction();
-        // TODO unchecked all checkbox
-        for (const Akonadi::MessageStatus &status : newLstStatus) {
-            for (QAction *act : std::as_const(mFilterListActions)) {
-                if (static_cast<qint32>(act->data().toInt()) == status.toQInt32()) {
-                    act->setChecked(true);
-                    mHasFilter = true;
-                    break;
-                }
-            }
-        }
-        updateFilterActionIcon();
+    for (const Akonadi::MessageStatus &status : newLstStatus) {
+        mButtonGroup->button(status.toQInt32())->setChecked(true);
     }
-#endif
-    // TODO
 }
 
 #include "moc_searchmessagebybuttons.cpp"
