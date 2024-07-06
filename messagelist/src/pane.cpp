@@ -1004,11 +1004,11 @@ QList<Akonadi::MessageStatus> Pane::currentFilterStatus() const
     return w->currentFilterStatus();
 }
 
-Core::QuickSearchLine::SearchOptions Pane::currentOptions() const
+Core::SearchMessageByButtons::SearchOptions Pane::currentOptions() const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return Core::QuickSearchLine::SearchEveryWhere;
+        return Core::SearchMessageByButtons::SearchEveryWhere;
     }
     return w->currentOptions();
 }

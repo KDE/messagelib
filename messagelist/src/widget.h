@@ -309,7 +309,7 @@ public:
     [[nodiscard]] Akonadi::Collection currentCollection() const;
 
     void setQuickSearchClickMessage(const QString &msg);
-    MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
 protected:
     /**

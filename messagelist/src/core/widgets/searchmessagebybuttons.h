@@ -5,7 +5,8 @@
 */
 
 #pragma once
-#include "messagelist_private_export.h"
+#include "messagelist_export.h"
+#include <Akonadi/MessageStatus>
 #include <QWidget>
 class QHBoxLayout;
 class QButtonGroup;
@@ -14,7 +15,7 @@ namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_TESTS_EXPORT SearchMessageByButtons : public QWidget
+class MESSAGELIST_EXPORT SearchMessageByButtons : public QWidget
 {
     Q_OBJECT
 public:
@@ -38,6 +39,10 @@ public:
 
     [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
     void setSearchOptions(SearchMessageByButtons::SearchOptions opts);
+
+    void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
+Q_SIGNALS:
+    void searchOptionChanged();
 
 private:
     MESSAGELIST_NO_EXPORT QToolButton *createFilterButton(const QString &text, SearchOption option);

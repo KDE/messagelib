@@ -243,7 +243,7 @@ MessageItem *Widget::currentMessageItem() const
     return view()->currentMessageItem();
 }
 
-MessageList::Core::QuickSearchLine::SearchOptions Widget::currentOptions() const
+MessageList::Core::SearchMessageByButtons::SearchOptions Widget::currentOptions() const
 {
     return d->quickSearchLine->searchOptions();
 }

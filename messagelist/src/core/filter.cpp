@@ -47,7 +47,7 @@ void Filter::setIconName(const QString &newIconName)
     mIconName = newIconName;
 }
 
-void Filter::setOptions(QuickSearchLine::SearchOptions newOptions)
+void Filter::setOptions(SearchMessageByButtons::SearchOptions newOptions)
 {
     mOptions = newOptions;
 }
@@ -83,12 +83,12 @@ bool Filter::match(const MessageItem *item) const
         }
 
         bool searchMatches = false;
-        bool searchEveryWhere = (mOptions & QuickSearchLine::SearchEveryWhere);
-        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
+        bool searchEveryWhere = (mOptions & SearchMessageByButtons::SearchEveryWhere);
+        if (containString(item->subject()) && ((mOptions & SearchMessageByButtons::SearchAgainstSubject) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom) || searchEveryWhere)) {
+        } else if (containString(item->sender()) && ((mOptions & SearchMessageByButtons::SearchAgainstFrom) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
+        } else if (containString(item->receiver()) && ((mOptions & SearchMessageByButtons::SearchAgainstTo) || searchEveryWhere)) {
             searchMatches = true;
         }
         if (!searchMatches) {
@@ -153,7 +153,7 @@ const QString &Filter::searchString() const
     return mSearchString;
 }
 
-QuickSearchLine::SearchOptions Filter::currentOptions() const
+SearchMessageByButtons::SearchOptions Filter::currentOptions() const
 {
     return mOptions;
 }
@@ -197,7 +197,8 @@ Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
 Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
 {
     auto filter = new Filter();
-    filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
+    filter->setSearchString(newGroup.readEntry("searchString"),
+                            static_cast<SearchMessageByButtons::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
     filter->setTagId(newGroup.readEntry("tagId"));
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
@@ -211,11 +212,11 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
         messageStatusLst << status;
     }
     filter->setStatus(messageStatusLst);
-    filter->setOptions(static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
+    filter->setOptions(static_cast<SearchMessageByButtons::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
     return filter;
 }
 
-void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptions options)
+void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)
 {
     const QString trimStr = search.trimmed();
     if ((mSearchString == trimStr) && (mOptions == options)) {
@@ -251,18 +252,18 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
     }
     if (!newStr.trimmed().isEmpty()) {
         Akonadi::Search::PIM::EmailQuery query;
-        if (options & QuickSearchLine::SearchEveryWhere) {
+        if (options & SearchMessageByButtons::SearchEveryWhere) {
             query.matches(newStr);
             query.setSplitSearchMatchString(needToSplitString);
-        } else if (options & QuickSearchLine::SearchAgainstSubject) {
+        } else if (options & SearchMessageByButtons::SearchAgainstSubject) {
             query.subjectMatches(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstBody) {
+        } else if (options & SearchMessageByButtons::SearchAgainstBody) {
             query.bodyMatches(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstFrom) {
+        } else if (options & SearchMessageByButtons::SearchAgainstFrom) {
             query.setFrom(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstBcc) {
+        } else if (options & SearchMessageByButtons::SearchAgainstBcc) {
             query.setBcc(QStringList() << newStr);
-        } else if (options & QuickSearchLine::SearchAgainstTo) {
+        } else if (options & SearchMessageByButtons::SearchAgainstTo) {
             query.setTo(QStringList() << newStr);
         }
 

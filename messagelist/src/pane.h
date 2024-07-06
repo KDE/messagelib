@@ -369,7 +369,7 @@ public:
 
     void populateStatusFilterCombo();
 
-    Core::QuickSearchLine::SearchOptions currentOptions() const;
+    Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
     [[nodiscard]] Akonadi::Collection currentFolder() const;
 

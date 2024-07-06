@@ -349,7 +349,7 @@ public:
 
     void setQuickSearchClickMessage(const QString &msg);
 
-    [[nodiscard]] MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
 protected:
     /**

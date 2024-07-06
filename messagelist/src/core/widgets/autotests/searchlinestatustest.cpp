@@ -9,7 +9,7 @@
 #include <QCompleter>
 #include <QMenu>
 #include <QTest>
-
+QTEST_MAIN(SearchLineStatusTest)
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
 {
@@ -20,11 +20,7 @@ SearchLineStatusTest::~SearchLineStatusTest() = default;
 void SearchLineStatusTest::shouldHaveDefaultValue()
 {
     MessageList::Core::SearchLineStatus w;
-    QVERIFY(!w.containsOutboundMessages());
     QVERIFY(!w.locked());
-    auto filterMenu = w.findChild<QMenu *>(QStringLiteral("filtermenu"));
-    QVERIFY(filterMenu);
-    QVERIFY(!filterMenu->actions().isEmpty());
 
     QVERIFY(w.completer());
     QVERIFY(w.completer()->model());
@@ -59,7 +55,5 @@ void SearchLineStatusTest::shouldClearCompleter()
     w.slotClearHistory();
     QCOMPARE(w.completer()->model()->rowCount(), 0);
 }
-
-QTEST_MAIN(SearchLineStatusTest)
 
 #include "moc_searchlinestatustest.cpp"

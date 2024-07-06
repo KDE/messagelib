@@ -120,7 +120,7 @@ public:
     void themeMenuAboutToShow(QMenu *menu);
     void aggregationMenuAboutToShow(QMenu *menu);
 
-    [[nodiscard]] MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
     void setFilter(Filter *filter);
 public Q_SLOTS:
 

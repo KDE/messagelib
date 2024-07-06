@@ -22,9 +22,7 @@ SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
     mMainLayout->setSpacing(0);
 
     mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
-    connect(mButtonGroup, &QButtonGroup::idClicked, this, [this](int index) {
-        // TODO
-    });
+    connect(mButtonGroup, &QButtonGroup::idClicked, this, &SearchMessageByButtons::searchOptionChanged);
     createButtons();
     mMainLayout->addStretch(0);
 }
@@ -104,6 +102,27 @@ void SearchMessageByButtons::setSearchOptions(SearchMessageByButtons::SearchOpti
     } else {
         mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstFrom);
     }
+}
+
+void SearchMessageByButtons::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
+{
+#if 0
+        clearFilterAction();
+        clearFilterByAction();
+        // TODO unchecked all checkbox
+        for (const Akonadi::MessageStatus &status : newLstStatus) {
+            for (QAction *act : std::as_const(mFilterListActions)) {
+                if (static_cast<qint32>(act->data().toInt()) == status.toQInt32()) {
+                    act->setChecked(true);
+                    mHasFilter = true;
+                    break;
+                }
+            }
+        }
+        updateFilterActionIcon();
+    }
+#endif
+    // TODO
 }
 
 #include "moc_searchmessagebybuttons.cpp"

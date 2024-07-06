@@ -629,7 +629,7 @@ Akonadi::Item::List MessageList::Widget::currentThreadAsMessageList() const
     return lstMiPtr;
 }
 
-MessageList::Core::QuickSearchLine::SearchOptions MessageList::Widget::currentOptions() const
+MessageList::Core::SearchMessageByButtons::SearchOptions MessageList::Widget::currentOptions() const
 {
     return view()->currentOptions();
 }
