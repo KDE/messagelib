@@ -26,6 +26,7 @@ SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
         // TODO
     });
     createButtons();
+    mMainLayout->addStretch(0);
 }
 
 SearchMessageByButtons::~SearchMessageByButtons() = default;
@@ -41,9 +42,12 @@ void SearchMessageByButtons::createButtons()
 
 void SearchMessageByButtons::createFilterButton(const QString &text, SearchOption option)
 {
-    auto button = new QToolButton(this);
-    button->setText(text);
-    mButtonGroup->addButton(button, option);
+    auto toolButton = new QToolButton(this);
+    toolButton->setText(text);
+    toolButton->setCheckable(true);
+    toolButton->setAutoRaise(true);
+    mButtonGroup->addButton(toolButton, option);
+    mMainLayout->addWidget(toolButton, 0, Qt::AlignTop);
 }
 
 void SearchMessageByButtons::changeSearchAgainstFromOrToText()
