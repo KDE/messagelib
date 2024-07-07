@@ -101,7 +101,7 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusReplied());
     if (mParentFolderId > 0) {
         auto header = new KMime::Headers::Generic("X-KMail-Fcc");
-        header->fromUnicodeString(QString::number(mParentFolderId), "utf-8");
+        header->fromUnicodeString(QString::number(mParentFolderId));
         msg->setHeader(header);
     }
 
@@ -261,12 +261,12 @@ void MessageFactoryNG::createReplyAsync()
 
     refStr = getRefStr(mOrigMsg);
     if (!refStr.isEmpty()) {
-        msg->references()->fromUnicodeString(QString::fromLocal8Bit(refStr), "utf-8");
+        msg->references()->fromUnicodeString(QString::fromLocal8Bit(refStr));
     }
     // In-Reply-To = original msg-id
     msg->inReplyTo()->from7BitString(mOrigMsg->messageID()->as7BitString(false));
 
-    msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.data()), "utf-8");
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.data()));
 
     // If the reply shouldn't be blank, apply the template to the message
     if (mQuote) {
@@ -338,11 +338,11 @@ void MessageFactoryNG::createForwardAsync()
 
         // restore the content type, MessageHelper::initFromMessage() sets the contents type to
         // text/plain, via initHeader(), for unclear reasons
-        msg->contentType()->fromUnicodeString(oldContentType, "utf-8");
+        msg->contentType()->fromUnicodeString(oldContentType);
         msg->assemble();
     }
 
-    msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(mOrigMsg.data()), "utf-8");
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(mOrigMsg.data()));
     auto job = new MessageFactoryForwardJob;
     connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
     job->setIdentityManager(mIdentityManager);
@@ -370,7 +370,7 @@ QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAtta
         KMime::Message::Ptr firstMsg = MessageComposer::Util::message(items.first());
         const uint originalIdentity = identityUoid(firstMsg);
         MessageHelper::initFromMessage(msg, firstMsg, mIdentityManager, originalIdentity);
-        msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(firstMsg.data()), "utf-8");
+        msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(firstMsg.data()));
     }
 
     MessageHelper::setAutomaticFields(msg, true);
@@ -407,7 +407,7 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
     ct->setParameter(QStringLiteral("name"), subject);
-    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject, "utf-8");
+    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject);
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 
@@ -435,7 +435,7 @@ KMime::Message::Ptr MessageFactoryNG::createResend()
 
     // Set the identity from above
     auto header = new KMime::Headers::Generic("X-KMail-Identity");
-    header->fromUnicodeString(QString::number(originalIdentity), "utf-8");
+    header->fromUnicodeString(QString::number(originalIdentity));
     msg->setHeader(header);
 
     // Restore the original bcc field as this is overwritten in applyIdentity
@@ -492,59 +492,59 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
         msgIdSuffix = MessageComposer::MessageComposerSettings::customMsgIDSuffix();
     }
     auto header = new KMime::Headers::Generic("Resent-Message-ID");
-    header->fromUnicodeString(MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), msgIdSuffix), "utf-8");
+    header->fromUnicodeString(MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), msgIdSuffix));
     msg->setHeader(header);
 
     header = new KMime::Headers::Generic("Resent-Date");
-    header->fromUnicodeString(newDate, "utf-8");
+    header->fromUnicodeString(newDate);
     msg->setHeader(header);
 
     header = new KMime::Headers::Generic("Resent-From");
-    header->fromUnicodeString(strFrom, "utf-8");
+    header->fromUnicodeString(strFrom);
     msg->setHeader(header);
 
     if (msg->to(false)) {
         auto headerT = new KMime::Headers::To;
-        headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString(), "utf-8");
+        headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString());
         msg->setHeader(headerT);
     }
 
     header = new KMime::Headers::Generic("Resent-To");
-    header->fromUnicodeString(toStr, "utf-8");
+    header->fromUnicodeString(toStr);
     msg->setHeader(header);
 
     if (!ccStr.isEmpty()) {
         header = new KMime::Headers::Generic("Resent-Cc");
-        header->fromUnicodeString(ccStr, "utf-8");
+        header->fromUnicodeString(ccStr);
         msg->setHeader(header);
     }
 
     if (!bccStr.isEmpty()) {
         header = new KMime::Headers::Generic("Resent-Bcc");
-        header->fromUnicodeString(bccStr, "utf-8");
+        header->fromUnicodeString(bccStr);
         msg->setHeader(header);
     }
 
     header = new KMime::Headers::Generic("X-KMail-Redirect-From");
-    header->fromUnicodeString(strByWayOf, "utf-8");
+    header->fromUnicodeString(strByWayOf);
     msg->setHeader(header);
 
     if (transportId != -1) {
         header = new KMime::Headers::Generic("X-KMail-Transport");
-        header->fromUnicodeString(QString::number(transportId), "utf-8");
+        header->fromUnicodeString(QString::number(transportId));
         msg->setHeader(header);
     }
 
     if (!fcc.isEmpty()) {
         header = new KMime::Headers::Generic("X-KMail-Fcc");
-        header->fromUnicodeString(fcc, "utf-8");
+        header->fromUnicodeString(fcc);
         msg->setHeader(header);
     }
 
     const bool fccIsDisabled = ident.disabledFcc();
     if (fccIsDisabled) {
         header = new KMime::Headers::Generic("X-KMail-FccDisabled");
-        header->fromUnicodeString(QStringLiteral("true"), "utf-8");
+        header->fromUnicodeString(QStringLiteral("true"));
         msg->setHeader(header);
     } else {
         msg->removeHeader("X-KMail-FccDisabled");
@@ -571,7 +571,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
     receipt->to()->fromUnicodeString(receiptTo, QStringLiteral("utf-8").toLatin1());
-    receipt->subject()->fromUnicodeString(i18n("Receipt: ") + mOrigMsg->subject()->asUnicodeString(), "utf-8");
+    receipt->subject()->fromUnicodeString(i18n("Receipt: ") + mOrigMsg->subject()->asUnicodeString());
 
     QString str = QStringLiteral("Your message was successfully delivered.");
     str += QLatin1StringView("\n\n---------- Message header follows ----------\n");
@@ -675,11 +675,11 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
         break;
     }
 
-    receipt->to()->fromUnicodeString(receiptTo, "utf-8");
+    receipt->to()->fromUnicodeString(receiptTo);
     // Laurent: We don't translate subject ?
     receipt->subject()->from7BitString("Message Disposition Notification");
     auto header = new KMime::Headers::InReplyTo;
-    header->fromUnicodeString(mOrigMsg->messageID()->asUnicodeString(), "utf-8");
+    header->fromUnicodeString(mOrigMsg->messageID()->asUnicodeString());
     receipt->setHeader(header);
 
     receipt->references()->from7BitString(getRefStr(mOrigMsg));

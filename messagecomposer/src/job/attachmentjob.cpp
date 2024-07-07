@@ -101,7 +101,7 @@ void AttachmentJob::doStart()
         ct->setCharset(textCharset);
     }
 
-    sjob->contentDescription()->fromUnicodeString(d->part->description(), "utf-8");
+    sjob->contentDescription()->fromUnicodeString(d->part->description());
 
     auto contentDisposition = sjob->contentDisposition();
     contentDisposition->setFilename(d->part->fileName());

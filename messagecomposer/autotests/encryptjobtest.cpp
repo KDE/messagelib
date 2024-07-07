@@ -202,7 +202,7 @@ void EncryptJobTest::testProtectedHeaders()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 

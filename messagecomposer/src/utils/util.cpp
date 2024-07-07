@@ -349,11 +349,11 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
     }
 
     auto header = new KMime::Headers::Generic("X-KMail-Link-Message");
-    header->fromUnicodeString(message, "utf-8");
+    header->fromUnicodeString(message);
     msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Link-Type");
-    header->fromUnicodeString(type, "utf-8");
+    header->fromUnicodeString(type);
     msg->setHeader(header);
 }
 
@@ -467,7 +467,7 @@ void MessageComposer::Util::addCustomHeaders(const KMime::Message::Ptr &message,
     while (customHeader.hasNext()) {
         customHeader.next();
         auto header = new KMime::Headers::Generic(customHeader.key().constData());
-        header->fromUnicodeString(customHeader.value(), "utf-8");
+        header->fromUnicodeString(customHeader.value());
         message->setHeader(header);
     }
 }

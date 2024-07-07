@@ -254,27 +254,27 @@ void ComposerViewBase::saveMailSettings()
 {
     const auto identity = currentIdentity();
     auto header = new KMime::Headers::Generic("X-KMail-Transport");
-    header->fromUnicodeString(QString::number(m_transport->currentTransportId()), "utf-8");
+    header->fromUnicodeString(QString::number(m_transport->currentTransportId()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Transport-Name");
-    header->fromUnicodeString(m_transport->currentText(), "utf-8");
+    header->fromUnicodeString(m_transport->currentText());
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Fcc");
-    header->fromUnicodeString(QString::number(m_fccCollection.id()), "utf-8");
+    header->fromUnicodeString(QString::number(m_fccCollection.id()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Identity");
-    header->fromUnicodeString(QString::number(identity.uoid()), "utf-8");
+    header->fromUnicodeString(QString::number(identity.uoid()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Identity-Name");
-    header->fromUnicodeString(identity.identityName(), "utf-8");
+    header->fromUnicodeString(identity.identityName());
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Dictionary");
-    header->fromUnicodeString(m_dictionary->currentDictionary(), "utf-8");
+    header->fromUnicodeString(m_dictionary->currentDictionary());
     m_msg->setHeader(header);
 
     // Save the quote prefix which is used for this message. Each message can have
@@ -283,14 +283,14 @@ void ComposerViewBase::saveMailSettings()
         m_msg->removeHeader("X-KMail-QuotePrefix");
     } else {
         header = new KMime::Headers::Generic("X-KMail-QuotePrefix");
-        header->fromUnicodeString(m_editor->quotePrefixName(), "utf-8");
+        header->fromUnicodeString(m_editor->quotePrefixName());
         m_msg->setHeader(header);
     }
 
     if (m_editor->composerControler()->isFormattingUsed()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "HTML mode";
         header = new KMime::Headers::Generic("X-KMail-Markup");
-        header->fromUnicodeString(QStringLiteral("true"), "utf-8");
+        header->fromUnicodeString(QStringLiteral("true"));
         m_msg->setHeader(header);
     } else {
         m_msg->removeHeader("X-KMail-Markup");

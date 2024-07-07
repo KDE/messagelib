@@ -236,7 +236,7 @@ void SignJobTest::testProtectedHeaders()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -276,7 +276,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -290,7 +290,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to()->from7BitString("overwrite@example.org");
     skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
-    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"), "utf-8");
+    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"));
 
     KMime::Content *result = sJob->content();
     result->assemble();
@@ -334,7 +334,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.appendHeader(face);
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
