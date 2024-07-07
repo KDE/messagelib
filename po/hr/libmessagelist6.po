@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:39+0000\n"
+"POT-Creation-Date: 2024-07-07 00:39+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -134,73 +134,73 @@ msgstr "Favoriziraj brzinu"
 msgid "Batch Job (No Interactivity)"
 msgstr "Naredbeni posao (nema interaktivnosti)"
 
-#: core/item.cpp:252 core/messageitem.cpp:489
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Pročitana"
 
-#: core/item.cpp:254 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Nepročitana"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Ima privitak"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Akcijska stavka"
 
-#: core/item.cpp:266 core/messageitem.cpp:487
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Odgovorena"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Proslijeđena"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Poslana"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "Važna"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Neželjena poruka"
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Ham"
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Nadgledana"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
@@ -883,8 +883,8 @@ msgstr "Prikaži zadane stupce"
 msgid "Display Tooltips"
 msgstr "Prikaži info-oblačiće"
 
-#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
-#: core/widgets/searchmessagebybuttons.cpp:55
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1151,7 +1151,7 @@ msgstr "Naziv:"
 msgid "Save Filter..."
 msgstr "&Napravi filtar"
 
-#: core/widgets/quicksearchline.cpp:42
+#: core/widgets/quicksearchline.cpp:45
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1176,19 +1176,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1196,119 +1196,31 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
-msgctxt "@info:tooltip"
-msgid "Filter Mails by Status"
-msgstr "Filter pravila"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "&Napravi filtar"
 
-#: core/widgets/searchlinestatus.cpp:217
+#: core/widgets/searchlinestatus.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
-msgctxt "@action:button"
-msgid "Clear Filter"
+msgid "Clear History"
 msgstr "&Napravi filtar"
 
-#: core/widgets/searchlinestatus.cpp:223
-#: core/widgets/searchstatusbuttons.cpp:37
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Unread"
-msgstr "Nepročitane"
-
-#: core/widgets/searchlinestatus.cpp:227
-#: core/widgets/searchstatusbuttons.cpp:41
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Replied"
-msgstr "Odgovorene"
-
-#: core/widgets/searchlinestatus.cpp:231
-#: core/widgets/searchstatusbuttons.cpp:45
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Forwarded"
-msgstr "Proslijeđene"
-
-#: core/widgets/searchlinestatus.cpp:235
-#: core/widgets/searchstatusbuttons.cpp:49
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Important"
-msgstr "Važne"
-
-#: core/widgets/searchlinestatus.cpp:239
-#: core/widgets/searchstatusbuttons.cpp:53
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Action Item"
-msgstr "Akcijska stavka"
-
-#: core/widgets/searchlinestatus.cpp:243
-#: core/widgets/searchstatusbuttons.cpp:57
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Watched"
-msgstr "Nadgledana"
-
-#: core/widgets/searchlinestatus.cpp:247
-#: core/widgets/searchstatusbuttons.cpp:61
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ignored"
-msgstr "Ignorirana"
-
-#: core/widgets/searchlinestatus.cpp:251
-#: core/widgets/searchstatusbuttons.cpp:65
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Attachment"
-msgstr "Ima privitak"
-
-#: core/widgets/searchlinestatus.cpp:255
-#: core/widgets/searchstatusbuttons.cpp:69
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Invitation"
-msgstr "Ima pozivnicu"
-
-#: core/widgets/searchlinestatus.cpp:259
-#: core/widgets/searchstatusbuttons.cpp:73
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Spam"
-msgstr "Neželjena pošta"
-
-#: core/widgets/searchlinestatus.cpp:263
-#: core/widgets/searchstatusbuttons.cpp:77
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ham"
-msgstr "Ham"
-
-#: core/widgets/searchlinestatus.cpp:273
-#: core/widgets/searchmessagebybuttons.cpp:35
+#: core/widgets/searchmessagebybuttons.cpp:34
 #, fuzzy, kde-format
 #| msgid "&Full message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "&Cijela poruka"
 
-#: core/widgets/searchlinestatus.cpp:280
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:285
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgctxt "Description of Type Subject"
@@ -1317,26 +1229,84 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "Tema"
 
-#: core/widgets/searchlinestatus.cpp:296
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
-#: core/widgets/searchlinestatus.cpp:324
-#: core/widgets/searchmessagebybuttons.cpp:53
+#: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinestatus.cpp:406
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgid "Clear History"
-msgstr "&Napravi filtar"
+#: core/widgets/searchstatusbuttons.cpp:34
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Nepročitane"
+
+#: core/widgets/searchstatusbuttons.cpp:38
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Odgovorene"
+
+#: core/widgets/searchstatusbuttons.cpp:42
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Proslijeđene"
+
+#: core/widgets/searchstatusbuttons.cpp:46
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Važne"
+
+#: core/widgets/searchstatusbuttons.cpp:50
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Akcijska stavka"
+
+#: core/widgets/searchstatusbuttons.cpp:54
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Nadgledana"
+
+#: core/widgets/searchstatusbuttons.cpp:58
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ignorirana"
+
+#: core/widgets/searchstatusbuttons.cpp:62
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Ima privitak"
+
+#: core/widgets/searchstatusbuttons.cpp:66
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Ima pozivnicu"
+
+#: core/widgets/searchstatusbuttons.cpp:70
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Neželjena pošta"
+
+#: core/widgets/searchstatusbuttons.cpp:74
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ham"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -2052,6 +2022,18 @@ msgstr "&Kopiraj ovdje"
 #, kde-format
 msgid "C&ancel"
 msgstr "P&rekini"
+
+#, fuzzy
+#~| msgid "Filter Rules"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Filter pravila"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "&Napravi filtar"
 
 #~ msgid "Note Icon"
 #~ msgstr "Ikona bilješke"

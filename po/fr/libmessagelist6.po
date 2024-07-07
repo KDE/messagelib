@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:39+0000\n"
+"POT-Creation-Date: 2024-07-07 00:39+0000\n"
 "PO-Revision-Date: 2024-06-26 20:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -157,73 +157,73 @@ msgstr "Privilégier la vitesse"
 msgid "Batch Job (No Interactivity)"
 msgstr "Tâche de fond (Aucune interactivité)"
 
-#: core/item.cpp:252 core/messageitem.cpp:489
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Lu"
 
-#: core/item.cpp:254 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Non lu"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Possède une pièce jointe"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Action à effectuer"
 
-#: core/item.cpp:266 core/messageitem.cpp:487
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Répondu"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Transmis"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Envoyé"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "Important"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Courrier indésirable"
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Courriel normal"
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Surveillé"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
@@ -899,8 +899,8 @@ msgstr "Afficher les colonnes par défaut"
 msgid "Display Tooltips"
 msgstr "Afficher les infobulles"
 
-#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
-#: core/widgets/searchmessagebybuttons.cpp:55
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
 msgstr "De"
@@ -1156,7 +1156,7 @@ msgstr "Nom :"
 msgid "Save Filter..."
 msgstr "Enregistrer un filtre..."
 
-#: core/widgets/quicksearchline.cpp:42
+#: core/widgets/quicksearchline.cpp:45
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1183,7 +1183,7 @@ msgstr ""
 "d'indexation ou sont exclus complètement de l'indexation. Les résultats ci-"
 "dessous peuvent être incomplets."
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
@@ -1191,13 +1191,13 @@ msgstr ""
 "Empêcher que le champ de recherche rapide ne soit effacé en changeant de "
 "dossier"
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Effacer le champ de recherche rapide en changeant de dossier"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1208,139 +1208,111 @@ msgstr ""
 "rapide lorsque vous vous déplacez dans d'autres dossiers ou lorsque vous "
 "arrondissez votre recherche par état de message."
 
-#: core/widgets/searchlinestatus.cpp:114
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Filter Mails by Status"
-msgstr "Filtrer les messages par état"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtre enregistré"
 
-#: core/widgets/searchlinestatus.cpp:217
+#: core/widgets/searchlinestatus.cpp:186
 #, kde-format
-msgctxt "@action:button"
-msgid "Clear Filter"
-msgstr "Effacer un filtre"
+msgid "Clear History"
+msgstr "Effacer l'historique"
 
-#: core/widgets/searchlinestatus.cpp:223
-#: core/widgets/searchstatusbuttons.cpp:37
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Unread"
-msgstr "Non lu"
-
-#: core/widgets/searchlinestatus.cpp:227
-#: core/widgets/searchstatusbuttons.cpp:41
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Replied"
-msgstr "Répondu"
-
-#: core/widgets/searchlinestatus.cpp:231
-#: core/widgets/searchstatusbuttons.cpp:45
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Forwarded"
-msgstr "Transmis"
-
-#: core/widgets/searchlinestatus.cpp:235
-#: core/widgets/searchstatusbuttons.cpp:49
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Important"
-msgstr "Important"
-
-#: core/widgets/searchlinestatus.cpp:239
-#: core/widgets/searchstatusbuttons.cpp:53
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Action Item"
-msgstr "Élément d'action"
-
-#: core/widgets/searchlinestatus.cpp:243
-#: core/widgets/searchstatusbuttons.cpp:57
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Watched"
-msgstr "Surveillé"
-
-#: core/widgets/searchlinestatus.cpp:247
-#: core/widgets/searchstatusbuttons.cpp:61
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ignored"
-msgstr "Ignoré"
-
-#: core/widgets/searchlinestatus.cpp:251
-#: core/widgets/searchstatusbuttons.cpp:65
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Attachment"
-msgstr "Possède une pièce jointe"
-
-#: core/widgets/searchlinestatus.cpp:255
-#: core/widgets/searchstatusbuttons.cpp:69
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Invitation"
-msgstr "Possède une invitation"
-
-#: core/widgets/searchlinestatus.cpp:259
-#: core/widgets/searchstatusbuttons.cpp:73
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Spam"
-msgstr "Courrier indésirable"
-
-#: core/widgets/searchlinestatus.cpp:263
-#: core/widgets/searchstatusbuttons.cpp:77
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ham"
-msgstr "Courriel normal"
-
-#: core/widgets/searchlinestatus.cpp:273
-#: core/widgets/searchmessagebybuttons.cpp:35
+#: core/widgets/searchmessagebybuttons.cpp:34
 #, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Message complet"
 
-#: core/widgets/searchlinestatus.cpp:280
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Corps"
 
-#: core/widgets/searchlinestatus.cpp:285
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Sujet"
 
-#: core/widgets/searchlinestatus.cpp:296
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchlinestatus.cpp:324
-#: core/widgets/searchmessagebybuttons.cpp:53
+#: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "À"
 
-#: core/widgets/searchlinestatus.cpp:406
+#: core/widgets/searchstatusbuttons.cpp:34
 #, kde-format
-msgid "Clear History"
-msgstr "Effacer l'historique"
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Non lu"
+
+#: core/widgets/searchstatusbuttons.cpp:38
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Répondu"
+
+#: core/widgets/searchstatusbuttons.cpp:42
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Transmis"
+
+#: core/widgets/searchstatusbuttons.cpp:46
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Important"
+
+#: core/widgets/searchstatusbuttons.cpp:50
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Élément d'action"
+
+#: core/widgets/searchstatusbuttons.cpp:54
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Surveillé"
+
+#: core/widgets/searchstatusbuttons.cpp:58
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ignoré"
+
+#: core/widgets/searchstatusbuttons.cpp:62
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Possède une pièce jointe"
+
+#: core/widgets/searchstatusbuttons.cpp:66
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Possède une invitation"
+
+#: core/widgets/searchstatusbuttons.cpp:70
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Courrier indésirable"
+
+#: core/widgets/searchstatusbuttons.cpp:74
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Courriel normal"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -2011,6 +1983,14 @@ msgstr "&Copier ici"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuler"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Filtrer les messages par état"
+
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "Effacer un filtre"
 
 #~ msgid "Note Icon"
 #~ msgstr "Icône de note"

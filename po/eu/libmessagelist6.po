@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:39+0000\n"
+"POT-Creation-Date: 2024-07-07 00:39+0000\n"
 "PO-Revision-Date: 2024-03-24 10:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -137,73 +137,73 @@ msgstr "Abiaduraren alde egin"
 msgid "Batch Job (No Interactivity)"
 msgstr "Sortatako lana (elkarreragiketarik ez)"
 
-#: core/item.cpp:252 core/messageitem.cpp:489
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Irakurrita"
 
-#: core/item.cpp:254 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Irakurri gabe"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Eranskina du"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Ekintza-elementua"
 
-#: core/item.cpp:266 core/messageitem.cpp:487
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Erantzunda"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Birbidalita"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Bidalita"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "Garrantzitsua"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Spam"
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Ez-spam"
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Zelatatua"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
@@ -875,8 +875,8 @@ msgstr "Erakutsi lehenetsitako zutabeak"
 msgid "Display Tooltips"
 msgstr "Azaldu tresna-argibideak"
 
-#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
-#: core/widgets/searchmessagebybuttons.cpp:55
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
 msgstr "Nork"
@@ -1131,7 +1131,7 @@ msgstr "Izena:"
 msgid "Save Filter..."
 msgstr "Gorde iragazkia..."
 
-#: core/widgets/quicksearchline.cpp:42
+#: core/widgets/quicksearchline.cpp:45
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1159,19 +1159,19 @@ msgstr ""
 "indexatzetik erabat baztertuta daude. Baliteke beheko emaitzak osatu gabe "
 "egotea."
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Karpetaz aldatzean bilaketa bizkorreko eremua hustea eragotzi"
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Hustu bilaketa bizkorreko eremua karpetaz aldatzean"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1182,113 +1182,25 @@ msgstr ""
 "egoeraren arabera murriztean, zure bilaketa bizkorra giltzatuta eduki nahi "
 "baduzu."
 
-#: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
-msgctxt "@info:tooltip"
-msgid "Filter Mails by Status"
-msgstr "Iragazi postak egoeraren arabera"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 #| msgid "Saved Filter"
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Gordetako iragazkia"
 
-#: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
-msgctxt "@action:button"
-msgid "Clear Filter"
-msgstr "Hustu iragazkia"
-
-#: core/widgets/searchlinestatus.cpp:223
-#: core/widgets/searchstatusbuttons.cpp:37
+#: core/widgets/searchlinestatus.cpp:186
 #, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Unread"
-msgstr "Irakurri gabe"
+msgid "Clear History"
+msgstr "Garbitu historia"
 
-#: core/widgets/searchlinestatus.cpp:227
-#: core/widgets/searchstatusbuttons.cpp:41
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Replied"
-msgstr "Erantzunda"
-
-#: core/widgets/searchlinestatus.cpp:231
-#: core/widgets/searchstatusbuttons.cpp:45
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Forwarded"
-msgstr "Birbidalita"
-
-#: core/widgets/searchlinestatus.cpp:235
-#: core/widgets/searchstatusbuttons.cpp:49
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Important"
-msgstr "Garrantzitsua"
-
-#: core/widgets/searchlinestatus.cpp:239
-#: core/widgets/searchstatusbuttons.cpp:53
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Action Item"
-msgstr "Ekintza-elementua"
-
-#: core/widgets/searchlinestatus.cpp:243
-#: core/widgets/searchstatusbuttons.cpp:57
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Watched"
-msgstr "Zelatatua"
-
-#: core/widgets/searchlinestatus.cpp:247
-#: core/widgets/searchstatusbuttons.cpp:61
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ignored"
-msgstr "Ez ikusi egina"
-
-#: core/widgets/searchlinestatus.cpp:251
-#: core/widgets/searchstatusbuttons.cpp:65
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Attachment"
-msgstr "Eranskina du"
-
-#: core/widgets/searchlinestatus.cpp:255
-#: core/widgets/searchstatusbuttons.cpp:69
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Invitation"
-msgstr "Gonbidapena du"
-
-#: core/widgets/searchlinestatus.cpp:259
-#: core/widgets/searchstatusbuttons.cpp:73
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Spam"
-msgstr "Spam"
-
-#: core/widgets/searchlinestatus.cpp:263
-#: core/widgets/searchstatusbuttons.cpp:77
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ham"
-msgstr "Ez-spam"
-
-#: core/widgets/searchlinestatus.cpp:273
-#: core/widgets/searchmessagebybuttons.cpp:35
+#: core/widgets/searchmessagebybuttons.cpp:34
 #, fuzzy, kde-format
 #| msgid "Full Message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Mezu osoa"
 
-#: core/widgets/searchlinestatus.cpp:280
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, fuzzy, kde-format
 #| msgid "Body"
@@ -1296,7 +1208,6 @@ msgctxt "@action"
 msgid "Body"
 msgstr "Gorputza"
 
-#: core/widgets/searchlinestatus.cpp:285
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgid "Subject"
@@ -1304,7 +1215,6 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "Gaia"
 
-#: core/widgets/searchlinestatus.cpp:296
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 #| msgid "BCC"
@@ -1312,16 +1222,76 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchlinestatus.cpp:324
-#: core/widgets/searchmessagebybuttons.cpp:53
+#: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Nori"
 
-#: core/widgets/searchlinestatus.cpp:406
+#: core/widgets/searchstatusbuttons.cpp:34
 #, kde-format
-msgid "Clear History"
-msgstr "Garbitu historia"
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Irakurri gabe"
+
+#: core/widgets/searchstatusbuttons.cpp:38
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Erantzunda"
+
+#: core/widgets/searchstatusbuttons.cpp:42
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Birbidalita"
+
+#: core/widgets/searchstatusbuttons.cpp:46
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Garrantzitsua"
+
+#: core/widgets/searchstatusbuttons.cpp:50
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Ekintza-elementua"
+
+#: core/widgets/searchstatusbuttons.cpp:54
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Zelatatua"
+
+#: core/widgets/searchstatusbuttons.cpp:58
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ez ikusi egina"
+
+#: core/widgets/searchstatusbuttons.cpp:62
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Eranskina du"
+
+#: core/widgets/searchstatusbuttons.cpp:66
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Gonbidapena du"
+
+#: core/widgets/searchstatusbuttons.cpp:70
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchstatusbuttons.cpp:74
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ez-spam"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -2025,6 +1995,18 @@ msgstr "&Kopiatu hemen"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Utzi"
+
+#, fuzzy
+#~| msgid "Filter Mails by Status"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Iragazi postak egoeraren arabera"
+
+#, fuzzy
+#~| msgid "Clear Filter"
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "Hustu iragazkia"
 
 #~ msgid "Note Icon"
 #~ msgstr "Ohar ikonoa"

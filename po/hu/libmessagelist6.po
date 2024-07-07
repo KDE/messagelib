@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:39+0000\n"
+"POT-Creation-Date: 2024-07-07 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -130,73 +130,73 @@ msgstr "A gyorsaság fontosabb"
 msgid "Batch Job (No Interactivity)"
 msgstr "Kötegelt feladat (nem interaktív)"
 
-#: core/item.cpp:252 core/messageitem.cpp:489
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Olvasott"
 
-#: core/item.cpp:254 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Olvasatlan"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Van melléklete"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Műveletelem"
 
-#: core/item.cpp:266 core/messageitem.cpp:487
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Megválaszolt"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Továbbított"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Elküldött"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "Fontos"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Levélszemét"
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Ál-kéretlen"
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Figyelt"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
@@ -864,8 +864,8 @@ msgstr "Az alapértelmezett oszlopok megjelenítése"
 msgid "Display Tooltips"
 msgstr "Tippek megjelenítése"
 
-#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
-#: core/widgets/searchmessagebybuttons.cpp:55
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
 msgstr "Feladó"
@@ -1120,7 +1120,7 @@ msgstr "Név:"
 msgid "Save Filter..."
 msgstr "Szűrő mentése…"
 
-#: core/widgets/quicksearchline.cpp:42
+#: core/widgets/quicksearchline.cpp:45
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1148,19 +1148,19 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "A gyors keresés mező törlésének megakadályozása mappaváltáskor"
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "A gyors keresés mező törlése mappaváltáskor"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1170,113 +1170,25 @@ msgstr ""
 "Váltsa át ezt a gombot, ha zárolva szeretné tartani a gyors keresést, amikor "
 "másik mappába lép vagy szűkíti az üzenetállapot szerinti keresést."
 
-#: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Mails by Status"
-msgctxt "@info:tooltip"
-msgid "Filter Mails by Status"
-msgstr "Levelek szűrése állapotra"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 #| msgid "Saved Filter"
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Mentett szűrő"
 
-#: core/widgets/searchlinestatus.cpp:217
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
-msgctxt "@action:button"
-msgid "Clear Filter"
-msgstr "Szűrő törlése"
-
-#: core/widgets/searchlinestatus.cpp:223
-#: core/widgets/searchstatusbuttons.cpp:37
+#: core/widgets/searchlinestatus.cpp:186
 #, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Unread"
-msgstr "Olvasatlan"
+msgid "Clear History"
+msgstr "Előzmények törlése"
 
-#: core/widgets/searchlinestatus.cpp:227
-#: core/widgets/searchstatusbuttons.cpp:41
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Replied"
-msgstr "Megválaszolt"
-
-#: core/widgets/searchlinestatus.cpp:231
-#: core/widgets/searchstatusbuttons.cpp:45
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Forwarded"
-msgstr "Továbbított"
-
-#: core/widgets/searchlinestatus.cpp:235
-#: core/widgets/searchstatusbuttons.cpp:49
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Important"
-msgstr "Fontos"
-
-#: core/widgets/searchlinestatus.cpp:239
-#: core/widgets/searchstatusbuttons.cpp:53
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Action Item"
-msgstr "Műveletelem"
-
-#: core/widgets/searchlinestatus.cpp:243
-#: core/widgets/searchstatusbuttons.cpp:57
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Watched"
-msgstr "Figyelt"
-
-#: core/widgets/searchlinestatus.cpp:247
-#: core/widgets/searchstatusbuttons.cpp:61
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ignored"
-msgstr "Nem figyelt"
-
-#: core/widgets/searchlinestatus.cpp:251
-#: core/widgets/searchstatusbuttons.cpp:65
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Attachment"
-msgstr "Van melléklete"
-
-#: core/widgets/searchlinestatus.cpp:255
-#: core/widgets/searchstatusbuttons.cpp:69
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Invitation"
-msgstr "Meghívóval rendelkezik"
-
-#: core/widgets/searchlinestatus.cpp:259
-#: core/widgets/searchstatusbuttons.cpp:73
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Spam"
-msgstr "Levélszemét"
-
-#: core/widgets/searchlinestatus.cpp:263
-#: core/widgets/searchstatusbuttons.cpp:77
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ham"
-msgstr "Ál-kéretlen"
-
-#: core/widgets/searchlinestatus.cpp:273
-#: core/widgets/searchmessagebybuttons.cpp:35
+#: core/widgets/searchmessagebybuttons.cpp:34
 #, fuzzy, kde-format
 #| msgid "Full Message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Teljes üzenetet"
 
-#: core/widgets/searchlinestatus.cpp:280
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, fuzzy, kde-format
 #| msgid "Body"
@@ -1284,7 +1196,6 @@ msgctxt "@action"
 msgid "Body"
 msgstr "Törzs"
 
-#: core/widgets/searchlinestatus.cpp:285
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgid "Subject"
@@ -1292,7 +1203,6 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "Tárgy"
 
-#: core/widgets/searchlinestatus.cpp:296
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 #| msgid "BCC"
@@ -1300,16 +1210,76 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "Titkos másolat"
 
-#: core/widgets/searchlinestatus.cpp:324
-#: core/widgets/searchmessagebybuttons.cpp:53
+#: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Címzett"
 
-#: core/widgets/searchlinestatus.cpp:406
+#: core/widgets/searchstatusbuttons.cpp:34
 #, kde-format
-msgid "Clear History"
-msgstr "Előzmények törlése"
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Olvasatlan"
+
+#: core/widgets/searchstatusbuttons.cpp:38
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Megválaszolt"
+
+#: core/widgets/searchstatusbuttons.cpp:42
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Továbbított"
+
+#: core/widgets/searchstatusbuttons.cpp:46
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Fontos"
+
+#: core/widgets/searchstatusbuttons.cpp:50
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Műveletelem"
+
+#: core/widgets/searchstatusbuttons.cpp:54
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Figyelt"
+
+#: core/widgets/searchstatusbuttons.cpp:58
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Nem figyelt"
+
+#: core/widgets/searchstatusbuttons.cpp:62
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Van melléklete"
+
+#: core/widgets/searchstatusbuttons.cpp:66
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Meghívóval rendelkezik"
+
+#: core/widgets/searchstatusbuttons.cpp:70
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Levélszemét"
+
+#: core/widgets/searchstatusbuttons.cpp:74
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ál-kéretlen"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -2015,6 +1985,18 @@ msgstr "Más&olás ide"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Mégsem"
+
+#, fuzzy
+#~| msgid "Filter Mails by Status"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Levelek szűrése állapotra"
+
+#, fuzzy
+#~| msgid "Clear Filter"
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "Szűrő törlése"
 
 #~ msgid "Note Icon"
 #~ msgstr "Jegyzetikon"

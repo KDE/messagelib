@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-05-28 13:44+0200\n"
+"PO-Revision-Date: 2024-07-04 14:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -411,8 +411,7 @@ msgid "Delete Keys"
 msgstr "Suprimix les claus"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Busca…"
@@ -598,8 +597,7 @@ msgid "From:"
 msgstr "De:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Utilitza «*» per a especificar tot el correu electrònic del domini"
@@ -2731,17 +2729,3 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Especifica la política predeterminada que s'utilitzarà, per a les "
-#~ "notificacions de processament de missatge (només per a ús intern)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Especifica l'acció de citació predeterminada que es prendrà, en respondre "
-#~ "a un missatge (només per a ús intern)"

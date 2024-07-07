@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:39+0000\n"
+"POT-Creation-Date: 2024-07-07 00:39+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:489
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Read"
@@ -155,7 +155,7 @@ msgctxt "Status of an item"
 msgid "Read"
 msgstr "Читање"
 
-#: core/item.cpp:254 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -163,21 +163,21 @@ msgctxt "Status of an item"
 msgid "Unread"
 msgstr "непрочитана"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Има прилог"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Отстрани ја ознаката за &важна порака"
 
-#: core/item.cpp:266 core/messageitem.cpp:487
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -185,7 +185,7 @@ msgctxt "Status of an item"
 msgid "Replied"
 msgstr "одговорена"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -193,14 +193,14 @@ msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "препратена"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sent"
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Испратена"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -208,19 +208,19 @@ msgctxt "Status of an item"
 msgid "Important"
 msgstr "важна"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr ""
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr ""
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
@@ -228,7 +228,7 @@ msgctxt "Status of an item"
 msgid "Watched"
 msgstr "следена"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
@@ -964,8 +964,8 @@ msgstr "Покажи &секогаш"
 msgid "Display Tooltips"
 msgstr "&До"
 
-#: core/view.cpp:2237 core/view.cpp:2241 core/widgets/searchlinestatus.cpp:326
-#: core/widgets/searchmessagebybuttons.cpp:55
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
@@ -1257,7 +1257,7 @@ msgstr "Име:"
 msgid "Save Filter..."
 msgstr "Зачувај листа"
 
-#: core/widgets/quicksearchline.cpp:42
+#: core/widgets/quicksearchline.cpp:45
 #, fuzzy, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1282,19 +1282,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1302,135 +1302,32 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
-msgctxt "@info:tooltip"
-msgid "Filter Mails by Status"
-msgstr "Правила за филтрирање"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 #| msgid "Save List"
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Зачувај листа"
 
-#: core/widgets/searchlinestatus.cpp:217
+#: core/widgets/searchlinestatus.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
-msgctxt "@action:button"
-msgid "Clear Filter"
+msgid "Clear History"
 msgstr "&Креирај филтер"
 
-#: core/widgets/searchlinestatus.cpp:223
-#: core/widgets/searchstatusbuttons.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Unread"
-msgctxt "@action:inmenu Status of a message"
-msgid "Unread"
-msgstr "непрочитана"
-
-#: core/widgets/searchlinestatus.cpp:227
-#: core/widgets/searchstatusbuttons.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Replied"
-msgctxt "@action:inmenu Status of a message"
-msgid "Replied"
-msgstr "одговорена"
-
-#: core/widgets/searchlinestatus.cpp:231
-#: core/widgets/searchstatusbuttons.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Forwarded"
-msgctxt "@action:inmenu Status of a message"
-msgid "Forwarded"
-msgstr "препратена"
-
-#: core/widgets/searchlinestatus.cpp:235
-#: core/widgets/searchstatusbuttons.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Important"
-msgctxt "@action:inmenu Status of a message"
-msgid "Important"
-msgstr "важна"
-
-#: core/widgets/searchlinestatus.cpp:239
-#: core/widgets/searchstatusbuttons.cpp:53
-#, fuzzy, kde-format
-#| msgid "Remove &Important Message Mark"
-msgctxt "@action:inmenu Status of a message"
-msgid "Action Item"
-msgstr "Отстрани ја ознаката за &важна порака"
-
-#: core/widgets/searchlinestatus.cpp:243
-#: core/widgets/searchstatusbuttons.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Watched"
-msgctxt "@action:inmenu Status of a message"
-msgid "Watched"
-msgstr "следена"
-
-#: core/widgets/searchlinestatus.cpp:247
-#: core/widgets/searchstatusbuttons.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "msg status"
-#| msgid "Ignored"
-msgctxt "@action:inmenu Status of a message"
-msgid "Ignored"
-msgstr "игнорирана"
-
-#: core/widgets/searchlinestatus.cpp:251
-#: core/widgets/searchstatusbuttons.cpp:65
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Attachment"
-msgstr "Има прилог"
-
-#: core/widgets/searchlinestatus.cpp:255
-#: core/widgets/searchstatusbuttons.cpp:69
-#, fuzzy, kde-format
-#| msgid "Advanced Options"
-msgctxt "@action:inmenu Status of a message"
-msgid "Has Invitation"
-msgstr "Напредни опции"
-
-#: core/widgets/searchlinestatus.cpp:259
-#: core/widgets/searchstatusbuttons.cpp:73
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Spam"
-msgstr ""
-
-#: core/widgets/searchlinestatus.cpp:263
-#: core/widgets/searchstatusbuttons.cpp:77
-#, kde-format
-msgctxt "@action:inmenu Status of a message"
-msgid "Ham"
-msgstr ""
-
-#: core/widgets/searchlinestatus.cpp:273
-#: core/widgets/searchmessagebybuttons.cpp:35
+#: core/widgets/searchmessagebybuttons.cpp:34
 #, fuzzy, kde-format
 #| msgid "&Full message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "&Целосна порака"
 
-#: core/widgets/searchlinestatus.cpp:280
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:285
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
 #| msgid "Subject"
@@ -1438,7 +1335,6 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "Тема"
 
-#: core/widgets/searchlinestatus.cpp:296
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 #| msgid "BCC"
@@ -1446,18 +1342,92 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchlinestatus.cpp:324
-#: core/widgets/searchmessagebybuttons.cpp:53
+#: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgid "To"
 msgid "To"
 msgstr "До"
 
-#: core/widgets/searchlinestatus.cpp:406
+#: core/widgets/searchstatusbuttons.cpp:34
 #, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgid "Clear History"
-msgstr "&Креирај филтер"
+#| msgctxt "msg status"
+#| msgid "Unread"
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "непрочитана"
+
+#: core/widgets/searchstatusbuttons.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Replied"
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "одговорена"
+
+#: core/widgets/searchstatusbuttons.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Forwarded"
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "препратена"
+
+#: core/widgets/searchstatusbuttons.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Important"
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "важна"
+
+#: core/widgets/searchstatusbuttons.cpp:50
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Отстрани ја ознаката за &важна порака"
+
+#: core/widgets/searchstatusbuttons.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Watched"
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "следена"
+
+#: core/widgets/searchstatusbuttons.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Ignored"
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "игнорирана"
+
+#: core/widgets/searchstatusbuttons.cpp:62
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Има прилог"
+
+#: core/widgets/searchstatusbuttons.cpp:66
+#, fuzzy, kde-format
+#| msgid "Advanced Options"
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Напредни опции"
+
+#: core/widgets/searchstatusbuttons.cpp:70
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:74
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -2189,6 +2159,18 @@ msgstr "&Копирај тука"
 #, kde-format
 msgid "C&ancel"
 msgstr "Отк&ажи"
+
+#, fuzzy
+#~| msgid "Filter Rules"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Правила за филтрирање"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "&Креирај филтер"
 
 #, fuzzy
 #~| msgid "Remove &Important Message Mark"
