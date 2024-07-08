@@ -1950,9 +1950,3 @@ msgstr "&Máŋge dása"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Orustahte barggu"
-
-#, fuzzy
-#~| msgid "Remove"
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Váldde eret"

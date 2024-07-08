@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-26 20:15+0200\n"
+"PO-Revision-Date: 2024-07-05 10:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1136,11 +1136,10 @@ msgstr ""
 "destinataire."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr "Sélection de nom"
+msgstr "Sélection du nom"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1499,8 +1498,7 @@ msgid "No text found in Clipboard"
 msgstr "Aucun texte dans le presse-papiers"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Définissez le nom de la pièce jointe"
@@ -1697,8 +1695,7 @@ msgid "&Name:"
 msgstr "&Nom :"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nom de la liste de distribution"
