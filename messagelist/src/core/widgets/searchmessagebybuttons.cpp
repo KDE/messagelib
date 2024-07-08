@@ -35,7 +35,7 @@ void SearchMessageByButtons::createButtons()
     button->setChecked(true); // Enable by default
     createFilterButton(i18nc("@action", "Body"), SearchAgainstBody);
     createFilterButton(i18nc("@action", "Subject"), SearchAgainstSubject);
-    mSearchAgainstFromOrToButton = createFilterButton(QString(), SearchAgainstTo); // TODO update text
+    mSearchAgainstFromOrToButton = createFilterButton(QString(), SearchAgainstTo);
     createFilterButton(i18nc("@action", "BCC"), SearchAgainstBcc);
     changeSearchAgainstFromOrToText();
 }
