@@ -240,8 +240,8 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
 {
     // remove invalid characters from the header strings
     QString res(s);
-    res.remove(QChar::fromLatin1('\r'));
-    res.replace(QChar::fromLatin1('\n'), QLatin1Char(' '));
+    res.remove(QLatin1Char('\r'));
+    res.replace(QLatin1Char('\n'), QLatin1Char(' '));
     return res.trimmed();
 }
 
@@ -330,7 +330,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         message = hrd->asUnicodeString();
     }
     if (!message.isEmpty()) {
-        message += QChar::fromLatin1(',');
+        message += QLatin1Char(',');
     }
 
     QString type;
@@ -338,7 +338,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         type = hrd->asUnicodeString();
     }
     if (!type.isEmpty()) {
-        type += QChar::fromLatin1(',');
+        type += QLatin1Char(',');
     }
 
     message += QString::number(id);

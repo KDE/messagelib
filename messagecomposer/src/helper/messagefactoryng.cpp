@@ -565,7 +565,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     if (receiptTo.trimmed().isEmpty()) {
         return {};
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
 
     KMime::Message::Ptr receipt(new KMime::Message);
     const uint originalIdentity = identityUoid(mOrigMsg);
@@ -600,7 +600,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     if (receiptTo.trimmed().isEmpty()) {
         return KMime::Message::Ptr(new KMime::Message);
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
 
     QString special; // fill in case of error, warning or failure
 
@@ -792,7 +792,7 @@ bool MessageFactoryNG::MDNRequested(const KMime::Message::Ptr &msg)
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
     return !receiptTo.isEmpty();
 }
 
@@ -806,7 +806,7 @@ bool MessageFactoryNG::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &m
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
 
     // RFC 2298: [ Confirmation from the user SHOULD be obtained (or no
     // MDN sent) ] if there is more than one distinct address in the
@@ -826,7 +826,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
 
     // RFC 2298: MDNs SHOULD NOT be sent automatically if the address in
     // the Disposition-Notification-To header differs from the address
@@ -834,7 +834,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
-    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QLatin1Char('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return returnPath.isEmpty();
 }
@@ -849,7 +849,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QChar::fromLatin1('\n'));
+    receiptTo.remove(QLatin1Char('\n'));
 
     // RFC 2298: MDNs SHOULD NOT be sent automatically if the address in
     // the Disposition-Notification-To header differs from the address
@@ -857,7 +857,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, QStringLiteral("Return-Path").toLatin1());
-    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QLatin1Char('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);
 }
