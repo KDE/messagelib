@@ -570,7 +570,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     KMime::Message::Ptr receipt(new KMime::Message);
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
-    receipt->to()->fromUnicodeString(receiptTo, QStringLiteral("utf-8").toLatin1());
+    receipt->to()->fromUnicodeString(receiptTo);
     receipt->subject()->fromUnicodeString(i18n("Receipt: ") + mOrigMsg->subject()->asUnicodeString());
 
     QString str = QStringLiteral("Your message was successfully delivered.");
@@ -704,7 +704,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
     auto ct = digest->contentType();
     ct->setMimeType("multipart/digest");
     ct->setBoundary(KMime::multiPartBoundary());
-    digest->contentDescription()->fromUnicodeString(QStringLiteral("Digest of %1 messages.").arg(items.count()), "utf8");
+    digest->contentDescription()->fromUnicodeString(QStringLiteral("Digest of %1 messages.").arg(items.count()));
     digest->contentDisposition()->setFilename(QStringLiteral("digest"));
     digest->fromUnicodeString(mainPartText);
 
@@ -725,7 +725,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         part->contentType()->setMimeType("message/rfc822");
         part->contentType(false)->setCharset(fMsg->contentType()->charset());
         part->contentID()->setIdentifier(fMsg->contentID()->identifier());
-        part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString(), "utf8");
+        part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString());
         part->contentDisposition()->setParameter(QStringLiteral("name"), i18n("forwarded message"));
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
