@@ -85,7 +85,7 @@ void AttachmentJob::doStart()
 
     auto ct = sjob->contentType();
     ct->setMimeType(d->part->mimeType()); // setMimeType() clears all other params.
-    ct->setName(d->part->name(), "utf-8");
+    ct->setName(d->part->name());
     if (ct->isText()) {
         // If it is a text file, detect its charset.
         // sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );

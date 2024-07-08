@@ -128,7 +128,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     // The image is a PNG encoded with base64.
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("image/png");
-    cjob->contentType()->setName(image->imageName, "utf-8");
+    cjob->contentType()->setName(image->imageName);
     cjob->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
     cjob->setDataIsEncoded(true); // It is already encoded.
     cjob->contentID()->setIdentifier(image->contentID.toLatin1());

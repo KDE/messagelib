@@ -586,7 +586,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     auto deletePart = new KMime::Content(parentNode);
     auto deleteCt = deletePart->contentType(true);
     deleteCt->setMimeType("text/x-moz-deleted");
-    deleteCt->setName(newName, "utf8");
+    deleteCt->setName(newName);
     deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
     deletePart->contentDisposition(false)->setFilename(newName);
 

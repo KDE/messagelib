@@ -53,7 +53,7 @@ SinglepartJob *ItipJobPrivate::createInvitationJob()
     auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
     job->contentType()->setCharset("utf-8");
-    job->contentType()->setName(QStringLiteral("cal.ics"), "utf-8");
+    job->contentType()->setName(QStringLiteral("cal.ics"));
     job->contentType()->setParameter(QStringLiteral("method"), itipPart->method());
     job->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
     job->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);
@@ -79,7 +79,7 @@ SinglepartJob *ItipJobPrivate::createOutlookItipJob()
 {
     auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
-    job->contentType()->setName(QStringLiteral("cal.ics"), "utf-8");
+    job->contentType()->setName(QStringLiteral("cal.ics"));
     job->contentType()->setParameter(QStringLiteral("method"), QStringLiteral("request"));
     job->contentType()->setCharset("utf-8");
 
