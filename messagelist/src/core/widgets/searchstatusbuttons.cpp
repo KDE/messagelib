@@ -106,4 +106,11 @@ void SearchStatusButtons::updateFilters()
     }
     Q_EMIT filterStatusChanged(lstStatus);
 }
+
+void SearchStatusButtons::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
+{
+    for (const Akonadi::MessageStatus &status : newLstStatus) {
+        mButtonGroup->button(status.toQInt32())->setChecked(true);
+    }
+}
 #include "moc_searchstatusbuttons.cpp"

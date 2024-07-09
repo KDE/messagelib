@@ -22,6 +22,7 @@ public:
     ~SearchStatusButtons() override;
 
     void clearFilter();
+    void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
 Q_SIGNALS:
     void filterStatusChanged(const QList<Akonadi::MessageStatus> &lst);
 

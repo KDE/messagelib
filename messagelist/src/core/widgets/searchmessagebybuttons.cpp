@@ -104,13 +104,6 @@ void SearchMessageByButtons::setSearchOptions(SearchMessageByButtons::SearchOpti
     }
 }
 
-void SearchMessageByButtons::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
-{
-    for (const Akonadi::MessageStatus &status : newLstStatus) {
-        mButtonGroup->button(status.toQInt32())->setChecked(true);
-    }
-}
-
 void SearchMessageByButtons::clearFilter()
 {
     mButtonGroup->button(SearchMessageByButtons::SearchEveryWhere)->setChecked(true);

@@ -156,7 +156,7 @@ void QuickSearchLine::setFilterMessageStatus(const QList<Akonadi::MessageStatus>
 {
     mLstStatus = newLstStatus;
     mSearchEdit->filterAdded();
-    mSearchMessageByButtons->setFilterMessageStatus(mLstStatus);
+    mSearchStatusButtons->setFilterMessageStatus(mLstStatus);
 }
 
 QList<Akonadi::MessageStatus> QuickSearchLine::status() const

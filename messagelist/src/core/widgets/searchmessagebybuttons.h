@@ -40,7 +40,6 @@ public:
     [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
     void setSearchOptions(SearchMessageByButtons::SearchOptions opts);
 
-    void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
     void clearFilter();
 Q_SIGNALS:
     void searchOptionChanged();
