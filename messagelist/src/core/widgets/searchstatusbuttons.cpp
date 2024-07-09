@@ -110,7 +110,11 @@ void SearchStatusButtons::updateFilters()
 void SearchStatusButtons::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
     for (const Akonadi::MessageStatus &status : newLstStatus) {
-        mButtonGroup->button(status.toQInt32())->setChecked(true);
+        if (!mButtonGroup->button(status.toQInt32())) {
+            qWarning() << " status not found " << status.toQInt32();
+        } else {
+            mButtonGroup->button(status.toQInt32())->setChecked(true);
+        }
     }
 }
 #include "moc_searchstatusbuttons.cpp"
