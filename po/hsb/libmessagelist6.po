@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2007-05-06 20:54+0200\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team:  <hsb@li.org>\n"
@@ -1068,7 +1068,6 @@ msgstr "Tema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Připrawić..."
@@ -1140,9 +1139,18 @@ msgid "Name:"
 msgstr "Mjeno:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Filter..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Filter zawěsćić..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Připrawić..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

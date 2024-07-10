@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1181,7 +1181,6 @@ msgstr "Þema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, fuzzy, kde-format
 msgid "Configure..."
 msgstr "Stilla &KMail..."
@@ -1261,8 +1260,15 @@ msgstr "Nafn:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Vista lista..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Stilla &KMail..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, fuzzy, kde-format

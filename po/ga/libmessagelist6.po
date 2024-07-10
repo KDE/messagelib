@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1055,7 +1055,6 @@ msgstr "Téama"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Cumraigh..."
@@ -1136,8 +1135,16 @@ msgstr "Ainm:"
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Sábháil Liosta..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Cumraigh..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

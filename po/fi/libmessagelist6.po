@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-20 16:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1059,7 +1059,6 @@ msgstr "Aika"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Asetukset…"
@@ -1130,9 +1129,18 @@ msgid "Name:"
 msgstr "Nimi:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Filter..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Tallenna suodatin…"
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Asetukset…"
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

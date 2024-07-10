@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2013-04-12 16:41+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1027,7 +1027,6 @@ msgstr "शैली"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "संयोजीत करा..."
@@ -1101,9 +1100,18 @@ msgid "Name:"
 msgstr "नाव :"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
 msgid "Save Filter..."
-msgstr ""
+msgstr "संयोजीत करा..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "संयोजीत करा..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

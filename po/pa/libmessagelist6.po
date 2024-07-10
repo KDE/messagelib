@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1088,7 +1088,6 @@ msgstr "ਥੀਮ"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "ਸੰਰਚਨਾ..."
@@ -1171,8 +1170,16 @@ msgstr "ਨਾਂ:"
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "ਲਿਸਟ ਸੰਭਾਲੋ..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "ਸੰਰਚਨਾ..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2024-06-18 16:08+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1035,7 +1035,6 @@ msgstr "Motiv"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Nastavit..."
@@ -1105,9 +1104,18 @@ msgid "Name:"
 msgstr "Název:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Filter..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Uložit filtr..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Nastavit..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format
@@ -1918,11 +1926,3 @@ msgstr "&Kopírovat sem"
 #, kde-format
 msgid "C&ancel"
 msgstr "Z&rušit"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Filtrovat poštu podle stavu"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Smazat filtr"

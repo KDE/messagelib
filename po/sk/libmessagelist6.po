@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1057,7 +1057,6 @@ msgstr "Téma"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "Nastaviť..."
@@ -1135,8 +1134,16 @@ msgstr "Názov:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, fuzzy, kde-format
 #| msgid "Clear Filter"
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Vyčistiť filter"
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Nastaviť..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

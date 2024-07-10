@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1177,7 +1177,6 @@ msgstr "समय"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
@@ -1258,8 +1257,16 @@ msgstr "नाम:"
 #: core/widgets/filtersavedmenu.cpp:16
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "सूची बचत गर्नुहोस्..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure KMail..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "केडीई मेल कन्फिगर गर्नुहोस्..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, fuzzy, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1035,7 +1035,6 @@ msgstr "प्रसंग"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, kde-format
 msgid "Configure..."
 msgstr "कान्फिगर..."
@@ -1109,9 +1108,18 @@ msgid "Name:"
 msgstr "नाम:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
 msgid "Save Filter..."
-msgstr ""
+msgstr "कान्फिगर..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "कान्फिगर..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format

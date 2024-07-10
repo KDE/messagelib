@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 00:39+0000\n"
+"POT-Creation-Date: 2024-07-10 00:40+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -1169,7 +1169,6 @@ msgstr "Eur"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
 #: core/widgets/configurefilterswidget.cpp:75
-#: core/widgets/filtersavedmenu.cpp:17
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
@@ -1252,8 +1251,16 @@ msgstr "Anv :"
 #: core/widgets/filtersavedmenu.cpp:16
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Enrollañ ar roll ..."
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure KMail..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "Kefluniañ KMail ..."
 
 #: core/widgets/quicksearchline.cpp:45
 #, fuzzy, kde-format
