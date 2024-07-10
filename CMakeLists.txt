@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: none
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PIM_VERSION "6.1.44")
-
+set(CMAKE_CXX_STANDARD 20)
 
 project(Messagelib VERSION ${PIM_VERSION})
 
