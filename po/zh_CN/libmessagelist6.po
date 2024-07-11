@@ -1106,7 +1106,7 @@ msgstr "名称："
 #: core/widgets/filtersavedmenu.cpp:16
 #, kde-format
 msgid "Save Filter..."
-msgstr "保存过滤..."
+msgstr ""
 
 #: core/widgets/quicksearchline.cpp:40
 #, kde-format
