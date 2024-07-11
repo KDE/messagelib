@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-10 00:40+0000\n"
-"PO-Revision-Date: 2024-06-18 08:37+0300\n"
+"PO-Revision-Date: 2024-07-10 06:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -1141,15 +1141,13 @@ msgid "Name:"
 msgstr "Назва:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Зберегти фільтр…"
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Налаштувати…"

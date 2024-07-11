@@ -1094,18 +1094,16 @@ msgid "Name:"
 msgstr ""
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
-msgstr "保存过滤..."
+msgstr ""
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
-msgstr "配置..."
+msgstr ""
 
 #: core/widgets/quicksearchline.cpp:45
 #, kde-format
