@@ -5,6 +5,7 @@
 */
 
 #include "searchstatusbuttons.h"
+#include "messagelist_debug.h"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -111,7 +112,7 @@ void SearchStatusButtons::setFilterMessageStatus(const QList<Akonadi::MessageSta
 {
     for (const Akonadi::MessageStatus &status : newLstStatus) {
         if (!mButtonGroup->button(status.toQInt32())) {
-            qWarning() << " status not found " << status.toQInt32();
+            qCWarning(MESSAGELIST_LOG) << " status not found " << status.toQInt32();
         } else {
             mButtonGroup->button(status.toQInt32())->setChecked(true);
         }
