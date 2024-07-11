@@ -167,10 +167,14 @@ Widget::~Widget()
 
 void Widget::slotActivateFilter(Filter *f)
 {
+    // setFilter reset filter => get info before to call setFilter
+    const auto status = f->status();
+    const auto options = f->currentOptions();
+    const auto str = f->searchString();
     setFilter(f);
-    d->quickSearchLine->searchEdit()->setText(f->searchString());
-    d->quickSearchLine->setSearchOptions(f->currentOptions());
-    d->quickSearchLine->setFilterMessageStatus(f->status());
+    d->quickSearchLine->searchEdit()->setText(str);
+    d->quickSearchLine->setSearchOptions(options);
+    d->quickSearchLine->setFilterMessageStatus(status);
 }
 
 void Widget::slotSaveFilter()
