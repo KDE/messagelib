@@ -109,6 +109,7 @@ void QuickSearchLine::slotClearButtonClicked()
 void QuickSearchLine::setSearchOptions(SearchMessageByButtons::SearchOptions opts)
 {
     mSearchMessageByButtons->setSearchOptions(opts);
+    mSearchMessageByButtons->setVisible(true);
     mSearchEdit->filterAdded();
 }
 
