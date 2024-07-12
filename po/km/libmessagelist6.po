@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 00:40+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1021,55 +1021,55 @@ msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> សារ​​ (<b>%2</b> មិនទាន់​អាន​​)​"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "ស្បែក"
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "ការ​រួមបញ្ចូល​គ្នា"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, kde-format
 msgid "Message Sort Order"
 msgstr "លំដាប់​តម្រៀប​សារ"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "ទិសដៅ​តម្រៀប​សារ"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, kde-format
 msgid "Group Sort Order"
 msgstr "លំដាប់​តម្រៀប​ក្រុម"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "ទិស​តម្រៀប​ក្រុម"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "ថត​ប្រើ​លំដាប់​តម្រៀប​នេះ​ជានិច្ច"
@@ -1218,67 +1218,67 @@ msgstr ""
 msgid "To"
 msgstr "​ជូន​ចំពោះ"
 
-#: core/widgets/searchstatusbuttons.cpp:34
+#: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "មិន​ទាន់​អាន"
 
-#: core/widgets/searchstatusbuttons.cpp:38
+#: core/widgets/searchstatusbuttons.cpp:39
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "បានឆ្លើយតប"
 
-#: core/widgets/searchstatusbuttons.cpp:42
+#: core/widgets/searchstatusbuttons.cpp:43
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "បាន​បញ្ជូនបន្ត"
 
-#: core/widgets/searchstatusbuttons.cpp:46
+#: core/widgets/searchstatusbuttons.cpp:47
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "សំខាន់"
 
-#: core/widgets/searchstatusbuttons.cpp:50
+#: core/widgets/searchstatusbuttons.cpp:51
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "ធាតុ​សកម្មភាព​"
 
-#: core/widgets/searchstatusbuttons.cpp:54
+#: core/widgets/searchstatusbuttons.cpp:55
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "បាន​ឃ្លាំមើល"
 
-#: core/widgets/searchstatusbuttons.cpp:58
+#: core/widgets/searchstatusbuttons.cpp:59
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "បាន​មិន​អើពើ​"
 
-#: core/widgets/searchstatusbuttons.cpp:62
+#: core/widgets/searchstatusbuttons.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "មាន​ឯកសារ​ភ្ជាប់​"
 
-#: core/widgets/searchstatusbuttons.cpp:66
+#: core/widgets/searchstatusbuttons.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "មាន​ការ​អញ្ជើញ​​"
 
-#: core/widgets/searchstatusbuttons.cpp:70
+#: core/widgets/searchstatusbuttons.cpp:71
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "​សារ​ឥត​បាន​ការ​"
 
-#: core/widgets/searchstatusbuttons.cpp:74
+#: core/widgets/searchstatusbuttons.cpp:75
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"

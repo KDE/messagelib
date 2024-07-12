@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-06-18 16:09+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2642,10 +2642,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr ""
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Otevřít složku, kam byla příloha uložena"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Otevřít složku, kam byla příloha uložena"
+msgstr[1] "Otevřít složku, kam byla příloha uložena"
+msgstr[2] "Otevřít složku, kam byla příloha uložena"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2653,16 +2659,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Otevřít složku, kam byla příloha uložena"
-msgstr[1] "Otevřít složku, kam byly přílohy uloženy"
-msgstr[2] "Otevřít složku, kam byly přílohy uloženy"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Otevřít složku, kam byl soubor PDF uložen"
 
@@ -2682,3 +2682,9 @@ msgstr "Následující zpráva"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Otevřít složku, kam byla příloha uložena"
+#~ msgstr[1] "Otevřít složku, kam byly přílohy uloženy"
+#~ msgstr[2] "Otevřít složku, kam byly přílohy uloženy"

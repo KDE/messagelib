@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-07-04 13:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2670,10 +2670,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Kullanıcıya ileti görüntülemek için HTML kodu"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Ekin Kaydedildiği Klasörü Aç"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Ekin Kaydedildiği Klasörü Aç"
+msgstr[1] "Ekin Kaydedildiği Klasörü Aç"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2681,15 +2686,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Dosyayı Aç"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Ekin kaydedildiği klasörü aç"
-msgstr[1] "Eklerin kaydedildiği klasörü aç"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "PDF dosyasının kaydedildiği klasörü aç"
 
@@ -2709,6 +2709,11 @@ msgstr "Sonraki İleti"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Önceki İleti"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Ekin kaydedildiği klasörü aç"
+#~ msgstr[1] "Eklerin kaydedildiği klasörü aç"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

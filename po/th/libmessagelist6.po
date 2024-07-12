@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 00:40+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1042,55 +1042,55 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 "จดหมาย <b>%1</b> ฉบับ (จดหมายใหม่ <b>%2</b> ฉบับ + ยังไม่อ่าน <b>%3</b> ฉบับ)"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 msgid "No filter defined."
 msgstr "การกระทำเมื่อกรอง"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "สร้างตัวกรองใหม่"
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "ชุดตกแต่ง"
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "ปรับแต่ง..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "การรวมกัน"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, kde-format
 msgid "Message Sort Order"
 msgstr "การเรียงลำดับจดหมาย"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "ทิศทางการเรียงลำดับของจดหมาย"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, kde-format
 msgid "Group Sort Order"
 msgstr "การเรียงลำดับของกลุ่ม"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "ทิศทางการเรียงลำดับของกลุ่ม"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "โฟลเดอร์จะใช้การเรียงลำดับนี้เสมอ"
@@ -1242,73 +1242,73 @@ msgstr "ซ่อนสำเนาถึง"
 msgid "To"
 msgstr "ถึง"
 
-#: core/widgets/searchstatusbuttons.cpp:34
+#: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "ยังไม่ได้อ่าน"
 
-#: core/widgets/searchstatusbuttons.cpp:38
+#: core/widgets/searchstatusbuttons.cpp:39
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "ตอบกลับแล้ว"
 
-#: core/widgets/searchstatusbuttons.cpp:42
+#: core/widgets/searchstatusbuttons.cpp:43
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "ส่งต่อแล้ว"
 
-#: core/widgets/searchstatusbuttons.cpp:46
+#: core/widgets/searchstatusbuttons.cpp:47
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "จดหมายสำคัญ"
 
-#: core/widgets/searchstatusbuttons.cpp:50
+#: core/widgets/searchstatusbuttons.cpp:51
 #, fuzzy, kde-format
 #| msgid "Action Item"
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "รายการการกระทำ"
 
-#: core/widgets/searchstatusbuttons.cpp:54
+#: core/widgets/searchstatusbuttons.cpp:55
 #, fuzzy, kde-format
 #| msgid "Watched"
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "ติดตามอ่าน"
 
-#: core/widgets/searchstatusbuttons.cpp:58
+#: core/widgets/searchstatusbuttons.cpp:59
 #, fuzzy, kde-format
 #| msgid "Ignored"
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "ไม่สนใจ"
 
-#: core/widgets/searchstatusbuttons.cpp:62
+#: core/widgets/searchstatusbuttons.cpp:63
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "มีสิ่งที่แนบมาด้วย"
 
-#: core/widgets/searchstatusbuttons.cpp:66
+#: core/widgets/searchstatusbuttons.cpp:67
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "ตัวเลือกขั้นสูง"
 
-#: core/widgets/searchstatusbuttons.cpp:70
+#: core/widgets/searchstatusbuttons.cpp:71
 #, fuzzy, kde-format
 #| msgid "Spam"
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "สแปม"
 
-#: core/widgets/searchstatusbuttons.cpp:74
+#: core/widgets/searchstatusbuttons.cpp:75
 #, fuzzy, kde-format
 #| msgid "Ham"
 msgctxt "@action:inmenu Status of a message"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 00:40+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1036,55 +1036,55 @@ msgstr[2] "<b>%1</b> theachtaireacht (<b>%2</b> gan léamh)"
 msgstr[3] "<b>%1</b> dteachtaireacht (<b>%2</b> gan léamh)"
 msgstr[4] "<b>%1</b> teachtaireacht (<b>%2</b> gan léamh)"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Cruthaigh Scagaire"
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Téama"
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Cumraigh..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Comhbhailiúchán"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Ord Sórtála Teachtaireachtaí"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, kde-format
 msgid "Message Sort Direction"
 msgstr ""
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Ord Sórtála Grúpaí"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, kde-format
 msgid "Group Sort Direction"
 msgstr ""
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1241,67 +1241,67 @@ msgstr "BCC"
 msgid "To"
 msgstr "Chuig"
 
-#: core/widgets/searchstatusbuttons.cpp:34
+#: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Gan Léamh"
 
-#: core/widgets/searchstatusbuttons.cpp:38
+#: core/widgets/searchstatusbuttons.cpp:39
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Freagartha"
 
-#: core/widgets/searchstatusbuttons.cpp:42
+#: core/widgets/searchstatusbuttons.cpp:43
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Curtha Ar Aghaidh"
 
-#: core/widgets/searchstatusbuttons.cpp:46
+#: core/widgets/searchstatusbuttons.cpp:47
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Tábhachtach"
 
-#: core/widgets/searchstatusbuttons.cpp:50
+#: core/widgets/searchstatusbuttons.cpp:51
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr ""
 
-#: core/widgets/searchstatusbuttons.cpp:54
+#: core/widgets/searchstatusbuttons.cpp:55
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr ""
 
-#: core/widgets/searchstatusbuttons.cpp:58
+#: core/widgets/searchstatusbuttons.cpp:59
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Neamhaird tugtha air"
 
-#: core/widgets/searchstatusbuttons.cpp:62
+#: core/widgets/searchstatusbuttons.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Le hIatán"
 
-#: core/widgets/searchstatusbuttons.cpp:66
+#: core/widgets/searchstatusbuttons.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr ""
 
-#: core/widgets/searchstatusbuttons.cpp:70
+#: core/widgets/searchstatusbuttons.cpp:71
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Dramhphost"
 
-#: core/widgets/searchstatusbuttons.cpp:74
+#: core/widgets/searchstatusbuttons.cpp:75
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"

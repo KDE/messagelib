@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-07-04 12:06+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2681,10 +2681,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Codice HTML pro monstrar le message al usator"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Aperi dossier ubi le attachamento esseva salveguardate"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Aperi dossier ubi le attachamento esseva salveguardate"
+msgstr[1] "Aperi dossier ubi le attachamento esseva salveguardate"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2692,15 +2697,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Aperi file"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Aperi dossier ubi le attachamento esseva salveguardate"
-msgstr[1] "Aperi dossier ubi le attachamento esseva salveguardate"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Aperi dossier ubi le file PDF  esseva salveguardate"
 
@@ -2720,6 +2720,11 @@ msgstr "Message Proxime"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Message Previe"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Aperi dossier ubi le attachamento esseva salveguardate"
+#~ msgstr[1] "Aperi dossier ubi le attachamento esseva salveguardate"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

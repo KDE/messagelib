@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-07-05 10:33+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -2724,10 +2724,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Code HTML pour afficher le message à l'utilisateur"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Ouvrir le dossier où la pièce jointe a été enregistrée"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Ouvrir le dossier où la pièce jointe a été enregistrée"
+msgstr[1] "Ouvrir le dossier où la pièce jointe a été enregistrée"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2735,15 +2740,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Ouvrir le dossier où la pièce jointe a été enregistrée"
-msgstr[1] "Ouvrir le dossier où les pièces jointes ont été enregistrées"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Ouvrir le dossier où le fichier « PDF » a été enregistrée"
 
@@ -2763,6 +2763,11 @@ msgstr "Message suivant"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Message précédent"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Ouvrir le dossier où la pièce jointe a été enregistrée"
+#~ msgstr[1] "Ouvrir le dossier où les pièces jointes ont été enregistrées"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

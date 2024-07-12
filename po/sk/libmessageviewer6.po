@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2729,12 +2729,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML kód pre zobrazenie správy užívateľovi"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
 #| msgid_plural "Open folder where attachments were saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Otvoriť priečinok, kam sa uložila príloha"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Otvoriť priečinok, kam sa uložila príloha"
+msgstr[1] "Otvoriť priečinok, kam sa uložila príloha"
+msgstr[2] "Otvoriť priečinok, kam sa uložila príloha"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, fuzzy, kde-format
@@ -2744,16 +2748,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "&Otvoriť pomocou"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Otvoriť priečinok, kam sa uložila príloha"
-msgstr[1] "Otvoriť priečinok, kam sa uložili prílohy"
-msgstr[2] "Otvoriť priečinok, kam sa uložili prílohy"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Otvoriť priečinok, kam sa uložila PDF súbor"
 
@@ -2776,6 +2774,12 @@ msgstr "Nasledujúca správa"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Predchádzajúca správa"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Otvoriť priečinok, kam sa uložila príloha"
+#~ msgstr[1] "Otvoriť priečinok, kam sa uložili prílohy"
+#~ msgstr[2] "Otvoriť priečinok, kam sa uložili prílohy"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

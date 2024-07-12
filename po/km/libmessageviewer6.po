@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2754,10 +2754,12 @@ msgid "HTML code for displaying the message to the user"
 msgstr "កូដ HTML សម្រាប់​បង្ហាញ​សារ​ទៅកាន់​អ្នក​ប្រើ​"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, fuzzy, kde-format
@@ -2767,14 +2769,9 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "​បើក​ជា​មួយ..."
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr ""
 

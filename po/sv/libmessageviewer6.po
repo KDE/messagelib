@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-07-05 04:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2666,10 +2666,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML-kod för att visa brevet för användaren"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Öppna katalog där bilagan sparades"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Öppna katalog där bilagan sparades"
+msgstr[1] "Öppna katalog där bilagan sparades"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2677,15 +2682,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Öppna fil"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Öppna katalog där bilagan sparades"
-msgstr[1] "Öppna katalog där bilagorna sparades"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Öppna katalog där PDF-filen sparades"
 
@@ -2705,6 +2705,11 @@ msgstr "Nästa brev"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Föregående brev"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Öppna katalog där bilagan sparades"
+#~ msgstr[1] "Öppna katalog där bilagorna sparades"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

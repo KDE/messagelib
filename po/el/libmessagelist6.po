@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 00:40+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2021-07-12 10:21+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1044,56 +1044,56 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> μήνυμα (<b>%2</b> μη αναγνωσμένο)"
 msgstr[1] "<b>%1</b> μηνύματα (<b>%2</b> μη αναγνωσμένα)"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "Any filter defined."
 msgid "No filter defined."
 msgstr "Όποιο φίλτρο έχει οριστεί."
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Δημιουργία φίλτρου"
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Θέμα"
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Συγκέντρωση"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Σειρά ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Σειρά ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Ο φάκελος χρησιμοποιεί πάντα αυτή τη σειρά ταξινόμησης"
@@ -1247,67 +1247,67 @@ msgstr "Κρυφή κοιν."
 msgid "To"
 msgstr "Προς"
 
-#: core/widgets/searchstatusbuttons.cpp:34
+#: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Μη αναγνωσμένο"
 
-#: core/widgets/searchstatusbuttons.cpp:38
+#: core/widgets/searchstatusbuttons.cpp:39
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Απαντημένο"
 
-#: core/widgets/searchstatusbuttons.cpp:42
+#: core/widgets/searchstatusbuttons.cpp:43
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Προωθημένο"
 
-#: core/widgets/searchstatusbuttons.cpp:46
+#: core/widgets/searchstatusbuttons.cpp:47
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Σημαντικό"
 
-#: core/widgets/searchstatusbuttons.cpp:50
+#: core/widgets/searchstatusbuttons.cpp:51
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Αντικείμενο ενέργειας"
 
-#: core/widgets/searchstatusbuttons.cpp:54
+#: core/widgets/searchstatusbuttons.cpp:55
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Παρακολουθούμενο"
 
-#: core/widgets/searchstatusbuttons.cpp:58
+#: core/widgets/searchstatusbuttons.cpp:59
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Αγνοημένο"
 
-#: core/widgets/searchstatusbuttons.cpp:62
+#: core/widgets/searchstatusbuttons.cpp:63
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Έχει συνημμένο"
 
-#: core/widgets/searchstatusbuttons.cpp:66
+#: core/widgets/searchstatusbuttons.cpp:67
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Έχει μια πρόσκληση"
 
-#: core/widgets/searchstatusbuttons.cpp:70
+#: core/widgets/searchstatusbuttons.cpp:71
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Ανεπιθύμητο"
 
-#: core/widgets/searchstatusbuttons.cpp:74
+#: core/widgets/searchstatusbuttons.cpp:75
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"

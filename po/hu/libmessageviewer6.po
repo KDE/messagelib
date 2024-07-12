@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2701,10 +2701,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Mappa megnyitása, ahová a melléklet mentve lett"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
+msgstr[1] "Mappa megnyitása, ahová a melléklet mentve lett"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2712,15 +2717,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Fájl megnyitása"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
-msgstr[1] "Mappa megnyitása, ahová a mellékletek mentve lettek"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Mappa megnyitása, ahová a PDF-fájl mentve lett"
 
@@ -2742,6 +2742,11 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
+#~ msgstr[1] "Mappa megnyitása, ahová a mellékletek mentve lettek"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

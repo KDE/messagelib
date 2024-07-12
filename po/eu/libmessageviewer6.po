@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-04-04 20:34+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2699,10 +2699,15 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Erabiltzaileari mezua azaltzeko HTML kodea"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Ireki eranskina gorde den karpeta"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Ireki eranskina gorde den karpeta"
+msgstr[1] "Ireki eranskina gorde den karpeta"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2710,15 +2715,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Ireki eranskina gorde den karpeta"
-msgstr[1] "Ireki eranskinak gorde diren karpeta"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Ireki PDF fitxategia gorde den karpeta"
 
@@ -2740,6 +2740,11 @@ msgstr "Hurrengo mezua"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Ireki eranskina gorde den karpeta"
+#~ msgstr[1] "Ireki eranskinak gorde diren karpeta"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

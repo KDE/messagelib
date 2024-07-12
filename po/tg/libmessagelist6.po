@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 00:40+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1136,59 +1136,59 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "Log filter actions"
 msgid "No filter defined."
 msgstr "Қайд кардани амалҳои филтр"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Эҷоди филтр"
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr ""
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 msgid "Configure..."
 msgstr "&Танзими KMail..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Таклифот"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Хусусиятҳои қисми иттилоот"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, fuzzy, kde-format
 msgid "Message Sort Direction"
 msgstr "Рӯйхати иттилоот"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Ҳузфи феҳрист"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, fuzzy, kde-format
 msgid "Group Sort Direction"
 msgstr "Рӯйхати иттилоот"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1331,7 +1331,7 @@ msgstr "&Нусхаи пинҳонӣ"
 msgid "To"
 msgstr "&Қабулкунанда"
 
-#: core/widgets/searchstatusbuttons.cpp:34
+#: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -1339,7 +1339,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Хонданашуда"
 
-#: core/widgets/searchstatusbuttons.cpp:38
+#: core/widgets/searchstatusbuttons.cpp:39
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -1347,7 +1347,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Дар ин иттилоот шумо ҷавоб додед"
 
-#: core/widgets/searchstatusbuttons.cpp:42
+#: core/widgets/searchstatusbuttons.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -1355,7 +1355,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Фиристодашуда"
 
-#: core/widgets/searchstatusbuttons.cpp:46
+#: core/widgets/searchstatusbuttons.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -1363,14 +1363,14 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Муҳим"
 
-#: core/widgets/searchstatusbuttons.cpp:50
+#: core/widgets/searchstatusbuttons.cpp:51
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Гирифтани нишонаи \"&муҳим\""
 
-#: core/widgets/searchstatusbuttons.cpp:54
+#: core/widgets/searchstatusbuttons.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
@@ -1378,7 +1378,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Аз назар гузаронидашуда"
 
-#: core/widgets/searchstatusbuttons.cpp:58
+#: core/widgets/searchstatusbuttons.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
@@ -1386,26 +1386,26 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ба эътибор нагирифта шуда"
 
-#: core/widgets/searchstatusbuttons.cpp:62
+#: core/widgets/searchstatusbuttons.cpp:63
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "бо замимот"
 
-#: core/widgets/searchstatusbuttons.cpp:66
+#: core/widgets/searchstatusbuttons.cpp:67
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Интихоботҳои иловагӣ"
 
-#: core/widgets/searchstatusbuttons.cpp:70
+#: core/widgets/searchstatusbuttons.cpp:71
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "спам"
 
-#: core/widgets/searchstatusbuttons.cpp:74
+#: core/widgets/searchstatusbuttons.cpp:75
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"

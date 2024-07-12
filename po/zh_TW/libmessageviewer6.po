@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-20 02:40+0900\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"PO-Revision-Date: 2024-07-08 16:00+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -400,8 +400,7 @@ msgid "Delete Keys"
 msgstr "刪除金鑰"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "搜尋…"
@@ -587,8 +586,7 @@ msgid "From:"
 msgstr "寄件者："
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "使用 '*' 來指定來自網域的所有郵件"
@@ -2602,10 +2600,14 @@ msgid "HTML code for displaying the message to the user"
 msgstr "顯示信件給使用者的 HTML 碼"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "開啟儲存附件的資料夾"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "開啟儲存附件的資料夾"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2613,14 +2615,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "開啟儲存附件的資料夾"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "開啟儲存 PDF 檔的資料夾"
 
@@ -2640,6 +2638,10 @@ msgstr "下一封信件"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "上一封信件"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "開啟儲存附件的資料夾"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

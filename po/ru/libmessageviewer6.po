@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-01-27 13:55+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2711,10 +2711,17 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML код для отображения письма пользователю"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Открыть папку с сохранёнными вложениями"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Открыть папку с сохранёнными вложениями"
+msgstr[1] "Открыть папку с сохранёнными вложениями"
+msgstr[2] "Открыть папку с сохранёнными вложениями"
+msgstr[3] "Открыть папку с сохранёнными вложениями"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2722,17 +2729,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "Открыть файл"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Открыть папку с сохранёнными вложениями"
-msgstr[1] "Открыть папку с сохранёнными вложениями"
-msgstr[2] "Открыть папку с сохранёнными вложениями"
-msgstr[3] "Открыть папку с сохранённым вложением"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Открыть папку с сохранённым файлом в формате PDF"
 
@@ -2754,6 +2754,13 @@ msgstr "Следующее письмо"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предыдущее письмо"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Открыть папку с сохранёнными вложениями"
+#~ msgstr[1] "Открыть папку с сохранёнными вложениями"
+#~ msgstr[2] "Открыть папку с сохранёнными вложениями"
+#~ msgstr[3] "Открыть папку с сохранённым вложением"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

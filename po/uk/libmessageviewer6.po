@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2024-07-04 21:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -2697,19 +2697,11 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Код HTML для показу повідомлення користувачеві"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
-msgctxt "@action"
-msgid "Open folder where attachment was saved"
-msgstr "Відкрити теку, до якої було збережено долучення"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "Відкрити файл"
-
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Відкрити теку, до якої було збережено долучення"
@@ -2717,8 +2709,16 @@ msgstr[1] "Відкрити теку, до якої було збережено 
 msgstr[2] "Відкрити теку, до якої було збережено долучення"
 msgstr[3] "Відкрити теку, до якої було збережено долучення"
 
-#: widgets/opensavedfilefolderwidget.cpp:65
+#: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Відкрити файл"
+
+#: widgets/opensavedfilefolderwidget.cpp:65
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Відкрити теку, до якої було збережено файл PDF"
 
@@ -2738,6 +2738,13 @@ msgstr "Наступне повідомлення"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Попереднє повідомлення"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Відкрити теку, до якої було збережено долучення"
+#~ msgstr[1] "Відкрити теку, до якої було збережено долучення"
+#~ msgstr[2] "Відкрити теку, до якої було збережено долучення"
+#~ msgstr[3] "Відкрити теку, до якої було збережено долучення"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

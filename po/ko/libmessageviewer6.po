@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2648,10 +2648,14 @@ msgid "HTML code for displaying the message to the user"
 msgstr "사용자에게 메시지를 표시할 때 사용하는 HTML 코드"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "첨부 파일이 저장된 폴더 열기"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "첨부 파일이 저장된 폴더 열기"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2659,14 +2663,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "파일 열기"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "첨부 파일이 저장된 폴더 열기"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "PDF 파일이 저장된 폴더 열기"
 
@@ -2688,6 +2688,10 @@ msgstr "다음 메시지"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "이전 메시지"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "첨부 파일이 저장된 폴더 열기"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

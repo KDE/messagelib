@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -2745,11 +2745,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML kodas laiško rodymui naudotojui"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Atverti aplanką, kur buvo įrašytas priedas"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[1] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[2] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[3] "Atverti aplanką, kur buvo įrašytas priedas"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, fuzzy, kde-format
@@ -2759,19 +2764,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "&Atverti su"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Atverti aplanką, kur buvo įrašytas priedas"
-msgstr[1] "Atverti aplanką, kur buvo įrašytas priedas"
-msgstr[2] "Atverti aplanką, kur buvo įrašytas priedas"
-msgstr[3] "Atverti aplanką, kur buvo įrašytas priedas"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Atverti aplanką, kur buvo įrašytas priedas"
 
@@ -2794,6 +2790,15 @@ msgstr "Kitas laiškas"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Ankstesnis laiškas"
+
+#, fuzzy
+#~| msgid "Open folder where attachment was saved"
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Atverti aplanką, kur buvo įrašytas priedas"
+#~ msgstr[1] "Atverti aplanką, kur buvo įrašytas priedas"
+#~ msgstr[2] "Atverti aplanką, kur buvo įrašytas priedas"
+#~ msgstr[3] "Atverti aplanką, kur buvo įrašytas priedas"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

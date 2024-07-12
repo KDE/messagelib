@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-12 00:40+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2784,11 +2784,16 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML kô̂d za prikaz poruke korisniku."
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
-msgstr "Otvori fasciklu gde je prilog sačuvan"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Otvori fasciklu gde je prilog sačuvan"
+msgstr[1] "Otvori fasciklu gde je prilog sačuvan"
+msgstr[2] "Otvori fasciklu gde je prilog sačuvan"
+msgstr[3] "Otvori fasciklu gde je prilog sačuvan"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, fuzzy, kde-format
@@ -2798,19 +2803,10 @@ msgctxt "@action"
 msgid "Open File"
 msgstr "&Otvori pomoću"
 
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Otvori fasciklu gde je prilog sačuvan"
-msgstr[1] "Otvori fasciklu gde je prilog sačuvan"
-msgstr[2] "Otvori fasciklu gde je prilog sačuvan"
-msgstr[3] "Otvori fasciklu gde je prilog sačuvan"
-
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Otvori fasciklu gde je prilog sačuvan"
 
@@ -2835,6 +2831,15 @@ msgstr "&Sačuvaj poruke"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Prethodna kartica"
+
+#, fuzzy
+#~| msgid "Open folder where attachment was saved"
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "Otvori fasciklu gde je prilog sačuvan"
+#~ msgstr[1] "Otvori fasciklu gde je prilog sačuvan"
+#~ msgstr[2] "Otvori fasciklu gde je prilog sačuvan"
+#~ msgstr[3] "Otvori fasciklu gde je prilog sačuvan"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
