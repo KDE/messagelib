@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 10:53+0100\n"
+"PO-Revision-Date: 2024-07-12 17:56+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -2668,7 +2668,7 @@ msgstr "Abrir o cartafol no que se gardou o anexo"
 #, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "Abrir o ficheiro"
+msgstr "Abrir un ficheiro"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
