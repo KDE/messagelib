@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-06-19 22:33+0200\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1119,15 +1119,13 @@ msgid "Name:"
 msgstr "Nomo:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Konservi Filtrilon..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Agordu..."
@@ -1955,17 +1953,3 @@ msgstr "&Kopii ĉi tien"
 #, kde-format
 msgid "C&ancel"
 msgstr "Re&zigni"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Filtri retpoŝtojn laŭ stato"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Malplenigi Filtrilon"
-
-#~ msgid "Note Icon"
-#~ msgstr "Noto Piktogramo"
-
-#~ msgid "Note"
-#~ msgstr "Noto"

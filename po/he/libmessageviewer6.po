@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-07-04 06:44+0300\n"
+"PO-Revision-Date: 2024-07-12 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2656,16 +2656,14 @@ msgstr "קוד HTML להצגת ההודעה למשתמש"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "פתיחת התיקייה אליה נשמר הקובץ המצורף"
-msgstr[1] "פתיחת התיקייה אליה נשמר הקובץ המצורף"
-msgstr[2] "פתיחת התיקייה אליה נשמר הקובץ המצורף"
-msgstr[3] "פתיחת התיקייה אליה נשמר הקובץ המצורף"
+msgstr[1] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[2] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[3] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2674,11 +2672,10 @@ msgid "Open File"
 msgstr "פתיחת קובץ"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr "פתיחת התיקייה בה נשמר ה־PDF"
+msgstr "פתיחת התיקייה אליה נשמר ה־PDF"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
 #, kde-format

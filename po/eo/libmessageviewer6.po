@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-07-04 21:35+0200\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2670,14 +2670,12 @@ msgstr "HTML-kodo por montri la mesaĝon al la uzanto"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] "Malfermi dosierujon, kie la aldonaĵo estis konservita"
-msgstr[1] "Malfermi dosierujon, kie la aldonaĵo estis konservita"
+msgstr[0] "Malfermi dosierujon, kie aldonaĵo estis konservita"
+msgstr[1] "Malfermi dosierujon, kie aldonaĵoj estis konservitaj"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2686,8 +2684,7 @@ msgid "Open File"
 msgstr "Malfermi Dosieron"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Malfermi dosierujon kie PDF-dosiero estis konservita"
@@ -2708,8 +2705,3 @@ msgstr "Sekva Mesaĝo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Malfermi dosierujon kie aldonaĵo konserviĝis"
-#~ msgstr[1] "Malfermi dosierujon kie aldonaĵoj konserviĝis"

@@ -2751,14 +2751,12 @@ msgstr "HTML-Code zur Darstellung der Nachricht"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Ordner öffnen, in dem der Anhang gespeichert wurde"
-msgstr[1] "Ordner öffnen, in dem der Anhang gespeichert wurde"
+msgstr[1] "Ordner öffnen, in dem die Anhänge gespeichert wurden"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
