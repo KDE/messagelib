@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-22 07:57+0200\n"
+"PO-Revision-Date: 2024-07-14 12:28+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1123,8 +1123,7 @@ msgstr ""
 "Wybierz certyfikat(y) używane dla tego adresata."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Wybór nazwy"
@@ -1484,8 +1483,7 @@ msgid "No text found in Clipboard"
 msgstr "Nie znaleziono tekstu w schowku"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Nadaj nazwę załącznikowi"
@@ -1673,11 +1671,10 @@ msgid "&Name:"
 msgstr "&Nazwa:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "Nazwa listy dystrybucyjnej"
+msgstr "Nazwa listy wysyłkowej"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
