@@ -23,7 +23,7 @@ using namespace MessageViewer;
 OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     : KMessageWidget(parent)
     , mTimer(new QTimer(this))
-    , mShowFolderAction(new QAction(i18nc("@action", "Open folder where attachment was saved"), this))
+    , mShowFolderAction(new QAction(i18nc("@action - For we don't know if it's one or many attachments", "Open folder where attachment was saved"), this))
     , mOpenFileAction(new QAction(i18nc("@action", "Open File"), this))
 {
     setPosition(KMessageWidget::Header);
