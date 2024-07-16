@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-07-04 14:02+0200\n"
+"PO-Revision-Date: 2024-07-12 09:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -2691,14 +2691,12 @@ msgstr "Codi HTML per a mostrar el missatge a l'usuari"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Obri la carpeta a on s'ha guardat l'adjunt"
-msgstr[1] "Obri la carpeta a on s'ha guardat l'adjunt"
+msgstr[1] "Obri la carpeta a on s'han guardat els adjunts"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2707,11 +2705,10 @@ msgid "Open File"
 msgstr "Obri un fitxer"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr "Obri la carpeta a on s'ha guardat l'adjunt"
+msgstr "Obri la carpeta a on s'ha guardat el fitxer PDF"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
 #, kde-format
@@ -2729,8 +2726,3 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Obri la carpeta a on s'ha guardat l'adjunt"
-#~ msgstr[1] "Obri la carpeta a on s'han guardat els adjunts"
