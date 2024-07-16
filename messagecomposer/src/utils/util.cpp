@@ -134,11 +134,11 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
-            ct->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-signature"));
-            ct->setParameter(QStringLiteral("micalg"), QString::fromLatin1(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
+            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pgp-signature"));
+            ct->setParameter(QByteArrayLiteral("micalg"), QString::fromLatin1(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
         } else {
             ct->setMimeType(QByteArrayLiteral("multipart/encrypted"));
-            ct->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
+            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
         }
     }
         return;
@@ -147,8 +147,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
             auto ct = content->contentType(); // Create
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
-            ct->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pkcs7-signature"));
-            ct->setParameter(QStringLiteral("micalg"), QString::fromLatin1(hashAlgo).toLower());
+            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pkcs7-signature"));
+            ct->setParameter(QByteArrayLiteral("micalg"), QString::fromLatin1(hashAlgo).toLower());
             return;
         }
         // fall through (for encryption, there's no difference between
@@ -163,11 +163,11 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         ct->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
 
         if (sign) {
-            ct->setParameter(QStringLiteral("smime-type"), QStringLiteral("signed-data"));
+            ct->setParameter(QByteArrayLiteral("smime-type"), QStringLiteral("signed-data"));
         } else {
-            ct->setParameter(QStringLiteral("smime-type"), QStringLiteral("enveloped-data"));
+            ct->setParameter(QByteArrayLiteral("smime-type"), QStringLiteral("enveloped-data"));
         }
-        ct->setParameter(QStringLiteral("name"), QStringLiteral("smime.p7m"));
+        ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("smime.p7m"));
     }
 }
 
@@ -178,7 +178,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("application/pgp-signature"));
-            ct->setParameter(QStringLiteral("name"), QStringLiteral("signature.asc"));
+            ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("signature.asc"));
             content->contentDescription()->from7BitString("This is a digitally signed message part.");
         } else {
             ct->setMimeType(QByteArrayLiteral("application/octet-stream"));
@@ -189,7 +189,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         if (sign) {
             auto ct = content->contentType(); // Create
             ct->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));
-            ct->setParameter(QStringLiteral("name"), QStringLiteral("smime.p7s"));
+            ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("smime.p7s"));
             return;
         }
     }

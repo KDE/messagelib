@@ -1146,8 +1146,8 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Conte
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
         if (auto ct = attachment->contentType(false)) {
-            if (!ct->hasParameter(QStringLiteral("name")) && !ct->hasParameter(QStringLiteral("filename"))) {
-                ct->setParameter(QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
+            if (!ct->hasParameter("name") && !ct->hasParameter("filename")) {
+                ct->setParameter(QByteArrayLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
         }
         ++attachmentNumber;

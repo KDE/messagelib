@@ -160,7 +160,7 @@ void EncryptJobTest::testHeaders()
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
     QCOMPARE(result->contentType(false)->charset(), "UTF-8");
-    QCOMPARE(result->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
+    QCOMPARE(result->contentType(false)->parameter("protocol"), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;

@@ -403,10 +403,10 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     ct->setMimeType("message/rfc822");
 
     auto cd = msgPart->contentDisposition(); // create
-    cd->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
+    cd->setParameter(QByteArrayLiteral("filename"), i18n("forwarded message"));
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
-    ct->setParameter(QStringLiteral("name"), subject);
+    ct->setParameter(QByteArrayLiteral("name"), subject);
     cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject);
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
@@ -620,7 +620,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     contentType->setCharset("us-ascii");
     receipt->removeHeader<KMime::Headers::ContentTransferEncoding>();
     // Modify the ContentType directly (replaces setAutomaticFields(true))
-    contentType->setParameter(QStringLiteral("report-type"), QStringLiteral("disposition-notification"));
+    contentType->setParameter(QByteArrayLiteral("report-type"), QStringLiteral("disposition-notification"));
 
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
@@ -726,7 +726,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         part->contentType(false)->setCharset(fMsg->contentType()->charset());
         part->contentID()->setIdentifier(fMsg->contentID()->identifier());
         part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString());
-        part->contentDisposition()->setParameter(QStringLiteral("name"), i18n("forwarded message"));
+        part->contentDisposition()->setParameter(QByteArrayLiteral("name"), i18n("forwarded message"));
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
         MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());

@@ -1531,8 +1531,8 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
         part->setDescription(cd->asUnicodeString());
     }
     if (auto ct = partToAttach->contentType(false)) {
-        if (ct->hasParameter(QStringLiteral("name"))) {
-            part->setName(ct->parameter(QStringLiteral("name")));
+        if (ct->hasParameter("name")) {
+            part->setName(ct->parameter("name"));
         }
     }
     if (auto cd = partToAttach->contentDisposition(false)) {

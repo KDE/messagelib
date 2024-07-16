@@ -50,7 +50,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
         return {};
     }
 
-    const QString smimeType = node->contentType(false)->parameter(QStringLiteral("smime-type")).toLower();
+    const QString smimeType = node->contentType(false)->parameter("smime-type").toLower();
 
     if (smimeType == QLatin1StringView("certs-only")) {
         part.processResult()->setNeverDisplayInline(true);

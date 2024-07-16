@@ -172,7 +172,7 @@ void SignEncryptTest::testHeaders()
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
-    QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-encrypted"));
+    QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
