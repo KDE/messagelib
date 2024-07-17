@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2735,6 +2735,20 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML-kode til at vise brevet til brugeren"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Åbn mappen hvor bilaget blev gemt"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Open Full Search"
+msgctxt "@action"
+msgid "Open File"
+msgstr "Åbn fuld søgning"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
@@ -2744,13 +2758,6 @@ msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Åbn mappen hvor bilaget blev gemt"
 msgstr[1] "Åbn mappen hvor bilaget blev gemt"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Open Full Search"
-msgctxt "@action"
-msgid "Open File"
-msgstr "Åbn fuld søgning"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
@@ -2778,11 +2785,6 @@ msgstr "Næste brev"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Forrige brev"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Åbn mappen hvor bilaget blev gemt"
-#~ msgstr[1] "Åbn mappen hvor bilagene blev gemt"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

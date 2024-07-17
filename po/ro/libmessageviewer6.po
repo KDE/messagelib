@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -2856,6 +2856,18 @@ msgid "HTML code for displaying the message to the user"
 msgstr ""
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Open Full Search"
+msgctxt "@action"
+msgid "Open File"
+msgstr "Deschide căutare completă"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgctxt "@action"
@@ -2864,13 +2876,6 @@ msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Open Full Search"
-msgctxt "@action"
-msgid "Open File"
-msgstr "Deschide căutare completă"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format

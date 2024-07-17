@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2024-03-01 15:38+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2691,6 +2691,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML pirmkods, kas tiek izmantots vēstules atveidošanai"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Atvērt datni, kurā ir saglabāts pielikums"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Atvērt datni"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -2701,12 +2714,6 @@ msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Atvērt mapi, kurā ir saglabāts pielikums"
 msgstr[1] "Atvērt mapi, kurā ir saglabāts pielikums"
 msgstr[2] "Atvērt mapi, kurā ir saglabāts pielikums"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "Atvērt datni"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
@@ -2733,12 +2740,6 @@ msgstr "Nākamā vēstule"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Iepriekšējā vēstule"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Atvērt datni, kurā ir saglabāts pielikums"
-#~ msgstr[1] "Atvērt datni, kurā ir saglabāti pielikumi"
-#~ msgstr[2] "Atvērt datni, kurā ir saglabāti pielikumi"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

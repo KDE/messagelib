@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2023-11-14 13:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2711,6 +2711,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Código HTML para mostrar a mensagem ao usuário"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Abrir pasta onde o anexo foi salvo"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Abrir arquivo"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -2720,12 +2733,6 @@ msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Abrir pasta onde o anexo foi salvo"
 msgstr[1] "Abrir pasta onde o anexo foi salvo"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "Abrir arquivo"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
@@ -2752,11 +2759,6 @@ msgstr "Próxima mensagem"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensagem anterior"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Abrir pasta onde o anexo foi salvo"
-#~ msgstr[1] "Abrir pasta onde os anexos foram salvos"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2024-07-14 21:42+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2678,6 +2678,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML код за показване на съобщението на потребителя"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Отваряне на папка, в която е запазен прикачения файл"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Отваряне на файл"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgctxt "@action"
@@ -2685,12 +2698,6 @@ msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Отваряне на папка, в която е запазен прикачения файл"
 msgstr[1] "Отваряне на папка, в която е запазен прикачения файл"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "Отваряне на файл"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
@@ -2714,11 +2721,6 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Отваряне на папка, в която е запазен прикачения файл"
-#~ msgstr[1] "Отваряне на папка, в която са запазени прикачени файлове"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

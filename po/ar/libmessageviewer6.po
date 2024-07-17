@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -2768,6 +2768,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "كود HTML لعرض الرّسالة على المستخدم"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "افتح المجلّد حيث خُزّن فيه المرفق"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Delete Search"
+msgctxt "@action"
+msgid "Open File"
+msgstr "محو البحث>"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
@@ -2780,13 +2793,6 @@ msgstr[2] "افتح المجلّد حيث خُزّن فيه المرفق"
 msgstr[3] "افتح المجلّد حيث خُزّن فيه المرفق"
 msgstr[4] "افتح المجلّد حيث خُزّن فيه المرفق"
 msgstr[5] "افتح المجلّد حيث خُزّن فيه المرفق"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Delete Search"
-msgctxt "@action"
-msgid "Open File"
-msgstr "محو البحث>"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
@@ -2814,17 +2820,6 @@ msgstr "الرسالة ال&تالية"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ال&رسالة السابقة غير المقروءة"
-
-#, fuzzy
-#~| msgid "Open folder where attachment was saved"
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "افتح المجلّد حيث خُزّن فيه المرفق"
-#~ msgstr[1] "افتح المجلّد حيث خُزّن فيه المرفق"
-#~ msgstr[2] "افتح المجلّد حيث خُزّن فيه المرفق"
-#~ msgstr[3] "افتح المجلّد حيث خُزّن فيه المرفق"
-#~ msgstr[4] "افتح المجلّد حيث خُزّن فيه المرفق"
-#~ msgstr[5] "افتح المجلّد حيث خُزّن فيه المرفق"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

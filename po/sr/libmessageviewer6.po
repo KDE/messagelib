@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2782,6 +2782,20 @@ msgid "HTML code for displaying the message to the user"
 msgstr "ХТМЛ ко̂д за приказ поруке кориснику."
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Отвори фасциклу где је прилог сачуван"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With"
+msgctxt "@action"
+msgid "Open File"
+msgstr "&Отвори помоћу"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
@@ -2792,14 +2806,6 @@ msgstr[0] "Отвори фасциклу где је прилог сачуван
 msgstr[1] "Отвори фасциклу где је прилог сачуван"
 msgstr[2] "Отвори фасциклу где је прилог сачуван"
 msgstr[3] "Отвори фасциклу где је прилог сачуван"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
-msgctxt "@action"
-msgid "Open File"
-msgstr "&Отвори помоћу"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
@@ -2829,15 +2835,6 @@ msgstr "&Сачувај поруке"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Претходна картица"
-
-#, fuzzy
-#~| msgid "Open folder where attachment was saved"
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Отвори фасциклу где је прилог сачуван"
-#~ msgstr[1] "Отвори фасциклу где је прилог сачуван"
-#~ msgstr[2] "Отвори фасциклу где је прилог сачуван"
-#~ msgstr[3] "Отвори фасциклу где је прилог сачуван"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

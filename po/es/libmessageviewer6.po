@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-17 00:40+0000\n"
 "PO-Revision-Date: 2024-07-13 04:12+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2694,6 +2694,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Código HTML para mostrar el mensaje al usuario"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr "Abrir la carpeta donde se ha guardado el adjunto"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Abrir archivo"
+
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgctxt "@action"
@@ -2701,12 +2714,6 @@ msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Abrir la carpeta donde se ha guardado el adjunto"
 msgstr[1] "Abrir la carpeta donde se han guardado los adjuntos"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "Abrir archivo"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
@@ -2730,11 +2737,6 @@ msgstr "Mensaje siguiente"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensaje anterior"
-
-#~ msgid "Open folder where attachment was saved"
-#~ msgid_plural "Open folder where attachments were saved"
-#~ msgstr[0] "Abrir la carpeta donde se ha guardado el adjunto"
-#~ msgstr[1] "Abrir la carpeta donde se han guardado los adjuntos"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
