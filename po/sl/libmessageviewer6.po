@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-17 00:40+0000\n"
-"PO-Revision-Date: 2024-07-12 07:01+0200\n"
+"PO-Revision-Date: 2024-07-17 04:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2682,12 +2682,10 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Koda HTML za prikaz sporočila uporabniku"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr "Odpri mapo, kjer so bile shranjene priloge"
+msgstr "Odpri mapo, kjer je bila shranjena priloga"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
