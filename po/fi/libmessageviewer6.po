@@ -2658,7 +2658,9 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Viestin HTML-lähdekoodi"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgstr "Avaa kansio, johon liite tallennettiin"
