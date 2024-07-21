@@ -1,16 +1,16 @@
 # Translation for libmessagecomposer.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2023 This file is copyright:
+# Copyright (C) 2021-2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2023-09-26 23:39+0200\n"
+"PO-Revision-Date: 2024-07-20 12:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -42,8 +42,7 @@ msgid "Keep"
 msgstr "Mantendu"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Konprimatu"
@@ -93,15 +92,13 @@ msgid "Failed to attach text from clipboard"
 msgstr "Arbeleko testua eranstea huts egin du"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Erantsi &gako publikoa..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Erantsi &nire gako publikoa"
@@ -130,8 +127,7 @@ msgid "&Attach Directory..."
 msgstr "Er&antsi direktorioa..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Erantsi norbere vCard"
@@ -185,8 +181,7 @@ msgid "Edit"
 msgstr "Editatu"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Editatu honekin..."
@@ -202,22 +197,19 @@ msgid "Save As..."
 msgstr "Gorde honela..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Eranskinaren pr&opietateak..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Propietateak"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Hautatu dena"
@@ -278,8 +270,7 @@ msgid "Save to File"
 msgstr "Gorde fitxategian"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "O&rdeztu"
@@ -593,15 +584,13 @@ msgid "File Attachment Reminder"
 msgstr "Fitxategi eranskinaren oroigarria"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Er&antsi fitxategia..."
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Bidali dagoen bezala"
@@ -630,8 +619,7 @@ msgid "&Sign"
 msgstr "&Sinatu"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "E&z sinatu"
@@ -661,8 +649,7 @@ msgid "Send Unsigned?"
 msgstr "Sinatu gabe bidali?"
 
 #: composer/composerviewbase.cpp:2014
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Bidali sinatu &gabe"
@@ -706,8 +693,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Sinatu gabeko mezuaren abisua"
 
 #: composer/composerviewbase.cpp:2041
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Bidali dagoen bez&ala"
@@ -769,15 +755,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Zifratu"
 
 #: composer/composerviewbase.cpp:2129
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "E&z zifratu"
@@ -800,8 +784,7 @@ msgid "Send Unencrypted?"
 msgstr "Bidali zifratu gabe?"
 
 #: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Bidali zifratu &gabe"
@@ -989,8 +972,7 @@ msgstr ""
 "ziurtagiririk konfiguratu."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Ez sinatu OpenPGP erabiliz"
@@ -1009,8 +991,7 @@ msgstr ""
 "ziurtagiririk konfiguratu."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Ez sinatu S/MIME erabiliz"
@@ -1136,8 +1117,7 @@ msgstr ""
 "Hautatu hartzaile honetarako erabili beharreko ziurtagiria(k)."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Izen hautaketa"
@@ -1240,11 +1220,10 @@ msgid "Select Image Format"
 msgstr "Hautatu irudiaren formatua"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Ezarri formatua..."
+msgstr "Hautatu formatua..."
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1496,8 +1475,7 @@ msgid "No text found in Clipboard"
 msgstr "Arbelan ez da testurik aurkitu"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Definitu eranskinaren izena"
@@ -1685,8 +1663,7 @@ msgid "&Name:"
 msgstr "&Izena:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Banaketa-zerrendaren izena"
@@ -1788,8 +1765,7 @@ msgid "Select type of recipient"
 msgstr "Hautatu hartzaile mota"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Ezarri mezu hau jaso behar duten e-posta helbideen zerenda"
@@ -1871,8 +1847,7 @@ msgid "Select Recipient"
 msgstr "Hautatu hartzailea"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Bilatu &direktorio zerbitzuan"
