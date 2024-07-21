@@ -43,38 +43,22 @@ InvitationSettings::InvitationSettings(QWidget *parent)
 
     d->mInvitationUi->mLegacyMangleFromTo->setWhatsThis(
         i18n(MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem()->whatsThis().toUtf8().constData()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-    connect(d->mInvitationUi->mLegacyMangleFromTo, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-#else
     connect(d->mInvitationUi->mLegacyMangleFromTo, &QCheckBox::checkStateChanged, this, &InvitationSettings::changed);
-#endif
 
     d->mInvitationUi->mLegacyBodyInvites->setWhatsThis(
         i18n(MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem()->whatsThis().toUtf8().constData()));
     connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::toggled, this, &InvitationSettings::slotLegacyBodyInvitesToggled);
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-    connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-#else
     connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::checkStateChanged, this, &InvitationSettings::changed);
-#endif
 
     d->mInvitationUi->mExchangeCompatibleInvitations->setWhatsThis(
         i18n(MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem()->whatsThis().toUtf8().constData()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-    connect(d->mInvitationUi->mExchangeCompatibleInvitations, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-#else
     connect(d->mInvitationUi->mExchangeCompatibleInvitations, &QCheckBox::checkStateChanged, this, &InvitationSettings::changed);
-#endif
 
     // Laurent BUG:257723: in kmail2 it's not possible to not send automatically.
     d->mInvitationUi->mAutomaticSending->hide();
     d->mInvitationUi->mAutomaticSending->setWhatsThis(
         i18n(MessageViewer::MessageViewerSettings::self()->automaticSendingItem()->whatsThis().toUtf8().constData()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-    connect(d->mInvitationUi->mAutomaticSending, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-#else
     connect(d->mInvitationUi->mAutomaticSending, &QCheckBox::checkStateChanged, this, &InvitationSettings::changed);
-#endif
 }
 
 InvitationSettings::~InvitationSettings() = default;
