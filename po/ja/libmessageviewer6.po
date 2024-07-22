@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-17 00:40+0000\n"
+"POT-Creation-Date: 2024-07-22 00:40+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2715,7 +2715,7 @@ msgstr ""
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "クリックして HTML 表示とプレーンテキスト表示を切り替えます。"
 
-#: widgets/invitationsettings.cpp:86
+#: widgets/invitationsettings.cpp:70
 #, kde-format
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
