@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-17 00:40+0000\n"
-"PO-Revision-Date: 2024-06-18 17:52+0200\n"
+"PO-Revision-Date: 2024-07-17 18:04+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -410,8 +410,7 @@ msgid "Delete Keys"
 msgstr "Elimina chiavi"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Cerca..."
@@ -597,8 +596,7 @@ msgid "From:"
 msgstr "Da:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Usa «*» per indicare tutti gli indirizzi di posta del dominio"
@@ -2690,9 +2688,7 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Codice HTML usato per mostrare il messaggio all'utente"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Apri la cartella dove è stato salvato l'allegato"
@@ -2704,18 +2700,15 @@ msgid "Open File"
 msgstr "Apri file"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Apri la cartella dove è stato salvato l'allegato"
-msgstr[1] "Apri la cartella dove è stato salvato l'allegato"
+msgstr[1] "Apri la cartella dove sono stati salvati gli allegati"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Apri la cartella dove è stato salvato il file PDF"
