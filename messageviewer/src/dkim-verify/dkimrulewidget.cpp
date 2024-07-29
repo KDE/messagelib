@@ -15,7 +15,7 @@
 using namespace MessageViewer;
 DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     : QWidget(parent)
-    , mEnabled(new QCheckBox(i18n("Enabled"), this))
+    , mEnabled(new QCheckBox(i18nc("@option:check", "Enabled"), this))
     , mDomain(new QLineEdit(this))
     , mSignatureDomainIdentifier(new QLineEdit(this))
     , mFrom(new QLineEdit(this))

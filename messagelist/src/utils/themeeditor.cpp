@@ -80,11 +80,11 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     mMessageSortingCombo->setToolTip(i18nc("@info:tooltip", "The sorting order that clicking on this column header will switch to."));
     g->addWidget(mMessageSortingCombo, 1, 1);
 
-    mVisibleByDefaultCheck = new QCheckBox(i18n("Visible by default"), base);
+    mVisibleByDefaultCheck = new QCheckBox(i18nc("@option:check", "Visible by default"), base);
     mVisibleByDefaultCheck->setToolTip(i18nc("@info:tooltip", "Check this if this column should be visible when the theme is selected."));
     g->addWidget(mVisibleByDefaultCheck, 2, 1);
 
-    mIsSenderOrReceiverCheck = new QCheckBox(i18n("Contains \"Sender or Receiver\" field"), base);
+    mIsSenderOrReceiverCheck = new QCheckBox(i18nc("@option:check", "Contains \"Sender or Receiver\" field"), base);
     mIsSenderOrReceiverCheck->setToolTip(
         i18nc("@info:tooltip", "Check this if this column label should be updated depending on the folder \"inbound\"/\"outbound\" type."));
     g->addWidget(mIsSenderOrReceiverCheck, 3, 1);
