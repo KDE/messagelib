@@ -34,23 +34,6 @@ public:
      * @param parent The parent object
      **/
     explicit WebEnginePage(QObject *parent = nullptr);
-
-    /**
-     * Constructor.
-     *
-     * The specified QWebEngineProfile will be used.  See the description of
-     * @c WebEnginePage(QObject *) and the API documentation of QWebEnginePage
-     * for caution regarding the lifetime of the profile.
-     *
-     * @param profile The profile to be used
-     * @param parent The parent object
-     * @deprecated Use the single argument constructor, which creates and uses
-     * a private profile.
-     **/
-#ifndef WEBENGINEVIEWER_NO_DEPRECATED
-    explicit WEBENGINEVIEWER_DEPRECATED WebEnginePage(QWebEngineProfile *profile, QObject *parent = nullptr);
-#endif
-
     /**
      * Destructor.  If there is a private QWebEngineProfile then it will also
      * be destroyed.

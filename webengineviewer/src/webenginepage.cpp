@@ -55,13 +55,6 @@ WebEnginePage::WebEnginePage(QObject *parent)
     init();
 }
 
-WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
-    : QWebEnginePage(profile, parent)
-    , d(std::make_unique<WebEnginePage::Private>())
-{
-    init();
-}
-
 WebEnginePage::~WebEnginePage() = default;
 
 void WebEnginePage::init()
