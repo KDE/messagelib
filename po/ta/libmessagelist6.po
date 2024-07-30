@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-06-20 21:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1647,7 +1647,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "இத்தலைப்பை கிளிக் செய்தால் எந்த வரிசைமுறை பயன்படுத்தப்படும்."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "இயல்பிருப்பாக காட்டு"
 
@@ -1660,7 +1662,9 @@ msgstr ""
 "செய்யவும்."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "அனுப்புநர்/பெறுநர் புலத்தைக் கொண்டுள்ளது"
 

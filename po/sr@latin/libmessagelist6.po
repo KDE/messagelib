@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2017-08-05 19:10+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1753,7 +1753,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Redosled ređanja koji se dobija klikom na ovo zaglavlje kolone."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Podrazumevano vidljiva"
 
@@ -1766,7 +1768,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Popunite ovo ako kolona treba da bude vidljiva kada se tema izabere."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Sadrži polje „pošiljalac ili primalac“"
 

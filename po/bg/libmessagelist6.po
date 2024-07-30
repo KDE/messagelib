@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-14 21:43+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1651,7 +1651,9 @@ msgstr ""
 "тази колона."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Показва се по подразбиране"
 
@@ -1663,7 +1665,9 @@ msgstr ""
 "Изберете това, ако тази колона трябва да се вижда, когато е избрана темата."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Съдържа поле \"Подател или получател\""
 

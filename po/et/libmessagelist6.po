@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2019-12-18 19:57+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1698,7 +1698,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Sortimiskord, mida kasutatakse sellele veerupäisele klõpsamisel."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Vaikimisi nähtav"
 
@@ -1711,7 +1713,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Märkimisel on see veerg teema valimise korral nähtav."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Sisaldab \"Saatja või saaja\" välja"
 

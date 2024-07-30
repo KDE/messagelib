@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-04 06:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1887,7 +1887,9 @@ msgid "Send Later"
 msgstr "שליחה בעיכוב"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delay"
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "עיכוב"
 

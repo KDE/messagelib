@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -556,6 +556,7 @@ msgstr "修改规则"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr ""
 

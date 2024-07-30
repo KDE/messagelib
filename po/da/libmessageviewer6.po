@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -603,7 +603,9 @@ msgid "Modify Rule"
 msgstr "Ændr regel"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enabled"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Aktiveret"
 

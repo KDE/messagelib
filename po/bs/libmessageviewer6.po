@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2014-01-31 19:13+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -638,6 +638,7 @@ msgstr ""
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "Enabled ad block"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Uključeno blokiranje reklama"
 

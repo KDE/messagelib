@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-10 06:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -1674,7 +1674,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Порядок сортування, який перемикатиме натискання заголовка стовпчика."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Типово видимий"
 
@@ -1685,7 +1687,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Позначте цей пункт, якщо стовпчик слід показувати, коли обрано тему."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "містить поле «Відправник або Отримувач»"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1763,6 +1763,7 @@ msgstr ""
 #: utils/themeeditor.cpp:83
 #, fuzzy, kde-format
 #| msgid "Visible by Default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "ਡਿਫਾਲਟ ਵਜੋਂ ਵੇਖੋ"
 
@@ -1774,6 +1775,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 

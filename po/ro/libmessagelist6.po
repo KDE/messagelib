@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -1721,7 +1721,9 @@ msgstr ""
 "Ordinea de sortare la care va comuta apăsarea pe antetul acestei coloane."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Vizibil implicit"
 
@@ -1738,6 +1740,7 @@ msgstr ""
 #: utils/themeeditor.cpp:87
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" Field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Conține câmpul „Expeditor sau destinatar”"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1704,7 +1704,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "このカラムのヘッダをクリックしたときに適用するソート基準"
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "デフォルトで表示する"
 
@@ -1717,7 +1719,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "テーマを選択したときにこのカラムを表示する場合、これをチェックします。"
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "送信/受信フィールドを含む"
 

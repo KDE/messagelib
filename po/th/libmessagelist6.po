@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1723,7 +1723,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "จะมีการเปลี่ยนการเรียงลำดับตามส่วนหัวเมื่อมีการคลิกที่หัวคอลัมน์"
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "มองเห็นได้โดยปริยาย"
 
@@ -1736,7 +1738,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "กาเลือกตัวเลือกนี้หากต้องการให้มองเห็นคอลัมน์ได้เมื่อมีการเลือกชุดตกแต่งแล้ว"
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "มีช่องข้อมูล \"ผู้ส่งหรือผู้รับ\""
 

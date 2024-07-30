@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -637,6 +637,7 @@ msgstr "Ubah Suai Akaun"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Ja&ngan Sulitkan"
 

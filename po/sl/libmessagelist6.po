@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-10 06:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1670,7 +1670,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Vrstni red razvrščanja, ki se preklopi po kliku na ta naslov stolpca."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Privzeto je viden"
 
@@ -1681,7 +1683,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Označite to možnost, če naj bo ta stolpec viden po izbiri teme."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Vsebuje polje »Pošiljatelj ali prejemnik«"
 

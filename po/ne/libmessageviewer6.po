@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -643,6 +643,7 @@ msgstr "खाता परिमार्जन गर्नुहोस्"
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "Enable"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "सक्षम पार्नुहोस्"
 

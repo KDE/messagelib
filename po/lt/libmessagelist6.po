@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2015-12-29 18:21+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -1693,6 +1693,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:83
 #, kde-format
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr ""
 
@@ -1704,6 +1705,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 

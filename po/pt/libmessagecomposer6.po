@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -2009,7 +2009,9 @@ msgid "Send Later"
 msgstr "Enviar Mais Tarde"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delay"
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "Atraso"
 

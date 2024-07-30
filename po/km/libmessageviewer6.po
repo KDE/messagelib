@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -614,6 +614,7 @@ msgstr ""
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "Activate Access Key"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម"
 

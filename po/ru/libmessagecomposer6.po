@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-02-07 12:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1957,7 +1957,9 @@ msgid "Send Later"
 msgstr "Отправить позже"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delay"
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "Задержка"
 

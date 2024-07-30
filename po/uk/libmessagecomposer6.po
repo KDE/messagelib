@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-04 21:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -1941,7 +1941,9 @@ msgid "Send Later"
 msgstr "Надіслати пізніше"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delay"
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "Затримка"
 

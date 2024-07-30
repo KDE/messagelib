@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2014-08-14 15:43+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1698,7 +1698,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "De Sorteerreeg, na de Du mit en Klick op den Striepkopp wesselst"
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Standardwies sichtbor"
 
@@ -1711,7 +1713,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Maak dit an, wenn Du dissen Striep bi dit Muster wiest hebben wullt"
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Bargt dat \"Senner oder Adressaat\"-Feld"
 

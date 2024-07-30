@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1854,6 +1854,7 @@ msgstr ""
 #: utils/themeeditor.cpp:83
 #, fuzzy, kde-format
 #| msgid "Set as Default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Setja sem sjálfgefið"
 
@@ -1865,6 +1866,7 @@ msgstr ""
 
 #: utils/themeeditor.cpp:87
 #, kde-format
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 

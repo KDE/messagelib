@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-03-03 19:28+0200\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: \n"
@@ -1694,7 +1694,9 @@ msgstr ""
 "Kārtošanas kārtība, uz kuru pārslēgties, nospiežot uz šīs kolonnas galvenes."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Redzama pēc noklusējuma"
 
@@ -1707,7 +1709,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Atzīmējiet šo, ka kolonnai jābūt redzamai, izvēloties motīvu."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Satur „Sūtītājs vai saņēmējs“ lauku"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2013-10-16 04:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1696,7 +1696,9 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Айдарынан түртіп ретттеу тәртібін ауыстратын қылу."
 
 #: utils/themeeditor.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visible by default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Әдетте көрінетін"
 
@@ -1709,7 +1711,9 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Нақышы таңдалғанда баған көрінетін тиіс болса - белгілеңіз."
 
 #: utils/themeeditor.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Contains \"Sender or Receiver\" field"
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "\"Жіберуші не Алушы\" өрстері болсын"
 
