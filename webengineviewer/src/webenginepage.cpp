@@ -33,7 +33,7 @@ public:
 };
 
 WebEnginePage::WebEnginePage(QObject *parent)
-    : QWebEnginePage(new QWebEngineProfile, parent)
+    : QWebEnginePage(/*new QWebEngineProfile, */ parent)
     , d(std::make_unique<WebEnginePage::Private>())
 {
     // Create a private (off the record) QWebEngineProfile here to isolate the
@@ -50,7 +50,7 @@ WebEnginePage::WebEnginePage(QObject *parent)
     //
     // because the QWebEngineProfile constructor will call out to the QWebEnginePage
     // and crash because the QWebEnginePage is not fully constructed yet.
-    profile()->setParent(this);
+    // profile()->setParent(this);
 
     init();
 }
