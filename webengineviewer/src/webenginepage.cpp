@@ -149,7 +149,7 @@ QPoint WebEnginePage::mapToViewport(const QPoint &pos) const
 
 void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
 {
-    const QString fileName = QFileDialog::getSaveFileName(QWebEngineView::forPage(this), i18n("Save HTML Page"));
+    const QString fileName = QFileDialog::getSaveFileName(QWebEngineView::forPage(this), i18nc("@title:window", "Save HTML Page"));
     if (!fileName.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadRequest::SingleHtmlSaveFormat);
         download->setDownloadDirectory(QFileInfo(fileName).path());

@@ -433,7 +433,7 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::deleteThemeButtonClick
 
 void ConfigureThemesDialog::ConfigureThemesDialogPrivate::importThemeButtonClicked()
 {
-    const QString filename = QFileDialog::getOpenFileName(q, i18n("Import Theme"));
+    const QString filename = QFileDialog::getOpenFileName(q, i18nc("@title:window", "Import Theme"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
@@ -467,7 +467,7 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::exportThemeButtonClick
     if (list.isEmpty()) {
         return;
     }
-    const QString filename = QFileDialog::getSaveFileName(q, i18n("Export Theme"), QString(), i18n("All Files (*)"));
+    const QString filename = QFileDialog::getSaveFileName(q, i18nc("@title:window", "Export Theme"), QString(), i18n("All Files (*)"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 

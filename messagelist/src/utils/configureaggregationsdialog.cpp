@@ -410,7 +410,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::deleteAggr
 
 void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::importAggregationButtonClicked()
 {
-    const QString filename = QFileDialog::getOpenFileName(q, i18n("Import Aggregation"));
+    const QString filename = QFileDialog::getOpenFileName(q, i18nc("@title:window", "Import Aggregation"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
@@ -443,7 +443,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::exportAggr
     if (list.isEmpty()) {
         return;
     }
-    const QString filename = QFileDialog::getSaveFileName(q, i18n("Export Aggregation"), QString(), i18n("All Files (*)"));
+    const QString filename = QFileDialog::getSaveFileName(q, i18nc("@title:window", "Export Aggregation"), QString(), i18n("All Files (*)"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 

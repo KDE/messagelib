@@ -197,7 +197,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
 void AttachmentControllerBase::AttachmentControllerBasePrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach file"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach file"));
         return;
     }
 
@@ -270,7 +270,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::reloadAttachment
 void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to reload attachment"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to reload attachment"));
         return;
     }
     auto ajob = qobject_cast<AttachmentUpdateJob *>(job);
@@ -373,7 +373,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachPublicKeyJ
     // is that we want to show the proper caption ("public key" instead of "file")...
 
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach public key"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach public key"));
         return;
     }
 
@@ -387,7 +387,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachVcardFromA
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vCard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach vCard"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach vCard"));
         return;
     }
 
@@ -400,7 +400,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachClipBoardE
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get try to attach text from clipboard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach text from clipboard"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach text from clipboard"));
         return;
     }
 
@@ -710,7 +710,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
     job->setDeleteTemporaryFile(true);
     connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
         if (job->error() == KIO::ERR_USER_CANCELED) {
-            KMessageBox::error(d->wParent, i18n("KMail was unable to open the attachment."), job->errorString());
+            KMessageBox::error(d->wParent, job->errorString(), i18n("KMail was unable to open the attachment"));
             delete tempFile;
         } else {
             // The file was opened.  Delete it only when the composer is closed
@@ -795,7 +795,7 @@ void AttachmentControllerBase::saveAttachmentAs(const AttachmentPart::Ptr &part)
         pname = i18n("unnamed");
     }
 
-    const QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18n("Save Attachment As"), QUrl::fromLocalFile(pname));
+    const QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18nc("@title:window", "Save Attachment As"), QUrl::fromLocalFile(pname));
 
     if (url.isEmpty()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Save Attachment As dialog canceled.";

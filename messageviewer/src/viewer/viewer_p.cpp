@@ -1991,7 +1991,7 @@ void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::Che
 {
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
+        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18nc("@title:window", "Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18nc("@title:window", "Check Phishing URL"));

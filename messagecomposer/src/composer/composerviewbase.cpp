@@ -717,9 +717,11 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                     dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
                 }
                 if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OtherKeyExpired) {
-                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired") : i18n("S/MIME Certificate Expired");
+                    title =
+                        key.protocol() == GpgME::OpenPGP ? i18nc("@title:window", "OpenPGP Key Expired") : i18nc("@title:window", "S/MIME Certificate Expired");
                 } else {
-                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon") : i18n("S/MIME Certificate Expires Soon");
+                    title = key.protocol() == GpgME::OpenPGP ? i18nc("@title:window", "OpenPGP Key Expires Soon")
+                                                             : i18nc("@title:window", "S/MIME Certificate Expires Soon");
                 }
                 if (KMessageBox::warningContinueCancel(nullptr, msg, title, KStandardGuiItem::cont(), KStandardGuiItem::cancel(), dontAskAgainName)
                     == KMessageBox::Cancel) {
