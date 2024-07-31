@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-22 19:16+0200\n"
+"PO-Revision-Date: 2024-07-30 17:24+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -581,11 +581,10 @@ msgid "Modify Rule"
 msgstr "Modificar a regra"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
-msgstr "Activada"
+msgstr "Activado."
 
 #: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format

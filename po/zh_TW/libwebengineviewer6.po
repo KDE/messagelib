@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:39+0000\n"
+"POT-Creation-Date: 2024-07-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-23 16:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -91,7 +91,7 @@ msgstr "區分大小寫"
 msgid "Phrase not found"
 msgstr "找不到該片語"
 
-#: webenginepage.cpp:159
+#: webenginepage.cpp:152
 #, kde-format
 msgid "Save HTML Page"
 msgstr "儲存 HTML 頁面"

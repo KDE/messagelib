@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:39+0000\n"
+"POT-Creation-Date: 2024-07-31 00:41+0000\n"
 "PO-Revision-Date: 2024-05-23 06:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -94,7 +94,7 @@ msgstr "З урахуванням регістру"
 msgid "Phrase not found"
 msgstr "Фразу не знайдено"
 
-#: webenginepage.cpp:159
+#: webenginepage.cpp:152
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Зберегти сторінку HTML"

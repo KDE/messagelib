@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:39+0000\n"
+"POT-Creation-Date: 2024-07-31 00:41+0000\n"
 "PO-Revision-Date: 2024-06-21 10:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -91,7 +91,7 @@ msgstr "Skiftlägeskänslig"
 msgid "Phrase not found"
 msgstr "Frasen hittades inte"
 
-#: webenginepage.cpp:159
+#: webenginepage.cpp:152
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Spara HTML-sida"

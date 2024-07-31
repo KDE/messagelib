@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-10 12:18+0300\n"
+"PO-Revision-Date: 2024-07-30 09:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -1670,8 +1670,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "סדר המיון שאליו תועבר כותרת העמודה בלחיצה עליה."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "גלוי כברירת מחדל"
@@ -1683,8 +1682,7 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "יש לסמן את זה אם העמודה הזאת צריכה להיות גלויה כאשר ערכת העיצוב נבחרת."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "מכיל שדה „מוען ונמען”"

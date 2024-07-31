@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-10 16:50+0200\n"
+"PO-Revision-Date: 2024-07-30 07:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1643,8 +1643,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Sorteringsordningen som ett klick på kolumnrubriken byter till."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Normalt synlig"
@@ -1656,8 +1655,7 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Markera det här om kolumnen ska vara synlig när temat väljes."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Innehåller fältet \"Avsändare eller mottagare\""

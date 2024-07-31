@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-11 15:21+0200\n"
+"PO-Revision-Date: 2024-07-30 16:52+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1656,8 +1656,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "El orden al que cambiará al pulsar en esta cabecera de columna."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Visible por omisión"
@@ -1671,8 +1670,7 @@ msgstr ""
 "seleccionado."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Contiene campo «Remitente o Destinatario»"

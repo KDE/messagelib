@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-10 10:16+0200\n"
+"PO-Revision-Date: 2024-07-30 13:43+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1668,8 +1668,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "De sorteervolgorde na klikken op deze kolomkop."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Standaard zichtbaar"
@@ -1683,8 +1682,7 @@ msgstr ""
 "is geselecteerd."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Bevat het veld \"Afzender of Geaddresseerde\""

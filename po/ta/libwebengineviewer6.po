@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:39+0000\n"
+"POT-Creation-Date: 2024-07-31 00:41+0000\n"
 "PO-Revision-Date: 2024-06-16 22:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -91,7 +91,7 @@ msgstr "எழுத்து வகையை (பெரிது/சிறி�
 msgid "Phrase not found"
 msgstr "சொற்றொடர் கண்டுபிடிக்கப்படவில்லை"
 
-#: webenginepage.cpp:159
+#: webenginepage.cpp:152
 #, kde-format
 msgid "Save HTML Page"
 msgstr "HTML பக்கத்தை சேமி"

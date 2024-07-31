@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-10 05:47+0200\n"
+"PO-Revision-Date: 2024-07-30 06:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1645,8 +1645,7 @@ msgstr ""
 "დალაგების მიმდევრობა, რომელზეც ამ სვეტის თავსართზე დაწკაპუნება გადართავს."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "ნაგულისხმევად ხილული"
@@ -1658,8 +1657,7 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "ჩართეთ ეს, თუ ეს სვეტი ხილული უნდა იყოს, როცა თემა მონიშნულია."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "შეიცავს ველს \"Sender or Receiver\""

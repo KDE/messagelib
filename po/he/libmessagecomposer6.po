@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-04 06:44+0300\n"
+"PO-Revision-Date: 2024-07-30 09:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -1887,8 +1887,7 @@ msgid "Send Later"
 msgstr "שליחה בעיכוב"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "עיכוב"

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-12 22:08+0200\n"
+"PO-Revision-Date: 2024-07-30 21:06+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1653,8 +1653,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "La ordigo al kiu alklakos ĉi tiun kolumnan kaplinion."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Videbla defaŭlte"
@@ -1667,8 +1666,7 @@ msgstr ""
 "Kontrolu ĉi tion se ĉi tiu kolumno estu videbla kiam la etoso estas elektita."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Enhavas kampon \"Sendinto aŭ Ricevilo\"."
