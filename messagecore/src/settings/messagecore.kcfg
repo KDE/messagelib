@@ -44,7 +44,8 @@
       <default code="true">MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor()</default>
     </entry>
     <entry name="DisplayOwnIdentity" type="Bool">
-      <default>false</default>
+      <default>false</default> 
+      <label>Display Own Identity</label>
     </entry>
   </group>
 
