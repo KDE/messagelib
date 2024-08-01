@@ -440,7 +440,8 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                     + QLatin1StringView("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
+            const bool foundMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity
+                && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.

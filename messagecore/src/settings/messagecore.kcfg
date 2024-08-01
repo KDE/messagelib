@@ -43,6 +43,9 @@
       <label>This is the color used in the 1st level of quoted text</label>
       <default code="true">MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor()</default>
     </entry>
+    <entry name="DisplayOwnIdentity" type="Bool">
+      <default>false</default>
+    </entry>
   </group>
 
   <group name="Composer">
