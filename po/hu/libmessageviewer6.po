@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-05-12 15:13+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -460,18 +460,16 @@ msgid "No rules found"
 msgstr "Nem találhatók szabályok"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Szabályok exportálása"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Szabályok exportálása"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Szabályok importálása"
 
@@ -479,12 +477,6 @@ msgstr "Szabályok importálása"
 #, kde-format
 msgid "No rules imported."
 msgstr "Nem lettek importálva szabályok."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Szabályok importálása"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1855,7 +1847,9 @@ msgid "attachment.1"
 msgstr "melléklet.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Melléklet mentése"
 
@@ -2518,8 +2512,9 @@ msgstr "Az összes melléklet mentése…"
 msgid "The network is broken."
 msgstr "A hálózat nem működik."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Adathalász URL ellenőrzése"
 
@@ -2527,12 +2522,6 @@ msgstr "Adathalász URL ellenőrzése"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "A(z) %1 URL-cím érvénytelen."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Adathalász URL ellenőrzése"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2751,6 +2740,15 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgid "Export Rules"
+#~ msgstr "Szabályok exportálása"
+
+#~ msgid "Import Rules"
+#~ msgstr "Szabályok importálása"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Adathalász URL ellenőrzése"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

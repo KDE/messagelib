@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-03-20 16:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1552,12 +1552,16 @@ msgid "New Aggregation"
 msgstr "Uusi koonta"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Tuo koonta"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Vie koonta"
 
@@ -1640,12 +1644,16 @@ msgid "Delete Theme"
 msgstr "Poista teema"
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Tuo teema"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Vie teema"
 

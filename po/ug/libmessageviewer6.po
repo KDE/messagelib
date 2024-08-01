@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -479,21 +479,18 @@ msgid "No rules found"
 msgstr "ياخشى ئىمزا"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Remo&ve"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "چىقىرىۋەت(&V)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Remo&ve"
-msgid "Export Rules"
-msgstr "چىقىرىۋەت(&V)"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Remo&ve"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "چىقىرىۋەت(&V)"
 
@@ -502,13 +499,6 @@ msgstr "چىقىرىۋەت(&V)"
 #| msgid "Good signature"
 msgid "No rules imported."
 msgstr "ياخشى ئىمزا"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remo&ve"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "چىقىرىۋەت(&V)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1855,7 +1845,9 @@ msgid "attachment.1"
 msgstr "قوشۇلما.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "قوشۇلمىنى ساقلا"
 
@@ -2534,20 +2526,15 @@ msgstr "قوشۇلمىنى ساقلا"
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr ""
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:2017
@@ -2748,6 +2735,16 @@ msgstr "ئۇچۇر ساقلا"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Export Rules"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Import Rules"
+#~ msgstr "چىقىرىۋەت(&V)"
 
 #~ msgid "Edit with:"
 #~ msgstr "ئىشلىتىدىغان تەھرىرلىگۈچ:"

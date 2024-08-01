@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -488,20 +488,18 @@ msgid "No rules found"
 msgstr "署名が見つかりません"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "インポート(&I)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr ""
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "インポート(&I)"
 
@@ -510,13 +508,6 @@ msgstr "インポート(&I)"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "署名が見つかりません"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "&Import"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "インポート(&I)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1882,7 +1873,9 @@ msgid "attachment.1"
 msgstr "添付ファイル.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "添付ファイルを保存"
 
@@ -2570,20 +2563,15 @@ msgstr "すべての添付ファイルを保存..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr ""
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:2017
@@ -2801,3 +2789,8 @@ msgstr "メッセージを保存(&S)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "前のカード(&P)"
+
+#, fuzzy
+#~| msgid "&Import"
+#~ msgid "Import Rules"
+#~ msgstr "インポート(&I)"

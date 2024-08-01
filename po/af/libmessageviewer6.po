@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -485,21 +485,18 @@ msgid "No rules found"
 msgstr "frix@expertron.co.za"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Skep Filter"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgid "Export Rules"
-msgstr "Skep Filter"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Skep Filter"
 
@@ -509,13 +506,6 @@ msgstr "Skep Filter"
 #| msgid "Your emails"
 msgid "No rules imported."
 msgstr "frix@expertron.co.za"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Skep Filter"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1846,6 +1836,7 @@ msgstr "Verwyder lêer aanhangsel"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Stoor aanhangsel as"
 
@@ -2517,20 +2508,15 @@ msgstr "Stoor Aanhangsels..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr ""
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:2017
@@ -2746,6 +2732,16 @@ msgstr "Nuwe boodskap"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Vorige ongeleesde boodskap"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Export Rules"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Import Rules"
+#~ msgstr "Skep Filter"
 
 #, fuzzy
 #~| msgid "Edit Identity"

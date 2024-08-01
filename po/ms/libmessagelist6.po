@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1693,12 +1693,14 @@ msgstr "Cadangan"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Cadangan"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Cadangan"
 
@@ -1788,12 +1790,14 @@ msgstr "Hapuskan &Rantaian"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "&Import Mesej..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Eksport Kekunci Gagal "
 

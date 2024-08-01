@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1489,12 +1489,16 @@ msgid "New Aggregation"
 msgstr "新建聚合"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "导入聚合"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "导出聚合"
 
@@ -1572,12 +1576,16 @@ msgid "Delete Theme"
 msgstr "删除主题"
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "导入主题"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "导出主题"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2010-02-27 01:06+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -494,21 +494,18 @@ msgid "No rules found"
 msgstr "ไม่พบลายเซ็น"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "ส่งออกการกรอง"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
-msgid "Export Rules"
-msgstr "ส่งออกการกรอง"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "นำเข้าการกรอง"
 
@@ -517,13 +514,6 @@ msgstr "นำเข้าการกรอง"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "ไม่พบลายเซ็น"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "นำเข้าการกรอง"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1914,7 +1904,9 @@ msgid "attachment.1"
 msgstr "สิ่งที่แนบมาด้วย.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "บันทึกสิ่งที่แนบมาด้วย"
 
@@ -2603,8 +2595,9 @@ msgstr "บันทึกสิ่งที่แนบมาด้วยทั
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2613,12 +2606,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "แฟ้มลายเซ็นใช้งานไม่ได้"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2844,6 +2831,16 @@ msgstr "ฉบับถัดไป"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ฉบับที่ยังไม่ได้อ่านก่อนหน้านี้"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Export Rules"
+#~ msgstr "ส่งออกการกรอง"
+
+#, fuzzy
+#~| msgid "Import Filters"
+#~ msgid "Import Rules"
+#~ msgstr "นำเข้าการกรอง"
 
 #~ msgid "Edit with:"
 #~ msgstr "แก้ไขด้วย:"

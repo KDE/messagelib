@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1574,12 +1574,14 @@ msgstr "การรวมกันตัวใหม่"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "การรวมกัน"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "การรวมกัน"
 
@@ -1667,12 +1669,14 @@ msgstr "ลบชุดตกแต่ง"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "นำเข้าจดหมาย..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Export Filters"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "ส่งออกการกรอง"
 

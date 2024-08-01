@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2017-08-05 19:10+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1603,13 +1603,17 @@ msgstr "Nova agregacija"
 
 # >> @title:window
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Uvoz agregacije"
 
 # >> @title:window
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Izvoz agregacije"
 
@@ -1696,13 +1700,17 @@ msgstr "Brisanje teme"
 
 # >> @title:window
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Uvoz teme"
 
 # >> @title:window
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Izvoz teme"
 

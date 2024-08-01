@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -532,21 +532,18 @@ msgid "No rules found"
 msgstr "Níor aimsíodh aon síniú"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Easpórtáil Scagairí"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
-msgid "Export Rules"
-msgstr "Easpórtáil Scagairí"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Iompórtáil Scagairí"
 
@@ -555,13 +552,6 @@ msgstr "Iompórtáil Scagairí"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Níor aimsíodh aon síniú"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Iompórtáil Scagairí"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1933,7 +1923,9 @@ msgid "attachment.1"
 msgstr "iatán.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Sábháil Iatán"
 
@@ -2618,8 +2610,9 @@ msgstr "Sábháil Iatáin..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2628,12 +2621,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Is neamhbhailí é an comhad sínithe"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2850,6 +2837,16 @@ msgstr "A&n Chéad Teachtaireacht Eile"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Teachtaireacht Reatha"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Export Rules"
+#~ msgstr "Easpórtáil Scagairí"
+
+#, fuzzy
+#~| msgid "Import Filters"
+#~ msgid "Import Rules"
+#~ msgstr "Iompórtáil Scagairí"
 
 #~ msgid "Edit with:"
 #~ msgstr "Cuir in eagar le:"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1721,12 +1721,14 @@ msgstr "Sugestjes"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Sugestjes"
 
@@ -1817,12 +1819,14 @@ msgstr "Diskusje wis&kje"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Berjochten &ymportearje..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Kaaieksport mislearre"
 

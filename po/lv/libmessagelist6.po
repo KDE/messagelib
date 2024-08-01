@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-03-03 19:28+0200\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: \n"
@@ -1549,12 +1549,16 @@ msgid "New Aggregation"
 msgstr "Jauna agregēšana"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importēt agregēšanu"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Eksportēt agregēšanu"
 
@@ -1637,12 +1641,16 @@ msgid "Delete Theme"
 msgstr "Dzēst motīvu"
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importēt motīvu"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Eksportēt motīvu"
 

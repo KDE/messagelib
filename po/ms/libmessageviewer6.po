@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -507,21 +507,18 @@ msgid "No rules found"
 msgstr "Tanda tangan tidak ditemui"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Eksport Kekunci Gagal "
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Key Export Failed"
-msgid "Export Rules"
-msgstr "Eksport Kekunci Gagal "
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Gagal mengimport vCard"
 
@@ -530,13 +527,6 @@ msgstr "Gagal mengimport vCard"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Tanda tangan tidak ditemui"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Gagal mengimport vCard"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1948,6 +1938,7 @@ msgstr "lampiran.1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Simpan Lampiran Sebagai"
 
@@ -2640,8 +2631,9 @@ msgstr "Simpan Semua Lampiran..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2650,12 +2642,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Fail tandatangan  tidak sah"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2895,6 +2881,16 @@ msgstr "Mesej &Seterusnya"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Mesej belum baca sebelumnya"
+
+#, fuzzy
+#~| msgid "Key Export Failed"
+#~ msgid "Export Rules"
+#~ msgstr "Eksport Kekunci Gagal "
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "Gagal mengimport vCard"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

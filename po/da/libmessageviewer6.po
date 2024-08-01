@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -483,19 +483,18 @@ msgid "No rules found"
 msgstr "Ingen regler fundet"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Rules"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Eksportér regler"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Eksportér regler"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importér regler"
 
@@ -503,13 +502,6 @@ msgstr "Importér regler"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ingen regler importeret."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importér regler"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1893,7 +1885,9 @@ msgid "attachment.1"
 msgstr "bilag.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Gem bilag"
 
@@ -2557,8 +2551,10 @@ msgstr "Gem alle bilag..."
 msgid "The network is broken."
 msgstr "Netværket er nede."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Tjek phishing-URL"
 
@@ -2566,13 +2562,6 @@ msgstr "Tjek phishing-URL"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL'en %1 er ikke gyldig."
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Tjek phishing-URL"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2787,6 +2776,15 @@ msgstr "Næste brev"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Forrige brev"
+
+#~ msgid "Export Rules"
+#~ msgstr "Eksportér regler"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importér regler"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Tjek phishing-URL"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

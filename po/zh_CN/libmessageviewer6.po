@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -439,30 +439,22 @@ msgid "No rules found"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr ""
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr ""
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "No rules imported."
-msgstr ""
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
@@ -1775,7 +1767,9 @@ msgid "attachment.1"
 msgstr "附件.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "保存附件"
 
@@ -2407,8 +2401,9 @@ msgstr "保存全部附件..."
 msgid "The network is broken."
 msgstr "网络中断。"
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "检查钓鱼链接"
 
@@ -2416,12 +2411,6 @@ msgstr "检查钓鱼链接"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "链接 %1 无效。"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "检查钓鱼链接"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2614,3 +2603,6 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "检查钓鱼链接"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1621,11 +1621,13 @@ msgstr "Inkcazelo"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Inkcazelo"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Inkcazelo"
 
@@ -1707,12 +1709,14 @@ msgstr "Ci&ma"
 
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "&Phendla imiyalezo..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Phelisa Incwadi eneenkcukacha"
 

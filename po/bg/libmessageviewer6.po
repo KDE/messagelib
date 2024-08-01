@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-22 23:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -454,18 +454,16 @@ msgid "No rules found"
 msgstr "Няма намерени правила"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Експортиране на правила"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Експортиране на правила"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Импортиране на правила"
 
@@ -473,12 +471,6 @@ msgstr "Импортиране на правила"
 #, kde-format
 msgid "No rules imported."
 msgstr "Няма импортирани правила."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Импортиране на правила"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1849,7 +1841,9 @@ msgid "attachment.1"
 msgstr "прикрепен файл.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Запазване на прикачените"
 
@@ -2497,8 +2491,9 @@ msgstr "Запис на всички прикрепени файлове..."
 msgid "The network is broken."
 msgstr "Мрежата е прекъсната."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Проверяване на URL адреса за фишинг"
 
@@ -2506,12 +2501,6 @@ msgstr "Проверяване на URL адреса за фишинг"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL адресът %1 не е валиден."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Проверяване на URL адреса за фишинг"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2721,6 +2710,15 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
+
+#~ msgid "Export Rules"
+#~ msgstr "Експортиране на правила"
+
+#~ msgid "Import Rules"
+#~ msgstr "Импортиране на правила"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Проверяване на URL адреса за фишинг"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2021-02-28 20:11+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1535,14 +1535,18 @@ msgid "New Aggregation"
 msgstr "Ny samanstilling"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
-msgstr ""
+msgstr "Samanstilling"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
-msgstr ""
+msgstr "Samanstilling"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1621,14 +1625,18 @@ msgid "Delete Theme"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
-msgstr ""
+msgstr "Klon tema"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clone Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
-msgstr ""
+msgstr "Klon tema"
 
 #: utils/optionseteditor.cpp:27
 #, kde-format

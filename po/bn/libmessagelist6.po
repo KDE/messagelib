@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1685,12 +1685,14 @@ msgstr "প্রস্তাবিত"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "প্রস্তাবিত"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "প্রস্তাবিত"
 
@@ -1780,12 +1782,14 @@ msgstr "[&স]সূত্র মুছে ফেলো"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "বার্তা আ&মদানি করো..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "কী (Key) রপ্তানি ব্যর্থ"
 

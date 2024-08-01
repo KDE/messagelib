@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-03-01 15:38+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -468,18 +468,16 @@ msgid "No rules found"
 msgstr "Nav atrasti noteikumi"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Eksportēt noteikumus"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Eksportēt noteikumus"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importēt noteikumus"
 
@@ -487,12 +485,6 @@ msgstr "Importēt noteikumus"
 #, kde-format
 msgid "No rules imported."
 msgstr "Noteikumi nav importēti."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importēt noteikumus"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1857,7 +1849,9 @@ msgid "attachment.1"
 msgstr "pielikums.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Saglabāt pielikumu"
 
@@ -2512,8 +2506,9 @@ msgstr "Saglabāt visus pielikumus..."
 msgid "The network is broken."
 msgstr "Tīkls nedarbojas."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Pārbaudīt URL pikšķerēšanu"
 
@@ -2521,12 +2516,6 @@ msgstr "Pārbaudīt URL pikšķerēšanu"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL „%1“ nav derīga."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Pārbaudīt URL pikšķerēšanu"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2742,6 +2731,15 @@ msgstr "Nākamā vēstule"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Iepriekšējā vēstule"
+
+#~ msgid "Export Rules"
+#~ msgstr "Eksportēt noteikumus"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importēt noteikumus"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Pārbaudīt URL pikšķerēšanu"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

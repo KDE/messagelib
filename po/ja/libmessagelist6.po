@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1556,12 +1556,14 @@ msgstr "新しい集約方法"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "集約方法"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "集約方法"
 
@@ -1648,12 +1650,14 @@ msgstr "テーマを削除"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "テーマを複製"
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "テーマを複製"
 

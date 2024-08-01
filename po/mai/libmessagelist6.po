@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1523,11 +1523,13 @@ msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:413
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:446
 #, kde-format
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr ""
 
@@ -1609,14 +1611,18 @@ msgid "Delete Theme"
 msgstr "नवीन प्रकरण"
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
-msgstr ""
+msgstr "नवीन प्रकरण"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
-msgstr ""
+msgstr "नवीन प्रकरण"
 
 #: utils/optionseteditor.cpp:27
 #, kde-format

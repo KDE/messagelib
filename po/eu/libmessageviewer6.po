@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-20 12:56+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -460,18 +460,16 @@ msgid "No rules found"
 msgstr "Ez da araurik aurkitu"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Esportatu arauak"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Esportatu arauak"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Inportatu arauak"
 
@@ -479,12 +477,6 @@ msgstr "Inportatu arauak"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ez da araurik inportatu."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Inportatu arauak"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1846,7 +1838,9 @@ msgid "attachment.1"
 msgstr "eranskina.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Gorde eranskina"
 
@@ -2491,21 +2485,16 @@ msgstr "Gorde eranskin guztiak..."
 msgid "The network is broken."
 msgstr "Sarea hautsita dago."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr "Egiaztatu «phishing» URLa"
+msgstr "Ikuskatu «phishing» URL"
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 URLa ez da baliozkoa."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Ikuskatu «phishing» URL"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2716,6 +2705,15 @@ msgstr "Hurrengo mezua"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
+
+#~ msgid "Export Rules"
+#~ msgstr "Esportatu arauak"
+
+#~ msgid "Import Rules"
+#~ msgstr "Inportatu arauak"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Egiaztatu «phishing» URLa"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

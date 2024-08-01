@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1669,12 +1669,14 @@ msgstr "Таклифот"
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Таклифот"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Таклифот"
 
@@ -1762,12 +1764,14 @@ msgstr "ҳузфшуда"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "&Содироти хатҳо..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Нуқсони содири калид"
 

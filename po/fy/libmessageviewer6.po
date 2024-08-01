@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -537,21 +537,18 @@ msgid "No rules found"
 msgstr "Gjin hântekening fûn."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Kaaieksport mislearre"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Key Export Failed"
-msgid "Export Rules"
-msgstr "Kaaieksport mislearre"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Ymportaasje vCard mislearre"
 
@@ -560,13 +557,6 @@ msgstr "Ymportaasje vCard mislearre"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Gjin hântekening fûn."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Ymportaasje vCard mislearre"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -2011,6 +2001,7 @@ msgstr "taheaksel.1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Taheaksel bewarje as"
 
@@ -2721,8 +2712,9 @@ msgstr "Bewarje alle taheaksels..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2731,12 +2723,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "De hântekeningstriem is ûnjildich"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2977,6 +2963,16 @@ msgstr "Berjoc&ht ferder"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Foarige net-lê&zen berjocht"
+
+#, fuzzy
+#~| msgid "Key Export Failed"
+#~ msgid "Export Rules"
+#~ msgstr "Kaaieksport mislearre"
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "Ymportaasje vCard mislearre"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

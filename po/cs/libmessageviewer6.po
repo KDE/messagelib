@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-18 10:42+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -458,18 +458,16 @@ msgid "No rules found"
 msgstr "Nenalezeny žádná pravidla"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportovat pravidla"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Exportovat pravidla"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importovat pravidla"
 
@@ -477,12 +475,6 @@ msgstr "Importovat pravidla"
 #, kde-format
 msgid "No rules imported."
 msgstr "Žádná pravidla nebyla importována."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importovat pravidla"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1827,7 +1819,9 @@ msgid "attachment.1"
 msgstr "příloha.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Uložit přílohu"
 
@@ -2465,8 +2459,9 @@ msgstr "Uložit všechny přílohy..."
 msgid "The network is broken."
 msgstr "Síť je přerušena."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Zkontrolovat URL Phishing "
 
@@ -2474,12 +2469,6 @@ msgstr "Zkontrolovat URL Phishing "
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 je neplatné."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Zkontrolovat URL Phishing "
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2686,3 +2675,12 @@ msgstr "Následující zpráva"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
+
+#~ msgid "Export Rules"
+#~ msgstr "Exportovat pravidla"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importovat pravidla"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Zkontrolovat URL Phishing "

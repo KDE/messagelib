@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 15:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -470,18 +470,16 @@ msgid "No rules found"
 msgstr "Не знайдено жодного правила"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Експортування правил"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Експортування правил"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Імпортування правил"
 
@@ -489,12 +487,6 @@ msgstr "Імпортування правил"
 #, kde-format
 msgid "No rules imported."
 msgstr "Не імпортовано жодного правила"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Імпортування правил"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1866,7 +1858,9 @@ msgid "attachment.1"
 msgstr "долучення.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Зберегти долучення"
 
@@ -2511,8 +2505,9 @@ msgstr "Зберегти всі долучення..."
 msgid "The network is broken."
 msgstr "Мережа не працює."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Перевірка шахрайських адрес"
 
@@ -2520,12 +2515,6 @@ msgstr "Перевірка шахрайських адрес"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Адреса %1 є некоректною."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Перевірка шахрайських адрес"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2741,6 +2730,15 @@ msgstr "Наступне повідомлення"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Попереднє повідомлення"
+
+#~ msgid "Export Rules"
+#~ msgstr "Експортування правил"
+
+#~ msgid "Import Rules"
+#~ msgstr "Імпортування правил"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Перевірка шахрайських адрес"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

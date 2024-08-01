@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-06 21:33+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -470,31 +470,23 @@ msgid "No rules found"
 msgstr "எந்த விதிமுறைகளும் கண்டுபிடிக்கப்படவில்லை"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "விதிமுறைகளை ஏற்றுமதி செய்வது"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
-msgid "Import Rules"
-msgstr "விதிமுறைகளை இறக்குமதி செய்"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgid "No rules imported."
-msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "விதிமுறைகளை இறக்குமதி செய்வது"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1848,7 +1840,9 @@ msgid "attachment.1"
 msgstr "உடனிணைப்பு.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "உடனிணைப்பை சேமி"
 
@@ -2494,8 +2488,9 @@ msgstr "அனைத்து உடனிணைப்புகளையும�
 msgid "The network is broken."
 msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
@@ -2503,12 +2498,6 @@ msgstr "ஏமாற்று முகவரியா என சோதிப்
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2710,6 +2699,15 @@ msgstr "அடுத்த அஞ்சல்"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
+
+#~ msgid "Export Rules"
+#~ msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
+
+#~ msgid "Import Rules"
+#~ msgstr "விதிமுறைகளை இறக்குமதி செய்"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

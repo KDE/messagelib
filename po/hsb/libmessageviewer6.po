@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -494,18 +494,17 @@ msgid "No rules found"
 msgstr "Žane prawidła"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "iCal eksportować"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-msgid "Export Rules"
-msgstr "iCal eksportować"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Prawidła importować"
 
@@ -514,13 +513,6 @@ msgstr "Prawidła importować"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Žana signatura"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Prawidła importować"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1844,7 +1836,9 @@ msgid "attachment.1"
 msgstr "přiwěšk. 1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Přiwěšk zawěsćić"
 
@@ -2519,8 +2513,9 @@ msgstr "Wšitke powěsće zawěsćić..."
 msgid "The network is broken."
 msgstr "Syć njefunguje."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2528,12 +2523,6 @@ msgstr ""
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL '%1' njeje walidny."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2730,6 +2719,13 @@ msgstr "Přichodna powěsć"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchadna powěsć"
+
+#, fuzzy
+#~ msgid "Export Rules"
+#~ msgstr "iCal eksportować"
+
+#~ msgid "Import Rules"
+#~ msgstr "Prawidła importować"
 
 #, fuzzy
 #~| msgid "Edit Identity"

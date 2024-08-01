@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 19:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -464,18 +464,16 @@ msgid "No rules found"
 msgstr "Kural bulunamadı"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Kuralları Dışa Aktar"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Kuralları Dışa Aktar"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Kurallar İçe Aktar"
 
@@ -483,12 +481,6 @@ msgstr "Kurallar İçe Aktar"
 #, kde-format
 msgid "No rules imported."
 msgstr "Hiçbir kural içe aktarılmadı."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Kurallar İçe Aktar"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1850,7 +1842,9 @@ msgid "attachment.1"
 msgstr "ek.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Eki Kaydet"
 
@@ -2490,8 +2484,9 @@ msgstr "Tüm Ekleri Kaydet…"
 msgid "The network is broken."
 msgstr "Ağ bozuk."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Kimlik Avı URL’si Denetle"
 
@@ -2499,12 +2494,6 @@ msgstr "Kimlik Avı URL’si Denetle"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "%1 URL’si geçerli değil."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Kimlik Avı URL’si Denetle"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2712,6 +2701,15 @@ msgstr "Sonraki İleti"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Önceki İleti"
+
+#~ msgid "Export Rules"
+#~ msgstr "Kuralları Dışa Aktar"
+
+#~ msgid "Import Rules"
+#~ msgstr "Kurallar İçe Aktar"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Kimlik Avı URL’si Denetle"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

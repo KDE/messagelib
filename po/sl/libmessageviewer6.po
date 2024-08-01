@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 10:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -473,18 +473,16 @@ msgid "No rules found"
 msgstr "Ni najdenih pravil"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Izvozna pravila"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Izvozi pravila"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Uvozi pravila"
 
@@ -492,12 +490,6 @@ msgstr "Uvozi pravila"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ni uvoženih pravil."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Uvozi pravila"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1854,7 +1846,9 @@ msgid "attachment.1"
 msgstr "priloga.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Shrani prilogo"
 
@@ -2500,8 +2494,9 @@ msgstr "Shrani vse priloge …"
 msgid "The network is broken."
 msgstr "Omrežje ni vzpostavljeno."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Preveri URL za ribarjenjem"
 
@@ -2509,12 +2504,6 @@ msgstr "Preveri URL za ribarjenjem"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Naslov URL %1 ni veljaven."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Preveri URL za ribarjenjem"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2726,6 +2715,15 @@ msgstr "Naslednje sporočilo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Prejšnje sporočilo"
+
+#~ msgid "Export Rules"
+#~ msgstr "Izvozi pravila"
+
+#~ msgid "Import Rules"
+#~ msgstr "Uvozi pravila"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Preveri URL za ribarjenjem"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

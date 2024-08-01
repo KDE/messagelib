@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -517,21 +517,18 @@ msgid "No rules found"
 msgstr "Ni chanfuwyd llofnod"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Darfod Plygell"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Expire Folder"
-msgid "Export Rules"
-msgstr "Darfod Plygell"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Mewnforio vCerdyn wedi Methu"
 
@@ -540,13 +537,6 @@ msgstr "Mewnforio vCerdyn wedi Methu"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Ni chanfuwyd llofnod"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Mewnforio vCerdyn wedi Methu"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1915,6 +1905,7 @@ msgstr "Atodiad"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Cadw Atodiad Fel..."
 
@@ -2593,8 +2584,9 @@ msgstr "Cadw Pob Atodiad"
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2602,12 +2594,6 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Mae'r llofnod wedi darfod."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2824,6 +2810,16 @@ msgstr "&Neges Nesaf"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Neges Bl&aenorol Heb ei Darllen"
+
+#, fuzzy
+#~| msgid "Expire Folder"
+#~ msgid "Export Rules"
+#~ msgstr "Darfod Plygell"
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "Mewnforio vCerdyn wedi Methu"
 
 #, fuzzy
 #~| msgid "Edit Identity"

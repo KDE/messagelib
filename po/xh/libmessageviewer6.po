@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -506,21 +506,18 @@ msgid "No rules found"
 msgstr "Akukho tyikityo olufumanekileyo"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Phelisa Incwadi eneenkcukacha"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Expire Folder"
-msgid "Export Rules"
-msgstr "Phelisa Incwadi eneenkcukacha"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 
@@ -529,13 +526,6 @@ msgstr "&Yenza Icebo lokucoca ulwelo"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Akukho tyikityo olufumanekileyo"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "&Yenza Icebo lokucoca ulwelo"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1881,6 +1871,7 @@ msgstr "Uncamathelo: "
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Gcina Izincamatheliso Njenge"
 
@@ -2558,8 +2549,9 @@ msgstr "&Gcina Izincamatheliso Njenge..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2567,12 +2559,6 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Utyikityo luphelelwe lixesha."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2773,6 +2759,16 @@ msgstr "&Umyalezo Olandelayo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Umyalezo &Ongafundwanga Odlulileyo"
+
+#, fuzzy
+#~| msgid "Expire Folder"
+#~ msgid "Export Rules"
+#~ msgstr "Phelisa Incwadi eneenkcukacha"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Import Rules"
+#~ msgstr "&Yenza Icebo lokucoca ulwelo"
 
 #, fuzzy
 #~| msgid "Edit Identity"

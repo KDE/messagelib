@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-03-03 19:24+0200\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: \n"
@@ -48,12 +48,16 @@ msgid "Compress"
 msgstr "Saspiest"
 
 #: attachment/attachmentcontrollerbase.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Neizdevās pievienot datni"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to reload attachment"
+msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Neizdevās pārlādēt pielikumu"
 
@@ -77,17 +81,23 @@ msgid "&Open With..."
 msgstr "&Atvērt ar..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to attach public key"
+msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Neizdevās pievienot publisko atslēgu"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to attach vCard"
+msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Neizdevās pievienot „vCard“"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to attach text from clipboard"
+msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Neizdevās pievienot tekstu no starpliktuves"
 
@@ -241,8 +251,9 @@ msgid "Unable to open attachment"
 msgstr "Nevar atvērt pielikumu"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, kde-format
-msgid "KMail was unable to open the attachment."
+#, fuzzy, kde-format
+#| msgid "KMail was unable to open the attachment."
+msgid "KMail was unable to open the attachment"
 msgstr "„KMail“ nevar atvērt pielikumu."
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
@@ -257,7 +268,9 @@ msgid "unnamed"
 msgstr "nenosaukts"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Saglabāt pielikumu kā"
 
@@ -314,12 +327,6 @@ msgstr "Pievienot mapi"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Pievienot datni"
-
-#: attachment/attachmentcontrollerbase.cpp:960
-#, kde-format
-msgctxt "@title:window"
-msgid "Failed to attach file"
-msgstr "Neizdevās pievienot datni"
 
 #: attachment/attachmentcontrollerbase.cpp:984
 #, kde-format
@@ -482,38 +489,46 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Nemainīt izmēru"
 
-#: composer/composerviewbase.cpp:720
-#, kde-format
+#: composer/composerviewbase.cpp:721
+#, fuzzy, kde-format
+#| msgid "OpenPGP Key Expired"
+msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "„OpenPGP“ atslēgas termiņš ir beidzies"
 
-#: composer/composerviewbase.cpp:720
-#, kde-format
+#: composer/composerviewbase.cpp:721
+#, fuzzy, kde-format
+#| msgid "S/MIME Certificate Expired"
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME sertifikāts ir beidzies"
 
-#: composer/composerviewbase.cpp:722
-#, kde-format
+#: composer/composerviewbase.cpp:723
+#, fuzzy, kde-format
+#| msgid "OpenPGP Key Expires Soon"
+msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "„OpenPGP“ atslēgas termiņš drīz beidzas"
 
-#: composer/composerviewbase.cpp:722
-#, kde-format
+#: composer/composerviewbase.cpp:724
+#, fuzzy, kde-format
+#| msgid "S/MIME Certificate Expires Soon"
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME sertifikāta termiņš drīz beidzas"
 
-#: composer/composerviewbase.cpp:797 composer/composerviewbase.cpp:811
-#: composer/composerviewbase.cpp:843
+#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
+#: composer/composerviewbase.cpp:845
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Neizdevās atrisināt atslēgas. Ziņojiet par kļūdu."
 
-#: composer/composerviewbase.cpp:1048 composer/composerviewbase.cpp:1319
+#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Lietotājs darbu atcēla"
 
-#: composer/composerviewbase.cpp:1053
+#: composer/composerviewbase.cpp:1055
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -522,37 +537,37 @@ msgstr ""
 "Neizdevās rakstīt vēstuli: %1\n"
 " Ziņojiet par šo kļūdu."
 
-#: composer/composerviewbase.cpp:1055
+#: composer/composerviewbase.cpp:1057
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Neizdevās rakstīt vēstuli: %1"
 
-#: composer/composerviewbase.cpp:1158
+#: composer/composerviewbase.cpp:1160
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Radās kļūda, mēģinot ierindot vēstules nosūtīšanai: %1"
 
-#: composer/composerviewbase.cpp:1322
+#: composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Neizdevās automātiski saglabāt ziņojumu: %1"
 
-#: composer/composerviewbase.cpp:1341
+#: composer/composerviewbase.cpp:1343
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Neizdevās rakstīt datus datnē."
 
-#: composer/composerviewbase.cpp:1344
+#: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Neizdevās pabeigt datni."
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1350
 #, kde-format
 msgid "Could not open file."
 msgstr "Neizdevās atvērt datni."
 
-#: composer/composerviewbase.cpp:1355
+#: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -563,18 +578,18 @@ msgstr ""
 "%2\n"
 "Iemesls: %3"
 
-#: composer/composerviewbase.cpp:1361
+#: composer/composerviewbase.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Automātiskā saglabāšana neizdevās"
 
-#: composer/composerviewbase.cpp:1474
+#: composer/composerviewbase.cpp:1476
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Neizdevās saglabāt vēstuli: %1"
 
-#: composer/composerviewbase.cpp:1895
+#: composer/composerviewbase.cpp:1897
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -585,27 +600,27 @@ msgstr ""
 "neesat tai neko pievienojis.\n"
 "Vai vēlaties vēstulei pievienot datni?"
 
-#: composer/composerviewbase.cpp:1898
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Datnes pievienošanas atgādinājums"
 
-#: composer/composerviewbase.cpp:1899
+#: composer/composerviewbase.cpp:1901
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Pievienot datni..."
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1902
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Nosūtīt šādu"
 
-#: composer/composerviewbase.cpp:1952
+#: composer/composerviewbase.cpp:1954
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -616,26 +631,26 @@ msgstr ""
 "lūgs, vai parakstīt šo vēstuli.\n"
 "Vai vēlaties parakstīt vēstuli?"
 
-#: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Parakstīt vēstuli?"
 
-#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Parakstīt"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Neparakstīt"
 
-#: composer/composerviewbase.cpp:1981
+#: composer/composerviewbase.cpp:1983
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -644,7 +659,7 @@ msgstr ""
 "Šiem saņēmējiem ir konfliktējoši parakstīšanas iestatījumi.\n"
 "Vai parakstīt vēstuli?"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2010
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -653,20 +668,20 @@ msgstr ""
 "Jums pieprasīja parakstīt šo ziņojumu, tomēr šai identitātei nav "
 "konfigurētas derīgas paraksta atslēgas."
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Vai nosūtīt neparakstītu?"
 
-#: composer/composerviewbase.cpp:2014
+#: composer/composerviewbase.cpp:2016
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&Nosūtīt neparakstītu"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -677,7 +692,7 @@ msgstr ""
 "Daļēji parakstītas vēstules sūtīšana var pārkāpt organizācijas noteikumus.\n"
 "Vai tā vietā parakstīt visas daļas?"
 
-#: composer/composerviewbase.cpp:2033
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -688,30 +703,30 @@ msgstr ""
 "Neparakstītas vēstules nosūtīšana var pārkāpt organizācijas noteikumus.\n"
 "Vai tomēr parakstīt vēstuli?"
 
-#: composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Parakstīt visas daļas"
 
-#: composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign"
 msgstr "&Parakstīt"
 
-#: composer/composerviewbase.cpp:2039
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Brīdinājums par neparakstītu vēstuli"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2043
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "N&osūtīt šādu"
 
-#: composer/composerviewbase.cpp:2088
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -720,7 +735,7 @@ msgstr ""
 "Visiem saņēmējiem ir atrastas derīgas šifrēšanas atslēgas.\n"
 "Vai šifrēt šo vēstuli?"
 
-#: composer/composerviewbase.cpp:2091
+#: composer/composerviewbase.cpp:2093
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -731,32 +746,32 @@ msgstr ""
 "vēlaties vai nevēlaties šifrēt vēstuli.\n"
 "Vai šifrēt šo vēstuli?"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Vai šifrēt vēstuli?"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2100
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "&Parakstīt un šifrēt"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2180
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt"
 msgstr "Ši&frēt"
 
-#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Tikai parakstīt"
 
-#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Nosūtīt šādu"
 
-#: composer/composerviewbase.cpp:2120
+#: composer/composerviewbase.cpp:2122
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -765,7 +780,7 @@ msgstr ""
 "Šiem saņēmējiem ir konfliktējoši šifrēšanas iestatījumi.\n"
 "Vai šifrēt šo vēstuli?"
 
-#: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
+#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -773,14 +788,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "Ši&frēt"
 
-#: composer/composerviewbase.cpp:2129
+#: composer/composerviewbase.cpp:2131
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nešifrēt"
 
-#: composer/composerviewbase.cpp:2149
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -790,20 +805,20 @@ msgstr ""
 "Jums ir lūgts šifrēt šo vēstuli un arī savu kopiju, tomēr šai identitātei "
 "nav konfigurētas uzticamas šifrēšanas atslēgas."
 
-#: composer/composerviewbase.cpp:2155
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Vai sūtīt nešifrētu?"
 
-#: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Sūtīt &nešifrētu"
 
-#: composer/composerviewbase.cpp:2171
+#: composer/composerviewbase.cpp:2173
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -816,7 +831,7 @@ msgstr ""
 "atklāt sensitīvu informāciju.\n"
 "Vai tomēr šifrēt visas daļas?"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2178
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -829,12 +844,12 @@ msgstr ""
 "atklāt sensitīvu informāciju.\n"
 "Vai tomēr šifrēt vēstules?"
 
-#: composer/composerviewbase.cpp:2180
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Šifrēt visas &daļas"
 
-#: composer/composerviewbase.cpp:2183
+#: composer/composerviewbase.cpp:2185
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -2413,6 +2428,9 @@ msgstr "Pasta nosūtītājs ir bezsaistē."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Strādāt tiešsaistē"
+
+#~ msgid "Failed to attach file"
+#~ msgstr "Neizdevās pievienot datni"
 
 #~ msgid ""
 #~ "No charsets were available for encoding. Please check your configuration "

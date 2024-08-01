@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -1629,11 +1629,13 @@ msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Novea"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Novea"
 
@@ -1720,12 +1722,14 @@ msgstr "Disfacer tinme"
 
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "&Trover les Messaedjes..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Export Filters"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Ebaguer des passetes"
 

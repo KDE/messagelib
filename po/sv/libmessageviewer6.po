@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 07:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -458,18 +458,16 @@ msgid "No rules found"
 msgstr "Inga regler funna"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportera regler"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Exportera regler"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importera regler"
 
@@ -477,12 +475,6 @@ msgstr "Importera regler"
 #, kde-format
 msgid "No rules imported."
 msgstr "Inga regler importerade."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importera regler"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1846,7 +1838,9 @@ msgid "attachment.1"
 msgstr "bilaga.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Spara bilaga"
 
@@ -2487,8 +2481,9 @@ msgstr "Spara alla bilagor..."
 msgid "The network is broken."
 msgstr "Nätverket fungerar inte."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Kontrollera nätfiskewebbadress"
 
@@ -2496,12 +2491,6 @@ msgstr "Kontrollera nätfiskewebbadress"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Webbadressen %1 är inte giltig."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Kontrollera nätfiskewebbadress"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2708,6 +2697,15 @@ msgstr "Nästa brev"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Föregående brev"
+
+#~ msgid "Export Rules"
+#~ msgstr "Exportera regler"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importera regler"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Kontrollera nätfiskewebbadress"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

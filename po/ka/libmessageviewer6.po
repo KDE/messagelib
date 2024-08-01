@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 06:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -454,18 +454,16 @@ msgid "No rules found"
 msgstr "წესები ვერ ვიპოვე."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "წესების გატანა"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "წესების გატანა"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "წესების შემოტანა"
 
@@ -473,12 +471,6 @@ msgstr "წესების შემოტანა"
 #, kde-format
 msgid "No rules imported."
 msgstr "წესები შემოტანილი არაა."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "წესების შემოტანა"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1838,7 +1830,9 @@ msgid "attachment.1"
 msgstr "მიბმული.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "მიმაგრებული ფაილის შენახვა"
 
@@ -2483,8 +2477,9 @@ msgstr "ყველა მიმაგრებული ფაილის შ
 msgid "The network is broken."
 msgstr "ქსელთა მიერთება გათიშულია."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ფიშინგის ბმულის შემოწმება"
 
@@ -2492,12 +2487,6 @@ msgstr "ფიშინგის ბმულის შემოწმება"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "ბმული %1 არასწორია."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "ფიშინგის ბმულის შემოწმება"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2706,6 +2695,15 @@ msgstr "შემდეგი შეტყობინება"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "წინა შეტყობინება"
+
+#~ msgid "Export Rules"
+#~ msgstr "წესების გატანა"
+
+#~ msgid "Import Rules"
+#~ msgstr "წესების შემოტანა"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "ფიშინგის ბმულის შემოწმება"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-01-27 13:55+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -480,31 +480,23 @@ msgid "No rules found"
 msgstr "Правил не найдено"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Экспорт правил"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Экспортирование правил"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
-msgid "Import Rules"
-msgstr "Импортирование правил"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgid "No rules imported."
-msgstr "Ни одно правило не было импортировано."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Импорт правил"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "Ни одно правило не было импортировано."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1872,7 +1864,9 @@ msgid "attachment.1"
 msgstr "вложение.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Сохранить вложение"
 
@@ -2534,8 +2528,9 @@ msgstr "Сохранить все вложения..."
 msgid "The network is broken."
 msgstr "Нет подключения к сети."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Проверка фишинговых ссылок"
 
@@ -2543,12 +2538,6 @@ msgstr "Проверка фишинговых ссылок"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Некорректная ссылка %1."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Проверка фишинговых ссылок"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2763,6 +2752,15 @@ msgstr "Следующее письмо"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предыдущее письмо"
+
+#~ msgid "Export Rules"
+#~ msgstr "Экспортирование правил"
+
+#~ msgid "Import Rules"
+#~ msgstr "Импортирование правил"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Проверка фишинговых ссылок"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

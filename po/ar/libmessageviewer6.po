@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2018-01-31 17:45+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -505,18 +505,16 @@ msgid "No rules found"
 msgstr "لم يُعثر على أيّ توقيع"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "فشل تصدير المفتاح"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-msgid "Export Rules"
-msgstr "فشل تصدير المفتاح"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "فشل أستيراد vCard"
 
@@ -525,12 +523,6 @@ msgstr "فشل أستيراد vCard"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "لم يُعثر على أيّ توقيع"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "فشل أستيراد vCard"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1915,7 +1907,9 @@ msgid "attachment.1"
 msgstr "مرفق.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "احفظ المرفق"
 
@@ -2583,8 +2577,10 @@ msgstr "احفظ كلّ المرفقات..."
 msgid "The network is broken."
 msgstr "الشّبكة معطوبة."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "فحص المسار المنتحل"
 
@@ -2592,13 +2588,6 @@ msgstr "فحص المسار المنتحل"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "المسار %1 غير صالح."
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "فحص المسار المنتحل"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2821,6 +2810,17 @@ msgstr "الرسالة ال&تالية"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ال&رسالة السابقة غير المقروءة"
+
+#, fuzzy
+#~ msgid "Export Rules"
+#~ msgstr "فشل تصدير المفتاح"
+
+#, fuzzy
+#~ msgid "Import Rules"
+#~ msgstr "فشل أستيراد vCard"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "فحص المسار المنتحل"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -527,21 +527,18 @@ msgid "No rules found"
 msgstr "ਕੋਈ ਦਸਤਖਤ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "ਫਿਲਟਰ ਐਕਸਪੋਰਟ"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
-msgid "Export Rules"
-msgstr "ਫਿਲਟਰ ਐਕਸਪੋਰਟ"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 
@@ -550,13 +547,6 @@ msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "ਕੋਈ ਦਸਤਖਤ ਉਪਲੱਬਧ ਨਹੀਂ"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1955,6 +1945,7 @@ msgstr "ਅਟੈਚਮੈਂਟ.1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "ਅਟੈਚਮੈਂਟ ਇੰਞ ਸੰਭਾਲੋ"
 
@@ -2653,8 +2644,9 @@ msgstr "ਸਭ ਅਟੈਚਮੈਂਟ ਸੰਭਾਲੋ..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2663,12 +2655,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "ਦਸਤਖਤ ਫਾਇਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2896,6 +2882,16 @@ msgstr "ਅੱਗੇ ਸੁਨੇਹਾ(&N)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ਪਿਛਲੇ ਨਾ-ਪੜ੍ਹੇ ਸੁਨੇਹੇ ਉੱਤੇ ਜਾਓ(&M)"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Export Rules"
+#~ msgstr "ਫਿਲਟਰ ਐਕਸਪੋਰਟ"
+
+#, fuzzy
+#~| msgid "Import Filters"
+#~ msgid "Import Rules"
+#~ msgstr "ਫਿਲਟਰ ਇੰਪੋਰਟ ਕਰੋ"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

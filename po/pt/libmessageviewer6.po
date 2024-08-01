@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -498,19 +498,18 @@ msgid "No rules found"
 msgstr "Não foram encontradas regras"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Rules"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportar as Regras"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Exportar as Regras"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importar as Regras"
 
@@ -518,13 +517,6 @@ msgstr "Importar as Regras"
 #, kde-format
 msgid "No rules imported."
 msgstr "Não foram importadas regras."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importar as Regras"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1914,7 +1906,9 @@ msgid "attachment.1"
 msgstr "anexo.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Gravar o Anexo"
 
@@ -2580,8 +2574,10 @@ msgstr "Gravar Todos os Anexos..."
 msgid "The network is broken."
 msgstr "A rede está com problemas."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Verificar o URL de Burla"
 
@@ -2589,13 +2585,6 @@ msgstr "Verificar o URL de Burla"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "O URL %1 não é válido."
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Verificar o URL de Burla"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2814,6 +2803,15 @@ msgstr "Mensagem Seguinte"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensagem Anterior"
+
+#~ msgid "Export Rules"
+#~ msgstr "Exportar as Regras"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importar as Regras"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Verificar o URL de Burla"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -512,21 +512,18 @@ msgid "No rules found"
 msgstr "Nole sinateure di trovêye"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Ebaguer des passetes"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
-msgid "Export Rules"
-msgstr "Ebaguer des passetes"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Abaguer des passetes"
 
@@ -535,13 +532,6 @@ msgstr "Abaguer des passetes"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Nole sinateure di trovêye"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Abaguer des passetes"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1941,6 +1931,7 @@ msgstr "Ataetchmint"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Schaper et rlomer l' ataetchmint"
 
@@ -2636,8 +2627,9 @@ msgstr "Schaper tos ls ataetchmints..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2646,12 +2638,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Li fitchî sd' sinateure n' est nén valide"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2876,6 +2862,16 @@ msgstr "Messaedje &shuvant"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Messaedje di dvant nén léjhou"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Export Rules"
+#~ msgstr "Ebaguer des passetes"
+
+#, fuzzy
+#~| msgid "Import Filters"
+#~ msgid "Import Rules"
+#~ msgstr "Abaguer des passetes"
 
 #~ msgid "Edit with:"
 #~ msgstr "Aspougnî avou:"

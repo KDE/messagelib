@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -527,21 +527,18 @@ msgid "No rules found"
 msgstr "Не е пронајден потпис"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Изнесувањето на клучот не успеа"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Key Export Failed"
-msgid "Export Rules"
-msgstr "Изнесувањето на клучот не успеа"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Внесот на vCard не успеа"
 
@@ -550,13 +547,6 @@ msgstr "Внесот на vCard не успеа"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Не е пронајден потпис"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Внесот на vCard не успеа"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1929,6 +1919,7 @@ msgstr "прилог.1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Зачувајте прилог како"
 
@@ -2635,8 +2626,9 @@ msgstr "Зачувај ги сите прилози..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2645,12 +2637,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Датотеката со потпис не е валидна"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2876,6 +2862,16 @@ msgstr "&Следна порака"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Претходна неп&рочитана порака"
+
+#, fuzzy
+#~| msgid "Key Export Failed"
+#~ msgid "Export Rules"
+#~ msgstr "Изнесувањето на клучот не успеа"
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "Внесот на vCard не успеа"
 
 #, fuzzy
 #~| msgid "Edit Identity"

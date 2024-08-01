@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2013-04-12 15:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -469,21 +469,18 @@ msgid "No rules found"
 msgstr ""
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Remo&ve"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "काढून टाका (&V)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Remo&ve"
-msgid "Export Rules"
-msgstr "काढून टाका (&V)"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Remo&ve"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "काढून टाका (&V)"
 
@@ -491,13 +488,6 @@ msgstr "काढून टाका (&V)"
 #, kde-format
 msgid "No rules imported."
 msgstr ""
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remo&ve"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "काढून टाका (&V)"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1833,6 +1823,7 @@ msgstr "अटॅचमेंट :"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save All Attachments..."
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "सर्व अटॅचमेंट साठवा..."
 
@@ -2502,20 +2493,15 @@ msgstr "सर्व अटॅचमेंट साठवा..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr ""
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:2017
@@ -2712,6 +2698,16 @@ msgstr "संदेश"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Export Rules"
+#~ msgstr "काढून टाका (&V)"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Import Rules"
+#~ msgstr "काढून टाका (&V)"
 
 #~ msgid "Edit with:"
 #~ msgstr "याने संपादित करा :"

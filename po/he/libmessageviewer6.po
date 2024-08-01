@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 09:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -475,18 +475,16 @@ msgid "No rules found"
 msgstr "לא נמצאו כללים"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "ייצוא כללים"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "ייצוא כללים"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "ייבוא כללים"
 
@@ -494,12 +492,6 @@ msgstr "ייבוא כללים"
 #, kde-format
 msgid "No rules imported."
 msgstr "לא יובאו כללים."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "ייבוא כללים"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1843,7 +1835,9 @@ msgid "attachment.1"
 msgstr "attachment.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "שמירת הקובץ המצורף"
 
@@ -2479,8 +2473,9 @@ msgstr "שמירת כל המצורפים..."
 msgid "The network is broken."
 msgstr "הרשת פגומה."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "בדיקת כתובת דיוג"
 
@@ -2488,12 +2483,6 @@ msgstr "בדיקת כתובת דיוג"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "הכתובת %1 שגויה."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "בדיקת כתובת דיוג"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2699,6 +2688,15 @@ msgstr "ההודעה הבאה"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ההודעה הקודמת"
+
+#~ msgid "Export Rules"
+#~ msgstr "ייצוא כללים"
+
+#~ msgid "Import Rules"
+#~ msgstr "ייבוא כללים"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "בדיקת כתובת דיוג"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

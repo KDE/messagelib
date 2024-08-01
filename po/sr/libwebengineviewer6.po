@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 00:41+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2016-06-19 15:36+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -101,7 +101,9 @@ msgstr "Израз није нађен."
 
 # >> @title:window
 #: webenginepage.cpp:152
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save HTML Page"
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Уписивање веб странице"
 

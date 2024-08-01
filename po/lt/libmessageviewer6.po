@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -493,19 +493,18 @@ msgid "No rules found"
 msgstr "Nerasta taisyklių"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Rules"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Eksportuoti taisykles..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Eksportuoti taisykles..."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importuoti taisykles..."
 
@@ -513,13 +512,6 @@ msgstr "Importuoti taisykles..."
 #, kde-format
 msgid "No rules imported."
 msgstr "Neimportuotos jokios taisyklės."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importuoti taisykles..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1899,7 +1891,9 @@ msgid "attachment.1"
 msgstr "priedas.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Išsaugoti priedą"
 
@@ -2563,8 +2557,10 @@ msgstr "Įrašyti visus priedus..."
 msgid "The network is broken."
 msgstr "Tinklo ryšio klaida."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Tikrinti, ar URL apgaulingas"
 
@@ -2572,13 +2568,6 @@ msgstr "Tikrinti, ar URL apgaulingas"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 nėra tinkamas"
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Tikrinti, ar URL apgaulingas"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2798,6 +2787,15 @@ msgstr "Kitas laiškas"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Ankstesnis laiškas"
+
+#~ msgid "Export Rules"
+#~ msgstr "Eksportuoti taisykles..."
+
+#~ msgid "Import Rules"
+#~ msgstr "Importuoti taisykles..."
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Tikrinti, ar URL apgaulingas"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

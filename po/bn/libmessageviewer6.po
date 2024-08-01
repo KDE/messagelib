@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -520,21 +520,18 @@ msgid "No rules found"
 msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "কী (Key) রপ্তানি ব্যর্থ"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Key Export Failed"
-msgid "Export Rules"
-msgstr "কী (Key) রপ্তানি ব্যর্থ"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 
@@ -543,13 +540,6 @@ msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1910,6 +1900,7 @@ msgstr "attachment.1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "অ্যাটাচমেন্ট নতুন নামে সংরক্ষণ করো"
 
@@ -2612,20 +2603,15 @@ msgstr "সব অ্যাটাচমেন্ট সংরক্ষণ কর
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
 msgid "The URL %1 is not valid."
-msgstr ""
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
 msgstr ""
 
 #: viewer/viewer_p.cpp:2017
@@ -2843,6 +2829,16 @@ msgstr "পরবর্তী বার্তা (&ন)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "পূর্ববর্তী &অপঠিত বার্তা"
+
+#, fuzzy
+#~| msgid "Key Export Failed"
+#~ msgid "Export Rules"
+#~ msgstr "কী (Key) রপ্তানি ব্যর্থ"
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "ভি-কার্ড আমদানি ব্যর্থ"
 
 #, fuzzy
 #~| msgid "Edit Identity"

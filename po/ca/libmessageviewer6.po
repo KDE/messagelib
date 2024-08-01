@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 11:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -461,31 +461,23 @@ msgid "No rules found"
 msgstr "No s'ha trobat cap regla"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exporta les regles"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Exporta les regles"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
-msgid "Import Rules"
-msgstr "Importa algunes regles"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgid "No rules imported."
-msgstr "No s'ha importat cap regla."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importa regles"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "No s'ha importat cap regla."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1865,7 +1857,9 @@ msgid "attachment.1"
 msgstr "adjunt.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Desa l'adjunt"
 
@@ -2512,8 +2506,9 @@ msgstr "Desa tots els adjunts..."
 msgid "The network is broken."
 msgstr "La xarxa no funciona."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Comprovació d'URL de pesca"
 
@@ -2521,12 +2516,6 @@ msgstr "Comprovació d'URL de pesca"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "L'URL %1 no és vàlid."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Comprovació d'URL de pesca"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2735,6 +2724,15 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
+
+#~ msgid "Export Rules"
+#~ msgstr "Exporta les regles"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importa algunes regles"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Comprovació d'URL de pesca"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

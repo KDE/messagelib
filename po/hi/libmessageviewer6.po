@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -484,18 +484,16 @@ msgid "No rules found"
 msgstr "कोई हस्ताक्षर नहीं मिला"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "कुंजी निर्यात असफल"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-msgid "Export Rules"
-msgstr "कुंजी निर्यात असफल"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "वी-कार्ड आयात असफल"
 
@@ -504,12 +502,6 @@ msgstr "वी-कार्ड आयात असफल"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "कोई हस्ताक्षर नहीं मिला"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "वी-कार्ड आयात असफल"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1909,6 +1901,7 @@ msgstr "संलग्नक. 1"
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "संलग्नक ऐसे सहेजें"
 
@@ -2606,8 +2599,9 @@ msgstr "सभी संलग्नक सहेजें..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2616,12 +2610,6 @@ msgstr ""
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "हस्ताक्षर फ़ाइल वैध नहीं है"
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2846,6 +2834,14 @@ msgstr "अगला संदेश (&N)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पिछला बिनपढ़ा संदेश (&M)"
+
+#, fuzzy
+#~ msgid "Export Rules"
+#~ msgstr "कुंजी निर्यात असफल"
+
+#, fuzzy
+#~ msgid "Import Rules"
+#~ msgstr "वी-कार्ड आयात असफल"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."

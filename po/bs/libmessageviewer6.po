@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2014-01-31 19:13+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -506,21 +506,18 @@ msgid "No rules found"
 msgstr "Nije pronađen potpis"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export filters..."
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Izvezi filtere..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export filters..."
-msgid "Export Rules"
-msgstr "Izvezi filtere..."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters..."
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Uvezi filtere..."
 
@@ -529,13 +526,6 @@ msgstr "Uvezi filtere..."
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Nije pronađen potpis"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters..."
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Uvezi filtere..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1945,7 +1935,9 @@ msgid "attachment.1"
 msgstr "prilog.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Sačuvaj prilog"
 
@@ -2620,8 +2612,9 @@ msgstr "Snimi sve priloge..."
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
@@ -2630,12 +2623,6 @@ msgstr ""
 #| msgid "Grantlee theme \"%1\" is not valid."
 msgid "The URL %1 is not valid."
 msgstr "Grentl  tema \"%1\" nije vazeca."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2862,6 +2849,16 @@ msgstr "Snimi poruku"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Dešifruj poruku"
+
+#, fuzzy
+#~| msgid "Export filters..."
+#~ msgid "Export Rules"
+#~ msgstr "Izvezi filtere..."
+
+#, fuzzy
+#~| msgid "Import Filters..."
+#~ msgid "Import Rules"
+#~ msgstr "Uvezi filtere..."
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

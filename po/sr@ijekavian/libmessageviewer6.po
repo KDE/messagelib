@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -492,20 +492,18 @@ msgid "No rules found"
 msgstr "Потпис није пронађен"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "&Увези"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr ""
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "&Увези"
 
@@ -513,13 +511,6 @@ msgstr "&Увези"
 #, kde-format
 msgid "No rules imported."
 msgstr ""
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "&Import"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "&Увези"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1919,7 +1910,9 @@ msgstr "прилог.1"
 
 # >> @title:window
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Уписивање прилога"
 
@@ -2598,8 +2591,10 @@ msgstr "Сачувај све прилоге..."
 msgid "The network is broken."
 msgstr "Мрежа је покварена."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Провера УРЛ‑а против преваре"
 
@@ -2607,13 +2602,6 @@ msgstr "Провера УРЛ‑а против преваре"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "УРЛ %1 није добар."
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Провера УРЛ‑а против преваре"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2837,6 +2825,14 @@ msgstr "&Сачувај поруке"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Претходна картица"
+
+#, fuzzy
+#~| msgid "&Import"
+#~ msgid "Import Rules"
+#~ msgstr "&Увези"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Провера УРЛ‑а против преваре"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

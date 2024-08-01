@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-11-14 13:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -466,18 +466,16 @@ msgid "No rules found"
 msgstr "Nenhuma regra encontrada"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportar regras"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Exportar regras"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importar regras"
 
@@ -485,12 +483,6 @@ msgstr "Importar regras"
 #, kde-format
 msgid "No rules imported."
 msgstr "Nenhuma regra importada."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importar regras"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1869,7 +1861,9 @@ msgid "attachment.1"
 msgstr "anexo.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Salvar anexo"
 
@@ -2531,8 +2525,9 @@ msgstr "Salvar todos os anexos..."
 msgid "The network is broken."
 msgstr "A rede está com problema."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Verificar a URL de Phishing"
 
@@ -2540,12 +2535,6 @@ msgstr "Verificar a URL de Phishing"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "A URL %1 não é válida."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Verificar a URL de Phishing"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2761,6 +2750,15 @@ msgstr "Próxima mensagem"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensagem anterior"
+
+#~ msgid "Export Rules"
+#~ msgstr "Exportar regras"
+
+#~ msgid "Import Rules"
+#~ msgstr "Importar regras"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Verificar a URL de Phishing"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

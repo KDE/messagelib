@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -448,18 +448,16 @@ msgid "No rules found"
 msgstr "규칙이 없습니다"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "규칙 내보내기"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "규칙 내보내기"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "규칙 가져오기"
 
@@ -467,12 +465,6 @@ msgstr "규칙 가져오기"
 #, kde-format
 msgid "No rules imported."
 msgstr "가져온 규칙이 없습니다."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "규칙 가져오기"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1826,7 +1818,9 @@ msgid "attachment.1"
 msgstr "첨부.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "첨부 파일 저장"
 
@@ -2479,8 +2473,9 @@ msgstr "모든 첨부 파일 저장..."
 msgid "The network is broken."
 msgstr "네트워크를 사용할 수 없습니다."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "피싱 URL 확인"
 
@@ -2488,12 +2483,6 @@ msgstr "피싱 URL 확인"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1이(가) 올바르지 않습니다."
-
-#: viewer/viewer_p.cpp:1997
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "피싱 URL 확인"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2697,6 +2686,15 @@ msgstr "다음 메시지"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "이전 메시지"
+
+#~ msgid "Export Rules"
+#~ msgstr "규칙 내보내기"
+
+#~ msgid "Import Rules"
+#~ msgstr "규칙 가져오기"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "피싱 URL 확인"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "

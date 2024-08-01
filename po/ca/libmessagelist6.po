@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-30 11:17+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-07-31 12:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1519,12 +1519,16 @@ msgid "New Aggregation"
 msgstr "Agregació nova"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Aggregation"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importació d'una agregació"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Aggregation"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Exportació d'una agregació"
 
@@ -1602,12 +1606,16 @@ msgid "Delete Theme"
 msgstr "Suprimeix el tema"
 
 #: utils/configurethemesdialog.cpp:436
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Theme"
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importació d'un tema"
 
 #: utils/configurethemesdialog.cpp:470
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Theme"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Exportació d'un tema"
 
@@ -1839,7 +1847,7 @@ msgstr "Afegeix una columna..."
 #: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Delete Column"
-msgstr "Elimina la columna"
+msgstr "Suprimeix la columna"
 
 #: utils/themeeditor.cpp:1169
 #, kde-format

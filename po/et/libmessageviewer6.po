@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -476,19 +476,18 @@ msgid "No rules found"
 msgstr "Ühtegi reeglit ei leitud"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Rules"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Reegli eksport"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Reegli eksport"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Reegli import"
 
@@ -496,13 +495,6 @@ msgstr "Reegli import"
 #, kde-format
 msgid "No rules imported."
 msgstr "Ühtegi reeglit ei imporditud."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Reegli import"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -1887,7 +1879,9 @@ msgid "attachment.1"
 msgstr "manus.1"
 
 #: utils/messageviewerutil.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Kaasatud faili salvestamine"
 
@@ -2547,8 +2541,10 @@ msgstr "Sal&vesta kõik kaasatud failid..."
 msgid "The network is broken."
 msgstr "Võrk on katki."
 
-#: viewer/viewer_p.cpp:1994
-#, kde-format
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, fuzzy, kde-format
+#| msgid "Check Phishing URL"
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Õngitsemise URL-i kontroll"
 
@@ -2556,13 +2552,6 @@ msgstr "Õngitsemise URL-i kontroll"
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL \"%1\" ei ole kehtiv."
-
-#: viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr "Õngitsemise URL-i kontroll"
 
 #: viewer/viewer_p.cpp:2017
 #, kde-format
@@ -2778,6 +2767,15 @@ msgstr "Järgmine kiri"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Eelmine kiri"
+
+#~ msgid "Export Rules"
+#~ msgstr "Reegli eksport"
+
+#~ msgid "Import Rules"
+#~ msgstr "Reegli import"
+
+#~ msgid "Check Phishing URL"
+#~ msgstr "Õngitsemise URL-i kontroll"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
