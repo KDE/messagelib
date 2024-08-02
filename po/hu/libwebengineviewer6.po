@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:39+0000\n"
-"PO-Revision-Date: 2024-01-28 21:14+0100\n"
+"PO-Revision-Date: 2024-08-01 22:57+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -25,8 +25,7 @@ msgid "Developer Tool"
 msgstr "Fejlesztői eszközök"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Bezárás"
@@ -43,8 +42,7 @@ msgid "F&ind:"
 msgstr "&Keresés:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "A keresendő szöveg"
@@ -56,8 +54,7 @@ msgid "Next"
 msgstr "Következő"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Ugrás a következő találatra"
@@ -69,8 +66,7 @@ msgid "Previous"
 msgstr "Előző"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Ugrás az előző találatra"
@@ -81,8 +77,7 @@ msgid "Options"
 msgstr "Beállítások"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "A kereső működésének beállítása"

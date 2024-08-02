@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-17 00:40+0000\n"
-"PO-Revision-Date: 2024-05-12 15:13+0200\n"
+"PO-Revision-Date: 2024-08-01 23:00+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -406,8 +406,7 @@ msgid "Delete Keys"
 msgstr "Kulcsok törlése"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Keresés…"
@@ -428,11 +427,10 @@ msgid "Ignore if not signed"
 msgstr "Mellőzés, ha nincs aláírva"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr "Exportálás..."
+msgstr "Exportálás…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -441,18 +439,16 @@ msgid "Configure Rule"
 msgstr "Szabály beállítása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Szabály hozzáadása…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr "Importálás..."
+msgstr "Importálás…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -596,8 +592,7 @@ msgid "From:"
 msgstr "Feladó:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Használja a „*”-ot a tartomány összes e-mailjének megadásához"
@@ -1239,8 +1234,7 @@ msgid "Blocked"
 msgstr "Tiltva"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Tartomány:"
@@ -1257,29 +1251,25 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "A levél becsapós lehet. <a href=\"scamdetails\">(Részletek…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
-msgstr "Áthelyezés a törölt üzenetek közé"
+msgstr "Áthelyezés a Kukába"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Megerősítem, ez nem becsapós"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "E-mail hozzáadása az engedélyezési listához"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Becsapásészlelés letiltása minden levélnél"
@@ -1877,15 +1867,13 @@ msgid "KMail Question"
 msgstr "Kérdés - KMail"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "A titkosítás megőrzése"
+msgstr "Titkosítás megőrzése"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Nem kell megőrizni"
@@ -1900,11 +1888,10 @@ msgstr ""
 "aláírást mentéskor?"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "Az aláírás megőrzése"
+msgstr "Aláírás megőrzése"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
 #: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
@@ -2173,8 +2160,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Biztosan futtatni szeretné ezt: <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Végrehajtás"
@@ -2373,11 +2359,10 @@ msgid "Copy Text"
 msgstr "Szöveg másolása"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr "Az összes szöveg kijelölése"
+msgstr "Minden szöveg kijelölése"
 
 #: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
@@ -2395,11 +2380,10 @@ msgid "Show Message Structure"
 msgstr "Üzenetstruktúra megjelenítése"
 
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "A f&orrás megjelenítése"
+msgstr "Forrás &megtekintése"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
@@ -2407,43 +2391,37 @@ msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
-msgstr "&Megjelenítési formátum mentése"
+msgstr "Megjelenítési formátum menté&se"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Megjelenítési formátum &visszaállítása"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Felfelé görrgetés"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Lefelé görgetés"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Felfelé görgetés (többet)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Lefelé görgetés (többet)"
@@ -2459,32 +2437,28 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Megjelenítési mód váltása HTML és egyszerű szöveg között"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Külső hivatkozások betöltése"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
 #: viewer/viewer_p.cpp:1636
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Szöveg megosztása…"
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "A kép címének másolása"
+msgstr "Kép címének másolása"
 
 #: viewer/viewer_p.cpp:1660
 #, kde-format
@@ -2701,9 +2675,7 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Mappa megnyitása, ahová a melléklet mentve lett"
@@ -2715,18 +2687,15 @@ msgid "Open File"
 msgstr "Fájl megnyitása"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
-msgstr[1] "Mappa megnyitása, ahová a melléklet mentve lett"
+msgstr[1] "Mappa megnyitása, ahová a mellékletek mentve lettek"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Mappa megnyitása, ahová a PDF-fájl mentve lett"
@@ -2737,15 +2706,13 @@ msgid "KMail was unable to open the attachment."
 msgstr "A KMail nem tudta megnyitni a mellékletet."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Következő üzenet"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"

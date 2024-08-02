@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-03-26 10:28+0100\n"
+"PO-Revision-Date: 2024-08-01 22:53+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -41,8 +41,7 @@ msgid "Keep"
 msgstr "Megtartás"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Tömörítés"
@@ -92,18 +91,16 @@ msgid "Failed to attach text from clipboard"
 msgstr "Nem sikerült csatolni a szöveget a vágólapról"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&Nyilvános kulcs csatolása…"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr "A saját n&yilvános kulcs csatolása"
+msgstr "Saját n&yilvános kulcs csatolása"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -129,8 +126,7 @@ msgid "&Attach Directory..."
 msgstr "Mappa cs&atolása…"
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Saját vCard csatolása"
@@ -184,11 +180,10 @@ msgid "Edit"
 msgstr "Szerkesztés"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Szerkesztés ezzel…"
+msgstr "Szerkesztés mással…"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -201,22 +196,19 @@ msgid "Save As..."
 msgstr "Mentés másként…"
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "A melléklet tulajd&onságai…"
+msgstr "Melléklet tulajd&onságai…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Tulajdonságok"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Összes kijelölése"
@@ -277,8 +269,7 @@ msgid "Save to File"
 msgstr "Mentés fájlba"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Cse&re"
@@ -592,18 +583,16 @@ msgid "File Attachment Reminder"
 msgstr "Emlékeztető a mellékletekre"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Fájl cs&atolása…"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "Elküldés a m&ostani állapotban"
+msgstr "&Küldés így"
 
 #: composer/composerviewbase.cpp:1952
 #, kde-format
@@ -629,8 +618,7 @@ msgid "&Sign"
 msgstr "&Aláírás"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Ne írja alá"
@@ -660,11 +648,10 @@ msgid "Send Unsigned?"
 msgstr "Küldés aláírás nélkül?"
 
 #: composer/composerviewbase.cpp:2014
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "Elkül&dés aláírás nélkül"
+msgstr "Kül&dés aláírás nélkül"
 
 #: composer/composerviewbase.cpp:2029
 #, kde-format
@@ -705,11 +692,10 @@ msgid "Unsigned-Message Warning"
 msgstr "Figyelmeztetés - az üzenet nincs aláírva"
 
 #: composer/composerviewbase.cpp:2041
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "Elkül&dés így"
+msgstr "Kü&ldés így"
 
 #: composer/composerviewbase.cpp:2088
 #, kde-format
@@ -767,15 +753,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Titkosítás"
 
 #: composer/composerviewbase.cpp:2129
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "T&itkosítás nélkül"
@@ -798,8 +782,7 @@ msgid "Send Unencrypted?"
 msgstr "Elküldés titkosítás nélkül?"
 
 #: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Küldés titkosítatlan&ul"
@@ -988,8 +971,7 @@ msgstr ""
 "azonosítóhoz."
 
 #: composer/keyresolver.cpp:1072
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nem kell OpenPGP aláírás"
@@ -1008,8 +990,7 @@ msgstr ""
 "azonosítóhoz."
 
 #: composer/keyresolver.cpp:1090
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nem kell S/MIME aláírás"
@@ -1134,8 +1115,7 @@ msgstr ""
 "Válassza ki a tanúsítványokat ehhez a címzetthez."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Névválasztás"
@@ -1239,8 +1219,7 @@ msgid "Select Image Format"
 msgstr "Képformátum kiválasztása"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Formátum kiválasztása…"
@@ -1494,11 +1473,10 @@ msgid "No text found in Clipboard"
 msgstr "Nem található szöveg a vágólapon"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "Emlékeztető nevének megadása"
+msgstr "Melléklet nevének megadása"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1687,8 +1665,7 @@ msgid "&Name:"
 msgstr "&Név:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "A terjesztési lista neve"
@@ -1791,11 +1768,10 @@ msgid "Select type of recipient"
 msgstr "A címzett típusa"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr "Adja meg a címzettek e-mail címeinek listáját"
+msgstr "Adja meg a címzettek e-mail-címeinek listáját"
 
 #: recipient/recipientseditor.cpp:112
 #, kde-format
@@ -1874,8 +1850,7 @@ msgid "Select Recipient"
 msgstr "Címzett kiválasztása"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Keresés cí&mtárszolgáltatásban"
