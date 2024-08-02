@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-12 15:13+0200\n"
+"PO-Revision-Date: 2024-08-01 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1108,22 +1108,19 @@ msgid "Edit Filter"
 msgstr "Szűrő szerkesztése"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Név:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Szűrő mentése…"
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Beállítások…"
@@ -1140,8 +1137,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "A három betűnél rövidebb szavak mellőzve lesznek."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ne jelenjen meg újra"
@@ -1179,8 +1175,7 @@ msgstr ""
 "másik mappába lép vagy szűkíti az üzenetállapot szerinti keresést."
 
 #: core/widgets/searchlinestatus.cpp:108
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Mentett szűrő"
@@ -1191,29 +1186,25 @@ msgid "Clear History"
 msgstr "Előzmények törlése"
 
 #: core/widgets/searchmessagebybuttons.cpp:34
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
-msgstr "Teljes üzenetet"
+msgstr "Teljes üzenet"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Törzs"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Tárgy"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "Titkos másolat"
@@ -1327,8 +1318,7 @@ msgid "Close tab"
 msgstr "Lap bezárása"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Váltás a(z) %1. lapra"
@@ -1344,43 +1334,37 @@ msgid "Message List"
 msgstr "Üzenetlista"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Új lap létrehozása"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Váltás a következő lapra"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Váltás az előző lapra"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Lap mozgatása balra"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Lap mozgatása jobbra"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Lap bezárása"
@@ -1428,11 +1412,10 @@ msgid "Unknown"
 msgstr "Ismeretlen"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "Beállítások…"
+msgstr "Beállítás…"
 
 #: utils/aggregationeditor.cpp:31
 #, kde-format
@@ -1440,36 +1423,31 @@ msgid "Groups && Threading"
 msgstr "Csoportok és szálak"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Csoportosítás:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Csoportkibontási mód:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Szálakra bontás:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Szálkezdő:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Szálkibontási mód:"
@@ -1481,8 +1459,7 @@ msgid "Advanced"
 msgstr "Speciális"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Nézetkitöltési módszer:"
@@ -1494,39 +1471,34 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Egyedi üzenetgyűjtési módok"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
-msgstr "Új gyűjtemény"
+msgstr "Új aggregáció"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
-msgstr "Gyűjtemény másolása"
+msgstr "Aggregáció klónozása"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "Összesítés exportálása…"
+msgstr "Aggregáció exportálása…"
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
-msgstr "Összesítés importálása…"
+msgstr "Aggregáció importálása…"
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
-msgstr "Gyűjtemény törlése"
+msgstr "Aggregáció törlése"
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
@@ -1565,36 +1537,31 @@ msgid "Customize Themes"
 msgstr "Témák testreszabása"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Új téma"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "Téma másolása"
+msgstr "Téma klónozása"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Téma exportálása…"
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Téma importálása…"
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Téma törlése"
@@ -1669,23 +1636,19 @@ msgid "Name:"
 msgstr "Név:"
 
 #: utils/themeeditor.cpp:73
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Az oszlopfejlécben megjelenő címke."
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Fejlécre kattintva rendezés:"
 
 #: utils/themeeditor.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
@@ -1700,9 +1663,7 @@ msgid "Visible by default"
 msgstr "Alapértelmezésben látható"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
@@ -1716,10 +1677,7 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "Tartalmazza a „Feladó vagy címzett” mezőt"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
@@ -1934,15 +1892,13 @@ msgid "Advanced"
 msgstr "Speciális"
 
 #: utils/themeeditor.cpp:1433
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Fejléc:"
 
 #: utils/themeeditor.cpp:1439
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ikonméret:"

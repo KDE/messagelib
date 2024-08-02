@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-31 10:40+0200\n"
+"PO-Revision-Date: 2024-08-01 15:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1514,15 +1514,13 @@ msgid "New Aggregation"
 msgstr "Nove Aggregation"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importa Aggregation"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Exporta Aggregation"
@@ -1601,15 +1599,13 @@ msgid "Delete Theme"
 msgstr "Deler Thema"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importa Thema"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Exporta Thema"

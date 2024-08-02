@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 16:52+0200\n"
+"PO-Revision-Date: 2024-08-01 04:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1859,8 +1859,7 @@ msgid "attachment.1"
 msgstr "adjunto.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Guardar adjunto"

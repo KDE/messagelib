@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 15:49+0300\n"
+"PO-Revision-Date: 2024-08-01 20:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1539,18 +1539,16 @@ msgid "New Aggregation"
 msgstr "Створити складання"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
-msgstr "Імпортувати складання"
+msgstr "Імпортування складання"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
-msgstr "Експортувати складання"
+msgstr "Експортування складання"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1626,18 +1624,16 @@ msgid "Delete Theme"
 msgstr "Вилучення теми"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
-msgstr "Імпортувати тему"
+msgstr "Імпортування теми"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
-msgstr "Клонувати тему"
+msgstr "Експортування теми"
 
 #: utils/optionseteditor.cpp:27
 #, kde-format

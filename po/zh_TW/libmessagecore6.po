@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:41+0000\n"
 "PO-Revision-Date: 2024-06-30 11:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -273,20 +273,26 @@ msgstr "第二層引言文字所使用的顏色"
 msgid "This is the color used in the 1st level of quoted text"
 msgstr "第一層引言文字所使用的顏色"
 
+#. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
+#: settings/messagecore.kcfg:48
+#, kde-format
+msgid "Display Own Identity"
+msgstr ""
+
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:54
+#: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr "將識別前綴取代成「Re:」(&X)"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:62
+#: settings/messagecore.kcfg:66
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr "將識別前綴取代成「&Fwd:」"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:67
+#: settings/messagecore.kcfg:71
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "

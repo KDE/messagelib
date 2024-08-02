@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 07:05+0200\n"
+"PO-Revision-Date: 2024-08-01 07:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -53,8 +53,7 @@ msgid "Failed to attach file"
 msgstr "Misslyckades bifoga fil"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Misslyckades läsa in bilaga igen"
@@ -79,22 +78,19 @@ msgid "&Open With..."
 msgstr "Öppna &med..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Misslyckades bifoga öppen nyckel"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Misslyckades bifoga visitkort"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Misslyckades bifoga text från klippbordet"
@@ -242,10 +238,9 @@ msgid "Unable to open attachment"
 msgstr "Kan inte öppna bilaga"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "Kmail kunde inte öppna bilagan."
+msgstr "Kmail kunde inte öppna bilagan"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -259,8 +254,7 @@ msgid "unnamed"
 msgstr "namnlös"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Spara bilaga som"
@@ -480,29 +474,25 @@ msgid "Do Not Resize"
 msgstr "Ändra inte storlek"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-nyckel utgången"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-certifikat utgånget"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-nyckel går snart ut"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-certifikat går snart ut"

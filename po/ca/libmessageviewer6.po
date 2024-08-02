@@ -1857,8 +1857,7 @@ msgid "attachment.1"
 msgstr "adjunt.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Desa l'adjunt"

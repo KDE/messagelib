@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 15:49+0300\n"
+"PO-Revision-Date: 2024-08-01 20:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1858,11 +1858,10 @@ msgid "attachment.1"
 msgstr "долучення.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "Зберегти долучення"
+msgstr "Збереження долучення"
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format

@@ -1519,15 +1519,13 @@ msgid "New Aggregation"
 msgstr "Agregació nova"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importació d'una agregació"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Exportació d'una agregació"
@@ -1606,15 +1604,13 @@ msgid "Delete Theme"
 msgstr "Suprimeix el tema"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importació d'un tema"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Exportació d'un tema"

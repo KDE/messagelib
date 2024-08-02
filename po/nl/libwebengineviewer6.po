@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-23 10:31+0200\n"
+"PO-Revision-Date: 2024-08-01 12:51+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -92,8 +92,7 @@ msgid "Phrase not found"
 msgstr "Uitdrukking niet gevonden"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML-pagina opslaan"

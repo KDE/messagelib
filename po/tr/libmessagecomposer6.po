@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 19:04+0300\n"
+"PO-Revision-Date: 2024-08-01 13:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -55,11 +55,10 @@ msgid "Failed to attach file"
 msgstr "Dosya iliştirilemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "Eki yeniden yükleme başarısız oldu"
+msgstr "Ek Yeniden Yüklenemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
@@ -81,25 +80,22 @@ msgid "&Open With..."
 msgstr "&Birlikte Aç…"
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr "Genel anahtar iliştirme başarısız oldu"
+msgstr "Genel Anahtar İliştirilemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "vCard iliştirme başarısız oldu"
+msgstr "vCard İliştirilemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "Panodan metin iliştirme başarısız oldu"
+msgstr "Panodan Metin İliştirilemedi"
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
@@ -244,10 +240,9 @@ msgid "Unable to open attachment"
 msgstr "Ek Açılamıyor"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "K Posta eki açamadı."
+msgstr "K Posta eki açamadı"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -261,8 +256,7 @@ msgid "unnamed"
 msgstr "adsız"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Eki Farklı Kaydet"
@@ -482,32 +476,28 @@ msgid "Do Not Resize"
 msgstr "Yeniden Boyutlama"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP Anahtarının Süresi Dolmuş"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME Sertifikasının Süresi Dolmuş"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
-msgstr "OpenPGP Anahtarı Yakında Bitiyor"
+msgstr "OpenPGP Anahtarı Süresi Yakında Doluyor"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr "S/MIME Sertifikası Yakında Bitiyor"
+msgstr "S/MIME Sertifikası Süresi Yakında Doluyor"
 
 #: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
 #: composer/composerviewbase.cpp:845

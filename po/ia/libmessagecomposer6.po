@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-31 10:39+0200\n"
+"PO-Revision-Date: 2024-08-01 15:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -54,8 +54,7 @@ msgid "Failed to attach file"
 msgstr "Falleva a attachar file"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Falleva a recargar attachamento"
@@ -80,22 +79,19 @@ msgid "&Open With..."
 msgstr "&Aperi con..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Falleva a attachar clave public"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Falleva a attachar vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Falleva a attachar texto ex area de transferentia"
@@ -243,10 +239,9 @@ msgid "Unable to open attachment"
 msgstr "Incapace a aperir attachamento"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "Kmail esseva incapace de aperir le attachamento."
+msgstr "Kmail esseva incapace a aperir le attachamento"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -260,8 +255,7 @@ msgid "unnamed"
 msgstr "sin nomine"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Salveguarda attachamento como"
@@ -481,29 +475,25 @@ msgid "Do Not Resize"
 msgstr "Non Redimensiona"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "Clave de OpenPGP expirava"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "certificato S/MIME expirava"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "Clave de OpenPGP expira tosto"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Certificato S/MIME expira tosto"

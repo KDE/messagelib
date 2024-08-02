@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 06:47+0200\n"
+"PO-Revision-Date: 2024-08-01 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1509,15 +1509,13 @@ msgid "New Aggregation"
 msgstr "ახალი აგრეგაცია"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "აგრეგაციის შემოტანა"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "აგრეგაციის გატანა"
@@ -1596,15 +1594,13 @@ msgid "Delete Theme"
 msgstr "თემის წაშლა"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "თემის შემოტანა"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "თემის გატანა"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:28-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -253,20 +253,26 @@ msgstr ""
 msgid "This is the color used in the 1st level of quoted text"
 msgstr ""
 
+#. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
+#: settings/messagecore.kcfg:48
+#, kde-format
+msgid "Display Own Identity"
+msgstr ""
+
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:54
+#: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:62
+#: settings/messagecore.kcfg:66
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:67
+#: settings/messagecore.kcfg:71
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:41+0000\n"
 "PO-Revision-Date: 2024-06-26 14:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -295,20 +295,26 @@ msgstr "Bu, 2. seviye alıntı metni için kullanılacak renktir"
 msgid "This is the color used in the 1st level of quoted text"
 msgstr "Bu, 1. düzey alıntı metni için kullanılacak renktir"
 
+#. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
+#: settings/messagecore.kcfg:48
+#, kde-format
+msgid "Display Own Identity"
+msgstr ""
+
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:54
+#: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr "Algılanan öneki “Re:” ile değişti&r"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:62
+#: settings/messagecore.kcfg:66
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr "Algılanan öneki “Fwd:” ile değişti&r"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:67
+#: settings/messagecore.kcfg:71
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "

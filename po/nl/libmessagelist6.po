@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 13:43+0200\n"
+"PO-Revision-Date: 2024-08-01 12:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1533,15 +1533,13 @@ msgid "New Aggregation"
 msgstr "Nieuwe aggregatie"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Samenvoeging importeren"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Samenvoeging exporteren"
@@ -1620,15 +1618,13 @@ msgid "Delete Theme"
 msgstr "Thema verwijderen"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Thema importeren"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Thema exporteren"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:41+0000\n"
 "PO-Revision-Date: 2024-07-20 12:45+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -290,20 +290,26 @@ msgstr "Hori da aipu testuaren 2. mailan erabili beharreko kolorea"
 msgid "This is the color used in the 1st level of quoted text"
 msgstr "Hori da aipu testuaren 1. mailan erabili beharreko kolorea"
 
+#. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
+#: settings/messagecore.kcfg:48
+#, kde-format
+msgid "Display Own Identity"
+msgstr ""
+
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:54
+#: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr "Ordezkatu aurrizki ezaguna \"&Re:\"rekin"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:62
+#: settings/messagecore.kcfg:66
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr "Ordezkatu aurrizki ezaguna \"&Fwd:\"rekin"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:67
+#: settings/messagecore.kcfg:71
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
