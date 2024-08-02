@@ -13,7 +13,6 @@
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
 #include <KMime/MDN>
-#include <KMime/Message>
 
 using namespace MessageCore;
 
