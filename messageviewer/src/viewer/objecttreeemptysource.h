@@ -11,7 +11,6 @@
 #include <MimeTreeParser/ObjectTreeSource>
 
 class QString;
-class QStringDecoder;
 namespace MessageViewer
 {
 class AttachmentStrategy;

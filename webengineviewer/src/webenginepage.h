@@ -10,7 +10,6 @@
 #include <QWebEnginePage>
 class QWebEngineProfile;
 class QWebEngineDownloadRequest;
-class QPrinter;
 namespace WebEngineViewer
 {
 class WebHitTest;

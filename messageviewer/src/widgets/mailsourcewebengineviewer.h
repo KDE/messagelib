@@ -12,7 +12,6 @@ class QWebEnginePage;
 
 namespace MessageViewer
 {
-class FindBarSourceView;
 class MailSourceViewTextBrowserWidget;
 class MailSourceWebEngineViewer : public QDialog
 {

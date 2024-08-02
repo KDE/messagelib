@@ -9,7 +9,6 @@
 #include "webengineviewer_export.h"
 #include <QWebEngineScript>
 
-class QWebEngineProfile;
 namespace WebEngineViewer
 {
 /**

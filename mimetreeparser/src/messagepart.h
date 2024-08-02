@@ -46,7 +46,6 @@ class KeyCache;
 namespace MimeTreeParser
 {
 class CompositeMemento;
-class CryptoBodyPartMemento;
 class MessagePartPrivate;
 namespace Interface
 {
