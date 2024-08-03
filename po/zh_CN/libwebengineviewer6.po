@@ -94,7 +94,7 @@ msgstr "词语未找到"
 #: webenginepage.cpp:159
 #, kde-format
 msgid "Save HTML Page"
-msgstr "保存 HTML 页"
+msgstr ""
 
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format

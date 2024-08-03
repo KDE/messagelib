@@ -1776,7 +1776,7 @@ msgstr "附件.1"
 #: utils/messageviewerutil.cpp:182
 #, kde-format
 msgid "Save Attachment"
-msgstr "保存附件"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format

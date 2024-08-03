@@ -50,7 +50,7 @@ msgstr "无法附加文件"
 #: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
 msgid "Failed to reload attachment"
-msgstr "无法重新加载附件"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
@@ -74,17 +74,17 @@ msgstr "打开方式(&O)..."
 #: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
 msgid "Failed to attach public key"
-msgstr "无法附加公钥"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
 msgid "Failed to attach vCard"
-msgstr "无法附加 vCard"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
 msgid "Failed to attach text from clipboard"
-msgstr "无法从剪贴板附加文本"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
@@ -247,7 +247,7 @@ msgstr "未命名"
 #: attachment/attachmentcontrollerbase.cpp:798
 #, kde-format
 msgid "Save Attachment As"
-msgstr "附件另存为"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -470,22 +470,22 @@ msgstr ""
 #: composer/composerviewbase.cpp:720
 #, kde-format
 msgid "OpenPGP Key Expired"
-msgstr "OpenPGP 密钥已过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:720
 #, kde-format
 msgid "S/MIME Certificate Expired"
-msgstr "S/MIME 证书已过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
-msgstr "OpenPGP 密钥即将过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:722
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
-msgstr "S/MIME 证书即将过期"
+msgstr ""
 
 #: composer/composerviewbase.cpp:797 composer/composerviewbase.cpp:811
 #: composer/composerviewbase.cpp:843
