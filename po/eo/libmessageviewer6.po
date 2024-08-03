@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 21:06+0200\n"
+"PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1836,8 +1836,7 @@ msgid "attachment.1"
 msgstr "kunsendaĵo.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Konservi Aldonaĵon"
@@ -2700,12 +2699,3 @@ msgstr "Sekva Mesaĝo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
-
-#~ msgid "Export Rules"
-#~ msgstr "Eksporti Regulojn"
-
-#~ msgid "Import Rules"
-#~ msgstr "Importi Regulojn"
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "Kontroli Phishing URL"

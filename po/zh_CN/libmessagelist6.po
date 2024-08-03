@@ -1489,18 +1489,16 @@ msgid "New Aggregation"
 msgstr "新建聚合"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
-msgstr "导入聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
-msgstr "导出聚合"
+msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1576,18 +1574,16 @@ msgid "Delete Theme"
 msgstr "删除主题"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
-msgstr "导入主题"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
-msgstr "导出主题"
+msgstr ""
 
 #: utils/optionseteditor.cpp:27
 #, kde-format
@@ -1632,11 +1628,10 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
-msgstr "默认可见"
+msgstr ""
 
 #: utils/themeeditor.cpp:84
 #, kde-format
@@ -1645,11 +1640,10 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
-msgstr "包含“发件人或收件人”字段"
+msgstr ""
 
 #: utils/themeeditor.cpp:89
 #, kde-format

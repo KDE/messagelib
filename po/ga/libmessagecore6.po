@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -302,7 +302,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr ""
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

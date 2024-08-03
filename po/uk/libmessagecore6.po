@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-06-26 20:32+0300\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 09:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -296,7 +296,7 @@ msgstr "Колір, який буде використано для першог
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Показати власний профіль"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -342,7 +342,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-06-26 12:26+0200\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 05:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -294,7 +294,7 @@ msgstr "To je barva prve ravni navedenega besedila"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Prikaži lastno identiteto"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -338,7 +338,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

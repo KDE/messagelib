@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-06-26 14:25+0200\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 17:58+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -302,7 +302,7 @@ msgstr "Questo è il colore usato per il primo livello di testo citato"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Mostra la propria identità"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -348,7 +348,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

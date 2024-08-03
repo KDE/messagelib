@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-23 05:51+0100\n"
+"PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -74,7 +74,7 @@ msgstr "Salti al antaŭa kongruo"
 #: findbar/findbarbase.cpp:71
 #, kde-format
 msgid "Options"
-msgstr "Opcioj"
+msgstr "Elektebloj"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
@@ -93,8 +93,7 @@ msgid "Phrase not found"
 msgstr "Frazo ne trovita"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Konservi HTML-paĝon"

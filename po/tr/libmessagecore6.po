@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:41+0000\n"
-"PO-Revision-Date: 2024-06-26 14:22+0300\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 14:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413102213.000000\n"
 
@@ -299,7 +299,7 @@ msgstr "Bu, 1. düzey alıntı metni için kullanılacak renktir"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Kendi kimliğimi görüntüle"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -344,7 +344,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:417
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

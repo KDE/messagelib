@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 21:06+0200\n"
+"PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -54,8 +54,7 @@ msgid "Failed to attach file"
 msgstr "Malsukcesis alligi dosieron"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Malsukcesis reŝargi aldonaĵon"
@@ -80,22 +79,19 @@ msgid "&Open With..."
 msgstr "&Malfermi Per..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Malsukcesis alligi publikan ŝlosilon"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Malsukcesis kunligi vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Malsukcesis alligi tekston el tondujo"
@@ -243,8 +239,7 @@ msgid "Unable to open attachment"
 msgstr "Ne eblas malfermi aldonaĵon"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
 msgstr "KMail ne povis malfermi la aldonaĵon."
 
@@ -260,8 +255,7 @@ msgid "unnamed"
 msgstr "sennoma"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Konservi kunsendaĵon kiel"
@@ -481,29 +475,25 @@ msgid "Do Not Resize"
 msgstr "Ne Regrandigi"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-ŝlosilo Eksvalidiĝis"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-Atestilo Eksvalidiĝis"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-ŝlosilo baldaŭ nevalidiĝas"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-atestilo baldaŭ nevalidiĝas"
@@ -2400,6 +2390,3 @@ msgstr "Poŝtsendisto eksterrete."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Meti Enreta"
-
-#~ msgid "Failed to attach file"
-#~ msgstr "Malsukcesis alligi dosieron"

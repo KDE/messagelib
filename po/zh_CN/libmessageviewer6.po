@@ -1767,11 +1767,10 @@ msgid "attachment.1"
 msgstr "附件.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "保存附件"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format
@@ -2603,6 +2602,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "检查钓鱼链接"
