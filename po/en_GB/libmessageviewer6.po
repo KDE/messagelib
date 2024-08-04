@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-17 00:40+0000\n"
-"PO-Revision-Date: 2024-07-05 13:51+0100\n"
+"PO-Revision-Date: 2024-08-03 13:49+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -2660,9 +2660,7 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML code for displaying the message to the user"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Open folder where attachment was saved"
@@ -2674,9 +2672,7 @@ msgid "Open File"
 msgstr "Open File"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
@@ -2684,8 +2680,7 @@ msgstr[0] "Open folder where attachment was saved"
 msgstr[1] "Open folder where attachment was saved"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Open folder where PDF file was saved"
