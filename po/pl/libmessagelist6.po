@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-14 12:29+0200\n"
+"PO-Revision-Date: 2024-08-03 11:52+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1524,15 +1524,13 @@ msgid "New Aggregation"
 msgstr "Nowe grupowanie"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Zaimportuj grupowanie"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Wyeksportuj grupowanie"
@@ -1611,15 +1609,13 @@ msgid "Delete Theme"
 msgstr "Usuń wygląd"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Zaimportuj wygląd"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Wyeksportuj wygląd"
@@ -1667,8 +1663,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Porządek szeregowania, na który przełącza naciśnięcie na tę kolumnę."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Domyślnie widoczny"
@@ -1680,8 +1675,7 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Włącz tę opcję, jeśli kolumna ma być widoczna przy wybranym wystroju."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Zawiera pole \"Nadawca lub adresat\""

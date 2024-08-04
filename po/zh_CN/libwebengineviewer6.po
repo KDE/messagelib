@@ -27,7 +27,7 @@ msgstr "开发者工具"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: findbar/findbarbase.cpp:42
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "查找(&I)："
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr ""
+msgstr "要查找的文本"
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -56,7 +56,7 @@ msgstr "下一个"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr ""
+msgstr "跳转到下一个匹配项"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -68,7 +68,7 @@ msgstr "上一个"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr ""
+msgstr "跳转到上一个匹配项"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -79,7 +79,7 @@ msgstr "选项"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr ""
+msgstr "更改搜索行为"
 
 #: findbar/findbarbase.cpp:74
 #, kde-format
@@ -89,13 +89,13 @@ msgstr "区分大小写"
 #: findbar/findbarbase.cpp:91
 #, kde-format
 msgid "Phrase not found"
-msgstr "词语未找到"
+msgstr "没有找到语句"
 
 #: webenginepage.cpp:152
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
-msgstr ""
+msgstr "保存 HTML 页面"
 
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
@@ -126,7 +126,7 @@ msgstr "详细信息："
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] "来自企业 %2 的 %1 个跟踪器 (%3)"
+msgstr[0] "来自 %2 公司的 %1 个跟踪器 (%3)"
 
 #: widgets/zoomactionmenu.cpp:127
 #, kde-format

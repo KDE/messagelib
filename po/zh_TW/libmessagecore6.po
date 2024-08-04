@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-03 00:40+0000\n"
-"PO-Revision-Date: 2024-06-30 11:15+0900\n"
+"PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -277,7 +277,7 @@ msgstr "第一層引言文字所使用的顏色"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "顯示自己的身份"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58

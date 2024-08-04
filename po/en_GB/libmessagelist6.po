@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-06-22 12:54+0100\n"
+"PO-Revision-Date: 2024-08-03 12:46+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1114,15 +1114,13 @@ msgid "Name:"
 msgstr "Name:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Save Filter..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Configure..."
@@ -1513,15 +1511,13 @@ msgid "New Aggregation"
 msgstr "New Aggregation"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Import Aggregation"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Export Aggregation"
@@ -1600,15 +1596,13 @@ msgid "Delete Theme"
 msgstr "Delete Theme"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Import Theme"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Export Theme"
@@ -1656,8 +1650,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "The sorting order that clicking on this column header will switch to."
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Visible by default"
@@ -1669,8 +1662,7 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Tick this if this column should be visible when the theme is selected."
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Contains \"Sender or Receiver\" field"

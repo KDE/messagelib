@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-23 16:26+0900\n"
+"PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: Traditional Chinese\n"
@@ -92,8 +92,7 @@ msgid "Phrase not found"
 msgstr "找不到該片語"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "儲存 HTML 頁面"
