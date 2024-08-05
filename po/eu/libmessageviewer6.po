@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-20 12:56+0200\n"
+"PO-Revision-Date: 2024-08-04 09:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -568,8 +568,7 @@ msgid "Modify Rule"
 msgstr "Aldatu araua"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Gaituta"
@@ -1838,8 +1837,7 @@ msgid "attachment.1"
 msgstr "eranskina.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Gorde eranskina"
