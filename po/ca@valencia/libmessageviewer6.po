@@ -1855,8 +1855,7 @@ msgid "attachment.1"
 msgstr "adjunt.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Guarda l'adjunt"
@@ -2721,12 +2720,3 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid "Export Rules"
-#~ msgstr "Exporta les regles"
-
-#~ msgid "Import Rules"
-#~ msgstr "Importa algunes regles"
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "Comprovació d'URL de pesca"

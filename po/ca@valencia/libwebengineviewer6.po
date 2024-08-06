@@ -99,8 +99,7 @@ msgid "Phrase not found"
 msgstr "No s'ha trobat la frase"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Guarda la pàgina en HTML"
