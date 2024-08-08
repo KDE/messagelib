@@ -142,7 +142,6 @@ void ProtectedHeadersJob::process()
     }
 
     if (d->obvoscate && subject) {
-        subject->clear();
         subject->from7BitString("...");
     }
     auto contentType = d->content->header<KMime::Headers::ContentType>();
