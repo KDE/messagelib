@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-22 23:48+0200\n"
+"PO-Revision-Date: 2024-08-07 11:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -562,8 +562,7 @@ msgid "Modify Rule"
 msgstr "Промяна на правило"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Включено"
@@ -1841,11 +1840,10 @@ msgid "attachment.1"
 msgstr "прикрепен файл.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "Запазване на прикачените"
+msgstr "Запазване на прикачените файлове"
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format
