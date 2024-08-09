@@ -1099,7 +1099,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
         d->mMsg->cc()->fromUnicodeString(d->mMsg->cc()->asUnicodeString() + QLatin1Char(',') + d->mCC);
     }
 
-    d->mMsg->contentType()->clear(); // to get rid of old boundary
+    d->mMsg->removeHeader<KMime::Headers::ContentType>(); // to get rid of old boundary
 
     // const QByteArray boundary = KMime::multiPartBoundary();
     KMime::Content *const mainTextPart = htmlBody.isEmpty() ? createPlainPartContent(plainBody) : createMultipartAlternativeContent(plainBody, htmlBody);
