@@ -21,7 +21,7 @@
 class QCheckBox;
 
 class QComboBox;
-class KPluralHandlingSpinBox;
+class QSpinBox;
 class QLineEdit;
 
 namespace MessageList
@@ -217,7 +217,7 @@ private:
 
     // Advanced tab
     QComboBox *mViewHeaderPolicyCombo = nullptr;
-    KPluralHandlingSpinBox *mIconSizeSpinBox = nullptr;
+    QSpinBox *mIconSizeSpinBox = nullptr;
 };
 } // namespace Utils
 } // namespace MessageList

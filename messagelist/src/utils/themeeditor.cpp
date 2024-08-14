@@ -11,6 +11,8 @@
 #include "core/messageitem.h"
 #include "core/modelinvariantrowmapper.h"
 #include "utils/comboboxutils.h"
+#include <KLocalization>
+#include <ki18n_version.h>
 
 #include <Akonadi/MessageStatus>
 
@@ -33,11 +35,11 @@
 
 #include <KIconLoader>
 #include <KLocalizedString>
-#include <KPluralHandlingSpinBox>
 #include <QColorDialog>
 #include <QComboBox>
 #include <QLineEdit>
 #include <QMenu>
+#include <QSpinBox>
 
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -1439,12 +1441,14 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     l = new QLabel(i18nc("@label:textbox", "Icon size:"), tab);
     tabg->addWidget(l, 1, 0);
 
-    mIconSizeSpinBox = new KPluralHandlingSpinBox(tab);
+    mIconSizeSpinBox = new QSpinBox(tab);
     mIconSizeSpinBox->setMinimum(8);
     mIconSizeSpinBox->setMaximum(64);
-    mIconSizeSpinBox->setSuffix(ki18ncp("suffix in a spinbox", " pixel", " pixels"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+    KLocalization::setupSpinBoxFormatString(mIconSizeSpinBox, ki18ncp("suffix in a spinbox", " pixel", " pixels"));
+#endif
 
-    QObject::connect(mIconSizeSpinBox, &KPluralHandlingSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
+    QObject::connect(mIconSizeSpinBox, &QSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
 
     tabg->addWidget(mIconSizeSpinBox, 1, 1);
 
