@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-28 22:11+0100\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 23:00+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -405,6 +405,12 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Kulcsok törlése"
 
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "Keresés…"
+
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
@@ -422,8 +428,9 @@ msgstr "Mellőzés, ha nincs aláírva"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Export..."
-msgstr "Exportálás..."
+msgstr "Exportálás…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -433,13 +440,15 @@ msgstr "Szabály beállítása"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Szabály hozzáadása…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Import..."
-msgstr "Importálás..."
+msgstr "Importálás…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -447,18 +456,16 @@ msgid "No rules found"
 msgstr "Nem találhatók szabályok"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Szabályok exportálása"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Szabályok exportálása"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Szabályok importálása"
 
@@ -466,12 +473,6 @@ msgstr "Szabályok importálása"
 #, kde-format
 msgid "No rules imported."
 msgstr "Nem lettek importálva szabályok."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Szabályok importálása"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -563,27 +564,30 @@ msgid "Modify Rule"
 msgstr "Szabály módosítása"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enabled"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
 msgstr "Tartomány:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "Listaazonosító:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "Feladó:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Használja a „*”-ot a tartomány összes e-mailjének megadásához"
 
@@ -795,88 +799,88 @@ msgstr "%1: Érvényes"
 msgid "Not Signed"
 msgstr "Nincs aláírva"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
 msgstr "Üzenetazonosító:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "Címzett:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "Válaszcím:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "Másolat:"
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "Titkos másolat:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "Feladó:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "újraküldte:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "újracímezve:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "A(z) „%1” Grantlee téma nem érvényes."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Nincs tárgy"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Kéretlenség:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "Nyomtatási mód"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "Mellékletek:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "Biztonság:"
@@ -984,23 +988,23 @@ msgstr "Feladó: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Címzett: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "Másolat: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "Titkos másolat: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "Válaszcím: "
@@ -1223,6 +1227,12 @@ msgstr "Engedélyezve"
 msgid "Blocked"
 msgstr "Tiltva"
 
+#: remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "Tartomány:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
@@ -1236,21 +1246,25 @@ msgstr "A levél becsapós lehet. <a href=\"scamdetails\">(Részletek…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
-msgstr "Áthelyezés a törölt üzenetek közé"
+msgstr "Áthelyezés a Kukába"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Megerősítem, ez nem becsapós"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "E-mail hozzáadása az engedélyezési listához"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Becsapásészlelés letiltása minden levélnél"
 
@@ -1335,6 +1349,322 @@ msgstr "A(z) „%1” kibontása lehetetlen."
 msgid "Short url '%1' redirects to '%2'."
 msgstr "A rövid „%1” URL átirányít ide: „%2”."
 
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Csak a megjelenítőben kijelölt szöveg nyomtatása"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Kibontás/összecsukás idézőjelek beállításainak tiszteletben tartása "
+"nyomtatáskor."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"Megadja, hogy a háttérszín és a képek is meg legyenek-e jelenítve az oldal "
+"nyomtatásakor."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"A titkosítás/aláírás részletei mindig jelenjenek meg az üzenet nyomtatásakor"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr "A html renderelésekor ne használjon a minimálisnál kisebb betűméretet."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Az üzenet törzséhez használt betűtípus megadása"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "A nyomtatáshoz használt betűtípus megadása"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "URL ellenőrzése, hogy nem-e adathalász"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Üzenetablak bezárása az üzenet megválaszolása vagy továbbítása után"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Kibontható-összecsukható idézőjelek mutatása"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Jelölje be ezt az opciót, ha többszintű idézést szeretne. Kapcsolja ki, ha "
+"el szeretné rejteni az idézett szöveg szintjeit."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatikus összecsukási szint:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Az idézett szöveg betűméretének lecsökkentése"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Jelölje be ezt az opciót, ha az idézett szöveget kisebb betűmérettel "
+"szeretné megjeleníteni."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "Megtekintéskor automatikus vagy kérésre történő legyen-e a dekódolás"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Üzenetstruktúra-megjelenítő"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "Soha"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "Mindig"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Milyen fejlécstílus jelenjen meg"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Mennyi jelenjen meg a fejlécekből"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "HTML használata egyszerű szöveg helyett"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Külső internetes hivatkozások engedélyezése az üzenetekben"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "A mellékletek megjelenítési módja"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "Megadja, hogy az idézet színét a 3. szint után újrahasználja-e"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Hozzáférési kulcs aktiválása"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"A KMail képes elemezni az üzeneteket feltételezett becsapós levelekhez olyan "
+"gyakori technikák keresésével, amelyeket arra használnak, hogy becsapják önt."
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Levelek listája a becsapós fehér listán"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Követő URL-ek keresése az e-mailekben"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Nem kell MDN-t küldeni titkosított üzeneteknél"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "A From:/To: fejlécek átalakítása válaszra adott válaszban"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"A Microsoft Outlookban sajnos nem teljesaz iCalendar szabvány támogatása. Ez "
+"az opció az egyik fogyatékosságon próbál segíteni. Ha azt tapasztalja, hogy "
+"az Outlookot használó partnerek nem kapják meg az Önválaszüzeneteit, "
+"próbálja bejelölni ezt az opciót."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "A csoportmunka-meghívók szövege az üzenettörzsbe kerüljön"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"A Microsoft Outlooknak számos hiányossága van az iCalendar szabvány "
+"megvalósításában; ez a beállítás ezek egyikét kerüli meg. Ha a meghívásait "
+"az Outlook-felhasználók nem kapják meg, jelölje be ezt az opciót."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Exchange-kompatibilis meghívónevek"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"A Microsoft Outlook levelezőprogram hibásan dolgozza fel a szabványos "
+"csoportmunka-üzeneteket, ha Microsoft Exchnage-kiszolgálóhoz kapcsolódik. Ha "
+"ez be van jelölve, a csoportmunka-meghívók olyan formátumúak lesznek, hogy a "
+"Microsoft Exchange fel tudja dolgozni."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatikus meghívóküldés"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Ha ez be van jelölve, nem lesz látható az üzenetszerkesztő ablak, hanem "
+"automatikusan el lesznek küldve a meghívók. Ha elküldés előtt meg szeretné "
+"tekinteni az üzenetet, ne jelölje be ezt az opciót. Ne felejtse el, hogy a "
+"szerkesztőablakban látható szöveg iCalendar-formátumú, ezért inkább ne "
+"szerkessze kézzel."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "A meghívó e-mailek törlése, ha már elment rájuk a válasz"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Ha ez be van jelölve, a törölt üzenetekhez kerülnek a kapott meghívó e-"
+"mailek, miután elküldte rájuk a választ."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Állandó szé&lességű betűtípus"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
+msgid "The most recent selected folder used for Todo."
+msgstr "A legutoljára kiválasztott mappa használva a teendőkhöz."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
+msgid "The most recent selected folder used for Event."
+msgstr "A legutoljára kiválasztott mappa használva a eseményekhez."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
+msgid "The most recent selected folder used for Notes."
+msgstr "A legutoljára kiválasztott mappa használva a jegyzetekhez."
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
@@ -1417,12 +1747,6 @@ msgstr "A&utomatikus meghívóküldés"
 msgid "Options"
 msgstr "Beállítások"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "A meghívó e-mailek törlése, ha már elment rájuk a válasz"
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1489,41 +1813,43 @@ msgstr "Automatikus összecsukási s&zint:"
 msgid "&Minimum font size:"
 msgstr "&Minimális betűméret:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Már létezik \"%1\" nevű fájl. Felül szeretné írni?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Felülírás?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "A mellékletek mentése"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "melléklet.1"
 
-#: utils/messageviewerutil.cpp:200
-#, kde-format
+#: utils/messageviewerutil.cpp:182
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Melléklet mentése"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "melléklet.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1531,22 +1857,24 @@ msgid ""
 msgstr ""
 "Az üzenet %1 része titkosított. Meg szeretné tartani a titkosítást mentéskor?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "Kérdés - KMail"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:306
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "A titkosítás megőrzése"
+msgstr "Titkosítás megőrzése"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Nem kell megőrizni"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1555,13 +1883,14 @@ msgstr ""
 "Az üzenet %1 része elektronikusan alá van írva. Meg szeretné tartani az "
 "aláírást mentéskor?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:319
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "Az aláírás megőrzése"
+msgstr "Aláírás megőrzése"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1571,78 +1900,78 @@ msgstr ""
 "<qt>Nem sikerült írni a következő fájlba<br /><filename>%1</filename><br /"
 "><br />%2<br /></qt>"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Hiba a melléklet mentésekor"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Nem sikerült elmenteni a mellékletet"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Nincs lementhető melléklet."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, kde-format
 msgid "message"
 msgstr "üzenet"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "e-mail üzenetek (*.mbox);;minden fájl (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Üzenet mentése"
 msgstr[1] "Üzenetek mentése"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "A(z) %1 fájlt nem sikerült betölteni."
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Hiba az üzenet betöltése közben"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "A(z) %1 fájlt nem sikerült létrehozni."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Hiba az üzenet mentése közben"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "We cannot save message."
 msgstr "Nem tudjuk elmenteni az üzenetet."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
 msgstr "Hiba az üzenet mentése közben"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Törölve: %1"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1651,12 +1980,12 @@ msgstr ""
 "Törölt egy mellékletet ebből az üzenetből. A melléklet eredeti MIME-fejlécei "
 "a következők voltak:"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, kde-format
 msgid "Open &with %1"
 msgstr "Me&gnyitás ezzel: %1"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1682,12 +2011,12 @@ msgstr "Típus"
 msgid "Size"
 msgstr "Méret"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr "Nem sikerült nyomtatási előnézetet generálni."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
@@ -1698,7 +2027,7 @@ msgstr "Dokumentum nyomtatása"
 msgid "Turn on HTML rendering for this message."
 msgstr "A HTML üzenetmegjelenítés bekapcsolása."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Az üzenet külső internetes hivatkozásainak betöltése."
@@ -1780,7 +2109,7 @@ msgstr "Megny&itás a címjegyzékben"
 msgid "&Copy Email Address"
 msgstr "Az e-mail cím &másolása"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "A címet a vágólapra másoltam."
@@ -1828,10 +2157,11 @@ msgstr "Biztosan futtatni szeretné ezt: <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "Üzenet betöltése…"
@@ -1878,13 +2208,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Megnyitás e&zzel…"
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Megnyitás"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1900,12 +2230,12 @@ msgstr "Görgetés ide:"
 msgid "Save As..."
 msgstr "Mentés másként..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Másolás"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "A melléklet törlése"
@@ -1920,7 +2250,7 @@ msgstr "Válasz a feladónak"
 msgid "Reply To All"
 msgstr "Válasz mindenkinek"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "Tulajdonságok"
@@ -1935,271 +2265,273 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "A KDE levelezőkliense"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Melléklet megtekintése: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "M&ellékletek"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Válassza ki a mellékletek megjelenítési módját"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Ikonként"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "A mellékletek ikonként jelennek meg, melyek kattintással megnyithatók."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "A feladó által &javasolt módon"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "A mellékletek a feladó által javasolt módon jelenjenek meg."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Beá&gyazva"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "A mellékletek tartalma közvetlenül a szövegben jelenjen meg, ha lehetséges."
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Elrejtés"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Az üzenetablakban ne legyenek láthatóak a mellékletek"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Csak a fejlécben"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mellékletek megjelenítése csak a levél fejlécében"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "A kó&dolás beállítása"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "automatikus"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "Szöveg másolása"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1543
 #, kde-format
+msgctxt "@action"
 msgid "Select All Text"
-msgstr "Az összes szöveg kijelölése"
+msgstr "Minden szöveg kijelölése"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "A link címének kimásolása"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Állandó szé&lességű betűtípus"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Üzenetstruktúra megjelenítése"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, kde-format
+msgctxt "@action"
 msgid "&View Source"
-msgstr "A f&orrás megjelenítése"
+msgstr "Forrás &megtekintése"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
-msgstr "&Megjelenítési formátum mentése"
+msgstr "Megjelenítési formátum menté&se"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Megjelenítési formátum &visszaállítása"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Felfelé görrgetés"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Lefelé görgetés"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Felfelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Lefelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-megjelenítési mód be/ki"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Megjelenítési mód váltása HTML és egyszerű szöveg között"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Külső hivatkozások betöltése"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1630
 #, kde-format
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Szöveg megosztása…"
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, kde-format
+msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "A kép címének másolása"
+msgstr "Kép címének másolása"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Ker&esés az üzenet szövegében..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Hangulatjelek kikapcsolása"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Mentés m&int..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Megnyitás ezzel..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Az összes melléklet mentése…"
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "A hálózat nem működik."
 
-#: viewer/viewer_p.cpp:1981
-#, kde-format
-msgid "Check Phishing URL"
-msgstr "Adathalász URL ellenőrzése"
-
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgid "The URL %1 is not valid."
-msgstr "A(z) %1 URL-cím érvénytelen."
-
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Adathalász URL ellenőrzése"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "A(z) %1 URL-cím érvénytelen."
+
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "A weboldal káros tevékenységet folytat, biztosan folytatni szeretné a "
 "megjelenítését?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Email Address"
 msgstr "E-mail cím másolása"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Az üzenet egyszerű szövegként"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Az URL-t a vágólapra másoltam."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Az üzenet betöltése sikertelen: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message not found."
 msgstr "Az üzenet nem található."
@@ -2304,6 +2636,11 @@ msgstr ""
 "üzeneteket fognak kapni.<br />A szabványos meghívókat kezelni tudó programok "
 "az opció bejelölésekor is használhatók maradnak.</qt>"
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Szöveg felolvasása"
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
@@ -2330,7 +2667,7 @@ msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Mappa megnyitása, ahová a melléklet mentve lett"
 
@@ -2342,6 +2679,7 @@ msgstr "Fájl megnyitása"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Mappa megnyitása, ahová a melléklet mentve lett"
@@ -2349,6 +2687,7 @@ msgstr[1] "Mappa megnyitása, ahová a mellékletek mentve lettek"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Mappa megnyitása, ahová a PDF-fájl mentve lett"
 
@@ -2359,105 +2698,24 @@ msgstr "A KMail nem tudta megnyitni a mellékletet."
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Következő üzenet"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, kde-format
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
 
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Csak a megjelenítőben kijelölt szöveg nyomtatása"
+#~ msgid "Export Rules"
+#~ msgstr "Szabályok exportálása"
 
-#, fuzzy
-#~| msgid "Respect expand collapse quote mark defined settings when printing"
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "Az összecsukott idézőjelek által meghatározott beállítások kinyitásának "
-#~ "figyelembe vétele nyomtatáskor"
+#~ msgid "Import Rules"
+#~ msgstr "Szabályok importálása"
 
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Megadja, hogy a háttérszín és a képek is meg legyenek-e jelenítve az "
-#~ "oldal nyomtatásakor."
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "A html renderelésekor ne használjon a minimálisnál kisebb betűméretet."
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Kibontható-összecsukható idézőjelek mutatása"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Jelölje be ezt az opciót, ha többszintű idézést szeretne. Kapcsolja ki, "
-#~ "ha el szeretné rejteni az idézett szöveg szintjeit."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Automatikus összecsukási szint:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Az idézett szöveg betűméretének lecsökkentése"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "Jelölje be ezt az opciót, ha az idézett szöveget kisebb betűmérettel "
-#~ "szeretné megjeleníteni."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Megtekintéskor automatikus vagy kérésre történő legyen-e a dekódolás"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Üzenetstruktúra-megjelenítő"
-
-#~ msgid "Show never"
-#~ msgstr "Soha"
-
-#~ msgid "Show always"
-#~ msgstr "Mindig"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Milyen fejlécstílus jelenjen meg"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Mennyi jelenjen meg a fejlécekből"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "HTML használata egyszerű szöveg helyett"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Külső internetes hivatkozások engedélyezése az üzenetekben"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "A mellékletek megjelenítési módja"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr "Megadja, hogy az idézet színét a 3. szint után újrahasználja-e"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Hozzáférési kulcs aktiválása"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "A KMail képes elemezni az üzeneteket feltételezett becsapós levelekhez "
-#~ "olyan gyakori technikák keresésével, amelyeket arra használnak, hogy "
-#~ "becsapják önt."
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "Levelek listája a becsapós fehér listán"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "Nem kell MDN-t küldeni titkosított üzeneteknél"
+#~ msgid "Check Phishing URL"
+#~ msgstr "Adathalász URL ellenőrzése"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
@@ -2473,82 +2731,11 @@ msgstr "Előző üzenet"
 #~ "Meghatározza az alapértelmezett idézési műveletet válaszüzenet írása "
 #~ "esetére (csak belső használatra)"
 
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "A From:/To: fejlécek átalakítása válaszra adott válaszban"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "A Microsoft Outlookban sajnos nem teljesaz iCalendar szabvány támogatása. "
-#~ "Ez az opció az egyik fogyatékosságon próbál segíteni. Ha azt tapasztalja, "
-#~ "hogy az Outlookot használó partnerek nem kapják meg az Önválaszüzeneteit, "
-#~ "próbálja bejelölni ezt az opciót."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "A csoportmunka-meghívók szövege az üzenettörzsbe kerüljön"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "A Microsoft Outlooknak számos hiányossága van az iCalendar szabvány "
-#~ "megvalósításában; ez a beállítás ezek egyikét kerüli meg. Ha a "
-#~ "meghívásait az Outlook-felhasználók nem kapják meg, jelölje be ezt az "
-#~ "opciót."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Exchange-kompatibilis meghívónevek"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "A Microsoft Outlook levelezőprogram hibásan dolgozza fel a szabványos "
-#~ "csoportmunka-üzeneteket, ha Microsoft Exchnage-kiszolgálóhoz kapcsolódik. "
-#~ "Ha ez be van jelölve, a csoportmunka-meghívók olyan formátumúak lesznek, "
-#~ "hogy a Microsoft Exchange fel tudja dolgozni."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Automatikus meghívóküldés"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "Ha ez be van jelölve, nem lesz látható az üzenetszerkesztő ablak, hanem "
-#~ "automatikusan el lesznek küldve a meghívók. Ha elküldés előtt meg "
-#~ "szeretné tekinteni az üzenetet, ne jelölje be ezt az opciót. Ne felejtse "
-#~ "el, hogy a szerkesztőablakban látható szöveg iCalendar-formátumú, ezért "
-#~ "inkább ne szerkessze kézzel."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "Ha ez be van jelölve, a törölt üzenetekhez kerülnek a kapott meghívó e-"
-#~ "mailek, miután elküldte rájuk a választ."
-
 #~ msgid "The most recent selected folder using for Todo."
 #~ msgstr "A legutoljára kiválasztott mappa használva a feladathoz."
 
 #~ msgid "The most recent selected folder using for Event."
 #~ msgstr "A legutoljára kiválasztott mappa használva az eseményhez."
-
-#, fuzzy
-#~| msgid "The most recent selected folder using for Todo."
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "A legutoljára kiválasztott mappa használva a feladathoz."
 
 #~ msgid "Edit with:"
 #~ msgstr "Szerkesztés ezzel:"
@@ -2881,9 +3068,6 @@ msgstr "Előző üzenet"
 
 #~ msgid "Address"
 #~ msgstr "Cím"
-
-#~ msgid "Search..."
-#~ msgstr "Keresés…"
 
 #~ msgid "Image"
 #~ msgstr "Kép"
@@ -3574,12 +3758,6 @@ msgstr "Előző üzenet"
 
 #~ msgid "&Cancel"
 #~ msgstr "&Mégsem"
-
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "A legutoljára kiválasztott mappa használva a eseményekhez."
-
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "A legutoljára kiválasztott mappa használva a teendőkhöz."
 
 #~ msgid "The message could not be decrypted."
 #~ msgstr "Az üzenetet nem sikerült visszafejteni."

@@ -11,6 +11,6 @@ namespace WebEngineViewer
 {
 namespace WebEngineAccessKeyUtils
 {
-[[nodiscard]] QString script();
+[[nodiscard]] QString accessKeyScript();
 }
 }

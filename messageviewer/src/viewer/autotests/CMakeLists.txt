@@ -4,6 +4,6 @@ macro(add_messageviewer_viewer_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt::Test KPim6::MessageViewer Qt::PrintSupport)
-endmacro ()
+endmacro()
 
 add_messageviewer_viewer_unittest(printmessagetest.cpp)

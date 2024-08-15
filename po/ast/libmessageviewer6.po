@@ -1,0 +1,2579 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Enol P. <enolp@softastur.org>
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-03-27 23:36+0100\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+msgid "Sorry, certificate could not be imported."
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+msgid "Sorry, no certificates were found in this message."
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+msgid "Certificate import status:"
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] ""
+msgstr[1] ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] ""
+msgstr[1] ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] ""
+msgstr[1] ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] ""
+msgstr[1] ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+msgid "Certificate import details:"
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr ""
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+msgid "Encapsulated message"
+msgstr ""
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+msgid "End of encapsulated message"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+msgid "Please wait while the message is being decrypted..."
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+msgid "The message is encrypted for the following keys:"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:146
+msgid "Hide Details"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:69
+msgid "unknown key"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:32
+#, kde-format
+msgctxt "Compliance: status/type of compliance"
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:38
+#, kde-format
+msgctxt "Encrypted message (status/type of compliance)"
+msgid "Encrypted message (%1)"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:40
+msgid "Encrypted message"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:43
+#: messagepartthemes/default/templates/signedmessagepart.html:174
+msgid "Show Details"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:48
+msgid "Encrypted message (decryption not possible)"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:51
+msgid "Reason: "
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:63
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+msgid "Could not decrypt the data."
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:81
+msgid "End of encrypted message"
+msgstr ""
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+msgid "Please wait while the signature is being verified..."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#: messagepartthemes/default/templates/signedmessagepart.html:115
+#: messagepartthemes/default/templates/signedmessagepart.html:134
+#, kde-format
+msgid "Message was signed by %1."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:99
+msgid "Message was signed with unknown key."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+msgid "Status: "
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+#: messagepartthemes/default/templates/signedmessagepart.html:131
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:102
+msgid "The validity of the signature cannot be verified."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:119
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:121
+msgid "The signature is valid and the key is marginally trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:123
+msgid "The signature is valid and the key is fully trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:125
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+msgid "The signature is valid, but the key is untrusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:137
+msgid "Warning: The signature is bad."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:142
+#, kde-format
+msgid "Compliance: %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+msgid "Invalid signature"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:156
+msgid "Not enough information to check signature validity"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:159
+#, kde-format
+msgid "Signed by <a href='mailto:%1'>%1</a>"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:161
+msgid "Signature is valid"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:164
+msgid "Unknown signature state"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:167
+#, kde-format
+msgctxt "Status of signature (status/type of compliance)"
+msgid "%1 (%2)"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:186
+msgid "End of signed message"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgctxt "@title:window"
+msgid "Key Changed"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#, kde-format
+msgid "DKIM Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#, kde-format
+msgid "Inserted"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#, kde-format
+msgid "Last Used"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#, kde-format
+msgid "Copy Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#, kde-format
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] ""
+msgstr[1] ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#, kde-format
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#, kde-format
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] ""
+msgstr[1] ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Delete All"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#, kde-format
+msgid "Do you want to delete all keys?"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Keys"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr ""
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, kde-format
+msgid "Must be signed"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, kde-format
+msgid "Can be signed"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, kde-format
+msgid "Ignore if not signed"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Export..."
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Rule..."
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Import..."
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgid "No rules found"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Rules"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Rules"
+msgstr ""
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: remote-content/remotecontentconfigurewidget.cpp:52
+#, kde-format
+msgid "Domain"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "Active"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "List-ID"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "From"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "Rule type"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#, kde-format
+msgid "Priority"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:196
+#: remote-content/remotecontentconfigurewidget.cpp:80
+#, kde-format
+msgid "Add..."
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:201
+#: remote-content/remotecontentconfigurewidget.cpp:83
+#, kde-format
+msgid "Modify..."
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:205
+#, kde-format
+msgid "Duplicate Rule"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, kde-format
+msgid "Remove Rule"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:211
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:212
+#: remote-content/remotecontentconfigurewidget.cpp:90
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Rule"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:225
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:226
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Rules"
+msgstr ""
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr ""
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, kde-format
+msgctxt "@option:check"
+msgid "Enabled"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:36
+#, kde-format
+msgid "Domain:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
+#, kde-format
+msgid "List-Id:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
+#, kde-format
+msgid "From:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Use '*' to specify all emails from domain"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, kde-format
+msgid "Recheck DKIM Signature"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:94
+#, kde-format
+msgid "Unknown"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:100
+#, kde-format
+msgid "DKIM: valid (signed by %1)"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:107
+#, kde-format
+msgid "DKIM: invalid"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: Not signed"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:115
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:131
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "Missing header From."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing signature."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, kde-format
+msgid "Invalid query method."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Signature algorithm is invalid."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, kde-format
+msgid "The public key was revoked."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, kde-format
+msgid "Signature is too large."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, kde-format
+msgid "Hash Algorithm is unsupported."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, kde-format
+msgid "Public key is too small."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Impossible to verify signature."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "Impossible to download key."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
+#, kde-format
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:185
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "Problem during converting public key"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:197
+#, kde-format
+msgid "Signature expired"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, kde-format
+msgid "Signature created in the future"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature too small"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:209
+#, kde-format
+msgid "Public Key too small"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:253
+#, kde-format
+msgid "%1: None"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:268
+#, kde-format
+msgid "%1: Valid (Signed by %2)"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:288
+#, kde-format
+msgid "%1: Valid"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:303
+#, kde-format
+msgid "Not Signed"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:203
+#, kde-format
+msgid "Subject:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:223
+#, kde-format
+msgid "Date:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:239
+#, kde-format
+msgid "Message-Id:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:263
+#, kde-format
+msgid "To:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:265
+#, kde-format
+msgid "Reply To:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:267
+#, kde-format
+msgid "CC:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:269
+#, kde-format
+msgid "BCC:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:273
+#, kde-format
+msgid "Sender:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:275
+#, kde-format
+msgid "resent from:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:277
+#, kde-format
+msgid "resent to:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:358
+#, kde-format
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
+#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
+#, kde-format
+msgid "No Subject"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:453
+#, kde-format
+msgid "Spam Status:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:465
+#, kde-format
+msgid "Printing mode"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:507
+#, kde-format
+msgid "[vcard]"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:514
+#, kde-format
+msgid "Attachments:"
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:540
+#, kde-format
+msgid "Security:"
+msgstr ""
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr ""
+
+#: header/headerstyle_util.cpp:145
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+
+#: header/headerstyle_util.cpp:154
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+
+#: header/headerstyle_util.cpp:163
+#, kde-format
+msgid "No Spam agent"
+msgstr ""
+
+#: header/headerstyle_util.cpp:166
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:169
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:172
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:175
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:178
+#, kde-format
+msgid "Error evaluating spam score"
+msgstr ""
+
+#: header/headerstyle_util.cpp:183
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr ""
+
+#: header/headerstylemenumanager.cpp:109
+#, kde-format
+msgid "Choose display style of message headers"
+msgstr ""
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr ""
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr ""
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr ""
+
+#: header/plainheaderstyle.cpp:121
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr ""
+
+#: header/plainheaderstyle.cpp:128
+#, kde-format
+msgid "CC: "
+msgstr ""
+
+#: header/plainheaderstyle.cpp:135
+#, kde-format
+msgid "BCC: "
+msgstr ""
+
+#: header/plainheaderstyle.cpp:140
+#, kde-format
+msgid "Reply to: "
+msgstr ""
+
+#: mdn/mdnwarningwidget.cpp:14
+#, kde-format
+msgctxt "@action"
+msgid "Ignore"
+msgstr ""
+
+#: mdn/mdnwarningwidget.cpp:15
+#, kde-format
+msgctxt "@action"
+msgid "Send"
+msgstr ""
+
+#: mdn/mdnwarningwidget.cpp:16
+#, kde-format
+msgctxt "@action"
+msgid "Send Deny"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:67
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:71
+#, kde-format
+msgid "Good signature"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:75
+#, kde-format
+msgid "Bad signature"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:79
+#, kde-format
+msgid "No public key to verify the signature"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:83
+#, kde-format
+msgid "No signature found"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:87
+#, kde-format
+msgid "Error verifying the signature"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:91
+#, kde-format
+msgid "Different results for signatures"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:111
+#, kde-format
+msgid "No status information available."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:118
+#: messagepartthemes/default/defaultrenderer.cpp:203
+#, kde-format
+msgid "Good signature."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:139
+#, kde-format
+msgid "One key has expired."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:143
+#, kde-format
+msgid "The signature has expired."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:155
+#, kde-format
+msgid "CRL not available."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:159
+#, kde-format
+msgid "Available CRL is too old."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:163
+#, kde-format
+msgid "A policy was not met."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:167
+#, kde-format
+msgid "A system error occurred."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:178
+#, kde-format
+msgid "One key has been revoked."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:205
+#, kde-format
+msgid "Bad signature."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:525
+#: messagepartthemes/default/defaultrenderer.cpp:527
+#, kde-format
+msgid "certificate"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:537
+#: messagepartthemes/default/defaultrenderer.cpp:556
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:538
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:538
+#, kde-format
+msgid "sender: "
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:539
+#, kde-format
+msgid "stored: "
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:557
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+
+#: remote-content/remotecontentconfiguredialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:52
+#, kde-format
+msgid "Status"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:89
+#, kde-format
+msgid "Do you want to delete this rule '%1'?"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:107
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:123
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:132
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:132
+#, kde-format
+msgctxt "@title:window"
+msgid "Add new Url"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:17
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:19
+#, kde-format
+msgid "Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, kde-format
+msgid "Blocked"
+msgstr ""
+
+#: remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr ""
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:34
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:39
+#, kde-format
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:44
+#, kde-format
+msgctxt "@action"
+msgid "I confirm it's not a scam"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Add email to whitelist"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:52
+#, kde-format
+msgctxt "@action"
+msgid "Disable scam detection for all messages"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:202
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:222
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:226
+#, kde-format
+msgid "Details:"
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr ""
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr ""
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr ""
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr ""
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
+msgid "The most recent selected folder used for Todo."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
+msgid "The most recent selected folder used for Event."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
+msgid "The most recent selected folder used for Notes."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, kde-format
+msgid "Always show encryption/signature details"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:19
+#, kde-format
+msgid "Viewer settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:47
+#, kde-format
+msgid "O&verride character encoding:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:79
+#, kde-format
+msgid "Enable access key"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:86
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:93
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:121
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:190
+#, kde-format
+msgid "&Minimum font size:"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:123
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:126
+#, kde-format
+msgctxt "@title:window"
+msgid "Overwrite File?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Save Attachments To"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:176
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:182
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Attachment"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:206
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:304
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
+#, kde-format
+msgid "KMail Question"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:306
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Encryption"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not Keep"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:317
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:319
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Signature"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#, kde-kuit-format
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:386
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving attachment"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#, kde-format
+msgid "Error saving attachment"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:435
+#, kde-format
+msgid "Found no attachments to save."
+msgstr ""
+
+#: utils/messageviewerutil.cpp:450
+#, kde-format
+msgid "message"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:472
+#, kde-format
+msgid "email messages (*.mbox);;all files (*)"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:483
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utils/messageviewerutil.cpp:508
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr ""
+
+#: utils/messageviewerutil.cpp:508
+#, kde-format
+msgctxt "@title:window"
+msgid "Error loading message"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:510
+#, kde-format
+msgid "File %1 could not be created."
+msgstr ""
+
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:521
+#, kde-format
+msgid "We cannot save message."
+msgstr ""
+
+#: utils/messageviewerutil.cpp:521
+#, kde-format
+msgid "Error saving message"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:585
+#, kde-format
+msgctxt "Argument is the original name of the deleted attachment"
+msgid "Deleted: %1"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:596
+#, kde-format
+msgid ""
+"You deleted an attachment from this message. The original MIME headers for "
+"the attachment were:"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:623
+#, kde-format
+msgid "Open &with %1"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:625
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr ""
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr ""
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr ""
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr ""
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr ""
+
+#: viewer/printmessage.cpp:68
+#, kde-format
+msgid "Could not generate print preview."
+msgstr ""
+
+#: viewer/printmessage.cpp:104
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:406
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:410
+#, kde-format
+msgid "Work online."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:412
+#, kde-format
+msgid "Make account online."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:414
+#, kde-format
+msgid "Decrypt message."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:416
+#, kde-format
+msgid "Show signature details."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:418
+#, kde-format
+msgid "Hide signature details."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:420
+#, kde-format
+msgid "Show encryption details."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:422
+#, kde-format
+msgid "Hide encryption details."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:427
+#, kde-format
+msgid "Open Documentation"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:461
+#, kde-format
+msgid "Expand all quoted text."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:463
+#, kde-format
+msgid "Collapse quoted text."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:532
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:534
+#, kde-format
+msgid "KMail Error"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:549
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:608
+#, kde-format
+msgid "&Open in Address Book"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:610
+#, kde-format
+msgid "&Copy Email Address"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:634
+#, kde-format
+msgid "Lookup the contact in KAddressbook"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Attachment: %1"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:813
+#, kde-format
+msgid "Encapsulated Message (Subject: %1)"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:815
+#, kde-format
+msgid "Encapsulated Message"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:818
+#, kde-format
+msgid "Unnamed attachment"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:853
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:894
+#, kde-format
+msgid "Opening URL..."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:903
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:905
+#, kde-format
+msgctxt "@action:button"
+msgid "Execute"
+msgstr ""
+
+#: viewer/viewer.cpp:146
+#, kde-format
+msgid "Loading message..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:344
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr ""
+
+#: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Attachment"
+msgstr ""
+
+#: viewer/viewer_p.cpp:379
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+
+#: viewer/viewer_p.cpp:428
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr ""
+
+#: viewer/viewer_p.cpp:446
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:448 viewer/viewer_p.cpp:461
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr ""
+
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr ""
+
+#: viewer/viewer_p.cpp:547
+#, kde-format
+msgid "Scroll To"
+msgstr ""
+
+#: viewer/viewer_p.cpp:552
+#, kde-format
+msgid "Save As..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
+#, kde-format
+msgid "Delete Attachment"
+msgstr ""
+
+#: viewer/viewer_p.cpp:580
+#, kde-format
+msgid "Reply To Author"
+msgstr ""
+
+#: viewer/viewer_p.cpp:588
+#, kde-format
+msgid "Reply To All"
+msgstr ""
+
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
+#, kde-format
+msgid "Properties"
+msgstr ""
+
+#: viewer/viewer_p.cpp:731
+#, kde-format
+msgid "KMail"
+msgstr ""
+
+#: viewer/viewer_p.cpp:732
+#, kde-format
+msgid "The KDE Mail Client"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1278
+#, kde-format
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1482
+#, kde-format
+msgid "Choose display style of attachments"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1485
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1488
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1492
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1495
+#, kde-format
+msgid "Show attachments as suggested by sender."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1499
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1502
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1506
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1509
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1513
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1521
+#, kde-format
+msgid "&Set Encoding"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1536
+#, kde-format
+msgid "Copy Text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1543
+#, kde-format
+msgctxt "@action"
+msgid "Select All Text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
+#, kde-format
+msgid "Copy Link Address"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Open URL"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "Show Message Structure"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1570
+#, kde-format
+msgctxt "@action"
+msgid "&View Source"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1575
+#, kde-format
+msgid "&Save Message..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1581
+#, kde-format
+msgctxt "@action"
+msgid "&Save Display Format"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1585
+#, kde-format
+msgctxt "@action"
+msgid "&Reset Display Format"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Message Up"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Message Down"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Message Up (More)"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1607
+#, kde-format
+msgctxt "@action"
+msgid "Scroll Message Down (More)"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1617
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1621
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1624
+#, kde-format
+msgctxt "@action"
+msgid "Load external references"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1630
+#, kde-format
+msgctxt "@action"
+msgid "Speak Text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1636
+#, kde-format
+msgctxt "@action"
+msgid "Share Text..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1654
+#, kde-format
+msgctxt "@action"
+msgid "Copy Image Location"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1660
+#, kde-format
+msgid "&Find in Message..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1669
+#, kde-format
+msgid "Disable Emoticon"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1735
+#, kde-format
+msgid "Save &As..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1743
+#, kde-format
+msgid "Open With..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1750
+#, kde-format
+msgid "Save All Attachments..."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1994
+#, kde-format
+msgid "The network is broken."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Phishing URL"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr ""
+
+#: viewer/viewer_p.cpp:2017
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr ""
+
+#: viewer/viewer_p.cpp:2018
+#, kde-format
+msgctxt "@title:window"
+msgid "Malware"
+msgstr ""
+
+#: viewer/viewer_p.cpp:2072
+#, kde-format
+msgid "Copy Email Address"
+msgstr ""
+
+#: viewer/viewer_p.cpp:2155
+#, kde-format
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:2726
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr ""
+
+#: viewer/viewer_p.cpp:2888
+#, kde-format
+msgid "Message loading failed: %1."
+msgstr ""
+
+#: viewer/viewer_p.cpp:2893
+#, kde-format
+msgid "Message not found."
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:39
+#, kde-format
+msgid "&Open With '%1'"
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:46
+#, kde-format
+msgid "Open &With..."
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr ""
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+
+#: widgets/htmlstatusbar.cpp:117
+#, kde-format
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+
+#: widgets/htmlstatusbar.cpp:121
+#, kde-format
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr ""
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:53
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:54
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:57
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:58
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action - For we don't know if it's one or many attachments"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/opensavedfilefolderwidget.cpp:65
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:78
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr ""
+
+#: widgets/shownextmessagewidget.cpp:15
+#, kde-format
+msgctxt "@action:button"
+msgid "Next Message"
+msgstr ""
+
+#: widgets/shownextmessagewidget.cpp:16
+#, kde-format
+msgctxt "@action:button"
+msgid "Previous Message"
+msgstr ""

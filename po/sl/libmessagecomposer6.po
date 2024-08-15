@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrej Vernekar <andrej.vernekar@gmail.com>, 2012.
-# Jure Repinc <jlp@holodeck1.com>, 2013.
+# SPDX-FileCopyrightText: 2013, 2024 Jure Repinc <jlp@holodeck1.com>
 # Andrej Mernik <andrejm@ubuntu.si>, 2015, 2016, 2017, 2018.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-09-26 09:33+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 06:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -20,234 +20,248 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: attachment/attachmentcontrollerbase.cpp:167
+#: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Stiskanje priloge ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:178
+#: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr "Stisnjena priloga je večja od izvirnika. Ali želite ohraniti izvirnik?"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:180
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Ohrani"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
+msgctxt "@action:button"
 msgid "Compress"
 msgstr "Stisni"
 
-#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Prilaganje datoteke ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:274
+#: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Ponovno nalaganje priloge ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:321
+#: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Odpri v"
 
-#: attachment/attachmentcontrollerbase.cpp:341
+#: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Ostalo..."
+msgstr "&Drugo …"
 
-#: attachment/attachmentcontrollerbase.cpp:343
-#: attachment/attachmentcontrollerbase.cpp:351
+#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Odpri z..."
+msgstr "&Odpri z …"
 
-#: attachment/attachmentcontrollerbase.cpp:377
+#: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Prilaganje javnega ključa ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:391
+#: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Prilaganje vizitke vCard ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:404
+#: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Prilaganje besedila z odložišča ni uspelo"
 
-#: attachment/attachmentcontrollerbase.cpp:452
+#: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
+msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&Priloži javni ključ..."
 
-#: attachment/attachmentcontrollerbase.cpp:455
+#: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Priloži &moj javni ključ"
 
-#: attachment/attachmentcontrollerbase.cpp:458
-#: attachment/attachmentcontrollerbase.cpp:463
-#: attachment/attachmentcontrollerbase.cpp:469
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:457
+#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "Attach"
 msgstr "Priloži"
 
-#: attachment/attachmentcontrollerbase.cpp:462
-#: composer/composerviewbase.cpp:1901
+#: attachment/attachmentcontrollerbase.cpp:461
 #, kde-format
 msgid "&Attach File..."
-msgstr "Priloži d&atoteko..."
+msgstr "Priloži d&atoteko …"
 
-#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Dodaj prilogo..."
+msgstr "Dodaj prilogo …"
 
-#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "Priloži m&apo..."
+msgstr "Priloži m&apo …"
+
+#: attachment/attachmentcontrollerbase.cpp:471
+#, kde-format
+msgctxt "@action"
+msgid "Attach Own vCard"
+msgstr "Priloži moj lastni vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#, kde-format
-msgid "Attach Own vCard"
-msgstr "Priloži moj vCard"
-
-#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Moj vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "Priloži vC&ard-e..."
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:480
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "Priloži besedilo z odložišča..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Priloži besedilo z odložišča"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Odst&rani prilogo"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: attachment/attachmentcontrollerbase.cpp:503
+#: attachment/attachmentcontrollerbase.cpp:502
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Odpri"
 
-#: attachment/attachmentcontrollerbase.cpp:508
+#: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Pokaži"
 
-#: attachment/attachmentcontrollerbase.cpp:513
+#: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Uredi"
 
-#: attachment/attachmentcontrollerbase.cpp:518
+#: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
+msgctxt "@action"
 msgid "Edit With..."
 msgstr "Uredi z..."
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Shrani prilogo kot..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "Save As..."
-msgstr "Shrani kot..."
+msgstr "Shrani kot …"
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:531
 #, kde-format
+msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Lastnosti pril&oge..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
+msgctxt "@action"
 msgid "Properties"
 msgstr "Lastnosti"
 
-#: attachment/attachmentcontrollerbase.cpp:541
+#: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
+msgctxt "@action"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: attachment/attachmentcontrollerbase.cpp:544
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
 msgstr "Znova naloži"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:755
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:703
+#: attachment/attachmentcontrollerbase.cpp:753
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail priloge ni mogel zapisati v začasno datoteko."
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Ni mogoče odpreti priloge"
 
-#: attachment/attachmentcontrollerbase.cpp:714
+#: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
-msgid "KMail was unable to open the attachment."
-msgstr "KMail priloge ni mogel odpreti."
+msgid "KMail was unable to open the attachment"
+msgstr "KMail ni mogel odpreti priloge"
 
-#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Ni mogoče urediti priloge"
 
-#: attachment/attachmentcontrollerbase.cpp:797
+#: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
 msgid "unnamed"
 msgstr "neimenovan"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:798
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Shrani prilogo kot"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -256,61 +270,56 @@ msgstr ""
 "Datoteka %1 že obstaja.\n"
 "Ali jo želite zamenjati?"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Shrani v datoteko"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
+msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Zamenjaj"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:850
+#: attachment/attachmentcontrollerbase.cpp:929
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "Ali res želite priložiti mapo \"%1\"?"
+msgstr "Ali res želite priložiti mapo »%1«?"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Priloži mapo"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:912
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Priloži"
 
-#: attachment/attachmentcontrollerbase.cpp:889
+#: attachment/attachmentcontrollerbase.cpp:887
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Priloži mapo"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:895
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Priloži datoteko"
 
-#: attachment/attachmentcontrollerbase.cpp:941
-#, kde-format
-msgctxt "@title:window"
-msgid "Failed to attach file"
-msgstr "Prilaganje datoteke ni uspelo"
-
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:984
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Priloži javen ključ OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:966
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Izberite javni ključ, ki ga želite priložiti."
@@ -393,37 +402,37 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "Najden ni bil noben podatek ključa za prejemnike."
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "Ohrani označevanje, ne podpiši/šifriraj"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "Ohrani označevanje, ne šifriraj"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "Ohrani označevanje, ne podpiši"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Podpiši/šifriraj (izbriši označevanje)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Šifriraj (izbriši označevanje)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Podpiši (izbriši označevanje)"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -432,72 +441,76 @@ msgstr ""
 "<qt><p>Podpisovanje/šifriranje znotraj sporočil HTML ni mogoče.</p><p>Ali "
 "želite izbrisati označevanje?</p></qt>"
 
-#: composer/composerviewbase.cpp:335
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Podpišem/šifriram sporočilo?"
 
-#: composer/composerviewbase.cpp:516
+#: composer/composerviewbase.cpp:506
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Sestavljalnika sporočil ni bilo mogoče ustvariti."
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Ali želite spremeniti velikost slik?"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Samodejno spremeni velikost slik"
 
-#: composer/composerviewbase.cpp:528
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Samodejno spremeni velikost"
 
-#: composer/composerviewbase.cpp:529
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Ne spreminjaj velikosti"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:721
 #, kde-format
+msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
-msgstr "Ključ OpenPGP je pretekel"
+msgstr "Ključ OpenPGP je potekel"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:721
 #, kde-format
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
-msgstr "Potrdilo S/MIME je preteklo"
+msgstr "Potrdilo S/MIME je poteklo"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:723
 #, kde-format
+msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
-msgstr "Ključ OpenPGP bo kmalu pretekel"
+msgstr "Ključ OpenPGP bo kmalu potekel"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:724
 #, kde-format
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr "Potrdilo S/MIME bo kmalu preteklo"
+msgstr "Potrdilo S/MIME bo kmalu poteklo"
 
-#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
-#: composer/composerviewbase.cpp:852
+#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
+#: composer/composerviewbase.cpp:845
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Razreševanje ključev ni uspelo. Pošljite nam sporočilo o napaki."
 
-#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
+#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Uporabnik je preklical posel"
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1055
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -506,38 +519,38 @@ msgstr ""
 "Sporočila ni bilo mogoče sestaviti: %1\n"
 "Pošljite nam sporočilo o napaki."
 
-#: composer/composerviewbase.cpp:1065
+#: composer/composerviewbase.cpp:1057
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Sporočila ni bilo mogoče sestaviti: %1"
 
-#: composer/composerviewbase.cpp:1162
+#: composer/composerviewbase.cpp:1160
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Med postavljanjem sporočila v vrsto za pošiljanje je prišlo do težav: %1"
 
-#: composer/composerviewbase.cpp:1326
+#: composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Sporočila ni bilo mogoče samodejno shraniti: %1"
 
-#: composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1343
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Vseh podatkov ni bilo mogoče zapisati v datoteko."
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Datoteke ni bilo mogoče zaključiti."
 
-#: composer/composerviewbase.cpp:1352
+#: composer/composerviewbase.cpp:1350
 #, kde-format
 msgid "Could not open file."
 msgstr "Datoteke ni bilo mogoče odpreti."
 
-#: composer/composerviewbase.cpp:1359
+#: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -548,13 +561,13 @@ msgstr ""
 "%2\n"
 "Razlog: %3"
 
-#: composer/composerviewbase.cpp:1365
+#: composer/composerviewbase.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Samodejno shranjevanje sporočila ni uspelo"
 
-#: composer/composerviewbase.cpp:1478
+#: composer/composerviewbase.cpp:1476
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Shranjevanje sporočila ni uspelo: %1"
@@ -576,8 +589,15 @@ msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Opomnik za prilaganje datotek"
 
+#: composer/composerviewbase.cpp:1901
+#, kde-format
+msgctxt "@action:button"
+msgid "&Attach File..."
+msgstr "Priloži d&atoteko..."
+
 #: composer/composerviewbase.cpp:1902
 #, kde-format
+msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Pošlji kot je"
 
@@ -606,6 +626,7 @@ msgstr "Podpiši"
 
 #: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
+msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Ne podpiši"
 
@@ -627,18 +648,19 @@ msgstr ""
 "Zahtevali ste podpis tega sporočila, vendar za to istovetnost ni bil "
 "nastavljen noben veljaven podpisovalni ključ."
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Pošiljanje brez podpisa?"
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2016
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Pošlji nepodpisano"
 
-#: composer/composerviewbase.cpp:2028
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -649,7 +671,7 @@ msgstr ""
 "Pošiljanje sporočil, ki so le delno podpisana, morda krši pravilnike.\n"
 "Ali želite podpisati vse dele?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -660,28 +682,29 @@ msgstr ""
 "Pošiljanje sporočil, ki niso podpisani, morda krši pravilnike.\n"
 "Ali želite podpisati sporočilo?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Podpiši vse dele"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign"
 msgstr "Podpiši"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Opozorilo o nepodpisanem sporočilu"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2043
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Pošlji kot je"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -691,7 +714,7 @@ msgstr ""
 "ključi.\n"
 "Ali želite šifrirati to sporočilo?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2093
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -702,34 +725,32 @@ msgstr ""
 "šifriranju tega sporočila.\n"
 "Ali želite šifrirati to sporočilo?"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Šifriranje sporočila?"
 
-#: composer/composerviewbase.cpp:2097
+#: composer/composerviewbase.cpp:2100
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Podpiši in šifriraj"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
-#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1358
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt"
 msgstr "Šifriraj"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Samo podpiši"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Pošlji kot je"
 
-#: composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2122
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -738,12 +759,20 @@ msgstr ""
 "Prejemniki imajo nasprotujoče si želje glede šifriranja.\n"
 "Ali želite šifrirati to sporočilo?"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
+#: composer/keyresolver.cpp:1363
 #, kde-format
+msgctxt "@action:button"
+msgid "&Encrypt"
+msgstr "Šifriraj"
+
+#: composer/composerviewbase.cpp:2131
+#, kde-format
+msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Ne šifriraj"
 
-#: composer/composerviewbase.cpp:2148
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -754,18 +783,19 @@ msgstr ""
 "istovetnost ni bil nastavljen noben veljaven in zaupanja vreden šifrirni "
 "ključ."
 
-#: composer/composerviewbase.cpp:2152
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Pošiljanje brez šifriranja?"
 
-#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
+#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Pošlji nešifrirano"
 
-#: composer/composerviewbase.cpp:2167
+#: composer/composerviewbase.cpp:2173
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -778,7 +808,7 @@ msgstr ""
 "razkriva občutljive podatke.\n"
 "Ali želite šifrirati vse dele?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2178
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -791,18 +821,18 @@ msgstr ""
 "razkriva občutljive podatke.\n"
 "Ali želite šifrirati sporočila?"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Šifriraj vse dele"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2185
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Opozorilo o nešifriranem sporočilu"
 
-#: composer/keyresolver.cpp:309
+#: composer/keyresolver.cpp:311
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -811,7 +841,7 @@ msgstr ""
 "Enemu ali več nastavljenim šifrirnim ključem OpenPGP ali potrdilom S/MIME ne "
 "zaupate povsem, ko gre za šifriranje."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:315
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -820,7 +850,7 @@ msgstr ""
 "Enemu ali več šifrirnim ključem OpenPGP ali potrdilom S/MIME za prejemnika "
 "»%1« ne zaupate povsem, ko gre za šifriranje."
 
-#: composer/keyresolver.cpp:320
+#: composer/keyresolver.cpp:322
 #, kde-format
 msgid ""
 "\n"
@@ -829,7 +859,7 @@ msgstr ""
 "\n"
 "Naslednjim ključem zaupate samo delno:\n"
 
-#: composer/keyresolver.cpp:324
+#: composer/keyresolver.cpp:326
 #, kde-format
 msgid ""
 "\n"
@@ -838,7 +868,7 @@ msgstr ""
 "\n"
 "Stopnja zaupanja v naslednje ključe ali potrdila ni znana:\n"
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:330
 #, kde-format
 msgid ""
 "\n"
@@ -847,13 +877,13 @@ msgstr ""
 "\n"
 "Naslednji ključi ali potrdila so <b>preklicani</b>:\n"
 
-#: composer/keyresolver.cpp:334
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Šifrirni ključi brez polnega zaupanja"
 
-#: composer/keyresolver.cpp:648
+#: composer/keyresolver.cpp:650
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -869,14 +899,14 @@ msgstr ""
 "Če nadaljujete in bodo kasneje ključi zahtevani, boste vprašani po ključu, "
 "ki naj se uporabi."
 
-#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
-#: composer/keyresolver.cpp:1040
+#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Neuporabni šifrirni ključi"
 
-#: composer/keyresolver.cpp:690
+#: composer/keyresolver.cpp:692
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -891,14 +921,14 @@ msgstr ""
 "Če nadaljujete in bodo kasneje ključi zahtevani, boste vprašani po ključu, "
 "ki naj se uporabi."
 
-#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
-#: composer/keyresolver.cpp:1087
+#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
+#: composer/keyresolver.cpp:1089
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Neuporabni podpisovalni ključi"
 
-#: composer/keyresolver.cpp:1001
+#: composer/keyresolver.cpp:1003
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -915,7 +945,7 @@ msgstr ""
 "Lahko nadaljujete, ne da bi šifrirali samemu sebi, vendar v tem primeru ne "
 "boste mogli brati svojih sporočil."
 
-#: composer/keyresolver.cpp:1030
+#: composer/keyresolver.cpp:1032
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -932,7 +962,7 @@ msgstr ""
 "Lahko nadaljujete, ne da bi šifrirali samemu sebi, vendar v tem primeru ne "
 "boste mogli brati svojih sporočil."
 
-#: composer/keyresolver.cpp:1062
+#: composer/keyresolver.cpp:1064
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -945,12 +975,13 @@ msgstr ""
 "vendar pa za to istovetnost niste nastavili veljavnega podpisovalnega "
 "potrdila OpenPGP."
 
-#: composer/keyresolver.cpp:1070
+#: composer/keyresolver.cpp:1072
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Ne podpiši z OpenPGP"
 
-#: composer/keyresolver.cpp:1080
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -963,12 +994,13 @@ msgstr ""
 "vendar pa za to istovetnost niste nastavili veljavnega podpisovalnega "
 "potrdila S/MIME."
 
-#: composer/keyresolver.cpp:1088
+#: composer/keyresolver.cpp:1090
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Ne podpiši s S/MIME"
 
-#: composer/keyresolver.cpp:1150
+#: composer/keyresolver.cpp:1152
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -980,13 +1012,13 @@ msgstr ""
 "podpisovalnim ključem.\n"
 "Ali želite sporočilo poslati nepodpisano?"
 
-#: composer/keyresolver.cpp:1154
+#: composer/keyresolver.cpp:1156
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Podpisovanje ni mogoče"
 
-#: composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1319
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -995,14 +1027,14 @@ msgstr ""
 "Niste izbrali šifrirnega ključa zase (šifriranje samemu sebi). Svojega "
 "lastnega sporočila ne boste mogli dešifrirati, če ga šifrirate."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
-#: composer/keyresolver.cpp:1358
+#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Opozorilo o manjkajočem ključu"
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1338
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1011,7 +1043,7 @@ msgstr ""
 "Niste izbrali šifrirnega ključa za prejemnika tega sporočila, zato sporočilo "
 "ne bo šifrirano."
 
-#: composer/keyresolver.cpp:1340
+#: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1020,7 +1052,7 @@ msgstr ""
 "Niste izbrali šifrirnega ključa za nobenega od prejemnikov tega sporočila, "
 "zato sporočilo ne bo šifrirano."
 
-#: composer/keyresolver.cpp:1350
+#: composer/keyresolver.cpp:1355
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1029,7 +1061,7 @@ msgstr ""
 "Niste izbrali šifrirnega ključa za enega izmed prejemnikov, zato ta oseba ne "
 "bo mogla dešifrirati sporočila, če ga šifrirate."
 
-#: composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1359
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1038,12 +1070,12 @@ msgstr ""
 "Niste izbrali šifrirnega ključa za nekatere izmed prejemnikov, zato te osebe "
 "ne bodo mogle dešifrirati sporočila, če ga šifrirate."
 
-#: composer/keyresolver.cpp:1431
+#: composer/keyresolver.cpp:1436
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Izbira šifrirnega ključa"
 
-#: composer/keyresolver.cpp:1475
+#: composer/keyresolver.cpp:1480
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1057,7 +1089,7 @@ msgstr ""
 "\n"
 "Znova izberite potrdila, ki naj bodo uporabljena za tega prejemnika."
 
-#: composer/keyresolver.cpp:1547
+#: composer/keyresolver.cpp:1552
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1074,7 +1106,7 @@ msgstr ""
 "seznamu ni ustreznega potrdila, lahko s klikom na gumb poiščete zunanja "
 "potrdila.</qt>"
 
-#: composer/keyresolver.cpp:1557
+#: composer/keyresolver.cpp:1562
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1090,6 +1122,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Izbor imena"
 
@@ -1160,17 +1193,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Neveljavna mapa"
 
-#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "posredovano sporočilo"
 
-#: helper/messagefactoryng.cpp:572
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Potrdilo: "
 
-#: helper/messagefactoryng.cpp:699
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1185,16 +1218,17 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:24
+#: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Izberi vrsto datoteke"
 
-#: imagescaling/imagescalingselectformat.cpp:94
+#: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
+msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Izberi vrsto..."
+msgstr "Izberi format…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1448,6 +1482,7 @@ msgstr "Nobenega besedila ni bilo najdenega na odložišču"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Določi ime priloge"
 
@@ -1466,7 +1501,7 @@ msgstr "Besedilo z odložišče"
 msgid "OpenPGP key 0x%1"
 msgstr "Ključ OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1477,7 +1512,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Izvažanje ključa ..."
+msgstr "Izvažanje ključa …"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1494,7 +1529,7 @@ msgstr "Neveljaven stik"
 msgid "Impossible to generate vCard."
 msgstr "vCarda ni mogoče ustvariti."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1503,71 +1538,26 @@ msgstr ""
 "<p>Prišlo je do napake ob poskusu izvažanja ključa iz zaledja:</p><p><b>Ni "
 "mogoče najti veljavnega ključa za uporabnika %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:59
+#: job/maintextjob.cpp:58
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Prosil za prelamljanje vrstic, vendar nisem dobil prelomljenega navadnega "
 "besedila."
 
-#: job/maintextjob.cpp:66
+#: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Nisem prosil za prelamljanje vrstic, vendar nisem dobil čistega navadnega "
 "besedila."
 
-#: job/maintextjob.cpp:81
-#, kde-format
-msgid ""
-"No charsets were available for encoding. Please check your configuration and "
-"make sure it contains at least one charset for sending."
-msgstr ""
-"Za kodiranje ni na voljo nobenega nabora znakov. Preverite, ali nastavitve "
-"vsebujejo vsaj en nabor znakov za pošiljanje."
-
-#: job/maintextjob.cpp:99
-#, kde-format
-msgid ""
-"Encoding the message with %1 will lose some characters.\n"
-"Do you want to continue?"
-msgstr ""
-"Kodiranje sporočila z naborom znakov %1 bo povzročilo izgubo nekaterih "
-"znakov.\n"
-"Ali želite nadaljevati?"
-
-#: job/maintextjob.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Some Characters Will Be Lost"
-msgstr "Nekateri znaki bodo izgubljeni"
-
-#: job/maintextjob.cpp:103
-#, kde-format
-msgid "Lose Characters"
-msgstr "Izgubi znake"
-
-#: job/maintextjob.cpp:104
-#, kde-format
-msgid "Change Encoding"
-msgstr "Spremeni kodiranje"
-
-#: job/maintextjob.cpp:107
-#, kde-format
-msgid "User decided to change the encoding."
-msgstr "Uporabnik se je odločil za spremembo kodiranja."
-
-#: job/maintextjob.cpp:117
-#, kde-format
-msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr "Z izbranim kodiranjem (%1) ni mogoče v celoti kodirati sporočila."
-
-#: job/maintextjob.cpp:142
+#: job/maintextjob.cpp:92
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Besedilnega kodeka za nabor znakov »%1« ni bilo mogoče pridobiti."
 
-#: job/singlepartjob.cpp:67
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -1582,7 +1572,7 @@ msgstr "Zahtevek Message Disposition Notification"
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
 msgid "Send \"&denied\""
-msgstr "Pošlji \"zavrnjeno\""
+msgstr "Pošlji »&zavrnjeno«"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1601,10 +1591,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za vrnitev obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za vrnitev obvestila o vašem prejemu "
 "sporočila.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1615,12 +1605,12 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila.\n"
-"Vsebuje navodilo za obdelavo, ki je označeno kot \"zahtevano\", vendar "
+"Vsebuje navodilo za obdelavo, ki je označeno kot »zahtevano«, vendar "
 "poštnemu programu ni znano.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor "
-"\"neuspešno\"."
+"»neuspešno«."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1630,11 +1620,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
 "a zahteva pošiljanje sporočila več kot enemu naslovniku.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1644,11 +1634,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
-"a zahteva nima nastavljenega naslova za odgovor.\n"
+"a zahteva nima nastavljene povratne poti.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1659,12 +1649,12 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem sprejemu "
+"To sporočilo vsebuje zahtevo za pošiljanje obvestila o vašem prejemu "
 "sporočila,\n"
-"a naslov povratne poti se razlikuje od naslova kamor obvestilo zahteva, da "
-"ga pošljete.\n"
+"a se naslov povratne poti razlikuje od naslova, kamor je bilo zahtevano "
+"pošiljanje obvestila.\n"
 "Lahko prezrete zahtevo ali pustite, da poštni program pošlje odgovor bodisi "
-"\"zavrnjeno\" ali normalni odziv."
+"»zavrnjeno« ali običajni odziv."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1686,6 +1676,7 @@ msgstr "Ime:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Ime seznama za razpošiljanje"
 
@@ -1779,7 +1770,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>Nedoločena vrsta prejemnika</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1787,36 +1778,37 @@ msgstr "Izberite vrsto prejemnika"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr "Nastavite seznam e-poštnih naslovov, ki bodo prejeli to sporočilo"
+msgstr "Nastavi seznam e-poštnih naslovov prejemnikov tega sporočila"
 
-#: recipient/recipientseditor.cpp:115
+#: recipient/recipientseditor.cpp:112
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
-msgstr[1] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
+msgstr[1] "Krajšanje seznama prejemnikov na %2 od %1 vnosa."
 msgstr[2] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
 msgstr[3] "Krajšanje seznama prejemnikov na %2 od %1 vnosov."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Shrani seznam ..."
+msgstr "Shrani seznam …"
 
-#: recipient/recipientseditorsidewidget.cpp:45
+#: recipient/recipientseditorsidewidget.cpp:29
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "&Izbor …"
+
+#: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Prejemnike shrani v seznam za razpošiljanje"
-
-#: recipient/recipientseditorsidewidget.cpp:47
-#, kde-format
-msgctxt "@action:button Open recipient selection dialog."
-msgid "Se&lect..."
-msgstr "Izberi..."
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1835,10 +1827,10 @@ msgstr "Ni prejemnikov"
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] "%1 prejemnik"
-msgstr[1] "%1 prejemnika"
-msgstr[2] "%1 prejemniki"
-msgstr[3] "%1 prejemnikov"
+msgstr[0] "%1 prejemnikov"
+msgstr[1] "%1 prejemnik"
+msgstr[2] "%1 prejemnika"
+msgstr[3] "%1 prejemniki"
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
@@ -1864,47 +1856,48 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Odgovor-za/Reply-To:%1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Izberite prejemnika"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:61
 #, kde-format
+msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "Storitev iskanja po imeniku"
+msgstr "Iskalna storitev imenika"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Dodaj kot Odgovor-za/Reply-to"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "Dodaj kot Za"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "Dodaj kot Kp"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Dodaj kot Skp"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] "%1 izbrana e-pošta"
-msgstr[1] "%1 izbrani e-pošti"
-msgstr[2] "%1 izbrane e-pošte"
-msgstr[3] "%1 izbranih e-pošt"
+msgstr[0] "%1 izbranih e-pošt"
+msgstr[1] "%1 izbrana e-pošta"
+msgstr[2] "%1 izbrani e-pošti"
+msgstr[3] "%1 izbrane e-pošte"
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1914,19 +1907,19 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
-"Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnikov. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[1] ""
 "Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[2] ""
-"Izbrali ste %1 prejemnike. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnika. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 msgstr[3] ""
-"Izbrali ste %1 prejemnikov. Največje podprto število prejemnikov je %2.\n"
+"Izbrali ste %1 prejemnike. Največje podprto število prejemnikov je %2.\n"
 "Prilagodite izbor."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Ne morete dodajati več naslovnikov."
@@ -1949,6 +1942,7 @@ msgstr "Pošlji kasneje"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "Zakasnitev"
 
@@ -2000,6 +1994,158 @@ msgstr "Pošlji ob:"
 #, kde-format
 msgid "Repeat every:"
 msgstr "Ponavljaj vsak:"
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Pri odgovarjanju navajaj samo izbrano besedilo"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Samodejno vstavi podpis"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Podpis vstavi nad navedeno besedilo"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Pred podpis dodaj ločilnik"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Za samodejno dopolnjevanje uporabi naslove najdene v e-sporočilih"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Onemogočite to možnost, če želite v seznamu samodejnega dopolnjevanja v "
+"naslovnih poljih sestavljalnika videti le naslove iz imenikov."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "V sestavljalniku sporočila za ločilnik dovoli uporabo podpičja (';')"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Za samodejno dopolnjevanje uporabi nedavne naslove"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"To možnost onemogočite, če v seznamu samodejnega dopolnjevanja v naslovnih "
+"poljih sestavljalnika ne želite videti nedavno uporabljenih naslovov."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Največje število vnosov prejemnikov:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Besedno previj vrstico pri stolpcu:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Izboljšaj navadno besedilo sporočila HTML"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Podpiši vsa sporočila, če je mogoče"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "Omogoči šifriranje, če smo našli ključe za vse prejemnike"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Opozori pred pošiljanjem nešifriranih sporočil"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Opozori pred pošiljanjem nepodpisanih sporočil"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Opozori, če potrdila/ključi pretečejo v kratkem (spodaj nastavite pragove)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti šifrirnega potrdila preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti vseh potrdil v verigi preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Najmanjše število dni veljavnosti korenskega potrdila preden bo prikazano "
+"opozorilo"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Vedno prikaži seznam šifrirnih ključev, s katerega je mogoče tudi izbirati"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
@@ -2228,7 +2374,7 @@ msgstr "Razno"
 msgid "Subject"
 msgstr "Zadeva"
 
-#: utils/util.cpp:259
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2238,7 +2384,7 @@ msgstr ""
 "priloga,priponka,priloženo,priložil,priložila,pripel,pripela,pripet,pripeta,"
 "pripete,pripeti,priložena,priložen,priloženi,priložene"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2247,19 +2393,19 @@ msgstr ""
 "Odpravnik pošte ni nastavljen, zato pošte ni mogoče pošiljati. Ali želite "
 "ustvariti odpravnika pošte?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ni odpravnika pošte."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Ustvari odpravnika pošte"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2268,64 +2414,58 @@ msgstr ""
 "Odpravnik pošte ni povezan, zato pošte ni mogoče pošiljati. Ali želite da "
 "odpravnik vzpostavi povezavo?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Odpravnik pošte ni povezan."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Nastavi v mrežo"
 
-#~ msgid "Only quote selected text when replying"
-#~ msgstr "Pri odgovarjanju navajaj samo izbrano besedilo"
+#~ msgid "Failed to attach file"
+#~ msgstr "Prilaganje datoteke ni uspelo"
+
+#~ msgid ""
+#~ "No charsets were available for encoding. Please check your configuration "
+#~ "and make sure it contains at least one charset for sending."
+#~ msgstr ""
+#~ "Za kodiranje ni na voljo nobenega nabora znakov. Preverite, ali "
+#~ "nastavitve vsebujejo vsaj en nabor znakov za pošiljanje."
+
+#~ msgid ""
+#~ "Encoding the message with %1 will lose some characters.\n"
+#~ "Do you want to continue?"
+#~ msgstr ""
+#~ "Kodiranje sporočila z naborom znakov %1 bo povzročilo izgubo nekaterih "
+#~ "znakov.\n"
+#~ "Ali želite nadaljevati?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Some Characters Will Be Lost"
+#~ msgstr "Nekateri znaki bodo izgubljeni"
+
+#~ msgctxt "@action:button"
+#~ msgid "Lose Characters"
+#~ msgstr "Ohlapni znaki"
+
+#~ msgctxt "@action:button"
+#~ msgid "Change Encoding"
+#~ msgstr "Spremeni kodiranje"
+
+#~ msgid "User decided to change the encoding."
+#~ msgstr "Uporabnik se je odločil za spremembo kodiranja."
+
+#~ msgid "The selected encoding (%1) cannot fully encode the message."
+#~ msgstr "Z izbranim kodiranjem (%1) ni mogoče v celoti kodirati sporočila."
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""
 #~ "Pri odgovarjanju ali posredovanju ohrani prvotni nabor znakov (če je "
 #~ "mogoče)"
-
-#~ msgid "A&utomatically insert signature"
-#~ msgstr "Samodejno vstavi podpis"
-
-#~ msgid "Insert signature above quoted text"
-#~ msgstr "Podpis vstavi nad navedeno besedilo"
-
-#~ msgid "Prepend separator to signature"
-#~ msgstr "Pred podpis dodaj ločilnik"
-
-#~ msgid "Use addresses indexed from emails for autocompletion"
-#~ msgstr "Za samodejno dopolnjevanje uporabi naslove najdene v e-sporočilih"
-
-#~ msgid ""
-#~ "Disable this option if you only want contacts from your addressbooks to "
-#~ "appear in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "Onemogočite to možnost, če želite v seznamu samodejnega dopolnjevanja v "
-#~ "naslovnih poljih sestavljalnika videti le naslove iz imenikov."
-
-#~ msgid ""
-#~ "Allow the semicolon character (';') to be used as separator in the "
-#~ "message composer"
-#~ msgstr ""
-#~ "V sestavljalniku sporočila za ločilnik dovoli uporabo podpičja (';')"
-
-#~ msgid "Use recent addresses for autocompletion"
-#~ msgstr "Za samodejno dopolnjevanje uporabi nedavne naslove"
-
-#~ msgid ""
-#~ "Disable this option if you do not want recently used addresses to appear "
-#~ "in the autocompletion list in the composer's address fields."
-#~ msgstr ""
-#~ "To možnost onemogočite, če v seznamu samodejnega dopolnjevanja v "
-#~ "naslovnih poljih sestavljalnika ne želite videti nedavno uporabljenih "
-#~ "naslovov."
-
-#~ msgid "Maximum number of recipient entries:"
-#~ msgstr "Največje število vnosov prejemnikov:"
 
 #~ msgid "Outlook-compatible attachment naming"
 #~ msgstr "Z Outlookom združljivo poimenovanje prilog"
@@ -2336,55 +2476,6 @@ msgstr "Nastavi v mrežo"
 #~ msgstr ""
 #~ "Vklopite to možnost, da bo Outlook(tm) razumel imena prilog, ki vsebujejo "
 #~ "neangleške znake"
-
-#~ msgid "Word &wrap at column:"
-#~ msgstr "Besedno previj vrstico pri stolpcu:"
-
-#~ msgid "Improve plain text version of HTML message"
-#~ msgstr "Izboljšaj navadno besedilo sporočila HTML"
-
-#~ msgid "Sign all messages, if possible"
-#~ msgstr "Podpiši vsa sporočila, če je mogoče"
-
-#~ msgid "Enable encryption, if we found keys for all recipients"
-#~ msgstr "Omogoči šifriranje, če smo našli ključe za vse prejemnike"
-
-#~ msgid "Warn before sending unencrypted messages"
-#~ msgstr "Opozori pred pošiljanjem nešifriranih sporočil"
-
-#~ msgid "Warn before sending unsigned messages"
-#~ msgstr "Opozori pred pošiljanjem nepodpisanih sporočil"
-
-#~ msgid "Warn if certificates/keys expire soon (configure thresholds below)"
-#~ msgstr ""
-#~ "Opozori, če potrdila/ključi pretečejo v kratkem (spodaj nastavite pragove)"
-
-#~ msgid ""
-#~ "The minimum number of days that the encryption certificate should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti šifrirnega potrdila preden bo prikazano "
-#~ "opozorilo"
-
-#~ msgid ""
-#~ "The minimum number of days that all certificates in the chain should be "
-#~ "valid before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti vseh potrdil v verigi preden bo "
-#~ "prikazano opozorilo"
-
-#~ msgid ""
-#~ "The minimum number of days that the root certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "Najmanjše število dni veljavnosti korenskega potrdila preden bo prikazano "
-#~ "opozorilo"
-
-#~ msgid ""
-#~ "Always show the list of encryption keys to select the one which will be "
-#~ "used"
-#~ msgstr ""
-#~ "Vedno prikaži seznam šifrirnih ključev, s katerega je mogoče tudi izbirati"
 
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"

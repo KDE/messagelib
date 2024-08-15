@@ -10,7 +10,7 @@
 #include "job/singlepartjob.h"
 
 #include <KMime/Content>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 using namespace MessageComposer;
 
@@ -74,7 +74,7 @@ void ProtectedHeadersJob::doStart()
         auto ct = cjob->contentType();
         ct->setMimeType("text/plain");
         ct->setCharset(subject->rfc2047Charset());
-        ct->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
+        ct->setParameter(QByteArrayLiteral("protected-headers"), QStringLiteral("v1"));
         cjob->contentDisposition()->setDisposition(KMime::Headers::contentDisposition::CDinline);
         cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 
@@ -142,11 +142,10 @@ void ProtectedHeadersJob::process()
     }
 
     if (d->obvoscate && subject) {
-        subject->clear();
         subject->from7BitString("...");
     }
     auto contentType = d->content->header<KMime::Headers::ContentType>();
-    contentType->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
+    contentType->setParameter(QByteArrayLiteral("protected-headers"), QStringLiteral("v1"));
 
     d->resultContent = d->content;
 

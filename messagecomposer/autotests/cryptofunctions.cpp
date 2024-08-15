@@ -17,8 +17,6 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <MessageCore/NodeHelper>
-
 #include <QTest>
 #include <cstdlib>
 #include <gpgme++/keylistresult.h>
@@ -68,7 +66,8 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
 
         // Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
 
-        QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
+        QVERIFY(!resultMessage->contents().isEmpty());
+        QCOMPARE(resultMessage->contents().at(0)->contentTransferEncoding()->encoding(), encoding);
     } else if (f & Kleo::InlineOpenPGPFormat) {
         // process the result..
         otp.parseObjectTree(resultMessage);
@@ -86,18 +85,19 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
             QCOMPARE(signedPart->contentDisposition()->filename(), QStringLiteral("smime.p7s"));
             Q_UNUSED(signedPart)
 
-            QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
+            QVERIFY(!resultMessage->contents().isEmpty());
+            QCOMPARE(resultMessage->contents().at(0)->contentTransferEncoding()->encoding(), encoding);
 
             QCOMPARE(resultMessage->contentType()->mimeType(), QByteArray("multipart/signed"));
-            QCOMPARE(resultMessage->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pkcs7-signature"));
-            QCOMPARE(resultMessage->contentType(false)->parameter(QStringLiteral("micalg")), QStringLiteral("sha1"));
+            QCOMPARE(resultMessage->contentType(false)->parameter("protocol"), QStringLiteral("application/pkcs7-signature"));
+            QCOMPARE(resultMessage->contentType(false)->parameter("micalg"), QStringLiteral("sha1"));
         } else if (f & Kleo::SMIMEOpaqueFormat) {
             KMime::Content *signedPart = Util::findTypeInMessage(resultMessage, "application", "pkcs7-mime");
             Q_ASSERT(signedPart);
             QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
             QCOMPARE(signedPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
             QCOMPARE(signedPart->contentType(false)->name(), QStringLiteral("smime.p7m"));
-            QCOMPARE(signedPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("signed-data"));
+            QCOMPARE(signedPart->contentType(false)->parameter("smime-type"), QStringLiteral("signed-data"));
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
             QCOMPARE(signedPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
             Q_UNUSED(signedPart)
@@ -138,7 +138,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     } else if (f & Kleo::InlineOpenPGPFormat) {
         if (withAttachment) {
             // Only first MimePart is the encrypted Text
-            KMime::Content *cContent = MessageCore::NodeHelper::firstChild(resultMessage.data());
+            KMime::Content *cContent = resultMessage->contents().at(0);
             resultMessage->setContent(cContent->encodedContent());
             resultMessage->parse();
         }
@@ -153,7 +153,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
 
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
         QCOMPARE(encPart->contentType(false)->name(), QStringLiteral("smime.p7m"));
-        QCOMPARE(encPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
+        QCOMPARE(encPart->contentType(false)->parameter("smime-type"), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
         QCOMPARE(encPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
         Q_UNUSED(encPart)
@@ -209,7 +209,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
         Q_ASSERT(encPart);
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
         QCOMPARE(encPart->contentType(false)->name(), QStringLiteral("smime.p7m"));
-        QCOMPARE(encPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
+        QCOMPARE(encPart->contentType(false)->parameter("smime-type"), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
         QCOMPARE(encPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
         Q_UNUSED(encPart)

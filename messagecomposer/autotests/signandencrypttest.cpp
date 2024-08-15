@@ -25,8 +25,6 @@
 #include "setupenv.h"
 #include <MimeTreeParser/NodeHelper>
 
-#include <MessageCore/NodeHelper>
-
 QTEST_MAIN(SignAndEncryptTest)
 
 using namespace MessageComposer;
@@ -41,9 +39,6 @@ void SignAndEncryptTest::testContent()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
-
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
@@ -115,8 +110,8 @@ void SignAndEncryptTest::testHeaders()
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
-    QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
-    QCOMPARE(result->contentType()->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
+    QCOMPARE(result->contentType()->charset(), "UTF-8");
+    QCOMPARE(result->contentType()->parameter("protocol"), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;

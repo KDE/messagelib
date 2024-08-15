@@ -62,9 +62,6 @@ void SignEncryptTest::testContent()
 
     Composer composer;
 
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
-
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(data);
@@ -174,8 +171,8 @@ void SignEncryptTest::testHeaders()
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
-    QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
-    QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-encrypted"));
+    QCOMPARE(result->contentType()->charset(), "UTF-8");
+    QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
@@ -217,7 +214,7 @@ void SignEncryptTest::testProtectedHeaders()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 

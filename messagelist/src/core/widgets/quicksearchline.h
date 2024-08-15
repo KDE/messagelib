@@ -8,6 +8,7 @@
 #pragma once
 
 #include "messagelist_export.h"
+#include "searchmessagebybuttons.h"
 #include <Akonadi/MessageStatus>
 #include <QWidget>
 
@@ -18,6 +19,8 @@ namespace Core
 {
 class SearchLineStatus;
 class Filter;
+class SearchStatusButtons;
+class SearchMessageByButtons;
 /**
  * @brief The QuickSearchLine class
  * @author Laurent Montel <montel@kde.org>
@@ -29,19 +32,7 @@ public:
     explicit QuickSearchLine(QWidget *parent = nullptr);
     ~QuickSearchLine() override;
 
-    enum SearchOption {
-        SearchEveryWhere = 1,
-        SearchAgainstBody = 2,
-        SearchAgainstSubject = 4,
-        SearchAgainstFrom = 8,
-        SearchAgainstBcc = 16,
-        SearchAgainstTo = 32
-    };
-
-    Q_ENUM(SearchOption)
-    Q_DECLARE_FLAGS(SearchOptions, SearchOption)
-
-    [[nodiscard]] SearchOptions searchOptions() const;
+    [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
 
     void focusQuickSearch(const QString &selectedText);
 
@@ -58,7 +49,7 @@ public:
     void changeQuicksearchVisibility(bool show);
     void addCompletionItem(const QString &str);
 
-    void setSearchOptions(QuickSearchLine::SearchOptions opts);
+    void setSearchOptions(SearchMessageByButtons::SearchOptions opts);
     void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
 
 Q_SIGNALS:
@@ -79,6 +70,8 @@ private Q_SLOTS:
 
 private:
     SearchLineStatus *const mSearchEdit;
+    SearchStatusButtons *const mSearchStatusButtons;
+    SearchMessageByButtons *const mSearchMessageByButtons;
     QComboBox *const mTagFilterCombo;
     QList<Akonadi::MessageStatus> mLstStatus;
 };

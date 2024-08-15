@@ -25,7 +25,7 @@ public:
     [[nodiscard]] QString iconPathFromLocal(const QString &name) const;
 
 private:
-    QString picsPath() const;
+    [[nodiscard]] QString picsPath() const;
 
     class Entry
     {

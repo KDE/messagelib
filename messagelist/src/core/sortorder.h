@@ -155,7 +155,7 @@ public:
      * Some combinations are not valid, for example the message sorting
      * "most recent in subtree" with a non-threaded aggregation.
      */
-    bool validForAggregation(const Aggregation *aggregation) const;
+    [[nodiscard]] bool validForAggregation(const Aggregation *aggregation) const;
 
     /**
      * Returns the default sort order for the given aggregation.
@@ -169,7 +169,7 @@ public:
     /**
      * Returns true if the ms parameter specifies a valid MessageSorting option.
      */
-    static bool isValidMessageSorting(SortOrder::MessageSorting ms);
+    [[nodiscard]] static bool isValidMessageSorting(SortOrder::MessageSorting ms);
 
     /**
      * Reads the sort order from a config group.
@@ -194,14 +194,14 @@ public:
 
 private:
     // Helper function to convert an enum value to a string and back
-    static const QString nameForSortDirection(SortDirection sortDirection);
-    static const QString nameForMessageSorting(MessageSorting messageSorting);
-    static const QString nameForGroupSorting(GroupSorting groupSorting);
-    static SortDirection sortDirectionForName(const QString &name);
-    static MessageSorting messageSortingForName(const QString &name);
-    static GroupSorting groupSortingForName(const QString &name);
+    [[nodiscard]] static const QString nameForSortDirection(SortDirection sortDirection);
+    [[nodiscard]] static const QString nameForMessageSorting(MessageSorting messageSorting);
+    [[nodiscard]] static const QString nameForGroupSorting(GroupSorting groupSorting);
+    [[nodiscard]] static SortDirection sortDirectionForName(const QString &name);
+    [[nodiscard]] static MessageSorting messageSortingForName(const QString &name);
+    [[nodiscard]] static GroupSorting groupSortingForName(const QString &name);
 
-    bool readConfigHelper(KConfigGroup &conf, const QString &id);
+    [[nodiscard]] bool readConfigHelper(KConfigGroup &conf, const QString &id);
 
     MessageSorting mMessageSorting = SortMessagesByDateTime;
     SortDirection mMessageSortDirection = Descending;

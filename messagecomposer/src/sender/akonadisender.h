@@ -11,7 +11,7 @@
 
 #include <QObject>
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 class KJob;
 

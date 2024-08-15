@@ -6,8 +6,8 @@ macro(add_messagelist_widget_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagelist-"
         LINK_LIBRARIES Qt::Test KPim6::MessageCore KPim6::MessageList KPim6::PimCommon KF6::IconThemes KF6::IconWidgets
-    )
-endmacro ()
+)
+endmacro()
 
 add_messagelist_widget_unittest(quicksearchwarningtest.cpp)
 add_messagelist_widget_unittest(searchlinestatustest.cpp)
@@ -16,3 +16,5 @@ add_messagelist_widget_unittest(tablockedwarningtest.cpp)
 add_messagelist_widget_unittest(configurefilterswidgettest.cpp)
 add_messagelist_widget_unittest(filternamewidgettest.cpp)
 
+add_messagelist_widget_unittest(searchstatusbuttonstest.cpp)
+add_messagelist_widget_unittest(searchmessagebybuttonstest.cpp)

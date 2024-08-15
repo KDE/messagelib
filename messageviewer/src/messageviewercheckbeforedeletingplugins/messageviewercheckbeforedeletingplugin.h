@@ -24,7 +24,7 @@ public:
     explicit MessageViewerCheckBeforeDeletingPlugin(QObject *parent = nullptr);
     ~MessageViewerCheckBeforeDeletingPlugin() override;
 
-    virtual MessageViewerCheckBeforeDeletingInterface *createInterface(QObject *parent) = 0;
+    [[nodiscard]] virtual MessageViewerCheckBeforeDeletingInterface *createInterface(QObject *parent) = 0;
     virtual void showConfigureDialog(QWidget *parent);
 
     void setIsEnabled(bool enabled);

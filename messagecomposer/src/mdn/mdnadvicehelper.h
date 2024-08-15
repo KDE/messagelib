@@ -16,14 +16,7 @@ class MESSAGECOMPOSER_EXPORT MDNAdviceHelper : public QObject
 {
     Q_OBJECT
 public:
-    static MDNAdviceHelper *instance()
-    {
-        if (!s_instance) {
-            s_instance = new MDNAdviceHelper;
-        }
-
-        return s_instance;
-    }
+    static MDNAdviceHelper *instance();
 
     /**
      * Checks the MDN headers to see if the user needs to be asked for any

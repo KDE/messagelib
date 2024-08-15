@@ -49,8 +49,8 @@ public:
 
     void setGnupgHome(const QString &path);
 
-    std::vector<GpgME::Key> encryptionKeys() const override;
-    QStringList recipients() const override;
+    [[nodiscard]] std::vector<GpgME::Key> encryptionKeys() const override;
+    [[nodiscard]] QStringList recipients() const override;
 
 protected Q_SLOTS:
     void doStart() override;

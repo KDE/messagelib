@@ -22,13 +22,13 @@ public:
     ~ImageScalingSelectFormatDialog() override;
 
     void setFormat(const QString &format);
-    QString format() const;
+    [[nodiscard]] QString format() const;
 
 private:
     enum { ImageRole = Qt::UserRole + 1 };
     void initialize();
     void addImageFormat(const QString &format, const QString &mimetype);
-    QListWidget *mListWidget = nullptr;
+    QListWidget *const mListWidget;
 };
 
 class ImageScalingSelectFormat : public QWidget
@@ -44,11 +44,9 @@ public:
 Q_SIGNALS:
     void textChanged(const QString &);
 
-private Q_SLOTS:
-    void slotSelectFormat();
-
 private:
-    QLineEdit *mFormat = nullptr;
-    QPushButton *mSelectFormat = nullptr;
+    void slotSelectFormat();
+    QLineEdit *const mFormat;
+    QPushButton *const mSelectFormat;
 };
 }

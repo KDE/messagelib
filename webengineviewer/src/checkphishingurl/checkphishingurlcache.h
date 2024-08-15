@@ -22,6 +22,7 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 {
     Q_OBJECT
 public:
+    explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     static CheckPhishingUrlCache *self();
 
     enum UrlStatus {
@@ -30,7 +31,6 @@ public:
         Unknown = 2,
     };
 
-    explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     ~CheckPhishingUrlCache() override;
 
     /**

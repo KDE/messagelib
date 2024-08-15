@@ -55,6 +55,8 @@ void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
 
 RecipientLineNG::RecipientLineNG(QWidget *parent)
     : MultiplyingLine(parent)
+    , mCombo(new RecipientComboBox(this))
+    , mEdit(new RecipientLineEdit(this))
     , mData(new Recipient)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -64,12 +66,10 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
 
     const QStringList recipientTypes = Recipient::allTypeLabels();
 
-    mCombo = new RecipientComboBox(this);
     mCombo->addItems(recipientTypes);
     topLayout->addWidget(mCombo);
     mCombo->setToolTip(i18nc("@label:listbox", "Select type of recipient"));
-    mEdit = new RecipientLineEdit(this);
-    mEdit->setToolTip(i18n("Set the list of email addresses to receive this message"));
+    mEdit->setToolTip(i18nc("@info:tooltip", "Set the list of email addresses to receive this message"));
     mEdit->setClearButtonEnabled(true);
     topLayout->addWidget(mEdit);
     mEdit->installEventFilter(this);

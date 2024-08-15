@@ -32,27 +32,27 @@ AggregationEditor::AggregationEditor(QWidget *parent)
 
     auto tabg = new QGridLayout(tab);
 
-    tabg->addWidget(new QLabel(i18n("Grouping:"), tab), 0, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Grouping:"), tab), 0, 0);
     mGroupingCombo = new QComboBox(tab);
     tabg->addWidget(mGroupingCombo, 0, 1);
 
     connect(mGroupingCombo, &QComboBox::activated, this, &AggregationEditor::groupingComboActivated);
 
-    tabg->addWidget(new QLabel(i18n("Group expand policy:"), tab), 3, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Group expand policy:"), tab), 3, 0);
     mGroupExpandPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mGroupExpandPolicyCombo, 3, 1);
 
-    tabg->addWidget(new QLabel(i18n("Threading:"), tab), 4, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Threading:"), tab), 4, 0);
     mThreadingCombo = new QComboBox(tab);
     tabg->addWidget(mThreadingCombo, 4, 1);
 
     connect(mThreadingCombo, &QComboBox::activated, this, &AggregationEditor::threadingComboActivated);
 
-    tabg->addWidget(new QLabel(i18n("Thread leader:"), tab), 5, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Thread leader:"), tab), 5, 0);
     mThreadLeaderCombo = new QComboBox(tab);
     tabg->addWidget(mThreadLeaderCombo, 5, 1);
 
-    tabg->addWidget(new QLabel(i18n("Thread expand policy:"), tab), 6, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Thread expand policy:"), tab), 6, 0);
     mThreadExpandPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mThreadExpandPolicyCombo, 6, 1);
 
@@ -65,7 +65,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
 
     tabg = new QGridLayout(tab);
 
-    tabg->addWidget(new QLabel(i18n("Fill view strategy:"), tab), 0, 0);
+    tabg->addWidget(new QLabel(i18nc("@label:textbox", "Fill view strategy:"), tab), 0, 0);
     mFillViewStrategyCombo = new QComboBox(tab);
     tabg->addWidget(mFillViewStrategyCombo, 0, 1);
 

@@ -75,7 +75,6 @@
 #include <QSplitter>
 #include <QTreeView>
 #include <QWheelEvent>
-#include <WebEngineViewer/WebEngineExportHtmlPageJob>
 // libkdepim
 #include <MessageCore/AttachmentPropertiesDialog>
 #include <PimCommon/BroadcastStatus>
@@ -121,7 +120,6 @@
 #include <MessageCore/StringUtil>
 
 #include <MessageCore/MessageCoreSettings>
-#include <MessageCore/NodeHelper>
 
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentManager>
@@ -201,7 +199,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
     }
     mPhishingDatabase = new WebEngineViewer::LocalDataBaseManager(this);
-    mPhishingDatabase->initialize();
+    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()) {
+        mPhishingDatabase->initialize();
+    }
     connect(mPhishingDatabase, &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &ViewerPrivate::slotCheckedUrlFinished);
 
     mShareServiceManager = new PimCommon::ShareServiceUrlManager(this);
@@ -277,7 +277,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
             return;
         }
         if (ct->mimeType() == "message/external-body") {
-            if (ct->hasParameter(QStringLiteral("url"))) {
+            if (ct->hasParameter("url")) {
                 auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
                 job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
                 job->start();
@@ -776,7 +776,9 @@ void ViewerPrivate::displayMessage()
     htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
     if (!mMainWindow) {
-        q->setWindowTitle(mMessage->subject()->asUnicodeString());
+        if (auto subject = mMessage->subject(false)) {
+            q->setWindowTitle(subject->asUnicodeString());
+        }
     }
 
     // Don't update here, parseMsg() can overwrite the HTML mode, which would lead to flicker.
@@ -839,7 +841,6 @@ void ViewerPrivate::parseContent(KMime::Content *content)
 
     otp.setAllowAsync(!mPrinting);
     otp.parseObjectTree(content, onlySingleNode);
-    htmlWriter()->setCodec(otp.plainTextContentCharset());
     if (message) {
         htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
@@ -910,7 +911,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::popupMenu, this, &ViewerPrivate::slotUrlPopup);
     connect(mViewer, &MailWebEngineView::wheelZoomChanged, this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, [this]() {
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, this, [this]() {
         if (!mSubmittedFormWarning) {
             createSubmittedFormWarning();
         }
@@ -1521,7 +1522,7 @@ void ViewerPrivate::createActions()
     mSelectEncodingAction->setToolBarMode(KSelectAction::MenuMode);
     ac->addAction(QStringLiteral("encoding"), mSelectEncodingAction);
     connect(mSelectEncodingAction, &KSelectAction::indexTriggered, this, &ViewerPrivate::slotSetEncoding);
-    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings();
     encodings.prepend(i18n("Auto"));
     mSelectEncodingAction->setItems(encodings);
     mSelectEncodingAction->setCurrentItem(0);
@@ -1539,7 +1540,7 @@ void ViewerPrivate::createActions()
     viewerSelectionChanged();
 
     // copy all text to clipboard
-    mSelectAllAction = new QAction(i18n("Select All Text"), this);
+    mSelectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All Text"), this);
     ac->addAction(QStringLiteral("mark_all_text"), mSelectAllAction);
     connect(mSelectAllAction, &QAction::triggered, this, &ViewerPrivate::selectAll);
     ac->setDefaultShortcut(mSelectAllAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_A));
@@ -1566,7 +1567,7 @@ void ViewerPrivate::createActions()
     connect(mToggleMimePartTreeAction, &QAction::toggled, this, &ViewerPrivate::slotToggleMimePartTree);
     QKeyCombination combinationKeys(Qt::CTRL | Qt::ALT, Qt::Key_D);
     ac->setDefaultShortcut(mToggleMimePartTreeAction, combinationKeys);
-    mViewSourceAction = new QAction(i18n("&View Source"), this);
+    mViewSourceAction = new QAction(i18nc("@action", "&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
     connect(mViewSourceAction, &QAction::triggered, this, &ViewerPrivate::slotShowMessageSource);
     ac->setDefaultShortcut(mViewSourceAction, QKeySequence(Qt::Key_V));
@@ -1577,33 +1578,33 @@ void ViewerPrivate::createActions()
     // Laurent: conflict with kmail shortcut
     // mSaveMessageAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_S));
 
-    mSaveMessageDisplayFormat = new QAction(i18n("&Save Display Format"), this);
+    mSaveMessageDisplayFormat = new QAction(i18nc("@action", "&Save Display Format"), this);
     ac->addAction(QStringLiteral("save_message_display_format"), mSaveMessageDisplayFormat);
     connect(mSaveMessageDisplayFormat, &QAction::triggered, this, &ViewerPrivate::slotSaveMessageDisplayFormat);
 
-    mResetMessageDisplayFormat = new QAction(i18n("&Reset Display Format"), this);
+    mResetMessageDisplayFormat = new QAction(i18nc("@action", "&Reset Display Format"), this);
     ac->addAction(QStringLiteral("reset_message_display_format"), mResetMessageDisplayFormat);
     connect(mResetMessageDisplayFormat, &QAction::triggered, this, &ViewerPrivate::slotResetMessageDisplayFormat);
 
     //
     // Scroll actions
     //
-    mScrollUpAction = new QAction(i18n("Scroll Message Up"), this);
+    mScrollUpAction = new QAction(i18nc("@action", "Scroll Message Up"), this);
     ac->setDefaultShortcut(mScrollUpAction, QKeySequence(Qt::Key_Up));
     ac->addAction(QStringLiteral("scroll_up"), mScrollUpAction);
     connect(mScrollUpAction, &QAction::triggered, q, &Viewer::slotScrollUp);
 
-    mScrollDownAction = new QAction(i18n("Scroll Message Down"), this);
+    mScrollDownAction = new QAction(i18nc("@action", "Scroll Message Down"), this);
     ac->setDefaultShortcut(mScrollDownAction, QKeySequence(Qt::Key_Down));
     ac->addAction(QStringLiteral("scroll_down"), mScrollDownAction);
     connect(mScrollDownAction, &QAction::triggered, q, &Viewer::slotScrollDown);
 
-    mScrollUpMoreAction = new QAction(i18n("Scroll Message Up (More)"), this);
+    mScrollUpMoreAction = new QAction(i18nc("@action", "Scroll Message Up (More)"), this);
     ac->setDefaultShortcut(mScrollUpMoreAction, QKeySequence(Qt::Key_PageUp));
     ac->addAction(QStringLiteral("scroll_up_more"), mScrollUpMoreAction);
     connect(mScrollUpMoreAction, &QAction::triggered, q, &Viewer::slotScrollPrior);
 
-    mScrollDownMoreAction = new QAction(i18n("Scroll Message Down (More)"), this);
+    mScrollDownMoreAction = new QAction(i18nc("@action", "Scroll Message Down (More)"), this);
     ac->setDefaultShortcut(mScrollDownMoreAction, QKeySequence(Qt::Key_PageDown));
     ac->addAction(QStringLiteral("scroll_down_more"), mScrollDownMoreAction);
     connect(mScrollDownMoreAction, &QAction::triggered, q, &Viewer::slotScrollNext);
@@ -1620,19 +1621,19 @@ void ViewerPrivate::createActions()
     MessageViewer::Util::addHelpTextAction(mToggleDisplayModeAction, i18n("Toggle display mode between HTML and plain text"));
 
     // Load external reference
-    auto loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
+    auto loadExternalReferenceAction = new QAction(i18nc("@action", "Load external references"), this);
     ac->addAction(QStringLiteral("load_external_reference"), loadExternalReferenceAction);
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    mSpeakTextAction = new QAction(i18n("Speak Text"), this);
+    mSpeakTextAction = new QAction(i18nc("@action", "Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
     connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
 #endif
     auto purposeMenuWidget = new ViewerPurposeMenuWidget(mViewer, this);
-    mShareTextAction = new QAction(i18n("Share Text..."), this);
+    mShareTextAction = new QAction(i18nc("@action", "Share Text..."), this);
     mShareTextAction->setMenu(purposeMenuWidget->menu());
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     ac->addAction(QStringLiteral("purpose_share_text_menu"), mShareTextAction);
@@ -1650,7 +1651,7 @@ void ViewerPrivate::createActions()
         mPurposeMenuMessageWidget->slotShareSuccess(message);
     });
 
-    mCopyImageLocation = new QAction(i18n("Copy Image Location"), this);
+    mCopyImageLocation = new QAction(i18nc("@action", "Copy Image Location"), this);
     mCopyImageLocation->setIcon(QIcon::fromTheme(QStringLiteral("view-media-visualization")));
     ac->addAction(QStringLiteral("copy_image_location"), mCopyImageLocation);
     ac->setShortcutsConfigurable(mCopyImageLocation, false);
@@ -1724,13 +1725,13 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             return;
         }
     }
-    const bool isAttachment = !content->contentType()->isMultipart() && !content->isTopLevel();
+    const bool isAttachment = !content->contentType()->isMultipart();
     const bool isExtraContent = !mMessage->content(content->index());
     const auto hasAttachments = KMime::hasAttachment(mMessage.data());
 
     QMenu popup;
 
-    if (!content->isTopLevel()) {
+    if (!content->isTopLevel() || isAttachment) {
         popup.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save &As..."), this, &ViewerPrivate::slotAttachmentSaveAs);
 
         if (isAttachment) {
@@ -1825,6 +1826,18 @@ static QColor nextColor(const QColor &c)
     return QColor::fromHsv((h + 50) % 360, qMax(s, 64), v);
 }
 
+[[nodiscard]] static KMime::Content *nextSibling(KMime::Content *node)
+{
+    if (KMime::Content *parent = node->parent()) {
+        const auto contents = parent->contents();
+        const int index = contents.indexOf(node) + 1;
+        if (index < contents.size()) { // next on the same level
+            return contents.at(index);
+        }
+    }
+    return nullptr;
+}
+
 QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgColor) const
 {
     if (!node) {
@@ -1832,7 +1845,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     }
 
     QString html;
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
+    KMime::Content *child = node->contents().isEmpty() ? nullptr : node->contents().at(0);
 
     if (child) {
         const QString subHtml = renderAttachments(child, nextColor(bgColor));
@@ -1892,7 +1905,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         html += renderAttachments(extraNode, bgColor);
     }
 
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(node);
+    KMime::Content *next = nextSibling(node);
     if (next) {
         html += renderAttachments(next, nextColor(bgColor));
     }
@@ -1978,7 +1991,7 @@ void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::Che
 {
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
+        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18nc("@title:window", "Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18nc("@title:window", "Check Phishing URL"));
@@ -2275,32 +2288,6 @@ void ViewerPrivate::exportToPdf(const QString &fileName)
     job->start();
 }
 
-void ViewerPrivate::slotOpenInBrowser()
-{
-    auto job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
-    job->setEngineView(mViewer);
-    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed, this, &ViewerPrivate::slotExportHtmlPageFailed);
-    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::success, this, &ViewerPrivate::slotExportHtmlPageSuccess);
-    job->start();
-}
-
-void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
-{
-    const QUrl url(QUrl::fromLocalFile(filename));
-    auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
-    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-    job->setDeleteTemporaryFile(true);
-    job->start();
-
-    Q_EMIT printingFinished();
-}
-
-void ViewerPrivate::slotExportHtmlPageFailed()
-{
-    qCDebug(MESSAGEVIEWER_LOG) << " Export HTML failed";
-    Q_EMIT printingFinished();
-}
-
 static QString filterCharsFromFilename(const QString &name)
 {
     QString value = name;
@@ -2355,7 +2342,8 @@ void ViewerPrivate::updatePalette()
     updateColorFromScheme();
     cssHelper()->updateColor();
     recreateCssHelper();
-    update(MimeTreeParser::Force);
+    mDkimWidgetInfo->updatePalette();
+    // update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::updateColorFromScheme()
@@ -2847,6 +2835,17 @@ bool ViewerPrivate::showEncryptionDetails() const
     return mShowEncryptionDetails;
 }
 
+[[nodiscard]] static int countNodes(const KMime::Content *node)
+{
+    int count = 1;
+
+    const auto children = node->contents();
+    for (const auto child : children) {
+        count += countNodes(child);
+    }
+    return count;
+}
+
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 {
     const QString indexStr = node->index().toString();
@@ -2854,8 +2853,7 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
     mViewer->scrollToAnchor(QLatin1StringView("attachmentDiv") + indexStr);
 
     // Remove any old color markings which might be there
-    const KMime::Content *root = node->topLevel();
-    const int totalChildCount = Util::allContents(root).size();
+    const int totalChildCount = countNodes(node->topLevel());
     for (int i = 0; i < totalChildCount + 1; ++i) {
         // Not optimal I need to optimize it. But for the moment it removes yellow mark
         mViewer->removeAttachmentMarking(QStringLiteral("attachmentDiv%1").arg(i + 1));

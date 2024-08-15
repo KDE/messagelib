@@ -38,6 +38,11 @@ public:
 
     [[nodiscard]] QByteArray data() const;
     void setData(const QByteArray &data);
+    /** Indicated the data set with setData() is already encoded with the selected
+     *  content transfer encoding.
+     *  @default @c false
+     */
+    void setDataIsEncoded(bool encoded);
 
     /// created on first call. delete them if you don't use the content
     [[nodiscard]] KMime::Headers::ContentDescription *contentDescription();

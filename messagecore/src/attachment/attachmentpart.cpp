@@ -13,22 +13,14 @@
 
 using namespace MessageCore;
 
-size_t qHash(const MessageCore::AttachmentPart::Ptr &ptr, size_t seed)
-{
-    return ::qHash(ptr.data(), seed);
-}
-
 // TODO move to kmime_util?
 static qint64 sizeWithEncoding(const QByteArray &data, KMime::Headers::contentEncoding encoding) // local
 {
-    auto content = new KMime::Content;
-    content->setBody(data);
-    content->contentTransferEncoding()->setEncoding(encoding);
+    KMime::Content content;
+    content.setBody(data);
+    content.contentTransferEncoding()->setEncoding(encoding);
 
-    const int size = content->size();
-    delete content;
-
-    return size;
+    return content.size();
 }
 
 static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArray &mimeType, const QByteArray &data)

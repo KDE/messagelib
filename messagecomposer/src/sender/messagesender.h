@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 namespace MessageComposer
 {
 class MessageSender

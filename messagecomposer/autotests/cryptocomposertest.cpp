@@ -29,7 +29,6 @@ using namespace KMime;
 using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
-#include <MessageCore/NodeHelper>
 using namespace MessageCore;
 
 #include <MimeTreeParser/ObjectTreeParser>
@@ -81,7 +80,7 @@ void CryptoComposerTest::testOpenPGPMime()
     fillComposerCryptoData(composer);
 
     composer->setSignAndEncrypt(sign, encrypt);
-    composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+    composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -124,7 +123,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
     composer->addAttachmentPart(attachment);
 
     composer->setSignAndEncrypt(false, true);
-    composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
+    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -179,7 +178,7 @@ void CryptoComposerTest::testEditEncryptAttachments()
     composer->addAttachmentPart(attachment);
 
     composer->setSignAndEncrypt(false, true);
-    composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
+    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -245,7 +244,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     composer->addAttachmentPart(attachment);
 
     composer->setSignAndEncrypt(false, true);
-    composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
+    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -302,7 +301,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     composer->addAttachmentPart(attachment);
 
     composer->setSignAndEncrypt(true, true);
-    composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
+    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -312,14 +311,15 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     composer = nullptr;
 
     // as we have an additional attachment, just ignore it when checking for sign/encrypt
-    KMime::Content *b = MessageCore::NodeHelper::firstChild(message.data());
+    QVERIFY(message->contents().size() >= 2);
+    KMime::Content *b = message->contents().at(0);
     ComposerTestUtil::verifySignatureAndEncryption(b, data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
     // now check the attachment separately
-    QCOMPARE(QString::fromLatin1(MessageCore::NodeHelper::nextSibling(b)->body()), QString::fromLatin1("abc"));
+    QCOMPARE(QString::fromLatin1(message->contents().at(1)->body()), QString::fromLatin1("abc"));
 }
 
 // protected headers
@@ -349,7 +349,7 @@ void CryptoComposerTest::testProtectedHeaders()
     fillComposerCryptoData(composer);
 
     composer->setSignAndEncrypt(sign, encrypt);
-    composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+    composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -381,14 +381,14 @@ void CryptoComposerTest::testProtectedHeaders()
         QCOMPARE(extraContents.size(), 1);
         part = extraContents.first();
         if (sign) {
-            QVERIFY(!part->contentType(false)->hasParameter(QStringLiteral("protected-headers")));
+            QVERIFY(!part->contentType(false)->hasParameter("protected-headers"));
             QVERIFY(!part->headerByType("to"));
             QVERIFY(!part->headerByType("from:"));
             part = Util::findTypeInMessage(part, "text", "plain");
         }
     }
     QVERIFY(part);
-    QCOMPARE(part->contentType(false)->parameter(QStringLiteral("protected-headers")), QStringLiteral("v1"));
+    QCOMPARE(part->contentType(false)->parameter("protected-headers"), QStringLiteral("v1"));
     QCOMPARE(part->headerByType("to")->asUnicodeString(), QStringLiteral("you@you.you"));
     QCOMPARE(part->headerByType("from")->asUnicodeString(), QStringLiteral("me@me.me"));
 }
@@ -428,7 +428,7 @@ void CryptoComposerTest::testBCCEncrypt()
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(secondRecipients, skeys));
 
     composer->setSignAndEncrypt(true, true);
-    composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
+    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
     composer->setEncryptionKeys(encKeys);
     composer->setSigningKeys(keys);
@@ -479,7 +479,7 @@ void CryptoComposerTest::testOpenPGPInline()
     fillComposerCryptoData(composer);
 
     composer->setSignAndEncrypt(sign, encrypt);
-    composer->setMessageCryptoFormat(Kleo::InlineOpenPGPFormat);
+    composer->setCryptoMessageFormat(Kleo::InlineOpenPGPFormat);
 
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
@@ -624,7 +624,7 @@ void CryptoComposerTest::testSetGnupgHome()
 
         composer->setGnupgHome(dir.path());
         composer->setSignAndEncrypt(sign, encrypt);
-        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
         QCOMPARE(composer->exec(), false);
     }
@@ -642,7 +642,7 @@ void CryptoComposerTest::testSetGnupgHome()
 
         composer->setGnupgHome(dir.path());
         composer->setSignAndEncrypt(sign, encrypt);
-        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
         VERIFYEXEC((composer));
         QCOMPARE(composer->resultMessages().size(), 1);
@@ -690,7 +690,7 @@ void CryptoComposerTest::testAutocryptHeaders()
         composer->setSenderEncryptionKey(keys[0]);
         composer->setGnupgHome(dir.path());
         composer->setSignAndEncrypt(sign, encrypt);
-        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
         QCOMPARE(composer->exec(), false);
     }
@@ -709,7 +709,7 @@ void CryptoComposerTest::testAutocryptHeaders()
         composer->setSenderEncryptionKey(keys[0]);
         composer->setGnupgHome(dir.path());
         composer->setSignAndEncrypt(sign, encrypt);
-        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
         VERIFYEXEC((composer));
         QCOMPARE(composer->resultMessages().size(), 1);
@@ -788,7 +788,7 @@ void CryptoComposerTest::testAutocryptGossip()
         composer->setAutocryptEnabled(true);
         composer->setSenderEncryptionKey(keys[0]);
         composer->setSignAndEncrypt(sign, encrypt);
-        composer->setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
         VERIFYEXEC((composer));
         QCOMPARE(composer->resultMessages().size(), 1);
@@ -831,7 +831,6 @@ void CryptoComposerTest::testAutocryptGossip()
 // Helper methods
 void CryptoComposerTest::fillComposerData(Composer *composer, const QString &data)
 {
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->textPart()->setWrappedPlainText(data);
@@ -877,7 +876,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     } else {
         f = Kleo::SMIMEFormat;
     }
-    composer->setMessageCryptoFormat(f);
+    composer->setCryptoMessageFormat(f);
 
     const bool result = composer->exec();
     // QEXPECT_FAIL("", "GPG setup problems", Continue);

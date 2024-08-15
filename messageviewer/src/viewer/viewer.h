@@ -81,7 +81,7 @@ protected:
     Akonadi::Session *session() const;
 
 private:
-    void setSession(Akonadi::Session *session);
+    MESSAGEVIEWER_NO_EXPORT void setSession(Akonadi::Session *session);
 
     friend class Viewer;
     class AbstractMessageLoadedHandlerPrivate;
@@ -204,7 +204,7 @@ public:
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
 
     /** Get the load external references override setting */
-    bool htmlLoadExtOverride() const;
+    [[nodiscard]] bool htmlLoadExtOverride() const;
 
     /** Default behavior for loading external references.
      *  Use this for specifying the external reference loading behavior as
@@ -325,7 +325,7 @@ public:
     [[nodiscard]] QString selectedText() const;
 
     void saveMainFrameScreenshotInFile(const QString &filename);
-    bool mimePartTreeIsEmpty() const;
+    [[nodiscard]] bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
     [[nodiscard]] QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
@@ -400,8 +400,8 @@ Q_SIGNALS:
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
-    void initialize();
-    void slotGeneralPaletteChanged();
+    MESSAGEVIEWER_NO_EXPORT void initialize();
+    MESSAGEVIEWER_NO_EXPORT void slotGeneralPaletteChanged();
 
 public Q_SLOTS:
 
@@ -432,6 +432,7 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     /** Watch for palette changes */
     [[nodiscard]] bool event(QEvent *e) override;
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
     void changeEvent(QEvent *event) override;
 
     ViewerPrivate *const d_ptr;

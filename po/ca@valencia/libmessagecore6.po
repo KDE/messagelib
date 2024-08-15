@@ -1,24 +1,24 @@
 # Translation of libmessagecore6.po to Catalan (Valencian)
-# Copyright (C) 2009-2020 This_file_is_part_of_KDE
+# Copyright (C) 2009-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009, 2010, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2015, 2017, 2018.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2015, 2017, 2018, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2016, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2020-08-17 23:09+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"PO-Revision-Date: 2024-08-02 12:52+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -168,7 +168,7 @@ msgid ""
 "<em>Content-Disposition</em> header field to \"inline\" instead of the "
 "default \"attachment\".</p>"
 msgstr ""
-"<p>Seleccioneu esta opció si voleu suggerir al destinatari que veja "
+"<p>Marqueu esta opció si voleu suggerir al destinatari que veja "
 "automàticament (dins del missatge) d'esta part en comptes de la vista "
 "predeterminada en la icona.</p><p>Tècnicament açò es fa posant la capçalera "
 "<em>Content-Disposition</em> d'esta part com a «inline» (inclosa) en comptes "
@@ -181,7 +181,7 @@ msgid ""
 "signature will be made with the key that you associated with the currently-"
 "selected identity.</p>"
 msgstr ""
-"<p>Seleccioneu esta opció si voleu que esta part del missatge siga signada.</"
+"<p>Marqueu esta opció si voleu que esta part del missatge siga signada.</"
 "p><p>La signatura es farà amb la clau que teniu associada amb la identitat "
 "seleccionada.</p>"
 
@@ -191,7 +191,7 @@ msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
-"<p>Seleccioneu esta opció si voleu que esta part del missatge s'encripte.</"
+"<p>Marqueu esta opció si voleu que esta part del missatge s'encripte.</"
 "p><p>La part s'encriptarà per als destinataris del missatge.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:307
@@ -294,20 +294,26 @@ msgstr "Este és el color utilitzat en el 2n nivell del text citat"
 msgid "This is the color used in the 1st level of quoted text"
 msgstr "Este és el color utilitzat en el 1r nivell del text citat"
 
+#. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
+#: settings/messagecore.kcfg:48
+#, kde-format
+msgid "Display Own Identity"
+msgstr "Mostra la identitat pròpia"
+
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:54
+#: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr "Substituïx el prefi&x reconegut per «Re:»"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:62
+#: settings/messagecore.kcfg:66
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr "Substituïx el prefix reconegut per «&Fwd:»"
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:67
+#: settings/messagecore.kcfg:71
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
@@ -316,7 +322,29 @@ msgstr ""
 "Mida màxima en bits que es permet en els adjunts del correu (-1 per a sense "
 "límit)"
 
-#: utils/stringutil.cpp:418
+#: utils/dateformatter.cpp:158
+#, kde-format
+msgctxt "invalid time specified"
+msgid "unknown"
+msgstr "desconegut"
+
+#: utils/dateformatter.cpp:172
+#, kde-format
+msgid "Today %1"
+msgstr "Hui %1"
+
+#: utils/dateformatter.cpp:175
+#, kde-format
+msgid "Yesterday %1"
+msgstr "Ahir %1"
+
+#: utils/dateformatter.cpp:180
+#, kde-format
+msgctxt "1. weekday, 2. time"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

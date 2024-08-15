@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -576,12 +576,16 @@ msgid "Reset to default"
 msgstr "기본값으로 초기화"
 
 #: templatesconfiguration.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset Current Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "현재 템플릿 초기화"
 
 #: templatesconfiguration.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset All Templates"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "모든 템플릿 초기화"
 

@@ -9,8 +9,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KMime/KMimeMessage>
 #include <KMime/MDN>
+#include <KMime/Message>
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
@@ -226,11 +226,9 @@ Q_SIGNALS:
     void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
     void createForwardDone(const KMime::Message::Ptr &msg);
 
-private Q_SLOTS:
+private:
     MESSAGECOMPOSER_NO_EXPORT void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
     MESSAGECOMPOSER_NO_EXPORT void slotCreateForwardDone(const KMime::Message::Ptr &msg);
-
-private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagementCore::IdentityManager::identityForAddress()

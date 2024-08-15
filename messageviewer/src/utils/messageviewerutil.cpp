@@ -5,7 +5,6 @@
 
 #include "messageviewer/messageviewerutil.h"
 #include "MessageCore/MessageCoreSettings"
-#include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
 #include "messageviewer_debug.h"
 #include "messageviewerutil_p.h"
@@ -147,23 +146,6 @@ bool Util::handleUrlWithQDesktopServices(const QUrl &url)
 #endif
 }
 
-KMime::Content::List Util::allContents(const KMime::Content *message)
-{
-    KMime::Content::List result;
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(message);
-    if (child) {
-        result += child;
-        result += allContents(child);
-    }
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(message);
-    if (next) {
-        result += next;
-        result += allContents(next);
-    }
-
-    return result;
-}
-
 bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList)
 {
     QUrl url;
@@ -197,7 +179,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
         localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
         QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), nullptr, options);
+        url = QFileDialog::getSaveFileUrl(parent, i18nc("@title:window", "Save Attachment"), localUrl, QString(), nullptr, options);
         if (url.isEmpty()) {
             return false;
         }
@@ -321,8 +303,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
                                        i18n(
                                            "The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Encryption")),
-                                       KGuiItem(i18n("Do Not Keep")))
+                                       i18n("KMail Question"), KGuiItem(i18nc("@action:button", "Keep Encryption")),
+                                       KGuiItem(i18nc("@action:button", "Do Not Keep")))
             == KMessageBox::ButtonCode::PrimaryAction) {
             bSaveEncrypted = true;
         }
@@ -334,8 +316,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
                                        i18n(
                                            "The part %1 of the message is signed. Do you want to keep the signature when saving?",
                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Signature")),
-                                       KGuiItem(i18n("Do Not Keep")))
+                                       i18n("KMail Question"), KGuiItem(i18nc("@action:button", "Keep Signature")),
+                                       KGuiItem(i18nc("@action:button", "Do Not Keep")))
             != KMessageBox::Yes) {
             bSaveWithSig = false;
         }
@@ -604,7 +586,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     auto deletePart = new KMime::Content(parentNode);
     auto deleteCt = deletePart->contentType(true);
     deleteCt->setMimeType("text/x-moz-deleted");
-    deleteCt->setName(newName, "utf8");
+    deleteCt->setName(newName);
     deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
     deletePart->contentDisposition(false)->setFilename(newName);
 
@@ -776,40 +758,6 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     s = s.remove(bodyEndRegularExpression).trimmed();
     messageInfo.htmlSource = textBeforeDoctype + s;
     return messageInfo;
-}
-
-QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
-{
-    QByteArray currentCodec = codec;
-    if (currentCodec.isEmpty()) {
-        currentCodec = QByteArray("UTF-8");
-    }
-    if (currentCodec == QByteArray("us-ascii")) {
-        currentCodec = QByteArray("iso-8859-1");
-    }
-    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
-        currentCodec = QByteArray("UTF-8");
-    }
-
-    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
-    return currentCodec;
-}
-QStringConverter::Encoding Util::htmlEncoding(const QByteArray &data, const QByteArray &codec)
-{
-    QByteArray currentCodec = codec;
-    if (currentCodec.isEmpty()) {
-        return QStringConverter::Utf8;
-    }
-    if (currentCodec == QByteArray("us-ascii")) {
-        return QStringConverter::Latin1;
-    }
-    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
-        return QStringConverter::Utf8;
-    }
-
-    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
-    // TODO verify
-    return QStringConverter::System;
 }
 
 QDebug operator<<(QDebug d, const Util::HtmlMessageInfo &t)

@@ -11,7 +11,8 @@
 
 #include <memory>
 
-namespace Kleo{
+namespace Kleo
+{
 class KeyCache;
 }
 

@@ -46,11 +46,12 @@ public:
     void loadPlugin(PluginEditorInitInfo *item);
     [[nodiscard]] QList<PluginEditorInit *> pluginsList() const;
     void initializePlugins();
-    QList<PluginEditorInitInfo> mPluginList;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
-    PluginEditorInit *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] PluginEditorInit *pluginFromIdentifier(const QString &id);
+
+    QList<PluginEditorInitInfo> mPluginList;
 
 private:
     QList<PimCommon::PluginUtilData> mPluginDataList;

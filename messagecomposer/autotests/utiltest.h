@@ -15,7 +15,6 @@ class UtilTest : public QObject
 public:
     explicit UtilTest(QObject *parent = nullptr);
 private Q_SLOTS:
-    void testSelectCharset();
     void shouldTestHasMissingAttachment();
     void shouldTestHasMissingAttachment_data();
 };

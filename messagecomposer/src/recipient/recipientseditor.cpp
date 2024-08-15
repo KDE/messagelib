@@ -38,11 +38,8 @@ RecipientLineFactory::RecipientLineFactory(QObject *parent)
 KPIM::MultiplyingLine *RecipientLineFactory::newLine(QWidget *p)
 {
     auto line = new RecipientLineNG(p);
-    if (qobject_cast<RecipientsEditor *>(parent())) {
-        connect(line,
-                SIGNAL(addRecipient(RecipientLineNG *, QString)),
-                qobject_cast<RecipientsEditor *>(parent()),
-                SLOT(addRecipient(RecipientLineNG *, QString)));
+    if (auto editor = qobject_cast<RecipientsEditor *>(parent()); editor) {
+        connect(line, &RecipientLineNG::addRecipient, editor, qOverload<RecipientLineNG *, const QString &>(&RecipientsEditor::addRecipient));
     } else {
         qCWarning(MESSAGECOMPOSER_LOG) << "RecipientLineFactory::newLine: We can't connect to new line" << parent();
     }
@@ -354,12 +351,6 @@ void RecipientsEditor::slotCalculateTotal()
     }
     // update the side widget
     d->mSideWidget->setTotal(count, lines().count());
-}
-
-RecipientLineNG *RecipientsEditor::activeLine() const
-{
-    MultiplyingLine *line = MultiplyingLineEditor::activeLine();
-    return qobject_cast<RecipientLineNG *>(line);
 }
 
 #include "moc_recipientseditor.cpp"

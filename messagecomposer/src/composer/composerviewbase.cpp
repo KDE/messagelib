@@ -40,7 +40,6 @@
 #include <Sonnet/DictionaryComboBox>
 
 #include <MessageCore/AutocryptStorage>
-#include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/MessageQueueJob>
@@ -88,8 +87,6 @@ ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
     , m_autoSaveInterval(60000) // default of 1 min
 {
-    m_charsets << "utf-8"; // default, so we have a backup in case client code forgot to set.
-
     initAutoSave();
 }
 
@@ -179,20 +176,20 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto msgContent = new KMime::Content;
-    msgContent->setContent(m_msg->encodedContent());
-    msgContent->parse();
+    KMime::Content msgContent;
+    msgContent.setContent(m_msg->encodedContent());
+    msgContent.parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource); // All default are ok
     emptySource.setDecryptMessage(allowDecryption);
-    otp.parseObjectTree(msgContent);
+    otp.parseObjectTree(&msgContent);
 
     // Load the attachments
     const auto attachmentsOfExtraContents{otp.nodeHelper()->attachmentsOfExtraContents()};
     for (const auto &att : attachmentsOfExtraContents) {
         addAttachmentPart(att);
     }
-    const auto attachments{msgContent->attachments()};
+    const auto attachments{msgContent.attachments()};
     for (const auto &att : attachments) {
         addAttachmentPart(att);
     }
@@ -226,7 +223,6 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     if (auto hdr = m_msg->headerByType("X-KMail-CursorPos")) {
         m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toUInt());
     }
-    delete msgContent;
 }
 
 void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
@@ -234,12 +230,12 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto msgContent = new KMime::Content;
-    msgContent->setContent(msg->encodedContent());
-    msgContent->parse();
+    KMime::Content msgContent;
+    msgContent.setContent(msg->encodedContent());
+    msgContent.parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource); // All default are ok
-    otp.parseObjectTree(msgContent);
+    otp.parseObjectTree(&msgContent);
     // Set the HTML text and collect HTML images
     if (!otp.htmlContent().isEmpty()) {
         m_editor->setHtml(otp.htmlContent());
@@ -252,34 +248,33 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     if (auto hdr = msg->headerByType("X-KMail-CursorPos")) {
         m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toInt());
     }
-    delete msgContent;
 }
 
 void ComposerViewBase::saveMailSettings()
 {
     const auto identity = currentIdentity();
     auto header = new KMime::Headers::Generic("X-KMail-Transport");
-    header->fromUnicodeString(QString::number(m_transport->currentTransportId()), "utf-8");
+    header->fromUnicodeString(QString::number(m_transport->currentTransportId()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Transport-Name");
-    header->fromUnicodeString(m_transport->currentText(), "utf-8");
+    header->fromUnicodeString(m_transport->currentText());
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Fcc");
-    header->fromUnicodeString(QString::number(m_fccCollection.id()), "utf-8");
+    header->fromUnicodeString(QString::number(m_fccCollection.id()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Identity");
-    header->fromUnicodeString(QString::number(identity.uoid()), "utf-8");
+    header->fromUnicodeString(QString::number(identity.uoid()));
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Identity-Name");
-    header->fromUnicodeString(identity.identityName(), "utf-8");
+    header->fromUnicodeString(identity.identityName());
     m_msg->setHeader(header);
 
     header = new KMime::Headers::Generic("X-KMail-Dictionary");
-    header->fromUnicodeString(m_dictionary->currentDictionary(), "utf-8");
+    header->fromUnicodeString(m_dictionary->currentDictionary());
     m_msg->setHeader(header);
 
     // Save the quote prefix which is used for this message. Each message can have
@@ -288,14 +283,14 @@ void ComposerViewBase::saveMailSettings()
         m_msg->removeHeader("X-KMail-QuotePrefix");
     } else {
         header = new KMime::Headers::Generic("X-KMail-QuotePrefix");
-        header->fromUnicodeString(m_editor->quotePrefixName(), "utf-8");
+        header->fromUnicodeString(m_editor->quotePrefixName());
         m_msg->setHeader(header);
     }
 
     if (m_editor->composerControler()->isFormattingUsed()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "HTML mode";
         header = new KMime::Headers::Generic("X-KMail-Markup");
-        header->fromUnicodeString(QStringLiteral("true"), "utf-8");
+        header->fromUnicodeString(QStringLiteral("true"));
         m_msg->setHeader(header);
     } else {
         m_msg->removeHeader("X-KMail-Markup");
@@ -419,12 +414,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         mExpandedBcc = resolveJob->expandedBcc();
         mExpandedReplyTo = resolveJob->expandedReplyTo();
         if (autoresizeImage) {
-            QStringList listEmails;
-            listEmails << mExpandedFrom;
-            listEmails << mExpandedTo;
-            listEmails << mExpandedCc;
-            listEmails << mExpandedBcc;
-            listEmails << mExpandedReplyTo;
+            const QStringList listEmails = QStringList() << mExpandedFrom << mExpandedTo << mExpandedCc << mExpandedBcc << mExpandedReplyTo;
             MessageComposer::Utils resizeUtils;
             autoresizeImage = resizeUtils.filterRecipients(listEmails);
         }
@@ -647,6 +637,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                 auto exportJob = proto->publicKeyExportJob(false);
                 connect(exportJob,
                         &QGpgME::ExportJob::result,
+                        this,
                         [&gnupgHome, &proto, &runningJobs, &loop, &k](const GpgME::Error &result,
                                                                       const QByteArray &keyData,
                                                                       const QString &auditLogAsHtml,
@@ -726,9 +717,11 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                     dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
                 }
                 if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OtherKeyExpired) {
-                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired") : i18n("S/MIME Certificate Expired");
+                    title =
+                        key.protocol() == GpgME::OpenPGP ? i18nc("@title:window", "OpenPGP Key Expired") : i18nc("@title:window", "S/MIME Certificate Expired");
                 } else {
-                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon") : i18n("S/MIME Certificate Expires Soon");
+                    title = key.protocol() == GpgME::OpenPGP ? i18nc("@title:window", "OpenPGP Key Expires Soon")
+                                                             : i18nc("@title:window", "S/MIME Certificate Expires Soon");
                 }
                 if (KMessageBox::warningContinueCancel(nullptr, msg, title, KStandardGuiItem::cont(), KStandardGuiItem::cancel(), dontAskAgainName)
                     == KMessageBox::Cancel) {
@@ -898,7 +891,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                 composer->setSigningKeys(signingKeys);
             }
 
-            composer->setMessageCryptoFormat(concreteFormat);
+            composer->setCryptoMessageFormat(concreteFormat);
             composer->setSignAndEncrypt(signSomething, encryptSomething);
 
             composers.append(composer);
@@ -921,7 +914,6 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
 void ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
 {
     globalPart->setParentWidgetForGui(m_parentWidget);
-    globalPart->setCharsets(m_charsets);
     globalPart->setMDNRequested(m_mdnRequested);
     globalPart->setRequestDeleveryConfirmation(m_requestDeleveryConfirmation);
 }
@@ -1078,17 +1070,23 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    const QList<QByteArray> toAddresses = msg->to()->addresses();
-    for (const QByteArray &address : toAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    if (auto to = msg->to(false)) {
+        const auto toAddresses = to->mailboxes();
+        for (const auto &address : toAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
-    const QList<QByteArray> ccAddresses = msg->cc()->addresses();
-    for (const QByteArray &address : ccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    if (auto cc = msg->cc(false)) {
+        const auto ccAddresses = cc->mailboxes();
+        for (const auto &address : ccAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
-    const QList<QByteArray> bccAddresses = msg->bcc()->addresses();
-    for (const QByteArray &address : bccAddresses) {
-        PimCommon::RecentAddresses::self(config)->add(QLatin1StringView(address));
+    if (auto bcc = msg->bcc(false)) {
+        const auto bccAddresses = bcc->mailboxes();
+        for (const auto &address : bccAddresses) {
+            PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
+        }
     }
 }
 
@@ -1159,7 +1157,7 @@ void ComposerViewBase::slotQueueResult(KJob *job)
         // There is not much we can do now, since all the MessageQueueJobs have been
         // started.  So just wait for them to finish.
         // TODO show a message box or something
-        QString msg = i18n("There were problems trying to queue the message for sending: %1", job->errorString());
+        const QString msg = i18n("There were problems trying to queue the message for sending: %1", job->errorString());
 
         if (m_pendingQueueJobs == 0) {
             Q_EMIT failed(msg);
@@ -1535,8 +1533,8 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
         part->setDescription(cd->asUnicodeString());
     }
     if (auto ct = partToAttach->contentType(false)) {
-        if (ct->hasParameter(QStringLiteral("name"))) {
-            part->setName(ct->parameter(QStringLiteral("name")));
+        if (ct->hasParameter("name")) {
+            part->setName(ct->parameter("name"));
         }
     }
     if (auto cd = partToAttach->contentDisposition(false)) {
@@ -1683,16 +1681,24 @@ void ComposerViewBase::updateRecipients(const KIdentityManagementCore::Identity 
 {
     QString oldIdentList;
     QString newIdentList;
-    if (type == MessageComposer::Recipient::Bcc) {
+    switch (type) {
+    case MessageComposer::Recipient::Bcc: {
         oldIdentList = oldIdent.bcc();
         newIdentList = ident.bcc();
-    } else if (type == MessageComposer::Recipient::Cc) {
+        break;
+    }
+    case MessageComposer::Recipient::Cc: {
         oldIdentList = oldIdent.cc();
         newIdentList = ident.cc();
-    } else if (type == MessageComposer::Recipient::ReplyTo) {
+        break;
+    }
+    case MessageComposer::Recipient::ReplyTo: {
         oldIdentList = oldIdent.replyToAddr();
         newIdentList = ident.replyToAddr();
-    } else {
+        break;
+    }
+    case MessageComposer::Recipient::To:
+    case MessageComposer::Recipient::Undefined:
         return;
     }
 
@@ -1823,11 +1829,6 @@ void ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMes
     m_neverEncrypt = neverEncryptDrafts;
 }
 
-void ComposerViewBase::setCharsets(const QList<QByteArray> &charsets)
-{
-    m_charsets = charsets;
-}
-
 void ComposerViewBase::setMDNRequested(bool mdnRequested)
 {
     m_mdnRequested = mdnRequested;
@@ -1849,8 +1850,8 @@ void ComposerViewBase::collectImages(KMime::Content *root)
     if (KMime::Content *n = Util::findTypeInMessage(root, "multipart", "alternative")) {
         KMime::Content *parentnode = n->parent();
         if (parentnode && parentnode->contentType()->isMultipart() && parentnode->contentType()->subType() == "related") {
-            KMime::Content *node = MessageCore::NodeHelper::nextSibling(n);
-            while (node) {
+            const auto nodes = parentnode->contents();
+            for (auto node : nodes) {
                 if (node->contentType()->isImage()) {
                     qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << node->contentType()->name();
                     QImage img;
@@ -1860,7 +1861,6 @@ void ComposerViewBase::collectImages(KMime::Content *root)
                         QString::fromLatin1(QByteArray(QByteArrayLiteral("cid:") + node->contentID()->identifier())),
                         node->contentType()->name());
                 }
-                node = MessageCore::NodeHelper::nextSibling(node);
             }
         }
     }
@@ -1898,8 +1898,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                              "attached file but you have not attached anything.\n"
                                                              "Do you want to attach a file to your message?"),
                                                         i18nc("@title:window", "File Attachment Reminder"),
-                                                        KGuiItem(i18n("&Attach File..."), QLatin1StringView("mail-attachment")),
-                                                        KGuiItem(i18n("&Send as Is"), QLatin1StringView("mail-send")));
+                                                        KGuiItem(i18nc("@action:button", "&Attach File..."), QLatin1StringView("mail-attachment")),
+                                                        KGuiItem(i18nc("@action:button", "&Send as Is"), QLatin1StringView("mail-send")));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }
@@ -1959,7 +1959,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                      msg,
                                                      i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
-                                                     KGuiItem(i18n("Do &Not Sign")))) {
+                                                     KGuiItem(i18nc("@action:button", "Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -1987,7 +1987,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                      msg,
                                                      i18nc("@title:window", "Sign Message?"),
                                                      KGuiItem(i18nc("to sign", "&Sign")),
-                                                     KGuiItem(i18n("Do &Not Sign")))) {
+                                                     KGuiItem(i18nc("@action:button", "Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -2010,7 +2010,10 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "You have requested to sign this message, "
             "but no valid signing keys have been configured "
             "for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unsigned?"), KGuiItem(i18n("Send &Unsigned")))
+        if (KMessageBox::warningContinueCancel(m_parentWidget,
+                                               msg,
+                                               i18nc("@title:window", "Send Unsigned?"),
+                                               KGuiItem(i18nc("@action:button", "Send &Unsigned")))
             == KMessageBox::Cancel) {
             result = false;
             return false;
@@ -2037,7 +2040,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                          msg,
                                                          i18nc("@title:window", "Unsigned-Message Warning"),
                                                          KGuiItem(buttonText),
-                                                         KGuiItem(i18n("Send &As Is")))) {
+                                                         KGuiItem(i18nc("@action:button", "Send &As Is")))) {
             case KMessageBox::Cancel:
                 result = false;
                 canceled = true;
@@ -2124,8 +2127,8 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             m_parentWidget,
             msg,
             i18n("Encrypt Message?"),
-            KGuiItem(i18n("&Encrypt")),
-            KGuiItem(i18n("Do &Not Encrypt")))) {
+            KGuiItem(i18nc("@action:button", "&Encrypt")),
+            KGuiItem(i18nc("@action:button", "Do &Not Encrypt")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
@@ -2149,7 +2152,10 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             "and to encrypt a copy to yourself, "
             "but no valid trusted encryption keys have been "
             "configured for this identity.");
-        if (KMessageBox::warningContinueCancel(m_parentWidget, msg, i18nc("@title:window", "Send Unencrypted?"), KGuiItem(i18n("Send &Unencrypted")))
+        if (KMessageBox::warningContinueCancel(m_parentWidget,
+                                               msg,
+                                               i18nc("@title:window", "Send Unencrypted?"),
+                                               KGuiItem(i18nc("@action:button", "Send &Unencrypted")))
             == KMessageBox::Cancel) {
             result = false;
             return false;

@@ -15,7 +15,7 @@
 #include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 class KXMLGUIClient;
 class QAbstractItemModel;
@@ -369,7 +369,7 @@ public:
 
     void populateStatusFilterCombo();
 
-    Core::QuickSearchLine::SearchOptions currentOptions() const;
+    Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
     [[nodiscard]] Akonadi::Collection currentFolder() const;
 

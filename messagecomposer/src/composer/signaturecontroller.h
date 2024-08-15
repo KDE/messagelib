@@ -82,11 +82,8 @@ private:
      * @param placement the position of the signature
      */
     MESSAGECOMPOSER_NO_EXPORT void insertSignatureHelper(KIdentityManagementCore::Signature::Placement placement);
-
-private Q_SLOTS:
     MESSAGECOMPOSER_NO_EXPORT void identityChanged(uint id);
 
-private:
     std::unique_ptr<SignatureControllerPrivate> const d;
 };
 }

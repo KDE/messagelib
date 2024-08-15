@@ -32,12 +32,12 @@ void AttachmentFromMimeContentJobTest::testAttachment()
 
     auto content = new Content;
     content->contentType()->setMimeType(mimeType);
-    content->contentType()->setName(name, charset);
+    content->contentType()->setName(name);
     content->contentType()->setCharset(charset);
     content->contentTransferEncoding()->setEncoding(encoding);
     content->contentDisposition()->setDisposition(disposition);
     content->contentDisposition()->setFilename(fileName);
-    content->contentDescription()->fromUnicodeString(description, charset);
+    content->contentDescription()->fromUnicodeString(description);
     content->setBody(data);
     content->assemble();
     // qCDebug(MESSAGECORE_LOG) << "Encoded content:" << content->encodedContent();

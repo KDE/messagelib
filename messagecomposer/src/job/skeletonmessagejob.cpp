@@ -17,7 +17,7 @@
 #include "messagecomposer_debug.h"
 
 #include <KEmailAddress>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 using namespace MessageComposer;
 
@@ -51,7 +51,7 @@ void SkeletonMessageJobPrivate::doStart()
         auto from = new KMime::Headers::From;
         KMime::Types::Mailbox address;
         address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
-        from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")), "utf-8");
+        from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")));
         message->setHeader(from);
     }
 
@@ -68,7 +68,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sTo.append(address.as7BitString("utf-8"));
         }
-        to->fromUnicodeString(QString::fromLatin1(sTo), "utf-8");
+        to->fromUnicodeString(QString::fromLatin1(sTo));
         message->setHeader(to);
     }
 
@@ -85,7 +85,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sReplyTo.append(address.as7BitString("utf-8"));
         }
-        replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo), "utf-8");
+        replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo));
         message->setHeader(replyTo);
     }
 
@@ -102,7 +102,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sCc.append(address.as7BitString("utf-8"));
         }
-        cc->fromUnicodeString(QString::fromLatin1(sCc), "utf-8");
+        cc->fromUnicodeString(QString::fromLatin1(sCc));
         message->setHeader(cc);
     }
 
@@ -119,14 +119,14 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sBcc.append(address.as7BitString("utf-8"));
         }
-        bcc->fromUnicodeString(QString::fromLatin1(sBcc), "utf-8");
+        bcc->fromUnicodeString(QString::fromLatin1(sBcc));
         message->setHeader(bcc);
     }
 
     // Subject:
     {
         auto subject = new KMime::Headers::Subject;
-        subject->fromUnicodeString(infoPart->subject(), "utf-8");
+        subject->fromUnicodeString(infoPart->subject());
         // TODO should we be more specific about the charset?
         message->setHeader(subject);
     }
@@ -141,14 +141,14 @@ void SkeletonMessageJobPrivate::doStart()
     // Fcc:
     if (!infoPart->fcc().isEmpty()) {
         auto header = new KMime::Headers::Generic("X-KMail-Fcc");
-        header->fromUnicodeString(infoPart->fcc(), "utf-8");
+        header->fromUnicodeString(infoPart->fcc());
         message->setHeader(header);
     }
 
     // Transport:
     if (infoPart->transportId() > -1) {
         auto header = new KMime::Headers::Generic("X-KMail-Transport");
-        header->fromUnicodeString(QString::number(infoPart->transportId()), "utf-8");
+        header->fromUnicodeString(QString::number(infoPart->transportId()));
         message->setHeader(header);
     }
 
@@ -188,7 +188,7 @@ void SkeletonMessageJobPrivate::doStart()
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             auto requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
-            requestDeleveryConfirmation->fromUnicodeString(addr, "utf-8");
+            requestDeleveryConfirmation->fromUnicodeString(addr);
             message->setHeader(requestDeleveryConfirmation);
         }
     }
@@ -199,7 +199,7 @@ void SkeletonMessageJobPrivate::doStart()
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             auto mdn = new KMime::Headers::Generic("Disposition-Notification-To");
-            mdn->fromUnicodeString(addr, "utf-8");
+            mdn->fromUnicodeString(addr);
             message->setHeader(mdn);
         }
     }
@@ -207,9 +207,9 @@ void SkeletonMessageJobPrivate::doStart()
     // Urgent header
     if (infoPart->urgent()) {
         auto urg1 = new KMime::Headers::Generic("X-PRIORITY");
-        urg1->fromUnicodeString(QStringLiteral("2 (High)"), "utf-8");
+        urg1->fromUnicodeString(QStringLiteral("2 (High)"));
         auto urg2 = new KMime::Headers::Generic("Priority");
-        urg2->fromUnicodeString(QStringLiteral("urgent"), "utf-8");
+        urg2->fromUnicodeString(QStringLiteral("urgent"));
         message->setHeader(urg1);
         message->setHeader(urg2);
     }
@@ -217,14 +217,14 @@ void SkeletonMessageJobPrivate::doStart()
     // In-Reply-To
     if (!infoPart->inReplyTo().isEmpty()) {
         auto header = new KMime::Headers::InReplyTo;
-        header->fromUnicodeString(infoPart->inReplyTo(), "utf-8");
+        header->fromUnicodeString(infoPart->inReplyTo());
         message->setHeader(header);
     }
 
     // References
     if (!infoPart->references().isEmpty()) {
         auto header = new KMime::Headers::References;
-        header->fromUnicodeString(infoPart->references(), "utf-8");
+        header->fromUnicodeString(infoPart->references());
         message->setHeader(header);
     }
 

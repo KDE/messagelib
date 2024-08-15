@@ -31,14 +31,14 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MessagePartRendererManager(QObject *parent = nullptr);
     ~MessagePartRendererManager() override;
     static MessagePartRendererManager *self();
     [[nodiscard]] KTextTemplate::Template loadByName(const QString &name);
     [[nodiscard]] KTextTemplate::Context createContext();
 
 private:
-    void initializeRenderer();
+    explicit MessagePartRendererManager(QObject *parent = nullptr);
+    MESSAGEVIEWER_NO_EXPORT void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;
     GlobalContext *const m_globalContext;
 };

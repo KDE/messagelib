@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# Kishore G <kishore96@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2022-09-01 19:52+0530\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-06-16 22:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -23,7 +23,13 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "நிரலாளர்களுக்கான கருவிநிரல்"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "மூடு"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "மூடு"
@@ -36,6 +42,7 @@ msgstr "&தேடு:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "கண்டுபிடிக்க வேண்டிய சொற்றொடர்"
 
@@ -47,8 +54,9 @@ msgstr "அடுத்தது"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவு"
+msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவும்"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -58,8 +66,9 @@ msgstr "முந்தையது"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "முந்தைய பொருத்தத்துக்கு தாவுக"
+msgstr "முந்தைய பொருத்தத்துக்கு தாவும்"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -68,8 +77,9 @@ msgstr "விருப்பங்கள்"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr "தேடல் நடத்தையை மாற்று"
+msgstr "தேடல் நடத்தையை மாற்ற விடும்"
 
 #: findbar/findbarbase.cpp:74
 #, kde-format
@@ -81,8 +91,10 @@ msgstr "எழுத்து வகையை (பெரிது/சிறி�
 msgid "Phrase not found"
 msgstr "சொற்றொடர் கண்டுபிடிக்கப்படவில்லை"
 
-#: webenginepage.cpp:68
-#, kde-format
+#: webenginepage.cpp:152
+#, fuzzy, kde-format
+#| msgid "Save HTML Page"
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML பக்கத்தை சேமி"
 

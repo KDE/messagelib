@@ -17,7 +17,7 @@
 #include "messagecomposer_debug.h"
 #include <KMime/Content>
 #include <KMime/Headers>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
@@ -46,7 +46,7 @@ public:
     bool protectedHeadersObvoscate = false;
 
     // copied from messagecomposer.cpp
-    bool binaryHint(Kleo::CryptoMessageFormat f)
+    [[nodiscard]] bool binaryHint(Kleo::CryptoMessageFormat f)
     {
         switch (f) {
         case Kleo::SMIMEFormat:

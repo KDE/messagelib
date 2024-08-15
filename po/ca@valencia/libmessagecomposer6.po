@@ -1,34 +1,34 @@
 # Translation of libmessagecomposer6.po to Catalan (Valencian)
-# Copyright (C) 2010-2023 This_file_is_part_of_KDE
+# Copyright (C) 2010-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Manuel Tortosa <manutortosa@gmail.com>, 2010, 2011.
-# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-29 01:38+0000\n"
-"PO-Revision-Date: 2023-09-26 12:34+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 10:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: attachment/attachmentcontrollerbase.cpp:167
+#: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "No s'ha pogut comprimir l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:178
+#: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -36,219 +36,233 @@ msgid ""
 msgstr ""
 "L'adjunt comprimit és més gran que l'original. Voleu mantindre l'original?"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:180
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Mantín"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
+msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprimix"
 
-#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "No s'ha pogut adjuntar el fitxer"
 
-#: attachment/attachmentcontrollerbase.cpp:274
+#: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "No s'ha pogut tornar a carregar l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:321
+#: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "O&bri amb"
 
-#: attachment/attachmentcontrollerbase.cpp:341
+#: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "Al&tres..."
+msgstr "Al&tres…"
 
-#: attachment/attachmentcontrollerbase.cpp:343
-#: attachment/attachmentcontrollerbase.cpp:351
+#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "O&bri amb..."
+msgstr "O&bri amb…"
 
-#: attachment/attachmentcontrollerbase.cpp:377
+#: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "No s'ha pogut adjuntar la clau pública"
 
-#: attachment/attachmentcontrollerbase.cpp:391
+#: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "No s'ha pogut adjuntar la vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:404
+#: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
+msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "No s'ha pogut adjuntar el text des del porta-retalls"
 
-#: attachment/attachmentcontrollerbase.cpp:452
+#: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
+msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "Adjunta la clau &pública..."
+msgstr "Adjunta la clau &pública…"
 
-#: attachment/attachmentcontrollerbase.cpp:455
+#: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
+msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Adjunta la &meua clau pública"
 
-#: attachment/attachmentcontrollerbase.cpp:458
-#: attachment/attachmentcontrollerbase.cpp:463
-#: attachment/attachmentcontrollerbase.cpp:469
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:457
+#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "Attach"
 msgstr "Adjunta"
 
-#: attachment/attachmentcontrollerbase.cpp:462
-#: composer/composerviewbase.cpp:1901
+#: attachment/attachmentcontrollerbase.cpp:461
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Adjunta un fitxer..."
+msgstr "&Adjunta un fitxer…"
 
-#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Afig un adjunt..."
+msgstr "Afig un adjunt…"
 
-#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "&Adjunta un directori..."
+msgstr "&Adjunta un directori…"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:471
 #, kde-format
+msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Adjunta la vCard pròpia"
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
 msgstr "vCard pròpia"
 
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "&Adjunta unes quantes vCard..."
+msgstr "&Adjunta unes quantes vCard…"
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:480
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "&Adjunta el text des del porta-retalls..."
+msgstr "&Adjunta el text des del porta-retalls…"
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Adjunta el text des del porta-retalls"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Elimina l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "Remove"
 msgstr "Elimina"
 
-#: attachment/attachmentcontrollerbase.cpp:503
+#: attachment/attachmentcontrollerbase.cpp:502
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obri"
 
-#: attachment/attachmentcontrollerbase.cpp:508
+#: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Visualitza"
 
-#: attachment/attachmentcontrollerbase.cpp:513
+#: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Edita"
 
-#: attachment/attachmentcontrollerbase.cpp:518
+#: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
+msgctxt "@action"
 msgid "Edit With..."
-msgstr "Edita amb..."
+msgstr "Edita amb…"
+
+#: attachment/attachmentcontrollerbase.cpp:522
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "Anomena i &guarda l'adjunt…"
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
-msgid "&Save Attachment As..."
-msgstr "Guar&da l'adjunt com a..."
-
-#: attachment/attachmentcontrollerbase.cpp:524
-#, kde-format
 msgid "Save As..."
-msgstr "Anomena i guarda..."
+msgstr "Anomena i guarda…"
+
+#: attachment/attachmentcontrollerbase.cpp:531
+#, kde-format
+msgctxt "@action"
+msgid "Attachment Pr&operties..."
+msgstr "Pr&opietats de l'adjunt…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
-msgid "Attachment Pr&operties..."
-msgstr "Pr&opietats de l'adjunt..."
-
-#: attachment/attachmentcontrollerbase.cpp:533
-#, kde-format
+msgctxt "@action"
 msgid "Properties"
 msgstr "Propietats"
 
-#: attachment/attachmentcontrollerbase.cpp:541
+#: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
+msgctxt "@action"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: attachment/attachmentcontrollerbase.cpp:544
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
 msgstr "Torna a carregar"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:755
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:703
+#: attachment/attachmentcontrollerbase.cpp:753
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail no ha pogut escriure l'adjunt a un fitxer temporal."
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "No s'ha pogut obrir l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:714
+#: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
-msgid "KMail was unable to open the attachment."
-msgstr "KMail no ha pogut obrir l'adjunt."
+msgid "KMail was unable to open the attachment"
+msgstr "KMail no ha pogut obrir l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "No es pot editar l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:797
+#: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
 msgid "unnamed"
 msgstr "sense nom"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:798
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "Guarda l'adjunt com a"
+msgstr "Anomeneu i guardeu l'adjunt"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -257,61 +271,56 @@ msgstr ""
 "El fitxer %1 ja existix.\n"
 "Voleu substituir-lo?"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Guarda a un fitxer"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
+msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Su&bstituïx"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:910
+#: attachment/attachmentcontrollerbase.cpp:850
+#: attachment/attachmentcontrollerbase.cpp:929
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Segur que voleu adjuntar este directori «%1»?"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:911
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Adjunta un directori"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:912
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Adjunta"
 
-#: attachment/attachmentcontrollerbase.cpp:889
+#: attachment/attachmentcontrollerbase.cpp:887
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Adjunta un directori"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:895
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Adjunta un fitxer"
 
-#: attachment/attachmentcontrollerbase.cpp:941
-#, kde-format
-msgctxt "@title:window"
-msgid "Failed to attach file"
-msgstr "No s'ha pogut adjuntar el fitxer"
-
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:984
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Adjunta una clau pública OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:966
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Seleccioneu la clau pública que s'hauria d'adjuntar."
@@ -394,111 +403,115 @@ msgstr ""
 msgid "No key data for recipients found."
 msgstr "No s'han trobat dades de les claus per als destinataris."
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "Man&tín els marcadors, no signes/encriptes"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "Man&tín els marcadors, no encriptes"
 
-#: composer/composerviewbase.cpp:330
+#: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "Man&tín els marcadors, no signes"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr "Signa/encripta (elimina els marcadors)"
+msgstr "Signa i encripta (suprimix els marcadors)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr "Encripta (elimina els marcadors)"
+msgstr "Encripta (suprimix els marcadors)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr "Signa (elimina els marcadors)"
+msgstr "Signa (suprimix els marcadors)"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
 "<qt><p>No és possible la signatura/encriptació inclosa dels missatges HTML.</"
-"p><p>Voleu eliminar els marcadors?</p></qt>"
+"p><p>Voleu suprimir els marcadors?</p></qt>"
 
-#: composer/composerviewbase.cpp:335
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Voleu signar/encriptar el missatge?"
 
-#: composer/composerviewbase.cpp:516
+#: composer/composerviewbase.cpp:506
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "No s'ha pogut crear un editor de missatges."
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:516
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Voleu redimensionar les imatges?"
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Redimensió automàtica de les imatges"
 
-#: composer/composerviewbase.cpp:528
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Redimensiona automàticament"
 
-#: composer/composerviewbase.cpp:529
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "No redimensiones"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:721
 #, kde-format
+msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "Clau OpenPGP vençuda"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:721
 #, kde-format
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "Certificat S/MIME vençut"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:723
 #, kde-format
+msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "La clau OpenPGP venç prompte"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:724
 #, kde-format
+msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "El certificat S/MIME venç prompte"
 
-#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
-#: composer/composerviewbase.cpp:852
+#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
+#: composer/composerviewbase.cpp:845
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "No s'ha pogut resoldre les claus. Informeu de l'error."
 
-#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1323
+#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Treball cancel·lat per l'usuari"
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1055
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -507,39 +520,39 @@ msgstr ""
 "No s'ha pogut editar el missatge: %1 \n"
 " Informeu d'este error."
 
-#: composer/composerviewbase.cpp:1065
+#: composer/composerviewbase.cpp:1057
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "No s'ha pogut editar el missatge: %1"
 
-#: composer/composerviewbase.cpp:1162
+#: composer/composerviewbase.cpp:1160
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "S'han produït errors en intentar posar el missatge a la cua per al seu "
 "enviament: %1"
 
-#: composer/composerviewbase.cpp:1326
+#: composer/composerviewbase.cpp:1324
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "No s'ha pogut autodesar el missatge: %1"
 
-#: composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1343
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "No s'han pogut escriure totes les dades en el fitxer."
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "No s'ha pogut finalitzar el fitxer."
 
-#: composer/composerviewbase.cpp:1352
+#: composer/composerviewbase.cpp:1350
 #, kde-format
 msgid "Could not open file."
 msgstr "No s'ha pogut obrir el fitxer."
 
-#: composer/composerviewbase.cpp:1359
+#: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -550,13 +563,13 @@ msgstr ""
 "%2\n"
 "Motiu: %3"
 
-#: composer/composerviewbase.cpp:1365
+#: composer/composerviewbase.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "La guardada automàtica del missatge ha fallat"
 
-#: composer/composerviewbase.cpp:1478
+#: composer/composerviewbase.cpp:1476
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "No s'ha pogut guardar el missatge: %1"
@@ -578,8 +591,15 @@ msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Recordatori de fitxer adjunt"
 
+#: composer/composerviewbase.cpp:1901
+#, kde-format
+msgctxt "@action:button"
+msgid "&Attach File..."
+msgstr "&Adjunta un fitxer…"
+
 #: composer/composerviewbase.cpp:1902
 #, kde-format
+msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Envia t&al qual"
 
@@ -608,6 +628,7 @@ msgstr "&Signa"
 
 #: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
+msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&No signes"
 
@@ -629,18 +650,19 @@ msgstr ""
 "Heu sol·licitat signar este missatge, però no s'ha configurat cap clau de "
 "signatura vàlida per a esta identitat."
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Voleu enviar sense signar?"
 
-#: composer/composerviewbase.cpp:2013
+#: composer/composerviewbase.cpp:2016
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Envia &sense signar"
 
-#: composer/composerviewbase.cpp:2028
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -652,7 +674,7 @@ msgstr ""
 "política del lloc.\n"
 "Voleu signar totes les parts?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2035
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -664,28 +686,29 @@ msgstr ""
 "lloc.\n"
 "Voleu signar el missatge?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Signa totes les parts"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2038
 #, kde-format
 msgid "&Sign"
 msgstr "&Signa"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Avís de missatge sense signar"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2043
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Envia t&al qual"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2090
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -694,7 +717,7 @@ msgstr ""
 "S'han trobat claus d'encriptació vàlides per a tots els destinataris.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2093
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -705,34 +728,32 @@ msgstr ""
 "que s'ha de preguntar si s'encripta o no este missatge.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2096 composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Voleu encriptar el missatge?"
 
-#: composer/composerviewbase.cpp:2097
+#: composer/composerviewbase.cpp:2100
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Signa i &encripta"
 
-#: composer/composerviewbase.cpp:2097 composer/composerviewbase.cpp:2127
-#: composer/composerviewbase.cpp:2176 composer/keyresolver.cpp:1320
-#: composer/keyresolver.cpp:1358
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Encripta"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Sign Only"
 msgstr "Només &signa"
 
-#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2181
+#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
 #, kde-format
 msgid "&Send As-Is"
 msgstr "En&via tal qual"
 
-#: composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2122
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -741,12 +762,20 @@ msgstr ""
 "Hi ha conflictes de preferència de l'encriptació per a estos destinataris.\n"
 "Voleu encriptar este missatge?"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
+#: composer/keyresolver.cpp:1363
 #, kde-format
+msgctxt "@action:button"
+msgid "&Encrypt"
+msgstr "&Encripta"
+
+#: composer/composerviewbase.cpp:2131
+#, kde-format
+msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&No l'encriptes"
 
-#: composer/composerviewbase.cpp:2148
+#: composer/composerviewbase.cpp:2151
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -757,18 +786,19 @@ msgstr ""
 "però no s'ha configurat cap clau fiable d'encriptació vàlida per a esta "
 "identitat."
 
-#: composer/composerviewbase.cpp:2152
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Voleu enviar sense encriptar?"
 
-#: composer/composerviewbase.cpp:2152 composer/keyresolver.cpp:1343
+#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
 #, kde-format
+msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Envia se&nse encriptar"
 
-#: composer/composerviewbase.cpp:2167
+#: composer/composerviewbase.cpp:2173
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -781,7 +811,7 @@ msgstr ""
 "política del lloc.\n"
 "Voleu encriptar totes les parts?"
 
-#: composer/composerviewbase.cpp:2172
+#: composer/composerviewbase.cpp:2178
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -794,18 +824,18 @@ msgstr ""
 "lloc i/o perdre informació confidencial.\n"
 "Voleu encriptar totes les parts?"
 
-#: composer/composerviewbase.cpp:2176
+#: composer/composerviewbase.cpp:2182
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Encripta totes les parts"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2185
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Avís de missatge sense encriptar"
 
-#: composer/keyresolver.cpp:309
+#: composer/keyresolver.cpp:311
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -814,7 +844,7 @@ msgstr ""
 "Una o més de les claus d'encriptació OpenPGP configurades o certificats S/"
 "MIME no és de plena confiança per a l'encriptació."
 
-#: composer/keyresolver.cpp:313
+#: composer/keyresolver.cpp:315
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -823,7 +853,7 @@ msgstr ""
 "Una o més de les claus d'encriptació OpenPGP configurades o certificats S/"
 "MIME per al destinatari «%1» no és de plena confiança per a l'encriptació."
 
-#: composer/keyresolver.cpp:320
+#: composer/keyresolver.cpp:322
 #, kde-format
 msgid ""
 "\n"
@@ -832,7 +862,7 @@ msgstr ""
 "\n"
 "Les claus següents només són de confiança parcial: \n"
 
-#: composer/keyresolver.cpp:324
+#: composer/keyresolver.cpp:326
 #, kde-format
 msgid ""
 "\n"
@@ -841,7 +871,7 @@ msgstr ""
 "\n"
 "Les claus següents tenen un nivell de confiança desconegut: \n"
 
-#: composer/keyresolver.cpp:328
+#: composer/keyresolver.cpp:330
 #, kde-format
 msgid ""
 "\n"
@@ -850,13 +880,13 @@ msgstr ""
 "\n"
 "Les claus següents o certificats estan <b>revocats</b>: \n"
 
-#: composer/keyresolver.cpp:334
+#: composer/keyresolver.cpp:336
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Claus d'encriptació sense confiança completa"
 
-#: composer/keyresolver.cpp:648
+#: composer/keyresolver.cpp:650
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -873,14 +903,14 @@ msgstr ""
 "Si trieu continuar, i més tard es necessiten les claus, se vos preguntarà "
 "que indiqueu les claus que s'utilitzaran."
 
-#: composer/keyresolver.cpp:658 composer/keyresolver.cpp:1011
-#: composer/keyresolver.cpp:1040
+#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
+#: composer/keyresolver.cpp:1042
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Claus d'encriptació no usables"
 
-#: composer/keyresolver.cpp:690
+#: composer/keyresolver.cpp:692
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -896,14 +926,14 @@ msgstr ""
 "Si trieu continuar, i més tard es necessiten les claus, se vos preguntarà "
 "que indiqueu les claus que s'utilitzaran."
 
-#: composer/keyresolver.cpp:700 composer/keyresolver.cpp:1069
-#: composer/keyresolver.cpp:1087
+#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
+#: composer/keyresolver.cpp:1089
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Claus de signatura no usables"
 
-#: composer/keyresolver.cpp:1001
+#: composer/keyresolver.cpp:1003
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -921,7 +951,7 @@ msgstr ""
 "Podeu continuar sense encriptació per a tu, però cal tindre present que no "
 "podreu llegir els vostres propis missatges si ho feu."
 
-#: composer/keyresolver.cpp:1030
+#: composer/keyresolver.cpp:1032
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -939,7 +969,7 @@ msgstr ""
 "Podeu continuar sense encriptació per a tu, però cal tindre present que no "
 "podreu llegir els vostres propis missatges si ho feu."
 
-#: composer/keyresolver.cpp:1062
+#: composer/keyresolver.cpp:1064
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -953,12 +983,13 @@ msgstr ""
 "Malgrat açò, no s'ha configurat cap clau de signatura OpenPGP vàlida per a "
 "esta identitat."
 
-#: composer/keyresolver.cpp:1070
+#: composer/keyresolver.cpp:1072
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "No signes amb OpenPGP"
 
-#: composer/keyresolver.cpp:1080
+#: composer/keyresolver.cpp:1082
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -972,12 +1003,13 @@ msgstr ""
 "Malgrat açò, no s'ha configurat cap certificat de signatura S/MIME vàlid per "
 "a esta identitat."
 
-#: composer/keyresolver.cpp:1088
+#: composer/keyresolver.cpp:1090
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "No signes amb S/MIME"
 
-#: composer/keyresolver.cpp:1150
+#: composer/keyresolver.cpp:1152
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -989,13 +1021,13 @@ msgstr ""
 "claus de signatura.\n"
 "Voleu enviar el missatge sense signar?"
 
-#: composer/keyresolver.cpp:1154
+#: composer/keyresolver.cpp:1156
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "No es pot signar"
 
-#: composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1319
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -1004,14 +1036,14 @@ msgstr ""
 "No heu seleccionat cap clau d'encriptació per a tu (encripta a mi mateix). "
 "Si l'encripteu, no podreu desencriptar el vostre propi missatge."
 
-#: composer/keyresolver.cpp:1320 composer/keyresolver.cpp:1343
-#: composer/keyresolver.cpp:1358
+#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
+#: composer/keyresolver.cpp:1363
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Avís de falta de clau"
 
-#: composer/keyresolver.cpp:1336
+#: composer/keyresolver.cpp:1338
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1020,7 +1052,7 @@ msgstr ""
 "No heu seleccionat cap clau d'encriptació per al destinatari d'este "
 "missatge. Per tant, el missatge no s'encriptarà."
 
-#: composer/keyresolver.cpp:1340
+#: composer/keyresolver.cpp:1342
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1029,7 +1061,7 @@ msgstr ""
 "No heu seleccionat cap clau d'encriptació per a algun dels destinataris "
 "d'este missatge. Per tant, el missatge no s'encriptarà."
 
-#: composer/keyresolver.cpp:1350
+#: composer/keyresolver.cpp:1355
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1038,7 +1070,7 @@ msgstr ""
 "No heu seleccionat cap clau d'encriptació per a un dels destinataris. Esta "
 "persona no podrà desencriptar el missatge si l'encripteu."
 
-#: composer/keyresolver.cpp:1354
+#: composer/keyresolver.cpp:1359
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1047,12 +1079,12 @@ msgstr ""
 "No heu seleccionat cap clau d'encriptació per a algun dels destinataris. "
 "Estes persones no podran desencriptar el missatge si l'encripteu."
 
-#: composer/keyresolver.cpp:1431
+#: composer/keyresolver.cpp:1436
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Seleccioneu la clau d'encriptació"
 
-#: composer/keyresolver.cpp:1475
+#: composer/keyresolver.cpp:1480
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1067,7 +1099,7 @@ msgstr ""
 "Torneu a seleccionar els certificats que s'hauran d'emprar per a este "
 "destinatari."
 
-#: composer/keyresolver.cpp:1547
+#: composer/keyresolver.cpp:1552
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1085,7 +1117,7 @@ msgstr ""
 "podreu buscar certificats externs clicant en el botó: busca certificats "
 "externs.</qt>"
 
-#: composer/keyresolver.cpp:1557
+#: composer/keyresolver.cpp:1562
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1101,6 +1133,7 @@ msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
+msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Seleccioneu el nom"
 
@@ -1173,17 +1206,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Carpeta no vàlida"
 
-#: helper/messagefactoryng.cpp:404 helper/messagefactoryng.cpp:727
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
 msgstr "missatge reenviat"
 
-#: helper/messagefactoryng.cpp:572
+#: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
 msgstr "Comprovant: "
 
-#: helper/messagefactoryng.cpp:699
+#: helper/messagefactoryng.cpp:701
 #, kde-format
 msgid ""
 "\n"
@@ -1198,16 +1231,17 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:24
+#: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Seleccioneu el format de la imatge"
 
-#: imagescaling/imagescalingselectformat.cpp:94
+#: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
+msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Selecciona el format..."
+msgstr "Selecciona el format…"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1459,6 +1493,7 @@ msgstr "No s'ha trobat cap text en el porta-retalls"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
+msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Establix el nom de l'adjunt"
 
@@ -1477,7 +1512,7 @@ msgstr "Text del porta-retalls"
 msgid "OpenPGP key 0x%1"
 msgstr "Clau OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1489,7 +1524,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "S'està exportant la clau..."
+msgstr "S'està exportant la clau…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
@@ -1506,7 +1541,7 @@ msgstr "Contacte no vàlid"
 msgid "Impossible to generate vCard."
 msgstr "Impossible generar la vCard."
 
-#: job/autocryptheadersjob.cpp:104
+#: job/autocryptheadersjob.cpp:102
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1515,72 +1550,26 @@ msgstr ""
 "<p>S'ha produït un error en intentar exportar la clau des del dorsal:</"
 "p><p><b>No s'ha trobat cap clau vàlida per a l'usuari %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:59
+#: job/maintextjob.cpp:58
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Heu sol·licitat utilitzar l'ajustament de paraules, però no heu proporcionat "
 "text pla."
 
-#: job/maintextjob.cpp:66
+#: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "No heu sol·licitat utilitzar l'ajustament de paraules, però heu proporcionat "
 "text pla."
 
-#: job/maintextjob.cpp:81
-#, kde-format
-msgid ""
-"No charsets were available for encoding. Please check your configuration and "
-"make sure it contains at least one charset for sending."
-msgstr ""
-"No hi ha jocs de caràcters disponibles per a la codificació. Comproveu la "
-"configuració i assegureu-vos que conté com a mínim un joc de caràcters per a "
-"l'enviament."
-
-#: job/maintextjob.cpp:99
-#, kde-format
-msgid ""
-"Encoding the message with %1 will lose some characters.\n"
-"Do you want to continue?"
-msgstr ""
-"Codificant el missatge amb %1 es perdran alguns caràcters.\n"
-"Voleu continuar?"
-
-#: job/maintextjob.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Some Characters Will Be Lost"
-msgstr "Es perdran alguns caràcters"
-
-#: job/maintextjob.cpp:103
-#, kde-format
-msgid "Lose Characters"
-msgstr "Perd caràcters"
-
-#: job/maintextjob.cpp:104
-#, kde-format
-msgid "Change Encoding"
-msgstr "Canvia la codificació"
-
-#: job/maintextjob.cpp:107
-#, kde-format
-msgid "User decided to change the encoding."
-msgstr "L'usuari ha decidit canviar la codificació."
-
-#: job/maintextjob.cpp:117
-#, kde-format
-msgid "The selected encoding (%1) cannot fully encode the message."
-msgstr ""
-"La codificació seleccionada (%1) no pot codificar completament el missatge."
-
-#: job/maintextjob.cpp:142
+#: job/maintextjob.cpp:92
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "No s'ha pogut obtindre el còdec de text del joc de caràcters «%1»."
 
-#: job/singlepartjob.cpp:67
+#: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -1699,6 +1688,7 @@ msgstr "&Nom:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nom de la llista de distribució"
 
@@ -1722,7 +1712,7 @@ msgid ""
 "again."
 msgstr ""
 "No hi ha cap destinatari en la llista. Primer seleccioneu alguns "
-"destinataris, després torneu-ho a intentar."
+"destinataris, després torneu-ho a provar."
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
@@ -1794,7 +1784,7 @@ msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr "<placeholder>Tipus de destinatari no definit</placeholder>"
 
-#: recipient/recipientline.cpp:70
+#: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
@@ -1802,10 +1792,11 @@ msgstr "Seleccioneu el tipus de destinatari"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Indiqueu la llista d'adreces de correu que rebran este missatge"
 
-#: recipient/recipientseditor.cpp:115
+#: recipient/recipientseditor.cpp:112
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
@@ -1813,23 +1804,23 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "S'està truncant la llista de destinataris de %2 a %1 entrada."
 msgstr[1] "S'està truncant la llista de destinataris de %2 a %1 entrades."
 
-#: recipient/recipientseditorsidewidget.cpp:41
+#: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Guarda la llista..."
+msgstr "Guarda la llista…"
 
-#: recipient/recipientseditorsidewidget.cpp:45
+#: recipient/recipientseditorsidewidget.cpp:29
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "Se&lecciona…"
+
+#: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Guarda els destinataris com una llista de distribució"
-
-#: recipient/recipientseditorsidewidget.cpp:47
-#, kde-format
-msgctxt "@action:button Open recipient selection dialog."
-msgid "Se&lect..."
-msgstr "Se&lecciona..."
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1875,45 +1866,46 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Respondre a:%1"
 
-#: recipient/recipientspicker.cpp:44
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Seleccioneu el destinatari"
 
-#: recipient/recipientspicker.cpp:56
+#: recipient/recipientspicker.cpp:61
 #, kde-format
+msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Busca al servei de &directori"
 
-#: recipient/recipientspicker.cpp:79
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Afig com &Respondre a"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "Afig com &A"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "Afig com CC"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Afig com &BCC"
 
-#: recipient/recipientspicker.cpp:105
+#: recipient/recipientspicker.cpp:106
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 correu seleccionat"
 msgstr[1] "%1 correus seleccionats"
 
-#: recipient/recipientspicker.cpp:172
+#: recipient/recipientspicker.cpp:173
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1931,7 +1923,7 @@ msgstr[1] ""
 "%2.\n"
 "Per favor, adapteu la selecció."
 
-#: recipient/recipientspicker.cpp:189
+#: recipient/recipientspicker.cpp:190
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "No es poden afegir més destinataris."
@@ -1954,6 +1946,7 @@ msgstr "Envia més tard"
 
 #: sendlater/sendlaterdialog.cpp:49
 #, kde-format
+msgctxt "@option:check"
 msgid "Delay"
 msgstr "Retard"
 
@@ -2004,6 +1997,166 @@ msgstr "Envia a:"
 #, kde-format
 msgid "Repeat every:"
 msgstr "Repetix cada:"
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Cita només el text seleccionat en contestar"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Inserix a&utomàticament la signatura"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Afig la signatura dalt del text citat"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Preposa un separador a la signatura"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr ""
+"Utilitza les adreces indexades dels correus per a la compleció automàtica"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Desmarqueu esta opció si no voleu que les adreces de les llibretes d'adreces "
+"apareguen en la llista de compleció automàtica en els camps d'adreça de "
+"l'editor."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Permet que s'utilitze el caràcter de punt i coma (;) com a separador en "
+"l'editor de missatges"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Utilitza les adreces recents per a la compleció automàtica"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Desmarqueu esta opció si no voleu que les adreces utilitzades recentment "
+"apareguen en la llista de compleció automàtica en els camps d'adreça de "
+"l'editor."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Nombre màxim d'entrades de destinatari:"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Ajusta &les paraules a la columna:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Millora la versió de text net del missatge en HTML"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "Signa tots els missatges, si és possible"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+"Activa l'encriptació, si s'han trobat les claus de tots els destinataris"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Avisa abans d'enviar missatges sense encriptar"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Avisa abans d'enviar missatges sense signar"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Avisa si els certificats/claus caduquen prompte (configureu els llindars "
+"davall)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"El nombre mínim de dies que el certificat d'encriptació hauria de ser vàlid "
+"abans d'emetre un avís"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"El nombre mínim de dies que haurien de ser vàlids tots els certificats de la "
+"cadena abans d'emetre un avís"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"El nombre mínim de dies que el certificat arrel hauria de ser vàlid abans "
+"d'emetre un avís"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Mostra sempre la llista de claus d'encriptació per a seleccionar la que "
+"s'utilitzarà"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
@@ -2232,7 +2385,7 @@ msgstr "Miscel·lània"
 msgid "Subject"
 msgstr "Assumpte"
 
-#: utils/util.cpp:259
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2240,7 +2393,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "adjunt,adjuntat,annex,annexat"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2249,19 +2402,19 @@ msgstr ""
 "El distribuïdor de correu està sense configurar, i no pot enviar els "
 "correus. Voleu crear ara un distribuïdor de correu?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Sense distribuïdor de correu."
 
-#: utils/util.cpp:296
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crea un distribuïdor de correu"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2270,13 +2423,13 @@ msgstr ""
 "El distribuïdor de correu està fora de línia, i no pot enviar els correus. "
 "Voleu posar-lo en línia?"
 
-#: utils/util.cpp:312
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "El distribuïdor de correu està fora de línia."
 
-#: utils/util.cpp:313
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

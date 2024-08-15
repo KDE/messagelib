@@ -15,8 +15,6 @@
 #include <MessageComposer/RecipientsEditor>
 #include <MessageComposer/RichTextComposerNg>
 
-#include <MessageCore/NodeHelper>
-
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
@@ -131,7 +129,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
         for (const auto composer : composerViewBase.m_composers) {
             if (!composer->finished()) {
                 notFinished = true;
-                connect(composer, &MessageComposer::Composer::result, [&composerViewBase, &loop]() {
+                connect(composer, &MessageComposer::Composer::result, this, [&composerViewBase, &loop]() {
                     if (composerViewBase.m_composers.size() < 1) {
                         loop.quit();
                     }
@@ -230,7 +228,8 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
     }
 
     if (sign) {
-        content = MessageCore::NodeHelper::firstChild(content);
+        QVERIFY(!content->contents().empty());
+        content = content->contents().at(0);
         QCOMPARE(nh->signatureState(content), MimeTreeParser::KMMsgFullySigned);
     } else {
         QCOMPARE(nh->signatureState(msg.data()), MimeTreeParser::KMMsgNotSigned);

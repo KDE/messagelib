@@ -20,7 +20,6 @@
 #include <MessageComposer/TransparentJob>
 
 #include "setupenv.h"
-#include <MessageCore/NodeHelper>
 
 #include <cstdlib>
 
@@ -99,11 +98,9 @@ void SignJobTest::testHeaders()
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/signed");
-    QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
-    QVERIFY(result->contentType()
-                ->parameter(QString::fromLocal8Bit("micalg"))
-                .startsWith(QLatin1StringView("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
-    QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-signature"));
+    QCOMPARE(result->contentType()->charset(), "UTF-8");
+    QVERIFY(result->contentType()->parameter("micalg").startsWith(QLatin1StringView("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
+    QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-signature"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
@@ -133,7 +130,8 @@ void SignJobTest::testRecommentationRFC3156()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    const QByteArray body = MessageCore::NodeHelper::firstChild(result)->body();
+    QVERIFY(!result->contents().isEmpty());
+    const QByteArray body = result->contents().at(0)->body();
     QCOMPARE(QString::fromUtf8(body), QStringLiteral("=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"));
 
     ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
@@ -175,8 +173,8 @@ void SignJobTest::testMixedContent()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    KMime::Content *firstChild = MessageCore::NodeHelper::firstChild(result);
     QCOMPARE(result->contents().count(), 2);
+    KMime::Content *firstChild = result->contents().at(0);
     QCOMPARE(firstChild->contents().count(), 2);
     QCOMPARE(firstChild->body(), QByteArray());
     QCOMPARE(firstChild->contentType()->mimeType(), QByteArrayLiteral("multipart/mixed"));
@@ -236,7 +234,7 @@ void SignJobTest::testProtectedHeaders()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -276,7 +274,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -290,7 +288,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to()->from7BitString("overwrite@example.org");
     skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
-    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"), "utf-8");
+    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"));
 
     KMime::Content *result = sJob->content();
     result->assemble();
@@ -334,7 +332,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.appendHeader(face);
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);

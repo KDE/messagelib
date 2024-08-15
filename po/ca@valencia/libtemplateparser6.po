@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2024-01-12 18:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -65,12 +65,12 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
-"<qt><p>Ací podeu afegir, editar i suprimir plantilles de missatges "
-"personalitzades a utilitzar en redactar una resposta o en reenviar un "
+"<qt><p>Ací podeu afegir, editar i suprimir plantilles de missatge "
+"personalitzades que s'utilitzaran en redactar una resposta o en reenviar un "
 "missatge. Creeu la plantilla personalitzada escrivint el nom en el quadro "
 "d'entrada de text i premeu el botó «+». També podeu assignar una combinació "
 "de teclat a la plantilla per a operacions més ràpides.</p><p>Les plantilles "
-"de missatges permeten ordres de substitució, senzillament escrivint-les o "
+"de missatge permeten ordres de substitució, senzillament escrivint-les o "
 "seleccionant-les des del menú <i>Inserix ordre</i>.</p><p>Hi ha quatre tipus "
 "de plantilla personalitzada: la utilitzada per a <i>respondre</i>, "
 "<i>respondre a tots</i>, <i>reenviar</i> i la <i>universal</i> que es pot "
@@ -549,7 +549,7 @@ msgid ""
 msgstr ""
 "<p>Ací podeu crear i gestionar les plantilles per a utilitzar-les en editar "
 "missatges nous, respostes o reenviar els missatges.</p><p> Les plantilles de "
-"missatges permeten substitució d'ordres, senzillament escrivint-les o "
+"missatge permeten substitució d'ordres, senzillament escrivint-les o "
 "seleccionant-les des del menú <i>Inserix una ordre</i>.</p>"
 
 #: templatesconfiguration.cpp:58
@@ -597,11 +597,13 @@ msgstr "Restablix als valors predeterminats"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Restaura la plantilla personalitzada"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Restaura totes les plantilles"
 
@@ -642,7 +644,7 @@ msgid ""
 msgstr ""
 "Passeu per este menú per a trobar una ordre que s'inserirà a la plantilla "
 "que s'està editant. L'ordre s'inserirà a la posició del cursor, per tant, "
-"abans desitjareu moure el cursor al punt d'inserció desitjat."
+"abans desitjareu moure el cursor cap al punt d'inserció desitjat."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86

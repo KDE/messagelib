@@ -10,7 +10,7 @@
 #include "contentjobbase_p.h"
 
 #include <KMime/Content>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 using namespace MessageComposer;
 
 class MessageComposer::TransparentJobPrivate : public MessageComposer::ContentJobBasePrivate

@@ -37,7 +37,7 @@ public:
     void setRule(const MessageViewer::DKIMRule &rule);
 
 private:
-    void updateInfo();
+    MESSAGEVIEWER_NO_EXPORT void updateInfo();
     MessageViewer::DKIMRule mRule;
     DKIMManageRulesComboBox *const mRuleTypeCombobox;
 };

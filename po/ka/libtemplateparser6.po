@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2023-09-28 07:58+0200\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"PO-Revision-Date: 2024-05-17 04:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -589,13 +589,15 @@ msgstr "ნაგულისხმევ მნიშვნელობაზ�
 
 #: templatesconfiguration.cpp:102
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset Current Template"
-msgstr "მიმდინარე შაბლონის გადატვირთვა"
+msgstr "მიმდინარე შაბლონის ჩამოყრა"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset All Templates"
-msgstr "ყველა შაბლონის გადატვირთვა"
+msgstr "ყველა შაბლონის ჩამოყრა"
 
 #: templatesconfiguration.cpp:361
 #, kde-format

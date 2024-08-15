@@ -11,6 +11,8 @@
 #include "core/messageitem.h"
 #include "core/modelinvariantrowmapper.h"
 #include "utils/comboboxutils.h"
+#include <KLocalization>
+#include <ki18n_version.h>
 
 #include <Akonadi/MessageStatus>
 
@@ -33,11 +35,11 @@
 
 #include <KIconLoader>
 #include <KLocalizedString>
-#include <KPluralHandlingSpinBox>
 #include <QColorDialog>
 #include <QComboBox>
 #include <QLineEdit>
 #include <QMenu>
+#include <QSpinBox>
 
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -70,22 +72,23 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     g->addWidget(l, 0, 0);
 
     mNameEdit = new QLineEdit(base);
-    mNameEdit->setToolTip(i18n("The label that will be displayed in the column header."));
+    mNameEdit->setToolTip(i18nc("@info:tooltip", "The label that will be displayed in the column header."));
     g->addWidget(mNameEdit, 0, 1);
 
-    l = new QLabel(i18n("Header click sorts messages:"), base);
+    l = new QLabel(i18nc("@label:textbox", "Header click sorts messages:"), base);
     g->addWidget(l, 1, 0);
 
     mMessageSortingCombo = new QComboBox(base);
-    mMessageSortingCombo->setToolTip(i18n("The sorting order that clicking on this column header will switch to."));
+    mMessageSortingCombo->setToolTip(i18nc("@info:tooltip", "The sorting order that clicking on this column header will switch to."));
     g->addWidget(mMessageSortingCombo, 1, 1);
 
-    mVisibleByDefaultCheck = new QCheckBox(i18n("Visible by default"), base);
-    mVisibleByDefaultCheck->setToolTip(i18n("Check this if this column should be visible when the theme is selected."));
+    mVisibleByDefaultCheck = new QCheckBox(i18nc("@option:check", "Visible by default"), base);
+    mVisibleByDefaultCheck->setToolTip(i18nc("@info:tooltip", "Check this if this column should be visible when the theme is selected."));
     g->addWidget(mVisibleByDefaultCheck, 2, 1);
 
-    mIsSenderOrReceiverCheck = new QCheckBox(i18n("Contains \"Sender or Receiver\" field"), base);
-    mIsSenderOrReceiverCheck->setToolTip(i18n("Check this if this column label should be updated depending on the folder \"inbound\"/\"outbound\" type."));
+    mIsSenderOrReceiverCheck = new QCheckBox(i18nc("@option:check", "Contains \"Sender or Receiver\" field"), base);
+    mIsSenderOrReceiverCheck->setToolTip(
+        i18nc("@info:tooltip", "Check this if this column label should be updated depending on the folder \"inbound\"/\"outbound\" type."));
     g->addWidget(mIsSenderOrReceiverCheck, 3, 1);
 
     g->setColumnStretch(1, 1);
@@ -1375,11 +1378,6 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 5);
 
-    cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::AnnotationIcon);
-    cil->setPixmap(*dummyTheme.pixmap(Theme::IconAnnotation));
-    cil->setToolTip(Theme::ContentItem::description(cil->type()));
-    gblayout->addWidget(cil, 1, 5);
-
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::InvitationIcon);
     cil->setPixmap(*dummyTheme.pixmap(Theme::IconInvitation));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
@@ -1434,21 +1432,23 @@ ThemeEditor::ThemeEditor(QWidget *parent)
 
     tabg = new QGridLayout(tab);
 
-    l = new QLabel(i18n("Header:"), tab);
+    l = new QLabel(i18nc("@label:textbox", "Header:"), tab);
     tabg->addWidget(l, 0, 0);
 
     mViewHeaderPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mViewHeaderPolicyCombo, 0, 1);
 
-    l = new QLabel(i18n("Icon size:"), tab);
+    l = new QLabel(i18nc("@label:textbox", "Icon size:"), tab);
     tabg->addWidget(l, 1, 0);
 
-    mIconSizeSpinBox = new KPluralHandlingSpinBox(tab);
+    mIconSizeSpinBox = new QSpinBox(tab);
     mIconSizeSpinBox->setMinimum(8);
     mIconSizeSpinBox->setMaximum(64);
-    mIconSizeSpinBox->setSuffix(ki18ncp("suffix in a spinbox", " pixel", " pixels"));
+#if KI18N_VERSION > QT_VERSION_CHECK(6, 5, 0)
+    KLocalization::setupSpinBoxFormatString(mIconSizeSpinBox, ki18ncp("suffix in a spinbox", " pixel", " pixels"));
+#endif
 
-    QObject::connect(mIconSizeSpinBox, &KPluralHandlingSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
+    QObject::connect(mIconSizeSpinBox, &QSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
 
     tabg->addWidget(mIconSizeSpinBox, 1, 1);
 

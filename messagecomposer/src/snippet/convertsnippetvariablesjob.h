@@ -26,7 +26,7 @@ public:
     void setText(const QString &str);
     [[nodiscard]] QString text() const;
 
-    MessageComposer::ComposerViewInterface *composerViewInterface() const;
+    [[nodiscard]] MessageComposer::ComposerViewInterface *composerViewInterface() const;
     void setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface);
     [[nodiscard]] static QString convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text);
 

@@ -4,9 +4,9 @@
 */
 #pragma once
 
-#include "kmime/kmime_header_parsing.h"
-#include "kmime/kmime_message.h"
 #include "messagecore_export.h"
+#include <KMime/HeaderParsing>
+#include <KMime/Message>
 
 #include <QList>
 #include <QStringList>

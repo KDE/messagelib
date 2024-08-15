@@ -46,7 +46,6 @@ class KeyCache;
 namespace MimeTreeParser
 {
 class CompositeMemento;
-class CryptoBodyPartMemento;
 class MessagePartPrivate;
 namespace Interface
 {
@@ -428,7 +427,7 @@ public:
 
     [[nodiscard]] bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
-    QList<KMime::Headers::Base *> headers(const char *headerType) const override;
+    [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
 private:
     /** Handles the verification of data
@@ -436,11 +435,11 @@ private:
      * Returns true if the verification was successful and the block is signed.
      * If used in async mode, check if mMetaData.inProgress is true, it initiates a running verification process.
      */
-    [[nodiscard]] bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
+    [[nodiscard]] MIMETREEPARSER_NO_EXPORT bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
 
     MIMETREEPARSER_NO_EXPORT void sigStatusToMetaData();
 
-    void setVerificationResult(const CompositeMemento *m, KMime::Content *textNode);
+    MIMETREEPARSER_NO_EXPORT void setVerificationResult(const CompositeMemento *m, KMime::Content *textNode);
 
 protected:
     const QGpgME::Protocol *mCryptoProto;

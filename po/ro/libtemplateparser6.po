@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the messagelib package.
 # Sergiu Bivol <sergiu@cip.md>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2011-10-14 04:25+0300\n"
-"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -565,12 +565,14 @@ msgstr ""
 #: templatesconfiguration.cpp:102
 #, fuzzy, kde-format
 #| msgid "With Custom Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Cu șablon personalizat"
 
 #: templatesconfiguration.cpp:103
 #, fuzzy, kde-format
 #| msgid "Reply to All With Custom Template"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Răspunde tuturor cu șablon personalizat"
 

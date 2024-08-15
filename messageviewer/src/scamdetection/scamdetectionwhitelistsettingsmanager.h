@@ -18,7 +18,6 @@ class MESSAGEVIEWER_EXPORT ScamDetectionWhiteListSettingsManager : public QObjec
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionWhiteListSettingsManager(QObject *parent = nullptr);
     ~ScamDetectionWhiteListSettingsManager() override;
     static ScamDetectionWhiteListSettingsManager *self();
 
@@ -26,6 +25,7 @@ public:
     void setScamDetectionInfoList(const QList<ScamDetectionInfo> &newScamDetectionInfoList);
 
 private:
+    explicit ScamDetectionWhiteListSettingsManager(QObject *parent = nullptr);
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
     MESSAGEVIEWER_NO_EXPORT void writeSettings();
     QList<ScamDetectionInfo> mScamDetectionInfoList;

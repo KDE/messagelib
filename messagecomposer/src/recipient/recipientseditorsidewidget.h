@@ -43,9 +43,9 @@ Q_SIGNALS:
 
 private:
     RecipientsEditor *const mEditor;
-    QLabel *mTotalLabel = nullptr;
-    QPushButton *mDistributionListButton = nullptr;
-    QPushButton *mSelectButton = nullptr;
+    QLabel *const mTotalLabel;
+    QPushButton *const mDistributionListButton;
+    QPushButton *const mSelectButton;
     /** The RecipientsPicker is lazy loaded, never access it directly,
       only through picker() */
     mutable MessageComposer::RecipientsPicker *mRecipientPicker = nullptr;

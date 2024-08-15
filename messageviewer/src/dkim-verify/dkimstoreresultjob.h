@@ -27,7 +27,7 @@ public:
     void setItem(const Akonadi::Item &item);
 
 private:
-    void slotModifyItemDone(KJob *job);
+    MESSAGEVIEWER_NO_EXPORT void slotModifyItemDone(KJob *job);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     Akonadi::Item mItem;
 };

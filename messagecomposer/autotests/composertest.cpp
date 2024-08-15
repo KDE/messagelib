@@ -112,11 +112,11 @@ void ComposerTest::testNonAsciiHeaders()
     QCOMPARE(message->cc(false)->displayNames().size(), 1);
     QCOMPARE(message->from(false)->displayNames().size(), 1);
     QCOMPARE(message->replyTo(false)->displayNames().size(), 1);
-    QCOMPARE(message->from()->displayNames().constFirst(), fromDisplayName);
-    QCOMPARE(message->to()->displayNames().constFirst(), toDisplayName);
-    QCOMPARE(message->cc()->displayNames().constFirst(), ccDisplayName);
-    QCOMPARE(message->bcc()->displayNames().constFirst(), bccDisplayName);
-    QCOMPARE(message->replyTo()->displayNames().constFirst(), replyToDisplayName);
+    QCOMPARE(message->from(false)->displayNames().constFirst(), fromDisplayName);
+    QCOMPARE(message->to(false)->displayNames().constFirst(), toDisplayName);
+    QCOMPARE(message->cc(false)->displayNames().constFirst(), ccDisplayName);
+    QCOMPARE(message->bcc(false)->displayNames().constFirst(), bccDisplayName);
+    QCOMPARE(message->replyTo(false)->displayNames().constFirst(), replyToDisplayName);
     message->clear();
 }
 
@@ -138,7 +138,6 @@ void ComposerTest::testBug271192()
 
 void ComposerTest::fillComposerData(Composer *composer)
 {
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));

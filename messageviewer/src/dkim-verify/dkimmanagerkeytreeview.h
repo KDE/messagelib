@@ -27,8 +27,8 @@ public:
     void clear();
 
 private:
-    void deleteSelectedItems();
-    void slotCustomContextMenuRequested(const QPoint &pos);
+    MESSAGEVIEWER_NO_EXPORT void deleteSelectedItems();
+    MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &pos);
     DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
     DKIMManagerKeyModel *mManagerKeyModel = nullptr;
 };

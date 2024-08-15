@@ -47,7 +47,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
 
     QString iconPath;
     if (tmpAsIcon == MimeTreeParser::IconInline) {
-        iconPath = mp->temporaryFilePath();
+        iconPath = QUrl::fromLocalFile(mp->temporaryFilePath()).toString();
     } else {
         iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         if (iconPath.right(14) == QLatin1StringView("mime_empty.png")) {
@@ -55,7 +55,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
             iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         }
     }
-    msgPart->setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
+    msgPart->setProperty("iconPath", iconPath);
     KTextTemplate::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
     return true;

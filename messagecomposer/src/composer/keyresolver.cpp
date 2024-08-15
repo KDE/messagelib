@@ -292,11 +292,13 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
         if (uid.isRevoked()) {
             rewookies.push_back(key);
         }
-        if (!uid.isRevoked() && uid.validity() == GpgME::UserID::Marginal) {
-            fishies.push_back(key);
-        }
-        if (!uid.isRevoked() && uid.validity() < GpgME::UserID::Never) {
-            ickies.push_back(key);
+        if (!uid.isRevoked()) {
+            if (uid.validity() == GpgME::UserID::Marginal) {
+                fishies.push_back(key);
+            }
+            if (uid.validity() < GpgME::UserID::Never) {
+                ickies.push_back(key);
+            }
         }
     }
 
@@ -1067,7 +1069,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
         if (KMessageBox::warningContinueCancel(nullptr,
                                                msg,
                                                i18nc("@title:window", "Unusable Signing Keys"),
-                                               KGuiItem(i18n("Do Not OpenPGP-Sign")),
+                                               KGuiItem(i18nc("@action:button", "Do Not OpenPGP-Sign")),
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
             == KMessageBox::Cancel) {
@@ -1085,7 +1087,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
         if (KMessageBox::warningContinueCancel(nullptr,
                                                msg,
                                                i18nc("@title:window", "Unusable Signing Keys"),
-                                               KGuiItem(i18n("Do Not S/MIME-Sign")),
+                                               KGuiItem(i18nc("@action:button", "Do Not S/MIME-Sign")),
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
             == KMessageBox::Cancel) {
@@ -1317,7 +1319,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
             "You did not select an encryption key for yourself "
             "(encrypt to self). You will not be able to decrypt "
             "your own message if you encrypt it.");
-        if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18n("&Encrypt")))
+        if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {
             return Kleo::Canceled;
         } else {
@@ -1340,7 +1342,10 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                 "You did not select an encryption key for any of the "
                 "recipients of this message; therefore, the message "
                 "will not be encrypted.");
-        if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18n("Send &Unencrypted")))
+        if (KMessageBox::warningContinueCancel(nullptr,
+                                               msg,
+                                               i18nc("@title:window", "Missing Key Warning"),
+                                               KGuiItem(i18nc("@action:button", "Send &Unencrypted")))
             == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }
@@ -1355,7 +1360,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                                                       "the recipients: these persons will not be able to "
                                                       "decrypt the message if you encrypt it.");
         KCursorSaver saver(Qt::WaitCursor);
-        if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18n("&Encrypt")))
+        if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }

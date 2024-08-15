@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QTest>
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
@@ -43,8 +43,8 @@ void SkeletonMessageJobTest::testSubject()
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
     QVERIFY(message->subject(false));
-    qDebug() << message->subject()->asUnicodeString();
-    QCOMPARE(subject, message->subject()->asUnicodeString());
+    qDebug() << message->subject(false)->asUnicodeString();
+    QCOMPARE(subject, message->subject(false)->asUnicodeString());
     delete message;
     delete composer;
 }
@@ -156,7 +156,7 @@ void SkeletonMessageJobTest::testAddresses()
     {
         QVERIFY(message->to(false));
         // qDebug() << "To:" << message->to()->asUnicodeString();
-        const auto mailboxes{message->to()->mailboxes()};
+        const auto mailboxes{message->to(false)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(to.contains(addr.prettyAddress()));
@@ -168,7 +168,7 @@ void SkeletonMessageJobTest::testAddresses()
     {
         QVERIFY(message->cc(false));
         // qDebug() << "Cc:" << message->cc()->asUnicodeString();
-        const auto mailboxes{message->cc()->mailboxes()};
+        const auto mailboxes{message->cc(false)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(cc.contains(addr.prettyAddress()));
@@ -180,7 +180,7 @@ void SkeletonMessageJobTest::testAddresses()
     {
         QVERIFY(message->bcc(false));
         // qDebug() << "Bcc:" << message->bcc()->asUnicodeString();
-        const auto mailboxes{message->bcc()->mailboxes()};
+        const auto mailboxes{message->bcc(false)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(bcc.contains(addr.prettyAddress()));

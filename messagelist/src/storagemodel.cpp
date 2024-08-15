@@ -7,7 +7,6 @@
 #include "storagemodel.h"
 
 #include <MessageCore/MessageCoreSettings>
-#include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/AttributeFactory>
@@ -207,12 +206,12 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     const Collection parentCol = parentCollectionForRow(row);
 
     QString sender;
-    if (mail->from()) {
-        sender = mail->from()->asUnicodeString();
+    if (auto from = mail->from(false)) {
+        sender = from->asUnicodeString();
     }
     QString receiver;
-    if (mail->to()) {
-        receiver = mail->to()->asUnicodeString();
+    if (auto to = mail->to(false)) {
+        receiver = to->asUnicodeString();
     }
 
     // Static for speed reasons
@@ -230,9 +229,12 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     mi->setItemId(item.id());
     mi->setParentCollectionId(parentCol.id());
 
-    QString subject = mail->subject()->asUnicodeString();
-    if (subject.isEmpty()) {
-        subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
+    QString subject;
+    if (auto subjectMail = mail->subject(false)) {
+        subject = subjectMail->asUnicodeString();
+        if (subject.isEmpty()) {
+            subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
+        }
     }
 
     mi->setSubject(subject);
@@ -340,7 +342,6 @@ void MessageList::StorageModel::updateMessageItemData(MessageList::Core::Message
     }
 
     mi->invalidateTagCache();
-    mi->invalidateAnnotationCache();
 }
 
 void MessageList::StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)

@@ -1,33 +1,33 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "6.0.40")
-
+set(PIM_VERSION "6.2.42")
+set(CMAKE_CXX_STANDARD 20)
 
 project(Messagelib VERSION ${PIM_VERSION})
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
-set(KF_MIN_VERSION "5.248.0")
-set(QT_REQUIRED_VERSION "6.6.0")
+set(KF_MIN_VERSION "6.5.0")
+set(QT_REQUIRED_VERSION "6.7.0")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
-set(AKONADIMIME_LIB_VERSION "6.0.40")
+set(AKONADIMIME_LIB_VERSION "6.2.40")
 
-set(AKONADICONTACT_LIB_VERSION "6.0.40")
-set(AKONADI_VERSION "6.0.40")
-set(GRANTLEETHEME_LIB_VERSION "6.0.40")
-set(GRAVATAR_LIB_VERSION "6.0.40")
-set(IDENTITYMANAGEMENT_LIB_VERSION "6.0.40")
-set(KMAILTRANSPORT_LIB_VERSION "6.0.40")
-set(KMBOX_LIB_VERSION "6.0.40")
-set(KMIME_LIB_VERSION "6.0.40")
-set(KPIMTEXTEDIT_LIB_VERSION "6.0.40")
-set(LIBKDEPIM_LIB_VERSION "6.0.40")
-set(LIBKLEO_LIB_VERSION "5.240.44")
-set(PIMCOMMON_LIB_VERSION "6.0.40")
-set(GPGME_REQUIRED_VERSION "1.16.0")
-set(AKONADI_SEARCH_VERSION "6.0.40")
+set(AKONADICONTACT_LIB_VERSION "6.2.40")
+set(AKONADI_VERSION "6.2.40")
+set(GRANTLEETHEME_LIB_VERSION "6.2.40")
+set(GRAVATAR_LIB_VERSION "6.2.40")
+set(IDENTITYMANAGEMENT_LIB_VERSION "6.2.40")
+set(KMAILTRANSPORT_LIB_VERSION "6.2.40")
+set(KMBOX_LIB_VERSION "6.2.40")
+set(KMIME_LIB_VERSION "6.2.40")
+set(KPIMTEXTEDIT_LIB_VERSION "6.2.40")
+set(LIBKDEPIM_LIB_VERSION "6.2.40")
+set(LIBKLEO_LIB_VERSION "6.2.40")
+set(PIMCOMMON_LIB_VERSION "6.2.40")
+set(GPGME_REQUIRED_VERSION "1.21.0")
+set(AKONADI_SEARCH_VERSION "6.2.40")
 
 set(ECM_VERSION ${KF_MIN_VERSION})
 
@@ -53,7 +53,7 @@ include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
 include(ECMAddTests)
 include(ECMAddQch)
-set(KTEXTADDONS_MIN_VERSION "1.5.3")
+set(KTEXTADDONS_MIN_VERSION "1.5.4")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -81,7 +81,6 @@ find_package(KF6TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6WidgetsAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF6DBusAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Notifications ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
@@ -102,12 +101,8 @@ find_package(KPim6TextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
-endif()
-
-if (Gpgmepp_VERSION VERSION_GREATER_EQUAL "1.22.0")
-    set(QGPGME_SUPPORTS_ENCRYPTION_JOB_SET_INPUT_ENCODING 1)
 endif()
 
 find_package(KF6TextAutoCorrectionWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
@@ -118,8 +113,8 @@ find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
-ecm_set_disabled_deprecation_versions(QT 6.6.0 KF 6.0.0)
-
+ecm_set_disabled_deprecation_versions(QT 6.7.2 KF 6.5.0)
+add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
@@ -127,12 +122,10 @@ endif()
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
-if (USE_UNITY_CMAKE_SUPPORT)
+if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
     add_definitions(-DCOMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-messagelib.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-messagelib.h)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}

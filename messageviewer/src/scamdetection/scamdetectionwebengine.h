@@ -31,14 +31,12 @@ public:
 public Q_SLOTS:
     void showDetails();
 
-private Q_SLOTS:
-    MESSAGEVIEWER_NO_EXPORT void handleScanPage(const QVariant &result);
-
 Q_SIGNALS:
     void messageMayBeAScam();
     void resultScanDetection(bool foundScam);
 
 private:
+    MESSAGEVIEWER_NO_EXPORT void handleScanPage(const QVariant &result);
     std::unique_ptr<ScamDetectionWebEnginePrivate> const d;
 };
 }

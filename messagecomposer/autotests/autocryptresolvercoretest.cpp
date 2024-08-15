@@ -99,7 +99,9 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverSkipSender()
 
 void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverUnresolved()
 {
-    QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example"), QStringLiteral("unresolved@test.example")};
+    QStringList recipients = {QStringLiteral("recipient@autocrypt.example"),
+                              QStringLiteral("recipient2@autocrypt.example"),
+                              QStringLiteral("unresolved@test.example")};
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
     QVERIFY(file1.copy(autocryptDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));

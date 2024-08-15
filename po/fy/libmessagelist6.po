@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-08-15 00:40+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:252 core/messageitem.cpp:536
+#: core/item.cpp:251 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Read"
@@ -162,7 +162,7 @@ msgctxt "Status of an item"
 msgid "Read"
 msgstr "Lêze"
 
-#: core/item.cpp:254 core/messageitem.cpp:536
+#: core/item.cpp:253 core/messageitem.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -170,21 +170,21 @@ msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Net-lêzen"
 
-#: core/item.cpp:258
+#: core/item.cpp:257
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Hat taheaksel"
 
-#: core/item.cpp:262
+#: core/item.cpp:261
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Markearring foar wicht&ich berjocht fuortsmite"
 
-#: core/item.cpp:266 core/messageitem.cpp:534
+#: core/item.cpp:265 core/messageitem.cpp:487
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -192,7 +192,7 @@ msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Beäntwurde"
 
-#: core/item.cpp:270
+#: core/item.cpp:269
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -200,14 +200,14 @@ msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Trochstjoerd"
 
-#: core/item.cpp:274
+#: core/item.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sent"
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Stjoerd"
 
-#: core/item.cpp:278
+#: core/item.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -215,21 +215,21 @@ msgctxt "Status of an item"
 msgid "Important"
 msgstr "Wichtich"
 
-#: core/item.cpp:282
+#: core/item.cpp:281
 #, fuzzy, kde-format
 #| msgid "Spam"
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Unpost"
 
-#: core/item.cpp:286
+#: core/item.cpp:285
 #, fuzzy, kde-format
 #| msgid "Ham"
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Reklame"
 
-#: core/item.cpp:290
+#: core/item.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
@@ -237,7 +237,7 @@ msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Observearre"
 
-#: core/item.cpp:294
+#: core/item.cpp:293
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
@@ -245,7 +245,7 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Negearre"
 
-#: core/manager.cpp:35 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Unknown"
@@ -253,12 +253,12 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Unbekend"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:205
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr ""
 
-#: core/manager.cpp:207
+#: core/manager.cpp:206
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -266,24 +266,24 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 
-#: core/manager.cpp:219
+#: core/manager.cpp:218
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr ""
 
-#: core/manager.cpp:220
+#: core/manager.cpp:219
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:231
+#: core/manager.cpp:230
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr ""
 
-#: core/manager.cpp:232
+#: core/manager.cpp:231
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -291,148 +291,148 @@ msgid ""
 "that have been active today."
 msgstr ""
 
-#: core/manager.cpp:244
+#: core/manager.cpp:243
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr ""
 
-#: core/manager.cpp:245
+#: core/manager.cpp:244
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:256
+#: core/manager.cpp:255
 #, fuzzy, kde-format
 #| msgid "Associated Mailing List"
 msgid "Standard Mailing List"
 msgstr "Assosjearre diskusjegroep"
 
-#: core/manager.cpp:257
+#: core/manager.cpp:256
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 
-#: core/manager.cpp:266
+#: core/manager.cpp:265
 #, kde-format
 msgid "Flat Date View"
 msgstr ""
 
-#: core/manager.cpp:267
+#: core/manager.cpp:266
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
 
-#: core/manager.cpp:278
+#: core/manager.cpp:277
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Senders/Receivers, Flat"
 msgstr "Stjoerder/Untfanger"
 
-#: core/manager.cpp:279
+#: core/manager.cpp:278
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
 
-#: core/manager.cpp:290
+#: core/manager.cpp:289
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Thread Starters"
 msgstr "Diskusje &groepearje"
 
-#: core/manager.cpp:291
+#: core/manager.cpp:290
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr ""
 
-#: core/manager.cpp:568
+#: core/manager.cpp:567
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:572
+#: core/manager.cpp:571
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Underwerp"
 
-#: core/manager.cpp:608 core/theme.cpp:113
+#: core/manager.cpp:604 core/theme.cpp:112
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Sender/Receiver"
 msgstr "Stjoerder/Untfanger"
 
-#: core/manager.cpp:615
+#: core/manager.cpp:611
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Stjoerder"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:613
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Untfanger"
 
-#: core/manager.cpp:623
+#: core/manager.cpp:619
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Datum"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:621
 #, fuzzy, kde-format
 #| msgid "Redirect Message"
 msgid "Most Recent Date"
 msgstr "Berjocht Omliede"
 
-#: core/manager.cpp:631
+#: core/manager.cpp:627
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Grutte"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:629
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Taheaksel"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:635
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Read/Unread"
 msgstr "Net-lêzen"
 
-#: core/manager.cpp:644
+#: core/manager.cpp:640
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
 msgid "Replied"
 msgstr "Beäntwurde"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:642
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -440,67 +440,67 @@ msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Wichtich"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:648
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgid "Action Item"
 msgstr "Markearring foar wicht&ich berjocht fuortsmite"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Unpost/Winske"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:660
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Observearre/negearre"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:666
 #, kde-format
 msgid "Encryption"
 msgstr "&Fersifering"
 
-#: core/manager.cpp:676
+#: core/manager.cpp:672
 #, kde-format
 msgid "Signature"
 msgstr "Hântekening"
 
-#: core/manager.cpp:681
+#: core/manager.cpp:677
 #, fuzzy, kde-format
 #| msgid "Save List"
 msgid "Tag List"
 msgstr "List bewarje"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:685
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "&tûk"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:685
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:693
+#: core/manager.cpp:689
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Message"
 msgstr "Berjo&cht"
 
-#: core/manager.cpp:777
+#: core/manager.cpp:770
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:778
+#: core/manager.cpp:771
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:782 core/view.cpp:2258 core/view.cpp:2262
+#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Tastân"
@@ -544,13 +544,13 @@ msgstr ""
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:185
+#: core/model.cpp:550 utils/themeeditor.cpp:188
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "Untfanger"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:184
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Sender"
 msgstr "Stjoerder"
@@ -745,155 +745,149 @@ msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Fer&stjoere"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:106
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Underwerp"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:109
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Datum"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:115
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Stjoerder"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:118
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Untfanger"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:121
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Grutte"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Unread/Read Icon"
 msgstr "Net-lêzen"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:127
 #, fuzzy, kde-format
 #| msgid "Attachment"
 msgid "Attachment Icon"
 msgstr "Taheaksel"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr ""
 
-#: core/theme.cpp:134
+#: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr ""
 
-#: core/theme.cpp:137
+#: core/theme.cpp:136
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgid "Action Item Icon"
 msgstr "Markearring foar wicht&ich berjocht fuortsmite"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:139
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
 msgid "Important Icon"
 msgstr "Wichtich"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:142
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header Label"
 msgstr "&Groupware"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:145
 #, fuzzy, kde-format
 #| msgid "Spam/Ham"
 msgid "Spam/Ham Icon"
 msgstr "Unpost/Winske"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:148
 #, fuzzy, kde-format
 #| msgid "Watched/Ignored"
 msgid "Watched/Ignored Icon"
 msgstr "Observearre/negearre"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:151
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr ""
 
-#: core/theme.cpp:155
+#: core/theme.cpp:154
 #, fuzzy, kde-format
 #| msgid "Encryption Key Selection"
 msgid "Encryption State Icon"
 msgstr "Kaaiseleksje foar fersifering"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:157
 #, fuzzy, kde-format
 #| msgid "Signature Configuration"
 msgid "Signature State Icon"
 msgstr "Hântekening ynstellings"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:160
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr ""
 
-#: core/theme.cpp:164
+#: core/theme.cpp:163
 #, fuzzy, kde-format
 #| msgid "internal part"
 msgid "Horizontal Spacer"
 msgstr "Yntern part"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:166
 #, fuzzy, kde-format
 #| msgid "Date"
 msgid "Max Date"
 msgstr "Datum"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:169
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Message Tags"
 msgstr "Berjo&cht"
 
-#: core/theme.cpp:173
-#, fuzzy, kde-format
-#| msgid "Remove &Important Message Mark"
-msgid "Note Icon"
-msgstr "Markearring foar wicht&ich berjocht fuortsmite"
-
-#: core/theme.cpp:175
+#: core/theme.cpp:172
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Invitation Icon"
 msgstr "Avansearre opsjes"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:174
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Map"
 
-#: core/theme.cpp:179
+#: core/theme.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "Message->"
 #| msgid "Unknown"
@@ -901,129 +895,124 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Unbekend"
 
-#: core/theme.cpp:853
+#: core/theme.cpp:835
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Unread"
 msgstr "Net-lêzen"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Never Show"
 msgstr "Untfanger"
 
-#: core/theme.cpp:1047
+#: core/theme.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Always"
 msgid "Always Show"
 msgstr "Altyd"
 
-#: core/theme.cpp:1052
+#: core/theme.cpp:1034
 #, kde-format
 msgid "Plain Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1053
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1054
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1055
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1056
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1057
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr ""
 
-#: core/theme.cpp:1058
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Styled Rectangles"
 msgstr ""
 
-#: core/theme.cpp:1059
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr ""
 
-#: core/view.cpp:682
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
 msgstr "Gjin hântekening fûn."
 
-#: core/view.cpp:761
+#: core/view.cpp:759
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr ""
 
-#: core/view.cpp:765
+#: core/view.cpp:763
 #, fuzzy, kde-format
 #| msgid "Show alway&s"
 msgid "Show Default Columns"
 msgstr "Alty&d sjen litte"
 
-#: core/view.cpp:770
+#: core/view.cpp:768
 #, fuzzy, kde-format
 #| msgid "&To"
 msgid "Display Tooltips"
 msgstr "&Oan"
 
-#: core/view.cpp:2239 core/view.cpp:2243 core/widgets/searchlinestatus.cpp:326
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&Fan"
 
-#: core/view.cpp:2240 core/view.cpp:2244
+#: core/view.cpp:2238 core/view.cpp:2242
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Oan:"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2239 core/view.cpp:2243
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: core/view.cpp:2259 core/view.cpp:2263
+#: core/view.cpp:2257 core/view.cpp:2261
 #, kde-format
 msgid "Size"
 msgstr "Grutte"
 
-#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:187
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "Map"
 
-#: core/view.cpp:2269 core/view.cpp:2271
-#, fuzzy, kde-format
-#| msgid "Notes"
-msgid "Note"
-msgstr "Notysjes"
-
-#: core/view.cpp:2278 core/view.cpp:2280
+#: core/view.cpp:2268 core/view.cpp:2270
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "Preview"
 msgstr "&Kaart earder"
 
-#: core/view.cpp:2297
+#: core/view.cpp:2287
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1031,14 +1020,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>Slechte</b> hântekening"
 msgstr[1] "<b>Slechte</b> hântekening"
 
-#: core/view.cpp:2300
+#: core/view.cpp:2290
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2337
+#: core/view.cpp:2327
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -1046,27 +1035,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "Diskusjes binne standert ie&pen"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2329
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Diskusjes binne standert ie&pen"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2333
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "Diskusjes groepearje yn berjoch&tenlist"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2343
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2356
+#: core/view.cpp:2346
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1074,93 +1063,93 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2360
+#: core/view.cpp:2350
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Berjo&cht"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2352
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2371
+#: core/view.cpp:2361
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "Diskusjes binne standert ie&pen"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2364
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "Diskusjes groepearje yn berjoch&tenlist"
 
-#: core/view.cpp:2382
+#: core/view.cpp:2372
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "Berjocht is ûndertekene mei kaai %1."
 
-#: core/view.cpp:2384
+#: core/view.cpp:2374
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "Berjocht is ûndertekene mei kaai %1."
 
-#: core/view.cpp:2393
+#: core/view.cpp:2383
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "Diskusjes binne standert ie&pen"
 
-#: core/view.cpp:2396
+#: core/view.cpp:2386
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "Diskusjes groepearje yn berjoch&tenlist"
 
-#: core/view.cpp:2405 core/view.cpp:2429
+#: core/view.cpp:2395 core/view.cpp:2419
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2407
+#: core/view.cpp:2397
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2410
+#: core/view.cpp:2400
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2418
+#: core/view.cpp:2408
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "Diskusjes binne standert ie&pen"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2411
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "Diskusjes groepearje yn berjoch&tenlist"
 
-#: core/view.cpp:2431
+#: core/view.cpp:2421
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "Berjocht is ûndertekene troch %1."
 
-#: core/view.cpp:2457
+#: core/view.cpp:2447
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1168,71 +1157,70 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>Slechte</b> hântekening"
 msgstr[1] "<b>Slechte</b> hântekening"
 
-#: core/view.cpp:2462
+#: core/view.cpp:2452
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/widgetbase.cpp:186
-#, kde-format
-msgid "Any filter defined."
-msgstr ""
+#: core/widgetbase.cpp:190
+#, fuzzy, kde-format
+#| msgid "Log filter actions"
+msgid "No filter defined."
+msgstr "Filteraksjes fêstlizze"
 
-#: core/widgetbase.cpp:186
+#: core/widgetbase.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Filter oanmeitsje"
 
-#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#: core/widgetbase.cpp:412 messagelistutil.cpp:114
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "Tiid"
 
-#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
-#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
-#: utils/themeconfigbutton.cpp:46
+#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "KMail ynstelle..."
 
-#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Sugestjes"
 
-#: core/widgetbase.cpp:581
+#: core/widgetbase.cpp:585
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Eigenschippen fan taheaksels"
 
-#: core/widgetbase.cpp:603
+#: core/widgetbase.cpp:607
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Message Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:624
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Map wiskje"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:641
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Group Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:656
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1244,19 +1232,19 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Filters y&nstelle..."
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Remo&ve"
 msgid "Remove"
 msgstr "Fuort&smite"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:82
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to empty the trash folder?"
 msgid "Do you want to delete this filter?"
 msgstr "Wolle jo it jiskefet leegje?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:83
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgctxt "@title:window"
@@ -1270,19 +1258,28 @@ msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Triem be&wurkje"
 
-#: core/widgets/filternamewidget.cpp:31
+#: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Namme:"
 
 #: core/widgets/filtersavedmenu.cpp:16
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@action"
 msgid "Save Filter..."
 msgstr "List bewarje..."
 
-#: core/widgets/quicksearchline.cpp:40
+#: core/widgets/filtersavedmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure KMail..."
+msgctxt "@action"
+msgid "Configure..."
+msgstr "KMail ynstelle..."
+
+#: core/widgets/quicksearchline.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Search"
 msgctxt "Search for messages."
@@ -1297,6 +1294,7 @@ msgstr ""
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
+msgctxt "@action"
 msgid "Do not show again"
 msgstr "Gjin berjochtfoarbyl&dfak sjen litte"
 
@@ -1307,19 +1305,19 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1327,25 +1325,53 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
-msgid "Filter Mails by Status"
-msgstr "Filterregels"
-
-#: core/widgets/searchlinestatus.cpp:118
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 #| msgid "Save List..."
+msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "List bewarje..."
 
-#: core/widgets/searchlinestatus.cpp:217
+#: core/widgets/searchlinestatus.cpp:186
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
-msgid "Clear Filter"
+msgid "Clear History"
 msgstr "&Filter oanmeitsje"
 
-#: core/widgets/searchlinestatus.cpp:223
+#: core/widgets/searchmessagebybuttons.cpp:34
+#, fuzzy, kde-format
+#| msgid "&Full message"
+msgctxt "@action"
+msgid "Full Message"
+msgstr "&Folslein berjocht"
+
+#: core/widgets/searchmessagebybuttons.cpp:36
+#, kde-format
+msgctxt "@action"
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:37
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action"
+msgid "Subject"
+msgstr "Underwerp"
+
+#: core/widgets/searchmessagebybuttons.cpp:39
+#, fuzzy, kde-format
+#| msgid "BCC"
+msgctxt "@action"
+msgid "BCC"
+msgstr "BCC"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgid "To"
+msgid "To"
+msgstr "Oan:"
+
+#: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -1353,7 +1379,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Net-lêzen"
 
-#: core/widgets/searchlinestatus.cpp:227
+#: core/widgets/searchstatusbuttons.cpp:39
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -1361,7 +1387,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Beäntwurde"
 
-#: core/widgets/searchlinestatus.cpp:231
+#: core/widgets/searchstatusbuttons.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
@@ -1369,7 +1395,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Trochstjoerd"
 
-#: core/widgets/searchlinestatus.cpp:235
+#: core/widgets/searchstatusbuttons.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -1377,14 +1403,14 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Wichtich"
 
-#: core/widgets/searchlinestatus.cpp:239
+#: core/widgets/searchstatusbuttons.cpp:51
 #, fuzzy, kde-format
 #| msgid "Remove &Important Message Mark"
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Markearring foar wicht&ich berjocht fuortsmite"
 
-#: core/widgets/searchlinestatus.cpp:243
+#: core/widgets/searchstatusbuttons.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
@@ -1392,7 +1418,7 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Observearre"
 
-#: core/widgets/searchlinestatus.cpp:247
+#: core/widgets/searchstatusbuttons.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
@@ -1400,68 +1426,33 @@ msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Negearre"
 
-#: core/widgets/searchlinestatus.cpp:251
+#: core/widgets/searchstatusbuttons.cpp:63
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Hat taheaksel"
 
-#: core/widgets/searchlinestatus.cpp:255
+#: core/widgets/searchstatusbuttons.cpp:67
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Avansearre opsjes"
 
-#: core/widgets/searchlinestatus.cpp:259
+#: core/widgets/searchstatusbuttons.cpp:71
 #, fuzzy, kde-format
 #| msgid "Spam"
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Unpost"
 
-#: core/widgets/searchlinestatus.cpp:263
+#: core/widgets/searchstatusbuttons.cpp:75
 #, fuzzy, kde-format
 #| msgid "Ham"
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Reklame"
-
-#: core/widgets/searchlinestatus.cpp:273
-#, fuzzy, kde-format
-#| msgid "&Full message"
-msgid "Full Message"
-msgstr "&Folslein berjocht"
-
-#: core/widgets/searchlinestatus.cpp:280
-#, kde-format
-msgid "Body"
-msgstr ""
-
-#: core/widgets/searchlinestatus.cpp:285
-#, fuzzy, kde-format
-#| msgid "Subject"
-msgid "Subject"
-msgstr "Underwerp"
-
-#: core/widgets/searchlinestatus.cpp:296
-#, fuzzy, kde-format
-#| msgid "BCC"
-msgid "BCC"
-msgstr "BCC"
-
-#: core/widgets/searchlinestatus.cpp:324
-#, fuzzy, kde-format
-#| msgid "To"
-msgid "To"
-msgstr "Oan:"
-
-#: core/widgets/searchlinestatus.cpp:406
-#, fuzzy, kde-format
-#| msgid "&Create Filter"
-msgid "Clear History"
-msgstr "&Filter oanmeitsje"
 
 #: core/widgets/tablockedwarning.cpp:17
 #, kde-format
@@ -1508,6 +1499,7 @@ msgstr "A&lle diskusjes ynfâldzje"
 
 #: pane.cpp:180
 #, kde-format
+msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
@@ -1525,26 +1517,32 @@ msgstr "Berjochtenlist"
 #: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Identiteit fan &stjoerder:"
 
 #: pane.cpp:258
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Sender identity:"
+msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr ""
+msgstr "Identiteit fan &stjoerder:"
 
 #: pane.cpp:268
 #, kde-format
+msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
 #: pane.cpp:280
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
 #: pane.cpp:288
 #, kde-format
+msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
@@ -1552,6 +1550,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
+msgctxt "@action"
 msgid "Close Tab"
 msgstr "A&lle diskusjes ynfâldzje"
 
@@ -1590,19 +1589,26 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "Lêste sykopjefte"
 
-#: storagemodel.cpp:219
+#: storagemodel.cpp:218
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Gjin ûnderwerp"
 
-#: storagemodel.cpp:220
+#: storagemodel.cpp:219
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Unbekend"
+
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+#| msgid "Configure KMail..."
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "KMail ynstelle..."
 
 #: utils/aggregationeditor.cpp:31
 #, fuzzy, kde-format
@@ -1614,30 +1620,35 @@ msgstr "Diskusje útfâldzj&e"
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
 #| msgid "&Groupware"
+msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "&Groupware"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Ferstjoerbelied:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
 #| msgid "&Reading"
+msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "&Lêzen"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
+msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Diskusje &groepearje"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
 #| msgid "Send policy:"
+msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Ferstjoerbelied:"
 
@@ -1650,6 +1661,7 @@ msgstr "Avansearre"
 
 #: utils/aggregationeditor.cpp:68
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr ""
 
@@ -1660,33 +1672,37 @@ msgid "Customize Message Aggregation Modes"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
-#: utils/configureaggregationsdialog.cpp:360
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
+msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Diskusje wis&kje"
 
@@ -1696,15 +1712,23 @@ msgstr "Diskusje wis&kje"
 msgid "Unnamed Aggregation"
 msgstr "Sugestjes"
 
+#: utils/configureaggregationsdialog.cpp:360
+#, fuzzy, kde-format
+#| msgid "Suggestions"
+msgid "New Aggregation"
+msgstr "Sugestjes"
+
 #: utils/configureaggregationsdialog.cpp:413
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Sugestjes"
 
 #: utils/configureaggregationsdialog.cpp:446
 #, fuzzy, kde-format
 #| msgid "Suggestions"
+msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Sugestjes"
 
@@ -1722,33 +1746,38 @@ msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "&Oanpaste sjabloanen"
 
-#: utils/configurethemesdialog.cpp:117 utils/configurethemesdialog.cpp:353
+#: utils/configurethemesdialog.cpp:117
 #, fuzzy, kde-format
 #| msgid "New Message"
+msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nij berjocht"
 
 #: utils/configurethemesdialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "New Message"
+msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Nij berjocht"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
 #| msgid "Expire"
+msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Ferrine litte"
 
 #: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "&Ymportearje"
 
 #: utils/configurethemesdialog.cpp:156
 #, fuzzy, kde-format
 #| msgid "Delete T&hread"
+msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Diskusje wis&kje"
 
@@ -1758,7 +1787,13 @@ msgstr "Diskusje wis&kje"
 msgid "Unnamed Theme"
 msgstr "Nammeleas"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1215
+#: utils/configurethemesdialog.cpp:353
+#, fuzzy, kde-format
+#| msgid "New Message"
+msgid "New Theme"
+msgstr "Nij berjocht"
+
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
@@ -1784,12 +1819,14 @@ msgstr "Diskusje wis&kje"
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
+msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Berjochten &ymportearje..."
 
 #: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
+msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Kaaieksport mislearre"
 
@@ -1814,142 +1851,149 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "&Beskriuwing:"
 
-#: utils/themeeditor.cpp:69
+#: utils/themeeditor.cpp:71
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "Namme:"
 
-#: utils/themeeditor.cpp:73
+#: utils/themeeditor.cpp:75
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr ""
 
-#: utils/themeeditor.cpp:76
+#: utils/themeeditor.cpp:78
 #, fuzzy, kde-format
 #| msgid "Remove Duplicate Messages"
+msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Dûbele berjochten fuortsmite"
 
-#: utils/themeeditor.cpp:80
+#: utils/themeeditor.cpp:82
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 
-#: utils/themeeditor.cpp:83
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid "Set as Default"
+msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Ynstelle as standert"
 
-#: utils/themeeditor.cpp:84
+#: utils/themeeditor.cpp:86
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 
-#: utils/themeeditor.cpp:87
+#: utils/themeeditor.cpp:89
 #, kde-format
+msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 
-#: utils/themeeditor.cpp:88
+#: utils/themeeditor.cpp:91
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
 
-#: utils/themeeditor.cpp:108
+#: utils/themeeditor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Unread Column"
 msgid "Unnamed Column"
 msgstr "Net-lêzen kolom"
 
-#: utils/themeeditor.cpp:173
+#: utils/themeeditor.cpp:176
 #, fuzzy, kde-format
 #| msgid "Message Body"
 msgid "Message Group"
 msgstr "Berjochtfjild"
 
-#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
 
-#: utils/themeeditor.cpp:192
+#: utils/themeeditor.cpp:195
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Sample Tag 1"
 msgstr "Berjo&cht"
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:196
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Sample Tag 2"
 msgstr "Berjo&cht"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:197
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Sample Tag 3"
 msgstr "Berjo&cht"
 
-#: utils/themeeditor.cpp:409
+#: utils/themeeditor.cpp:412
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr ""
 
-#: utils/themeeditor.cpp:849
+#: utils/themeeditor.cpp:852
 #, fuzzy, kde-format
 #| msgid "&Send"
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Fer&stjoere"
 
-#: utils/themeeditor.cpp:856
+#: utils/themeeditor.cpp:859
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "&Fet"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:863
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Skeanpr&inte"
 
-#: utils/themeeditor.cpp:867
+#: utils/themeeditor.cpp:870
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Font"
 msgstr "Kontaktpersoanen"
 
-#: utils/themeeditor.cpp:875
+#: utils/themeeditor.cpp:878
 #, fuzzy, kde-format
 #| msgid "Set Default"
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Ynstelle as standert"
 
-#: utils/themeeditor.cpp:880
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:888
+#: utils/themeeditor.cpp:891
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Foreground Color"
 msgstr "Alternative eftergrûnkleur"
 
-#: utils/themeeditor.cpp:897
+#: utils/themeeditor.cpp:900
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Hide"
@@ -1959,7 +2003,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "&Ferstoppe"
 
-#: utils/themeeditor.cpp:904
+#: utils/themeeditor.cpp:907
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1967,7 +2011,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:911
+#: utils/themeeditor.cpp:914
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1975,103 +2019,103 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:919
+#: utils/themeeditor.cpp:922
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:925
+#: utils/themeeditor.cpp:928
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header"
 msgstr "&Groupware"
 
-#: utils/themeeditor.cpp:932
+#: utils/themeeditor.cpp:935
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Gjin"
 
-#: utils/themeeditor.cpp:937
+#: utils/themeeditor.cpp:940
 #, fuzzy, kde-format
 #| msgid "Never Automatically"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Nea automatysk"
 
-#: utils/themeeditor.cpp:942
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:950
+#: utils/themeeditor.cpp:953
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Color"
 msgstr "Alternative eftergrûnkleur"
 
-#: utils/themeeditor.cpp:970
+#: utils/themeeditor.cpp:973
 #, fuzzy, kde-format
 #| msgid "Alternative Background Color"
 msgid "Background Style"
 msgstr "Alternative eftergrûnkleur"
 
-#: utils/themeeditor.cpp:1156
+#: utils/themeeditor.cpp:1159
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties..."
 msgstr "Mapeigenschippen"
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1162
 #, fuzzy, kde-format
 #| msgid "Add Entry..."
 msgid "Add Column..."
 msgstr "Yngong taheakje..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1165
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Delete Column"
 msgstr "Map wiskje"
 
-#: utils/themeeditor.cpp:1168
+#: utils/themeeditor.cpp:1171
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1175
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1221
+#: utils/themeeditor.cpp:1224
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "Add New Column"
 msgstr "Kolommen sjen litte"
 
-#: utils/themeeditor.cpp:1245
+#: utils/themeeditor.cpp:1248
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties"
 msgstr "Mapeigenschippen"
 
-#: utils/themeeditor.cpp:1287
+#: utils/themeeditor.cpp:1290
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Append"
 msgid "Appearance"
 msgstr "Taheakje"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1294
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Content Items"
 msgstr "Kontaktpersoanen"
 
-#: utils/themeeditor.cpp:1423
+#: utils/themeeditor.cpp:1421
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2079,26 +2123,28 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1431
 #, fuzzy, kde-format
 #| msgid "Advanced"
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Avansearre"
 
-#: utils/themeeditor.cpp:1437
+#: utils/themeeditor.cpp:1435
 #, fuzzy, kde-format
 #| msgid "H&eaders"
+msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "B&erjochtkoppen"
 
-#: utils/themeeditor.cpp:1443
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Size"
+msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Grutte"
 
-#: utils/themeeditor.cpp:1449
+#: utils/themeeditor.cpp:1448
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
@@ -2170,6 +2216,28 @@ msgstr "Hjirhinne &kopiearre"
 #, kde-format
 msgid "C&ancel"
 msgstr "&Ofbrekke"
+
+#, fuzzy
+#~| msgid "Filter Rules"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Filter Mails by Status"
+#~ msgstr "Filterregels"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgctxt "@action:button"
+#~ msgid "Clear Filter"
+#~ msgstr "&Filter oanmeitsje"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgid "Note Icon"
+#~ msgstr "Markearring foar wicht&ich berjocht fuortsmite"
+
+#, fuzzy
+#~| msgid "Notes"
+#~ msgid "Note"
+#~ msgstr "Notysjes"
 
 #~ msgid "Rename..."
 #~ msgstr "Omneame..."
@@ -3193,9 +3261,6 @@ msgstr "&Ofbrekke"
 
 #~ msgid "Log filter pattern evaluation"
 #~ msgstr "Filterevaluaasje fêstlizze"
-
-#~ msgid "Log filter actions"
-#~ msgstr "Filteraksjes fêstlizze"
 
 #~ msgid "Log size limit:"
 #~ msgstr "Maksimale lochgrutte:"

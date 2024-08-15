@@ -50,6 +50,12 @@ target_sources(KPim6MessageList PRIVATE
     core/widgets/filternamedialog.cpp
     core/widgets/filternamewidget.cpp
 
+    core/widgets/searchstatusbuttons.h
+    core/widgets/searchstatusbuttons.cpp
+
+    core/widgets/searchmessagebybuttons.h
+    core/widgets/searchmessagebybuttons.cpp
+
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp
     utils/aggregationeditor.cpp
@@ -133,7 +139,7 @@ kconfig_add_kcfg_files(KPim6MessageList
     core/messagelistsettings.kcfgc
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -153,7 +159,6 @@ target_link_libraries(KPim6MessageList
     KPim6::AkonadiMime
     KPim6::Mime
     PRIVATE
-    KF6::KIOCore
     KPim6::MessageCore
     KPim6::PimCommonAkonadi
     KPim6::AkonadiSearchPIM
@@ -204,6 +209,7 @@ ecm_generate_headers(MessageList_Camelcaseutil_HEADERS
 ecm_generate_headers(MessageList_Camelcasewidgets_HEADERS
     HEADER_NAMES
     QuickSearchLine
+    SearchMessageByButtons
     REQUIRED_HEADERS MessageList_widgets_HEADERS
     RELATIVE core/widgets
     PREFIX MessageList
@@ -243,7 +249,7 @@ install(FILES
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageList")
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageList_QCH
         NAME KPim6MessageList
@@ -266,7 +272,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageList_QCH

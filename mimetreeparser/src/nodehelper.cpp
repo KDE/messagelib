@@ -179,7 +179,7 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
     }
     fname += QLatin1Char('/') + filename;
     QFile f(fname);
-    if (!f.open(QIODevice::ReadWrite)) {
+    if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
         return {};
@@ -227,7 +227,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
         data = KMime::CRLFtoLF(data);
     }
     QFile f(fname);
-    if (!f.open(QIODevice::ReadWrite)) {
+    if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
         return {};
@@ -315,8 +315,7 @@ bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
     const KMime::Content *const topLevel = node->topLevel();
     const KMime::Content *cur = node;
     while (cur && cur != topLevel) {
-        const bool parentIsMessage =
-            cur->parent() && cur->parent()->contentType(false) && cur->parent()->contentType(false)->mimeType().toLower() == "message/rfc822";
+        const bool parentIsMessage = cur->parent() && cur->parent()->contentType() && cur->parent()->contentType()->mimeType().toLower() == "message/rfc822";
         if (parentIsMessage && cur->parent() != topLevel) {
             return true;
         }
@@ -325,13 +324,12 @@ bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
     return false;
 }
 
-QByteArray NodeHelper::charset(KMime::Content *node)
+QByteArray NodeHelper::charset(const KMime::Content *node)
 {
-    if (node->contentType(false)) {
-        return node->contentType(false)->charset();
-    } else {
-        return node->defaultCharset();
+    if (const auto ct = node->contentType(); ct) {
+        return ct->charset();
     }
+    return QByteArrayLiteral("utf-8");
 }
 
 KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) const
@@ -800,7 +798,7 @@ QString NodeHelper::encodingForName(const QString &descriptiveName)
     return NodeHelper::fixEncoding(encoding);
 }
 
-QStringList NodeHelper::supportedEncodings(bool usAscii)
+QStringList NodeHelper::supportedEncodings()
 {
     QStringList encodingNames = KCharsets::charsets()->availableEncodingNames();
     QStringList encodings;
@@ -815,9 +813,6 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
         }
     }
     encodings.sort();
-    if (usAscii) {
-        encodings.prepend(KCharsets::charsets()->descriptionForEncoding(QStringLiteral("us-ascii")));
-    }
     return encodings;
 }
 

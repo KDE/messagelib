@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions( -DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data" )
-add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
+add_definitions(-DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data")
+add_definitions(-DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
 set(test_libmessageviewer_SRCS)
 ecm_qt_declare_logging_category(test_libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
@@ -14,8 +14,8 @@ macro(add_messageviewer_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
-    )
-endmacro ()
+)
+endmacro()
 
 macro(add_messageviewer_class_unittest _source _additionalSource)
     get_filename_component(_name ${_source} NAME_WE)
@@ -23,10 +23,10 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer Qt::Test KF6::IconThemes KF6::XmlGui KF6::I18n
-    )
-endmacro ()
+)
+endmacro()
 
-add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
+add_messageviewer_unittest( messagedisplayformatattributetest.cpp)
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
@@ -37,14 +37,14 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
         LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::PimTextEdit
         KPim6::PimCommon KPim6::MessageViewer KPim6::WebEngineViewer KF6::SyntaxHighlighting KF6::TextAddonsWidgets
         KF6::I18n KF6::IconThemes
-    )
-    if (TARGET KF6::TextEditTextToSpeech)
+)
+    if(TARGET KF6::TextEditTextToSpeech)
         target_link_libraries(${_name} KF6::TextEditTextToSpeech)
     endif()
-endmacro ()
+endmacro()
 
 
-add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp )
+add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp)
 ########### viewertest_gui ###############
 
 add_akonadi_isolated_test_advanced(viewertest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")

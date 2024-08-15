@@ -44,7 +44,6 @@ static const int gThemeMinimumVersionWithColumnRuntimeData = 0x1014;
 static const int gThemeMinimumVersionWithIconSizeField = 0x1015;
 static const int gThemeMinimumVersionWithSortingByUnreadStatusAllowed = 0x1016;
 static const int gThemeMinimumVersionWithColumnIcon = 0x1017;
-static const int gThemeMinimumVersionWithAnnotationIcon = 0x1018;
 static const int gThemeMinimumVersionWithInvitationIcon = 0x1019;
 
 // the default icon size
@@ -169,8 +168,6 @@ QString Theme::ContentItem::description(Type type)
     case TagList:
         return i18n("Message Tags");
         break;
-    case AnnotationIcon:
-        return i18n("Note Icon");
     case InvitationIcon:
         return i18n("Invitation Icon");
     case Folder:
@@ -321,7 +318,6 @@ bool Theme::ContentItem::load(QDataStream &stream, int /*themeVersion*/)
     case MostRecentDate:
     case CombinedReadRepliedStateIcon:
     case TagList:
-    case AnnotationIcon:
     case InvitationIcon:
     case Folder:
         // ok
@@ -473,20 +469,6 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
             addLeftItem(ci);
         } else {
             addRightItem(ci);
-        }
-
-        // Add the annotation item next to the attachment icon, so that users upgrading from old
-        // versions don't manually need to set this.
-        // Don't do this for the stand-alone attachment column.
-        if (ci->type() == ContentItem::AttachmentStateIcon && themeVersion < gThemeMinimumVersionWithAnnotationIcon && val > 1) {
-            qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding annotation item next to attachment icon.";
-            auto annotationItem = new ContentItem(ContentItem::AnnotationIcon);
-            annotationItem->setHideWhenDisabled(true);
-            if (leftItem) {
-                addLeftItem(annotationItem);
-            } else {
-                addRightItem(annotationItem);
-            }
         }
 
         // Same as above, for the invitation icon

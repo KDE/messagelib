@@ -1,0 +1,136 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 08:36+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Lokalize 24.05.2\n"
+
+#: developertool/developertooldialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr "כלים למפתחים"
+
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "סגירה"
+
+#: findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "סגירה"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "&איתור:"
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Text to search for"
+msgstr "טקסט לחיפוש"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "הבא"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to next match"
+msgstr "דילוג לתוצאה הבאה"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "הקודמת"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to previous match"
+msgstr "דילוג לתוצאה הקודמת"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "אפשרויות"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Modify search behavior"
+msgstr "שינוי התנהגות החיפוש"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "תלוי רישיות"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "המשפט לא נמצא"
+
+#: webenginepage.cpp:152
+#, kde-format
+msgctxt "@title:window"
+msgid "Save HTML Page"
+msgstr "שמירת עמוד HTML"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr "אסור להגיש טפסים במנגנון הדוא״ל. נא לפתוח כתובת בדפדפן."
+
+#: widgets/tracking/trackingdetailsdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "פרטים"
+
+#: widgets/tracking/trackingwarningwidget.cpp:21
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr "נמצא מרגל דוא״ל והוא נחסם.<a href=\"mailtrackingdetails\">(פרטים…)"
+
+#: widgets/tracking/trackingwarningwidget.cpp:40
+#, kde-format
+msgid "Details:"
+msgstr "פרטים:"
+
+#: widgets/tracking/trackingwarningwidget.cpp:46
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] "מרגל אחד מטעם חברת %2 (%3)"
+msgstr[1] "שני מרגלים מטעם חברת %2 (%3)"
+msgstr[2] "%1 מרגלים מטעם חברת %2 (%3)"
+msgstr[3] "%1 מרגלים מטעם חברת %2 (%3)"
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "תקריב"

@@ -27,7 +27,7 @@ Q_SIGNALS:
     void updateOkButtonRequested(bool enabled);
 
 private:
-    void updateOkButton();
+    MESSAGEVIEWER_NO_EXPORT void updateOkButton();
     QCheckBox *const mEnabled;
     QLineEdit *const mDomain;
     QLineEdit *const mSignatureDomainIdentifier;

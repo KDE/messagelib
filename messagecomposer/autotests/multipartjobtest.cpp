@@ -68,27 +68,4 @@ void MultipartJobTest::testMultipartMixed()
     delete result;
 }
 
-void MultipartJobTest::test8BitPropagation()
-{
-    // If a subpart is 8bit, its parent must be 8bit too.
-
-    Composer composer;
-    composer.globalPart()->set8BitAllowed(true);
-    auto mjob = new MultipartJob(&composer);
-    mjob->setMultipartSubtype("mixed");
-    auto mjob2 = new MultipartJob(mjob);
-    mjob2->setMultipartSubtype("mixed");
-    auto cjob = new SinglepartJob(mjob2);
-    QByteArray data("time is so short and I'm sure there must be something more");
-    cjob->setData(data);
-    cjob->contentTransferEncoding()->setEncoding(Headers::CE8Bit);
-    QVERIFY(mjob->exec());
-    Content *content = mjob->content();
-    content->assemble();
-    qDebug() << content->encodedContent();
-    QVERIFY(content->contentTransferEncoding(false));
-    QCOMPARE(content->contentTransferEncoding(false)->encoding(), Headers::CE8Bit);
-    delete content;
-}
-
 #include "moc_multipartjobtest.cpp"

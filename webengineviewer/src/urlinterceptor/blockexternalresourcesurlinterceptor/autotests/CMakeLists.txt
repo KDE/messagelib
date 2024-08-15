@@ -6,7 +6,7 @@ macro(add_messageviewer_blockexternalresource_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer Qt::Test
-    )
-endmacro ()
+)
+endmacro()
 
 add_messageviewer_blockexternalresource_unittest(blockexternalresourcesurlinterceptortest.cpp)

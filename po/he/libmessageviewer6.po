@@ -19,89 +19,84 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
-"PO-Revision-Date: 2024-02-07 09:06+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 08:36+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
-#, fuzzy
 msgid "Sorry, certificate could not be imported."
-msgstr "התעודה המשמשת לחתימה על הודעות:"
+msgstr "לא ניתן לייבא אישור, עמך הסליחה."
 
 #: messagepartthemes/default/templates/certmessagepart.html:4
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reason: %1"
-msgstr "סיבה:"
+msgstr "סיבה: %1"
 
 #: messagepartthemes/default/templates/certmessagepart.html:7
-#, fuzzy
 msgid "Sorry, no certificates were found in this message."
-msgstr "התעודה המשמשת לחתימה על הודעות:"
+msgstr "לא נמצאו אישורים בהודעה הזאת, עמך הסליחה."
 
 #: messagepartthemes/default/templates/certmessagepart.html:9
-#, fuzzy
 msgid "Certificate import status:"
-msgstr "רשימות ביטול תעודות"
+msgstr "מצב ייבוא אישורים:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:13
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] "אשף התעודות"
-msgstr[1] "אשף התעודות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "אישור אחד חדש יובא."
+msgstr[1] "שני אישורים חדשים יובאו."
+msgstr[2] "%1 אישורים חדשים יובאו."
+msgstr[3] "%1 אישורים חדשים יובאו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] "מנהל תעודות..."
-msgstr[1] "מנהל תעודות..."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "אישור אחד לא השתנה."
+msgstr[1] "שני אישורים לא השתנו."
+msgstr[2] "%1 אישורים לא השתנו."
+msgstr[3] "%1 אישורים לא השתנו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] "פג תוקף של מפתח אחד."
-msgstr[1] "פג תוקף של מפתח אחד."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מפתח סודי חדש אחד יובא."
+msgstr[1] "שני מפתחות סודיים חדשים יובאו."
+msgstr[2] "%1 מפתחות סודיים חדשים יובאו."
+msgstr[3] "%1 מפתחות סודיים חדשים יובאו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] "מנהל תעודות..."
-msgstr[1] "מנהל תעודות..."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מפתח סודי אחד לא השתנה."
+msgstr[1] "שני מפתחות סודיים לא השתנו."
+msgstr[2] "%1 מפתחות סודיים לא השתנו."
+msgstr[3] "%1 מפתחות סודיים לא השתנו."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
-#, fuzzy
 msgid "Sorry, no details on certificate import available."
-msgstr "אין מידע זמין לגבי מצב."
+msgstr "אין פרטים על ייבוא אישורים, עמך הסליחה."
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
-#, fuzzy
 msgid "Certificate import details:"
-msgstr "אשף התעודות"
+msgstr "פרטי ייבוא אישור:"
 
 #: messagepartthemes/default/templates/certmessagepart.html:34
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Certificate import failed."
 msgid "Failed: %1 (%2)"
-msgstr "נכשל: %1 (%2)"
+msgstr "נכשלו: %1 (%2)"
 
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
@@ -113,50 +108,43 @@ msgid "End of encapsulated message"
 msgstr "סוף הודעה מכומסת"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:3
-#, fuzzy
 msgid "This message is encrypted."
-msgstr "שמור הודעות בצורה מוצ&פנת"
+msgstr "ההודעה הזאת מוצפנת."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
-#, fuzzy
 msgid "Decrypt Message"
-msgstr "ה&צפן את ההודעה"
+msgstr "פענוח הודעה"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
-#, fuzzy
 msgid "Please wait while the message is being decrypted..."
-msgstr "נא המתן בעת שההודעה מועברת"
+msgstr "נא להמתין לפענוח ההודעה הזאת…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
-#, fuzzy
 msgid "The message is encrypted for the following keys:"
-msgstr "בחר באפשרות זו כדי שהודעות יוצפנו גם על ידי המפתח שלך."
+msgstr "ההודעה הוצפנה עבור המפתחות הבאים:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
 #: messagepartthemes/default/templates/signedmessagepart.html:72
 #: messagepartthemes/default/templates/signedmessagepart.html:146
-#, fuzzy
 msgid "Hide Details"
-msgstr "פרטי רישום"
+msgstr "הסתרת פרטים"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
 #: messagepartthemes/default/templates/encryptedmessagepart.html:69
-#, fuzzy
 msgid "unknown key"
-msgstr "&העבר"
+msgstr "מפתח לא ידוע"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "תאימות: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "הודעה מוצפנת"
+msgstr "הודעה מוצפנת (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -164,65 +152,57 @@ msgstr "הודעה מוצפנת"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
 #: messagepartthemes/default/templates/signedmessagepart.html:174
-#, fuzzy
 msgid "Show Details"
-msgstr "הצג ת&מיד"
+msgstr "הצגת פרטים"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
-msgstr ""
+msgstr "הודעה מוצפנת (אי אפשר לפענח)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
-#, fuzzy
 msgid "Reason: "
-msgstr "סיבה:"
+msgstr "סיבה: "
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:63
-#, fuzzy
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "בחר באפשרות זו כדי שהודעות יוצפנו גם על ידי המפתח שלך."
+msgstr "לא נמצא מפתח סודי לפענוח ההודעה הזאת. ההודעה מוצפנת למפתחות הבאים:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
-#, fuzzy
 msgid "Could not decrypt the data."
-msgstr "תוסף ההצפנה %1 לא יכול היה לפענח את הנתונים."
+msgstr "לא ניתן לפענח את הנתונים."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:81
 msgid "End of encrypted message"
 msgstr "סוף הודעה מוצפנת"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
-#, fuzzy
 msgid ""
 "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
 "HTML code is shown. If you trust the sender of this message then you can "
 "activate formatted HTML display for this message <a href='kmail:showHTML'>by "
 "clicking here</a>."
 msgstr ""
-"<p dir=\"rtl\" align=\"right\"><b>שים לב:</b> זוהי הודעת HTML. מטעמי אבטחה, "
-"מוצג רק קוד ה־HTML הגולמי. אם אתה בוטח בשולח של הודעה זו, באפשרותך להפעיל את "
-"תצוגת ה־HTML המעוצבת עבור הודעה זו על ידי לחיצה <a href=\"kmail:showHTML"
-"\">כאן</a>."
+"<b>לתשומת ליבך:</b> זאת הודעת HTML. מטעמי אבטחה, רק קוד ה־HTML הגולמי מופיע. "
+"אם מוען ההודעה אמין מבחינתך אפשר להפעיל תצוגת HTML מעוצבת להודעה הזאת <a "
+"href='kmail:showHTML'>בלחיצה כאן</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
 "trust the sender of this message then you can load the external references "
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
-"<p dir=\"rtl\" align=\"right\"><b>שים לב:</b> זוהי הודעת HTML. מטעמי אבטחה, "
-"מוצג רק קוד ה־HTML הגולמי. אם אתה בוטח בשולח של הודעה זו, באפשרותך להפעיל את "
-"תצוגת ה־HTML המעוצבת עבור הודעה זו על ידי לחיצה <a href=\"kmail:showHTML"
-"\">כאן</a>."
+"<b>לתשומת ליבך:</b> הודעת ה־HTML הזאת יכולה להפנות חיצונית לתמונות וכו׳. "
+"מטעמי אבטחה/פרטיות הפניות חיצוניות לא נטענות. אם יש לך אמון במוען ההודעה "
+"אפשר לטעון את ההפניות החיצוניות להודעה הזאת <a href='kmail:"
+"loadExternal'>בלחיצה כאן</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
-#, fuzzy
 msgid "Please wait while the signature is being verified..."
-msgstr "נא המתן בעת שההודעה מועברת"
+msgstr "נא להמתין לאימות החתימה…"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:15
 #, kde-format
@@ -250,14 +230,14 @@ msgid "Message was signed with key %1."
 msgstr "ההודעה נחתמה עם המפתח %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Message was signed by %3 on %1 with key %2"
-msgstr "ההודעה נחתמה על ידי %2 עם המפתח %1."
+msgstr "ההודעה נחתמה על ידי %3 ב־%1 עם המפתח %2"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Message was signed on %1 with key %2."
-msgstr "ההודעה נחתמה על ידי %2 עם המפתח %1."
+msgstr "ההודעה נחתמה ב־%2 עם המפתח %1."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:45
 #, kde-format
@@ -277,9 +257,9 @@ msgid "Message was signed by %2 (Key ID: %1)."
 msgstr "ההודעה נחתמה על ידי %2 (זיהוי מפתח: %1)."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:92
-#, fuzzy, kde-format
+#, kde-format
 msgid "Message was signed on %1 with unknown key %2."
-msgstr "ההודעה נחתמה עם מפתח לא מוכר %1."
+msgstr "ההודעה נחתמה ב־%1 עם מפתח לא מוכר %2."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:95
 #, kde-format
@@ -317,38 +297,34 @@ msgstr "אזהרה: החתימה אינה תקינה."
 #: messagepartthemes/default/templates/signedmessagepart.html:142
 #, kde-format
 msgid "Compliance: %1"
-msgstr ""
+msgstr "תאימות: %1"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
 msgid "Invalid signature"
-msgstr "א&פשר חתימה"
+msgstr "חתימה שגויה"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
 msgid "Not enough information to check signature validity"
-msgstr "אין מספיק מידע כדי לבדוק את החתימה. %1"
+msgstr "אין מספיק מידע כדי לבדוק את תוקף החתימה"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr ""
+msgstr "נחתם על ידי <a href='mailto:%1'>%1</a>"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
 msgid "Signature is valid"
-msgstr "&חתימה"
+msgstr "החתימה תקפה"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
 msgid "Unknown signature state"
-msgstr "לא נמצאה חתימה"
+msgstr "מצב החתימה לא ידוע"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr "נכשל: %1 (%2)"
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
@@ -359,591 +335,580 @@ msgstr "סוף הודעה חתומה"
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
-msgstr ""
+msgstr "מפתח ה־DKIM שונה מהנוכחי. לאחסן גם את זה?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "המפתח נערך"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "הכתובת המאוחסנת: "
+msgstr "אחסון"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "מפתח DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "בורר"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "מזהה שם תחום חותם (SDID)"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "נוסף"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "שימוש אחרון"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copy Key"
-msgstr "הע&תק אל"
+msgstr "העתקת מפתח"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "להסיר מפתח"
+msgstr[1] "להסיר מפתחות"
+msgstr[2] "להסיר מפתחות"
+msgstr[3] "להסיר מפתחות"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "למחוק את המפתח הזה?"
+msgstr[1] "למחוק את המפתחות האלה?"
+msgstr[2] "למחוק את המפתחות האלה?"
+msgstr[3] "למחוק את המפתחות האלה?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "בחר את כל הטקסט"
-msgstr[1] "בחר את כל הטקסט"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "למחוק מפתח"
+msgstr[1] "למחוק מפתחות"
+msgstr[2] "למחוק מפתחות"
+msgstr[3] "למחוק מפתחות"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Delete All"
-msgstr "בחר את כל הטקסט"
+msgstr "מחיקה של הכול"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
-msgstr ""
+msgstr "למחוק את כל המפתחות?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "בחר את כל הטקסט"
+msgstr "מחיקת מפתחות"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "חיפוש…"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
-msgstr ""
+msgstr "חייב להיות חתום"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
 #, kde-format
 msgid "Can be signed"
-msgstr ""
+msgstr "אפשר לחתום"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:22
 #, kde-format
 msgid "Ignore if not signed"
-msgstr ""
+msgstr "להתעלם אם לא חתום"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Export..."
-msgstr ""
+msgstr "ייצוא…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr ""
+msgstr "הגדרת כלל"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr ""
+msgstr "הוספת כלל…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
+#, kde-format
+msgctxt "@action:button"
 msgid "Import..."
-msgstr "&ייבוא..."
+msgstr "ייבוא…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "לא נמצאה חתימה"
+msgstr "לא נמצאו כללים"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Export Rules"
-msgstr "&ייבוא..."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
+msgctxt "@title:window"
 msgid "Export Rules"
-msgstr ""
+msgstr "ייצוא כללים"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, fuzzy, kde-format
-msgid "Import Rules"
-msgstr "&ייבוא..."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "No signature found"
-msgid "No rules imported."
-msgstr "לא נמצאה חתימה"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "&ייבוא..."
+msgstr "ייבוא כללים"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "לא יובאו כללים."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "שם תחום"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "פעיל"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
-msgstr ""
+msgstr "מזהה רשימה"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "From"
-msgstr "מאת: "
+msgstr "מתוך"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
-msgstr ""
+msgstr "סוג כלל"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
-msgstr ""
+msgstr "עדיפות"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:196
 #: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
-msgstr ""
+msgstr "הוספה…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:201
 #: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
-msgstr ""
+msgstr "שינוי…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "בחר את כל הטקסט"
+msgstr "שכפול כלל"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgid "Remove Rule"
-msgstr "בחר את כל הטקסט"
+msgstr "הסרת כלל"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
 #, kde-format
 msgid "Do you want to delete this rule?"
-msgstr ""
+msgstr "למחוק את הכלל הזה?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "בחר את כל הטקסט"
+msgstr "מחיקת כלל"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Do you want to delete all the rules?"
-msgstr ""
+msgstr "למחוק את כל הכללים?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "בחר את כל הטקסט"
+msgstr "מחיקת כללים"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "הוספת כלל"
 
 #: dkim-verify/dkimruledialog.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr ""
+msgstr "שינוי כלל"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Enabled"
-msgstr ""
+msgstr "מופעל"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "שם תחום:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
-msgstr ""
+msgstr "מזהה רשימה:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
-#, fuzzy, kde-format
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
+#, kde-format
 msgid "From:"
-msgstr "מאת: "
+msgstr "מאת:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "יש להשתמש ב־‚*’ כדי לציין את כל כתובות הדוא״ל משם תחום מסוים"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
 msgid "SDID:"
-msgstr ""
+msgstr "מזהה שם תחום חותם (SDID):"
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "Rule:"
-msgstr ""
+msgstr "כלל:"
 
 #: dkim-verify/dkimrulewidget.cpp:60
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "עדיפות:"
 
 #: dkim-verify/dkimviewermenu.cpp:14
 #, kde-format
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
-msgstr "שמור חתימה"
+msgstr "בדיקת חתימת DKIM מחדש"
 
 #: dkim-verify/dkimviewermenu.cpp:39
 #, kde-format
 msgid "Update DKIM key"
-msgstr ""
+msgstr "עדכון מפתח DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr ""
+msgstr "כללים…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown"
-msgstr "&העבר"
+msgstr "לא ידועה"
 
 #: dkim-verify/dkimwidgetinfo.cpp:100
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "DKIM: valid (signed by %1)"
-msgstr "ההודעה נחתמה על ידי %1."
+msgstr "DKIM: תקף (נחתם על ידי %1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:107
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: שגוי"
 
 #: dkim-verify/dkimwidgetinfo.cpp:110
 #, kde-format
 msgid "DKIM: Not signed"
-msgstr ""
+msgstr "DKIM: לא חתום"
 
 #: dkim-verify/dkimwidgetinfo.cpp:115
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: צריך להיחתם עד %1"
 
 #: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "גיבוב התוכן נפגם."
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "שם התחום לא קיים."
 
 #: dkim-verify/dkimwidgetinfo.cpp:137
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "חסר „מאת” בכותרת."
 
 #: dkim-verify/dkimwidgetinfo.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "Missing signature."
-msgstr "חתימה תקינה."
+msgstr "חסרה חתימה."
 
 #: dkim-verify/dkimwidgetinfo.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Invalid query method."
-msgstr "א&פשר חתימה"
+msgstr "שיטת תשאול שגויה."
 
 #: dkim-verify/dkimwidgetinfo.cpp:146
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "מיטוב כותרת שגוי."
 
 #: dkim-verify/dkimwidgetinfo.cpp:149
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "מיטוב גוף שגוי."
 
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "אלגוריתם גיבוב לא ידוע לתוכן."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgid "Signature algorithm is invalid."
-msgstr "&חתימה"
+msgstr "אלגוריתם החתימה שגוי."
 
 #: dkim-verify/dkimwidgetinfo.cpp:158
-#, fuzzy, kde-format
-#| msgid "One key has been revoked."
+#, kde-format
 msgid "The public key was revoked."
-msgstr "תוקף מפתח אחד בוטל."
+msgstr "המפתח הציבורי נשלל."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
-#, fuzzy, kde-format
+#, kde-format
 msgid "Signature is too large."
-msgstr "&חתימה"
+msgstr "החתימה גדולה מדי."
 
 #: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr ""
+msgstr "אלגוריתם הגיבוב לא נתמך."
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
 msgid "Public key is too small."
-msgstr ""
+msgstr "המפתח הציבורי קטן מדי."
 
 #: dkim-verify/dkimwidgetinfo.cpp:170
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to verify signature."
-msgstr "אין מפתח ציבורי לווידוא החתימה"
+msgstr "אי אפשר לאמת את החתימה."
 
 #: dkim-verify/dkimwidgetinfo.cpp:173
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
+"מזהה סוכן או משתמש (AUID) חייב להיות באותו שם התחום כמו מזהה שם התחום החותם "
+"(SDID - דגלון s ברשומת המפתח)."
 
 #: dkim-verify/dkimwidgetinfo.cpp:176
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr ""
+msgstr "שם התחום החותם רק בודק את DKIM."
 
 #: dkim-verify/dkimwidgetinfo.cpp:179
-#, fuzzy, kde-format
-#| msgid "No public key to verify the signature"
+#, kde-format
 msgid "Impossible to download key."
-msgstr "אין מפתח ציבורי לווידוא החתימה"
+msgstr "אי אפשר להוריד את המפתח."
 
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr ""
+msgstr "אלגוריתם הגיבוב מפוקפק (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr ""
+"מזהה סוכן או משתמש (AUID) אינו באחד מתתי־התחום של מזהה שם התחום החותם (SDID)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:188
 #, kde-format
 msgid "Problem during converting public key"
-msgstr ""
+msgstr "בעיה במהלך המרת מפתח ציבורי"
 
 #: dkim-verify/dkimwidgetinfo.cpp:197
-#, fuzzy, kde-format
-#| msgid "The signature has expired."
+#, kde-format
 msgid "Signature expired"
-msgstr "פג תוקף החתימה."
+msgstr "תוקף החתימה פג"
 
 #: dkim-verify/dkimwidgetinfo.cpp:200
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "החתימה נוצרה בעתיד"
 
 #: dkim-verify/dkimwidgetinfo.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgid "Signature too small"
-msgstr "&חתימה"
+msgstr "החתימה קטנה מדי"
 
 #: dkim-verify/dkimwidgetinfo.cpp:209
-#, fuzzy, kde-format
+#, kde-format
 msgid "Public Key too small"
-msgstr "&חתימה"
+msgstr "המפתח הציבורי קטן מדי"
 
 #: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
 msgid "%1: None"
-msgstr ""
+msgstr "%1: ללא"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "ההודעה נחתמה על ידי %1."
+msgstr "%1: תקף (נחתם על ידי %2)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
 msgid "%1: Valid"
-msgstr ""
+msgstr "%1: תקף"
 
 #: dkim-verify/dkimwidgetinfo.cpp:303
 #, kde-format
 msgid "Not Signed"
-msgstr ""
+msgstr "לא חתום"
 
-#: header/grantleeheaderformatter.cpp:204
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:203
+#, kde-format
 msgid "Subject:"
-msgstr "&נושא:"
+msgstr "נושא:"
 
-#: header/grantleeheaderformatter.cpp:224
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:223
+#, kde-format
 msgid "Date:"
-msgstr "תאריך: "
+msgstr "תאריך:"
 
-#: header/grantleeheaderformatter.cpp:240
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:239
+#, kde-format
 msgid "Message-Id:"
-msgstr "0 הודעות"
+msgstr "מזהה הודעה:"
 
-#: header/grantleeheaderformatter.cpp:264
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:263
+#, kde-format
 msgid "To:"
-msgstr "אל: "
+msgstr "אל:"
 
-#: header/grantleeheaderformatter.cpp:266
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:265
+#, kde-format
 msgid "Reply To:"
-msgstr "השב אל: "
+msgstr "תגובה אל:"
 
-#: header/grantleeheaderformatter.cpp:268
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:267
+#, kde-format
 msgid "CC:"
-msgstr "עותק: "
+msgstr "עותק:"
 
-#: header/grantleeheaderformatter.cpp:270
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:269
+#, kde-format
 msgid "BCC:"
-msgstr "עותק סמוי: "
+msgstr "עותק סמוי:"
 
-#: header/grantleeheaderformatter.cpp:274
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:273
+#, kde-format
 msgid "Sender:"
-msgstr "השולח"
+msgstr "מוען:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
-msgstr ""
+msgstr "נשלח מחדש מ־:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
-msgstr ""
+msgstr "נשלח מחדש אל:"
 
-#: header/grantleeheaderformatter.cpp:359
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:358
+#, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr "קובץ החתימה לא תקף"
+msgstr "ערכת העיצוב גרנטלי „%1” לא תקפה."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "ללא נושא"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
-msgstr "מצב דוא\"ל זבל"
+msgstr "מצב דוא״ל זבל:"
 
-#: header/grantleeheaderformatter.cpp:466
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:465
+#, kde-format
 msgid "Printing mode"
-msgstr "פלט הדפסה"
+msgstr "מצב הדפסה"
 
-#: header/grantleeheaderformatter.cpp:508
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:507
+#, kde-format
 msgid "[vcard]"
-msgstr "[כרטיס וירטואלי]"
+msgstr "[כרטיס ביקור וירטואלי]"
 
-#: header/grantleeheaderformatter.cpp:515
-#, fuzzy, kde-format
+#: header/grantleeheaderformatter.cpp:514
+#, kde-format
 msgid "Attachments:"
-msgstr "&מצורפים"
+msgstr "קבצים מצורפים:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
-msgstr ""
+msgstr "אבטחה:"
 
 #: header/headerstyle_util.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
-msgstr "&העבר"
+msgstr "לא ידוע"
 
 #: header/headerstyle_util.cpp:145
 #, kde-format
@@ -954,6 +919,11 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
+"%1% סבירות לספאם עם רמת ודאות %3%.\n"
+"\n"
+"דוח מלא:\n"
+"סבירות=%2\n"
+"ודאות=%4"
 
 #: header/headerstyle_util.cpp:154
 #, kde-format
@@ -963,36 +933,40 @@ msgid ""
 "Full report:\n"
 "Probability=%2"
 msgstr ""
+"%1% סבירות לספאם.\n"
+"\n"
+"דוח מלא:\n"
+"סבירות=%2"
 
 #: header/headerstyle_util.cpp:163
 #, kde-format
 msgid "No Spam agent"
-msgstr ""
+msgstr "אין סוכן ספאם"
 
 #: header/headerstyle_util.cpp:166
 #, kde-format
 msgid "Spam filter score not a number"
-msgstr ""
+msgstr "ניקוד מסנן הספאם אינו מספרי"
 
 #: header/headerstyle_util.cpp:169
 #, kde-format
 msgid "Threshold not a valid number"
-msgstr ""
+msgstr "הסף הוא לא מספר תקף"
 
 #: header/headerstyle_util.cpp:172
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
-msgstr ""
+msgstr "אי אפשר לחלץ את דירוג מסנן הספאם מהכותרת"
 
 #: header/headerstyle_util.cpp:175
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr ""
+msgstr "אי אפשר לחלץ את הסף מהכותרת"
 
 #: header/headerstyle_util.cpp:178
-#, fuzzy, kde-format
+#, kde-format
 msgid "Error evaluating spam score"
-msgstr "ארעה שגיאה בעת האלעת ההודעה"
+msgstr "שגיאה בשערוך ניקוד הספאם"
 
 #: header/headerstyle_util.cpp:183
 #, kde-format
@@ -1002,6 +976,10 @@ msgid ""
 "Full report:\n"
 "%2"
 msgstr ""
+"%1.\n"
+"\n"
+"דוח מלא:\n"
+"%2"
 
 #: header/headerstylemenumanager.cpp:105
 #, kde-format
@@ -1029,23 +1007,23 @@ msgstr "מאת: "
 msgid "[vCard]"
 msgstr "[כרטיס וירטואלי]"
 
-#: header/plainheaderstyle.cpp:120
-#, fuzzy, kde-format
+#: header/plainheaderstyle.cpp:121
+#, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
-msgstr "אל: "
+msgstr "אל:"
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "עותק: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "עותק סמוי: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "השב אל: "
@@ -1054,19 +1032,19 @@ msgstr "השב אל: "
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "התעלמות"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "השולח"
+msgstr "שליחה"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "השולח"
+msgstr "שליחת סירוב"
 
 #: messagepartthemes/default/defaultrenderer.cpp:67
 #, kde-format
@@ -1079,9 +1057,9 @@ msgid "Good signature"
 msgstr "חתימה תקינה"
 
 #: messagepartthemes/default/defaultrenderer.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bad signature"
-msgstr "חתימה תקינה"
+msgstr "חתימה שגויה"
 
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
@@ -1155,19 +1133,19 @@ msgid "One key has been revoked."
 msgstr "תוקף מפתח אחד בוטל."
 
 #: messagepartthemes/default/defaultrenderer.cpp:205
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bad signature."
-msgstr "חתימה תקינה."
+msgstr "חתימה שגויה."
 
 #: messagepartthemes/default/defaultrenderer.cpp:525
 #: messagepartthemes/default/defaultrenderer.cpp:527
-#, fuzzy, kde-format
+#, kde-format
 msgid "certificate"
-msgstr "תעודה"
+msgstr "אישור"
 
 #: messagepartthemes/default/defaultrenderer.cpp:537
 #: messagepartthemes/default/defaultrenderer.cpp:556
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Start of warning message."
 msgid "Warning:"
 msgstr "אזהרה:"
@@ -1188,114 +1166,123 @@ msgid "stored: "
 msgstr "הכתובת המאוחסנת: "
 
 #: messagepartthemes/default/defaultrenderer.cpp:557
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "No mail address is stored in the %1 used for signing, so we cannot compare "
 "it to the sender's address %2."
 msgstr ""
-"אין אף כתובת דואר שמאוחסנת ב%1 המשמשת לשליחה, כך שאין אפשרות להשוות אותה עם "
-"כתובת השולח, &lt;%2&gt;."
+"לא מאוחסנת כתובת דוא״ל באישור %1 ששימש לחתימה, לכן לא נוכל להשוות אותהלכתובת "
+"המוען %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr ""
+msgstr "להגדיר תוכן מרוחק"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "מצב: "
+msgstr "מצב"
 
 #: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr ""
+msgstr "למחוק את הכלל ‚%1’?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "עריכת תוכן מרוחק"
 
 #: remote-content/remotecontentconfigurewidget.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr ""
+msgstr "הוספת תוכן מרוחק"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "רשומה כבר מגדירה את הכתובת הזאת. נא לערוך אותה."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr ""
+msgstr "הוספת כתובת חדשה"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "הגדרה"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "תוכן מרוחק"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "אישור %1"
 
 #: remote-content/remotecontentmenu.cpp:58
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "אישור כל הכתובות"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "אושרו"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
 msgid "Blocked"
-msgstr ""
+msgstr "נחסמו"
+
+#: remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "שם תחום:"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr "[פרטים]"
+msgstr "פרטים"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:34
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
-msgstr ""
+msgstr "ההודעה הזאת היא כנראה תרמית. <a href=\"scamdetails\">(פרטים…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
-msgstr "העבר לאשפה"
+msgstr "העברה לאשפה"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
-msgstr ""
+msgstr "מקובל עליי שזאת לא הונאה"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
-msgstr ""
+msgstr "הוספת כתובת לרשימת ההיתר"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
+#, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr "מחיקת הודעות"
+msgstr "השבתת זיהוי תרמיות בכל ההודעות"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:202
@@ -1305,6 +1292,8 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שנראה כמו ‚%1’ מבחינת הטקסט, אך למעשה מצביע אל "
+"‚%2’. מצב כזה בדרך כלל מעיד על הודעות תרמית שמנסות להונות את הנמען"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1313,6 +1302,8 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שמצביע לכתובת IP מספרית (%1) במקום לכתובת אתר "
+"טקסטואלית טיפוסית. מצב כזה בדרך כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:135
 #, kde-format
@@ -1321,11 +1312,13 @@ msgid ""
 "instead of a typical textual website address. This is often the case in scam "
 "emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור שמצביע לכתובת IP במבנה הקסדצימלי (%1) במקום "
+"לכתובת אתר טקסטואלית טיפוסית. מצב כזה בדרך כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:141
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
-msgstr ""
+msgstr "הודעת הדוא״ל הזאת מכילה קישור (%1) שמוביל להפניה"
 
 #: scamdetection/scamdetectionwebengine.cpp:148
 #, kde-format
@@ -1333,42 +1326,349 @@ msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
+"הודעת הדוא״ל הזאת מכילה קישור (%1) שמכיל http:// מספר פעמים. מצב כזה בדרך "
+"כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:159
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
-msgstr ""
+msgstr "ההודעה הזאת מכילה כתובת מקוצרת (%1). היא יכולה להפנות לשרת אחר."
 
 #: scamdetection/scamdetectionwebengine.cpp:222
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
-msgstr ""
+msgstr "ההודעה מכילה רכיב טופס. זה בדרך כלל מעיד על הודעות תרמית."
 
 #: scamdetection/scamdetectionwebengine.cpp:226
-#, fuzzy, kde-format
+#, kde-format
 msgid "Details:"
-msgstr "[פרטים]"
+msgstr "פרטים:"
 
 #: scamdetection/scamexpandurljob.cpp:47
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
-msgstr ""
+msgstr "לא זוהה חיבור לאינטרנט, אי אפשר להרחיב את הכתובת."
 
 #: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Impossible to expand '%1'."
-msgstr ""
+msgstr "אי אפשר להרחיב את ‚%1’."
 
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
+msgstr "הכתובת הקצרה ‚%1’ מפנה אל ‚%2’."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "להדפיס רק את הטקסט הנבחר במציג"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "כיבוד סימן ציטוט להרחבה/צמצום שמוגדר בהגדרות במהלך ההדפסה."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr "מציין האם צבע הרקע והתמונות יתווספו להדפסת העמוד."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr "תמיד להציג פרטי הצפנה/חתימה בעת הדפסת הודעה"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr "בעת עיבוד html לא להשתמש בגודל גופן קטן מהגודל המזערי."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "מציין את הגופן לשימוש לגוף ההודעה"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "מציין את הגופן לשימוש להדפסה"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "לבדוק אם כתובת יכולה להיות דיוג"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "סגירת חלון ההודעה לאחר תגובה או העברה"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "הצגת סימני ציטוט להרחבת/צמצום"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי להציג רמות שונות של טקסט מצוטט. יש להשבית כדי "
+"להסתיר את רמות הטקסט המצוטט."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "רמת צמצום אוטומטית:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "הקטנת גודל הגופן לטקסט מצוטט"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr "יש להפעיל את האפשרות הזאת כדי להציג טקטס מצוטט עם גופן קטן יותר."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "תמיד לפענח הודעות בטרם הצגתן או לשאול לפני פענוח"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "מציב מבנה הודעות"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "אף פעם לא להציג"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "להציג תמיד"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "איזה סגנון של כותרות תוצגנה"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "כמה מהכותרת להציג"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "להעדיף HTML על טקסט פשוט"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "לאפשר להודעות לטעון הפניות חיצוניות מהאינטרנט"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "איך קבצים מצורפים מופיעים"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "מצייג האם להשתמש מחדש בצבע הציטוט, מעבר לרמה השלישית"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "הפעלת מפתח גישה"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail יכול לנתח הודעות לאיתור הונאות דוא״ל על ידי חיפוש טכניקות הטעיה נפוצות"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "הצגת הודעות דוא״ל ברשימת היתר להונאות"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "סריקת הודעות לאיתור כתובות מעקב"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "הצג אזהרה בעת ניסיון לשלוח הודעות &לא מוצפנות"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "השחתת כותרות מאת:/אל: (From/To) בתגובות לתגובות"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"ל־Microsoft Outlook יש מגוון ליקויים במימוש תקן iCalendar, האפשרות הזאת "
+"עוקפת אחד מהם. אם יש לך בעיות מול משתמשי Outlook עקב כך שאינם יכולים לקבל את "
+"התגובות שלך, כדאי לנסות להגדיר את האפשרות הזאת."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "שליחת הזמנות groupware בגוף ההודעה"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"ל־Microsoft Outlook יש מגוון ליקויים במימוש תקן iCalendar, האפשרות הזאת "
+"עוקפת אחד מהם. אם יש לך בעיות מול משתמשי Outlook עקב כך שאינם יכולים לקבל את "
+"ההזמנות שלך, כדאי לנסות להגדיר את האפשרות הזאת."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "מתן שם להזמנות תומך Exchange"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, בשימוש במשולב מול שרת Microsoft Exchange,חווה בעיה בהבנת "
+"הודעות דוא״ל groupware תומכות תקנים.יש להפעיל את האפשרות הזאת כדי לשלוח "
+"הזמנות groupware באופן ש־Microsoft Exchange מבין."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "שליחת הזמנות אוטומטית"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"כשהאפשרות הזאת מסומנת, חלון כתיבת ההודעה לא יופיע. במקום, כל הודעות ההזמנה "
+"תישלחנה אוטומטית. כדי לראות את ההודעה טרם שליחתה, אפשר לבטל את סימון האפשרות "
+"הזאת. עם זאת, ראוי לשים לב שהטקסט בחלון הכתיבה הוא בתחביר iCalendar ולא כדאי "
+"לנסות לערוך את זה ידנית."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "למחוק הודעות הזמנה לאחר שהתקבלה עליהן תגובה"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"כשהאפשרות הזאת מסומנת, הודעות הזמנה שמתקבלות ונענו תועברנה לתיקיית האשפה, "
+"לאחר שהתגובה נשלחה בהצלחה."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "השתמש ב&גופן ברוחב קבוע"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
+msgid "The most recent selected folder used for Todo."
+msgstr "התיקייה האחרונה שנבחרה משמשת למטלות."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
+msgid "The most recent selected folder used for Event."
+msgstr "התיקייה האחרונה שנבחרה משמשת לאירועים."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
+msgid "The most recent selected folder used for Notes."
+msgstr "התיקייה האחרונה שנבחרה משמשת לפתקיות."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, kde-format
 msgid "Groupware Compatibility && Legacy Options"
-msgstr ""
+msgstr "תאימות ל־Groupware ואפשרויות לתוכנות מיושנות"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:23
@@ -1377,12 +1677,14 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitation replies"
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לגרום ל־Outlook(tm) להבין את התשובות שלך "
+"לתגובות לזימונים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
 #: ui/invitationsettings.ui:26
 #, kde-format
 msgid "&Mangle From:/To: headers in replies to invitations"
-msgstr ""
+msgstr "ה&שחתת כותרות מאת:/אל: (From/To) בתגובות לזימונים"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:33
@@ -1391,12 +1693,14 @@ msgid ""
 "Turn this option on in order to make Outlook(tm) understand your answers to "
 "invitations"
 msgstr ""
+"יש להפעיל את האפשרות הזאת כדי לגרום ל־Outlook(tm) להבין את התגובות שלך "
+"להזמנות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
 #: ui/invitationsettings.ui:36
 #, kde-format
 msgid "Send &invitations in the mail body"
-msgstr ""
+msgstr "שליחת ה&זמנות בגוף ההודעה"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:45
@@ -1408,12 +1712,16 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
+"Microsoft Outlook, בשימוש במשולב מול שרת Microsoft Exchange,\n"
+"חווה בעיה בהבנת הודעות דוא״ל groupware תומכות תקנים.\n"
+"יש להפעיל את האפשרות הזאת כדי לשלוח הזמנות groupware באופן ש־Microsoft "
+"Exchange מבין."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
 #: ui/invitationsettings.ui:48
 #, kde-format
 msgid "Exchange-compatible invitation &naming"
-msgstr ""
+msgstr "מתן שם לה&זמנות תומך Exchange"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:55
@@ -1422,262 +1730,259 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
+"כשהאפשרות הזאת פעילה, המשתמש לא יראה את חלון כתיבת ההודעות. הודעות הזימון "
+"תישלחנה אוטומטית."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
 #, kde-format
 msgid "&Automatic invitation sending"
-msgstr ""
+msgstr "שליחת ה&זמנות אוטומטית"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: ui/invitationsettings.ui:68
-#, fuzzy, kde-format
-msgid "Options"
-msgstr "אפשרויות נפוצות"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
 #, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
+msgid "Options"
+msgstr "אפשרויות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
 msgid "Print only selected text"
-msgstr ""
+msgstr "להדפיס רק את הטקסט הנבחר"
 
 #. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
 #: ui/printingsettings.ui:24
 #, kde-format
 msgid "Respect &expand/collapse quote marks settings"
-msgstr ""
+msgstr "כיבוד הגדרות ה&רחבת/צמצום סימני ציטוט"
 
 #. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
 #: ui/printingsettings.ui:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Print background color and images"
-msgstr "צבע רקע חלופי"
+msgstr "הדפסת צבע הרקע ואת התמונות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
 #: ui/printingsettings.ui:38
-#, fuzzy, kde-format
+#, kde-format
 msgid "Always show encryption/signature details"
-msgstr "א&פשר חתימה"
+msgstr "תמיד להציג פרטי הצפנה/חתימה"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
-#, fuzzy, kde-format
+#, kde-format
 msgid "Viewer settings"
-msgstr "&שליחה"
+msgstr "הגדרות מציג"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
-#, fuzzy, kde-format
+#, kde-format
 msgid "O&verride character encoding:"
-msgstr "&אכוף קידוד:"
+msgstr "&דריסת קידוד תווים:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
 #: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
-msgstr ""
+msgstr "הפעלת מפתח גישה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
 #: ui/settings.ui:86
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "השתמש בגופן קטן יותר עבור ציטוטים"
+msgstr "הקטנת כתב הטקסט המ&צוטט:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr ""
+msgstr "הצגת הרחבת/צמצום סימני &ציטוט"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
-msgstr ""
+msgstr "רמת &צמצום אוטומטית:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
-msgstr ""
+msgstr "גודל כתב מ&זערי:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-msgstr "כבר קיים קובץ תחת שם \"%1\". האם ברצונך לכתוב אותו?"
+msgstr "כבר קיים קובץ בשם „%1”. לשכתב אותו?"
 
-#: utils/messageviewerutil.cpp:127
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#: utils/messageviewerutil.cpp:126
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr "לשכתב את הקובץ?"
+msgstr "לשכתב קובץ?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
-msgstr "שמירת מצורף בשם"
+msgstr "שמירת קובץ מצורף בשם"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "attachment.1"
 
-#: utils/messageviewerutil.cpp:200
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:182
+#, kde-format
+msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "שמירת מצורף בשם"
+msgstr "שמירת הקובץ המצורף"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "attachment.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
-msgstr "חלק %1 של ההודעה מוצפן. האם ברצונך להשאיר את ההצפנה בעת השמירה?"
+msgstr "החלק %1 של ההודעה מוצפן. לשמור על ההצפנה בעת השמירה?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "שאלה מ־KMail"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:306
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "שמור הצפנה"
+msgstr "להשאיר את ההצפנה"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr "אל תשמור"
+msgstr "לא להשאיר"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
-msgstr "חלק %1 של ההודעה חתום. האם ברצונך להשאיר את החתימה בעת השמירה?"
+msgstr "החלק %1 של ההודעה חתום. לשמור על החתימה בעת השמירה?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:319
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr "שמור חתימה"
+msgstr "להשאיר את החתימה"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
-#, fuzzy, kde-kuit-format
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
-"אין אפשרות לכתוב את הקובץ %1:\n"
-"%1"
+"<qt>לא ניתן לכתוב לקובץ<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:404
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:386
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr "מצורף: "
+msgstr "שגיאה בשמירת הקובץ המצורף"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#, kde-format
 msgid "Error saving attachment"
-msgstr "מצורף: "
+msgstr "שגיאה בשמירת הקובץ המצורף"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "לא נמצאו מצורפים לשמירה"
+msgstr "לא נמצאו קבצים מצורפים לשמירה"
 
-#: utils/messageviewerutil.cpp:468
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:450
+#, kde-format
 msgid "message"
-msgstr "0 הודעות"
+msgstr "הודעה"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
-msgstr ""
+msgstr "הודעות דוא״ל (‎*.mbox);;כל הקבצים (*)"
 
-#: utils/messageviewerutil.cpp:501
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:483
+#, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] "הודעה חדשה ב־%2"
-msgstr[1] "הודעה חדשה ב־%2"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שמירת הודעה"
+msgstr[1] "שמירת הודעות"
+msgstr[2] "שמירת הודעות"
+msgstr[3] "שמירת הודעות"
 
-#: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:508
+#, kde-format
 msgid "File %1 could not be loaded."
-msgstr "שמור הודעות בצורה מוצ&פנת"
+msgstr "לא ניתן לטעון את הקובץ %1."
 
-#: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:508
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
-msgstr "ארעה שגיאה בעת האלעת ההודעה"
+msgstr "שגיאה בטעינת הודעה"
 
-#: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:510
+#, kde-format
 msgid "File %1 could not be created."
-msgstr "שמור הודעות בצורה מוצ&פנת"
+msgstr "לא ניתן ליצור את הקובץ %1."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr "מעביר הודעות"
+msgstr "שגיאה בשמירת ההודעה"
 
-#: utils/messageviewerutil.cpp:539
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:521
+#, kde-format
 msgid "We cannot save message."
-msgstr "סוף הודעה חתומה"
+msgstr "לא ניתן לשמור הודעה."
 
-#: utils/messageviewerutil.cpp:539
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:521
+#, kde-format
 msgid "Error saving message"
-msgstr "מעביר הודעות"
+msgstr "שגיאה בשמירת הודעה"
 
-#: utils/messageviewerutil.cpp:603
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#: utils/messageviewerutil.cpp:585
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "בחר את כל הטקסט"
+msgstr "נמחקו: %1"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
-msgstr ""
+msgstr "מחקת קובץ מצורף מההודעה הזאת. כותרות ה־MIME המקורית לקובץ המצורף היו:"
 
-#: utils/messageviewerutil.cpp:641
-#, fuzzy, kde-format
+#: utils/messageviewerutil.cpp:623
+#, kde-format
 msgid "Open &with %1"
-msgstr "פתח באמצעות \"%1\""
+msgstr "פתיחה &עם %1"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
@@ -1699,81 +2004,81 @@ msgstr "סוג"
 msgid "Size"
 msgstr "גודל"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "לא ניתן לייצר תצוגה מקדימה להדפסה."
 
-#: viewer/printmessage.cpp:97
-#, fuzzy, kde-format
+#: viewer/printmessage.cpp:104
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "תיעוד"
+msgstr "הדפסת מסמך"
 
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
-msgstr "הפעלת הצגה של HTML עבור הודעה זו."
+msgstr "הפעלת עיבוד HTML להודעה הזאת."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
-msgstr "טען הפניות חיצונית מהאינטרנט עבור הודעה זו"
+msgstr "לטעון הפניות חיצונית מהאינטרנט להודעה הזאת."
 
 #: viewer/urlhandlermanager.cpp:410
-#, fuzzy, kde-format
+#, kde-format
 msgid "Work online."
-msgstr "עבוד באופן מקוון"
+msgstr "עבודה מקוונת."
 
 #: viewer/urlhandlermanager.cpp:412
-#, fuzzy, kde-format
+#, kde-format
 msgid "Make account online."
-msgstr "מהחשבונות המסומנים בלבד"
+msgstr "חיבור החשבון לאינטרנט."
 
 #: viewer/urlhandlermanager.cpp:414
-#, fuzzy, kde-format
+#, kde-format
 msgid "Decrypt message."
-msgstr "ה&צפן את ההודעה"
+msgstr "פענוח הודעה."
 
 #: viewer/urlhandlermanager.cpp:416
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show signature details."
-msgstr "א&פשר חתימה"
+msgstr "הצגת פרטי חתימה."
 
 #: viewer/urlhandlermanager.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide signature details."
-msgstr "א&פשר חתימה"
+msgstr "הסתרת פרטי חתימה."
 
 #: viewer/urlhandlermanager.cpp:420
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show encryption details."
-msgstr "א&פשר חתימה"
+msgstr "הצגת פרטי הצפנה."
 
 #: viewer/urlhandlermanager.cpp:422
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hide encryption details."
-msgstr "א&פשר חתימה"
+msgstr "הסתרת פרטי הצפנה."
 
 #: viewer/urlhandlermanager.cpp:427
-#, fuzzy, kde-format
+#, kde-format
 msgid "Open Documentation"
-msgstr "תיעוד"
+msgstr "פתיחת תיעוד"
 
 #: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
-msgstr ""
+msgstr "הרחבת כל הטקסט המצוטט."
 
 #: viewer/urlhandlermanager.cpp:463
-#, fuzzy, kde-format
+#, kde-format
 msgid "Collapse quoted text."
-msgstr "&צמצם אשכול"
+msgstr "צמצום טקסט מצוטט."
 
 #: viewer/urlhandlermanager.cpp:532
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not start certificate manager. Please check your installation."
-msgstr "אין אפשרות להפעיל את מנהל התעודות. בדוק את ההתקנה שלך."
+msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדוק שההתקנה שלך תקינה."
 
 #: viewer/urlhandlermanager.cpp:534
 #, kde-format
@@ -1783,119 +2088,120 @@ msgstr "שגיאה של KMail"
 #: viewer/urlhandlermanager.cpp:549
 #, kde-format
 msgid "Show certificate 0x%1"
-msgstr "הצגת התעודה 0x%1"
+msgstr "הצגת האישור 0x%1"
 
 #: viewer/urlhandlermanager.cpp:608
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Open in Address Book"
-msgstr "פתח בפנקס הכתובות"
+msgstr "פתיחה ב&פנקס הכתובות"
 
 #: viewer/urlhandlermanager.cpp:610
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Copy Email Address"
-msgstr "כתובת דוא\"ל"
+msgstr "ה&עתקת כתובת דוא״ל"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
-msgstr "הכתובת הועתקה ללוח העריכה."
+msgstr "הכתובת הועתקה ללוח הגזירים."
 
 #: viewer/urlhandlermanager.cpp:634
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lookup the contact in KAddressbook"
-msgstr "פתח בפנקס הכתובות"
+msgstr "חיפוש פרטי הקשר ב־KAddressbook"
 
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
 msgid "Attachment: %1"
-msgstr "מצורף:  %1"
+msgstr "קובץ מצורף: %1"
 
 #: viewer/urlhandlermanager.cpp:813
-#, fuzzy, kde-format
+#, kde-format
 msgid "Encapsulated Message (Subject: %1)"
-msgstr "הודעה מכומסת"
+msgstr "הודעה מכומסת (נושא: %1)"
 
 #: viewer/urlhandlermanager.cpp:815
-#, fuzzy, kde-format
+#, kde-format
 msgid "Encapsulated Message"
 msgstr "הודעה מכומסת"
 
 #: viewer/urlhandlermanager.cpp:818
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unnamed attachment"
-msgstr "שם המצורף:"
+msgstr "קובץ מצורף ללא שם"
 
 #: viewer/urlhandlermanager.cpp:853
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
-msgstr ""
+msgstr "הצגת יומן פיקוח של GnuPG לפעולה הזאת"
 
 #: viewer/urlhandlermanager.cpp:894
 #, kde-format
 msgid "Opening URL..."
-msgstr "פותח כתובת..."
+msgstr "כתובת נפתחת…"
 
 #: viewer/urlhandlermanager.cpp:903
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
-msgstr "<qt> האם אתה בטוח שברצונך ללהפעיל <b>%1</b>? </qt>"
+msgstr "להפעיל את <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
-msgstr "הפעל פקודה"
+msgstr "להריץ"
 
-#: viewer/viewer.cpp:135
-#, fuzzy, kde-format
+#: viewer/viewer.cpp:146
+#, kde-format
 msgid "Loading message..."
-msgstr "מעביר הודעות"
+msgstr "ההודעה נטענת…"
 
 #: viewer/viewer_p.cpp:344
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
-msgstr ""
+msgstr "מחיקת קובץ מצורף עלולה לבטל חתימה דיגיטלית על ההודעה הזאת אם יש."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "ה&סר מצורף"
+msgstr "מחיקת קובץ מצורף"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
-msgstr ""
+msgstr "אין תמיכה במחיקת קובץ מצורף מהודעת mailman מוצפנת או בסגנון ישן."
 
 #: viewer/viewer_p.cpp:428
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&פתח באמצעות..."
+msgstr "&פתיחה באמצעות"
 
 #: viewer/viewer_p.cpp:446
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&פעולות אחרות"
+msgstr "&אחר…"
 
 #: viewer/viewer_p.cpp:448 viewer/viewer_p.cpp:461
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&פתח באמצעות..."
+msgstr "&פתיחה באמצעות…"
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr "פתח"
+msgstr "פתיחה"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1907,34 +2213,34 @@ msgid "Scroll To"
 msgstr "גלילה אל"
 
 #: viewer/viewer_p.cpp:552
-#, fuzzy, kde-format
+#, kde-format
 msgid "Save As..."
-msgstr "שמירה &בשם..."
+msgstr "שמירה בשם…"
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
+#, kde-format
 msgid "Copy"
-msgstr "הע&תק אל"
+msgstr "העתקה"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
+#, kde-format
 msgid "Delete Attachment"
-msgstr "ה&סר מצורף"
+msgstr "מחיקת קובץ מצורף"
 
 #: viewer/viewer_p.cpp:580
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reply To Author"
-msgstr "השב ל&כותב..."
+msgstr "תגובה למוען"
 
 #: viewer/viewer_p.cpp:588
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reply To All"
-msgstr "&השב"
+msgstr "תגובה לכולם"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
+#, kde-format
 msgid "Properties"
-msgstr "&מאפיינים"
+msgstr "מאפיינים"
 
 #: viewer/viewer_p.cpp:731
 #, kde-format
@@ -1942,308 +2248,303 @@ msgid "KMail"
 msgstr "KMail"
 
 #: viewer/viewer_p.cpp:732
-#, fuzzy, kde-format
+#, kde-format
 msgid "The KDE Mail Client"
-msgstr "תוכנית הדוא\"ל של KDE"
+msgstr "לקוח הדוא״ל של KDE"
 
-#: viewer/viewer_p.cpp:1277
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#: viewer/viewer_p.cpp:1278
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr "הצגת מצורף: %1"
+msgstr "הצגת קובץ מצורף: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&מצורפים"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "בחירת סגנון ההצגה של מצורפים"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&בצורת סמלים"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "הצגת כל המצורפים בצורת סמלים. לחץ עליהם על מנת להציגם."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&חכמים"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "הצגת המצורפים לפי המלצת השולח."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&מוטבעים"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "הצגת כל המצורפים בצורה מוטבעת (אם ניתן)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
-msgstr "&הסתר"
+msgstr "ה&סתרה"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
-msgstr "אל תציג מצורפים במציג ההודעות"
+msgstr "לא להציג קבצים מצורפים במציג ההודעות"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "בכותרת בלבד"
 
-#: viewer/viewer_p.cpp:1515
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1516
+#, kde-format
 msgid "Show Attachments only in the header of the mail"
-msgstr "הצגת כל המצורפים בצורת סמלים. לחץ עליהם על מנת להציגם."
+msgstr "הצגת קבצים מצורפים רק בכותרת הדוא״ל"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
-msgstr "קבע קיד&וד"
+msgstr "הגדרת &קידוד"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "אוטומטי"
 
-#: viewer/viewer_p.cpp:1535
-#, fuzzy, kde-format
-msgid "Copy Text"
-msgstr "הע&תק אל"
-
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1536
 #, kde-format
-msgid "Select All Text"
-msgstr "בחר את כל הטקסט"
+msgid "Copy Text"
+msgstr "העתקת טקסט"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1543
+#, kde-format
+msgctxt "@action"
+msgid "Select All Text"
+msgstr "בחירה בכל הטקסט"
+
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "העתק כתובת הקישור"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "פתח כתובת"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1565
 #, kde-format
-msgid "Use Fi&xed Font"
-msgstr "השתמש ב&גופן ברוחב קבוע"
-
-#: viewer/viewer_p.cpp:1564
-#, fuzzy, kde-format
 msgid "Show Message Structure"
-msgstr "הו&דעה"
+msgstr "הצגת מבנה הודעה"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, kde-format
+msgctxt "@action"
 msgid "&View Source"
-msgstr "הצג מ&קור"
+msgstr "הצגת מ&קור"
 
-#: viewer/viewer_p.cpp:1574
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1575
+#, kde-format
 msgid "&Save Message..."
-msgstr "הודעה חדשה ב־%2"
+msgstr "&שמירת הודעה…"
 
-#: viewer/viewer_p.cpp:1580
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1581
+#, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
-msgstr "&שמור כטיוטה"
+msgstr "שמירת &תבנית התצוגה"
 
-#: viewer/viewer_p.cpp:1584
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1585
+#, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
-msgstr "&שמור כטיוטה"
+msgstr "&איפוס תבנית התצוגה"
 
-#: viewer/viewer_p.cpp:1591
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up"
-msgstr "בחר את &כל ההודעות"
+msgstr "גלילת ההודעה מעלה"
 
-#: viewer/viewer_p.cpp:1596
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down"
-msgstr "בחר את &כל ההודעות"
+msgstr "גלילת ההודעה מטה"
 
-#: viewer/viewer_p.cpp:1601
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
-msgstr "בחר את &כל ההודעות"
+msgstr "גלילת ההודעה מעלה (עוד)"
 
-#: viewer/viewer_p.cpp:1606
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1607
+#, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
-msgstr "בחר את &כל ההודעות"
+msgstr "גלילת ההודעה מטה (עוד)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "החלפת מצב הצגת HTML"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "החלפת מצב תגובה בין HTML לבין טקסט פשוט"
 
-#: viewer/viewer_p.cpp:1623
-#, fuzzy, kde-format
-msgid "Load external references"
-msgstr "טען הפניות חיצוניות"
-
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1624
 #, kde-format
+msgctxt "@action"
+msgid "Load external references"
+msgstr "טעינת הפניות חיצוניות"
+
+#: viewer/viewer_p.cpp:1630
+#, kde-format
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "הקראת הטקסט"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "שיתוף טקסט…"
 
-#: viewer/viewer_p.cpp:1653
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:1654
+#, kde-format
+msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "בחירת מיקום"
+msgstr "העתקת מקום תמונה"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&חיפוש בהודעה..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "השבתת סמל רגש"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "שמירה &בשם..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "פתיחה באמצעות..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "שמירת כל המצורפים..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "הרשת פגומה."
 
-#: viewer/viewer_p.cpp:1981
-#, kde-format
-msgid "Check Phishing URL"
-msgstr "בדיקת כתובת דיוג"
-
-#: viewer/viewer_p.cpp:1984
-#, fuzzy, kde-format
-msgid "The URL %1 is not valid."
-msgstr "קובץ החתימה לא תקף"
-
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "בדיקת כתובת דיוג"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "הכתובת %1 שגויה."
+
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "זה אתר זדוני, להמשיך להציג אותו?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "נוזקה"
 
-#: viewer/viewer_p.cpp:2059
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:2072
+#, kde-format
 msgid "Copy Email Address"
-msgstr "כתובת דוא\"ל"
+msgstr "העתקת כתובת דוא״ל"
 
-#: viewer/viewer_p.cpp:2142
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#: viewer/viewer_p.cpp:2155
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
-msgstr "הודעה בתור טקסט רגיל"
+msgstr "הודעה כטקסט פשוט"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "הכתובת הועתקה ללוח העריכה."
 
-#: viewer/viewer_p.cpp:2890
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:2888
+#, kde-format
 msgid "Message loading failed: %1."
-msgstr "ההודעה נחתמה על ידי %1."
+msgstr "טעינת הודעה נכשלה: %1."
 
-#: viewer/viewer_p.cpp:2895
-#, fuzzy, kde-format
+#: viewer/viewer_p.cpp:2893
+#, kde-format
 msgid "Message not found."
-msgstr "ההודעה נחתמה על ידי %1."
+msgstr "ההודעה לא נמצאה."
 
 #: widgets/attachmentdialog.cpp:27
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Open attachment '%1'?\n"
-#| "Note that opening an attachment may compromise your system's security."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
-"האם לפתוח מצורף \"%1\"? שים לב כי פתיחת מצורף עלולה לסכן את אבטחת המערכת שלך."
+"לפתוח את הקובץ המצורף <filename>%1</filename>?<nl/>נא לשים לב שפתיחת קובץ "
+"מצורף יכולה לסכן את אבטחת המערכת שלך."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "האם לפתוח מצורף?"
+msgstr "לפתוח את הקובץ המצורף?"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
-msgstr "פתח באמצעות \"%1\""
+msgstr "&פתיחה באמצעות ‚%1’"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "פתיחה באמצעות..."
+msgstr "פתיחה ב&אמצעות…"
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2251,44 +2552,50 @@ msgid "Do not ask again"
 msgstr "לא לשאול שוב"
 
 #: widgets/htmlstatusbar.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
 msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
-msgstr "<qt><b> <br>ה<br>ו<br>ד<br>ע<br>ת<br>  <br>H<br>T<br>M<br>L </b> </qt>"
+msgstr ""
+"<qt><b><br />ה<br />ו<br />ד<br />ע<br />ת<br />  <br />H<br />T<br />M<br /"
+">L </b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
-"<qt><br>א<br>י<br>ן<br>ה<br>ו<br>ד<br>ע<br>ת<br><br>H<br>T<br>M<br>L </qt>"
+"<qt><br />ל<br />א<br /> <br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br /"
+">H<br />T<br />M<br />L<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
-msgstr "<qt><b> <br>ה<br>ו<br>ד<br>ע<br>ת<br>  <br>H<br>T<br>M<br>L </b> </qt>"
+msgstr ""
+"<qt><br />ה<br />ו<br />ד<br />ע<br />ה<br /> <br />פ<br />ש<br />ו<br /"
+">ט<br />ה<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br>א<br>י<br>ן<br>ה<br>ו<br>ד<br>ע<br>ת<br><br>H<br>T<br>M<br>L </qt>"
+"<qt><br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br />ל<br />ו<br />ח<br /> "
+"<br />ש<br />נ<br />ה<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr ""
+msgstr "יש ללחוץ כדי להחליף בין HTML, טקסט פשוט ולוח שנה."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
@@ -2302,101 +2609,107 @@ msgid ""
 ">People that have email programs that do understand invitations will still "
 "be able to work with this.</qt>"
 msgstr ""
+"<qt>הזמנות בדרך כלל נשלחות בצירוף להודעות דוא״ל. המתג הזה משנה את הודעות "
+"הזמנה כך שההזמנה תהיה חלק מתוכן ההודעה; הכרחי לשליחת הודעות ותגובות ל־"
+"Microsoft Outlook.<br />אבל, כשבוחרים בהגדרה הזאת, לא מקבלים טקסט מפורט "
+"שתוכניות דוא״ל יכולות לקרוא; לכן, למי שיש תוכניות דוא״ל שלא מבינות את "
+"ההזמנות, ההודעות ששתקבלנה תהיינה מוזרות מאוד.<br />למי שיש תוכניות דוא״ל "
+"שמבינות את מבנה ההזמנות הזה עדיין יוכל לעבוד עם זה.</qt>"
+
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "הקראת הטקסט"
 
 #: widgets/mailsourcewebengineviewer.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr "הצג מ&קור"
+msgstr "מקור גולמי"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
-msgstr ""
+msgstr "הודעת דוא״ל גולמית, ללא שינוי, כפי שהיא מאוחסנת במערכת הקבצים או בשרת"
 
 #: widgets/mailsourcewebengineviewer.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr "הצג מ&קור"
+msgstr "מקור HTML"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr ""
+msgstr "קוד HTML להצגת ההודעה למשתמש"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "פתיחת התיקייה בה נשמר הקובץ המצורף"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "&פתח באמצעות..."
+msgstr "פתיחת קובץ"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פתיחת התיקייה אליה נשמר הקובץ המצורף"
+msgstr[1] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[2] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
+msgstr[3] "פתיחת התיקייה אליה נשמרו הקבצים המצורפים"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "פתיחת התיקייה אליה נשמר ה־PDF"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "KMail was unable to open the attachment."
-msgstr "שם המצורף:"
+msgstr "KMail לא הצליח לפתוח את הקובץ המצורף."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "New Message"
+#, kde-format
+msgctxt "@action:button"
 msgid "Next Message"
-msgstr "הודעה חדשה"
+msgstr "ההודעה הבאה"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
+#, kde-format
+msgctxt "@action:button"
 msgid "Previous Message"
-msgstr "פתח הודעה"
+msgstr "ההודעה הקודמת"
 
-#, fuzzy
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "השתמש בגופן קטן יותר עבור ציטוטים"
+#~ msgid "Export Rules"
+#~ msgstr "ייצוא כללים"
 
-#, fuzzy
-#~ msgid "Message Structure Viewer"
-#~ msgstr "הו&דעה"
+#~ msgid "Import Rules"
+#~ msgstr "ייבוא כללים"
 
-#, fuzzy
-#~ msgid "Show never"
-#~ msgstr "הצג &אף פעם"
+#~ msgid "Check Phishing URL"
+#~ msgstr "בדיקת כתובת דיוג"
 
-#, fuzzy
-#~ msgid "Show always"
-#~ msgstr "הצג ת&מיד"
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "מציין את מדיניות ברירת המחדל לשימוש, להודעות תנועת הודעות (לשימוש פנימי "
+#~ "בלבד)"
 
-#, fuzzy
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "הע&דף HTML על פני טקסט רגיל"
-
-#, fuzzy
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "א&פשר להודעות לטעון הפניות חיצוניות מהאינטרנט"
-
-#, fuzzy
-#~ msgid "How attachments are shown"
-#~ msgstr "הצגת סמל מצורף"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "הצג אזהרה בעת ניסיון לשלוח הודעות &לא מוצפנות"
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "מציין את פעולת הציטוט לנקוט כברירת המחדל, בעת שליחת תגובה להודעה (לשימוש "
+#~ "פנימי בלבד)"
 
 #, fuzzy
 #~ msgid "Edit with:"

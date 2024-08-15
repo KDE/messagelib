@@ -13,5 +13,4 @@ class MultipartJobTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void testMultipartMixed();
-    void test8BitPropagation();
 };

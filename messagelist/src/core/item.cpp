@@ -9,10 +9,9 @@
 #include "core/item.h"
 #include "core/item_p.h"
 #include "core/manager.h"
-#include "core/model.h"
 
-#include <KIO/Global> // for KIO::filesize_t and related functions
-#include <KMime/DateFormatter>
+#include <KFormat>
+#include <MessageCore/DateFormatter>
 
 #include <KLocalizedString>
 
@@ -299,7 +298,8 @@ QString Item::statusDescription() const
 
 QString Item::formattedSize() const
 {
-    return KIO::convertSize((KIO::filesize_t)size());
+    KFormat format;
+    return format.formatByteSize(size());
 }
 
 QString Item::formattedDate() const

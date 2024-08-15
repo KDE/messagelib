@@ -281,7 +281,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += len;
                 if (!q.isEmpty()) {
                     auto header = new KMime::Headers::Generic("X-KMail-Dictionary");
-                    header->fromUnicodeString(q, "utf-8");
+                    header->fromUnicodeString(q);
                     d->mMsg->setHeader(header);
                 }
             } else if (cmd.startsWith(QLatin1StringView("INSERT=")) || cmd.startsWith(QLatin1StringView("PUT="))) {
@@ -442,7 +442,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 htmlBody = htmlStr;
 
                 auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
-                header->fromUnicodeString(QString::number(0), "utf-8");
+                header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(header);
             } else if (cmd.startsWith(QLatin1StringView("TEXT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXT";
@@ -956,7 +956,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.clear();
                 htmlBody.clear();
                 auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
-                header->fromUnicodeString(QString::number(0), "utf-8");
+                header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(header);
             } else if (cmd.startsWith(QLatin1StringView("DEBUGOFF"))) {
                 // turn off debug
@@ -974,7 +974,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 int oldI = i;
                 i += strlen("CURSOR");
                 auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
-                header->fromUnicodeString(QString::number(plainBody.length()), "utf-8");
+                header->fromUnicodeString(QString::number(plainBody.length()));
                 /* if template is:
                  *  FOOBAR
                  *  %CURSOR
@@ -1092,14 +1092,14 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 
     // Set To and CC from the template
     if (!d->mTo.isEmpty()) {
-        d->mMsg->to()->fromUnicodeString(d->mMsg->to()->asUnicodeString() + QLatin1Char(',') + d->mTo, "utf-8");
+        d->mMsg->to()->fromUnicodeString(d->mMsg->to()->asUnicodeString() + QLatin1Char(',') + d->mTo);
     }
 
     if (!d->mCC.isEmpty()) {
-        d->mMsg->cc()->fromUnicodeString(d->mMsg->cc()->asUnicodeString() + QLatin1Char(',') + d->mCC, "utf-8");
+        d->mMsg->cc()->fromUnicodeString(d->mMsg->cc()->asUnicodeString() + QLatin1Char(',') + d->mCC);
     }
 
-    d->mMsg->contentType()->clear(); // to get rid of old boundary
+    d->mMsg->removeHeader<KMime::Headers::ContentType>(); // to get rid of old boundary
 
     // const QByteArray boundary = KMime::multiPartBoundary();
     KMime::Content *const mainTextPart = htmlBody.isEmpty() ? createPlainPartContent(plainBody) : createMultipartAlternativeContent(plainBody, htmlBody);
@@ -1146,8 +1146,8 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Conte
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
         if (auto ct = attachment->contentType(false)) {
-            if (!ct->hasParameter(QStringLiteral("name")) && !ct->hasParameter(QStringLiteral("filename"))) {
-                ct->setParameter(QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
+            if (!ct->hasParameter("name") && !ct->hasParameter("filename")) {
+                ct->setParameter(QByteArrayLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
         }
         ++attachmentNumber;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-04-03 16:49+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -24,7 +24,14 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Entwicklerwerkzeug"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Schließen"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Schließen"
@@ -36,7 +43,9 @@ msgid "F&ind:"
 msgstr "&Suchen:"
 
 #: findbar/findbarbase.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Suchtext"
 
@@ -47,7 +56,9 @@ msgid "Next"
 msgstr "Weiter"
 
 #: findbar/findbarbase.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Zur nächsten Übereinstimmung springen"
 
@@ -58,7 +69,9 @@ msgid "Previous"
 msgstr "Zurück"
 
 #: findbar/findbarbase.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Zur vorherigen Übereinstimmung springen"
 
@@ -68,7 +81,9 @@ msgid "Options"
 msgstr "Einstellungen"
 
 #: findbar/findbarbase.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Suchverhalten ändern"
 
@@ -82,8 +97,10 @@ msgstr "Groß-/Kleinschreibung beachten"
 msgid "Phrase not found"
 msgstr "Ausdruck nicht gefunden"
 
-#: webenginepage.cpp:68
-#, kde-format
+#: webenginepage.cpp:152
+#, fuzzy, kde-format
+#| msgid "Save HTML Page"
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML-Seite speichern"
 

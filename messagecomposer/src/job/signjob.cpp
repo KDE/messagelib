@@ -18,7 +18,7 @@
 #include "messagecomposer_debug.h"
 #include <KMime/Content>
 #include <KMime/Headers>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
@@ -204,7 +204,8 @@ void SignJob::process()
         // Note: If any line begins with the string "From ", it is strongly
         //   suggested that either the Quoted-Printable or Base64 MIME encoding
         //   be applied.
-        const auto encoding = d->content->contentTransferEncoding()->encoding();
+        const auto cte = d->content->contentTransferEncoding(false);
+        const auto encoding = cte ? cte->encoding() : KMime::Headers::CE7Bit;
         if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
@@ -219,7 +220,7 @@ void SignJob::process()
                          << "from=20"
                          << "=2D";
 
-            if (d->content->contentTransferEncoding()->encoding() == KMime::Headers::CE7Bit) {
+            if (encoding == KMime::Headers::CE7Bit) {
                 for (int i = 0, total = search.size(); i < total; ++i) {
                     const auto pos = body.indexOf(search[i]);
                     if (pos == 0 || (pos > 0 && body.at(pos - 1) == '\n')) {
@@ -244,8 +245,7 @@ void SignJob::process()
 
             if (changed) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "Content changed";
-                d->content->setBody(body);
-                d->content->contentTransferEncoding()->setDecoded(false);
+                d->content->setEncodedBody(body);
             }
         }
 

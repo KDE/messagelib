@@ -27,7 +27,7 @@ Q_SIGNALS:
     void updateOkButton(bool enabled);
 
 private:
-    void slotTextChanged(const QString &url);
+    MESSAGEVIEWER_NO_EXPORT void slotTextChanged(const QString &url);
     QLineEdit *const mLineEdit;
     RemoteContentStatusTypeComboBox *const mStatusComboBox;
 };

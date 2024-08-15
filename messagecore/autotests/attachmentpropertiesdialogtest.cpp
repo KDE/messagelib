@@ -159,7 +159,8 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
 
     // Create the MIME Content.
     auto content = new Content;
-    content->contentType()->setName(name, charset);
+    content->contentType()->setName(name);
+    content->contentType()->setRFC2047Charset(charset);
     const Content *constContent = content;
 
     // Show the (read-only) dialog and do some changes.

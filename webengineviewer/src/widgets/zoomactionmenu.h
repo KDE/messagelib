@@ -25,11 +25,11 @@ public:
 
     void createZoomActions();
 
-    QAction *zoomInAction() const;
+    [[nodiscard]] QAction *zoomInAction() const;
 
-    QAction *zoomOutAction() const;
+    [[nodiscard]] QAction *zoomOutAction() const;
 
-    QAction *zoomResetAction() const;
+    [[nodiscard]] QAction *zoomResetAction() const;
 
     void setActionCollection(KActionCollection *ac);
 

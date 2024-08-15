@@ -55,9 +55,6 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
 [[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const KMime::Content::List &contents);
 
 [[nodiscard]] MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
-/** Return a QTextCodec for the specified charset.
- * This function is a bit more tolerant, than QTextCodec::codecForName */
-MESSAGEVIEWER_EXPORT QStringConverter::Encoding htmlEncoding(const QByteArray &data, const QByteArray &codec);
 struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;
@@ -69,7 +66,6 @@ struct HtmlMessageInfo {
 };
 
 [[nodiscard]] MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
-[[nodiscard]] MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString parseBodyStyle(const QString &style);
 }

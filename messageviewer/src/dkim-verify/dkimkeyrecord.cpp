@@ -13,7 +13,7 @@ DKIMKeyRecord::DKIMKeyRecord() = default;
 
 bool DKIMKeyRecord::parseKey(const QString &key)
 {
-    qDebug() << " key " << key;
+    // qDebug() << " key " << key;
     QString newKey = key;
     if (newKey.isEmpty()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";

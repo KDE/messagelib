@@ -7,7 +7,6 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 set(templateeditor_gui_SRCS templateeditor_gui.cpp templateeditor_gui.h)
 add_executable(templateeditor_gui ${templateeditor_gui_SRCS})
 target_link_libraries(templateeditor_gui
-  KF6::KIOCore
   KPim6::TemplateParser
   KPim6::PimTextEdit
   KF6::I18n
@@ -17,7 +16,6 @@ target_link_libraries(templateeditor_gui
 set(templateconfigurewidget_gui_SRCS templateconfigurewidget_gui.cpp templateconfigurewidget_gui.h)
 add_executable(templateconfigurewidget_gui ${templateconfigurewidget_gui_SRCS})
 target_link_libraries(templateconfigurewidget_gui
-  KF6::KIOCore
   KPim6::TemplateParser
   KF6::I18n
   KPim6::PimTextEdit

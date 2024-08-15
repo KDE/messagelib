@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -452,6 +452,14 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Disfacer"
 
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "Search for messages."
+#| msgid "Search"
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "Trover"
+
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
@@ -471,7 +479,9 @@ msgid "Ignore if not signed"
 msgstr "Djivêye des Messaedjes - Tchamp Date"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Eberweter..."
 
@@ -484,11 +494,14 @@ msgstr "Apontyî Conte"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Radjouter..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Aberweter..."
 
@@ -499,21 +512,18 @@ msgid "No rules found"
 msgstr "Nole sinateure di trovêye"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Ebaguer des passetes"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Filters"
-msgid "Export Rules"
-msgstr "Ebaguer des passetes"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Abaguer des passetes"
 
@@ -522,13 +532,6 @@ msgstr "Abaguer des passetes"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "Nole sinateure di trovêye"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Filters"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Abaguer des passetes"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -630,21 +633,22 @@ msgstr "Candjî l' conte"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "&Ni nén Ecripter"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Defaul&t domain:"
 msgid "Domain:"
 msgstr "Préme&tou dominne:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -652,6 +656,7 @@ msgstr "Di: "
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
@@ -882,104 +887,104 @@ msgstr ""
 msgid "Not Signed"
 msgstr "Èn &nén siner"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "S&udjet"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "Date : "
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 #| msgid "Message Id"
 msgid "Message-Id:"
 msgstr "Id do messaedje"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, fuzzy, kde-format
 #| msgctxt "To-field of the mailheader."
 #| msgid "To: "
 msgid "To:"
 msgstr "Po: "
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "&Responde a"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "Cc: "
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "Bcc : "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "Evoyeu"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(revoyî d' %1)"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(revoyî d' %1)"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Li fitchî sd' sinateure n' est nén valide"
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Nou sudjet"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Sitatut spam: "
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "Imprimaedje del rexhowe"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "Config->Composer->Attachments"
 #| msgid "A&ttachments"
 msgid "Attachments:"
 msgstr "A&taetchmints"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"
@@ -1081,23 +1086,23 @@ msgstr "Di : "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Po : "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "Cc : "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "Bcc : "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "Responde a : "
@@ -1328,6 +1333,13 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
+#: remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Defaul&t domain:"
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "Préme&tou dominne:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "EMAIL OF TRANSLATORS"
@@ -1342,17 +1354,21 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Taper å batch"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
@@ -1360,6 +1376,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Delete all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Disfacer tos les messaedjes"
 
@@ -1430,6 +1447,303 @@ msgstr ""
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, fuzzy, kde-format
+#| msgid "Show expand/collapse quote marks"
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "Håyner les markes wiyemets mostrer/catchî"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, fuzzy, kde-format
+#| msgid "&Enable signature"
+msgid "Always show encryption/signature details when we print message"
+msgstr "M&ete en alaedje sinateure"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Håyner les markes wiyemets mostrer/catchî"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, fuzzy, kde-format
+#| msgid "Use smaller font for quoted text"
+msgid "Reduce font size for quoted text"
+msgstr "Eployî des pus ptitès fontes po l' tecse inte wiyemets"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Håyneu del sitructeure des messaedjes"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, fuzzy, kde-format
+#| msgid "Show &never"
+msgid "Show never"
+msgstr "En &måy mostrer"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, fuzzy, kde-format
+#| msgid "Show alway&s"
+msgid "Show always"
+msgstr "&Tofer håyner"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "HTML pus rade ki peur tecse"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr ""
+"Permete ås messaedjes di tcherdjî des dfoûtrinnès referinces a pårti del "
+"daegntoele"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, fuzzy, kde-format
+#| msgid "Show attachment icon"
+msgid "How attachments are shown"
+msgstr "Mostrer l' imådjete des ataetchmints"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr ""
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr ""
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "En nén evoyî des MDN po responde a des messaedjes nén ecriptés"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, fuzzy, kde-format
+#| msgid "Outlook-compatible attachment naming"
+msgid "Exchange-compatible invitation naming"
+msgstr "Manire di lomer les ataetchmints copatibes avou Outlook"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, fuzzy, kde-format
+#| msgid "Outlook-compatible attachment naming"
+msgid "Automatic invitation sending"
+msgstr "Manire di lomer les ataetchmints copatibes avou Outlook"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Eployî ene ewa&le fonte"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
+msgid "The most recent selected folder used for Todo."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
+msgid "The most recent selected folder used for Event."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
+msgid "The most recent selected folder used for Notes."
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -1515,12 +1829,6 @@ msgstr "Manire di lomer les ataetchmints copatibes avou Outlook"
 msgid "Options"
 msgstr "Tchuzes"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1593,26 +1901,26 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "Li fitchî « %1 » egzistêye dedja. Estoz seur(e) ki vos l' voloz spotchî?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Sipotchî l' fitchî?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, fuzzy, kde-format
 msgid "Save Attachments To"
 msgstr "Schaper et Rlomer l' Ataetchmint"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -1620,55 +1928,62 @@ msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "Ataetchmint"
 
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Schaper et rlomer l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, fuzzy, kde-format
 #| msgid "Attachment: %1"
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "Ataetchmint: %1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "Kesse di KMail"
 
-#: utils/messageviewerutil.cpp:324
-#, kde-format
+#: utils/messageviewerutil.cpp:306
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Wårder ecriptaedje"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "&Ni nén wårder"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:337
-#, kde-format
+#: utils/messageviewerutil.cpp:319
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Wårder sinateure"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1678,34 +1993,34 @@ msgstr ""
 "Dji n' a savou scrire e l' fitchî:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Åk n' a nén stî come dji schapéve l' ataetchmint"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Dji n' a trové nol ataetchmint a schaper."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, fuzzy, kde-format
 msgid "message"
 msgstr "Novea messaedje"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1714,63 +2029,63 @@ msgid_plural "Save Messages"
 msgstr[0] " messaedje"
 msgstr[1] " messaedje"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Wårder &ecriptés les messaedjes schapés"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Åk n' a nén stî come dj' eberwetéve li messaedje"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Wårder &ecriptés les messaedjes schapés"
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Dji bodje les messaedjes"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Fén do messaedje siné"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Dji bodje les messaedjes"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Ridjeté: %1 "
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&Drovi avou « %1 »"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"
@@ -1797,12 +2112,12 @@ msgstr "Sôre"
 msgid "Size"
 msgstr "Grandeu"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
@@ -1814,7 +2129,7 @@ msgstr "Documintåcion"
 msgid "Turn on HTML rendering for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, fuzzy, kde-format
 #| msgid "Allow messages to load external references from the Internet"
 msgid "Load external references from the Internet for this message."
@@ -1908,7 +2223,7 @@ msgstr "Drovi e calpin d' adresses"
 msgid "&Copy Email Address"
 msgstr "Adresse emile"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
@@ -1959,11 +2274,13 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Voloz po do bon disfacer l' idintité lomêye <b>%1</b>?</qt>"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Enonder"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2011,13 +2328,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Drovi avou..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Drovi"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2033,12 +2350,12 @@ msgstr "Disrôler a"
 msgid "Save As..."
 msgstr "Schaper et rlomer..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Copyî"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Disfacer l' ataetchmint"
@@ -2055,7 +2372,7 @@ msgstr "Responde a &Tertos..."
 msgid "Reply To All"
 msgstr "Responde a tertos"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "Prôpietés"
@@ -2071,288 +2388,293 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "Li cliyint d' emilaedje di KDE."
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Mostrer l' ataetchmint : %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Ataetchmints"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Tchoezi li façon di håyner les ataetchmints"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Come &Imådjetes"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Håyner tos les ataetchmints come des imådjetes. Clitchîz dsu po les vey."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Maléns"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Håyner les ataetchmints come l' evoyeu l' a dmandé."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Dins l' &messaedje"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "Mostrer tos les ataetchmints tot droet dins l' messaedjes, si do moens c' "
 "est possibe."
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Catchî"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ni nén mostrer les ataetchmints el finiesse des messaedjes"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Dins l' tiestire seulmint"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 "Håyner tos les ataetchmints come des imådjetes. Clitchîz dsu po les vey."
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Tch&oezi l' ecôdaedje"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Oto"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Copyî viè"
 
-#: viewer/viewer_p.cpp:1542
-#, kde-format
+#: viewer/viewer_p.cpp:1543
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "T&choezi tot l' sicrijhaedje"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copyî adresse del hårdêye"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Drovi èn URL"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Eployî ene ewa&le fonte"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Håyner l' tcherpinte des messaedjes"
 
-#: viewer/viewer_p.cpp:1569
-#, kde-format
+#: viewer/viewer_p.cpp:1570
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&Vey li sourdant"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
 msgid "&Save Message..."
 msgstr " messaedje"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Schaper come brouyon"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Schaper come brouyon"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "T&choezi Tos les Messaedjes"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "T&choezi Tos les Messaedjes"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "T&choezi Tos les Messaedjes"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "T&choezi Tos les Messaedjes"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
-msgid "Speak Text"
-msgstr ""
-
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
+#| msgid "&Copy To"
+msgctxt "@action"
+msgid "Speak Text"
+msgstr "&Copyî viè"
+
+#: viewer/viewer_p.cpp:1636
+#, fuzzy, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "&Sititchî on Fitchî..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Choose Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Tchoezi Eplaeçmint"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Cweri e messaedjes..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Sch&aper et rlomer..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Drovi avou..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Schaper tos ls ataetchmints..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1997
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Li fitchî sd' sinateure n' est nén valide"
 
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
-
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Adresse emile"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Messaedje e peur tecse"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Li messaedje a stî siné di %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
@@ -2467,6 +2789,11 @@ msgid ""
 "be able to work with this.</qt>"
 msgstr ""
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr ""
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
@@ -2491,7 +2818,7 @@ msgstr ""
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr ""
 
@@ -2504,6 +2831,7 @@ msgstr "Drovi spepieus cweraedje"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
@@ -2511,6 +2839,7 @@ msgstr[1] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr ""
 
@@ -2523,68 +2852,26 @@ msgstr "Dji n' a sepou aspougnî l' ataetchmint"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "&Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Messaedje &shuvant"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Messaedje di dvant nén léjhou"
 
 #, fuzzy
-#~| msgid "Show expand/collapse quote marks"
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr "Håyner les markes wiyemets mostrer/catchî"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Håyner les markes wiyemets mostrer/catchî"
+#~| msgid "Export Filters"
+#~ msgid "Export Rules"
+#~ msgstr "Ebaguer des passetes"
 
 #, fuzzy
-#~| msgid "Use smaller font for quoted text"
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Eployî des pus ptitès fontes po l' tecse inte wiyemets"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Håyneu del sitructeure des messaedjes"
-
-#, fuzzy
-#~| msgid "Show &never"
-#~ msgid "Show never"
-#~ msgstr "En &måy mostrer"
-
-#, fuzzy
-#~| msgid "Show alway&s"
-#~ msgid "Show always"
-#~ msgstr "&Tofer håyner"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "HTML pus rade ki peur tecse"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr ""
-#~ "Permete ås messaedjes di tcherdjî des dfoûtrinnès referinces a pårti del "
-#~ "daegntoele"
-
-#, fuzzy
-#~| msgid "Show attachment icon"
-#~ msgid "How attachments are shown"
-#~ msgstr "Mostrer l' imådjete des ataetchmints"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "En nén evoyî des MDN po responde a des messaedjes nén ecriptés"
-
-#, fuzzy
-#~| msgid "Outlook-compatible attachment naming"
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Manire di lomer les ataetchmints copatibes avou Outlook"
-
-#, fuzzy
-#~| msgid "Outlook-compatible attachment naming"
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Manire di lomer les ataetchmints copatibes avou Outlook"
+#~| msgid "Import Filters"
+#~ msgid "Import Rules"
+#~ msgstr "Abaguer des passetes"
 
 #~ msgid "Edit with:"
 #~ msgstr "Aspougnî avou:"
@@ -2861,12 +3148,6 @@ msgstr "&Messaedje di dvant nén léjhou"
 #~| msgid "&Address Book"
 #~ msgid "Address"
 #~ msgstr "Cal&pin d' Adresses"
-
-#, fuzzy
-#~| msgctxt "Search for messages."
-#~| msgid "Search"
-#~ msgid "Search..."
-#~ msgstr "Trover"
 
 #, fuzzy
 #~ msgid "Script"

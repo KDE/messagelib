@@ -10,16 +10,16 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer6\")
 
 if(BUILD_TESTING)
-    add_subdirectory( imagescaling/autotests )
-    add_subdirectory( imagescaling/tests )
-    add_subdirectory( composer-ng/autotests )
-    add_subdirectory( statusbarwidget/autotests )
-    add_subdirectory( plugineditor/autotests )
-    add_subdirectory( composer/autotests )
-    add_subdirectory( snippet/autotests )
-    add_subdirectory( mdn/autotests )
-    add_subdirectory( mdn/tests )
-    add_subdirectory( contactpreference/autotests)
+    add_subdirectory(imagescaling/autotests)
+    add_subdirectory(imagescaling/tests)
+    add_subdirectory(composer-ng/autotests)
+    add_subdirectory(statusbarwidget/autotests)
+    add_subdirectory(plugineditor/autotests)
+    add_subdirectory(composer/autotests)
+    add_subdirectory(snippet/autotests)
+    add_subdirectory(mdn/autotests)
+    add_subdirectory(mdn/tests)
+    add_subdirectory(contactpreference/autotests)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -38,7 +38,7 @@ qt_add_dbus_interface(messagecomposer_interface_SRCS
     followupreminderinterface
 )
 
-target_sources( KPim6MessageComposer PRIVATE
+target_sources(KPim6MessageComposer PRIVATE
     ${messagecomposer_interface_SRCS}
     job/jobbase.cpp
     job/contentjobbase.cpp
@@ -274,7 +274,7 @@ kconfig_add_kcfg_files(KPim6MessageComposer
     settings/messagecomposersettings_base.kcfgc
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageComposer PROPERTIES UNITY_BUILD ON)
 endif()
 ecm_generate_export_header(KPim6MessageComposer
@@ -314,16 +314,16 @@ target_link_libraries(KPim6MessageComposer
     KF6::Codecs
     ${Inotify_LIBRARIES}
 )
-if (TARGET KF6::TextAutoCorrectionWidgets)
+if(TARGET KF6::TextAutoCorrectionWidgets)
     target_link_libraries(KPim6MessageComposer
         PUBLIC
         KF6::TextAutoCorrectionWidgets
-    )
+)
 else()
     target_link_libraries(KPim6MessageComposer
         PUBLIC
         KF6::TextAutoCorrection
-    )
+)
 endif()
 
 target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
@@ -664,7 +664,7 @@ install(FILES
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageComposer")
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageComposer_QCH
         NAME KPim6MessageComposer
@@ -706,7 +706,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageComposer_QCH

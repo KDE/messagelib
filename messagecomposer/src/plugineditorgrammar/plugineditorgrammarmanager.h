@@ -25,7 +25,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorGrammarManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorGrammarManager(QObject *parent = nullptr);
     ~PluginEditorGrammarManager() override;
 
     static PluginEditorGrammarManager *self();
@@ -38,6 +37,7 @@ public:
     [[nodiscard]] PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit PluginEditorGrammarManager(QObject *parent = nullptr);
     std::unique_ptr<PluginEditorGrammarManagerPrivate> const d;
 };
 }

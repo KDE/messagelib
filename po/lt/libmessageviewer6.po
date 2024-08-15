@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -438,6 +438,13 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Trinti raktą"
 
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "Ieškoti..."
+
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
@@ -454,7 +461,9 @@ msgid "Ignore if not signed"
 msgstr "Ignoruoti, jei nepasirašytas"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "Eksportuoti..."
 
@@ -465,12 +474,16 @@ msgid "Configure Rule"
 msgstr "Konfigūruoti taisyklę"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Rule..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Pridėti taisyklę..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importuoti..."
 
@@ -480,19 +493,18 @@ msgid "No rules found"
 msgstr "Nerasta taisyklių"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Export Rules"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Eksportuoti taisykles..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "Eksportuoti taisykles..."
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
-#, kde-format
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Rules"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importuoti taisykles..."
 
@@ -500,13 +512,6 @@ msgstr "Importuoti taisykles..."
 #, kde-format
 msgid "No rules imported."
 msgstr "Neimportuotos jokios taisyklės."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "Importuoti taisykles..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -600,27 +605,31 @@ msgid "Modify Rule"
 msgstr "Keisti taisyklę"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enabled"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Įgalinta"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
 msgstr "Domenas:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "Sąrašo-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "Nuo:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use '*' to specify all emails from domain"
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Naudokite „*“, kad nurodytumėte visus domeno e-laiškus"
 
@@ -830,89 +839,89 @@ msgstr "%1: Tinkamas"
 msgid "Not Signed"
 msgstr "Nepasirašyta"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "Tema:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "Nuo:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 #| msgid "message"
 msgid "Message-Id:"
 msgstr "laiškas"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "Kam:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "Kam atsakyti:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "Kopija:"
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "Slapta kopija:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "Siuntėjas: "
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "persiųsta iš:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "persiųsti kam:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "Nėra temos"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Šlamšto statusas:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "Spausdinimo būdas"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "Priedai:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "Saugumas:"
@@ -1020,23 +1029,23 @@ msgstr "Nuo: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Kam: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "Kopija: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "Slapta kopija: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "Kam atsakyti: "
@@ -1267,6 +1276,13 @@ msgstr ""
 msgid "Blocked"
 msgstr "Blokuoti paveikslėlį"
 
+#: remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Domain:"
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "Domenas:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
@@ -1281,22 +1297,30 @@ msgstr ""
 "a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Perkelti į šiukšlinę"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "I confirm it's not a scam"
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Patvirtinu, kad tai nėra sukčiavimas."
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add email to whitelist"
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Pridėti laišką į baltąjį sąrašą"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disable scam detection for all messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Išjungti sukčiavimo aptikimą visiems laiškams"
 
@@ -1375,6 +1399,325 @@ msgstr "Neįmanoma išplėsti „%1“."
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Trumpas url „%1“ peradresuoja į „%2“."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Rodyme spausdinti tik pažymėtą tekstą"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, fuzzy, kde-format
+#| msgid "Show &expand/collapse quote marks"
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"Nurodo, ar spausdinant puslapį taipogi spausdinti fono spalvą ir piešinius."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr "Spausdinant laišką visada rodyti šifravimo/parašo informaciją"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr "Paišant html, niekada nenaudoti šrifto dydžio, mažesnius už minimalų."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Nurodo laiško tekstui naudotiną šriftą"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Nurodo spausdinimui skirtą šriftą"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Tikrinti, ar url gali būti sukčiavimas"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Uždaryti laiško langą atsakius ar persiuntus"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Rodyti citatų sutraukimo/išplėtimo žymes"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Įgalinkite šią parinktį jei norite, kad būtų matomi skirtingi cituojamo "
+"teksto lygiai. Išjunkite norėdami paslėpti skirtingus cituojamo teksto "
+"lygius."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatinio sutraukimo lygmuo:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Sumažinti cituojamo teksto šrifto dydį"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Įgalinkite šią parinktį jei norite, kad cituojamas  tekstas būtų rodomas "
+"smulkesniu šriftu."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Visuomet iššifruoti laiškus peržiūrint, arba klausti prieš iššifruojant"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Žinūtės struktūros žiūryklė"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "Nerodyti niekada"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "Visada rodyti"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Kokio stiliaus antraštės turėtų būti rodomos"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Kiek antraščių rodyti"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Pirmenybė HTML prieš įprastą tekstą"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Leisti laiškams įkelti išorines nuorodas iš interneto"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Kaip rodomi priedai"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "Nurodo ar naudoti citavimo spalvą, toliau nei 3 lygyje"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Aktyvuoti prieigos raktą"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail gali analizuoti laiškus dėl įtariamo sukčiavimo ieškant įprastų būdų "
+"jus apgauti"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "E-pašto adresų baltasis sąrašas"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Ieškoti laiškuose sekimo URL"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Nesiųsti PLP atsakant į užšifruotus laiškus"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook turi keletą neapgalvotų dalykų jų iCaldendar standarto "
+"įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
+"Outlook naudotojais, kurie negali atsakyti į jūsų laiškus, pabandykite "
+"įjungti šią parinktį."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Siųsti grupinius kvietimus laiške"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook turi keletą neapgalvotų dalykų jų iCalendar standarto "
+"įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
+"Outlook naudotojais, kurie negali gauti jūsų pakvietimų, pabandykite ją "
+"įjungti."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, kai naudojamas su Microsoft Exchnange serveriu, turi "
+"problemų suprantant standartų besilaikančių grupinio darbo priemonių "
+"laiškus. Įjunkite šią parinktį, kad siųstumėte grupinius kvietimus tokiu "
+"būdu, kurį supranta Microsoft Exchange."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatinis kvietimų siuntimas"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Įjungus šią parinktį jūs nebematysite laiško kūrimo lango. Vietoje jo visi "
+"pakvietimų laiškai bus siunčiami automatiškai. Jei norite matyti laiškus "
+"prieš juos išsiųsdami, išjunkite šią parinktį. Kaip ten bebūtų, žinokite, "
+"kad tekstas kūrimo lange yra iCalendar sintaksėje ir jums nereikėtų bandyti "
+"jo keisti rankomis."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Ištrinti kvietimo el. laiškus kai atsakymas jiems buvo išsiųstas"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Įjungus šią parinktį, gauti pakvietimų laiškai, į kuriuos buvo atsakyta, bus "
+"perkelti į šiukšliadėžės aplanką, kai tik laiškas bus sėkmingai išsiųstas."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Naudoti ne&kintamo pločio šriftą"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Todo."
+msgid "The most recent selected folder used for Todo."
+msgstr "Paskutinis pažymėtas aplankas naudotas darytiniems darbams."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Event."
+msgid "The most recent selected folder used for Event."
+msgstr "Paskutinis pažymėtas aplankas naudotas įvykiams."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, fuzzy, kde-format
+#| msgid "The most recent selected folder using for Notes."
+msgid "The most recent selected folder used for Notes."
+msgstr "Paskutinis pažymėtas aplankas naudotas pastaboms."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1457,12 +1800,6 @@ msgstr "&Automatinis kvietimų siuntimas"
 msgid "Options"
 msgstr "Nuostatos"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "Ištrinti kvietimo el. laiškus kai atsakymas jiems buvo išsiųstas"
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1529,42 +1866,44 @@ msgstr "Automatinio sutraukimo &lygmuo:"
 msgid "&Minimum font size:"
 msgstr "&Mažiausias šrifto dydis:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Failas pavadinimu „%1“ jau yra. Ar norite jį perrašyti?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Perrašyti failą?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Įrašyti priedą į"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "priedas.1"
 
-#: utils/messageviewerutil.cpp:200
-#, kde-format
+#: utils/messageviewerutil.cpp:182
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Išsaugoti priedą"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "priedas.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1573,35 +1912,41 @@ msgstr ""
 "Laiško dalis %1 yra užšifruota.  Ar Jūs norite ją įrašyti užšifruotame "
 "pavidale?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail klausimas"
 
-#: utils/messageviewerutil.cpp:324
-#, kde-format
+#: utils/messageviewerutil.cpp:306
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Išlaikyti šifravimą"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Neišlaikyti"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "Laiško dalis %1 yra pasirašyta.  Ar Jūs norite ją išsaugoti su parašu?"
 
-#: utils/messageviewerutil.cpp:337
-#, kde-format
+#: utils/messageviewerutil.cpp:319
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Išlaikyti parašą"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1610,34 +1955,34 @@ msgid ""
 msgstr ""
 "<qt>Nepavyko rašyti į failą<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Klaida išsaugant priedą"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Klaida išsaugant priedą"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Neradau priedų išsaugojimui."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, kde-format
 msgid "message"
 msgstr "laiškas"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "el. laiškai (*.mbox);;visi failai (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1646,60 +1991,60 @@ msgstr[1] "&Išsaugoti laišką"
 msgstr[2] "&Išsaugoti laišką"
 msgstr[3] "&Išsaugoti laišką"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Nepavyko įkelti %1 failo."
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Klaida įkeliant laišką"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Nepavyko sukurti %1 failo."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Klaida įrašant laišką"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "We cannot save message."
 msgstr "Nepavyksta įrašyti laiško."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
 msgstr "Klaida įrašant laišką"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, fuzzy, kde-format
 #| msgid "Delete Key"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Trinti raktą"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, kde-format
 msgid "Open &with %1"
 msgstr "Atverti &su %1"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1725,12 +2070,12 @@ msgstr "Tipas"
 msgid "Size"
 msgstr "Dydis"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr ""
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
@@ -1741,7 +2086,7 @@ msgstr "Spausdinti dokumentą"
 msgid "Turn on HTML rendering for this message."
 msgstr "Įjungti laiško HTML formatavimą."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Įkelti išorines nuorodas iš Interneto šiam laiškui."
@@ -1822,7 +2167,7 @@ msgstr "&Atverti su adresų knygele"
 msgid "&Copy Email Address"
 msgstr "&Kopijuoti el. pašto adresą"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresas nukopijuotas į talpyklę."
@@ -1869,11 +2214,13 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ar Jūs tikrai norite vykdyti <filename>%1</filename>? "
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "Vykdyti"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "Įkeliamas laiškas..."
@@ -1919,13 +2266,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Atverti su..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Atverti"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1941,12 +2288,12 @@ msgstr "Slinkti į"
 msgid "Save As..."
 msgstr "Įrašyti kaip..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Trinti priedą"
@@ -1961,7 +2308,7 @@ msgstr "Atsakyti autoriui"
 msgid "Reply To All"
 msgstr "Atsakyti visiems"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "Savybės"
@@ -1976,273 +2323,286 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE elektroninio pašto klientas"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Žiūrėti priedą: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Priedai"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Pasirinkite priedų rodymo stilių"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Ž&enkliukai"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Rodyti visus priedus kaip ženkliukus. Ženkliuko spragtelėjimas parodo priedą."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Išmoningai"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Rodyti priedus taip, kaip rekomenduoja siuntėjas."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Į&dėtas tekste"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Rodyti visus priedus laiško tekste (jei įmanoma)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Slėpti"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Nerodyti priedų laiškų žiūriklėje"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Tik antraštėje"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Rodyti priedus tik laiško antraštėje"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Nus&tatyti koduotę"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Automatiškai"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "Kopijuoti tekstą"
 
-#: viewer/viewer_p.cpp:1542
-#, kde-format
+#: viewer/viewer_p.cpp:1543
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "Žymėti visą tekstą"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopijuoti nuorodos adresą"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Atverti URL"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "Naudoti ne&kintamo pločio šriftą"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Rodyti laiško struktūrą"
 
-#: viewer/viewer_p.cpp:1569
-#, kde-format
+#: viewer/viewer_p.cpp:1570
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "R&odyti išeities tekstą"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "&Išsaugoti laišką..."
 
-#: viewer/viewer_p.cpp:1580
-#, kde-format
+#: viewer/viewer_p.cpp:1581
+#, fuzzy, kde-format
+#| msgid "&Save Display Format"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Į&rašyti rodymo formatą"
 
-#: viewer/viewer_p.cpp:1584
-#, kde-format
+#: viewer/viewer_p.cpp:1585
+#, fuzzy, kde-format
+#| msgid "&Reset Display Format"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Atstatyti rodymo formatą"
 
-#: viewer/viewer_p.cpp:1591
-#, kde-format
+#: viewer/viewer_p.cpp:1592
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Slinkti laišką aukštyn"
 
-#: viewer/viewer_p.cpp:1596
-#, kde-format
+#: viewer/viewer_p.cpp:1597
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Slinkti laišką žemyn"
 
-#: viewer/viewer_p.cpp:1601
-#, kde-format
+#: viewer/viewer_p.cpp:1602
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up (More)"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Slinkti laišką aukštyn (daugiau)"
 
-#: viewer/viewer_p.cpp:1606
-#, kde-format
+#: viewer/viewer_p.cpp:1607
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down (More)"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Slinkti laišką žemyn (mažiau)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Perjungti HTML ekrano veikseną"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Perjungti ekrano veikseną tarp HTML ir paprasto teksto"
 
-#: viewer/viewer_p.cpp:1623
-#, kde-format
+#: viewer/viewer_p.cpp:1624
+#, fuzzy, kde-format
+#| msgid "Load external references"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "Įkelti nuorodas iš išorės"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1630
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "Kalbėti tekstą"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgid "Speak Text"
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "Kalbėti tekstą"
 
-#: viewer/viewer_p.cpp:1653
-#, kde-format
+#: viewer/viewer_p.cpp:1654
+#, fuzzy, kde-format
+#| msgid "Copy Image Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopijuoti piešinio vietą"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Ieškoti laiške..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "uždrausti jaustukus"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Įrašyti &kaip..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Atverti su..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Įrašyti visus priedus..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "Tinklo ryšio klaida."
 
-#: viewer/viewer_p.cpp:1981
-#, kde-format
-msgid "Check Phishing URL"
-msgstr "Tikrinti, ar URL apgaulingas"
-
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgid "The URL %1 is not valid."
-msgstr "URL %1 nėra tinkamas"
-
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Tikrinti, ar URL apgaulingas"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "URL %1 nėra tinkamas"
+
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Ši svetainė kenksminga, tikrai norite ją atverti?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Kenkimo programinė įranga"
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopijuoti el. pašto adresą"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Laiškas įprastu tekstu"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL nukopijuotas į talpyklę."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nepavyko įkelti laiško: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message not found."
 msgstr "Laiškas nerastas."
@@ -2346,6 +2706,11 @@ msgstr ""
 "gaus keistai atrodančius laiškus.<br />Žmonės, kurių pašto programos "
 "supranta pakvietimus vis dar galės su tuo dirbti.</qt>"
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "Kalbėti tekstą"
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
@@ -2373,7 +2738,7 @@ msgstr "HTML kodas laiško rodymui naudotojui"
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Atverti aplanką, kur buvo įrašytas priedas"
 
@@ -2388,6 +2753,7 @@ msgstr "&Atverti su"
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Atverti aplanką, kur buvo įrašytas priedas"
@@ -2398,6 +2764,7 @@ msgstr[3] "Atverti aplanką, kur buvo įrašytas priedas"
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Atverti aplanką, kur buvo įrašytas priedas"
 
@@ -2408,122 +2775,27 @@ msgid "KMail was unable to open the attachment."
 msgstr "Negalima keisti priedo"
 
 #: widgets/shownextmessagewidget.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Kitas laiškas"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Previous Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Ankstesnis laiškas"
 
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "Rodyme spausdinti tik pažymėtą tekstą"
+#~ msgid "Export Rules"
+#~ msgstr "Eksportuoti taisykles..."
 
-#, fuzzy
-#~| msgid "Show &expand/collapse quote marks"
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+#~ msgid "Import Rules"
+#~ msgstr "Importuoti taisykles..."
 
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "Nurodo, ar spausdinant puslapį taipogi spausdinti fono spalvą ir "
-#~ "piešinius."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr "Spausdinant laišką visada rodyti šifravimo/parašo informaciją"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr ""
-#~ "Paišant html, niekada nenaudoti šrifto dydžio, mažesnius už minimalų."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "Nurodo laiško tekstui naudotiną šriftą"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "Nurodo spausdinimui skirtą šriftą"
-
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "Tikrinti, ar url gali būti sukčiavimas"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "Uždaryti laiško langą atsakius ar persiuntus"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "Rodyti citatų sutraukimo/išplėtimo žymes"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "Įgalinkite šią parinktį jei norite, kad būtų matomi skirtingi cituojamo "
-#~ "teksto lygiai. Išjunkite norėdami paslėpti skirtingus cituojamo teksto "
-#~ "lygius."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "Automatinio sutraukimo lygmuo:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "Sumažinti cituojamo teksto šrifto dydį"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "Įgalinkite šią parinktį jei norite, kad cituojamas  tekstas būtų rodomas "
-#~ "smulkesniu šriftu."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr ""
-#~ "Visuomet iššifruoti laiškus peržiūrint, arba klausti prieš iššifruojant"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "Žinūtės struktūros žiūryklė"
-
-#~ msgid "Show never"
-#~ msgstr "Nerodyti niekada"
-
-#~ msgid "Show always"
-#~ msgstr "Visada rodyti"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "Kokio stiliaus antraštės turėtų būti rodomos"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "Kiek antraščių rodyti"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "Pirmenybė HTML prieš įprastą tekstą"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "Leisti laiškams įkelti išorines nuorodas iš interneto"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "Kaip rodomi priedai"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr "Nurodo ar naudoti citavimo spalvą, toliau nei 3 lygyje"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "Aktyvuoti prieigos raktą"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "KMail gali analizuoti laiškus dėl įtariamo sukčiavimo ieškant įprastų "
-#~ "būdų jus apgauti"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "E-pašto adresų baltasis sąrašas"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "Ieškoti laiškuose sekimo URL"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "Nesiųsti PLP atsakant į užšifruotus laiškus"
+#~ msgid "Check Phishing URL"
+#~ msgstr "Tikrinti, ar URL apgaulingas"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
@@ -2538,82 +2810,6 @@ msgstr "Ankstesnis laiškas"
 #~ msgstr ""
 #~ "Nustato numatytą naudotiną citavimo veiksmą, kai atsakoma į laišką (tik "
 #~ "vidiniam naudojimui)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook turi keletą neapgalvotų dalykų jų iCaldendar standarto "
-#~ "įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
-#~ "Outlook naudotojais, kurie negali atsakyti į jūsų laiškus, pabandykite "
-#~ "įjungti šią parinktį."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Siųsti grupinius kvietimus laiške"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsoft Outlook turi keletą neapgalvotų dalykų jų iCalendar standarto "
-#~ "įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
-#~ "Outlook naudotojais, kurie negali gauti jūsų pakvietimų, pabandykite ją "
-#~ "įjungti."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook, kai naudojamas su Microsoft Exchnange serveriu, turi "
-#~ "problemų suprantant standartų besilaikančių grupinio darbo priemonių "
-#~ "laiškus. Įjunkite šią parinktį, kad siųstumėte grupinius kvietimus tokiu "
-#~ "būdu, kurį supranta Microsoft Exchange."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "Automatinis kvietimų siuntimas"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "Įjungus šią parinktį jūs nebematysite laiško kūrimo lango. Vietoje jo "
-#~ "visi pakvietimų laiškai bus siunčiami automatiškai. Jei norite matyti "
-#~ "laiškus prieš juos išsiųsdami, išjunkite šią parinktį. Kaip ten bebūtų, "
-#~ "žinokite, kad tekstas kūrimo lange yra iCalendar sintaksėje ir jums "
-#~ "nereikėtų bandyti jo keisti rankomis."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "Įjungus šią parinktį, gauti pakvietimų laiškai, į kuriuos buvo atsakyta, "
-#~ "bus perkelti į šiukšliadėžės aplanką, kai tik laiškas bus sėkmingai "
-#~ "išsiųstas."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "Paskutinis pažymėtas aplankas naudotas darytiniems darbams."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "Paskutinis pažymėtas aplankas naudotas įvykiams."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "Paskutinis pažymėtas aplankas naudotas pastaboms."
 
 #~ msgid "Edit with:"
 #~ msgstr "Redaguoti su:"
@@ -2888,9 +3084,6 @@ msgstr "Ankstesnis laiškas"
 
 #~ msgid "Address"
 #~ msgstr "Adresas"
-
-#~ msgid "Search..."
-#~ msgstr "Ieškoti..."
 
 #~ msgid "Image"
 #~ msgstr "Paveikslėlis"

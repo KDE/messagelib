@@ -13,7 +13,7 @@ endif()
 
 configure_file(config-messagecomposer.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/config-messagecomposer.h)
 add_subdirectory(src)
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()

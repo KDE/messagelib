@@ -21,7 +21,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorConvertTextManager(QObject *parent = nullptr);
     ~PluginEditorConvertTextManager() override;
 
     static PluginEditorConvertTextManager *self();
@@ -34,6 +33,7 @@ public:
     [[nodiscard]] PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit PluginEditorConvertTextManager(QObject *parent = nullptr);
     std::unique_ptr<PluginEditorConvertTextManagerPrivate> const d;
 };
 }

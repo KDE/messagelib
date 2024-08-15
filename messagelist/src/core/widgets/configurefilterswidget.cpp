@@ -10,12 +10,13 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QMenu>
+#include <QPainter>
 #include <QPointer>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
 ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     : QWidget(parent)
-    , mListFiltersWidget(new QListWidget(this))
+    , mListFiltersWidget(new ConfigureFiltersListWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QLatin1StringView("mainLayout"));
@@ -130,6 +131,28 @@ const QString &FilterListWidgetItem::iconName() const
 void FilterListWidgetItem::setIconName(const QString &newIconName)
 {
     mIconName = newIconName;
+}
+
+ConfigureFiltersListWidget::ConfigureFiltersListWidget(QWidget *parent)
+    : QListWidget(parent)
+{
+}
+
+ConfigureFiltersListWidget::~ConfigureFiltersListWidget() = default;
+
+void ConfigureFiltersListWidget::paintEvent(QPaintEvent *event)
+{
+    if (!model() || model()->rowCount() == 0) {
+        QPainter p(viewport());
+
+        QFont font = p.font();
+        font.setItalic(true);
+        p.setFont(font);
+
+        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("No result found"));
+    } else {
+        QListWidget::paintEvent(event);
+    }
 }
 
 #include "moc_configurefilterswidget.cpp"

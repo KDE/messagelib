@@ -27,6 +27,7 @@
 #include <Akonadi/ItemFetchJob>
 #include <KIO/JobUiDelegateFactory>
 #include <QIcon>
+#include <QStringConverter>
 
 #include <QMenu>
 #include <QPointer>
@@ -35,7 +36,6 @@
 #include "messagecomposer_debug.h"
 #include <KActionCollection>
 #include <KActionMenu>
-#include <KEncodingFileDialog>
 #include <KFileItemActions>
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
@@ -48,9 +48,8 @@
 #include <Libkleo/KeySelectionDialog>
 #include <QGpgME/Protocol>
 
-#include "attachment/attachmentfromurljob.h"
+#include "messagecore/attachmentfromurlbasejob.h"
 #include "messagecore/attachmentupdatejob.h"
-#include "settings/messagecomposersettings.h"
 #include <Akonadi/EmailAddressSelectionDialog>
 #include <Akonadi/EmailAddressSelectionWidget>
 #include <KIO/JobUiDelegate>
@@ -75,21 +74,21 @@ public:
     explicit AttachmentControllerBasePrivate(AttachmentControllerBase *qq);
     ~AttachmentControllerBasePrivate();
 
-    void attachmentRemoved(const AttachmentPart::Ptr &part); // slot
-    void compressJobResult(KJob *job); // slot
-    void loadJobResult(KJob *job); // slot
-    void openSelectedAttachments(); // slot
-    void viewSelectedAttachments(); // slot
-    void editSelectedAttachment(); // slot
-    void editSelectedAttachmentWith(); // slot
-    void removeSelectedAttachments(); // slot
-    void saveSelectedAttachmentAs(); // slot
-    void selectedAttachmentProperties(); // slot
-    void editDone(MessageComposer::EditorWatcher *watcher); // slot
-    void attachPublicKeyJobResult(KJob *job); // slot
-    void slotAttachmentContentCreated(KJob *job); // slot
+    void attachmentRemoved(const AttachmentPart::Ptr &part);
+    void compressJobResult(KJob *job);
+    void loadJobResult(KJob *job);
+    void openSelectedAttachments();
+    void viewSelectedAttachments();
+    void editSelectedAttachment();
+    void editSelectedAttachmentWith();
+    void removeSelectedAttachments();
+    void saveSelectedAttachmentAs();
+    void selectedAttachmentProperties();
+    void editDone(MessageComposer::EditorWatcher *watcher);
+    void attachPublicKeyJobResult(KJob *job);
+    void slotAttachmentContentCreated(KJob *job);
     void addAttachmentPart(AttachmentPart::Ptr part);
-    void attachVcardFromAddressBook(KJob *job); // slot
+    void attachVcardFromAddressBook(KJob *job);
     void attachClipBoardElement(KJob *job);
     void selectedAllAttachment();
     void createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part);
@@ -179,7 +178,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
                                                                 "Do you want to keep the original one?"),
                                                            QString(/*caption*/),
                                                            KGuiItem(i18nc("Do not compress", "Keep")),
-                                                           KGuiItem(i18n("Compress")));
+                                                           KGuiItem(i18nc("@action:button", "Compress")));
         if (result == KMessageBox::ButtonCode::PrimaryAction) {
             // The user has chosen to keep the uncompressed file.
             return;
@@ -198,7 +197,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
 void AttachmentControllerBase::AttachmentControllerBasePrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach file"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach file"));
         return;
     }
 
@@ -271,7 +270,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::reloadAttachment
 void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(KJob *job)
 {
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to reload attachment"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to reload attachment"));
         return;
     }
     auto ajob = qobject_cast<AttachmentUpdateJob *>(job);
@@ -374,7 +373,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachPublicKeyJ
     // is that we want to show the proper caption ("public key" instead of "file")...
 
     if (job->error()) {
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach public key"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach public key"));
         return;
     }
 
@@ -388,7 +387,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachVcardFromA
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vCard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach vCard"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach vCard"));
         return;
     }
 
@@ -401,7 +400,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachClipBoardE
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get try to attach text from clipboard";
-        KMessageBox::error(wParent, job->errorString(), i18n("Failed to attach text from clipboard"));
+        KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach text from clipboard"));
         return;
     }
 
@@ -449,10 +448,10 @@ AttachmentControllerBase::~AttachmentControllerBase() = default;
 void AttachmentControllerBase::createActions()
 {
     // Create the actions.
-    d->attachPublicKeyAction = new QAction(i18n("Attach &Public Key..."), this);
+    d->attachPublicKeyAction = new QAction(i18nc("@action", "Attach &Public Key..."), this);
     connect(d->attachPublicKeyAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachPublicKeyDialog);
 
-    d->attachMyPublicKeyAction = new QAction(i18n("Attach &My Public Key"), this);
+    d->attachMyPublicKeyAction = new QAction(i18nc("@action", "Attach &My Public Key"), this);
     connect(d->attachMyPublicKeyAction, &QAction::triggered, this, &AttachmentControllerBase::attachMyPublicKey);
 
     d->attachmentMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("Attach"), this);
@@ -469,7 +468,7 @@ void AttachmentControllerBase::createActions()
     d->addAttachmentDirectoryAction->setIconText(i18n("Attach"));
     connect(d->addAttachmentDirectoryAction, &QAction::triggered, this, &AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog);
 
-    d->addOwnVcardAction = new QAction(i18n("Attach Own vCard"), this);
+    d->addOwnVcardAction = new QAction(i18nc("@action", "Attach Own vCard"), this);
     d->addOwnVcardAction->setIconText(i18n("Own vCard"));
     d->addOwnVcardAction->setCheckable(true);
     connect(d->addOwnVcardAction, &QAction::triggered, this, &AttachmentControllerBase::addOwnVcard);
@@ -515,7 +514,7 @@ void AttachmentControllerBase::createActions()
         d->editSelectedAttachment();
     });
 
-    d->editWithContextAction = new QAction(i18n("Edit With..."), this);
+    d->editWithContextAction = new QAction(i18nc("@action", "Edit With..."), this);
     connect(d->editWithContextAction, &QAction::triggered, this, [this]() {
         d->editSelectedAttachmentWith();
     });
@@ -529,8 +528,8 @@ void AttachmentControllerBase::createActions()
         d->saveSelectedAttachmentAs();
     });
 
-    d->propertiesAction = new QAction(i18n("Attachment Pr&operties..."), this);
-    d->propertiesContextAction = new QAction(i18n("Properties"), this);
+    d->propertiesAction = new QAction(i18nc("@action", "Attachment Pr&operties..."), this);
+    d->propertiesContextAction = new QAction(i18nc("@action", "Properties"), this);
     connect(d->propertiesAction, &QAction::triggered, this, [this]() {
         d->selectedAttachmentProperties();
     });
@@ -538,7 +537,7 @@ void AttachmentControllerBase::createActions()
         d->selectedAttachmentProperties();
     });
 
-    d->selectAllAction = new QAction(i18n("Select All"), this);
+    d->selectAllAction = new QAction(i18nc("@action", "Select All"), this);
     connect(d->selectAllAction, &QAction::triggered, this, &AttachmentControllerBase::selectedAllAttachment);
 
     d->reloadAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("Reload"), this);
@@ -711,7 +710,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
     job->setDeleteTemporaryFile(true);
     connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
         if (job->error() == KIO::ERR_USER_CANCELED) {
-            KMessageBox::error(d->wParent, i18n("KMail was unable to open the attachment."), job->errorString());
+            KMessageBox::error(d->wParent, job->errorString(), i18n("KMail was unable to open the attachment"));
             delete tempFile;
         } else {
             // The file was opened.  Delete it only when the composer is closed
@@ -725,7 +724,6 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 {
     auto composer = new MessageComposer::Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     auto attachmentJob = new MessageComposer::AttachmentJob(part, composer);
     connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) {
         d->slotAttachmentContentCreated(job);
@@ -797,7 +795,7 @@ void AttachmentControllerBase::saveAttachmentAs(const AttachmentPart::Ptr &part)
         pname = i18n("unnamed");
     }
 
-    const QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18n("Save Attachment As"), QUrl::fromLocalFile(pname));
+    const QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18nc("@title:window", "Save Attachment As"), QUrl::fromLocalFile(pname));
 
     if (url.isEmpty()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Save Attachment As dialog canceled.";
@@ -822,7 +820,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
             if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()),
                                                    i18nc("@title:window", "Save to File"),
-                                                   KGuiItem(i18n("&Replace")))
+                                                   KGuiItem(i18nc("@action:button", "&Replace")))
                 == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);
             }
@@ -894,15 +892,36 @@ void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()
 
 void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
-    const KEncodingFileDialog::Result result =
-        KEncodingFileDialog::getOpenUrlsAndEncoding(QString(), QUrl(), QString(), d->wParent, i18nc("@title:window", "Attach File"));
-    if (!result.URLs.isEmpty()) {
-        const QString encoding = MimeTreeParser::NodeHelper::fixEncoding(result.encoding);
-        const int numberOfFiles(result.URLs.count());
+    const auto urls = QFileDialog::getOpenFileUrls(d->wParent, i18nc("@title:window", "Attach File"));
+    if (!urls.isEmpty()) {
+        const int numberOfFiles(urls.count());
         for (int i = 0; i < numberOfFiles; ++i) {
-            const QUrl url = result.URLs.at(i);
+            const QUrl url = urls.at(i);
+            std::optional<QStringConverter::Encoding> encoding;
+
+            QFile file(url.toLocalFile());
+            if (file.open(QIODeviceBase::ReadOnly)) {
+                auto content = file.read(1024 * 1024); // only read the first 1MB
+                if (content.isEmpty()) {
+                    encoding = QStringConverter::System;
+                } else if (url.toLocalFile().endsWith(QStringLiteral("html"))) {
+                    encoding = QStringConverter::encodingForHtml(content);
+                } else {
+                    encoding = QStringConverter::encodingForData(content);
+                }
+            }
+
+            auto encodingName = QStringConverter::nameForEncoding(encoding.value_or(QStringConverter::System));
+            if (!encodingName) {
+                encodingName = "UTF-8";
+            }
+
+            if (strcmp(encodingName, "Locale") == 0) {
+                encodingName = "UTF-8";
+            }
+
             QUrl urlWithEncoding = url;
-            MessageCore::StringUtil::setEncodingFile(urlWithEncoding, encoding);
+            MessageCore::StringUtil::setEncodingFile(urlWithEncoding, QLatin1StringView(encodingName));
             QMimeDatabase mimeDb;
             const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
             if (mimeType.name() == QLatin1StringView("inode/directory")) {

@@ -69,7 +69,6 @@ static const struct {
 CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     : mPaintDevice(pd)
 {
-    recalculatePGPColors();
     const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
     const QString imgSrcHide = QStringLiteral("quicklistOpened.png");
     imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
@@ -420,6 +419,11 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
 bool CSSHelperBase::useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const
 {
     return mUseBrowserColor && htmlHeadSettings.htmlFormat;
+}
+
+const HeaderStylePlugin *CSSHelperBase::headerPlugin() const
+{
+    return mHeaderPlugin;
 }
 
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &htmlHeadSettings) const

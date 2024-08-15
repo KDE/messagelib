@@ -36,7 +36,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setObjectName(QLatin1StringView("close"));
     closeBtn->setIconSize(QSize(16, 16));
-    closeBtn->setToolTip(i18n("Close"));
+    closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
 
 #ifndef QT_NO_ACCESSIBILITY
     closeBtn->setAccessibleName(i18n("Close"));
@@ -50,26 +50,26 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     mSearch = new PimCommon::LineEditWithCompleterNg(this);
     mSearch->setObjectName(QLatin1StringView("searchline"));
-    mSearch->setToolTip(i18n("Text to search for"));
+    mSearch->setToolTip(i18nc("@info:tooltip", "Text to search for"));
     mSearch->setClearButtonEnabled(true);
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
     mFindNextBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this);
-    mFindNextBtn->setToolTip(i18n("Jump to next match"));
+    mFindNextBtn->setToolTip(i18nc("@info:tooltip", "Jump to next match"));
     mFindNextBtn->setObjectName(QLatin1StringView("findnext"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
 
     mFindPrevBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this);
-    mFindPrevBtn->setToolTip(i18n("Jump to previous match"));
+    mFindPrevBtn->setToolTip(i18nc("@info:tooltip", "Jump to previous match"));
     mFindPrevBtn->setObjectName(QLatin1StringView("findprevious"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
 
     auto optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
-    optionsBtn->setToolTip(i18n("Modify search behavior"));
+    optionsBtn->setToolTip(i18nc("@info:tooltip", "Modify search behavior"));
     mOptionsMenu = new QMenu(optionsBtn);
     mCaseSensitiveAct = mOptionsMenu->addAction(i18n("Case sensitive"));
     mCaseSensitiveAct->setCheckable(true);
@@ -94,6 +94,7 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
+    qGuiApp->installEventFilter(this);
 }
 
 FindBarBase::~FindBarBase() = default;
@@ -264,10 +265,16 @@ bool FindBarBase::event(QEvent *e)
             return true;
         }
     }
-    if (e->type() == QEvent::ApplicationPaletteChange) {
+    return QWidget::event(e);
+}
+
+bool FindBarBase::eventFilter(QObject *obj, QEvent *event)
+{
+    Q_UNUSED(obj);
+    if (event->type() == QEvent::ApplicationPaletteChange) {
         updatePalette();
     }
-    return QWidget::event(e);
+    return false;
 }
 
 #include "moc_findbarbase.cpp"

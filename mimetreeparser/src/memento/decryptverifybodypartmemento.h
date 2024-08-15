@@ -47,13 +47,10 @@ public:
         return m_vr;
     }
 
-private Q_SLOTS:
-    void slotResult(const GpgME::DecryptionResult &dr, const GpgME::VerificationResult &vr, const QByteArray &plainText);
-
 private:
+    void slotResult(const GpgME::DecryptionResult &dr, const GpgME::VerificationResult &vr, const QByteArray &plainText);
     void saveResult(const GpgME::DecryptionResult &, const GpgME::VerificationResult &, const QByteArray &);
 
-private:
     // input:
     const QByteArray m_cipherText;
     QPointer<QGpgME::DecryptVerifyJob> m_job;

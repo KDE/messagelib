@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2013-11-15 13:52+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bs <bs@kde.org>\n"
@@ -586,12 +586,16 @@ msgid "Reset to default"
 msgstr "Reset na podrazumijevano"
 
 #: templatesconfiguration.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset Current Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Reset trenutnog predloška"
 
 #: templatesconfiguration.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset All Templates"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Reset svih predložaka"
 

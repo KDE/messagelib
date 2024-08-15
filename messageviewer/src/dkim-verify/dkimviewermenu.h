@@ -22,7 +22,7 @@ class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 public:
     explicit DKIMViewerMenu(QObject *parent = nullptr);
     ~DKIMViewerMenu() override;
-    QMenu *menu() const;
+    [[nodiscard]] QMenu *menu() const;
 
     void setEnableUpdateDkimKeyMenu(bool enabled);
 Q_SIGNALS:

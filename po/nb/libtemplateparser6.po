@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2013-09-30 09:50+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -584,12 +584,16 @@ msgid "Reset to default"
 msgstr "Tilbakestill til standard"
 
 #: templatesconfiguration.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset Current Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Tilbakestill gjeldende mal"
 
 #: templatesconfiguration.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset All Templates"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Tilbakestill alle maler"
 

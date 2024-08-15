@@ -7,7 +7,7 @@
 
 #include "messagecore_export.h"
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <QUrl>
 
 #include <QByteArray>

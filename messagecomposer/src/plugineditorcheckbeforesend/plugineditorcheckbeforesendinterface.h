@@ -25,7 +25,7 @@ public:
     explicit PluginEditorCheckBeforeSendInterface(QObject *parent = nullptr);
     ~PluginEditorCheckBeforeSendInterface() override;
 
-    virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;
+    [[nodiscard]] virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;
 
     void setParentWidget(QWidget *parent);
     [[nodiscard]] QWidget *parentWidget() const;

@@ -38,8 +38,13 @@ static const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";
 RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)
     , mView(new Akonadi::RecipientsPickerWidget(true, nullptr, this))
+    , mUser1Button(new QPushButton(this))
+    , mUser2Button(new QPushButton(this))
+    , mUser3Button(new QPushButton(this))
+    , mUser4Button(new QPushButton(this))
     , mSelectedLabel(new QLabel(this))
 {
+    // TODO add accountactivitiesabstract
     setObjectName(QLatin1StringView("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
@@ -53,7 +58,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     mainLayout->addWidget(mSelectedLabel);
 
-    auto searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
+    auto searchLDAPButton = new QPushButton(i18nc("@action:button", "Search &Directory Service"), this);
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
     mainLayout->addWidget(searchLDAPButton);
 
@@ -65,13 +70,9 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     }
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    mUser1Button = new QPushButton(this);
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
-    mUser2Button = new QPushButton(this);
     buttonBox->addButton(mUser2Button, QDialogButtonBox::ActionRole);
-    mUser3Button = new QPushButton(this);
     buttonBox->addButton(mUser3Button, QDialogButtonBox::ActionRole);
-    mUser4Button = new QPushButton(this);
     buttonBox->addButton(mUser4Button, QDialogButtonBox::ActionRole);
 
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RecipientsPicker::reject);

@@ -20,9 +20,7 @@
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
-#include "MessageCore/StringUtil"
-
-#include <KMime/DateFormatter> // kdepimlibs
+#include <MessageCore/StringUtil>
 
 #include <Akonadi/Item>
 #include <KTwoFingerTap>
@@ -2264,14 +2262,6 @@ bool View::event(QEvent *e)
             tip += htmlCodeForStandardRow.arg(mi->folder(), i18n("Folder"));
         }
 
-        if (mi->hasAnnotation()) {
-            if (textIsLeftToRight) {
-                tip += htmlCodeForStandardRow.arg(i18n("Note"), mi->annotation().replace(QLatin1Char('\n'), QStringLiteral("<br>")));
-            } else {
-                tip += htmlCodeForStandardRow.arg(mi->annotation().replace(QLatin1Char('\n'), QStringLiteral("<br>"))).arg(i18n("Note"));
-            }
-        }
-
         QString content = MessageList::Util::contentSummary(mi->akonadiItem());
         if (!content.trimmed().isEmpty()) {
             if (textIsLeftToRight) {
@@ -2524,7 +2514,7 @@ QList<Akonadi::MessageStatus> View::currentFilterStatus() const
     return d->mWidget->currentFilterStatus();
 }
 
-MessageList::Core::QuickSearchLine::SearchOptions View::currentOptions() const
+MessageList::Core::SearchMessageByButtons::SearchOptions View::currentOptions() const
 {
     return d->mWidget->currentOptions();
 }
@@ -2620,10 +2610,6 @@ void View::ViewPrivate::onPressed(QMouseEvent *e)
                 qCDebug(MESSAGELIST_LOG) << "Left hit with selectedIndexes().count() == " << q->selectedIndexes().count();
 
                 switch (mDelegate->hitContentItem()->type()) {
-                case Theme::ContentItem::AnnotationIcon:
-                    static_cast<MessageItem *>(it)->editAnnotation(q);
-                    return; // don't select the item
-                    break;
                 case Theme::ContentItem::ActionItemStateIcon:
                     q->changeMessageStatus(static_cast<MessageItem *>(it),
                                            it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),

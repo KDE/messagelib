@@ -36,7 +36,7 @@ public:
      * @param defaultDomain The default domain that shall be used when expanding aliases.
      * @param parent The parent object.
      */
-    AliasesExpandJob(const QString &recipients, const QString &defaultDomain, QObject *parent = nullptr);
+    explicit AliasesExpandJob(const QString &recipients, const QString &defaultDomain, QObject *parent = nullptr);
 
     /**
      * Destroys the aliases expand job.
@@ -60,11 +60,9 @@ public:
 
     [[nodiscard]] QStringList emailAddressOnly() const;
 
-private Q_SLOTS:
+private:
     MESSAGECOMPOSER_NO_EXPORT void slotDistributionListExpansionDone(KJob *);
     MESSAGECOMPOSER_NO_EXPORT void slotNicknameExpansionDone(KJob *);
-
-private:
     MESSAGECOMPOSER_NO_EXPORT void finishExpansion();
 
     QStringList mEmailAddressOnly;

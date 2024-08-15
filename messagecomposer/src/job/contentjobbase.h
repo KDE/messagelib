@@ -49,7 +49,7 @@ public:
       it possible to add subjobs from the outside.
       Transfers ownership of the @p job to this object.
     */
-    [[nodiscard]] bool appendSubjob(ContentJobBase *job);
+    bool appendSubjob(ContentJobBase *job);
 
     /**
       Set some extra content to be saved with the job, and available

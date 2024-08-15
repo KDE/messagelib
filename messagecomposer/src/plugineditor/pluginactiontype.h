@@ -33,7 +33,7 @@ public:
     };
     PluginActionType();
 
-    PluginActionType(QAction *action, Type type);
+    explicit PluginActionType(QAction *action, Type type);
     [[nodiscard]] QAction *action() const;
     [[nodiscard]] Type type() const;
 

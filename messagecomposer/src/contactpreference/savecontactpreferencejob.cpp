@@ -31,7 +31,7 @@ public:
     {
     }
 
-    SaveContactPreferenceJob *q_ptr;
+    SaveContactPreferenceJob *const q_ptr;
     Q_DECLARE_PUBLIC(SaveContactPreferenceJob)
 
     const QString mEmail;
@@ -67,7 +67,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
     if (items.isEmpty()) {
         bool ok = true;
         const QString fullName = QInputDialog::getText(nullptr,
-                                                       i18n("Name Selection"),
+                                                       i18nc("@title:window", "Name Selection"),
                                                        i18n("Which name shall the contact '%1' have in your address book?", d->mEmail),
                                                        QLineEdit::Normal,
                                                        QString(),

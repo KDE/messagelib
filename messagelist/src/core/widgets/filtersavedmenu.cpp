@@ -13,8 +13,8 @@ using namespace MessageList::Core;
 
 FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     : QMenu(parent)
-    , mSaveAction(new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save Filter..."), this))
-    , mConfigureAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure..."), this))
+    , mSaveAction(new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18nc("@action", "Save Filter..."), this))
+    , mConfigureAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18nc("@action", "Configure..."), this))
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
 }

@@ -263,14 +263,14 @@ void NodeHelperTest::testFromAsString()
     //  |- encSubExtra
 
     KMime::Message msg;
-    msg.from(true)->fromUnicodeString(tlSender, "UTF-8");
+    msg.from(true)->fromUnicodeString(tlSender);
     auto node = msg.topLevel();
     auto subNode = new KMime::Content();
     auto subExtra = new KMime::Content();
 
     // Encapsulated message
     auto encMsg = new KMime::Message;
-    encMsg->from(true)->fromUnicodeString(encSender, "UTF-8");
+    encMsg->from(true)->fromUnicodeString(encSender);
     auto encNode = encMsg->topLevel();
     auto encSubNode = new KMime::Content();
     auto encSubExtra = new KMime::Content();

@@ -24,13 +24,15 @@ using namespace MessageComposer;
 RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, QWidget *parent)
     : QWidget(parent)
     , mEditor(view)
+    , mTotalLabel(new QLabel(this))
+    , mDistributionListButton(new QPushButton(i18nc("@action:button", "Save List..."), this))
+    , mSelectButton(new QPushButton(i18nc("@action:button Open recipient selection dialog.", "Se&lect..."), this))
 {
     auto topLayout = new QVBoxLayout(this);
 
     topLayout->setContentsMargins({});
     topLayout->addStretch(1);
 
-    mTotalLabel = new QLabel(this);
     mTotalLabel->setAlignment(Qt::AlignCenter);
     mTotalLabel->setTextFormat(Qt::PlainText);
     topLayout->addWidget(mTotalLabel);
@@ -38,13 +40,11 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
 
     topLayout->addStretch(1);
 
-    mDistributionListButton = new QPushButton(i18nc("@action:button", "Save List..."), this);
     topLayout->addWidget(mDistributionListButton);
     mDistributionListButton->hide();
     connect(mDistributionListButton, &QAbstractButton::clicked, this, &RecipientsEditorSideWidget::saveDistributionList);
     mDistributionListButton->setToolTip(i18nc("@info:tooltip", "Save recipients as distribution list"));
 
-    mSelectButton = new QPushButton(i18nc("@action:button Open recipient selection dialog.", "Se&lect..."), this);
     topLayout->addWidget(mSelectButton);
     connect(mSelectButton, &QPushButton::clicked, this, &RecipientsEditorSideWidget::pickRecipient);
     mSelectButton->setToolTip(i18nc("@info:tooltip", "Select recipients from address book"));

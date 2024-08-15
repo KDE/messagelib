@@ -22,12 +22,12 @@ class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ScamCheckShortUrlManager(QObject *parent = nullptr);
     ~ScamCheckShortUrlManager() override;
     static ScamCheckShortUrlManager *self();
     [[nodiscard]] ScamCheckShortUrl *scamCheckShortUrl() const;
 
 private:
+    explicit ScamCheckShortUrlManager(QObject *parent = nullptr);
     std::unique_ptr<ScamCheckShortUrlManagerPrivate> const d;
 };
 }

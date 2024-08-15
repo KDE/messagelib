@@ -358,7 +358,7 @@ void ComposerPrivate::contentJobFinished(KJob *job)
         headers->setHeader(skeletonMessage->messageID());
 
         auto realTo = new KMime::Headers::Generic("X-KMail-EncBccRecipients");
-        realTo->fromUnicodeString(eJob->recipients().join(QLatin1Char('%')), "utf-8");
+        realTo->fromUnicodeString(eJob->recipients().join(QLatin1Char('%')));
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got one of multiple messages sending to:" << realTo->asUnicodeString();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to recipients:" << recipients;
@@ -600,7 +600,7 @@ void Composer::setSignAndEncrypt(const bool doSign, const bool doEncrypt)
     d->encrypt = doEncrypt;
 }
 
-void Composer::setMessageCryptoFormat(Kleo::CryptoMessageFormat format)
+void Composer::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
 {
     Q_D(Composer);
 

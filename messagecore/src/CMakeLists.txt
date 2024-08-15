@@ -32,16 +32,16 @@ target_sources(KPim6MessageCore PRIVATE
     misc/imagecollector.cpp
     misc/mailinglist.cpp
 
-    helpers/nodehelper.cpp
-
     utils/stringutil.cpp
     utils/util.cpp
     utils/colorutil.cpp
+    utils/dateformatter.cpp
 
     settings/messagecoresettings.cpp
     misc/imagecollector.h
     misc/mailinglist.h
     utils/colorutil.h
+    utils/dateformatter.h
     utils/stringutil.h
     utils/util.h
     attachment/attachmentloadjob.h
@@ -60,7 +60,6 @@ target_sources(KPim6MessageCore PRIVATE
     autocrypt/autocryptstorage_p.h
     autocrypt/autocryptrecipient.h
     autocrypt/autocryptrecipient_p.h
-    helpers/nodehelper.h
     settings/messagecoresettings.h
 )
 
@@ -84,7 +83,7 @@ ecm_qt_declare_logging_category(KPim6MessageCore HEADER autocrypt_debug.h IDENTI
     EXPORT MESSAGELIB
 )
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -141,6 +140,7 @@ ecm_generate_headers(MessageCore_Camelcaseutils_HEADERS
     ColorUtil
     StringUtil
     Util
+    DateFormatter
     REQUIRED_HEADERS MessageCore_utils_HEADERS
     PREFIX MessageCore
     RELATIVE utils
@@ -170,14 +170,6 @@ ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
     RELATIVE attachment
 )
 
-ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
-    HEADER_NAMES
-    NodeHelper
-    REQUIRED_HEADERS MessageCore_helpers_HEADERS
-    PREFIX MessageCore
-    RELATIVE helpers
-)
-
 ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     HEADER_NAMES
     AutocryptRecipient
@@ -190,7 +182,6 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
 
 install(FILES
     ${MessageCore_Camelcaseautocrypt_HEADERS}
-    ${MessageCore_Camelcasehelpers_HEADERS}
     ${MessageCore_Camelcasesettings_HEADERS}
     ${MessageCore_Camelcaseutils_HEADERS}
     ${MessageCore_Camelcaseattachment_HEADERS}
@@ -201,7 +192,6 @@ install(FILES
 
 install(FILES
     ${MessageCore_autocrypt_HEADERS}
-    ${MessageCore_helpers_HEADERS}
     ${MessageCore_settings_HEADERS}
     ${MessageCore_utils_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
@@ -215,7 +205,7 @@ install(FILES
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageCore_QCH
         NAME KPim6MessageCore
@@ -224,7 +214,6 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${MessageCore_autocrypt_HEADERS}
-        ${MessageCore_helpers_HEADERS}
         ${MessageCore_settings_HEADERS}
         ${MessageCore_utils_HEADERS}
         LINK_QCHS
@@ -238,7 +227,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageCore_QCH

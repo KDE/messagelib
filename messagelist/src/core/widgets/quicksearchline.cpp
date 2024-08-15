@@ -11,9 +11,11 @@
 
 #include "core/filter.h"
 #include "searchlinestatus.h"
+#include "searchstatusbuttons.h"
 #include <KLocalizedString>
 
 #include <QComboBox>
+#include <QEvent>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -22,6 +24,8 @@ using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
     , mSearchEdit(new SearchLineStatus(this))
+    , mSearchStatusButtons(new SearchStatusButtons(this))
+    , mSearchMessageByButtons(new SearchMessageByButtons(this))
     , mTagFilterCombo(new QComboBox(this))
 {
     auto vbox = new QVBoxLayout(this);
@@ -34,12 +38,17 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->setSpacing(0);
     vbox->addWidget(w);
 
-    connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
-    connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
+    vbox->addWidget(mSearchMessageByButtons);
+    mSearchMessageByButtons->setVisible(false);
+
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
     mSearchEdit->setObjectName(QLatin1StringView("quicksearch"));
     mSearchEdit->setClearButtonEnabled(true);
+    connect(mSearchMessageByButtons, &SearchMessageByButtons::searchOptionChanged, this, [this]() {
+        mSearchEdit->filterAdded();
+        Q_EMIT searchOptionChanged();
+    });
 
     connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
     connect(mSearchEdit, &SearchLineStatus::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
@@ -47,8 +56,12 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::activateFilter, this, &QuickSearchLine::activateFilter);
 
     hbox->addWidget(mSearchEdit);
+    mSearchStatusButtons->setObjectName(QLatin1StringView("mSearchStatusButtons"));
+    hbox->addWidget(mSearchStatusButtons);
+    connect(mSearchStatusButtons, &SearchStatusButtons::filterStatusChanged, this, &QuickSearchLine::slotFilterActionChanged);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
+    mTagFilterCombo->setObjectName(QLatin1StringView("mTagFilterCombo"));
     mTagFilterCombo->setMaximumWidth(300);
     mTagFilterCombo->setMaximumWidth(200);
     mTagFilterCombo->hide();
@@ -73,6 +86,7 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
     }
     if (!text.trimmed().isEmpty()) {
         if (KStringHandler::logicalLength(text) >= minimumStringLength) {
+            mSearchMessageByButtons->setVisible(true);
             Q_EMIT searchEditTextEdited(text);
         }
     } else {
@@ -86,17 +100,22 @@ void QuickSearchLine::slotClearButtonClicked()
         mTagFilterCombo->setCurrentIndex(0);
     }
     mSearchEdit->clearFilterButtonClicked();
+    mSearchStatusButtons->clearFilter();
+    mSearchMessageByButtons->clearFilter();
+    mSearchMessageByButtons->setVisible(false);
     Q_EMIT clearButtonClicked();
 }
 
-void QuickSearchLine::setSearchOptions(QuickSearchLine::SearchOptions opts)
+void QuickSearchLine::setSearchOptions(SearchMessageByButtons::SearchOptions opts)
 {
-    mSearchEdit->setSearchOptions(opts);
+    mSearchMessageByButtons->setSearchOptions(opts);
+    mSearchMessageByButtons->setVisible(true);
+    mSearchEdit->filterAdded();
 }
 
-QuickSearchLine::SearchOptions QuickSearchLine::searchOptions() const
+SearchMessageByButtons::SearchOptions QuickSearchLine::searchOptions() const
 {
-    return mSearchEdit->searchOptions();
+    return mSearchMessageByButtons->searchOptions();
 }
 
 void QuickSearchLine::focusQuickSearch(const QString &selectedText)
@@ -124,18 +143,21 @@ void QuickSearchLine::resetFilter()
     }
     mSearchEdit->clearFilterButtonClicked();
     mSearchEdit->setLocked(false);
+    mSearchStatusButtons->clearFilter();
 }
 
 void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)
 {
     mLstStatus = lst;
+    mSearchEdit->filterAdded();
     Q_EMIT statusButtonsClicked();
 }
 
 void QuickSearchLine::setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus)
 {
     mLstStatus = newLstStatus;
-    mSearchEdit->setFilterMessageStatus(mLstStatus);
+    mSearchEdit->filterAdded();
+    mSearchStatusButtons->setFilterMessageStatus(mLstStatus);
 }
 
 QList<Akonadi::MessageStatus> QuickSearchLine::status() const
@@ -145,12 +167,12 @@ QList<Akonadi::MessageStatus> QuickSearchLine::status() const
 
 bool QuickSearchLine::containsOutboundMessages() const
 {
-    return mSearchEdit->containsOutboundMessages();
+    return mSearchMessageByButtons->containsOutboundMessages();
 }
 
 void QuickSearchLine::setContainsOutboundMessages(bool containsOutboundMessages)
 {
-    mSearchEdit->setContainsOutboundMessages(containsOutboundMessages);
+    mSearchMessageByButtons->setContainsOutboundMessages(containsOutboundMessages);
 }
 
 void QuickSearchLine::updateComboboxVisibility()
@@ -172,6 +194,7 @@ void QuickSearchLine::changeQuicksearchVisibility(bool show)
 {
     mSearchEdit->setVisible(show);
     mTagFilterCombo->setVisible(show && mTagFilterCombo->count());
+    mSearchStatusButtons->setVisible(show);
 }
 
 void QuickSearchLine::addCompletionItem(const QString &str)

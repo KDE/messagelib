@@ -48,13 +48,13 @@ public:
                                  bool isPrinting) const;
 
 private:
-    [[nodiscard]] QString format(const QString &absolutePath,
-                                 const KTextTemplate::Template &headerTemplate,
-                                 const QStringList &displayExtraHeaders,
-                                 bool isPrinting,
-                                 const MessageViewer::HeaderStyle *style,
-                                 KMime::Message *message,
-                                 bool showEmoticons = true) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString format(const QString &absolutePath,
+                                                         const KTextTemplate::Template &headerTemplate,
+                                                         const QStringList &displayExtraHeaders,
+                                                         bool isPrinting,
+                                                         const MessageViewer::HeaderStyle *style,
+                                                         KMime::Message *message,
+                                                         bool showEmoticons = true) const;
     class GrantleeHeaderFormatterPrivate;
     std::unique_ptr<GrantleeHeaderFormatterPrivate> const d;
 };

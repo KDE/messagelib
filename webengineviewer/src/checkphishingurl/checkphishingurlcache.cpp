@@ -40,7 +40,7 @@ public:
         load();
     }
 
-    CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
+    [[nodiscard]] CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
     void addCheckPhishingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
     void clearCache();
     void load();

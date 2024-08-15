@@ -49,8 +49,6 @@ void EncryptJobTest::initTestCase()
 void EncryptJobTest::testContentDirect()
 {
     Composer composer;
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
@@ -81,8 +79,6 @@ void EncryptJobTest::testContentDirect()
 void EncryptJobTest::testContentChained()
 {
     Composer composer;
-    const QList<QByteArray> charsets = {"us-ascii"};
-    composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
@@ -157,15 +153,14 @@ void EncryptJobTest::testHeaders()
     VERIFYEXEC(eJob);
 
     QByteArray mimeType("multipart/encrypted");
-    QByteArray charset("ISO-8859-1");
 
     KMime::Content *result = eJob->content();
     result->assemble();
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
-    QCOMPARE(result->contentType(false)->charset(), charset);
-    QCOMPARE(result->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
+    QCOMPARE(result->contentType(false)->charset(), "UTF-8");
+    QCOMPARE(result->contentType(false)->parameter("protocol"), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
@@ -207,7 +202,7 @@ void EncryptJobTest::testProtectedHeaders()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+    skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 

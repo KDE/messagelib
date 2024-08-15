@@ -66,7 +66,7 @@ public:
     /**
      * Sets the search string for this filter.
      */
-    void setSearchString(const QString &search, QuickSearchLine::SearchOptions options);
+    void setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options);
 
     /**
      * Returns the currently set MessageItem::Tag id
@@ -89,7 +89,7 @@ public:
      */
     [[nodiscard]] bool isEmpty() const;
 
-    [[nodiscard]] QuickSearchLine::SearchOptions currentOptions() const;
+    [[nodiscard]] SearchMessageByButtons::SearchOptions currentOptions() const;
 
     void save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter = -1);
     [[nodiscard]] static Filter *load(const KSharedConfig::Ptr &config, int filternumber);
@@ -100,7 +100,7 @@ public:
     [[nodiscard]] const QString &filterName() const;
     void setFilterName(const QString &newFilterName);
 
-    void setOptions(QuickSearchLine::SearchOptions newOptions);
+    void setOptions(SearchMessageByButtons::SearchOptions newOptions);
 
     [[nodiscard]] static Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
     [[nodiscard]] const QString &iconName() const;
@@ -116,7 +116,7 @@ private:
     QString mTagId; ///< Messages must have this tag, if not empty. Contains a tag url.
     Akonadi::Collection mCurrentFolder;
     QSet<qint64> mMatchingItemIds;
-    QuickSearchLine::SearchOptions mOptions;
+    SearchMessageByButtons::SearchOptions mOptions;
     QStringList mSearchList;
     QString mIdentifier;
     QString mFilterName;

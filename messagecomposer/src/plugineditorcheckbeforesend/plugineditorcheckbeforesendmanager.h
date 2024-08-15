@@ -21,7 +21,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendManager(QObject *parent = nullptr);
     ~PluginEditorCheckBeforeSendManager() override;
 
     static PluginEditorCheckBeforeSendManager *self();
@@ -34,6 +33,7 @@ public:
     [[nodiscard]] PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit PluginEditorCheckBeforeSendManager(QObject *parent = nullptr);
     std::unique_ptr<PluginEditorCheckBeforeSendManagerPrivate> const d;
 };
 }

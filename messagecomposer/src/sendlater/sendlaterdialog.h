@@ -37,7 +37,7 @@ public:
     explicit SendLaterDialog(SendLaterInfo *info, QWidget *parent = nullptr);
     ~SendLaterDialog() override;
 
-    SendLaterInfo *info();
+    [[nodiscard]] SendLaterInfo *info();
 
     [[nodiscard]] SendLaterAction action() const;
 
@@ -49,7 +49,6 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void slotDateChanged(const QString &date);
     MESSAGECOMPOSER_NO_EXPORT void load(SendLaterInfo *info);
 
-private:
     QDateTime mSendDateTime;
     SendLaterAction mAction = Unknown;
     QCheckBox *mDelay = nullptr;

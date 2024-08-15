@@ -7,7 +7,6 @@
 
 #include "messageviewer_export.h"
 #include <QWidget>
-class QTreeWidget;
 namespace MessageViewer
 {
 class DKIMManagerKeyTreeView;

@@ -58,5 +58,5 @@ void ConvertHtmlToPlainText::toCleanPlainText(QString &text)
     text.remove(QChar(0xFFFC));
 
     // In plaintext mode, each space is non-breaking.
-    text.replace(QChar::Nbsp, QChar::fromLatin1(' '));
+    text.replace(QChar::Nbsp, QLatin1Char(' '));
 }

@@ -2,15 +2,15 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the messagelib package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2010.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
-"PO-Revision-Date: 2023-09-26 20:18+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"PO-Revision-Date: 2024-05-17 06:24+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -550,7 +550,7 @@ msgid ""
 "templates and per-identity templates.</p>"
 msgstr ""
 "<p>Ŝablonoj specifitaj ĉi tie estas dosierujo-specifaj. Ili superregas kaj "
-"tutmondajn ŝablonojn kaj po-identajn ŝablonojn.</p>"
+"ĉieajn ŝablonojn kaj po-identajn ŝablonojn.</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -559,9 +559,9 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>Ŝablonoj specifitaj ĉi tie estas identecspecifaj. Ili anstataŭas "
-"tutmondajn ŝablonojn, sed povas esti anstataŭitaj de po-dosierujoj ŝablonoj "
-"se ili estas specifitaj.</p>"
+"<p>Ŝablonoj specifitaj ĉi tie estas identecspecifaj. Ili anstataŭas ĉieajn "
+"ŝablonojn, sed povas esti anstataŭitaj de po-dosierujoj ŝablonoj se ili "
+"estas specifitaj.</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -569,8 +569,8 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>Ĉi tiuj estas tutmondaj (defaŭltaj) ŝablonoj. Ili povas esti anstataŭitaj "
-"de po-identaj ŝablonoj aŭ po-dosierujoj se ili estas specifitaj.</p>"
+"<p>Ĉi tiuj estas ĉieaj (defaŭltaj) ŝablonoj. Ili povas esti anstataŭitaj de "
+"po-identaj ŝablonoj aŭ po-dosierujoj se ili estas specifitaj.</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
@@ -585,11 +585,13 @@ msgstr "Restarigi al defaŭlta"
 
 #: templatesconfiguration.cpp:102
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Restarigi Nunan Ŝablonon"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Restarigi Ĉiuj Ŝablonoj"
 

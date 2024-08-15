@@ -22,7 +22,11 @@ class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject
 {
     Q_OBJECT
 public:
-    enum UrlStatus { UrlOk = 0, MalWare = 1, Unknown = 2 };
+    enum UrlStatus {
+        UrlOk = 0,
+        MalWare = 1,
+        Unknown = 2,
+    };
     explicit HashCacheManager(QObject *parent = nullptr);
     ~HashCacheManager() override;
 

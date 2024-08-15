@@ -218,13 +218,13 @@ public:
     */
     [[nodiscard]] std::vector<SplitInfo> encryptionItems(CryptoMessageFormat f) const;
 
-    std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
 
     /** If Autocrypt keys are used to find valid PGP Keys
      */
     void setAutocryptEnabled(bool autocryptEnabled);
 
-    std::map<QByteArray, QString> useAutocrypt() const;
+    [[nodiscard]] std::map<QByteArray, QString> useAutocrypt() const;
 
     /** Disable ContactSearchJob in KeyResolver.
         A usecase is that ests won't fireup an Akonadi instance only for this feature.
@@ -241,35 +241,35 @@ public:
 
 private:
     void dump() const;
-    std::vector<Item> getEncryptionItems(const QStringList &recipients);
-    std::vector<GpgME::Key> getEncryptionKeys(const QString &recipient, bool quiet) const;
+    [[nodiscard]] std::vector<Item> getEncryptionItems(const QStringList &recipients);
+    [[nodiscard]] std::vector<GpgME::Key> getEncryptionKeys(const QString &recipient, bool quiet) const;
 
-    Kleo::Result showKeyApprovalDialog(bool &finalySendUnencrypted);
+    [[nodiscard]] Kleo::Result showKeyApprovalDialog(bool &finalySendUnencrypted);
 
-    bool encryptionPossible() const;
-    bool signingPossible() const;
-    Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
-    Kleo::Result resolveSigningKeysForEncryption();
-    Kleo::Result resolveSigningKeysForSigningOnly();
+    [[nodiscard]] bool encryptionPossible() const;
+    [[nodiscard]] bool signingPossible() const;
+    [[nodiscard]] Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
+    [[nodiscard]] Kleo::Result resolveSigningKeysForEncryption();
+    [[nodiscard]] Kleo::Result resolveSigningKeysForSigningOnly();
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
     void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);
     void addKeys(const std::vector<Item> &items);
-    QStringList allRecipients() const;
-    std::vector<GpgME::Key> signingKeysFor(CryptoMessageFormat f) const;
+    [[nodiscard]] QStringList allRecipients() const;
+    [[nodiscard]] std::vector<GpgME::Key> signingKeysFor(CryptoMessageFormat f) const;
 
-    std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
+    [[nodiscard]] std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 
-    std::vector<GpgME::Key>
+    [[nodiscard]] std::vector<GpgME::Key>
     selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
 
-    QStringList keysForAddress(const QString &address) const;
+    [[nodiscard]] QStringList keysForAddress(const QString &address) const;
     void setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const;
 
-    bool encryptToSelf() const;
-    bool showApprovalDialog() const;
+    [[nodiscard]] bool encryptToSelf() const;
+    [[nodiscard]] bool showApprovalDialog() const;
 
-    MessageComposer::ContactPreference lookupContactPreferences(const QString &address) const;
+    [[nodiscard]] MessageComposer::ContactPreference lookupContactPreferences(const QString &address) const;
     void saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const;
 
 private:

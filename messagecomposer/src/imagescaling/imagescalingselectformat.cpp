@@ -20,6 +20,7 @@ using namespace MessageComposer;
 
 ImageScalingSelectFormatDialog::ImageScalingSelectFormatDialog(QWidget *parent)
     : QDialog(parent)
+    , mListWidget(new QListWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Select Image Format"));
     auto mainLayout = new QVBoxLayout(this);
@@ -29,7 +30,6 @@ ImageScalingSelectFormatDialog::ImageScalingSelectFormatDialog(QWidget *parent)
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    mListWidget = new QListWidget(this);
     mainLayout->addWidget(mListWidget);
     mainLayout->addWidget(buttonBox);
 
@@ -72,7 +72,7 @@ QString ImageScalingSelectFormatDialog::format() const
 
 void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 {
-    const QStringList listFormat = format.split(QLatin1Char(';'));
+    const QList<QStringView> listFormat = QStringView(format).split(QLatin1Char(';'));
     const int numberOfElement(mListWidget->count());
     for (int i = 0; i < numberOfElement; ++i) {
         QListWidgetItem *item = mListWidget->item(i);
@@ -84,14 +84,14 @@ void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 
 ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
     : QWidget(parent)
+    , mFormat(new QLineEdit(this))
+    , mSelectFormat(new QPushButton(i18nc("@action:button", "Select Format..."), this))
 {
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
-    mFormat = new QLineEdit(this);
     connect(mFormat, &QLineEdit::textChanged, this, &ImageScalingSelectFormat::textChanged);
     mFormat->setReadOnly(true);
     lay->addWidget(mFormat);
-    mSelectFormat = new QPushButton(i18n("Select Format..."), this);
     connect(mSelectFormat, &QPushButton::clicked, this, &ImageScalingSelectFormat::slotSelectFormat);
     lay->addWidget(mSelectFormat);
 }

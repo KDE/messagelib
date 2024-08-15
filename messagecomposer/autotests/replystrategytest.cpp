@@ -336,7 +336,7 @@ void ReplyStrategyTest::testReply()
     }
     if (!oLP.isEmpty()) {
         auto listPost = new KMime::Headers::Generic("List-Post");
-        listPost->from7BitString("<mailto:" + oLP.toLatin1() + ">");
+        listPost->from7BitString(QByteArray("<mailto:" + oLP.toLatin1() + ">"));
         original->setHeader(listPost);
     }
     if (!oMRT.isEmpty()) {

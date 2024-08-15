@@ -104,8 +104,6 @@ void SinglepartJobTest::testContentType()
 void SinglepartJobTest::testContentTransferEncoding()
 {
     auto composer = new Composer;
-    QVERIFY(!composer->globalPart()->is8BitAllowed());
-    composer->globalPart()->setFallbackCharsetEnabled(true);
 
     // 7bit if possible.
     {
@@ -152,21 +150,6 @@ void SinglepartJobTest::testContentTransferEncoding()
         delete cjob;
     }
 
-    // 8bit if asked for and allowed.
-    {
-        composer->globalPart()->set8BitAllowed(true);
-        QByteArray data("[ăîşţâ]"); // utf-8
-        auto cjob = new SinglepartJob(composer);
-        cjob->setData(data);
-        QVERIFY(cjob->exec());
-        Content *result = cjob->content();
-        result->assemble();
-        qDebug() << result->encodedContent();
-        QVERIFY(result->contentTransferEncoding(false));
-        QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CE8Bit);
-        QCOMPARE(result->body(), data);
-        delete cjob;
-    }
     delete composer;
 }
 

@@ -59,7 +59,7 @@ add_subdirectory(pics)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(dkim-verify/autotests)
     add_subdirectory(dkim-verify/tests)
 endif()
@@ -385,7 +385,7 @@ ki18n_wrap_ui(KPim6MessageViewer
 )
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6MessageViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -433,11 +433,11 @@ target_link_libraries(KPim6MessageViewer
     KF6::TextAddonsWidgets
 )
 
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6MessageViewer
         PRIVATE
         KF6::TextEditTextToSpeech
-    )
+)
 endif()
 
 target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
@@ -721,15 +721,15 @@ install(FILES
     COMPONENT Devel
 )
 
-install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
+install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
 
-install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR} )
-install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
+install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer)
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageViewer")
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6MessageViewer_QCH
         NAME KPim6MessageViewer
@@ -765,7 +765,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 
 ecm_install_qch_export(
     TARGETS KPim6MessageViewer_QCH

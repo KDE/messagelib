@@ -44,7 +44,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     Q_ASSERT(signedData);
     Q_ASSERT(signature);
 
-    QString protocolContentType = node->contentType()->parameter(QStringLiteral("protocol")).toLower();
+    QString protocolContentType = node->contentType()->parameter("protocol").toLower();
     const QString signatureContentType = QLatin1StringView(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
         qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "

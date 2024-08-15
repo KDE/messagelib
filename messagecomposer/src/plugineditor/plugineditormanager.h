@@ -21,7 +21,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorManager(QObject *parent = nullptr);
     ~PluginEditorManager() override;
 
     static PluginEditorManager *self();
@@ -35,6 +34,7 @@ public:
     [[nodiscard]] PluginEditor *pluginFromIdentifier(const QString &id);
 
 private:
+    explicit PluginEditorManager(QObject *parent = nullptr);
     std::unique_ptr<PluginEditorManagerPrivate> const d;
 };
 }

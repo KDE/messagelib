@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-09-08 06:17+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -24,7 +24,13 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "პროგრამისტის ხელსაწყო"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "დახურვა"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "დახურვა"
@@ -37,6 +43,7 @@ msgstr "&ძებნა:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "მოსაძებნი ეტქსტი"
 
@@ -48,6 +55,7 @@ msgstr "შემდეგი"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "შემდეგ დამთხვევაზე გადასვლა"
 
@@ -59,6 +67,7 @@ msgstr "წინა"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "წინა დამთხვევაზე გადასვლა"
 
@@ -69,6 +78,7 @@ msgstr "გამართვა"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "ძებნის ქცევის შეცვლა"
 
@@ -82,8 +92,9 @@ msgstr "რეგისტრზე-დამოკიდებული"
 msgid "Phrase not found"
 msgstr "ფრაზა ვერ ვიპოვე"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:152
 #, kde-format
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML გვერდის შენახვა"
 

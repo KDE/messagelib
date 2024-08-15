@@ -118,7 +118,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
         d->aggregationListItemClicked(item);
     });
 
-    d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
+    d->mNewAggregationButton = new QPushButton(i18nc("@action:button", "New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     g->addWidget(d->mNewAggregationButton, 0, 1);
 
@@ -126,7 +126,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
         d->newAggregationButtonClicked();
     });
 
-    d->mCloneAggregationButton = new QPushButton(i18n("Clone Aggregation"), base);
+    d->mCloneAggregationButton = new QPushButton(i18nc("@action:button", "Clone Aggregation"), base);
     d->mCloneAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
     g->addWidget(d->mCloneAggregationButton, 1, 1);
 
@@ -139,14 +139,14 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     f->setMinimumHeight(24);
     g->addWidget(f, 2, 1, Qt::AlignVCenter);
 
-    d->mExportAggregationButton = new QPushButton(i18n("Export Aggregation..."), base);
+    d->mExportAggregationButton = new QPushButton(i18nc("@action:button", "Export Aggregation..."), base);
     g->addWidget(d->mExportAggregationButton, 3, 1);
 
     connect(d->mExportAggregationButton, &QPushButton::clicked, this, [this]() {
         d->exportAggregationButtonClicked();
     });
 
-    d->mImportAggregationButton = new QPushButton(i18n("Import Aggregation..."), base);
+    d->mImportAggregationButton = new QPushButton(i18nc("@action:button", "Import Aggregation..."), base);
     g->addWidget(d->mImportAggregationButton, 4, 1);
     connect(d->mImportAggregationButton, &QPushButton::clicked, this, [this]() {
         d->importAggregationButtonClicked();
@@ -157,7 +157,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     f->setMinimumHeight(24);
     g->addWidget(f, 5, 1, Qt::AlignVCenter);
 
-    d->mDeleteAggregationButton = new QPushButton(i18n("Delete Aggregation"), base);
+    d->mDeleteAggregationButton = new QPushButton(i18nc("@action:button", "Delete Aggregation"), base);
     d->mDeleteAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     g->addWidget(d->mDeleteAggregationButton, 6, 1);
 
@@ -410,7 +410,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::deleteAggr
 
 void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::importAggregationButtonClicked()
 {
-    const QString filename = QFileDialog::getOpenFileName(q, i18n("Import Aggregation"));
+    const QString filename = QFileDialog::getOpenFileName(q, i18nc("@title:window", "Import Aggregation"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
@@ -443,7 +443,7 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::exportAggr
     if (list.isEmpty()) {
         return;
     }
-    const QString filename = QFileDialog::getSaveFileName(q, i18n("Export Aggregation"), QString(), i18n("All Files (*)"));
+    const QString filename = QFileDialog::getSaveFileName(q, i18nc("@title:window", "Export Aggregation"), QString(), i18n("All Files (*)"));
     if (!filename.isEmpty()) {
         KConfig config(filename);
 

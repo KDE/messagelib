@@ -11,7 +11,7 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <QList>
 
 class QAbstractItemModel;

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-20 00:37+0000\n"
+"POT-Creation-Date: 2024-06-17 00:40+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -23,45 +23,45 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Anv ebet"
 
-#: src/messagepart.cpp:708 src/messagepart.cpp:754 src/messagepart.cpp:1093
+#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:820 src/messagepart.cpp:1307
+#: src/messagepart.cpp:819 src/messagepart.cpp:1306
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:821
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr ""
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:824
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "N'hellan ket ezrinegañ ar gemennad :"
 
-#: src/messagepart.cpp:828
+#: src/messagepart.cpp:827
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1309
+#: src/messagepart.cpp:1308
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "N'hellan ket ezrinegañ ar gemennad :"
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1310
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "N'hellan ket ezrinegañ ar gemennad :"
 
-#: src/messagepart.cpp:1312
+#: src/messagepart.cpp:1311
 #, kde-format
 msgid "Error: %1"
 msgstr "Fazi : %1"

@@ -43,7 +43,7 @@ public:
     /**
      * Destroys the attachment part.
      */
-    virtual ~AttachmentPart();
+    ~AttachmentPart();
 
     /**
      * Sets the @p name of the attachment.
@@ -186,8 +186,6 @@ public:
 
     void setUrl(const QUrl &url);
     [[nodiscard]] QUrl url() const;
-
-    size_t qHash(const QSharedPointer<MessageCore::AttachmentPart> &, size_t seed = 0);
 
 private:
     //@cond PRIVATE

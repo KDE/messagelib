@@ -21,8 +21,6 @@
 
 #include <QRegularExpression>
 
-#define USE_TEXTHTML_BUILDER 1
-
 using namespace MessageComposer;
 
 class MessageComposer::RichTextComposerNgPrivate
@@ -159,55 +157,40 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     const bool wasConverted = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
-    if (composerControler()->isFormattingUsed()) {
-        if (!wasConverted) {
-            if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-                auto pb = new KPIMTextEdit::PlainTextMarkupBuilder();
+    if (composerControler()->isFormattingUsed() && !wasConverted) {
+        if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
+            KPIMTextEdit::PlainTextMarkupBuilder pb;
 
-                auto pmd = new KPIMTextEdit::MarkupDirector(pb);
-                pmd->processDocument(document());
-                const QString plainText = pb->getResult();
-                textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
-                auto doc = new QTextDocument(plainText);
-                doc->adjustSize();
+            KPIMTextEdit::MarkupDirector pmd(&pb);
+            pmd.processDocument(document());
+            const QString plainText = pb.getResult();
+            textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
+            QTextDocument doc(plainText);
+            doc.adjustSize();
 
-                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
-                delete doc;
-                delete pmd;
-                delete pb;
-            } else {
-                textPart->setCleanPlainText(composerControler()->toCleanPlainText());
-                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
-            }
-        }
-    } else {
-        if (!wasConverted) {
+            textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(&doc));
+        } else {
             textPart->setCleanPlainText(composerControler()->toCleanPlainText());
             textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
         }
+    } else if (!wasConverted) {
+        textPart->setCleanPlainText(composerControler()->toCleanPlainText());
+        textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
     }
+
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed() && !wasConverted) {
-#ifdef USE_TEXTHTML_BUILDER
-        auto pb = new KPIMTextEdit::TextHTMLBuilder();
+        KPIMTextEdit::TextHTMLBuilder pb;
 
-        auto pmd = new KPIMTextEdit::MarkupDirector(pb);
-        pmd->processDocument(document());
+        KPIMTextEdit::MarkupDirector pmd(&pb);
+        pmd.processDocument(document());
         QString cleanHtml =
             QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>")
-                .arg(pb->getResult());
-        delete pmd;
-        delete pb;
+                .arg(pb.getResult());
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
         // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
         // qDebug() << " d->toCleanHtml() " << d->toCleanHtml();
-#else
-        QString cleanHtml = d->toCleanHtml();
-        d->fixHtmlFontSize(cleanHtml);
-        textPart->setCleanHtml(cleanHtml);
-        qDebug() << "cleanHtml  " << cleanHtml;
-#endif
         textPart->setEmbeddedImages(composerControler()->composerImages()->embeddedImages());
     }
 }

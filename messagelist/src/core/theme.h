@@ -193,11 +193,6 @@ public:
              */
             TagList = 22 | ApplicableToMessageItems | IsIcon,
             /**
-             * Whether the message has a annotation/note
-             */
-            AnnotationIcon = 23 | ApplicableToMessageItems | IsIcon | CanBeDisabled | IsClickable,
-
-            /**
              * Whether the message is an invitation
              */
             InvitationIcon = 24 | ApplicableToMessageItems | IsIcon,
@@ -288,24 +283,24 @@ public:
          * Static test that returns true if an instance of ContentItem with the
          * specified type makes sense in a Row for message items.
          */
-        static bool applicableToMessageItems(Type type);
+        [[nodiscard]] static bool applicableToMessageItems(Type type);
 
         /**
          * Static test that returns true if an instance of ContentItem with the
          * specified type makes sense in a Row for group header items.
          */
-        static bool applicableToGroupHeaderItems(Type type);
+        [[nodiscard]] static bool applicableToGroupHeaderItems(Type type);
 
         /**
          * Returns a descriptive name for the specified content item type
          */
-        static QString description(Type type);
+        [[nodiscard]] static QString description(Type type);
 
         /**
          * Returns true if this item uses a custom color.
          * The return value of this function is valid only if canUseCustomColor() returns true.
          */
-        bool useCustomColor() const;
+        [[nodiscard]] bool useCustomColor() const;
 
         /**
          * Makes this item use the custom color that can be set by setCustomColor().
@@ -317,7 +312,7 @@ public:
          * Returns true if this item uses a bold text.
          * The return value of this function is valid only if displaysText() returns true.
          */
-        bool isBold() const;
+        [[nodiscard]] bool isBold() const;
 
         /**
          * Makes this item use a bold font.
@@ -328,7 +323,7 @@ public:
          * Returns true if this item uses an italic text.
          * The return value of this function is valid only if displaysText() returns true.
          */
-        bool isItalic() const;
+        [[nodiscard]] bool isItalic() const;
 
         /**
          * Makes this item use italic font.
@@ -340,7 +335,7 @@ public:
          * Hidden content items simply aren't painted and take no space.
          * This flag has meaning only on items for that canBeDisabled() returns true.
          */
-        bool hideWhenDisabled() const;
+        [[nodiscard]] bool hideWhenDisabled() const;
 
         /**
          * Sets the flag that causes this item to be hidden when disabled.
@@ -355,7 +350,7 @@ public:
          * in disabled state. Soft icons are painted with very low opacity.
          * This flag has meaning only on items for that canBeDisabled() returns true.
          */
-        bool softenByBlendingWhenDisabled() const;
+        [[nodiscard]] bool softenByBlendingWhenDisabled() const;
 
         /**
          * Sets the flag that causes this item to be painted "softly" when disabled.
@@ -369,7 +364,7 @@ public:
          * Returns true if this item should be always painted in a "soft" fashion.
          * Meaningful only for text items.
          */
-        bool softenByBlending() const;
+        [[nodiscard]] bool softenByBlending() const;
 
         /**
          * Sets the flag that causes this item to be painted "softly".
@@ -382,7 +377,7 @@ public:
          * The return value is meaningful only if canUseCustomColor() returns true
          * returns true and setUseCustomColor( true ) has been called.
          */
-        const QColor &customColor() const;
+        [[nodiscard]] const QColor &customColor() const;
 
         /**
          * Sets the custom color for this item. Meaningful only if canUseCustomColor()
@@ -485,7 +480,7 @@ public:
          * This is useful if you want to know if the column should just get
          * its minimum allowable space or it should get more.
          */
-        bool containsTextItems() const;
+        [[nodiscard]] bool containsTextItems() const;
 
         /**
          * Handles row saving (used by Theme::Column::save())
@@ -537,18 +532,18 @@ public:
              * Decrements the reference count for this shared runtime data object.
              * Returns true if there are other references and false otherwise (so the data can be safely deleted)
              */
-            bool deleteReference();
+            [[nodiscard]] bool deleteReference();
 
             /**
              * Returns the current number of reference counts, that is, the number of
              * Theme::Column objects that use this SharedRuntimeData instance.
              */
-            int referenceCount() const;
+            [[nodiscard]] int referenceCount() const;
 
             /**
              * Returns the current visibility state
              */
-            bool currentlyVisible() const;
+            [[nodiscard]] bool currentlyVisible() const;
 
             /**
              * Sets the current visibility state
@@ -558,7 +553,7 @@ public:
             /**
              * Returns the current width or -1 if the width is unspecified/invalid
              */
-            double currentWidth() const;
+            [[nodiscard]] double currentWidth() const;
 
             /**
              * Sets the current width of the column
@@ -609,7 +604,7 @@ public:
         /**
          * Returns the label set for this column
          */
-        const QString &label() const;
+        [[nodiscard]] const QString &label() const;
 
         /**
          * Sets the label for this column
@@ -619,7 +614,7 @@ public:
         /**
          * Returns the icon's name (used in SmallIcon) set for this column
          */
-        const QString &pixmapName() const;
+        [[nodiscard]] const QString &pixmapName() const;
 
         /**
          * Sets the icon's name (used in SmallIcon) for this column
@@ -630,7 +625,7 @@ public:
          * Returns true if this column is marked as "sender/receiver" and we should
          * update its label on-the-fly.
          */
-        bool isSenderOrReceiver() const;
+        [[nodiscard]] bool isSenderOrReceiver() const;
 
         /**
          * Marks this column as containing the "sender/receiver" field.
@@ -641,7 +636,7 @@ public:
         /**
          * Returns true if this column has to be shown by default
          */
-        bool visibleByDefault() const;
+        [[nodiscard]] bool visibleByDefault() const;
 
         /**
          * Sets the "visible by default" tag for this column.
@@ -658,7 +653,7 @@ public:
          * Returns the sort order for messages that we should switch to
          * when clicking on this column's header (if visible at all).
          */
-        SortOrder::MessageSorting messageSorting() const;
+        [[nodiscard]] SortOrder::MessageSorting messageSorting() const;
 
         /**
          * Sets the sort order for messages that we should switch to
@@ -670,7 +665,7 @@ public:
          * Returns the current shared visibility state for this column.
          * This state is shared between all the instances of this theme.
          */
-        bool currentlyVisible() const;
+        [[nodiscard]] bool currentlyVisible() const;
 
         /**
          * Sets the current shared visibility state for this column.
@@ -683,7 +678,7 @@ public:
          * or -1 if the width is not specified and should be auto-determined.
          * This state is shared between all the instances of this theme.
          */
-        double currentWidth() const;
+        [[nodiscard]] double currentWidth() const;
 
         /**
          * Sets the current shared width setting for this column.
@@ -694,7 +689,7 @@ public:
         /**
          * Returns the list of rows visible in this column for a MessageItem
          */
-        const QList<Row *> &messageRows() const;
+        [[nodiscard]] const QList<Row *> &messageRows() const;
 
         /**
          * Removes all the message rows from this column.
@@ -721,7 +716,7 @@ public:
         /**
          * Returns the list of rows visible in this column for a GroupHeaderItem
          */
-        const QList<Row *> &groupHeaderRows() const;
+        [[nodiscard]] const QList<Row *> &groupHeaderRows() const;
 
         /**
          * Removes all the group header rows from this column.
@@ -750,7 +745,7 @@ public:
          * This is useful if you want to know if the column should just get
          * its minimum allowable space or it should get more.
          */
-        bool containsTextItems() const;
+        [[nodiscard]] bool containsTextItems() const;
 
         /**
          * Handles column saving (used by Theme::save())
@@ -889,7 +884,7 @@ public:
     /**
      * Returns the list of columns available in this theme
      */
-    const QList<Column *> &columns() const;
+    [[nodiscard]] const QList<Column *> &columns() const;
 
     /**
      * Returns a pointer to the column at the specified index or 0 if there is no such column
@@ -921,7 +916,7 @@ public:
     /**
      * Returns the group header background mode for this theme.
      */
-    GroupHeaderBackgroundMode groupHeaderBackgroundMode() const;
+    [[nodiscard]] GroupHeaderBackgroundMode groupHeaderBackgroundMode() const;
 
     /**
      * Sets the group header background mode for this theme.
@@ -946,7 +941,7 @@ public:
      * The group header background style makes sense only if groupHeaderBackgroundMode() is
      * set to something different than Transparent.
      */
-    GroupHeaderBackgroundStyle groupHeaderBackgroundStyle() const;
+    [[nodiscard]] GroupHeaderBackgroundStyle groupHeaderBackgroundStyle() const;
 
     /**
      * Sets the group header background style for this theme.
@@ -965,7 +960,7 @@ public:
     /**
      * Returns the currently set ViewHeaderPolicy
      */
-    ViewHeaderPolicy viewHeaderPolicy() const;
+    [[nodiscard]] ViewHeaderPolicy viewHeaderPolicy() const;
 
     /**
      * Sets the ViewHeaderPolicy for this theme
@@ -975,7 +970,7 @@ public:
     /**
      * Returns the currently set icon size
      */
-    int iconSize() const;
+    [[nodiscard]] int iconSize() const;
 
     /**
      * Sets the icon size for this theme.

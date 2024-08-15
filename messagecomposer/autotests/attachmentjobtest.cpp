@@ -42,7 +42,6 @@ void AttachmentJobTest::testAttachment()
     part->setData(data);
 
     Composer composer;
-    composer.globalPart()->setFallbackCharsetEnabled(true);
     auto ajob = new AttachmentJob(part, &composer);
     QVERIFY(ajob->exec());
     Content *result = ajob->content();

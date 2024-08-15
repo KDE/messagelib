@@ -26,7 +26,7 @@ Q_SIGNALS:
     void filterSelected(const QString &identifier);
 
 private:
-    void slotShowMenu();
+    MESSAGELIST_NO_EXPORT void slotShowMenu();
     QAction *const mSaveAction;
     QAction *const mConfigureAction;
     QList<QAction *> mListAction;

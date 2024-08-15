@@ -93,6 +93,17 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::sendResponse, this, &Viewer::sendResponse);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
+    qGuiApp->installEventFilter(this);
+    slotGeneralPaletteChanged();
+}
+
+bool Viewer::eventFilter(QObject *obj, QEvent *event)
+{
+    Q_UNUSED(obj);
+    if (event->type() == QEvent::ApplicationPaletteChange) {
+        slotGeneralPaletteChanged();
+    }
+    return false;
 }
 
 void Viewer::slotGeneralPaletteChanged()
@@ -129,7 +140,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, &Akonadi::ItemFetchJob::result, [d](KJob *job) {
+        connect(job, &Akonadi::ItemFetchJob::result, this, [d](KJob *job) {
             d->itemFetchResult(job);
         });
         d->displaySplashPage(i18n("Loading message..."));
@@ -349,8 +360,6 @@ bool Viewer::event(QEvent *e)
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;
-    } else if (e->type() == QEvent::ApplicationPaletteChange) {
-        slotGeneralPaletteChanged();
     }
 
     return QWidget::event(e);
@@ -529,7 +538,6 @@ Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
     job->fetchScope().fetchAllAttributes();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     job->fetchScope().fetchFullPayload(true);
-    job->fetchScope().setFetchRelations(true); // needed to know if we have notes or not
     job->fetchScope().fetchAttribute<Akonadi::ErrorAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::MDNStateAttribute>();
     return job;

@@ -74,10 +74,10 @@ public:
     void clearOverrideHeaders();
     void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
     [[nodiscard]] bool hasMailHeader(const char *header, const KMime::Content *message) const;
-    QList<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
+    [[nodiscard]] QList<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
     KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
-    QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
-    QList<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
+    [[nodiscard]] QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
+    [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
     [[nodiscard]] QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
@@ -94,7 +94,7 @@ public:
     [[nodiscard]] KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
 
     /** Get a codec suitable for this message part */
-    QByteArray codecName(KMime::Content *node) const;
+    [[nodiscard]] QByteArray codecName(KMime::Content *node) const;
 
     /** Set the charset the user selected for the message to display */
     void setOverrideCodec(KMime::Content *node, const QByteArray &codec);
@@ -116,7 +116,7 @@ public:
      * Writes the given message part to a temporary file and returns the
      * name of this file or QString() if writing failed.
      */
-    QString writeNodeToTempFile(KMime::Content *node);
+    [[nodiscard]] QString writeNodeToTempFile(KMime::Content *node);
 
     [[nodiscard]] QString writeFileToTempFile(KMime::Content *node, const QString &filename);
 
@@ -146,7 +146,7 @@ public:
     // Get a href in the form attachment:<nodeId>?place=<place>, used by ObjectTreeParser and
     // UrlHandlerManager.
     [[nodiscard]] QString asHREF(const KMime::Content *node, const QString &place) const;
-    KMime::Content *fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &href) const;
+    [[nodiscard]] KMime::Content *fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &href) const;
 
     // Overload which creates a URL without the query part. Used by MessagePart::makeLink.
     [[nodiscard]] QString asHREF(const KMime::Content *node) const;
@@ -160,7 +160,7 @@ public:
      * Returns the charset for the given node. If no charset is specified
      * for the node, the defaultCharset() is returned.
      */
-    [[nodiscard]] static QByteArray charset(KMime::Content *node);
+    [[nodiscard]] static QByteArray charset(const KMime::Content *node);
 
     /**
      * Returns a usable filename for a node, that can be the filename from the
@@ -186,13 +186,12 @@ public:
 
     /**
      * Return a list of the supported encodings
-     * @param usAscii if true, US-Ascii encoding will be prepended to the list.
      */
-    [[nodiscard]] static QStringList supportedEncodings(bool usAscii); // TODO(Andras) move to a utility class?
+    [[nodiscard]] static QStringList supportedEncodings(); // TODO(Andras) move to a utility class?
 
     [[nodiscard]] QString fromAsString(KMime::Content *node) const;
 
-    KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
+    [[nodiscard]] KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 
     /**
      * This function returns the unencrypted message that is based on @p originalMessage.
@@ -207,7 +206,7 @@ public:
      * @return the unencrypted message or an invalid pointer if the original message didn't contain
      *         a part that needed to be modified.
      */
-    KMime::Message::Ptr unencryptedMessage(const KMime::Message::Ptr &originalMessage);
+    [[nodiscard]] KMime::Message::Ptr unencryptedMessage(const KMime::Message::Ptr &originalMessage);
 
     /**
      * Returns a list of attachments of attached extra content nodes.

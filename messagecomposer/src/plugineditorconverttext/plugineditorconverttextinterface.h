@@ -42,7 +42,7 @@ public:
 
     virtual bool reformatText();
 
-    virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
+    [[nodiscard]] virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
     [[nodiscard]] QWidget *parentWidget() const;
@@ -66,7 +66,7 @@ public:
 
     void setStatusBarWidget(QWidget *w);
 
-    QWidget *statusBarWidget() const;
+    [[nodiscard]] QWidget *statusBarWidget() const;
 
     void setPlugin(PluginEditorConvertText *plugin);
     [[nodiscard]] PluginEditorConvertText *plugin() const;

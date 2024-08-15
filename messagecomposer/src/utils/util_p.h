@@ -51,7 +51,7 @@ void setNestedContentDisposition(KMime::Content *content, Kleo::CryptoMessageFor
  * Helper that returns whether or not the current combination of crypto format and signing choice means that the
  * resulting message will be a mime message or not.
  */
-bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
+[[nodiscard]] bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
 void addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob);
 }
 }

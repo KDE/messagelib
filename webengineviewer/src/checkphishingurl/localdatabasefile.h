@@ -39,7 +39,7 @@ public:
     [[nodiscard]] quint16 getUint16(int offset) const;
     [[nodiscard]] quint32 getUint32(int offset) const;
     [[nodiscard]] quint64 getUint64(int offset) const;
-    const char *getCharStar(int offset) const;
+    [[nodiscard]] const char *getCharStar(int offset) const;
 
     [[nodiscard]] QByteArray searchHash(const QByteArray &hashToSearch);
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2018-08-13 08:37+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 2.0\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -581,12 +580,16 @@ msgid "Reset to default"
 msgstr "التصفير إلى المبدئيات"
 
 #: templatesconfiguration.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset Current Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "صفّر القالب الحالي"
 
 #: templatesconfiguration.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset All Templates"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "صفّر كل القوالب"
 

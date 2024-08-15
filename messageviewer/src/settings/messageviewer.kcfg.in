@@ -158,11 +158,9 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>true</default>
     </entry>
     <entry name="DefaultPolicy" type="Int" key="default-policy">
-      <label>Specifies the default policy to use, for the Message Disposition Notifications (for internal use only)</label>
       <default>0</default>
     </entry>
     <entry name="QuoteMessage" type="Int" key="quote-message">
-      <label>Specifies the default quoting action to take, when replying to a message (for internal use only)</label>
       <default>0</default>
     </entry>
   </group>
@@ -234,19 +232,19 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
 
     <group name="Todo">
       <entry name="LastSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Todo.</whatsthis>
+        <whatsthis>The most recent selected folder used for Todo.</whatsthis>
         <default>-1</default>
       </entry>
     </group>
     <group name="Event">
       <entry name="LastEventSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Event.</whatsthis>
+        <whatsthis>The most recent selected folder used for Event.</whatsthis>
         <default>-1</default>
       </entry>
     </group>
     <group name="Note">
       <entry name="LastNoteSelectedFolder" type="LongLong">
-        <whatsthis>The most recent selected folder using for Notes.</whatsthis>
+        <whatsthis>The most recent selected folder used for Notes.</whatsthis>
         <default>-1</default>
       </entry>
     </group>

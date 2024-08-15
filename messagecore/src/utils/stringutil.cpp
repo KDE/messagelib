@@ -7,13 +7,10 @@
 #include "stringutil.h"
 
 #include "MessageCore/MessageCoreSettings"
-#include "config-enterprise.h"
 
 #include <KEmailAddress>
 #include <KLocalizedString>
-#include <KMime/HeaderParsing>
 #include <KMime/Headers>
-#include <KMime/Message>
 
 #include "messagecore_debug.h"
 #include <KUser>
@@ -441,7 +438,8 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                     + QLatin1StringView("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
+            const bool foundMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity
+                && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
@@ -699,7 +697,7 @@ QString cleanFileName(const QString &name)
     fileName.replace(QLatin1Char('/'), QLatin1Char('_'));
     fileName.replace(QLatin1Char('\\'), QLatin1Char('_'));
 
-#ifdef KDEPIM_ENTERPRISE_BUILD
+#ifdef Q_OS_WINDOWS
     // replace all '.' with '_', not just at the start of the filename
     // but don't replace the last '.' before the file extension.
     int i = fileName.lastIndexOf(QLatin1Char('.'));
@@ -730,7 +728,11 @@ QString cleanSubject(KMime::Message *msg)
 
 QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
-    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace, newPrefix);
+    if (auto subject = msg->subject(false)) {
+        return replacePrefixes(subject->asUnicodeString(), prefixRegExps, replace, newPrefix);
+    } else {
+        return {};
+    }
 }
 
 QString forwardSubject(KMime::Message *msg)

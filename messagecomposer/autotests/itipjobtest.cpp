@@ -69,7 +69,7 @@ void ItipJobTest::testInvitationWithAttachment()
     const auto itipPart = subparts[1];
     QCOMPARE(itipPart->contentType(false)->mimeType(), "text/calendar");
     QCOMPARE(itipPart->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(itipPart->contentType(false)->parameter(QStringLiteral("method")), QStringLiteral("request"));
+    QCOMPARE(itipPart->contentType(false)->parameter("method"), QStringLiteral("request"));
     QCOMPARE(itipPart->contentType(false)->charset(), "utf-8");
     QCOMPARE(itipPart->contentDisposition(false)->disposition(), KMime::Headers::CDattachment);
     QCOMPARE(itipPart->decodedText(), testItip);
@@ -113,7 +113,7 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
 
     QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
     QCOMPARE(content->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(content->contentType(false)->parameter(QStringLiteral("method")), QStringLiteral("request"));
+    QCOMPARE(content->contentType(false)->parameter("method"), QStringLiteral("request"));
     QCOMPARE(content->contentType(false)->charset(), "utf-8");
     QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItip);
@@ -136,7 +136,7 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
 
     QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
     QCOMPARE(content->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(content->contentType(false)->parameter(QStringLiteral("method")), QStringLiteral("request"));
+    QCOMPARE(content->contentType(false)->parameter("method"), QStringLiteral("request"));
     QCOMPARE(content->contentType(false)->charset(), "utf-8");
     QVERIFY(content->decodedText().isEmpty());
 }

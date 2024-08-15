@@ -29,7 +29,4 @@ private Q_SLOTS:
 
     void shouldExtractBodyStyle();
     void shouldExtractBodyStyle_data();
-
-    void shouldUseCorrectCodec();
-    void shouldUseCorrectCodec_data();
 };

@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
-"PO-Revision-Date: 2023-10-22 18:01+0530\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-07-06 21:33+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -339,8 +339,7 @@ msgstr ""
 "சேமித்துள்ள DKIM சாவி, தற்போதையதிலிருந்து மாறுபடுகிறது. இதையும் செமிக்க வேண்டுமா?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "சாவி மாறியுள்ளது"
@@ -415,11 +414,16 @@ msgid "Do you want to delete all keys?"
 msgstr "அனைத்து சாவிகளையும் நீக்க வேண்டுமா?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "சாவிகளை நீக்குவது"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "தேடு..."
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -438,6 +442,7 @@ msgstr "கையொப்பமில்லையேல் பொருட்�
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "ஏற்றுமதி…"
 
@@ -449,11 +454,13 @@ msgstr "விதிமுறையை அமைத்தல்"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "விதிமுறையை சேர்…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "இறக்குமதி…"
 
@@ -463,33 +470,23 @@ msgid "No rules found"
 msgstr "எந்த விதிமுறைகளும் கண்டுபிடிக்கப்படவில்லை"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Export Rules"
-msgctxt "@title:window"
-msgid "Export Rules"
-msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
+msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
+msgstr "விதிமுறைகளை ஏற்றுமதி செய்வது"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "விதிமுறைகளை இறக்குமதி செய்"
+msgstr "விதிமுறைகளை இறக்குமதி செய்வது"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgid "No rules imported."
 msgstr "எந்த விதிமுறைகளும் இறக்குமதி செய்யப்படவில்லை."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "விதிமுறைகளை இறக்குமதி செய்"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -552,11 +549,10 @@ msgstr "உறுதியாக இந்த விதிமுறையை ந
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "விதிமுறையை நீக்கு"
+msgstr "விதிமுறையை நீக்குவது"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -564,11 +560,10 @@ msgid "Do you want to delete all the rules?"
 msgstr "உறுதியாக அனைத்து விதிமுறைகளையும் நீக்க விரும்புகிறீர்களா?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "விதிமுறைகளை நீக்கு"
+msgstr "விதிமுறைகளை நீக்குவது"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
@@ -583,27 +578,30 @@ msgid "Modify Rule"
 msgstr "விதிமுறையை திருத்துதல்"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enabled"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "இயக்கப்பட்டது"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
 msgstr "ஆள்களம்:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "List-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "அனுப்புநர்:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "ஆள்களத்திலிருந்து அனைத்து அஞ்சல்களையும் குறிக்க '*' தனை பயன்படுத்தவும்"
 
@@ -705,7 +703,7 @@ msgstr ""
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "உடற்பகுதிக்கான சரிகாண்தொகை படிமுறை தெரியாதது."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
@@ -813,89 +811,89 @@ msgstr "%1: முறையானது"
 msgid "Not Signed"
 msgstr "கையொப்பமிடாதது"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "தலைப்பு:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "தேதி:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 msgid "Message-Id:"
 msgstr "செய்தியின் கருத்து"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "பதில் பெறுபவர்:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "நகல்:"
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "கமுக்க நகல்:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "அனுப்புநர்:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "மீளனுப்பியவர்:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "மீளனுப்பிபோதான பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "\"%1\" என்ற Grantlee திட்டம் செல்லுபடியாகாதது."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "தலைப்பு இல்லை"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "ஸ்பேம் நிலை:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "அச்சிடும் பயன்முறை"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vஅட்டை]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "உடனிணைப்புகள்:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "பாதுகாப்பு:"
@@ -1003,23 +1001,23 @@ msgstr "அனுப்புநர்: "
 msgid "[vCard]"
 msgstr "[vஅட்டை]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "பெறுநர்: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "நகல்: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "கமுக்க நகல்: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "பதில் பெறுபவர்: "
@@ -1119,7 +1117,7 @@ msgid "A policy was not met."
 msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
 
 #: messagepartthemes/default/defaultrenderer.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "A system error occurred."
 msgstr "கணினி சிக்கல் நேர்ந்தது."
 
@@ -1204,11 +1202,10 @@ msgid "An entry already defines this url. Please modify it."
 msgstr "இம்முகவிரிக்கு ஏற்கனவே ஓர் பதிவுள்ளது. அப்பதிவையே மாற்றுங்கள்."
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Add new Url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "புதிய முகவரியை சேர்"
+msgstr "புதிய முகவரியை சேர்ப்பது"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1240,6 +1237,12 @@ msgstr "அனுமதிக்கப்பட்டது"
 msgid "Blocked"
 msgstr "தடுக்கப்பட்டது"
 
+#: remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "ஆள்களம்:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
@@ -1254,21 +1257,25 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "அகற்றிடத்துக்கு நகர்த்து"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "இது ஏமாற்றுவேலை இல்லை"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "மின்னஞ்சலை அனுமதிப்பட்டியலில் சேர்"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "மோசடிகளை கண்டறியும் கூறை அனைத்து அஞ்சல்களுக்கும் முடக்கு"
 
@@ -1349,6 +1356,322 @@ msgstr "'%1' தனை விரிவுபடுத்த முடியா�
 msgid "Short url '%1' redirects to '%2'."
 msgstr "'%1' என்ற சுருக்கப்பட்ட முகவரி, '%2' என்பதற்கு வழிமாற்றுகிறது."
 
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "காட்டியில் தேர்ந்தெடுக்கப்பட்டுள்ள உரையையே அச்சிடு"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "அச்சிடும்போதும் மேற்கோள்களை விரிப்பதற்கான/சுருக்குவதற்கான அமைப்புகளை பின்பற்று"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr "அச்சிடும்போது பின்புல நிறத்தையும் படங்களையும் உட்படுத்த வேண்டுமா."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr "அச்சிடும்போது மறையாக்க/கையொப்ப விவரங்களை எப்போதும் காட்டு"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"HTML-ஐக் காட்டும்போது குறைந்தபட்ச அளவைவிட சிறிய எழுத்துருக்களைப் பயன்படுத்த வேண்டாம்."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "உடல் பகுதிக்கு பயன்படுத்த வேண்டிய எழுத்துருவைக் குறிப்பிடும்"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "அச்சிடும்போது பயன்படுத்த வேண்டிய எழுத்துருவைக் குறிப்பிடும்"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "முகவரி மோசடியாக இருக்கலாமா என்பதை சரிபார்"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "பதிலளித்த பின்னோ முன்னனுப்பி பின்னோ அஞ்சல்காட்டி சாளரத்தை மூடு"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "மேற்கோள்களை விரிக்கும்/சுருக்கும் பட்டன்களை காட்டு"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"மேற்கோளுக்குள் உள்ள மேற்கோள்களை வெவ்வேறு அடுக்குகளாக காட்ட இத்தேர்வை இயக்கலாம். இத்தேர்வு "
+"முடக்கப்பட்டிருந்தால், அனைத்து மேற்கோள்களும் ஒரே மாதிரி காட்டப்படும்."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "தானாக சுருக்க வேண்டிய மட்டம்:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "மேற்கோளிட்ட உரைக்கான எழுத்துரு அளவை குறை"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr "மேற்கோளிடப்பட்டுள்ள உரையை சிறியதாக்கி காட்ட இத்தேர்வை இயக்கலாம்."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "அஞ்சல்களைத் திறக்கும்போதே மறைநீக்க வேண்டுமா அல்லது ஒவ்வொரு முறையும் கேட்க வேண்டுமா"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "அஞ்சல் அமைப்பு காட்டி"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "ஒருபோதும் காட்டாதே"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "எப்போதும் காட்டு"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "தலைப்புப்புலங்கள் காட்டப்படும் முறை"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "எந்த தலைப்புப்புலங்களைக் காட்ட வேண்டும்"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "வெறும் உரையை காட்டிலும் HTML-ஐ விரும்பு"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை அஞ்சல்களில் ஏற்ற விடு"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "உடனிணைப்புகள் காட்டப்படும் முறை"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+"மூன்றாம் மட்டத்திற்கு மேலான மேற்கோள்களுக்கு முன்பு பயன்படுத்திய நிறங்களை மறுபடியும் "
+"பயன்படுத்தலாமா"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "அணுகல் விசைகளை இயக்கு"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"மோசடி அஞ்சல்களில் படிப்பவர்களை ஏமாற்ற அடிக்கடி பயன்படுத்தப்படும் நுட்பங்களை கேமெயிலால் "
+"கண்டறிய முடியும்"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "மோசடியில்லை என்று குறித்த மின்னஞ்சல் முகவரிகளின் பட்டியல்"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "தடமறியும் முகவரிகளை அஞ்சல்களில் கண்டறி"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "மறையாக்கிய அஞ்சல்களுக்கு மறுமொழியாக MDN-களை அனுப்பாதே"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "பதில்களுக்கான பதில்களில் அனுப்புநர்/பெறுநர் புலங்களை முறையற்றவையாக மாற்று"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, fuzzy, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"மைக்ரோசாப்ட் அவுட்லுக்கில் எளியமுறையில் எண்ணிக்கைகளைக் காணலாம் \"\n"
+"\"in இயல்பான நடைமுறையில் உள்ள  நாள் அட்டவணை ; \"\n"
+"   \"  ஒன்றை மட்டும் எடுத்து தேர்வு செய்யும், இருந்தால் மட்டும்  \"\n"
+"          \"பிரச்சினை இருந்தால் மட்டுமே அவுட்லுக் என்பது \"\n"
+"          \"தங்களின் மறுமொழியைக் கூறும், இந்த விருப்பத்தை அமைக்க முயற்சி."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "அஞ்சலின் உடலில் &அழைப்புகளை அனுப்பு"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, fuzzy, kde-format
+#| msgid ""
+#| "Microsoft Outlook has a number of shortcomings in its implementation of "
+#| "the iCalendar standard; this option works around one of them. If you have "
+#| "problems with Outlook users not being able to get your replies, try "
+#| "setting this option."
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"மைக்ரோசாஃப்ட் அவுட்லுக்கில் எளியமுறையில் எண்ணிக்கைகளைக் காணலாம் \"\n"
+"\"in இயல்பான நடைமுறையில் உள்ள  நாள் அட்டவணை ; \"\n"
+"   \"  ஒன்றை மட்டும் எடுத்து தேர்வு செய்யும், இருந்தால் மட்டும்  \"\n"
+"          \"பிரச்சினை இருந்தால் மட்டுமே அவுட்லுக் என்பது \"\n"
+"          \"தங்களின் மறுமொழியைக் கூறும், இந்த விருப்பத்தை அமைக்க முயற்சி."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, fuzzy, kde-format
+#| msgid "Automatic invitation sending"
+msgid "Exchange-compatible invitation naming"
+msgstr "தானாகவே அழைப்பிதழ் அனுப்புதல்"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "தானாகவே அழைப்பிதழ்களை அனுப்புதல்"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "அழைப்பிதழ்களுக்கு பதிலளித்த பின் அவற்றை நீக்கு"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "சம &அகல எழுத்துருவை பயன்படுத்து"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Todo."
+msgstr ""
+"ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Event."
+msgstr ""
+"ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Notes."
+msgstr ""
+"ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
 #, fuzzy, kde-format
@@ -1427,12 +1750,6 @@ msgstr "&தானாகவே அழைப்பிதழ்களை அனு
 msgid "Options"
 msgstr "விருப்பங்கள்"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1499,42 +1816,43 @@ msgstr "தானாக சுருக்க வேண்டிய ம&ட்�
 msgid "&Minimum font size:"
 msgstr "&குறைந்தபட்ச எழுத்துரு அளவு:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "'%1' என்ற கோப்பு ஏற்கனவே உள்ளது. உறுதியாக அதை மேலெழுத வேண்டுமா?"
 
-#: utils/messageviewerutil.cpp:127
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#: utils/messageviewerutil.cpp:126
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "கோப்பை மேலெழுதலாமா?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "உடனிணைப்புகளை இப்படி சேமி"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "உடனிணைப்பு.1"
 
-#: utils/messageviewerutil.cpp:200
-#, kde-format
+#: utils/messageviewerutil.cpp:182
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "உடனிணைப்பை சேமி"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "உடனிணைப்பு.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1543,22 +1861,24 @@ msgstr ""
 "செய்தியின் இந்த %1 பகுதி மறைகுறியீட்டப்பட்டிருக்கிறது. சேமிக்கு பொழுது மறைக்குறியீட்டை "
 "வைத்து கொள்ள விரும்புகிறீர்களா?."
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "கேமெயில் கேள்வி"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:306
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "மறையாக்கத்தை வைத்திரு"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "வைத்திருக்காதே"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1567,13 +1887,14 @@ msgstr ""
 "செய்தியின் இந்த பகுதி %1 கையெழுத்திடப்பட்டிருக்கிறது. சேமிக்கு பொழுது கையெழுத்தை "
 "வைத்து கொள்ள விரும்புகிறீர்களா?."
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:319
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "கையொப்பதை வைத்திரு"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1583,81 +1904,78 @@ msgstr ""
 "<qt>பின்வரும் கோப்புக்கு எழுத முடியவில்லை<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:404
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#: utils/messageviewerutil.cpp:386
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "உடனிணைப்பை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "சேமிப்பதற்கு உடனிணைப்புகளேதும் கண்டுப்பிடிக்கப்படவில்லை"
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, kde-format
 msgid "message"
 msgstr "அஞ்சல்"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "மின்னஞ்சல்கள் (*.mbox);;அனைத்து கோப்புகள் (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "அஞ்சலை சேமி"
 msgstr[1] "அஞ்சல்களை சேமி"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "%1 எனும் கோப்பை ஏற்ற முடியவில்லை."
 
-#: utils/messageviewerutil.cpp:526
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#: utils/messageviewerutil.cpp:508
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 எனும் கோப்பை உருவாக்க முடியவில்லை."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "We cannot save message."
 msgstr "அஞ்சலை சேமிக்க முடியாது."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "நீக்கப்பட்டது: %1"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1666,12 +1984,12 @@ msgstr ""
 "இந்த அஞ்சலிலிருந்த ஓர் உடனிணைப்பை நீக்கியுள்ளீர். உடனிணைப்புக்கு இருந்த MIME "
 "தலைப்புப்புலங்கள்:"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1 &என்பதால திற"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1697,13 +2015,12 @@ msgstr "வகை"
 msgid "Size"
 msgstr "அளவு"
 
-#: viewer/printmessage.cpp:61
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#: viewer/printmessage.cpp:68
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "%1கோப்பை எழுதமுடியாது"
+msgstr "அச்சின் முன்னோட்டத்தை உருவாக்க முடியவில்லை."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
@@ -1714,7 +2031,7 @@ msgstr "அஞ்சலை அச்சிடுவது"
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML rendering க்கான தகவலை இயக்கு."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை ஏற்ற விடவும்"
@@ -1795,16 +2112,15 @@ msgstr "&முகவரிப்புத்தகத்தில் திற"
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
 #: viewer/urlhandlermanager.cpp:634
-#, fuzzy, kde-format
-#| msgid "Open in Address Book"
+#, kde-format
 msgid "Lookup the contact in KAddressbook"
-msgstr "&முகவரிபுத்தகத்தில் திற"
+msgstr "தொடர்பை KAddressbook-இல் காட்டு"
 
 #: viewer/urlhandlermanager.cpp:810
 #, kde-format
@@ -1844,10 +2160,11 @@ msgstr "<filename>%1</filename> தனை உறுதியாக இயக்�
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "இயக்கு"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "அஞ்சல் ஏற்றப்படுகிறது"
@@ -1862,11 +2179,10 @@ msgstr ""
 "தாகலாம்."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
-msgstr "உடனிணைப்பை நீக்கு"
+msgstr "உடனிணைப்பை நீக்குவது"
 
 #: viewer/viewer_p.cpp:379
 #, kde-format
@@ -1874,6 +2190,8 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
+"மறையாக்கப்பட்டுள்ள அல்லது பழையவகை mailman அஞ்சலிலிருந்து உடனிணைப்பை நீக்குவது "
+"ஆதரிக்கப்படாத‍து."
 
 #: viewer/viewer_p.cpp:428
 #, kde-format
@@ -1893,13 +2211,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&இதனால் திற..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "திற"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1915,12 +2233,12 @@ msgstr "ஓர் இடத்திற்கு உருள்"
 msgid "Save As..."
 msgstr "இவ்வாறு சேமி..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "நகலெடு"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "உடனிணைப்பை நீக்கு"
@@ -1935,7 +2253,7 @@ msgstr "அனுப்புநருக்கு பதிலளி"
 msgid "Reply To All"
 msgstr "அனைவருக்கும் பதிலளி"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "பண்புகள்"
@@ -1950,269 +2268,270 @@ msgstr "கேமெயில்"
 msgid "The KDE Mail Client"
 msgstr "கே.டீ.யீ.யின் மின்னஞ்சல் செயலி"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "உடனிணைப்பைப் பார்ப்பது: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&உடனிணைப்புகள்"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "உடனிணைப்புகளின் காட்சிமுறையை தேர்ந்தெடுங்கள்"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&சின்னங்களாக"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "உடனிணைப்புகளை சின்னங்களாக காட்டும். அவற்றைக் காண கிளிக் செய்யலாம்."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "சூ&ழமைவாக"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "இணைப்புகளை அனுப்புநர் விரும்புவது போல் காண்பிக்கும்."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&உள்ளமைவாக"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "முடிந்தால் உடனிணைப்புகளை அஞ்சல்காட்டிக்குள்ளேயே காட்டும்"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&மறை"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "அஞ்சல்காட்டியில் உடனிணைப்புகளைக் காட்ட வேண்டாம்"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "தலைப்புப்பகுதியில் மட்டும்"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "உடனிணைப்புகளை அஞ்சலின் தலைப்புப்பகுதியில் மட்டும் காட்டு"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "குறியாக்கத்தை அமைப்பது"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "தானியக்கம்"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "உரையை நகலெடு"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1543
 #, kde-format
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "எல்லா உரையையும் தேர்ந்தெடு"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "இணைப்பின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "முகவரியை திற"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "சம &அகல எழுத்துருவை பயன்படுத்து"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "அஞ்சலின் அமைப்பைக் காட்டு"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, kde-format
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&மூலத்தைக் காட்டு"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
 msgstr "&அஞ்சலை சேமி..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&காட்சி முறையை சேமி"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "கா&ட்சி முறையை மீட்டமை"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "அஞ்சலில் மேலே உருள்"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "அஞ்சலில் கீழே உருள்"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "அஞ்சலில் மேலே உருள் (அதிகமாக)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "அஞ்சலில் கீழே உருள் (அதிகமாக)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML காட்சிமுறையை இயக்கு/முடக்கு"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML முற்றும் சாதாரண உரை காட்சிமுறைகளுக்கிடையே மாறும்"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr "வெளி இணைப்புகளை ஏற்று"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1630
 #, kde-format
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "உரையைப் பகிர்..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, kde-format
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "படத்தின் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&அஞ்சலில் கண்டுபிடி..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "முகவடியை முடக்கு"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "&இப்படி சேமி..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "இதனால் திற..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "அனைத்து உடனிணைப்புகளையும் சேமி..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "பிணையத்தில் இணைந்திருக்கவில்லை."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
-msgid "Check Phishing URL"
-msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
-
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgid "The URL %1 is not valid."
-msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
-
-#: viewer/viewer_p.cpp:1984
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "%1 என்ற முகவரி செல்லுபடியாகாதது"
+
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "இந்த இணையதளம் ஏமாற்றுவதாக இருக்கலாம். இதை உறுதியாக காட்ட வேண்டுமா?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "தீங்குநிரல்"
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை நகலெடு"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "அஞ்சல், சாதாரண உரையாக"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message not found."
 msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."
@@ -2306,6 +2625,11 @@ msgid ""
 "be able to work with this.</qt>"
 msgstr ""
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "உரையைப் பேச்சாக்கு"
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
@@ -2315,7 +2639,7 @@ msgstr "வடிவமைக்கப்படா மூலம்"
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
-msgstr ""
+msgstr "கோப்பகத்திலோ சேவையகத்திலோ சேமிக்கப்பட்டுள்ளவாறே அஞ்சலை காட்டும்"
 
 #: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
@@ -2329,10 +2653,12 @@ msgid "HTML code for displaying the message to the user"
 msgstr "பயனருக்கு அஞ்சலை காட்ட பயன்படுத்தப்படும் HTML நிரல்தொடர்"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
-msgctxt "@action"
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+#| msgid_plural "Open folder where attachments were saved"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr "உடனிணைப்பு எந்த அடைவுக்குள் சேமிக்கப்பட்டுள்ளதோ, அதைத் திறக்கும்"
+msgstr "உடனிணைப்பை கொண்ட அடைவை திற"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
@@ -2341,14 +2667,19 @@ msgid "Open File"
 msgstr "கோப்பை திற"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Open folder where attachment was saved"
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] "உடனிணைப்பை கொண்ட அடைவை திற"
-msgstr[1] "உடனிணைப்புகளை கொண்ட அடைவை திற"
+msgstr[0] "உடனிணைப்பு எந்த அடைவுக்குள் சேமிக்கப்பட்டுள்ளதோ, அதைத் திறக்கும்"
+msgstr[1] "உடனிணைப்பு எந்த அடைவுக்குள் சேமிக்கப்பட்டுள்ளதோ, அதைத் திறக்கும்"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open folder where PDF file was saved"
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "PDF கோப்பைக்கொண்ட அடைவை சேமி"
 
@@ -2359,109 +2690,24 @@ msgstr "கேமெயிலால் உடனிணைப்பை திற�
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "அடுத்த அஞ்சல்"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, kde-format
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
 
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "காட்டியில் தேர்ந்தெடுக்கப்பட்டுள்ள உரையையே அச்சிடு"
+#~ msgid "Export Rules"
+#~ msgstr "விதிமுறைகளை ஏற்றுமதி செய்"
 
-#~ msgid "Check if url can be a phishing"
-#~ msgstr "முகவரி மோசடியாக இருக்கலாமா என்பதை சரிபார்"
+#~ msgid "Import Rules"
+#~ msgstr "விதிமுறைகளை இறக்குமதி செய்"
 
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "பதிலளித்த பின்னோ முன்னனுப்பி பின்னோ அஞ்சல்காட்டி சாளரத்தை மூடு"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "மேற்கோள்களை விரிக்கும்/சுருக்கும் பட்டன்களை காட்டு"
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "தானாக சுருக்க வேண்டிய மட்டம்:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "மேற்கோளிட்ட உரைக்கான எழுத்துரு அளவை குறை"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "அஞ்சல் அமைப்பு காட்டி"
-
-#~ msgid "Show never"
-#~ msgstr "ஒருபோதும் காட்டாதே"
-
-#~ msgid "Show always"
-#~ msgstr "எப்போதும் காட்டு"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "வெறும் உரையை காட்டிலும் HTML-ஐ விரும்பு"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை அஞ்சல்களில் ஏற்ற விடு"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "உடனிணைப்புகள் காட்டப்படும் முறை"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "மோசடி அஞ்சல்களில் படிப்பவர்களை ஏமாற்ற அடிக்கடி பயன்படுத்தப்படும் நுட்பங்களை கேமெயிலால் "
-#~ "கண்டறிய முடியும்"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "மோசடியில்லை என்று குறித்த மின்னஞ்சல் முகவரிகளின் பட்டியல்"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "தடமறியும் முகவரிகளை அஞ்சல்களில் கண்டறி"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "மறையாக்கிய அஞ்சல்களுக்கு மறுமொழியாக MDN-களை அனுப்பாதே"
-
-#, fuzzy
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr ""
-#~ "பாரம்பரிய வகை: அனுப்புநர்/பெறுநர்:தலைப்புகளின் அழைப்புகளுக்குப் பதில் அழைப்புகள்."
-
-#, fuzzy
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "மைக்ரோசாப்ட் அவுட்லுக்கில் எளியமுறையில் எண்ணிக்கைகளைக் காணலாம் \"\n"
-#~ "\"in இயல்பான நடைமுறையில் உள்ள  நாள் அட்டவணை ; \"\n"
-#~ "   \"  ஒன்றை மட்டும் எடுத்து தேர்வு செய்யும், இருந்தால் மட்டும்  \"\n"
-#~ "          \"பிரச்சினை இருந்தால் மட்டுமே அவுட்லுக் என்பது \"\n"
-#~ "          \"தங்களின் மறுமொழியைக் கூறும், இந்த விருப்பத்தை அமைக்க முயற்சி."
-
-#, fuzzy
-#~| msgid ""
-#~| "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~| "the iCalendar standard; this option works around one of them. If you "
-#~| "have problems with Outlook users not being able to get your replies, try "
-#~| "setting this option."
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "மைக்ரோசாஃப்ட் அவுட்லுக்கில் எளியமுறையில் எண்ணிக்கைகளைக் காணலாம் \"\n"
-#~ "\"in இயல்பான நடைமுறையில் உள்ள  நாள் அட்டவணை ; \"\n"
-#~ "   \"  ஒன்றை மட்டும் எடுத்து தேர்வு செய்யும், இருந்தால் மட்டும்  \"\n"
-#~ "          \"பிரச்சினை இருந்தால் மட்டுமே அவுட்லுக் என்பது \"\n"
-#~ "          \"தங்களின் மறுமொழியைக் கூறும், இந்த விருப்பத்தை அமைக்க முயற்சி."
-
-#, fuzzy
-#~| msgid "Automatic invitation sending"
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "தானாகவே அழைப்பிதழ் அனுப்புதல்"
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "தானாகவே அழைப்பிதழ்களை அனுப்புதல்"
+#~ msgid "Check Phishing URL"
+#~ msgstr "ஏமாற்று முகவரியா என சோதிப்பது"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."
@@ -2472,12 +2718,6 @@ msgstr "முந்தைய அஞ்சல்"
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."
 #~ msgid "The most recent selected folder using for Event."
-#~ msgstr ""
-#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recent selected folder using for Notes."
 #~ msgstr ""
 #~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
@@ -2746,10 +2986,6 @@ msgstr "முந்தைய அஞ்சல்"
 #~| msgid "&Address Book"
 #~ msgid "Address"
 #~ msgstr "&முகவரி புத்தகம்."
-
-#, fuzzy
-#~ msgid "Search..."
-#~ msgstr "தேடு"
 
 #, fuzzy
 #~ msgid "Script"
@@ -3194,18 +3430,6 @@ msgstr "முந்தைய அஞ்சல்"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "நிறுத்தப்பட்டது"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr ""
-#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr ""
-#~ "ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

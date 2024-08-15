@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -451,6 +451,13 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "मेटिएको"
 
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "खोज्नुहोस्"
+
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
@@ -472,6 +479,7 @@ msgstr "सन्देश सूची - मिति फिल्ड"
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Expire"
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "खारेज गर्नुहोस्"
 
@@ -485,12 +493,14 @@ msgstr "खाता कन्फिगर गर्नुहोस्"
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add Entry..."
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "प्रविष्टि थप्नुहोस्..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "&Import"
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "आयात"
 
@@ -501,21 +511,18 @@ msgid "No rules found"
 msgstr "हस्ताक्षर फेला परेन"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Key Export Failed"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "कुञ्जी निर्यात असफल भयो"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Key Export Failed"
-msgid "Export Rules"
-msgstr "कुञ्जी निर्यात असफल भयो"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
 #| msgid "vCard Import Failed"
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "vCard आयात असफल"
 
@@ -524,13 +531,6 @@ msgstr "vCard आयात असफल"
 #| msgid "No signature found"
 msgid "No rules imported."
 msgstr "हस्ताक्षर फेला परेन"
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "vCard Import Failed"
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "vCard आयात असफल"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -633,21 +633,22 @@ msgstr "खाता परिमार्जन गर्नुहोस्"
 #: dkim-verify/dkimrulewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "Enable"
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "सक्षम पार्नुहोस्"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Defaul&t domain:"
 msgid "Domain:"
 msgstr "पूर्वनिर्धारित डोमेन:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -655,6 +656,7 @@ msgstr "बाट: "
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
@@ -885,102 +887,102 @@ msgstr ""
 msgid "Not Signed"
 msgstr "चिन्ह नलगाउनुहोस्"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "विषयवस्तु:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "मिति: "
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 msgid "Message-Id:"
 msgstr "सन्देश आईडी"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "लाई: "
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "यसलाई जवाफ दिनुहोस्"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "बोधार्थ प्रतिलिपि: "
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "गुप्त बोधार्थ प्रतिलिपि: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "प्रेषक"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(%1 बाट पुन: पठाइएको)"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(%1 बाट पुन: पठाइएको)"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "हस्ताक्षर फाइल वैध छैन"
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "कुनै विषयवस्तु छैन"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "स्पाम स्थिति:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "मुद्रण निर्गत"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "Config->Composer->Attachments"
 #| msgid "A&ttachments"
 msgid "Attachments:"
 msgstr "सङ्लग्नता"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"
@@ -1093,24 +1095,24 @@ msgstr "बाट: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "लाई: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "बोधार्थ प्रतिलिपि: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "गुप्त बोधार्थ प्रतिलिपि: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "यसलाई जवाफ दिनुहोस्: "
@@ -1343,6 +1345,13 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
+#: remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Defaul&t domain:"
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "पूर्वनिर्धारित डोमेन:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "[Details]"
@@ -1356,23 +1365,28 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
 msgid "Move to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Delete Messages"
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "सन्देश मेट्नुहोस्"
 
@@ -1443,6 +1457,322 @@ msgstr ""
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr ""
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, fuzzy, kde-format
+#| msgid "Show expand/collapse quote marks"
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "विस्तार/संक्षिप्त उद्धरण चिन्ह देखाउनुहोस्"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, fuzzy, kde-format
+#| msgid "&Enable signature"
+msgid "Always show encryption/signature details when we print message"
+msgstr "हस्ताक्षर सक्षम पार्नुहोस्"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "विस्तार/संक्षिप्त उद्धरण चिन्ह देखाउनुहोस्"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to show different levels of quoted text. Disable to "
+#| "hide the levels of quoted text."
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"उद्धरण गरिएका पाठका फरक स्तर देखाउन यो विकल्प सक्षम पार्नुहोस् । उद्धरण गरिएका पाठका "
+"स्तर लुकाउन अक्षम पार्नुहोस् ।"
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "स्वचालित संक्षिप्त स्तर:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "उद्धरण गरिएका पाठका लागि फन्ट साइज घटाउछ"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, fuzzy, kde-format
+#| msgid "Enable this option to show quoted text with a smaller font."
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr "उद्धरण गरिएका पाठ सानो फन्टमा देखाउन यो विकल्प सक्षम पार्नुहोस् ।"
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "सन्देश संरचना दर्शक"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, fuzzy, kde-format
+#| msgid "Show &never"
+msgid "Show never"
+msgstr "कहिल्यै पनि नदेखाउनुहोस्"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, fuzzy, kde-format
+#| msgid "Show alway&s"
+msgid "Show always"
+msgstr "सधैँँ देखाउनुहोस्"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "सादा पाठलाई HTML छान्नुहोस्"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "इन्टरनेटबाट बाह्य सन्दर्भ लोड गर्न अनुमति सन्देश दिनुहोस्"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, fuzzy, kde-format
+#| msgid "Show attachment icon"
+msgid "How attachments are shown"
+msgstr "सङ्लग्न प्रतिमा देखाउनुहोस्"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr ""
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr ""
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "गुप्तिकृत सन्देशको प्रतिक्रियामा MDN हरू नपठाउनुहोस्"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "प्रेषक:/प्रापक: हेडरमा जवाफलाई जवाफ दिन म्याङ्गल गर्नुहोस्"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"यसको आइक्यालेन्डर मानकको कार्यान्वयनमा माइक्रोसफ्ट आउटलुकमा धेरै त्रुटि छन्; यो विकल्पले "
+"तिनहरू मध्ये एकमा कार्य गर्छ । तपाईँको आउटलुकमा समस्या भएमा प्रयोगकर्ताले तपाईँको जवाफ "
+"प्राप्त गर्न सक्षम हुने छैन, यो विकल्प सेटिङ गर्ने प्रयास गर्नुहोस् ।"
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "मेल मुख्य भगमा ग्रुपवेयर निमन्त्रणा पठाउनुहोस्"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, fuzzy, kde-format
+#| msgid ""
+#| "Microsoft Outlook has a number of shortcomings  in its implementation of "
+#| "the iCalendar standard; this option works around one of them. If you have "
+#| "problems with Outlook users not being able to get your invitations, try "
+#| "setting this option."
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"यसको आइक्यालेन्डर मानकको कार्यान्वयनमा  माइक्रोसफ्ट आउटलुकमा धेरै त्रुटि छन्; यो विकल्पले "
+"तिनहरू मध्ये एकमा कार्य गर्छ । तपाईँको आउटलुकमा समस्या भएमा प्रयोगकर्ताले तपाईँको "
+"निमन्त्रणा प्राप्त गर्न सक्षम हुने छैन, यो विकल्प सेटिङ गर्ने प्रयास गर्नुहोस् ।"
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, fuzzy, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "स्वचालित रूपमा निमन्त्रणा पठाइदैछ"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "स्वचालित रूपमा निमन्त्रणा पठाइदैछ"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"यो विकल्प चिनो गरेमा, तपाईँले इमेल कम्पोजर सञ्झ्याल देख्नुहुने छैन । साटोमा, सबै निमन्त्रणा "
+"मेल स्वचालित रूपमा पठाइन्छन् । तपाईँले मेल पठाउनु भन्दा पहिला यसलाई हेर्न चाहनुहुन्छ भने, यो "
+"विकल्प चिनो हटाउन सक्नुहुन्छ । तापनि, सावधान हुनुहोस् कम्पोजर सञ्झ्यालको पाठ आइक्यालेन्डर "
+"वाक्य संरचनामा हुन्छ, र तपाईँले यसलाई हातैले परिमार्जन गर्ने प्रयास गर्नुहुदैन ।"
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "निश्चित फन्ट प्रयोग गर्नुहोस्"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Todo."
+msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Event."
+msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, fuzzy, kde-format
+#| msgid "The most recently selected folder in the folder selection dialog."
+msgid "The most recent selected folder used for Notes."
+msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1524,12 +1854,6 @@ msgstr "स्वचालित रूपमा निमन्त्रणा 
 msgid "Options"
 msgstr "विकल्प"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1603,7 +1927,7 @@ msgstr "स्वचालित संक्षिप्त स्तर:"
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -1611,72 +1935,79 @@ msgstr ""
 "\"%1\" नाम गरिएको फाइल पहिला नै अवस्थित छ । के तपाईँ यसमा अधिलेखन गर्न निश्चिन्त "
 "हुनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "फाइल अधिलेखन गर्नुभयो?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "यसमा सङ्लग्नता बचत गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "सङ्लग्नता.१"
 
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "यस रूपमा सङ्लग्नता बचत गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "सङ्लग्नता.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr "सन्देशको %1 भाग गुप्तिकृत गरिएको छ । के तपाईँ बचत गर्दा गुप्तिकरण राख्न चाहनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "केडीई मेल प्रश्न"
 
-#: utils/messageviewerutil.cpp:324
-#, kde-format
+#: utils/messageviewerutil.cpp:306
+#, fuzzy, kde-format
+#| msgid "Keep Encryption"
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "गुप्तिकरण राख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
-#, kde-format
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#, fuzzy, kde-format
+#| msgid "Do Not Keep"
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "नराख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "सन्देशको %1 भाग हस्ताक्षर गरिएको छ । के तपाईँ बचत गर्दा हस्ताक्षर राख्न चाहनुहुन्छ?"
 
-#: utils/messageviewerutil.cpp:337
-#, kde-format
+#: utils/messageviewerutil.cpp:319
+#, fuzzy, kde-format
+#| msgid "Keep Signature"
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "हस्ताक्षर राख्नुहोस्"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1690,36 +2021,36 @@ msgstr ""
 "फाइल %1 लेख्न सकेन:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "एउटा सङ्लग्नता छ"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "एउटा सङ्लग्नता छ"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "बचत गर्न सङ्लग्नता फेला पारेन ।"
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "० सन्देश"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1728,65 +2059,65 @@ msgid_plural "Save Messages"
 msgstr[0] " सन्देश"
 msgstr[1] " सन्देश"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be loaded."
 msgstr "पठइएका गुप्तिकृत सन्देश भण्डारण गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "सन्देश अद्यावधिक गर्दा त्रुटि"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be created."
 msgstr "पठइएका गुप्तिकृत सन्देश भण्डारण गर्नुहोस्"
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "सन्देश सार्दैछ"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "चिन्ह लगाएका सन्देशको अन्त्यमा"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "सन्देश सार्दैछ"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "घटाइएको: %1 "
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' सँग खोल्नुहोस्"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1812,13 +2143,13 @@ msgstr "प्रकार"
 msgid "Size"
 msgstr "साइज"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Could not write the file %1."
 msgid "Could not generate print preview."
 msgstr "फाइल %1 लेख्न सकेन ।"
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgctxt "@title:window"
@@ -1830,7 +2161,7 @@ msgstr "मिसिलीकरण"
 msgid "Turn on HTML rendering for this message."
 msgstr "यो सन्देशका लागि HTML रेन्डरिङ खोल्नुहोस् ।"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "यो सन्देशका लागि इन्टरनेटबाट बाह्य सन्दर्भ लोड गर्नुहोस् ।"
@@ -1920,7 +2251,7 @@ msgstr "ठेगाना पुस्तक भित्र खोल्नु
 msgid "&Copy Email Address"
 msgstr "इमेल ठेगाना"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "क्लिपबोर्डमा ठेगाना प्रतिलिपि गरियो ।"
@@ -1972,11 +2303,13 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>के तपाईँ वास्तवमै <b>%1</b> कार्यान्वयन गर्न चाहनुहुन्छ?</qt>"
 
 #: viewer/urlhandlermanager.cpp:905
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Execute"
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "कार्यान्वयन गर्नुहोस्"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Loading message..."
@@ -2024,13 +2357,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "यससँग खोल्नुहोस्..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "खोल्नुहोस्"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2046,12 +2379,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
@@ -2070,7 +2403,7 @@ msgstr "लेखकलाई जवाफ दिनुहोस्..."
 msgid "Reply To All"
 msgstr "सबैलाई जवाफ दिनुहोस्"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "विशेषता"
@@ -2086,287 +2419,292 @@ msgstr "केडीई मेल"
 msgid "The KDE Mail Client"
 msgstr "केडीई इमेल क्लाइन्ट"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "दृश्य सङ्लग्नता: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "सङ्लग्नता"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "सङ्लग्नताको प्रदर्शन शैली रोज्नुहोस्"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "प्रतिमा अनुरुप"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "प्रतिमाका सबै सङ्लग्नता देखाउनुहोस् । तिनलाई हेर्न क्लिक गर्नुहोस् ।"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "छरितो"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "प्रेषकद्वारा सुझाव गरिए अनुरुपका सङ्लग्नता देखाउनुहोस् ।"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "इनलाइन"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "सबै इनलाइन सङ्लग्नता देखाउनुहोस् (सम्भव भएमा)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "लुकाउनुहोस्"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "सन्देश दर्शकमा सङ्लग्नता नदेखाउनुहोस्"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "प्रतिमाका सबै सङ्लग्नता देखाउनुहोस् । तिनलाई हेर्न क्लिक गर्नुहोस् ।"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "सङ्केतन सेट गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "स्वत:"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1542
-#, kde-format
+#: viewer/viewer_p.cpp:1543
+#, fuzzy, kde-format
+#| msgid "Select All Text"
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "सबै पाठ चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिङ्क ठेगाना प्रतिलिपि गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "ओपन URL"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "निश्चित फन्ट प्रयोग गर्नुहोस्"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "सन्देश संरचना दर्शक"
 
-#: viewer/viewer_p.cpp:1569
-#, kde-format
+#: viewer/viewer_p.cpp:1570
+#, fuzzy, kde-format
+#| msgid "&View Source"
+msgctxt "@action"
 msgid "&View Source"
 msgstr "स्रोत हेर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
 msgid "&Save Message..."
 msgstr " सन्देश"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "ड्राफ्टका रूपमा बचत गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "ड्राफ्टका रूपमा बचत गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "सबै सन्देश चयन गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 #| msgid "Load External References"
+msgctxt "@action"
 msgid "Load external references"
 msgstr "बाह्य सन्दर्भ लोड गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
-#, kde-format
+#: viewer/viewer_p.cpp:1630
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgctxt "@action"
 msgid "Speak Text"
-msgstr ""
+msgstr "यसमा प्रतिलिपि गर्नुहोस्"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "चयन गर्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Choose Location"
+msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "स्थान रोज्नुहोस्"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "सन्देशमा फेला पार्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "यससँग खोल्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "सबै सङ्लग्नता बचत गर्नुहोस्..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
+msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1997
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "हस्ताक्षर फाइल वैध छैन"
 
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgctxt "@title:window"
-msgid "Check Phishing URL"
-msgstr ""
-
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "इमेल ठेगाना"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठका रूपमा सन्देश"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "क्लिपबोर्डमा यूआरएल प्रतिलिपि गरियो ।"
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "सन्देश %1 द्वारा चिन्ह लगाइएको थियो ।"
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
@@ -2493,6 +2831,11 @@ msgstr ""
 "परिणाम सन्देश ज्यादै बिषम देखिन्छ ।<br> निमन्त्रणा बुझ्ने इमेल कार्यक्रम भएका मानिस अझै "
 "यससँग कार्य गर्न योग्य देखिन्छन् ।</qt>"
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr ""
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, fuzzy, kde-format
 #| msgid "&View Source"
@@ -2519,7 +2862,7 @@ msgstr ""
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr ""
 
@@ -2532,6 +2875,7 @@ msgstr "मेट्नलाई खोजी गर्नुहोस्"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] ""
@@ -2539,6 +2883,7 @@ msgstr[1] ""
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr ""
 
@@ -2551,125 +2896,26 @@ msgstr "सङ्लग्नताको नाम:"
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
 #| msgid "&Next Message"
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "पछिल्लो सन्देश"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "अघिल्लो नपढिएको सन्देश"
 
 #, fuzzy
-#~| msgid "Show expand/collapse quote marks"
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr "विस्तार/संक्षिप्त उद्धरण चिन्ह देखाउनुहोस्"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "विस्तार/संक्षिप्त उद्धरण चिन्ह देखाउनुहोस्"
+#~| msgid "Key Export Failed"
+#~ msgid "Export Rules"
+#~ msgstr "कुञ्जी निर्यात असफल भयो"
 
 #, fuzzy
-#~| msgid ""
-#~| "Enable this option to show different levels of quoted text. Disable to "
-#~| "hide the levels of quoted text."
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "उद्धरण गरिएका पाठका फरक स्तर देखाउन यो विकल्प सक्षम पार्नुहोस् । उद्धरण गरिएका "
-#~ "पाठका स्तर लुकाउन अक्षम पार्नुहोस् ।"
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "स्वचालित संक्षिप्त स्तर:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "उद्धरण गरिएका पाठका लागि फन्ट साइज घटाउछ"
-
-#, fuzzy
-#~| msgid "Enable this option to show quoted text with a smaller font."
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr "उद्धरण गरिएका पाठ सानो फन्टमा देखाउन यो विकल्प सक्षम पार्नुहोस् ।"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "सन्देश संरचना दर्शक"
-
-#, fuzzy
-#~| msgid "Show &never"
-#~ msgid "Show never"
-#~ msgstr "कहिल्यै पनि नदेखाउनुहोस्"
-
-#, fuzzy
-#~| msgid "Show alway&s"
-#~ msgid "Show always"
-#~ msgstr "सधैँँ देखाउनुहोस्"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "सादा पाठलाई HTML छान्नुहोस्"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr "इन्टरनेटबाट बाह्य सन्दर्भ लोड गर्न अनुमति सन्देश दिनुहोस्"
-
-#, fuzzy
-#~| msgid "Show attachment icon"
-#~ msgid "How attachments are shown"
-#~ msgstr "सङ्लग्न प्रतिमा देखाउनुहोस्"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "गुप्तिकृत सन्देशको प्रतिक्रियामा MDN हरू नपठाउनुहोस्"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "प्रेषक:/प्रापक: हेडरमा जवाफलाई जवाफ दिन म्याङ्गल गर्नुहोस्"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "यसको आइक्यालेन्डर मानकको कार्यान्वयनमा माइक्रोसफ्ट आउटलुकमा धेरै त्रुटि छन्; यो विकल्पले "
-#~ "तिनहरू मध्ये एकमा कार्य गर्छ । तपाईँको आउटलुकमा समस्या भएमा प्रयोगकर्ताले तपाईँको "
-#~ "जवाफ प्राप्त गर्न सक्षम हुने छैन, यो विकल्प सेटिङ गर्ने प्रयास गर्नुहोस् ।"
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "मेल मुख्य भगमा ग्रुपवेयर निमन्त्रणा पठाउनुहोस्"
-
-#, fuzzy
-#~| msgid ""
-#~| "Microsoft Outlook has a number of shortcomings  in its implementation of "
-#~| "the iCalendar standard; this option works around one of them. If you "
-#~| "have problems with Outlook users not being able to get your invitations, "
-#~| "try setting this option."
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "यसको आइक्यालेन्डर मानकको कार्यान्वयनमा  माइक्रोसफ्ट आउटलुकमा धेरै त्रुटि छन्; यो "
-#~ "विकल्पले तिनहरू मध्ये एकमा कार्य गर्छ । तपाईँको आउटलुकमा समस्या भएमा प्रयोगकर्ताले "
-#~ "तपाईँको निमन्त्रणा प्राप्त गर्न सक्षम हुने छैन, यो विकल्प सेटिङ गर्ने प्रयास गर्नुहोस् ।"
-
-#, fuzzy
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "स्वचालित रूपमा निमन्त्रणा पठाइदैछ"
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "स्वचालित रूपमा निमन्त्रणा पठाइदैछ"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "यो विकल्प चिनो गरेमा, तपाईँले इमेल कम्पोजर सञ्झ्याल देख्नुहुने छैन । साटोमा, सबै "
-#~ "निमन्त्रणा मेल स्वचालित रूपमा पठाइन्छन् । तपाईँले मेल पठाउनु भन्दा पहिला यसलाई हेर्न "
-#~ "चाहनुहुन्छ भने, यो विकल्प चिनो हटाउन सक्नुहुन्छ । तापनि, सावधान हुनुहोस् कम्पोजर "
-#~ "सञ्झ्यालको पाठ आइक्यालेन्डर वाक्य संरचनामा हुन्छ, र तपाईँले यसलाई हातैले परिमार्जन गर्ने "
-#~ "प्रयास गर्नुहुदैन ।"
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Rules"
+#~ msgstr "vCard आयात असफल"
 
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."
@@ -2679,11 +2925,6 @@ msgstr "अघिल्लो नपढिएको सन्देश"
 #, fuzzy
 #~| msgid "The most recently selected folder in the folder selection dialog."
 #~ msgid "The most recent selected folder using for Event."
-#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recent selected folder using for Notes."
 #~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #, fuzzy
@@ -2993,11 +3234,6 @@ msgstr "अघिल्लो नपढिएको सन्देश"
 #~| msgid "&Address Book"
 #~ msgid "Address"
 #~ msgstr "ठेगाना पुस्तक"
-
-#, fuzzy
-#~| msgid "Search"
-#~ msgid "Search..."
-#~ msgstr "खोज्नुहोस्"
 
 #, fuzzy
 #~| msgid "Delete Script"
@@ -3518,16 +3754,6 @@ msgstr "अघिल्लो नपढिएको सन्देश"
 #, fuzzy
 #~ msgid "&Cancel"
 #~ msgstr "रद्द गर्नुहोस्"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Events."
-#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
-
-#, fuzzy
-#~| msgid "The most recently selected folder in the folder selection dialog."
-#~ msgid "The most recently selected folder used for Todos."
-#~ msgstr "फोल्डर चयन संवादमा सबैभन्दा पछि चयन गरिएको फोल्डर ।"
 
 #, fuzzy
 #~| msgid "Store sent messages encry&pted"

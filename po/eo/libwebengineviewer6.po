@@ -1,15 +1,15 @@
 # Translation of libwebengineviewer.pot into esperanto.
 # Copyright (C) 2022 Free Software Foundation, Inc.
 # This file is distributed under the same license as the messagelib package.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-02-06 21:11+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-02 22:29+0200\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,13 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Ilo por programistoj"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Fermi"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Fermi"
@@ -37,6 +43,7 @@ msgstr "Trov&i:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Teksto serĉenda"
 
@@ -48,6 +55,7 @@ msgstr "Sekva"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Salti al la sekva kongruo"
 
@@ -59,16 +67,18 @@ msgstr "Antaŭa"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Salti al antaŭa kongruo"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
 msgid "Options"
-msgstr "Opcioj"
+msgstr "Elektebloj"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modifi serĉan konduton"
 
@@ -82,8 +92,9 @@ msgstr "Usklecodistinga"
 msgid "Phrase not found"
 msgstr "Frazo ne trovita"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:152
 #, kde-format
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Konservi HTML-paĝon"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-27 00:38+0000\n"
+"POT-Creation-Date: 2024-05-17 00:39+0000\n"
 "PO-Revision-Date: 2021-07-12 10:30+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -603,12 +603,16 @@ msgid "Reset to default"
 msgstr "Επαναφορά στο προκαθορισμένο"
 
 #: templatesconfiguration.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset Current Template"
+msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Επαναφορά τρέχοντος προτύπου"
 
 #: templatesconfiguration.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset All Templates"
+msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Επαναφορά όλων των προτύπων"
 

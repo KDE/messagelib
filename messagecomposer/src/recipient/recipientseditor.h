@@ -81,6 +81,8 @@ public Q_SLOTS:
     void saveDistributionList();
 
 protected Q_SLOTS:
+    friend class RecipientLineFactory;
+
     void slotPickedRecipient(const Recipient &, bool &tooManyAddress);
     void slotLineAdded(KPIM::MultiplyingLine *);
     void slotLineDeleted(int pos);
@@ -89,7 +91,6 @@ protected Q_SLOTS:
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
-    [[nodiscard]] RecipientLineNG *activeLine() const override;
 
 Q_SIGNALS:
     void focusInRecipientLineEdit();

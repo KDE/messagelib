@@ -23,7 +23,7 @@ Q_SIGNALS:
     void unlockTabRequested();
 
 private:
-    void slotLinkActivated(const QString &contents);
+    MESSAGELIST_NO_EXPORT void slotLinkActivated(const QString &contents);
 };
 }
 }

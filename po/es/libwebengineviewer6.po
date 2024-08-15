@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Javier Vinal <fjvinal@gmail.com>, 2016.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-09-20 01:17+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 04:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -24,7 +24,13 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Herramienta de desarrolladores"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Cerrar"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Cerrar"
@@ -37,8 +43,9 @@ msgstr "&Buscar:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "Texto a buscar"
+msgstr "Texto que se va a buscar"
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -48,6 +55,7 @@ msgstr "Siguiente"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Saltar a la siguiente coincidencia"
 
@@ -59,6 +67,7 @@ msgstr "Anterior"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Saltar a la anterior coincidencia"
 
@@ -69,6 +78,7 @@ msgstr "Opciones"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modificar comportamiento de búsqueda"
 
@@ -82,8 +92,9 @@ msgstr "Sensible a mayúsculas"
 msgid "Phrase not found"
 msgstr "Frase no encontrada"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:152
 #, kde-format
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Guardar página HTML"
 

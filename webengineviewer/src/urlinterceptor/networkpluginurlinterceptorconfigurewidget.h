@@ -26,7 +26,7 @@ public:
     virtual void saveSettings() = 0;
     virtual void resetSettings() = 0;
 
-    virtual QString helpAnchor() const;
+    [[nodiscard]] virtual QString helpAnchor() const;
 
 Q_SIGNALS:
     void configureChanged();

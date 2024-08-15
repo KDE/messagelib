@@ -62,9 +62,7 @@ void WebEnginePartHtmlWriter::end()
         // qDebug() << " load big message ";
         mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/messageviewer_XXXXXX") + QLatin1StringView(".html"));
         mTempFile->open();
-        QTextStream stream(mTempFile);
-        stream.setEncoding(Util::htmlEncoding(data(), codec()));
-        stream << data();
+        mTempFile->write(data());
         // Bug 387061
         mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
         // qDebug() << " tempFile.fileName()" << mTempFile->fileName();

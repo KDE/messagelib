@@ -25,7 +25,7 @@ DraftEncryptionState::DraftEncryptionState(const KMime::Message::Ptr &msg)
 void DraftEncryptionState::setState(bool encrypt)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
-    hdr->fromUnicodeString(encrypt ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
+    hdr->fromUnicodeString(encrypt ? QStringLiteral("true") : QStringLiteral("false"));
     mMsg->setHeader(hdr);
 }
 
@@ -57,7 +57,7 @@ DraftSignatureState::DraftSignatureState(const KMime::Message::Ptr &msg)
 void DraftSignatureState::setState(bool sign)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-SignatureActionEnabled");
-    hdr->fromUnicodeString(sign ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
+    hdr->fromUnicodeString(sign ? QStringLiteral("true") : QStringLiteral("false"));
     mMsg->setHeader(hdr);
 }
 
@@ -89,7 +89,7 @@ DraftCryptoMessageFormatState::DraftCryptoMessageFormatState(const KMime::Messag
 void DraftCryptoMessageFormatState::setState(Kleo::CryptoMessageFormat cryptoMessageFormat)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-CryptoMessageFormat");
-    hdr->fromUnicodeString(QString::number(cryptoMessageFormat), "utf-8");
+    hdr->fromUnicodeString(QString::number(cryptoMessageFormat));
     mMsg->setHeader(hdr);
 }
 

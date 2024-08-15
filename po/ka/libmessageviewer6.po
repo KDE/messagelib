@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 00:38+0000\n"
-"PO-Revision-Date: 2023-09-29 07:22+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-02 05:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -403,6 +403,12 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "გასაღებების წაშლა"
 
+#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search..."
+msgstr "ძებნა..."
+
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
@@ -420,6 +426,7 @@ msgstr "გამოტოვება, თუ ხელმოწერილი
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Export..."
 msgstr "გატანა..."
 
@@ -431,11 +438,13 @@ msgstr "წესის მორგება"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
+msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "წესის დამატება..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Import..."
 msgstr "შემოტანა..."
 
@@ -445,18 +454,16 @@ msgid "No rules found"
 msgstr "წესები ვერ ვიპოვე."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "წესების გატანა"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, kde-format
-msgid "Export Rules"
-msgstr "წესების გატანა"
-
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "წესების შემოტანა"
 
@@ -464,12 +471,6 @@ msgstr "წესების შემოტანა"
 #, kde-format
 msgid "No rules imported."
 msgstr "წესები შემოტანილი არაა."
-
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, kde-format
-msgctxt "@title:window"
-msgid "Import Rules"
-msgstr "წესების შემოტანა"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #: remote-content/remotecontentconfigurewidget.cpp:52
@@ -562,26 +563,28 @@ msgstr "წესის შეცვლა"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Enabled"
 msgstr "ჩართულია"
 
-#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
 msgid "Domain:"
 msgstr "დომენი:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
 msgstr "სიის-ID:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:272
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "ვისგან:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "დომენიდან მოსული ყველა ელფოსტის მისათითებლად \"*\" გამოიყენეთ"
 
@@ -793,88 +796,88 @@ msgstr "%1: სწორია"
 msgid "Not Signed"
 msgstr "ხელმოწერილი არაა"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "სათაური:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "თარიღი:"
 
-#: header/grantleeheaderformatter.cpp:240
+#: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
 msgstr "შეტყობინების-ID:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "ვის:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "უპასუხეთ:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "ასლი:"
 
-#: header/grantleeheaderformatter.cpp:270
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "ფარულიასლი:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "გამგზავნი:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "გადმოგზავნილია ვისგან:"
 
-#: header/grantleeheaderformatter.cpp:278
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "გადაგზავნილია ვისთან:"
 
-#: header/grantleeheaderformatter.cpp:359
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee-ის თემა \"%1\" არასწორია."
 
-#: header/grantleeheaderformatter.cpp:449 header/headerstyle_util.cpp:80
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
 #, kde-format
 msgid "No Subject"
 msgstr "სათაურის გარეშე"
 
-#: header/grantleeheaderformatter.cpp:454
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "სპამის სტატუსი:"
 
-#: header/grantleeheaderformatter.cpp:466
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "ბეჭდვის რეჟიმი"
 
-#: header/grantleeheaderformatter.cpp:508
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:515
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "მიმაგრებული ფაილები:"
 
-#: header/grantleeheaderformatter.cpp:544
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "უსაფრთხოება:"
@@ -982,23 +985,23 @@ msgstr "ვისგან: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "ვის: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "ასლი: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "ფარულიასლი: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "უპასუხეთ: "
@@ -1219,6 +1222,12 @@ msgstr "ავტორიზებული"
 msgid "Blocked"
 msgstr "დაბლოკილია"
 
+#: remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Domain:"
+msgstr "დომენი:"
+
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
@@ -1233,21 +1242,25 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Move to Trash"
-msgstr "ნაგავში გადატანა"
+msgstr "ნაგვის ყუთში გადატანა"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
+msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "ვადასტურებ, რომ ეს სპამი არაა"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
+msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "ელფოსტის თეთრ სიაში ჩამატება"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "ფიშინგის ამოცნობის გამორთვა ყველა შეტყობინებისთვის"
 
@@ -1328,6 +1341,323 @@ msgstr "'%1' ის გაფართოება შეუძლებელ�
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "მოკლე ბმული '%1' გადამისამართდება URL-ზე '%2'."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.in:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "მხოლოდ მონიშნული ტექსტის დაბეჭდვა"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.in:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"ბეჭდვისას მორგების ფანჯარაში მითითებული ციტატის გაშლა/ჩაკეცვის ნიშნების "
+"გათვალისწინება."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.in:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"მიუთითებს, დაიბეჭდება თუ არა გვერდთან ერთად ფონის ფერი და გამოსახულება."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.in:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"შეტყობინების დაბეჭდვისას დაშიფვრის/ხელმოწერის დეტალების ყოველთვის ჩვენება"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.in:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr "HTML-ის რენდერისას ფონტების მინიმალურზე მცირე ზომას არ ვიყენებთ."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "შეტყობინების სხეულის ფონტი"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.in:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "ფონტი ბეჭდვისთვის"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.in:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "ფიშინგის ბმულის შემოწმება"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.in:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "შეტყობინების ფანჯრის დახურვა პასუხის/გადაგზავნის შემდეგ"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების ჩვენება"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.in:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"ჩართეთ ეს პარამეტრი ციტირებულ ტექსტის სხვადასხვა დონის საჩვენებლად. გამორთეთ "
+"ციტირებული ტექსტის დონეების ჩვენების შესაწყვეტად."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.in:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "ავტომატური ჩაკეცვის დონე:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "ციტატის ტექსტისთვის ფონტის ზომის შემცირება"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.in:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"ჩართეთ ეს პარამეტრი, თუ გნებავთ, ციტირებული ტექსტი უფრო მცირე ფონტით "
+"გამოჩნდეს."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.in:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "ნახვისას ელფოსტის ავტომატური გაშიფვრა თუ კითხვა ამის შესახებ"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "შეტყობინების სტრუქტურის ჩვენება"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:94
+#, kde-format
+msgid "Show never"
+msgstr "არასდროს მაჩვენო"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.in:97
+#, kde-format
+msgid "Show always"
+msgstr "ყოველთვის ჩვენება"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "რა სტილით იქნება თავსართები ნაჩვენები"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.in:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "რამდენი თავსართი იქნება ნაჩვენები"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.in:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "უბრალო ტექსტს HTML მირჩევნია"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.in:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr ""
+"შეტყობინებებისთვის ინტერნეტიდან გარე მიმართვების ჩატვირთვის ნების დართვა"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.in:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "როგორაა ნაჩვენები მიმაგრებული ფაილები"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.in:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "მიუთითებს, გამოიყენება თუ არა ციტირების ტექსტი მესამე დონის შემდეგ"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "წვდომის გასაღების გააქტიურება"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail-ს შეუძლია საეჭვო ელფოსტების შემოწმება თქვენს მოსატყუებლად ჩვეულებრივ "
+"გამოყენებული ხერხების არსებობის შემოწმებით"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.in:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "ფიშინგის თეთრ სიაში არსებული ელფოსტების სია"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.in:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "ელფოსტების სკანირება ტრეკინგის ბმულებზე"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.in:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "დაშიფრულ შეტყობინებებზე პასუხისას MDN გაგზავნილი არ იქნება"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:179
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "ვისგან:/ვის: თავსართების გადაწერა პასუხებში პასუხად"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.in:180
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. ეს "
+"პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, რომ "
+"Outlook-ის მომხმარებლები თქვენს პასუხს ვერ იღებენ, სცადეთ, ეს პარამეტრი "
+"ჩართოთ."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:185
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Groupware-ის მოსაწვევების ელფოსტის სხეულში გაგზავნა"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.in:186
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. ეს "
+"პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, რომ "
+"Outlook-ის მომხმარებლები თქვენს მოსაწვევებს ვერ იღებენ, სცადეთ, ეს პარამეტრი "
+"ჩართოთ."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:191
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Exchange-სთან თავსებადი მოსაწვევის სახელები"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.in:192
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook-ს, თუ მას Microsoft Exchange-სთან ერთად იყენებს, აქვს "
+"პრობლემა, გაიგოს სტანდარტებთან თავსებადი ჯგუფური ელფოსტა. ჩართეთ ეს "
+"პარამეტრი, რომ ჯგუფური მოსაწვევები ისე გავგზავნო, რომ Microsoft Exchange-მა "
+"გაიგოს."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:197
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "ავტომატური მოსაწვევის გაგზავნა"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.in:198
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"თუ ეს ჩართულია, ელფოსტის კომპოზიტორის ფანჯარას ვერ დაინახავთ. სამაგიეროდ "
+"ყველა მოსაწვევის ელფოსტა ავტომატურად გაიგზავნება. თუ გნებავთ, ელფოსტა "
+"გაგზავნამდე ნახოთ, შეგიძლიათ, ეს პარამეტრი გამორთოთ. მაგრამ, დაიმახსოვრეთ, "
+"რომ ტექსტი კომპოზიტორის ფანჯარაში iCalendar-ის სინტაქსშითაა და ის ხელით არ "
+"უნდა შეცვალოთ."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "პასუხის გაგზავნის შემდეგ მოსაწვევის ელფოსტების წაშლა"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.in:204
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"თუ ეს ჩართულია, მიღებული მოსაწვევის ელფოსტები, რომლებზეც პასუხს გასცემთ, "
+"ნაგვის ყუთში აღმოჩნდება."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "&ფიქსირებული ფონტის გამოყენება"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.in:235
+#, kde-format
+msgid "The most recent selected folder used for Todo."
+msgstr "გასაკეთებლისთვის გამოყენებული უახლესი საქაღალდე."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.in:241
+#, kde-format
+msgid "The most recent selected folder used for Event."
+msgstr "მოვლენისთვის გამოყენებული უახლესი საქაღალდე."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.in:247
+#, kde-format
+msgid "The most recent selected folder used for Notes."
+msgstr "შენიშვნებისთვის გამოყენებული უახლესი საქაღალდე."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1410,12 +1740,6 @@ msgstr "&ავტომატური მოსაწვევის გაგ
 msgid "Options"
 msgstr "გამართვა"
 
-#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: ui/invitationsettings.ui:74
-#, kde-format
-msgid "Delete invitation emails after the reply to them has been sent"
-msgstr "პასუხის გაგზავნის შემდეგ მოსაწვევის ელფოსტების წაშლა"
-
 #. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
 #: ui/printingsettings.ui:17
 #, kde-format
@@ -1482,41 +1806,42 @@ msgstr "ავტომატური &ჩაკეცვის დონე:"
 msgid "&Minimum font size:"
 msgstr "&ფონტის მინიმალური ზომა:"
 
-#: utils/messageviewerutil.cpp:124
+#: utils/messageviewerutil.cpp:123
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "ფაილი \"%1\" სახელით უკვე არსებობს. შევცვალო?"
 
-#: utils/messageviewerutil.cpp:127
+#: utils/messageviewerutil.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ჩავანაცვლო ფაილი?"
 
-#: utils/messageviewerutil.cpp:177
+#: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
 msgstr "მიმაგრებული ფაილების შენახვა"
 
-#: utils/messageviewerutil.cpp:194
+#: utils/messageviewerutil.cpp:176
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "მიბმული.1"
 
-#: utils/messageviewerutil.cpp:200
+#: utils/messageviewerutil.cpp:182
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "მიმაგრებული ფაილის შენახვა"
 
-#: utils/messageviewerutil.cpp:224
+#: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "მიბმული.%1"
 
-#: utils/messageviewerutil.cpp:322
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1524,22 +1849,24 @@ msgid ""
 msgstr ""
 "შეტყობინების ნაწილი %1 დაშიფრულია. გნებავთ დაშიფვრის შენარჩუნება შენახვისას?"
 
-#: utils/messageviewerutil.cpp:324 utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail-ის კითხვა"
 
-#: utils/messageviewerutil.cpp:324
+#: utils/messageviewerutil.cpp:306
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "დაშიფვრის შენარჩუნება"
 
-#: utils/messageviewerutil.cpp:325 utils/messageviewerutil.cpp:338
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
+msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "არ შეინარჩუნო"
 
-#: utils/messageviewerutil.cpp:335
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1548,13 +1875,14 @@ msgstr ""
 "შეტყობინების ნაწილი %1 ხელმოწერილია. გნებავთ ხელმოწერის შენარჩუნება "
 "შენახვისას?"
 
-#: utils/messageviewerutil.cpp:337
+#: utils/messageviewerutil.cpp:319
 #, kde-format
+msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "ხელმოწერის შენარჩუნება"
 
-#: utils/messageviewerutil.cpp:401 utils/messageviewerutil.cpp:419
-#: utils/messageviewerutil.cpp:437 utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1564,78 +1892,78 @@ msgstr ""
 "<qt>შეცდომა, ჩაწერისას, ფაილში<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 
-#: utils/messageviewerutil.cpp:404
+#: utils/messageviewerutil.cpp:386
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
 
-#: utils/messageviewerutil.cpp:422 utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
 msgstr "მიმაგრებული ფაილის შენახვის შეცდომა"
 
-#: utils/messageviewerutil.cpp:453
+#: utils/messageviewerutil.cpp:435
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "შესანახი მიმაგრებული ფაილი არ არსებობს."
 
-#: utils/messageviewerutil.cpp:468
+#: utils/messageviewerutil.cpp:450
 #, kde-format
 msgid "message"
 msgstr "შეტყობინება"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:472
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr "ელფოსტის შეტყობინებები (*.mbox);;ყველა ფაილი (*)"
 
-#: utils/messageviewerutil.cpp:501
+#: utils/messageviewerutil.cpp:483
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "შეტყობინების შენახვა"
 msgstr[1] "შეტყობინების შენახვა"
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "ფაილის (%1) ჩატვირთვის შეცდომა."
 
-#: utils/messageviewerutil.cpp:526
+#: utils/messageviewerutil.cpp:508
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "შეტყობინების ჩატვირთვის შეცდომა"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:510
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1: ფაილის შექმნის შეცდომა."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:559
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "შეტყობინების შენახვის შეცდომა"
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "We cannot save message."
 msgstr "ამ შეტყობინების შენახვა შეუძლებელია."
 
-#: utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
 msgstr "შეტყობინების შენახვის შეცდომა"
 
-#: utils/messageviewerutil.cpp:603
+#: utils/messageviewerutil.cpp:585
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "წაიშალა: %1"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1644,12 +1972,12 @@ msgstr ""
 "თქვენ ამ შეტყობინებაზე მიმაგრებული ფაილი წაშალეთ. მიმაგრებული ფაილის საწყისი "
 "MIME თავსართები იყო:"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:623
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1-ით &გახსნა"
 
-#: utils/messageviewerutil.cpp:643
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1675,12 +2003,12 @@ msgstr "ტიპი"
 msgid "Size"
 msgstr "ზომა"
 
-#: viewer/printmessage.cpp:61
+#: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
 msgstr "ბეჭდვის მინიატურის გენერაცია შეუძლებელია."
 
-#: viewer/printmessage.cpp:97
+#: viewer/printmessage.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
@@ -1691,7 +2019,7 @@ msgstr "დოკუმენტის დაბეჭდვა"
 msgid "Turn on HTML rendering for this message."
 msgstr "ამ შეტყობინებისთვის HTML რენდერის ჩართვა."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "ამ შეტყობინებისთვის გარე მიმართვების ინტერნეტიდან ჩატვირთვა."
@@ -1771,7 +2099,7 @@ msgstr "&მისამართების წიგნში გახსნ
 msgid "&Copy Email Address"
 msgstr "ელფოსტის მისამართის &კოპირება"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2732
+#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "მისამართი კოპირებულია ბუფერში."
@@ -1819,10 +2147,11 @@ msgstr "მართლა გნებავთ, გაუშვათ <filenam
 
 #: viewer/urlhandlermanager.cpp:905
 #, kde-format
+msgctxt "@action:button"
 msgid "Execute"
 msgstr "გაშვება"
 
-#: viewer/viewer.cpp:135
+#: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
 msgstr "შეტყობინების ჩატვირთვა..."
@@ -1869,13 +2198,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&გამხსნელი პროგრამა..."
 
-#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:525 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "გახსნა"
 
-#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:539 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1891,12 +2220,12 @@ msgstr "გადახვევა"
 msgid "Save As..."
 msgstr "შენახვა, როგორც..."
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "კოპირება"
 
-#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:569 viewer/viewer_p.cpp:1760
 #, kde-format
 msgid "Delete Attachment"
 msgstr "მიმაგრებული ფაილის წაშლა"
@@ -1911,7 +2240,7 @@ msgstr "ავტორისთვის პასუხი"
 msgid "Reply To All"
 msgstr "ყველასთვის პასუხი"
 
-#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:594 viewer/viewer_p.cpp:1765
 #, kde-format
 msgid "Properties"
 msgstr "თვისებები"
@@ -1926,270 +2255,272 @@ msgstr "KMail"
 msgid "The KDE Mail Client"
 msgstr "KDE-ის ელფოსტის კლიენტი"
 
-#: viewer/viewer_p.cpp:1277
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "მიმაგრებული ფაილის ნახვა: %1"
 
-#: viewer/viewer_p.cpp:1479
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&მიმაგრებული ფაილები"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "აირჩიეთ მიმაგრებული ფაილების ჩვენების სტილი"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&როგორც ხატულები"
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "ყველა მიმაგრებული ფაილის ხატულის სახით ჩვენება. სანახავად დააწკაპუნეთ."
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&ჭკვიანი"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "მიმაგრებული ფაილების ჩვენება გამომგზავნის მიერ მითითებული ხერხით."
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&ხაზშივე"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "ყველა მიმაგრებული ფაილის ხაზშივე ჩვენება (თუ შესაძლებელია)"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&დამალვა"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr ""
 "შეტყობინებების დამთვალიერებელში მიმაგრებული ფაილები ნაჩვენები არ იქნება"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "მხოლოდ თავსართში"
 
-#: viewer/viewer_p.cpp:1515
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "მიმაგრებული ფაილების, მხოლოდ, ელფოსტის თავსართებში ჩვენება"
 
-#: viewer/viewer_p.cpp:1520
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&კოდირების დაყენება"
 
-#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "ავტომატური"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "ტექსტის კოპირება"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1543
 #, kde-format
+msgctxt "@action"
 msgid "Select All Text"
 msgstr "ტექსტის სრულად მონიშვნა"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2061
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
 msgid "Copy Link Address"
 msgstr "ბმულის მისამართის კოპირება"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "URL-ის გახსნა"
 
-#: viewer/viewer_p.cpp:1558
-#, kde-format
-msgid "Use Fi&xed Font"
-msgstr "&ფიქსირებული ფონტის გამოყენება"
-
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "შეტყობინების სტრუქტურის ჩვენება"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, kde-format
+msgctxt "@action"
 msgid "&View Source"
 msgstr "&წყაროს ნახვა"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
 msgstr "&შეტყობინების შენახვა..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, kde-format
+msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&ჩვენების ფორმატის შენახვა"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, kde-format
+msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&ჩვენების ფორმატის დაბრუნება"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "შეტყობინების ზემოთ ახვევა"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "შეტყობინების ზემოთ ახვევა (მეტი)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, kde-format
+msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა (მეტი)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-ით ჩვენების რეჟიმის გადართვა"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "ჩვენების რეჟიმის ტექსტისა და HTML-ის შორის გადართვა"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
+msgctxt "@action"
 msgid "Load external references"
 msgstr "გარე მიმართვების ჩატვირთვა"
 
-#: viewer/viewer_p.cpp:1629 widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: viewer/viewer_p.cpp:1630
 #, kde-format
+msgctxt "@action"
 msgid "Speak Text"
 msgstr "ტექსტის წაკითხვა"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, kde-format
+msgctxt "@action"
 msgid "Share Text..."
 msgstr "ტექსტის გაზიარება..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, kde-format
+msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "ნახატის ბმის კოპირება"
+msgstr "გამოსახულების მდებარეობის კოპირება"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&შეტყობინებაში მოძებნა..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "ემოციების გამორთვა"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "შეინახვა &როგორც..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "გამხსნელი პროგრამა..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "ყველა მიმაგრებული ფაილის შენახვა..."
 
-#: viewer/viewer_p.cpp:1981
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The network is broken."
 msgstr "ქსელთა მიერთება გათიშულია."
 
-#: viewer/viewer_p.cpp:1981
-#, kde-format
-msgid "Check Phishing URL"
-msgstr "ფიშინგის ბმულის შემოწმება"
-
-#: viewer/viewer_p.cpp:1984
-#, kde-format
-msgid "The URL %1 is not valid."
-msgstr "ბმული %1 არასწორია."
-
-#: viewer/viewer_p.cpp:1984
+#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ფიშინგის ბმულის შემოწმება"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1997
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "ბმული %1 არასწორია."
+
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "ეს ვებგვერდი საზიანო პროგრამებს შეიცავს. გნებავთ გააგრძელოთ მისი ჩვენება?"
 
-#: viewer/viewer_p.cpp:2005
+#: viewer/viewer_p.cpp:2018
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "მავნე პროგრამა"
 
-#: viewer/viewer_p.cpp:2059
+#: viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ელფოსტის მისამართის კოპირება"
 
-#: viewer/viewer_p.cpp:2142
+#: viewer/viewer_p.cpp:2155
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "შეტყობინება უბრალო ტექსტის სახით"
 
-#: viewer/viewer_p.cpp:2738
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL წარმატებით დაკოპირდა ბუფერში."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2888
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "შეტყობინების ჩატვირთვის შეცდომა: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message not found."
 msgstr "შეტყობინება ვერ ვიპოვე."
@@ -2292,6 +2623,11 @@ msgstr ""
 "<br />ხალხი, რომლებსაც აქვთ ელფოსტის პროგრამა, რომელსაც მოსაწვევების "
 "მხარდაჭერა გააჩნია, ამასთან მაინც იმუშავებენ.</qt>"
 
+#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#, kde-format
+msgid "Speak Text"
+msgstr "ტექსტის წაკითხვა"
+
 #: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
@@ -2318,7 +2654,7 @@ msgstr "HTML კოდი მომხმარებლისთვის შ�
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
-msgctxt "@action"
+msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
 
@@ -2330,13 +2666,15 @@ msgstr "ფაილის გახსნა"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
-msgstr[1] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილები შევინახე"
+msgstr[1] "იმ საქაღალდის გახსნა, სადაც მიმაგრებული ფაილი შევინახე"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
+msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "იმ საქაღალდის გახსნა, სადაც PDF ფაილი შევინახე"
 
@@ -2347,119 +2685,24 @@ msgstr "KMail-ის შეცდომა მიმაგრებული ფ
 
 #: widgets/shownextmessagewidget.cpp:15
 #, kde-format
+msgctxt "@action:button"
 msgid "Next Message"
 msgstr "შემდეგი შეტყობინება"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, kde-format
+msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "წინა შეტყობინება"
 
-#~ msgid "Only print selected text in viewer"
-#~ msgstr "მხოლოდ მონიშნული ტექსტის დაბეჭდვა"
+#~ msgid "Export Rules"
+#~ msgstr "წესების გატანა"
 
-#~ msgid ""
-#~ "Respect expand/collapse quote mark which is defined in settings during "
-#~ "printing."
-#~ msgstr ""
-#~ "ბეჭდვისას მორგების ფანჯარაში მითითებული ციტატის გაშლა/ჩაკეცვის ნიშნების "
-#~ "გათვალისწინება."
+#~ msgid "Import Rules"
+#~ msgstr "წესების შემოტანა"
 
-#~ msgid ""
-#~ "Specifies whether the background color and images are also drawn when the "
-#~ "page is printed."
-#~ msgstr ""
-#~ "მიუთითებს, დაიბეჭდება თუ არა გვერდთან ერთად ფონის ფერი და გამოსახულება."
-
-#~ msgid "Always show encryption/signature details when we print message"
-#~ msgstr ""
-#~ "შეტყობინების დაბეჭდვისას დაშიფვრის/ხელმოწერის დეტალების ყოველთვის ჩვენება"
-
-#~ msgid "When we render html do not use font size inferior to minimum size."
-#~ msgstr "HTML-ის რენდერისას ფონტების მინიმალურზე მცირე ზომას არ ვიყენებთ."
-
-#~ msgid "Specifies the font to use for the message body"
-#~ msgstr "შეტყობინების სხეულის ფონტი"
-
-#~ msgid "Specifies the font to use for printing"
-#~ msgstr "ფონტი ბეჭდვისთვის"
-
-#~ msgid "Check if url can be a phishing"
+#~ msgid "Check Phishing URL"
 #~ msgstr "ფიშინგის ბმულის შემოწმება"
-
-#~ msgid "Close message window after replying or forwarding"
-#~ msgstr "შეტყობინების ფანჯრის დახურვა პასუხის/გადაგზავნის შემდეგ"
-
-#~ msgid "Show expand/collapse quote marks"
-#~ msgstr "ჩამოსაშლელი/ასაკეცი ციტატის ნიშნების ჩვენება"
-
-#~ msgid ""
-#~ "Enable this option to show different levels of quoted text. Disable to "
-#~ "hide the levels of quoted text."
-#~ msgstr ""
-#~ "ჩართეთ ეს პარამეტრი ციტირებულ ტექსტის სხვადასხვა დონის საჩვენებლად. "
-#~ "გამორთეთ ციტირებული ტექსტის დონეების ჩვენების შესაწყვეტად."
-
-#~ msgid "Automatic collapse level:"
-#~ msgstr "ავტომატური ჩაკეცვის დონე:"
-
-#~ msgid "Reduce font size for quoted text"
-#~ msgstr "ციტატის ტექსტისთვის ფონტის ზომის შემცირება"
-
-#~ msgid "Enable this option to show quoted text with a smaller font."
-#~ msgstr ""
-#~ "ჩართეთ ეს პარამეტრი, თუ გნებავთ, ციტირებული ტექსტი უფრო მცირე ფონტით "
-#~ "გამოჩნდეს."
-
-#~ msgid "Always decrypt messages when viewing or ask before decrypting"
-#~ msgstr "ნახვისას ელფოსტის ავტომატური გაშიფვრა თუ კითხვა ამის შესახებ"
-
-#~ msgid "Message Structure Viewer"
-#~ msgstr "შეტყობინების სტრუქტურის ჩვენება"
-
-#~ msgid "Show never"
-#~ msgstr "არასდროს მაჩვენო"
-
-#~ msgid "Show always"
-#~ msgstr "ყოველთვის ჩვენება"
-
-#~ msgid "What style of headers should be displayed"
-#~ msgstr "რა სტილით იქნება თავსართები ნაჩვენები"
-
-#~ msgid "How much of headers should be displayed"
-#~ msgstr "რამდენი თავსართი იქნება ნაჩვენები"
-
-#~ msgid "Prefer HTML to plain text"
-#~ msgstr "უბრალო ტექსტს HTML მირჩევნია"
-
-#~ msgid "Allow messages to load external references from the Internet"
-#~ msgstr ""
-#~ "შეტყობინებებისთვის ინტერნეტიდან გარე მიმართვების ჩატვირთვის ნების დართვა"
-
-#~ msgid "How attachments are shown"
-#~ msgstr "როგორაა ნაჩვენები მიმაგრებული ფაილები"
-
-#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-#~ msgstr "მიუთითებს, გამოიყენება თუ არა ციტირების ტექსტი მესამე დონის შემდეგ"
-
-#~ msgid "Activate Access Key"
-#~ msgstr "წვდომის გასაღების გააქტიურება"
-
-#~ msgid ""
-#~ "KMail can analyze messages for suspected email scams by looking for "
-#~ "common techniques used to deceive you"
-#~ msgstr ""
-#~ "KMail-ს შეუძლია საეჭვო ელფოსტების შემოწმება თქვენს მოსატყუებლად "
-#~ "ჩვეულებრივ გამოყენებული ხერხების არსებობის შემოწმებით"
-
-#~ msgid "List of emails in scam white list"
-#~ msgstr "ფიშინგის თეთრ სიაში არსებული ელფოსტების სია"
-
-#~ msgid "Scan emails for tracking URLs"
-#~ msgstr "ელფოსტების სკანირება ტრეკინგის ბმულებზე"
-
-#~ msgid "Do not send MDNs in response to encrypted messages"
-#~ msgstr "დაშიფრულ შეტყობინებებზე პასუხისას MDN გაგზავნილი არ იქნება"
 
 #~ msgid ""
 #~ "Specifies the default policy to use, for the Message Disposition "
@@ -2474,81 +2717,6 @@ msgstr "წინა შეტყობინება"
 #~ msgstr ""
 #~ "მიუთითებს ციტირების ნაგულისხმევ ქმედებას შეტყობინებაზე პასუხისას (მხოლოდ "
 #~ "შიდა გამოყენებისთვის)"
-
-#~ msgid "Mangle From:/To: headers in replies to replies"
-#~ msgstr "ვისგან:/ვის: თავსართების გადაწერა პასუხებში პასუხად"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your replies, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. "
-#~ "ეს პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, "
-#~ "რომ Outlook-ის მომხმარებლები თქვენს პასუხს ვერ იღებენ, სცადეთ, ეს "
-#~ "პარამეტრი ჩართოთ."
-
-#~ msgid "Send groupware invitations in the mail body"
-#~ msgstr "Groupware-ის მოსაწვევების ელფოსტის სხეულში გაგზავნა"
-
-#~ msgid ""
-#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
-#~ "the iCalendar standard; this option works around one of them. If you have "
-#~ "problems with Outlook users not being able to get your invitations, try "
-#~ "setting this option."
-#~ msgstr ""
-#~ "Microsof Outlook-ს მის iCalendar-ის განხორციელებაში ბევრი ნაკლი გააჩნია. "
-#~ "ეს პარამეტრი მათთვის გვერდის შემოვლაში დაგეხმარებათ. თუ გაქვთ პრობლემა, "
-#~ "რომ Outlook-ის მომხმარებლები თქვენს მოსაწვევებს ვერ იღებენ, სცადეთ, ეს "
-#~ "პარამეტრი ჩართოთ."
-
-#~ msgid "Exchange-compatible invitation naming"
-#~ msgstr "Exchange-სთან თავსებადი მოსაწვევის სახელები"
-
-#~ msgid ""
-#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
-#~ "server, has a problem understanding standards-compliant groupware email. "
-#~ "Turn this option on to send groupware invitations in a way that Microsoft "
-#~ "Exchange understands."
-#~ msgstr ""
-#~ "Microsoft Outlook-ს, თუ მას Microsoft Exchange-სთან ერთად იყენებს, აქვს "
-#~ "პრობლემა, გაიგოს სტანდარტებთან თავსებადი ჯგუფური ელფოსტა. ჩართეთ ეს "
-#~ "პარამეტრი, რომ ჯგუფური მოსაწვევები ისე გავგზავნო, რომ Microsoft Exchange-"
-#~ "მა გაიგოს."
-
-#~ msgid "Automatic invitation sending"
-#~ msgstr "ავტომატური მოსაწვევის გაგზავნა"
-
-#~ msgid ""
-#~ "When this is checked, you will not see the mail composer window. Instead, "
-#~ "all invitation mails are sent automatically. If you want to see the mail "
-#~ "before sending it, you can uncheck this option. However, be aware that "
-#~ "the text in the composer window is in iCalendar syntax, and you should "
-#~ "not try modifying it by hand."
-#~ msgstr ""
-#~ "თუ ეს ჩართულია, ელფოსტის კომპოზიტორის ფანჯარას ვერ დაინახავთ. სამაგიეროდ "
-#~ "ყველა მოსაწვევის ელფოსტა ავტომატურად გაიგზავნება. თუ გნებავთ, ელფოსტა "
-#~ "გაგზავნამდე ნახოთ, შეგიძლიათ, ეს პარამეტრი გამორთოთ. მაგრამ, "
-#~ "დაიმახსოვრეთ, რომ ტექსტი კომპოზიტორის ფანჯარაში iCalendar-ის სინტაქსშითაა "
-#~ "და ის ხელით არ უნდა შეცვალოთ."
-
-#~ msgid ""
-#~ "When this is checked, received invitation emails that have been replied "
-#~ "to will be moved to the Trash folder, once the reply has been "
-#~ "successfully sent."
-#~ msgstr ""
-#~ "თუ ეს ჩართულია, მიღებული მოსაწვევის ელფოსტები, რომლებზეც პასუხს გასცემთ, "
-#~ "ნაგვის ყუთში აღმოჩნდება."
-
-#~ msgid "The most recent selected folder using for Todo."
-#~ msgstr "გასაკეთებლისთვის გამოყენებული უახლესი საქაღალდე."
-
-#~ msgid "The most recent selected folder using for Event."
-#~ msgstr "მოვლენისთვის გამოყენებული უახლესი საქაღალდე."
-
-#~ msgid "The most recent selected folder using for Notes."
-#~ msgstr "შენიშვნებისთვის გამოყენებული უახლესი საქაღალდე."
 
 #~ msgid "Edit with:"
 #~ msgstr "რედაქტორი:"

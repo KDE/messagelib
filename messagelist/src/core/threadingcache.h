@@ -33,7 +33,7 @@ public:
 
     void updateParent(MessageItem *mi, MessageItem *parent);
 
-    MessageItem *parentForItem(MessageItem *mi, qint64 &parentId) const;
+    [[nodiscard]] MessageItem *parentForItem(MessageItem *mi, qint64 &parentId) const;
 
     void expireParent(MessageItem *item);
 

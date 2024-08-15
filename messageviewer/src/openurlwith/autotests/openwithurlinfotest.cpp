@@ -20,6 +20,8 @@ void OpenWithUrlInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.url().isEmpty());
     QVERIFY(info.command().isEmpty());
     QVERIFY(info.commandLine().isEmpty());
+    QVERIFY(info.isLocalOpenWithInfo());
+    QVERIFY(info.enabled());
 }
 
 #include "moc_openwithurlinfotest.cpp"

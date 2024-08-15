@@ -391,7 +391,6 @@ void ObjectTreeParserTest::testParsePlainMessage()
     // Check that the textual content and the charset have the expected values
     QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the message text.\n"));
     QVERIFY(otp.htmlContent().isEmpty());
-    QCOMPARE(otp.plainTextContentCharset().toLower(), QByteArray("iso-8859-15"));
 
     // Check that the message was not modified in any way
     QCOMPARE(msg->encodedContent().constData(), content.constData());
@@ -410,7 +409,6 @@ void ObjectTreeParserTest::testParsePlainMessage()
     msg->parse();
     ObjectTreeParser otp2(&testSource);
     otp2.parseObjectTree(msg.data());
-    QCOMPARE(otp2.plainTextContentCharset().constData(), msg->defaultCharset().constData());
 }
 
 void ObjectTreeParserTest::testParseEncapsulatedMessage()
@@ -435,7 +433,6 @@ void ObjectTreeParserTest::testParseEncapsulatedMessage()
 
     // Check that the textual content and the charset have the expected values
     QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the first encapsulating message.\n"));
-    QCOMPARE(otp.plainTextContentCharset().toLower(), QByteArray("iso-8859-15"));
     QVERIFY(otp.htmlContent().isEmpty());
 
     // Check that the objecttreeparser did process the encapsulated message
@@ -517,7 +514,6 @@ void ObjectTreeParserTest::testHTML()
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
     QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text")));
-    QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
 
 void ObjectTreeParserTest::testHTMLasText()
@@ -534,9 +530,7 @@ void ObjectTreeParserTest::testHTMLasText()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
-    QCOMPARE(otp.htmlContentCharset().constData(), "");
     QCOMPARE(otp.plainTextContent().toLatin1().constData(), "Some HTML text");
-    QCOMPARE(otp.plainTextContentCharset().constData(), "windows-1252");
 }
 
 void ObjectTreeParserTest::testHTMLOnly()

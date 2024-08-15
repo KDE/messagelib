@@ -35,8 +35,8 @@ Q_SIGNALS:
     void mailTrackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event) override;
-    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
+    [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
+    [[nodiscard]] QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
 
     virtual void forwardWheelEvent(QWheelEvent *event);
     virtual void forwardKeyPressEvent(QKeyEvent *event);

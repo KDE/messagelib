@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
-"PO-Revision-Date: 2023-03-31 09:16+0200\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"PO-Revision-Date: 2024-08-01 06:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -25,7 +25,13 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Razvojno orodje"
 
-#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Zapri"
+
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
@@ -38,8 +44,9 @@ msgstr "Najd&i:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "Besedilo, ki naj se išče"
+msgstr "Iskano besedilo"
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
@@ -49,8 +56,9 @@ msgstr "Naslednje"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Pojdi na naslednje ujemanje"
+msgstr "Skoči na naslednje ujemanje"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
@@ -60,8 +68,9 @@ msgstr "Predhodno"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "Pojdi na predhodno ujemanje"
+msgstr "Skoči na predhodno ujemanje"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -70,6 +79,7 @@ msgstr "Možnosti"
 
 #: findbar/findbarbase.cpp:72
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Spremeni obnašanje iskanja"
 
@@ -83,8 +93,9 @@ msgstr "Ločevanje velikosti črk"
 msgid "Phrase not found"
 msgstr "Izraza ni mogoče najti"
 
-#: webenginepage.cpp:68
+#: webenginepage.cpp:152
 #, kde-format
+msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Shrani stran HTML"
 

@@ -79,7 +79,7 @@ public:
     [[nodiscard]] bool allowAsync() const;
 
     void setSourceObject(QObject *sourceObject);
-    QObject *sourceObject() const;
+    [[nodiscard]] QObject *sourceObject() const;
 
     void setMessageStatus(Akonadi::MessageStatus status);
     [[nodiscard]] Akonadi::MessageStatus messageStatus() const;

@@ -41,11 +41,18 @@ void PrintMessage::print()
         deleteLater();
         return;
     }
-    printDocument(&mPrinter);
+    printDocument(&mPrinter, dialog.printer()->pageLayout());
 }
 
-void PrintMessage::printDocument(QPrinter *printer)
+void PrintMessage::printPreviewDocument(QPrinter *printer)
 {
+    mView->print(printer);
+    mWaitForResult.exec();
+}
+
+void PrintMessage::printDocument(QPrinter *printer, const QPageLayout &layout)
+{
+    printer->setPageLayout(layout);
     mView->print(printer);
     mWaitForResult.exec();
 }
@@ -96,7 +103,7 @@ void PrintMessage::printPreview()
     QPrintPreviewDialog preview(&mPrinter, mParentWidget);
     preview.setWindowTitle(i18nc("@title:window", "Print Document"));
     preview.resize(800, 750);
-    connect(&preview, &QPrintPreviewDialog::paintRequested, this, &PrintMessage::printDocument);
+    connect(&preview, &QPrintPreviewDialog::paintRequested, this, &PrintMessage::printPreviewDocument);
     preview.exec();
     mInPrintPreview = false;
     deleteLater();

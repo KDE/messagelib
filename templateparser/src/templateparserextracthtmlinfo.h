@@ -31,8 +31,8 @@ Q_SIGNALS:
     void finished(const TemplateParserExtractHtmlInfoResult &result);
 
 private:
-    void slotExtractHtmlElementFinished(bool success);
-    void slotExtractToPlainTextFinished(bool success);
+    TEMPLATEPARSER_NO_EXPORT void slotExtractHtmlElementFinished(bool success);
+    TEMPLATEPARSER_NO_EXPORT void slotExtractToPlainTextFinished(bool success);
 
     TemplateParserExtractHtmlInfoResult mResult;
 

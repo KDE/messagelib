@@ -25,7 +25,7 @@ public:
     void setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
-    void verifyAndGenerateRule();
+    MESSAGEVIEWER_NO_EXPORT void verifyAndGenerateRule();
     DKIMCheckSignatureJob::CheckSignatureResult mResult;
 };
 }

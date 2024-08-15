@@ -30,10 +30,10 @@ protected:
     void run() override;
 
 private:
-    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
-    void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-                                      WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
-    void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
+    WEBENGINEVIEWER_NO_EXPORT void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
+    WEBENGINEVIEWER_NO_EXPORT void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                                                WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    WEBENGINEVIEWER_NO_EXPORT void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
     QString mCurrentDataBaseState;
     QString mDatabaseFullPath;
 };

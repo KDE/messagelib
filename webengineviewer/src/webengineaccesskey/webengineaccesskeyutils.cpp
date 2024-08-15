@@ -6,7 +6,7 @@
 
 #include "webengineaccesskeyutils.h"
 
-QString WebEngineViewer::WebEngineAccessKeyUtils::script()
+QString WebEngineViewer::WebEngineAccessKeyUtils::accessKeyScript()
 {
     const QString script = QString::fromLatin1(
         "(function() {"

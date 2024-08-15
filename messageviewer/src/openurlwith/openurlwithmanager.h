@@ -28,9 +28,15 @@ public:
     void saveRules();
 
     [[nodiscard]] OpenWithUrlInfo openWith(const QUrl &url);
+    [[nodiscard]] bool alwaysRuleForHost(const QUrl &url);
+
+    [[nodiscard]] QStringList hosts() const;
 
 private:
     MESSAGEVIEWER_NO_EXPORT void loadSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadUserSettings();
+    MESSAGEVIEWER_NO_EXPORT void loadGlobalSettings();
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList openUrlWithListPath() const;
 
     QList<OpenWithUrlInfo> mOpenWithUrlInfo;
 };

@@ -902,7 +902,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
                     nullptr,
                     xi18nc("@info", "Do you really want to execute <filename>%1</filename>?", url.toDisplayString(QUrl::PreferLocalFile)),
                     QString(),
-                    KGuiItem(i18n("Execute")),
+                    KGuiItem(i18nc("@action:button", "Execute")),
                     KStandardGuiItem::cancel())
                 != KMessageBox::ButtonCode::PrimaryAction) {
                 return true;

@@ -23,7 +23,7 @@ public:
 
     void start();
 
-    const OpenWithUrlInfo &info() const;
+    [[nodiscard]] const OpenWithUrlInfo &info() const;
     void setInfo(const OpenWithUrlInfo &newInfo);
     void setUrl(const QUrl &url);
 

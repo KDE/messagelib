@@ -23,7 +23,7 @@
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
 
-#include <KMime/DateFormatter>
+#include <MessageCore/DateFormatter>
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
@@ -654,7 +654,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -706,7 +706,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -755,7 +755,7 @@ void MessageFactoryTest::testCreateRedirect()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "Resent-Message-ID: %3\n"
         "Resent-Date: %4\n"
         "Resent-From: %5\n"
@@ -803,7 +803,7 @@ void MessageFactoryTest::testCreateResend()
         "Disposition-Notification-To: me@me.me\n"
         "MIME-Version: 1.0\n"
         "Content-Transfer-Encoding: 7Bit\n"
-        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
         "\n"
         "All happy families are alike; each unhappy family is unhappy in its own way.");
     baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageidMatch.captured(1));
@@ -828,7 +828,7 @@ void MessageFactoryTest::testCreateMDN()
     QString mdnContent = QString::fromLatin1(
         "The message sent on %1 to %2 with subject \"%3\" has been displayed. "
         "This is no guarantee that the message has been read or understood.");
-    mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime()))
+    mdnContent = mdnContent.arg(MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Localized, msg->date()->dateTime()))
                      .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(), mdnContent.toUtf8());
@@ -838,7 +838,6 @@ void MessageFactoryTest::testCreateMDN()
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 {
     auto composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->infoPart()->setCc(QStringList(QStringLiteral("cc@cc.cc")));
@@ -857,7 +856,6 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
     auto composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
     composer->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));

@@ -257,16 +257,16 @@ public:
     virtual ~ObjectTreeParser();
 
     void setAllowAsync(bool allow);
-    bool allowAsync() const;
+    [[nodiscard]] bool allowAsync() const;
 
-    bool hasPendingAsyncJobs() const;
+    [[nodiscard]] bool hasPendingAsyncJobs() const;
 
     /**
      * The text of the message, ie. what would appear in the
      * composer's text editor if this was edited or replied to.
      * This is usually the content of the first text/plain MIME part.
      */
-    QString plainTextContent() const;
+    [[nodiscard]] QString plainTextContent() const;
 
     /**
      * Similar to plainTextContent(), but returns the HTML source of the first text/html MIME part.
@@ -274,46 +274,35 @@ public:
      * Not to be confused with the HTML code that the message viewer widget displays, that HTML
      * is written out by htmlWriter() and a totally different pair of shoes.
      */
-    QString htmlContent() const;
+    [[nodiscard]] QString htmlContent() const;
 
-    /**
-     * The original charset of MIME part the plain text was extracted from.
-     *
-     * If there were more than one text/plain MIME parts in the mail, the this is the charset
-     * of the last MIME part processed.
-     */
-    QByteArray plainTextContentCharset() const;
-    QByteArray htmlContentCharset() const;
-
-    NodeHelper *nodeHelper() const;
+    [[nodiscard]] NodeHelper *nodeHelper() const;
 
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node, bool parseOnlySingleNode = false);
-    MessagePartPtr parsedPart() const;
+    [[nodiscard]] MessagePartPtr parsedPart() const;
 
 private:
-    void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
-    void setPlainTextContent(const QString &plainTextContent);
+    MIMETREEPARSER_NO_EXPORT void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
+    MIMETREEPARSER_NO_EXPORT void setPlainTextContent(const QString &plainTextContent);
 
     /**
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
-    MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType);
+    MIMETREEPARSER_NO_EXPORT MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    MIMETREEPARSER_NO_EXPORT MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType);
 
 private:
     /** ctor helper */
-    void init();
+    MIMETREEPARSER_NO_EXPORT void init();
 
-    QByteArray codecNameFor(KMime::Content *node) const;
+    MIMETREEPARSER_NO_EXPORT QByteArray codecNameFor(KMime::Content *node) const;
 
 private:
-    Interface::ObjectTreeSource *mSource;
-    NodeHelper *mNodeHelper;
-    QByteArray mPlainTextContentCharset;
-    QByteArray mHtmlContentCharset;
+    Interface::ObjectTreeSource *mSource = nullptr;
+    NodeHelper *mNodeHelper = nullptr;
     QString mPlainTextContent;
     QString mHtmlContent;
     KMime::Content *mTopLevelContent = nullptr;

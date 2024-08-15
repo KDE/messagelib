@@ -23,7 +23,7 @@ using namespace MessageViewer;
 OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     : KMessageWidget(parent)
     , mTimer(new QTimer(this))
-    , mShowFolderAction(new QAction(i18nc("@action", "Open folder where attachment was saved"), this))
+    , mShowFolderAction(new QAction(i18nc("@action - For we don't know if it's one or many attachments", "Open folder where attachment was saved"), this))
     , mOpenFileAction(new QAction(i18nc("@action", "Open File"), this))
 {
     setPosition(KMessageWidget::Header);
@@ -59,10 +59,10 @@ void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileTy
     mUrls = urls;
     switch (fileType) {
     case FileType::Attachment:
-        mShowFolderAction->setText(i18np("Open folder where attachment was saved", "Open folder where attachments were saved", mUrls.count()));
+        mShowFolderAction->setText(i18ncp("@action", "Open folder where attachment was saved", "Open folder where attachments were saved", mUrls.count()));
         break;
     case FileType::Pdf:
-        mShowFolderAction->setText(i18n("Open folder where PDF file was saved"));
+        mShowFolderAction->setText(i18nc("@action", "Open folder where PDF file was saved"));
         break;
     }
 }

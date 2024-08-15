@@ -35,7 +35,7 @@ public:
     [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
 
     void setOverrideCodecName(const QByteArray &codec);
-    QByteArray overrideCodecName() const override;
+    [[nodiscard]] QByteArray overrideCodecName() const override;
 
 private:
     std::unique_ptr<SimpleObjectTreeSourcePrivate> d;

@@ -21,7 +21,6 @@ public:
         QString identifier;
         QString iconName;
     };
-    explicit FilterSavedManager(QObject *parent = nullptr);
     ~FilterSavedManager() override;
 
     void saveFilter(MessageList::Core::Filter *filter, const QString &filtername, const QString &iconName);
@@ -37,6 +36,9 @@ public:
 
 Q_SIGNALS:
     void activateFilter(const QString &identifier);
+
+private:
+    explicit FilterSavedManager(QObject *parent = nullptr);
 };
 }
 }
