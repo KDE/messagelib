@@ -72,6 +72,8 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QStringLiteral("%NEXTYEAR");
     case MonthNumber:
         return QStringLiteral("%MONTHNUMBER"); // 1-12
+    case DayNumber:
+        return QStringLiteral("%DAYNUMBER"); // 1-28 to 31
     case DayOfMonth:
         return QStringLiteral("%DAYOFMONTH"); // 1-31
     case WeekNumber:
@@ -135,6 +137,12 @@ QString MessageComposer::ConvertSnippetVariablesUtil::nextYear()
 {
     const QDate date = QDate::currentDate();
     return QString::number(date.year() + 1);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::dayNumber()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.day());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNumber()

@@ -44,6 +44,7 @@ enum VariableType {
     LastYear,
     NextYear,
     MonthNumber,
+    DayNumber,
     DayOfMonth,
     WeekNumber,
     MonthNameShort,
@@ -64,6 +65,7 @@ enum VariableType {
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString insertDayOfWeek();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString lastYear();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString nextYear();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayNumber();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNumber();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfMonth();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString weekNumber();

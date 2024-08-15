@@ -79,6 +79,8 @@ void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
              QStringLiteral("%NEXTYEAR"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::MonthNumber),
              QStringLiteral("%MONTHNUMBER"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayNumber),
+             QStringLiteral("%DAYNUMBER"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth),
              QStringLiteral("%DAYOFMONTH"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::WeekNumber),

@@ -133,6 +133,9 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
     dateTimeMenuVariable->addAction(i18n("Month Number (%1)", MessageComposer::ConvertSnippetVariablesUtil::monthNumber()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNumber);
     });
+    dateTimeMenuVariable->addAction(i18n("Day Number (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayNumber()), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayNumber);
+    });
     dateTimeMenuVariable->addAction(i18n("Day Of Month (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth);
     });
