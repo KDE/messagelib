@@ -110,6 +110,9 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         dateTimeMenuVariable->addAction(i18n("Long Date (%1)", MessageComposer::ConvertSnippetVariablesUtil::longDate()), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Date);
         });
+        dateTimeMenuVariable->addAction(i18n("Custom Date (%1)", MessageComposer::ConvertSnippetVariablesUtil::customDate()), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CustomDate);
+        });
         dateTimeMenuVariable->addAction(i18n("Short Time (%1)", MessageComposer::ConvertSnippetVariablesUtil::shortTime()), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Time);
         });

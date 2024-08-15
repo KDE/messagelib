@@ -35,6 +35,7 @@ enum VariableType {
     AttachmentName,
     Date,
     ShortDate,
+    CustomDate,
     Time,
     TimeLong,
     AttachmentCount,
@@ -67,6 +68,7 @@ enum VariableType {
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString nextYear();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayNumber();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNumber();
+[[nodiscard]] MESSAGECOMPOSER_EXPORT QString customDate();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString dayOfMonth();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString weekNumber();
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QString monthNameShort();

@@ -74,6 +74,8 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QStringLiteral("%MONTHNUMBER"); // 1-12
     case DayNumber:
         return QStringLiteral("%DAYNUMBER"); // 1-28 to 31
+    case CustomDate:
+        return QStringLiteral("%CUSTOMDATE"); // dd MMM yyyy
     case DayOfMonth:
         return QStringLiteral("%DAYOFMONTH"); // 1-31
     case WeekNumber:
@@ -106,6 +108,12 @@ QString MessageComposer::ConvertSnippetVariablesUtil::longDate()
 {
     QLocale locale;
     return locale.toString(QDate::currentDate(), QLocale::LongFormat);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::customDate()
+{
+    QLocale locale;
+    return locale.toString(QDate::currentDate(), QStringLiteral("dd MMM yyyy"));
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::shortTime()

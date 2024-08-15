@@ -76,6 +76,9 @@ QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i,
     } else if (cmd.startsWith(QLatin1StringView("DAYNUMBER"))) {
         i += strlen("DAYNUMBER");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayNumber());
+    } else if (cmd.startsWith(QLatin1StringView("CUSTOMDATE"))) {
+        i += strlen("CUSTOMDATE");
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::customDate());
     } else if (cmd.startsWith(QLatin1StringView("DAYOFMONTH"))) {
         i += strlen("DAYOFMONTH");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth());

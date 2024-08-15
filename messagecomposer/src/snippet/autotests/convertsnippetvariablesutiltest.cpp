@@ -83,6 +83,9 @@ void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
              QStringLiteral("%DAYNUMBER"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth),
              QStringLiteral("%DAYOFMONTH"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::CustomDate),
+             QStringLiteral("%CUSTOMDATE"));
+
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::WeekNumber),
              QStringLiteral("%WEEKNUMBER"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::MonthNameShort),
