@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-04 14:39+0200\n"
+"PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -54,8 +54,7 @@ msgid "Failed to attach file"
 msgstr "Nelze připojit soubor"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Nelze znovu načíst přílohu"
@@ -80,22 +79,19 @@ msgid "&Open With..."
 msgstr "&Otevřít pomocí..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Nelze připojit klíč"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Připojení vizitky selhalo"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Přiložení textu ze schránky selhalo"
@@ -243,10 +239,9 @@ msgid "Unable to open attachment"
 msgstr "Nelze otevřít přílohu"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "KMail nemohl otevřít přílohu."
+msgstr "KMail nemohl otevřít přílohu"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -260,8 +255,7 @@ msgid "unnamed"
 msgstr "nepojmenováno"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Uložit přílohu jako"
@@ -481,29 +475,25 @@ msgid "Do Not Resize"
 msgstr "Neměnit velikost"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "Klíč OpenPGP vypršel"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME certifikát vypršel"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "Klíč OpenPGP brzy vyprší"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME certifikát brzy vyprší"
@@ -1894,8 +1884,7 @@ msgid "Send Later"
 msgstr "Poslat později"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Prodleva"
@@ -2363,6 +2352,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Nastavit na připojen"
-
-#~ msgid "Failed to attach file"
-#~ msgstr "Nelze připojit soubor"

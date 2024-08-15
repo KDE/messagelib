@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-15 00:40+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -495,12 +495,12 @@ msgstr "៤ សប្ដាហ៍​កន្លង​ទៅ"
 msgid "Five Weeks Ago"
 msgstr "៥ សប្ដាហ៍​កន្លង​ទៅ"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:186
+#: core/model.cpp:550 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Receiver"
 msgstr "អ្នកទទួល"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:185
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Sender"
 msgstr "​អ្នក​ផ្ញើ"
@@ -884,7 +884,7 @@ msgstr "កាលបរិច្ឆេទ"
 msgid "Size"
 msgstr "ទំហំ"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr ""
@@ -1613,7 +1613,7 @@ msgstr "ស្បែក​គ្មាន​ឈ្មោះ"
 msgid "New Theme"
 msgstr "ស្បែក​ថ្មី"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
 #, kde-format
 msgid "New Column"
 msgstr "ជួរ​ឈរ​ថ្មី"
@@ -1667,27 +1667,27 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "​ការ​ពិពណ៌នា ៖"
 
-#: utils/themeeditor.cpp:69
+#: utils/themeeditor.cpp:71
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "ឈ្មោះ ៖"
 
-#: utils/themeeditor.cpp:73
+#: utils/themeeditor.cpp:75
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "ស្លាក​ដែល​នឹង​ត្រូវបាន​បង្ហាញ​​នៅ​ក្នុង​បឋមកថា​ជួរ​ឈរ ។"
 
-#: utils/themeeditor.cpp:76
+#: utils/themeeditor.cpp:78
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "សារ​តម្រៀប​តាម​ការ​ចុច​បឋមកថា ៖"
 
-#: utils/themeeditor.cpp:80
+#: utils/themeeditor.cpp:82
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -1695,14 +1695,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "លំដាប់​តម្រៀប​ដែល​ចុច​លើ​បឋមកថា​ជួរឈរ​នឹង​ត្រូវ​ប្ដូរ​ទៅ ។"
 
-#: utils/themeeditor.cpp:83
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "មើល​ឃើញ​តាម​លំនាំដើម"
 
-#: utils/themeeditor.cpp:84
+#: utils/themeeditor.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -1710,14 +1710,14 @@ msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "ពិនិត្យ​មើល​វា ប្រសិន​បើ​ជួរឈរ​នេះ​គួរ​តែ​មើលឃើញ នៅពេល​ដែល​បាន​ជ្រើស​ស្បែក ។"
 
-#: utils/themeeditor.cpp:87
+#: utils/themeeditor.cpp:89
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "មាន​វាល \"អ្នក​ផ្ញើ ឬ​អ្នក​ទទួល\""
 
-#: utils/themeeditor.cpp:89
+#: utils/themeeditor.cpp:91
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -1730,85 +1730,85 @@ msgstr ""
 "ពិនិត្យ​វា ប្រសិន​បើ​ស្លាក​ជួរ​ឈរ​នេះ​គួរ​តែ​ត្រូវ​បាន​ធ្វើ​បច្ចុប្បន្នភាព ដោយ​ផ្អែក​លើ​ថត​ប្រភេទ \"inbound\"/"
 "\"outbound\" ។"
 
-#: utils/themeeditor.cpp:109
+#: utils/themeeditor.cpp:111
 #, kde-format
 msgid "Unnamed Column"
 msgstr "ជួរ​ឈរ​គ្មាន​ឈ្មោះ"
 
-#: utils/themeeditor.cpp:174
+#: utils/themeeditor.cpp:176
 #, kde-format
 msgid "Message Group"
 msgstr "ក្រុម​សារ"
 
-#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
+#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr "ប្រធានបទ​វែង​ណាស់..."
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "ស្លាក​គំរូ ១"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "ស្លាក​គំរូ ២"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:197
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "ស្លាក​គំរូ ៣"
 
-#: utils/themeeditor.cpp:410
+#: utils/themeeditor.cpp:412
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "មើល​ឃើញ"
 
-#: utils/themeeditor.cpp:850
+#: utils/themeeditor.cpp:852
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "ធ្វើ​ឲ្យ​ស្រទន់"
 
-#: utils/themeeditor.cpp:857
+#: utils/themeeditor.cpp:859
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:861
+#: utils/themeeditor.cpp:863
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:868
+#: utils/themeeditor.cpp:870
 #, kde-format
 msgid "Font"
 msgstr "ពុម្ពអក្សរ"
 
-#: utils/themeeditor.cpp:876
+#: utils/themeeditor.cpp:878
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "លំនាំដើម"
 
-#: utils/themeeditor.cpp:881
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "ផ្ទាល់ខ្លួន..."
 
-#: utils/themeeditor.cpp:889
+#: utils/themeeditor.cpp:891
 #, kde-format
 msgid "Foreground Color"
 msgstr "ព័ត៌​ផ្ទៃ​ខាង​មុខ"
 
-#: utils/themeeditor.cpp:898
+#: utils/themeeditor.cpp:900
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1816,7 +1816,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "លាក់"
 
-#: utils/themeeditor.cpp:905
+#: utils/themeeditor.cpp:907
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1824,7 +1824,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "ទុក​ចន្លោះ​ទទេ"
 
-#: utils/themeeditor.cpp:912
+#: utils/themeeditor.cpp:914
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1832,90 +1832,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "រក្សាទុក​រូបតំណាង​ធ្វើ​ឲ្យ​ស្រទន់"
 
-#: utils/themeeditor.cpp:920
+#: utils/themeeditor.cpp:922
 #, kde-format
 msgid "When Disabled"
 msgstr "នៅពេល​បិទ"
 
-#: utils/themeeditor.cpp:926
+#: utils/themeeditor.cpp:928
 #, kde-format
 msgid "Group Header"
 msgstr "បឋមកថា​ក្រុម"
 
-#: utils/themeeditor.cpp:933
+#: utils/themeeditor.cpp:935
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "គ្មាន"
 
-#: utils/themeeditor.cpp:938
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "ស្វ័យប្រវត្តិ"
 
-#: utils/themeeditor.cpp:943
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "ផ្ទាល់ខ្លួន..."
 
-#: utils/themeeditor.cpp:951
+#: utils/themeeditor.cpp:953
 #, kde-format
 msgid "Background Color"
 msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោម"
 
-#: utils/themeeditor.cpp:971
+#: utils/themeeditor.cpp:973
 #, kde-format
 msgid "Background Style"
 msgstr "រចនាប័ទ្ម​ផ្ទៃ​ខាងក្រោយ"
 
-#: utils/themeeditor.cpp:1157
+#: utils/themeeditor.cpp:1159
 #, kde-format
 msgid "Column Properties..."
 msgstr "លក្ខណ​សម្បត្តិ​ជួរឈរ..."
 
-#: utils/themeeditor.cpp:1160
+#: utils/themeeditor.cpp:1162
 #, kde-format
 msgid "Add Column..."
 msgstr "បន្ថែម​ជួរ​ឈរ"
 
-#: utils/themeeditor.cpp:1163
+#: utils/themeeditor.cpp:1165
 #, kde-format
 msgid "Delete Column"
 msgstr "លុប​ជួរ​ឈរ"
 
-#: utils/themeeditor.cpp:1169
+#: utils/themeeditor.cpp:1171
 #, kde-format
 msgid "Move Column to Left"
 msgstr "ផ្លាស់ទី​ជួរឈរ​ទៅ​ឆ្វេង"
 
-#: utils/themeeditor.cpp:1173
+#: utils/themeeditor.cpp:1175
 #, kde-format
 msgid "Move Column to Right"
 msgstr "ផ្លាស់ទី​ជួរឈរ​ទៅ​ស្ដាំ"
 
-#: utils/themeeditor.cpp:1222
+#: utils/themeeditor.cpp:1224
 #, kde-format
 msgid "Add New Column"
 msgstr "បន្ថែម​ជួរ​ឈរ​ថ្មី"
 
-#: utils/themeeditor.cpp:1246
+#: utils/themeeditor.cpp:1248
 #, kde-format
 msgid "Column Properties"
 msgstr "លក្ខណៈ​សម្បត្តិ​ជួរ​ឈរ"
 
-#: utils/themeeditor.cpp:1288
+#: utils/themeeditor.cpp:1290
 #, kde-format
 msgid "Appearance"
 msgstr "រូបរាង"
 
-#: utils/themeeditor.cpp:1292
+#: utils/themeeditor.cpp:1294
 #, kde-format
 msgid "Content Items"
 msgstr "ធាតុ​មាតិកា"
 
-#: utils/themeeditor.cpp:1419
+#: utils/themeeditor.cpp:1421
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1925,27 +1925,27 @@ msgstr ""
 "ចុច​កណ្ដុរ​ខាង​ស្ដាំ​លើ​បឋមកថា ដើម្បី​បន្ថែម ឬ​កែប្រែ​ជួរ​ឈរ ។ អូស​ធាតុ​មាតិកា ហើយ​ទម្លាក់​វា​នៅ​លើ​ជួរ​ឈរ​ដើម្បី​"
 "បង្កើត​ស្បែក​របស់​អ្នក ។ ចុច​កណ្ដុរ​ស្ដាំ​លើ​ធាតុ​នៅ​ក្នុង​ទិដ្ឋភាព ដើម្បី​បង្ហាញ​ជម្រើស​បន្ថែម ។"
 
-#: utils/themeeditor.cpp:1429
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "​កម្រិត​ខ្ពស់"
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1435
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "បឋមកថា ៖"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "ទំហំ​រូបតំណាង ៖"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1448
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"

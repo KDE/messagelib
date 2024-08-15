@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-18 10:42+0200\n"
+"PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -566,8 +566,7 @@ msgid "Modify Rule"
 msgstr "Upravit pravidlo"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Povoleno"
@@ -1819,8 +1818,7 @@ msgid "attachment.1"
 msgstr "příloha.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Uložit přílohu"
@@ -2675,12 +2673,3 @@ msgstr "Následující zpráva"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
-
-#~ msgid "Export Rules"
-#~ msgstr "Exportovat pravidla"
-
-#~ msgid "Import Rules"
-#~ msgstr "Importovat pravidla"
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "Zkontrolovat URL Phishing "

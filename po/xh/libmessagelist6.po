@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-15 00:40+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -517,13 +517,13 @@ msgstr ""
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:186
+#: core/model.cpp:550 utils/themeeditor.cpp:188
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "Umamakeli"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:185
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Sender"
 msgstr "Umthumeli"
@@ -961,7 +961,7 @@ msgstr "Umhla"
 msgid "Size"
 msgstr "Ubungakanani"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:188
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "Incwadi eneenkcukacha"
@@ -1686,7 +1686,7 @@ msgstr "Ayithiywanga gama"
 msgid "New Theme"
 msgstr "Umyalezo omtsha"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1216
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
 #, fuzzy, kde-format
 msgid "New Column"
 msgstr "Jonga imihlathi"
@@ -1740,51 +1740,51 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "&Inkcazelo:"
 
-#: utils/themeeditor.cpp:69
+#: utils/themeeditor.cpp:71
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "Igama:"
 
-#: utils/themeeditor.cpp:73
+#: utils/themeeditor.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr ""
 
-#: utils/themeeditor.cpp:76
+#: utils/themeeditor.cpp:78
 #, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Cima Imiyalezo"
 
-#: utils/themeeditor.cpp:80
+#: utils/themeeditor.cpp:82
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 
-#: utils/themeeditor.cpp:83
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid "Set as Default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Cwangcisa Njengokwendalo"
 
-#: utils/themeeditor.cpp:84
+#: utils/themeeditor.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 
-#: utils/themeeditor.cpp:87
+#: utils/themeeditor.cpp:89
 #, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr ""
 
-#: utils/themeeditor.cpp:89
+#: utils/themeeditor.cpp:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1792,87 +1792,87 @@ msgid ""
 "\"inbound\"/\"outbound\" type."
 msgstr ""
 
-#: utils/themeeditor.cpp:109
+#: utils/themeeditor.cpp:111
 #, fuzzy, kde-format
 #| msgid "Unread Column"
 msgid "Unnamed Column"
 msgstr "Umhlathi Ongafundwanga"
 
-#: utils/themeeditor.cpp:174
+#: utils/themeeditor.cpp:176
 #, fuzzy, kde-format
 #| msgid "Message Body"
 msgid "Message Group"
 msgstr "Umyalezo Wesiqu"
 
-#: utils/themeeditor.cpp:178 utils/themeeditor.cpp:187
+#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
 
-#: utils/themeeditor.cpp:193
+#: utils/themeeditor.cpp:195
 #, fuzzy, kde-format
 msgid "Sample Tag 1"
 msgstr "Uluhlu Lomyalezo"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:196
 #, fuzzy, kde-format
 msgid "Sample Tag 2"
 msgstr "Uluhlu Lomyalezo"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:197
 #, fuzzy, kde-format
 msgid "Sample Tag 3"
 msgstr "Uluhlu Lomyalezo"
 
-#: utils/themeeditor.cpp:410
+#: utils/themeeditor.cpp:412
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr ""
 
-#: utils/themeeditor.cpp:850
+#: utils/themeeditor.cpp:852
 #, fuzzy, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "&Thumela"
 
-#: utils/themeeditor.cpp:857
+#: utils/themeeditor.cpp:859
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Incwadi eneenkcukacha"
 
-#: utils/themeeditor.cpp:861
+#: utils/themeeditor.cpp:863
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:868
+#: utils/themeeditor.cpp:870
 #, fuzzy, kde-format
 msgid "Font"
 msgstr "Umxholo"
 
-#: utils/themeeditor.cpp:876
+#: utils/themeeditor.cpp:878
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Cwangcisa Njengokwendalo"
 
-#: utils/themeeditor.cpp:881
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:889
+#: utils/themeeditor.cpp:891
 #, fuzzy, kde-format
 msgid "Foreground Color"
 msgstr "Umbala wendawo yangasemva omele omnye"
 
-#: utils/themeeditor.cpp:898
+#: utils/themeeditor.cpp:900
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Hide"
@@ -1882,7 +1882,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "&Fihla"
 
-#: utils/themeeditor.cpp:905
+#: utils/themeeditor.cpp:907
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1890,7 +1890,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr ""
 
-#: utils/themeeditor.cpp:912
+#: utils/themeeditor.cpp:914
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1898,92 +1898,92 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr ""
 
-#: utils/themeeditor.cpp:920
+#: utils/themeeditor.cpp:922
 #, kde-format
 msgid "When Disabled"
 msgstr ""
 
-#: utils/themeeditor.cpp:926
+#: utils/themeeditor.cpp:928
 #, fuzzy, kde-format
 msgid "Group Header"
 msgstr "Qwalasela i Akhawunti"
 
-#: utils/themeeditor.cpp:933
+#: utils/themeeditor.cpp:935
 #, fuzzy, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "&Akukho nanye"
 
-#: utils/themeeditor.cpp:938
+#: utils/themeeditor.cpp:940
 #, fuzzy, kde-format
 #| msgid "Auto"
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Okuzenzekelayo"
 
-#: utils/themeeditor.cpp:943
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr ""
 
-#: utils/themeeditor.cpp:951
+#: utils/themeeditor.cpp:953
 #, fuzzy, kde-format
 msgid "Background Color"
 msgstr "Umbala wendawo yangasemva omele omnye"
 
-#: utils/themeeditor.cpp:971
+#: utils/themeeditor.cpp:973
 #, fuzzy, kde-format
 msgid "Background Style"
 msgstr "Umbala wendawo yangasemva omele omnye"
 
-#: utils/themeeditor.cpp:1157
+#: utils/themeeditor.cpp:1159
 #, fuzzy, kde-format
 msgid "Column Properties..."
 msgstr "Indawo Yencwadi eneenkcukacha"
 
-#: utils/themeeditor.cpp:1160
+#: utils/themeeditor.cpp:1162
 #, fuzzy, kde-format
 msgid "Add Column..."
 msgstr "Ungeno olutsha:"
 
-#: utils/themeeditor.cpp:1163
+#: utils/themeeditor.cpp:1165
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Delete Column"
 msgstr "Cima Incwadi eneenkcukacha"
 
-#: utils/themeeditor.cpp:1169
+#: utils/themeeditor.cpp:1171
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1173
+#: utils/themeeditor.cpp:1175
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1222
+#: utils/themeeditor.cpp:1224
 #, fuzzy, kde-format
 msgid "Add New Column"
 msgstr "Jonga imihlathi"
 
-#: utils/themeeditor.cpp:1246
+#: utils/themeeditor.cpp:1248
 #, fuzzy, kde-format
 msgid "Column Properties"
 msgstr "Indawo Yencwadi eneenkcukacha"
 
-#: utils/themeeditor.cpp:1288
+#: utils/themeeditor.cpp:1290
 #, fuzzy, kde-format
 msgid "Appearance"
 msgstr "Amaphawu emifanekiso encwadi eneenkcukacha yesiko"
 
-#: utils/themeeditor.cpp:1292
+#: utils/themeeditor.cpp:1294
 #, fuzzy, kde-format
 msgid "Content Items"
 msgstr "Umxholo"
 
-#: utils/themeeditor.cpp:1419
+#: utils/themeeditor.cpp:1421
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1991,27 +1991,27 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 
-#: utils/themeeditor.cpp:1429
+#: utils/themeeditor.cpp:1431
 #, fuzzy, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "&Ukubheka phambili"
 
-#: utils/themeeditor.cpp:1433
+#: utils/themeeditor.cpp:1435
 #, fuzzy, kde-format
 #| msgid "H&eaders"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Oku&bhalwe phezu ephepheni"
 
-#: utils/themeeditor.cpp:1439
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ubungakanani"
 
-#: utils/themeeditor.cpp:1445
+#: utils/themeeditor.cpp:1448
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid " pixel"
