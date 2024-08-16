@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-16 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 13:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2252,13 +2252,13 @@ msgid "Names and Sizes"
 msgstr "Adlar ve Boyutlar"
 
 #: snippet/convertsnippetvariablemenu.cpp:103
-#: snippet/convertsnippetvariablemenu.cpp:123
+#: snippet/convertsnippetvariablemenu.cpp:126
 #, kde-format
 msgid "Date/Time"
 msgstr "Tarih/Zaman"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:151
+#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Haftanın Günü (%1)"
@@ -2274,81 +2274,93 @@ msgid "Long Date (%1)"
 msgstr "Uzun Tarih (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
+#, fuzzy, kde-format
+#| msgid "Long Date (%1)"
+msgid "Custom Date (%1)"
+msgstr "Uzun Tarih (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
 msgid "Short Time (%1)"
 msgstr "Kısa Tarih (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:116
+#: snippet/convertsnippetvariablemenu.cpp:119
 #, kde-format
 msgid "Time (%1)"
 msgstr "Zaman (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:119
+#: snippet/convertsnippetvariablemenu.cpp:122
 #, kde-format
 msgid "Year (%1)"
 msgstr "Yıl (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:127
+#: snippet/convertsnippetvariablemenu.cpp:130
 #, kde-format
 msgid "Last Year (%1)"
 msgstr "Geçen Yıl (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:130
+#: snippet/convertsnippetvariablemenu.cpp:133
 #, kde-format
 msgid "Next Year (%1)"
 msgstr "Gelecek Yıl (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:133
+#: snippet/convertsnippetvariablemenu.cpp:136
 #, kde-format
 msgid "Month Number (%1)"
 msgstr "Ay Numarası (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:136
-#, kde-format
-msgid "Day Of Month (%1)"
-msgstr "Ayın Günü (%1)"
-
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, kde-format
-msgid "Week Number (%1)"
+#, fuzzy, kde-format
+#| msgid "Week Number (%1)"
+msgid "Day Number (%1)"
 msgstr "Hafta Numarası (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
+msgid "Day Of Month (%1)"
+msgstr "Ayın Günü (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Week Number (%1)"
+msgstr "Hafta Numarası (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
 msgid "Month Name Short (%1)"
 msgstr "Kısa Ay Adı (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:145
+#: snippet/convertsnippetvariablemenu.cpp:151
 #, kde-format
 msgid "Month Name Long (%1)"
 msgstr "Uzun Ay Adı (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:148
+#: snippet/convertsnippetvariablemenu.cpp:154
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Geçen Uzun Ay Adı (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:154
+#: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Day Of Week Name Short (%1)"
 msgstr "Haftanın Günü Kısa Adı (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:157
+#: snippet/convertsnippetvariablemenu.cpp:163
 #, kde-format
 msgid "Day Of Week Name Long (%1)"
 msgstr "Haftanın Günü Uzun Adı (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:160
+#: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format
 msgid "Year Last Month (%1)"
 msgstr "Yıl Geçen Ay (%1)"
 
-#: snippet/convertsnippetvariablemenu.cpp:165
+#: snippet/convertsnippetvariablemenu.cpp:171
 #, kde-format
 msgid "Misc"
 msgstr "Çeşitli"
 
-#: snippet/convertsnippetvariablemenu.cpp:166
+#: snippet/convertsnippetvariablemenu.cpp:172
 #, kde-format
 msgid "Subject"
 msgstr "Konu"
