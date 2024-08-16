@@ -1445,7 +1445,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     mIconSizeSpinBox->setMinimum(8);
     mIconSizeSpinBox->setMaximum(64);
 #if KI18N_VERSION > QT_VERSION_CHECK(6, 5, 0)
-    KLocalization::setupSpinBoxFormatString(mIconSizeSpinBox, ki18ncp("suffix in a spinbox", " pixel", " pixels"));
+    KLocalization::setupSpinBoxFormatString(mIconSizeSpinBox, ki18ncp("suffix in a spinbox", "%v pixel", "%v pixels"));
 #endif
 
     QObject::connect(mIconSizeSpinBox, &QSpinBox::valueChanged, this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
