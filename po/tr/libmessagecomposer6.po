@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-16 00:40+0000\n"
-"PO-Revision-Date: 2024-08-01 13:12+0300\n"
+"PO-Revision-Date: 2024-08-16 12:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2274,10 +2274,9 @@ msgid "Long Date (%1)"
 msgstr "Uzun Tarih (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Uzun Tarih (%1)"
+msgstr "Özel Tarih (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2310,10 +2309,9 @@ msgid "Month Number (%1)"
 msgstr "Ay Numarası (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Hafta Numarası (%1)"
+msgstr "Gün Numarası (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format

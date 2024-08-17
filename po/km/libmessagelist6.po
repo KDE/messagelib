@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-17 00:40+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1946,10 +1946,13 @@ msgid "Icon size:"
 msgstr "ទំហំ​រូបតំណាង ៖"
 
 #: utils/themeeditor.cpp:1448
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "suffix in a spinbox"
+#| msgid " pixel"
+#| msgid_plural " pixels"
 msgctxt "suffix in a spinbox"
-msgid " pixel"
-msgid_plural " pixels"
+msgid "%v pixel"
+msgid_plural "%v pixels"
 msgstr[0] "ភីកសែល​"
 
 #: widget.cpp:220

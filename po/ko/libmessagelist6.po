@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-17 00:40+0000\n"
 "PO-Revision-Date: 2023-10-08 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1933,10 +1933,13 @@ msgid "Icon size:"
 msgstr "아이콘 크기:"
 
 #: utils/themeeditor.cpp:1448
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "suffix in a spinbox"
+#| msgid " pixel"
+#| msgid_plural " pixels"
 msgctxt "suffix in a spinbox"
-msgid " pixel"
-msgid_plural " pixels"
+msgid "%v pixel"
+msgid_plural "%v pixels"
 msgstr[0] " 픽셀"
 
 #: widget.cpp:220

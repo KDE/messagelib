@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-16 00:40+0000\n"
-"PO-Revision-Date: 2024-08-01 04:33+0200\n"
+"PO-Revision-Date: 2024-08-16 12:08+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2311,10 +2311,9 @@ msgid "Long Date (%1)"
 msgstr "Fecha completa (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Fecha completa (%1)"
+msgstr "Fecha personalizada (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2347,10 +2346,9 @@ msgid "Month Number (%1)"
 msgstr "Número del mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Número de la semana (%1)"
+msgstr "Número del día (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format

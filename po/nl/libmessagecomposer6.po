@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-16 00:40+0000\n"
-"PO-Revision-Date: 2024-08-01 12:50+0200\n"
+"PO-Revision-Date: 2024-08-16 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2304,10 +2304,9 @@ msgid "Long Date (%1)"
 msgstr "Lange datum (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Lange datum (%1)"
+msgstr "Aangepaste datum (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2340,10 +2339,9 @@ msgid "Month Number (%1)"
 msgstr "Maandnummer (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Weeknummmer (%1)"
+msgstr "Dagnummer (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
@@ -2353,7 +2351,7 @@ msgstr "Dag van de maand (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:145
 #, kde-format
 msgid "Week Number (%1)"
-msgstr "Weeknummmer (%1)"
+msgstr "Weeknummer (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:148
 #, kde-format

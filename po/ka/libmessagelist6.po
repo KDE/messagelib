@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-17 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1894,10 +1894,13 @@ msgid "Icon size:"
 msgstr "ხატულების ზომა:"
 
 #: utils/themeeditor.cpp:1448
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "suffix in a spinbox"
+#| msgid " pixel"
+#| msgid_plural " pixels"
 msgctxt "suffix in a spinbox"
-msgid " pixel"
-msgid_plural " pixels"
+msgid "%v pixel"
+msgid_plural "%v pixels"
 msgstr[0] " პიქსელი"
 msgstr[1] "  პიქსელი"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-15 00:40+0000\n"
+"POT-Creation-Date: 2024-08-17 00:40+0000\n"
 "PO-Revision-Date: 2023-11-14 13:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1961,10 +1961,13 @@ msgid "Icon size:"
 msgstr "Tamanho do ícone:"
 
 #: utils/themeeditor.cpp:1448
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "suffix in a spinbox"
+#| msgid " pixel"
+#| msgid_plural " pixels"
 msgctxt "suffix in a spinbox"
-msgid " pixel"
-msgid_plural " pixels"
+msgid "%v pixel"
+msgid_plural "%v pixels"
 msgstr[0] " pixel"
 msgstr[1] " pixels"
 
