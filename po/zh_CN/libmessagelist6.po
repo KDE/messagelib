@@ -1869,14 +1869,11 @@ msgid "Icon size:"
 msgstr ""
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " 像素"
+msgstr[0] ""
 
 #: widget.cpp:220
 #, kde-format

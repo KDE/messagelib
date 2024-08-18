@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-17 00:40+0000\n"
-"PO-Revision-Date: 2024-08-01 20:31+0300\n"
+"PO-Revision-Date: 2024-08-17 09:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1924,17 +1924,14 @@ msgid "Icon size:"
 msgstr "Розмір піктограм:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " піксель"
-msgstr[1] " пікселів"
-msgstr[2] " пікселів"
-msgstr[3] " піксель"
+msgstr[0] "%v піксель"
+msgstr[1] "%v пікселі"
+msgstr[2] "%v пікселів"
+msgstr[3] "%v піксель"
 
 #: widget.cpp:220
 #, kde-format
