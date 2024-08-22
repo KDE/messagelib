@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-18 15:21+0200\n"
+"PO-Revision-Date: 2024-08-04 14:19+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -589,8 +589,7 @@ msgid "Modify Rule"
 msgstr "Modifier une règle"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Activé"
@@ -1887,11 +1886,10 @@ msgid "attachment.1"
 msgstr "pièce jointe 1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "Enregistrer la pièce jointe"
+msgstr "Enregistrer une pièce jointe"
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format

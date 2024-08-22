@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-17 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 10:52+0200\n"
+"PO-Revision-Date: 2024-08-18 09:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1551,15 +1551,13 @@ msgid "New Aggregation"
 msgstr "Nouvel agrégat"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importer un agrégat"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Exporter un agrégat"
@@ -1638,18 +1636,16 @@ msgid "Delete Theme"
 msgstr "Supprimer le thème"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importer un thème"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
-msgstr "Exporter le thème"
+msgstr "Exporter un thème"
 
 #: utils/optionseteditor.cpp:27
 #, kde-format
@@ -1695,8 +1691,7 @@ msgstr ""
 "L'ordre de tri qui sera utilisé lors d'un clic sur cette en-tête de colonne."
 
 #: utils/themeeditor.cpp:85
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Visible par défaut"
@@ -1710,11 +1705,10 @@ msgstr ""
 "thème est sélectionné."
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
-msgstr "Contient le champ « expéditeur ou destinataire »"
+msgstr "Contient le champ « Expéditeur ou destinataire »"
 
 #: utils/themeeditor.cpp:91
 #, kde-format
@@ -1944,15 +1938,12 @@ msgid "Icon size:"
 msgstr "Taille d'icônes :"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " pixel"
-msgstr[1] " pixels"
+msgstr[0] "Pixel %v"
+msgstr[1] "%v pixels"
 
 #: widget.cpp:220
 #, kde-format

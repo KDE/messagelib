@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-24 10:28+0200\n"
+"PO-Revision-Date: 2024-08-04 14:19+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -97,11 +97,10 @@ msgid "Phrase not found"
 msgstr "Impossible de trouver la phrase"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
-msgstr "Enregistrer en tant que page HTML"
+msgstr "Enregistrer en tant que page « HTML »"
 
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
