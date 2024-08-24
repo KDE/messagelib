@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-16 00:40+0000\n"
-"PO-Revision-Date: 2024-08-02 22:29+0200\n"
+"PO-Revision-Date: 2024-08-23 21:45+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2262,10 +2262,9 @@ msgid "Long Date (%1)"
 msgstr "Longa dato (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Longa dato (%1)"
+msgstr "Tajlorita Dato (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2298,10 +2297,9 @@ msgid "Month Number (%1)"
 msgstr "Monata Nombro (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Semajna Nombro (%1)"
+msgstr "Taga Nombro (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
