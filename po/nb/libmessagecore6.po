@@ -309,8 +309,6 @@ msgstr ""
 
 #: utils/dateformatter.cpp:158
 #, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "ukjent"

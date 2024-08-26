@@ -1112,8 +1112,6 @@ msgstr ""
 
 #: core/widgets/filternamewidget.cpp:32
 #, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Navn:"
@@ -1126,7 +1124,6 @@ msgstr ""
 
 #: core/widgets/filtersavedmenu.cpp:17
 #, fuzzy, kde-format
-#| msgid "Configure..."
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Oppsett …"
@@ -1144,7 +1141,6 @@ msgstr ""
 
 #: core/widgets/quicksearchwarning.cpp:22
 #, fuzzy, kde-format
-#| msgid "Do not show again"
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Ikke vis igjen"
@@ -1191,28 +1187,24 @@ msgstr ""
 
 #: core/widgets/searchmessagebybuttons.cpp:34
 #, fuzzy, kde-format
-#| msgid "Full Message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Hele meldinga"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, fuzzy, kde-format
-#| msgid "Body"
 msgctxt "@action"
 msgid "Body"
 msgstr "Kropp"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
 #, fuzzy, kde-format
-#| msgid "Subject"
 msgctxt "@action"
 msgid "Subject"
 msgstr "Emne"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
-#| msgid "BCC"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Blindkopi"
@@ -1327,7 +1319,6 @@ msgstr "Lukk fane"
 
 #: pane.cpp:180
 #, fuzzy, kde-format
-#| msgid "Activate Tab %1"
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Gå til fane %1"
@@ -1344,42 +1335,36 @@ msgstr "Meldingsliste"
 
 #: pane.cpp:227
 #, fuzzy, kde-format
-#| msgid "Create New Tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opprett et nytt faneblad"
 
 #: pane.cpp:258
 #, fuzzy, kde-format
-#| msgid "Activate Next Tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Gå til neste fane"
 
 #: pane.cpp:268
 #, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Gå til forrige fane"
 
 #: pane.cpp:280
 #, fuzzy, kde-format
-#| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Flytt fane til venstre"
 
 #: pane.cpp:288
 #, fuzzy, kde-format
-#| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Flytt fane til høyre"
 
 #: pane.cpp:298
 #, fuzzy, kde-format
-#| msgid "Close Tab"
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Lukk fane"
@@ -1428,7 +1413,6 @@ msgstr "Ukjent"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
 #, fuzzy, kde-format
-#| msgid "Configure..."
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Oppsett …"
@@ -1440,35 +1424,30 @@ msgstr "Grupper og tråding"
 
 #: utils/aggregationeditor.cpp:35
 #, fuzzy, kde-format
-#| msgid "Grouping:"
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Gruppering:"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
-#| msgid "Group expand policy:"
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Utfoldingspraksis for grupper:"
 
 #: utils/aggregationeditor.cpp:45
 #, fuzzy, kde-format
-#| msgid "Threading:"
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Tråding:"
 
 #: utils/aggregationeditor.cpp:51
 #, fuzzy, kde-format
-#| msgid "Thread leader:"
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Trådstarter:"
 
 #: utils/aggregationeditor.cpp:55
 #, fuzzy, kde-format
-#| msgid "Thread expand policy:"
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Utfoldingspraksis for tråder:"
@@ -1481,7 +1460,6 @@ msgstr "Avansert"
 
 #: utils/aggregationeditor.cpp:68
 #, fuzzy, kde-format
-#| msgid "Fill view strategy:"
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Strategi for å fylle visningen:"
@@ -1494,35 +1472,30 @@ msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:121
 #, fuzzy, kde-format
-#| msgid "New Aggregation"
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Ny sammenstilling"
 
 #: utils/configureaggregationsdialog.cpp:129
 #, fuzzy, kde-format
-#| msgid "Clone Aggregation"
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Klone sammenstilling"
 
 #: utils/configureaggregationsdialog.cpp:142
 #, fuzzy, kde-format
-#| msgid "Export Aggregation..."
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Eksporter sammenstilling …"
 
 #: utils/configureaggregationsdialog.cpp:149
 #, fuzzy, kde-format
-#| msgid "Import Aggregation..."
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Importer sammenstilling …"
 
 #: utils/configureaggregationsdialog.cpp:160
 #, fuzzy, kde-format
-#| msgid "Delete Aggregation"
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Slett sammenstilling"
@@ -1561,35 +1534,30 @@ msgstr ""
 
 #: utils/configurethemesdialog.cpp:117
 #, fuzzy, kde-format
-#| msgid "New Theme"
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nytt tema"
 
 #: utils/configurethemesdialog.cpp:125
 #, fuzzy, kde-format
-#| msgid "Clone Theme"
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Klon tema"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
-#| msgid "Export Theme..."
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Eksporter tema …"
 
 #: utils/configurethemesdialog.cpp:145
 #, fuzzy, kde-format
-#| msgid "Import Theme..."
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Importer tema …"
 
 #: utils/configurethemesdialog.cpp:156
 #, fuzzy, kde-format
-#| msgid "Delete Theme"
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Slett tema"
@@ -1661,22 +1629,18 @@ msgstr "Navn:"
 
 #: utils/themeeditor.cpp:73
 #, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Merkelappen som vises i kolonneoverskrifta."
 
 #: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Meldinger sorteres ved å trykke på overskrifta:"
 
 #: utils/themeeditor.cpp:80
 #, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
@@ -1690,8 +1654,6 @@ msgstr "Synlig som standard"
 
 #: utils/themeeditor.cpp:84
 #, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "Kryss av her hvis denne kolonnen skal være synlig når temaet velges."
@@ -1703,9 +1665,6 @@ msgstr "Inneholder felt «Sender eller mottaker»"
 
 #: utils/themeeditor.cpp:89
 #, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
@@ -1920,14 +1879,12 @@ msgstr "Avansert"
 
 #: utils/themeeditor.cpp:1433
 #, fuzzy, kde-format
-#| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Overskrift:"
 
 #: utils/themeeditor.cpp:1439
 #, fuzzy, kde-format
-#| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ikonstørrelse:"

@@ -179,8 +179,6 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:517
 #, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With..."
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "O&pna med …"
@@ -439,7 +437,6 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:330
 #, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Signer/krypter melding?"
@@ -553,7 +550,6 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:1361
 #, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Feil ved autolagring"
@@ -585,7 +581,6 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:1900
 #, fuzzy, kde-format
-#| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Send &utan endring"
@@ -603,7 +598,6 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
 #, fuzzy, kde-format
-#| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Signer melding?"
@@ -616,7 +610,6 @@ msgstr "&Signer"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, fuzzy, kde-format
-#| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Ikkje signer"
@@ -641,14 +634,12 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2013
 #, fuzzy, kde-format
-#| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Send usignert?"
 
 #: composer/composerviewbase.cpp:2014
 #, fuzzy, kde-format
-#| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Send &usignert"
@@ -687,14 +678,12 @@ msgstr "&Signer"
 
 #: composer/composerviewbase.cpp:2039
 #, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Åtvaring om usignert melding"
 
 #: composer/composerviewbase.cpp:2041
 #, fuzzy, kde-format
-#| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Send &utan endring"
@@ -756,14 +745,12 @@ msgstr ""
 #: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Ikkje krypter"
 
 #: composer/composerviewbase.cpp:2129
 #, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Ikkje krypter"
@@ -781,14 +768,12 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2155
 #, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Send ukryptert?"
 
 #: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
 #, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Send ukryptert?"
@@ -826,7 +811,6 @@ msgstr "&Krypter alle delar"
 
 #: composer/composerviewbase.cpp:2183
 #, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Åtvaring om ukryptert melding"
@@ -940,7 +924,6 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1072
 #, fuzzy, kde-format
-#| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "&Ikkje signer"
@@ -956,7 +939,6 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1090
 #, fuzzy, kde-format
-#| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "&Ikkje signer"
@@ -985,7 +967,6 @@ msgstr ""
 #: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
 #: composer/keyresolver.cpp:1363
 #, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Åtvaring om usignert melding"
@@ -1950,9 +1931,6 @@ msgstr ""
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
 #, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Fann gyldige og tiltrudde krypteringsnøklar for alle mottakarane.\n"

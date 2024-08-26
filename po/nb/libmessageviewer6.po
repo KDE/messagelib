@@ -1235,28 +1235,24 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, fuzzy, kde-format
-#| msgid "Move to Trash"
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Flytt til papirkurven"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Jeg bekrefter at det ikke er svindel."
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, fuzzy, kde-format
-#| msgid "Add email to whitelist"
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Legg til kontakt til hvitlista"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Slå av svindelsøk for alle meldinger"
@@ -1350,7 +1346,6 @@ msgstr "Skriv bare valgt tekst i visningen"
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
 #: settings/messageviewer.kcfg.in:15
 #, fuzzy, kde-format
-#| msgid "Respect &expand/collapse quote marks settings"
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
 "printing."
@@ -1641,21 +1636,18 @@ msgstr "&Bruk skrift med fast bredde"
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:235
 #, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Todo."
 msgstr "Sist valge mappe brukt til Gjøremål."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:241
 #, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Event."
 msgid "The most recent selected folder used for Event."
 msgstr "Sist valge mappe brukt til Hendelse."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:247
 #, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Notes."
 msgstr "Sist valge mappe brukt til Gjøremål."
 
@@ -1810,7 +1802,6 @@ msgstr "Det finnes allerede en fil med navnet «%1». Vil du overskrive den?"
 
 #: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
-#| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Skriv over fil?"
@@ -1852,14 +1843,12 @@ msgstr "KMail-spørsmål"
 
 #: utils/messageviewerutil.cpp:306
 #, fuzzy, kde-format
-#| msgid "Keep Encryption"
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Behold kryptering"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, fuzzy, kde-format
-#| msgid "Do Not Keep"
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ikke behold"
@@ -1875,7 +1864,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:319
 #, fuzzy, kde-format
-#| msgid "Keep Signature"
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Behold signatur"
@@ -1891,7 +1879,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
-#| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Feil ved lagring av vedlegg"
@@ -1930,7 +1917,6 @@ msgstr "Klarte ikke laste inn fila %1."
 
 #: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
-#| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Feil mens melding ble lastet"
@@ -1942,7 +1928,6 @@ msgstr "Fila %1 kunne ikke opprettes."
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
-#| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Feil mens melding ble lagret"
@@ -2145,7 +2130,6 @@ msgstr "Er det sikkert at du vil kjøre <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
 #, fuzzy, kde-format
-#| msgid "Execute"
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Kjør"
@@ -2165,7 +2149,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
-#| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Slett vedlegg"
@@ -2344,7 +2327,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
-#| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merk all tekst"
@@ -2366,7 +2348,6 @@ msgstr "Vis meldingsstruktur"
 
 #: viewer/viewer_p.cpp:1570
 #, fuzzy, kde-format
-#| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Vis kildekoden"
@@ -2378,42 +2359,36 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
-#| msgid "&Save Display Format"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Lagre visningsformat"
 
 #: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
-#| msgid "&Reset Display Format"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Tilbakestill visningsformat"
 
 #: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
-#| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Rull meldinga opp"
 
 #: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
-#| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Rull meldinga ned"
 
 #: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Rull meldinga oppover (mer)"
 
 #: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Rull meldinga nedover (mer)"
@@ -2430,28 +2405,24 @@ msgstr "Vend visning mellom HTML og ren tekst"
 
 #: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
-#| msgid "Load external references"
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Last eksterne referanser"
 
 #: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
-#| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Uttal teksten"
 
 #: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
-#| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Uttal teksten"
 
 #: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
-#| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopier bildeadresse"
@@ -2693,16 +2664,12 @@ msgstr ""
 
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
-#| msgid "Save Message"
-#| msgid_plural "Save Messages"
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Lagre melding"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
-#| msgid "Save Message"
-#| msgid_plural "Save Messages"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Lagre melding"
