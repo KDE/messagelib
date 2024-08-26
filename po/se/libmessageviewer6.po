@@ -1215,7 +1215,6 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, fuzzy, kde-format
-#| msgid "Move to Trash"
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Sirdde ruskalihtái"
@@ -1447,7 +1446,6 @@ msgstr ""
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
 #, fuzzy, kde-format
-#| msgid "Show attachments as suggested by sender."
 msgid "How attachments are shown"
 msgstr "Čájet mildosiid nugo sáddejeaddji evttoha."
 
@@ -1738,7 +1736,6 @@ msgstr "Fiila nammaduvvon «%1» gávdno juo. Háliidatgo buhttet dan?"
 
 #: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
-#| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Buhttet?"
@@ -1756,7 +1753,6 @@ msgstr "mielddus.1"
 
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
-#| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Vurke mildosa"
@@ -1782,14 +1778,12 @@ msgstr "KMail-jearaldat"
 
 #: utils/messageviewerutil.cpp:306
 #, fuzzy, kde-format
-#| msgid "Keep Encryption"
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Doalat krypterema"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, fuzzy, kde-format
-#| msgid "Do Not Keep"
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ale doalat krypterema"
@@ -1805,7 +1799,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:319
 #, fuzzy, kde-format
-#| msgid "Keep Signature"
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Doalat vuolláičállaga"
@@ -1821,7 +1814,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
-#| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Šattai meattáhus mildosa vurkedettiin"
@@ -1860,7 +1852,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
-#| msgid "End of signed message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Vuolláičállon reivve loahppa"
@@ -1872,7 +1863,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
-#| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Šattai meattáhus mildosa vurkedettiin"
@@ -2075,7 +2065,6 @@ msgstr "Háliidat go duođaid vuodjit <filename>«%1»</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
 #, fuzzy, kde-format
-#| msgid "Execute"
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Vuoje gohččuma"
@@ -2094,7 +2083,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
-#| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Vurke mildosa"
@@ -2271,7 +2259,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
-#| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merke visot teavstta"
@@ -2293,7 +2280,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1570
 #, fuzzy, kde-format
-#| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Čájet &gáldu"
@@ -2357,21 +2343,18 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
-#| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Huma teavstta"
 
 #: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
-#| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Huma teavstta"
 
 #: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
-#| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Máŋge govvačujuhusa"

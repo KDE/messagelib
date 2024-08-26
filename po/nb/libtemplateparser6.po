@@ -86,7 +86,6 @@ msgstr "Det finnes fra før en mal med dette navnet."
 
 #: customtemplates.cpp:252
 #, fuzzy, kde-format
-#| msgid "Cannot create template"
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Kan ikke opprette mal"
@@ -578,21 +577,18 @@ msgstr "Vil du nullstille gjeldende mal eller alle maler til standardverdier?"
 
 #: templatesconfiguration.cpp:101
 #, fuzzy, kde-format
-#| msgid "Reset to default"
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Tilbakestill til standard"
 
 #: templatesconfiguration.cpp:102
 #, fuzzy, kde-format
-#| msgid "Reset Current Template"
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Tilbakestill gjeldende mal"
 
 #: templatesconfiguration.cpp:103
 #, fuzzy, kde-format
-#| msgid "Reset All Templates"
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Tilbakestill alle maler"

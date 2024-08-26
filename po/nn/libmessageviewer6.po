@@ -1232,7 +1232,6 @@ msgstr ""
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, fuzzy, kde-format
-#| msgid "Move to Trash"
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Flytt til papirkorga"
@@ -1466,7 +1465,6 @@ msgstr "La meldingar lasta eksterne referansar frå Internett"
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
 #: settings/messageviewer.kcfg.in:131
 #, fuzzy, kde-format
-#| msgid "Show attachments as suggested by sender."
 msgid "How attachments are shown"
 msgstr "Vis vedlegga slik avsendaren føreslår."
 
@@ -1757,7 +1755,6 @@ msgstr "Fila «%1» finst frå før. Er du sikker på at du vil skriva over ho?"
 
 #: utils/messageviewerutil.cpp:126
 #, fuzzy, kde-format
-#| msgid "Overwrite File?"
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Skriv over fil?"
@@ -1775,7 +1772,6 @@ msgstr "vedlegg.1"
 
 #: utils/messageviewerutil.cpp:182
 #, fuzzy, kde-format
-#| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Lagra vedlegg"
@@ -1801,14 +1797,12 @@ msgstr "KMail-spørsmål"
 
 #: utils/messageviewerutil.cpp:306
 #, fuzzy, kde-format
-#| msgid "Keep Encryption"
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Ta vare på kryptering"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, fuzzy, kde-format
-#| msgid "Do Not Keep"
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ikkje ta vare på"
@@ -1823,7 +1817,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:319
 #, fuzzy, kde-format
-#| msgid "Keep Signature"
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Ta vare på signatur"
@@ -1839,7 +1832,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:386
 #, fuzzy, kde-format
-#| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Feil ved lagring av vedlegg"
@@ -1878,7 +1870,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:508
 #, fuzzy, kde-format
-#| msgid "Error evaluating spam score"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Feil ved lesing av søppelpost-poengverdien"
@@ -1890,7 +1881,6 @@ msgstr ""
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
 #, fuzzy, kde-format
-#| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Feil ved lagring av vedlegg"
@@ -2095,7 +2085,6 @@ msgstr "Er du sikker på at du vil køyra <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:905
 #, fuzzy, kde-format
-#| msgid "Execute"
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Køyr"
@@ -2116,7 +2105,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
 #, fuzzy, kde-format
-#| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Slett vedlegg"
@@ -2293,7 +2281,6 @@ msgstr "Kopier tekst"
 
 #: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
-#| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merk all tekst"
@@ -2315,7 +2302,6 @@ msgstr "Vis meldingsstruktur"
 
 #: viewer/viewer_p.cpp:1570
 #, fuzzy, kde-format
-#| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Vis k&jeldekode"
@@ -2339,28 +2325,24 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
-#| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Rull oppover i melding"
 
 #: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
-#| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Rull nedover i melding"
 
 #: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Rull oppover i melding (meir)"
 
 #: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Rull nedover i melding (meir)"
@@ -2383,7 +2365,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
-#| msgid "Copy Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Kopier tekst"
@@ -2396,7 +2377,6 @@ msgstr ""
 
 #: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
-#| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopier biletadresse"
@@ -2623,14 +2603,12 @@ msgstr ""
 
 #: widgets/shownextmessagewidget.cpp:15
 #, fuzzy, kde-format
-#| msgid "Decrypt Message"
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Dekrypter melding"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
-#| msgid "Scroll Message Up"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Rull oppover i melding"
