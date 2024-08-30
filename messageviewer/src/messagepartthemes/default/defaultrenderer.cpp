@@ -27,6 +27,7 @@
 
 #include <QGpgME/Protocol>
 
+#include <Libkleo/Formatting>
 #include <MessageCore/StringUtil>
 
 #include <KEmailAddress>
@@ -686,7 +687,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
-    block.setProperty("importError", QString::fromLocal8Bit(importResult.error().asString()));
+    block.setProperty("importError", Kleo::Formatting::errorAsString(importResult.error()));
     block.setProperty("nImp", importResult.numImported());
     block.setProperty("nUnc", importResult.numUnchanged());
     block.setProperty("nSKImp", importResult.numSecretKeysImported());
@@ -698,7 +699,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
     auto end(imports.end());
     for (auto it = imports.begin(); it != end; ++it) {
         auto key(new QObject(mp.data()));
-        key->setProperty("error", QString::fromLocal8Bit((*it).error().asString()));
+        key->setProperty("error", Kleo::Formatting::errorAsString(it->error()));
         key->setProperty("status", (*it).status());
         key->setProperty("fingerprint", QLatin1StringView((*it).fingerprint()));
         keylist << QVariant::fromValue(key);

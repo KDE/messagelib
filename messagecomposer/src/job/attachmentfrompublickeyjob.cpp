@@ -15,6 +15,7 @@
 #include <QGpgME/ExportJob>
 #include <QGpgME/Protocol>
 
+#include <Libkleo/Formatting>
 #include <Libkleo/ProgressDialog>
 
 using namespace MessageComposer;
@@ -63,7 +64,7 @@ void AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::emitGpgError
         "<p>An error occurred while trying to export "
         "the key from the backend:</p>"
         "<p><b>%1</b></p>",
-        QString::fromLocal8Bit(error.asString()));
+        Kleo::Formatting::errorAsString(error));
     q->setError(KJob::UserDefinedError);
     q->setErrorText(msg);
     q->emitResult();

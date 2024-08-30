@@ -18,11 +18,11 @@
 #include <KMime/Content>
 #include <KMime/Headers>
 #include <KMime/Message>
+#include <Libkleo/Formatting>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
-#include <sstream>
 
 using namespace MessageComposer;
 
@@ -242,16 +242,16 @@ void SignEncryptJob::process()
                          Q_UNUSED(auditLogAsHtml)
                          Q_UNUSED(auditLogError)
                          if (signingResult.error()) {
-                             qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << signingResult.error().asString();
+                             qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << Kleo::Formatting::errorAsString(signingResult.error());
                              setError(signingResult.error().code());
-                             setErrorText(QString::fromLocal8Bit(signingResult.error().asString()));
+                             setErrorText(Kleo::Formatting::errorAsString(signingResult.error()));
                              emitResult();
                              return;
                          }
                          if (encryptionResult.error()) {
-                             qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << encryptionResult.error().asString();
+                             qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << Kleo::Formatting::errorAsString(encryptionResult.error());
                              setError(encryptionResult.error().code());
-                             setErrorText(QString::fromLocal8Bit(encryptionResult.error().asString()));
+                             setErrorText(Kleo::Formatting::errorAsString(encryptionResult.error()));
                              emitResult();
                              return;
                          }
@@ -266,7 +266,7 @@ void SignEncryptJob::process()
     if (error.code()) {
         job->deleteLater();
         setError(error.code());
-        setErrorText(QString::fromLocal8Bit(error.asString()));
+        setErrorText(Kleo::Formatting::errorAsString(error));
         emitResult();
     }
 }

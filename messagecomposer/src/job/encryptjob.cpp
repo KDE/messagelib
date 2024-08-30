@@ -14,6 +14,8 @@
 #include <QGpgME/EncryptJob>
 #include <QGpgME/Protocol>
 
+#include <Libkleo/Formatting>
+
 #include "messagecomposer_debug.h"
 
 #include <gpgme++/encryptionresult.h>
@@ -252,7 +254,7 @@ void EncryptJob::process()
             Q_UNUSED(auditLogError)
             if (result.error()) {
                 setError(result.error().code());
-                setErrorText(QString::fromLocal8Bit(result.error().asString()));
+                setErrorText(Kleo::Formatting::errorAsString(result.error()));
                 emitResult();
                 return;
             }
@@ -265,7 +267,7 @@ void EncryptJob::process()
     if (error.code()) {
         eJob->deleteLater();
         setError(error.code());
-        setErrorText(QString::fromLocal8Bit(error.asString()));
+        setErrorText(Kleo::Formatting::errorAsString(error));
         emitResult();
     }
 }

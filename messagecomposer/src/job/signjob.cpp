@@ -19,11 +19,11 @@
 #include <KMime/Content>
 #include <KMime/Headers>
 #include <KMime/Message>
+#include <Libkleo/Formatting>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
-#include <sstream>
 
 using namespace MessageComposer;
 
@@ -255,10 +255,10 @@ void SignJob::process()
             Q_UNUSED(auditLogAsHtml)
             Q_UNUSED(auditLogError)
             if (result.error().code()) {
-                qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << result.error().asString();
+                qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << Kleo::Formatting::errorAsString(result.error());
                 //        job->showErrorDialog( globalPart()->parentWidgetForGui() );
                 setError(result.error().code());
-                setErrorText(QString::fromLocal8Bit(result.error().asString()));
+                setErrorText(Kleo::Formatting::errorAsString(result.error()));
                 emitResult();
                 return;
             }
@@ -273,7 +273,7 @@ void SignJob::process()
     if (error.code()) {
         job->deleteLater();
         setError(error.code());
-        setErrorText(QString::fromLocal8Bit(error.asString()));
+        setErrorText(Kleo::Formatting::errorAsString(error));
         emitResult();
     }
 }
