@@ -33,12 +33,8 @@ public:
     {
     }
 
-    GpgME::Signature::Summary sigSummary = GpgME::Signature::None;
-    QString signClass;
-    QString signer;
-    QStringList signerMailAddresses;
+    GpgME::VerificationResult verificationResult;
     QByteArray keyId;
-    GpgME::Signature::Validity keyTrust = GpgME::Signature::Validity::Unknown;
     QString status; // to be used for unknown plug-ins
     int status_code = 0; // = GPGME_SIG_STAT_NONE; to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;

@@ -25,6 +25,7 @@
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 
+#include <Libkleo/Formatting>
 #include <QGpgME/Protocol>
 
 #include <Libkleo/Formatting>
@@ -421,11 +422,6 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
     block.setProperty("detailHeader", showSignatureDetails());
     block.setProperty("isPrinting", isPrinting());
-    QStringList endodedEmails;
-    for (const auto &addr : metaData.signerMailAddresses) {
-        endodedEmails.append(MessageCore::StringUtil::quoteHtmlChars(addr, true));
-    }
-    block.setProperty("addr", endodedEmails.join(QLatin1Char(',')));
     block.setProperty("technicalProblem", metaData.technicalProblem);
     block.setProperty("keyId", metaData.keyId);
     if (metaData.creationTime.isValid()) { // should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
@@ -436,24 +432,11 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("compliance", metaData.compliance);
     block.setProperty("isSMIME", isSMIME);
 
-    if (metaData.keyTrust == GpgME::Signature::Unknown) {
-        block.setProperty("keyTrust", QStringLiteral("unknown"));
-    } else if (metaData.keyTrust == GpgME::Signature::Marginal) {
-        block.setProperty("keyTrust", QStringLiteral("marginal"));
-    } else if (metaData.keyTrust == GpgME::Signature::Full) {
-        block.setProperty("keyTrust", QStringLiteral("full"));
-    } else if (metaData.keyTrust == GpgME::Signature::Ultimate) {
-        block.setProperty("keyTrust", QStringLiteral("ultimate"));
-    } else {
-        block.setProperty("keyTrust", QStringLiteral("untrusted"));
-    }
-
     QString startKeyHREF;
     {
         QString keyWithWithoutURL;
         if (cryptoProto) {
-            startKeyHREF = QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
-                               .arg(cryptoProto->displayName(), cryptoProto->name(), QString::fromLatin1(metaData.keyId));
+            startKeyHREF = QStringLiteral("<a href=\"key:#%1\">").arg(QString::fromLatin1(metaData.keyId));
 
             keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
         } else {
@@ -462,146 +445,30 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
         block.setProperty("keyWithWithoutURL", keyWithWithoutURL);
     }
 
-    bool onlyShowKeyURL = false;
-    bool showKeyInfos = false;
-    bool cannotCheckSignature = true;
-    QString signer = metaData.signer;
     QString statusStr;
     QString mClass;
-    QString greenCaseWarning;
 
+    const auto signatures = metaData.verificationResult.signatures();
     if (metaData.inProgress) {
         mClass = QStringLiteral("signInProgress");
     } else {
-        const QStringList &blockAddrs(metaData.signerMailAddresses);
-        // note: At the moment frameColor and showKeyInfos are
-        //       used for CMS only but not for PGP signatures
-        // pending(khz): Implement usage of these for PGP sigs as well.
-        int frameColor = SIG_FRAME_COL_UNDEF;
-        statusStr = sigStatusToString(cryptoProto, metaData.status_code, metaData.sigSummary, frameColor, showKeyInfos);
-        // if needed fallback to english status text
-        // that was reported by the plugin
-        if (statusStr.isEmpty()) {
-            statusStr = metaData.status;
-        }
-        if (metaData.technicalProblem) {
-            frameColor = SIG_FRAME_COL_YELLOW;
-        }
+        Q_ASSERT(!signatures.empty());
+        const auto signature = signatures.front(); // TODO add support for multiple signature
+        const auto summary = signature.summary();
 
-        switch (frameColor) {
-        case SIG_FRAME_COL_RED:
-            cannotCheckSignature = false;
-            break;
-        case SIG_FRAME_COL_YELLOW:
-            cannotCheckSignature = true;
-            break;
-        case SIG_FRAME_COL_GREEN:
-            cannotCheckSignature = false;
-            break;
-        }
+        statusStr = Kleo::Formatting::prettySignature(signature, {});
 
-        // temporary hack: always show key information!
-        showKeyInfos = true;
-
-        if (isSMIME && (SIG_FRAME_COL_UNDEF != frameColor)) {
-            switch (frameColor) {
-            case SIG_FRAME_COL_RED:
-                mClass = QStringLiteral("signErr");
-                onlyShowKeyURL = true;
-                break;
-            case SIG_FRAME_COL_YELLOW:
-                if (metaData.technicalProblem) {
-                    mClass = QStringLiteral("signWarn");
-                } else {
-                    mClass = QStringLiteral("signOkKeyBad");
-                }
-                break;
-            case SIG_FRAME_COL_GREEN:
-                mClass = QStringLiteral("signOkKeyOk");
-                // extra hint for green case
-                // that email addresses in DN do not match fromAddress
-                QString msgFrom(KEmailAddress::extractEmailAddress(mp->fromAddress()));
-                QString certificate;
-                if (metaData.keyId.isEmpty()) {
-                    certificate = i18n("certificate");
-                } else {
-                    certificate = startKeyHREF + i18n("certificate") + QStringLiteral("</a>");
-                }
-
-                if (!blockAddrs.empty()) {
-                    QStringList::ConstIterator end(blockAddrs.constEnd());
-                    QStringList extractedEmails;
-                    for (QStringList::ConstIterator it = blockAddrs.constBegin(); it != end; ++it) {
-                        extractedEmails.append(KEmailAddress::extractEmailAddress(*it));
-                    }
-                    if (!extractedEmails.contains(msgFrom, Qt::CaseInsensitive)) {
-                        greenCaseWarning = QStringLiteral("<u>") + i18nc("Start of warning message.", "Warning:") + QStringLiteral("</u> ")
-                            + i18n("Sender's mail address is not stored in the %1 used for signing.", certificate) + QStringLiteral("<br />") + i18n("sender: ")
-                            + msgFrom + QStringLiteral("<br />") + i18n("stored: ");
-                        // We cannot use Qt's join() function here but
-                        // have to join the addresses manually to
-                        // extract the mail addresses (without '<''>')
-                        // before including it into our string:
-                        bool bStart = true;
-                        QStringList::ConstIterator end(extractedEmails.constEnd());
-                        for (QStringList::ConstIterator it = extractedEmails.constBegin(); it != end; ++it) {
-                            if (!bStart) {
-                                greenCaseWarning.append(QLatin1StringView(", <br />&nbsp; &nbsp;"));
-                            }
-
-                            bStart = false;
-                            greenCaseWarning.append(*it);
-                        }
-                    }
-                } else {
-                    greenCaseWarning = QStringLiteral("<u>") + i18nc("Start of warning message.", "Warning:") + QStringLiteral("</u> ")
-                        + i18n("No mail address is stored in the %1 used for signing, "
-                               "so we cannot compare it to the sender's address %2.",
-                               certificate,
-                               msgFrom);
-                }
-                break;
-            }
-
-            if (showKeyInfos && !cannotCheckSignature) {
-                if (metaData.signer.isEmpty()) {
-                    signer.clear();
-                } else {
-                    if (!blockAddrs.empty()) {
-                        const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>")
-                                     .arg(QLatin1StringView(QUrl ::toPercentEncoding(address.path())), MessageCore::StringUtil::quoteHtmlChars(signer, true));
-                    }
-                }
-            }
+        if (summary & GpgME::Signature::Summary::Red) {
+            mClass = QStringLiteral("signErr");
+        } else if (summary & GpgME::Signature::Summary::Valid) {
+            mClass = QStringLiteral("signOkKeyOk");
         } else {
-            if (metaData.signer.isEmpty() || metaData.technicalProblem || !metaData.isCompliant) {
-                mClass = QStringLiteral("signWarn");
-            } else {
-                // HTMLize the signer's user id and create mailto: link
-                signer = MessageCore::StringUtil::quoteHtmlChars(signer, true);
-                signer = QStringLiteral("<a href=\"mailto:%1\">%1</a>").arg(signer);
-
-                if (metaData.isGoodSignature) {
-                    if (metaData.keyTrust < GpgME::Signature::Marginal) {
-                        mClass = QStringLiteral("signOkKeyBad");
-                    } else {
-                        mClass = QStringLiteral("signOkKeyOk");
-                    }
-                } else {
-                    mClass = QStringLiteral("signErr");
-                }
-            }
+            mClass = QStringLiteral("signWarn");
         }
     }
 
-    block.setProperty("onlyShowKeyURL", onlyShowKeyURL);
-    block.setProperty("showKeyInfos", showKeyInfos);
-    block.setProperty("cannotCheckSignature", cannotCheckSignature);
-    block.setProperty("signer", signer);
     block.setProperty("statusStr", statusStr);
     block.setProperty("signClass", mClass);
-    block.setProperty("greenCaseWarning", greenCaseWarning);
     KTextTemplate::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
 }

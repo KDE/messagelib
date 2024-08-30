@@ -8,6 +8,7 @@
 #include <QProcess>
 #include <QRegularExpression>
 #include <QTest>
+
 using namespace MessageViewer;
 KMime::Message::Ptr Test::readAndParseMail(const QString &mailFile)
 {
@@ -80,6 +81,10 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
 
     QCOMPARE(pStdOut.size(), 0);
 #else
+    // Uncommment to update test data
+    // proc.start(QStringLiteral("cp"), {htmlFile, referenceFile});
+    // QVERIFY(proc.waitForFinished());
+
     // compare to reference file
     args = QStringList() << QStringLiteral("-u") << referenceFile << htmlFile;
 

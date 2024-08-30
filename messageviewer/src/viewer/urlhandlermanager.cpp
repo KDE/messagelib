@@ -467,54 +467,17 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
     return {};
 }
 
-bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId)
-{
-    static QString showCertMan(QStringLiteral("showCertificate#"));
-    displayName.clear();
-    libName.clear();
-    keyId.clear();
-    int i1 = aUrl.indexOf(showCertMan);
-    if (-1 < i1) {
-        i1 += showCertMan.length();
-        int i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
-        if (i1 < i2) {
-            displayName = aUrl.mid(i1, i2 - i1);
-            i1 = i2 + 5;
-            i2 = aUrl.indexOf(QLatin1StringView(" ### "), i1);
-            if (i1 < i2) {
-                libName = aUrl.mid(i1, i2 - i1);
-                i2 += 5;
-
-                keyId = aUrl.mid(i2);
-                /*
-                int len = aUrl.length();
-                if( len > i2+1 ) {
-                keyId = aUrl.mid( i2, 2 );
-                i2 += 2;
-                while( len > i2+1 ) {
-                keyId += ':';
-                keyId += aUrl.mid( i2, 2 );
-                i2 += 2;
-                }
-                }
-                */
-            }
-        }
-    }
-    return !keyId.isEmpty();
-}
-
 bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
-    if (!url.hasFragment()) {
-        return false;
-    }
-    QString displayName;
-    QString libName;
     QString keyId;
-    if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
+    if (url.scheme() == QStringLiteral("key")) {
+        keyId = url.path();
+    }
+
+    if (keyId.isEmpty()) {
         return false;
     }
+
     QStringList lst;
     lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << QStringLiteral("--query")
         << keyId;
@@ -540,10 +503,12 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 
 QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    QString displayName;
-    QString libName;
     QString keyId;
-    if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
+    if (url.scheme() == QStringLiteral("key")) {
+        keyId = url.path();
+    }
+
+    if (keyId.isEmpty()) {
         return {};
     }
     return i18n("Show certificate 0x%1", keyId);

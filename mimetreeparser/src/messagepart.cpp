@@ -703,7 +703,6 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
     partMetaData()->isSigned = true;
     partMetaData()->isGoodSignature = false;
-    partMetaData()->keyTrust = GpgME::Signature::Unknown;
     partMetaData()->status = i18n("Wrong Crypto Plug-In.");
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
@@ -749,7 +748,6 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     partMetaData()->isSigned = false;
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
-    partMetaData()->keyTrust = GpgME::Signature::Unknown;
     partMetaData()->status = i18n("Wrong Crypto Plug-In.");
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 
@@ -834,106 +832,9 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     return partMetaData()->isSigned;
 }
 
-static int signatureToStatus(const GpgME::Signature &sig)
-{
-    switch (sig.status().code()) {
-    case GPG_ERR_NO_ERROR:
-        return GPGME_SIG_STAT_GOOD;
-    case GPG_ERR_BAD_SIGNATURE:
-        return GPGME_SIG_STAT_BAD;
-    case GPG_ERR_NO_PUBKEY:
-        return GPGME_SIG_STAT_NOKEY;
-    case GPG_ERR_NO_DATA:
-        return GPGME_SIG_STAT_NOSIG;
-    case GPG_ERR_SIG_EXPIRED:
-        return GPGME_SIG_STAT_GOOD_EXP;
-    case GPG_ERR_KEY_EXPIRED:
-        return GPGME_SIG_STAT_GOOD_EXPKEY;
-    default:
-        return GPGME_SIG_STAT_ERROR;
-    }
-}
-
 QString prettifyDN(const char *uid)
 {
     return QGpgME::DN(uid).prettyDN();
-}
-
-void SignedMessagePart::sigStatusToMetaData()
-{
-    GpgME::Key key;
-    if (partMetaData()->isSigned) {
-        GpgME::Signature signature = mSignatures.front();
-        partMetaData()->status_code = signatureToStatus(signature);
-        partMetaData()->isGoodSignature = partMetaData()->status_code == GPGME_SIG_STAT_GOOD;
-        // save extended signature status flags
-        partMetaData()->sigSummary = signature.summary();
-
-        if (partMetaData()->isGoodSignature && !key.keyID()) {
-            // Search for the key by its fingerprint so that we can check for
-            // trust etc.
-            key = mKeyCache->findByFingerprint(signature.fingerprint());
-            if (key.isNull() && signature.fingerprint()) {
-                // try to find a subkey that was used for signing;
-                // assumes that the key ID is the last 16 characters of the fingerprint
-                const auto fpr = std::string_view{signature.fingerprint()};
-                const auto keyID = std::string{fpr, fpr.size() - 16, 16};
-                const auto subkeys = mKeyCache->findSubkeysByKeyID({keyID});
-                if (subkeys.size() > 0) {
-                    key = subkeys[0].parent();
-                }
-            }
-            if (key.isNull()) {
-                qCDebug(MIMETREEPARSER_LOG) << "Found no key or subkey for fingerprint" << signature.fingerprint();
-            }
-        }
-
-        if (key.keyID()) {
-            partMetaData()->keyId = key.keyID();
-        }
-        if (partMetaData()->keyId.isEmpty()) {
-            partMetaData()->keyId = signature.fingerprint();
-        }
-        partMetaData()->keyTrust = signature.validity();
-        if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            partMetaData()->signer = prettifyDN(key.userID(0).id());
-        }
-        for (const auto &uid : key.userIDs()) {
-            // The following if /should/ always result in TRUE but we
-            // won't trust implicitly the plugin that gave us these data.
-            if (uid.email()) {
-                KMime::Types::Mailbox mbox;
-                mbox.from7BitString(uid.email());
-                if (mbox.hasAddress()) {
-                    partMetaData()->signerMailAddresses.append(mbox.addrSpec().asString());
-                }
-            }
-        }
-
-        if (signature.creationTime()) {
-            partMetaData()->creationTime.setSecsSinceEpoch(signature.creationTime());
-        } else {
-            partMetaData()->creationTime = QDateTime();
-        }
-        if (partMetaData()->signer.isEmpty()) {
-            if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                partMetaData()->signer = prettifyDN(key.userID(0).name());
-            }
-            if (!partMetaData()->signerMailAddresses.empty()) {
-                if (partMetaData()->signer.isEmpty()) {
-                    partMetaData()->signer = partMetaData()->signerMailAddresses.front();
-                } else {
-                    partMetaData()->signer += QLatin1StringView(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
-                }
-            }
-        }
-        if (Kleo::DeVSCompliance::isCompliant()) {
-            partMetaData()->isCompliant = signature.isDeVs();
-            partMetaData()->compliance = Kleo::DeVSCompliance::name(signature.isDeVs());
-        } else {
-            partMetaData()->isCompliant = true;
-        }
-    }
 }
 
 void SignedMessagePart::startVerification(const QByteArray &text, QByteArrayView aCodec)
@@ -972,6 +873,7 @@ void SignedMessagePart::setVerificationResult(const CompositeMemento *m, KMime::
         const auto vm = m->memento<VerifyDetachedBodyPartMemento>();
         if (vm) {
             mSignatures = vm->verifyResult().signatures();
+            partMetaData()->verificationResult = vm->verifyResult();
         }
     }
     {
@@ -979,6 +881,7 @@ void SignedMessagePart::setVerificationResult(const CompositeMemento *m, KMime::
         if (vm) {
             mVerifiedText = vm->plainText();
             mSignatures = vm->verifyResult().signatures();
+            partMetaData()->verificationResult = vm->verifyResult();
         }
     }
     {
@@ -986,32 +889,32 @@ void SignedMessagePart::setVerificationResult(const CompositeMemento *m, KMime::
         if (vm) {
             mVerifiedText = vm->plainText();
             mSignatures = vm->verifyResult().signatures();
+            partMetaData()->verificationResult = vm->verifyResult();
         }
     }
     partMetaData()->auditLogError = m->auditLogError();
     partMetaData()->auditLog = m->auditLogAsHtml();
     partMetaData()->isSigned = !mSignatures.empty();
 
-    if (partMetaData()->isSigned) {
-        sigStatusToMetaData();
-        if (content()) {
-            mOtp->nodeHelper()->setSignatureState(content(), KMMsgFullySigned);
-            if (!textNode) {
-                mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
+    if (partMetaData()->isSigned && content()) {
+        mOtp->nodeHelper()->setSignatureState(content(), KMMsgFullySigned);
+        if (textNode) {
+            return;
+        }
 
-                if (!mVerifiedText.isEmpty()) {
-                    auto tempNode = new KMime::Content();
-                    tempNode->setContent(KMime::CRLFtoLF(mVerifiedText.constData()));
-                    tempNode->parse();
+        mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
 
-                    if (!tempNode->head().isEmpty()) {
-                        tempNode->contentDescription()->from7BitString("signed data");
-                    }
-                    mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
+        if (!mVerifiedText.isEmpty()) {
+            auto tempNode = new KMime::Content();
+            tempNode->setContent(KMime::CRLFtoLF(mVerifiedText.constData()));
+            tempNode->parse();
 
-                    parseInternal(tempNode, false);
-                }
+            if (!tempNode->head().isEmpty()) {
+                tempNode->contentDescription()->from7BitString("signed data");
             }
+            mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
+
+            parseInternal(tempNode, false);
         }
     }
 }
@@ -1088,7 +991,6 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
     partMetaData()->isGoodSignature = false;
     partMetaData()->isEncrypted = false;
     partMetaData()->isDecryptable = false;
-    partMetaData()->keyTrust = GpgME::Signature::Unknown;
     partMetaData()->status = i18n("Wrong Crypto Plug-In.");
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
