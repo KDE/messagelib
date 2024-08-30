@@ -209,19 +209,11 @@ void SignJob::process()
         if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
-            QList<QByteArray> search;
-            search.reserve(3);
-            QList<QByteArray> replacements;
-            replacements.reserve(3);
-            search << "From "
-                   << "from "
-                   << "-";
-            replacements << "From=20"
-                         << "from=20"
-                         << "=2D";
+            constexpr auto search = std::to_array<QByteArrayView>({"From ", "from ", "-"});
+            constexpr auto replacements = std::to_array<QByteArrayView>({"From=20", "from=20", "=2D"});
 
             if (encoding == KMime::Headers::CE7Bit) {
-                for (int i = 0, total = search.size(); i < total; ++i) {
+                for (size_t i = 0, total = search.size(); i < total; ++i) {
                     const auto pos = body.indexOf(search[i]);
                     if (pos == 0 || (pos > 0 && body.at(pos - 1) == '\n')) {
                         changed = true;
@@ -235,7 +227,7 @@ void SignJob::process()
                 }
             }
 
-            for (int i = 0; i < search.size(); ++i) {
+            for (size_t i = 0, total = search.size(); i < total; ++i) {
                 const auto pos = body.indexOf(search[i]);
                 if (pos == 0 || (pos > 0 && body.at(pos - 1) == '\n')) {
                     changed = true;
