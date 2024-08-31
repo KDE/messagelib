@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-08-01 12:50+0200\n"
+"PO-Revision-Date: 2024-08-30 12:52+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1053,7 +1053,7 @@ msgstr "Correcte ondertekening"
 #: messagepartthemes/default/defaultrenderer.cpp:75
 #, kde-format
 msgid "Bad signature"
-msgstr "Ongeldige ondertekening"
+msgstr "Foute ondertekening"
 
 #: messagepartthemes/default/defaultrenderer.cpp:79
 #, kde-format
@@ -1129,7 +1129,7 @@ msgstr "Eén sleutel is ingetrokken."
 #: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Bad signature."
-msgstr "Ongeldige ondertekening."
+msgstr "Foute ondertekening."
 
 #: messagepartthemes/default/defaultrenderer.cpp:525
 #: messagepartthemes/default/defaultrenderer.cpp:527
