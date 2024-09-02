@@ -308,14 +308,14 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
 
     // if  some keys are not fully trusted, let the user confirm their use
     QString msg = address.isEmpty() ? i18n(
-                      "One or more of your configured OpenPGP encryption "
-                      "keys or S/MIME certificates is not fully trusted "
-                      "for encryption.")
+                                          "One or more of your configured OpenPGP encryption "
+                                          "keys or S/MIME certificates is not fully trusted "
+                                          "for encryption.")
                                     : i18n(
-                                        "One or more of the OpenPGP encryption keys or S/MIME "
-                                        "certificates for recipient \"%1\" is not fully trusted "
-                                        "for encryption.",
-                                        address);
+                                          "One or more of the OpenPGP encryption keys or S/MIME "
+                                          "certificates for recipient \"%1\" is not fully trusted "
+                                          "for encryption.",
+                                          address);
 
     if (!fishies.empty()) {
         // certificates can't have marginal trust
@@ -1335,13 +1335,13 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
     if (items.size() == emptyListCount) {
         const QString msg = (d->mPrimaryEncryptionKeys.size() + d->mSecondaryEncryptionKeys.size() == 1)
             ? i18n(
-                "You did not select an encryption key for the "
-                "recipient of this message; therefore, the message "
-                "will not be encrypted.")
+                  "You did not select an encryption key for the "
+                  "recipient of this message; therefore, the message "
+                  "will not be encrypted.")
             : i18n(
-                "You did not select an encryption key for any of the "
-                "recipients of this message; therefore, the message "
-                "will not be encrypted.");
+                  "You did not select an encryption key for any of the "
+                  "recipients of this message; therefore, the message "
+                  "will not be encrypted.");
         if (KMessageBox::warningContinueCancel(nullptr,
                                                msg,
                                                i18nc("@title:window", "Missing Key Warning"),
@@ -1352,13 +1352,13 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         finalySendUnencrypted = true;
     } else if (emptyListCount > 0) {
         const QString msg = (emptyListCount == 1) ? i18n(
-                                "You did not select an encryption key for one of "
-                                "the recipients: this person will not be able to "
-                                "decrypt the message if you encrypt it.")
+                                                        "You did not select an encryption key for one of "
+                                                        "the recipients: this person will not be able to "
+                                                        "decrypt the message if you encrypt it.")
                                                   : i18n(
-                                                      "You did not select encryption keys for some of "
-                                                      "the recipients: these persons will not be able to "
-                                                      "decrypt the message if you encrypt it.");
+                                                        "You did not select encryption keys for some of "
+                                                        "the recipients: these persons will not be able to "
+                                                        "decrypt the message if you encrypt it.");
         KCursorSaver saver(Qt::WaitCursor);
         if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {

@@ -2028,13 +2028,13 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
         if (cryptoWarningUnsigned(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = sign && !doSignCompletely ? i18n(
-                                    "Some parts of this message will not be signed.\n"
-                                    "Sending only partially signed messages might violate site policy.\n"
-                                    "Sign all parts instead?") // oh, I hate this...
+                                                                "Some parts of this message will not be signed.\n"
+                                                                "Sending only partially signed messages might violate site policy.\n"
+                                                                "Sign all parts instead?") // oh, I hate this...
                                                           : i18n(
-                                                              "This message will not be signed.\n"
-                                                              "Sending unsigned message might violate site policy.\n"
-                                                              "Sign message instead?"); // oh, I hate this...
+                                                                "This message will not be signed.\n"
+                                                                "Sending unsigned message might violate site policy.\n"
+                                                                "Sign message instead?"); // oh, I hate this...
             const QString buttonText = sign && !doSignCompletely ? i18n("&Sign All Parts") : i18n("&Sign");
             switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                          msg,
@@ -2087,13 +2087,13 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
         // the user wants to be asked or has to be asked
         KCursorSaver saver(Qt::WaitCursor);
         const QString msg = opportunistic ? i18n(
-                                "Valid trusted encryption keys were found for all recipients.\n"
-                                "Encrypt this message?")
+                                                "Valid trusted encryption keys were found for all recipients.\n"
+                                                "Encrypt this message?")
                                           : i18n(
-                                              "Examination of the recipient's encryption preferences "
-                                              "yielded that you be asked whether or not to encrypt "
-                                              "this message.\n"
-                                              "Encrypt this message?");
+                                                "Examination of the recipient's encryption preferences "
+                                                "yielded that you be asked whether or not to encrypt "
+                                                "this message.\n"
+                                                "Encrypt this message?");
         switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                      msg,
                                                      i18n("Encrypt Message?"),
@@ -2170,15 +2170,15 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
         if (cryptoWarningUnencrypted(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = !doEncryptCompletely ? i18n(
-                                    "Some parts of this message will not be encrypted.\n"
-                                    "Sending only partially encrypted messages might violate "
-                                    "site policy and/or leak sensitive information.\n"
-                                    "Encrypt all parts instead?") // oh, I hate this...
+                                                           "Some parts of this message will not be encrypted.\n"
+                                                           "Sending only partially encrypted messages might violate "
+                                                           "site policy and/or leak sensitive information.\n"
+                                                           "Encrypt all parts instead?") // oh, I hate this...
                                                      : i18n(
-                                                         "This message will not be encrypted.\n"
-                                                         "Sending unencrypted messages might violate site policy and/or "
-                                                         "leak sensitive information.\n"
-                                                         "Encrypt messages instead?"); // oh, I hate this...
+                                                           "This message will not be encrypted.\n"
+                                                           "Sending unencrypted messages might violate site policy and/or "
+                                                           "leak sensitive information.\n"
+                                                           "Encrypt messages instead?"); // oh, I hate this...
             const QString buttonText = !doEncryptCompletely ? i18n("&Encrypt All Parts") : i18n("&Encrypt");
             switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
                                                          msg,
