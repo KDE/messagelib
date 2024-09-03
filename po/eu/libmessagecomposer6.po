@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-16 09:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1495,12 +1495,12 @@ msgstr "Eranskinaren izena:"
 msgid "Clipboard Text"
 msgstr "Arbeleko testua"
 
-#: job/attachmentfrompublickeyjob.cpp:50
+#: job/attachmentfrompublickeyjob.cpp:51
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP gakoa 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
+#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1509,7 +1509,7 @@ msgstr ""
 "<p>Errore bat gertatu da gakoa bizkarraldekotik esportatzen saiatzean:</"
 "p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Gakoa esportatzen..."
@@ -1529,7 +1529,7 @@ msgstr "Kontaktu baliogabea"
 msgid "Impossible to generate vCard."
 msgstr "Ezinezkoa da «vCard» sortzea."
 
-#: job/autocryptheadersjob.cpp:102
+#: job/autocryptheadersjob.cpp:103
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"

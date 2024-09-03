@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -109,8 +109,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Správa je šifrovaná pre nasledujúce kľúče:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Skryť detaily"
 
@@ -137,7 +135,6 @@ msgid "Encrypted message"
 msgstr "Zašifrovaná správa"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Zobraziť detaily"
 
@@ -193,140 +190,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Čakajte prosím, kým sa overí podpis..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Nedostatočné informácie pre overenie podpisu. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Správu podpísal %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Správa bola podpísaná neznámym kľúčom."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Správa bola podpísaná kľúčom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Správa bola podpísaná %3 dňa %1 s kľúčom %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Správa bola podpísaná dňa %1 s kľúčom %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Správa bola podpísaná %2 s kľúčom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Stav:"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Správu bola podpísaná %2 (ID kľúča: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Správa bola podpísaná dňa %1 neznámym kľúčom %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Správa bola podpísaná neznámym kľúčom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Platnosť podpisu nie je možné overiť."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Podpis je platný, ale bezpečnosť kľúča nie je známa."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Podpis je platný a kľúč je  čiastočne bezpečný."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Podpis je platný a kľúč je  plne bezpečný."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Podpis je platný a kľúč je nekonečne bezpečný."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Podpis je platný, ale kľúč nie je považovaný za bezpečný."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Pozor: Chybný podpis."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Neplatný podpis."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Nedostatočné informácie pre overenie podpisu."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Podpísal <a href='mailto:%1'>%1</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "Podpis je platný."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
-msgid "Unknown signature state"
-msgstr "Neznámy stav podpisu"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "Zlyhalo: %1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Koniec podpísanej správy"
 
@@ -1061,134 +925,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Odosielateľ:"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Chyba: Signatúra nebola overená"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Dobrý podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Nesprávny podpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Nemám verejný kľúč pre overenie podpisu"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Podpis nebol nájdený"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Chyba pri overovaní podpisu"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Rôzne výsledky pre podpisy"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Nie sú k dispozícii informácie o stave."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Dobrý podpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Jeden kľúč už stratil platnosť."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Podpis stratil časovú platnosť."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Nemôžem overiť: chýba kľúč."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL nie je k dispozícii."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Dostupné CRL je príliš staré."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Politika nedodržaná."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Vyskytla sa systémová chyba."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Jeden kľúč bol odvolaný."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Zlý podpis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "certifikát"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Upozornenie:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"E-mailová adresa odosielateľa nie je uložená v %1 použitého pre podpis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "odosielateľ:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "uložené:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"V %1, ktorý sa používa pre podpis, nie je uložená žiadna e-mailová adresa, "
-"preto nie je čo porovnať s adresou odosielateľa %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2127,78 +1953,78 @@ msgstr "Rozvinúť všetok citovaný text."
 msgid "Collapse quoted text."
 msgstr "Zvinúť citovaný text."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Nemôžem spustiť manažéra certifikátov. Prosím overte si inštaláciu."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Chybová správa KMail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Zobraziť certifikát 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Otvoriť v adresári"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Kopírovať e-mailovú adresu"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa skopírovaná do schránky."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Vyhľadávanie kontaktu v KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Príloha: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Zapuzdrená správa (Predmet: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Zapuzdrená správa"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Nepomenovaná príloha"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Ukázať záznam GnuPG Audit pre túto operáciu"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Otváranie URL..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Naozaj chcete spustiť <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2772,6 +2598,116 @@ msgstr "Nasledujúca správa"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Predchádzajúca správa"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nedostatočné informácie pre overenie podpisu. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Správu podpísal %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Správa bola podpísaná neznámym kľúčom."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Správa bola podpísaná kľúčom %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Správa bola podpísaná %3 dňa %1 s kľúčom %2."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Správa bola podpísaná dňa %1 s kľúčom %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Správa bola podpísaná %2 s kľúčom %1."
+
+#~ msgid "Status: "
+#~ msgstr "Stav:"
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Správu bola podpísaná %2 (ID kľúča: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Správa bola podpísaná dňa %1 neznámym kľúčom %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Správa bola podpísaná neznámym kľúčom %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Platnosť podpisu nie je možné overiť."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Podpis je platný, ale bezpečnosť kľúča nie je známa."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Podpis je platný a kľúč je  čiastočne bezpečný."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Podpis je platný a kľúč je  plne bezpečný."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Podpis je platný a kľúč je nekonečne bezpečný."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Podpis je platný, ale kľúč nie je považovaný za bezpečný."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Pozor: Chybný podpis."
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Neplatný podpis."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Nedostatočné informácie pre overenie podpisu."
+
+#, fuzzy
+#~| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Podpísal <a href='mailto:%1'>%1</a>."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "Podpis je platný."
+
+#, fuzzy
+#~| msgid "Unknown signature state"
+#~ msgid "Unknown signature state"
+#~ msgstr "Neznámy stav podpisu"
+
+#, fuzzy
+#~| msgctxt "Certificate import failed."
+#~| msgid "Failed: %1 (%2)"
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "Zlyhalo: %1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "certifikát"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Upozornenie:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "E-mailová adresa odosielateľa nie je uložená v %1 použitého pre podpis."
+
+#~ msgid "sender: "
+#~ msgstr "odosielateľ:"
+
+#~ msgid "stored: "
+#~ msgstr "uložené:"
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "V %1, ktorý sa používa pre podpis, nie je uložená žiadna e-mailová "
+#~ "adresa, preto nie je čo porovnať s adresou odosielateľa %2."
 
 #~ msgid "Export Rules"
 #~ msgstr "Exportovať pravidlá"

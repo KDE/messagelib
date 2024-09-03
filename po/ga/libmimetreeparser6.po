@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -23,49 +23,49 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Gan ainm"
 
-#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Breiseán Mícheart Criptithe."
 
-#: src/messagepart.cpp:819 src/messagepart.cpp:1306
+#: src/messagepart.cpp:817 src/messagepart.cpp:1208
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Níor aimsíodh breiseán criptiúcháin."
 
-#: src/messagepart.cpp:821
+#: src/messagepart.cpp:819
 #, fuzzy, kde-format
 #| msgid "No appropriate crypto plug-in was found."
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Níor aimsíodh breiseán criptiúcháin."
 
-#: src/messagepart.cpp:824
+#: src/messagepart.cpp:822
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
 
-#: src/messagepart.cpp:827
+#: src/messagepart.cpp:825
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1210
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
 
-#: src/messagepart.cpp:1310
+#: src/messagepart.cpp:1212
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1213
 #, kde-format
 msgid "Error: %1"
 msgstr "Earráid: %1"

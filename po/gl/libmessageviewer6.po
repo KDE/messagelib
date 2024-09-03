@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-03 12:17+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -115,8 +115,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "A mensaxe está cifrada para as seguintes chaves:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Agochar os detalles"
 
@@ -142,7 +140,6 @@ msgid "Encrypted message"
 msgstr "Mensaxe cifrada"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Amosar os detalles"
 
@@ -199,129 +196,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Agarde mentres se verifica a sinatura…"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Non hai información para comprobar a sinatura. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "A mensaxe asinouna %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "A mensaxe asinouse cunha chave descoñecida."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "A mensaxe asinouse coa chave %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "A mensaxe asinouna %3 o %1 coa chave %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "A mensaxe asinouse o %1 coa chave %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "A mensaxe asinouna %2 coa chave %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Estado: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "A mensaxe asinouna %2 (Identificador da chave: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "A mensaxe asinouse o %1 coa chave descoñecida %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "A mensaxe asinouse coa chave descoñecida %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Non é posíbel verificar a validez da sinatura."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "A sinatura é correcta, pero descoñécese a validez da chave."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "A sinatura é correcta e a chave é de confianza marxinal."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "A sinatura é correcta e a chave é de confianza absoluta."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "A sinatura é correcta e a chave é de confianza total."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "A sinatura é correcta, pero a chave non é de confianza."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Advertencia: A sinatura é mala."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "Cumprimento: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "A sinatura non é válida."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "Non hai información para comprobar a validez da sinatura."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Asinado por <a href=\"mailto:%1\">%1</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "A sinatura é válida."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "O estado da sinatura é descoñecido"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Fin da mensaxe asinada"
 
@@ -1035,133 +910,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Enviar a denegación"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Erro: A sinatura non está verificada"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Boa sinatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Sinatura incorrecta"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Non hai chave pública para verificar a sinatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Non se atopou ningunha sinatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Produciuse un erro ao verificar a sinatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Distintos resultados para as sinaturas"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Non hai información dispoñíbel de estado."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Boa sinatura."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Caducou unha chave."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Caducou a sinatura."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Non é posíbel verificar: falta a chave."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL non dispoñíbel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "A CRL dispoñíbel é demasiado vella."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Non se cumpriu unha política."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Produciuse un erro no sistema."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Revogouse unha chave."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Sinatura incorrecta."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "certificado"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Coidado:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "O enderezo do remitente non se garda na %1 usada para asinar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "remitente: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "gardado: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Non se garda ningún enderezo no %1 usado para asinar, así que non se pode "
-"comparar co enderezo do remitente %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2086,79 +1924,79 @@ msgstr "Expandir todo o texto citado."
 msgid "Collapse quoted text."
 msgstr "Pregar o texto citado."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Non foi posíbel iniciar o xestor de certificados. Comprobe a instalación."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Erro de KMail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Amosar o certificado 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Abrir na axenda de enderezos"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Copiar o enderezo de correo"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Copiouse o enderezo no portapapeis."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Buscar o contacto en KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Anexo: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Mensaxe encapsulada (Asunto: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Mensaxe encapsulada"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Anexo sen nome"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Amosar o rexistro de auditoría de GnuPG desta operación"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Abrindo URL…"
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Seguro que quere executar <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2705,6 +2543,105 @@ msgstr "Seguinte mensaxe"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensaxe anterior"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Non hai información para comprobar a sinatura. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "A mensaxe asinouna %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "A mensaxe asinouse cunha chave descoñecida."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "A mensaxe asinouse coa chave %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "A mensaxe asinouna %3 o %1 coa chave %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "A mensaxe asinouse o %1 coa chave %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "A mensaxe asinouna %2 coa chave %1."
+
+#~ msgid "Status: "
+#~ msgstr "Estado: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "A mensaxe asinouna %2 (Identificador da chave: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "A mensaxe asinouse o %1 coa chave descoñecida %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "A mensaxe asinouse coa chave descoñecida %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Non é posíbel verificar a validez da sinatura."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "A sinatura é correcta, pero descoñécese a validez da chave."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza marxinal."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza absoluta."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza total."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "A sinatura é correcta, pero a chave non é de confianza."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Advertencia: A sinatura é mala."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "Cumprimento: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "A sinatura non é válida."
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Non hai información para comprobar a validez da sinatura."
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Asinado por <a href=\"mailto:%1\">%1</a>."
+
+#~ msgid "Signature is valid"
+#~ msgstr "A sinatura é válida."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "O estado da sinatura é descoñecido"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "certificado"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Coidado:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "O enderezo do remitente non se garda na %1 usada para asinar."
+
+#~ msgid "sender: "
+#~ msgstr "remitente: "
+
+#~ msgid "stored: "
+#~ msgstr "gardado: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Non se garda ningún enderezo no %1 usado para asinar, así que non se pode "
+#~ "comparar co enderezo do remitente %2."
 
 #~ msgid "Export Rules"
 #~ msgstr "Exportar as regras"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -113,8 +113,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "भेजे गए संदेशों को एनक्रिप्टेड भंडारित करें (&p)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 #, fuzzy
 msgid "Hide Details"
 msgstr "लॉगिंग विवरण"
@@ -145,7 +143,6 @@ msgid "Encrypted message"
 msgstr "एनक्रिप्टेड संदेश"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 msgid "Show Details"
 msgstr "हमेशा दिखाएँ (&s)"
@@ -199,135 +196,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "कृपया इंतजार करें जब तक कि संदेश हस्तांतरित नहीं हो जाता"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "हस्ताक्षर को जाँचने के लिए पर्याप्त जानकारी नहीं. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "संदेश %1 के द्वारा हस्ताक्षरित है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "संदेश को अज्ञात कुंजी द्वारा हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "संदेश को कुंजी %1 द्वारा हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, fuzzy, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "संदेश को %2 द्वारा %1 पर कुंजी %1 से हस्ताक्षरित किया गया है"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "संदेश को %1 पर कुंजी %2 द्वारा हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "संदेश को %2 द्वारा कुंजी %1 से हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "स्थिति:"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "संदेश  %2 के द्वारा हस्ताक्षरित है (कुंजी आई-डी: : %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "संदेश को %1 पर अज्ञात कुंजी %2 द्वारा हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "संदेश को अज्ञात कुंजी %1 द्वारा हस्ताक्षरित किया गया है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "हस्ताक्षर की वैधता सत्यापित नहीं की जा सकी."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "हस्ताक्षर वैध है, परंतु कुंजी की वैधता अज्ञात है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "हस्ताक्षर वैध है तथा कुंजी गुंजाइश भर भरोसे योग्य है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "हस्ताक्षर वैध है तथा कुंजी पूर्णतः भरोसे योग्य है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "हस्ताक्षर वैध है तथा कुंजी निर्णायक रूप से भरोसे योग्य है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "हस्ताक्षर वैध है, परंतु कुंजी भरोसे योग्य नहीं है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "चेतावनीः हस्ताक्षर खराब है."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr "स्तम्भ: %1 "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-msgid "Invalid signature"
-msgstr "हस्ताक्षर सक्षम करें (&E)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-msgid "Not enough information to check signature validity"
-msgstr "हस्ताक्षर को जाँचने के लिए पर्याप्त जानकारी नहीं. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-msgid "Signature is valid"
-msgstr "हस्ताक्षर फ़ाइल वैध नहीं है"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "No signature found"
-msgid "Unknown signature state"
-msgstr "कोई हस्ताक्षर नहीं मिला"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "डाक: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "हस्ताक्षरित संदेश का अंत"
 
@@ -1109,136 +978,98 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "अभी भेजें"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "त्रुटिः हस्ताक्षर सत्यापित नहीं"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "अच्छा हस्ताक्षर"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "अच्छा हस्ताक्षर"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "हस्ताक्षर सत्यापित करने के लिए कोई पब्लिक कुंजी नहीं"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "कोई हस्ताक्षर नहीं मिला"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "हस्ताक्षर प्रमाणित करते समय त्रुटि"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "हस्ताक्षर के लिए भिन्न परिणाम"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "कोई स्थिति जानकारी उपलब्ध नहीं."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "अच्छा हस्ताक्षर."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "एक कुंजी की मियाद ख़त्म हो चुकी है."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "हस्ताक्षर की मियाद ख़त्म हो चुकी है."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "सत्यापित करने में अक्षमः कुंजी गुम है."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "सीआरएल उपलब्ध नहीं."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "उपलब्ध सीआरएल काफी पुराना है."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "नीति मिल नहीं पाई."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr " तंत्र त्रुटि हुई"
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "एक कुंजी रद्द कर दी गई है."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "अच्छा हस्ताक्षर."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, fuzzy, kde-format
-#| msgid "Show certificate 0x%1"
-msgid "certificate"
-msgstr "प्रमाणपत्र दिखाएँ 0x%1"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, fuzzy, kde-format
-#| msgid "Warning:"
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "चेतावनीः"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "प्रेषक का ईमेल पता %1 में भंडारित नहीं है जो साइनइन के लिए प्रयोग में आता है."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "भेजने वालाः"
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "भंडारितः"
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, fuzzy, kde-format
-#| msgid "Sender's mail address is not stored in the %1 used for signing."
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr "प्रेषक का ईमेल पता %1 में भंडारित नहीं है जो साइनइन के लिए प्रयोग में आता है."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2165,78 +1996,78 @@ msgstr "सभी उद्धृत पाठ फैलाएँ."
 msgid "Collapse quoted text."
 msgstr "उद्दृत पाठ समेटें."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "प्रमाणपत्र प्रबंधक प्रारंभ नहीं कर सका. कृपया अपना संस्थापन जांचें."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "के-मेल त्रुटि"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "प्रमाणपत्र दिखाएँ 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "पता पुस्तिका में खोलें"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "ई-मेल पता"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "क्लिपबोर्ड पर पता की प्रति बनाई."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "पता पुस्तिका में खोलें"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "संलग्नक: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "एनकेप्सुलेटेड संदेश"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "एनकेप्सुलेटेड संदेश"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "संलग्नक को संपादित करने में अक्षम"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "यूआरएल खोला जा रहा है..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
@@ -2245,7 +2076,7 @@ msgstr ""
 "<qt>क्या आप सचमुच में चलाना चाहते हैं इसे-\n"
 " <b>'%1'</b>?</qt>"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2834,6 +2665,115 @@ msgstr "अगला संदेश (&N)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पिछला बिनपढ़ा संदेश (&M)"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "हस्ताक्षर को जाँचने के लिए पर्याप्त जानकारी नहीं. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "संदेश %1 के द्वारा हस्ताक्षरित है."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "संदेश को अज्ञात कुंजी द्वारा हस्ताक्षरित किया गया है."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "संदेश को कुंजी %1 द्वारा हस्ताक्षरित किया गया है."
+
+#, fuzzy
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "संदेश को %2 द्वारा %1 पर कुंजी %1 से हस्ताक्षरित किया गया है"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "संदेश को %1 पर कुंजी %2 द्वारा हस्ताक्षरित किया गया है."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "संदेश को %2 द्वारा कुंजी %1 से हस्ताक्षरित किया गया है."
+
+#~ msgid "Status: "
+#~ msgstr "स्थिति:"
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "संदेश  %2 के द्वारा हस्ताक्षरित है (कुंजी आई-डी: : %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "संदेश को %1 पर अज्ञात कुंजी %2 द्वारा हस्ताक्षरित किया गया है."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "संदेश को अज्ञात कुंजी %1 द्वारा हस्ताक्षरित किया गया है."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "हस्ताक्षर की वैधता सत्यापित नहीं की जा सकी."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "हस्ताक्षर वैध है, परंतु कुंजी की वैधता अज्ञात है."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "हस्ताक्षर वैध है तथा कुंजी गुंजाइश भर भरोसे योग्य है."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "हस्ताक्षर वैध है तथा कुंजी पूर्णतः भरोसे योग्य है."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "हस्ताक्षर वैध है तथा कुंजी निर्णायक रूप से भरोसे योग्य है."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "हस्ताक्षर वैध है, परंतु कुंजी भरोसे योग्य नहीं है."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "चेतावनीः हस्ताक्षर खराब है."
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr "स्तम्भ: %1 "
+
+#, fuzzy
+#~ msgid "Invalid signature"
+#~ msgstr "हस्ताक्षर सक्षम करें (&E)"
+
+#, fuzzy
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "हस्ताक्षर को जाँचने के लिए पर्याप्त जानकारी नहीं. %1"
+
+#, fuzzy
+#~ msgid "Signature is valid"
+#~ msgstr "हस्ताक्षर फ़ाइल वैध नहीं है"
+
+#, fuzzy
+#~| msgid "No signature found"
+#~ msgid "Unknown signature state"
+#~ msgstr "कोई हस्ताक्षर नहीं मिला"
+
+#, fuzzy
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "डाक: %1"
+
+#, fuzzy
+#~| msgid "Show certificate 0x%1"
+#~ msgid "certificate"
+#~ msgstr "प्रमाणपत्र दिखाएँ 0x%1"
+
+#, fuzzy
+#~| msgid "Warning:"
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "चेतावनीः"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "प्रेषक का ईमेल पता %1 में भंडारित नहीं है जो साइनइन के लिए प्रयोग में आता है."
+
+#~ msgid "sender: "
+#~ msgstr "भेजने वालाः"
+
+#~ msgid "stored: "
+#~ msgstr "भंडारितः"
+
+#, fuzzy
+#~| msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr "प्रेषक का ईमेल पता %1 में भंडारित नहीं है जो साइनइन के लिए प्रयोग में आता है."
 
 #, fuzzy
 #~ msgid "Export Rules"

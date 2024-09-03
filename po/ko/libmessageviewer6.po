@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -101,8 +101,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "이 메시지를 보려면 다음 비밀 키가 필요합니다:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "자세한 정보 숨기기"
 
@@ -128,7 +126,6 @@ msgid "Encrypted message"
 msgstr "암호화된 메시지"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "자세히 보기"
 
@@ -182,129 +179,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "서명을 검사하는 동안 기다려 주십시오..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "서명을 검사하는 데 충분한 정보가 없습니다. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "%1이(가) 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "메시지가 알 수 없는 키로 서명되었습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "키 %1(으)로 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "%3이(가) %1에 키 %2(으)로 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "%1에 키 %2(으)로 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "키 %1(으)로 %2이(가) 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "상태: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "%2이(가) 메시지에 서명했습니다. (키 ID: %1)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "알 수 없는 키 %2(으)로 %1에 메시지에 서명했습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "알 수 없는 키 %1(으)로 메시지가 서명되었습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "서명의 유효성을 검사할 수 없습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "서명이 올바르지만 키 유효성을 알 수 없습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "서명이 올바르지만 키를 그럭저럭 신뢰합니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "서명이 올바르고 키를 웬만큼 신뢰합니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "서명이 올바르고 키를 완전히 신뢰합니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "서명이 올바르지만 이 키를 믿을 수 없습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "경고: 이 서명이 잘못되었습니다."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "준수: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "서명 잘못됨"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "서명의 유효성을 검증할 수 있는 정보가 충분하지 않음"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "<a href='mailto:%1'>%1</a>이(가) 서명함"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "서명이 올바름"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "서명 상태 알 수 없음"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1(%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "서명된 메시지 끝"
 
@@ -1012,133 +887,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "거부됨 전송"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "오류: 서명이 인증되지 않았음"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "좋은 서명"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "서명이 잘못됨"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "서명을 검증할 수 있는 공개 키가 없습니다"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "서명이 없습니다"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "서명을 검사하는 중 오류가 발생했습니다"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "서명의 결과가 다름"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "상태 정보를 알 수 없습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "좋은 서명입니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "한 키가 만료되었습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "서명이 만료되었습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "검증할 수 없습니다: 키가 없습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL이 없습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL이 너무 오래되었습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "정책이 충분하지 않습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "시스템 오류가 발생했습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "한 키가 취소되었습니다."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "서명이 잘못되었습니다."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "인증서"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "경고:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "보낸 사람의 메일 주소가 서명에 사용된 %1에 저장되지 않았습니다."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "보낸 사람:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "저장된 값:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"보낸 사람의 메일 주소가 서명에 사용된 %1에 없으므로 보낸 사람의 주소 %2와"
-"(과) 비교할 수 없습니다."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2045,78 +1883,78 @@ msgstr "모든 인용문을 펼칩니다."
 msgid "Collapse quoted text."
 msgstr "모든 인용문을 접습니다."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 오류"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "인증서 0x%1 보기"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "주소록에서 열기(&O)"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "이메일 주소 복사(&C)"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "클립보드에 주소를 복사했습니다."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "KAddressBook에서 연락처 찾기"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "첨부: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "캡슐화된 메시지(제목: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "캡슐화된 메시지"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "이름 없는 첨부"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "이 작업의 GnuPG 감사 기록 보기"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL 여는 중..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename>을(를) 정말로 실행하시겠습니까?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2648,6 +2486,105 @@ msgstr "다음 메시지"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "이전 메시지"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "서명을 검사하는 데 충분한 정보가 없습니다. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "%1이(가) 메시지에 서명했습니다."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "메시지가 알 수 없는 키로 서명되었습니다."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "키 %1(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "%3이(가) %1에 키 %2(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "%1에 키 %2(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "키 %1(으)로 %2이(가) 메시지에 서명했습니다."
+
+#~ msgid "Status: "
+#~ msgstr "상태: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "%2이(가) 메시지에 서명했습니다. (키 ID: %1)"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "알 수 없는 키 %2(으)로 %1에 메시지에 서명했습니다."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "알 수 없는 키 %1(으)로 메시지가 서명되었습니다."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "서명의 유효성을 검사할 수 없습니다."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "서명이 올바르지만 키 유효성을 알 수 없습니다."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "서명이 올바르지만 키를 그럭저럭 신뢰합니다."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "서명이 올바르고 키를 웬만큼 신뢰합니다."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "서명이 올바르고 키를 완전히 신뢰합니다."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "서명이 올바르지만 이 키를 믿을 수 없습니다."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "경고: 이 서명이 잘못되었습니다."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "준수: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "서명 잘못됨"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "서명의 유효성을 검증할 수 있는 정보가 충분하지 않음"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "<a href='mailto:%1'>%1</a>이(가) 서명함"
+
+#~ msgid "Signature is valid"
+#~ msgstr "서명이 올바름"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "서명 상태 알 수 없음"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1(%2)"
+
+#~ msgid "certificate"
+#~ msgstr "인증서"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "경고:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "보낸 사람의 메일 주소가 서명에 사용된 %1에 저장되지 않았습니다."
+
+#~ msgid "sender: "
+#~ msgstr "보낸 사람:"
+
+#~ msgid "stored: "
+#~ msgstr "저장된 값:"
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "보낸 사람의 메일 주소가 서명에 사용된 %1에 없으므로 보낸 사람의 주소 %2와"
+#~ "(과) 비교할 수 없습니다."
 
 #~ msgid "Export Rules"
 #~ msgstr "규칙 내보내기"

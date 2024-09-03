@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-01 08:36+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -124,8 +124,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "ההודעה הוצפנה עבור המפתחות הבאים:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "הסתרת פרטים"
 
@@ -151,7 +149,6 @@ msgid "Encrypted message"
 msgstr "הודעה מוצפנת"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "הצגת פרטים"
 
@@ -204,129 +201,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "נא להמתין לאימות החתימה…"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "אין מספיק מידע כדי לבדוק את החתימה. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "ההודעה נחתמה על ידי %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "ההודעה נחתמה עם מפתח לא מוכר."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "ההודעה נחתמה עם המפתח %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "ההודעה נחתמה על ידי %3 ב־%1 עם המפתח %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "ההודעה נחתמה ב־%2 עם המפתח %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "ההודעה נחתמה על ידי %2 עם המפתח %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "מצב: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "ההודעה נחתמה על ידי %2 (זיהוי מפתח: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "ההודעה נחתמה ב־%1 עם מפתח לא מוכר %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "ההודעה נחתמה עם מפתח לא מוכר %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "אין אפשרות לוודא את תוקף החתימה."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "החתימה תקפה, אך תוקף המפתח אינו ידוע."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "החתימה תקפה והמפתח נבטח באופן חלקי."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "החתימה תקפה והמפתח נבטח באופן מלא."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "החתימה תקפה והמפתח נבטח באופן מוחלט."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "החתימה תקפה, אך המפתח אינו נבטח."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "אזהרה: החתימה אינה תקינה."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "תאימות: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "חתימה שגויה"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "אין מספיק מידע כדי לבדוק את תוקף החתימה"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "נחתם על ידי <a href='mailto:%1'>%1</a>"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "החתימה תקפה"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "מצב החתימה לא ידוע"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "סוף הודעה חתומה"
 
@@ -1046,133 +921,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "שליחת סירוב"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "שגיאה: החתימה לא וודאה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "חתימה תקינה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "חתימה שגויה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "אין מפתח ציבורי לווידוא החתימה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "לא נמצאה חתימה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "שגיאה בווידוא החתימה"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "תוצאות שונות לחתימות"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "אין מידע זמין לגבי מצב."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "חתימה תקינה."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "פג תוקף של מפתח אחד."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "פג תוקף החתימה."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "אין אפשרות לוודא: מפתח חסר."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "רשימת ביטול התעודות אינה זמינה."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "רשימת ביטול האישורים הזמינה ישנה מדי."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "מדיניות מסויימת לא נענתה."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "אירעה שגיאת מערכת."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "תוקף מפתח אחד בוטל."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "חתימה שגויה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "אישור"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "אזהרה:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "כתובת הדואר של השולח לא מאוחסנת ב%1 המשמשת לחתימה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "כתובת השולח: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "הכתובת המאוחסנת: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"לא מאוחסנת כתובת דוא״ל באישור %1 ששימש לחתימה, לכן לא נוכל להשוות אותהלכתובת "
-"המוען %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2075,78 +1913,78 @@ msgstr "הרחבת כל הטקסט המצוטט."
 msgid "Collapse quoted text."
 msgstr "צמצום טקסט מצוטט."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "לא ניתן להפעיל את מנהל האישורים. נא לבדוק שההתקנה שלך תקינה."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "שגיאה של KMail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "הצגת האישור 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "פתיחה ב&פנקס הכתובות"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ה&עתקת כתובת דוא״ל"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "הכתובת הועתקה ללוח הגזירים."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "חיפוש פרטי הקשר ב־KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "קובץ מצורף: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "הודעה מכומסת (נושא: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "הודעה מכומסת"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "קובץ מצורף ללא שם"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "הצגת יומן פיקוח של GnuPG לפעולה הזאת"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "כתובת נפתחת…"
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "להפעיל את <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2687,6 +2525,105 @@ msgstr "ההודעה הבאה"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ההודעה הקודמת"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "אין מספיק מידע כדי לבדוק את החתימה. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "ההודעה נחתמה על ידי %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "ההודעה נחתמה עם מפתח לא מוכר."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "ההודעה נחתמה עם המפתח %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "ההודעה נחתמה על ידי %3 ב־%1 עם המפתח %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "ההודעה נחתמה ב־%2 עם המפתח %1."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "ההודעה נחתמה על ידי %2 עם המפתח %1."
+
+#~ msgid "Status: "
+#~ msgstr "מצב: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "ההודעה נחתמה על ידי %2 (זיהוי מפתח: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "ההודעה נחתמה ב־%1 עם מפתח לא מוכר %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "ההודעה נחתמה עם מפתח לא מוכר %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "אין אפשרות לוודא את תוקף החתימה."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "החתימה תקפה, אך תוקף המפתח אינו ידוע."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "החתימה תקפה והמפתח נבטח באופן חלקי."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "החתימה תקפה והמפתח נבטח באופן מלא."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "החתימה תקפה והמפתח נבטח באופן מוחלט."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "החתימה תקפה, אך המפתח אינו נבטח."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "אזהרה: החתימה אינה תקינה."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "תאימות: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "חתימה שגויה"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "אין מספיק מידע כדי לבדוק את תוקף החתימה"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "נחתם על ידי <a href='mailto:%1'>%1</a>"
+
+#~ msgid "Signature is valid"
+#~ msgstr "החתימה תקפה"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "מצב החתימה לא ידוע"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "אישור"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "אזהרה:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "כתובת הדואר של השולח לא מאוחסנת ב%1 המשמשת לחתימה."
+
+#~ msgid "sender: "
+#~ msgstr "כתובת השולח: "
+
+#~ msgid "stored: "
+#~ msgstr "הכתובת המאוחסנת: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "לא מאוחסנת כתובת דוא״ל באישור %1 ששימש לחתימה, לכן לא נוכל להשוות "
+#~ "אותהלכתובת המוען %2."
 
 #~ msgid "Export Rules"
 #~ msgstr "ייצוא כללים"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2023-11-14 13:53-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1533,12 +1533,12 @@ msgstr "Nome do anexo:"
 msgid "Clipboard Text"
 msgstr "Texto da área de transferência"
 
-#: job/attachmentfrompublickeyjob.cpp:50
+#: job/attachmentfrompublickeyjob.cpp:51
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "Chave OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
+#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1547,7 +1547,7 @@ msgstr ""
 "<p>Ocorreu um erro ao tentar exportar a chave a partir da infraestrutura:</"
 "p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Exportando chave..."
@@ -1567,7 +1567,7 @@ msgstr "Contato inválido"
 msgid "Impossible to generate vCard."
 msgstr "Não é possível gerar o vCard."
 
-#: job/autocryptheadersjob.cpp:102
+#: job/autocryptheadersjob.cpp:103
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"

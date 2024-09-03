@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-16 13:39+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1507,12 +1507,12 @@ msgstr "Nome dell'allegato:"
 msgid "Clipboard Text"
 msgstr "Testo degli appunti"
 
-#: job/attachmentfrompublickeyjob.cpp:50
+#: job/attachmentfrompublickeyjob.cpp:51
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "Chiave OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
+#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1521,7 +1521,7 @@ msgstr ""
 "<p>Si è verificato un errore durante l'esportazione della chiave dal modulo:"
 "</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Esportazione chiave..."
@@ -1541,7 +1541,7 @@ msgstr "Contatto non valido"
 msgid "Impossible to generate vCard."
 msgstr "Impossibile generare una vCard."
 
-#: job/autocryptheadersjob.cpp:102
+#: job/autocryptheadersjob.cpp:103
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"

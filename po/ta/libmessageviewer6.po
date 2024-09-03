@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-07-06 21:33+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -119,8 +119,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "பின்வரும் சாவிகளால் திறக்கும்படி இவ்வஞ்சல் மறையாக்கப்பட்டுள்ளது:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "விவரங்களை மறை"
 
@@ -147,7 +145,6 @@ msgid "Encrypted message"
 msgstr "மறையாக்கம் செய்யப்பட்ட அஞ்சல்"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "விவரங்களை காட்டு"
 
@@ -203,130 +200,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "கையொப்பம் சரிபார்க்கப்படும் வரை காத்திருக்கவும்…"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "கையொப்பத்தை சரிபார்க்க போதுமான விவரங்கள் இல்லை. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "அஞ்சலில் கையொப்பமிட்டவர் %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "தகவல் தெரியாத விசையால் கையொப்பமிடப்பட்டுள்ளது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "தகவல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "தகவல் %2 விசை உடன் %1 மேல் %3 யால் நுழைந்தது"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "தகவல் %2 ஆல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "தகவல் %2 ஆல் %1 உடண் கைஎழுத்திடப்பட்டுள்ளதது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "நிலை:"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "தகவல் %2 ஆல் கையெழுத்திடப்பட்டுள்ளது (விசை ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Message was signed on %1 with unknown key %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "தகவல் தெரியாத %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "கையொப்பத்தின் செல்லுபடி சரிபார்க்க முடியவில்லை."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "கையொப்பம் செல்லுபடியானது, ஆனால் விசை செல்லுபடி தெரியாதது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "கையெழுத்து செல்லுபடியானது, விசையை முழுமையாக நம்பமுடிகிறது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "கைஎழுத்து செல்லுபடியானது, ஆனால் விசையை முழுமையாக நம்ப முடிகிறது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "கையொப்பம் செல்லுபடியானது மற்றும் விசை நம்பப்பட்டது."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "கைஎழுத்து செல்லுபடியானது, ஆணால் விசையை நம்பமுடியவில்லை."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "எச்சரிக்கை: தவறான கையொப்பம்"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr "நிரல்:%1 "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "செல்லுபடியாகாத கையொப்பம்"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "கையொப்பம் செல்லுபடியாகுமா என்பதை சரிபார்க்க போதுமான விவரங்கள் இல்லை"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "கையொப்பமிட்டவர் <a href='mailto:%1'>%1</a>"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "கையொப்பம் செல்லுபடியாகும்"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "தெரியாத கையொப்ப நிலை"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "கையெழுத்திட்ட தகவலின் முடிவு"
 
@@ -1040,133 +914,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "மறுத்த‍தாக பதிலளி"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "சிக்கல்: கையொப்பம் சரிபார்க்கப்படவில்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "செல்லுபடியாகும் கையொப்பம்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "செல்லுபடியாகாத கையொப்பம்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "கையொப்பத்தை சரிபார்க்க எந்த பொது சாவியும் இல்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "கையொப்பம் கண்டுபிடிக்கப்படவில்லை"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "கையொப்பத்தை சரிபார்ப்பதில் சிக்கல்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, fuzzy, kde-format
 msgid "Different results for signatures"
 msgstr "கையொப்பத்திற்கு வெவ்வேறு விளைவுகள்"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "நிலை குறித்த தகவல் இல்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "செல்லுபடியாகும் கையொப்பம்."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "ஒரு சாவி காலாவதியாகியுள்ளது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "கையொப்பம் காலாவதியாகிவிட்டது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "சரிபார்க்க முடியவில்லை: சாவியைக் காணவில்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL இல்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "இருக்கும் CRL மிக பழையது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "கணினி சிக்கல் நேர்ந்தது."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "ஒரு விசை திரும்பப்பெறப்பட்டுள்ளது"
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "செல்லுபடியாகாத கையொப்பம்."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "சான்றிதழில்"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "எச்சரிக்கை:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "கையொப்பமிட பயன்பட்ட %1 அனுப்புநரின் முகவரி குறிப்பிடப்படவில்லை."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "அனுப்புநர்: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "குறிப்பிடப்பட்டது: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"கையொப்பமிட பயன்பட்ட %1 எந்த மின்னஞ்சல் முகவரியும் குறிப்பிடப்படாததால், அதை அனுப்புநரின் "
-"முகவரியாகிய %2 உடன் ஒப்பிட முடியாது."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2086,79 +1923,79 @@ msgstr "மேற்கோளிடப்பட்டுள்ள அனைத�
 msgid "Collapse quoted text."
 msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் சுருக்கு"
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "சான்றிதழ் மேலாளியைத் திறக்க முடியவில்லை. அது சரியாக நிறுவப்பட்டுள்ளதா என பாருங்கள்."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "கேமெயில் சிக்கல்"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 சான்றிதழைக் காட்டு"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&முகவரிப்புத்தகத்தில் திற"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "தொடர்பை KAddressbook-இல் காட்டு"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "உடனிணைப்பு: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "உட்பொதிந்த அஞ்சல்: (தலைப்பு: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "உட்பொதிந்த அஞ்சல்"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "பெயரிடப்படாத உடனிணைப்பு"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "முகவரி திறக்கப்படுகிறது..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename> தனை உறுதியாக இயக்க வேண்டுமா?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2699,6 +2536,107 @@ msgstr "அடுத்த அஞ்சல்"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "கையொப்பத்தை சரிபார்க்க போதுமான விவரங்கள் இல்லை. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "அஞ்சலில் கையொப்பமிட்டவர் %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "தகவல் தெரியாத விசையால் கையொப்பமிடப்பட்டுள்ளது."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "தகவல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "தகவல் %2 விசை உடன் %1 மேல் %3 யால் நுழைந்தது"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "தகவல் %2 ஆல் %1 உடன் கையெழுத்திடப்பட்டுள்ளது"
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "தகவல் %2 ஆல் %1 உடண் கைஎழுத்திடப்பட்டுள்ளதது."
+
+#~ msgid "Status: "
+#~ msgstr "நிலை:"
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "தகவல் %2 ஆல் கையெழுத்திடப்பட்டுள்ளது (விசை ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Message was signed on %1 with unknown key %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "தகவல் தெரியாத %1 ஆல் கையெழுத்திடப்பட்டுள்ளது."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "கையொப்பத்தின் செல்லுபடி சரிபார்க்க முடியவில்லை."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "கையொப்பம் செல்லுபடியானது, ஆனால் விசை செல்லுபடி தெரியாதது."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "கையெழுத்து செல்லுபடியானது, விசையை முழுமையாக நம்பமுடிகிறது."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "கைஎழுத்து செல்லுபடியானது, ஆனால் விசையை முழுமையாக நம்ப முடிகிறது."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "கையொப்பம் செல்லுபடியானது மற்றும் விசை நம்பப்பட்டது."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "கைஎழுத்து செல்லுபடியானது, ஆணால் விசையை நம்பமுடியவில்லை."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "எச்சரிக்கை: தவறான கையொப்பம்"
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr "நிரல்:%1 "
+
+#~ msgid "Invalid signature"
+#~ msgstr "செல்லுபடியாகாத கையொப்பம்"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "கையொப்பம் செல்லுபடியாகுமா என்பதை சரிபார்க்க போதுமான விவரங்கள் இல்லை"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "கையொப்பமிட்டவர் <a href='mailto:%1'>%1</a>"
+
+#~ msgid "Signature is valid"
+#~ msgstr "கையொப்பம் செல்லுபடியாகும்"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "தெரியாத கையொப்ப நிலை"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "சான்றிதழில்"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "எச்சரிக்கை:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "கையொப்பமிட பயன்பட்ட %1 அனுப்புநரின் முகவரி குறிப்பிடப்படவில்லை."
+
+#~ msgid "sender: "
+#~ msgstr "அனுப்புநர்: "
+
+#~ msgid "stored: "
+#~ msgstr "குறிப்பிடப்பட்டது: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "கையொப்பமிட பயன்பட்ட %1 எந்த மின்னஞ்சல் முகவரியும் குறிப்பிடப்படாததால், அதை "
+#~ "அனுப்புநரின் முகவரியாகிய %2 உடன் ஒப்பிட முடியாது."
 
 #~ msgid "Export Rules"
 #~ msgstr "விதிமுறைகளை ஏற்றுமதி செய்"

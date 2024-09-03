@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-16 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-19 15:19+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1497,12 +1497,12 @@ msgstr "Nome do anexo:"
 msgid "Clipboard Text"
 msgstr "Texto do portapapeis"
 
-#: job/attachmentfrompublickeyjob.cpp:50
+#: job/attachmentfrompublickeyjob.cpp:51
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "Chave OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:89
+#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1511,7 +1511,7 @@ msgstr ""
 "<p>Produciuse un erro ao intentar exportar a chave desde a infraestrutura:</"
 "p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Exportando a chave…"
@@ -1531,7 +1531,7 @@ msgstr "Contacto incorrecto"
 msgid "Impossible to generate vCard."
 msgstr "Non foi posíbel xerar a vCard."
 
-#: job/autocryptheadersjob.cpp:102
+#: job/autocryptheadersjob.cpp:103
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"

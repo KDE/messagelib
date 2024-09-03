@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -113,8 +113,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Acest mesaj este criptat."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Ascunde detalii"
 
@@ -145,7 +143,6 @@ msgid "Encrypted message"
 msgstr "Mesaj criptat"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Arată detalii"
 
@@ -215,138 +212,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Așteptați cât semnătura este verificată..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Informații insuficiente pentru verificarea semnăturii. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Mesajul a fost semnat de %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Mesajul a fost semnat cu o cheie necunoscută."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Mesajul a fost semnat cu cheia %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Mesajul a fost semnat de %1 pe %2 cu cheia %3"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Mesajul a fost semnat pe %1 cu cheia %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Mesajul a fost semnat de %2 cu cheia %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Stare: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Mesajul a fost semnat %2 (Id. cheie: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Mesajul a fost semnat pe %1 cu cheia necunoscută %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Mesajul a fost semnat cu cheia necunoscută %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Validitatea semnăturii nu poate fi verificată."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Semnătura este corectă, dar validitatea cheii este necunoscută."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Semnătura este corectă și cheia este numai marginal de încredere."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Semnătura este corectă și cheia este de încredere."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Semnătura este corectă și cheia este de absolută încredere."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Semnătura este corectă, dar cheia nu este de încredere."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Atenție: Semnătura este rea."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr " Coloana: %1 "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Semnătură nevalidă."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Informații insuficiente pentru verificarea validității semnăturii."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Semnat de <a href=\"mailto:%1\">%2</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "Semnătura este validă."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Stare semnătură necunoscută"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Sfârșitul mesajului semnat"
 
@@ -1134,133 +1000,98 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Trimite acum"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Eroare: Semnătură neverificată"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Semnătură bună"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "Semnătură bună"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Nicio cheie publică pentru verificarea semnăturii"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Nu am găsit semnătura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Eroare la verificarea semnăturii"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Rezultate diferite pentru semnături"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Nicio informație de stare disponibilă."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Semnătură bună."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "O cheie a expirat."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Semnătura e expirat."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Imposibil de verificat: cheia lipsește."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "LRC indisponibilă."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "LRC disponibilă este prea veche."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "O politică nu a fost îndeplinită."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "A intervenit o eroare de sistem."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "O cheie a fost revocată."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "Semnătură bună."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "certificat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Atenție:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "expeditor:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "stocat: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2205,86 +2036,86 @@ msgstr "Desfășoară tot textul citat."
 msgid "Collapse quoted text."
 msgstr "Restrânge textul citat."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Nu am putut porni gestionarul de certificate. Verificați instalarea "
 "programului."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Eroare KMail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Afișează certificatul 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "Deschide în cartea de adrese"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "Adresă de e-mail"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Am copiat adresa în clipboard."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "Deschide în cartea de adrese"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Atașament: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Mesaj incapsulat"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "Mesaj incapsulat"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "Imposibil de editat atașamentul"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Deschidere URL..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Sigur doriți să executați <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2889,6 +2720,107 @@ msgstr "Mesajul &următor"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mesajul precedent n&ecitit"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Informații insuficiente pentru verificarea semnăturii. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Mesajul a fost semnat de %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Mesajul a fost semnat cu o cheie necunoscută."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Mesajul a fost semnat cu cheia %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Mesajul a fost semnat de %1 pe %2 cu cheia %3"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Mesajul a fost semnat pe %1 cu cheia %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Mesajul a fost semnat de %2 cu cheia %1."
+
+#~ msgid "Status: "
+#~ msgstr "Stare: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Mesajul a fost semnat %2 (Id. cheie: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Mesajul a fost semnat pe %1 cu cheia necunoscută %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Mesajul a fost semnat cu cheia necunoscută %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Validitatea semnăturii nu poate fi verificată."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Semnătura este corectă, dar validitatea cheii este necunoscută."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Semnătura este corectă și cheia este numai marginal de încredere."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Semnătura este corectă și cheia este de încredere."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Semnătura este corectă și cheia este de absolută încredere."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Semnătura este corectă, dar cheia nu este de încredere."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Atenție: Semnătura este rea."
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr " Coloana: %1 "
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Semnătură nevalidă."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Informații insuficiente pentru verificarea validității semnăturii."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Semnat de <a href=\"mailto:%1\">%2</a>."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "Semnătura este validă."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Stare semnătură necunoscută"
+
+#, fuzzy
+#~| msgid "%1 (%2)"
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "certificat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Atenție:"
+
+#~ msgid "sender: "
+#~ msgstr "expeditor:"
+
+#~ msgid "stored: "
+#~ msgstr "stocat: "
 
 #, fuzzy
 #~| msgid "Export Filters"

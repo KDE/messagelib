@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-04 09:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -111,8 +111,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Mezua zifratuta dago ondoko gakoentzako:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Ezkutatu xehetasunak"
 
@@ -138,7 +136,6 @@ msgid "Encrypted message"
 msgstr "Zifratutako mezua"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Erakutsi xehetasunak"
 
@@ -195,129 +192,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Mesedez, itxoin sinadura egiaztatzen den bitartean..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Ez dago sinadura egiaztatzeko behar adinako informaziorik. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Mezua %1(e)k sinatu du."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Mezua gako ezezagun batekin sinatu da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Mezua %1 gakoarekin sinatu da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Mezua %3(e)k %1(e)an sinatu du %2 gakoarekin"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Mezua %1(e)an %2 gakoarekin sinatu da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Mezua %2(e)k sinatu du %1 gakoarekin."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Egoera: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Mezua %2(e)k sinatu du (gakoaren ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Mezua %1(e)an sinatu da %2 gako ezezagunarekin."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Mezua %1 gako ezezagunarekin sinatu da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Sinaduraren baliozkotasuna ezin da egiaztatu."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Sinadura baliozkoa da, baina gakoaren baliozkotasuna ezezaguna da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Sinadura baliozkoa da eta gakoa konfiantza marjinalekoa da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Sinadura baliozkoa eta gakoa guztiz konfiantzazkoa da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Sinadura baliozkoa da eta gakoa muturreraino fidagarria da."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Sinadura baliozkoa da, baina gakoa ez da fidagarria."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Abisua: sinadura gaizki dago."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "Betetzea: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "Sinadura baliogabea"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "Ez dago sinaduraren baliozkotasuna egiaztatzeko informazio nahikorik"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "<a href='mailto:%1'>%1</a>(e)k sinatua"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "Sinadura baliozkoa da"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Sinaduraren egoera ezezaguna"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Sinatutako mezuaren amaiera"
 
@@ -1030,134 +905,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Bidali Ukoa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Errorea: sinadura ez da egiaztatu"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Sinadura ona"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Sinadura okerra"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Sinadura egiaztatzeko gako publikorik ez"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Ez da sinadurarik aurkitu"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Errorea sinadura egiaztatzean"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Sinaduren emaitza desberdinak"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Ez dago egoerari buruzko informaziorik."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Sinadura zuzena."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Gako bat iraungi egin da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Sinadura iraungi egin da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Ezin egiaztatu: gakoa falta da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRLa ez dago erabilgarri."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL erabilgarria zaharregia da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Gidalerro bat ez da bete."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Sistemako errore bat gertatu da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Gako bat indargabetu da."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Sinadura okerra."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "ziurtagiria"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Abisua:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"Bidaltzailearen posta helbidea ez da sinatzeko erabilitako %1(e)an gorde."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "bidaltzailea: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "gordeta: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Ezin da helbide elektronikoa bidaltzailearen %2 helbidearekin konparatu, ez "
-"baita sinatzeko erabiltzen den %1(a)n gorde."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2081,80 +1918,80 @@ msgstr "Zabaldu aipatutako testu guztia."
 msgid "Collapse quoted text."
 msgstr "Tolestu aipatutako testua."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Ezin izan da ziurtagiri-kudeatzailea abiatu. Mesedez, ikuskatu zure "
 "instalazioa."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail errorea"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Erakutsi ziurtagiria 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Ireki helbide-liburuan"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Kopiatu e-posta helbidea"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Helbidea arbelera kopiatu da."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Bilatu kontaktua KAddressbook-en"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Eranskina: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Kapsulatutako mezua (Gaia: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Kapsulatutako mezua"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Izengabeko eranskina"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Erakutsi eragiketa honetarako GnuPG auditoretza egunkaria"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL irekitzen..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename> benetan exekutatu nahi duzu?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2703,6 +2540,107 @@ msgstr "Hurrengo mezua"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Aurreko mezua"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Ez dago sinadura egiaztatzeko behar adinako informaziorik. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Mezua %1(e)k sinatu du."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Mezua gako ezezagun batekin sinatu da."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Mezua %1 gakoarekin sinatu da."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Mezua %3(e)k %1(e)an sinatu du %2 gakoarekin"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Mezua %1(e)an %2 gakoarekin sinatu da."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Mezua %2(e)k sinatu du %1 gakoarekin."
+
+#~ msgid "Status: "
+#~ msgstr "Egoera: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Mezua %2(e)k sinatu du (gakoaren ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Mezua %1(e)an sinatu da %2 gako ezezagunarekin."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Mezua %1 gako ezezagunarekin sinatu da."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Sinaduraren baliozkotasuna ezin da egiaztatu."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Sinadura baliozkoa da, baina gakoaren baliozkotasuna ezezaguna da."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Sinadura baliozkoa da eta gakoa konfiantza marjinalekoa da."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Sinadura baliozkoa eta gakoa guztiz konfiantzazkoa da."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Sinadura baliozkoa da eta gakoa muturreraino fidagarria da."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Sinadura baliozkoa da, baina gakoa ez da fidagarria."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Abisua: sinadura gaizki dago."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "Betetzea: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "Sinadura baliogabea"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr ""
+#~ "Ez dago sinaduraren baliozkotasuna egiaztatzeko informazio nahikorik"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "<a href='mailto:%1'>%1</a>(e)k sinatua"
+
+#~ msgid "Signature is valid"
+#~ msgstr "Sinadura baliozkoa da"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Sinaduraren egoera ezezaguna"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "ziurtagiria"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Abisua:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Bidaltzailearen posta helbidea ez da sinatzeko erabilitako %1(e)an gorde."
+
+#~ msgid "sender: "
+#~ msgstr "bidaltzailea: "
+
+#~ msgid "stored: "
+#~ msgstr "gordeta: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Ezin da helbide elektronikoa bidaltzailearen %2 helbidearekin konparatu, "
+#~ "ez baita sinatzeko erabiltzen den %1(a)n gorde."
 
 #~ msgid "Export Rules"
 #~ msgstr "Esportatu arauak"

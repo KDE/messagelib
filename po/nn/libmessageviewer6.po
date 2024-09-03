@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2013-05-12 14:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -108,8 +108,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr ""
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Gøym detaljar"
 
@@ -135,7 +133,6 @@ msgid "Encrypted message"
 msgstr "Kryptert melding"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Vis detaljar"
 
@@ -181,129 +178,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Vent mens signaturen vert stadfesta …"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Manglar informasjon til å kontrollera om signaturen er gyldig. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Meldinga er signert av %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Meldinga er signert med ein ukjend nøkkel."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Meldinga er signert med nøkkelen %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Meldinga er signert av %3 på %1 med nøkkelen %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Meldinga er signert på %1 med nøkkelen %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Meldinga er signert av %2 med nøkkelen %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Status: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Meldinga er signert av %2. (Nøkkel-ID: %1.)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Meldinga er signert på %1 med ukjend nøkkel %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Meldinga er signert med ukjend nøkkel %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Kan ikkje stadfesta om signaturen er gyldig."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Signaturen er gyldig, men veit ikkje om nøkkelen er gyldig."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Signaturen er gyldig og nøkkelen er delvis tiltrudd."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Signaturen er gyldig og nøkkelen er tiltrudd."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Signaturen er gyldig og nøkkelen er ultimat tiltrudd."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Signaturen er gyldig, men nøkkelen er ikkje tiltrudd."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Åtvaring: Ugyldig signatur."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Ukjend signaturstatus"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Slutt på signert melding"
 
@@ -1014,135 +889,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Feil: Signaturen er ikkje stadfesta"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Gyldig signatur"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Ugyldig signatur"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Ingen offentlegnøkkel kan stadfesta signaturen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Fann ikkje nokon signatur"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Feil ved stadfesting av signatur"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Ulike resultat for signaturar"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Ingen statusinformasjon tilgjengeleg."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Gyldig signatur."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Éin nøkkel er forelda."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Signaturen er forelda."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Klarte ikkje stadfesta: Manglar nøkkel."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL ikkje tilgjengeleg."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Tilgjengeleg CRL er for gammal."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Praksisen vart ikkje følgd."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Det oppstod ein systemfeil."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Éin nøkkel er kalla tilbake."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "sertifikat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Åtvaring:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"E-postadressa til avsendaren er ikkje lagra i %1-en som vert brukt til "
-"signering."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "avsendar: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "lagra: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Det er ikkje lagra noka e-postadresse i %1-en som vert brukt til signering. "
-"Kan derfor ikkje samanlikna med avsendaradressa %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2010,80 +1846,80 @@ msgstr "Vis all sitert tekst."
 msgid "Collapse quoted text."
 msgstr "Gøym all sitert tekst."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Klarte ikkje starta sertifikathandteringa. Kontroller at alt er rett "
 "installert."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-feil"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Vis sertifikatet 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresse kopiert til utklippstavla."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Vedlegg: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Innkapsla melding (emne: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Namnlaust vedlegg"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Vis GnuPG-revisjonslogg for denne operasjonen"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Opnar adresse …"
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Er du sikker på at du vil køyra <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2612,3 +2448,85 @@ msgstr "Dekrypter melding"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Rull oppover i melding"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Manglar informasjon til å kontrollera om signaturen er gyldig. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Meldinga er signert av %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Meldinga er signert med ein ukjend nøkkel."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Meldinga er signert med nøkkelen %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Meldinga er signert av %3 på %1 med nøkkelen %2."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Meldinga er signert på %1 med nøkkelen %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Meldinga er signert av %2 med nøkkelen %1."
+
+#~ msgid "Status: "
+#~ msgstr "Status: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Meldinga er signert av %2. (Nøkkel-ID: %1.)"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Meldinga er signert på %1 med ukjend nøkkel %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Meldinga er signert med ukjend nøkkel %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Kan ikkje stadfesta om signaturen er gyldig."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Signaturen er gyldig, men veit ikkje om nøkkelen er gyldig."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Signaturen er gyldig og nøkkelen er delvis tiltrudd."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Signaturen er gyldig og nøkkelen er tiltrudd."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Signaturen er gyldig og nøkkelen er ultimat tiltrudd."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Signaturen er gyldig, men nøkkelen er ikkje tiltrudd."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Åtvaring: Ugyldig signatur."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Ukjend signaturstatus"
+
+#~ msgid "certificate"
+#~ msgstr "sertifikat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Åtvaring:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "E-postadressa til avsendaren er ikkje lagra i %1-en som vert brukt til "
+#~ "signering."
+
+#~ msgid "sender: "
+#~ msgstr "avsendar: "
+
+#~ msgid "stored: "
+#~ msgstr "lagra: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Det er ikkje lagra noka e-postadresse i %1-en som vert brukt til "
+#~ "signering. Kan derfor ikkje samanlikna med avsendaradressa %2."

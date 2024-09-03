@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -115,8 +115,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Poruka je šifrovana za naredne ključeve:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Sakrij detalje"
 
@@ -143,7 +141,6 @@ msgid "Encrypted message"
 msgstr "Šifrovana poruka"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Prikaži detalje"
 
@@ -199,144 +196,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Sačekajte dok se overi potpis..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Nema dovoljno podataka za proveru potpisa. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Poruku potpisa %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Poruka je potpisana nepoznatim ključem."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Poruka je potpisana ključem %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr ""
-"Poruku potpisa %3 %1 ključem %2|/|Poruku potpisa %3 $[na-reč %1 gen] ključem "
-"%2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr ""
-"Poruka je potpisana %1 ključem %2.|/|Poruka je potpisana $[na-reč %1 gen] "
-"ključem %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Poruku potpisa %2 ključem %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Stanje: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Poruku potpisa %2 (ID ključa: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr ""
-"Poruka je potpisana %1 nepoznatim ključem %2.|/|Poruka je potpisana $[na-reč "
-"%1 gen] nepoznatim ključem %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Poruka je potpisana nepoznatim ključem %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Valjanost potpisa ne može da se overi."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Potpis je valjan, ali je valjanost ključa nepoznata."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Potpis je valjan a ključ je granično pouzdan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Potpis je valjan i ključ je potpuno pouzdan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Potpis je valjan i ključ je bezuslovno pouzdan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Potpis je valjan, ali je ključ nepouzdan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Upozorenje: Potpis je loš."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr ""
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Potpis nije valjan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Nema dovoljno podataka za proveru valjanosti potpisa."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Potpisnik: <a href='mailto:%1'>%1</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "Potpis je valjan."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Nepoznato stanje potpisa"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgctxt "Certificate import failed."
-#| msgid "Failed: %1 (%2)"
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "Neuspeli: %1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Kraj potpisane poruke"
 
@@ -1085,135 +945,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Pošiljalac: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Greška: potpis nije overen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Dobar potpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Loš potpis"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Nema javnog ključa za overu potpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Potpis nije pronađen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Greška pri overi potpisa"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Različiti rezultati za potpise"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Nema dostupnih informacija o stanju."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Dobar potpis."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Jedan ključ je istekao."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Potpis je istekao."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Ne mogu da overim: nedostaje ključ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL nije dostupan."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Dostupni CRL je prestar."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Smernica nije zadovoljena."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Sistemska greška."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Jedan ključ je opozvan."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Loš potpis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "sertifikat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Upozorenje:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"Pošiljaočeva poštanska adresa nije pohranjena u %1 koji je korišćen za "
-"potpisivanje."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "pošiljalac: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "pohranjen: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Nema poštanskih adresa pohranjenih u %1 koji se koristi za potpisivanje, "
-"tako da poređenje sa adresom pošiljaoca %2 nije moguće."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2166,78 +1987,78 @@ msgstr "Raširi sav citirani tekst."
 msgid "Collapse quoted text."
 msgstr "Sažmi citirani tekst."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Ne mogu da pokrenem menadžer sertifikata. Proverite instalaciju."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Greška K‑pošte"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Prikaži sertifikat 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Otvori u adresaru"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Kopiraj adresu e‑pošte"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa kopirana u klipbord."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Potraži kontakt u adresaru"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Prilog: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Učaurena poruka (tema: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Učaurena poruka"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Neimenovani prilog"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Prikaži GnuPG‑ov dnevnik revizije za ovaj postupak"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Otvaram URL..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Želite li zaista da izvršite <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2826,6 +2647,121 @@ msgstr "&Sačuvaj poruke"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Prethodna kartica"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nema dovoljno podataka za proveru potpisa. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Poruku potpisa %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Poruka je potpisana nepoznatim ključem."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Poruka je potpisana ključem %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr ""
+#~ "Poruku potpisa %3 %1 ključem %2|/|Poruku potpisa %3 $[na-reč %1 gen] "
+#~ "ključem %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr ""
+#~ "Poruka je potpisana %1 ključem %2.|/|Poruka je potpisana $[na-reč %1 gen] "
+#~ "ključem %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Poruku potpisa %2 ključem %1."
+
+#~ msgid "Status: "
+#~ msgstr "Stanje: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Poruku potpisa %2 (ID ključa: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr ""
+#~ "Poruka je potpisana %1 nepoznatim ključem %2.|/|Poruka je potpisana $[na-"
+#~ "reč %1 gen] nepoznatim ključem %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Poruka je potpisana nepoznatim ključem %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Valjanost potpisa ne može da se overi."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Potpis je valjan, ali je valjanost ključa nepoznata."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Potpis je valjan a ključ je granično pouzdan."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Potpis je valjan i ključ je potpuno pouzdan."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Potpis je valjan i ključ je bezuslovno pouzdan."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Potpis je valjan, ali je ključ nepouzdan."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Upozorenje: Potpis je loš."
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Potpis nije valjan."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Nema dovoljno podataka za proveru valjanosti potpisa."
+
+#, fuzzy
+#~| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Potpisnik: <a href='mailto:%1'>%1</a>."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "Potpis je valjan."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Nepoznato stanje potpisa"
+
+#, fuzzy
+#~| msgctxt "Certificate import failed."
+#~| msgid "Failed: %1 (%2)"
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "Neuspeli: %1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "sertifikat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Upozorenje:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Pošiljaočeva poštanska adresa nije pohranjena u %1 koji je korišćen za "
+#~ "potpisivanje."
+
+#~ msgid "sender: "
+#~ msgstr "pošiljalac: "
+
+#~ msgid "stored: "
+#~ msgstr "pohranjen: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Nema poštanskih adresa pohranjenih u %1 koji se koristi za potpisivanje, "
+#~ "tako da poređenje sa adresom pošiljaoca %2 nije moguće."
 
 #, fuzzy
 #~| msgid "&Import"

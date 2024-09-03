@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -107,8 +107,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Disse Naricht is verslötelt."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Enkelheiten versteken"
 
@@ -138,7 +136,6 @@ msgid "Encrypted message"
 msgstr "Verslötelt Naricht"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Enkelheiten wiesen"
 
@@ -206,140 +203,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Tööv bitte, de Ünnerschrift warrt pröövt..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Nich noog Informatschonen för't Pröven vun de Ünnerschrift. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "%1 hett de Naricht ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Naricht mit nich begäng Slötel ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Naricht wöör mit den Slötel %1 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Naricht wöör vun %3 op %1 mit den Slötel %2 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Naricht wöör op %1 mit den Slötel %2 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Naricht wöör vun %2 mit den Slötel %1 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Status: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Naricht wöör vun %2 ünnerschreven (Slötel-ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Naricht wöör op %1 mit den nich begäng Slötel %2 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Naricht wöör mit den nich begäng Slötel %1 ünnerschreven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Dat Gellen vun de Ünnerschrift lett sik nich pröven."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "De Ünnerschrift gellt, man dat is nich begäng, wat de Slötel gellt."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "De Ünnerschrift gellt, un den Slötel warrt deelwies troot."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "De Ünnerschrift gellt, un den Slötel warrt troot."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "De Ünnerschrift gellt, un den Slötel warrt vull troot."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "De Ünnerschrift gellt, man den Slötel warrt nich troot."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Wohrschoen: Ünnerschrift is leeg."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr " Striep: %1 "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Ünnerschrift is leeg."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Nich noog Informatschonen för't Pröven vun de Ünnerschrift."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Ünnerschreven vun <a href=\"mailto:%1\">%2</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "De Ünnerschrift gellt."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
-msgid "Unknown signature state"
-msgstr "Ünnerschrift-Status nich begäng"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Enn vun den ünnerschreven Naricht"
 
@@ -1114,138 +978,98 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Liekers loosstüern"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Fehler: Ünnerschrift nich pröövt"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Goot Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "Goot Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Keen apen Slötel för't Pröven vun de Ünnerschrift verföögbor"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Keen Ünnerschrift funnen"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Fehler bi't Pröven vun de Ünnerschrift"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Verscheden Resultaten för Ünnerschriften"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Keen Statusinformatschonen verföögbor."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Ünnerschrift gellt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Een Slötel is aflopen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "De Ünnerschrift is aflopen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Prööv nich mööglich: Slötel fehlt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "ZTL nich verföögbor"
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Verföögbor ZTL is to oolt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "En Regel wöör braken."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Dat geev en Systeemfehler."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Een Slötel wöör torüchropen."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "Ünnerschrift gellt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "Zertifikaat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Wohrschoen:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"Den Senner sien Nettpostadress is nich binnen dat %1 sekert, dat för de "
-"Ünnerschrift bruukt wöör."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "Senner: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "sekert: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Binnen dat %1, dat för de Ünnerschrift bruukt warrt, is keen Nettpostadress "
-"angeven, so dat se nich günt den Senner sien Nettpostadress (%2) vergleken "
-"warrn kann."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2210,79 +2034,79 @@ msgstr "Heel ziteert Text wiesen"
 msgid "Collapse quoted text."
 msgstr "Ziteert Text tosamenfoolden"
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Zertifikatenpleger lett sik nich starten. Prööv bitte Dien Installatschoon."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-Fehler"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Zertifikaat 0x%1 wiesen"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "In Adressbook &opmaken"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Nettpostadress &koperen"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adress na Twischenaflaag kopeert."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "In KAdressbook na Kontakt kieken"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Bilaag: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Inbett Naricht (Bedraap: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Inbett Naricht"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Bilaag ahn Naam"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "GnuPG-Pröövlogbook för disse Akschoon wiesen"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL warrt opmaakt..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Wullt Du <filename>%1</filename> redig utföhren?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2869,6 +2693,122 @@ msgstr "&Nakamen Naricht"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Ve&rleden nich leest Naricht"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nich noog Informatschonen för't Pröven vun de Ünnerschrift. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "%1 hett de Naricht ünnerschreven."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Naricht mit nich begäng Slötel ünnerschreven."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Naricht wöör mit den Slötel %1 ünnerschreven."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Naricht wöör vun %3 op %1 mit den Slötel %2 ünnerschreven."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Naricht wöör op %1 mit den Slötel %2 ünnerschreven."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Naricht wöör vun %2 mit den Slötel %1 ünnerschreven."
+
+#~ msgid "Status: "
+#~ msgstr "Status: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Naricht wöör vun %2 ünnerschreven (Slötel-ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Naricht wöör op %1 mit den nich begäng Slötel %2 ünnerschreven."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Naricht wöör mit den nich begäng Slötel %1 ünnerschreven."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Dat Gellen vun de Ünnerschrift lett sik nich pröven."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "De Ünnerschrift gellt, man dat is nich begäng, wat de Slötel gellt."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "De Ünnerschrift gellt, un den Slötel warrt deelwies troot."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "De Ünnerschrift gellt, un den Slötel warrt troot."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "De Ünnerschrift gellt, un den Slötel warrt vull troot."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "De Ünnerschrift gellt, man den Slötel warrt nich troot."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Wohrschoen: Ünnerschrift is leeg."
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr " Striep: %1 "
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Ünnerschrift is leeg."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Nich noog Informatschonen för't Pröven vun de Ünnerschrift."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Ünnerschreven vun <a href=\"mailto:%1\">%2</a>."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "De Ünnerschrift gellt."
+
+#, fuzzy
+#~| msgid "Unknown signature state"
+#~ msgid "Unknown signature state"
+#~ msgstr "Ünnerschrift-Status nich begäng"
+
+#, fuzzy
+#~| msgid "%1 (%2)"
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "Zertifikaat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Wohrschoen:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Den Senner sien Nettpostadress is nich binnen dat %1 sekert, dat för de "
+#~ "Ünnerschrift bruukt wöör."
+
+#~ msgid "sender: "
+#~ msgstr "Senner: "
+
+#~ msgid "stored: "
+#~ msgstr "sekert: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Binnen dat %1, dat för de Ünnerschrift bruukt warrt, is keen "
+#~ "Nettpostadress angeven, so dat se nich günt den Senner sien "
+#~ "Nettpostadress (%2) vergleken warrn kann."
 
 #, fuzzy
 #~| msgid "Export Filters"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-01 23:00+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -103,8 +103,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Az üzenetet a következő kulcsokkal titkosították:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "A részletek elrejtése"
 
@@ -130,7 +128,6 @@ msgid "Encrypted message"
 msgstr "Titkosított üzenet"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Részletek"
 
@@ -186,133 +183,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Kis türelmet, az üzenet e-aláírásának ellenőrzése folyik…"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Az üzenet aláírója: %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Az üzenet aláírása ismeretlen kulccsal történt."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Az üzenet aláírása ezzel a kulccsal történt: %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Az üzenet aláírója: %3, az aláírás dátuma: %1, a kulcs: %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Az üzenet aláírási dátuma: %1, a kulcs: %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Az üzenet aláírója: %2, a kulcs: %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Állapot: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Az üzenet aláírója %2 (kulcsazonosító: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Az üzenet aláírási dátuma: %1, a kulcs (ismeretlen): %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Az üzenet aláírása ismeretlen kulccsal történt: %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Az aláírás hitelessége nem ellenőrizhető."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr ""
-"Az elektronikus aláírás hiteles, de a kulcs érvényessége nem ellenőrizhető."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr ""
-"Az elektronikus aláírás hiteles, de kulcs érvényessége csak részlegesen "
-"ellenőrizhető."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Az elektronikus aláírás hiteles és a kulcs teljesen megbzható."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr ""
-"Az elektronikus aláírás hiteles és a kulcs teljes mértékben megbízható."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Az elektronikus aláírás hiteles, de a kulcs nem megbízható."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Figyelem! Az elektronikus aláírás hibás."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "Megfelelőség: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "Érvénytelen aláírás"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Aláíró: <a href='mailto:%1'>%1</a>"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "Az aláírás érvényes"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Ismeretlen aláírási állapot"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Az aláírt üzenet vége"
 
@@ -1027,136 +898,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Elutasítás küldése"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Hiba: az aláírás hitelessége nincs ellenőrizve"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Az aláírás hiteles"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Hibás aláírás"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Nincs publikus kulcs az aláírás ellenőrzéséhez"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Nem található aláírás"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Az elektronikus aláírás ellenőrzése nem sikerült"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Az aláírások ellenőrzési eredményei"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Nem áll rendelkezésre állapotinformáció."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Az aláírás hiteles."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Az egyik kulcs lejárt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Az elektronikus aláírás lejárt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Nem sikerült az ellenőrzés: a kulcs hiányzik."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL nem áll rendelkezésre."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "A rendelkezésre álló CRL túl régi."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "A házirend egyik előírása nem teljesült."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Rendszerhiba történt."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Az egyik kulcsot visszavonták."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Hibás aláírás."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "tanúsítvány"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Figyelmeztetés:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"A feladó e-mail-címe nem szerepel a(z) %1 mezőben, amely az elektronikus "
-"aláírást tartalmazza."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "feladó: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "eltárolva: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Nem található e-mail cím az elektronikus aláíráshoz használt %1 objektumban, "
-"ezért nem lehet ellenőrizni, hogy az üzenet valóban a feladó e-mail címéről "
-"(%2) jött-e."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2082,80 +1913,80 @@ msgstr "Az idézett szöveg kibontása."
 msgid "Collapse quoted text."
 msgstr "Az idézett szöveg összecsukása."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "A tanúsítványkezelőt nem sikerült elindítani. Ellenőrizze, hogy minden "
 "szükséges rész telepítve van-e."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Hiba - KMail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "A(z) 0x%1 tanúsítvány megjelenítése"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "Megny&itás a címjegyzékben"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Az e-mail cím &másolása"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "A címet a vágólapra másoltam."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Névjegy keresése a KAddressbookban"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Melléklet: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Beágyazott üzenet (tárgy: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Beágyazott üzenet"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Névtelen melléklet"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "A GnuPG ellenőrzési napló megjelenítése a műveletnél"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL megnyitása..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Biztosan futtatni szeretné ezt: <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2707,6 +2538,113 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Az üzenet aláírója: %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Az üzenet aláírása ismeretlen kulccsal történt."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Az üzenet aláírása ezzel a kulccsal történt: %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Az üzenet aláírója: %3, az aláírás dátuma: %1, a kulcs: %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Az üzenet aláírási dátuma: %1, a kulcs: %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Az üzenet aláírója: %2, a kulcs: %1."
+
+#~ msgid "Status: "
+#~ msgstr "Állapot: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Az üzenet aláírója %2 (kulcsazonosító: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Az üzenet aláírási dátuma: %1, a kulcs (ismeretlen): %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Az üzenet aláírása ismeretlen kulccsal történt: %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Az aláírás hitelessége nem ellenőrizhető."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr ""
+#~ "Az elektronikus aláírás hiteles, de a kulcs érvényessége nem "
+#~ "ellenőrizhető."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr ""
+#~ "Az elektronikus aláírás hiteles, de kulcs érvényessége csak részlegesen "
+#~ "ellenőrizhető."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Az elektronikus aláírás hiteles és a kulcs teljesen megbzható."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr ""
+#~ "Az elektronikus aláírás hiteles és a kulcs teljes mértékben megbízható."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Az elektronikus aláírás hiteles, de a kulcs nem megbízható."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Figyelem! Az elektronikus aláírás hibás."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "Megfelelőség: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "Érvénytelen aláírás"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Aláíró: <a href='mailto:%1'>%1</a>"
+
+#~ msgid "Signature is valid"
+#~ msgstr "Az aláírás érvényes"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Ismeretlen aláírási állapot"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "tanúsítvány"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Figyelmeztetés:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "A feladó e-mail-címe nem szerepel a(z) %1 mezőben, amely az elektronikus "
+#~ "aláírást tartalmazza."
+
+#~ msgid "sender: "
+#~ msgstr "feladó: "
+
+#~ msgid "stored: "
+#~ msgstr "eltárolva: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Nem található e-mail cím az elektronikus aláíráshoz használt %1 "
+#~ "objektumban, ezért nem lehet ellenőrizni, hogy az üzenet valóban a feladó "
+#~ "e-mail címéről (%2) jött-e."
 
 #~ msgid "Export Rules"
 #~ msgstr "Szabályok exportálása"

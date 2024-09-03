@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:40+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2016-12-11 23:06+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -26,28 +26,28 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "이름 없음"
 
-#: src/messagepart.cpp:707 src/messagepart.cpp:753 src/messagepart.cpp:1092
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "잘못된 암호화 플러그인입니다."
 
-#: src/messagepart.cpp:819 src/messagepart.cpp:1306
+#: src/messagepart.cpp:817 src/messagepart.cpp:1208
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "적절한 암호화 플러그인을 찾을 수 없습니다."
 
-#: src/messagepart.cpp:821
+#: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "%1 플러그인을 찾을 수 없습니다."
 
-#: src/messagepart.cpp:824
+#: src/messagepart.cpp:822
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "암호화 플러그인 \"%1\"에서 서명을 검사할 수 없습니다."
 
-#: src/messagepart.cpp:827
+#: src/messagepart.cpp:825
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -55,17 +55,17 @@ msgid ""
 msgstr ""
 "메시지가 서명되어 있지만 서명의 유효성을 검증할 수 없습니다.<br />이유: %1"
 
-#: src/messagepart.cpp:1308
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
 
-#: src/messagepart.cpp:1310
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
 
-#: src/messagepart.cpp:1311
+#: src/messagepart.cpp:1213
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"

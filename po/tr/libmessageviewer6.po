@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-01 13:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -113,8 +113,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "İleti, aşağıdaki anahtarlar için şifreli:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Ayrıntıları Gizle"
 
@@ -140,7 +138,6 @@ msgid "Encrypted message"
 msgstr "Şifreli ileti"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Ayrıntıları Göster"
 
@@ -197,129 +194,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Lütfen imza doğrulanırken bekleyin…"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "İmzalamayı denetlemek için yeterli bilgi yok. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "İleti, %1 tarafından imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "İleti, bilinmeyen anahtarla imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "İleti, %1 anahtarı ile imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "İleti, %3 tarafından %2 anahtarı ile %1 tarihinde imzalandı"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "İleti, %2 anahtarı ile %1 tarihinde imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "İleti, %2 tarafından %1 anahtarı ile imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Durum: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "İleti, %2 tarafından imzalandı (Anahtar kimliği: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "İleti, bilinmeyen %2 anahtarıyla %1 tarihinde imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "İleti, bilinmeyen %1 anahtarıyla imzalandı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "İmzanın geçerliliği doğrulanamadı."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "İmza geçerli; ancak anahtarın geçerliliği bilinmiyor."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "İmza geçerli; ancak anahtara pek az güveniliyor."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "İmza geçerli ve anahtara güveniliyor."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "İmza geçerli ve anahtara en yüksek düzeyde güveniliyor."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "İmza geçerli; ancak anahtara güvenilmiyor."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Uyarı: Bozuk imza."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "Uygunluk: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "Geçersiz imza"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "İmzanın geçerliliğini denetlemek için yeterli bilgi yok"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "<a href='mailto:%1'>%1</a> tarafından imzalandı"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "İmza geçerli"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Bilinmeyen imza durumu"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "İmzalı iletinin sonu"
 
@@ -1033,133 +908,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Reddedildi Gönder"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Hata: İmza doğrulanamadı"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Geçerli imza"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Bozuk imza"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "İmzayı doğrulayacak genel anahtar yok"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "İmza bulunamadı"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "İmzayı doğrulamada hata"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "İmzalama için farklı sonuçlar"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Üzgünüm, durum bilgisi yok."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Geçerli imza."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Bir anahtarın kullanım süresi dolmuş."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "İmzanın zamanı doldu."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Doğrulanamıyor: Anahtar kayıp."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL hazır değil."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Kullanılabilir CRL’ler pek eski."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "İzinler uygun değil."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Bir sistem hatası meydana geldi."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Bir anahtar yürürlükten kaldırıldı."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Bozuk imza."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "sertifika"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Uyarı:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "Gönderenin adresi imzama için kullanılan %1 içinde saklanmıyor."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "gönderen: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "kayıtlı: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"İmzalama için kullanılan %1 içinde hiçbir e-posta adresi kayıtlı "
-"olmadığından bunu gönderenin %2 adresiyle karşılaştıramıyoruz."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2085,79 +1923,79 @@ msgstr "Alıntılanan metni genişletin."
 msgid "Collapse quoted text."
 msgstr "Alıntılanan metni daraltın."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Sertifika yöneticisi başlatılamıyor. Kurulumunuzu denetleyin."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "K Posta Hatası"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Sertifika göster 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Adres Defterinden Aç"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "E-posta Adresini Ko&pyala"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adres panoya kopyalandı."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Kişiye Adres Defterinden Bak"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Ek: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Kapsüllenmiş ileti (Konu: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Kapsüllenmiş ileti"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Adsız ek"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Bu işlem için GnuPG Audit Günlük Kaydını göster"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL açılıyor…"
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr ""
 "<filename>%1</filename> uygulamasını çalıştırmayı gerçekten istiyor musunuz?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2700,6 +2538,105 @@ msgstr "Sonraki İleti"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Önceki İleti"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "İmzalamayı denetlemek için yeterli bilgi yok. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "İleti, %1 tarafından imzalandı."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "İleti, bilinmeyen anahtarla imzalandı."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "İleti, %1 anahtarı ile imzalandı."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "İleti, %3 tarafından %2 anahtarı ile %1 tarihinde imzalandı"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "İleti, %2 anahtarı ile %1 tarihinde imzalandı."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "İleti, %2 tarafından %1 anahtarı ile imzalandı."
+
+#~ msgid "Status: "
+#~ msgstr "Durum: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "İleti, %2 tarafından imzalandı (Anahtar kimliği: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "İleti, bilinmeyen %2 anahtarıyla %1 tarihinde imzalandı."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "İleti, bilinmeyen %1 anahtarıyla imzalandı."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "İmzanın geçerliliği doğrulanamadı."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "İmza geçerli; ancak anahtarın geçerliliği bilinmiyor."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "İmza geçerli; ancak anahtara pek az güveniliyor."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "İmza geçerli ve anahtara güveniliyor."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "İmza geçerli ve anahtara en yüksek düzeyde güveniliyor."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "İmza geçerli; ancak anahtara güvenilmiyor."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Uyarı: Bozuk imza."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "Uygunluk: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "Geçersiz imza"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "İmzanın geçerliliğini denetlemek için yeterli bilgi yok"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "<a href='mailto:%1'>%1</a> tarafından imzalandı"
+
+#~ msgid "Signature is valid"
+#~ msgstr "İmza geçerli"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Bilinmeyen imza durumu"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "sertifika"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Uyarı:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "Gönderenin adresi imzama için kullanılan %1 içinde saklanmıyor."
+
+#~ msgid "sender: "
+#~ msgstr "gönderen: "
+
+#~ msgid "stored: "
+#~ msgstr "kayıtlı: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "İmzalama için kullanılan %1 içinde hiçbir e-posta adresi kayıtlı "
+#~ "olmadığından bunu gönderenin %2 adresiyle karşılaştıramıyoruz."
 
 #~ msgid "Export Rules"
 #~ msgstr "Kuralları Dışa Aktar"

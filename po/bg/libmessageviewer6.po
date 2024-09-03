@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-07 11:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -104,8 +104,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Съобщението е шифровано за следните ключове:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Скриване на детайлите"
 
@@ -131,7 +129,6 @@ msgid "Encrypted message"
 msgstr "Шифровано съобщение"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Показване на подробности"
 
@@ -188,129 +185,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Моля, изчакайте, докато подписът се проверява..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Няма достатъчно информация за проверка на подписа. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Съобщението е подписано от %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Съобщението е подписано с неизвестен ключ."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Съобщението е подписано с ключ %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Съобщението е подписано от %3 на %1 с ключ %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Съобщението е подписано на %1 с ключ %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Съобщението е подписано от %2 с ключ %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Състояние: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Съобщението е подписано от %2 (ID на Ключ: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Съобщението е подписано на %1 с неизвестния ключ %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Съобщението е подписано с неизвестния ключ %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Валидността на подписа не може да бъде проверена."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Подписът е валиден, но валидността на ключа е неизвестна."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Подписът е валиден и ключът е отчасти надежден."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Подписът е валиден и ключът е напълно надежден."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Подписът е валиден и ключът е горе-долу надежден."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Подписът е валиден, но ключът не е надежден."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Предупреждение: подписът е лош."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "Съответствие: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "Невалиден подпис"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "Няма достатъчно информация за проверка на валидността на подписа"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Подписан от <a href='mailto:%1'>%1</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "Подписът е валиден"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "Неизвестно състояние на подписа"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Край на подписаното съобщение"
 
@@ -1026,133 +901,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Изпращане на отказ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Грешка: Подписът не е проверен"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Добър подпис"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Лош подпис"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Няма публичен ключ за проверка на подписа"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Не е открит електронен подпис"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Грешка при проверка на подписа"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Различни резултати за електронните подписи"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Няма налична информация за статус."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Добър подпис."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Един ключ е изтекъл."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Подписът е изтекъл."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Грешка при проверка: липсва ключ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "Не е наличен CRL."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Наличният CRL е твърде стар."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Не е открита отговаряща политика."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Системна грешка."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Един ключ е бил анулиран."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Лош подпис."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "удостоверение"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Предупреждение:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "Адреса на подателя не е записан в %1, който се използва за подписване."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "подател: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "запазен: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Не е записан пощенски адрес в %1 за подписване, затова не може да се сравни "
-"с адреса на подателя %2."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2085,80 +1923,80 @@ msgstr "Разгъване на цитирания текст."
 msgid "Collapse quoted text."
 msgstr "Сгъване на цитирания текст."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Грешка при стартиране управлението на удостоверенията. Моля, проверете "
 "инсталацията си."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Грешка в Kmail"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Показване на удостоверение 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Отваряне в адресника"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Копиране на имейл адрес"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресът е копиран в буфера."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Търсене на контакта в KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Прикрепен файл: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Инкапсулирано съобщение (Тема:%1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Инкапсулирано съобщение"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Неозаглавен прикрепен файл"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Показване на журналния GnuPG файл за тази операция"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Отваряне на адрес (URL)..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Наистина ли искате да изпълните <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2708,6 +2546,106 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Няма достатъчно информация за проверка на подписа. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Съобщението е подписано от %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Съобщението е подписано с неизвестен ключ."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Съобщението е подписано с ключ %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Съобщението е подписано от %3 на %1 с ключ %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Съобщението е подписано на %1 с ключ %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Съобщението е подписано от %2 с ключ %1."
+
+#~ msgid "Status: "
+#~ msgstr "Състояние: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Съобщението е подписано от %2 (ID на Ключ: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Съобщението е подписано на %1 с неизвестния ключ %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Съобщението е подписано с неизвестния ключ %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Валидността на подписа не може да бъде проверена."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Подписът е валиден, но валидността на ключа е неизвестна."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Подписът е валиден и ключът е отчасти надежден."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Подписът е валиден и ключът е напълно надежден."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Подписът е валиден и ключът е горе-долу надежден."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Подписът е валиден, но ключът не е надежден."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Предупреждение: подписът е лош."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "Съответствие: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "Невалиден подпис"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Няма достатъчно информация за проверка на валидността на подписа"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Подписан от <a href='mailto:%1'>%1</a>."
+
+#~ msgid "Signature is valid"
+#~ msgstr "Подписът е валиден"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Неизвестно състояние на подписа"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "удостоверение"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Предупреждение:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Адреса на подателя не е записан в %1, който се използва за подписване."
+
+#~ msgid "sender: "
+#~ msgstr "подател: "
+
+#~ msgid "stored: "
+#~ msgstr "запазен: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Не е записан пощенски адрес в %1 за подписване, затова не може да се "
+#~ "сравни с адреса на подателя %2."
 
 #~ msgid "Export Rules"
 #~ msgstr "Експортиране на правила"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -103,8 +103,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "Бұл хат шифрланған."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Егжей-тегжейін жасыру"
 
@@ -135,7 +133,6 @@ msgid "Encrypted message"
 msgstr "Шифрланған хат"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "Егжей-тегжейін көрсету"
 
@@ -204,140 +201,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Қолтаңбаның тексеруі біткенше күте тұрыңыз"
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Қолтаңбаны тексеру үшін мәлімет жеткіліксіз. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Хатты %1 қолтаңбаланған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Хат беймәлім кілтпен қолтаңбаланған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Хат %1 деген кілтімен қолтаңбаланған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Хатты %3 деген %1 %2 деген кілтімен қолтаңбалаған"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Хат %1 %2 деген кілтімен қолтаңбалаған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Хатты %2 деген %1 деген кілтімен қолтаңбалаған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Күй-жайы: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Хатты %2 қолтаңбалаған (кілттің ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Хат %1 %2 деген беймәлім кілтімен қолтаңбалаған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Хат %1 деген беймәлім кілтімен қолтаңбалаған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Қолтаңбаның шындылығы тексерілмеді."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Қолтаңбасы дұрыс, бірақ кілттің шындылығы беймәлім."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Қолтаңбасы дұрыс, бірақ кілті әбден сенімді емес."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Қолтаңбасы дұрыс, кілті де әбден сенімді."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Қолтаңбасы дұрыс, кілті де кәміл сенімді."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Қолтаңбасы дұрыс, бірақ кілті сенімсіз."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Ескерту: Қолтаңбасы дұрыс емес."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr " %1=баған  "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Жарамсыз қолтаңба."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Қолтаңбаны тексеру үшін мәлімет жеткіліксіз."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "<a href=\"mailto:%1\">%2</a> қолтабалаған."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "Қолтаңбасы жарамды."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
-msgid "Unknown signature state"
-msgstr "Қолтаңбаның күй-жайы беймәлім"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-#| msgid "Mail"
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "Пошта"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Қолтаңбаланған хаттың соңы"
 
@@ -1103,136 +967,98 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Қазір жіберу"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Қате: Қолтаңбасы тексерілмеді"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Дұрыс қолтаңба"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "Дұрыс қолтаңба"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Қолтаңбаны тексеретін ашық кілті жоқ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Қолтаңба табылмады"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Қолтаңбаны тексеру қатесі"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Қолтаңбаның әртүрлі нәтижелері"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Күй-жай мәліметі қол жеткізбейді."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Қолтаңба дұрыс."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Бір кілттің мерзімі өтіп кеткен."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Қолтаңбаның мерзімі өтіп кеткен."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Тексеру мүмкін емес: кілті жоқ."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL қол жеткізбейді."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Бар CRL тым ескі."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "Ережесі сәйкес келмейді."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "Жүйелік қате пайда болды."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Кілттердің біреуі қайтарылып алынған."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
 msgstr "Қолтаңба дұрыс."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "куәлік"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Ескерту:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"Қолтаңбалау үшін қолданылған %1 дегенде жіберушінің адресі сақталмаған."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "жіберуші: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "сақталған: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"Қолтаңбалау үшін қолданылған %1 дегенде пошта адресі сақталмаған, сонымен %2 "
-"жіберушінің адресімен салыстыру мүмкін емес."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2181,78 +2007,78 @@ msgstr "Барлық тырнақшадағы мәтін тарқатылып к
 msgid "Collapse quoted text."
 msgstr "Барлық тырнақшадағы мәтін жасырылсын."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Куәліктер менеджері жегілмеді. Орнатылғанын тексеріңіз."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail қатесі"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 куәлігі көрсетілсін"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "Адрестік кітапшасында а&шу"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Эл.пошта адресін &көшіріп алу"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес алмасу буферіне көшірімеленді."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Контактты KAddressbook-та іздеу"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Тіркеме: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Ендірілген хат (Тақырыбы: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Ендірілген хат"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Аталмаған тіркеме"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Бұл әрекет туралы GnuPG аудит журналын көрсету"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL адресін ашу..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Шынымен <filename>%1</filename> дегенді орындауды қалайсыз ба?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2827,6 +2653,120 @@ msgstr "&Келесі хат"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Алдыңғы оқылмаған &хат"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Қолтаңбаны тексеру үшін мәлімет жеткіліксіз. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Хатты %1 қолтаңбаланған."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Хат беймәлім кілтпен қолтаңбаланған."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Хат %1 деген кілтімен қолтаңбаланған."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Хатты %3 деген %1 %2 деген кілтімен қолтаңбалаған"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Хат %1 %2 деген кілтімен қолтаңбалаған."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Хатты %2 деген %1 деген кілтімен қолтаңбалаған."
+
+#~ msgid "Status: "
+#~ msgstr "Күй-жайы: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Хатты %2 қолтаңбалаған (кілттің ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Хат %1 %2 деген беймәлім кілтімен қолтаңбалаған."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Хат %1 деген беймәлім кілтімен қолтаңбалаған."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Қолтаңбаның шындылығы тексерілмеді."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Қолтаңбасы дұрыс, бірақ кілттің шындылығы беймәлім."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Қолтаңбасы дұрыс, бірақ кілті әбден сенімді емес."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Қолтаңбасы дұрыс, кілті де әбден сенімді."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Қолтаңбасы дұрыс, кілті де кәміл сенімді."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Қолтаңбасы дұрыс, бірақ кілті сенімсіз."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Ескерту: Қолтаңбасы дұрыс емес."
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr " %1=баған  "
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Жарамсыз қолтаңба."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Қолтаңбаны тексеру үшін мәлімет жеткіліксіз."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "<a href=\"mailto:%1\">%2</a> қолтабалаған."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "Қолтаңбасы жарамды."
+
+#, fuzzy
+#~| msgid "Unknown signature state"
+#~ msgid "Unknown signature state"
+#~ msgstr "Қолтаңбаның күй-жайы беймәлім"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "Пошта"
+
+#~ msgid "certificate"
+#~ msgstr "куәлік"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Ескерту:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Қолтаңбалау үшін қолданылған %1 дегенде жіберушінің адресі сақталмаған."
+
+#~ msgid "sender: "
+#~ msgstr "жіберуші: "
+
+#~ msgid "stored: "
+#~ msgstr "сақталған: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Қолтаңбалау үшін қолданылған %1 дегенде пошта адресі сақталмаған, сонымен "
+#~ "%2 жіберушінің адресімен салыстыру мүмкін емес."
 
 #, fuzzy
 #~| msgid "Export filters..."

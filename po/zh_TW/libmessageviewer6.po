@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -109,8 +109,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "此信件已為以下金鑰加密："
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "隱藏詳情"
 
@@ -136,7 +134,6 @@ msgid "Encrypted message"
 msgstr "加密信件"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "顯示詳情"
 
@@ -188,129 +185,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "檢查 %1 封信件的簽章中，請稍候..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "沒有足夠的資訊檢查簽章。%1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "信件由 %1 簽署。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "信件由未知的金鑰簽章"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "信件簽章的金鑰為 %1。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "信件由 %3 用金鑰 %2 簽署在 %1。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "信件用金鑰 %2 簽署在 %1。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "信件由 %2 用金鑰 %1 簽署。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "狀態："
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "信件由 %2 簽署（金鑰代碼：%1）。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "信件用未知的金鑰 %2 簽署在 %1。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "信件用未知的金鑰 %1 簽署。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "有效的簽章無法被認證"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "此簽章是有效的，但是無法辨識鍵值是否有效。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "此簽章是有效的，而且鍵值有最低的可信度。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "此簽章是有效的，而且鍵值完全可信。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "此簽章是有效的，而且鍵值絕對可信。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "此簽章是有效的，不過鍵值不可信。"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "警告：簽章是錯誤的"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "合規：%1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "無效簽章"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "沒有足夠的資訊來檢查簽章有效性"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "由 <a href='mailto:%1'>%1</a> 簽署"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "簽章有效"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "未知的簽章狀態"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "已簽署信件的尾端"
 
@@ -1018,133 +893,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "送出拒絕"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "錯誤： 簽章未驗證"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "好的簽章"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "不正確的簽章"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "沒有公開金鑰可以驗證簽章"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "找不到簽章"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "驗證簽章時發生錯誤"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "簽章檢查結果不同"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "沒有可用的狀態資訊"
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "好的簽章。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "有一個金鑰已經過期了。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "簽章已經過期。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "無法驗證：金鑰遺失。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "無效的 CRL。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "有效的 CRL 已經太舊了"
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "沒有找到原則"
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "系統發生錯誤"
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "已撤銷一個金鑰。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "不正確的簽章。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "憑證"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "警告："
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "寄件者用於簽署的電子郵件地址沒有保存在 %1。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "寄件者："
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "保存："
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"寄件者用於簽署的電子郵件地址沒有保存在 %1，因此我們無法與寄件者的地址 %2 做比"
-"較。"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2029,78 +1867,78 @@ msgstr "展開引言。"
 msgid "Collapse quoted text."
 msgstr "折疊引言。"
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "無法啟動憑證管理員。請檢查安裝是否完全！"
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 錯誤"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "顯示憑證 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "開啟通訊錄(&O)"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "複製電子郵件地址(&C)"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "信件位址已複製到剪貼簿。"
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "在 KAddressbook 中尋找聯絡人"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "附件： %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "封裝信件（主題：%1）"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "封裝信件"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "未命名附件"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "顯示此操作的 GnuPG 稽核紀錄"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "正在開啟 URL..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "您確定要執行 <filename>%1</filename> 嗎？"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2629,6 +2467,105 @@ msgstr "下一封信件"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "上一封信件"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "沒有足夠的資訊檢查簽章。%1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "信件由 %1 簽署。"
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "信件由未知的金鑰簽章"
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "信件簽章的金鑰為 %1。"
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "信件由 %3 用金鑰 %2 簽署在 %1。"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "信件用金鑰 %2 簽署在 %1。"
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "信件由 %2 用金鑰 %1 簽署。"
+
+#~ msgid "Status: "
+#~ msgstr "狀態："
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "信件由 %2 簽署（金鑰代碼：%1）。"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "信件用未知的金鑰 %2 簽署在 %1。"
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "信件用未知的金鑰 %1 簽署。"
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "有效的簽章無法被認證"
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "此簽章是有效的，但是無法辨識鍵值是否有效。"
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "此簽章是有效的，而且鍵值有最低的可信度。"
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "此簽章是有效的，而且鍵值完全可信。"
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "此簽章是有效的，而且鍵值絕對可信。"
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "此簽章是有效的，不過鍵值不可信。"
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "警告：簽章是錯誤的"
+
+#~ msgid "Compliance: %1"
+#~ msgstr "合規：%1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "無效簽章"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "沒有足夠的資訊來檢查簽章有效性"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "由 <a href='mailto:%1'>%1</a> 簽署"
+
+#~ msgid "Signature is valid"
+#~ msgstr "簽章有效"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "未知的簽章狀態"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "憑證"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "警告："
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "寄件者用於簽署的電子郵件地址沒有保存在 %1。"
+
+#~ msgid "sender: "
+#~ msgstr "寄件者："
+
+#~ msgid "stored: "
+#~ msgstr "保存："
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "寄件者用於簽署的電子郵件地址沒有保存在 %1，因此我們無法與寄件者的地址 %2 "
+#~ "做比較。"
 
 #~ msgid "Export Rules"
 #~ msgstr "匯出規則"

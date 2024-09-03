@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2024-08-02 05:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -103,8 +103,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "შეტყობინება დაშიფრულია შემდეგი გასაღებებისთვის:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "დეტალების დამალვა"
 
@@ -130,7 +128,6 @@ msgid "Encrypted message"
 msgstr "დაშიფრული შეტყობინება"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 msgid "Show Details"
 msgstr "დეტალების ჩვენება"
 
@@ -187,129 +184,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "მიმდინარეობს ხელმოწერის გადამოწმება. გთხოვთ, მოითმინოთ..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "არასაკმარისი ინფორმაცია ხელმოწერის შესამოწმებლად: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "შეტყობინების ხელმომწერია %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "შეტყობინება ხელმოწერილია გასაღებით  %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "შეტყობინებაზე ხელი მოაწერა %3-მა %1-ზე გასაღებით %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "შეტყობინება ხელმოწერილია %1-ზე გასაღებით %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ გასაღებით %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "სტატუსი: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ (გასაღების ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "შეტყობინებ ხელმოწერილია %1-ზე უცნობი გასაღებით %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "ხელმოწერილის სინამდვილის გადამოწმება შეუძლებელია."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "ხელმოწერია სწორია, მაგრამ გასაღების სისწორე უცნობია."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "ხელმოწერა სწორია, გასაღები კი ოდნავ საეჭვო."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "ხელმოწერა სწორია, გასაღები კი სრულად სანდო."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "ხელმოწერა სწორია და გასაღები ყოველთვის სანდოა."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "ხელმოწერა სწორია, მაგრამ გასაღები სანდო არაა."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "გაფრთხილება: ხელმოწერა არასწორია."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, kde-format
-msgid "Compliance: %1"
-msgstr "შესაბამისობა: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-msgid "Invalid signature"
-msgstr "არასწორი ხელმოწერა"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-msgid "Not enough information to check signature validity"
-msgstr "არასაკმარისი ინფორმაცია ხელმოწერის გადასამოწმებლად"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, kde-format
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "ხელმომწერია: <a href='mailto:%1'>%1</a>"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-msgid "Signature is valid"
-msgstr "ხელმოწერა სწორია"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-msgid "Unknown signature state"
-msgstr "ხელმოწერის უცნობი მდგომარეობა"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "ხელმოწერილი შეტყობინების დასასრული"
 
@@ -1024,134 +899,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "უარყოფის გაგზავნა"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "შეცდომა: ხელმოწერა შემოწმებული არაა"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "კარგი ხელმოწერა"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "არასწორი ხელმოწერა"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "ხელმოწერის შესამოწმებლად საჯარო გასაღები არ გაქვთ"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "ხელმოწერა ვერ ვიპოვე"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "შეცდომა ხელმოწერის გადამოწმებისას"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "სხვადასხვა შედეგები ხელმოწერებისთვის"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "სტატუსის ინფორმაცია ხელმისაწვდომი არაა."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "კარგი ხელმოწერა."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "ერთი გასაღების ვადა ამოწურულია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "ხელმოწერის ვადა ამოწურულია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "გადამოწმების შეცდომა: გასაღები აკლია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL მიუწვდომელია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "ხელმისაწვდომი CRL ძალიან ძველია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr "წესები დაცული არაა."
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr "დაშვებულის სიტემური შეცდომა."
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "ერთი გასაღები გაუქმებულია."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "არასწორი ხელმოწერა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "სერტიფიკატი"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "გაფთხილება:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr ""
-"გამომგზავნის ელფოსტის მისამართი %1-ში ხელმოსაწერად დამახსოვრებული არაა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "გამომგზავნი: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "დამახსოვრებული: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"%1-ში დამახსოვრებული ელფოსტის მისამართები ხელმოწერისთვის არ გამოიყენება, "
-"ამიტომ, გამომგზავნის მისამართს %2 ვერ შევადარებთ."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2074,78 +1911,78 @@ msgstr "ციტირებული ტექსტის სრულად 
 msgid "Collapse quoted text."
 msgstr "ციტირებული ტექსტის სრულად ჩაკეცვა."
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "სერტიფიკატების მმართველის გაშვების შეცდომა. გადაამოწმეთ ფაილები."
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail-ის შეცდომა"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "მაჩვენე სერტიფიკატი 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&მისამართების წიგნში გახსნა"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ელფოსტის მისამართის &კოპირება"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "მისამართი კოპირებულია ბუფერში."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "კონტაქტების KAddressbook-ში მოძებნა"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "მიმაგრებული ფაილები: %1"
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "ჩასმული შეტყობინება (სათაური: %1)"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "ჩასმული შეტყობინება"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "უსახელო მიმაგრებული ფაილი"
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "ამ ოპერაციის GnuPG აუდიტის ჟურნალის ჩვენება"
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL-ის გახსნა..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "მართლა გნებავთ, გაუშვათ <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2694,6 +2531,106 @@ msgstr "შემდეგი შეტყობინება"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "წინა შეტყობინება"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "არასაკმარისი ინფორმაცია ხელმოწერის შესამოწმებლად: %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "შეტყობინების ხელმომწერია %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "შეტყობინება ხელმოწერილია გასაღებით  %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "შეტყობინებაზე ხელი მოაწერა %3-მა %1-ზე გასაღებით %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "შეტყობინება ხელმოწერილია %1-ზე გასაღებით %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ გასაღებით %1."
+
+#~ msgid "Status: "
+#~ msgstr "სტატუსი: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "შეტყობინება ხელმოწერილია %2-ის მიერ (გასაღების ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "შეტყობინებ ხელმოწერილია %1-ზე უცნობი გასაღებით %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "შეტყობინება ხელმოწერილია უცნობი გასაღებით %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "ხელმოწერილის სინამდვილის გადამოწმება შეუძლებელია."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "ხელმოწერია სწორია, მაგრამ გასაღების სისწორე უცნობია."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "ხელმოწერა სწორია, გასაღები კი ოდნავ საეჭვო."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "ხელმოწერა სწორია, გასაღები კი სრულად სანდო."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "ხელმოწერა სწორია და გასაღები ყოველთვის სანდოა."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "ხელმოწერა სწორია, მაგრამ გასაღები სანდო არაა."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "გაფრთხილება: ხელმოწერა არასწორია."
+
+#~ msgid "Compliance: %1"
+#~ msgstr "შესაბამისობა: %1"
+
+#~ msgid "Invalid signature"
+#~ msgstr "არასწორი ხელმოწერა"
+
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "არასაკმარისი ინფორმაცია ხელმოწერის გადასამოწმებლად"
+
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "ხელმომწერია: <a href='mailto:%1'>%1</a>"
+
+#~ msgid "Signature is valid"
+#~ msgstr "ხელმოწერა სწორია"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "ხელმოწერის უცნობი მდგომარეობა"
+
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "certificate"
+#~ msgstr "სერტიფიკატი"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "გაფთხილება:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "გამომგზავნის ელფოსტის მისამართი %1-ში ხელმოსაწერად დამახსოვრებული არაა."
+
+#~ msgid "sender: "
+#~ msgstr "გამომგზავნი: "
+
+#~ msgid "stored: "
+#~ msgstr "დამახსოვრებული: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "%1-ში დამახსოვრებული ელფოსტის მისამართები ხელმოწერისთვის არ გამოიყენება, "
+#~ "ამიტომ, გამომგზავნის მისამართს %2 ვერ შევადარებთ."
 
 #~ msgid "Export Rules"
 #~ msgstr "წესების გატანა"

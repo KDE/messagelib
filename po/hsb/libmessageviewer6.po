@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-03 00:39+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -118,8 +118,6 @@ msgid "The message is encrypted for the following keys:"
 msgstr "PGP-ŝifrowana powěsć"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:72
-#: messagepartthemes/default/templates/signedmessagepart.html:146
 msgid "Hide Details"
 msgstr "Nadrobnosće chować"
 
@@ -147,7 +145,6 @@ msgid "Encrypted message"
 msgstr "Šifrowana powěsć"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:43
-#: messagepartthemes/default/templates/signedmessagepart.html:174
 #, fuzzy
 #| msgid "[Details]"
 msgid "Show Details"
@@ -204,139 +201,7 @@ msgstr ""
 msgid "Please wait while the signature is being verified..."
 msgstr "Prošu dočakajće, doniž so podpismo přepruwuje..."
 
-#: messagepartthemes/default/templates/signedmessagepart.html:15
-#, kde-format
-msgid "Not enough information to check signature. %1"
-msgstr "Njedosahaca informacija za přepruwowanje podpisma. %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:20
-#: messagepartthemes/default/templates/signedmessagepart.html:88
-#: messagepartthemes/default/templates/signedmessagepart.html:115
-#: messagepartthemes/default/templates/signedmessagepart.html:134
-#, kde-format
-msgid "Message was signed by %1."
-msgstr "Powěsć bu podpisana wot %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:22
-#: messagepartthemes/default/templates/signedmessagepart.html:99
-msgid "Message was signed with unknown key."
-msgstr "Powěsć bu z njeznatym klučom podpisany."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:28
-#: messagepartthemes/default/templates/signedmessagepart.html:36
-#: messagepartthemes/default/templates/signedmessagepart.html:48
-#, kde-format
-msgid "Message was signed with key %1."
-msgstr "Powěsć bu podpisana z klučom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:31
-#, kde-format
-msgid "Message was signed by %3 on %1 with key %2"
-msgstr "Powěsć bu podpisana wot %3 na %1 z klučom %2"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:39
-#, kde-format
-msgid "Message was signed on %1 with key %2."
-msgstr "Powěsć bu podpisana na %1 z klučom %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:45
-#, kde-format
-msgid "Message was signed by %2 with key %1."
-msgstr "Powěsć bu podpisana wot %2 z klučom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:57
-#: messagepartthemes/default/templates/signedmessagepart.html:105
-msgid "Status: "
-msgstr "Staw: "
-
-#: messagepartthemes/default/templates/signedmessagepart.html:85
-#: messagepartthemes/default/templates/signedmessagepart.html:112
-#: messagepartthemes/default/templates/signedmessagepart.html:131
-#, kde-format
-msgid "Message was signed by %2 (Key ID: %1)."
-msgstr "Powěsć bu podpisana wot %2 (klučowa ID: %1)."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:92
-#, kde-format
-msgid "Message was signed on %1 with unknown key %2."
-msgstr "Powěsć bu podpisana na %1 z njeznatym klučom %2."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:95
-#, kde-format
-msgid "Message was signed with unknown key %1."
-msgstr "Powěsć bu podpisana z njeznatym klučom %1."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:102
-msgid "The validity of the signature cannot be verified."
-msgstr "Podpismo njehodźi so přepruwować."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:119
-msgid "The signature is valid, but the key's validity is unknown."
-msgstr "Podpismo je w porjadku, ale walidnosć kluča njehodźi so přepruwować."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:121
-msgid "The signature is valid and the key is marginally trusted."
-msgstr "Podpismo je w porjadku a kluč trochu dowěry hódny."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:123
-msgid "The signature is valid and the key is fully trusted."
-msgstr "Podpismo je w porjadku a kluč je połnje dowěry hódny."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:125
-msgid "The signature is valid and the key is ultimately trusted."
-msgstr "Podpismo je w porjadku a kluč dospołnje dowěry hódny."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:127
-msgid "The signature is valid, but the key is untrusted."
-msgstr "Podpismo je w porjadku a kluč njeje dowěry hódny."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:137
-msgid "Warning: The signature is bad."
-msgstr "Kedźbu. Podpismo njeje w porjadku."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:142
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
-msgid "Compliance: %1"
-msgstr " Špalta: %1"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:154
-#, fuzzy
-#| msgid "Invalid signature."
-msgid "Invalid signature"
-msgstr "Podpismo njeje w porjadku."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:156
-#, fuzzy
-#| msgid "Not enough information to check signature validity."
-msgid "Not enough information to check signature validity"
-msgstr "Njedosahaca informacija za přepruwowanje podpisma."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:159
-#, fuzzy, kde-format
-#| msgid "Signed by <a href='mailto:%1'>%1</a>."
-msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr "Podpisane wot <a href='mailto:%1'>%1</a>."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:161
-#, fuzzy
-#| msgid "Signature is valid."
-msgid "Signature is valid"
-msgstr "Podpismo je w porjadku."
-
-#: messagepartthemes/default/templates/signedmessagepart.html:164
-#, fuzzy
-#| msgid "Unknown signature state"
-msgid "Unknown signature state"
-msgstr "Njeznaty staw podpisma"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:167
-#, fuzzy, kde-format
-msgctxt "Status of signature (status/type of compliance)"
-msgid "%1 (%2)"
-msgstr "KMail"
-
-#: messagepartthemes/default/templates/signedmessagepart.html:186
+#: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
 msgstr "Kónc podpisaneje powěsće"
 
@@ -1068,133 +933,96 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Hnydom pósłać"
 
-#: messagepartthemes/default/defaultrenderer.cpp:67
+#: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Zmylk: njewerifikowana signatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:71
+#: messagepartthemes/default/defaultrenderer.cpp:73
 #, kde-format
 msgid "Good signature"
 msgstr "Dobre podpismo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:75
+#: messagepartthemes/default/defaultrenderer.cpp:77
 #, kde-format
 msgid "Bad signature"
 msgstr "Podpismo njeje w porjadku"
 
-#: messagepartthemes/default/defaultrenderer.cpp:79
+#: messagepartthemes/default/defaultrenderer.cpp:81
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Žadyn zjawny kluč za přepruwowanje podpisma"
 
-#: messagepartthemes/default/defaultrenderer.cpp:83
+#: messagepartthemes/default/defaultrenderer.cpp:85
 #, kde-format
 msgid "No signature found"
 msgstr "Žane podpismo"
 
-#: messagepartthemes/default/defaultrenderer.cpp:87
+#: messagepartthemes/default/defaultrenderer.cpp:89
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Zmylk při přepruwowanju podpisma"
 
-#: messagepartthemes/default/defaultrenderer.cpp:91
+#: messagepartthemes/default/defaultrenderer.cpp:93
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Wotchilne wuslědki za podpisma"
 
-#: messagepartthemes/default/defaultrenderer.cpp:111
+#: messagepartthemes/default/defaultrenderer.cpp:113
 #, kde-format
 msgid "No status information available."
 msgstr "Žana informacija wo stawje."
 
-#: messagepartthemes/default/defaultrenderer.cpp:118
-#: messagepartthemes/default/defaultrenderer.cpp:203
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#: messagepartthemes/default/defaultrenderer.cpp:205
 #, kde-format
 msgid "Good signature."
 msgstr "Dobre podpismo."
 
-#: messagepartthemes/default/defaultrenderer.cpp:139
+#: messagepartthemes/default/defaultrenderer.cpp:141
 #, kde-format
 msgid "One key has expired."
 msgstr "Jedyn kluč je zestarjeny."
 
-#: messagepartthemes/default/defaultrenderer.cpp:143
+#: messagepartthemes/default/defaultrenderer.cpp:145
 #, kde-format
 msgid "The signature has expired."
 msgstr "Podpismo hižo njepłaći."
 
-#: messagepartthemes/default/defaultrenderer.cpp:148
+#: messagepartthemes/default/defaultrenderer.cpp:150
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Njemóžu přepruwować: kluč faluje."
 
-#: messagepartthemes/default/defaultrenderer.cpp:155
+#: messagepartthemes/default/defaultrenderer.cpp:157
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL nimam."
 
-#: messagepartthemes/default/defaultrenderer.cpp:159
+#: messagepartthemes/default/defaultrenderer.cpp:161
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "CRL je zestarjena."
 
-#: messagepartthemes/default/defaultrenderer.cpp:163
+#: messagepartthemes/default/defaultrenderer.cpp:165
 #, kde-format
 msgid "A policy was not met."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:167
+#: messagepartthemes/default/defaultrenderer.cpp:169
 #, kde-format
 msgid "A system error occurred."
 msgstr ""
 
-#: messagepartthemes/default/defaultrenderer.cpp:178
+#: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Jedyn kluč je zběhnjeny."
 
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
 msgid "Bad signature."
 msgstr "Podpismo njeje w porjadku."
-
-#: messagepartthemes/default/defaultrenderer.cpp:525
-#: messagepartthemes/default/defaultrenderer.cpp:527
-#, kde-format
-msgid "certificate"
-msgstr "certifikat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:537
-#: messagepartthemes/default/defaultrenderer.cpp:556
-#, kde-format
-msgctxt "Start of warning message."
-msgid "Warning:"
-msgstr "Kedźbu:"
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "Sender's mail address is not stored in the %1 used for signing."
-msgstr "Adresa wotpósłarja njeje so zawěsćiła w '%1',, z čimž bu podpisane."
-
-#: messagepartthemes/default/defaultrenderer.cpp:538
-#, kde-format
-msgid "sender: "
-msgstr "wotpósłar: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:539
-#, kde-format
-msgid "stored: "
-msgstr "zawěsćene: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:557
-#, fuzzy, kde-format
-msgid ""
-"No mail address is stored in the %1 used for signing, so we cannot compare "
-"it to the sender's address %2."
-msgstr ""
-"W %1, kiž so za podpisowanje wužiwa, njeje žana emailowa adresa, tuž njeje "
-"móžno přirunować z adresu wotpósłarja &lt;%2&gt;."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2093,84 +1921,84 @@ msgstr ""
 msgid "Collapse quoted text."
 msgstr "&Skupinu sćahnyć"
 
-#: viewer/urlhandlermanager.cpp:532
+#: viewer/urlhandlermanager.cpp:495
 #, fuzzy, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Njemóžach certifikatowy manager startować. Prošu přepruwujće swoju "
 "instalaciju!"
 
-#: viewer/urlhandlermanager.cpp:534
+#: viewer/urlhandlermanager.cpp:497
 #, kde-format
 msgid "KMail Error"
 msgstr "Zmylk w kmailu"
 
-#: viewer/urlhandlermanager.cpp:549
+#: viewer/urlhandlermanager.cpp:514
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Pokaž certifikat 0x%1"
 
-#: viewer/urlhandlermanager.cpp:608
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "W&očinić w adresniku"
 
-#: viewer/urlhandlermanager.cpp:610
+#: viewer/urlhandlermanager.cpp:575
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Emailowu adresu &kopěrować"
 
-#: viewer/urlhandlermanager.cpp:623 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa bu do zapisnika kopěrowana."
 
-#: viewer/urlhandlermanager.cpp:634
+#: viewer/urlhandlermanager.cpp:599
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "Wočinić w adresniku"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:775
 #, fuzzy, kde-format
 msgid "Attachment: %1"
 msgstr "Přiwěšk: "
 
-#: viewer/urlhandlermanager.cpp:813
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Zasunjena powěsć"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "Zasunjena powěsć"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 msgid "Unnamed attachment"
 msgstr "Přiwěšk: "
 
-#: viewer/urlhandlermanager.cpp:853
+#: viewer/urlhandlermanager.cpp:818
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:894
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Wočinjam URL..."
 
-#: viewer/urlhandlermanager.cpp:903
+#: viewer/urlhandlermanager.cpp:868
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Chceće woprawdźe <b>%1</b> startować?</qt>"
 
-#: viewer/urlhandlermanager.cpp:905
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2719,6 +2547,120 @@ msgstr "Přichodna powěsć"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchadna powěsć"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Njedosahaca informacija za přepruwowanje podpisma. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Powěsć bu podpisana wot %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Powěsć bu z njeznatym klučom podpisany."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Powěsć bu podpisana z klučom %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Powěsć bu podpisana wot %3 na %1 z klučom %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Powěsć bu podpisana na %1 z klučom %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Powěsć bu podpisana wot %2 z klučom %1."
+
+#~ msgid "Status: "
+#~ msgstr "Staw: "
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Powěsć bu podpisana wot %2 (klučowa ID: %1)."
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Powěsć bu podpisana na %1 z njeznatym klučom %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Powěsć bu podpisana z njeznatym klučom %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Podpismo njehodźi so přepruwować."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr ""
+#~ "Podpismo je w porjadku, ale walidnosć kluča njehodźi so přepruwować."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Podpismo je w porjadku a kluč trochu dowěry hódny."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Podpismo je w porjadku a kluč je połnje dowěry hódny."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Podpismo je w porjadku a kluč dospołnje dowěry hódny."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Podpismo je w porjadku a kluč njeje dowěry hódny."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Kedźbu. Podpismo njeje w porjadku."
+
+#, fuzzy
+#~| msgid " Column: %1 "
+#~ msgid "Compliance: %1"
+#~ msgstr " Špalta: %1"
+
+#, fuzzy
+#~| msgid "Invalid signature."
+#~ msgid "Invalid signature"
+#~ msgstr "Podpismo njeje w porjadku."
+
+#, fuzzy
+#~| msgid "Not enough information to check signature validity."
+#~ msgid "Not enough information to check signature validity"
+#~ msgstr "Njedosahaca informacija za přepruwowanje podpisma."
+
+#, fuzzy
+#~| msgid "Signed by <a href='mailto:%1'>%1</a>."
+#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
+#~ msgstr "Podpisane wot <a href='mailto:%1'>%1</a>."
+
+#, fuzzy
+#~| msgid "Signature is valid."
+#~ msgid "Signature is valid"
+#~ msgstr "Podpismo je w porjadku."
+
+#, fuzzy
+#~| msgid "Unknown signature state"
+#~ msgid "Unknown signature state"
+#~ msgstr "Njeznaty staw podpisma"
+
+#, fuzzy
+#~ msgctxt "Status of signature (status/type of compliance)"
+#~ msgid "%1 (%2)"
+#~ msgstr "KMail"
+
+#~ msgid "certificate"
+#~ msgstr "certifikat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Kedźbu:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "Adresa wotpósłarja njeje so zawěsćiła w '%1',, z čimž bu podpisane."
+
+#~ msgid "sender: "
+#~ msgstr "wotpósłar: "
+
+#~ msgid "stored: "
+#~ msgstr "zawěsćene: "
+
+#, fuzzy
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "W %1, kiž so za podpisowanje wužiwa, njeje žana emailowa adresa, tuž "
+#~ "njeje móžno přirunować z adresu wotpósłarja &lt;%2&gt;."
 
 #, fuzzy
 #~ msgid "Export Rules"
