@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:39+0000\n"
 "PO-Revision-Date: 2023-04-03 16:49+0200\n"

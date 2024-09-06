@@ -6,7 +6,7 @@
 # Jürgen Jäckle <divmails1@gmx.net>, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: libmessagecomposer\n"
+"Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2023-05-18 20:02+0200\n"
