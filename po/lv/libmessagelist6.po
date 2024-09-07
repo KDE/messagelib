@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-17 00:40+0000\n"
-"PO-Revision-Date: 2024-03-03 19:28+0200\n"
-"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-09-05 15:42+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -1038,10 +1038,9 @@ msgstr[1] "<b>%1</b> vēstules (<b>%2</b> nelasītas)"
 msgstr[2] "<b>%1</b> vēstuļu (<b>%2</b> nelasītas)"
 
 #: core/widgetbase.cpp:190
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "Jebkāds definēts filtrs."
+msgstr "Nav definēts filtrs."
 
 #: core/widgetbase.cpp:190
 #, kde-format
@@ -1063,7 +1062,7 @@ msgstr "Konfigurēt..."
 #: core/widgetbase.cpp:502 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
-msgstr "Agregēšana"
+msgstr "Apkopojums"
 
 #: core/widgetbase.cpp:585
 #, kde-format
@@ -1119,22 +1118,19 @@ msgid "Edit Filter"
 msgstr "Rediģēt filtru"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nosaukums:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Saglabāt filtru..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Konfigurēt..."
@@ -1151,8 +1147,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Vārdi, kas īsāki par trim rakstzīmēm, tiks ignorēti."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Turpmāk nerādīt"
@@ -1189,8 +1184,7 @@ msgstr ""
 "pārvietojaties starp mapēm vai ierobežojat meklēšanu pēc vēstules statusa."
 
 #: core/widgets/searchlinestatus.cpp:108
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Saglabāt filtru"
@@ -1201,29 +1195,25 @@ msgid "Clear History"
 msgstr "Notīrīt vēsturi"
 
 #: core/widgets/searchmessagebybuttons.cpp:34
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Visa vēstule"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Pamatteksts"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Tēma"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
@@ -1337,11 +1327,10 @@ msgid "Close tab"
 msgstr "Aizvērt cilni"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
-msgstr "Aktivizēt cilni %1"
+msgstr "Pārslēgties uz cilni „%1“"
 
 #: pane.cpp:200
 #, kde-format
@@ -1354,43 +1343,37 @@ msgid "Message List"
 msgstr "Vēstuļu saraksts"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
-msgstr "Atvērt jaunā cilnē"
+msgstr "Izveidot jaunu cilni"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Pārslēgties uz nākamo cilni"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Pārslēgties uz iepriekšējo cilni"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Pārvietot cilni pa kreisi"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Pārvietot cilni pa labi"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Aizvērt cilni"
@@ -1438,8 +1421,7 @@ msgid "Unknown"
 msgstr "Nezināms"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Konfigurēt..."
@@ -1450,36 +1432,31 @@ msgid "Groups && Threading"
 msgstr "Grupas un pavedieni"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Grupēšana:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
-msgstr "Grupu izvēršanas politika:"
+msgstr "Grupas izvēršanas politika:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Pavedieni:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Pavedienu vadītājs:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Pavedienu izvēršanas politika:"
@@ -1491,8 +1468,7 @@ msgid "Advanced"
 msgstr "Paplašināti"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Skata aizpildīšanas stratēģija:"
@@ -1501,66 +1477,59 @@ msgstr "Skata aizpildīšanas stratēģija:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
-msgstr "Pielāgot vēstuļu agregēšanas režīmus"
+msgstr "Pielāgot vēstuļu apkopšanas režīmus"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
-msgstr "Jauna agregēšana"
+msgstr "Jauns apkopojums"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
-msgstr "Kopēt agregēšanu"
+msgstr "Klonēt apkopojumu"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "Eksportēt agregēšanu..."
+msgstr "Eksportēt apkopojumu..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
-msgstr "Importēt agregēšanu..."
+msgstr "Importēt apkopojumu..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
-msgstr "Dzēst agregēšanu"
+msgstr "Dzēst apkopojumu"
 
 #: utils/configureaggregationsdialog.cpp:343
 #, kde-format
 msgid "Unnamed Aggregation"
-msgstr "Nenosaukta agregēšana"
+msgstr "Nenosaukts apkopojums"
 
 #: utils/configureaggregationsdialog.cpp:360
 #, kde-format
 msgid "New Aggregation"
-msgstr "Jauna agregēšana"
+msgstr "Jauns apkopojums"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
-msgstr "Importēt agregēšanu"
+msgstr "Importēt apkopojumu"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
-msgstr "Eksportēt agregēšanu"
+msgstr "Eksportēt apkopojumu"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1575,36 +1544,31 @@ msgid "Customize Themes"
 msgstr "Pielāgot motīvus"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Jauns motīvs"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "Kopēt motīvu"
+msgstr "Klonēt motīvu"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Eksportēt motīvu..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Importēt motīvu..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Dzēst motīvu"
@@ -1641,15 +1605,13 @@ msgid "Delete Theme"
 msgstr "Dzēst motīvu"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importēt motīvu"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Eksportēt motīvu"
@@ -1679,62 +1641,51 @@ msgid "Name:"
 msgstr "Nosaukums:"
 
 #: utils/themeeditor.cpp:75
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
-msgstr "Etiķete, kas tiks parādīta kolonnas galvenē."
+msgstr "Etiķete, kas būs redzama kolonnas galvenē."
 
 #: utils/themeeditor.cpp:78
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Klikšķis uz galvenes kārto vēstules:"
 
 #: utils/themeeditor.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
 "Kārtošanas kārtība, uz kuru pārslēgties, nospiežot uz šīs kolonnas galvenes."
 
 #: utils/themeeditor.cpp:85
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Redzama pēc noklusējuma"
 
 #: utils/themeeditor.cpp:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "Atzīmējiet šo, ka kolonnai jābūt redzamai, izvēloties motīvu."
+msgstr "Atzīmējiet, ja kolonnai jābūt redzamai, izvēloties motīvu."
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Satur „Sūtītājs vai saņēmējs“ lauku"
 
 #: utils/themeeditor.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"Atzīmējiet šo, ja kolonnas etiķeti ir jāatjaunina atkarībā no mapes "
-"„ienākošā“/„izejošā“ tipa."
+"Atzīmējiet, ja kolonnas etiķete ir jāatjaunina atkarībā no mapes „ienākošā“/"
+"„izejošā“ tipa."
 
 #: utils/themeeditor.cpp:111
 #, kde-format
@@ -1941,30 +1892,25 @@ msgid "Advanced"
 msgstr "Paplašināti"
 
 #: utils/themeeditor.cpp:1435
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Galvene:"
 
 #: utils/themeeditor.cpp:1441
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Ikonu izmērs:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " pikselis"
-msgstr[1] " pikseļi"
-msgstr[2] "pikseļu"
+msgstr[0] "%v pikselis"
+msgstr[1] "%v pikseļi"
+msgstr[2] "%v pikseļu"
 
 #: widget.cpp:220
 #, kde-format
