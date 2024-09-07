@@ -3,20 +3,21 @@
 # Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006, 2007.
 # Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
 # Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# SPDX-FileCopyrightText: 2024 Mohi Mirdamadi <mohi.pub@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-17 00:40+0000\n"
-"PO-Revision-Date: 2007-09-03 14:00+0330\n"
-"Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
-"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"PO-Revision-Date: 2024-09-06 22:32+0330\n"
+"Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
+"Language-Team: fa\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  .r1608 (kmail)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -1238,7 +1239,7 @@ msgstr "سیاستی دیده نشد."
 #: messagepartthemes/default/defaultrenderer.cpp:167
 #, kde-format
 msgid "A system error occurred."
-msgstr "یک خطای سیستمی رخ داد."
+msgstr "یک خطای سامانهی رخ داد."
 
 #: messagepartthemes/default/defaultrenderer.cpp:178
 #, kde-format
@@ -2754,7 +2755,7 @@ msgid ""
 "may compromise your system's security."
 msgstr ""
 " پیوست »%1« باز شود؟\n"
-"توجه کنید که باز کردن یک پیوست، ممکن است امنیت سیستم شما را توافقی کند."
+"توجه کنید که باز کردن یک پیوست، ممکن است امنیت سامانه شما را توافقی کند."
 
 #: widgets/attachmentdialog.cpp:32
 #, fuzzy, kde-format
