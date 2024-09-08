@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-17 00:40+0000\n"
-"PO-Revision-Date: 2024-06-20 21:34+0530\n"
+"PO-Revision-Date: 2024-09-07 21:15+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1115,15 +1115,13 @@ msgid "Name:"
 msgstr "பெயர்:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "வடிகட்டியை சேமி..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "அமை..."
@@ -1512,15 +1510,13 @@ msgid "New Aggregation"
 msgstr "புதிய தொகுப்புமுறை"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "தொகுப்புமுறையை இறக்குமதி செய்வது"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "தொகுப்புமுறையை ஏற்றுமதி செய்வது"
@@ -1599,15 +1595,13 @@ msgid "Delete Theme"
 msgstr "தோற்றத்திட்டத்தை நீக்குவது"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "தோற்றத்திட்டத்தை இறக்குமதி செய்வது"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "தோற்றத்திட்டத்தை ஏற்றுமதி செய்வது"
@@ -1655,8 +1649,7 @@ msgid "The sorting order that clicking on this column header will switch to."
 msgstr "இத்தலைப்பை கிளிக் செய்தால் எந்த வரிசைமுறை பயன்படுத்தப்படும்."
 
 #: utils/themeeditor.cpp:85
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "இயல்பிருப்பாக காட்டு"
@@ -1670,23 +1663,19 @@ msgstr ""
 "செய்யவும்."
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "அனுப்புநர்/பெறுநர் புலத்தைக் கொண்டுள்ளது"
 
 #: utils/themeeditor.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"இந்த காட்சிமுறை செயலிலுள்ளபோது இந்த நெடுவரிசையை காட்ட வேண்டுமெனில் இதைத் தேர்வு "
-"செய்யவும்."
+"அஞ்சலனுப்பும்/பெறும் அடைவுகளுக்கேற்ப இந்த நெடுவரிசையின் தலைப்பை மாற்ற இதைக் குறிக்கவும்."
 
 #: utils/themeeditor.cpp:111
 #, kde-format
@@ -1902,15 +1891,12 @@ msgid "Icon size:"
 msgstr "சின்னத்தின் அளவு:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " பிக்செல்"
-msgstr[1] " பிக்செல்கள்"
+msgstr[0] "%v பிக்செல்"
+msgstr[1] "%v பிக்செல்கள்"
 
 #: widget.cpp:220
 #, kde-format
