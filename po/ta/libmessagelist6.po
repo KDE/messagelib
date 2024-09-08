@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-06-20 21:34+0530\n"
+"PO-Revision-Date: 2024-09-07 21:14+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1115,15 +1115,13 @@ msgid "Name:"
 msgstr "பெயர்:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "வடிகட்டியை சேமி..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "அமை..."
@@ -1665,16 +1663,13 @@ msgid "Contains \"Sender or Receiver\" field"
 msgstr "அனுப்புநர்/பெறுநர் புலத்தைக் கொண்டுள்ளது"
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
-"இந்த காட்சிமுறை செயலிலுள்ளபோது இந்த நெடுவரிசையை காட்ட வேண்டுமெனில் இதைத் தேர்வு "
-"செய்யவும்."
+"அஞ்சலனுப்பும்/பெறும் அடைவுகளுக்கேற்ப இந்த நெடுவரிசையின் தலைப்பை மாற்ற இதைக் குறிக்கவும்."
 
 #: utils/themeeditor.cpp:109
 #, kde-format
