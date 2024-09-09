@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-07-06 21:32+0530\n"
+"PO-Revision-Date: 2024-09-08 12:49+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -52,8 +52,7 @@ msgid "Failed to attach file"
 msgstr "கோப்பை உடனிணைக்க முடியவில்லை"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "உடனிணைப்பை மீளேற்ற முடியவில்லை"
@@ -78,25 +77,22 @@ msgid "&Open With..."
 msgstr "&இதனால் திற..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr "பொது சாவியை இணைத்தல் தோல்வியடைந்தது"
+msgstr "பொது சாவியை இணைப்பது தோல்வியடைந்தது"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "vCard-ஐ இணைத்தல் தோல்வியடைந்தது"
+msgstr "vCard-ஐ இணைப்பது தோல்வியடைந்தது"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "பிடிப்புப்பலகையிலிருந்து உரையை இணைத்தல் தோல்வியடைந்தது"
+msgstr "பிடிப்புப்பலகையிலிருந்து உரையை இணைப்பது தோல்வியடைந்தது"
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
@@ -241,10 +237,9 @@ msgid "Unable to open attachment"
 msgstr "உடனிணைப்பைத் திறக்க முடியவில்லை"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "கேமெயிலால் உடனிணைப்பை திறக்க முடியவில்லை."
+msgstr "கேமெயிலால் உடனிணைப்பை திறக்க முடியவில்லை"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
@@ -258,11 +253,10 @@ msgid "unnamed"
 msgstr "பெயரிடப்படாதது"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "உடனிணைப்பை இவ்வாறு சேமி"
+msgstr "உடனிணைப்பை வேறு பெயரில் சேமிப்பது"
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -479,29 +473,25 @@ msgid "Do Not Resize"
 msgstr "தானாக அளவை மாற்றாதே"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP சாவி காலாவதியாகியுள்ளது"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME சான்றிதழ் காலாவதியாகியுள்ளது"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP சாவி காலாவதியாகப்போகிறது"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME சான்றிதழ் காலாவதியாகப்போகிறது"
@@ -1866,8 +1856,7 @@ msgid "Send Later"
 msgstr "பின்னர் அனுப்பு"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "தாமதி"
@@ -2211,10 +2200,9 @@ msgid "Long Date (%1)"
 msgstr "விவரமான தேதி (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "விவரமான தேதி (%1)"
+msgstr "தனிப்பயன் தேதி (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2247,10 +2235,9 @@ msgid "Month Number (%1)"
 msgstr "மாத எண் (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "வார எண் (%1)"
+msgstr "நாள் எண் (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
