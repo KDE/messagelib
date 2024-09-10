@@ -11,10 +11,7 @@
 #include <QDateTime>
 #include <QList>
 #include <QObject>
-namespace QCA
-{
-class Initializer;
-}
+
 namespace MessageViewer
 {
 /**
@@ -71,7 +68,6 @@ private:
     explicit DKIMManagerKey(QObject *parent = nullptr);
     [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QList<KeyInfo> mKeys;
-    QCA::Initializer *const mQcaInitializer;
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_RELOCATABLE_TYPE);

@@ -9,14 +9,15 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QStandardPaths>
-#include <qca_publickey.h>
+
+#include <openssl/decoder.h>
+#include <openssl/err.h>
+#include <openssl/evp.h>
 
 CheckRSAPublicKey::CheckRSAPublicKey(QObject *parent)
     : QObject(parent)
 {
-    QCA::Initializer initializer;
     // qDebug() << " support : "<< QCA::isSupported("rsa");
-    QCA::ConvertResult conversionResult;
     // QByteArray ba =
     // "TUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FES3NSL3ZEVS9kNitnRnZhbW42c2c4M1Q5KzVPdkI4MFFvbXR5Y09yeG1UdHhGT0FMVkxWVWpWN1J6OExOcVhKZDh1TnROVXFzdU5iK3JSc3pnNE5HS09HRG5OQjJEMWd5M3NWUFNtZkYvZmxycEN3QkEyOHJ5Q3N2MVRoNG9aaGNlVkN1cmNIdFlGbXE1OHhta1ZhQXpSSllmbnBzNmVKQU9xZFJBcGpHRUdRSURBUUFC";
     // QByteArray ba =
@@ -26,12 +27,19 @@ CheckRSAPublicKey::CheckRSAPublicKey(QObject *parent)
         "flrpCwBA28ryCsv1Th4oZhceVCurcHtYFmq58xmkVaAzRJYfnps6eJAOqdRApjGEGQIDAQAB";
     qDebug() << " ba before: " << ba;
 
-    QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QByteArray::fromBase64(ba), &conversionResult);
-    if (conversionResult != QCA::ConvertGood) {
-        qDebug() << "Public key read failed" << conversionResult;
+    EVP_PKEY *pkey = nullptr;
+    auto ctx = OSSL_DECODER_CTX_new_for_pkey(&pkey, "DER", nullptr, "RSA", OSSL_KEYMGMT_SELECT_PUBLIC_KEY, nullptr, nullptr);
+    const auto raw_key = QByteArray::fromBase64(ba);
+    auto pubkey_bio = BIO_new_mem_buf(raw_key.constData(), raw_key.size());
+    if (!OSSL_DECODER_from_bio(ctx, pubkey_bio)) {
+        qDebug() << "Public key read failed" << ERR_error_string(ERR_get_error(), nullptr);
     } else {
         qDebug() << "Public key read success";
     }
+
+    EVP_PKEY_free(pkey);
+    OSSL_DECODER_CTX_free(ctx);
+    BIO_free(pubkey_bio);
 }
 
 int main(int argc, char **argv)

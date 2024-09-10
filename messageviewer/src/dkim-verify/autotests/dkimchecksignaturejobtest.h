@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QObject>
-#include <QtCrypto>
+
 class DKIMCheckSignatureJobTest : public QObject
 {
     Q_OBJECT
@@ -20,7 +20,4 @@ private Q_SLOTS:
     void shouldTestMail_data();
     void initTestCase();
     void cleanupTestCase();
-
-private:
-    QCA::Initializer *mQcaInitializer = nullptr;
 };

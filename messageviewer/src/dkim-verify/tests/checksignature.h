@@ -8,7 +8,6 @@
 
 #include "dkim-verify/dkimchecksignaturejob.h"
 #include <QObject>
-#include <QtCrypto>
 
 class CheckSignature : public QObject
 {
@@ -19,5 +18,4 @@ public:
 
 private:
     void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    QCA::Initializer *mQcaInitializer = nullptr;
 };

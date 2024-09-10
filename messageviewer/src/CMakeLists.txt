@@ -27,11 +27,6 @@ endif()
 configure_file(settings/messageviewer.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
 
-find_package(Qca-qt6 2.3.7 CONFIG REQUIRED)
-set_package_properties(Qca-qt6 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
-    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
-    PURPOSE "Needed for dkim support.")
-
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
 
@@ -428,9 +423,9 @@ target_link_libraries(KPim6MessageViewer
     KPim6::AkonadiContactWidgets
     KF6::TextTemplate
     Qt::PrintSupport
-    qca-qt6
     KF6::Notifications
     KF6::TextAddonsWidgets
+    OpenSSL::SSL
 )
 
 if(TARGET KF6::TextEditTextToSpeech)

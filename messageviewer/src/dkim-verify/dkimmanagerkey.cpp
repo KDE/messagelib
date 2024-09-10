@@ -9,18 +9,16 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
-#include <QtCrypto>
+
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
-    , mQcaInitializer(new QCA::Initializer(QCA::Practical, 64))
 {
     loadKeys();
 }
 
 DKIMManagerKey::~DKIMManagerKey()
 {
-    delete mQcaInitializer;
     saveKeys();
 }
 

@@ -21,13 +21,11 @@ DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
 
 void DKIMCheckSignatureJobTest::initTestCase()
 {
-    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
     qRegisterMetaType<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
 }
 
 void DKIMCheckSignatureJobTest::cleanupTestCase()
 {
-    delete mQcaInitializer;
 }
 
 void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()

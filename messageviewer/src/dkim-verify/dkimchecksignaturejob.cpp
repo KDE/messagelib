@@ -17,7 +17,13 @@
 #include <QDateTime>
 #include <QFile>
 #include <QRegularExpression>
-#include <qca_publickey.h>
+
+#include <openssl/bn.h>
+#include <openssl/core_names.h>
+#include <openssl/decoder.h>
+#include <openssl/err.h>
+#include <openssl/evp.h>
+#include <openssl/rsa.h>
 
 // see https://tools.ietf.org/html/rfc6376
 // #define DEBUG_SIGNATURE_DKIM 1
@@ -499,27 +505,97 @@ void DKIMCheckSignatureJob::verifyEd25519Signature()
     deleteLater();
 }
 
+using EVPPKeyPtr = std::unique_ptr<EVP_PKEY, decltype(&EVP_PKEY_free)>;
+
+EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+{
+    EVP_PKEY *pubKey = nullptr;
+    std::unique_ptr<OSSL_DECODER_CTX, decltype(&OSSL_DECODER_CTX_free)> decoderCtx(
+        OSSL_DECODER_CTX_new_for_pkey(&pubKey, "DER", nullptr, "RSA", EVP_PKEY_PUBLIC_KEY, nullptr, nullptr),
+        OSSL_DECODER_CTX_free);
+    if (!decoderCtx) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to create OSSL_DECODER_CTX";
+        return {nullptr, EVP_PKEY_free};
+    }
+
+    const auto rawDer = QByteArray::fromBase64(der);
+    std::unique_ptr<BIO, decltype(&BIO_free)> pubKeyBio(BIO_new_mem_buf(rawDer.constData(), rawDer.size()), BIO_free);
+    if (!OSSL_DECODER_from_bio(decoderCtx.get(), pubKeyBio.get())) {
+        // No need to free pubKey, it's initialized by this function only on success
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to decode public key:" << ERR_error_string(ERR_get_error(), nullptr);
+        return {nullptr, EVP_PKEY_free};
+    }
+
+    return {pubKey, EVP_PKEY_free};
+}
+
+const EVP_MD *evpAlgo(DKIMInfo::HashingAlgorithmType algo)
+{
+    switch (algo) {
+    case DKIMInfo::HashingAlgorithmType::Sha1:
+        return EVP_sha1();
+    case DKIMInfo::HashingAlgorithmType::Sha256:
+        return EVP_sha256();
+    case DKIMInfo::HashingAlgorithmType::Any:
+    case DKIMInfo::HashingAlgorithmType::Unknown:
+        break;
+    }
+    return nullptr;
+}
+
+std::optional<bool> doVerifySignature(EVP_PKEY *key, const EVP_MD *md, const QByteArray &signature, const QByteArray &message)
+{
+    std::unique_ptr<EVP_MD_CTX, decltype(&EVP_MD_CTX_free)> ctx(EVP_MD_CTX_new(), EVP_MD_CTX_free);
+    if (!EVP_MD_CTX_init(ctx.get())) {
+        qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to initialize signature verification:" << ERR_error_string(ERR_get_error(), nullptr);
+        return std::nullopt;
+    }
+
+    EVP_PKEY_CTX *pctx = nullptr; // will be free'd automatically when ctx is free'dssss
+    if (!EVP_DigestVerifyInit(ctx.get(), &pctx, md, nullptr, key)) {
+        qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to initialize signature verification:" << ERR_error_string(ERR_get_error(), nullptr);
+        return std::nullopt;
+    }
+
+    EVP_PKEY_CTX_set_rsa_padding(pctx, RSA_PKCS1_PADDING);
+    const auto result = EVP_DigestVerify(ctx.get(),
+                                         reinterpret_cast<const unsigned char *>(signature.constData()),
+                                         signature.size(),
+                                         reinterpret_cast<const unsigned char *>(message.constData()),
+                                         message.size());
+
+    if (result <= 0) {
+        qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature verification failed:" << ERR_error_string(ERR_get_error(), nullptr);
+        return false;
+    }
+
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature successfully verified";
+    return true;
+}
+
+uint64_t getKeyE(EVP_PKEY *key)
+{
+    BIGNUM *bne = nullptr;
+    EVP_PKEY_get_bn_param(key, OSSL_PKEY_PARAM_RSA_E, &bne);
+    const uint64_t size = BN_get_word(bne);
+    BN_free(bne);
+    return size;
+}
+
 void DKIMCheckSignatureJob::verifyRSASignature()
 {
-    QCA::ConvertResult conversionResult;
-    // qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey() << " QCA::base64ToArray(mDkimKeyRecord.publicKey() "
-    // <<QCA::base64ToArray(mDkimKeyRecord.publicKey());
-    QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QCA::base64ToArray(mDkimKeyRecord.publicKey()), &conversionResult);
-    if (QCA::ConvertGood != conversionResult) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult << " public key" << mDkimKeyRecord.publicKey();
-        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyConversionError;
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
-    } else {
-        qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
-    }
-    QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
-    // qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
-    // qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
+    // We need an SSA public key, the message and a signature to verify.
+    // First we decode the public key from the DKIM key record (it's in PEM format)
 
-    if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
+    const auto publicKey = loadRSAPublicKey(mDkimKeyRecord.publicKey().toLatin1());
+    if (!publicKey) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to load public key";
+        return verificationFailed(DKIMError::PublicKeyConversionError);
+    }
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
+
+    // Check minimum key strength
+    if (const auto keyE = getKeyE(publicKey.get()); keyE * 4 < 1024) {
         const int publicRsaTooSmallPolicyValue = mPolicy.publicRsaTooSmallPolicy();
         if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Nothing) {
             // Nothing
@@ -532,57 +608,41 @@ void DKIMCheckSignatureJob::verifyRSASignature()
             deleteLater();
             return;
         }
-
-    } else if (rsaPublicKey.e().toString().toLong() * 4 < 2048) {
+    } else if (keyE * 4 < 2048) {
         // TODO
     }
-    // qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature();
-    if (rsaPublicKey.canVerify()) {
-        const QString s = mDkimInfo.signature().remove(QLatin1Char(' '));
-        QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
-        const QByteArray ba = QCA::base64ToArray(s);
-        // qDebug() << " s base ba" << ba;
-        QCA::SignatureAlgorithm sigAlg;
-        switch (mDkimInfo.hashingAlgorithm()) {
-        case DKIMInfo::HashingAlgorithmType::Sha1:
-            sigAlg = QCA::EMSA3_SHA1;
-            break;
-        case DKIMInfo::HashingAlgorithmType::Sha256:
-            sigAlg = QCA::EMSA3_SHA256;
-            break;
-        case DKIMInfo::HashingAlgorithmType::Any:
-        case DKIMInfo::HashingAlgorithmType::Unknown: {
-            // then signature is invalid
-            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
-            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-            Q_EMIT result(createCheckResult());
-            deleteLater();
-            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMInfo::HashingAlgorithmType undefined ! ";
-            return;
-        }
-        }
-        if (!rsaPublicKey.verifyMessage(sec, ba, sigAlg, QCA::DERSequence)) {
-            computeHeaderCanonization(false);
-            const QCA::SecureArray secWithoutQuote = mHeaderCanonizationResult.toLatin1();
-            if (!rsaPublicKey.verifyMessage(secWithoutQuote, ba, sigAlg, QCA::DERSequence)) {
-                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
-                // then signature is invalid
-                mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
-                mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-                Q_EMIT result(createCheckResult());
-                deleteLater();
-                return;
-            }
-        }
-    } else {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";
-        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
+
+    // Get the digest algorithm we want to use
+    const auto md = evpAlgo(mDkimInfo.hashingAlgorithm());
+    if (!md) {
+        return verificationFailed(DKIMError::InvalidBodyHashAlgorithm);
     }
-    mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+
+    const auto signature = QByteArray::fromBase64(mDkimInfo.signature().remove(QLatin1Char(' ')).toLatin1());
+    if (const auto result = doVerifySignature(publicKey.get(), md, signature, mHeaderCanonizationResult.toLatin1()); !result.has_value()) {
+        // OpenSSL failure
+        return verificationFailed(DKIMError::ImpossibleToVerifySignature);
+    } else if (!result.value()) {
+        // Verification failed, retry with canonicalized headers without quotes
+        computeHeaderCanonization(false);
+        if (const auto result = doVerifySignature(publicKey.get(), md, signature, mHeaderCanonizationResult.toLatin1()); !result.has_value()) {
+            // OpenSSL failure
+            return verificationFailed(DKIMError::ImpossibleToVerifySignature);
+        } else if (!result.value()) {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature verification failed";
+            return verificationFailed(DKIMError::ImpossibleToVerifySignature);
+        }
+    }
+
+    mStatus = DKIMStatus::Valid;
+    Q_EMIT result(createCheckResult());
+    deleteLater();
+}
+
+void DKIMCheckSignatureJob::verificationFailed(DKIMError error)
+{
+    mError = error;
+    mStatus = DKIMStatus::Invalid;
     Q_EMIT result(createCheckResult());
     deleteLater();
 }

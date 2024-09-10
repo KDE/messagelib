@@ -29,6 +29,8 @@ set(PIMCOMMON_LIB_VERSION "6.2.40")
 set(GPGME_REQUIRED_VERSION "1.21.0")
 set(AKONADI_SEARCH_VERSION "6.2.40")
 
+set(OPENSSL_VERSION "3.0.0")
+
 set(ECM_VERSION ${KF_MIN_VERSION})
 
 find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
@@ -112,6 +114,8 @@ find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
+
+find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 6.7.2 KF 6.6.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)

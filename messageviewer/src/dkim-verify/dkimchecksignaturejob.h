@@ -152,6 +152,8 @@ private:
     MESSAGEVIEWER_NO_EXPORT void verifyRSASignature();
     MESSAGEVIEWER_NO_EXPORT void verifyEd25519Signature();
     MESSAGEVIEWER_NO_EXPORT void computeHeaderCanonization(bool removeQuoteOnContentType);
+    MESSAGEVIEWER_NO_EXPORT void verificationFailed(DKIMError error);
+
     QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;

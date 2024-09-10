@@ -15,7 +15,6 @@
 CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
     : QObject(parent)
 {
-    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
     auto job = new MessageViewer::DKIMCheckSignatureJob(this);
     connect(job, &MessageViewer::DKIMCheckSignatureJob::result, this, &CheckSignature::slotResult);
 
@@ -31,10 +30,7 @@ CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
     job->start();
 }
 
-CheckSignature::~CheckSignature()
-{
-    delete mQcaInitializer;
-}
+CheckSignature::~CheckSignature() = default;
 
 void CheckSignature::slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
