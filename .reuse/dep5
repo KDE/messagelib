@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: messagelib
-Upstream-Contact: Montel Laurent <montel@kde.org>
-Source: https://invent.kde.org/pim/messagelib
-
-Files: webengineviewer/src/checkphishingurl/autotests/data/*.json mimetreeparser/autotests/data/* templateparser/autotests/data/* messageviewer/src/dkim-verify/autotests/data/* messageviewer/src/header/autotests/data/* messageviewer/autotests/unittestenv/* messagecore/autotests/gnupg_home/* messagecomposer/autotests/data/* messagecomposer/autotests/attachments/* messagecomposer/autotests/unittestenv/* messageviewer/src/messagepartthemes/default/templates/* messageviewer/src/utils/autotests/data/* messageviewer/src/viewer/webengine/tests/data/* webengineviewer/src/checkphishingurl/tests/data/* messagecomposer/src/composer-ng/autotests/data/* messagecore/autotests/attachments/* messagecore/autotests/data/autocrypt/*.json messageviewer/src/TODO messagecomposer/DESIGN messagecomposer/TODO messagecomposer/src/COMPLIANCE messagecore/src/README messagelist/src/Mainpage.dox messageviewer/src/Mainpage.dox
-Copyright: none
-License: CC0-1.0
