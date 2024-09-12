@@ -39,7 +39,7 @@ QString IconNameCache::iconPath(const QString &name, int size) const
     }
 
     QString fileName = KIconLoader::global()->iconPath(name, size);
-    if (fileName.startsWith(QLatin1String(":/"))) {
+    if (fileName.startsWith(QLatin1StringView(":/"))) {
         fileName = QStringLiteral("qrc") + fileName;
     }
     mCachedEntries.insert(entry, fileName);
