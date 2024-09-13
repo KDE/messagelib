@@ -13,19 +13,20 @@
 # Giorgos Katsikatsos <giorgos.katsikatsos@gmail.com>, 2010.
 # Dimitrios Glentadakis <dglent@gmail.com>, 2011, 2012, 2014.
 # Stelios <sstavra@gmail.com>, 2012.
+# Dimitrys Meliates <demetresmeliates+i18n@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2014-04-19 15:12+0200\n"
-"Last-Translator: Dimitrios Glentadakis <dglent@free.fr>\n"
-"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"PO-Revision-Date: 2024-09-04 14:30+0300\n"
+"Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-doc@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1187,8 +1188,7 @@ msgstr ""
 "\">(Λεπτομέρειες...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Μετακίνηση στα απορρίμματα"
@@ -1223,7 +1223,7 @@ msgid ""
 "recipient"
 msgstr ""
 "Αυτό το μήνυμα περιέχει ένα δεσμό αποτυπωμένος ως «%1» στο κείμενο, αλλά "
-"στην πραγματικότητα υποδεικνύει στο »%2». Αυτό συμβαίνει συχνά σε μηνύματα "
+"στην πραγματικότητα υποδεικνύει στο «%2». Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης με σκοπό την παραπλάνηση του παραλήπτη "
 
 #: scamdetection/scamdetectionwebengine.cpp:128
