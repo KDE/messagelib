@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-08-07 11:18+0200\n"
+"PO-Revision-Date: 2024-09-11 12:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2293,10 +2293,9 @@ msgid "Long Date (%1)"
 msgstr "Пълна дата (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Пълна дата (%1)"
+msgstr "Потребителска дата (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2329,10 +2328,9 @@ msgid "Month Number (%1)"
 msgstr "Месец, числов формат (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Номер на седмицата (%1)"
+msgstr "Номер на деня (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format

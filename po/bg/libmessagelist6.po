@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-17 00:40+0000\n"
-"PO-Revision-Date: 2024-08-07 11:16+0200\n"
+"PO-Revision-Date: 2024-09-11 12:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1901,15 +1901,12 @@ msgid "Icon size:"
 msgstr "Размер на икона:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " пиксел"
-msgstr[1] " пиксели"
+msgstr[0] "%v пиксел"
+msgstr[1] "%v пиксела"
 
 #: widget.cpp:220
 #, kde-format
