@@ -25,8 +25,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1051,8 +1051,7 @@ msgid "No filter defined."
 msgstr "Όποιο φίλτρο έχει οριστεί."
 
 #: core/widgetbase.cpp:190
-#, fuzzy, kde-format
-#| msgid "Create Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Δημιουργία φίλτρου"
@@ -1115,8 +1114,7 @@ msgid "Do you want to delete this filter?"
 msgstr "Θέλετε να διαγράψετε αυτό το φίλτρο;"
 
 #: core/widgets/configurefilterswidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Remove Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Αφαίρεση φίλτρου"
@@ -1129,22 +1127,19 @@ msgid "Edit Filter"
 msgstr "Αποθημευμένο φίλτρο"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Όνομα:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Αποθήκευση φίλτρου..."
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
@@ -1161,8 +1156,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Λέξεις με λιγότερα από 3 γράμματα δεν λαμβάνονται υπόψη."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Να μην εμφανιστεί ξανά"
@@ -1203,8 +1197,7 @@ msgstr ""
 "την κατάσταση του μηνύματος."
 
 #: core/widgets/searchlinestatus.cpp:108
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Αποθημευμένο φίλτρο"
@@ -1215,29 +1208,25 @@ msgid "Clear History"
 msgstr "Καθαρισμός ιστορικού"
 
 #: core/widgets/searchmessagebybuttons.cpp:34
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Πλήρες μήνυμα"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Κείμενο"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Θέμα"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "Κρυφή κοιν."
@@ -1351,8 +1340,7 @@ msgid "Close tab"
 msgstr "Κλείσιμο καρτέλας"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Ενεργοποίηση της καρτέλας %1"
@@ -1368,43 +1356,37 @@ msgid "Message List"
 msgstr "Λίστα μηνυμάτων"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Δημιουργία νέας καρτέλας"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Ενεργοποίηση της επόμενης καρτέλας"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Ενεργοποίηση προηγούμενης καρτέλας"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Μετακίνηση καρτέλας αριστερά"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Μετακίνηση καρτέλας δεξιά"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
@@ -1452,8 +1434,7 @@ msgid "Unknown"
 msgstr "Άγνωστος"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
@@ -1464,36 +1445,31 @@ msgid "Groups && Threading"
 msgstr "Ομάδες και νήματα"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Ομάδες:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Πολιτική ανάπτυξης ομάδων:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Νήματα:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Έναρξη νήματος:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Πολιτική ανάπτυξης νήματος:"
@@ -1505,8 +1481,7 @@ msgid "Advanced"
 msgstr "Για προχωρημένους"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Στρατηγική γεμίσματος προβολής:"
@@ -1518,36 +1493,31 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Προσαρμογή λειτουργιών συγκέντρωσης μηνυμάτων"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Νέα συγκέντρωση"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Αντίγραφο συγκέντρωσης"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Εξαγωγή συγκέντρωσης..."
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Εισαγωγή συγκέντρωσης..."
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Διαγραφή συγκέντρωσης"
@@ -1563,15 +1533,13 @@ msgid "New Aggregation"
 msgstr "Νέα συγκέντρωση"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Εισαγωγή συγκέντρωσης"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Εξαγωγή συγκέντρωσης"
@@ -1589,36 +1557,31 @@ msgid "Customize Themes"
 msgstr "Προσαρμογή θεμάτων"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Νέο θέμα"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Αντίγραφο θέματος"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Εξαγωγή θέματος..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Εισαγωγή θέματος..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Διαγραφή θέματος"
@@ -1655,15 +1618,13 @@ msgid "Delete Theme"
 msgstr "Διαγραφή θέματος"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Εισαγωγή θέματος"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Εξαγωγή θέματος"
@@ -1693,23 +1654,19 @@ msgid "Name:"
 msgstr "Όνομα:"
 
 #: utils/themeeditor.cpp:75
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Η ετικέτα που θα εμφανίζεται στην κεφαλίδα της στήλης."
 
 #: utils/themeeditor.cpp:78
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Με κλικ στην κεφαλίδα ταξινομούνται τα μηνύματα"
 
 #: utils/themeeditor.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
@@ -1717,16 +1674,13 @@ msgstr ""
 "στήλης."
 
 #: utils/themeeditor.cpp:85
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Προκαθορισμένα ορατό"
 
 #: utils/themeeditor.cpp:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
@@ -1734,17 +1688,13 @@ msgstr ""
 "θέμα."
 
 #: utils/themeeditor.cpp:89
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Περιέχει το πεδίο \"Αποστολέας ή παραλήπτης\""
 
 #: utils/themeeditor.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
@@ -1959,15 +1909,13 @@ msgid "Advanced"
 msgstr "Για προχωρημένους"
 
 #: utils/themeeditor.cpp:1435
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Κεφαλίδα:"
 
 #: utils/themeeditor.cpp:1441
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Μέγεθος εικονιδίων:"
@@ -2010,18 +1958,14 @@ msgid "Collapse All Groups"
 msgstr "Σύμπτυξη όλων των ομάδων"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "Ex&pand All Threads"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "Ανά&πτυξη όλων των νημάτων"
+msgstr "Ανάπτυξη όλων των νημάτων"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "View->"
-#| msgid "C&ollapse All Threads"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "Σύμπ&τυξη όλων των νημάτων"
+msgstr "Σύμπτυξη όλων των νημάτων"
 
 #: widget.cpp:419
 #, kde-format

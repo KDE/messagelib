@@ -26,8 +26,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 #, fuzzy
@@ -324,8 +324,7 @@ msgid "Delete Keys"
 msgstr "Διαγραφή"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Αναζήτηση..."
@@ -349,8 +348,7 @@ msgid "Ignore if not signed"
 msgstr "Το μήνυμα δεν θα έχει υπογραφή"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Εξαγωγή..."
@@ -370,8 +368,7 @@ msgid "Add Rule..."
 msgstr "Προσθήκη ομά&δας..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Εισαγωγή..."
@@ -778,10 +775,9 @@ msgid "To:"
 msgstr "Προς:"
 
 #: header/grantleeheaderformatter.cpp:265
-#, fuzzy, kde-format
-#| msgid "&Reply To"
+#, kde-format
 msgid "Reply To:"
-msgstr "&Απάντηση σε"
+msgstr "Απάντηση σε:"
 
 #: header/grantleeheaderformatter.cpp:267
 #, kde-format
@@ -794,16 +790,14 @@ msgid "BCC:"
 msgstr "Κρυφή κοινοποίηση:"
 
 #: header/grantleeheaderformatter.cpp:273
-#, fuzzy, kde-format
-#| msgid "Sender"
+#, kde-format
 msgid "Sender:"
-msgstr "Αποστολέας"
+msgstr "Αποστολέας:"
 
 #: header/grantleeheaderformatter.cpp:275
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent from:"
-msgstr "επαναποστολή από"
+msgstr "επαναποστολή από:"
 
 #: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
@@ -843,10 +837,9 @@ msgid "Attachments:"
 msgstr "Συνημμένα:"
 
 #: header/grantleeheaderformatter.cpp:540
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgid "Security:"
-msgstr "Ασφάλεια"
+msgstr "Ασφάλεια:"
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -976,15 +969,13 @@ msgid "Reply to: "
 msgstr "Απάντηση σε: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Παράβλεψη"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
 msgstr "Αποστολή"
@@ -1134,10 +1125,9 @@ msgid "Add new Url"
 msgstr "Προσθήκη νέας ετικέτας"
 
 #: remote-content/remotecontentmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure"
-msgstr "Ρύθμιση..."
+msgstr "Ρύθμιση"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, fuzzy, kde-format
@@ -1174,8 +1164,7 @@ msgid "Domain:"
 msgstr "&Προκαθορισμένος τομέας:"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Λεπτομέρειες"
@@ -1194,22 +1183,19 @@ msgid "Move to Trash"
 msgstr "Μετακίνηση στα απορρίμματα"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Δεν είναι εξαπάτηση"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Προσθήκη διεύθυνσης στη λευκή λίστα"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Απενεργοποίηση εντοπισμού εξαπάτησης"
@@ -1747,8 +1733,7 @@ msgstr "Ρυθμίσεις προβολέα"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
-#, fuzzy, kde-format
-#| msgid "&Override character encoding:"
+#, kde-format
 msgid "O&verride character encoding:"
 msgstr "&Υπερκάλυψη κωδικοποίησης χαρακτήρων:"
 
@@ -1772,17 +1757,15 @@ msgstr "Εμφάνιση σημείων ανάπτυξης/σύμπτυξης π
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
-#, fuzzy, kde-format
-#| msgid "Automatic collapse level:"
+#, kde-format
 msgid "Automatic collapse &level:"
-msgstr "Επίπεδο αυτόματης σύμπτυξης:"
+msgstr "&Επίπεδο αυτόματης σύμπτυξης:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
-#, fuzzy, kde-format
-#| msgid "Minimum font size:"
+#, kde-format
 msgid "&Minimum font size:"
-msgstr "Ελάχιστο μέγεθος γραμματοσειράς:"
+msgstr "Ελάχιστο μέ&γεθος γραμματοσειράς:"
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
@@ -1792,8 +1775,7 @@ msgstr ""
 "Ένα αρχείο με όνομα %1 υπάρχει ήδη. Επιθυμείτε σίγουρα την αντικατάστασή του;"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Αντικατάσταση του αρχείου;"
@@ -1810,8 +1792,7 @@ msgid "attachment.1"
 msgstr "συνημμένο.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Αποθήκευση συνημμένου"
@@ -1837,15 +1818,13 @@ msgid "KMail Question"
 msgstr "Ερώτηση KMail"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Διατήρηση κρυπτογράφησης"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Να μη διατηρηθεί"
@@ -1860,8 +1839,7 @@ msgstr ""
 "υπογραφής κατά την αποθήκευση;"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Διατήρηση υπογραφής"
@@ -1879,8 +1857,7 @@ msgstr ""
 "<qt>Αδύνατη η εγγραφή του αρχείου <br><filename>%1</filename><br><br>%2"
 
 #: utils/messageviewerutil.cpp:386
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Σφάλμα αποθήκευσης συνημμένου"
@@ -1923,8 +1900,7 @@ msgid "File %1 could not be loaded."
 msgstr "Αδύνατη η φόρτωση του αρχείου %1."
 
 #: utils/messageviewerutil.cpp:508
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Σφάλμα κατά τη φόρτωση του μηνύματος"
@@ -1935,8 +1911,7 @@ msgid "File %1 could not be created."
 msgstr "Αδύνατη η δημιουργία του αρχείου %1."
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
@@ -2147,8 +2122,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Επιθυμείτε πραγματικά την εκτέλεση του <filename>%1</filename>;"
 
 #: viewer/urlhandlermanager.cpp:870
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Εκτέλεση"
@@ -2168,8 +2142,7 @@ msgstr ""
 "αυτό το μήνυμα."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Αφαίρεση συνημμένου"
@@ -2234,10 +2207,9 @@ msgid "Delete Attachment"
 msgstr "Αφαίρεση συνημμένου"
 
 #: viewer/viewer_p.cpp:580
-#, fuzzy, kde-format
-#| msgid "Reply to A&uthor..."
+#, kde-format
 msgid "Reply To Author"
-msgstr "Απάντηση στο &συγγραφέα..."
+msgstr "Απάντηση στο συγγραφέα"
 
 #: viewer/viewer_p.cpp:588
 #, fuzzy, kde-format
@@ -2263,8 +2235,7 @@ msgid "The KDE Mail Client"
 msgstr "Ο πελάτης αλληλογραφίας του KDE"
 
 #: viewer/viewer_p.cpp:1278
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Προβολή συνημμένου: %1"
@@ -2354,8 +2325,7 @@ msgid "Copy Text"
 msgstr "&Αντιγραφή σε"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Επιλογή όλου του κειμένου"
@@ -2376,56 +2346,48 @@ msgid "Show Message Structure"
 msgstr "Εμφάνιση δομής μηνύματος"
 
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Προ&βολή πηγαίου κώδικα"
 
 #: viewer/viewer_p.cpp:1575
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "Αποθήκευ&ση μηνύματος..."
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Αποθήκευ&ση της μορφής εμφάνισης"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Επαναφο&ρά της μορφής εμφάνισης"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Κύλιση μηνύματος πάνω"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Κύλιση μηνύματος κάτω"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Κύλιση μηνύματος πάνω (επιπλέον)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Κύλιση μηνύματος κάτω (επιπλέον)"
@@ -2441,15 +2403,13 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Εναλλαγή της λειτουργίας εμφάνισης μεταξύ HTML και απλού κειμένου"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Φόρτωση εξωτερικών αναφορών"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Εκφώνηση κειμένου"
@@ -2462,8 +2422,7 @@ msgid "Share Text..."
 msgstr "Εκφώνηση κειμένου"
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Αντιγραφή τοποθεσίας εικόνας"
@@ -2527,8 +2486,7 @@ msgid "Copy Email Address"
 msgstr "Αντιγραφή διεύθυνσης Email"
 
 #: viewer/viewer_p.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Μήνυμα ως απλό κείμενο"
@@ -2563,23 +2521,20 @@ msgstr ""
 "ασφάλεια του συστήματός σας."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Άνοιγμα του συνημμένου;"
 
 #: widgets/attachmentdialog.cpp:39
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
+#, kde-format
 msgid "&Open With '%1'"
 msgstr "Ά&νοιγμα με «%1»"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "Άνοιγμα με..."
+msgstr "Άνοι&γμα με..."
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2721,11 +2676,10 @@ msgid "KMail was unable to open the attachment."
 msgstr "Αδυναμία επεξεργασίας συνημμένου"
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "&Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
-msgstr "Επόμε&νο μήνυμα"
+msgstr "Επόμενο μήνυμα"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, fuzzy, kde-format
