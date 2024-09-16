@@ -26,10 +26,10 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, enableElement);
     settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, enableElement);
-    // We need to activate in qt6 otherwise it can't load external url.
+    // Default off, needed to load any external urls, we filter them manual
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
-    // We need to activate it in qt5.15 otherwise we can't load local css file and co
-    // settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
+    // Default on, needed to load our own icons and cid urls. FIXME: Ideally should be off for additional security
+    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, true);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, enableElement);

@@ -7,14 +7,13 @@
 #include "cidreferencesurlinterceptor.h"
 #include "htmlwriter/webengineembedpart.h"
 
-#include <QBuffer>
-#include <QDebug>
-#include <QImage>
 #include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 
+// This class is not needed if we get cidschemehandler working,
+// which could also help us avoid having to giving local file access.
+
 using namespace MessageViewer;
-// #define LOAD_FROM_FILE 1
 CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
@@ -29,21 +28,7 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path()));
             if (!newUrl.isEmpty()) {
-#ifdef LOAD_FROM_FILE
-                QImage image(newUrl.path());
-                QByteArray ba;
-                QBuffer buf(&ba);
-                // Reduce image.
-                image = image.scaled(800, 600);
-                image.save(&buf, "png");
-
-                const QByteArray hexed = ba.toBase64();
-                buf.close();
-                const QUrl r = QUrl(QString::fromUtf8(QByteArray("data:image/png;base64,") + hexed));
-                info.redirect(r);
-#else
                 info.redirect(newUrl);
-#endif
             }
         }
     }
