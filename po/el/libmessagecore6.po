@@ -307,7 +307,7 @@ msgstr ""
 #: settings/messagecore.kcfg:58
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
-msgstr "Αντικατάσταση αναγνωρισμένου προθέματο&ς με «Re:»"
+msgstr "Αντικατάσταση αναγν&ωρισμένου προθέματος με «Re:»"
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
 #: settings/messagecore.kcfg:66

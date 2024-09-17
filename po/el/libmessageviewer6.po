@@ -2068,7 +2068,7 @@ msgstr "Εμφάνιση πιστοποιητικού 0x%1"
 #: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Open in Address Book"
-msgstr "&Άνοιγμα στο βιβλίο διευθύνσεων"
+msgstr "Άνοιγμα στο βιβλίο &διευθύνσεων"
 
 #: viewer/urlhandlermanager.cpp:575
 #, kde-format
@@ -2310,7 +2310,7 @@ msgstr "Εμφάνιση των συνημμένων μόνο στην επικ�
 #: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
-msgstr "Ορισμός κωδικοποίηση&ς"
+msgstr "Ορισμός κ&ωδικοποίησης"
 
 #: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77

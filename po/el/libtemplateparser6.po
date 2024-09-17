@@ -984,7 +984,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr "&Ένδειξη παράθεσης:"
+msgstr "Ένδειξη παρά&θεσης:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316
