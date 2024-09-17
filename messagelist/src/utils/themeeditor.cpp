@@ -12,7 +12,6 @@
 #include "core/modelinvariantrowmapper.h"
 #include "utils/comboboxutils.h"
 #include <KLocalization>
-#include <ki18n_version.h>
 
 #include <Akonadi/MessageStatus>
 
