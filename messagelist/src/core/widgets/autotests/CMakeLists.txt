@@ -18,3 +18,4 @@ add_messagelist_widget_unittest(filternamewidgettest.cpp)
 
 add_messagelist_widget_unittest(searchstatusbuttonstest.cpp)
 add_messagelist_widget_unittest(searchmessagebybuttonstest.cpp)
+add_messagelist_widget_unittest(searchlinecommandtest.cpp)
