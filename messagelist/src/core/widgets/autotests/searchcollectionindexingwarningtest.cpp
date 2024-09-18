@@ -6,7 +6,7 @@
 */
 
 #include "searchcollectionindexingwarningtest.h"
-#include "../src/core/widgets/searchcollectionindexingwarning.h"
+#include "core/widgets/searchcollectionindexingwarning.h"
 #include <QTest>
 
 SearchCollectionIndexingWarningTest::SearchCollectionIndexingWarningTest(QObject *parent)
