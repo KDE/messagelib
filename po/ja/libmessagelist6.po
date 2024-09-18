@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-17 00:40+0000\n"
+"POT-Creation-Date: 2024-09-18 00:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -508,12 +508,12 @@ msgstr "4 週間前"
 msgid "Five Weeks Ago"
 msgstr "5 週間前"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:188
+#: core/model.cpp:550 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "受信者"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "送信者"
@@ -902,7 +902,7 @@ msgstr "日付"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
 msgstr ""
@@ -1625,7 +1625,7 @@ msgstr "名前のないテーマ"
 msgid "New Theme"
 msgstr "新しいテーマ"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "新しいカラム"
@@ -1679,27 +1679,27 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "説明:"
 
-#: utils/themeeditor.cpp:71
+#: utils/themeeditor.cpp:70
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "名前:"
 
-#: utils/themeeditor.cpp:75
+#: utils/themeeditor.cpp:74
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "カラムのヘッダに表示するラベル"
 
-#: utils/themeeditor.cpp:78
+#: utils/themeeditor.cpp:77
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "ヘッダのクリックによるメッセージのソート基準:"
 
-#: utils/themeeditor.cpp:82
+#: utils/themeeditor.cpp:81
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -1707,14 +1707,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "このカラムのヘッダをクリックしたときに適用するソート基準"
 
-#: utils/themeeditor.cpp:85
+#: utils/themeeditor.cpp:84
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "デフォルトで表示する"
 
-#: utils/themeeditor.cpp:86
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -1722,14 +1722,14 @@ msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "テーマを選択したときにこのカラムを表示する場合、これをチェックします。"
 
-#: utils/themeeditor.cpp:89
+#: utils/themeeditor.cpp:88
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "送信/受信フィールドを含む"
 
-#: utils/themeeditor.cpp:91
+#: utils/themeeditor.cpp:90
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -1742,17 +1742,17 @@ msgstr ""
 "フォルダが受信フォルダであるか送信フォルダであるかによってカラムのラベルを変"
 "える必要がある場合、このオプションをチェックします。"
 
-#: utils/themeeditor.cpp:111
+#: utils/themeeditor.cpp:110
 #, kde-format
 msgid "Unnamed Column"
 msgstr "名前のないカラム"
 
-#: utils/themeeditor.cpp:176
+#: utils/themeeditor.cpp:175
 #, kde-format
 msgid "Message Group"
 msgstr "メッセージグループ"
 
-#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
+#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1760,68 +1760,68 @@ msgid ""
 msgstr ""
 "非常に長い件名 非常に長い件名 非常に長い件名 非常に長い件名 非常に長い件名 "
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "サンプルタグ 1"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "サンプルタグ 2"
 
-#: utils/themeeditor.cpp:197
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "サンプルタグ 3"
 
-#: utils/themeeditor.cpp:412
+#: utils/themeeditor.cpp:411
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "表示"
 
-#: utils/themeeditor.cpp:852
+#: utils/themeeditor.cpp:851
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "色を薄く"
 
-#: utils/themeeditor.cpp:859
+#: utils/themeeditor.cpp:858
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:863
+#: utils/themeeditor.cpp:862
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:870
+#: utils/themeeditor.cpp:869
 #, kde-format
 msgid "Font"
 msgstr "フォント"
 
-#: utils/themeeditor.cpp:878
+#: utils/themeeditor.cpp:877
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "標準"
 
-#: utils/themeeditor.cpp:883
+#: utils/themeeditor.cpp:882
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "カスタム..."
 
-#: utils/themeeditor.cpp:891
+#: utils/themeeditor.cpp:890
 #, kde-format
 msgid "Foreground Color"
 msgstr "テキスト色"
 
-#: utils/themeeditor.cpp:900
+#: utils/themeeditor.cpp:899
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1829,7 +1829,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "隠す"
 
-#: utils/themeeditor.cpp:907
+#: utils/themeeditor.cpp:906
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1837,7 +1837,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "空のスペースを残す"
 
-#: utils/themeeditor.cpp:914
+#: utils/themeeditor.cpp:913
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1845,93 +1845,93 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "薄色のアイコンを表示"
 
-#: utils/themeeditor.cpp:922
+#: utils/themeeditor.cpp:921
 #, kde-format
 msgid "When Disabled"
 msgstr "無効時"
 
-#: utils/themeeditor.cpp:928
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "Group Header"
 msgstr "グループヘッダ"
 
-#: utils/themeeditor.cpp:935
+#: utils/themeeditor.cpp:934
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "なし"
 
-#: utils/themeeditor.cpp:940
+#: utils/themeeditor.cpp:939
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "自動"
 
-#: utils/themeeditor.cpp:945
+#: utils/themeeditor.cpp:944
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "カスタム..."
 
-#: utils/themeeditor.cpp:953
+#: utils/themeeditor.cpp:952
 #, kde-format
 msgid "Background Color"
 msgstr "背景色"
 
-#: utils/themeeditor.cpp:973
+#: utils/themeeditor.cpp:972
 #, kde-format
 msgid "Background Style"
 msgstr "背景のスタイル"
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1158
 #, fuzzy, kde-format
 #| msgid "Column Properties"
 msgid "Column Properties..."
 msgstr "カラムのプロパティ"
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1161
 #, kde-format
 msgid "Add Column..."
 msgstr "カラムを追加..."
 
-#: utils/themeeditor.cpp:1165
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Delete Column"
 msgstr "カラムを削除"
 
-#: utils/themeeditor.cpp:1171
+#: utils/themeeditor.cpp:1170
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgid "Move Column to Left"
 msgstr "タブを左へ移動"
 
-#: utils/themeeditor.cpp:1175
+#: utils/themeeditor.cpp:1174
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgid "Move Column to Right"
 msgstr "タブを右へ移動"
 
-#: utils/themeeditor.cpp:1224
+#: utils/themeeditor.cpp:1223
 #, kde-format
 msgid "Add New Column"
 msgstr "新しいカラムを追加"
 
-#: utils/themeeditor.cpp:1248
+#: utils/themeeditor.cpp:1247
 #, kde-format
 msgid "Column Properties"
 msgstr "カラムのプロパティ"
 
-#: utils/themeeditor.cpp:1290
+#: utils/themeeditor.cpp:1289
 #, kde-format
 msgid "Appearance"
 msgstr "外観"
 
-#: utils/themeeditor.cpp:1294
+#: utils/themeeditor.cpp:1293
 #, kde-format
 msgid "Content Items"
 msgstr "テーマの要素"
 
-#: utils/themeeditor.cpp:1421
+#: utils/themeeditor.cpp:1420
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1942,27 +1942,27 @@ msgstr ""
 "身のテーマを作成する場合は、カラムに要素をドラッグ＆ドロップして追加します。"
 "ビューの中の要素を右クリックすると、設定可能なオプションが表示されます。</p>"
 
-#: utils/themeeditor.cpp:1431
+#: utils/themeeditor.cpp:1430
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "詳細"
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1434
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "ヘッダ:"
 
-#: utils/themeeditor.cpp:1441
+#: utils/themeeditor.cpp:1440
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "アイコンサイズ:"
 
-#: utils/themeeditor.cpp:1448
+#: utils/themeeditor.cpp:1447
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"

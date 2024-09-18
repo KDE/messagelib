@@ -1158,10 +1158,7 @@ msgid "Wait answer from \"%1\" send to \"%2\""
 msgstr "Αναμένεται απάντηση από «%1» για αποστολή στο «%2»"
 
 #: followupreminder/followupremindercreatejob.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to store a new reminder: an error occurred while trying to create "
-#| "a new Todo in your calendar: %1"
+#, kde-format
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
@@ -1186,8 +1183,7 @@ msgid "Date:"
 msgstr "Ημερομηνία:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Store ToDo in:"
+#, kde-format
 msgid "Store to-do in:"
 msgstr "Αποθήκευση μελλοντικής εργασίας στο:"
 
@@ -1904,13 +1900,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: recipient/recipientspicker.cpp:173
-#, fuzzy, kde-format
-#| msgid ""
-#| "You selected 1 recipient. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
-#| msgid_plural ""
-#| "You selected %1 recipients. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
+#, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
 "Please adapt the selection."
@@ -1920,10 +1910,12 @@ msgid_plural ""
 "Please adapt the selection."
 msgstr[0] ""
 "Έχετε επιλέξει έναν παραλήπτη. Ο μέγιστος υποστηριζόμενος αριθμός παραληπτών "
-"είναι %2. Παρακαλώ προσαρμόστε την επιλογή. "
+"είναι %2.\n"
+"Παρακαλώ προσαρμόστε την επιλογή. "
 msgstr[1] ""
 "Έχετε επιλέξει %1 παραλήπτες. Ο μέγιστος υποστηριζόμενος αριθμός παραληπτών "
-"είναι %2. Παρακαλώ προσαρμόστε την επιλογή. "
+"είναι %2.\n"
+"Παρακαλώ προσαρμόστε την επιλογή. "
 
 #: recipient/recipientspicker.cpp:190
 #, fuzzy, kde-format

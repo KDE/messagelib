@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-17 00:40+0000\n"
+"POT-Creation-Date: 2024-09-18 00:41+0000\n"
 "PO-Revision-Date: 2024-08-25 02:07+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -492,12 +492,12 @@ msgstr "四週前"
 msgid "Five Weeks Ago"
 msgstr "五週前"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:188
+#: core/model.cpp:550 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "收件者"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "寄件者"
@@ -880,7 +880,7 @@ msgstr "日期"
 msgid "Size"
 msgstr "大小"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
 msgstr "資料夾"
@@ -1563,7 +1563,7 @@ msgstr "未命名主題"
 msgid "New Theme"
 msgstr "新增主題"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "新欄位"
@@ -1614,49 +1614,49 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "描述："
 
-#: utils/themeeditor.cpp:71
+#: utils/themeeditor.cpp:70
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "名稱："
 
-#: utils/themeeditor.cpp:75
+#: utils/themeeditor.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "要顯示在欄位標頭的標籤。"
 
-#: utils/themeeditor.cpp:78
+#: utils/themeeditor.cpp:77
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "點擊標頭來排序信件："
 
-#: utils/themeeditor.cpp:82
+#: utils/themeeditor.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "點擊此欄位標頭會切換哪些排序順序。"
 
-#: utils/themeeditor.cpp:85
+#: utils/themeeditor.cpp:84
 #, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "預設可見"
 
-#: utils/themeeditor.cpp:86
+#: utils/themeeditor.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "若此欄位預設要可見，則勾選此選項。"
 
-#: utils/themeeditor.cpp:89
+#: utils/themeeditor.cpp:88
 #, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "包含「寄件者或接收者」欄位"
 
-#: utils/themeeditor.cpp:91
+#: utils/themeeditor.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1664,17 +1664,17 @@ msgid ""
 "\"inbound\"/\"outbound\" type."
 msgstr "若此欄位的標籤要依收信或發信的型態來決定要顯示什麼，則勾選此選項。"
 
-#: utils/themeeditor.cpp:111
+#: utils/themeeditor.cpp:110
 #, kde-format
 msgid "Unnamed Column"
 msgstr "未命名欄位"
 
-#: utils/themeeditor.cpp:176
+#: utils/themeeditor.cpp:175
 #, kde-format
 msgid "Message Group"
 msgstr "信件群組"
 
-#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
+#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1683,68 +1683,68 @@ msgstr ""
 "很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的主"
 "旨"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "範例標籤 1"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "範例標籤 2"
 
-#: utils/themeeditor.cpp:197
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "範例標籤 3"
 
-#: utils/themeeditor.cpp:412
+#: utils/themeeditor.cpp:411
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "可見"
 
-#: utils/themeeditor.cpp:852
+#: utils/themeeditor.cpp:851
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "柔和"
 
-#: utils/themeeditor.cpp:859
+#: utils/themeeditor.cpp:858
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "粗體"
 
-#: utils/themeeditor.cpp:863
+#: utils/themeeditor.cpp:862
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "斜體"
 
-#: utils/themeeditor.cpp:870
+#: utils/themeeditor.cpp:869
 #, kde-format
 msgid "Font"
 msgstr "字型"
 
-#: utils/themeeditor.cpp:878
+#: utils/themeeditor.cpp:877
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "預設"
 
-#: utils/themeeditor.cpp:883
+#: utils/themeeditor.cpp:882
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "自訂..."
 
-#: utils/themeeditor.cpp:891
+#: utils/themeeditor.cpp:890
 #, kde-format
 msgid "Foreground Color"
 msgstr "前景顏色"
 
-#: utils/themeeditor.cpp:900
+#: utils/themeeditor.cpp:899
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1752,7 +1752,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "隱藏"
 
-#: utils/themeeditor.cpp:907
+#: utils/themeeditor.cpp:906
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1760,7 +1760,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "保持空白空間"
 
-#: utils/themeeditor.cpp:914
+#: utils/themeeditor.cpp:913
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1768,90 +1768,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "保持柔和圖示"
 
-#: utils/themeeditor.cpp:922
+#: utils/themeeditor.cpp:921
 #, kde-format
 msgid "When Disabled"
 msgstr "關閉時"
 
-#: utils/themeeditor.cpp:928
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "Group Header"
 msgstr "群組標頭"
 
-#: utils/themeeditor.cpp:935
+#: utils/themeeditor.cpp:934
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "無"
 
-#: utils/themeeditor.cpp:940
+#: utils/themeeditor.cpp:939
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "自動"
 
-#: utils/themeeditor.cpp:945
+#: utils/themeeditor.cpp:944
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "自訂..."
 
-#: utils/themeeditor.cpp:953
+#: utils/themeeditor.cpp:952
 #, kde-format
 msgid "Background Color"
 msgstr "背景顏色"
 
-#: utils/themeeditor.cpp:973
+#: utils/themeeditor.cpp:972
 #, kde-format
 msgid "Background Style"
 msgstr "背景樣式"
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1158
 #, kde-format
 msgid "Column Properties..."
 msgstr "欄位屬性..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1161
 #, kde-format
 msgid "Add Column..."
 msgstr "新增欄位..."
 
-#: utils/themeeditor.cpp:1165
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Delete Column"
 msgstr "刪除欄位"
 
-#: utils/themeeditor.cpp:1171
+#: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Move Column to Left"
 msgstr "將欄位左移"
 
-#: utils/themeeditor.cpp:1175
+#: utils/themeeditor.cpp:1174
 #, kde-format
 msgid "Move Column to Right"
 msgstr "將欄位右移"
 
-#: utils/themeeditor.cpp:1224
+#: utils/themeeditor.cpp:1223
 #, kde-format
 msgid "Add New Column"
 msgstr "新增欄位"
 
-#: utils/themeeditor.cpp:1248
+#: utils/themeeditor.cpp:1247
 #, kde-format
 msgid "Column Properties"
 msgstr "欄位屬性"
 
-#: utils/themeeditor.cpp:1290
+#: utils/themeeditor.cpp:1289
 #, kde-format
 msgid "Appearance"
 msgstr "外觀"
 
-#: utils/themeeditor.cpp:1294
+#: utils/themeeditor.cpp:1293
 #, kde-format
 msgid "Content Items"
 msgstr "內容項目"
 
-#: utils/themeeditor.cpp:1421
+#: utils/themeeditor.cpp:1420
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1861,25 +1861,25 @@ msgstr ""
 "在標頭上點擊右鍵可以新增或變更欄位。將內容項目拖放到欄位可以組合您自己的主"
 "題。在檢視中的項目上點擊右鍵可以看到更多選項。"
 
-#: utils/themeeditor.cpp:1431
+#: utils/themeeditor.cpp:1430
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "進階"
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1434
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "標頭："
 
-#: utils/themeeditor.cpp:1441
+#: utils/themeeditor.cpp:1440
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "圖示大小："
 
-#: utils/themeeditor.cpp:1448
+#: utils/themeeditor.cpp:1447
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"

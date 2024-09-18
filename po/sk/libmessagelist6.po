@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-17 00:40+0000\n"
+"POT-Creation-Date: 2024-09-18 00:41+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -495,12 +495,12 @@ msgstr "Pred štyrmi týždňami"
 msgid "Five Weeks Ago"
 msgstr "Pred piatimi týždňami"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:188
+#: core/model.cpp:550 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "Príjemca"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "Odosielateľ"
@@ -893,7 +893,7 @@ msgstr "Dátum"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:190
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
 msgstr "Priečinok"
@@ -1629,7 +1629,7 @@ msgstr "Nepomenovaná téma"
 msgid "New Theme"
 msgstr "Nová téma"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1218
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "Nový stĺpec"
@@ -1682,27 +1682,27 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "Popis:"
 
-#: utils/themeeditor.cpp:71
+#: utils/themeeditor.cpp:70
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "Názov:"
 
-#: utils/themeeditor.cpp:75
+#: utils/themeeditor.cpp:74
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Popis, ktorý sa zobrazí v hlavičke stĺpca."
 
-#: utils/themeeditor.cpp:78
+#: utils/themeeditor.cpp:77
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Kliknutie na hlavičku triedi správy:"
 
-#: utils/themeeditor.cpp:82
+#: utils/themeeditor.cpp:81
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -1710,14 +1710,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Poradie triedenia pri kliknutí na hlavičku stĺpca sa prepne do."
 
-#: utils/themeeditor.cpp:85
+#: utils/themeeditor.cpp:84
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Štandardne viditeľné"
 
-#: utils/themeeditor.cpp:86
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -1726,14 +1726,14 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 "Toto zaškrtnúť, ak by mal byť tento stĺpec viditeľný, keď je zvolená téma."
 
-#: utils/themeeditor.cpp:89
+#: utils/themeeditor.cpp:88
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Obsahuje pole \"Odosielateľ alebo prijímateľ\""
 
-#: utils/themeeditor.cpp:91
+#: utils/themeeditor.cpp:90
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -1746,17 +1746,17 @@ msgstr ""
 "Toto zaškrtnúť, ak by mal byť tento popis stĺpca aktualizovaný v závislosti "
 "od toho, či je typ priečinka \"prichádzajúci\"/\"odchádzajúci\"."
 
-#: utils/themeeditor.cpp:111
+#: utils/themeeditor.cpp:110
 #, kde-format
 msgid "Unnamed Column"
 msgstr "Nepomenovaný stĺpec"
 
-#: utils/themeeditor.cpp:176
+#: utils/themeeditor.cpp:175
 #, kde-format
 msgid "Message Group"
 msgstr "Skupina správ"
 
-#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
+#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -1765,68 +1765,68 @@ msgstr ""
 "Veľmi dlhý predmet veľmi dlhý predmet veľmi dlhý predmet veľmi dlhý predmet "
 "veľmi dlhý predmet"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:194
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "Vzorová značka 1"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "Vzorová značka 2"
 
-#: utils/themeeditor.cpp:197
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "Vzorová značka 3"
 
-#: utils/themeeditor.cpp:412
+#: utils/themeeditor.cpp:411
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Viditeľné"
 
-#: utils/themeeditor.cpp:852
+#: utils/themeeditor.cpp:851
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Zjemniť"
 
-#: utils/themeeditor.cpp:859
+#: utils/themeeditor.cpp:858
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Tučné"
 
-#: utils/themeeditor.cpp:863
+#: utils/themeeditor.cpp:862
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Kurzíva"
 
-#: utils/themeeditor.cpp:870
+#: utils/themeeditor.cpp:869
 #, kde-format
 msgid "Font"
 msgstr "Písmo"
 
-#: utils/themeeditor.cpp:878
+#: utils/themeeditor.cpp:877
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Predvolené"
 
-#: utils/themeeditor.cpp:883
+#: utils/themeeditor.cpp:882
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Vlastné..."
 
-#: utils/themeeditor.cpp:891
+#: utils/themeeditor.cpp:890
 #, kde-format
 msgid "Foreground Color"
 msgstr "Farba popredia"
 
-#: utils/themeeditor.cpp:900
+#: utils/themeeditor.cpp:899
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -1834,7 +1834,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Skryť"
 
-#: utils/themeeditor.cpp:907
+#: utils/themeeditor.cpp:906
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -1842,7 +1842,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Ponechať prázdne miesto"
 
-#: utils/themeeditor.cpp:914
+#: utils/themeeditor.cpp:913
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -1850,90 +1850,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Ponechať rozmazanú ikonu"
 
-#: utils/themeeditor.cpp:922
+#: utils/themeeditor.cpp:921
 #, kde-format
 msgid "When Disabled"
 msgstr "Keď je zakázané"
 
-#: utils/themeeditor.cpp:928
+#: utils/themeeditor.cpp:927
 #, kde-format
 msgid "Group Header"
 msgstr "Hlavička skupiny"
 
-#: utils/themeeditor.cpp:935
+#: utils/themeeditor.cpp:934
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Žiadne"
 
-#: utils/themeeditor.cpp:940
+#: utils/themeeditor.cpp:939
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Automaticky"
 
-#: utils/themeeditor.cpp:945
+#: utils/themeeditor.cpp:944
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Vlastné..."
 
-#: utils/themeeditor.cpp:953
+#: utils/themeeditor.cpp:952
 #, kde-format
 msgid "Background Color"
 msgstr "Farba pozadia"
 
-#: utils/themeeditor.cpp:973
+#: utils/themeeditor.cpp:972
 #, kde-format
 msgid "Background Style"
 msgstr "Štýl pozadia"
 
-#: utils/themeeditor.cpp:1159
+#: utils/themeeditor.cpp:1158
 #, kde-format
 msgid "Column Properties..."
 msgstr "Vlastnosti stĺpca..."
 
-#: utils/themeeditor.cpp:1162
+#: utils/themeeditor.cpp:1161
 #, kde-format
 msgid "Add Column..."
 msgstr "Pridať stĺpec..."
 
-#: utils/themeeditor.cpp:1165
+#: utils/themeeditor.cpp:1164
 #, kde-format
 msgid "Delete Column"
 msgstr "Odstrániť stĺpec"
 
-#: utils/themeeditor.cpp:1171
+#: utils/themeeditor.cpp:1170
 #, kde-format
 msgid "Move Column to Left"
 msgstr "Presunúť stĺpec vľavo"
 
-#: utils/themeeditor.cpp:1175
+#: utils/themeeditor.cpp:1174
 #, kde-format
 msgid "Move Column to Right"
 msgstr "Presunúť stĺpec vpravo"
 
-#: utils/themeeditor.cpp:1224
+#: utils/themeeditor.cpp:1223
 #, kde-format
 msgid "Add New Column"
 msgstr "Pridať nový stĺpec"
 
-#: utils/themeeditor.cpp:1248
+#: utils/themeeditor.cpp:1247
 #, kde-format
 msgid "Column Properties"
 msgstr "Vlastnosti stĺpca"
 
-#: utils/themeeditor.cpp:1290
+#: utils/themeeditor.cpp:1289
 #, kde-format
 msgid "Appearance"
 msgstr "Vzhľad"
 
-#: utils/themeeditor.cpp:1294
+#: utils/themeeditor.cpp:1293
 #, kde-format
 msgid "Content Items"
 msgstr "Položky obsahu"
 
-#: utils/themeeditor.cpp:1421
+#: utils/themeeditor.cpp:1420
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -1945,27 +1945,27 @@ msgstr ""
 "témy. Pre viac možností kliknite pravým tlačidlom myši na položky vo vnútri "
 "zobrazenia."
 
-#: utils/themeeditor.cpp:1431
+#: utils/themeeditor.cpp:1430
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: utils/themeeditor.cpp:1435
+#: utils/themeeditor.cpp:1434
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Hlavička:"
 
-#: utils/themeeditor.cpp:1441
+#: utils/themeeditor.cpp:1440
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Veľkosť ikon:"
 
-#: utils/themeeditor.cpp:1448
+#: utils/themeeditor.cpp:1447
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"

@@ -178,12 +178,6 @@ msgid "End of encrypted message"
 msgstr "Τέλος κρυπτογραφημένου μηνύματος"
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:6
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
-#| "HTML code is shown. If you trust the sender of this message then you can "
-#| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
-#| "\">by clicking here</a>."
 msgid ""
 "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
 "HTML code is shown. If you trust the sender of this message then you can "
@@ -193,16 +187,9 @@ msgstr ""
 "<b>Σημείωση:</b> Αυτό είναι ένα μήνυμα HTML. Για λόγους ασφαλείας "
 "εμφανίζεται μόνο ο πηγαίος κώδικας HTML. Αν εμπιστεύεστε τον αποστολέα αυτού "
 "του μηνύματος μπορείτε να ενεργοποιήσετε την προβολή μορφοποιημένης HTML γι' "
-"αυτό το μήνυμα <a href=\"kmail:showHTML\"> κάνοντας κλικ εδώ</a>."
+"αυτό το μήνυμα <a href='kmail:showHTML'> κάνοντας κλικ εδώ</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
-#, fuzzy
-#| msgid ""
-#| "<b>Note:</b> This HTML message may contain external references to images "
-#| "etc. For security/privacy reasons external references are not loaded. If "
-#| "you trust the sender of this message then you can load the external "
-#| "references for this message <a href=\"kmail:loadExternal\">by clicking "
-#| "here</a>."
 msgid ""
 "<b>Note:</b> This HTML message may contain external references to images "
 "etc. For security/privacy reasons external references are not loaded. If you "
@@ -212,7 +199,7 @@ msgstr ""
 "<b>Σημείωση:</b> Αυτό το μήνυμα HTML μπορεί να περιέχει εξωτερικές αναφορές "
 "σε εικόνες κλπ. Για λόγους ασφαλείας οι εξωτερικές αναφορές δε φορτώνονται. "
 "Αν εμπιστεύεστε τον αποστολέα αυτού του μηνύματος μπορείτε να τις φορτώσετε, "
-"γι' αυτό το μήνυμα, <a href=\"kmail:loadExternal\"> κάνοντας κλικ εδώ</a>."
+"γι' αυτό το μήνυμα, <a href='kmail:loadExternal'> κάνοντας κλικ εδώ</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
@@ -2212,9 +2199,7 @@ msgid "Reply To Author"
 msgstr "Απάντηση στο συγγραφέα"
 
 #: viewer/viewer_p.cpp:588
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Reply to All"
+#, kde-format
 msgid "Reply To All"
 msgstr "Απάντηση σε όλους"
 
