@@ -14,6 +14,11 @@ SearchLineCommandTest::SearchLineCommandTest(QObject *parent)
 {
 }
 
+void SearchLineCommandTest::initTestCase()
+{
+    qRegisterMetaType<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>();
+}
+
 void SearchLineCommandTest::shouldHaveDefaultValues()
 {
     MessageList::Core::SearchLineCommand command;
@@ -28,8 +33,22 @@ void SearchLineCommandTest::shouldHaveDefaultValues()
 void SearchLineCommandTest::shouldParseInfo_data()
 {
     QTest::addColumn<QString>("line");
-    QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("info");
+    QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("infos");
     QTest::addColumn<int>("numberElement");
+    {
+        QString str;
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        QTest::newRow("empty") << str << lstInfo << 0;
+    }
+    {
+        const QString str{QStringLiteral("subject:foo")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+        info.argument = QStringLiteral("foo");
+        lstInfo.append(info);
+        QTest::newRow("test1") << str << lstInfo << 1;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
