@@ -24,3 +24,21 @@ void SearchLineCommandTest::shouldHaveDefaultValues()
     QVERIFY(info.argument.isEmpty());
     QCOMPARE(info.type, MessageList::Core::SearchLineCommand::SearchLineType::Unknown);
 }
+
+void SearchLineCommandTest::shouldParseInfo_data()
+{
+    QTest::addColumn<QString>("line");
+    QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("info");
+    QTest::addColumn<bool>("valid");
+    QTest::addColumn<bool>("hasUnreadBanner");
+}
+
+void SearchLineCommandTest::shouldParseInfo()
+{
+    QFETCH(QString, line);
+    QFETCH(QList<MessageList::Core::SearchLineCommand::SearchLineInfo>, infos);
+    QFETCH(bool, valid);
+    MessageList::Core::SearchLineCommand command;
+    command.parseSearchLineCommand(line);
+    QCOMPARE(command.searchLineInfo(), infos);
+}

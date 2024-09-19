@@ -31,6 +31,7 @@ public:
         SearchLineType type = SearchLineType::Unknown;
         QString argument;
         [[nodiscard]] bool isValid() const;
+        [[nodiscard]] bool operator==(const SearchLineInfo &other) const;
     };
     SearchLineCommand();
     ~SearchLineCommand();

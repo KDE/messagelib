@@ -75,3 +75,8 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
     // TODO
     return true;
 }
+
+bool SearchLineCommand::SearchLineInfo::operator==(const SearchLineInfo &other) const
+{
+    return type == other.type && argument == other.argument;
+}
