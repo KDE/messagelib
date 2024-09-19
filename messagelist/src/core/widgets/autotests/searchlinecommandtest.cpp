@@ -17,5 +17,10 @@ SearchLineCommandTest::SearchLineCommandTest(QObject *parent)
 void SearchLineCommandTest::shouldHaveDefaultValues()
 {
     MessageList::Core::SearchLineCommand command;
-    // TODO
+    QVERIFY(command.searchLineInfo().isEmpty());
+
+    MessageList::Core::SearchLineCommand::SearchLineInfo info;
+    QVERIFY(!info.isValid());
+    QVERIFY(info.argument.isEmpty());
+    QCOMPARE(info.type, MessageList::Core::SearchLineCommand::SearchLineType::Unknown);
 }

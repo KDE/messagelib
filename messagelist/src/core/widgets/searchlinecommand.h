@@ -18,6 +18,7 @@ class MESSAGELIST_TESTS_EXPORT SearchLineCommand
 public:
     enum SearchLineType {
         Unknown = 0,
+        Literal,
         To,
         Bcc,
         From,
@@ -33,11 +34,16 @@ public:
     };
     SearchLineCommand();
     ~SearchLineCommand();
+
     void parseSearchLineCommand(const QString &str);
     [[nodiscard]] QString dump() const;
 
+    [[nodiscard]] QList<SearchLineInfo> searchLineInfo() const;
+    void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
+
 private:
     static QStringList mKeyList;
+    QList<SearchLineInfo> mSearchLineInfo;
 };
 }
 }

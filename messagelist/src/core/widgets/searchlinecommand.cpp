@@ -57,8 +57,21 @@ QString SearchLineCommand::dump() const
     return {};
 }
 
+QList<SearchLineCommand::SearchLineInfo> SearchLineCommand::searchLineInfo() const
+{
+    return mSearchLineInfo;
+}
+
+void SearchLineCommand::setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo)
+{
+    mSearchLineInfo = newSearchLineInfo;
+}
+
 bool SearchLineCommand::SearchLineInfo::isValid() const
 {
+    if (type == SearchLineType::Unknown) {
+        return false;
+    }
     // TODO
     return true;
 }
