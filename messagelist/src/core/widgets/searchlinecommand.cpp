@@ -47,6 +47,12 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 searchLineInfo.clear();
                 tmp.clear();
             }
+        } else if (ch == QLatin1Char('"')) {
+            // TODO
+        } else if (ch == QLatin1Char('(')) {
+            // TODO
+        } else if (ch == QLatin1Char(')')) {
+            // TODO
         } else { // Compare with keys
             if (mKeyList.contains(tmp)) {
                 searchLineInfo.type = mKeyList.value(tmp);
