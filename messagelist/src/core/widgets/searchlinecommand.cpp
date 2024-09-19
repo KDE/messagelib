@@ -39,12 +39,24 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         if (ch != QLatin1Char(':')) {
             tmp += ch;
         } else if (ch.isSpace()) {
-            // TODO
+            if (searchLineInfo.type != Unknown) {
+                searchLineInfo.argument = tmp;
+            }
+            if (searchLineInfo.isValid()) {
+                mSearchLineInfo.append(std::move(searchLineInfo));
+                searchLineInfo.clear();
+                tmp.clear();
+            }
         } else { // Compare with keys
             if (mKeyList.contains(tmp)) {
-                // TODO
+                searchLineInfo.type = mKeyList.value(tmp);
+                tmp.clear();
             }
-            // TODO
+        }
+    }
+    if (searchLineInfo.type != Unknown) {
+        if (!tmp.isEmpty()) {
+            searchLineInfo.argument = tmp;
         }
     }
     if (searchLineInfo.isValid()) {
@@ -74,6 +86,12 @@ void SearchLineCommand::setSearchLineInfo(const QList<SearchLineInfo> &newSearch
     mSearchLineInfo = newSearchLineInfo;
 }
 
+void SearchLineCommand::SearchLineInfo::clear()
+{
+    type = SearchLineCommand::SearchLineType::Unknown;
+    argument.clear();
+}
+
 bool SearchLineCommand::SearchLineInfo::isValid() const
 {
     if (type == SearchLineType::Unknown) {
@@ -86,4 +104,11 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
 bool SearchLineCommand::SearchLineInfo::operator==(const SearchLineInfo &other) const
 {
     return type == other.type && argument == other.argument;
+}
+
+QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLineInfo &info)
+{
+    d << " type " << info.type;
+    d << " argument " << info.argument;
+    return d;
 }

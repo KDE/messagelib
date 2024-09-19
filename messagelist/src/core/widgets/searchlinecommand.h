@@ -6,6 +6,7 @@
 
 #pragma once
 #include "messagelist_private_export.h"
+#include <QDebug>
 #include <QMap>
 #include <QObject>
 #include <QStringList>
@@ -32,6 +33,7 @@ public:
     struct SearchLineInfo {
         SearchLineType type = SearchLineType::Unknown;
         QString argument;
+        void clear();
         [[nodiscard]] bool isValid() const;
         [[nodiscard]] bool operator==(const SearchLineInfo &other) const;
     };
@@ -52,3 +54,4 @@ private:
 }
 }
 Q_DECLARE_TYPEINFO(MessageList::Core::SearchLineCommand::SearchLineInfo, Q_RELOCATABLE_TYPE);
+MESSAGELIST_TESTS_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand::SearchLineInfo &info);
