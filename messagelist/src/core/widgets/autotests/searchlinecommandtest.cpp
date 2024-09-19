@@ -29,16 +29,16 @@ void SearchLineCommandTest::shouldParseInfo_data()
 {
     QTest::addColumn<QString>("line");
     QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("info");
-    QTest::addColumn<bool>("valid");
-    QTest::addColumn<bool>("hasUnreadBanner");
+    QTest::addColumn<int>("numberElement");
 }
 
 void SearchLineCommandTest::shouldParseInfo()
 {
     QFETCH(QString, line);
     QFETCH(QList<MessageList::Core::SearchLineCommand::SearchLineInfo>, infos);
-    QFETCH(bool, valid);
+    QFETCH(int, numberElement);
     MessageList::Core::SearchLineCommand command;
     command.parseSearchLineCommand(line);
+    QCOMPARE(command.searchLineInfo().count(), numberElement);
     QCOMPARE(command.searchLineInfo(), infos);
 }

@@ -23,9 +23,11 @@ SearchLineCommand::~SearchLineCommand() = default;
 
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
+    mSearchLineInfo.clear();
     if (str.isEmpty()) {
         return;
     }
+    SearchLineInfo searchLineInfo;
     QString tmp;
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
@@ -42,6 +44,9 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             }
             // TODO
         }
+    }
+    if (searchLineInfo.isValid()) {
+        mSearchLineInfo.append(std::move(searchLineInfo));
     }
     // TODO parse subject:<foo> to:<foo> cc:<foo> bcc:<foo> from:<foo>
     // TODO add date ?
