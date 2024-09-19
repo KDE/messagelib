@@ -6,6 +6,7 @@
 
 #pragma once
 #include "messagelist_private_export.h"
+#include <QMap>
 #include <QObject>
 #include <QStringList>
 namespace MessageList
@@ -21,6 +22,7 @@ public:
         Literal,
         To,
         Bcc,
+        Cc,
         From,
         Subject,
         Date,
@@ -43,7 +45,8 @@ public:
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
 private:
-    static QStringList mKeyList;
+    [[nodiscard]] SearchLineCommand::SearchLineType convertStringToSearchLineType(const QString &str) const;
+    static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };
 }

@@ -7,12 +7,12 @@
 #include "searchlinecommand.h"
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
-QStringList SearchLineCommand::mKeyList = {
-    "subject"_L1,
-    "to"_L1,
-    "cc"_L1,
-    "bcc"_L1,
-    "from"_L1,
+QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
+    {"subject"_L1, SearchLineCommand::SearchLineType::Subject},
+    {"to"_L1, SearchLineCommand::SearchLineType::To},
+    {"cc"_L1, SearchLineCommand::SearchLineType::Cc},
+    {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
+    {"from"_L1, SearchLineCommand::SearchLineType::From}
     // TODO add more
 };
 SearchLineCommand::SearchLineCommand()
@@ -20,6 +20,11 @@ SearchLineCommand::SearchLineCommand()
 }
 
 SearchLineCommand::~SearchLineCommand() = default;
+
+SearchLineCommand::SearchLineType SearchLineCommand::convertStringToSearchLineType(const QString &str) const
+{
+    return {};
+}
 
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
@@ -36,11 +41,8 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         } else if (ch.isSpace()) {
             // TODO
         } else { // Compare with keys
-            for (const auto &key : std::as_const(mKeyList)) {
-                if (tmp == key) {
-                    // TODO
-                    break;
-                }
+            if (mKeyList.contains(tmp)) {
+                // TODO
             }
             // TODO
         }
