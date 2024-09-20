@@ -12,12 +12,14 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"to"_L1, SearchLineCommand::SearchLineType::To},
     {"cc"_L1, SearchLineCommand::SearchLineType::Cc},
     {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
-    {"from"_L1, SearchLineCommand::SearchLineType::From}
+    {"from"_L1, SearchLineCommand::SearchLineType::From},
+    {"has:attachment"_L1, SearchLineCommand::SearchLineType::HasAttachment},
+    {"is:unread"_L1, SearchLineCommand::SearchLineType::IsUnRead},
+    {"is:read"_L1, SearchLineCommand::SearchLineType::IsRead},
+    {"is:important"_L1, SearchLineCommand::SearchLineType::IsImportant},
     // TODO add more
 };
-SearchLineCommand::SearchLineCommand()
-{
-}
+SearchLineCommand::SearchLineCommand() = default;
 
 SearchLineCommand::~SearchLineCommand() = default;
 
@@ -41,8 +43,18 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 // qDebug() << " contains " << tmp;
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
+            } else if (tmp == QLatin1StringView("is") || tmp == QLatin1StringView("has")) {
+                searchLineInfo.type = HasStateOrAttachment;
+                tmp += ch;
+                // continue
             }
         } else if (ch.isSpace()) {
+            // We can use is:... or has:...
+            if (mKeyList.contains(tmp)) {
+                searchLineInfo.type = mKeyList.value(tmp);
+                tmp.clear();
+            }
+
             // qDebug() << " is space ";
             if (searchLineInfo.type != Unknown) {
                 searchLineInfo.argument = tmp;
@@ -65,16 +77,20 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         }
     }
     if (searchLineInfo.type != Unknown) {
-        if (!tmp.isEmpty()) {
-            searchLineInfo.argument = tmp;
-            mSearchLineInfo.append(std::move(searchLineInfo));
+        if (searchLineInfo.type == HasStateOrAttachment) {
+            if (mKeyList.contains(tmp)) {
+                searchLineInfo.type = mKeyList.value(tmp);
+                mSearchLineInfo.append(std::move(searchLineInfo));
+            }
+        } else {
+            if (!tmp.isEmpty()) {
+                searchLineInfo.argument = tmp;
+                mSearchLineInfo.append(std::move(searchLineInfo));
+            }
         }
     }
-    // TODO parse subject:<foo> to:<foo> cc:<foo> bcc:<foo> from:<foo>
     // TODO add date ?
-    // TODO add has:attachment ?
     // TODO add size: ?
-    // TODO add is:important is:starred is:unread is:read
     // TODO
 }
 
@@ -120,3 +136,5 @@ QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLi
     d << " argument " << info.argument;
     return d;
 }
+
+#include "moc_searchlinecommand.cpp"

@@ -20,6 +20,7 @@ class MESSAGELIST_TESTS_EXPORT SearchLineCommand
 public:
     enum SearchLineType {
         Unknown = 0,
+        HasStateOrAttachment,
         Literal,
         To,
         Bcc,
@@ -28,6 +29,10 @@ public:
         Subject,
         Date,
         Size,
+        HasAttachment,
+        IsImportant,
+        IsRead,
+        IsUnRead,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {

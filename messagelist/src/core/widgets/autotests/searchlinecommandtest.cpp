@@ -49,6 +49,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
         lstInfo.append(info);
         QTest::newRow("test1") << str << lstInfo << 1;
     }
+
     {
         const QString str{QStringLiteral("subject:foo from:bli")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -66,6 +67,15 @@ void SearchLineCommandTest::shouldParseInfo_data()
         }
         QTest::newRow("test2") << str << lstInfo << 2;
     }
+
+    {
+        const QString str{QStringLiteral("is:important")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::SearchLineType::IsImportant;
+        lstInfo.append(info);
+        QTest::newRow("test is important") << str << lstInfo << 1;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
@@ -78,3 +88,5 @@ void SearchLineCommandTest::shouldParseInfo()
     QCOMPARE(command.searchLineInfo().count(), numberElement);
     QCOMPARE(command.searchLineInfo(), infos);
 }
+
+#include "moc_searchlinecommandtest.cpp"
