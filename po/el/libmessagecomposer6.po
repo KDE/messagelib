@@ -4,26 +4,27 @@
 # Dimitrios Glentadakis <dglent@gmail.com>, 2011, 2012.
 # Petros Vidalis <pvidalis@gmail.com>, 2011.
 # Stelios <sstavra@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2013-01-17 21:45+0200\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 17:22+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "Αποτυχία sυμπίεσης του συνημμένου"
+msgstr "Αποτυχία συμπίεσης του συνημμένου"
 
 #: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
@@ -436,7 +437,7 @@ msgid ""
 "you want to delete your markup?</p></qt>"
 msgstr ""
 "<qt><p>Η εμβόλιμη υπογραφή/κρυπτογράφηση ενός HTML μηνύματος δεν είναι "
-"δυνατή.</p><p>Επιθυμείτε τη διαγραφή της σημείωσής σας;</p></qt>"
+"δυνατή.</p><p>Επιθυμείτε τη διαγραφή της σημείωσης σας;</p></qt>"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
@@ -622,7 +623,7 @@ msgstr "Θα υπογράψετε το μήνυμα;"
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
-msgstr "Υ$πογραφή"
+msgstr "Υ&πογραφή"
 
 #: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
 #, kde-format
@@ -1164,7 +1165,7 @@ msgid ""
 "new to-do in your calendar: %1"
 msgstr ""
 "Αποτυχία αποθήκευσης νέας υπενθύμισης: παρουσιάστηκε σφάλμα στην προσπάθεια "
-"δημιουργίας μιας νέας μελλοντικής εργασίας στο ημερολόγιά σας: %1"
+"δημιουργίας μιας νέας μελλοντικής εργασίας στο ημερολόγια σας: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
@@ -1190,7 +1191,7 @@ msgstr "Αποθήκευση μελλοντικής εργασίας στο:"
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr "Η επιλεγμένη ημερομηνία πρέπει να είναι μεγαλύτερη απί την τρέχουσα."
+msgstr "Η επιλεγμένη ημερομηνία πρέπει να είναι μεγαλύτερη από την τρέχουσα."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -1875,7 +1876,7 @@ msgstr "Αναζήτηση στην υπηρεσία καταλόγου"
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
-msgstr "Προσθήκη ως πα&ραπλήπτες"
+msgstr "Προσθήκη ως παραλήπτες"
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
@@ -1968,7 +1969,7 @@ msgstr "Έτη"
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr "Ο πράκτοας της μεταγενέστερης αποστολής δεν εκτελείται."
+msgstr "Ο πράκτορας της μεταγενέστερης αποστολής δεν εκτελείται."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
@@ -2218,7 +2219,7 @@ msgstr "Κοιν. πεδίο διεύθυνσης"
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr "Κοιν. πρδίο επώνυμο"
+msgstr "Κοιν. πεδίο επώνυμο"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
@@ -2228,7 +2229,7 @@ msgstr "Κοιν. πεδίο όνομα"
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr "Κοιν. πρδίο όνομα"
+msgstr "Κοιν. πεδίο όνομα"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
@@ -2238,7 +2239,7 @@ msgstr "Κρυφή κοιν."
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr "Ρυφή κοιν. πεδίο διεύθυνσης"
+msgstr "Κρυφό κοιν. πεδίο διεύθυνσης"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
@@ -2377,7 +2378,7 @@ msgstr "Ημέρα της εβδομάδας όνομα σύντομο (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:163
 #, kde-format
 msgid "Day Of Week Name Long (%1)"
-msgstr "Ημέρα της εβδομάδας όνομα πλήρε (%1)"
+msgstr "Ημέρα της εβδομάδας πλήρες όνομα (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format

@@ -13,20 +13,21 @@
 # Giorgos Katsikatsos <giorgos.katsikatsos@gmail.com>, 2010.
 # Dimitrios Glentadakis <dglent@gmail.com>, 2011, 2012, 2014.
 # Stelios <sstavra@gmail.com>, 2012, 2021.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-18 00:41+0000\n"
-"PO-Revision-Date: 2021-07-12 10:21+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 17:23+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -588,7 +589,7 @@ msgstr "Κατά ημερομηνία/ώρα"
 #: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
-msgstr "Κατά ημερομηνία/ώρα του πιο πρόσφατου στο υποδέντρο"
+msgstr "Κατά ημερομηνία/ώρα του πιο πρόσφατου στο υποδένδρο"
 
 #: core/sortorder.cpp:71
 #, kde-format
@@ -924,8 +925,8 @@ msgstr[1] "<b>%1</b> απαντήσεις"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] "<b>%1</b> μήνυμα στο υποδέντρο (<b>%2</b> μη αναγνωσμένο)"
-msgstr[1] "<b>%1</b> μηνύματα στο υποδέντρο (<b>%2</b> μη αναγνωσμένα)"
+msgstr[0] "<b>%1</b> μήνυμα στο υποδένδρο (<b>%2</b> μη αναγνωσμένο)"
+msgstr[1] "<b>%1</b> μηνύματα στο υποδένδρο (<b>%2</b> μη αναγνωσμένα)"
 
 #: core/view.cpp:2327
 #, kde-format
@@ -1200,7 +1201,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr "Αποθημευμένο φίλτρο"
+msgstr "Αποθηκευμένο φίλτρο"
 
 #: core/widgets/searchlinestatus.cpp:186
 #, kde-format
