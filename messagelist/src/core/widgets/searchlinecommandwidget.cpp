@@ -5,6 +5,7 @@
 */
 
 #include "searchlinecommandwidget.h"
+#include <KLocalizedString>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
 SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
@@ -16,5 +17,16 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
+
+void SearchLineCommandWidget::fillWidgets()
+{
+    mButtonsList = {
+        {QStringLiteral("from:"), i18n("From")},
+        {QStringLiteral("to:"), i18n("To")},
+        {QStringLiteral("cc:"), i18n("Cc")},
+        {QStringLiteral("bcc:"), i18n("Bcc")},
+        // TODO add more
+    };
+}
 
 #include "moc_searchlinecommandwidget.cpp"

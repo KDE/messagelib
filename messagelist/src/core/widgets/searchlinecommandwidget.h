@@ -18,6 +18,10 @@ class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QWidget
 public:
     explicit SearchLineCommandWidget(QWidget *parent = nullptr);
     ~SearchLineCommandWidget() override;
+
+private:
+    MESSAGELIST_NO_EXPORT void fillWidgets();
+    QMap<QString, QString> mButtonsList;
 };
 }
 }
