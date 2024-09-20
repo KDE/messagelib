@@ -36,11 +36,17 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     QString tmp;
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
-        if (ch != QLatin1Char(':')) {
-            tmp += ch;
+        if (ch == QLatin1Char(':')) {
+            if (mKeyList.contains(tmp)) {
+                // qDebug() << " contains " << tmp;
+                searchLineInfo.type = mKeyList.value(tmp);
+                tmp.clear();
+            }
         } else if (ch.isSpace()) {
+            // qDebug() << " is space ";
             if (searchLineInfo.type != Unknown) {
                 searchLineInfo.argument = tmp;
+                tmp.clear();
             }
             if (searchLineInfo.isValid()) {
                 mSearchLineInfo.append(std::move(searchLineInfo));
@@ -53,20 +59,16 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             // TODO
         } else if (ch == QLatin1Char(')')) {
             // TODO
-        } else { // Compare with keys
-            if (mKeyList.contains(tmp)) {
-                searchLineInfo.type = mKeyList.value(tmp);
-                tmp.clear();
-            }
+        } else {
+            tmp += ch;
+            // qDebug() << " tmp " << tmp << " ch " << ch << "end";
         }
     }
     if (searchLineInfo.type != Unknown) {
         if (!tmp.isEmpty()) {
             searchLineInfo.argument = tmp;
+            mSearchLineInfo.append(std::move(searchLineInfo));
         }
-    }
-    if (searchLineInfo.isValid()) {
-        mSearchLineInfo.append(std::move(searchLineInfo));
     }
     // TODO parse subject:<foo> to:<foo> cc:<foo> bcc:<foo> from:<foo>
     // TODO add date ?
