@@ -94,6 +94,16 @@ void SearchLineCommandTest::shouldParseInfo_data()
 
         QTest::newRow("test several1") << str << lstInfo << 2;
     }
+
+    {
+        const QString str{QStringLiteral(" bli bli bli")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
+        info.argument = QStringLiteral(" bli bli bli");
+        lstInfo.append(info);
+        QTest::newRow("literal1") << str << lstInfo << 1;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()

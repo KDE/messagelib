@@ -59,6 +59,8 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (searchLineInfo.type != Unknown) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
+            } else { // Literal
+                tmp += ch;
             }
             if (searchLineInfo.isValid()) {
                 mSearchLineInfo.append(std::move(searchLineInfo));
@@ -88,6 +90,10 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 mSearchLineInfo.append(std::move(searchLineInfo));
             }
         }
+    } else {
+        searchLineInfo.type = Literal;
+        searchLineInfo.argument = tmp;
+        mSearchLineInfo.append(std::move(searchLineInfo));
     }
     // TODO add date ?
     // TODO add size: ?
