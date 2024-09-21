@@ -76,6 +76,24 @@ void SearchLineCommandTest::shouldParseInfo_data()
         lstInfo.append(info);
         QTest::newRow("test is important") << str << lstInfo << 1;
     }
+
+    {
+        const QString str{QStringLiteral("has:attachment subject:bla")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::HasAttachment;
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("bla");
+            lstInfo.append(info);
+        }
+
+        QTest::newRow("test several1") << str << lstInfo << 2;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
