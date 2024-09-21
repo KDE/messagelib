@@ -14,6 +14,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     : QWidget{parent}
 {
     auto flowLayout = new SearchLineCommandFlowLayout(this);
+    flowLayout->setObjectName(QStringLiteral("flowLayout"));
     flowLayout->setContentsMargins({});
     flowLayout->setSpacing(0);
     fillWidgets();
