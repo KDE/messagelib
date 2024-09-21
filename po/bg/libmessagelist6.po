@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-09-11 12:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -867,6 +867,7 @@ msgid "Display Tooltips"
 msgstr "Показване на подсказки"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1153,6 +1154,22 @@ msgstr ""
 "Някои от папките за търсене в тази заявка все още се индексират или са "
 "изключени от индексиране напълно. Резултатите по-долу може да са непълни."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "До"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1211,11 +1228,6 @@ msgstr "Тема"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Скр. копие до:"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "До"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

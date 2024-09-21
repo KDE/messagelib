@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -859,6 +859,7 @@ msgid "Display Tooltips"
 msgstr "표시 풍선 도움말"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1141,6 +1142,23 @@ msgstr ""
 "이 질의에 포함된 일부 검색 폴더의 색인 작업이 진행 중이거나 색인에서 제외되었"
 "습니다. 아래 결과가 불완전할 수도 있습니다."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "받는 사람"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "숨은 참조"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1197,11 +1215,6 @@ msgstr "제목"
 msgctxt "@action"
 msgid "BCC"
 msgstr "숨은 참조"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "받는 사람"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -1992,11 +2005,6 @@ msgstr "취소(&A)"
 #~ "이 옵션을 사용하면 탭 표시줄은 탭이 두 개 이상 있을 때에만 표시됩니다. 이 "
 #~ "옵션을 사용하지 않으면 탭 표시줄을 항상 표시합니다. 탭 표시줄이 숨어 있을 "
 #~ "때에도 폴더를 가운데 단추로 누르면 새 탭에 열 수 있습니다."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "숨은 참조"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "빠른 필터:"

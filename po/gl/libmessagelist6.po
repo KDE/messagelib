@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-19 15:16+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -871,6 +871,7 @@ msgid "Display Tooltips"
 msgstr "Amosar indicacións emerxentes"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1158,6 +1159,23 @@ msgstr ""
 "excluídos completamente da indexación. Os seguintes resultados poderían "
 "estar incompletos."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Para"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Copia oculta"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1215,11 +1233,6 @@ msgstr "Asunto"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Copia agochada"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Para"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2004,11 +2017,6 @@ msgstr "C&ancelar"
 #~ "ou máis lapelas. Con esta opción desactivada a barra de lapelas está "
 #~ "sempre presente. Cando está agochada pódese abrir un cartafol nunha "
 #~ "lapela nova calcando nela co botón central do rato."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Copia oculta"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Filtro rápido:"

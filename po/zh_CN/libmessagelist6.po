@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -849,6 +849,7 @@ msgid "Display Tooltips"
 msgstr "显示工具提示"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1130,6 +1131,22 @@ msgid ""
 msgstr ""
 "搜索的文件夹有些还在被索引中，或者完全被排除在索引之外。因此结果可能不完整。"
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "收件人"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1186,11 +1203,6 @@ msgstr ""
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "收件人"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

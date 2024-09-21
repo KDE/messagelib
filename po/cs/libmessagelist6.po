@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 08:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -850,6 +850,7 @@ msgid "Display Tooltips"
 msgstr "Zobrazit nástrojové tipy"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1139,6 +1140,22 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Komu"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1193,11 +1210,6 @@ msgstr "Předmět"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Skrytá kopie"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Komu"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

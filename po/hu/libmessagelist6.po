@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-01 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -865,6 +865,7 @@ msgid "Display Tooltips"
 msgstr "Tippek megjelenítése"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1152,6 +1153,23 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Címzett"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Titkos másolat"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1208,11 +1226,6 @@ msgstr "Tárgy"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Titkos másolat"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Címzett"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2026,11 +2039,6 @@ msgstr "&Mégsem"
 #~ "lap meg van nyitva. Ha nincs bejelölve, akkor is látható lesz, ha csak "
 #~ "egy lap nyitott. Ha a lapsáv rejtett, egy mappa új lapon történő "
 #~ "megnyitásához kattintson rá a középső egérgombbal."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Titkos másolat"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Gyors szűrő:"

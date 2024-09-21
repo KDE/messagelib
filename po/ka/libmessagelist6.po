@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 04:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -864,6 +864,7 @@ msgid "Display Tooltips"
 msgstr "მინიშნებების ჩვენება"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1150,6 +1151,22 @@ msgstr ""
 "ამ მოთხოვნაში ზოგიერთი საძებნი საქაღალდე ჯერ კიდევ ინდექსდება ან ამოღებულია "
 "დაინდექსებიდან. შედეგები შეიძლება არასრული იყოს."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "ვის"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1206,11 +1223,6 @@ msgstr "თემა"
 msgctxt "@action"
 msgid "BCC"
 msgstr "ფარული ასლი"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "ვის"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

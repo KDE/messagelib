@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-18 08:13+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -882,6 +882,7 @@ msgid "Display Tooltips"
 msgstr "הצגת חלוניות עצה"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1176,6 +1177,22 @@ msgstr ""
 "חלק מתיקיות החיפוש בשאילתה הזאת עדיין מסדרות את המפתח או שמוחרגות מסידור "
 "המפתח לחלוטין. התוצאות שלהלן עלולות להיות חלקיות."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "אל"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1232,11 +1249,6 @@ msgstr "נושא"
 msgctxt "@action"
 msgid "BCC"
 msgstr "עותק סמוי"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "אל"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

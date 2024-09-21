@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -960,6 +960,7 @@ msgid "Display Tooltips"
 msgstr "প্রা&পক"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1277,6 +1278,23 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgid "To"
+msgid "To"
+msgstr "গ্রা&হক"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1335,12 +1353,6 @@ msgstr "বিষয়"
 msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, fuzzy, kde-format
-#| msgid "To"
-msgid "To"
-msgstr "গ্রা&হক"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format

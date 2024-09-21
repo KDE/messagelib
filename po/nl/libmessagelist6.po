@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 11:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -886,6 +886,7 @@ msgid "Display Tooltips"
 msgstr "Tekstballonnen tonen"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1173,6 +1174,23 @@ msgstr ""
 "zijn uitgesloten voor volledige indexering. De onderstaande resultaten "
 "kunnen onvolledig zijn."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Aan"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "bcc"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1230,11 +1248,6 @@ msgstr "Onderwerp"
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Aan"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2028,9 +2041,6 @@ msgstr "&Annuleren"
 #~ "tabbalk altijd weergegeven. Als de tabbalk verborgen is kunt u nog altijd "
 #~ "een map in een nieuw tabblad openen door er op te klikken met de "
 #~ "middelste muisknop."
-
-#~ msgid "bcc"
-#~ msgstr "bcc"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Snelfilter:"

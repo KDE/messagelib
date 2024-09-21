@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2014-08-14 15:43+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -871,6 +871,7 @@ msgid "Display Tooltips"
 msgstr "Kortinformatschonen wiesen"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1163,6 +1164,23 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Na"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Blindkopie"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1223,11 +1241,6 @@ msgstr "Bedraap"
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Na"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2060,11 +2073,6 @@ msgstr "&Afbreken"
 #~ "mehr Paneels gifft; anners warrt de Balken jümmers wiest. Is de "
 #~ "Paneelbalken versteken, kannst Du mit en Middelklick en Orner liekers "
 #~ "binnen en nieg Paneel opmaken."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Blindkopie"
 
 #~ msgid "More..."
 #~ msgstr "Mehr..."

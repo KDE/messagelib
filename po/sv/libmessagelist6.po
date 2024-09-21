@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 08:30+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -863,6 +863,7 @@ msgid "Display Tooltips"
 msgstr "Visa verktygstips"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1149,6 +1150,23 @@ msgstr ""
 "Vissa av sökkatalogerna i förfrågan indexeras fortfarande eller har helt "
 "undantagits från indexering. Resultaten nedan kan vara ofullständiga."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Till"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "Dold kopia"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1205,11 +1223,6 @@ msgstr "Rubrik"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Dold kopia"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Till"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -1997,9 +2010,6 @@ msgstr "&Avbryt"
 #~ "flera flikar. När alternativet är inaktiverat visas flikraden alltid. När "
 #~ "flikraden är dold kan man alltid öppna en katalog under en ny flik genom "
 #~ "att mittenklicka på den."
-
-#~ msgid "bcc"
-#~ msgstr "Dold kopia"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Snabbfilter:"

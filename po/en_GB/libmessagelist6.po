@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-24 12:06+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -865,6 +865,7 @@ msgid "Display Tooltips"
 msgstr "Display Tooltips"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1151,6 +1152,23 @@ msgstr ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "To"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "bcc"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1208,11 +1226,6 @@ msgstr "Subject"
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "To"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2002,9 +2015,6 @@ msgstr "C&ancel"
 #~ "are two or more tabs. With this option disabled the tab bar will be "
 #~ "always shown. When the tab bar is hidden you can always open a folder in "
 #~ "a new tab by middle-clicking it."
-
-#~ msgid "bcc"
-#~ msgstr "bcc"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Quick Filter:"

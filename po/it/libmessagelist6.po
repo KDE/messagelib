@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 13:15+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -874,6 +874,7 @@ msgid "Display Tooltips"
 msgstr "Mostra suggerimenti"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1161,6 +1162,23 @@ msgstr ""
 "indicizzazione o sono state completamente escluse dall'indicizzazione. I "
 "risultati di seguito potrebbero essere incompleti."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "A"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "CCN"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1220,11 +1238,6 @@ msgstr "Oggetto"
 msgctxt "@action"
 msgid "BCC"
 msgstr "CCN"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "A"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2020,9 +2033,6 @@ msgstr "&Annulla"
 #~ "verrà sempre mostrata. Quando la barra delle schede è nascosta puoi "
 #~ "sempre aprire una cartella in una nuova scheda facendo clic su di essa "
 #~ "con il tasto centrale."
-
-#~ msgid "bcc"
-#~ msgstr "CCN"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Filtro rapido:"

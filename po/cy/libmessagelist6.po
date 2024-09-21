@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -954,6 +954,7 @@ msgid "Display Tooltips"
 msgstr "&I"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1265,6 +1266,23 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgid "To"
+msgid "To"
+msgstr "I"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1323,12 +1341,6 @@ msgstr "Pwnc"
 msgctxt "@action"
 msgid "BCC"
 msgstr "CCD (BCC)"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, fuzzy, kde-format
-#| msgid "To"
-msgid "To"
-msgstr "I"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format

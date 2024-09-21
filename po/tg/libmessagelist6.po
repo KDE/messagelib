@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -956,6 +956,7 @@ msgid "Display Tooltips"
 msgstr "&Қабулкунанда"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1268,6 +1269,22 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+msgid "To"
+msgstr "&Қабулкунанда"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1325,11 +1342,6 @@ msgstr "Мавзӯъ"
 msgctxt "@action"
 msgid "BCC"
 msgstr "&Нусхаи пинҳонӣ"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, fuzzy, kde-format
-msgid "To"
-msgstr "&Қабулкунанда"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format

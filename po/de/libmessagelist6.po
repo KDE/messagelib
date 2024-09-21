@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2023-04-03 16:45+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -881,6 +881,7 @@ msgid "Display Tooltips"
 msgstr "Kurzinfos anzeigen"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1174,6 +1175,23 @@ msgstr ""
 "Einige der Suchordner dieser Abfrage werden noch indiziert oder sind von der "
 "Indizierung ausgeschlossen. Die Ergebnisse sind vielleicht unvollständig."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "An"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "Blindkopie"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1236,11 +1254,6 @@ msgstr "Betreff"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Blindkopie"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "An"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2087,9 +2100,6 @@ msgstr "&Abbrechen"
 #~ "wird sie immer angezeigt. Wenn die Unterfensterleiste nicht sichtbar ist, "
 #~ "können Sie ein neues Unterfenster öffnen, indem Sie mit der mittleren "
 #~ "Maustaste auf einen Ordner klicken."
-
-#~ msgid "bcc"
-#~ msgstr "Blindkopie"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Schnellfilter:"

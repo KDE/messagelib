@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 09:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -884,6 +884,7 @@ msgid "Display Tooltips"
 msgstr "Показувати підказки"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1179,6 +1180,23 @@ msgstr ""
 "індексування або їх повністю виключено з індексування. Наведені нижче "
 "результати можуть бути неповними."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "До"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "пр. копія"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1236,11 +1254,6 @@ msgstr "Тема"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Пр. копія"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "До"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2031,9 +2044,6 @@ msgstr "&Скасувати"
 #~ "програми відкрито декілька вкладок. Якщо не позначати цей пункт, панель "
 #~ "вкладок буде показано завжди. Якщо панель вкладок приховано, ви можете "
 #~ "відкрити теку у новій вкладці клацанням середньою кнопкою миші."
-
-#~ msgid "bcc"
-#~ msgstr "пр. копія"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Швидке фільтрування:"

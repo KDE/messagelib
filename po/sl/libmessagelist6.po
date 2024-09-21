@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-17 07:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -881,6 +881,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži orodne namige"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1176,6 +1177,23 @@ msgstr ""
 "ali pa so izločene iz ustvarjanja kazala. Spodnji rezultati bodo morda "
 "nepopolni."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Za"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Skp"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1232,11 +1250,6 @@ msgstr "Zadeva"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Skp"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Za"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2025,11 +2038,6 @@ msgstr "&Prekliči"
 #~ "voljo vsaj dva zavihka. V nasprotnem primeru bo vrstica vedno vidna. Ko "
 #~ "je vrstica skrita, lahko za odprtje mape v novem zavihku na mapo kliknete "
 #~ "s srednjim miškinim gumbom."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Skp"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Hitri filter:"

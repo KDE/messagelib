@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -872,6 +872,7 @@ msgid "Display Tooltips"
 msgstr "Zobrazovať popisky"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1172,6 +1173,23 @@ msgstr ""
 "Niektoré z prehľadaných priečinkov sú stále indexované alebo vylúčené z "
 "indexovania. Výsledky môžu byť nekompletné."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Pre"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "bcc"
+msgid "Bcc"
+msgstr "Skrytá kópia"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1234,11 +1252,6 @@ msgstr "Predmet"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Skrytá kópia"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Pre"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2079,9 +2092,6 @@ msgstr "&Zrušiť"
 #~ "alebo viac kariet. Ak je táto voľba vypnutá, panel bude zobrazený vždy. "
 #~ "Keď je panel skrytý, vždy môžete otvoriť priečinok na novej záložke "
 #~ "kliknutím prostredného tlačidla myši naň."
-
-#~ msgid "bcc"
-#~ msgstr "Skrytá kópia"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Rýchly filter:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -875,6 +875,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži savjete"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1170,6 +1171,25 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "Receiver of the email"
+#| msgid "To"
+msgid "To"
+msgstr "Za"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Bcc"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1230,13 +1250,6 @@ msgstr "Tema"
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "Receiver of the email"
-#| msgid "To"
-msgid "To"
-msgstr "Za"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2069,11 +2082,6 @@ msgstr "&Otkaži"
 #~ "dvije ili više njih. Sa isključenom ovom opcijom kartice će biti uvijek "
 #~ "prikazane. Kada su kartice sakrivene, uvijek možete otovoriti datoteku u "
 #~ "novoj kartici pritiskom srenjeg dugmeta na mišu."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Bcc"
 
 #, fuzzy
 #~| msgid "Configure..."

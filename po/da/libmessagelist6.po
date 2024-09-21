@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-18 00:41+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -869,6 +869,7 @@ msgid "Display Tooltips"
 msgstr "Vis værktøjstip"
 
 #: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchlinecommandwidget.cpp:24
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1168,6 +1169,23 @@ msgstr ""
 "Nogle af søgemapperne i denne forespørgsel bliver stadig indekseret eller er "
 "helt undtaget fra indeksering. Resultaterne nedenfor kan være ukomplette."
 
+#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Til"
+
+#: core/widgets/searchlinecommandwidget.cpp:26
+#, kde-format
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgid "Bcc"
+msgstr "Bcc"
+
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1230,11 +1248,6 @@ msgstr "Emne"
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
-
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
-msgid "To"
-msgstr "Til"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
@@ -2090,11 +2103,6 @@ msgstr "&Annullér"
 #~ "eller flere faneblade. Med indstillingen deaktiveret, vil fanebladslinjen "
 #~ "altid blive vist. Når fanebladslinjen er skjult kan du altid åbne en "
 #~ "mappe i et nyt faneblad ved at midterklikke på den."
-
-#, fuzzy
-#~| msgid "Bcc"
-#~ msgid "bcc"
-#~ msgstr "Bcc"
 
 #~ msgid "Quick Filter:"
 #~ msgstr "Kvikfilter:"
