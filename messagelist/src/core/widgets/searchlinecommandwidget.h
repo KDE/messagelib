@@ -8,6 +8,7 @@
 
 #include "messagelist_private_export.h"
 #include <QWidget>
+class QPushButton;
 namespace MessageList
 {
 namespace Core
@@ -19,8 +20,12 @@ public:
     explicit SearchLineCommandWidget(QWidget *parent = nullptr);
     ~SearchLineCommandWidget() override;
 
+Q_SIGNALS:
+    void insertCommand(const QString &commandStr);
+
 private:
     MESSAGELIST_NO_EXPORT void fillWidgets();
+    MESSAGELIST_NO_EXPORT QPushButton *createPushButton(const QString &i18nStr, const QString &commandStr);
     QMap<QString, QString> mButtonsList;
 };
 }

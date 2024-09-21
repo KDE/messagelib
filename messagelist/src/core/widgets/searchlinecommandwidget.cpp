@@ -5,18 +5,35 @@
 */
 
 #include "searchlinecommandwidget.h"
+#include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
+#include <QPushButton>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
 SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     : QWidget{parent}
 {
-    auto vbox = new QVBoxLayout(this);
-    vbox->setContentsMargins({});
-    vbox->setSpacing(0);
+    auto flowLayout = new SearchLineCommandFlowLayout(this);
+    flowLayout->setContentsMargins({});
+    flowLayout->setSpacing(0);
+    fillWidgets();
+    QMapIterator<QString, QString> i(mButtonsList);
+    while (i.hasNext()) {
+        i.next();
+        flowLayout->addWidget(createPushButton(i.value(), i.key()));
+    }
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
+
+QPushButton *SearchLineCommandWidget::createPushButton(const QString &i18nStr, const QString &commandStr)
+{
+    auto pushButton = new QPushButton(i18nStr, this);
+    connect(pushButton, &QPushButton::clicked, this, [this, commandStr]() {
+        Q_EMIT insertCommand(commandStr);
+    });
+    return pushButton;
+}
 
 void SearchLineCommandWidget::fillWidgets()
 {
