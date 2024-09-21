@@ -61,6 +61,8 @@ target_sources(KPim6MessageList PRIVATE
 
     core/widgets/searchlinecommandwidget.h
     core/widgets/searchlinecommandwidget.cpp
+    core/widgets/searchlinecommandflowlayout.cpp
+    core/widgets/searchlinecommandflowlayout.h
 
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp
