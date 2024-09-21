@@ -52,7 +52,6 @@ public:
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
 private:
-    [[nodiscard]] SearchLineCommand::SearchLineType convertStringToSearchLineType(const QString &str) const;
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };

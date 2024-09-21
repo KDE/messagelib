@@ -23,11 +23,6 @@ SearchLineCommand::SearchLineCommand() = default;
 
 SearchLineCommand::~SearchLineCommand() = default;
 
-SearchLineCommand::SearchLineType SearchLineCommand::convertStringToSearchLineType(const QString &str) const
-{
-    return {};
-}
-
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
@@ -97,7 +92,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     }
     // TODO add date ?
     // TODO add size: ?
-    // TODO
 }
 
 QString SearchLineCommand::dump() const
