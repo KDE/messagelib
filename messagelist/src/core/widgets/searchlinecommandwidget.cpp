@@ -32,7 +32,7 @@ QPushButton *SearchLineCommandWidget::createPushButton(const QString &i18nStr, c
     auto pushButton = new QPushButton(i18nStr, this);
     pushButton->setObjectName(commandStr);
     connect(pushButton, &QPushButton::clicked, this, [this, commandStr]() {
-        Q_EMIT insertCommand(commandStr);
+        Q_EMIT insertCommand(commandStr + QLatin1Char(' '));
     });
     return pushButton;
 }
