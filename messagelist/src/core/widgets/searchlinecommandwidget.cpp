@@ -30,6 +30,7 @@ SearchLineCommandWidget::~SearchLineCommandWidget() = default;
 QPushButton *SearchLineCommandWidget::createPushButton(const QString &i18nStr, const QString &commandStr)
 {
     auto pushButton = new QPushButton(i18nStr, this);
+    pushButton->setObjectName(commandStr);
     connect(pushButton, &QPushButton::clicked, this, [this, commandStr]() {
         Q_EMIT insertCommand(commandStr);
     });
