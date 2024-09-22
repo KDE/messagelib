@@ -23,7 +23,7 @@ void SearchLineCommandWidgetTest::shouldHaveDefaultValues()
     QVERIFY(flowLayout);
     QCOMPARE(flowLayout->contentsMargins(), QMargins{});
     QCOMPARE(flowLayout->spacing(), 0);
-    QCOMPARE(flowLayout->count(), 4);
+    QCOMPARE(flowLayout->count(), 8);
 }
 
 #include "moc_searchlinecommandwidgettest.cpp"

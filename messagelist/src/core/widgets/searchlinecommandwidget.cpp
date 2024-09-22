@@ -43,6 +43,10 @@ void SearchLineCommandWidget::fillWidgets()
         {QStringLiteral("to:"), i18n("To")},
         {QStringLiteral("cc:"), i18n("Cc")},
         {QStringLiteral("bcc:"), i18n("Bcc")},
+        {QStringLiteral("has:attachment"), i18n("Has Attachment")},
+        {QStringLiteral("is:read"), i18n("Read")},
+        {QStringLiteral("is:unread"), i18n("Unread")},
+        {QStringLiteral("is:important"), i18n("Important")},
         // TODO add more
     };
 }
