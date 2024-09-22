@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
 "PO-Revision-Date: 2024-08-18 09:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -900,7 +900,7 @@ msgid "Display Tooltips"
 msgstr "Afficher les infobulles"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1190,18 +1190,18 @@ msgstr ""
 "d'indexation ou sont exclus complètement de l'indexation. Les résultats ci-"
 "dessous peuvent être incomplets."
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "À"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:27
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgid "Bcc"

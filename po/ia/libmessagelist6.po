@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
 "PO-Revision-Date: 2024-09-02 15:57+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -867,7 +867,7 @@ msgid "Display Tooltips"
 msgstr "Monstrar consilios"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1155,18 +1155,18 @@ msgstr ""
 "excludite completemente ex le indicisar. Le exitos a basso pote esser "
 "incomplete."
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "A"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:27
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Bcc"
 msgstr ""

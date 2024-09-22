@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
-"PO-Revision-Date: 2024-08-17 04:07+0200\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"PO-Revision-Date: 2024-09-21 05:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -864,7 +864,7 @@ msgid "Display Tooltips"
 msgstr "მინიშნებების ჩვენება"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1151,21 +1151,21 @@ msgstr ""
 "ამ მოთხოვნაში ზოგიერთი საძებნი საქაღალდე ჯერ კიდევ ინდექსდება ან ამოღებულია "
 "დაინდექსებიდან. შედეგები შეიძლება არასრული იყოს."
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "ვის"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "ასლი"
 
-#: core/widgets/searchlinecommandwidget.cpp:27
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "ფარულიასლი"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

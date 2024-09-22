@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
 "PO-Revision-Date: 2014-08-14 15:43+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -871,7 +871,7 @@ msgid "Display Tooltips"
 msgstr "Kortinformatschonen wiesen"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1164,18 +1164,18 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Na"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:27
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgid "Bcc"

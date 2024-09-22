@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -872,7 +872,7 @@ msgid "Display Tooltips"
 msgstr "Zobrazovať popisky"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1173,18 +1173,18 @@ msgstr ""
 "Niektoré z prehľadaných priečinkov sú stále indexované alebo vylúčené z "
 "indexovania. Výsledky môžu byť nekompletné."
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Pre"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:27
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, fuzzy, kde-format
 #| msgid "bcc"
 msgid "Bcc"

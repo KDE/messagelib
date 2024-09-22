@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
-"PO-Revision-Date: 2024-08-17 08:30+0200\n"
+"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"PO-Revision-Date: 2024-09-21 07:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -863,7 +863,7 @@ msgid "Display Tooltips"
 msgstr "Visa verktygstips"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:24
+#: core/widgets/searchlinecommandwidget.cpp:42
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1150,20 +1150,19 @@ msgstr ""
 "Vissa av sökkatalogerna i förfrågan indexeras fortfarande eller har helt "
 "undantagits från indexering. Resultaten nedan kan vara ofullständiga."
 
-#: core/widgets/searchlinecommandwidget.cpp:25
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Till"
 
-#: core/widgets/searchlinecommandwidget.cpp:26
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "Kopia"
 
-#: core/widgets/searchlinecommandwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "bcc"
+#: core/widgets/searchlinecommandwidget.cpp:45
+#, kde-format
 msgid "Bcc"
 msgstr "Dold kopia"
 
