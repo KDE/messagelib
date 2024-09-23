@@ -17,6 +17,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     flowLayout->setObjectName(QStringLiteral("flowLayout"));
     flowLayout->setContentsMargins({});
     flowLayout->setSpacing(0);
+    Q_ASSERT(!mButtonsList.isEmpty());
     fillWidgets();
     QMapIterator<QString, QString> i(mButtonsList);
     while (i.hasNext()) {
