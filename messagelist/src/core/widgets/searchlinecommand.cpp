@@ -63,8 +63,17 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
 QString SearchLineCommand::generateCommadLineStr() const
 {
     QString result;
-    for (const auto &info : mSearchLineInfo) { }
-    return {};
+    for (const auto &info : mSearchLineInfo) {
+        if (!result.isEmpty()) {
+            result += QLatin1Char(' ') + i18n("AND") + QLatin1Char(' ');
+        }
+        const QString translatedType = convertSearchLinetypeToTranslatedString(info.type);
+        if (!translatedType.isEmpty()) {
+            result += translatedType + QLatin1Char(' ');
+        }
+        result += info.argument;
+    }
+    return result;
 }
 
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
