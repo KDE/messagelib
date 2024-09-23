@@ -69,9 +69,14 @@ QString SearchLineCommand::generateCommadLineStr() const
         }
         const QString translatedType = convertSearchLinetypeToTranslatedString(info.type);
         if (!translatedType.isEmpty()) {
-            result += translatedType + QLatin1Char(' ');
+            result += translatedType;
         }
-        result += info.argument;
+        if (!info.argument.isEmpty()) {
+            if (!translatedType.isEmpty()) {
+                result += QLatin1Char(' ');
+            }
+            result += info.argument;
+        }
     }
     return result;
 }

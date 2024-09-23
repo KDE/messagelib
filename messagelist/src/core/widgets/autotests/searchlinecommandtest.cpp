@@ -35,10 +35,12 @@ void SearchLineCommandTest::shouldParseInfo_data()
     QTest::addColumn<QString>("line");
     QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("infos");
     QTest::addColumn<int>("numberElement");
+    QTest::addColumn<QString>("convertedToString");
+
     {
         QString str;
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
-        QTest::newRow("empty") << str << lstInfo << 0;
+        QTest::newRow("empty") << str << lstInfo << 0 << QString();
     }
     {
         const QString str{QStringLiteral("subject:foo")};
@@ -47,7 +49,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
         info.argument = QStringLiteral("foo");
         lstInfo.append(info);
-        QTest::newRow("test1") << str << lstInfo << 1;
+        const QString convertStr = QStringLiteral("Subject contains foo");
+        QTest::newRow("test1") << str << lstInfo << 1 << convertStr;
     }
 
     {
@@ -65,7 +68,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
             info.argument = QStringLiteral("bli");
             lstInfo.append(info);
         }
-        QTest::newRow("test2") << str << lstInfo << 2;
+        const QString convertStr{QStringLiteral("Subject contains foo AND From contains bli")};
+        QTest::newRow("test2") << str << lstInfo << 2 << convertStr;
     }
 
     {
@@ -74,7 +78,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::IsImportant;
         lstInfo.append(info);
-        QTest::newRow("test is important") << str << lstInfo << 1;
+        const QString convertStr{QStringLiteral("Mail is important")};
+        QTest::newRow("test is important") << str << lstInfo << 1 << convertStr;
     }
 
     {
@@ -91,7 +96,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
             info.argument = QStringLiteral("bla");
             lstInfo.append(info);
         }
-        QTest::newRow("test several1") << str << lstInfo << 2;
+        const QString convertStr{QStringLiteral("Mail has attachment AND Subject contains bla")};
+        QTest::newRow("test several1") << str << lstInfo << 2 << convertStr;
     }
 
     {
@@ -101,7 +107,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
         info.argument = QStringLiteral(" bli bli bli");
         lstInfo.append(info);
-        QTest::newRow("literal1") << str << lstInfo << 1;
+        const QString convertStr{QStringLiteral(" bli bli bli")};
+        QTest::newRow("literal1") << str << lstInfo << 1 << convertStr;
     }
     {
         const QString str{QStringLiteral("subject:(goo bla)")};
@@ -110,7 +117,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
         info.argument = QStringLiteral("goo bla");
         lstInfo.append(info);
-        QTest::newRow("test parenthese1") << str << lstInfo << 1;
+        const QString convertStr{QStringLiteral("Subject contains goo bla")};
+        QTest::newRow("test parenthese1") << str << lstInfo << 1 << convertStr;
     }
     {
         const QString str{QStringLiteral("subject:(goo bla) from:(dddd ddd)")};
@@ -127,7 +135,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
             info.argument = QStringLiteral("dddd ddd");
             lstInfo.append(info);
         }
-        QTest::newRow("test parenthese1") << str << lstInfo << 2;
+        const QString convertStr{QStringLiteral("Subject contains goo bla AND From contains dddd ddd")};
+        QTest::newRow("test parenthese1") << str << lstInfo << 2 << convertStr;
     }
 }
 
@@ -136,10 +145,12 @@ void SearchLineCommandTest::shouldParseInfo()
     QFETCH(QString, line);
     QFETCH(QList<MessageList::Core::SearchLineCommand::SearchLineInfo>, infos);
     QFETCH(int, numberElement);
+    QFETCH(QString, convertedToString);
     MessageList::Core::SearchLineCommand command;
     command.parseSearchLineCommand(line);
     QCOMPARE(command.searchLineInfo().count(), numberElement);
     QCOMPARE(command.searchLineInfo(), infos);
+    QCOMPARE(command.generateCommadLineStr(), convertedToString);
 }
 
 void SearchLineCommandTest::shouldHaveSubType()
