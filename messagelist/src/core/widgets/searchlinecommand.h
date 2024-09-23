@@ -46,7 +46,6 @@ public:
     ~SearchLineCommand();
 
     void parseSearchLineCommand(const QString &str);
-    [[nodiscard]] QString dump() const;
 
     [[nodiscard]] QList<SearchLineInfo> searchLineInfo() const;
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);

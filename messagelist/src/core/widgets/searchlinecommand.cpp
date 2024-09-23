@@ -94,12 +94,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     // TODO add size: ?
 }
 
-QString SearchLineCommand::dump() const
-{
-    // TODO
-    return {};
-}
-
 QList<SearchLineCommand::SearchLineInfo> SearchLineCommand::searchLineInfo() const
 {
     return mSearchLineInfo;
