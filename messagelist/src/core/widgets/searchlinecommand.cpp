@@ -97,6 +97,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     }
     // TODO add date ?
     // TODO add size: ?
+    // TODO add more email state (spam/starred etc .)
     // We need to extend emailquery or creating query by hand
 }
 
