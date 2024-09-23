@@ -24,3 +24,5 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
 }
 
 SearchLineCommandWidgetGui::~SearchLineCommandWidgetGui() = default;
+
+#include "moc_searchlinecommandwidgetgui.cpp"
