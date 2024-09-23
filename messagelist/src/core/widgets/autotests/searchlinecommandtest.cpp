@@ -112,6 +112,23 @@ void SearchLineCommandTest::shouldParseInfo_data()
         lstInfo.append(info);
         QTest::newRow("test parenthese1") << str << lstInfo << 1;
     }
+    {
+        const QString str{QStringLiteral("subject:(goo bla) from:(dddd ddd)")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("goo bla");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
+            info.argument = QStringLiteral("dddd ddd");
+            lstInfo.append(info);
+        }
+        QTest::newRow("test parenthese1") << str << lstInfo << 2;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()

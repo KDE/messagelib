@@ -40,9 +40,10 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
         if (ch == QLatin1Char(':')) {
-            if (mKeyList.contains(tmp)) {
+            // qDebug() << " tmp ! " << tmp;
+            if (mKeyList.contains(tmp.trimmed())) {
                 // qDebug() << " contains " << tmp;
-                searchLineInfo.type = mKeyList.value(tmp);
+                searchLineInfo.type = mKeyList.value(tmp.trimmed());
                 tmp.clear();
             } else if (hasSubType(tmp)) {
                 searchLineInfo.type = HasStateOrAttachment;
@@ -56,7 +57,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp.clear();
             }
 
-            // qDebug() << " is space ";
+            // qDebug() << " is space " << "pare" << parentheses << " tmp " << tmp;
             if (searchLineInfo.type != Unknown && parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
@@ -72,8 +73,10 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             // TODO
         } else if (ch == QLatin1Char('(')) {
             parentheses++;
+            // qDebug() << " DDDDDDDDDD ( " << parentheses;
         } else if (ch == QLatin1Char(')')) {
             parentheses--;
+            // qDebug() << " DDDDDDDDDD ) " << parentheses;
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
