@@ -35,6 +35,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case Unknown:
     case HasStateOrAttachment:
     case Literal:
+    case Date:
+    case Size:
         return {};
     case To:
         return i18n("To contains");
@@ -46,9 +48,6 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("From contains");
     case Subject:
         return i18n("Subject contains");
-    case Date:
-    case Size:
-        return {};
     case HasAttachment:
         return i18n("Mail has attachment");
     case IsImportant:
