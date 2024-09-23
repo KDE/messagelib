@@ -97,6 +97,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     }
     // TODO add date ?
     // TODO add size: ?
+    // We need to extend emailquery or creating query by hand
 }
 
 QList<SearchLineCommand::SearchLineInfo> SearchLineCommand::searchLineInfo() const
