@@ -23,6 +23,11 @@ SearchLineCommand::SearchLineCommand() = default;
 
 SearchLineCommand::~SearchLineCommand() = default;
 
+bool SearchLineCommand::hasSubType(const QString &v) const
+{
+    return v == QLatin1StringView("is") || v == QLatin1StringView("has");
+}
+
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
@@ -38,7 +43,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 // qDebug() << " contains " << tmp;
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
-            } else if (tmp == QLatin1StringView("is") || tmp == QLatin1StringView("has")) {
+            } else if (hasSubType(tmp)) {
                 searchLineInfo.type = HasStateOrAttachment;
                 tmp += ch;
                 // continue

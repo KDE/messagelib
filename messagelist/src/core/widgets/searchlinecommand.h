@@ -50,6 +50,8 @@ public:
     [[nodiscard]] QList<SearchLineInfo> searchLineInfo() const;
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
+    [[nodiscard]] bool hasSubType(const QString &v) const;
+
 private:
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
