@@ -57,15 +57,13 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             }
 
             // qDebug() << " is space ";
-            if (searchLineInfo.type != Unknown) {
+            if (searchLineInfo.type != Unknown && parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
-            } else if (searchLineInfo.type == Literal) {
-                tmp += ch;
             } else { // Literal
                 tmp += ch;
             }
-            if (searchLineInfo.isValid()) {
+            if (searchLineInfo.isValid() && parentheses == 0) {
                 mSearchLineInfo.append(std::move(searchLineInfo));
                 searchLineInfo.clear();
                 tmp.clear();
@@ -74,16 +72,15 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             // TODO
         } else if (ch == QLatin1Char('(')) {
             parentheses++;
-            searchLineInfo.type = Literal;
         } else if (ch == QLatin1Char(')')) {
             parentheses--;
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
+                // qDebug() << " DDDDDDDDDDDDD " << searchLineInfo;
                 mSearchLineInfo.append(std::move(searchLineInfo));
                 searchLineInfo.clear();
             }
-            // TODO
         } else {
             tmp += ch;
             // qDebug() << " tmp " << tmp << " ch " << ch << "end";
@@ -102,10 +99,13 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             }
         }
     } else {
-        searchLineInfo.type = Literal;
-        searchLineInfo.argument = tmp;
-        mSearchLineInfo.append(std::move(searchLineInfo));
+        if (!tmp.isEmpty()) {
+            searchLineInfo.type = Literal;
+            searchLineInfo.argument = tmp;
+            mSearchLineInfo.append(std::move(searchLineInfo));
+        }
     }
+    // qDebug() << " END " << mSearchLineInfo;
     // TODO add date ?
     // TODO add size: ?
     // TODO add more email state (spam/starred etc .)
