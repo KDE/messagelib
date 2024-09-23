@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -857,7 +857,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "&Yisa phambili"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -939,7 +939,7 @@ msgid "Display Tooltips"
 msgstr "&Ku"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1241,21 +1241,38 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 msgid "To"
 msgstr "&Ku"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Bcc"
 msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+msgid "Has Attachment"
+msgstr "Uncamathelo: "
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+msgid "Read"
+msgstr "Amaphawu emifanekiso encwadi eneenkcukacha yesiko"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Important"
+msgid "Important"
+msgstr "ibalulekile"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

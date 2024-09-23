@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2021-02-28 20:11+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -794,7 +794,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Unread"
 msgstr "Ulesne"
@@ -870,7 +870,7 @@ msgid "Display Tooltips"
 msgstr "Vis hjelpebobler"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1155,21 +1155,42 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Til"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Bcc"
 msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Has Attachment"
+msgstr "Har vedlegg"
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Read"
+msgid "Read"
+msgstr "Lesen"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Important"
+msgid "Important"
+msgstr "Viktig"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -789,7 +789,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Unread"
 msgstr "Olvasatlan"
@@ -865,7 +865,7 @@ msgid "Display Tooltips"
 msgstr "Tippek megjelenítése"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1153,22 +1153,43 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Címzett"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgid "Bcc"
 msgstr "Titkos másolat"
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Has Attachment"
+msgstr "Van melléklete"
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Read"
+msgid "Read"
+msgstr "Olvasott"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Important"
+msgid "Important"
+msgstr "Fontos"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

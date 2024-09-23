@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -785,7 +785,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Unread"
 msgstr "Gan Léamh"
@@ -862,7 +862,7 @@ msgid "Display Tooltips"
 msgstr ""
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1172,7 +1172,7 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
@@ -1180,15 +1180,36 @@ msgstr ""
 msgid "To"
 msgstr "Chuig"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Bcc"
 msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Has Attachment"
+msgstr "Le hIatán"
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Read"
+msgid "Read"
+msgstr "Léite"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Important"
+msgid "Important"
+msgstr "Tábhachtach"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

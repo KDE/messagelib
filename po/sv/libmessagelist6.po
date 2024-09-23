@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2024-09-21 07:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -787,7 +787,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Unread"
 msgstr "Oläst"
@@ -863,7 +863,7 @@ msgid "Display Tooltips"
 msgstr "Visa verktygstips"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1150,21 +1150,42 @@ msgstr ""
 "Vissa av sökkatalogerna i förfrågan indexeras fortfarande eller har helt "
 "undantagits från indexering. Resultaten nedan kan vara ofullständiga."
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Till"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
 msgstr "Kopia"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Bcc"
 msgstr "Dold kopia"
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Has Attachment"
+msgstr "Har bilaga"
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Read"
+msgid "Read"
+msgstr "Läst"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Important"
+msgid "Important"
+msgstr "Viktigt"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

@@ -1,16 +1,15 @@
-# translation of libmessagelist.po to Spanish
+# Translation of libmessagelist to Spanish
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the messagelib package.
 #
-# Javier Vinal <fjvinal@gmail.com>, 2009, 2010, 2011, 2012, 2017.
-# Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2018, 2019.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Javier Viñal <fjvinal@gmail.com>
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:41+0000\n"
-"PO-Revision-Date: 2024-08-18 01:01+0200\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"PO-Revision-Date: 2024-09-21 13:33+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -798,7 +797,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Unread"
 msgstr "No leído"
@@ -874,7 +873,7 @@ msgid "Display Tooltips"
 msgstr "Mostrar consejos emergentes"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:42
+#: core/widgets/searchlinecommandwidget.cpp:43
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1162,21 +1161,42 @@ msgstr ""
 "indexadas o se han excluido completamente del indexado. Los resultados de "
 "abajo pueden estar incompletos."
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Para"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
-#, kde-format
-msgid "Cc"
-msgstr ""
-
 #: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
+msgid "Cc"
+msgstr "Cc"
+
+#: core/widgets/searchlinecommandwidget.cpp:46
+#, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Cco"
+
+#: core/widgets/searchlinecommandwidget.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Has Attachment"
+msgstr "Tiene adjunto"
+
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Read"
+msgid "Read"
+msgstr "Leído"
+
+#: core/widgets/searchlinecommandwidget.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Important"
+msgid "Important"
+msgstr "Importante"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
