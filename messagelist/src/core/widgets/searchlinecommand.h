@@ -47,12 +47,15 @@ public:
 
     void parseSearchLineCommand(const QString &str);
 
+    [[nodiscard]] QString generateCommadLineStr() const;
+
     [[nodiscard]] QList<SearchLineInfo> searchLineInfo() const;
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
     [[nodiscard]] static bool hasSubType(const QString &v);
 
 private:
+    [[nodiscard]] QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };

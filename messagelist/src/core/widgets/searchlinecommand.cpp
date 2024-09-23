@@ -5,6 +5,7 @@
 */
 
 #include "searchlinecommand.h"
+#include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
@@ -26,6 +27,45 @@ SearchLineCommand::~SearchLineCommand() = default;
 bool SearchLineCommand::hasSubType(const QString &v)
 {
     return v == QLatin1StringView("is") || v == QLatin1StringView("has");
+}
+
+QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const
+{
+    switch (type) {
+    case Unknown:
+    case HasStateOrAttachment:
+    case Literal:
+        return {};
+    case To:
+        return i18n("To contains");
+    case Bcc:
+        return i18n("BCC contains");
+    case Cc:
+        return i18n("CC contains");
+    case From:
+        return i18n("From contains");
+    case Subject:
+        return i18n("Subject contains");
+    case Date:
+    case Size:
+        return {};
+    case HasAttachment:
+        return i18n("Mail has attachment");
+    case IsImportant:
+        return i18n("Mail is important");
+    case IsRead:
+        return i18n("Mail is read");
+    case IsUnRead:
+        return i18n("Mail is Unread");
+    }
+    return {};
+}
+
+QString SearchLineCommand::generateCommadLineStr() const
+{
+    QString result;
+    for (const auto &info : mSearchLineInfo) { }
+    return {};
 }
 
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
