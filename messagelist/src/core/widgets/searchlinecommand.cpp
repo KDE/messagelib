@@ -36,6 +36,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     }
     SearchLineInfo searchLineInfo;
     QString tmp;
+    int parentheses = 0;
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
         if (ch == QLatin1Char(':')) {
@@ -59,6 +60,8 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (searchLineInfo.type != Unknown) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
+            } else if (searchLineInfo.type == Literal) {
+                tmp += ch;
             } else { // Literal
                 tmp += ch;
             }
@@ -70,8 +73,16 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         } else if (ch == QLatin1Char('"')) {
             // TODO
         } else if (ch == QLatin1Char('(')) {
-            // TODO
+            parentheses++;
+            searchLineInfo.type = Literal;
         } else if (ch == QLatin1Char(')')) {
+            parentheses--;
+            if (parentheses == 0) {
+                searchLineInfo.argument = tmp;
+                tmp.clear();
+                mSearchLineInfo.append(std::move(searchLineInfo));
+                searchLineInfo.clear();
+            }
             // TODO
         } else {
             tmp += ch;
