@@ -121,7 +121,6 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
     if (type == SearchLineType::Unknown) {
         return false;
     }
-    // TODO
     return true;
 }
 
