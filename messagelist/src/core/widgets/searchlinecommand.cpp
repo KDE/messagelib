@@ -23,7 +23,7 @@ SearchLineCommand::SearchLineCommand() = default;
 
 SearchLineCommand::~SearchLineCommand() = default;
 
-bool SearchLineCommand::hasSubType(const QString &v) const
+bool SearchLineCommand::hasSubType(const QString &v)
 {
     return v == QLatin1StringView("is") || v == QLatin1StringView("has");
 }

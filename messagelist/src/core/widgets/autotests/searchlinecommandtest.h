@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldParseInfo_data();
     void shouldParseInfo();
     void initTestCase();
+    void shouldHaveSubType();
 };

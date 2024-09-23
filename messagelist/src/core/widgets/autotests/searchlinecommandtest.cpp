@@ -117,4 +117,11 @@ void SearchLineCommandTest::shouldParseInfo()
     QCOMPARE(command.searchLineInfo(), infos);
 }
 
+void SearchLineCommandTest::shouldHaveSubType()
+{
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("has")));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("is")));
+    QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("foo")));
+
+}
 #include "moc_searchlinecommandtest.cpp"
