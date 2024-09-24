@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
-"PO-Revision-Date: 2024-09-21 08:13+0200\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
+"PO-Revision-Date: 2024-09-23 05:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -805,7 +805,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Neprebrano"
@@ -881,7 +881,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži orodne namige"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1177,40 +1177,89 @@ msgstr ""
 "ali pa so izločene iz ustvarjanja kazala. Spodnji rezultati bodo morda "
 "nepopolni."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, kde-format
+msgid "To contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:44
+#, kde-format
+msgid "BCC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:46
+#, kde-format
+msgid "CC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:48
+#, kde-format
+msgid "From contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject contains"
+msgstr "Zadeva"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgid "Mail has attachment"
+msgstr "Ima prilogo"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "Important"
+msgid "Mail is important"
+msgstr "Pomembno"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, kde-format
+msgid "Mail is read"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Mail is Unread"
+msgstr "Neprebrano"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "Kp"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Skp"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, kde-format
 msgid "Has Attachment"
 msgstr "Ima prilogo"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, kde-format
 msgid "Read"
 msgstr "Prebrano"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, kde-format
 msgid "Important"
 msgstr "Pomembno"
 

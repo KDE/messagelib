@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
-"PO-Revision-Date: 2024-09-21 22:03+0300\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
+"PO-Revision-Date: 2024-09-23 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -795,7 +795,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Okunmamış"
@@ -871,7 +871,7 @@ msgid "Display Tooltips"
 msgstr "İpuçlarını Göster"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1158,40 +1158,89 @@ msgstr ""
 "Bu sorgudaki bazı arama klasörleri hâlâ indeksleniyor veya indeksten tümüyle "
 "dışlanmış durumda. Aşağıdaki sonuçlar tamamlanmamış olabilir."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, kde-format
+msgid "To contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:44
+#, kde-format
+msgid "BCC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:46
+#, kde-format
+msgid "CC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:48
+#, kde-format
+msgid "From contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject contains"
+msgstr "Konu"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgid "Mail has attachment"
+msgstr "Eki Var"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "Important"
+msgid "Mail is important"
+msgstr "Önemli"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, kde-format
+msgid "Mail is read"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Mail is Unread"
+msgstr "Okunmamış"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Kime"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "Kopya"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Gizli kopya"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, kde-format
 msgid "Has Attachment"
 msgstr "Eki Var"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, kde-format
 msgid "Read"
-msgstr "Okunmuş"
+msgstr "Okundu"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, kde-format
 msgid "Important"
 msgstr "Önemli"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -807,7 +807,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Nepročitana"
@@ -884,7 +884,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži info-oblačiće"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1184,7 +1184,64 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "sadrži"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "sadrži"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "sadrži"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "sadrži"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "sadrži"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+msgid "Mail has attachment"
+msgstr "prilog"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "&Transport Pošte"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+msgid "Mail is read"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "Označi nit kao nep&ročitanu"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
@@ -1192,31 +1249,31 @@ msgstr ""
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Ima privitak"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Pročitana"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2215,9 +2272,6 @@ msgstr "P&rekini"
 #~ msgid "Sign"
 #~ msgstr "Znak"
 
-#~ msgid "contains"
-#~ msgstr "sadrži"
-
 #~ msgid "equals"
 #~ msgstr "jednako"
 
@@ -2229,10 +2283,6 @@ msgstr "P&rekini"
 
 #~ msgid "is not in address book"
 #~ msgstr "nije adresar"
-
-#, fuzzy
-#~ msgid "has an attachment"
-#~ msgstr "prilog"
 
 #, fuzzy
 #~ msgid "has no attachment"
@@ -3890,9 +3940,6 @@ msgstr "P&rekini"
 
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "Označi sve poruke u odabranoj niti kao nove"
-
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "Označi nit kao nep&ročitanu"
 
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "Označi sve poruke u odabranoj niti kao nepročitane"
@@ -5728,11 +5775,6 @@ msgstr "P&rekini"
 #, fuzzy
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
-#~ msgstr "KMail"
-
-#, fuzzy
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
 #~ msgstr "KMail"
 
 #, fuzzy
@@ -8785,9 +8827,6 @@ msgstr "P&rekini"
 #, fuzzy
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "Mapa za p&oslatu poštu"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "&Transport Pošte"
 
 #~ msgid "&From"
 #~ msgstr "&Od"

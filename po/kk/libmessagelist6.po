@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
 "PO-Revision-Date: 2013-10-16 04:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -788,7 +788,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Беймәлім"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Оқылмаған"
@@ -865,7 +865,7 @@ msgid "Display Tooltips"
 msgstr "Ишараларды көрсету"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1157,7 +1157,66 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "мазмұнында"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "мазмұнында"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "мазмұнында"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "мазмұнында"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "мазмұнында"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has attachment"
+msgstr "тіркемесі бар"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "&Жіберу әдісі"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is read"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "Таңдалған ілеспе топтағы барлық хаттарды оқыл&маған деп белгілеу"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
@@ -1165,31 +1224,31 @@ msgstr ""
 msgid "To"
 msgstr "Кімге"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Тіркемесі бар"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Оқылған"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2214,9 +2273,6 @@ msgstr "Қ&айту"
 #~ msgid "Sign"
 #~ msgstr "Қолтаңба"
 
-#~ msgid "contains"
-#~ msgstr "мазмұнында"
-
 #~ msgid "does not contain"
 #~ msgstr "мазмұнында жоғы"
 
@@ -2243,9 +2299,6 @@ msgstr "Қ&айту"
 
 #~ msgid "is not in category"
 #~ msgstr "санатта жоқ"
-
-#~ msgid "has an attachment"
-#~ msgstr "тіркемесі бар"
 
 #~ msgid "has no attachment"
 #~ msgstr "тіркемесі жоқ"
@@ -5187,9 +5240,6 @@ msgstr "Қ&айту"
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "Таңдалған ілеспе топтағы барлық хаттарды жаңа деп белгілеу"
 
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "Таңдалған ілеспе топтағы барлық хаттарды оқыл&маған деп белгілеу"
-
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "Таңдалған ілеспе топтағы барлық хабарды оқылмаған деп белгілеу"
 
@@ -7639,12 +7689,6 @@ msgstr "Қ&айту"
 #~| msgid "Mail"
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
-#~ msgstr "Пошта"
-
-#, fuzzy
-#~| msgid "Mail"
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
 #~ msgstr "Пошта"
 
 #, fuzzy
@@ -11976,9 +12020,6 @@ msgstr "Қ&айту"
 
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "&Жіберілген пошта қапшығы"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "&Жіберу әдісі"
 
 #~ msgid "&From"
 #~ msgstr "&Кімнен"

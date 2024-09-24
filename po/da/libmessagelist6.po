@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -793,7 +793,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Ulæst"
@@ -869,7 +869,7 @@ msgid "Display Tooltips"
 msgstr "Vis værktøjstip"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1169,38 +1169,98 @@ msgstr ""
 "Nogle af søgemapperne i denne forespørgsel bliver stadig indekseret eller er "
 "helt undtaget fra indeksering. Resultaterne nedenfor kan være ukomplette."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "indeholder"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "indeholder"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "indeholder"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "indeholder"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "indeholder"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has attachment"
+msgstr "har et bilag"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "&Mail-overførsel"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "type of folder storage"
+#| msgid "Maildir"
+msgid "Mail is read"
+msgstr "Maildir"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "Markér tråd som &ulæst"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Til"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgid "Bcc"
 msgstr "Bcc"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Har bilag"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Læst"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2209,9 +2269,6 @@ msgstr "&Annullér"
 #~ msgid "Sign"
 #~ msgstr "Signér"
 
-#~ msgid "contains"
-#~ msgstr "indeholder"
-
 #~ msgid "does not contain"
 #~ msgstr "ikke indeholder"
 
@@ -2238,9 +2295,6 @@ msgstr "&Annullér"
 
 #~ msgid "is not in category"
 #~ msgstr "ikke er i kategori"
-
-#~ msgid "has an attachment"
-#~ msgstr "har et bilag"
 
 #~ msgid "has no attachment"
 #~ msgstr "ikke har noget bilag"
@@ -4960,9 +5014,6 @@ msgstr "&Annullér"
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "Markér alle breve i den valgte tråd som nye"
 
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "Markér tråd som &ulæst"
-
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "Markér alle breve i den valgte tråd som ulæste"
 
@@ -7323,10 +7374,6 @@ msgstr "&Annullér"
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
 #~ msgstr "Mail-bakke"
-
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
-#~ msgstr "Maildir"
 
 #~ msgctxt "type of folder storage"
 #~ msgid "Disconnected IMAP"
@@ -11788,9 +11835,6 @@ msgstr "&Annullér"
 
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "&Mappe til afsendte e-mails"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "&Mail-overførsel"
 
 #~ msgid "&From"
 #~ msgstr "&Fra"

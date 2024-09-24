@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
-"PO-Revision-Date: 2024-09-21 07:42+0200\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
+"PO-Revision-Date: 2024-09-23 17:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -787,7 +787,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Oläst"
@@ -863,7 +863,7 @@ msgid "Display Tooltips"
 msgstr "Visa verktygstips"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1150,40 +1150,89 @@ msgstr ""
 "Vissa av sökkatalogerna i förfrågan indexeras fortfarande eller har helt "
 "undantagits från indexering. Resultaten nedan kan vara ofullständiga."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, kde-format
+msgid "To contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:44
+#, kde-format
+msgid "BCC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:46
+#, kde-format
+msgid "CC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:48
+#, kde-format
+msgid "From contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject contains"
+msgstr "Rubrik"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgid "Mail has attachment"
+msgstr "Har bilaga"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "Important"
+msgid "Mail is important"
+msgstr "Viktigt"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, kde-format
+msgid "Mail is read"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Mail is Unread"
+msgstr "Oläst"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Till"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "Kopia"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Dold kopia"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, kde-format
 msgid "Has Attachment"
 msgstr "Har bilaga"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, kde-format
 msgid "Read"
 msgstr "Läst"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, kde-format
 msgid "Important"
 msgstr "Viktigt"
 

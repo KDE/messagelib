@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
 "PO-Revision-Date: 2024-09-05 15:42+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -795,7 +795,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Nelasīta"
@@ -871,7 +871,7 @@ msgid "Display Tooltips"
 msgstr "Rādīt paskaidres"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1162,37 +1162,97 @@ msgstr ""
 "Dažas no meklēšanas mapēm šajā vaicājumā vēl tiek indeksētas vai indeksēšanā "
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "satur"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "satur"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "satur"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "satur"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "satur"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has attachment"
+msgstr "Ir pielikums"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "&Pasta transports:"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is read"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "Atzīmēt pavedienu kā nelastīt&u"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Kam"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Ir pielikums"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Lasīta"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2137,9 +2197,6 @@ msgstr "&Atcelt"
 #~ msgid "Sign"
 #~ msgstr "Parakstīt"
 
-#~ msgid "contains"
-#~ msgstr "satur"
-
 #~ msgid "does not contain"
 #~ msgstr "nesatur"
 
@@ -2166,9 +2223,6 @@ msgstr "&Atcelt"
 
 #~ msgid "is not in category"
 #~ msgstr "nav kategorijā"
-
-#~ msgid "has an attachment"
-#~ msgstr "Ir pielikums"
 
 #~ msgid "has no attachment"
 #~ msgstr "nav pielikuma"
@@ -5098,9 +5152,6 @@ msgstr "&Atcelt"
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "Atzīmēt visas vēstules izvēlētajā pavedienā kā jaunas"
 
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "Atzīmēt pavedienu kā nelastīt&u"
-
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "Atzīmēt visas vēstules izvēlētajā pavedienā kā nelasītas"
 
@@ -7453,13 +7504,6 @@ msgstr "&Atcelt"
 #~| msgid "Mail"
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
-#~ msgstr "Pasts"
-
-#, fuzzy
-#~| msgctxt "type of folder content"
-#~| msgid "Mail"
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
 #~ msgstr "Pasts"
 
 #, fuzzy
@@ -11848,9 +11892,6 @@ msgstr "&Atcelt"
 
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "No&sūtītā pasta mape:"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "&Pasta transports:"
 
 #~ msgid "&From"
 #~ msgstr "&No"

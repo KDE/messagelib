@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -789,7 +789,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Olvasatlan"
@@ -865,7 +865,7 @@ msgid "Display Tooltips"
 msgstr "Tippek megjelenítése"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1153,38 +1153,98 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "tartalmazza"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "tartalmazza"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "tartalmazza"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "tartalmazza"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "tartalmazza"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has attachment"
+msgstr "van csatolása"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "Üze&nettovábbítási mód"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is read"
+msgstr "Levelek"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "A szál megjelölése ol&vasatlannak"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Címzett"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgid "Bcc"
 msgstr "Titkos másolat"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Van melléklete"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Olvasott"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2145,9 +2205,6 @@ msgstr "&Mégsem"
 #~ msgid "Sign"
 #~ msgstr "Elektronikus aláírás"
 
-#~ msgid "contains"
-#~ msgstr "tartalmazza"
-
 #~ msgid "does not contain"
 #~ msgstr "nem tartalmazza"
 
@@ -2174,9 +2231,6 @@ msgstr "&Mégsem"
 
 #~ msgid "is not in category"
 #~ msgstr "nem esik bele egy kategóriába"
-
-#~ msgid "has an attachment"
-#~ msgstr "van csatolása"
 
 #~ msgid "has no attachment"
 #~ msgstr "nincs csatolása"
@@ -5072,9 +5126,6 @@ msgstr "&Mégsem"
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "A kijelölt szálban található összes üzenet megjelölése újnak"
 
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "A szál megjelölése ol&vasatlannak"
-
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "A kijelölt szálhoz tartozó összes üzenet megjelölése olvasatlannak"
 
@@ -7456,13 +7507,6 @@ msgstr "&Mégsem"
 #~| msgid "Mail"
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
-#~ msgstr "Levelek"
-
-#, fuzzy
-#~| msgctxt "type of folder content"
-#~| msgid "Mail"
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
 #~ msgstr "Levelek"
 
 #, fuzzy
@@ -12081,9 +12125,6 @@ msgstr "&Mégsem"
 
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "Az &elküldött üzenetek mappája"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "Üze&nettovábbítási mód"
 
 #~ msgid "&From"
 #~ msgstr "&Feladó"

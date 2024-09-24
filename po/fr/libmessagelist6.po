@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
-"PO-Revision-Date: 2024-08-18 09:31+0200\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
+"PO-Revision-Date: 2024-09-22 08:53+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -36,9 +36,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #: core/aggregation.cpp:178
@@ -824,7 +824,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Non lu"
@@ -900,7 +900,7 @@ msgid "Display Tooltips"
 msgstr "Afficher les infobulles"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1190,37 +1190,97 @@ msgstr ""
 "d'indexation ou sont exclus complètement de l'indexation. Les résultats ci-"
 "dessous peuvent être incomplets."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "To contains"
+msgstr "contient"
+
+#: core/widgets/searchlinecommand.cpp:44
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "BCC contains"
+msgstr "contient"
+
+#: core/widgets/searchlinecommand.cpp:46
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "CC contains"
+msgstr "contient"
+
+#: core/widgets/searchlinecommand.cpp:48
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "From contains"
+msgstr "contient"
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "contains"
+msgid "Subject contains"
+msgstr "contient"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has attachment"
+msgstr "possède une pièce jointe"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "&Mail Transport"
+msgid "Mail is important"
+msgstr "&Transport du courriel"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is read"
+msgstr "Courriel"
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Unread"
+msgstr "Marquer comme non l&u"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "À"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Bcc"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Has Attachment"
 msgstr "Possède une pièce jointe"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
 msgid "Read"
 msgstr "Lu"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -2169,9 +2229,6 @@ msgstr "&Annuler"
 #~ msgid "Sign"
 #~ msgstr "Signature"
 
-#~ msgid "contains"
-#~ msgstr "contient"
-
 #~ msgid "does not contain"
 #~ msgstr "ne contient pas"
 
@@ -2198,9 +2255,6 @@ msgstr "&Annuler"
 
 #~ msgid "is not in category"
 #~ msgstr "n'est pas dans la catégorie"
-
-#~ msgid "has an attachment"
-#~ msgstr "possède une pièce jointe"
 
 #~ msgid "has no attachment"
 #~ msgstr "ne possède pas de pièce jointe"
@@ -5128,9 +5182,6 @@ msgstr "&Annuler"
 #~ msgid "Mark all messages in the selected thread as new"
 #~ msgstr "Marquer tous les messages du fil de discussion comme nouveaux"
 
-#~ msgid "Mark Thread as &Unread"
-#~ msgstr "Marquer comme non l&u"
-
 #~ msgid "Mark all messages in the selected thread as unread"
 #~ msgstr "Marquer tous les messages du fil de discussion comme non lus"
 
@@ -7538,13 +7589,6 @@ msgstr "&Annuler"
 #~| msgid "Mail"
 #~ msgctxt "type of folder storage"
 #~ msgid "Mailbox"
-#~ msgstr "Courriel"
-
-#, fuzzy
-#~| msgctxt "type of folder content"
-#~| msgid "Mail"
-#~ msgctxt "type of folder storage"
-#~ msgid "Maildir"
 #~ msgstr "Courriel"
 
 #, fuzzy
@@ -12287,9 +12331,6 @@ msgstr "&Annuler"
 
 #~ msgid "&Sent-Mail Folder"
 #~ msgstr "Dossier des messages envo&yés"
-
-#~ msgid "&Mail Transport"
-#~ msgstr "&Transport du courriel"
 
 #~ msgid "&From"
 #~ msgstr "D&e"

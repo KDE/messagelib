@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
-"PO-Revision-Date: 2024-09-21 08:48+0300\n"
+"POT-Creation-Date: 2024-09-24 00:40+0000\n"
+"PO-Revision-Date: 2024-09-23 19:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -806,7 +806,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "לא נקראו"
@@ -882,7 +882,7 @@ msgid "Display Tooltips"
 msgstr "הצגת חלוניות עצה"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1177,40 +1177,89 @@ msgstr ""
 "חלק מתיקיות החיפוש בשאילתה הזאת עדיין מסדרות את המפתח או שמוחרגות מסידור "
 "המפתח לחלוטין. התוצאות שלהלן עלולות להיות חלקיות."
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommand.cpp:42
+#, kde-format
+msgid "To contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:44
+#, kde-format
+msgid "BCC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:46
+#, kde-format
+msgid "CC contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:48
+#, kde-format
+msgid "From contains"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject contains"
+msgstr "נושא"
+
+#: core/widgets/searchlinecommand.cpp:52
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgid "Mail has attachment"
+msgstr "יש צרופה"
+
+#: core/widgets/searchlinecommand.cpp:54
+#, fuzzy, kde-format
+#| msgid "Important"
+msgid "Mail is important"
+msgstr "חשובה"
+
+#: core/widgets/searchlinecommand.cpp:56
+#, kde-format
+msgid "Mail is read"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Mail is Unread"
+msgstr "לא נקראו"
+
+#: core/widgets/searchlinecommand.cpp:68
+#, kde-format
+msgid "AND"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "אל"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "עותק"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "עותק סמוי"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#: core/widgets/searchlinecommandwidget.cpp:48
+#, kde-format
 msgid "Has Attachment"
 msgstr "יש צרופה"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, kde-format
 msgid "Read"
 msgstr "נקראה"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, kde-format
 msgid "Important"
 msgstr "חשובה"
 
