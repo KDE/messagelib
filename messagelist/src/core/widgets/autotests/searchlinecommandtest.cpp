@@ -136,7 +136,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
         const QString convertStr{QStringLiteral("Subject contains goo bla AND From contains dddd ddd")};
-        QTest::newRow("test parenthese1") << str << lstInfo << 2 << convertStr;
+        QTest::newRow("test parenthese2") << str << lstInfo << 2 << convertStr;
     }
 }
 
