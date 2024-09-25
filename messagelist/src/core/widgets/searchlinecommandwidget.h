@@ -7,6 +7,7 @@
 #pragma once
 
 #include "messagelist_private_export.h"
+#include <QHash>
 #include <QWidget>
 class QPushButton;
 namespace MessageList
@@ -26,7 +27,7 @@ Q_SIGNALS:
 private:
     MESSAGELIST_NO_EXPORT void fillWidgets();
     MESSAGELIST_NO_EXPORT QPushButton *createPushButton(const QString &i18nStr, const QString &commandStr);
-    QMap<QString, QString> mButtonsList;
+    QHash<QString, QString> mButtonsList;
 };
 }
 }

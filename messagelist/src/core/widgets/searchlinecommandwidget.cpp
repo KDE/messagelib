@@ -19,7 +19,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     flowLayout->setSpacing(0);
     fillWidgets();
     Q_ASSERT(!mButtonsList.isEmpty());
-    QMapIterator<QString, QString> i(mButtonsList);
+    QHashIterator<QString, QString> i(mButtonsList);
     while (i.hasNext()) {
         i.next();
         flowLayout->addWidget(createPushButton(i.value(), i.key()));
