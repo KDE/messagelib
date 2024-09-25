@@ -122,8 +122,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 searchLineInfo.clear();
                 tmp.clear();
             }
-        } else if (ch == QLatin1Char('"')) {
-            // TODO
         } else if (ch == QLatin1Char('(')) {
             parentheses++;
             if (parentheses > 1) {
