@@ -126,14 +126,14 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             // TODO
         } else if (ch == QLatin1Char('(')) {
             parentheses++;
-            // qDebug() << " DDDDDDDDDD ( " << parentheses;
+            // qDebug() << " parenthese ( equal " << parentheses;
         } else if (ch == QLatin1Char(')')) {
             parentheses--;
-            // qDebug() << " DDDDDDDDDD ) " << parentheses;
+            // qDebug() << " parenthese ) equal " << parentheses;
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
-                // qDebug() << " DDDDDDDDDDDDD " << searchLineInfo;
+                // qDebug() << " new values " << searchLineInfo;
                 mSearchLineInfo.append(std::move(searchLineInfo));
                 searchLineInfo.clear();
             }
