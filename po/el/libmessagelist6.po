@@ -1245,29 +1245,22 @@ msgid "Cc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Bcc"
+#, kde-format
 msgid "Bcc"
 msgstr "Κρυφή κοινοποίηση"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
 msgstr "Έχει επισύναψη"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "Αναγνωσμένο"
 
 #: core/widgets/searchlinecommandwidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "Σημαντικό"
 

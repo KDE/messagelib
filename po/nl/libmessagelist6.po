@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-23 11:40+0200\n"
+"PO-Revision-Date: 2024-09-24 11:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1175,64 +1175,54 @@ msgstr ""
 "kunnen onvolledig zijn."
 
 #: core/widgets/searchlinecommand.cpp:42
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "bevat"
+msgstr "Aan bevat"
 
 #: core/widgets/searchlinecommand.cpp:44
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "bevat"
+msgstr "BCC bevat"
 
 #: core/widgets/searchlinecommand.cpp:46
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "bevat"
+msgstr "CC bevat"
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "bevat"
+msgstr "Uit bevat"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "bevat"
+msgstr "Onderwerp bevat"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "heeft bijlage"
+msgstr "E-mail heeft bijlage"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "Beric&htentransport"
+msgstr "E-mail is belangrijk"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "type of folder storage"
-#| msgid "Maildir"
+#, kde-format
 msgid "Mail is read"
-msgstr "Maildir"
+msgstr "E-mail is gelezen"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Discussie markeren als &ongelezen"
+msgstr "E-mail is ongelezen"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "EN"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70

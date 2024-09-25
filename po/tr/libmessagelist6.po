@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-23 14:24+0300\n"
+"PO-Revision-Date: 2024-09-24 10:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1161,57 +1161,52 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:42
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "Kime şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "Gizli Kopya şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "Kopya şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "Kimden şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Konu"
+msgstr "Konu şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Eki Var"
+msgstr "Postanın eki var"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Önemli"
+msgstr "Posta önemli"
 
 #: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Posta okunmuş"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Okunmamış"
+msgstr "Posta okunmamış"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "VE"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70

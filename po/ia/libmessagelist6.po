@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-02 15:57+0200\n"
+"PO-Revision-Date: 2024-09-24 12:16+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1158,59 +1158,52 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:42
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "A contine"
 
 #: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "BCC contine"
 
 #: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "CC contine"
 
 #: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "Ex contine"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Subjecto"
+msgstr "Subjecto contine"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Il ha attachamento"
+msgstr "Posta ha attachamento"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Importante"
+msgstr "Posta es Importante"
 
 #: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Posta es legite"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Non Legite"
+msgstr "Posta es non Legite"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "AND"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
@@ -1221,31 +1214,25 @@ msgstr "A"
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "pc (CC)"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Bcc"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
-msgstr "Il ha attachamento"
+msgstr "Ha attachamento"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "Legite"
 
 #: core/widgets/searchlinecommandwidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "Importante"
 
