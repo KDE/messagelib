@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-23 03:51+0200\n"
+"PO-Revision-Date: 2024-09-26 18:54+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1164,57 +1164,52 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:42
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "Para contiene"
 
 #: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "Cco contiene"
 
 #: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "Cc contiene"
 
 #: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "De contiene"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Asunto"
+msgstr "El asunto contiene"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Tiene adjunto"
+msgstr "El mensaje tiene adjunto"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Importante"
+msgstr "El mensaje es importante"
 
 #: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "El mensaje está leído"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "No leído"
+msgstr "El mensaje está sin leer"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "Y"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70

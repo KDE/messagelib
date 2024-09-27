@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-24 07:46+0200\n"
+"PO-Revision-Date: 2024-09-25 11:21+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1191,64 +1191,54 @@ msgstr ""
 "dessous peuvent être incomplets."
 
 #: core/widgets/searchlinecommand.cpp:42
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "contient"
+msgstr "« À » contient"
 
 #: core/widgets/searchlinecommand.cpp:44
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "contient"
+msgstr "« BCC » contient"
 
 #: core/widgets/searchlinecommand.cpp:46
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "contient"
+msgstr "« CC » contient"
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "contient"
+msgstr "« De » contient"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "contient"
+msgstr "« Sujet » contient"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "possède une pièce jointe"
+msgstr "Le courrier possède une pièce jointe"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "&Transport du courriel"
+msgstr "Le courriel est important"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is read"
-msgstr "Courriel"
+msgstr "Le courriel est lu."
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Marquer comme non l&u"
+msgstr "Le courriel est non lu."
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "ET"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70

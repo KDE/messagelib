@@ -2035,17 +2035,3 @@ msgstr "&Копиране тук"
 #, kde-format
 msgid "C&ancel"
 msgstr "О&тказ"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Филтриране на пощата по състояние"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Изчистване на филтъра"
-
-#~ msgid "Note Icon"
-#~ msgstr "Икона за Бележка"
-
-#~ msgid "Note"
-#~ msgstr "Бележка"

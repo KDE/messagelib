@@ -2431,38 +2431,3 @@ msgstr "Диспечерът на поща е офлайн."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Включване онлайн"
-
-#~ msgid "Failed to attach file"
-#~ msgstr "Неуспешно прикачване на файл"
-
-#~ msgid ""
-#~ "No charsets were available for encoding. Please check your configuration "
-#~ "and make sure it contains at least one charset for sending."
-#~ msgstr ""
-#~ "Нямаше налични кодове за кодиране. Моля, проверете вашата конфигурация и "
-#~ "се уверете, че съдържа поне един набор от знаци за изпращане."
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "При кодиране на писмото с %1 ще се загубят някои знаци.\n"
-#~ "Искате ли да продължите?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Някои символи ще бъдат изгубени"
-
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Загуба на символи"
-
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Промяна на кодирането"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "Потребителят реши да промени кодирането."
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr "Избраното кодиране (%1) не може да кодира напълно писмото."

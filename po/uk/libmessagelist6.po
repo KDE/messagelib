@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-09-23 09:02+0300\n"
+"PO-Revision-Date: 2024-09-26 19:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1183,57 +1183,52 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:42
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "«Кому» містить"
 
 #: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "«Пр. копія» містить"
 
 #: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "«Копія» містить"
 
 #: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "«Від» містить"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Тема"
+msgstr "Тема містить"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Має долучення"
+msgstr "Повідомлення містить долучення"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Важливе"
+msgstr "Повідомлення є важливим"
 
 #: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Повідомлення прочитано"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Непрочитане"
+msgstr "Повідомлення не прочитано"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "І"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
