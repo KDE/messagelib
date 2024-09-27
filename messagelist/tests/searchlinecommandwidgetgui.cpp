@@ -23,10 +23,10 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     mainLayout->addStretch(1);
     auto label = new QLabel(this);
     mainLayout->addWidget(label);
-    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, this, [this, label](const QString &str) {
-        mLineEdit->insert(str);
+    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, mLineEdit, &QLineEdit::insert);
+    connect(mLineEdit, &QLineEdit::textChanged, this, [label](const QString &str) {
         MessageList::Core::SearchLineCommand c;
-        c.parseSearchLineCommand(mLineEdit->text());
+        c.parseSearchLineCommand(str);
         label->setText(c.generateCommadLineStr());
     });
 }
