@@ -5,10 +5,11 @@
 */
 
 #include "searchlinecommandwidgetgui.h"
+#include <QLabel>
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <core/widgets/searchlinecommand.h>
 #include <core/widgets/searchlinecommandwidget.h>
-
 SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     : QWidget{parent}
     , mLineEdit(new QLineEdit(this))
@@ -20,7 +21,14 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     MessageList::Core::SearchLineCommandWidget *w = new MessageList::Core::SearchLineCommandWidget(this);
     mainLayout->addWidget(w);
     mainLayout->addStretch(1);
-    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, mLineEdit, &QLineEdit::insert);
+    auto label = new QLabel(this);
+    mainLayout->addWidget(label);
+    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, this, [this, label](const QString &str) {
+        mLineEdit->insert(str);
+        MessageList::Core::SearchLineCommand c;
+        c.parseSearchLineCommand(mLineEdit->text());
+        label->setText(c.generateCommadLineStr());
+    });
 }
 
 SearchLineCommandWidgetGui::~SearchLineCommandWidgetGui() = default;
