@@ -26,8 +26,14 @@ Q_SIGNALS:
 
 private:
     MESSAGELIST_NO_EXPORT void fillWidgets();
-    MESSAGELIST_NO_EXPORT QPushButton *createPushButton(const QString &i18nStr, const QString &commandStr);
-    QHash<QString, QString> mButtonsList;
+    MESSAGELIST_NO_EXPORT QPushButton *createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr);
+    struct ButtonInfo {
+        bool needSpace = false;
+        QString identifier;
+        QString i18n;
+    };
+
+    QList<ButtonInfo> mButtonsList;
 };
 }
 }

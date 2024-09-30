@@ -19,21 +19,20 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     flowLayout->setSpacing(0);
     fillWidgets();
     Q_ASSERT(!mButtonsList.isEmpty());
-    QHashIterator<QString, QString> i(mButtonsList);
-    while (i.hasNext()) {
-        i.next();
-        flowLayout->addWidget(createPushButton(i.value(), i.key()));
+    for (const auto &info : std::as_const(mButtonsList)) {
+        flowLayout->addWidget(createPushButton(info.needSpace, info.i18n, info.identifier));
     }
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
 
-QPushButton *SearchLineCommandWidget::createPushButton(const QString &i18nStr, const QString &commandStr)
+QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)
 {
     auto pushButton = new QPushButton(i18nStr, this);
     pushButton->setObjectName(commandStr);
-    connect(pushButton, &QPushButton::clicked, this, [this, commandStr]() {
-        Q_EMIT insertCommand(commandStr);
+    connect(pushButton, &QPushButton::clicked, this, [this, commandStr, needSpace]() {
+        const QString str = commandStr + (needSpace ? QStringLiteral(" ") : QString());
+        Q_EMIT insertCommand(str);
     });
     return pushButton;
 }
@@ -41,14 +40,14 @@ QPushButton *SearchLineCommandWidget::createPushButton(const QString &i18nStr, c
 void SearchLineCommandWidget::fillWidgets()
 {
     mButtonsList = {
-        {QStringLiteral("from:"), i18n("From")},
-        {QStringLiteral("to:"), i18n("To")},
-        {QStringLiteral("cc:"), i18n("Cc")},
-        {QStringLiteral("bcc:"), i18n("Bcc")},
-        {QStringLiteral("has:attachment"), i18n("Has Attachment")},
-        {QStringLiteral("is:read"), i18n("Read")},
-        {QStringLiteral("is:unread"), i18n("Unread")},
-        {QStringLiteral("is:important"), i18n("Important")},
+        {false, QStringLiteral("from:"), i18n("From")},
+        {false, QStringLiteral("to:"), i18n("To")},
+        {false, QStringLiteral("cc:"), i18n("Cc")},
+        {false, QStringLiteral("bcc:"), i18n("Bcc")},
+        {true, QStringLiteral("has:attachment"), i18n("Has Attachment")},
+        {true, QStringLiteral("is:read"), i18n("Read")},
+        {true, QStringLiteral("is:unread"), i18n("Unread")},
+        {true, QStringLiteral("is:important"), i18n("Important")},
         // TODO add more
     };
 }
