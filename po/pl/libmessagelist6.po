@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-24 00:40+0000\n"
-"PO-Revision-Date: 2024-08-24 12:13+0200\n"
+"PO-Revision-Date: 2024-09-29 09:49+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1166,64 +1166,54 @@ msgstr ""
 "zostały wykluczone z indeksowania. Wyniki mogą być niepełne."
 
 #: core/widgets/searchlinecommand.cpp:42
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "zawiera"
+msgstr "\"Do\" zawiera"
 
 #: core/widgets/searchlinecommand.cpp:44
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "zawiera"
+msgstr "\"UDW\" zawiera"
 
 #: core/widgets/searchlinecommand.cpp:46
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "zawiera"
+msgstr "\"DW\" zawiera"
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "zawiera"
+msgstr "\"Od\" zawiera"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "zawiera"
+msgstr "Temat zawiera"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "zawiera załącznik"
+msgstr "Wiadomość ma załącznik"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "&Przekazywanie poczty"
+msgstr "Wiadomość jest ważna"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is read"
-msgstr "Wiadomości"
+msgstr "Wiadomość jest przeczytana"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Zaznacz wątek jako nieprze&czytany"
+msgstr "Wiadomość jest nieprzeczytana"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "ORAZ"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
@@ -1234,32 +1224,25 @@ msgstr "Do"
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "DW"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "bcc"
+#, kde-format
 msgid "Bcc"
-msgstr "udw"
+msgstr "UDW"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
-msgstr "Z załącznikiem"
+msgstr "Ma załącznik"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "Przeczytana"
 
 #: core/widgets/searchlinecommandwidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "Ważna"
 
