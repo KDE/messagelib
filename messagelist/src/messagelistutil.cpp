@@ -128,7 +128,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     if (!textContent) {
         return {};
     }
-    const QString content = textContent->decodedText(true, true);
+    const QString content = textContent->decodedText(KMime::Content::TrimSpaces);
     if (content.isEmpty()) {
         return {};
     }
