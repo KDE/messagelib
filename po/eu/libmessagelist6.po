@@ -15,14 +15,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-01 00:40+0000\n"
-"PO-Revision-Date: 2024-08-17 10:02+0200\n"
+"PO-Revision-Date: 2024-10-01 17:55+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/aggregation.cpp:178
@@ -1165,63 +1165,54 @@ msgstr ""
 "egotea."
 
 #: core/widgets/searchlinecommand.cpp:42
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "hau du"
+msgstr "\"Nori\"k hau du"
 
 #: core/widgets/searchlinecommand.cpp:44
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "hau du"
+msgstr "\"BCC\"ek hau du"
 
 #: core/widgets/searchlinecommand.cpp:46
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "hau du"
+msgstr "\"CC\"ek hau du"
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "hau du"
+msgstr "\"Nork\" hau du"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "hau du"
+msgstr "\"Gaia\"k hau du"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "eranskina du"
+msgstr "Postak eranskina du"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "&Posta garraioa"
+msgstr "Posta garrantzitsua da"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is read"
-msgstr "Posta"
+msgstr "Posta irakurri da"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Markatu haria &irakurri gabe gisa"
+msgstr "Posta ez da irakurri"
 
 #: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "ETA"
 
 #: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:70
@@ -1232,31 +1223,25 @@ msgstr "Nori"
 #: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Bcc"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
 msgstr "Eranskina du"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "Irakurrita"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "Garrantzitsua"
 
