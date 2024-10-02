@@ -15,9 +15,11 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
     {"from"_L1, SearchLineCommand::SearchLineType::From},
     {"has:attachment"_L1, SearchLineCommand::SearchLineType::HasAttachment},
+    {"has:hasinvitation"_L1, SearchLineCommand::SearchLineType::HasInvitation},
     {"is:unread"_L1, SearchLineCommand::SearchLineType::IsUnRead},
     {"is:read"_L1, SearchLineCommand::SearchLineType::IsRead},
     {"is:important"_L1, SearchLineCommand::SearchLineType::IsImportant},
+    {"is:ignored"_L1, SearchLineCommand::SearchLineType::IsIgnored},
     // TODO add more
 };
 SearchLineCommand::SearchLineCommand() = default;
@@ -50,12 +52,16 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("Subject contains");
     case HasAttachment:
         return i18n("Mail has attachment");
+    case HasInvitation:
+        return i18n("Mail has invitation");
     case IsImportant:
         return i18n("Mail is important");
     case IsRead:
         return i18n("Mail is read");
     case IsUnRead:
         return i18n("Mail is Unread");
+    case IsIgnored:
+        return i18n("Mail is Ignored");
     }
     return {};
 }

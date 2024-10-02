@@ -30,9 +30,11 @@ public:
         Date,
         Size,
         HasAttachment,
+        HasInvitation,
         IsImportant,
         IsRead,
         IsUnRead,
+        IsIgnored,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {

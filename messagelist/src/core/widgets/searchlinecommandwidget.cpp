@@ -45,9 +45,11 @@ void SearchLineCommandWidget::fillWidgets()
         {false, QStringLiteral("cc:"), i18n("Cc")},
         {false, QStringLiteral("bcc:"), i18n("Bcc")},
         {true, QStringLiteral("has:attachment"), i18n("Has Attachment")},
+        {true, QStringLiteral("has:invitation"), i18n("Has Invitation")},
         {true, QStringLiteral("is:read"), i18n("Read")},
         {true, QStringLiteral("is:unread"), i18n("Unread")},
         {true, QStringLiteral("is:important"), i18n("Important")},
+        {true, QStringLiteral("is:ignored"), i18n("Ignored")},
         // TODO add more
     };
 }
