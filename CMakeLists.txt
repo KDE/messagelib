@@ -55,6 +55,27 @@ include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
 include(ECMAddTests)
 include(ECMAddQch)
+
+include(ECMCheckOutboundLicense)
+file(GLOB_RECURSE ALL_SOURCE_FILES
+messagecomposer/*.cpp
+messagecomposer/*.h
+messagecore/*.cpp
+messagecore/*.h
+messagelist/*.cpp
+messagelist/*.h
+messageviewer/*.cpp
+messageviewer/*.h
+mimetreeparser/*.cpp
+mimetreeparser/*.h
+templateparser/*.cpp
+templateparser/*.h
+webengineviewer/*.cpp
+webengineviewer/*.h
+)
+ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
+
+
 set(KTEXTADDONS_MIN_VERSION "1.5.4")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
