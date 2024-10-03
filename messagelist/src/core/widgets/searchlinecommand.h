@@ -38,6 +38,8 @@ public:
         IsHam,
         IsSpam,
         IsWatched,
+        IsReplied,
+        IsForwarded,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {

@@ -53,6 +53,8 @@ void SearchLineCommandWidget::fillWidgets()
         {true, QStringLiteral("is:ham"), i18n("Ham")},
         {true, QStringLiteral("is:spam"), i18n("Spam")},
         {true, QStringLiteral("is:watched"), i18n("Watched")},
+        {true, QStringLiteral("is:replied"), i18n("Replied")},
+        {true, QStringLiteral("is:forwarded"), i18n("Forwarded")},
         // TODO add more
     };
 }

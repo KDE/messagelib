@@ -23,6 +23,8 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"is:ham"_L1, SearchLineCommand::SearchLineType::IsHam},
     {"is:spam"_L1, SearchLineCommand::SearchLineType::IsSpam},
     {"is:watched"_L1, SearchLineCommand::SearchLineType::IsWatched},
+    {"is:replied"_L1, SearchLineCommand::SearchLineType::IsReplied},
+    {"is:forwarded"_L1, SearchLineCommand::SearchLineType::IsForwarded},
     // TODO add more
 };
 SearchLineCommand::SearchLineCommand() = default;
@@ -71,6 +73,10 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("Mail is Spam");
     case IsWatched:
         return i18n("Mail is watched");
+    case IsReplied:
+        return i18n("Mail is replied");
+    case IsForwarded:
+        return i18n("Mail is forwarded");
     }
     return {};
 }
