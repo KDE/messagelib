@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:40+0000\n"
 "PO-Revision-Date: 2024-09-24 10:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -798,7 +798,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Sense llegir"
@@ -1161,52 +1161,65 @@ msgstr ""
 "Algunes de les carpetes de busca en esta consulta encara s'estan indexant o "
 "seran excloses. Els resultats a continuació poden estar incomplets."
 
-#: core/widgets/searchlinecommand.cpp:42
+#: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "To contains"
 msgstr "A conté"
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "BCC contains"
 msgstr "BCC conté"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "CC contains"
 msgstr "CC conté"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:50
 #, kde-format
 msgid "From contains"
 msgstr "Des de conté"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:52
 #, kde-format
 msgid "Subject contains"
 msgstr "Assumpte conté"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:54
 #, kde-format
 msgid "Mail has attachment"
 msgstr "El correu té un adjunt"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Status of a message"
+#| msgid "Has Invitation"
+msgid "Mail has invitation"
+msgstr "Té una invitació"
+
+#: core/widgets/searchlinecommand.cpp:58
 #, kde-format
 msgid "Mail is important"
 msgstr "El correu és important"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:60
 #, kde-format
 msgid "Mail is read"
 msgstr "El correu s'ha llegit"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:62
 #, kde-format
 msgid "Mail is Unread"
 msgstr "El correu no s'ha llegit"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:64
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is Ignored"
+msgstr "El correu no s'ha llegit"
+
+#: core/widgets/searchlinecommand.cpp:74
 #, kde-format
 msgid "AND"
 msgstr "I"
@@ -1233,14 +1246,28 @@ msgid "Has Attachment"
 msgstr "Té un adjunt"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Status of a message"
+#| msgid "Has Invitation"
+msgid "Has Invitation"
+msgstr "Té una invitació"
+
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Read"
 msgstr "Llegit"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, kde-format
 msgid "Important"
 msgstr "Important"
+
+#: core/widgets/searchlinecommandwidget.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ignored"
+msgid "Ignored"
+msgstr "Ignorat"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

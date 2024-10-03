@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:40+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -878,7 +878,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "&ফরোয়ার্ড করো"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -1278,61 +1278,73 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:42
+#: core/widgets/searchlinecommand.cpp:44
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "-এর মধ্যে রয়েছে"
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:46
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "-এর মধ্যে রয়েছে"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:48
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "-এর মধ্যে রয়েছে"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:50
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "-এর মধ্যে রয়েছে"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:52
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "-এর মধ্যে রয়েছে"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:54
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "একটি অ্যাটাচমেন্ট আছে"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Advanced Options"
+msgid "Mail has invitation"
+msgstr "অগ্রসর অপশন"
+
+#: core/widgets/searchlinecommand.cpp:58
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "মেইল &পরিবাহক"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:60
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "মেইল"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:62
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "সূত্র &অপঠিত হিসাবে চিহ্নিত করো"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:64
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Ignored"
+msgstr "সূত্র &অপঠিত হিসাবে চিহ্নিত করো"
+
+#: core/widgets/searchlinecommand.cpp:74
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1362,17 +1374,29 @@ msgstr "অ্যাটাচমেন্ট আছে"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
+#| msgid "Advanced Options"
+msgid "Has Invitation"
+msgstr "অগ্রসর অপশন"
+
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Read"
 msgid "Read"
 msgstr "পঠিত"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
 msgid "Important"
 msgstr "গুরুত্বপূর্ণ"
+
+#: core/widgets/searchlinecommandwidget.cpp:52
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgid "Ignored"
+msgstr "অগ্রাহ্য করা"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

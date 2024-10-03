@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:40+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -870,7 +870,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Невядомы"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Unread"
@@ -1276,61 +1276,73 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:42
+#: core/widgets/searchlinecommand.cpp:44
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:46
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:48
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:50
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:52
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:54
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "зьмяшчае далучэнне"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Advanced Options"
+msgid "Mail has invitation"
+msgstr "Адмысловыя опцыі"
+
+#: core/widgets/searchlinecommand.cpp:58
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "&Паштовы транспарт"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:60
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Пошта"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:62
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Пазначыць тэму як &непрачытаную"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:64
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is Ignored"
+msgstr "Пазначыць тэму як &непрачытаную"
+
+#: core/widgets/searchlinecommand.cpp:74
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1360,15 +1372,27 @@ msgstr "Змяшчае далучэнне"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
+#| msgid "Advanced Options"
+msgid "Has Invitation"
+msgstr "Адмысловыя опцыі"
+
+#: core/widgets/searchlinecommandwidget.cpp:49
+#, fuzzy, kde-format
 #| msgid "Read"
 msgid "Read"
 msgstr "Чытанне"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgid "Important"
 msgid "Important"
 msgstr "Важнаы"
+
+#: core/widgets/searchlinecommandwidget.cpp:52
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgid "Ignored"
+msgstr "Прапушчана"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

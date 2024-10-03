@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:40+0000\n"
 "PO-Revision-Date: 2024-09-24 23:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -791,7 +791,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:49
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Unread"
 msgstr "Непрочетени"
@@ -1154,52 +1154,65 @@ msgstr ""
 "Някои от папките за търсене в тази заявка все още се индексират или са "
 "изключени от индексиране напълно. Резултатите по-долу може да са непълни."
 
-#: core/widgets/searchlinecommand.cpp:42
+#: core/widgets/searchlinecommand.cpp:44
 #, kde-format
 msgid "To contains"
 msgstr "\"До\" съдържа"
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:46
 #, kde-format
 msgid "BCC contains"
 msgstr "\"Скр. копие до\" съдържа"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "CC contains"
 msgstr "\"Копие до\" съдържа"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:50
 #, kde-format
 msgid "From contains"
 msgstr "\"От\" съдържа"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:52
 #, kde-format
 msgid "Subject contains"
 msgstr "Темата съдържа"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:54
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Писмото има прикачен файл"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Status of a message"
+#| msgid "Has Invitation"
+msgid "Mail has invitation"
+msgstr "С покана"
+
+#: core/widgets/searchlinecommand.cpp:58
 #, kde-format
 msgid "Mail is important"
 msgstr "Писмото е важно"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:60
 #, kde-format
 msgid "Mail is read"
 msgstr "Писмото е прочетено"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:62
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Писмото е непрочетено"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:64
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is Ignored"
+msgstr "Писмото е непрочетено"
+
+#: core/widgets/searchlinecommand.cpp:74
 #, kde-format
 msgid "AND"
 msgstr "И"
@@ -1226,14 +1239,28 @@ msgid "Has Attachment"
 msgstr "Има прикачен файл"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu Status of a message"
+#| msgid "Has Invitation"
+msgid "Has Invitation"
+msgstr "С покана"
+
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Read"
 msgstr "Прочетено"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, kde-format
 msgid "Important"
 msgstr "Важно"
+
+#: core/widgets/searchlinecommandwidget.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ignored"
+msgid "Ignored"
+msgstr "Игнориран"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
