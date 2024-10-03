@@ -50,6 +50,9 @@ void SearchLineCommandWidget::fillWidgets()
         {true, QStringLiteral("is:unread"), i18n("Unread")},
         {true, QStringLiteral("is:important"), i18n("Important")},
         {true, QStringLiteral("is:ignored"), i18n("Ignored")},
+        {true, QStringLiteral("is:ham"), i18n("Ham")},
+        {true, QStringLiteral("is:spam"), i18n("Spam")},
+        {true, QStringLiteral("is:watched"), i18n("Watched")},
         // TODO add more
     };
 }

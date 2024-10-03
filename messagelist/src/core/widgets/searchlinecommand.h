@@ -35,6 +35,9 @@ public:
         IsRead,
         IsUnRead,
         IsIgnored,
+        IsHam,
+        IsSpam,
+        IsWatched,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {
