@@ -25,7 +25,6 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"is:watched"_L1, SearchLineCommand::SearchLineType::IsWatched},
     {"is:replied"_L1, SearchLineCommand::SearchLineType::IsReplied},
     {"is:forwarded"_L1, SearchLineCommand::SearchLineType::IsForwarded},
-    // TODO add more
 };
 SearchLineCommand::SearchLineCommand() = default;
 

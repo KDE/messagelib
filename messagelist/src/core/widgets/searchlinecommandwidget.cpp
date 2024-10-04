@@ -40,6 +40,7 @@ QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QSt
 void SearchLineCommandWidget::fillWidgets()
 {
     mButtonsList = {
+        {false, QStringLiteral("subject:"), i18n("Subject")},
         {false, QStringLiteral("from:"), i18n("From")},
         {false, QStringLiteral("to:"), i18n("To")},
         {false, QStringLiteral("cc:"), i18n("Cc")},
@@ -55,7 +56,6 @@ void SearchLineCommandWidget::fillWidgets()
         {true, QStringLiteral("is:watched"), i18n("Watched")},
         {true, QStringLiteral("is:replied"), i18n("Replied")},
         {true, QStringLiteral("is:forwarded"), i18n("Forwarded")},
-        // TODO add more
     };
 }
 
