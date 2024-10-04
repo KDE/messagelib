@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -406,7 +406,7 @@ msgstr "Илова"
 msgid "Read/Unread"
 msgstr "Ўқилмаган"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -1242,73 +1242,103 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "бор"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "бор"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "бор"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "бор"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "бор"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "иловали"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Mail has invitation"
 msgstr "Қўшимча параметрлар"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Important"
 msgid "Mail is important"
 msgstr "&Муҳим"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Хат"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "&Ўқилмаган"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "&Ўқилмаган"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Ham"
+msgstr "Хат"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Spam"
+msgstr "Хат"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is watched"
+msgstr "Хат"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is replied"
+msgstr "Хат"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is forwarded"
+msgstr "Хат"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1362,6 +1392,32 @@ msgstr "Муҳим"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "Эътибор берилмаган"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgid "Ham"
+msgstr "Хэм"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgid "Spam"
+msgstr "Спэм"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Watched"
+msgid "Watched"
+msgstr "Назоратда"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "Узатилган"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

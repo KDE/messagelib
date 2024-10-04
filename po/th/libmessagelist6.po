@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -384,7 +384,7 @@ msgstr "สิ่งที่แนบมาด้วย"
 msgid "Read/Unread"
 msgstr "ใหม่/ยังไม่ได้อ่าน"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, kde-format
 msgid "Replied"
 msgstr "ตอบกลับแล้ว"
@@ -1175,73 +1175,103 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "มีคำว่า"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "มีคำว่า"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "มีคำว่า"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "มีคำว่า"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "มีคำว่า"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "มีสิ่งที่แนบมาด้วย"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Mail has invitation"
 msgstr "ตัวเลือกขั้นสูง"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "เครื่องมือส่งจดหมาย"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "จดหมาย"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "ตั้งสถานะเธรดเป็นเธรดที่ยังไม่ได้อ่าน"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "ตั้งสถานะเธรดเป็นเธรดที่ยังไม่ได้อ่าน"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Ham"
+msgstr "จดหมาย"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Spam"
+msgstr "จดหมาย"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is watched"
+msgstr "จดหมาย"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is replied"
+msgstr "จดหมาย"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is forwarded"
+msgstr "จดหมาย"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1297,6 +1327,34 @@ msgstr "จดหมายสำคัญ"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "ไม่สนใจ"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ham"
+msgid "Ham"
+msgstr "อาจจะเป็นสแปม"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Spam"
+msgid "Spam"
+msgstr "สแปม"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Watched"
+msgid "Watched"
+msgstr "ติดตามอ่าน"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "ส่งต่อแล้ว"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

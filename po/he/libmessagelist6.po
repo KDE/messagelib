@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2024-09-24 08:04+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -395,7 +395,7 @@ msgstr "צרופה"
 msgid "Read/Unread"
 msgstr "(לא) נקראה"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, kde-format
 msgid "Replied"
 msgstr "זכתה למענה"
@@ -1177,65 +1177,95 @@ msgstr ""
 "חלק מתיקיות החיפוש בשאילתה הזאת עדיין מסדרות את המפתח או שמוחרגות מסידור "
 "המפתח לחלוטין. התוצאות שלהלן עלולות להיות חלקיות."
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, kde-format
 msgid "To contains"
 msgstr "אל מכיל"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, kde-format
 msgid "BCC contains"
 msgstr "עותק סמוי מכיל"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, kde-format
 msgid "CC contains"
 msgstr "עותק מכיל"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, kde-format
 msgid "From contains"
 msgstr "מאת מכיל"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, kde-format
 msgid "Subject contains"
 msgstr "הנושא מכיל"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, kde-format
 msgid "Mail has attachment"
 msgstr "להודעה יש צרופה"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "יש הזמנה"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, kde-format
 msgid "Mail is important"
 msgstr "ההודעה חשובה"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, kde-format
 msgid "Mail is read"
 msgstr "ההודעה נקראה"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, kde-format
 msgid "Mail is Unread"
 msgstr "ההודעה לא נקראה"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mail is Unread"
 msgid "Mail is Ignored"
 msgstr "ההודעה לא נקראה"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is Ham"
+msgstr "ההודעה נקראה"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is Spam"
+msgstr "ההודעה נקראה"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is watched"
+msgstr "ההודעה נקראה"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is replied"
+msgstr "ההודעה נקראה"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is forwarded"
+msgstr "ההודעה נקראה"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr "וגם"
@@ -1284,6 +1314,34 @@ msgstr "חשובה"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "נתעלמה"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ham"
+msgid "Ham"
+msgstr "תקין"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Spam"
+msgid "Spam"
+msgstr "זבל"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Watched"
+msgid "Watched"
+msgstr "נקרא"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "הועברה"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

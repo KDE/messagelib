@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2007-05-06 20:54+0200\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team:  <hsb@li.org>\n"
@@ -371,7 +371,7 @@ msgstr "Přiwěšk"
 msgid "Read/Unread"
 msgstr "(Nje)čitana"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, kde-format
 msgid "Replied"
 msgstr "Wotmołwjena"
@@ -1180,72 +1180,97 @@ msgstr ""
 "Za někotre z přepytowanych zapiskow so hišće indeks twori abo wone "
 "njesłušeja k indicěrowanym zapiskam. Wuslědki móhli być njekompletne."
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "wobsahuje"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "wobsahuje"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "wobsahuje"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "wobsahuje"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "wobsahuje"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 msgid "Mail has attachment"
 msgstr "Přiwěšk: "
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Z přeprošenjom"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "&Transport póšty"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 msgid "Mail is read"
 msgstr "KMail"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Nječitana powěsć"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Nječitana powěsć"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+msgid "Mail is Ham"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+msgid "Mail is Spam"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+msgid "Mail is watched"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+msgid "Mail is replied"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+msgid "Mail is forwarded"
+msgstr "KMail"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1300,6 +1325,34 @@ msgstr "Wažna"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "So ignoruje"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ham"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Spam"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Watched"
+msgid "Watched"
+msgstr "So wobkedźbuje"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "Dopósłana"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

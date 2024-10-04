@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -419,7 +419,7 @@ msgstr "Далучэнне"
 msgid "Read/Unread"
 msgstr "Непрачытаны"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgid "Replied"
@@ -1276,73 +1276,103 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "зьмяшчае"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "зьмяшчае далучэнне"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Mail has invitation"
 msgstr "Адмысловыя опцыі"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "&Паштовы транспарт"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Пошта"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Пазначыць тэму як &непрачытаную"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Пазначыць тэму як &непрачытаную"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Ham"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Spam"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is watched"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is replied"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is forwarded"
+msgstr "Пошта"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1393,6 +1423,30 @@ msgstr "Важнаы"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "Прапушчана"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgid "Ham"
+msgstr "Не спам"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgid "Spam"
+msgstr "Спам"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgid "Watched"
+msgid "Watched"
+msgstr "Назіраемае"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "Перасланае"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

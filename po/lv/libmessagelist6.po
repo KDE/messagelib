@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2024-09-05 15:42+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -387,7 +387,7 @@ msgstr "Pielikums"
 msgid "Read/Unread"
 msgstr "Jauna/nelasīta"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, kde-format
 msgid "Replied"
 msgstr "Atbildēta"
@@ -1162,75 +1162,110 @@ msgstr ""
 "Dažas no meklēšanas mapēm šajā vaicājumā vēl tiek indeksētas vai indeksēšanā "
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "satur"
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "satur"
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "satur"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "satur"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "satur"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "Ir pielikums"
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Paplašinātas iespējas"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "&Pasta transports:"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "type of folder content"
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Pasts"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Atzīmēt pavedienu kā nelastīt&u"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Atzīmēt pavedienu kā nelastīt&u"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is Ham"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is Spam"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is watched"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is replied"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "type of folder content"
+#| msgid "Mail"
+msgid "Mail is forwarded"
+msgstr "Pasts"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1285,6 +1320,34 @@ msgstr "Svarīga"
 #| msgid "Ignored"
 msgid "Ignored"
 msgstr "Ignorēta"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Ham"
+msgid "Ham"
+msgstr "Nav mēstule"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Spam"
+msgid "Spam"
+msgstr "Mēstule"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Watched"
+msgid "Watched"
+msgstr "Uzraudzīta"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Forwarded"
+msgid "Forwarded"
+msgstr "Pārsūtīta"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-04 00:40+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -389,7 +389,7 @@ msgstr "Verwyder lêer aanhangsel"
 msgid "Read/Unread"
 msgstr "Ongelees"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
 #, fuzzy, kde-format
 msgid "Replied"
 msgstr "Vervang"
@@ -1202,69 +1202,99 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:44
+#: core/widgets/searchlinecommand.cpp:49
 #, kde-format
 msgid "To contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:46
+#: core/widgets/searchlinecommand.cpp:51
 #, kde-format
 msgid "BCC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:53
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "CC contains"
 msgstr "Inhoud"
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:55
 #, fuzzy, kde-format
 #| msgid "Former maintainer"
 msgid "From contains"
 msgstr "Vorige onderhouer"
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:57
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgid "Subject contains"
 msgstr "Onderwerp"
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:59
 #, fuzzy, kde-format
 msgid "Mail has attachment"
 msgstr "Stoor Aanhangsels..."
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:61
 #, fuzzy, kde-format
 msgid "Mail has invitation"
 msgstr "Stoor Aanhangsels..."
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:63
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Important"
 msgid "Mail is important"
 msgstr "Merk gesprekslyn as belangrik"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:65
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Pos"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:67
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Merk gesprekslyn as ongelees"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:69
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Merk gesprekslyn as ongelees"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Ham"
+msgstr "Pos"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is Spam"
+msgstr "Pos"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is watched"
+msgstr "Pos"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is replied"
+msgstr "Pos"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgid "Mail is forwarded"
+msgstr "Pos"
+
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1311,6 +1341,30 @@ msgstr "Voer Boodskappe In..."
 #, fuzzy, kde-format
 msgid "Ignored"
 msgstr "Ignoreer gesprekslyn"
+
+#: core/widgets/searchlinecommandwidget.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Ham"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Spam"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, fuzzy, kde-format
+msgid "Watched"
+msgstr "Hou gesprekslyn dop"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+msgid "Forwarded"
+msgstr "Stuur aan"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
