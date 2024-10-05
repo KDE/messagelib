@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 00:40+0000\n"
+"POT-Creation-Date: 2024-10-05 00:40+0000\n"
 "PO-Revision-Date: 2024-10-03 06:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -392,7 +392,7 @@ msgstr "Priloga"
 msgid "Read/Unread"
 msgstr "Prebrano/neprebrano"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "Odgovorjeno"
@@ -805,7 +805,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
 #, kde-format
 msgid "Unread"
 msgstr "Neprebrano"
@@ -881,7 +881,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži orodne namige"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1177,159 +1177,166 @@ msgstr ""
 "ali pa so izločene iz ustvarjanja kazala. Spodnji rezultati bodo morda "
 "nepopolni."
 
-#: core/widgets/searchlinecommand.cpp:49
+#: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "To contains"
 msgstr "Za vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:51
+#: core/widgets/searchlinecommand.cpp:50
 #, kde-format
 msgid "BCC contains"
 msgstr "Skp vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:53
+#: core/widgets/searchlinecommand.cpp:52
 #, kde-format
 msgid "CC contains"
 msgstr "Kp vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:55
+#: core/widgets/searchlinecommand.cpp:54
 #, kde-format
 msgid "From contains"
 msgstr "Od vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:57
+#: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Subject contains"
 msgstr "Zadeva vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:59
+#: core/widgets/searchlinecommand.cpp:58
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Pismo ima prilogo"
 
-#: core/widgets/searchlinecommand.cpp:61
+#: core/widgets/searchlinecommand.cpp:60
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Pismo ima povabilo"
 
-#: core/widgets/searchlinecommand.cpp:63
+#: core/widgets/searchlinecommand.cpp:62
 #, kde-format
 msgid "Mail is important"
 msgstr "Pismo je pomembno"
 
-#: core/widgets/searchlinecommand.cpp:65
+#: core/widgets/searchlinecommand.cpp:64
 #, kde-format
 msgid "Mail is read"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:67
+#: core/widgets/searchlinecommand.cpp:66
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Pismo je neprebrano"
 
-#: core/widgets/searchlinecommand.cpp:69
+#: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Pismo je prezrto"
 
-#: core/widgets/searchlinecommand.cpp:71
+#: core/widgets/searchlinecommand.cpp:70
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is Ham"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:73
+#: core/widgets/searchlinecommand.cpp:72
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is Spam"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:74
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is watched"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:76
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is replied"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:78
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is forwarded"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "AND"
 msgstr "IN"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject"
+msgstr "Zadeva"
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "Kp"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Skp"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, kde-format
 msgid "Has Attachment"
 msgstr "Ima prilogo"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Has Invitation"
 msgstr "Ima povabilo"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Read"
 msgstr "Prebrano"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandwidget.cpp:52
 #, kde-format
 msgid "Important"
 msgstr "Pomembno"
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandwidget.cpp:53
 #, kde-format
 msgid "Ignored"
 msgstr "Prezrto"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandwidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
 msgid "Ham"
 msgstr "Želeno"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandwidget.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
 msgid "Spam"
 msgstr "Neželeno"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
 msgid "Watched"
 msgstr "Opazovano"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"

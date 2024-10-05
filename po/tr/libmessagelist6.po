@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-04 00:40+0000\n"
-"PO-Revision-Date: 2024-10-03 06:41+0300\n"
+"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"PO-Revision-Date: 2024-10-05 01:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -391,7 +391,7 @@ msgstr "Ek"
 msgid "Read/Unread"
 msgstr "Okunan/Okunmamış"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:56
+#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "Yanıtlanan"
@@ -795,7 +795,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:50
+#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
 #, kde-format
 msgid "Unread"
 msgstr "Okunmamış"
@@ -871,7 +871,7 @@ msgid "Display Tooltips"
 msgstr "İpuçlarını Göster"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1158,162 +1158,156 @@ msgstr ""
 "Bu sorgudaki bazı arama klasörleri hâlâ indeksleniyor veya indeksten tümüyle "
 "dışlanmış durumda. Aşağıdaki sonuçlar tamamlanmamış olabilir."
 
-#: core/widgets/searchlinecommand.cpp:49
+#: core/widgets/searchlinecommand.cpp:48
 #, kde-format
 msgid "To contains"
 msgstr "Kime şunu içeriyor"
 
-#: core/widgets/searchlinecommand.cpp:51
+#: core/widgets/searchlinecommand.cpp:50
 #, kde-format
 msgid "BCC contains"
 msgstr "Gizli Kopya şunu içeriyor"
 
-#: core/widgets/searchlinecommand.cpp:53
+#: core/widgets/searchlinecommand.cpp:52
 #, kde-format
 msgid "CC contains"
 msgstr "Kopya şunu içeriyor"
 
-#: core/widgets/searchlinecommand.cpp:55
+#: core/widgets/searchlinecommand.cpp:54
 #, kde-format
 msgid "From contains"
 msgstr "Kimden şunu içeriyor"
 
-#: core/widgets/searchlinecommand.cpp:57
+#: core/widgets/searchlinecommand.cpp:56
 #, kde-format
 msgid "Subject contains"
 msgstr "Konu şunu içeriyor"
 
-#: core/widgets/searchlinecommand.cpp:59
+#: core/widgets/searchlinecommand.cpp:58
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Postanın eki var"
 
-#: core/widgets/searchlinecommand.cpp:61
+#: core/widgets/searchlinecommand.cpp:60
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Postada davetiye var"
 
-#: core/widgets/searchlinecommand.cpp:63
+#: core/widgets/searchlinecommand.cpp:62
 #, kde-format
 msgid "Mail is important"
 msgstr "Posta önemli"
 
-#: core/widgets/searchlinecommand.cpp:65
+#: core/widgets/searchlinecommand.cpp:64
 #, kde-format
 msgid "Mail is read"
 msgstr "Posta okunmuş"
 
-#: core/widgets/searchlinecommand.cpp:67
+#: core/widgets/searchlinecommand.cpp:66
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Posta okunmamış"
 
-#: core/widgets/searchlinecommand.cpp:69
+#: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Posta yok sayılmış"
 
-#: core/widgets/searchlinecommand.cpp:71
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#: core/widgets/searchlinecommand.cpp:70
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Posta okunmuş"
+msgstr "Posta işlenmedi"
 
-#: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#: core/widgets/searchlinecommand.cpp:72
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Posta okunmuş"
+msgstr "Posta istenmeyen"
 
-#: core/widgets/searchlinecommand.cpp:75
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#: core/widgets/searchlinecommand.cpp:74
+#, kde-format
 msgid "Mail is watched"
-msgstr "Posta okunmuş"
+msgstr "Posta izleniyor"
 
-#: core/widgets/searchlinecommand.cpp:77
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#: core/widgets/searchlinecommand.cpp:76
+#, kde-format
 msgid "Mail is replied"
-msgstr "Posta okunmuş"
+msgstr "Posta yanıtlandı"
 
-#: core/widgets/searchlinecommand.cpp:79
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#: core/widgets/searchlinecommand.cpp:78
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Posta okunmuş"
+msgstr "Posta iletildi"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "AND"
 msgstr "VE"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject"
+msgstr "Konu"
+
+#: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
 #, kde-format
 msgid "To"
 msgstr "Kime"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
 msgstr "Kopya"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
 msgstr "Gizli kopya"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, kde-format
 msgid "Has Attachment"
 msgstr "Eki Var"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgid "Has Invitation"
 msgstr "Davetiyesi var"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgid "Read"
 msgstr "Okundu"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandwidget.cpp:52
 #, kde-format
 msgid "Important"
 msgstr "Önemli"
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandwidget.cpp:53
 #, kde-format
 msgid "Ignored"
 msgstr "Yok sayılmış"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#: core/widgets/searchlinecommandwidget.cpp:54
+#, kde-format
 msgid "Ham"
 msgstr "İşlenmedi"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#: core/widgets/searchlinecommandwidget.cpp:55
+#, kde-format
 msgid "Spam"
 msgstr "İstenmeyen"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#: core/widgets/searchlinecommandwidget.cpp:56
+#, kde-format
 msgid "Watched"
-msgstr "İzlendi"
+msgstr "İzleniyor"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#: core/widgets/searchlinecommandwidget.cpp:58
+#, kde-format
 msgid "Forwarded"
 msgstr "İletildi"
 
@@ -1962,7 +1956,7 @@ msgstr "Hiçbiri"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #: utils/themeeditor.cpp:944
 #, kde-format
