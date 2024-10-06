@@ -15,14 +15,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-10-01 17:55+0200\n"
+"PO-Revision-Date: 2024-10-05 21:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/aggregation.cpp:178
@@ -1195,11 +1195,9 @@ msgid "Mail has attachment"
 msgstr "Postak eranskina du"
 
 #: core/widgets/searchlinecommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "Gonbidapena du"
+msgstr "Postak gonbidapena du"
 
 #: core/widgets/searchlinecommand.cpp:62
 #, kde-format
@@ -1217,40 +1215,34 @@ msgid "Mail is Unread"
 msgstr "Posta ez da irakurri"
 
 #: core/widgets/searchlinecommand.cpp:68
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "Posta ez da irakurri"
+msgstr "Postari ezikusi egin zaio"
 
 #: core/widgets/searchlinecommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Posta irakurri da"
+msgstr "Posta Ez da Spam"
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Posta irakurri da"
+msgstr "Posta Spam da"
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is watched"
-msgstr "Posta irakurri da"
+msgstr "Posta zelatatu da"
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Posta irakurri da"
+msgstr "Posta erantzun da"
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Posta irakurri da"
+msgstr "Posta birbidali da"
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
@@ -1258,9 +1250,7 @@ msgid "AND"
 msgstr "ETA"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject"
 msgstr "Gaia"
 
@@ -1286,9 +1276,7 @@ msgid "Has Attachment"
 msgstr "Eranskina du"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Has Invitation"
 msgstr "Gonbidapena du"
 
@@ -1303,39 +1291,29 @@ msgid "Important"
 msgstr "Garrantzitsua"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignored"
-msgstr "Ez ikusi egina"
+msgstr "Ezikusia"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgid "Ham"
 msgstr "Ez-spam"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
 msgstr "Spam"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
 msgstr "Zelatatua"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
-msgstr "Birbidalita"
+msgstr "Birbidalia"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

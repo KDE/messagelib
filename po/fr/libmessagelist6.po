@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-25 11:21+0200\n"
+"PO-Revision-Date: 2024-10-04 14:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1221,11 +1221,9 @@ msgid "Mail has attachment"
 msgstr "Le courrier possède une pièce jointe"
 
 #: core/widgets/searchlinecommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "Possède une invitation"
+msgstr "Le courriel contient une invitation."
 
 #: core/widgets/searchlinecommand.cpp:62
 #, kde-format
@@ -1243,10 +1241,9 @@ msgid "Mail is Unread"
 msgstr "Le courriel est non lu."
 
 #: core/widgets/searchlinecommand.cpp:68
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "Le courriel est non lu."
+msgstr "Le courriel est ignoré."
 
 #: core/widgets/searchlinecommand.cpp:70
 #, fuzzy, kde-format
@@ -1312,11 +1309,9 @@ msgid "Has Attachment"
 msgstr "Possède une pièce jointe"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Has Invitation"
-msgstr "Possède une invitation"
+msgstr "Contient une invitation."
 
 #: core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
@@ -1329,9 +1324,7 @@ msgid "Important"
 msgstr "Important"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignored"
 msgstr "Ignoré"
 
