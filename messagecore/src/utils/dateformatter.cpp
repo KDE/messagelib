@@ -71,7 +71,7 @@ public:
     static QByteArray zone(const QDateTime &t);
 
     DateFormatter::FormatType mFormat;
-    QDateTime mTodayOneSecondBeforeMidnight;
+    QDateTime mTodayOneMillisecondBeforeMidnight;
     QString mCustomFormat;
 };
 
@@ -142,7 +142,7 @@ QString DateFormatter::customFormat() const
 
 void DateFormatter::invalidateReferenceDate() const
 {
-    d->mTodayOneSecondBeforeMidnight = QDateTime();
+    d->mTodayOneMillisecondBeforeMidnight = QDateTime();
 }
 
 QByteArray DateFormatterPrivate::zone(const QDateTime &t)
@@ -163,13 +163,13 @@ QString DateFormatterPrivate::fancy(const QDateTime &t)
         return i18nc("invalid time specified", "unknown");
     }
 
-    if (!mTodayOneSecondBeforeMidnight.isValid()) {
-        // determine time of today 23:59:59
-        mTodayOneSecondBeforeMidnight = QDateTime(QDate::currentDate(), QTime(23, 59, 59));
+    if (!mTodayOneMillisecondBeforeMidnight.isValid()) {
+        // determine time of today 23:59:59.999
+        mTodayOneMillisecondBeforeMidnight = QDateTime(QDate::currentDate(), QTime(23, 59, 59, 999));
     }
 
-    if (mTodayOneSecondBeforeMidnight >= t) {
-        const auto diffDays = t.daysTo(mTodayOneSecondBeforeMidnight);
+    if (mTodayOneMillisecondBeforeMidnight >= t) {
+        const auto diffDays = t.daysTo(mTodayOneMillisecondBeforeMidnight);
         if (diffDays < 7) {
             if (diffDays == 0) {
                 return i18n("Today %1", QLocale().toString(t.time(), QLocale::ShortFormat));
