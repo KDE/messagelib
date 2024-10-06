@@ -29,6 +29,7 @@
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
 #include "core/item_p.h"
+#include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/messageitemsetmanager.h"
 #include "core/model_p.h"
@@ -42,6 +43,7 @@
 #include "MessageCore/StringUtil"
 #include <Akonadi/Item>
 #include <Akonadi/MessageStatus>
+#include <MessageCore/DateFormatter>
 
 #include <KLocalizedString>
 
@@ -995,6 +997,7 @@ void ModelPrivate::checkIfDateChanged()
     }
 
     // date changed, reload the view (and try to preserve the current selection)
+    Manager::instance()->dateFormatter()->invalidateReferenceDate();
     q->setStorageModel(mStorageModel, PreSelectLastSelected);
 }
 

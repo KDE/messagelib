@@ -140,6 +140,11 @@ QString DateFormatter::customFormat() const
     return d->mCustomFormat;
 }
 
+void DateFormatter::invalidateReferenceDate() const
+{
+    d->mTodayOneSecondBeforeMidnight = QDateTime();
+}
+
 QByteArray DateFormatterPrivate::zone(const QDateTime &t)
 {
     const auto secs = t.offsetFromUtc();

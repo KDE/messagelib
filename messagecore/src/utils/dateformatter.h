@@ -44,6 +44,12 @@ class DateFormatterPrivate;
   - @b ctime as with the @ref ctime function, eg. "Sun Mar 31 02:08:35 2002"
   - @b localized according to the control center setting, eg. "2002-03-31 02:08"
   - @b custom "whatever you like"
+
+  @note
+  If a long-lived instance of this class is kept, its owner is responsible for
+  calling `invalidateReferenceDate()` on date changes.
+  This ensures that the `Fancy` formatter has an up-to-date notion of "Today",
+  "Yesterday" etc.
 */
 class MESSAGECORE_EXPORT DateFormatter
 {
@@ -116,6 +122,12 @@ public:
       @see setCustomFormat().
     */
     [[nodiscard]] QString customFormat() const;
+
+    /**
+      Invalidates the cached reference date used by the `Fancy` formatter to
+      determine the meaning of "Today", "Yesterday" etc.
+     */
+    void invalidateReferenceDate() const;
 
     // static methods
     /**
