@@ -169,16 +169,16 @@ QString DateFormatterPrivate::fancy(const QDateTime &t)
     }
 
     if (mTodayOneSecondBeforeMidnight >= t) {
-        const auto diff = t.secsTo(mTodayOneSecondBeforeMidnight);
-        if (diff < 7 * 24 * 60 * 60) {
-            if (diff < 24 * 60 * 60) {
+        const auto diffDays = t.daysTo(mTodayOneSecondBeforeMidnight);
+        if (diffDays < 7) {
+            if (diffDays == 0) {
                 return i18n("Today %1", QLocale().toString(t.time(), QLocale::ShortFormat));
             }
-            if (diff < 2 * 24 * 60 * 60) {
+            if (diffDays == 1) {
                 return i18n("Yesterday %1", QLocale().toString(t.time(), QLocale::ShortFormat));
             }
-            for (int i = 3; i < 8; i++) {
-                if (diff < i * 24 * 60 * 60) {
+            for (int i = 2; i < 7; i++) {
+                if (diffDays == i) {
                     return i18nc("1. weekday, 2. time",
                                  "%1 %2",
                                  QLocale().dayName(t.date().dayOfWeek(), QLocale::LongFormat),
