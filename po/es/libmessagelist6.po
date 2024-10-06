@@ -2,15 +2,15 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Javier Vinal <fjvinal@gmail.com>, 2009, 2010, 2011, 2012, 2017.
-# Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2018, 2019.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2017 Javier Vinal <fjvinal@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2012, 2013, 2014, 2015, 2016, 2018, 2019 Javier Viñal <fjvinal@gmail.com>
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-12 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 15:21+0200\n"
+"PO-Revision-Date: 2024-10-06 01:53+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -411,7 +411,7 @@ msgstr "Elemento de acción"
 #: core/manager.cpp:654
 #, kde-format
 msgid "Spam/Ham"
-msgstr "Correo basura/correo útil"
+msgstr "Correo basura/válido"
 
 #: core/manager.cpp:660
 #, kde-format
@@ -739,7 +739,7 @@ msgstr "Etiqueta de cabecera de grupo"
 #: core/theme.cpp:145
 #, kde-format
 msgid "Spam/Ham Icon"
-msgstr "Icono de correo basura/correo útil"
+msgstr "Icono de correo basura/válido"
 
 #: core/theme.cpp:148
 #, kde-format
