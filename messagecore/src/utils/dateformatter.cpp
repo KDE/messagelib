@@ -168,29 +168,27 @@ QString DateFormatterPrivate::fancy(const QDateTime &t)
         mTodayOneSecondBeforeMidnight = QDateTime(QDate::currentDate(), QTime(23, 59, 59));
     }
 
-    QDateTime old(t);
-
     if (mTodayOneSecondBeforeMidnight >= t) {
         const auto diff = t.secsTo(mTodayOneSecondBeforeMidnight);
         if (diff < 7 * 24 * 60 * 60) {
             if (diff < 24 * 60 * 60) {
-                return i18n("Today %1", QLocale().toString(old.time(), QLocale::ShortFormat));
+                return i18n("Today %1", QLocale().toString(t.time(), QLocale::ShortFormat));
             }
             if (diff < 2 * 24 * 60 * 60) {
-                return i18n("Yesterday %1", QLocale().toString(old.time(), QLocale::ShortFormat));
+                return i18n("Yesterday %1", QLocale().toString(t.time(), QLocale::ShortFormat));
             }
             for (int i = 3; i < 8; i++) {
                 if (diff < i * 24 * 60 * 60) {
                     return i18nc("1. weekday, 2. time",
                                  "%1 %2",
-                                 QLocale().dayName(old.date().dayOfWeek(), QLocale::LongFormat),
-                                 QLocale().toString(old.time(), QLocale::ShortFormat));
+                                 QLocale().dayName(t.date().dayOfWeek(), QLocale::LongFormat),
+                                 QLocale().toString(t.time(), QLocale::ShortFormat));
                 }
             }
         }
     }
 
-    return QLocale().toString(old, QLocale::ShortFormat);
+    return QLocale().toString(t, QLocale::ShortFormat);
 }
 
 QString DateFormatterPrivate::localized(const QDateTime &t, bool shortFormat, const QString &lang)
