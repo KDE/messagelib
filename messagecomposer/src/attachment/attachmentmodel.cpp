@@ -241,33 +241,33 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     if (role == Qt::DisplayRole) {
         switch (index.column()) {
         case NameColumn:
-            return QVariant::fromValue(part->name().isEmpty() ? part->fileName() : part->name());
+            return part->name().isEmpty() ? part->fileName() : part->name();
         case SizeColumn:
-            return QVariant::fromValue(KIO::convertSize(part->size()));
+            return KIO::convertSize(part->size());
         case EncodingColumn:
-            return QVariant::fromValue(KMime::nameForEncoding(part->encoding()));
+            return KMime::nameForEncoding(part->encoding());
         case MimeTypeColumn:
-            return QVariant::fromValue(part->mimeType());
+            return part->mimeType();
         default:
             return {};
         }
     } else if (role == Qt::ToolTipRole) {
-        return QVariant::fromValue(i18nc("@info:tooltip",
-                                         "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
-                                         part->name().isEmpty() ? part->fileName() : part->name(),
-                                         KIO::convertSize(part->size()),
-                                         KMime::nameForEncoding(part->encoding()),
-                                         QString::fromLatin1(part->mimeType().data())));
+        return i18nc("@info:tooltip",
+                     "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
+                     part->name().isEmpty() ? part->fileName() : part->name(),
+                     KIO::convertSize(part->size()),
+                     KMime::nameForEncoding(part->encoding()),
+                     QString::fromLatin1(part->mimeType().data()));
     } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
         case CompressColumn:
-            return QVariant::fromValue(int(boolToCheckState(part->isCompressed())));
+            return int(boolToCheckState(part->isCompressed()));
         case EncryptColumn:
-            return QVariant::fromValue(int(boolToCheckState(part->isEncrypted())));
+            return int(boolToCheckState(part->isEncrypted()));
         case SignColumn:
-            return QVariant::fromValue(int(boolToCheckState(part->isSigned())));
+            return int(boolToCheckState(part->isSigned()));
         case AutoDisplayColumn:
-            return QVariant::fromValue(int(boolToCheckState(part->isInline())));
+            return int(boolToCheckState(part->isInline()));
         default:
             return {};
         }
@@ -279,21 +279,21 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return {};
         }
     } else if (role == NameRole) {
-        return QVariant::fromValue(part->fileName().isEmpty() ? part->name() : part->fileName());
+        return part->fileName().isEmpty() ? part->name() : part->fileName();
     } else if (role == SizeRole) {
-        return QVariant::fromValue(KIO::convertSize(part->size()));
+        return KIO::convertSize(part->size());
     } else if (role == EncodingRole) {
-        return QVariant::fromValue(KMime::nameForEncoding(part->encoding()));
+        return KMime::nameForEncoding(part->encoding());
     } else if (role == MimeTypeRole) {
-        return QVariant::fromValue(part->mimeType());
+        return part->mimeType();
     } else if (role == CompressRole) {
-        return QVariant::fromValue(part->isCompressed());
+        return part->isCompressed();
     } else if (role == EncryptRole) {
-        return QVariant::fromValue(part->isEncrypted());
+        return part->isEncrypted();
     } else if (role == SignRole) {
-        return QVariant::fromValue(part->isSigned());
+        return part->isSigned();
     } else if (role == AutoDisplayRole) {
-        return QVariant::fromValue(part->isInline());
+        return part->isInline();
     } else {
         return {};
     }
