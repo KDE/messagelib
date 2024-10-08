@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-24 08:04+0300\n"
+"PO-Revision-Date: 2024-10-07 07:06+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1208,11 +1208,9 @@ msgid "Mail has attachment"
 msgstr "להודעה יש צרופה"
 
 #: core/widgets/searchlinecommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "יש הזמנה"
+msgstr "בהודעה יש הזמנה"
 
 #: core/widgets/searchlinecommand.cpp:62
 #, kde-format
@@ -1230,40 +1228,34 @@ msgid "Mail is Unread"
 msgstr "ההודעה לא נקראה"
 
 #: core/widgets/searchlinecommand.cpp:68
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "ההודעה לא נקראה"
+msgstr "ההודעה נפסחה"
 
 #: core/widgets/searchlinecommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה תקינה"
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה היא זבל"
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is watched"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה נצפתה"
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is replied"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה זכתה למענה"
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה הועברה"
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
@@ -1271,9 +1263,7 @@ msgid "AND"
 msgstr "וגם"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject"
 msgstr "נושא"
 
@@ -1299,9 +1289,7 @@ msgid "Has Attachment"
 msgstr "יש צרופה"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Has Invitation"
 msgstr "יש הזמנה"
 
@@ -1316,37 +1304,27 @@ msgid "Important"
 msgstr "חשובה"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignored"
 msgstr "נתעלמה"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgid "Ham"
 msgstr "תקין"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
 msgstr "זבל"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
 msgstr "נקרא"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
 msgstr "הועברה"
 

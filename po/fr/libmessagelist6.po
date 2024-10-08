@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-10-04 14:31+0200\n"
+"PO-Revision-Date: 2024-10-06 10:14+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1246,34 +1246,29 @@ msgid "Mail is Ignored"
 msgstr "Le courriel est ignoré."
 
 #: core/widgets/searchlinecommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Le courriel est lu."
+msgstr "Le courriel est Ham."
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Le courriel est lu."
+msgstr "Le courriel est un pourriel."
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is watched"
 msgstr "Le courriel est lu."
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Le courriel est lu."
+msgstr "Le courriel est répondu."
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Le courriel est lu."
+msgstr "Le courriel est transféré."
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
@@ -1281,11 +1276,9 @@ msgid "AND"
 msgstr "ET"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject"
-msgstr "Sujet"
+msgstr "Objet"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
 #: core/widgets/searchmessagebybuttons.cpp:70
@@ -1329,32 +1322,24 @@ msgid "Ignored"
 msgstr "Ignoré"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgid "Ham"
-msgstr "Courriel normal"
+msgstr "Ham"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
-msgstr "Courrier indésirable"
+msgstr "Pourriel"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
-msgstr "Surveillé"
+msgstr "Lu"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
-msgstr "Transmis"
+msgstr "Transféré"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
