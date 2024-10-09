@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-05 15:42+0300\n"
+"PO-Revision-Date: 2024-10-04 21:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -1163,112 +1163,89 @@ msgstr ""
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "satur"
+msgstr "„Kam“ satur"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "satur"
+msgstr "„BCC“ satur"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "satur"
+msgstr "„CC“ satur"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "satur"
+msgstr "„No“ satur"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "satur"
+msgstr "„Temats“ satur"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Ir pielikums"
+msgstr "Vēstulei ir pielikumi"
 
 #: core/widgets/searchlinecommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "Paplašinātas iespējas"
+msgstr "Vēstulē ir uzaicinājums"
 
 #: core/widgets/searchlinecommand.cpp:62
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "&Pasta transports:"
+msgstr "Vēstule ir svarīga"
 
 #: core/widgets/searchlinecommand.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is read"
-msgstr "Pasts"
+msgstr "Vēstule ir lasīta"
 
 #: core/widgets/searchlinecommand.cpp:66
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Atzīmēt pavedienu kā nelastīt&u"
+msgstr "Vēstule nav lasīta"
 
 #: core/widgets/searchlinecommand.cpp:68
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "Atzīmēt pavedienu kā nelastīt&u"
+msgstr "Vēstule ir ignorēta"
 
 #: core/widgets/searchlinecommand.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Pasts"
+msgstr "Vēstule nav mēstule"
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Pasts"
+msgstr "Vēstule ir mēstule"
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is watched"
-msgstr "Pasts"
+msgstr "Vēstule ir uzraudzīta"
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Pasts"
+msgstr "Vēstule ir atbildēta"
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "type of folder content"
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Pasts"
+msgstr "Vēstule ir pārsūtīta"
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "UN"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
 #, fuzzy, kde-format
@@ -1286,73 +1263,55 @@ msgstr "Kam"
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Bcc"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
 msgstr "Ir pielikums"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Has Invitation"
-msgstr "Paplašinātas iespējas"
+msgstr "Ir uzaicinājums"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "Lasīta"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "Svarīga"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignored"
 msgstr "Ignorēta"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgid "Ham"
 msgstr "Nav mēstule"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
 msgstr "Mēstule"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
 msgstr "Uzraudzīta"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
 msgstr "Pārsūtīta"
 
