@@ -29,6 +29,7 @@
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
 #include "core/item_p.h"
+#include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/messageitemsetmanager.h"
 #include "core/model_p.h"
@@ -995,6 +996,7 @@ void ModelPrivate::checkIfDateChanged()
     }
 
     // date changed, reload the view (and try to preserve the current selection)
+    Manager::instance()->reloadDateFormatter();
     q->setStorageModel(mStorageModel, PreSelectLastSelected);
 }
 

@@ -53,7 +53,7 @@ private:
     QList<Widget *> mWidgetList;
     QMap<QString, Aggregation *> mAggregations;
     QMap<QString, Theme *> mThemes;
-    MessageCore::DateFormatter *const mDateFormatter;
+    std::unique_ptr<MessageCore::DateFormatter> mDateFormatter;
     const QString mCachedLocalizedUnknownText;
 
 public:
@@ -69,8 +69,9 @@ public:
 
     const MessageCore::DateFormatter *dateFormatter() const
     {
-        return mDateFormatter;
+        return mDateFormatter.get();
     }
+    void reloadDateFormatter();
 
     const QString &cachedLocalizedUnknownText() const
     {

@@ -49,8 +49,6 @@ Manager::~Manager()
     removeAllAggregations();
     removeAllThemes();
 
-    delete mDateFormatter;
-
     mInstance = nullptr;
 }
 
@@ -76,6 +74,15 @@ void Manager::unregisterWidget(Widget *pWidget)
         delete mInstance;
         mInstance = nullptr;
     }
+}
+
+void Manager::reloadDateFormatter()
+{
+    const auto format = mDateFormatter->format();
+    const auto customFormat = mDateFormatter->customFormat();
+    mDateFormatter.reset(new MessageCore::DateFormatter);
+    mDateFormatter->setCustomFormat(customFormat);
+    mDateFormatter->setFormat(format);
 }
 
 const Aggregation *Manager::aggregation(const QString &id)
