@@ -49,8 +49,6 @@ Manager::~Manager()
     removeAllAggregations();
     removeAllThemes();
 
-    delete mDateFormatter;
-
     mInstance = nullptr;
 }
 
