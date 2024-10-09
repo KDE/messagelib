@@ -47,7 +47,22 @@ include(ECMGenerateHeaders)
 include(FeatureSummary)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
-file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+messagecomposer/*.cpp
+messagecomposer/*.h
+messagecore/*.cpp
+messagecore/*.h
+messagelist/*.cpp
+messagelist/*.h
+messageviewer/*.cpp
+messageviewer/*.h
+mimetreeparser/*.cpp
+mimetreeparser/*.h
+templateparser/*.cpp
+templateparser/*.h
+webengineviewer/*.cpp
+webengineviewer/*.h
+)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 include(ECMQtDeclareLoggingCategory)
