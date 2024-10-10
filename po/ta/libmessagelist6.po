@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-09-07 21:15+0200\n"
+"PO-Revision-Date: 2024-10-09 21:04+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1154,71 +1154,59 @@ msgstr ""
 "முடக்கப்பட்டுள்ளது. கீழுள்ள முடிவுகள் அரைகுறையாக இருக்கலாம்."
 
 #: core/widgets/searchlinecommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "To contains"
-msgstr "உள்ளடக்கியது"
+msgstr "பெறுநர் இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "BCC contains"
-msgstr "உள்ளடக்கியது"
+msgstr "மறைநகல் இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:52
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "CC contains"
-msgstr "உள்ளடக்கியது"
+msgstr "நகல் இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "From contains"
-msgstr "உள்ளடக்கியது"
+msgstr "அனுப்புநர் இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "contains"
+#, kde-format
 msgid "Subject contains"
-msgstr "உள்ளடக்கியது"
+msgstr "தலைப்பு இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "has an attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "ஒரு இணைப்பு உள்ளது"
+msgstr "உடனிணைப்பைக் கொண்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "அழைப்பிதழைக் கொண்டது"
+msgstr "அழைப்பிதழைக் கொண்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:62
-#, fuzzy, kde-format
-#| msgid "&Mail Transport"
+#, kde-format
 msgid "Mail is important"
-msgstr "&அஞ்சல் போக்குவரத்து"
+msgstr "முக்கியமான அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:64
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is read"
-msgstr "அஞ்சல்"
+msgstr "படித்த அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:66
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "புரியை படிக்காதவையாக குறி"
+msgstr "படிக்காத அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:68
-#, fuzzy, kde-format
-#| msgid "Mark Thread as &Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "புரியை படிக்காதவையாக குறி"
+msgstr "பொருட்படுத்தப்படாத அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:70
 #, fuzzy, kde-format
@@ -1227,38 +1215,32 @@ msgid "Mail is Ham"
 msgstr "அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "அஞ்சல்"
+msgstr "ஸ்பேம் அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is watched"
-msgstr "அஞ்சல்"
+msgstr "கவனிக்கப்படும் அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is replied"
-msgstr "அஞ்சல்"
+msgstr "பதிலளித்த அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "அஞ்சல்"
+msgstr "முன்னனுப்பிய அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "மற்றும்"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject"
 msgstr "தலைப்பு"
 
@@ -1271,45 +1253,35 @@ msgstr "பெறுநர்"
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgid "Cc"
-msgstr ""
+msgstr "நகல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "மறைநகல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Has Attachment"
-msgstr "உடனிணைப்பை கொண்டது"
+msgstr "உடனிணைப்பைக் கொண்டது"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Has Invitation"
 msgstr "அழைப்பிதழைக் கொண்டது"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgid "Read"
 msgstr "படித்த‍து"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Important"
 msgstr "முக்கியமானது"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignored"
 msgstr "பொருட்படுத்தாதது"
 
@@ -1320,23 +1292,17 @@ msgid "Ham"
 msgstr "தேவையற்ற மின்னஞ்சல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
 msgstr "ஸ்பேம்"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
 msgstr "கவனிக்கப்படுவது"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
 msgstr "முன்னனுப்பப்பட்டது"
 
