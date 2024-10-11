@@ -274,20 +274,20 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:154
 msgid "Invalid signature"
-msgstr ""
+msgstr "签名无效"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:156
 msgid "Not enough information to check signature validity"
-msgstr ""
+msgstr "没有足够的信息检查签名有效性。"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:159
 #, kde-format
 msgid "Signed by <a href='mailto:%1'>%1</a>"
-msgstr ""
+msgstr "已经过 <a href='mailto:%1'>%1</a> 签名"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:161
 msgid "Signature is valid"
-msgstr ""
+msgstr "签名有效"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:164
 msgid "Unknown signature state"
@@ -297,7 +297,7 @@ msgstr "未知的签名状态"
 #, kde-format
 msgctxt "Status of signature (status/type of compliance)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:186
 msgid "End of signed message"
