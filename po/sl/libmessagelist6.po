@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 00:40+0000\n"
-"PO-Revision-Date: 2024-10-03 06:33+0200\n"
+"PO-Revision-Date: 2024-10-11 19:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1233,34 +1233,29 @@ msgid "Mail is Ignored"
 msgstr "Pismo je prezrto"
 
 #: core/widgets/searchlinecommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Pismo je prebrano"
+msgstr "Pismo je želeno"
 
 #: core/widgets/searchlinecommand.cpp:72
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Pismo je prebrano"
+msgstr "Pismo je nezaželeno"
 
 #: core/widgets/searchlinecommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is watched"
-msgstr "Pismo je prebrano"
+msgstr "Pismo je opazovano"
 
 #: core/widgets/searchlinecommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Pismo je prebrano"
+msgstr "Pismo je odgovorjeno"
 
 #: core/widgets/searchlinecommand.cpp:78
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Pismo je prebrano"
+msgstr "Pismo je posredovano"
 
 #: core/widgets/searchlinecommand.cpp:88
 #, kde-format
@@ -1268,9 +1263,7 @@ msgid "AND"
 msgstr "IN"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject"
 msgstr "Zadeva"
 
@@ -1316,30 +1309,22 @@ msgid "Ignored"
 msgstr "Prezrto"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgid "Ham"
 msgstr "Želeno"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgid "Spam"
 msgstr "Neželeno"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgid "Watched"
 msgstr "Opazovano"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgid "Forwarded"
 msgstr "Posredovano"
 
