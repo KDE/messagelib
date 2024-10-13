@@ -191,13 +191,18 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                     if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
                                         if (QUrl(normalizedHref).toDisplayString() != text) {
                                             const bool qurlqueryequal = displayUrl.query() == normalizedHrefUrl.query();
+                                            // qDebug() << " displayUrl.query()  " << displayUrl.query() << " normalizedHrefUrl.query() " <<
+                                            // normalizedHrefUrl.query();
                                             const QString displayUrlWithoutQuery =
                                                 displayUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
                                             const QString hrefUrlWithoutQuery =
                                                 normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
                                             // qDebug() << "displayUrlWithoutQuery "  << displayUrlWithoutQuery << " hrefUrlWithoutQuery " <<
                                             // hrefUrlWithoutQuery << " text " << text;
-                                            if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                            // qDebug() << " qurlqueryequal " << qurlqueryequal << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery;
+
+                                            if ((qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery))
+                                                || (displayUrlWithoutQuery != hrefUrlWithoutQuery)) {
                                                 d->mDetails += QLatin1StringView("<li>")
                                                     + i18n("This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is "
                                                            "often "
