@@ -201,8 +201,15 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                             // hrefUrlWithoutQuery << " text " << text;
                                             // qDebug() << " qurlqueryequal " << qurlqueryequal << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery;
 
-                                            if ((qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery))
-                                                || (displayUrlWithoutQuery != hrefUrlWithoutQuery)) {
+                                            if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                                foundScam = true;
+                                            } else if ((displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                                // qDebug() << " displayUrlWithoutQuery********** "<< displayUrlWithoutQuery << " hrefUrlWithoutQuery***" <<
+                                                // hrefUrlWithoutQuery;
+                                                foundScam = true;
+                                            }
+
+                                            if (foundScam) {
                                                 d->mDetails += QLatin1StringView("<li>")
                                                     + i18n("This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is "
                                                            "often "
@@ -210,7 +217,6 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                                            addWarningColor(text),
                                                            addWarningColor(normalizedHref))
                                                     + QLatin1StringView("</li>");
-                                                foundScam = true;
                                             }
                                         }
                                     }
