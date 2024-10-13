@@ -153,7 +153,7 @@ set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Se
 
 find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 
-ecm_set_disabled_deprecation_versions(QT 6.7.2 KF 6.7.0)
+ecm_set_disabled_deprecation_versions(QT 6.7.2 KF 6.8.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
