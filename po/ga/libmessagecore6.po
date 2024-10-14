@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -272,7 +272,7 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown'"
 #| msgid "unknown"
@@ -280,17 +280,17 @@ msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "anaithnid"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:177
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:180
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:185
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

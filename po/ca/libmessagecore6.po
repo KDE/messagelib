@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2024-06-26 10:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -316,23 +316,23 @@ msgstr ""
 "Mida màxima en bits que es permet en els adjunts del correu (-1 per a sense "
 "límit)"
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "desconegut"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:177
 #, kde-format
 msgid "Today %1"
 msgstr "Avui %1"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:180
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Ahir %1"
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:185
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

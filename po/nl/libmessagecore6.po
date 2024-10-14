@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2024-06-26 10:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -314,23 +314,23 @@ msgstr ""
 "De maximale grootte in bits die bijlagen in e-mail mogen hebben (-1 voor "
 "geen limiet)"
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "onbekend"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:177
 #, kde-format
 msgid "Today %1"
 msgstr "vandaag %1"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:180
 #, kde-format
 msgid "Yesterday %1"
 msgstr "gisteren %1"
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:185
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

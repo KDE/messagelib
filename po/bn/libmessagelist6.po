@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -233,7 +233,7 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "অগ্রাহ্য করা"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, fuzzy, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
@@ -492,56 +492,56 @@ msgstr ""
 msgid "Status"
 msgstr "স্ট্যাটাস"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, fuzzy, kde-format
 #| msgid "days"
 msgid "Today"
 msgstr "দিন"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, fuzzy, kde-format
 #| msgid "System &Tray"
 msgid "Yesterday"
 msgstr "সিস্টে&ম ট্রে"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Week"
 msgstr "শেষ সন্ধান"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:186
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "গ্রাহক"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:185
+#: core/model.cpp:554 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "প্রেরক"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "%1: name; %2: number appended to it to make it unique among a list of "
@@ -551,7 +551,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -559,7 +559,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "বার্তা সূত্র&বদ্ধ করো"
 msgstr[1] "বার্তা সূত্র&বদ্ধ করো"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -567,7 +567,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "বার্তা সূত্র&বদ্ধ করো"
 msgstr[1] "বার্তা সূত্র&বদ্ধ করো"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -576,7 +576,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "সূত্র &সম্প্রসারণ করো"
 msgstr[1] "সূত্র &সম্প্রসারণ করো"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -585,7 +585,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "সূত্র &সম্প্রসারণ করো"
 msgstr[1] "সূত্র &সম্প্রসারণ করো"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

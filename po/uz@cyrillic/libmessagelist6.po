@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -230,7 +230,7 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Эътибор берилмаган"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, fuzzy, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
@@ -485,88 +485,88 @@ msgstr ""
 msgid "Status"
 msgstr "Ҳолати"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgid "Today"
 msgstr "Вазифа"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr ""
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Week"
 msgstr "Охирги қидирув"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:186
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "Қабул қилувчи"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:185
+#: core/model.cpp:554 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "Жўнатувчи"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "Хат"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, fuzzy, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Хабарнинг асл нусхаси:"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, fuzzy, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Хабарнинг асл нусхаси:"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, fuzzy, kde-format
 #| msgid "&Reading"
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Ўқ&иш"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, fuzzy, kde-format
 #| msgid "&Reading"
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Ўқ&иш"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

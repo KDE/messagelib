@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2024-07-14 12:29+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -307,23 +307,23 @@ msgid ""
 msgstr ""
 "Największy dopuszczalny rozmiar załącznika w bitach (-1 dla nieograniczonego)"
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "nieznany"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:177
 #, kde-format
 msgid "Today %1"
 msgstr "Dzisiaj %1"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:180
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Wczoraj %1"
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:185
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

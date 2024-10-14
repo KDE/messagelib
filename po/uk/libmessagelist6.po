@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 02:27+0000\n"
 "PO-Revision-Date: 2024-07-10 06:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -204,7 +204,7 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Проігнороване"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
@@ -467,58 +467,58 @@ msgstr ""
 msgid "Status"
 msgstr "Стан"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, kde-format
 msgid "Today"
 msgstr "Сьогодні"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr "Вчора"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Last Week"
 msgstr "Минулого тижня"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Два тижні тому"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Три тижні тому"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Чотири тижні тому"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "П’ять тижнів тому"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:186
+#: core/model.cpp:552 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Receiver"
 msgstr "Отримувач"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:185
+#: core/model.cpp:554 utils/themeeditor.cpp:185
 #, kde-format
 msgid "Sender"
 msgstr "Відправник"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2 року"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -527,7 +527,7 @@ msgstr[1] "Оброблено %1 повідомлення з %2"
 msgstr[2] "Оброблено %1 повідомлень з %2"
 msgstr[3] "Оброблено %1 повідомлення з %2"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -536,7 +536,7 @@ msgstr[1] "Розподілено за гілками %1 повідомленн�
 msgstr[2] "Розподілено за гілками %1 повідомлень з %2"
 msgstr[3] "Розподілено за гілками %1 повідомлення з %2"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -545,7 +545,7 @@ msgstr[1] "Розподілено за групами %1 гілки з %2"
 msgstr[2] "Розподілено за групами %1 гілок з %2"
 msgstr[3] "Розподілено за групами %1 гілку з %2"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -554,7 +554,7 @@ msgstr[1] "Оновлено %1 групи з %2"
 msgstr[2] "Оновлено %1 груп з %2"
 msgstr[3] "Оновлено %1 групу з %2"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
