@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2023-01-11 09:27+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -235,18 +235,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Ignorado"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/manager.cpp:205
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Actividade Actual, por Tópico"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -257,12 +257,12 @@ msgstr ""
 "organizadas por tópicos. Por exemplo, em \"Hoje\" irá encontrar todas as "
 "mensagens que chegaram hoje e todos os tópicos que foram activados hoje."
 
-#: core/manager.cpp:218
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Actividade Actual, Plana"
 
-#: core/manager.cpp:219
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -272,12 +272,12 @@ msgstr ""
 "são organizadas por tópicos. Por exemplo, em \"Hoje\" irá encontrar todas as "
 "mensagens que chegaram hoje."
 
-#: core/manager.cpp:230
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Actividade por Data, por Tópico"
 
-#: core/manager.cpp:231
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -288,12 +288,12 @@ msgstr ""
 "Por exemplo, em \"Hoje\" irá encontrar todas as mensagens que chegaram hoje "
 "e todos os tópicos que foram activados hoje."
 
-#: core/manager.cpp:243
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Actividade por Data, Plana"
 
-#: core/manager.cpp:244
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -303,12 +303,12 @@ msgstr ""
 "tópicos. Por exemplo, em \"Hoje\" irá apenas encontrar todas as mensagens "
 "que chegaram hoje."
 
-#: core/manager.cpp:255
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Lista de Correio Normal"
 
-#: core/manager.cpp:256
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -316,12 +316,12 @@ msgstr ""
 "Esta é uma vista em lista antiga e plana de listas de correio: sem grupos e "
 "com tópicos fortes."
 
-#: core/manager.cpp:265
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "Vista por Data Plana"
 
-#: core/manager.cpp:266
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -330,12 +330,12 @@ msgstr ""
 "Esta é uma vista em lista antiga e plana de mensagens ordenadas por data: "
 "sem grupos e sem tópicos."
 
-#: core/manager.cpp:277
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Remetentes/Destinatários, Plana"
 
-#: core/manager.cpp:278
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -344,12 +344,12 @@ msgstr ""
 "Esta vista agrupa as mensagens pelos remetentes ou destinatários (dependendo "
 "do tipo de pasta). As mensagens não são organizadas por tópicos."
 
-#: core/manager.cpp:289
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "Iniciantes do Tópico"
 
-#: core/manager.cpp:290
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -358,221 +358,221 @@ msgstr ""
 "Esta vista agrupa as mensagens por tópicos e depois agrupa estes pelo "
 "utilizador inicial."
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Clássico"
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Um tema de linhas simples e únicas, retro-compatível"
 
-#: core/manager.cpp:571
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Assunto"
 
-#: core/manager.cpp:604 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Remetente/Destinatário"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Remetente"
 
-#: core/manager.cpp:613
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Destinatário"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Data"
 
-#: core/manager.cpp:621
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Data Mais Recente"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Tamanho"
 
-#: core/manager.cpp:629
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Anexo"
 
-#: core/manager.cpp:635
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "Lido/Não-Lido"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "Respondida"
 
-#: core/manager.cpp:642
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Importante"
 
-#: core/manager.cpp:648
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "Item de Acção"
 
-#: core/manager.cpp:654
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Lixo/Relevante"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:658
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Vigiada/Ignorada"
 
-#: core/manager.cpp:666
+#: core/manager.cpp:664
 #, kde-format
 msgid "Encryption"
 msgstr "Encriptação"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:670
 #, kde-format
 msgid "Signature"
 msgstr "Assinatura"
 
-#: core/manager.cpp:677
+#: core/manager.cpp:675
 #, kde-format
 msgid "Tag List"
 msgstr "Lista de Marcas"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "Smart"
 msgstr "Inteligente"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Um tema multi-itens e multi-linhas inteligente"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:687
 #, kde-format
 msgid "Message"
 msgstr "Mensagem"
 
-#: core/manager.cpp:770
+#: core/manager.cpp:768
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Inteligente com Estado Carregável"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:769
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Um tema multi-linhas e multi-itens inteligente com uma coluna de estado "
 "carregável"
 
-#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Estado"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, kde-format
 msgid "Today"
 msgstr "Hoje"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr "Ontem"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Last Week"
 msgstr "Semana Passada"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Há Duas Semanas"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Há Três Semanas"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Há Quatro Semanas"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "Há Cinco Semanas"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "Destinatário"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:186
+#: core/model.cpp:554 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "Remetente"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 de %2"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%1 Mensagem Processada em %2"
 msgstr[1] "%1 Mensagens Processadas em %2"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%1 Mensagem por Tópico em %2"
 msgstr[1] "%1 Mensagens por Tópicos em %2"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%1 Tópico Agrupado em %2"
 msgstr[1] "%1 Tópicos Agrupados em %2"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%1 Tópico Actualizado em %2"
 msgstr[1] "%1 Tópicos Actualizados em %2"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

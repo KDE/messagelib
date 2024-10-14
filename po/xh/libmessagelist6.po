@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -228,18 +228,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Ayifundwanga"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, fuzzy, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "&Yisa phambili"
 
-#: core/manager.cpp:205
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr ""
 
-#: core/manager.cpp:206
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -247,24 +247,24 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 
-#: core/manager.cpp:218
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr ""
 
-#: core/manager.cpp:219
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:230
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr ""
 
-#: core/manager.cpp:231
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -272,146 +272,146 @@ msgid ""
 "that have been active today."
 msgstr ""
 
-#: core/manager.cpp:243
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr ""
 
-#: core/manager.cpp:244
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:255
+#: core/manager.cpp:253
 #, fuzzy, kde-format
 #| msgid "Associated Mailing List"
 msgid "Standard Mailing List"
 msgstr "Uluhlu Oluxhulumeneyo Lweposi"
 
-#: core/manager.cpp:256
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 
-#: core/manager.cpp:265
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr ""
 
-#: core/manager.cpp:266
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
 
-#: core/manager.cpp:277
+#: core/manager.cpp:275
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Senders/Receivers, Flat"
 msgstr "Umthumeli/Umamkeli"
 
-#: core/manager.cpp:278
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
 
-#: core/manager.cpp:289
+#: core/manager.cpp:287
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Thread Starters"
 msgstr "&Thungela Imiyalezo"
 
-#: core/manager.cpp:290
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr ""
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:571
+#: core/manager.cpp:569
 #, fuzzy, kde-format
 #| msgid "Subject"
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Umxholo"
 
-#: core/manager.cpp:604 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:112
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "Sender/Receiver"
 msgstr "Umthumeli/Umamkeli"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:609
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Umthumeli"
 
-#: core/manager.cpp:613
+#: core/manager.cpp:611
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Umamakeli"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:617
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Umhla"
 
-#: core/manager.cpp:621
+#: core/manager.cpp:619
 #, fuzzy, kde-format
 msgid "Most Recent Date"
 msgstr "Cima Imiyalezo"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:625
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Ubungakanani"
 
-#: core/manager.cpp:629
+#: core/manager.cpp:627
 #, fuzzy, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Uncamathelo: "
 
-#: core/manager.cpp:635
+#: core/manager.cpp:633
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
 msgid "Read/Unread"
 msgstr "Ayifundwanga"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
 msgid "Replied"
 msgstr "Iphendulwe"
 
-#: core/manager.cpp:642
+#: core/manager.cpp:640
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
@@ -419,116 +419,116 @@ msgctxt "Message importance indication"
 msgid "Important"
 msgstr "ibalulekile"
 
-#: core/manager.cpp:648
+#: core/manager.cpp:646
 #, fuzzy, kde-format
 msgid "Action Item"
 msgstr "Umyalezo obalulekileyo"
 
-#: core/manager.cpp:654
+#: core/manager.cpp:652
 #, fuzzy, kde-format
 msgid "Spam/Ham"
 msgstr "Funda"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:658
 #, fuzzy, kde-format
 msgid "Watched/Ignored"
 msgstr "Egafundwanga"
 
-#: core/manager.cpp:666
+#: core/manager.cpp:664
 #, kde-format
 msgid "Encryption"
 msgstr "Ufihlo"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:670
 #, fuzzy, kde-format
 msgid "Signature"
 msgstr "&Utyikityo"
 
-#: core/manager.cpp:677
+#: core/manager.cpp:675
 #, fuzzy, kde-format
 msgid "Tag List"
 msgstr "&Yenza Icebo lokucoca ulwelo"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, fuzzy, kde-format
 #| msgctxt "View->attachments->"
 #| msgid "&Smart"
 msgid "Smart"
 msgstr "&Iyabukeka"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:689
+#: core/manager.cpp:687
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Message"
 msgstr "&Umyalezo"
 
-#: core/manager.cpp:770
+#: core/manager.cpp:768
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:771
+#: core/manager.cpp:769
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, fuzzy, kde-format
 msgid "Status"
 msgstr "Isimo:"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, fuzzy, kde-format
 msgid "Today"
 msgstr "Iya: "
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr ""
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, fuzzy, kde-format
 msgid "Last Week"
 msgstr "&Phendla"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:550 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "Umamakeli"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:186
+#: core/model.cpp:554 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "Umthumeli"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "%1: name; %2: number appended to it to make it unique among a list of "
@@ -540,7 +540,7 @@ msgstr ""
 "amagama\n"
 "%1 %2"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -548,7 +548,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "&Thungela Imiyalezo"
 msgstr[1] "&Thungela Imiyalezo"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -556,7 +556,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "&Thungela Imiyalezo"
 msgstr[1] "&Thungela Imiyalezo"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -565,7 +565,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "&Yandisa Umsonto"
 msgstr[1] "&Yandisa Umsonto"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -574,7 +574,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "&Yandisa Umsonto"
 msgstr[1] "&Yandisa Umsonto"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

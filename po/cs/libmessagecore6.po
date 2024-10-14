@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -313,23 +313,23 @@ msgstr ""
 "Maximální velikost povolené přílohy zprávy v bitech (-1 pro neomezenou "
 "velikost)"
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "neznámý"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr "Dnes %1"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Včera %1"
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

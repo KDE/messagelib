@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2019-12-17 11:45+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -351,7 +351,7 @@ msgstr ""
 "O tamanho máximo em 'bits' que os anexos de e-mail poderão ter (-1 para "
 "ilimitado)"
 
-#: utils/dateformatter.cpp:158
+#: utils/dateformatter.cpp:163
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown'"
 #| msgid "unknown"
@@ -359,17 +359,17 @@ msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "desconhecido"
 
-#: utils/dateformatter.cpp:172
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:180
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

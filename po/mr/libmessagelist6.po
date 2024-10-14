@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2013-04-12 16:41+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -201,18 +201,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "दुर्लक्ष केले"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "अपरिचीत"
 
-#: core/manager.cpp:205
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "वर्तमान क्रिया, थ्रेडेड"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -220,24 +220,24 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 
-#: core/manager.cpp:218
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "वर्तमान क्रिया, सपाट"
 
-#: core/manager.cpp:219
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:230
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "दिनांका प्रमाणे क्रिया, थ्रेडेड"
 
-#: core/manager.cpp:231
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -245,117 +245,117 @@ msgid ""
 "that have been active today."
 msgstr ""
 
-#: core/manager.cpp:243
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "दिनांका प्रमाणे क्रिया, सपाट"
 
-#: core/manager.cpp:244
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:255
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "प्रमाणित मेलिंग यादी"
 
-#: core/manager.cpp:256
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 
-#: core/manager.cpp:265
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "सपाट दिनांक दृश्य"
 
-#: core/manager.cpp:266
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
 
-#: core/manager.cpp:277
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "घेणारे / पाठवणारे, सपाट"
 
-#: core/manager.cpp:278
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
 
-#: core/manager.cpp:289
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "थ्रेड सुरुवात करणारे"
 
-#: core/manager.cpp:290
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "क्लासिक"
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:571
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "विषय"
 
-#: core/manager.cpp:604 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "घेणारा/पाठविणारा"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "पाठवणारा"
 
-#: core/manager.cpp:613
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "घेणारा"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "दिनांक"
 
-#: core/manager.cpp:621
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "सर्वात अलिकडील दिनांक"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "आकार"
 
-#: core/manager.cpp:629
+#: core/manager.cpp:627
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -363,162 +363,162 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "अटॅचमेंट"
 
-#: core/manager.cpp:635
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "वाचलेले / न वाचलेले"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "उत्तर दिले"
 
-#: core/manager.cpp:642
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "महत्वपूर्ण"
 
-#: core/manager.cpp:648
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "क्रिया घटक"
 
-#: core/manager.cpp:654
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "स्पाम / हाम"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:658
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "लक्ष ठेवले / दुर्लक्ष केले"
 
-#: core/manager.cpp:666
+#: core/manager.cpp:664
 #, kde-format
 msgid "Encryption"
 msgstr "कुटलिपी"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:670
 #, kde-format
 msgid "Signature"
 msgstr "हस्ताक्षर"
 
-#: core/manager.cpp:677
+#: core/manager.cpp:675
 #, kde-format
 msgid "Tag List"
 msgstr "टॅग यादी"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "Smart"
 msgstr ""
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr ""
 
-#: core/manager.cpp:689
+#: core/manager.cpp:687
 #, kde-format
 msgid "Message"
 msgstr "संदेश"
 
-#: core/manager.cpp:770
+#: core/manager.cpp:768
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr ""
 
-#: core/manager.cpp:771
+#: core/manager.cpp:769
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "स्थिती"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, kde-format
 msgid "Today"
 msgstr "आज"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr "काल"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Last Week"
 msgstr "गेला आठवडा"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "दोन आठवड्या पूर्वी"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "तीन आठवड्या पूर्वी"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "चार आठवड्या पूर्वी"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "पाच आठवड्या पूर्वी"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "घेणारा"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:186
+#: core/model.cpp:554 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "पाठवणारा"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

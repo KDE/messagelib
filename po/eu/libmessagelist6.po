@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2024-10-05 21:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -209,18 +209,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Ez ikusi egina"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/manager.cpp:205
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Uneko jarduera, harian"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -231,12 +231,12 @@ msgstr ""
 "erakusten dira. Beraz, adibidez, «Gaur» barruan gaurko egunean iritsi diren "
 "mezu guztiak eta gaur aktibo egon diren hari guztiak aurkituko dituzu."
 
-#: core/manager.cpp:218
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Uneko jarduera, laua"
 
-#: core/manager.cpp:219
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -246,12 +246,12 @@ msgstr ""
 "dira harietan ipiniko. Beraz, adibidez, «Gaur» barruan gaurko egunean iritsi "
 "diren mezu guztiak aurkituko dituzu."
 
-#: core/manager.cpp:230
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Jarduera dataren arabera, harian"
 
-#: core/manager.cpp:231
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -262,12 +262,12 @@ msgstr ""
 "«Gaur» barruan gaurko egunean iritsi diren mezu guztiak eta gaur aktibo egon "
 "diren hari guztiak aurkituko dituzu."
 
-#: core/manager.cpp:243
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Jarduera dataren arabera, laua"
 
-#: core/manager.cpp:244
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -277,12 +277,12 @@ msgstr ""
 "harietan ipiniko. Beraz, adibidez, «Gaur» barruan gaurko egunean iritsi "
 "diren mezu guztiak aurkituko dituzu."
 
-#: core/manager.cpp:255
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Posta-zerrenda estandarra"
 
-#: core/manager.cpp:256
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -290,12 +290,12 @@ msgstr ""
 "Hau posta-zerrendaren ikuspegi zahar soil bat da: ez talderik ez eta hari-"
 "zama astunik ere."
 
-#: core/manager.cpp:265
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "Data ikuspegi laua"
 
-#: core/manager.cpp:266
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -304,12 +304,12 @@ msgstr ""
 "Hau dataren arabera ordenatutako mezu-zerrenda zahar soil bat da: ez "
 "talderik ez eta haririk ere."
 
-#: core/manager.cpp:277
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Bidaltzaileak/Hartzaileak, laua"
 
-#: core/manager.cpp:278
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -318,12 +318,12 @@ msgstr ""
 "Ikuspegi honek mezuak bidaltzaileen edo hartzaileen arabera (karpeta motaren "
 "arabera) taldekatzen ditu. Mezuak ez dira harietan ipiniko."
 
-#: core/manager.cpp:289
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "Hari abiapuntuak"
 
-#: core/manager.cpp:290
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -332,221 +332,221 @@ msgstr ""
 "Ikuspegi honek mezuak harietan taldekatzen ditu eta ondoren hariak "
 "taldekatzen ditu abiatu dituzten erabiltzaileen arabera."
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Klasikoa"
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Errenkada bakarreko gai ume bat, atzerantz bateragarria"
 
-#: core/manager.cpp:571
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Gaia"
 
-#: core/manager.cpp:604 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Bidaltzailea/Hartzailea"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Bidaltzailea"
 
-#: core/manager.cpp:613
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Hartzailea"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Data"
 
-#: core/manager.cpp:621
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Data berriena"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Neurria"
 
-#: core/manager.cpp:629
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Eranskina"
 
-#: core/manager.cpp:635
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "Irakurrita/Gabe"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "Erantzunda"
 
-#: core/manager.cpp:642
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Garrantzitsua"
 
-#: core/manager.cpp:648
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "Ekintza-elementua"
 
-#: core/manager.cpp:654
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Spam/Ez-spam"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:658
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Zelatatua/Ez ikusi egina"
 
-#: core/manager.cpp:666
+#: core/manager.cpp:664
 #, kde-format
 msgid "Encryption"
 msgstr "Zifratzea"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:670
 #, kde-format
 msgid "Signature"
 msgstr "Sinadura"
 
-#: core/manager.cpp:677
+#: core/manager.cpp:675
 #, kde-format
 msgid "Tag List"
 msgstr "Etiketa zerrenda"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "Smart"
 msgstr "Adimentsua"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Lerro anitzeko eta elementu anitzeko gai adimentsu bat"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:687
 #, kde-format
 msgid "Message"
 msgstr "Mezua"
 
-#: core/manager.cpp:770
+#: core/manager.cpp:768
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Adimentsua egoera klikagarriarekin"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:769
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Egoera klikagarriko zutabea duen lerro anitzeko eta elementu anitzeko gai "
 "adimentsu bat"
 
-#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Egoera"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, kde-format
 msgid "Today"
 msgstr "Gaur"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr "Atzo"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Last Week"
 msgstr "Aurreko astea"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Duela bi aste"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Duela hiru aste"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Duela lau aste"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "Duela bost aste"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "Hartzailea"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:186
+#: core/model.cpp:554 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "Bidaltzailea"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%2 %1"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%2(e)tik mezu 1 prozesatuta"
 msgstr[1] "%2(e)tik %1 mezu prozesatuta"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%2(e)tik mezuak 1 harian"
 msgstr[1] "%2(e)tik %1 mezu harian"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%2(e)tik hari 1 taldekatuta"
 msgstr[1] "%2(e)tik %1 hari taldekatuta"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2(e)tik talde 1 eguneratua"
 msgstr[1] "%2(e)tik %1 talde eguneratuta"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

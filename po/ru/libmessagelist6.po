@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-05 00:40+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2024-02-07 12:38+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -214,18 +214,18 @@ msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Игнорируемое"
 
-#: core/manager.cpp:34 core/model.cpp:332
+#: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/manager.cpp:205
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Активность по дискуссиям"
 
-#: core/manager.cpp:206
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -237,12 +237,12 @@ msgstr ""
 "группе «Сегодня» будут расположены все письма, которые получены сегодня и "
 "дискуссии, содержащие эти письма."
 
-#: core/manager.cpp:218
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Активность по датам"
 
-#: core/manager.cpp:219
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -252,12 +252,12 @@ msgstr ""
 "показываются вверху. Например, в группе «Сегодня» будут расположены все "
 "письма, которые получены сегодня."
 
-#: core/manager.cpp:230
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "По датам и дискуссиям"
 
-#: core/manager.cpp:231
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -268,12 +268,12 @@ msgstr ""
 "письмами показываются вверху. Например, в группе «Сегодня» будут расположены "
 "все письма, которые получены сегодня и дискуссии, содержащие эти письма."
 
-#: core/manager.cpp:243
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "По датам"
 
-#: core/manager.cpp:244
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -283,12 +283,12 @@ msgstr ""
 "показываются вверху. Например, в группе «Сегодня» будут расположены все "
 "письма, которые получены сегодня."
 
-#: core/manager.cpp:255
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Стандартный список рассылки"
 
-#: core/manager.cpp:256
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -296,12 +296,12 @@ msgstr ""
 "Стандартный вид списка почтовой рассылки: с группировкой только по "
 "дискуссиям, в которых последние полученные письма показываются внизу."
 
-#: core/manager.cpp:265
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "По дате без группировки"
 
-#: core/manager.cpp:266
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -310,12 +310,12 @@ msgstr ""
 "Обычный список писем, без групп и дискуссий, отсортированный по дате, когда "
 "последние полученные письма показываются вверху."
 
-#: core/manager.cpp:277
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "По отправителю или получателю"
 
-#: core/manager.cpp:278
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -326,12 +326,12 @@ msgstr ""
 "или по их адресам электронной почты. Письма не группируются по дискуссиям, с "
 "показом последних писем внизу."
 
-#: core/manager.cpp:289
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "По инициаторам дискуссий"
 
-#: core/manager.cpp:290
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -340,193 +340,193 @@ msgstr ""
 "Этот тип группирует письма по дискуссиям, а дискуссии — по их инициаторам. "
 "Группы сортируются по имени или адресу электронной почты."
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Классический вид"
 
-#: core/manager.cpp:567
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Стандартный внешний вид с одной строкой на письмо"
 
-#: core/manager.cpp:571
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Тема"
 
-#: core/manager.cpp:604 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Отправитель/Получатель"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Отправитель"
 
-#: core/manager.cpp:613
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Получатель"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Дата"
 
-#: core/manager.cpp:621
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Самая свежая дата"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Размер"
 
-#: core/manager.cpp:629
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Есть вложение"
 
-#: core/manager.cpp:635
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "Прочитанное/Не прочитанное"
 
-#: core/manager.cpp:640 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgid "Replied"
 msgstr "Отвеченное"
 
-#: core/manager.cpp:642
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Важное"
 
-#: core/manager.cpp:648
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "На контроле"
 
-#: core/manager.cpp:654
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Спам"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:658
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Наблюдаемое/Игнорируемое"
 
-#: core/manager.cpp:666
+#: core/manager.cpp:664
 #, kde-format
 msgid "Encryption"
 msgstr "Шифрование"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:670
 #, kde-format
 msgid "Signature"
 msgstr "Подпись"
 
-#: core/manager.cpp:677
+#: core/manager.cpp:675
 #, kde-format
 msgid "Tag List"
 msgstr "Список меток"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "Smart"
 msgstr "«Умная»"
 
-#: core/manager.cpp:685
+#: core/manager.cpp:683
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Умная тема оформления с несколькими строками и элементами"
 
-#: core/manager.cpp:689
+#: core/manager.cpp:687
 #, kde-format
 msgid "Message"
 msgstr "Письмо"
 
-#: core/manager.cpp:770
+#: core/manager.cpp:768
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "«Умная» с активным статусом"
 
-#: core/manager.cpp:771
+#: core/manager.cpp:769
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Умная тема оформления с несколькими строками и элементами и активным "
 "столбцом статуса"
 
-#: core/manager.cpp:775 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Статус"
 
-#: core/model.cpp:330
+#: core/model.cpp:332
 #, kde-format
 msgid "Today"
 msgstr "Сегодня"
 
-#: core/model.cpp:331
+#: core/model.cpp:333
 #, kde-format
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Last Week"
 msgstr "На прошлой неделе"
 
-#: core/model.cpp:334
+#: core/model.cpp:336
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Две недели назад"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Три недели назад"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Четыре недели назад"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "Пять недель назад"
 
-#: core/model.cpp:550 utils/themeeditor.cpp:187
+#: core/model.cpp:552 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Receiver"
 msgstr "Получатель"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:186
+#: core/model.cpp:554 utils/themeeditor.cpp:186
 #, kde-format
 msgid "Sender"
 msgstr "Отправитель"
 
-#: core/model.cpp:1367
+#: core/model.cpp:1370
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2 года"
 
-#: core/model.cpp:3787
+#: core/model.cpp:3790
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -535,7 +535,7 @@ msgstr[1] "Обработано %1 письма из %2"
 msgstr[2] "Обработано %1 писем из %2"
 msgstr[3] "Обработано %1 письмо из %2"
 
-#: core/model.cpp:3793 core/model.cpp:3799
+#: core/model.cpp:3796 core/model.cpp:3802
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -544,7 +544,7 @@ msgstr[1] "Распределено по дискуссиям %1 письма и
 msgstr[2] "Распределено по дискуссиям %1 писем из %2"
 msgstr[3] "Распределено по дискуссиям %1 письмо из %2"
 
-#: core/model.cpp:3805
+#: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -553,7 +553,7 @@ msgstr[1] "Сгруппировано %1 дискуссии из %2"
 msgstr[2] "Сгруппировано %1 дискуссий из %2"
 msgstr[3] "Сгруппирована %1 дискуссия из %2"
 
-#: core/model.cpp:3811
+#: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -562,7 +562,7 @@ msgstr[1] "Обновлено %1 группы из %2"
 msgstr[2] "Обновлено %1 групп из %2"
 msgstr[3] "Обновлена %1 группа из %2"
 
-#: core/model.cpp:3903
+#: core/model.cpp:3906
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

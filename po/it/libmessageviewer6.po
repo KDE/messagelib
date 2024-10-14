@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 21:59+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1109,7 +1109,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Disabilita il rilevamento delle truffe per tutti i messaggi"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:202
+#: scamdetection/scamdetectionwebengine.cpp:214
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1164,14 +1164,14 @@ msgstr ""
 "Questo messaggio contiene un collegamento (%1). Può reindirizzare ad un "
 "altro server."
 
-#: scamdetection/scamdetectionwebengine.cpp:222
+#: scamdetection/scamdetectionwebengine.cpp:233
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Il messaggio contiene degli elementi di un modulo. Questo succede spesso nei "
 "messaggi di posta truffaldini."
 
-#: scamdetection/scamdetectionwebengine.cpp:226
+#: scamdetection/scamdetectionwebengine.cpp:237
 #, kde-format
 msgid "Details:"
 msgstr "Dettagli:"

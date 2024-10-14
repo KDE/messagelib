@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-10-14 00:40+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1172,7 +1172,7 @@ msgid "Disable scam detection for all messages"
 msgstr ""
 
 #: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:202
+#: scamdetection/scamdetectionwebengine.cpp:214
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1213,12 +1213,12 @@ msgstr ""
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:222
+#: scamdetection/scamdetectionwebengine.cpp:233
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:226
+#: scamdetection/scamdetectionwebengine.cpp:237
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "Details:"
