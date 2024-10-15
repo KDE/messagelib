@@ -1,4 +1,5 @@
 # translation of kmail.po to
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # Ahmad M. Zawawi <zawawi@arabeyes.org>, 2004.
 # Usamah Ali Al-Maqdad <msareehi@kacst.edu.sa>, 2004.
@@ -11,15 +12,16 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 00:40+0000\n"
-"PO-Revision-Date: 2018-01-31 17:45+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-10-14 20:50+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -131,18 +133,16 @@ msgid "unknown key"
 msgstr "مفتاح مجهول"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
-#, fuzzy, kde-format
-#| msgid " Column: %1 "
+#, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr " العامود: %1 "
+msgstr "الامتثال: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "رسالة معمّاة"
+msgstr "رسالة معمّاة (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -219,11 +219,10 @@ msgid "Key Changed"
 msgstr ""
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr "مُخزّنة في: "
+msgstr "احفظ"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
@@ -231,10 +230,9 @@ msgid "DKIM Key"
 msgstr ""
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:79
-#, fuzzy, kde-format
-#| msgid "Select Folder"
+#, kde-format
 msgid "Selector"
-msgstr "اختر مجلد"
+msgstr "المحدد"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #: dkim-verify/dkimmanageruleswidget.cpp:73
@@ -243,21 +241,19 @@ msgid "SDID"
 msgstr ""
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Inserted"
-msgstr "أدرج الأمر..."
+msgstr "مدرج"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgid "Last Used"
-msgstr "آخر بحث"
+msgstr "آخر استعمال"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:69
-#, fuzzy, kde-format
-#| msgid "Copy Text"
+#, kde-format
 msgid "Copy Key"
-msgstr "انسخ النّصّ"
+msgstr "انسخ المفتاح"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:76
 #, fuzzy, kde-format
@@ -282,11 +278,11 @@ msgstr[4] ""
 msgstr[5] ""
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] "احذف"
-msgstr[1] "احذف"
+msgstr[0] "مفتاح الحذف"
+msgstr[1] "احذف المفاتيح"
 msgstr[2] "احذف"
 msgstr[3] "احذف"
 msgstr[4] "احذف"
@@ -294,9 +290,9 @@ msgstr[5] "احذف"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete All"
-msgstr "احذف"
+msgstr "احذف الكل"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, fuzzy, kde-format
@@ -305,16 +301,16 @@ msgid "Do you want to delete all keys?"
 msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل الرسائل القديمة؟"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr "احذف"
+msgstr "احذف المفاتيح"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "ابحث"
+msgstr "ابحث..."
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, fuzzy, kde-format
@@ -335,52 +331,47 @@ msgid "Ignore if not signed"
 msgstr "لائحة الرسائل - حقل التاريخ"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Expire"
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr "انقضى اجله"
+msgstr "صدّر..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Configure Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr "هيئ الحساب"
+msgstr "اضبط القاعدة"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Entry..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr "إضافة خانة..."
+msgstr "أضِف قاعدة..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "&Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr "إست&يراد"
+msgstr "استورد..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "No signature found"
+#, kde-format
 msgid "No rules found"
-msgstr "لم يُعثر على أيّ توقيع"
+msgstr "لم يعثر على قواعد"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr "فشل تصدير المفتاح"
+msgstr "صدر قواعد"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr "فشل أستيراد vCard"
+msgstr "استورد قواعد"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, fuzzy, kde-format
@@ -392,7 +383,7 @@ msgstr "لم يُعثر على أيّ توقيع"
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
-msgstr ""
+msgstr "المجال"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -400,22 +391,19 @@ msgid "Active"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "List-Id:"
+#, kde-format
 msgid "List-ID"
-msgstr "معرّف القائمة:"
+msgstr "معرّف القائمة"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "&From"
+#, kde-format
 msgid "From"
-msgstr "&من"
+msgstr "من"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Folder List"
+#, kde-format
 msgid "Rule type"
-msgstr "لائحة المجلدات"
+msgstr "نوع القاعدة"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
@@ -435,16 +423,15 @@ msgid "Modify..."
 msgstr "تعديل..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgid "Duplicate Rule"
-msgstr "قواعد المرشح"
+msgstr "كرّر القاعدة"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:209
 #: remote-content/remotecontentconfigurewidget.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove Rule"
-msgstr "احذف"
+msgstr "أزِل القاعدة"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
 #, fuzzy, kde-format
@@ -454,11 +441,10 @@ msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل ال�
 
 #: dkim-verify/dkimmanageruleswidget.cpp:212
 #: remote-content/remotecontentconfigurewidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr "قواعد المرشح"
+msgstr "احذف القاعدة"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, fuzzy, kde-format
@@ -467,37 +453,33 @@ msgid "Do you want to delete all the rules?"
 msgstr "هل أنت متأكد من أنك تريد إنهاء اجل كل الرسائل القديمة؟"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:226
-#, fuzzy, kde-format
-#| msgid "Filter Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr "قواعد المرشح"
+msgstr "قواعد الحذف"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "أضِف قاعدة"
 
 #: dkim-verify/dkimruledialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Modify Account"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr "تعديل حساب"
+msgstr "عدّل القاعدة"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enable"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
-msgstr "مكّن"
+msgstr "ممكّن"
 
 #: dkim-verify/dkimrulewidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Defaul&t domain:"
+#, kde-format
 msgid "Domain:"
-msgstr "المجال الإفت&راضي:"
+msgstr "المجال:"
 
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
@@ -552,7 +534,7 @@ msgid "Rules..."
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown"
 msgstr "مجهول"
 
@@ -717,15 +699,14 @@ msgid "%1: %2"
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1: None"
-msgstr "لا شيء"
+msgstr "%1: بلا"
 
 #: dkim-verify/dkimwidgetinfo.cpp:268
-#, fuzzy, kde-format
-#| msgid "Message was signed by %1."
+#, kde-format
 msgid "%1: Valid (Signed by %2)"
-msgstr "وقّع %1 الرّسالة."
+msgstr "%1: صالحة (وقّعها %2)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:288
 #, kde-format
@@ -733,10 +714,9 @@ msgid "%1: Valid"
 msgstr ""
 
 #: dkim-verify/dkimwidgetinfo.cpp:303
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgid "Not Signed"
-msgstr "لا &توقِع"
+msgstr "غير موقعة"
 
 #: header/grantleeheaderformatter.cpp:203
 #, kde-format
@@ -749,9 +729,9 @@ msgid "Date:"
 msgstr "التّاريخ:"
 
 #: header/grantleeheaderformatter.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "Message-Id:"
-msgstr "رسالة هوية"
+msgstr "معرّف الرسالة:"
 
 #: header/grantleeheaderformatter.cpp:263
 #, kde-format
@@ -759,10 +739,9 @@ msgid "To:"
 msgstr "إلى:"
 
 #: header/grantleeheaderformatter.cpp:265
-#, fuzzy, kde-format
-#| msgid "&Reply To"
+#, kde-format
 msgid "Reply To:"
-msgstr "&ردً إلى"
+msgstr "ردّ على:"
 
 #: header/grantleeheaderformatter.cpp:267
 #, kde-format
@@ -780,16 +759,14 @@ msgid "Sender:"
 msgstr "المرسل:"
 
 #: header/grantleeheaderformatter.cpp:275
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent from:"
-msgstr "أُعيد إرسالها من"
+msgstr "أُعيد إرسالها من:"
 
 #: header/grantleeheaderformatter.cpp:277
-#, fuzzy, kde-format
-#| msgid "resent from"
+#, kde-format
 msgid "resent to:"
-msgstr "أُعيد إرسالها من"
+msgstr "أُعيد إرسالها إلى:"
 
 #: header/grantleeheaderformatter.cpp:358
 #, kde-format
@@ -823,10 +800,9 @@ msgid "Attachments:"
 msgstr "المرفقات:"
 
 #: header/grantleeheaderformatter.cpp:540
-#, fuzzy, kde-format
-#| msgid "S&ecurity"
+#, kde-format
 msgid "Security:"
-msgstr "الأ&من"
+msgstr "الأمن:"
 
 #: header/headerstyle_util.cpp:55
 #, kde-format
@@ -953,24 +929,22 @@ msgid "Reply to: "
 msgstr "ردّ على: "
 
 #: mdn/mdnwarningwidget.cpp:14
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "تجاهل"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "إرسل"
+msgstr "أرسل"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Send Now"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr "أرسل الآن"
+msgstr "أرسل رفض"
 
 #: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
@@ -1104,14 +1078,14 @@ msgid "Add new Url"
 msgstr "إضافة جديد بطاقة"
 
 #: remote-content/remotecontentmenu.cpp:17
-#, fuzzy, kde-format
+#, kde-format
 msgid "Configure"
-msgstr "اضبط KMail."
+msgstr "اضبط"
 
 #: remote-content/remotecontentmenu.cpp:19
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remote Content"
-msgstr "قالب المحتوى"
+msgstr "محتوى بعيد"
 
 #: remote-content/remotecontentmenu.cpp:50
 #, kde-format
@@ -1134,18 +1108,16 @@ msgid "Blocked"
 msgstr ""
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Defaul&t domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
-msgstr "المجال الإفت&راضي:"
+msgstr "المجال:"
 
 #: scamdetection/scamdetectiondetailsdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr "التّفاصيل"
+msgstr "التفاصيل"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:34
 #, kde-format
@@ -1153,29 +1125,25 @@ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr "قد تكون هذه الرّسالة مخادعة. <a href=\"scamdetails\">(التّفاصيل...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "أؤكّد بأنّها ليست مخادعة"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "أضف البريد إلى القائمة البيضاء"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "عطّل اكتشاف الخداع لكلّ الرّسائل"
@@ -1437,7 +1405,7 @@ msgstr "قائمة بالبريد في القائمة البيضاء للرّس�
 #: settings/messageviewer.kcfg.in:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr ""
+msgstr "امسح رسائل البريد الإلكتروني لتتبع عناوين المواقع"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.in:157
@@ -1715,8 +1683,7 @@ msgid ""
 msgstr "الملفّ بالاسم \"%1\" موجود فعلًا. أمتأكّد من الكتابة فوقه؟"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "أأكتب فوق الملفّ؟"
@@ -1733,8 +1700,7 @@ msgid "attachment.1"
 msgstr "مرفق.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "احفظ المرفق"
@@ -1758,15 +1724,13 @@ msgid "KMail Question"
 msgstr "سؤال «بريدك»"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr "أبقِ التّعمية"
+msgstr "أبق التعمية"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "لا تُبقها"
@@ -1779,8 +1743,7 @@ msgid ""
 msgstr "الجزء %1 من الرّسالة موقّعة. أتريد إبقاء التّوقيع عند الحفظ؟"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "أبقِ التّوقيع"
@@ -1797,8 +1760,7 @@ msgstr ""
 "><br />%2</html>"
 
 #: utils/messageviewerutil.cpp:386
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "خطأ في حفظ المستند"
@@ -1841,8 +1803,7 @@ msgid "File %1 could not be loaded."
 msgstr "تعذّر تحميل الملفّ %1."
 
 #: utils/messageviewerutil.cpp:508
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "خطأ في تحميل الرّسالة"
@@ -1853,8 +1814,7 @@ msgid "File %1 could not be created."
 msgstr "تعذّر إنشاء الملفّ %1."
 
 #: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "خطأ في حفظ الرّسالة"
@@ -1870,10 +1830,10 @@ msgid "Error saving message"
 msgstr "خطأ في حفظ الرّسالة"
 
 #: utils/messageviewerutil.cpp:585
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "مرفوض 1"
+msgstr "حُذف: %1"
 
 #: utils/messageviewerutil.cpp:596
 #, kde-format
@@ -1914,17 +1874,15 @@ msgid "Size"
 msgstr "الحجم"
 
 #: viewer/printmessage.cpp:68
-#, fuzzy, kde-format
-#| msgid "Could not write the file %1."
+#, kde-format
 msgid "Could not generate print preview."
-msgstr "لم يمكن كتابة الملف %1 ."
+msgstr "تعذر تحميل معاينة الطباعة."
 
 #: viewer/printmessage.cpp:104
-#, fuzzy, kde-format
-#| msgid "Print Document"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr "اطبع المستند"
+msgstr "طباعة المستند"
 
 #: viewer/urlhandlermanager.cpp:406
 #, kde-format
@@ -2058,8 +2016,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "أمتأكّد من تنفيذ <filename>%1</filename>؟"
 
 #: viewer/urlhandlermanager.cpp:870
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "نفّذ"
@@ -2077,8 +2034,7 @@ msgid ""
 msgstr "حذف المرفق قد يلغي صلاحيّة أيّ توقيع رقميّ في هذه الرّسالة."
 
 #: viewer/viewer_p.cpp:345 viewer/viewer_p.cpp:380
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "احذف المرفق"
@@ -2170,8 +2126,7 @@ msgid "The KDE Mail Client"
 msgstr "عميل البريد لِ‍«كِيدِي»"
 
 #: viewer/viewer_p.cpp:1278
-#, fuzzy, kde-format
-#| msgid "View Attachment: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "اعرض المرفق: %1"
@@ -2259,8 +2214,7 @@ msgid "Copy Text"
 msgstr "انسخ النّصّ"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "حدّد كلّ النّصّ"
@@ -2281,56 +2235,48 @@ msgid "Show Message Structure"
 msgstr "اعرض بنية الرّسالة"
 
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "ا&عرض المصدر"
+msgstr "اعرض ال&مصدر"
 
 #: viewer/viewer_p.cpp:1575
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "ا&حفظ الرّسالة..."
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "ا&حفظ تنسيق العرض"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&صفّر تنسيق العرض"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "مرّر الرّسالة لأعلى"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "مرّر الرّسالة لأسفل"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "مرّر الرّسالة لأعلى (أكثر)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "مرّر الرّسالة لأسفل (أكثر)"
@@ -2346,32 +2292,28 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "بدّل وضع العرض بين HTML والنّصّ الصِّرف"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "حمّل المراجع الخارجيّة"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "انطق النّصّ"
 
 #: viewer/viewer_p.cpp:1636
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "انطق النّصّ"
+msgstr "شارك النص…"
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "انسخ مكان الصّورة"
+msgstr "انسخ موقع الصورة"
 
 #: viewer/viewer_p.cpp:1660
 #, kde-format
@@ -2404,8 +2346,7 @@ msgid "The network is broken."
 msgstr "الشّبكة معطوبة."
 
 #: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "فحص المسار المنتحل"
@@ -2421,8 +2362,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "هذا الموقع برنامجُ تجسّس، أتريد المتابعة وعرضه؟"
 
 #: viewer/viewer_p.cpp:2018
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "برنامج تجسّس"
@@ -2433,8 +2373,7 @@ msgid "Copy Email Address"
 msgstr "انسخ عنوان البريد"
 
 #: viewer/viewer_p.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Message as Plain Text"
+#, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "الرّسالة كنصّ صِرف"
@@ -2465,11 +2404,10 @@ msgstr ""
 "النّظام."
 
 #: widgets/attachmentdialog.cpp:32
-#, fuzzy, kde-format
-#| msgid "Open Attachment?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "أأفتح المرفق؟"
+msgstr "هل أفتح المرفق؟"
 
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
@@ -2477,10 +2415,9 @@ msgid "&Open With '%1'"
 msgstr "ا&فتح في ’%1‘"
 
 #: widgets/attachmentdialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Open With..."
+#, kde-format
 msgid "Open &With..."
-msgstr "افتح في..."
+msgstr "افتح ف&ي..."
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2584,22 +2521,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "كود HTML لعرض الرّسالة على المستخدم"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "افتح المجلّد حيث خُزّن فيه المرفق"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Delete Search"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "محو البحث>"
+msgstr "افتح ملفًّا"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
@@ -2624,18 +2558,16 @@ msgid "KMail was unable to open the attachment."
 msgstr "تعذّر تحرير المرفق"
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "&Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
-msgstr "الرسالة ال&تالية"
+msgstr "الرّسالة التّالية"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Unread &Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
-msgstr "ال&رسالة السابقة غير المقروءة"
+msgstr "الرّسالة السّابقة"
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "لا معلومات كافية لفحص التّوقيع. %1"
