@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 02:27+0000\n"
-"PO-Revision-Date: 2021-12-19 19:57+0400\n"
+"PO-Revision-Date: 2024-10-14 20:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -297,9 +298,7 @@ msgid ""
 msgstr "الحدّ الأقصى (بالبِتّ) المسموح لحجم مرفقات البريد (-1 لإزالة الحدّ)"
 
 #: utils/dateformatter.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "مجهول"
@@ -307,18 +306,18 @@ msgstr "مجهول"
 #: utils/dateformatter.cpp:177
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "اليوم %1"
 
 #: utils/dateformatter.cpp:180
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "الأمس %1"
 
 #: utils/dateformatter.cpp:185
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:417
 #, kde-format

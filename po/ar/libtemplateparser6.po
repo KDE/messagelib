@@ -1,21 +1,23 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2018.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2018-08-13 08:37+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-10-14 20:31+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -81,8 +83,7 @@ msgid "A template with same name already exists."
 msgstr "هناك قالب بنفس الاسم أساسًا."
 
 #: customtemplates.cpp:252
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "لا يمكن إنشاء القالب"
@@ -234,6 +235,7 @@ msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
 msgstr ""
+"الرد أو التمرير باستخدام نفس التنسيق المرئي للرسالة الأصلية (نص عادي أو HTML)"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
@@ -573,22 +575,19 @@ msgid "Do you want to reset current template or all templates to default?"
 msgstr "أتريد تصفير القالب الحالي إلى المبدئيات، أم كل القوالب؟"
 
 #: templatesconfiguration.cpp:101
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "التصفير إلى المبدئيات"
 
 #: templatesconfiguration.cpp:102
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "صفّر القالب الحالي"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "صفّر كل القوالب"
@@ -808,9 +807,7 @@ msgstr "ردّ على الكل"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
 msgstr "تمرير"

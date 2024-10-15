@@ -1,4 +1,5 @@
 # translation of kmail.po to
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # Ahmad M. Zawawi <zawawi@arabeyes.org>, 2004.
 # Usamah Ali Al-Maqdad <msareehi@kacst.edu.sa>, 2004.
@@ -6,13 +7,12 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 02:27+0000\n"
-"PO-Revision-Date: 2021-12-19 19:58+0400\n"
+"PO-Revision-Date: 2024-10-14 20:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -21,6 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -382,7 +383,7 @@ msgid "Read/Unread"
 msgstr ""
 
 #: core/manager.cpp:640
-#, fuzzy, kde-format
+#, kde-format
 msgid "Replied"
 msgstr "رُدّ عليها"
 
@@ -433,9 +434,9 @@ msgid "A smart multiline and multi item theme"
 msgstr ""
 
 #: core/manager.cpp:689
-#, fuzzy, kde-format
+#, kde-format
 msgid "Message"
-msgstr "الرّسالة"
+msgstr "الرسالة"
 
 #: core/manager.cpp:770
 #, kde-format
@@ -788,11 +789,10 @@ msgid "Invitation Icon"
 msgstr "أيقونة الدّعوات"
 
 #: core/theme.cpp:174
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr "المجلد"
+msgstr "المجلّد"
 
 #: core/theme.cpp:176
 #, kde-format
@@ -801,7 +801,7 @@ msgid "Unknown"
 msgstr "مجهول"
 
 #: core/theme.cpp:835
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unread"
 msgstr "غير المقروء"
 
@@ -811,9 +811,9 @@ msgid "Never Show"
 msgstr ""
 
 #: core/theme.cpp:1029
-#, fuzzy, kde-format
+#, kde-format
 msgid "Always Show"
-msgstr "اعرض دائمًا"
+msgstr "أظهر دائمًا"
 
 #: core/theme.cpp:1034
 #, kde-format
@@ -828,7 +828,7 @@ msgstr ""
 #: core/theme.cpp:1036
 #, kde-format
 msgid "Rounded Rectangles"
-msgstr ""
+msgstr "مستطيلات مستديرة الزوايا"
 
 #: core/theme.cpp:1037
 #, kde-format
@@ -903,7 +903,7 @@ msgid "Folder"
 msgstr "المجلد"
 
 #: core/view.cpp:2268 core/view.cpp:2270
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preview"
 msgstr "معاينة"
 
@@ -1068,7 +1068,7 @@ msgid "Create Filter"
 msgstr "أ&نشئ مرشّحًا"
 
 #: core/widgetbase.cpp:412 messagelistutil.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Theme"
 msgstr "السمة"
 
@@ -1109,11 +1109,10 @@ msgid "Folder Always Uses This Sort Order"
 msgstr ""
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Configure &Filters..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "هييء ال&مرشحات..."
+msgstr "مرشح الضبط"
 
 #: core/widgets/configurefilterswidget.cpp:79
 #, fuzzy, kde-format
@@ -1127,11 +1126,10 @@ msgid "Do you want to delete this filter?"
 msgstr "أتريد حذف ”%1“؟"
 
 #: core/widgets/configurefilterswidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Rename Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "أزل المرشّح"
+msgstr "إزالة المرشّح"
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format
@@ -1140,8 +1138,7 @@ msgid "Edit Filter"
 msgstr "حرّر المرشّح"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "الاسم:"
@@ -1154,14 +1151,13 @@ msgid "Save Filter..."
 msgstr "احفظ المرشح"
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "اضبط..."
 
 #: core/widgets/quicksearchline.cpp:45
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "ابحث"
@@ -1172,8 +1168,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "تُتجاهل الكلمات الأقصر من ثلاثة أحرف."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "لا تعرض مجدّدًا"
@@ -1218,29 +1213,25 @@ msgid "Clear History"
 msgstr "امسح التّأريخ"
 
 #: core/widgets/searchmessagebybuttons.cpp:34
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
-msgstr "الرّسالة الكاملة"
+msgstr "كلّ الرّسالة"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "المتن"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "الموضوع"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "ن‌ك‌ع"
@@ -1322,9 +1313,9 @@ msgid "Current Tab is locked."
 msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:17
-#, fuzzy, kde-format
+#, kde-format
 msgid "(Unlock it)"
-msgstr "آخر بحث"
+msgstr "(أزِل القفل)"
 
 #: messagelistutil.cpp:104
 #, kde-format
@@ -1354,11 +1345,10 @@ msgid "Close tab"
 msgstr "أغلق اللسان"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
-msgstr "فعّل اللسان %1"
+msgstr "فعِّل اللسان %1"
 
 #: pane.cpp:200
 #, kde-format
@@ -1371,47 +1361,43 @@ msgid "Message List"
 msgstr "قائمة الرّسائل"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "أنشئ لسانًا جديدًا"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
-msgstr "فعّل اللسان التّالي"
+msgstr "فعّل اللسان التالي"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
-msgstr "فعّل اللسان السّابق"
+msgstr "فعّل اللسان السابق"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "انقل اللسان لليسار"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "انقل اللسان لليمين"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "أغلق اللسان"
 
 #: pane.cpp:520 pane.cpp:812
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "فارغ"
@@ -1453,8 +1439,7 @@ msgid "Unknown"
 msgstr "مجهول"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "اضبط..."
@@ -1465,10 +1450,10 @@ msgid "Groups && Threading"
 msgstr "المجموعات والمواضيع"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
-msgstr "يجمّع"
+msgstr "التجميع:"
 
 #: utils/aggregationeditor.cpp:41
 #, fuzzy, kde-format
@@ -1577,46 +1562,40 @@ msgid "All Files (*)"
 msgstr "كلّ الملفّات (*)"
 
 #: utils/configurethemesdialog.cpp:96
-#, fuzzy, kde-format
-#| msgid "Customize Themes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "خصّص السّمات"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "سمة جديدة"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "استنسخ السّمة"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "صدّر السّمة..."
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "استورد سمة..."
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
-msgstr "احذف السّمة"
+msgstr "حذف السّمة"
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format
@@ -1690,8 +1669,7 @@ msgid "The label that will be displayed in the column header."
 msgstr ""
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "النّقر على التّرويسة يفرز الرّسائل:"
@@ -1815,7 +1793,7 @@ msgid "Hide"
 msgstr "أخفِ"
 
 #: utils/themeeditor.cpp:905
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
 "Important mark on a non important mail"
@@ -1838,7 +1816,7 @@ msgstr ""
 #: utils/themeeditor.cpp:926
 #, kde-format
 msgid "Group Header"
-msgstr ""
+msgstr "رأس المجموعة"
 
 #: utils/themeeditor.cpp:933
 #, kde-format
@@ -1928,18 +1906,16 @@ msgid "Advanced"
 msgstr "متقدّم"
 
 #: utils/themeeditor.cpp:1433
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr "التّرويسة:"
+msgstr "الترويسة:"
 
 #: utils/themeeditor.cpp:1439
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
-msgstr "حجم الأيقونات:"
+msgstr "حجم الأيقونة:"
 
 #: utils/themeeditor.cpp:1445
 #, kde-format
@@ -1980,14 +1956,14 @@ msgid "Collapse All Groups"
 msgstr "اطوِ كلّ المجموعات"
 
 #: widget.cpp:361
-#, fuzzy, kde-format
+#, kde-format
 msgid "Expand All Threads"
-msgstr "توسيع الكل الخيوط"
+msgstr "وسّع كلّ المواضيع"
 
 #: widget.cpp:363
-#, fuzzy, kde-format
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "طيّ الكل الخيوط"
+msgstr "اطوِ كلّ المواضيع"
 
 #: widget.cpp:419
 #, kde-format

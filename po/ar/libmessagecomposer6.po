@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2017.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2021-12-19 19:56+0400\n"
+"PO-Revision-Date: 2024-10-14 20:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, fuzzy, kde-format
@@ -39,11 +40,10 @@ msgid "Keep"
 msgstr "أبقِه"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "اضغطه"
+msgstr "اضغط"
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #, kde-format
@@ -186,8 +186,7 @@ msgid "Edit"
 msgstr "حرّر"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "حرّر ب‍..."
@@ -203,22 +202,19 @@ msgid "Save As..."
 msgstr "احفظ ك‍..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "&خصائص المرفق..."
+msgstr "خصائص ال&مرفق..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "الخصائص"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "حدّد الكلّ"
@@ -275,18 +271,16 @@ msgstr ""
 "أتريد استبداله؟"
 
 #: attachment/attachmentcontrollerbase.cpp:822
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr "احفظه في ملفّ"
+msgstr "احفظ في ملفّ"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "ا&ستبدله"
+msgstr "ا&ستبدل"
 
 #: attachment/attachmentcontrollerbase.cpp:850
 #: attachment/attachmentcontrollerbase.cpp:929
@@ -390,7 +384,7 @@ msgid "Sign"
 msgstr "وقّع"
 
 #: attachment/attachmentmodel.cpp:453
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "اقترح عرضًا آليًّا"
@@ -598,18 +592,16 @@ msgid "File Attachment Reminder"
 msgstr "تذكير بإرفاق الملفّات"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "أر&فق ملفّات..."
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "أر&سلها كما هي"
+msgstr "أ&رسلها هكذا"
 
 #: composer/composerviewbase.cpp:1952
 #, kde-format
@@ -622,8 +614,7 @@ msgstr ""
 "أأوقّع هذه الرّسالة؟"
 
 #: composer/composerviewbase.cpp:1958 composer/composerviewbase.cpp:1986
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "أأوقّع الرّسالة؟"
@@ -635,8 +626,7 @@ msgid "&Sign"
 msgstr "و&قّع"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "لا &توقّع"
@@ -659,36 +649,38 @@ msgstr ""
 "لقد طلبت توقيع هذه الرّسالة ولكن لم تُضبط مفاتيح توقيع صالحة لهذه الهويّة."
 
 #: composer/composerviewbase.cpp:2013
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "أأرسلها غير موقّعة؟"
 
 #: composer/composerviewbase.cpp:2014
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "أرسلها &غير موقّعة"
 
 #: composer/composerviewbase.cpp:2029
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
 "Sending only partially signed messages might violate site policy.\n"
 "Sign all parts instead?"
-msgstr "لن تُوقّع بعض أجزاء هذه الرّسالة.\n"
+msgstr ""
+"بعض أجزاء هذه الرسالة لن توقع \n"
+"إرسال رسائل موقعة بشكل جزئي قد يؤدي إلى انتهاك نهج الموقع .\n"
+"هل تريد توقيع كل الأجزاء بدلاً من ذلك؟"
 
 #: composer/composerviewbase.cpp:2033
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This message will not be signed.\n"
 "Sending unsigned message might violate site policy.\n"
 "Sign message instead?"
 msgstr ""
-"لن تُوقّع هذه الرّسالة.\n"
-"إرسال الرّسائل دون توقيع قد "
+"هذه الرسالة لم توقع.\n"
+"إرسال رسالة غير موقعة قد ينتهك سياسة الموقع.\n"
+"هل تريد توقيع الرسالة بدلاً من ذلك؟"
 
 #: composer/composerviewbase.cpp:2036
 #, kde-format
@@ -701,15 +693,13 @@ msgid "&Sign"
 msgstr "و&قّع"
 
 #: composer/composerviewbase.cpp:2039
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "تحذير برسالة غير موقّعة"
 
 #: composer/composerviewbase.cpp:2041
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "أر&سلها كما هي"
@@ -769,15 +759,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2128 composer/keyresolver.cpp:1322
 #: composer/keyresolver.cpp:1363
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&عمِّ"
 
 #: composer/composerviewbase.cpp:2129
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "لا &تعمِّ"
@@ -793,15 +781,13 @@ msgstr ""
 "لهذه الهويّة."
 
 #: composer/composerviewbase.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "أأرسلها دون تعمية؟"
 
 #: composer/composerviewbase.cpp:2156 composer/keyresolver.cpp:1348
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "أرسلها &دون تعمية"
@@ -814,6 +800,10 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
+"بعض أجزاء هذه الرسالة لن تعمى.\n"
+"إرسال رسائل معماه بشكل جزئي قد يؤدي إلى انتهاك نهج الموقع و/أو تسرب معلومات "
+"حساسة.\n"
+"هل تريد تعمية كل الأجزاء بدلاً من ذلك؟"
 
 #: composer/composerviewbase.cpp:2176
 #, kde-format
@@ -823,6 +813,10 @@ msgid ""
 "information.\n"
 "Encrypt messages instead?"
 msgstr ""
+"لن تعمى هذه الرسالة.\n"
+"قد يؤدي إرسال رسائل غير معماه إلى انتهاك نهج الموقع و/أو تسرب معلومات "
+"حساسة.\n"
+"هل تريد تعمية الرسائل بدلاً من ذلك؟"
 
 #: composer/composerviewbase.cpp:2180
 #, kde-format
@@ -830,8 +824,7 @@ msgid "&Encrypt All Parts"
 msgstr "&عمِّ كلّ الأجزاء"
 
 #: composer/composerviewbase.cpp:2183
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "تحذير برسالة غير معمّاة"
@@ -1038,7 +1031,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1436
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr ""
+msgstr "اختيار مفتاح التعمية"
 
 #: composer/keyresolver.cpp:1480
 #, kde-format
@@ -1063,6 +1056,10 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
+"<qt>لم يعثر على شهادة تشفير صالحة وموثوقة لـ  \"%1\".<br/><br/>حدد الشهادة "
+"(الشهادات) التي يجب استخدامها لهذا المستلم. لو لا توجد شهادة مناسبة في "
+"القائمة يمكنك أيضا البحث عن الشهادات الخارجية بالنقر فوق الزر: البحث عن "
+"الشهادات الخارجيّة.</qt>"
 
 #: composer/keyresolver.cpp:1562
 #, kde-format
@@ -1132,11 +1129,10 @@ msgid "The selected date must be greater than the current date."
 msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr "التاريخ غير صالح"
+msgstr "تاريخ غير صالح"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
@@ -1365,7 +1361,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:326
 #, kde-format
 msgid "Image Format"
-msgstr ""
+msgstr "وصف"
 
 #. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
 #: imagescaling/ui/imagescalingwidget.ui:332
@@ -1523,10 +1519,9 @@ msgid "&Ignore"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "أر&سلها كما هي"
+msgstr "أ&رسل"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1753,28 +1748,28 @@ msgstr[4] "%1 مستلمًا"
 msgstr[5] "%1 مستلم"
 
 #: recipient/recipientseditorsidewidget.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr "إلى"
+msgstr "إلى:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr "ن‌ك"
+msgstr "ن‌ك:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr "ن‌ك‌ع"
+msgstr "ن‌ك‌ع:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr "ردّ على: "
+msgstr "ردّ على: :%1"
 
 #: recipient/recipientspicker.cpp:49
 #, fuzzy, kde-format
@@ -1785,12 +1780,10 @@ msgid "Select Recipient"
 msgstr "اختر المستلم:"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Attach Directory"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "إرفاق دليل"
+msgstr "ابحث &خدمة الدليل"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
@@ -2188,10 +2181,9 @@ msgid "Names"
 msgstr "الأسماء:"
 
 #: snippet/convertsnippetvariablemenu.cpp:96
-#, fuzzy, kde-format
-#| msgid "Filename"
+#, kde-format
 msgid "Filenames"
-msgstr "اسم الملفّ"
+msgstr "أسماء الملفات"
 
 #: snippet/convertsnippetvariablemenu.cpp:99
 #, kde-format
