@@ -470,7 +470,7 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
 bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     QString keyId;
-    if (url.scheme() == QStringLiteral("key")) {
+    if (url.scheme() == QLatin1StringView("key")) {
         keyId = url.path();
     }
 
@@ -504,7 +504,7 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     QString keyId;
-    if (url.scheme() == QStringLiteral("key")) {
+    if (url.scheme() == QLatin1StringView("key")) {
         keyId = url.path();
     }
 
