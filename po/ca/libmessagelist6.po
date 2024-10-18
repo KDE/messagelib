@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-10-05 12:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -392,7 +392,7 @@ msgstr "Adjunt"
 msgid "Read/Unread"
 msgstr "Llegit/Sense llegir"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "Respost"
@@ -798,7 +798,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Sense llegir"
@@ -874,7 +874,6 @@ msgid "Display Tooltips"
 msgstr "Mostra els consells"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1247,68 +1246,114 @@ msgid "AND"
 msgstr "I"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Assumpte"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "Des de"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "A"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "CC"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "BCC"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Té un adjunt"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Té una invitació"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Llegit"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Sense llegir"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Important"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorat"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Correu legítim"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "Correu brossa"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "Vigilat"
 
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Respost"
+
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Reenviat"
 
@@ -1368,6 +1413,11 @@ msgstr "Assumpte"
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "A"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -412,7 +412,7 @@ msgstr "attach"
 msgid "Read/Unread"
 msgstr "Хонданашуда"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -874,7 +874,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "&Фиристониш"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -956,7 +956,6 @@ msgid "Display Tooltips"
 msgstr "&Қабулкунанда"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1373,45 +1372,67 @@ msgstr ""
 #: core/widgets/searchlinecommandwidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Мавзӯъ"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchlinecommandwidget.cpp:44
 #, fuzzy, kde-format
+#| msgid "&From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "&Фиристанда"
+
+#: core/widgets/searchlinecommandwidget.cpp:45
+#, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "To"
 msgstr "&Қабулкунанда"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
+msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "бо замимот"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Интихоботҳои иловагӣ"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Ҳуқуқҳои дастрасӣ"
+
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Хонданашуда"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Муҳим"
 
@@ -1419,16 +1440,19 @@ msgstr "Муҳим"
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ба эътибор нагирифта шуда"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "муфид"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "спам"
 
@@ -1436,13 +1460,23 @@ msgstr "спам"
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "Аз назар гузаронидашуда"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Дар ин иттилоот шумо ҷавоб додед"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Фиристодашуда"
 
@@ -1503,6 +1537,11 @@ msgstr "Мавзӯъ"
 msgctxt "@action"
 msgid "BCC"
 msgstr "&Нусхаи пинҳонӣ"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+msgid "To"
+msgstr "&Қабулкунанда"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format

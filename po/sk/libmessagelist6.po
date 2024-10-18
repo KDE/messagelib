@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -388,7 +388,7 @@ msgstr "Príloha"
 msgid "Read/Unread"
 msgstr "Prečítané/neprečítané"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "Odpovedané"
@@ -796,7 +796,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Neprečítané"
@@ -872,7 +872,6 @@ msgid "Display Tooltips"
 msgstr "Zobrazovať popisky"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1278,23 +1277,34 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Predmet"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "Od"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "Pre"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
+msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Skrytá kópia"
 
@@ -1302,6 +1312,7 @@ msgstr "Skrytá kópia"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Má prílohu"
 
@@ -1309,6 +1320,7 @@ msgstr "Má prílohu"
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Má pozvánku"
 
@@ -1316,13 +1328,22 @@ msgstr "Má pozvánku"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Prečítané"
+
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Dôležité"
 
@@ -1330,6 +1351,7 @@ msgstr "Dôležité"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorované"
 
@@ -1337,6 +1359,7 @@ msgstr "Ignorované"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ham"
 
@@ -1344,6 +1367,7 @@ msgstr "Ham"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "Spam"
 
@@ -1351,13 +1375,22 @@ msgstr "Spam"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "Sledované"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Odpovedané"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Presmerované"
 
@@ -1423,6 +1456,11 @@ msgstr "Predmet"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Skrytá kópia"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Pre"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

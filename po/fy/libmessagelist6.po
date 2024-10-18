@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -425,7 +425,7 @@ msgstr "Taheaksel"
 msgid "Read/Unread"
 msgstr "Net-lêzen"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Replied"
@@ -895,7 +895,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Unbekend"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Unread"
@@ -978,7 +978,6 @@ msgid "Display Tooltips"
 msgstr "&Oan"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgid "&From"
@@ -1410,35 +1409,47 @@ msgstr ""
 #: core/widgets/searchlinecommandwidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Underwerp"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "&From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "&Fan"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "Oan:"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
+msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:48
 #, fuzzy, kde-format
 #| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Hat taheaksel"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Avansearre opsjes"
 
@@ -1446,13 +1457,23 @@ msgstr "Avansearre opsjes"
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Lêze"
+
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Net-lêzen"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Wichtich"
 
@@ -1460,18 +1481,21 @@ msgstr "Wichtich"
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Negearre"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Reklame"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
 #, fuzzy, kde-format
 #| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "Unpost"
 
@@ -1479,13 +1503,23 @@ msgstr "Unpost"
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "Observearre"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Beäntwurde"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "msg status"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Trochstjoerd"
 
@@ -1548,6 +1582,12 @@ msgstr "Underwerp"
 msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgid "To"
+msgid "To"
+msgstr "Oan:"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, fuzzy, kde-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-09-25 21:16+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -389,7 +389,7 @@ msgstr "Anexos"
 msgid "Read/Unread"
 msgstr "Lidas/Sen ler"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "Respondida"
@@ -795,7 +795,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Descoñecido"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Sen ler"
@@ -871,7 +871,6 @@ msgid "Display Tooltips"
 msgstr "Amosar indicacións emerxentes"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1256,27 +1255,42 @@ msgstr "E"
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Asunto"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "De"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "Para"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "Copia"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Copia agochada"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Ten un anexo"
 
@@ -1284,16 +1298,28 @@ msgstr "Ten un anexo"
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Ten unha invitación"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Lida"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Sen ler"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Importante"
 
@@ -1301,6 +1327,7 @@ msgstr "Importante"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorada"
 
@@ -1308,6 +1335,7 @@ msgstr "Ignorada"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Inocua"
 
@@ -1315,6 +1343,7 @@ msgstr "Inocua"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "Correo Lixo"
 
@@ -1322,13 +1351,22 @@ msgstr "Correo Lixo"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "Vixiada"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Respondida"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Reenviada"
 
@@ -1389,6 +1427,11 @@ msgstr "Asunto"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Copia agochada"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Para"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

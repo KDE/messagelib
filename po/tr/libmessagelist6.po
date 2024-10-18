@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-10-05 10:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -391,7 +391,7 @@ msgstr "Ek"
 msgid "Read/Unread"
 msgstr "Okunan/Okunmamış"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "Yanıtlanan"
@@ -795,7 +795,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Okunmamış"
@@ -871,7 +871,6 @@ msgid "Display Tooltips"
 msgstr "İpuçlarını Göster"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1244,68 +1243,114 @@ msgid "AND"
 msgstr "VE"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Konu"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "Kimden"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "Kime"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "Kopya"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Gizli kopya"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Eki Var"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Davetiyesi var"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Okundu"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Okunmamış"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Önemli"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Yok sayılmış"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "İşlenmedi"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "İstenmeyen"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "İzleniyor"
 
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "Yanıtlanan"
+
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "İletildi"
 
@@ -1365,6 +1410,11 @@ msgstr "Konu"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Gizli Kopya"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "Kime"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-09-23 21:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -386,7 +386,7 @@ msgstr "附件"
 msgid "Read/Unread"
 msgstr "讀取/未讀"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "已回覆"
@@ -783,7 +783,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "未讀"
@@ -859,7 +859,6 @@ msgid "Display Tooltips"
 msgstr "顯示工具提示"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1244,27 +1243,42 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "主題"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "寄件者"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "收件者"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "副本"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "密件副本"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "含附件"
 
@@ -1272,16 +1286,28 @@ msgstr "含附件"
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "有邀請函"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "已讀"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "未讀"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "重要"
 
@@ -1289,6 +1315,7 @@ msgstr "重要"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "已忽略"
 
@@ -1296,6 +1323,7 @@ msgstr "已忽略"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "正常信"
 
@@ -1303,6 +1331,7 @@ msgstr "正常信"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "垃圾信"
 
@@ -1310,13 +1339,22 @@ msgstr "垃圾信"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "已監測"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "已回覆"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "已轉寄"
 
@@ -1376,6 +1414,11 @@ msgstr "主旨"
 msgctxt "@action"
 msgid "BCC"
 msgstr "密件副本"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "收件者"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

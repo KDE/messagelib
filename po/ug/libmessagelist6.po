@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -368,7 +368,7 @@ msgstr "قوشۇلما"
 msgid "Read/Unread"
 msgstr ""
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "جاۋاب قايتۇرغان"
@@ -766,7 +766,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "نامەلۇم"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "ئوقۇلمىغان"
@@ -842,7 +842,6 @@ msgid "Display Tooltips"
 msgstr "كۆرسەتمىلەرنى كۆرسىتىش"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1235,24 +1234,34 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "تېما"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "يوللىغۇچى"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
 #| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "تاپشۇرۇپ ئالغۇچى"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
+msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
@@ -1260,25 +1269,38 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "قوشۇلما بار"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Invitation"
-msgstr ""
+msgstr "قوشۇلما بار"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "ئوقۇ"
+
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "ئوقۇلمىغان"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "مۇھىم"
 
@@ -1286,6 +1308,7 @@ msgstr "مۇھىم"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "پەرۋا قىلمىدى"
 
@@ -1293,6 +1316,7 @@ msgstr "پەرۋا قىلمىدى"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ham"
 
@@ -1300,6 +1324,7 @@ msgstr "Ham"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "سپەم"
 
@@ -1307,13 +1332,22 @@ msgstr "سپەم"
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "كۆرۈلگەن"
+
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "جاۋاب قايتۇرغان"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "جاۋاب يوللىغان"
 
@@ -1375,6 +1409,13 @@ msgstr "تېما"
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "Receiver of the email"
+#| msgid "To"
+msgid "To"
+msgstr "تاپشۇرۇپ ئالغۇچى"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-10-05 16:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -394,7 +394,7 @@ msgstr "Долучення"
 msgid "Read/Unread"
 msgstr "Прочитане/Непрочитане"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "З відповіддю"
@@ -808,7 +808,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "Непрочитане"
@@ -884,7 +884,6 @@ msgid "Display Tooltips"
 msgstr "Показувати підказки"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1266,68 +1265,114 @@ msgid "AND"
 msgstr "І"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "Тема"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "Від"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "До"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "Копія"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Пр. копія"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Має долучення"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Містить запрошення"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "Прочитане"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "Непрочитане"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "Важливе"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Проігноровано"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "Не спам"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "Спам"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "З наглядом"
 
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "З відповіддю"
+
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Переспрямовано"
 
@@ -1388,6 +1433,11 @@ msgstr "Тема"
 msgctxt "@action"
 msgid "BCC"
 msgstr "Пр. копія"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "До"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format

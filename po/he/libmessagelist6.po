@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2024-10-18 00:40+0000\n"
 "PO-Revision-Date: 2024-10-07 07:06+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -395,7 +395,7 @@ msgstr "צרופה"
 msgid "Read/Unread"
 msgstr "(לא) נקראה"
 
-#: core/manager.cpp:638 core/widgets/searchlinecommandwidget.cpp:57
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "זכתה למענה"
@@ -806,7 +806,7 @@ msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/theme.cpp:835 core/widgets/searchlinecommandwidget.cpp:51
+#: core/theme.cpp:835
 #, kde-format
 msgid "Unread"
 msgstr "לא נקראו"
@@ -882,7 +882,6 @@ msgid "Display Tooltips"
 msgstr "הצגת חלוניות עצה"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchlinecommandwidget.cpp:44
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
@@ -1263,68 +1262,114 @@ msgid "AND"
 msgstr "וגם"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@action:button"
 msgid "Subject"
 msgstr "נושא"
 
+#: core/widgets/searchlinecommandwidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "From"
+msgctxt "@action:button"
+msgid "From"
+msgstr "מאת"
+
 #: core/widgets/searchlinecommandwidget.cpp:45
-#: core/widgets/searchmessagebybuttons.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To"
+msgctxt "@action:button"
 msgid "To"
 msgstr "אל"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cc"
+msgctxt "@action:button"
 msgid "Cc"
 msgstr "עותק"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bcc"
+msgctxt "@action:button"
 msgid "Bcc"
 msgstr "עותק סמוי"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Attachment"
+msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "יש צרופה"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Has Invitation"
+msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "יש הזמנה"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Read"
+msgctxt "@action:button"
 msgid "Read"
 msgstr "נקראה"
 
+#: core/widgets/searchlinecommandwidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "לא נקראו"
+
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Important"
+msgctxt "@action:button"
 msgid "Important"
 msgstr "חשובה"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignored"
+msgctxt "@action:button"
 msgid "Ignored"
 msgstr "נתעלמה"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ham"
+msgctxt "@action:button"
 msgid "Ham"
 msgstr "תקין"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spam"
+msgctxt "@action:button"
 msgid "Spam"
 msgstr "זבל"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Watched"
+msgctxt "@action:button"
 msgid "Watched"
 msgstr "נקרא"
 
+#: core/widgets/searchlinecommandwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Replied"
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "זכתה למענה"
+
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Forwarded"
+msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "הועברה"
 
@@ -1384,6 +1429,11 @@ msgstr "נושא"
 msgctxt "@action"
 msgid "BCC"
 msgstr "עותק סמוי"
+
+#: core/widgets/searchmessagebybuttons.cpp:70
+#, kde-format
+msgid "To"
+msgstr "אל"
 
 #: core/widgets/searchstatusbuttons.cpp:35
 #, kde-format
