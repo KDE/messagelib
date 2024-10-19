@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 02:27+0000\n"
-"PO-Revision-Date: 2024-10-06 01:53+0200\n"
+"PO-Revision-Date: 2024-10-19 01:08+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "Elemento de acción"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
-msgstr "Contestado"
+msgstr "Respondido"
 
 #: core/item.cpp:269
 #, kde-format
@@ -395,7 +395,7 @@ msgstr "Leído/No leído"
 #: core/manager.cpp:640
 #, kde-format
 msgid "Replied"
-msgstr "Contestado"
+msgstr "Respondido"
 
 #: core/manager.cpp:642
 #, kde-format
@@ -714,12 +714,12 @@ msgstr "Icono de adjunto"
 #: core/theme.cpp:130
 #, kde-format
 msgid "Replied/Forwarded Icon"
-msgstr "Icono de contestado/reenviado"
+msgstr "Icono de respondido/reenviado"
 
 #: core/theme.cpp:133
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
-msgstr "Icono combinado de nuevo/sin leer/leído/contestado/reenviado"
+msgstr "Icono combinado de nuevo/sin leer/leído/respondido/reenviado"
 
 #: core/theme.cpp:136
 #, kde-format
@@ -877,7 +877,7 @@ msgstr "Mostrar consejos emergentes"
 #: core/widgets/searchmessagebybuttons.cpp:72
 #, kde-format
 msgid "From"
-msgstr "Desde"
+msgstr "De"
 
 #: core/view.cpp:2238 core/view.cpp:2242
 #, kde-format
@@ -1234,7 +1234,7 @@ msgstr "No leídos"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
-msgstr "Contestado"
+msgstr "Respondido"
 
 #: core/widgets/searchstatusbuttons.cpp:43
 #, kde-format
