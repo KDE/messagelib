@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-18 00:40+0000\n"
-"PO-Revision-Date: 2024-10-07 11:55+0200\n"
+"PO-Revision-Date: 2024-10-20 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1240,113 +1240,97 @@ msgid "AND"
 msgstr "AND"
 
 #: core/widgets/searchlinecommandwidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Subjecto"
 
 #: core/widgets/searchlinecommandwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Ex"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
-msgstr "A"
+msgstr "a"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Cc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "pc (CC)"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Bcc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Bcc"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Ha attachamento"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Has Invitation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Il ha Invitation"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Legite"
 
 #: core/widgets/searchlinecommandwidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Non Legite"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Importante"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorate"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Ham"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ham"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Spam"
 
 #: core/widgets/searchlinecommandwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Observate"
 
 #: core/widgets/searchlinecommandwidget.cpp:57
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Respondite"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Reexpedite"
