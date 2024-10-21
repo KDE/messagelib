@@ -48,7 +48,11 @@ void MailWebEnginePage::initialize()
     const QFontInfo font(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    connect(this, &QWebEnginePage::permissionRequested, this, &MailWebEnginePage::slotFeaturePermissionRequested);
+#else
     connect(this, &QWebEnginePage::featurePermissionRequested, this, &MailWebEnginePage::slotFeaturePermissionRequested);
+#endif
 }
 
 void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
@@ -56,10 +60,18 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
     settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, printElementBackground);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+void MailWebEnginePage::slotFeaturePermissionRequested(QWebEnginePermission feature)
+#else
 void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature)
+#endif
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
     // Denied all permissions.
+    feature.deny();
+#else
     setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
+#endif
 }
 
 #include "moc_mailwebenginepage.cpp"

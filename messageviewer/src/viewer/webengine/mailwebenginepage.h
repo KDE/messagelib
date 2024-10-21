@@ -24,7 +24,11 @@ public:
     void setPrintElementBackground(bool printElementBackground);
 
 private:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    MESSAGEVIEWER_NO_EXPORT void slotFeaturePermissionRequested(QWebEnginePermission feature);
+#else
     MESSAGEVIEWER_NO_EXPORT void slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature);
+#endif
     MESSAGEVIEWER_NO_EXPORT void initialize();
 };
 }
