@@ -60,6 +60,7 @@ public:
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
     [[nodiscard]] static bool hasSubType(const QString &v);
+    [[nodiscard]] static bool hasSubType(SearchLineCommand::SearchLineType type);
 
 private:
     [[nodiscard]] QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;

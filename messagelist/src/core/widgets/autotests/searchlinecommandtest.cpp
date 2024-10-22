@@ -164,6 +164,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
             lstInfo.append(info);
+            // TODO it's not valid
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
@@ -195,6 +196,15 @@ void SearchLineCommandTest::shouldHaveSubType()
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("has")));
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("is")));
     QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("foo")));
+
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Bcc));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::To));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Cc));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Size));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Date));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::From));
+    QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::HasAttachment));
+    QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::IsHam));
 }
 
 #include "moc_searchlinecommandtest.cpp"

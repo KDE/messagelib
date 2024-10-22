@@ -35,6 +35,11 @@ bool SearchLineCommand::hasSubType(const QString &v)
     return v == QLatin1StringView("is") || v == QLatin1StringView("has");
 }
 
+bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
+{
+    return type == Date || type == Size || type == To || type == Bcc || type == Cc || type == From || type == Subject;
+}
+
 QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const
 {
     switch (type) {
