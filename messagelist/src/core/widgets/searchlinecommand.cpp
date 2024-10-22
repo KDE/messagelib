@@ -106,7 +106,7 @@ QString SearchLineCommand::generateCommadLineStr() const
     return result;
 }
 
-#define DEBUG_COMMAND_PARSER 1
+// #define DEBUG_COMMAND_PARSER 1
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
