@@ -56,6 +56,9 @@ void SearchLineCommandWidget::fillWidgets()
         {true, QStringLiteral("is:watched"), i18nc("@action:button", "Watched")},
         {true, QStringLiteral("is:replied"), i18nc("@action:button", "Replied")},
         {true, QStringLiteral("is:forwarded"), i18nc("@action:button", "Forwarded")},
+        {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
+        {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
+        {false, QStringLiteral("size:"), i18nc("@action:button", "Size")},
     };
 }
 

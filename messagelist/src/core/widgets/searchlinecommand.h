@@ -40,6 +40,8 @@ public:
         IsWatched,
         IsReplied,
         IsForwarded,
+        Larger,
+        Smaller,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {
