@@ -156,6 +156,25 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Subject contains goo (bla)")};
         QTest::newRow("test parenthese3") << str << lstInfo << 1 << convertStr;
     }
+
+    {
+        const QString str{QStringLiteral("subject: bla")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
+            info.argument = QStringLiteral("bla");
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("Subject contains AND bla")};
+        QTest::newRow("extra space") << str << lstInfo << 2 << convertStr;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
