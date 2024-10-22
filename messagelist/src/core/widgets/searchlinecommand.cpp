@@ -136,7 +136,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         } else if (ch.isSpace()) {
             // We can use is:... or has:...
             if (mKeyList.contains(tmp)) {
-                qDebug() << " 11111111111111";
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
             } else {
@@ -167,13 +166,17 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (parentheses > 1) {
                 tmp += ch;
             }
-            // qDebug() << " parenthese ( equal " << parentheses;
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " parenthese ( equal " << parentheses;
+#endif
         } else if (ch == QLatin1Char(')')) {
             parentheses--;
             if (parentheses > 0) {
                 tmp += ch;
             }
-            // qDebug() << " parenthese ) equal " << parentheses;
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " parenthese ) equal " << parentheses;
+#endif
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
