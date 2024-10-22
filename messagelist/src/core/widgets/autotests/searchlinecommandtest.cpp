@@ -162,12 +162,12 @@ void SearchLineCommandTest::shouldParseInfo_data()
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
-            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
             info.argument = QStringLiteral("bla");
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains bla")};
+        const QString convertStr{QStringLiteral("bla")};
         QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
 }
