@@ -23,7 +23,13 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     mainLayout->addStretch(1);
     auto label = new QLabel(this);
     mainLayout->addWidget(label);
-    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, mLineEdit, &QLineEdit::insert);
+    mLineEdit->setClearButtonEnabled(true);
+    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, this, [this](const QString &commandStr) {
+        if (!mLineEdit->text().isEmpty() && mLineEdit->text().back() != QLatin1Char(' ')) {
+            mLineEdit->insert(QStringLiteral(" "));
+        }
+        mLineEdit->insert(commandStr);
+    });
     connect(mLineEdit, &QLineEdit::textChanged, this, [label](const QString &str) {
         MessageList::Core::SearchLineCommand c;
         c.parseSearchLineCommand(str);
