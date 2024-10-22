@@ -25,6 +25,9 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"is:watched"_L1, SearchLineCommand::SearchLineType::IsWatched},
     {"is:replied"_L1, SearchLineCommand::SearchLineType::IsReplied},
     {"is:forwarded"_L1, SearchLineCommand::SearchLineType::IsForwarded},
+    // TODO add Date/Size size:larger:smaller:
+    // after:before:older:newer:
+    // older_than:newer_than:
 };
 SearchLineCommand::SearchLineCommand() = default;
 
@@ -46,6 +49,7 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case Unknown:
     case HasStateOrAttachment:
     case Literal:
+        // TODO implement Date/Size
     case Date:
     case Size:
         return {};
