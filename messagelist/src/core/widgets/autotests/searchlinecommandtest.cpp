@@ -9,6 +9,13 @@
 
 #include <QTest>
 QTEST_MAIN(SearchLineCommandTest)
+void initLocale()
+{
+    qputenv("LANG", "en_US.utf-8");
+}
+
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+
 SearchLineCommandTest::SearchLineCommandTest(QObject *parent)
     : QObject{parent}
 {
