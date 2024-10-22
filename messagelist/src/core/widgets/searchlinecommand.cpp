@@ -218,7 +218,13 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
     if (type == SearchLineType::Unknown) {
         return false;
     }
-    return true;
+    if (hasSubType(type) && !argument.isEmpty()) {
+        return true;
+    }
+    if (!hasSubType(type) && argument.isEmpty()) {
+        return true;
+    }
+    return false;
 }
 
 bool SearchLineCommand::SearchLineInfo::operator==(const SearchLineInfo &other) const

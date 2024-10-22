@@ -163,18 +163,12 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            lstInfo.append(info);
-            // TODO it's not valid
-        }
-        {
-            MessageList::Core::SearchLineCommand::SearchLineInfo info;
-            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
             info.argument = QStringLiteral("bla");
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains AND bla")};
-        QTest::newRow("extra space") << str << lstInfo << 2 << convertStr;
+        const QString convertStr{QStringLiteral("Subject contains bla")};
+        QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
 }
 
@@ -205,6 +199,30 @@ void SearchLineCommandTest::shouldHaveSubType()
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::From));
     QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::HasAttachment));
     QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::IsHam));
+}
+
+void SearchLineCommandTest::shouldBeValid()
+{
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        QVERIFY(!info.isValid());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::HasAttachment;
+        QVERIFY(info.isValid());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Subject;
+        QVERIFY(!info.isValid());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Subject;
+        info.argument = QStringLiteral("ddd");
+        QVERIFY(info.isValid());
+    }
 }
 
 #include "moc_searchlinecommandtest.cpp"

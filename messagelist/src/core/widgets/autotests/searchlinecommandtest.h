@@ -21,4 +21,5 @@ private Q_SLOTS:
     void shouldParseInfo();
     void initTestCase();
     void shouldHaveSubType();
+    void shouldBeValid();
 };
