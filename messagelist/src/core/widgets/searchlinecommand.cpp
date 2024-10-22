@@ -106,6 +106,7 @@ QString SearchLineCommand::generateCommadLineStr() const
     return result;
 }
 
+#define DEBUG_COMMAND_PARSER 1
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
@@ -118,9 +119,13 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
         if (ch == QLatin1Char(':')) {
-            // qDebug() << " tmp ! " << tmp;
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " tmp ! " << tmp;
+#endif
             if (mKeyList.contains(tmp.trimmed())) {
-                // qDebug() << " contains " << tmp;
+#ifdef DEBUG_COMMAND_PARSER
+                qDebug() << " contains " << tmp;
+#endif
                 searchLineInfo.type = mKeyList.value(tmp.trimmed());
                 tmp.clear();
             } else if (hasSubType(tmp)) {
@@ -131,12 +136,22 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         } else if (ch.isSpace()) {
             // We can use is:... or has:...
             if (mKeyList.contains(tmp)) {
+                qDebug() << " 11111111111111";
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
+            } else {
             }
-
-            // qDebug() << " is space " << "pare" << parentheses << " tmp " << tmp;
-            if (searchLineInfo.type != Unknown && parentheses == 0) {
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " is space " << "pare" << parentheses << " tmp " << tmp << "searchLineInfo.type " << searchLineInfo.type
+                     << " searchLineInfo.argument.isEmpty() " << searchLineInfo.argument.isEmpty();
+#endif
+            if (tmp.isEmpty() && hasSubType(searchLineInfo.type) && parentheses == 0) {
+#ifdef DEBUG_COMMAND_PARSER
+                qDebug() << "clear invalid type" << searchLineInfo;
+#endif
+                searchLineInfo.type = Unknown;
+                tmp.clear();
+            } else if (searchLineInfo.type != Unknown && parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
             } else { // Literal
@@ -162,13 +177,17 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
-                // qDebug() << " new values " << searchLineInfo;
+#ifdef DEBUG_COMMAND_PARSER
+                qDebug() << " new values " << searchLineInfo;
+#endif
                 mSearchLineInfo.append(std::move(searchLineInfo));
                 searchLineInfo.clear();
             }
         } else {
             tmp += ch;
-            // qDebug() << " tmp " << tmp << " ch " << ch << "end";
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " tmp " << tmp << " ch " << ch << "end";
+#endif
         }
     }
     if (searchLineInfo.type != Unknown) {
@@ -190,7 +209,9 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             mSearchLineInfo.append(std::move(searchLineInfo));
         }
     }
-    // qDebug() << " END " << mSearchLineInfo;
+#ifdef DEBUG_COMMAND_PARSER
+    qDebug() << " END " << mSearchLineInfo;
+#endif
     // TODO add date ?
     // TODO add size: ?
     // TODO add support for double quote
