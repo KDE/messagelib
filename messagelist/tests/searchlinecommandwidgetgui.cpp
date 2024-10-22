@@ -24,6 +24,7 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     auto label = new QLabel(this);
     mainLayout->addWidget(label);
     mLineEdit->setClearButtonEnabled(true);
+    label->setWordWrap(true);
     connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, this, [this](const QString &commandStr) {
         if (!mLineEdit->text().isEmpty() && mLineEdit->text().back() != QLatin1Char(' ')) {
             mLineEdit->insert(QStringLiteral(" "));
