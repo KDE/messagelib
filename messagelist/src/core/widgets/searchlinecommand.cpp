@@ -54,13 +54,15 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case Unknown:
     case HasStateOrAttachment:
     case Literal:
-        // TODO implement Date/Size
+        // TODO implement Date
     case Date:
-    case Smaller:
-    case Larger:
     case OlderThan:
     case NewerThan:
         return {};
+    case Smaller:
+        return i18n("Size is smaller than");
+    case Larger:
+        return i18n("Size is larger than");
     case Size:
         return i18n("Size is");
     case To:
