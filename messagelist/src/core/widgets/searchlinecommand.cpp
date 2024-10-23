@@ -120,7 +120,38 @@ QString SearchLineCommand::generateCommadLineStr() const
     return result;
 }
 
-// #define DEBUG_COMMAND_PARSER 1
+#define DEBUG_COMMAND_PARSER 1
+
+SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo)
+{
+    if (!tmp.contains(QLatin1Char(' '))) {
+        return {};
+    }
+    const QStringList keys = mKeyList.keys();
+    for (const QString &key : keys) {
+        if (tmp.endsWith(key)) {
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " found element !!!!!! " << tmp;
+#endif
+            tmp.remove(key);
+            tmp.removeLast(); // Remove last space
+            searchLineInfo.argument = tmp;
+            // qDebug() << " AAAAAAAAAAAAAAAAAAAAAAAAAAA " << searchLineInfo;
+            if (searchLineInfo.isValid()) {
+                mSearchLineInfo.append(searchLineInfo);
+            }
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " Add  searchLineInfo" << searchLineInfo;
+#endif
+
+            SearchLineInfo info;
+            info.type = mKeyList.value(key);
+            return info;
+        }
+    }
+    return {};
+}
+
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
@@ -136,7 +167,12 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
 #ifdef DEBUG_COMMAND_PARSER
             qDebug() << " tmp ! " << tmp;
 #endif
-            if (mKeyList.contains(tmp.trimmed())) {
+            const SearchLineCommand::SearchLineInfo newInfo = isAnotherInfo(tmp, searchLineInfo);
+            if (newInfo.type != Unknown) {
+                tmp.clear();
+                searchLineInfo = newInfo;
+                qDebug() << " vxvxcvxcvxcv " << tmp;
+            } else if (mKeyList.contains(tmp.trimmed())) {
 #ifdef DEBUG_COMMAND_PARSER
                 qDebug() << " contains " << tmp;
 #endif
@@ -163,9 +199,14 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
 #endif
                 searchLineInfo.type = Unknown;
                 tmp.clear();
+            } else if (hasSubType(searchLineInfo.type)) {
+                tmp += ch;
             } else if (searchLineInfo.type != Unknown && parentheses == 0) {
                 searchLineInfo.argument = tmp;
                 tmp.clear();
+#ifdef DEBUG_COMMAND_PARSER
+                qDebug() << "clear tmp argument " << searchLineInfo;
+#endif
             } else { // Literal
                 tmp += ch;
             }

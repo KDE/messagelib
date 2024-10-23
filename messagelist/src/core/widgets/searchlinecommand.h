@@ -67,7 +67,8 @@ public:
     [[nodiscard]] static bool hasSubType(SearchLineCommand::SearchLineType type);
 
 private:
-    [[nodiscard]] QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
+    [[nodiscard]] MESSAGELIST_NO_EXPORT QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
+    [[nodiscard]] MESSAGELIST_NO_EXPORT SearchLineInfo isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo);
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };
