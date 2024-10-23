@@ -197,9 +197,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp.clear();
                 searchLineInfo = newInfo;
                 qDebug() << " vxvxcvxcvxcv " << tmp;
-            }
-            // We can use is:... or has:...
-            if (mKeyList.contains(tmp)) {
+            } else if (mKeyList.contains(tmp)) { // We can use is:... or has:...
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
             }
