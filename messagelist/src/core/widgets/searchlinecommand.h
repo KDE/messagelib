@@ -52,6 +52,7 @@ public:
         void clear();
         [[nodiscard]] bool isValid() const;
         [[nodiscard]] bool operator==(const SearchLineInfo &other) const;
+        [[nodiscard]] bool isValidDate() const;
     };
     SearchLineCommand();
     ~SearchLineCommand();

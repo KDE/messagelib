@@ -6,6 +6,7 @@
 
 #include "searchlinecommand.h"
 #include <KLocalizedString>
+#include <QDateTime>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
@@ -322,6 +323,14 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
 bool SearchLineCommand::SearchLineInfo::operator==(const SearchLineInfo &other) const
 {
     return type == other.type && argument == other.argument;
+}
+
+bool SearchLineCommand::SearchLineInfo::isValidDate() const
+{
+    if (argument.isEmpty()) {
+        return false;
+    }
+    return QDateTime::fromString(argument).isValid();
 }
 
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLineInfo &info)
