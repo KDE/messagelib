@@ -192,6 +192,12 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp += ch;
             }
         } else if (ch.isSpace()) {
+            const SearchLineCommand::SearchLineInfo newInfo = isAnotherInfo(tmp, searchLineInfo);
+            if (newInfo.type != Unknown) {
+                tmp.clear();
+                searchLineInfo = newInfo;
+                qDebug() << " vxvxcvxcvxcv " << tmp;
+            }
             // We can use is:... or has:...
             if (mKeyList.contains(tmp)) {
                 searchLineInfo.type = mKeyList.value(tmp);
