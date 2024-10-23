@@ -45,7 +45,7 @@
 #include <Akonadi/MessageStatus>
 #include <chrono>
 
-#define USE_SEARCH_LINE_COMMAND 1
+// #define USE_SEARCH_LINE_COMMAND 1
 #ifdef USE_SEARCH_LINE_COMMAND
 #include "core/widgets/searchlinecommand.h"
 #endif
@@ -1018,7 +1018,7 @@ void Widget::searchTimerFired()
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }
-#if USE_SEARCH_LINE_COMMAND
+#ifdef USE_SEARCH_LINE_COMMAND
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
     d->mFilter->setSearchString(command);
