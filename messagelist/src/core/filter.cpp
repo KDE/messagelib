@@ -216,6 +216,10 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     return filter;
 }
 
+void Filter::setSearchString(const SearchLineCommand &command)
+{
+}
+
 void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)
 {
     const QString trimStr = search.trimmed();

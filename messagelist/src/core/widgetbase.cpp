@@ -1009,6 +1009,8 @@ void Widget::searchTimerFired()
 
     const QString text = d->quickSearchLine->searchEdit()->text();
 
+    // TODO extract SearchLineCommand here.
+    // Convert in search option
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }

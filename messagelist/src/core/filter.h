@@ -13,6 +13,7 @@
 #include <QSet>
 #include <QString>
 
+#include "core/widgets/searchlinecommand.h"
 #include "messagelist_export.h"
 #include "widgets/quicksearchline.h"
 #include <Akonadi/Collection>
@@ -106,6 +107,7 @@ public:
     [[nodiscard]] const QString &iconName() const;
     void setIconName(const QString &newIconName);
 
+    void setSearchString(const SearchLineCommand &command);
 Q_SIGNALS:
     void finished();
 
