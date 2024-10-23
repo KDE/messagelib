@@ -127,6 +127,12 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
     if (!tmp.contains(QLatin1Char(' '))) {
         return {};
     }
+    if (tmp.endsWith(QLatin1StringView("is")) || tmp.endsWith(QLatin1StringView("has"))) {
+#ifdef DEBUG_COMMAND_PARSER
+        qDebug() << " found has subtype " << tmp;
+#endif
+        return {};
+    }
     const QStringList keys = mKeyList.keys();
     for (const QString &key : keys) {
         if (tmp.endsWith(key)) {
@@ -182,6 +188,8 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 searchLineInfo.type = HasStateOrAttachment;
                 tmp += ch;
                 // continue
+            } else {
+                tmp += ch;
             }
         } else if (ch.isSpace()) {
             // We can use is:... or has:...
