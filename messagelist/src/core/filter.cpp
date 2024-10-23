@@ -223,6 +223,48 @@ void Filter::setSearchString(const SearchLineCommand &command)
     if (command.isEmpty()) {
         return;
     }
+    const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
+    Akonadi::Search::PIM::EmailQuery query;
+    for (const auto &info : infos) {
+        switch (info.type) {
+        case SearchLineCommand::Unknown:
+        case SearchLineCommand::HasStateOrAttachment:
+        case SearchLineCommand::Literal:
+        case SearchLineCommand::To:
+        case SearchLineCommand::Bcc:
+        case SearchLineCommand::Cc:
+        case SearchLineCommand::From:
+        case SearchLineCommand::Subject:
+        case SearchLineCommand::Date:
+        case SearchLineCommand::Size:
+        case SearchLineCommand::HasAttachment:
+        case SearchLineCommand::HasInvitation:
+        case SearchLineCommand::IsImportant:
+        case SearchLineCommand::IsRead:
+        case SearchLineCommand::IsUnRead:
+        case SearchLineCommand::IsIgnored:
+        case SearchLineCommand::IsHam:
+        case SearchLineCommand::IsSpam:
+        case SearchLineCommand::IsWatched:
+        case SearchLineCommand::IsReplied:
+        case SearchLineCommand::IsForwarded:
+        case SearchLineCommand::Larger:
+        case SearchLineCommand::Smaller:
+        case SearchLineCommand::OlderThan:
+        case SearchLineCommand::NewerThan:
+            break;
+        }
+    }
+    // If the collection is virtual we're probably trying to filter the search collection, so we just search globally
+    if (mCurrentFolder.isValid() && !mCurrentFolder.isVirtual()) {
+        query.addCollection(mCurrentFolder.id());
+    }
+
+    Akonadi::Search::PIM::ResultIterator it = query.exec();
+    while (it.next()) {
+        mMatchingItemIds << it.id();
+    }
+    Q_EMIT finished();
 }
 
 void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)
