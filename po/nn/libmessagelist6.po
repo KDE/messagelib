@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:40+0000\n"
+"POT-Creation-Date: 2024-10-23 00:41+0000\n"
 "PO-Revision-Date: 2021-02-28 20:11+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1154,103 +1154,103 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:48
+#: core/widgets/searchlinecommand.cpp:62
 #, kde-format
 msgid "To contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:50
+#: core/widgets/searchlinecommand.cpp:64
 #, kde-format
 msgid "BCC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:52
+#: core/widgets/searchlinecommand.cpp:66
 #, kde-format
 msgid "CC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:54
+#: core/widgets/searchlinecommand.cpp:68
 #, kde-format
 msgid "From contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:56
+#: core/widgets/searchlinecommand.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
 msgid "Subject contains"
 msgstr "Emne"
 
-#: core/widgets/searchlinecommand.cpp:58
+#: core/widgets/searchlinecommand.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail has attachment"
 msgstr "Har vedlegg"
 
-#: core/widgets/searchlinecommand.cpp:60
+#: core/widgets/searchlinecommand.cpp:74
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail has invitation"
 msgstr "Har vedlegg"
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
 msgid "Mail is important"
 msgstr "Viktig"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Mail is read"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:80
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:82
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:84
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ham"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:86
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Spam"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:88
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail is watched"
 msgstr "Har vedlegg"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:90
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is replied"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:92
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is forwarded"
 msgstr "Ulesne"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1374,6 +1374,25 @@ msgstr "Svara på"
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Send vidare"
+
+#: core/widgets/searchlinecommandwidget.cpp:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Smaller"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:60
+#, kde-format
+msgctxt "@action:button"
+msgid "Larger"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "Size"
+msgctxt "@action:button"
+msgid "Size"
+msgstr "Storleik"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
