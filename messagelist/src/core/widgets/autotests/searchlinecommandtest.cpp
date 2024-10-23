@@ -43,7 +43,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
     QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("infos");
     QTest::addColumn<int>("numberElement");
     QTest::addColumn<QString>("convertedToString");
-#if 1
     {
         QString str;
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -125,7 +124,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Subject contains goo bla")};
         QTest::newRow("test parenthese1") << str << lstInfo << 1 << convertStr;
     }
-#endif
+
     {
         const QString str{QStringLiteral("subject:(goo bla) from:(dddd ddd)")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -144,7 +143,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Subject contains goo bla AND From contains dddd ddd")};
         QTest::newRow("test parenthese2") << str << lstInfo << 2 << convertStr;
     }
-#if 1
     {
         const QString str{QStringLiteral("subject:(goo (bla))")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -260,8 +258,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
             "Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND literal")};
         QTest::newRow("multiple elements2") << str << lstInfo << 5 << convertStr;
     }
-
-#endif
 }
 
 void SearchLineCommandTest::shouldParseInfo()
