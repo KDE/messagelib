@@ -28,8 +28,9 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"size"_L1, SearchLineCommand::SearchLineType::Size},
     {"smaller"_L1, SearchLineCommand::SearchLineType::Larger},
     {"larger"_L1, SearchLineCommand::SearchLineType::Smaller},
+    {"older_than"_L1, SearchLineCommand::SearchLineType::OlderThan},
+    {"newer_than"_L1, SearchLineCommand::SearchLineType::NewerThan},
     // after:before:older:newer:
-    // older_than:newer_than:
     // TODO add support for OR
 };
 SearchLineCommand::SearchLineCommand() = default;
@@ -43,7 +44,8 @@ bool SearchLineCommand::hasSubType(const QString &v)
 
 bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
 {
-    return type == Date || type == Size || type == To || type == Bcc || type == Cc || type == From || type == Subject || type == Smaller || type == Larger;
+    return type == Date || type == Size || type == To || type == Bcc || type == Cc || type == From || type == Subject || type == Smaller || type == Larger
+        || type == OlderThan || type == NewerThan;
 }
 
 QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const
@@ -57,6 +59,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case Size:
     case Smaller:
     case Larger:
+    case OlderThan:
+    case NewerThan:
         return {};
     case To:
         return i18n("To contains");

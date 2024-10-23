@@ -170,6 +170,20 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("bla")};
         QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
+
+    {
+        const QString str{QStringLiteral("size:1M")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Size;
+            info.argument = QStringLiteral("1M");
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("1M")};
+        QTest::newRow("size") << str << lstInfo << 1 << convertStr;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
@@ -199,6 +213,11 @@ void SearchLineCommandTest::shouldHaveSubType()
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::From));
     QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::HasAttachment));
     QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::IsHam));
+
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Larger));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Smaller));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::OlderThan));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::NewerThan));
 }
 
 void SearchLineCommandTest::shouldBeValid()

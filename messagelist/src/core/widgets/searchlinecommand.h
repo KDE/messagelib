@@ -42,6 +42,8 @@ public:
         IsForwarded,
         Larger,
         Smaller,
+        OlderThan,
+        NewerThan,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {
