@@ -49,6 +49,11 @@ bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
         || type == OlderThan || type == NewerThan;
 }
 
+bool SearchLineCommand::isEmpty() const
+{
+    return mSearchLineInfo.isEmpty();
+}
+
 QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const
 {
     switch (type) {

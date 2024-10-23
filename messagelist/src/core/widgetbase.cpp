@@ -45,6 +45,10 @@
 #include <Akonadi/MessageStatus>
 #include <chrono>
 
+#define USE_SEARCH_LINE_COMMAND 1
+#ifdef USE_SEARCH_LINE_COMMAND
+#include "core/widgets/searchlinecommand.h"
+#endif
 using namespace std::chrono_literals;
 
 using namespace MessageList::Core;
@@ -1014,10 +1018,15 @@ void Widget::searchTimerFired()
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }
-
+#if USE_SEARCH_LINE_COMMAND
+    SearchLineCommand command;
+    command.parseSearchLineCommand(text);
+    d->mFilter->setSearchString(command);
+#else
     d->mFilter->setCurrentFolder(d->mCurrentFolder);
     d->mFilter->setSearchString(text, d->quickSearchLine->searchOptions());
     d->quickSearchWarning->setSearchText(text);
+#endif
     if (d->mFilter->isEmpty()) {
         resetFilter();
         return;

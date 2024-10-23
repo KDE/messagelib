@@ -218,6 +218,11 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
 
 void Filter::setSearchString(const SearchLineCommand &command)
 {
+    // TODO
+    mMatchingItemIds.clear();
+    if (command.isEmpty()) {
+        return;
+    }
 }
 
 void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)

@@ -67,6 +67,8 @@ public:
     [[nodiscard]] static bool hasSubType(const QString &v);
     [[nodiscard]] static bool hasSubType(SearchLineCommand::SearchLineType type);
 
+    [[nodiscard]] bool isEmpty() const;
+
 private:
     [[nodiscard]] MESSAGELIST_NO_EXPORT QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
     [[nodiscard]] MESSAGELIST_NO_EXPORT SearchLineInfo isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo);
