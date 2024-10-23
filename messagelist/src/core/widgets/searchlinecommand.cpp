@@ -56,12 +56,13 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case Literal:
         // TODO implement Date/Size
     case Date:
-    case Size:
     case Smaller:
     case Larger:
     case OlderThan:
     case NewerThan:
         return {};
+    case Size:
+        return i18n("Size is");
     case To:
         return i18n("To contains");
     case Bcc:
@@ -151,7 +152,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (mKeyList.contains(tmp)) {
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
-            } else {
             }
 #ifdef DEBUG_COMMAND_PARSER
             qDebug() << " is space " << "pare" << parentheses << " tmp " << tmp << "searchLineInfo.type " << searchLineInfo.type

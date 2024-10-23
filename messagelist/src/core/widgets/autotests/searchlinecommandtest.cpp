@@ -181,8 +181,22 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("1M")};
+        const QString convertStr{QStringLiteral("Size is 1M")};
         QTest::newRow("size") << str << lstInfo << 1 << convertStr;
+    }
+
+    {
+        const QString str{QStringLiteral("subject:ddd ffff")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("ddd ffff");
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("Suject is ddd ffff")};
+        QTest::newRow("subject with space") << str << lstInfo << 1 << convertStr;
     }
 }
 
