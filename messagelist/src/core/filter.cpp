@@ -224,6 +224,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
         return;
     }
     const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
+    QList<Akonadi::MessageStatus> lstStatus;
     Akonadi::Search::PIM::EmailQuery query;
     for (const auto &info : infos) {
         switch (info.type) {
@@ -234,17 +235,74 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Subject:
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
-        case SearchLineCommand::HasAttachment:
-        case SearchLineCommand::HasInvitation:
-        case SearchLineCommand::IsImportant:
-        case SearchLineCommand::IsRead:
-        case SearchLineCommand::IsUnRead:
-        case SearchLineCommand::IsIgnored:
-        case SearchLineCommand::IsHam:
-        case SearchLineCommand::IsSpam:
-        case SearchLineCommand::IsWatched:
-        case SearchLineCommand::IsReplied:
-        case SearchLineCommand::IsForwarded:
+            break;
+        case SearchLineCommand::HasAttachment: {
+            Akonadi::MessageStatus status;
+            status.setHasAttachment(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::HasInvitation: {
+            Akonadi::MessageStatus status;
+            status.setHasInvitation(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsImportant: {
+            Akonadi::MessageStatus status;
+            status.setImportant(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsRead: {
+            Akonadi::MessageStatus status;
+            status.setRead(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsUnRead: {
+            // TODO verify
+            Akonadi::MessageStatus status;
+            status.setRead(false);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsIgnored: {
+            Akonadi::MessageStatus status;
+            status.setIgnored(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsHam: {
+            Akonadi::MessageStatus status;
+            status.setHam(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsSpam: {
+            Akonadi::MessageStatus status;
+            status.setSpam(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsWatched: {
+            Akonadi::MessageStatus status;
+            status.setWatched(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsReplied: {
+            Akonadi::MessageStatus status;
+            status.setReplied(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsForwarded: {
+            Akonadi::MessageStatus status;
+            status.setForwarded(true);
+            lstStatus.append(status);
+            break;
+        }
         case SearchLineCommand::Larger:
         case SearchLineCommand::Smaller:
         case SearchLineCommand::OlderThan:
@@ -264,6 +322,8 @@ void Filter::setSearchString(const SearchLineCommand &command)
             break;
         }
     }
+
+    setStatus(lstStatus);
     // If the collection is virtual we're probably trying to filter the search collection, so we just search globally
     if (mCurrentFolder.isValid() && !mCurrentFolder.isVirtual()) {
         query.addCollection(mCurrentFolder.id());
