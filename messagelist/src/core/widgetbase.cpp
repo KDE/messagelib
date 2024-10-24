@@ -7,6 +7,7 @@
  *******************************************************************************/
 
 #include "core/widgetbase.h"
+#include "config-messagelist.h"
 #include "core/aggregation.h"
 #include "core/filter.h"
 #include "core/filtersavedmanager.h"
@@ -45,8 +46,7 @@
 #include <Akonadi/MessageStatus>
 #include <chrono>
 
-// #define USE_SEARCH_LINE_COMMAND 1
-#ifdef USE_SEARCH_LINE_COMMAND
+#if USE_SEARCH_COMMAND_LINE
 #include "core/widgets/searchlinecommand.h"
 #endif
 using namespace std::chrono_literals;
@@ -1018,9 +1018,10 @@ void Widget::searchTimerFired()
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }
-#ifdef USE_SEARCH_LINE_COMMAND
+#if USE_SEARCH_COMMAND_LINE
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
+    qDebug() << " text " << text << " command " << command.searchLineInfo();
     d->mFilter->setSearchString(command);
 #else
     d->mFilter->setCurrentFolder(d->mCurrentFolder);

@@ -1,1 +1,2 @@
 #cmakedefine KDEPIM_FOLDEROPEN_PROFILE 1
+#cmakedefine USE_SEARCH_COMMAND_LINE 1
