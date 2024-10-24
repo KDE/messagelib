@@ -230,10 +230,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Unknown:
         case SearchLineCommand::HasStateOrAttachment:
         case SearchLineCommand::Literal:
-        case SearchLineCommand::To:
-        case SearchLineCommand::Bcc:
-        case SearchLineCommand::Cc:
-        case SearchLineCommand::From:
+
         case SearchLineCommand::Subject:
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
@@ -252,6 +249,18 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Smaller:
         case SearchLineCommand::OlderThan:
         case SearchLineCommand::NewerThan:
+            break;
+        case SearchLineCommand::To:
+            query.addTo(info.argument);
+            break;
+        case SearchLineCommand::Bcc:
+            query.addBcc(info.argument);
+            break;
+        case SearchLineCommand::From:
+            query.addFrom(info.argument);
+            break;
+        case SearchLineCommand::Cc:
+            query.addCc(info.argument);
             break;
         }
     }
