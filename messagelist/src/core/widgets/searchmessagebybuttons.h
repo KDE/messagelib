@@ -25,7 +25,8 @@ public:
         SearchAgainstSubject = 4,
         SearchAgainstFrom = 8,
         SearchAgainstBcc = 16,
-        SearchAgainstTo = 32
+        SearchAgainstTo = 32,
+        SearchAgainstCc = 64,
     };
     Q_ENUM(SearchOption)
     Q_DECLARE_FLAGS(SearchOptions, SearchOption)

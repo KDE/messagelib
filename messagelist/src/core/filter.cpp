@@ -314,6 +314,8 @@ void Filter::setSearchString(const QString &search, SearchMessageByButtons::Sear
             query.setFrom(newStr);
         } else if (options & SearchMessageByButtons::SearchAgainstBcc) {
             query.setBcc(QStringList() << newStr);
+        } else if (options & SearchMessageByButtons::SearchAgainstCc) {
+            query.setCc(QStringList() << newStr);
         } else if (options & SearchMessageByButtons::SearchAgainstTo) {
             query.setTo(QStringList() << newStr);
         }

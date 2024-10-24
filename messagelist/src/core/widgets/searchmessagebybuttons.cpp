@@ -37,6 +37,7 @@ void SearchMessageByButtons::createButtons()
     createFilterButton(i18nc("@action", "Subject"), SearchAgainstSubject);
     mSearchAgainstFromOrToButton = createFilterButton(QString(), SearchAgainstTo);
     createFilterButton(i18nc("@action", "BCC"), SearchAgainstBcc);
+    createFilterButton(i18nc("@action", "CC"), SearchAgainstCc);
     changeSearchAgainstFromOrToText();
 }
 
@@ -95,7 +96,7 @@ void SearchMessageByButtons::setSearchOptions(SearchMessageByButtons::SearchOpti
     mButtonGroup->button(SearchMessageByButtons::SearchAgainstBody)->setChecked(opts & SearchMessageByButtons::SearchAgainstBody);
     mButtonGroup->button(SearchMessageByButtons::SearchAgainstSubject)->setChecked(opts & SearchMessageByButtons::SearchAgainstSubject);
     mButtonGroup->button(SearchMessageByButtons::SearchAgainstBcc)->setChecked(opts & SearchMessageByButtons::SearchAgainstBcc);
-    mButtonGroup->button(SearchMessageByButtons::SearchEveryWhere)->setChecked(opts & SearchMessageByButtons::SearchEveryWhere);
+    mButtonGroup->button(SearchMessageByButtons::SearchAgainstCc)->setChecked(opts & SearchMessageByButtons::SearchAgainstCc);
 
     if (mContainsOutboundMessages) {
         mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstTo);
