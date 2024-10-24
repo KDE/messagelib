@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1041,55 +1041,55 @@ msgstr[0] "<b>%1</b>poruka (<b>%2</b> nepročitanih)"
 msgstr[1] "<b>%1</b>poruke (<b>%2</b> nepročitanih)"
 msgstr[2] "<b>%1</b>poruka (<b>%2</b> nepročitanih)"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Podesi..."
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Tema"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Podesi..."
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregacija"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Redoslijed sortiranja"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Smijera sortiranja poruka"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Poredak grupnog sortiranja"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Pravac grupnog sortiranja"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Direktorij uvijek koristi ovo sortiranje"
@@ -1170,103 +1170,119 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, kde-format
+msgid "Size is smaller than"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:71
+#, kde-format
+msgid "Size is larger than"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Veličina"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "To contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "BCC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "CC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, kde-format
 msgid "From contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
 msgid "Subject contains"
 msgstr "Tema"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail has attachment"
 msgstr "Ima prilog"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Ima poziv"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
 msgid "Mail is important"
 msgstr "Važno"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, kde-format
 msgid "Mail is read"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ham"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Spam"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail is watched"
 msgstr "Ima prilog"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is replied"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is forwarded"
 msgstr "Nepročitano"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1411,6 +1427,18 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Veličina"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, kde-format
+msgctxt "@action:button"
+msgid "Older"
+msgstr ""
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format

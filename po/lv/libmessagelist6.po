@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2024-10-04 21:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1037,54 +1037,54 @@ msgstr[0] "<b>%1</b> vēstule (<b>%2</b> nelasītas)"
 msgstr[1] "<b>%1</b> vēstules (<b>%2</b> nelasītas)"
 msgstr[2] "<b>%1</b> vēstuļu (<b>%2</b> nelasītas)"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgid "No filter defined."
 msgstr "Nav definēts filtrs."
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Izveidot filtru"
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Motīvs"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Konfigurēt..."
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Apkopojums"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Vēstuļu kārtošanas kārtība"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Vēstuļu kārtošanas virziens"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Grupu kārtošanas kārtība"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Grupu kārtošanas virziens"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Mape vienmēr izmanto šo kārtošanu"
@@ -1161,87 +1161,105 @@ msgstr ""
 "Dažas no meklēšanas mapēm šajā vaicājumā vēl tiek indeksētas vai indeksēšanā "
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is smaller than"
+msgstr "ir lielāks par"
+
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is larger than"
+msgstr "ir lielāks par"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Izmērs"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "To contains"
 msgstr "„Kam“ satur"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "BCC contains"
 msgstr "„BCC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "CC contains"
 msgstr "„CC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, kde-format
 msgid "From contains"
 msgstr "„No“ satur"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "Subject contains"
 msgstr "„Temats“ satur"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Vēstulei ir pielikumi"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Vēstulē ir uzaicinājums"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "Mail is important"
 msgstr "Vēstule ir svarīga"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, kde-format
 msgid "Mail is read"
 msgstr "Vēstule ir lasīta"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Vēstule nav lasīta"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Vēstule ir ignorēta"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Vēstule nav mēstule"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Vēstule ir mēstule"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, kde-format
 msgid "Mail is watched"
 msgstr "Vēstule ir uzraudzīta"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is replied"
 msgstr "Vēstule ir atbildēta"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Vēstule ir pārsūtīta"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr "UN"
@@ -1377,6 +1395,19 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Izmērs"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "@action:button"
+msgid "Older"
+msgstr "Mape"
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -2362,9 +2393,6 @@ msgstr "&Atcelt"
 
 #~ msgid "is not equal to"
 #~ msgstr "nav vienāds ar"
-
-#~ msgid "is greater than"
-#~ msgstr "ir lielāks par"
 
 #~ msgid "is less than or equal to"
 #~ msgstr "ir vienāds vai mazāks par"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1161,59 +1161,59 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, fuzzy, kde-format
 #| msgid "Log filter actions"
 msgid "No filter defined."
 msgstr "Skoðun af síuaðgerðum"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Búa til sí&u"
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, fuzzy, kde-format
 msgid "Theme"
 msgstr "Þema"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 msgid "Configure..."
 msgstr "Stilla &KMail..."
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Ábendingar"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Stillingar bréfhluta"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, fuzzy, kde-format
 msgid "Message Sort Direction"
 msgstr "Bréfalisti"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Eyða möppu"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, fuzzy, kde-format
 msgid "Group Sort Direction"
 msgstr "Bréfalisti"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1295,103 +1295,121 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is smaller than"
+msgstr "er stærra en"
+
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is larger than"
+msgstr "er stærra en"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Stærð"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "inniheldur"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "inniheldur"
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "inniheldur"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "inniheldur"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "inniheldur"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "hefur viðhengi"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgid "Mail has invitation"
 msgstr "Nánari stillingar"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "F&lutningsleið"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Merkja þráð sem &ólesinn"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Merkja þráð sem &ólesinn"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is Ham"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is Spam"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is watched"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is replied"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is forwarded"
 msgstr "Póstur"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1531,6 +1549,19 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Stærð"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "@action:button"
+msgid "Older"
+msgstr "Mappa"
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -2608,9 +2639,6 @@ msgstr "&Hætta við"
 
 #~ msgid "is not equal to"
 #~ msgstr "er ekki jafnt og"
-
-#~ msgid "is greater than"
-#~ msgstr "er stærra en"
 
 #~ msgid "is less than or equal to"
 #~ msgstr "er minna eða jafnt og"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2024-10-19 12:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1040,54 +1040,54 @@ msgstr[0] "<b>%1</b> wiadomość (nieprzeczytane <b>%2</b>)"
 msgstr[1] "<b>%1</b> wiadomości (nieprzeczytane <b>%2</b>)"
 msgstr[2] "<b>%1</b> wiadomości (nieprzeczytane <b>%2</b>)"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgid "No filter defined."
 msgstr "Nie określono filtra."
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Utwórz filtr"
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Wygląd"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Ustawienia..."
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Grupowanie"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Porządek szeregowania wiadomości"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Kierunek szeregowania wiadomości"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Porządek szeregowania grup"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Kierunek szeregowania grup"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Katalog zawsze używa tego porządku szeregowania"
@@ -1164,87 +1164,105 @@ msgstr ""
 "Niektóre z katalogów wyszukiwania w tym zapytaniu nadal są indeksowane lub "
 "zostały wykluczone z indeksowania. Wyniki mogą być niepełne."
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is smaller than"
+msgstr "jest większy niż"
+
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is larger than"
+msgstr "jest większy niż"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Rozmiar"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "To contains"
 msgstr "\"Do\" zawiera"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "BCC contains"
 msgstr "\"UDW\" zawiera"
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "CC contains"
 msgstr "\"DW\" zawiera"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, kde-format
 msgid "From contains"
 msgstr "\"Od\" zawiera"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "Subject contains"
 msgstr "Temat zawiera"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Wiadomość ma załącznik"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Wiadomość ma zaproszenie"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "Mail is important"
 msgstr "Wiadomość jest ważna"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, kde-format
 msgid "Mail is read"
 msgstr "Wiadomość jest przeczytana"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Wiadomość jest nieprzeczytana"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Wiadomość jest pomijana"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Wiadomość nie jest SPAMem"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Wiadomość jest SPAMem"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, kde-format
 msgid "Mail is watched"
 msgstr "Wiadomość jest obserwowana"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is replied"
 msgstr "Odpowiedziano na wiadomość"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Przekierowano wiadomość"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr "ORAZ"
@@ -1363,6 +1381,19 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Rozmiar"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "@action:button"
+msgid "Older"
+msgstr "Katalog"
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -2344,9 +2375,6 @@ msgstr "&Anuluj"
 
 #~ msgid "is not equal to"
 #~ msgstr "różny od"
-
-#~ msgid "is greater than"
-#~ msgstr "jest większy niż"
 
 #~ msgid "is less than or equal to"
 #~ msgstr "jest mniejszy lub równy niż"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1045,55 +1045,55 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> μήνυμα (<b>%2</b> μη αναγνωσμένο)"
 msgstr[1] "<b>%1</b> μηνύματα (<b>%2</b> μη αναγνωσμένα)"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, fuzzy, kde-format
 #| msgid "Any filter defined."
 msgid "No filter defined."
 msgstr "Όποιο φίλτρο έχει οριστεί."
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Δημιουργία φίλτρου"
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Θέμα"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Συγκέντρωση"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Σειρά ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Σειρά ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Ο φάκελος χρησιμοποιεί πάντα αυτή τη σειρά ταξινόμησης"
@@ -1172,110 +1172,128 @@ msgstr ""
 "δεικτοδότηση ή εξαιρούνται της δεικτοδότησης πλήρως. Τα παρακάτω "
 "αποτελέσματα ίσως είναι ελλιπή."
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is smaller than"
+msgstr "είναι μεγαλύτερο από"
+
+#: core/widgets/searchlinecommand.cpp:71
+#, fuzzy, kde-format
+#| msgid "is greater than"
+msgid "Size is larger than"
+msgstr "είναι μεγαλύτερο από"
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Μέγεθος"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "έχει συνημμένο"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Έχει μια πρόσκληση"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "Μεταφορέας &αλληλογραφίας"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is read"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Ham"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Spam"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is watched"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is replied"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is forwarded"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1394,6 +1412,19 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Μέγεθος"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "@action:button"
+msgid "Older"
+msgstr "Φάκελος"
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -2391,9 +2422,6 @@ msgstr "&Ακύρωση"
 
 #~ msgid "is not equal to"
 #~ msgstr "δεν είναι ίσο με"
-
-#~ msgid "is greater than"
-#~ msgstr "είναι μεγαλύτερο από"
 
 #~ msgid "is less than or equal to"
 #~ msgstr "είναι μικρότερο ή ίσο με"

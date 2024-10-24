@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
-"PO-Revision-Date: 2024-10-18 19:27+0300\n"
+"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"PO-Revision-Date: 2024-10-23 09:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1054,54 +1054,54 @@ msgstr[1] "<b>%1</b> повідомлення (не прочитано: <b>%2</b
 msgstr[2] "<b>%1</b> повідомлень (не прочитано: <b>%2</b>)"
 msgstr[3] "<b>%1</b> повідомлення (не прочитано: <b>%2</b>)"
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgid "No filter defined."
 msgstr "Не визначено жодного фільтра."
 
-#: core/widgetbase.cpp:190
+#: core/widgetbase.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Створення фільтра"
 
-#: core/widgetbase.cpp:412 messagelistutil.cpp:114
+#: core/widgetbase.cpp:416 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Тема"
 
-#: core/widgetbase.cpp:433 core/widgetbase.cpp:523
+#: core/widgetbase.cpp:437 core/widgetbase.cpp:527
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Налаштувати…"
 
-#: core/widgetbase.cpp:502 messagelistutil.cpp:109
+#: core/widgetbase.cpp:506 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Складання"
 
-#: core/widgetbase.cpp:585
+#: core/widgetbase.cpp:589
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Порядок сортування повідомлень"
 
-#: core/widgetbase.cpp:607
+#: core/widgetbase.cpp:611
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Напрям сортування повідомлень"
 
-#: core/widgetbase.cpp:624
+#: core/widgetbase.cpp:628
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Порядок сортування груп"
 
-#: core/widgetbase.cpp:641
+#: core/widgetbase.cpp:645
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Напрям сортування груп"
 
-#: core/widgetbase.cpp:656
+#: core/widgetbase.cpp:660
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "У теці завжди використовується цей порядок"
@@ -1179,87 +1179,103 @@ msgstr ""
 "індексування або їх повністю виключено з індексування. Наведені нижче "
 "результати можуть бути неповними."
 
-#: core/widgets/searchlinecommand.cpp:62
+#: core/widgets/searchlinecommand.cpp:69
+#, kde-format
+msgid "Size is smaller than"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:71
+#, kde-format
+msgid "Size is larger than"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:73
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Size is"
+msgstr "Розмір"
+
+#: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "To contains"
 msgstr "«Кому» містить"
 
-#: core/widgets/searchlinecommand.cpp:64
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "BCC contains"
 msgstr "«Пр. копія» містить"
 
-#: core/widgets/searchlinecommand.cpp:66
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "CC contains"
 msgstr "«Копія» містить"
 
-#: core/widgets/searchlinecommand.cpp:68
+#: core/widgets/searchlinecommand.cpp:81
 #, kde-format
 msgid "From contains"
 msgstr "«Від» містить"
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "Subject contains"
 msgstr "Тема містить"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Повідомлення містить долучення"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "Mail has invitation"
 msgstr "У повідомленні є запрошення"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "Mail is important"
 msgstr "Повідомлення є важливим"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:91
 #, kde-format
 msgid "Mail is read"
 msgstr "Повідомлення прочитано"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:93
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Повідомлення не прочитано"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:95
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Повідомлення проігноровано"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:97
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Повідомлення є бажаним"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:99
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Повідомлення є небажаним"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:101
 #, kde-format
 msgid "Mail is watched"
 msgstr "Повідомлення з наглядом"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is replied"
 msgstr "Повідомлення з відповіддю"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:105
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Повідомлення переспрямовано"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "AND"
 msgstr "І"
@@ -1364,20 +1380,32 @@ msgstr "Переспрямовано"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Менший"
 
 #: core/widgets/searchlinecommandwidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Більший"
 
 #: core/widgets/searchlinecommandwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Розмір"
+
+#: core/widgets/searchlinecommandwidget.cpp:62
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "@action:button"
+msgid "Older"
+msgstr "Тека"
+
+#: core/widgets/searchlinecommandwidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
