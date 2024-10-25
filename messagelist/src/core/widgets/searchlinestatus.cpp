@@ -154,7 +154,7 @@ void SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction()
             connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, this, &SearchLineStatus::slotInsertCommand);
         }
         mSearchLineCommandWidget->show();
-        mSearchLineCommandWidget->resize(width(), 100);
+        mSearchLineCommandWidget->resize(width(), 200);
         // mSearchLineCommandWidget->setGeometry()
     } else {
         if (mSearchLineCommandWidget) {

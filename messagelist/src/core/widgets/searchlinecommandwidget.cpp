@@ -23,6 +23,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     for (const auto &info : std::as_const(mButtonsList)) {
         flowLayout->addWidget(createPushButton(info.needSpace, info.i18n, info.identifier));
     }
+    setAutoFillBackground(true);
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
