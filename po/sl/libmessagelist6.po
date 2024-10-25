@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
-"PO-Revision-Date: 2024-10-23 06:39+0200\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
+"PO-Revision-Date: 2024-10-24 07:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -881,7 +881,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži orodne namige"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1179,18 +1179,17 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:69
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Velikost je manjša kot"
 
 #: core/widgets/searchlinecommand.cpp:71
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Velikost je večja kot"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Velikost"
+msgstr "Velikost je"
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1392,17 +1391,16 @@ msgid "Size"
 msgstr "Velikost"
 
 #: core/widgets/searchlinecommandwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Mapa"
+msgstr "Starejše"
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Novejše"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -1461,7 +1459,15 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "Skp"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "BCC"
+msgctxt "@action"
+msgid "CC"
+msgstr "Skp"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "Za"

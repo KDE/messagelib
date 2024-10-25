@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
-"PO-Revision-Date: 2024-10-23 12:53+0300\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
+"PO-Revision-Date: 2024-10-24 13:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -871,7 +871,7 @@ msgid "Display Tooltips"
 msgstr "İpuçlarını Göster"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Kimden"
@@ -1160,16 +1160,15 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:69
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Boyut şundan küçük"
 
 #: core/widgets/searchlinecommand.cpp:71
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Boyut şundan büyük"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
 msgstr "Boyut"
 
@@ -1373,17 +1372,16 @@ msgid "Size"
 msgstr "Boyut"
 
 #: core/widgets/searchlinecommandwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Klasör"
+msgstr "Daha Eski"
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Daha Yeni"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -1442,7 +1440,15 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "Gizli Kopya"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "BCC"
+msgctxt "@action"
+msgid "CC"
+msgstr "Gizli Kopya"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "Kime"

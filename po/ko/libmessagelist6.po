@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -859,7 +859,7 @@ msgid "Display Tooltips"
 msgstr "표시 풍선 도움말"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "보낸 사람"
@@ -1468,7 +1468,15 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "숨은 참조"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "BCC"
+msgctxt "@action"
+msgid "CC"
+msgstr "숨은 참조"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "받는 사람"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -862,7 +862,7 @@ msgid "Display Tooltips"
 msgstr ""
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Ó"
@@ -1510,7 +1510,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "CC"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
 #| msgid "To"
@@ -3886,9 +3893,6 @@ msgstr "C&ealaigh"
 
 #~ msgid "Add to Address Book"
 #~ msgstr "Cuir leis an Leabhar Seoltaí"
-
-#~ msgid "CC"
-#~ msgstr "CC"
 
 #~ msgctxt "Continue search button."
 #~ msgid "&Search"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2015-12-29 18:21+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -865,7 +865,7 @@ msgid "Display Tooltips"
 msgstr "Rodyti patarimus"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Nuo"
@@ -1492,7 +1492,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
 #| msgid "To"

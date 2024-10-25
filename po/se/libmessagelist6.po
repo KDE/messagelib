@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2009-06-03 01:28+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -868,7 +868,7 @@ msgid "Display Tooltips"
 msgstr "Čájet reaidorávvagiid"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr ""
@@ -1480,7 +1480,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "Čiegus máŋggus"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr "Čiegus máŋggus"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "Vuostáiváldi"

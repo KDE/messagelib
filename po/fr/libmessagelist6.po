@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
-"PO-Revision-Date: 2024-10-19 17:38+0200\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
+"PO-Revision-Date: 2024-10-24 07:46+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -900,7 +900,7 @@ msgid "Display Tooltips"
 msgstr "Afficher les infobulles"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "De"
@@ -1392,17 +1392,16 @@ msgstr "Transféré"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Plus petit"
 
 #: core/widgets/searchlinecommandwidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Plus grand"
 
 #: core/widgets/searchlinecommandwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Taille"
@@ -1480,7 +1479,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "CC"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "À"
@@ -6747,9 +6753,6 @@ msgstr "&Annuler"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "À"
-
-#~ msgid "CC"
-#~ msgstr "CC"
 
 #, fuzzy
 #~| msgid "is in category"

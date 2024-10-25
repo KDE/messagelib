@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
-"PO-Revision-Date: 2024-10-23 10:51+0200\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
+"PO-Revision-Date: 2024-10-24 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -874,7 +874,7 @@ msgid "Display Tooltips"
 msgstr "Mostra els consells"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Des de"
@@ -1163,18 +1163,17 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:69
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "La mida és més petita que"
 
 #: core/widgets/searchlinecommand.cpp:71
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "La mida és més gran que"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Mida"
+msgstr "La mida és"
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1376,17 +1375,16 @@ msgid "Size"
 msgstr "Mida"
 
 #: core/widgets/searchlinecommandwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Carpeta"
+msgstr "Més antic"
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Més nou"
 
 #: core/widgets/searchlinestatus.cpp:77
 #, kde-format
@@ -1445,7 +1443,15 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "BCC"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "BCC"
+msgctxt "@action"
+msgid "CC"
+msgstr "BCC"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "A"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2019-09-29 12:44+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -956,7 +956,7 @@ msgid "Display Tooltips"
 msgstr "&Қабулкунанда"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
@@ -1588,7 +1588,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "&Нусхаи пинҳонӣ"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr "&Нусха"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 msgid "To"
 msgstr "&Қабулкунанда"
@@ -6651,10 +6657,6 @@ msgstr "&Барҳам додан"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "&Қабулкунанда"
-
-#, fuzzy
-#~ msgid "CC"
-#~ msgstr "&Нусха"
 
 #, fuzzy
 #~| msgid "is in category"

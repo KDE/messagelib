@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -875,7 +875,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži savjete"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1501,7 +1501,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the email"
 #| msgid "To"

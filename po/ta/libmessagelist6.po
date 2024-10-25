@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2024-10-09 21:04+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -866,7 +866,7 @@ msgid "Display Tooltips"
 msgstr "கருவித்துப்புகளை காட்டு"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "அனுப்புநர்"
@@ -1455,7 +1455,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "மறைநகல்"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "CC"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "பெறுநர்"
@@ -6289,9 +6296,6 @@ msgstr "நிறுத்தப்பட்டது"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "பெறுநர்"
-
-#~ msgid "CC"
-#~ msgstr "CC"
 
 #, fuzzy
 #~| msgid "is in category"

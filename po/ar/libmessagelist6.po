@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2024-10-14 20:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -876,7 +876,7 @@ msgid "Display Tooltips"
 msgstr "اعرض التّلميحات"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "من"
@@ -1502,7 +1502,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "ن‌ك‌ع"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "مرفق"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "إلى"
@@ -6858,9 +6865,6 @@ msgstr "أ&لغِ"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "إلى"
-
-#~ msgid "CC"
-#~ msgstr "مرفق"
 
 #, fuzzy
 #~| msgid "is in category"

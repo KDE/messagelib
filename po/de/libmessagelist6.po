@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2023-04-03 16:45+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -881,7 +881,7 @@ msgid "Display Tooltips"
 msgstr "Kurzinfos anzeigen"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Von"
@@ -1516,7 +1516,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "Blindkopie"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "Kopie"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "An"
@@ -6687,9 +6694,6 @@ msgstr "&Abbrechen"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "An"
-
-#~ msgid "CC"
-#~ msgstr "Kopie"
 
 #, fuzzy
 #~| msgid "is in category"

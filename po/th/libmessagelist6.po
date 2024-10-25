@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2010-02-28 19:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -874,7 +874,7 @@ msgid "Display Tooltips"
 msgstr "แสดงทูลทิป"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "จาก"
@@ -1507,7 +1507,14 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "ซ่อนสำเนาถึง"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+#| msgid "CC"
+msgctxt "@action"
+msgid "CC"
+msgstr "สำเนาถึง"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -5589,9 +5596,6 @@ msgstr "&ยกเลิก"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "ถึง"
-
-#~ msgid "CC"
-#~ msgstr "สำเนาถึง"
 
 #, fuzzy
 #~| msgid "is in category"

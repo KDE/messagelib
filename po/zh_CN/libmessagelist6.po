@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -849,7 +849,7 @@ msgid "Display Tooltips"
 msgstr "显示工具提示"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "发件人"
@@ -1141,10 +1141,9 @@ msgid "Size is larger than"
 msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "大小"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1340,18 +1339,16 @@ msgid "Larger"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:61
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "文件夹"
+msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
@@ -1416,7 +1413,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
 msgid "To"
 msgstr "收件人"

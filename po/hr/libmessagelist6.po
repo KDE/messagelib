@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:40+0000\n"
+"POT-Creation-Date: 2024-10-25 00:41+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -884,7 +884,7 @@ msgid "Display Tooltips"
 msgstr "Prikaži info-oblačiće"
 
 #: core/view.cpp:2237 core/view.cpp:2241
-#: core/widgets/searchmessagebybuttons.cpp:72
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Od"
@@ -1508,7 +1508,13 @@ msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
-#: core/widgets/searchmessagebybuttons.cpp:70
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr "&Kopija"
+
+#: core/widgets/searchmessagebybuttons.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -5238,10 +5244,6 @@ msgstr "P&rekini"
 #~ msgctxt "Email recipient"
 #~ msgid "To"
 #~ msgstr "&Za:"
-
-#, fuzzy
-#~ msgid "CC"
-#~ msgstr "&Kopija"
 
 #, fuzzy
 #~| msgid "is in address book"
