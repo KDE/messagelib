@@ -51,6 +51,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::searchCommandActionRequested, this, [this]() {
         mSearchLineCommandWidget->setVisible(!mSearchLineCommandWidget->isVisible());
     });
+    connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, mSearchEdit, &SearchLineStatus::slotInsertCommand);
 #endif
 
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);

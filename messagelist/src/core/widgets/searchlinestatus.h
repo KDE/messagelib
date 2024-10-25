@@ -33,6 +33,7 @@ public:
     void slotClearHistory();
     void clearFilterButtonClicked();
     void filterAdded();
+    void slotInsertCommand(const QString &command);
 Q_SIGNALS:
     void clearButtonClicked();
     void forceLostFocus();
@@ -54,7 +55,6 @@ private:
     MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
     MESSAGELIST_NO_EXPORT void slotConfigureFilters();
     MESSAGELIST_NO_EXPORT void slotActivateFilter(const QString &identifier);
-    MESSAGELIST_NO_EXPORT void slotInsertCommand(const QString &command);
 
     bool mLocked = false;
     bool mHasFilter = false;
