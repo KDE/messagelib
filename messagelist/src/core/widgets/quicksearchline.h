@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "config-messagelist.h"
 #include "messagelist_export.h"
 #include "searchmessagebybuttons.h"
 #include <Akonadi/MessageStatus>
@@ -21,6 +22,7 @@ class SearchLineStatus;
 class Filter;
 class SearchStatusButtons;
 class SearchMessageByButtons;
+class SearchLineCommandWidget;
 /**
  * @brief The QuickSearchLine class
  * @author Laurent Montel <montel@kde.org>
@@ -72,6 +74,9 @@ private:
     SearchLineStatus *const mSearchEdit;
     SearchStatusButtons *const mSearchStatusButtons;
     SearchMessageByButtons *const mSearchMessageByButtons;
+#if USE_SEARCH_COMMAND_LINE
+    SearchLineCommandWidget *const mSearchLineCommandWidget;
+#endif
     QComboBox *const mTagFilterCombo;
     QList<Akonadi::MessageStatus> mLstStatus;
 };

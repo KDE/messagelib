@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "config-messagelist.h"
 #include "messagelist_private_export.h"
 #include "quicksearchline.h"
 #include <Akonadi/MessageStatus>
@@ -20,7 +19,6 @@ namespace Core
 {
 class FilterSavedMenu;
 class Filter;
-class SearchLineCommandWidget;
 class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
@@ -40,6 +38,7 @@ Q_SIGNALS:
     void forceLostFocus();
     void saveFilter();
     void activateFilter(MessageList::Core::Filter *f);
+    void searchCommandActionRequested();
 
 protected:
     void contextMenuEvent(QContextMenuEvent *e) override;
@@ -55,7 +54,6 @@ private:
     MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
     MESSAGELIST_NO_EXPORT void slotConfigureFilters();
     MESSAGELIST_NO_EXPORT void slotActivateFilter(const QString &identifier);
-    MESSAGELIST_NO_EXPORT void slotToggledChangeVisibleCommandWidgetAction();
     MESSAGELIST_NO_EXPORT void slotInsertCommand(const QString &command);
 
     bool mLocked = false;
@@ -68,9 +66,6 @@ private:
     FilterSavedMenu *mFilterSavedMenu = nullptr;
     QStringList mListCompetion;
     QString mColorName;
-#if USE_SEARCH_COMMAND_LINE
-    SearchLineCommandWidget *mSearchLineCommandWidget = nullptr;
-#endif
 };
 }
 }

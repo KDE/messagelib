@@ -25,10 +25,6 @@
 #include <QStringListModel>
 #include <QWidgetAction>
 
-#if USE_SEARCH_COMMAND_LINE
-#include "core/widgets/searchlinecommandwidget.h"
-#endif
-
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 #define MAX_COMPLETION_ITEMS 20
 using namespace MessageList::Core;
@@ -53,12 +49,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     connect(FilterSavedManager::self(), &FilterSavedManager::activateFilter, this, &SearchLineStatus::slotActivateFilter);
 }
 
-SearchLineStatus::~SearchLineStatus()
-{
-#if USE_SEARCH_COMMAND_LINE
-    delete mSearchLineCommandWidget;
-#endif
-}
+SearchLineStatus::~SearchLineStatus() = default;
 
 void SearchLineStatus::keyPressEvent(QKeyEvent *e)
 {
@@ -108,18 +99,7 @@ void SearchLineStatus::initializeActions()
 #if USE_SEARCH_COMMAND_LINE
     mSearchCommandAction = addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), QLineEdit::TrailingPosition);
     mSearchCommandAction->setWhatsThis(i18nc("@info:whatsthis", "Toggle this button if you want show or hide search command line widget."));
-
-    auto action = new QWidgetAction(mSearchCommandAction);
-
-    auto searchLineCommandWidget = new SearchLineCommandWidget(this);
-    action->setDefaultWidget(searchLineCommandWidget);
-    auto menu = new QMenu(this);
-    menu->addAction(action);
-    mSearchCommandAction->setMenu(menu);
-    connect(mSearchCommandAction, &QAction::triggered, this, [menu, searchLineCommandWidget, this]() {
-        searchLineCommandWidget->resize(width(), 100);
-        menu->exec();
-    });
+    connect(mSearchCommandAction, &QAction::triggered, this, &SearchLineStatus::searchCommandActionRequested);
 #endif
     mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
     mLockAction->setWhatsThis(i18nc("@info:whatsthis",
@@ -153,26 +133,6 @@ void SearchLineStatus::slotConfigureFilters()
 {
     ConfigureFiltersDialog dlg(this);
     dlg.exec();
-}
-
-void SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction()
-{
-#if USE_SEARCH_COMMAND_LINE
-    if (!mSearchLineCommandWidget || (mSearchLineCommandWidget && !mSearchLineCommandWidget->isVisible())) {
-        if (!mSearchLineCommandWidget) {
-            mSearchLineCommandWidget = new SearchLineCommandWidget(this);
-            mSearchLineCommandWidget->setAlignWidget(parentWidget());
-            connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, this, &SearchLineStatus::slotInsertCommand);
-        }
-        mSearchLineCommandWidget->show();
-        mSearchLineCommandWidget->resize(width(), 200);
-        // mSearchLineCommandWidget->setGeometry()
-    } else {
-        if (mSearchLineCommandWidget) {
-            mSearchLineCommandWidget->hide();
-        }
-    }
-#endif
 }
 
 void SearchLineStatus::slotToggledLockAction()
