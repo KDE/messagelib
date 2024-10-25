@@ -23,60 +23,9 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     for (const auto &info : std::as_const(mButtonsList)) {
         flowLayout->addWidget(createPushButton(info.needSpace, info.i18n, info.identifier));
     }
-    setAutoFillBackground(true);
-    setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
-
-bool SearchLineCommandWidget::eventFilter(QObject *o, QEvent *e)
-{
-    if (o == mAlignWidget && (e->type() == QEvent::Move || e->type() == QEvent::Resize)) {
-        reposition();
-    }
-    return QFrame::eventFilter(o, e);
-}
-
-void SearchLineCommandWidget::resizeEvent(QResizeEvent *ev)
-{
-    reposition();
-    QWidget::resizeEvent(ev);
-}
-
-void SearchLineCommandWidget::setAlignWidget(QWidget *w)
-{
-    if (w == mAlignWidget) {
-        return;
-    }
-
-    if (mAlignWidget) {
-        mAlignWidget->removeEventFilter(this);
-    }
-
-    mAlignWidget = w;
-
-    if (mAlignWidget) {
-        mAlignWidget->installEventFilter(this);
-    }
-    reposition();
-}
-
-void SearchLineCommandWidget::reposition()
-{
-    if (!mAlignWidget) {
-        return;
-    }
-    // p is in the alignWidget's coordinates
-    QPoint p;
-    // p.setY(-height());
-    //  Position in the toplevelwidget's coordinates
-    QPoint pTopLevel = mAlignWidget->mapTo(topLevelWidget(), p);
-    // Position in the widget's parentWidget coordinates
-    QPoint pParent = parentWidget()->mapFrom(topLevelWidget(), pTopLevel);
-    // Move 'this' to that position.
-    move(pParent);
-    qDebug() << "pParent  " << pParent;
-}
 
 QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)
 {
