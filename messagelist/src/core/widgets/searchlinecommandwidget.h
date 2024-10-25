@@ -20,6 +20,7 @@ class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QFrame
 public:
     explicit SearchLineCommandWidget(QWidget *parent = nullptr);
     ~SearchLineCommandWidget() override;
+    void setAlignWidget(QWidget *w);
 
 Q_SIGNALS:
     void insertCommand(const QString &commandStr);
@@ -39,6 +40,7 @@ private:
     };
 
     QList<ButtonInfo> mButtonsList;
+    QWidget *mAlignWidget = nullptr;
 };
 }
 }

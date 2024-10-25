@@ -24,17 +24,16 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
         flowLayout->addWidget(createPushButton(info.needSpace, info.i18n, info.identifier));
     }
     setAutoFillBackground(true);
+    setFrameStyle(QFrame::Panel | QFrame::Sunken);
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
 
 bool SearchLineCommandWidget::eventFilter(QObject *o, QEvent *e)
 {
-#if 0
-    if (o == d->mAlignWidget && (e->type() == QEvent::Move || e->type() == QEvent::Resize)) {
+    if (o == mAlignWidget && (e->type() == QEvent::Move || e->type() == QEvent::Resize)) {
         reposition();
     }
-#endif
     return QFrame::eventFilter(o, e);
 }
 
@@ -44,10 +43,27 @@ void SearchLineCommandWidget::resizeEvent(QResizeEvent *ev)
     QWidget::resizeEvent(ev);
 }
 
+void SearchLineCommandWidget::setAlignWidget(QWidget *w)
+{
+    if (w == mAlignWidget) {
+        return;
+    }
+
+    if (mAlignWidget) {
+        mAlignWidget->removeEventFilter(this);
+    }
+
+    mAlignWidget = w;
+
+    if (mAlignWidget) {
+        mAlignWidget->installEventFilter(this);
+    }
+    reposition();
+}
+
 void SearchLineCommandWidget::reposition()
 {
-#if 0
-    if (!d->mAlignWidget) {
+    if (!mAlignWidget) {
         return;
     }
     // p is in the alignWidget's coordinates
@@ -55,16 +71,16 @@ void SearchLineCommandWidget::reposition()
     // We are always above the alignWidget, right-aligned with it for
     // LTR locales, and left-aligned for RTL locales (default value=0).
     if (layoutDirection() == Qt::LeftToRight) {
-        p.setX(d->mAlignWidget->width() - width());
+        p.setX(mAlignWidget->width() - width());
     }
     p.setY(-height());
     // Position in the toplevelwidget's coordinates
-    QPoint pTopLevel = d->mAlignWidget->mapTo(topLevelWidget(), p);
+    QPoint pTopLevel = mAlignWidget->mapTo(topLevelWidget(), p);
     // Position in the widget's parentWidget coordinates
     QPoint pParent = parentWidget()->mapFrom(topLevelWidget(), pTopLevel);
     // Move 'this' to that position.
     move(pParent);
-#endif
+    qDebug() << "pParent  " << pParent;
 }
 
 QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)

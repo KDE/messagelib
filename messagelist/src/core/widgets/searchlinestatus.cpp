@@ -150,11 +150,12 @@ void SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction()
 #if USE_SEARCH_COMMAND_LINE
     if (!mSearchLineCommandWidget || (mSearchLineCommandWidget && !mSearchLineCommandWidget->isVisible())) {
         if (!mSearchLineCommandWidget) {
-            mSearchLineCommandWidget = new SearchLineCommandWidget();
+            mSearchLineCommandWidget = new SearchLineCommandWidget(this);
+            mSearchLineCommandWidget->setAlignWidget(parentWidget());
             connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, this, &SearchLineStatus::slotInsertCommand);
         }
         mSearchLineCommandWidget->show();
-        mSearchLineCommandWidget->resize(width(), 200);
+        // mSearchLineCommandWidget->resize(width(), 200);
         // mSearchLineCommandWidget->setGeometry()
     } else {
         if (mSearchLineCommandWidget) {
