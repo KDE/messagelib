@@ -5,7 +5,7 @@
 */
 
 #include "searchlinestatus.h"
-#include "config-messagelist.h"
+
 #include "configurefiltersdialog.h"
 #include "core/filtersavedmanager.h"
 #include "filtersavedmenu.h"
@@ -53,7 +53,12 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     connect(FilterSavedManager::self(), &FilterSavedManager::activateFilter, this, &SearchLineStatus::slotActivateFilter);
 }
 
-SearchLineStatus::~SearchLineStatus() = default;
+SearchLineStatus::~SearchLineStatus()
+{
+#if USE_SEARCH_COMMAND_LINE
+    delete mSearchLineCommandWidget;
+#endif
+}
 
 void SearchLineStatus::keyPressEvent(QKeyEvent *e)
 {
@@ -142,7 +147,21 @@ void SearchLineStatus::slotConfigureFilters()
 
 void SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction()
 {
-    // TODO
+#if USE_SEARCH_COMMAND_LINE
+    if (!mSearchLineCommandWidget || (mSearchLineCommandWidget && !mSearchLineCommandWidget->isVisible())) {
+        if (!mSearchLineCommandWidget) {
+            mSearchLineCommandWidget = new SearchLineCommandWidget();
+            connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, this, &SearchLineStatus::slotInsertCommand);
+        }
+        mSearchLineCommandWidget->show();
+        mSearchLineCommandWidget->resize(width(), 100);
+        // mSearchLineCommandWidget->setGeometry()
+    } else {
+        if (mSearchLineCommandWidget) {
+            mSearchLineCommandWidget->hide();
+        }
+    }
+#endif
 }
 
 void SearchLineStatus::slotToggledLockAction()
@@ -209,6 +228,14 @@ void SearchLineStatus::slotClearHistory()
 {
     mListCompetion.clear();
     mCompleterListModel->setStringList(mListCompetion);
+}
+
+void SearchLineStatus::slotInsertCommand(const QString &command)
+{
+    if (!text().isEmpty() && text().back() != QLatin1Char(' ')) {
+        insert(QStringLiteral(" "));
+    }
+    insert(command);
 }
 
 #include "moc_searchlinestatus.cpp"
