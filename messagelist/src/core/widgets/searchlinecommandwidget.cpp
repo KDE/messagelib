@@ -7,11 +7,12 @@
 #include "searchlinecommandwidget.h"
 #include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
+#include <QEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
 SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
-    : QWidget{parent}
+    : QFrame{parent}
 {
     auto flowLayout = new SearchLineCommandFlowLayout(this);
     flowLayout->setObjectName(QStringLiteral("flowLayout"));
@@ -25,6 +26,45 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
+
+bool SearchLineCommandWidget::eventFilter(QObject *o, QEvent *e)
+{
+#if 0
+    if (o == d->mAlignWidget && (e->type() == QEvent::Move || e->type() == QEvent::Resize)) {
+        reposition();
+    }
+#endif
+    return QFrame::eventFilter(o, e);
+}
+
+void SearchLineCommandWidget::resizeEvent(QResizeEvent *ev)
+{
+    reposition();
+    QWidget::resizeEvent(ev);
+}
+
+void SearchLineCommandWidget::reposition()
+{
+#if 0
+    if (!d->mAlignWidget) {
+        return;
+    }
+    // p is in the alignWidget's coordinates
+    QPoint p;
+    // We are always above the alignWidget, right-aligned with it for
+    // LTR locales, and left-aligned for RTL locales (default value=0).
+    if (layoutDirection() == Qt::LeftToRight) {
+        p.setX(d->mAlignWidget->width() - width());
+    }
+    p.setY(-height());
+    // Position in the toplevelwidget's coordinates
+    QPoint pTopLevel = d->mAlignWidget->mapTo(topLevelWidget(), p);
+    // Position in the widget's parentWidget coordinates
+    QPoint pParent = parentWidget()->mapFrom(topLevelWidget(), pTopLevel);
+    // Move 'this' to that position.
+    move(pParent);
+#endif
+}
 
 QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)
 {

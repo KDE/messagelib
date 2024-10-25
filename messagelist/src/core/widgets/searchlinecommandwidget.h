@@ -7,14 +7,14 @@
 #pragma once
 
 #include "messagelist_private_export.h"
+#include <QFrame>
 #include <QHash>
-#include <QWidget>
 class QPushButton;
 namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QWidget
+class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QFrame
 {
     Q_OBJECT
 public:
@@ -24,9 +24,14 @@ public:
 Q_SIGNALS:
     void insertCommand(const QString &commandStr);
 
+protected:
+    void resizeEvent(QResizeEvent *ev) override;
+    [[nodiscard]] bool eventFilter(QObject *o, QEvent *e) override;
+
 private:
     MESSAGELIST_NO_EXPORT void fillWidgets();
     MESSAGELIST_NO_EXPORT QPushButton *createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr);
+    MESSAGELIST_NO_EXPORT void reposition();
     struct ButtonInfo {
         bool needSpace = false;
         QString identifier;
