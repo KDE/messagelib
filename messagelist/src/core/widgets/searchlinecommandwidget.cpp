@@ -31,6 +31,7 @@ QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QSt
 {
     auto pushButton = new QPushButton(i18nStr, this);
     pushButton->setObjectName(commandStr);
+    pushButton->setToolTip(commandStr);
     connect(pushButton, &QPushButton::clicked, this, [this, commandStr, needSpace]() {
         const QString str = commandStr + (needSpace ? QStringLiteral(" ") : QString());
         Q_EMIT insertCommand(str);
