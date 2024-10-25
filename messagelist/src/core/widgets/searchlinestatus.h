@@ -53,11 +53,13 @@ private:
     MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
     MESSAGELIST_NO_EXPORT void slotConfigureFilters();
     MESSAGELIST_NO_EXPORT void slotActivateFilter(const QString &identifier);
+    MESSAGELIST_NO_EXPORT void slotToggledChangeVisibleCommandWidgetAction();
 
     bool mLocked = false;
     bool mHasFilter = false;
     QAction *mLockAction = nullptr;
     QAction *mSaveFilterAction = nullptr;
+    QAction *mSearchCommandAction = nullptr;
     QCompleter *const mCompleter;
     QStringListModel *const mCompleterListModel;
     FilterSavedMenu *mFilterSavedMenu = nullptr;
