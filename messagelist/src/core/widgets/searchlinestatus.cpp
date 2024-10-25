@@ -109,7 +109,17 @@ void SearchLineStatus::initializeActions()
     mSearchCommandAction = addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), QLineEdit::TrailingPosition);
     mSearchCommandAction->setWhatsThis(i18nc("@info:whatsthis", "Toggle this button if you want show or hide search command line widget."));
 
-    connect(mSearchCommandAction, &QAction::triggered, this, &SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction);
+    auto action = new QWidgetAction(mSearchCommandAction);
+
+    auto searchLineCommandWidget = new SearchLineCommandWidget(this);
+    action->setDefaultWidget(searchLineCommandWidget);
+    auto menu = new QMenu(this);
+    menu->addAction(action);
+    mSearchCommandAction->setMenu(menu);
+    connect(mSearchCommandAction, &QAction::triggered, this, [menu, searchLineCommandWidget, this]() {
+        searchLineCommandWidget->resize(width(), 100);
+        menu->exec();
+    });
 #endif
     mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
     mLockAction->setWhatsThis(i18nc("@info:whatsthis",
@@ -155,7 +165,7 @@ void SearchLineStatus::slotToggledChangeVisibleCommandWidgetAction()
             connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, this, &SearchLineStatus::slotInsertCommand);
         }
         mSearchLineCommandWidget->show();
-        // mSearchLineCommandWidget->resize(width(), 200);
+        mSearchLineCommandWidget->resize(width(), 200);
         // mSearchLineCommandWidget->setGeometry()
     } else {
         if (mSearchLineCommandWidget) {

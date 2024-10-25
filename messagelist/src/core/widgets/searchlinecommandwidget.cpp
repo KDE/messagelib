@@ -24,7 +24,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
         flowLayout->addWidget(createPushButton(info.needSpace, info.i18n, info.identifier));
     }
     setAutoFillBackground(true);
-    setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
@@ -68,13 +68,8 @@ void SearchLineCommandWidget::reposition()
     }
     // p is in the alignWidget's coordinates
     QPoint p;
-    // We are always above the alignWidget, right-aligned with it for
-    // LTR locales, and left-aligned for RTL locales (default value=0).
-    if (layoutDirection() == Qt::LeftToRight) {
-        p.setX(mAlignWidget->width() - width());
-    }
-    p.setY(-height());
-    // Position in the toplevelwidget's coordinates
+    // p.setY(-height());
+    //  Position in the toplevelwidget's coordinates
     QPoint pTopLevel = mAlignWidget->mapTo(topLevelWidget(), p);
     // Position in the widget's parentWidget coordinates
     QPoint pParent = parentWidget()->mapFrom(topLevelWidget(), pTopLevel);
