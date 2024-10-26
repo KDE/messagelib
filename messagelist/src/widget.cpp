@@ -386,7 +386,11 @@ void MessageList::Widget::viewDragMoveEvent(QDragMoveEvent *e)
     e->accept();
 }
 
-enum DragMode { DragCopy, DragMove, DragCancel };
+enum DragMode {
+    DragCopy,
+    DragMove,
+    DragCancel
+};
 
 void MessageList::Widget::viewDropEvent(QDropEvent *e)
 {

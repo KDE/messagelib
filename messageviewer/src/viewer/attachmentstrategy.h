@@ -34,7 +34,13 @@ public:
     //
     // Factory methods:
     //
-    enum Type { Iconic, Smart, Inlined, Hidden, HeaderOnly };
+    enum Type {
+        Iconic,
+        Smart,
+        Inlined,
+        Hidden,
+        HeaderOnly
+    };
 
     static const AttachmentStrategy *create(Type type);
     static const AttachmentStrategy *create(const QString &type);

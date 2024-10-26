@@ -25,7 +25,9 @@ public:
     [[nodiscard]] QString format() const;
 
 private:
-    enum { ImageRole = Qt::UserRole + 1 };
+    enum {
+        ImageRole = Qt::UserRole + 1
+    };
     void initialize();
     void addImageFormat(const QString &format, const QString &mimetype);
     QListWidget *const mListWidget;

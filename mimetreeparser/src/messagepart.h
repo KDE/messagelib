@@ -178,7 +178,11 @@ public:
     [[nodiscard]] QString htmlContent() const override;
 };
 
-enum IconType { NoIcon = 0, IconExternal, IconInline };
+enum IconType {
+    NoIcon = 0,
+    IconExternal,
+    IconInline
+};
 /**
  * @brief The TextMessagePart class
  */

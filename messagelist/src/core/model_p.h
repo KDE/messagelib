@@ -55,7 +55,10 @@ public:
      */
     MessageItem *guessMessageParent(MessageItem *mi);
 
-    enum AttachOptions { SkipCacheUpdate = 0, StoreInCache = 1 };
+    enum AttachOptions {
+        SkipCacheUpdate = 0,
+        StoreInCache = 1
+    };
     void attachMessageToParent(Item *pParent, MessageItem *mi, AttachOptions attachOptions = StoreInCache);
     void messageDetachedUpdateParentProperties(Item *oldParent, MessageItem *mi);
     void attachMessageToGroupHeader(MessageItem *mi);

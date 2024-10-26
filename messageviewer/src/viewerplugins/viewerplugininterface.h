@@ -26,7 +26,13 @@ class MESSAGEVIEWER_EXPORT ViewerPluginInterface : public QObject
 public:
     explicit ViewerPluginInterface(QObject *parent = nullptr);
     ~ViewerPluginInterface() override;
-    enum SpecificFeatureType { None = 0, NeedSelection = 2, NeedMessage = 4, NeedUrl = 8, All = 16 };
+    enum SpecificFeatureType {
+        None = 0,
+        NeedSelection = 2,
+        NeedMessage = 4,
+        NeedUrl = 8,
+        All = 16
+    };
     Q_FLAGS(SpecificFeatureTypes)
     Q_DECLARE_FLAGS(SpecificFeatureTypes, SpecificFeatureType)
 

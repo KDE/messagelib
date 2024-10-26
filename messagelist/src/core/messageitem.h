@@ -64,9 +64,19 @@ public:
         NonThreadable ///< this message does not look as being threadable
     };
 
-    enum EncryptionState { NotEncrypted, PartiallyEncrypted, FullyEncrypted, EncryptionStateUnknown };
+    enum EncryptionState {
+        NotEncrypted,
+        PartiallyEncrypted,
+        FullyEncrypted,
+        EncryptionStateUnknown
+    };
 
-    enum SignatureState { NotSigned, PartiallySigned, FullySigned, SignatureStateUnknown };
+    enum SignatureState {
+        NotSigned,
+        PartiallySigned,
+        FullySigned,
+        SignatureStateUnknown
+    };
 
     explicit MessageItem();
     ~MessageItem() override;

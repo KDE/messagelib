@@ -71,7 +71,13 @@ public:
 
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
-    enum InlineMessageType { Positive, Information, Warning, Error, MESSAGE_TYPE_COUNT };
+    enum InlineMessageType {
+        Positive,
+        Information,
+        Warning,
+        Error,
+        MESSAGE_TYPE_COUNT
+    };
 
     [[nodiscard]] const HeaderStylePlugin *headerPlugin() const;
 
