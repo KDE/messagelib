@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 00:41+0000\n"
-"PO-Revision-Date: 2024-10-24 07:21+0200\n"
+"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"PO-Revision-Date: 2024-10-25 09:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1149,7 +1149,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Nastavi..."
 
-#: core/widgets/quicksearchline.cpp:45
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1276,145 +1276,151 @@ msgstr "Pismo je posredovano"
 msgid "AND"
 msgstr "IN"
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Zadeva"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Od"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "Kp"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Skp"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Ima prilogo"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Ima povabilo"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Prebrano"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandwidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Neprebrano"
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandwidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Pomembno"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandwidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Prezrto"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandwidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Želeno"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandwidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Neželeno"
 
-#: core/widgets/searchlinecommandwidget.cpp:56
+#: core/widgets/searchlinecommandwidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Opazovano"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandwidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Odgovorjeno"
 
-#: core/widgets/searchlinecommandwidget.cpp:58
+#: core/widgets/searchlinecommandwidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Posredovano"
 
-#: core/widgets/searchlinecommandwidget.cpp:59
+#: core/widgets/searchlinecommandwidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Manjše"
 
-#: core/widgets/searchlinecommandwidget.cpp:60
+#: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Večje"
 
-#: core/widgets/searchlinecommandwidget.cpp:61
+#: core/widgets/searchlinecommandwidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Velikost"
 
-#: core/widgets/searchlinecommandwidget.cpp:62
+#: core/widgets/searchlinecommandwidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Starejše"
 
-#: core/widgets/searchlinecommandwidget.cpp:63
+#: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Novejše"
 
-#: core/widgets/searchlinestatus.cpp:77
+#: core/widgets/searchlinestatus.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Pri spremembi mape prepreči čiščenje polja hitrega iskanja"
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Pri spremembi mape počisti polje hitrega iskanja"
 
-#: core/widgets/searchlinestatus.cpp:100
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Toggle this button if you want show or hide search command line widget."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:106
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1424,13 +1430,13 @@ msgstr ""
 "Preklopite ta gumb, če želite, da je hitro iskanje pri premikanju v druge "
 "mape ali pri zoževanju iskanja po stanju besedila zaklenjeno."
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Shranjeni filter"
 
-#: core/widgets/searchlinestatus.cpp:186
+#: core/widgets/searchlinestatus.cpp:192
 #, kde-format
 msgid "Clear History"
 msgstr "Počisti zgodovino"
@@ -1460,12 +1466,10 @@ msgid "BCC"
 msgstr "Skp"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "Skp"
+msgstr "Kp"
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format

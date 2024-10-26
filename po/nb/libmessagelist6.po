@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 00:41+0000\n"
+"POT-Creation-Date: 2024-10-26 00:41+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1128,7 +1128,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Oppsett …"
 
-#: core/widgets/quicksearchline.cpp:45
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1269,7 +1269,7 @@ msgstr "Ulest"
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:43
+#: core/widgets/searchlinecommandwidget.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1277,33 +1277,33 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "Emne"
 
-#: core/widgets/searchlinecommandwidget.cpp:44
+#: core/widgets/searchlinecommandwidget.cpp:46
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "Fra"
 
-#: core/widgets/searchlinecommandwidget.cpp:45
+#: core/widgets/searchlinecommandwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "@action:button"
 msgid "To"
 msgstr "Til"
 
-#: core/widgets/searchlinecommandwidget.cpp:46
+#: core/widgets/searchlinecommandwidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandwidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandwidget.cpp:50
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1311,7 +1311,7 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Har vedlegg"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandwidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
@@ -1319,7 +1319,7 @@ msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Har invitasjon"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandwidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1327,14 +1327,14 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "Lest"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandwidget.cpp:53
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Ulest"
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandwidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1342,7 +1342,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "Viktig"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandwidget.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1350,7 +1350,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorert"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1358,7 +1358,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ikke-søppelpost"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandwidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1366,7 +1366,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "Søppelpost"
 
-#: core/widgets/searchlinecommandwidget.cpp:56
+#: core/widgets/searchlinecommandwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1374,14 +1374,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "Overvåket"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandwidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Besvart"
 
-#: core/widgets/searchlinecommandwidget.cpp:58
+#: core/widgets/searchlinecommandwidget.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1389,50 +1389,56 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Videresendt"
 
-#: core/widgets/searchlinecommandwidget.cpp:59
+#: core/widgets/searchlinecommandwidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:60
+#: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:61
+#: core/widgets/searchlinecommandwidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Størrelse"
 
-#: core/widgets/searchlinecommandwidget.cpp:62
+#: core/widgets/searchlinecommandwidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:63
+#: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:77
+#: core/widgets/searchlinestatus.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Ikke tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:100
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Toggle this button if you want show or hide search command line widget."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:106
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1442,13 +1448,13 @@ msgstr ""
 "Bruk denne knappen hvis du vil beholde hurtigsøket låst mens du går til "
 "andre mapper, eller når søket innskrenkes etter meldingsstatus."
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:186
+#: core/widgets/searchlinestatus.cpp:192
 #, kde-format
 msgid "Clear History"
 msgstr ""
