@@ -338,6 +338,12 @@ bool SearchLineCommand::SearchLineInfo::isValidDate() const
     return QDateTime::fromString(argument).isValid();
 }
 
+bool SearchLineCommand::SearchLineInfo::mustBeUnique() const
+{
+    return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
+        || type == IsWatched || type == IsReplied || type == IsForwarded;
+}
+
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLineInfo &info)
 {
     d << " type " << info.type;
