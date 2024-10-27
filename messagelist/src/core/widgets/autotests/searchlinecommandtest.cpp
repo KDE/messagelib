@@ -318,4 +318,42 @@ void SearchLineCommandTest::shouldBeValid()
     }
 }
 
+void SearchLineCommandTest::mustBeUnique()
+{
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Subject;
+        QVERIFY(!info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::IsForwarded;
+        QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::HasAttachment;
+        QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Cc;
+        QVERIFY(!info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::IsHam;
+        QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::IsImportant;
+        QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::IsIgnored;
+        QVERIFY(info.mustBeUnique());
+    }
+}
 #include "moc_searchlinecommandtest.cpp"

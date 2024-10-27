@@ -22,4 +22,5 @@ private Q_SLOTS:
     void initTestCase();
     void shouldHaveSubType();
     void shouldBeValid();
+    void mustBeUnique();
 };
