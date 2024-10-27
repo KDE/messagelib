@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 08:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2114,7 +2114,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Velikost ikony:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2159,17 +2159,17 @@ msgstr "Rozvinout všechna vlákna"
 msgid "Collapse All Threads"
 msgstr "Svinout všechna vlákna"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "Přesunout se&m"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopírovat sem"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "Z&rušit"

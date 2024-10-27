@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2024-09-25 21:16+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2176,7 +2176,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Tamaño da icona:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2220,17 +2220,17 @@ msgstr "Expandir todos os fíos"
 msgid "Collapse All Threads"
 msgstr "Pregar todos os fíos"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mover para aquí"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiar aquí"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"

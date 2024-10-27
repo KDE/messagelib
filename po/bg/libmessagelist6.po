@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-23 19:25+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 18:58+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1156,18 +1156,17 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:69
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Размерът е по-млък от"
 
 #: core/widgets/searchlinecommand.cpp:71
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Размерът е по-голям от"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Размер"
+msgstr "Размерът е"
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1369,17 +1368,16 @@ msgid "Size"
 msgstr "Размер"
 
 #: core/widgets/searchlinecommandwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Папка"
+msgstr "По-стари"
 
 #: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "По-нови"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1399,6 +1397,8 @@ msgstr "Изчистване на полето за бързо търсене п
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Превключете този бутон, ако искате да покажете или скриете уиджета за "
+"търсене в командния ред."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -1447,12 +1447,10 @@ msgid "BCC"
 msgstr "Скр. копие до:"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "Скр. копие до:"
+msgstr "Скр. копие до"
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
@@ -2142,7 +2140,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Размер на икона:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2186,17 +2184,17 @@ msgstr "Разгъване на всички нишки"
 msgid "Collapse All Threads"
 msgstr "Сгъване на всички нишки"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "П&реместване тук"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Копиране тук"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "О&тказ"

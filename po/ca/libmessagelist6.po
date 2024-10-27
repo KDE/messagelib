@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-25 10:51+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 11:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1403,6 +1403,8 @@ msgstr "Neteja el camp de cerca ràpida en canviar de carpeta"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Commuteu aquest botó si voleu mostrar o ocultar el giny de la línia d'ordres "
+"de cerca."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -2143,7 +2145,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Mida de les icones:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2187,17 +2189,17 @@ msgstr "Expandeix totes les converses"
 msgid "Collapse All Threads"
 msgstr "Redueix totes les converses"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "M&ou aquí"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "Co&pia aquí"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"

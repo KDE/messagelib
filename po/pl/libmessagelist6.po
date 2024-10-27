@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-19 12:45+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 12:43+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1165,22 +1165,19 @@ msgstr ""
 "zostały wykluczone z indeksowania. Wyniki mogą być niepełne."
 
 #: core/widgets/searchlinecommand.cpp:69
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is smaller than"
-msgstr "jest większy niż"
+msgstr "Rozmiar jest mniejszy niż"
 
 #: core/widgets/searchlinecommand.cpp:71
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is larger than"
-msgstr "jest większy niż"
+msgstr "Rozmiar jest większy niż"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Rozmiar"
+msgstr "Rozmiar jest"
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1367,33 +1364,31 @@ msgstr "Przekierowana"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Mniejsze"
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Większe"
 
 #: core/widgets/searchlinecommandwidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Rozmiar"
 
 #: core/widgets/searchlinecommandwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Katalog"
+msgstr "Starsze"
 
 #: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Nowsze"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1460,8 +1455,7 @@ msgid "BCC"
 msgstr "UDW"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgid "CC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "DW"
@@ -2151,7 +2145,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Rozmiar ikon:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2196,17 +2190,17 @@ msgstr "Rozwiń wszystkie wątki"
 msgid "Collapse All Threads"
 msgstr "Zwiń wszystkie wątki"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Przenieś tutaj"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "S&kopiuj tutaj"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Anuluj"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2024-03-20 16:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2241,7 +2241,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Kuvakkeen koko:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2288,17 +2288,17 @@ msgstr "Laajenna kaikki ryhmät"
 msgid "Collapse All Threads"
 msgstr "Supista kaikki ryhmät"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Siirrä tähän"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopioi tähän"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Peru"

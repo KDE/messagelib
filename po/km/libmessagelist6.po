@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2226,7 +2226,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "ទំហំ​រូបតំណាង ៖"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2274,17 +2274,17 @@ msgstr "ពន្លា​ក្រុម​ទាំងអស់"
 msgid "Collapse All Threads"
 msgstr "វេញ​ក្រុម​ទាំងអស់"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "​ផ្លាស់ទី​មក​ទីនេះ"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "​ចម្លង​មក​ទីនេះ"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "​បោះបង់"

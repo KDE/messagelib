@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2024-10-14 20:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2204,7 +2204,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "حجم الأيقونة:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2255,17 +2255,17 @@ msgstr "وسّع كلّ المواضيع"
 msgid "Collapse All Threads"
 msgstr "اطوِ كلّ المواضيع"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "ان&قل هنا"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "ان&سخ هنا"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "أ&لغِ"

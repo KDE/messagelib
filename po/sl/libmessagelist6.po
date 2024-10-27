@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-25 09:11+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 08:08+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1419,6 +1419,8 @@ msgstr "Pri spremembi mape počisti polje hitrega iskanja"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Preklopite ta gumb, če želite prikazati ali skriti gradnik iskalne ukazne "
+"vrstice."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -2155,7 +2157,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Velikost ikone:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2201,17 +2203,17 @@ msgstr "Razširi vse niti"
 msgid "Collapse All Threads"
 msgstr "Strni vse niti"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "Pre&makni sem"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiraj sem"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Prekliči"

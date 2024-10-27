@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2008-01-20 16:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -2403,7 +2403,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "आकार"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2461,17 +2461,17 @@ msgstr "सभी लड़ी फैलाएँ (&p)"
 msgid "Collapse All Threads"
 msgstr "सभी लड़ियाँ समेटें (&o)"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "यहाँ खिसकाएँ (&M)"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "यहाँ नक़ल करें (&C)"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "रद्द करें (&a)"

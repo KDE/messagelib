@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2023-11-14 13:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2242,7 +2242,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Tamanho do ícone:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2289,17 +2289,17 @@ msgstr "Expandir todas as discussões"
 msgid "Collapse All Threads"
 msgstr "Recolher todas as discussões"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mover aqui"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiar aqui"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"

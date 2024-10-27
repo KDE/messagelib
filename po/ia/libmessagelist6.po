@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-25 11:50+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 10:34+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1398,6 +1398,8 @@ msgstr "Netta le campo de cerca rapide quando on cambia dossieres"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Pulsa iste button si tu vole monstrar o celar widget de commando de linea de "
+"cerca."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -2137,7 +2139,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Dimension de Icone:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2181,17 +2183,17 @@ msgstr "Expande omne topicos"
 msgid "Collapse All Threads"
 msgstr "Plica omne topicos"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mover Hic"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiar Hic"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancellar"

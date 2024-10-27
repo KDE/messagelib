@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -2396,7 +2396,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Stærð"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, fuzzy, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2454,17 +2454,17 @@ msgstr "Opna &alla þræði"
 msgid "Collapse All Threads"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "&Færa hingað"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Afrita hingað"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Hætta við"

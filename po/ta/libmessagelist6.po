@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
 "PO-Revision-Date: 2024-10-09 21:04+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -2151,7 +2151,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "சின்னத்தின் அளவு:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2195,17 +2195,17 @@ msgstr "அனைத்து தொகுப்புகளையும் வ�
 msgid "Collapse All Threads"
 msgstr "அனைத்து தொகுப்புகளையும் சுருக்கு"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "இங்கு &நகர்த்தவும்"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&இதற்கு நகலெடுக்கவும்"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "நிறுத்தப்பட்டது"

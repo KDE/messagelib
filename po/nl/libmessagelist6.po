@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-24 12:32+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 11:48+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1416,6 +1416,8 @@ msgstr "Wis het snelzoekveld bij wijziging van mappen"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Schakel deze knop om als u widget opdrachtregel voor zoeken wilt tonen of "
+"verbergen."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -1464,8 +1466,7 @@ msgid "BCC"
 msgstr "BCC"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgid "CC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "CC"
@@ -2156,7 +2157,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Pictogramgrootte:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2200,17 +2201,17 @@ msgstr "Alle discussies uitvouwen"
 msgid "Collapse All Threads"
 msgstr "Alle discussies invouwen"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "Hierheen &verplaatsen"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "Hierheen &kopiëren"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuleren"

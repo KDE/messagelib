@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-25 18:31+0300\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-26 09:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1422,6 +1422,8 @@ msgstr "Спорожнювати поле пришвидшення пошуку 
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Перемкніть цю кнопку, якщо ви хочете побачити або приховати віджет рядка "
+"пошуку"
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -2161,7 +2163,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Розмір піктограм:"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2207,17 +2209,17 @@ msgstr "Розгорнути усі гілки"
 msgid "Collapse All Threads"
 msgstr "Згорнути усі гілки"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "Перес&унути сюди"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Копіювати сюди"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Скасувати"

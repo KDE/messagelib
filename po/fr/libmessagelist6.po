@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-26 00:41+0000\n"
-"PO-Revision-Date: 2024-10-24 07:46+0200\n"
+"POT-Creation-Date: 2024-10-27 00:41+0000\n"
+"PO-Revision-Date: 2024-10-25 08:04+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1190,22 +1190,19 @@ msgstr ""
 "dessous peuvent être incomplets."
 
 #: core/widgets/searchlinecommand.cpp:69
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is smaller than"
-msgstr "est supérieur à"
+msgstr "La taille est inférieur à"
 
 #: core/widgets/searchlinecommand.cpp:71
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is larger than"
-msgstr "est supérieur à"
+msgstr "La taille est supérieure à"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Taille"
+msgstr "La taille est"
 
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
@@ -1407,17 +1404,16 @@ msgid "Size"
 msgstr "Taille"
 
 #: core/widgets/searchlinecommandwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Dossier"
+msgstr "Plus ancien"
 
 #: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Plus récent"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -2180,7 +2176,7 @@ msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Taille d'icônes :"
 
-#: utils/themeeditor.cpp:1447
+#: utils/themeeditor.cpp:1446
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2224,17 +2220,17 @@ msgstr "Déplier tous les fils de discussions"
 msgid "Collapse All Threads"
 msgstr "Réduire tous les fils de discussions"
 
-#: widget.cpp:419
+#: widget.cpp:423
 #, kde-format
 msgid "&Move Here"
 msgstr "Dé&placer ici"
 
-#: widget.cpp:420
+#: widget.cpp:424
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copier ici"
 
-#: widget.cpp:422
+#: widget.cpp:426
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuler"
