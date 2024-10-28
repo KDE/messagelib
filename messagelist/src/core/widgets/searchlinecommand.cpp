@@ -336,7 +336,7 @@ void SearchLineCommand::SearchLineInfo::clear()
 
 bool SearchLineCommand::SearchLineInfo::isValid() const
 {
-    if (type == SearchLineType::Unknown) {
+    if (type == SearchLineType::Unknown || type == SearchLineCommand::HasStateOrAttachment) {
         return false;
     }
     if (hasSubType(type) && !argument.isEmpty()) {
