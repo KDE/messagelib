@@ -228,13 +228,33 @@ void Filter::setSearchString(const SearchLineCommand &command)
     for (const auto &info : infos) {
         switch (info.type) {
         case SearchLineCommand::Literal: {
-            // TODO verify
-            query.matches(info.argument);
-            // query.setSplitSearchMatchString(needToSplitString);
+            QString newStr = info.argument;
+            const QStringList searchListTmp = info.argument.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            bool needToSplitString = false;
+            for (const QString &text : searchListTmp) {
+                if (text.size() >= 3) {
+                    mSearchList << text;
+                    if (!newStr.isEmpty()) {
+                        newStr += QLatin1Char(' ');
+                    }
+                    newStr += text;
+                }
+            }
+            needToSplitString = true;
+
+            mSearchString = newStr;
+            query.matches(newStr);
+            query.setSplitSearchMatchString(needToSplitString);
             break;
         }
         case SearchLineCommand::Subject: {
-            query.subjectMatches(info.argument);
+            mSearchString = info.argument;
+            query.subjectMatches(mSearchString);
+            break;
+        }
+        case SearchLineCommand::Body: {
+            mSearchString = info.argument;
+            query.bodyMatches(mSearchString);
             break;
         }
         case SearchLineCommand::Unknown:
