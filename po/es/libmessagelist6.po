@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:41+0000\n"
-"PO-Revision-Date: 2024-10-25 17:54+0200\n"
+"PO-Revision-Date: 2024-10-26 20:27+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1403,6 +1403,8 @@ msgstr "Despejar el campo de búsqueda rápida cuando se cambie de carpetas"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Conmute este botón si quiere mostrar u ocultar la línea de órdenes de "
+"búsqueda."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format

@@ -3,7 +3,7 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2012, 2014, 2015, 2020, 2021, 2023, 2024.
+# SPDX-FileCopyrightText: 2011, 2012, 2014, 2015, 2020, 2021, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Manuel Tortosa <manutortosa@chakra-project.org>, 2011.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2018, 2020, 2021.
 msgid ""
@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-01-12 18:50+0100\n"
+"PO-Revision-Date: 2024-10-27 13:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -73,9 +73,9 @@ msgstr ""
 "permeten ordres de substitució, simplement escrivint-les o seleccionant-les "
 "des del menú <i>Insereix ordre</i>.</p><p>Hi ha quatre tipus de plantilla "
 "personalitzada: la usada per a <i>respondre</i>, <i>respondre a tots</i>, "
-"<i>reenviar</i> i la <i>universal</i> que es pot usar per a qualsevol tipus "
-"d'operació. No podeu assignar una drecera de teclat a les plantilles de "
-"tipus <i>universal</i>.</p></qt>"
+"<i>reenviar</i> i la <i>universal</i> que es pot usar per a qualsevol classe "
+"d'operació. No podeu assignar una drecera de teclat a les plantilles "
+"<i>universal</i>.</p></qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
@@ -471,7 +471,7 @@ msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
-msgstr "Descarta fins a la propera línia"
+msgstr "Descarta fins a la línia següent"
 
 #: templatescommandmenu.cpp:151
 msgid "Template Comment"

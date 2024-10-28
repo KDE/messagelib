@@ -1407,8 +1407,7 @@ msgid "Larger"
 msgstr ""
 
 #: core/widgets/searchlinecommandwidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Μέγεθος"
@@ -1493,8 +1492,7 @@ msgid "BCC"
 msgstr "Κρυφή κοιν."
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgid "CC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "Κοιν."

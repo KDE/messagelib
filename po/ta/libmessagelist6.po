@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:41+0000\n"
-"PO-Revision-Date: 2024-10-09 21:04+0530\n"
+"PO-Revision-Date: 2024-10-27 12:03+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1153,20 +1153,17 @@ msgstr ""
 "முடக்கப்பட்டுள்ளது. கீழுள்ள முடிவுகள் அரைகுறையாக இருக்கலாம்."
 
 #: core/widgets/searchlinecommand.cpp:69
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is smaller than"
-msgstr "அதிகமான"
+msgstr "அளவு இதைவிட சிறியது"
 
 #: core/widgets/searchlinecommand.cpp:71
-#, fuzzy, kde-format
-#| msgid "is greater than"
+#, kde-format
 msgid "Size is larger than"
-msgstr "அதிகமான"
+msgstr "அளவு இதைவிட பெரியது"
 
 #: core/widgets/searchlinecommand.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
 msgstr "அளவு"
 
@@ -1257,78 +1254,67 @@ msgid "AND"
 msgstr "மற்றும்"
 
 #: core/widgets/searchlinecommandwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "தலைப்பு"
 
 #: core/widgets/searchlinecommandwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "அனுப்புநர்"
 
 #: core/widgets/searchlinecommandwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "பெறுநர்"
 
 #: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Cc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "நகல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Bcc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "மறைநகல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "உடனிணைப்பைக் கொண்டது"
 
 #: core/widgets/searchlinecommandwidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "Has Invitation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "அழைப்பிதழைக் கொண்டது"
 
 #: core/widgets/searchlinecommandwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "படித்த‍து"
 
 #: core/widgets/searchlinecommandwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "படிக்காத‍து"
 
 #: core/widgets/searchlinecommandwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "முக்கியமானது"
 
 #: core/widgets/searchlinecommandwidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "பொருட்படுத்தாதது"
@@ -1341,29 +1327,25 @@ msgid "Ham"
 msgstr "தேவையற்ற மின்னஞ்சல்"
 
 #: core/widgets/searchlinecommandwidget.cpp:57
-#, fuzzy, kde-format
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "ஸ்பேம்"
 
 #: core/widgets/searchlinecommandwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "கவனிக்கப்படுவது"
 
 #: core/widgets/searchlinecommandwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "பதிலளிக்கப்பட்டது"
 
 #: core/widgets/searchlinecommandwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "முன்னனுப்பப்பட்டது"
@@ -1372,33 +1354,31 @@ msgstr "முன்னனுப்பப்பட்டது"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "சிறியது"
 
 #: core/widgets/searchlinecommandwidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "பெரியது"
 
 #: core/widgets/searchlinecommandwidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "அளவு"
 
 #: core/widgets/searchlinecommandwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "அடைவு"
+msgstr "பழையது"
 
 #: core/widgets/searchlinecommandwidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "புதியது"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1462,11 +1442,10 @@ msgid "BCC"
 msgstr "மறைநகல்"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgid "CC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "CC"
+msgstr "நகல்"
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
