@@ -81,9 +81,9 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case From:
         return i18n("From contains");
     case Subject:
-        return i18n("Body contains");
-    case Body:
         return i18n("Subject contains");
+    case Body:
+        return i18n("Body contains");
     case HasAttachment:
         return i18n("Mail has attachment");
     case HasInvitation:
