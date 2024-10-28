@@ -167,7 +167,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("bla")};
         QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
-
     {
         const QString str{QStringLiteral("size:1M")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -181,6 +180,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Size is 1M")};
         QTest::newRow("size") << str << lstInfo << 1 << convertStr;
     }
+
     {
         const QString str{QStringLiteral("subject:ddd ffff")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -323,8 +323,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
             QStringLiteral("Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
         QTest::newRow("multiple elements duplicate2") << str << lstInfo << 4 << convertStr;
     }
-
-    // TODO bug
     {
         const QString str{QStringLiteral("subject:ddd ffff has:attachment")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -340,7 +338,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains ddd ffff")};
+        const QString convertStr{QStringLiteral("Subject contains ddd ffff AND Mail has attachment")};
         QTest::newRow("subject with space2") << str << lstInfo << 2 << convertStr;
     }
 }

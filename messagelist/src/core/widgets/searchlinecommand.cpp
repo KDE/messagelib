@@ -269,13 +269,24 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     }
     if (searchLineInfo.type != Unknown) {
         if (searchLineInfo.type == HasStateOrAttachment) {
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " type is HasStateOrAttachment";
+#endif
             if (mKeyList.contains(tmp)) {
                 searchLineInfo.type = mKeyList.value(tmp);
                 appendSearchLineInfo(searchLineInfo);
             }
         } else {
             if (!tmp.isEmpty()) {
-                searchLineInfo.argument = tmp;
+#ifdef DEBUG_COMMAND_PARSER
+                qDebug() << " add as original searchLineInfo" << searchLineInfo;
+#endif
+                const SearchLineCommand::SearchLineInfo newInfo = isAnotherInfo(tmp, searchLineInfo);
+                if (newInfo.type != Unknown) {
+                    searchLineInfo = newInfo;
+                } else {
+                    searchLineInfo.argument = tmp;
+                }
                 appendSearchLineInfo(searchLineInfo);
             }
         }
