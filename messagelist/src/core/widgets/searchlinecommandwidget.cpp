@@ -45,6 +45,7 @@ void SearchLineCommandWidget::fillWidgets()
 {
     mButtonsList = {
         {false, QStringLiteral("subject:"), i18nc("@action:button", "Subject")},
+        {false, QStringLiteral("body:"), i18nc("@action:button", "Body")},
         {false, QStringLiteral("from:"), i18nc("@action:button", "From")},
         {false, QStringLiteral("to:"), i18nc("@action:button", "To")},
         {false, QStringLiteral("cc:"), i18nc("@action:button", "Cc")},

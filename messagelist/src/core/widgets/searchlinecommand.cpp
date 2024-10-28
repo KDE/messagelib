@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"subject"_L1, SearchLineCommand::SearchLineType::Subject},
+    {"body"_L1, SearchLineCommand::SearchLineType::Body},
     {"to"_L1, SearchLineCommand::SearchLineType::To},
     {"cc"_L1, SearchLineCommand::SearchLineType::Cc},
     {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
@@ -46,7 +47,7 @@ bool SearchLineCommand::hasSubType(const QString &v)
 bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
 {
     return type == Date || type == Size || type == To || type == Bcc || type == Cc || type == From || type == Subject || type == Smaller || type == Larger
-        || type == OlderThan || type == NewerThan;
+        || type == OlderThan || type == NewerThan || type == Body;
 }
 
 bool SearchLineCommand::isEmpty() const
@@ -80,6 +81,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     case From:
         return i18n("From contains");
     case Subject:
+        return i18n("Body contains");
+    case Body:
         return i18n("Subject contains");
     case HasAttachment:
         return i18n("Mail has attachment");

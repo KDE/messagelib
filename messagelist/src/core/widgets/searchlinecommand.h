@@ -27,6 +27,7 @@ public:
         Cc,
         From,
         Subject,
+        Body,
         Date,
         Size,
         HasAttachment,
