@@ -258,6 +258,39 @@ void SearchLineCommandTest::shouldParseInfo_data()
             "Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND literal")};
         QTest::newRow("multiple elements2") << str << lstInfo << 5 << convertStr;
     }
+
+    {
+        const QString str{QStringLiteral("has:attachment subject:ddd ffff has:attachment from:laurent <foo@kde.org> cc:test@kde.org")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::HasAttachment;
+            lstInfo.append(info);
+        }
+
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("ddd ffff");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
+            info.argument = QStringLiteral("laurent <foo@kde.org>");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Cc;
+            info.argument = QStringLiteral("test@kde.org");
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{
+            QStringLiteral("Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
+        QTest::newRow("multiple elements duplicate") << str << lstInfo << 4 << convertStr;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
