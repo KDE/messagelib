@@ -18,6 +18,8 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     flowLayout->setObjectName(QStringLiteral("flowLayout"));
     flowLayout->setContentsMargins({});
     flowLayout->setSpacing(0);
+    flowLayout->setHorizontalSpacing(0);
+    flowLayout->setVerticalSpacing(0);
     fillWidgets();
     Q_ASSERT(!mButtonsList.isEmpty());
     for (const auto &info : std::as_const(mButtonsList)) {
