@@ -323,6 +323,26 @@ void SearchLineCommandTest::shouldParseInfo_data()
             QStringLiteral("Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
         QTest::newRow("multiple elements duplicate2") << str << lstInfo << 4 << convertStr;
     }
+
+    // TODO bug
+    {
+        const QString str{QStringLiteral("subject:ddd ffff has:attachment")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("ddd ffff");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::HasAttachment;
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("Subject contains ddd ffff")};
+        QTest::newRow("subject with space2") << str << lstInfo << 2 << convertStr;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
