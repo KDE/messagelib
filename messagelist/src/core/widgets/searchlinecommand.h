@@ -73,6 +73,7 @@ public:
 private:
     [[nodiscard]] MESSAGELIST_NO_EXPORT QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
     [[nodiscard]] MESSAGELIST_NO_EXPORT SearchLineInfo isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo);
+    MESSAGELIST_NO_EXPORT void appendSearchLineInfo(SearchLineInfo searchLineInfo);
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };

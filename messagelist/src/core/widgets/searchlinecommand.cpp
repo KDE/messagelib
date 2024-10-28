@@ -152,7 +152,7 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
             searchLineInfo.argument = tmp;
             // qDebug() << " AAAAAAAAAAAAAAAAAAAAAAAAAAA " << searchLineInfo;
             if (searchLineInfo.isValid()) {
-                mSearchLineInfo.append(searchLineInfo);
+                appendSearchLineInfo(searchLineInfo);
             }
 #ifdef DEBUG_COMMAND_PARSER
             qDebug() << " Add  searchLineInfo" << searchLineInfo;
@@ -231,7 +231,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp += ch;
             }
             if (searchLineInfo.isValid() && parentheses == 0) {
-                mSearchLineInfo.append(std::move(searchLineInfo));
+                appendSearchLineInfo(searchLineInfo);
                 searchLineInfo.clear();
                 tmp.clear();
             }
@@ -257,7 +257,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
 #ifdef DEBUG_COMMAND_PARSER
                 qDebug() << " new values " << searchLineInfo;
 #endif
-                mSearchLineInfo.append(std::move(searchLineInfo));
+                appendSearchLineInfo(searchLineInfo);
                 searchLineInfo.clear();
             }
         } else {
@@ -271,19 +271,19 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
         if (searchLineInfo.type == HasStateOrAttachment) {
             if (mKeyList.contains(tmp)) {
                 searchLineInfo.type = mKeyList.value(tmp);
-                mSearchLineInfo.append(std::move(searchLineInfo));
+                appendSearchLineInfo(searchLineInfo);
             }
         } else {
             if (!tmp.isEmpty()) {
                 searchLineInfo.argument = tmp;
-                mSearchLineInfo.append(std::move(searchLineInfo));
+                appendSearchLineInfo(searchLineInfo);
             }
         }
     } else {
         if (!tmp.isEmpty()) {
             searchLineInfo.type = Literal;
             searchLineInfo.argument = tmp;
-            mSearchLineInfo.append(std::move(searchLineInfo));
+            appendSearchLineInfo(searchLineInfo);
         }
     }
 #ifdef DEBUG_COMMAND_PARSER
@@ -293,6 +293,16 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     // TODO add size: ?
     // TODO add support for double quote
     // We need to extend emailquery or creating query by hand
+}
+
+void SearchLineCommand::appendSearchLineInfo(SearchLineInfo searchLineInfo)
+{
+    if (searchLineInfo.mustBeUnique()) {
+        if (mSearchLineInfo.contains(searchLineInfo)) {
+            return;
+        }
+    }
+    mSearchLineInfo.append(std::move(searchLineInfo));
 }
 
 QList<SearchLineCommand::SearchLineInfo> SearchLineCommand::searchLineInfo() const
