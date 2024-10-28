@@ -227,13 +227,23 @@ void Filter::setSearchString(const SearchLineCommand &command)
     Akonadi::Search::PIM::EmailQuery query;
     for (const auto &info : infos) {
         switch (info.type) {
+        case SearchLineCommand::Literal: {
+            // TODO verify
+            query.matches(info.argument);
+            // query.setSplitSearchMatchString(needToSplitString);
+            break;
+        }
+        case SearchLineCommand::Subject: {
+            query.subjectMatches(info.argument);
+            break;
+        }
         case SearchLineCommand::Unknown:
         case SearchLineCommand::HasStateOrAttachment:
-        case SearchLineCommand::Literal:
-
-        case SearchLineCommand::Subject:
+            // Nothing
+            break;
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
+            // TODO
             break;
         case SearchLineCommand::HasAttachment: {
             Akonadi::MessageStatus status;
