@@ -301,7 +301,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     qDebug() << " END " << mSearchLineInfo;
 #endif
     // TODO add date ?
-    // TODO add size: ?
     // TODO add support for double quote
     // We need to extend emailquery or creating query by hand
 }
