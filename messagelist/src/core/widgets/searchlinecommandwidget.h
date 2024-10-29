@@ -20,6 +20,10 @@ public:
     explicit SearchLineCommandWidget(QWidget *parent = nullptr);
     ~SearchLineCommandWidget() override;
 
+    void setLabel(const QString &str);
+Q_SIGNALS:
+    void insertCommand(const QString &commandStr);
+
 private:
     SearchLineCommandButtonsWidget *const mSearchLineCommandButtonsWidget;
     QLabel *const mLabel;

@@ -23,8 +23,15 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
 
     mLabel->setObjectName(QStringLiteral("mLabel"));
     mainLayout->addWidget(mLabel);
+
+    connect(mSearchLineCommandButtonsWidget, &SearchLineCommandButtonsWidget::insertCommand, this, &SearchLineCommandWidget::insertCommand);
 }
 
 SearchLineCommandWidget::~SearchLineCommandWidget() = default;
+
+void SearchLineCommandWidget::setLabel(const QString &str)
+{
+    mLabel->setText(str);
+}
 
 #include "moc_searchlinecommandwidget.cpp"
