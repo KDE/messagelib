@@ -62,12 +62,14 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
     switch (type) {
     case Unknown:
     case HasStateOrAttachment:
-    case Literal:
+        return {};
         // TODO implement Date
     case Date:
     case OlderThan:
     case NewerThan:
         return {};
+    case Literal:
+        return i18n("Literal string");
     case Smaller:
         return i18n("Size is smaller than");
     case Larger:
