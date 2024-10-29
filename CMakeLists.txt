@@ -153,7 +153,7 @@ set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Se
 
 find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 
-option(OPTION_USE_SEARCH_COMMAND_LINE "Enable search command line (experimental)" OFF)
+option(OPTION_USE_SEARCH_COMMAND_LINE "Enable search command line" ON)
 
 if(OPTION_USE_SEARCH_COMMAND_LINE)
     set(USE_SEARCH_COMMAND_LINE 1)
