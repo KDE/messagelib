@@ -7,16 +7,22 @@
 
 #include "messagelist_private_export.h"
 #include <QWidget>
+class QLabel;
 namespace MessageList
 {
 namespace Core
 {
+class SearchLineCommandButtonsWidget;
 class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit SearchLineCommandWidget(QWidget *parent = nullptr);
     ~SearchLineCommandWidget() override;
+
+private:
+    SearchLineCommandButtonsWidget *const mSearchLineCommandButtonsWidget;
+    QLabel *const mLabel;
 };
 }
 }
