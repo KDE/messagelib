@@ -34,7 +34,7 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface() override;
 
-    enum class ConvertTextStatus {
+    enum class ConvertTextStatus : uint8_t {
         NotConverted,
         Converted,
         Error,

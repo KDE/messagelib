@@ -15,7 +15,7 @@ class OpenSavedFileFolderWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    enum class FileType {
+    enum class FileType : uint8_t {
         Attachment,
         Pdf,
     };

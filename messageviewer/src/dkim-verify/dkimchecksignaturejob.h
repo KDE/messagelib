@@ -33,7 +33,7 @@ public:
     };
     Q_ENUM(DKIMStatus)
 
-    enum class DKIMError : int {
+    enum class DKIMError : uint8_t {
         Any = 0,
         CorruptedBodyHash = 1,
         DomainNotExist = 2,
@@ -57,7 +57,7 @@ public:
         PublicKeyConversionError = 20,
     };
     Q_ENUM(DKIMError)
-    enum class DKIMWarning : int {
+    enum class DKIMWarning : uint8_t {
         Any = 0,
         SignatureExpired = 1,
         SignatureCreatedInFuture = 2,
@@ -67,7 +67,7 @@ public:
     };
     Q_ENUM(DKIMWarning)
 
-    enum class AuthenticationMethod : int {
+    enum class AuthenticationMethod : uint8_t {
         Unknown = 0,
         Dkim = 1,
         Spf = 2,

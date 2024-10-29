@@ -22,12 +22,12 @@ class MESSAGEVIEWER_EXPORT DKIMInfo
 public:
     DKIMInfo();
 
-    enum CanonicalizationType {
+    enum CanonicalizationType : uint8_t {
         Unknown,
         Simple,
         Relaxed,
     };
-    enum class HashingAlgorithmType {
+    enum class HashingAlgorithmType : uint8_t {
         Any,
         Sha1,
         Sha256,

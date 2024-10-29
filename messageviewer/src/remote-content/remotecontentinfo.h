@@ -18,7 +18,7 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentInfo
 {
     Q_GADGET
 public:
-    enum class RemoteContentInfoStatus {
+    enum class RemoteContentInfoStatus : uint8_t {
         Unknown,
         Blocked,
         Authorized,
