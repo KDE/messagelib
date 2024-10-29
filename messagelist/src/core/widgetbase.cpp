@@ -1012,16 +1012,13 @@ void Widget::searchTimerFired()
     }
 
     const QString text = d->quickSearchLine->searchEdit()->text();
-
-    // TODO extract SearchLineCommand here.
-    // Convert in search option
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }
 #if USE_SEARCH_COMMAND_LINE
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
-    qDebug() << " text " << text << " command " << command.searchLineInfo();
+    // qDebug() << " text " << text << " command " << command.searchLineInfo();
     d->mFilter->setSearchString(command);
 #else
     d->mFilter->setCurrentFolder(d->mCurrentFolder);
