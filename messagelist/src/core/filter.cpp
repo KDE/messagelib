@@ -266,7 +266,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
         case SearchLineCommand::Category:
-            // TODO
+            // TODO implement tag support
             break;
         case SearchLineCommand::HasAttachment: {
             Akonadi::MessageStatus status;
