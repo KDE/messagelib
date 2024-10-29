@@ -23,6 +23,7 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
 
     mLabel->setObjectName(QStringLiteral("mLabel"));
     mainLayout->addWidget(mLabel);
+    mLabel->setWordWrap(true);
 
     connect(mSearchLineCommandButtonsWidget, &SearchLineCommandButtonsWidget::insertCommand, this, &SearchLineCommandWidget::insertCommand);
 }

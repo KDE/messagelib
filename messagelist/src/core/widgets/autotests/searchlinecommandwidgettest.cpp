@@ -29,6 +29,7 @@ void SearchLineCommandWidgetTest::shouldHaveDefaultValues()
     auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
+    QVERIFY(mLabel->wordWrap());
 }
 
 #include "moc_searchlinecommandwidgettest.cpp"
