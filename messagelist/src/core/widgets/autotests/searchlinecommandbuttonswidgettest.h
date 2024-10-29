@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class SearchLineCommandWidgetTest : public QObject
+class SearchLineCommandButtonsWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SearchLineCommandWidgetTest(QObject *parent = nullptr);
-    ~SearchLineCommandWidgetTest() override = default;
+    explicit SearchLineCommandButtonsWidgetTest(QObject *parent = nullptr);
+    ~SearchLineCommandButtonsWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

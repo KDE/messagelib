@@ -22,7 +22,7 @@ class SearchLineStatus;
 class Filter;
 class SearchStatusButtons;
 class SearchMessageByButtons;
-class SearchLineCommandWidget;
+class SearchLineCommandButtonsWidget;
 /**
  * @brief The QuickSearchLine class
  * @author Laurent Montel <montel@kde.org>
@@ -75,7 +75,7 @@ private:
     SearchStatusButtons *const mSearchStatusButtons;
     SearchMessageByButtons *const mSearchMessageByButtons;
 #if USE_SEARCH_COMMAND_LINE
-    SearchLineCommandWidget *const mSearchLineCommandWidget;
+    SearchLineCommandButtonsWidget *const mSearchLineCommandWidget;
 #endif
     QComboBox *const mTagFilterCombo;
     QList<Akonadi::MessageStatus> mLstStatus;

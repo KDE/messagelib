@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "searchlinecommandwidget.h"
+#include "searchlinecommandbuttonswidget.h"
 #include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
 #include <QEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
-SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
+SearchLineCommandButtonsWidget::SearchLineCommandButtonsWidget(QWidget *parent)
     : QFrame{parent}
 {
     auto flowLayout = new SearchLineCommandFlowLayout(this);
@@ -27,9 +27,9 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     }
 }
 
-SearchLineCommandWidget::~SearchLineCommandWidget() = default;
+SearchLineCommandButtonsWidget::~SearchLineCommandButtonsWidget() = default;
 
-QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)
+QPushButton *SearchLineCommandButtonsWidget::createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr)
 {
     auto pushButton = new QPushButton(i18nStr, this);
     pushButton->setObjectName(commandStr);
@@ -41,7 +41,7 @@ QPushButton *SearchLineCommandWidget::createPushButton(bool needSpace, const QSt
     return pushButton;
 }
 
-void SearchLineCommandWidget::fillWidgets()
+void SearchLineCommandButtonsWidget::fillWidgets()
 {
     mButtonsList = {
         {false, QStringLiteral("subject:"), i18nc("@action:button", "Subject")},
@@ -71,4 +71,4 @@ void SearchLineCommandWidget::fillWidgets()
     };
 }
 
-#include "moc_searchlinecommandwidget.cpp"
+#include "moc_searchlinecommandbuttonswidget.cpp"

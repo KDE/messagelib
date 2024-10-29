@@ -4,20 +4,20 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "searchlinecommandwidgettest.h"
+#include "searchlinecommandbuttonswidgettest.h"
+#include "core/widgets/searchlinecommandbuttonswidget.h"
 #include "core/widgets/searchlinecommandflowlayout.h"
-#include "core/widgets/searchlinecommandwidget.h"
 #include <QTest>
-QTEST_MAIN(SearchLineCommandWidgetTest)
+QTEST_MAIN(SearchLineCommandButtonsWidgetTest)
 
-SearchLineCommandWidgetTest::SearchLineCommandWidgetTest(QObject *parent)
+SearchLineCommandButtonsWidgetTest::SearchLineCommandButtonsWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void SearchLineCommandWidgetTest::shouldHaveDefaultValues()
+void SearchLineCommandButtonsWidgetTest::shouldHaveDefaultValues()
 {
-    MessageList::Core::SearchLineCommandWidget w;
+    MessageList::Core::SearchLineCommandButtonsWidget w;
 
     auto flowLayout = w.findChild<MessageList::Core::SearchLineCommandFlowLayout *>(QStringLiteral("flowLayout"));
     QVERIFY(flowLayout);
@@ -28,4 +28,4 @@ void SearchLineCommandWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(flowLayout->verticalSpacing(), 0);
 }
 
-#include "moc_searchlinecommandwidgettest.cpp"
+#include "moc_searchlinecommandbuttonswidgettest.cpp"

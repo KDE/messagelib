@@ -14,12 +14,12 @@ namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_TESTS_EXPORT SearchLineCommandWidget : public QFrame
+class MESSAGELIST_TESTS_EXPORT SearchLineCommandButtonsWidget : public QFrame
 {
     Q_OBJECT
 public:
-    explicit SearchLineCommandWidget(QWidget *parent = nullptr);
-    ~SearchLineCommandWidget() override;
+    explicit SearchLineCommandButtonsWidget(QWidget *parent = nullptr);
+    ~SearchLineCommandButtonsWidget() override;
 
 Q_SIGNALS:
     void insertCommand(const QString &commandStr);

@@ -9,7 +9,7 @@
 #include <QLineEdit>
 #include <QVBoxLayout>
 #include <core/widgets/searchlinecommand.h>
-#include <core/widgets/searchlinecommandwidget.h>
+#include <core/widgets/searchlinecommandbuttonswidget.h>
 SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     : QWidget{parent}
     , mLineEdit(new QLineEdit(this))
@@ -18,14 +18,14 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     mainLayout->addWidget(mLineEdit);
-    MessageList::Core::SearchLineCommandWidget *w = new MessageList::Core::SearchLineCommandWidget(this);
+    MessageList::Core::SearchLineCommandButtonsWidget *w = new MessageList::Core::SearchLineCommandButtonsWidget(this);
     mainLayout->addWidget(w);
     mainLayout->addStretch(1);
     auto label = new QLabel(this);
     mainLayout->addWidget(label);
     mLineEdit->setClearButtonEnabled(true);
     label->setWordWrap(true);
-    connect(w, &MessageList::Core::SearchLineCommandWidget::insertCommand, this, [this](const QString &commandStr) {
+    connect(w, &MessageList::Core::SearchLineCommandButtonsWidget::insertCommand, this, [this](const QString &commandStr) {
         if (!mLineEdit->text().isEmpty() && mLineEdit->text().back() != QLatin1Char(' ')) {
             mLineEdit->insert(QStringLiteral(" "));
         }

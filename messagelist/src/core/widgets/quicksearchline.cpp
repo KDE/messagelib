@@ -20,7 +20,7 @@
 #include <QPushButton>
 #include <QStandardPaths>
 #if USE_SEARCH_COMMAND_LINE
-#include "core/widgets/searchlinecommandwidget.h"
+#include "core/widgets/searchlinecommandbuttonswidget.h"
 #endif
 using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
@@ -29,7 +29,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     , mSearchStatusButtons(new SearchStatusButtons(this))
     , mSearchMessageByButtons(new SearchMessageByButtons(this))
 #if USE_SEARCH_COMMAND_LINE
-    , mSearchLineCommandWidget(new SearchLineCommandWidget(this))
+    , mSearchLineCommandWidget(new SearchLineCommandButtonsWidget(this))
 #endif
     , mTagFilterCombo(new QComboBox(this))
 {
@@ -51,7 +51,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::searchCommandActionRequested, this, [this]() {
         mSearchLineCommandWidget->setVisible(!mSearchLineCommandWidget->isVisible());
     });
-    connect(mSearchLineCommandWidget, &SearchLineCommandWidget::insertCommand, mSearchEdit, &SearchLineStatus::slotInsertCommand);
+    connect(mSearchLineCommandWidget, &SearchLineCommandButtonsWidget::insertCommand, mSearchEdit, &SearchLineStatus::slotInsertCommand);
 #endif
 
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
