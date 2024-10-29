@@ -7,6 +7,9 @@
 #include "searchlinecommand.h"
 #include <KLocalizedString>
 #include <QDateTime>
+
+// #define DEBUG_COMMAND_PARSER 1
+
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
@@ -137,8 +140,6 @@ QString SearchLineCommand::generateCommadLineStr() const
     return result;
 }
 
-// #define DEBUG_COMMAND_PARSER 1
-
 SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo)
 {
     if (!tmp.contains(QLatin1Char(' '))) {
@@ -159,12 +160,15 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
             tmp.remove(key);
             tmp.removeLast(); // Remove last space
             searchLineInfo.argument = tmp;
+            if (!searchLineInfo.argument.isEmpty() && searchLineInfo.type == Unknown) {
+                searchLineInfo.type = Literal;
+            }
             // qDebug() << " AAAAAAAAAAAAAAAAAAAAAAAAAAA " << searchLineInfo;
             if (searchLineInfo.isValid()) {
                 appendSearchLineInfo(searchLineInfo);
             }
 #ifdef DEBUG_COMMAND_PARSER
-            qDebug() << " Add  searchLineInfo" << searchLineInfo;
+            qDebug() << " Add  searchLineInfo" << searchLineInfo << mSearchLineInfo;
 #endif
 
             SearchLineInfo info;
@@ -318,6 +322,9 @@ void SearchLineCommand::appendSearchLineInfo(SearchLineInfo searchLineInfo)
 {
     if (searchLineInfo.mustBeUnique()) {
         if (mSearchLineInfo.contains(searchLineInfo)) {
+#ifdef DEBUG_COMMAND_PARSER
+            qDebug() << " Already exist " << searchLineInfo;
+#endif
             return;
         }
     }
@@ -344,6 +351,9 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
 {
     if (type == SearchLineType::Unknown || type == SearchLineCommand::HasStateOrAttachment) {
         return false;
+    }
+    if (type == SearchLineType::Literal && !argument.isEmpty()) {
+        return true;
     }
     if (hasSubType(type) && !argument.isEmpty()) {
         return true;

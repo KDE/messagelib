@@ -43,6 +43,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
     QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("infos");
     QTest::addColumn<int>("numberElement");
     QTest::addColumn<QString>("convertedToString");
+#if 1
     {
         QString str;
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -111,7 +112,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
         info.argument = QStringLiteral(" bli bli bli");
         lstInfo.append(info);
-        const QString convertStr{QStringLiteral(" bli bli bli")};
+        const QString convertStr{QStringLiteral("Literal string  bli bli bli")};
         QTest::newRow("literal1") << str << lstInfo << 1 << convertStr;
     }
     {
@@ -164,7 +165,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("bla")};
+        const QString convertStr{QStringLiteral("Literal string bla")};
         QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
     {
@@ -254,8 +255,9 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral(
-            "Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND literal")};
+        const QString convertStr{
+            QStringLiteral("Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND Literal "
+                           "string literal")};
         QTest::newRow("multiple elements2") << str << lstInfo << 5 << convertStr;
     }
 
@@ -340,6 +342,32 @@ void SearchLineCommandTest::shouldParseInfo_data()
 
         const QString convertStr{QStringLiteral("Subject contains ddd ffff AND Mail has attachment")};
         QTest::newRow("subject with space2") << str << lstInfo << 2 << convertStr;
+    }
+#endif
+    {
+        const QString str{QStringLiteral("voiture subject:ddd ffff has:attachment")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
+            info.argument = QStringLiteral("voiture");
+            lstInfo.append(info);
+        }
+
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("ddd ffff");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::HasAttachment;
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("Literal string voiture AND Subject contains ddd ffff AND Mail has attachment")};
+        QTest::newRow("literal2") << str << lstInfo << 3 << convertStr;
     }
 }
 
