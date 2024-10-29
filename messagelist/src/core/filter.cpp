@@ -223,8 +223,6 @@ void Filter::setSearchString(const SearchLineCommand &command)
         return;
     }
     const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
-    // TODO Store it ?
-
     QList<Akonadi::MessageStatus> lstStatus;
     Akonadi::Search::PIM::EmailQuery query;
     for (const auto &info : infos) {
@@ -263,6 +261,10 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::HasStateOrAttachment:
             // Nothing
             break;
+        case SearchLineCommand::Larger:
+        case SearchLineCommand::Smaller:
+        case SearchLineCommand::OlderThan:
+        case SearchLineCommand::NewerThan:
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
         case SearchLineCommand::Category:
@@ -335,11 +337,6 @@ void Filter::setSearchString(const SearchLineCommand &command)
             lstStatus.append(status);
             break;
         }
-        case SearchLineCommand::Larger:
-        case SearchLineCommand::Smaller:
-        case SearchLineCommand::OlderThan:
-        case SearchLineCommand::NewerThan:
-            break;
         case SearchLineCommand::To:
             mSearchString = info.argument;
             query.addTo(info.argument);
