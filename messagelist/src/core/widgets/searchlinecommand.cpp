@@ -17,7 +17,7 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
     {"from"_L1, SearchLineCommand::SearchLineType::From},
     {"has:attachment"_L1, SearchLineCommand::SearchLineType::HasAttachment},
-    {"has:hasinvitation"_L1, SearchLineCommand::SearchLineType::HasInvitation},
+    {"has:invitation"_L1, SearchLineCommand::SearchLineType::HasInvitation},
     {"is:unread"_L1, SearchLineCommand::SearchLineType::IsUnRead},
     {"is:read"_L1, SearchLineCommand::SearchLineType::IsRead},
     {"is:important"_L1, SearchLineCommand::SearchLineType::IsImportant},
