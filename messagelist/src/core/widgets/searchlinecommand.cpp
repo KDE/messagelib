@@ -33,6 +33,7 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"older_than"_L1, SearchLineCommand::SearchLineType::OlderThan},
     {"newer_than"_L1, SearchLineCommand::SearchLineType::NewerThan},
     // after:before:older:newer:
+    // category:
     // TODO add support for OR
 };
 SearchLineCommand::SearchLineCommand() = default;
