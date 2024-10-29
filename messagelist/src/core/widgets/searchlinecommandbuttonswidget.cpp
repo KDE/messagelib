@@ -67,6 +67,7 @@ void SearchLineCommandButtonsWidget::fillWidgets()
         {false, QStringLiteral("size:"), i18nc("@action:button", "Size")},
         {false, QStringLiteral("older_than:"), i18nc("@action:button", "Older")},
         {false, QStringLiteral("newer_than:"), i18nc("@action:button", "Newer")},
+        {false, QStringLiteral("category:"), i18nc("@action:button", "Category")},
 #endif
     };
 }

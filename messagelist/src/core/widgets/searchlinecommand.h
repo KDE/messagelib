@@ -45,6 +45,7 @@ public:
         Smaller,
         OlderThan,
         NewerThan,
+        Category,
     };
     Q_ENUM(SearchLineType)
     struct SearchLineInfo {

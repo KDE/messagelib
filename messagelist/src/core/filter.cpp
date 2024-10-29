@@ -265,6 +265,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
             break;
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
+        case SearchLineCommand::Category:
             // TODO
             break;
         case SearchLineCommand::HasAttachment: {

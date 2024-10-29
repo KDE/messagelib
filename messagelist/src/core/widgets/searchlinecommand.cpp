@@ -32,6 +32,7 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"larger"_L1, SearchLineCommand::SearchLineType::Smaller},
     {"older_than"_L1, SearchLineCommand::SearchLineType::OlderThan},
     {"newer_than"_L1, SearchLineCommand::SearchLineType::NewerThan},
+    {"category"_L1, SearchLineCommand::SearchLineType::Category},
     // after:before:older:newer:
     // category:
     // TODO add support for OR
@@ -48,7 +49,7 @@ bool SearchLineCommand::hasSubType(const QString &v)
 bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
 {
     return type == Date || type == Size || type == To || type == Bcc || type == Cc || type == From || type == Subject || type == Smaller || type == Larger
-        || type == OlderThan || type == NewerThan || type == Body;
+        || type == OlderThan || type == NewerThan || type == Body || type == Category;
 }
 
 bool SearchLineCommand::isEmpty() const
@@ -85,6 +86,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("Subject contains");
     case Body:
         return i18n("Body contains");
+    case Category:
+        return i18n("Mail has tag");
     case HasAttachment:
         return i18n("Mail has attachment");
     case HasInvitation:
