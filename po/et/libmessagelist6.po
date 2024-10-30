@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
 "PO-Revision-Date: 2019-12-18 19:57+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1136,7 +1136,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Seadista..."
 
-#: core/widgets/quicksearchline.cpp:58
+#: core/widgets/quicksearchline.cpp:64
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1164,139 +1164,151 @@ msgstr ""
 "üldse indekseerimisest kõrvale jäetud. All näidatavad tulemused ei pruugi "
 "olla täielikud."
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:75
+#, fuzzy, kde-format
+#| msgid "Filtering"
+msgid "Literal string"
+msgstr "Filtreerimine"
+
+#: core/widgets/searchlinecommand.cpp:77
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is smaller than"
 msgstr "on suurem kui"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:79
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is larger than"
 msgstr "on suurem kui"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:81
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Size is"
 msgstr "Suurus"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:83
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:85
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:87
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:89
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:91
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Body contains"
 msgstr "sisaldab"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:95
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Mail has tag"
+msgstr "kaasatud failiga"
+
+#: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "kaasatud failiga"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Kutsega"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "&Kirjade saatmise viis"
 
-#: core/widgets/searchlinecommand.cpp:94
+#: core/widgets/searchlinecommand.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is read"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:96
+#: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Märgi lõim &lugemata lõimeks"
 
-#: core/widgets/searchlinecommand.cpp:98
+#: core/widgets/searchlinecommand.cpp:107
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Märgi lõim &lugemata lõimeks"
 
-#: core/widgets/searchlinecommand.cpp:100
+#: core/widgets/searchlinecommand.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Ham"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Spam"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:104
+#: core/widgets/searchlinecommand.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is watched"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:106
+#: core/widgets/searchlinecommand.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is replied"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:108
+#: core/widgets/searchlinecommand.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is forwarded"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:118
+#: core/widgets/searchlinecommand.cpp:127
 #, kde-format
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1304,41 +1316,41 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "Teema"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, fuzzy, kde-format
 #| msgid "Body"
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Põhitekst"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "Saatja"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "@action:button"
 msgid "To"
 msgstr "Saaja"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Pimekoopia"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1346,7 +1358,7 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Kaasatud failiga"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
@@ -1354,7 +1366,7 @@ msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Kutsega"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1362,14 +1374,14 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "Loetud"
 
-#: core/widgets/searchlinecommandwidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Lugemata"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1377,7 +1389,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "Tähtis"
 
-#: core/widgets/searchlinecommandwidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1385,7 +1397,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Eiratav"
 
-#: core/widgets/searchlinecommandwidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1393,7 +1405,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "Väärtpost"
 
-#: core/widgets/searchlinecommandwidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1401,7 +1413,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "Rämpspost"
 
-#: core/widgets/searchlinecommandwidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1409,14 +1421,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "Jälgitav"
 
-#: core/widgets/searchlinecommandwidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Vastatud"
 
-#: core/widgets/searchlinecommandwidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1424,37 +1436,43 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Edastatud"
 
-#: core/widgets/searchlinecommandwidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Suurus"
 
-#: core/widgets/searchlinecommandwidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Kaust"
 
-#: core/widgets/searchlinecommandwidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Category"
+msgstr "Kategooriad"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -7263,10 +7281,6 @@ msgstr "Ka&tkesta"
 #~ msgid "Address Books"
 #~ msgstr "&Aadressiraamat"
 
-#, fuzzy
-#~ msgid "Categories"
-#~ msgstr "Kategooriad"
-
 #~ msgid "Recent Addresses"
 #~ msgstr "Viimati kasutatud aadressid"
 
@@ -12895,9 +12909,6 @@ msgstr "Ka&tkesta"
 
 #~ msgid "Account Type: IMAP Account"
 #~ msgstr "Konto tüüp: IMAP konto"
-
-#~ msgid "Filtering"
-#~ msgstr "Filtreerimine"
 
 #~ msgctxt "Placeholder for the case that there is no folder."
 #~ msgid "<placeholder>none</placeholder>"

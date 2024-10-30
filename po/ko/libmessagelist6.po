@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1115,7 +1115,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "설정..."
 
-#: core/widgets/quicksearchline.cpp:58
+#: core/widgets/quicksearchline.cpp:64
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1141,131 +1141,143 @@ msgstr ""
 "이 질의에 포함된 일부 검색 폴더의 색인 작업이 진행 중이거나 색인에서 제외되었"
 "습니다. 아래 결과가 불완전할 수도 있습니다."
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:75
+#, kde-format
+msgid "Literal string"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "Size is smaller than"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "Size is larger than"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:81
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Size is"
 msgstr "크기"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "To contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "BCC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "CC contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "From contains"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:91
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
 msgid "Subject contains"
 msgstr "제목"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
 msgid "Body contains"
 msgstr "제목"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "Status of an item"
+#| msgid "Has Attachment"
+msgid "Mail has tag"
+msgstr "첨부 파일 포함"
+
+#: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail has attachment"
 msgstr "첨부 파일 포함"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "초대장 포함"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
 msgid "Mail is important"
 msgstr "중요함"
 
-#: core/widgets/searchlinecommand.cpp:94
+#: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is read"
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:96
+#: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:98
+#: core/widgets/searchlinecommand.cpp:107
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:100
+#: core/widgets/searchlinecommand.cpp:109
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ham"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:111
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Spam"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:104
+#: core/widgets/searchlinecommand.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
 msgid "Mail is watched"
 msgstr "첨부 파일 포함"
 
-#: core/widgets/searchlinecommand.cpp:106
+#: core/widgets/searchlinecommand.cpp:115
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is replied"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:108
+#: core/widgets/searchlinecommand.cpp:117
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is forwarded"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:118
+#: core/widgets/searchlinecommand.cpp:127
 #, kde-format
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1273,7 +1285,7 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "제목"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Body"
@@ -1281,34 +1293,34 @@ msgctxt "@action:button"
 msgid "Body"
 msgstr "본문"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "보낸 사람"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "@action:button"
 msgid "To"
 msgstr "받는 사람"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Bcc"
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "숨은 참조"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1316,7 +1328,7 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "첨부 파일 포함"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
@@ -1324,7 +1336,7 @@ msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "초대장 포함"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1332,14 +1344,14 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "읽음"
 
-#: core/widgets/searchlinecommandwidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1347,7 +1359,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "중요함"
 
-#: core/widgets/searchlinecommandwidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1355,7 +1367,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "무시됨"
 
-#: core/widgets/searchlinecommandwidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1363,7 +1375,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "햄"
 
-#: core/widgets/searchlinecommandwidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1371,7 +1383,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "스팸"
 
-#: core/widgets/searchlinecommandwidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1379,14 +1391,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "주시함"
 
-#: core/widgets/searchlinecommandwidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "답장 보냈음"
 
-#: core/widgets/searchlinecommandwidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1394,36 +1406,42 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "전달함"
 
-#: core/widgets/searchlinecommandwidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandwidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "크기"
 
-#: core/widgets/searchlinecommandwidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "폴더"
 
-#: core/widgets/searchlinecommandwidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Category"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:78

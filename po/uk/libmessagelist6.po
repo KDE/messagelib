@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:40+0000\n"
-"PO-Revision-Date: 2024-10-26 09:30+0300\n"
+"POT-Creation-Date: 2024-10-30 00:40+0000\n"
+"PO-Revision-Date: 2024-10-29 08:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1152,7 +1152,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Налаштувати…"
 
-#: core/widgets/quicksearchline.cpp:58
+#: core/widgets/quicksearchline.cpp:64
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1179,245 +1179,259 @@ msgstr ""
 "індексування або їх повністю виключено з індексування. Наведені нижче "
 "результати можуть бути неповними."
 
-#: core/widgets/searchlinecommand.cpp:70
+#: core/widgets/searchlinecommand.cpp:75
+#, kde-format
+msgid "Literal string"
+msgstr ""
+
+#: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Розмір є меншим за"
 
-#: core/widgets/searchlinecommand.cpp:72
+#: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "Size is larger than"
 msgstr "Розмір є більшим за"
 
-#: core/widgets/searchlinecommand.cpp:74
+#: core/widgets/searchlinecommand.cpp:81
 #, kde-format
 msgid "Size is"
 msgstr "Розмір дорівнює"
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "To contains"
 msgstr "«Кому» містить"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "BCC contains"
 msgstr "«Пр. копія» містить"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "CC contains"
 msgstr "«Копія» містить"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "From contains"
 msgstr "«Від» містить"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:91
 #, kde-format
 msgid "Subject contains"
 msgstr "Тема містить"
 
-#: core/widgets/searchlinecommand.cpp:86
-#, fuzzy, kde-format
-#| msgid "To contains"
+#: core/widgets/searchlinecommand.cpp:93
+#, kde-format
 msgid "Body contains"
-msgstr "«Кому» містить"
+msgstr "Вміст містить"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:95
+#, fuzzy, kde-format
+#| msgid "Mail has attachment"
+msgid "Mail has tag"
+msgstr "Повідомлення містить долучення"
+
+#: core/widgets/searchlinecommand.cpp:97
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Повідомлення містить долучення"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:99
 #, kde-format
 msgid "Mail has invitation"
 msgstr "У повідомленні є запрошення"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:101
 #, kde-format
 msgid "Mail is important"
 msgstr "Повідомлення є важливим"
 
-#: core/widgets/searchlinecommand.cpp:94
+#: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is read"
 msgstr "Повідомлення прочитано"
 
-#: core/widgets/searchlinecommand.cpp:96
+#: core/widgets/searchlinecommand.cpp:105
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Повідомлення не прочитано"
 
-#: core/widgets/searchlinecommand.cpp:98
+#: core/widgets/searchlinecommand.cpp:107
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Повідомлення проігноровано"
 
-#: core/widgets/searchlinecommand.cpp:100
+#: core/widgets/searchlinecommand.cpp:109
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Повідомлення є бажаним"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:111
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Повідомлення є небажаним"
 
-#: core/widgets/searchlinecommand.cpp:104
+#: core/widgets/searchlinecommand.cpp:113
 #, kde-format
 msgid "Mail is watched"
 msgstr "Повідомлення з наглядом"
 
-#: core/widgets/searchlinecommand.cpp:106
+#: core/widgets/searchlinecommand.cpp:115
 #, kde-format
 msgid "Mail is replied"
 msgstr "Повідомлення з відповіддю"
 
-#: core/widgets/searchlinecommand.cpp:108
+#: core/widgets/searchlinecommand.cpp:117
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Повідомлення переспрямовано"
 
-#: core/widgets/searchlinecommand.cpp:118
+#: core/widgets/searchlinecommand.cpp:127
 #, kde-format
 msgid "AND"
 msgstr "І"
 
-#: core/widgets/searchlinecommandwidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Тема"
 
-#: core/widgets/searchlinecommandwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Вміст"
 
-#: core/widgets/searchlinecommandwidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Від"
 
-#: core/widgets/searchlinecommandwidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "До"
 
-#: core/widgets/searchlinecommandwidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "Копія"
 
-#: core/widgets/searchlinecommandwidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Пр. копія"
 
-#: core/widgets/searchlinecommandwidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Має долучення"
 
-#: core/widgets/searchlinecommandwidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Містить запрошення"
 
-#: core/widgets/searchlinecommandwidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Прочитане"
 
-#: core/widgets/searchlinecommandwidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Непрочитане"
 
-#: core/widgets/searchlinecommandwidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Важливе"
 
-#: core/widgets/searchlinecommandwidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Проігноровано"
 
-#: core/widgets/searchlinecommandwidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Не спам"
 
-#: core/widgets/searchlinecommandwidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Спам"
 
-#: core/widgets/searchlinecommandwidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "З наглядом"
 
-#: core/widgets/searchlinecommandwidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "З відповіддю"
 
-#: core/widgets/searchlinecommandwidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Переспрямовано"
 
-#: core/widgets/searchlinecommandwidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Менший"
 
-#: core/widgets/searchlinecommandwidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Більший"
 
-#: core/widgets/searchlinecommandwidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Розмір"
 
-#: core/widgets/searchlinecommandwidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Старіше"
 
-#: core/widgets/searchlinecommandwidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Новіше"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Category"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
