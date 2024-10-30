@@ -56,6 +56,7 @@ public:
         [[nodiscard]] bool operator==(const SearchLineInfo &other) const;
         [[nodiscard]] bool isValidDate() const;
         [[nodiscard]] bool mustBeUnique() const;
+        [[nodiscard]] qint64 convertArgumentAsSize() const;
     };
     SearchLineCommand();
     ~SearchLineCommand();

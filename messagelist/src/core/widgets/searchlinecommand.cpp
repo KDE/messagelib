@@ -383,6 +383,12 @@ bool SearchLineCommand::SearchLineInfo::mustBeUnique() const
         || type == IsWatched || type == IsReplied || type == IsForwarded;
 }
 
+qint64 SearchLineCommand::SearchLineInfo::convertArgumentAsSize() const
+{
+    // TODO convert it
+    return {};
+}
+
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLineInfo &info)
 {
     d << " type " << info.type;
