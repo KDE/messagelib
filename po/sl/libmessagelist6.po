@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-29 07:12+0100\n"
+"PO-Revision-Date: 2024-10-30 05:53+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1179,7 +1179,7 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Dobesedni niz"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
@@ -1227,10 +1227,9 @@ msgid "Body contains"
 msgstr "Telo vsebuje"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "Pismo ima prilogo"
+msgstr "Pismo ima oznako"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1428,7 +1427,7 @@ msgstr "Novejše"
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategorija"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

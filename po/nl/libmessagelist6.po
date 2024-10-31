@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-29 13:36+0100\n"
+"PO-Revision-Date: 2024-10-30 17:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1174,10 +1174,9 @@ msgstr ""
 "kunnen onvolledig zijn."
 
 #: core/widgets/searchlinecommand.cpp:75
-#, fuzzy, kde-format
-#| msgid "Filtering"
+#, kde-format
 msgid "Literal string"
-msgstr "Filteren"
+msgstr "Letterlijke tekenreeks"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
@@ -1225,10 +1224,9 @@ msgid "Body contains"
 msgstr "Inhoud bevat"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "E-mail heeft bijlage"
+msgstr "E-mail heeft tag"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1423,11 +1421,10 @@ msgid "Newer"
 msgstr "Nieuwer"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "is in category"
+#, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr "zit in categorie"
+msgstr "Categorie"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
