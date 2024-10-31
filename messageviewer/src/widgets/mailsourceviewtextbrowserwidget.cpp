@@ -23,7 +23,7 @@
 #include <KSyntaxHighlighting/Theme>
 
 #include <KLocalizedString>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <QAction>
 #include <QIcon>
 
@@ -126,7 +126,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     QMenu *popup = createStandardContextMenu();
     if (popup) {
         popup->addSeparator();
-        popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
+        popup->addAction(KStandardActions::find(this, &MailSourceViewTextBrowser::findText, this));
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         popup->addSeparator();
         popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
@@ -135,7 +135,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
                          &MailSourceViewTextBrowser::slotSpeakText);
 #endif
         popup->addSeparator();
-        popup->addAction(KStandardAction::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
+        popup->addAction(KStandardActions::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
 
         popup->exec(event->globalPos());
         delete popup;
