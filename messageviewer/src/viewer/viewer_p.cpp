@@ -35,6 +35,7 @@
 
 #include <KActionCollection>
 #include <KActionMenu>
+#include <KStandardActions>
 #include <QAction>
 #include <QHBoxLayout>
 #include <QPrintPreviewDialog>
@@ -1532,9 +1533,8 @@ void ViewerPrivate::createActions()
     //
 
     // copy selected text to clipboard
-    mCopyAction = ac->addAction(KStandardAction::Copy, QStringLiteral("kmail_copy"));
+    mCopyAction = ac->addAction(KStandardActions::Copy, QStringLiteral("kmail_copy"), this, &ViewerPrivate::slotCopySelectedText);
     mCopyAction->setText(i18n("Copy Text"));
-    connect(mCopyAction, &QAction::triggered, this, &ViewerPrivate::slotCopySelectedText);
 
     connect(mViewer, &MailWebEngineView::selectionChanged, this, &ViewerPrivate::viewerSelectionChanged);
     viewerSelectionChanged();
