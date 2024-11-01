@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-27 08:38+0100\n"
+"PO-Revision-Date: 2024-10-30 09:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1236,10 +1236,9 @@ msgid "Subject contains"
 msgstr "« Sujet » contient"
 
 #: core/widgets/searchlinecommand.cpp:93
-#, fuzzy, kde-format
-#| msgid "To contains"
+#, kde-format
 msgid "Body contains"
-msgstr "« À » contient"
+msgstr "Le corps contient"
 
 #: core/widgets/searchlinecommand.cpp:95
 #, fuzzy, kde-format
@@ -1314,9 +1313,7 @@ msgid "Subject"
 msgstr "Objet"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Corps"
