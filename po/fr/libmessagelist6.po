@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-30 09:51+0100\n"
+"PO-Revision-Date: 2024-10-31 09:16+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1190,10 +1190,9 @@ msgstr ""
 "dessous peuvent être incomplets."
 
 #: core/widgets/searchlinecommand.cpp:75
-#, fuzzy, kde-format
-#| msgid "Filtering"
+#, kde-format
 msgid "Literal string"
-msgstr "Filtrage"
+msgstr "Chaîne littérale"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
@@ -1241,10 +1240,9 @@ msgid "Body contains"
 msgstr "Le corps contient"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "Le courrier possède une pièce jointe"
+msgstr "Le courriel possède une étiquette"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1439,11 +1437,10 @@ msgid "Newer"
 msgstr "Plus récent"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "is in category"
+#, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr "est dans la catégorie"
+msgstr "Catégorie"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
