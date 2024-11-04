@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:40+0000\n"
-"PO-Revision-Date: 2024-10-29 16:17+0300\n"
+"PO-Revision-Date: 2024-11-02 16:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 "X-POOTLE-MTIME: 1413132534.000000\n"
 
@@ -1160,7 +1160,7 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Düz karakter dizisi"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
@@ -1208,10 +1208,9 @@ msgid "Body contains"
 msgstr "Gövde şunu içeriyor"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "Postanın eki var"
+msgstr "Postada etiket var"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1409,7 +1408,7 @@ msgstr "Daha Yeni"
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -2226,17 +2225,3 @@ msgstr "Buraya Ko&pyala"
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Durumu göre postaları süz"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Süzgeci Temizle"
-
-#~ msgid "Note Icon"
-#~ msgstr "Not Simgesi"
-
-#~ msgid "Note"
-#~ msgstr "Not"
