@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "config-messagelist.h"
 #include "messagelist_private_export.h"
 #include <Akonadi/Collection>
 #include <KMessageWidget>
@@ -47,7 +48,9 @@ private:
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;
+#if !FORCE_DISABLE_AKONADI_SEARCH
     Akonadi::Search::PIM::IndexedItems *const mIndexedItems;
+#endif
 };
 }
 }

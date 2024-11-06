@@ -19,13 +19,17 @@
 
 #include <KLocalizedString>
 
+#if !FORCE_DISABLE_AKONADI_SEARCH
 #include <PIM/indexeditems.h>
+#endif
 
 using namespace MessageList::Core;
 
 SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent)
     : KMessageWidget(parent)
+#if !FORCE_DISABLE_AKONADI_SEARCH
     , mIndexedItems(new Akonadi::Search::PIM::IndexedItems(this))
+#endif
 {
     setVisible(false);
     setWordWrap(true);
@@ -113,6 +117,7 @@ void SearchCollectionIndexingWarning::queryCollectionFetchFinished(KJob *job)
 
 void SearchCollectionIndexingWarning::queryIndexerStatus()
 {
+#if !FORCE_DISABLE_AKONADI_SEARCH
     bool allFullyIndexed = true;
     for (const Akonadi::Collection &col : std::as_const(mCollections)) {
         if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
@@ -132,6 +137,7 @@ void SearchCollectionIndexingWarning::queryIndexerStatus()
     if (!allFullyIndexed) {
         animatedShow();
     }
+#endif
 }
 
 #include "moc_searchcollectionindexingwarning.cpp"

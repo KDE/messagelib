@@ -7,13 +7,16 @@
  *******************************************************************************/
 
 #include "core/filter.h"
+#include "config-messagelist.h"
 #include "core/messageitem.h"
 #include <MessageCore/StringUtil>
 #include <TextUtils/ConvertText>
 
 #include <KRandom>
+#if !FORCE_DISABLE_AKONADI_SEARCH
 #include <PIM/emailquery.h>
 #include <PIM/resultiterator.h>
+#endif
 using namespace MessageList::Core;
 
 Filter::Filter(QObject *parent)
@@ -218,6 +221,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
 
 void Filter::setSearchString(const SearchLineCommand &command)
 {
+#if !FORCE_DISABLE_AKONADI_SEARCH
     mMatchingItemIds.clear();
     if (command.isEmpty()) {
         return;
@@ -367,10 +371,12 @@ void Filter::setSearchString(const SearchLineCommand &command)
         mMatchingItemIds << it.id();
     }
     Q_EMIT finished();
+#endif
 }
 
 void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)
 {
+#if !FORCE_DISABLE_AKONADI_SEARCH
     const QString trimStr = search.trimmed();
     if ((mSearchString == trimStr) && (mOptions == options)) {
         return;
@@ -433,6 +439,7 @@ void Filter::setSearchString(const QString &search, SearchMessageByButtons::Sear
         }
     }
     Q_EMIT finished();
+#endif
 }
 
 const QString &Filter::tagId() const

@@ -19,7 +19,9 @@
 #include "core/theme.h"
 #include "core/view.h"
 #include "core/widgets/quicksearchwarning.h"
+#if !FORCE_DISABLE_AKONADI_SEARCH
 #include "core/widgets/searchcollectionindexingwarning.h"
+#endif
 #include "core/widgets/tablockedwarning.h"
 #include "messagelistsettings.h"
 #include "widgets/searchlinestatus.h"
@@ -85,7 +87,9 @@ public:
     Widget *const q;
 
     QuickSearchWarning *quickSearchWarning = nullptr;
+#if !FORCE_DISABLE_AKONADI_SEARCH
     SearchCollectionIndexingWarning *searchCollectionIndexingWarning = nullptr;
+#endif
     TabLockedWarning *tabLockedWarning = nullptr;
     QuickSearchLine *quickSearchLine = nullptr;
     View *mView = nullptr;
@@ -135,8 +139,10 @@ Widget::Widget(QWidget *pParent)
     g->addWidget(d->quickSearchLine, 0);
     d->quickSearchWarning = new QuickSearchWarning(this);
     g->addWidget(d->quickSearchWarning, 0);
+#if !FORCE_DISABLE_AKONADI_SEARCH
     d->searchCollectionIndexingWarning = new SearchCollectionIndexingWarning(this);
     g->addWidget(d->searchCollectionIndexingWarning, 0);
+#endif
 
     d->tabLockedWarning = new TabLockedWarning(this);
     g->addWidget(d->tabLockedWarning, 0);
@@ -1111,7 +1117,9 @@ void Widget::setCurrentFolder(const Akonadi::Collection &collection)
 {
     if (!d->mLockTab) {
         d->mCurrentFolder = collection;
+#if !FORCE_DISABLE_AKONADI_SEARCH
         d->searchCollectionIndexingWarning->setCollection(collection);
+#endif
     }
 }
 
