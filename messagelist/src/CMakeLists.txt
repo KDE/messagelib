@@ -172,7 +172,6 @@ target_link_libraries(KPim6MessageList
     PRIVATE
     KPim6::MessageCore
     KPim6::PimCommonAkonadi
-    KPim6::AkonadiSearchPIM
     KF6::XmlGui
     KF6::IconThemes
     KF6::IconWidgets
@@ -181,6 +180,13 @@ target_link_libraries(KPim6MessageList
     KF6::TextWidgets
     KF6::TextUtils
 )
+
+if(NOT FORCE_DISABLE_AKONADI_SEARCH)
+    target_link_libraries(KPim6MessageList
+        PRIVATE
+        KPim6::AkonadiSearchPIM
+    )
+endif()
 
 set_target_properties(KPim6MessageList PROPERTIES
     VERSION ${MESSAGELIST_VERSION}

@@ -11,7 +11,6 @@ Dependencies:
     'pim/akonadi' : '@same'
     'pim/akonadi-contacts' : '@same'
     'pim/akonadi-mime' : '@same'
-    'pim/akonadi-search' : '@same'
     'pim/grantleetheme' : '@same'
     'pim/kidentitymanagement' : '@same'
     'pim/kmailtransport' : '@same'
@@ -25,6 +24,11 @@ Dependencies:
     'frameworks/kcolorscheme': '@latest-kf6'
     'libraries/qca' : '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
+
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'pim/akonadi-search' : '@same'
+
 
 Options:
   json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']
