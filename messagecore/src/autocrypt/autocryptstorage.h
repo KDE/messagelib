@@ -30,6 +30,8 @@ public:
     AutocryptRecipient::Ptr addRecipient(const QByteArray &addr);
     void deleteRecipient(const QByteArray &addr);
 
+    ~AutocryptStorage();
+
 private:
     MESSAGECORE_NO_EXPORT AutocryptStorage();
     static AutocryptStorage::Ptr mSelf;

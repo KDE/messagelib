@@ -88,6 +88,8 @@ void AutocryptStorage::deleteRecipient(const QByteArray &addr)
     d->recipients.remove(addr);
 }
 
+AutocryptStorage::~AutocryptStorage() = default;
+
 void AutocryptStorage::save()
 {
     Q_D(AutocryptStorage);

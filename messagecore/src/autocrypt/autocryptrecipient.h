@@ -25,6 +25,7 @@ class MESSAGECORE_EXPORT AutocryptRecipient
 public:
     using Ptr = QSharedPointer<AutocryptRecipient>;
     AutocryptRecipient();
+    ~AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
     void updateFromGossip(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
 

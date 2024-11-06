@@ -48,7 +48,7 @@ public:
         Category,
     };
     Q_ENUM(SearchLineType)
-    struct SearchLineInfo {
+    struct MESSAGELIST_TESTS_EXPORT SearchLineInfo {
         SearchLineType type = SearchLineType::Unknown;
         QString argument;
         void clear();

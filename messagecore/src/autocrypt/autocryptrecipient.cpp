@@ -91,6 +91,8 @@ AutocryptRecipient::AutocryptRecipient()
 {
 }
 
+AutocryptRecipient::~AutocryptRecipient() = default;
+
 void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header)
 {
     Q_D(AutocryptRecipient);
