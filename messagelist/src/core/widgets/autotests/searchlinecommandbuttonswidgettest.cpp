@@ -23,7 +23,7 @@ void SearchLineCommandButtonsWidgetTest::shouldHaveDefaultValues()
     QVERIFY(flowLayout);
     QCOMPARE(flowLayout->contentsMargins(), QMargins{});
     QCOMPARE(flowLayout->spacing(), 0);
-    QCOMPARE(flowLayout->count(), 21);
+    QCOMPARE(flowLayout->count(), 17);
     QCOMPARE(flowLayout->horizontalSpacing(), 0);
     QCOMPARE(flowLayout->verticalSpacing(), 0);
 }
