@@ -729,8 +729,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                 }
             });
 
-    QScopedPointer<Kleo::KeyResolver> keyResolver(
-        new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, expiryChecker()));
+    QScopedPointer<KeyResolver> keyResolver(new KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, expiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
@@ -750,7 +749,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
     if (!id.smimeEncryptionKey().isEmpty()) {
         encryptToSelfKeys.push_back(QLatin1StringView(id.smimeEncryptionKey()));
     }
-    if (canceled || keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
+    if (canceled || keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != ResolverResult::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set encryptoToSelf keys!";
         return {};
     }
@@ -762,7 +761,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
     if (!id.smimeSigningKey().isEmpty()) {
         signKeys.push_back(QLatin1StringView(id.smimeSigningKey()));
     }
-    if (canceled || keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
+    if (canceled || keyResolver->setSigningKeys(signKeys) != ResolverResult::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set signing keys!";
         return {};
     }
@@ -835,11 +834,11 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
     }
 
     canceled = false;
-    const Kleo::Result kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
-    if (kpgpResult == Kleo::Canceled || canceled) {
+    const auto kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
+    if (kpgpResult == ResolverResult::Canceled || canceled) {
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: one key resolution canceled by user";
         return {};
-    } else if (kpgpResult != Kleo::Ok) {
+    } else if (kpgpResult != ResolverResult::Ok) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: failed to resolve keys! oh noes";
         Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
@@ -1931,7 +1930,7 @@ void ComposerViewBase::markAllAttachmentsForEncryption(bool encrypt)
     }
 }
 
-bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled)
+bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled)
 {
     bool sign = false;
     switch (keyResolver->checkSigningPreferences(signSomething)) {
@@ -2060,7 +2059,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
 }
 
 bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
-                                                 Kleo::KeyResolver *keyResolver,
+                                                 KeyResolver *keyResolver,
                                                  bool encryptSomething,
                                                  bool signSomething,
                                                  bool &result,

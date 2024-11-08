@@ -51,21 +51,24 @@
 #include <memory>
 #include <set>
 
+using namespace MessageComposer;
+using namespace Kleo;
+
 //
 // some predicates to be used in STL algorithms:
 //
 
-static inline bool EmptyKeyList(const Kleo::KeyApprovalDialog::Item &item)
+static inline bool EmptyKeyList(const KeyApprovalDialog::Item &item)
 {
     return item.keys.empty();
 }
 
-static inline QString ItemDotAddress(const Kleo::KeyResolver::Item &item)
+static inline QString ItemDotAddress(const KeyResolver::Item &item)
 {
     return item.address;
 }
 
-static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
+static inline bool ApprovalNeeded(const KeyResolver::Item &item)
 {
     bool approvalNeeded = item.pref == Kleo::NeverEncrypt || item.keys.empty();
     if (!approvalNeeded && Kleo::DeVSCompliance::isCompliant()) {
@@ -74,9 +77,9 @@ static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
     return approvalNeeded;
 }
 
-static inline Kleo::KeyResolver::Item CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem, const Kleo::KeyApprovalDialog::Item &newItem)
+static inline KeyResolver::Item CopyKeysAndEncryptionPreferences(const KeyResolver::Item &oldItem, const KeyApprovalDialog::Item &newItem)
 {
-    return Kleo::KeyResolver::Item(oldItem.address, newItem.keys, newItem.pref, oldItem.signPref, oldItem.format);
+    return KeyResolver::Item(oldItem.address, newItem.keys, newItem.pref, oldItem.signPref, oldItem.format);
 }
 
 static bool ValidOpenPGPEncryptionKey(const GpgME::Key &key)
@@ -378,12 +381,12 @@ struct IsForFormat : std::function<bool(GpgME::Key)> {
 };
 }
 
-class Kleo::KeyResolver::SigningPreferenceCounter : public std::function<void(Kleo::KeyResolver::Item)>
+class KeyResolver::SigningPreferenceCounter : public std::function<void(KeyResolver::Item)>
 {
 public:
     SigningPreferenceCounter() = default;
 
-    void operator()(const Kleo::KeyResolver::Item &item);
+    void operator()(const KeyResolver::Item &item);
 #define make_int_accessor(x)                                                                                                                                   \
     unsigned int num##x() const                                                                                                                                \
     {                                                                                                                                                          \
@@ -401,7 +404,7 @@ public:
     unsigned int mAskSigningWheneverPossible = 0;
 };
 
-void Kleo::KeyResolver::SigningPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
+void KeyResolver::SigningPreferenceCounter::operator()(const KeyResolver::Item &item)
 {
     switch (item.signPref) {
 #define CASE(x)                                                                                                                                                \
@@ -419,12 +422,12 @@ void Kleo::KeyResolver::SigningPreferenceCounter::operator()(const Kleo::KeyReso
     ++mTotal;
 }
 
-class Kleo::KeyResolver::EncryptionPreferenceCounter : public std::function<void(Item)>
+class KeyResolver::EncryptionPreferenceCounter : public std::function<void(Item)>
 {
-    const Kleo::KeyResolver *_this;
+    const KeyResolver *_this;
 
 public:
-    EncryptionPreferenceCounter(const Kleo::KeyResolver *kr, EncryptionPreference defaultPreference)
+    EncryptionPreferenceCounter(const KeyResolver *kr, EncryptionPreference defaultPreference)
         : _this(kr)
         , mDefaultPreference(defaultPreference)
     {
@@ -457,7 +460,7 @@ public:
     unsigned int mAskWheneverPossible = 0;
 };
 
-void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
+void KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
 {
     if (_this) {
         if (item.needKeys) {
@@ -486,7 +489,7 @@ void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
 
 namespace
 {
-class FormatPreferenceCounterBase : public std::function<void(Kleo::KeyResolver::Item)>
+class FormatPreferenceCounterBase : public std::function<void(KeyResolver::Item)>
 {
 public:
     FormatPreferenceCounterBase() = default;
@@ -526,30 +529,24 @@ protected:
 class EncryptionFormatPreferenceCounter : public FormatPreferenceCounterBase
 {
 public:
-    EncryptionFormatPreferenceCounter()
-        : FormatPreferenceCounterBase()
-    {
-    }
+    EncryptionFormatPreferenceCounter() = default;
 
-    void operator()(const Kleo::KeyResolver::Item &item);
+    void operator()(const KeyResolver::Item &item);
 };
 
 class SigningFormatPreferenceCounter : public FormatPreferenceCounterBase
 {
 public:
-    SigningFormatPreferenceCounter()
-        : FormatPreferenceCounterBase()
-    {
-    }
+    SigningFormatPreferenceCounter() = default;
 
-    void operator()(const Kleo::KeyResolver::Item &item);
+    void operator()(const KeyResolver::Item &item);
 };
 
 #define CASE(x)                                                                                                                                                \
     if (item.format & Kleo::x##Format) {                                                                                                                       \
         ++m##x;                                                                                                                                                \
     }
-void EncryptionFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
+void EncryptionFormatPreferenceCounter::operator()(const KeyResolver::Item &item)
 {
     if (item.format & (Kleo::InlineOpenPGPFormat | Kleo::OpenPGPMIMEFormat)
         && std::any_of(item.keys.begin(),
@@ -568,7 +565,7 @@ void EncryptionFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item
     ++mTotal;
 }
 
-void SigningFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
+void SigningFormatPreferenceCounter::operator()(const KeyResolver::Item &item)
 {
     CASE(InlineOpenPGP);
     CASE(OpenPGPMIME);
@@ -593,11 +590,11 @@ static QString canonicalAddress(const QString &_address)
 }
 
 struct FormatInfo {
-    std::vector<Kleo::KeyResolver::SplitInfo> splitInfos;
+    std::vector<KeyResolver::SplitInfo> splitInfos;
     std::vector<GpgME::Key> signKeys;
 };
 
-struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
+struct Q_DECL_HIDDEN MessageComposer::KeyResolver::KeyResolverPrivate {
     bool mAkonadiLookupEnabled = true;
     bool mAutocryptEnabled = false;
     std::set<QByteArray> alreadyWarnedFingerprints;
@@ -620,7 +617,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
     std::shared_ptr<Kleo::ExpiryChecker> expiryChecker;
 };
 
-Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, const std::shared_ptr<Kleo::ExpiryChecker> &expiryChecker)
+KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, const std::shared_ptr<Kleo::ExpiryChecker> &expiryChecker)
     : d(new KeyResolverPrivate)
     , mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
@@ -630,12 +627,12 @@ Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryp
     d->expiryChecker = expiryChecker;
 }
 
-Kleo::KeyResolver::~KeyResolver() = default;
+KeyResolver::~KeyResolver() = default;
 
-Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerprints)
+ResolverResult KeyResolver::setEncryptToSelfKeys(const QStringList &fingerprints)
 {
     if (!encryptToSelf()) {
-        return Kleo::Ok;
+        return Ok;
     }
 
     std::vector<GpgME::Key> keys = lookup(fingerprints);
@@ -662,8 +659,8 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
                                                   KStandardGuiItem::cancel(),
                                                   QStringLiteral("unusable own encryption key warning"))
                 == KMessageBox::Continue
-            ? Kleo::Ok
-            : Kleo::Canceled;
+            ? Ok
+            : Canceled;
     }
 
     // check for near-expiry:
@@ -677,10 +674,10 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
         d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnEncryptionKey);
     }
 
-    return Kleo::Ok;
+    return Ok;
 }
 
-Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
+ResolverResult KeyResolver::setSigningKeys(const QStringList &fingerprints)
 {
     std::vector<GpgME::Key> keys = lookup(fingerprints, true); // secret keys
     std::remove_copy_if(keys.begin(), keys.end(), std::back_inserter(d->mOpenPGPSigningKeys), NotValidOpenPGPSigningKey);
@@ -704,8 +701,8 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
                                                   KStandardGuiItem::cancel(),
                                                   QStringLiteral("unusable signing key warning"))
                 == KMessageBox::Continue
-            ? Kleo::Ok
-            : Kleo::Canceled;
+            ? Ok
+            : Canceled;
     }
 
     // check for near expiry:
@@ -718,20 +715,20 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
         d->expiryChecker->checkKey(*it, Kleo::ExpiryChecker::OwnSigningKey);
     }
 
-    return Kleo::Ok;
+    return Ok;
 }
 
-void Kleo::KeyResolver::setPrimaryRecipients(const QStringList &addresses)
+void KeyResolver::setPrimaryRecipients(const QStringList &addresses)
 {
     d->mPrimaryEncryptionKeys = getEncryptionItems(addresses);
 }
 
-void Kleo::KeyResolver::setSecondaryRecipients(const QStringList &addresses)
+void KeyResolver::setSecondaryRecipients(const QStringList &addresses)
 {
     d->mSecondaryEncryptionKeys = getEncryptionItems(addresses);
 }
 
-std::vector<Kleo::KeyResolver::Item> Kleo::KeyResolver::getEncryptionItems(const QStringList &addresses)
+std::vector<KeyResolver::Item> KeyResolver::getEncryptionItems(const QStringList &addresses)
 {
     std::vector<Item> items;
     items.reserve(addresses.size());
@@ -768,7 +765,7 @@ static Kleo::Action action(bool doit, bool ask, bool donot, bool requested)
     return Kleo::Conflict;
 }
 
-Kleo::Action Kleo::KeyResolver::checkSigningPreferences(bool signingRequested) const
+Kleo::Action KeyResolver::checkSigningPreferences(bool signingRequested) const
 {
     if (signingRequested && d->mOpenPGPSigningKeys.empty() && d->mSMIMESigningKeys.empty()) {
         return Impossible;
@@ -789,12 +786,12 @@ Kleo::Action Kleo::KeyResolver::checkSigningPreferences(bool signingRequested) c
     return action(sign, ask, dontSign, signingRequested);
 }
 
-bool Kleo::KeyResolver::signingPossible() const
+bool KeyResolver::signingPossible() const
 {
     return !d->mOpenPGPSigningKeys.empty() || !d->mSMIMESigningKeys.empty();
 }
 
-Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionRequested) const
+Kleo::Action KeyResolver::checkEncryptionPreferences(bool encryptionRequested) const
 {
     if (d->mPrimaryEncryptionKeys.empty() && d->mSecondaryEncryptionKeys.empty()) {
         return DontDoIt;
@@ -843,13 +840,13 @@ Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionReques
     }
 }
 
-bool Kleo::KeyResolver::encryptionPossible() const
+bool KeyResolver::encryptionPossible() const
 {
     return std::none_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), EmptyKeyList)
         && std::none_of(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), EmptyKeyList);
 }
 
-Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &encryptionRequested)
+ResolverResult KeyResolver::resolveAllKeys(bool &signingRequested, bool &encryptionRequested)
 {
     if (!encryptionRequested && !signingRequested) {
         // make a dummy entry with all recipients, but no signing or
@@ -857,9 +854,9 @@ Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &enc
         dump();
         d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.emplace_back(allRecipients());
         dump();
-        return Kleo::Ok;
+        return Ok;
     }
-    Kleo::Result result = Kleo::Ok;
+    ResolverResult result = Ok;
     if (encryptionRequested) {
         bool finalySendUnencrypted = false;
         result = resolveEncryptionKeys(signingRequested, finalySendUnencrypted);
@@ -867,22 +864,22 @@ Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &enc
             encryptionRequested = false;
         }
     }
-    if (result != Kleo::Ok) {
+    if (result != Ok) {
         return result;
     }
     if (encryptionRequested) {
         result = resolveSigningKeysForEncryption();
     } else {
         result = resolveSigningKeysForSigningOnly();
-        if (result == Kleo::Failure) {
+        if (result == Failure) {
             signingRequested = false;
-            return Kleo::Ok;
+            return Ok;
         }
     }
     return result;
 }
 
-Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted)
+ResolverResult KeyResolver::resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted)
 {
     //
     // 1. Get keys for all recipients:
@@ -896,7 +893,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         it->keys = getEncryptionKeys(it->address, false);
         qCDebug(MESSAGECOMPOSER_LOG) << "got # keys:" << it->keys.size();
         if (it->keys.empty()) {
-            return Kleo::Canceled;
+            return Canceled;
         }
         QString addr = canonicalAddress(it->address).toLower();
         const auto pref = lookupContactPreferences(addr);
@@ -912,7 +909,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         }
         it->keys = getEncryptionKeys(it->address, false);
         if (it->keys.empty()) {
-            return Kleo::Canceled;
+            return Canceled;
         }
         QString addr = canonicalAddress(it->address).toLower();
         const auto pref = lookupContactPreferences(addr);
@@ -923,8 +920,8 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     // 1a: Present them to the user
 
-    const Kleo::Result res = showKeyApprovalDialog(finalySendUnencrypted);
-    if (res != Kleo::Ok) {
+    const ResolverResult res = showKeyApprovalDialog(finalySendUnencrypted);
+    if (res != Ok) {
         return res;
     }
 
@@ -989,7 +986,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
     // 4. Check that we have the right keys for encryptToSelf()
 
     if (!encryptToSelf()) {
-        return Kleo::Ok;
+        return Ok;
     }
 
     // 4a. Check for OpenPGP keys
@@ -1015,7 +1012,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                                    KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
                 == KMessageBox::Cancel) {
-                return Kleo::Canceled;
+                return Canceled;
             }
             // FIXME: Allow selection
         }
@@ -1044,7 +1041,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                                    KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
                 == KMessageBox::Cancel) {
-                return Kleo::Canceled;
+                return Canceled;
             }
             // FIXME: Allow selection
         }
@@ -1054,10 +1051,10 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
     // FIXME: Present another message if _both_ OpenPGP and S/MIME keys
     // are missing.
 
-    return Kleo::Ok;
+    return Ok;
 }
 
-Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
+ResolverResult KeyResolver::resolveSigningKeysForEncryption()
 {
     if ((!encryptionItems(InlineOpenPGPFormat).empty() || !encryptionItems(OpenPGPMIMEFormat).empty()) && d->mOpenPGPSigningKeys.empty()) {
         const QString msg = i18n(
@@ -1073,7 +1070,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
             == KMessageBox::Cancel) {
-            return Kleo::Canceled;
+            return Canceled;
         }
         // FIXME: Allow selection
     }
@@ -1091,7 +1088,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
             == KMessageBox::Cancel) {
-            return Kleo::Canceled;
+            return Canceled;
         }
         // FIXME: Allow selection
     }
@@ -1107,10 +1104,10 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
         }
     }
 
-    return Kleo::Ok;
+    return Ok;
 }
 
-Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
+ResolverResult KeyResolver::resolveSigningKeysForSigningOnly()
 {
     //
     // we don't need to distinguish between primary and secondary
@@ -1145,7 +1142,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
         fi.splitInfos.resize(1);
         fi.splitInfos.front() = SplitInfo(allRecipients());
         dump();
-        return Kleo::Ok;
+        return Ok;
     }
 
     const QString msg = i18n(
@@ -1155,12 +1152,12 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
         "Send message without signing?");
     if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "No signing possible"), KStandardGuiItem::cont()) == KMessageBox::Continue) {
         d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.emplace_back(allRecipients());
-        return Kleo::Failure; // means "Ok, but without signing"
+        return Failure; // means "Ok, but without signing"
     }
-    return Kleo::Canceled;
+    return Canceled;
 }
 
-std::vector<GpgME::Key> Kleo::KeyResolver::signingKeysFor(CryptoMessageFormat f) const
+std::vector<GpgME::Key> KeyResolver::signingKeysFor(CryptoMessageFormat f) const
 {
     if (isOpenPGP(f)) {
         return d->mOpenPGPSigningKeys;
@@ -1171,7 +1168,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::signingKeysFor(CryptoMessageFormat f)
     return {};
 }
 
-std::vector<GpgME::Key> Kleo::KeyResolver::encryptToSelfKeysFor(CryptoMessageFormat f) const
+std::vector<GpgME::Key> KeyResolver::encryptToSelfKeysFor(CryptoMessageFormat f) const
 {
     if (isOpenPGP(f)) {
         return d->mOpenPGPEncryptToSelfKeys;
@@ -1182,7 +1179,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::encryptToSelfKeysFor(CryptoMessageFor
     return {};
 }
 
-QStringList Kleo::KeyResolver::allRecipients() const
+QStringList KeyResolver::allRecipients() const
 {
     QStringList result;
     std::transform(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), std::back_inserter(result), ItemDotAddress);
@@ -1190,7 +1187,7 @@ QStringList Kleo::KeyResolver::allRecipients() const
     return result;
 }
 
-void Kleo::KeyResolver::collapseAllSplitInfos()
+void KeyResolver::collapseAllSplitInfos()
 {
     dump();
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
@@ -1212,7 +1209,7 @@ void Kleo::KeyResolver::collapseAllSplitInfos()
     dump();
 }
 
-void Kleo::KeyResolver::addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int f)
+void KeyResolver::addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int f)
 {
     dump();
     if (!f || keys.empty()) {
@@ -1234,7 +1231,7 @@ void Kleo::KeyResolver::addToAllSplitInfos(const std::vector<GpgME::Key> &keys, 
     dump();
 }
 
-void Kleo::KeyResolver::dump() const
+void KeyResolver::dump() const
 {
 #ifndef NDEBUG
     if (d->mFormatInfoMap.empty()) {
@@ -1257,13 +1254,13 @@ void Kleo::KeyResolver::dump() const
 #endif
 }
 
-Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
+ResolverResult KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
 {
     const bool showKeysForApproval = showApprovalDialog() || std::any_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), ApprovalNeeded)
         || std::any_of(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), ApprovalNeeded);
 
     if (!showKeysForApproval) {
-        return Kleo::Ok;
+        return Ok;
     }
 
     std::vector<Kleo::KeyApprovalDialog::Item> items;
@@ -1282,7 +1279,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
 
     if (dlg->exec() == QDialog::Rejected) {
         delete dlg;
-        return Kleo::Canceled;
+        return Canceled;
     }
 
     items = dlg->items();
@@ -1321,7 +1318,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
             "your own message if you encrypt it.");
         if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {
-            return Kleo::Canceled;
+            return Canceled;
         } else {
             mEncryptToSelf = false;
         }
@@ -1347,7 +1344,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                                                i18nc("@title:window", "Missing Key Warning"),
                                                KGuiItem(i18nc("@action:button", "Send &Unencrypted")))
             == KMessageBox::Cancel) {
-            return Kleo::Canceled;
+            return Canceled;
         }
         finalySendUnencrypted = true;
     } else if (emptyListCount > 0) {
@@ -1362,7 +1359,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         KCursorSaver saver(Qt::WaitCursor);
         if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {
-            return Kleo::Canceled;
+            return Canceled;
         }
     }
 
@@ -1389,32 +1386,32 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                         std::back_inserter(d->mSMIMEEncryptToSelfKeys),
                         NotValidTrustedSMIMEEncryptionKey); // -= trusted (see above, too)?
 
-    return Kleo::Ok;
+    return Ok;
 }
 
-std::vector<Kleo::KeyResolver::SplitInfo> Kleo::KeyResolver::encryptionItems(Kleo::CryptoMessageFormat f) const
+std::vector<KeyResolver::SplitInfo> KeyResolver::encryptionItems(Kleo::CryptoMessageFormat f) const
 {
     dump();
     auto it = d->mFormatInfoMap.find(f);
     return it != d->mFormatInfoMap.end() ? it->second.splitInfos : std::vector<SplitInfo>();
 }
 
-void Kleo::KeyResolver::setAutocryptEnabled(bool autocryptEnabled)
+void KeyResolver::setAutocryptEnabled(bool autocryptEnabled)
 {
     d->mAutocryptEnabled = autocryptEnabled;
 }
 
-std::map<QByteArray, QString> Kleo::KeyResolver::useAutocrypt() const
+std::map<QByteArray, QString> KeyResolver::useAutocrypt() const
 {
     return d->mAutocryptMap;
 }
 
-void Kleo::KeyResolver::setAkonadiLookupEnabled(bool akonadiLoopkupEnabled)
+void KeyResolver::setAkonadiLookupEnabled(bool akonadiLoopkupEnabled)
 {
     d->mAkonadiLookupEnabled = akonadiLoopkupEnabled;
 }
 
-std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const
+std::vector<GpgME::Key> KeyResolver::signingKeys(CryptoMessageFormat f) const
 {
     dump();
     auto it = d->mFormatInfoMap.find(f);
@@ -1427,7 +1424,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) co
 //
 //
 
-std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys) const
+std::vector<GpgME::Key> KeyResolver::selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys) const
 {
     const bool opgp = containsOpenPGP(mCryptoMessageFormats);
     const bool x509 = containsSMIME(mCryptoMessageFormats);
@@ -1456,7 +1453,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(const QString &person, con
     return keys;
 }
 
-std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &person, bool quiet) const
+std::vector<GpgME::Key> KeyResolver::getEncryptionKeys(const QString &person, bool quiet) const
 {
     const QString address = canonicalAddress(person).toLower();
 
@@ -1570,7 +1567,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
     // an empty vector when canceled == true, and we'd just do the same
 }
 
-std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, bool secret) const
+std::vector<GpgME::Key> KeyResolver::lookup(const QStringList &patterns, bool secret) const
 {
     if (patterns.empty()) {
         return {};
@@ -1601,7 +1598,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
     return result;
 }
 
-void Kleo::KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFormat f)
+void KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFormat f)
 {
     dump();
     for (auto it = items.begin(); it != items.end(); ++it) {
@@ -1617,7 +1614,7 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFor
     dump();
 }
 
-void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
+void KeyResolver::addKeys(const std::vector<Item> &items)
 {
     dump();
     for (auto it = items.begin(); it != items.end(); ++it) {
@@ -1640,7 +1637,7 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
     dump();
 }
 
-MessageComposer::ContactPreference Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
+MessageComposer::ContactPreference KeyResolver::lookupContactPreferences(const QString &address) const
 {
     const auto it = d->mContactPreferencesMap.find(address);
     if (it != d->mContactPreferencesMap.end()) {
@@ -1669,19 +1666,19 @@ MessageComposer::ContactPreference Kleo::KeyResolver::lookupContactPreferences(c
     return pref;
 }
 
-void Kleo::KeyResolver::setContactPreferences(const QString &address, const MessageComposer::ContactPreference &pref)
+void KeyResolver::setContactPreferences(const QString &address, const MessageComposer::ContactPreference &pref)
 {
     d->mContactPreferencesMap.insert(std::make_pair(address, pref));
 }
 
-void Kleo::KeyResolver::saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const
+void KeyResolver::saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const
 {
     d->mContactPreferencesMap.insert(std::make_pair(email, pref));
     auto saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
     saveContactPreferencesJob->start();
 }
 
-QStringList Kleo::KeyResolver::keysForAddress(const QString &address) const
+QStringList KeyResolver::keysForAddress(const QString &address) const
 {
     if (address.isEmpty()) {
         return {};
@@ -1691,7 +1688,7 @@ QStringList Kleo::KeyResolver::keysForAddress(const QString &address) const
     return pref.pgpKeyFingerprints + pref.smimeCertFingerprints;
 }
 
-void Kleo::KeyResolver::setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const
+void KeyResolver::setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const
 {
     if (address.isEmpty()) {
         return;
@@ -1703,12 +1700,12 @@ void Kleo::KeyResolver::setKeysForAddress(const QString &address, const QStringL
     saveContactPreference(addr, pref);
 }
 
-bool Kleo::KeyResolver::encryptToSelf() const
+bool KeyResolver::encryptToSelf() const
 {
     return mEncryptToSelf;
 }
 
-bool Kleo::KeyResolver::showApprovalDialog() const
+bool KeyResolver::showApprovalDialog() const
 {
     return mShowApprovalDialog;
 }

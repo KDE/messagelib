@@ -57,14 +57,14 @@ void KeyResolverTest::testAutocrypt()
     QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
     QVERIFY(file2.copy(baseDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
 
-    QCOMPARE(keyResolver.setEncryptToSelfKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), Kleo::Ok);
-    QCOMPARE(keyResolver.setSigningKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), Kleo::Ok);
+    QCOMPARE(keyResolver.setEncryptToSelfKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), ResolverResult::Ok);
+    QCOMPARE(keyResolver.setSigningKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), ResolverResult::Ok);
     keyResolver.setAutocryptEnabled(true);
     keyResolver.setPrimaryRecipients(recipients);
 
     bool signSomething(false), encryptSomething(true);
     const auto kpgpResult = keyResolver.resolveAllKeys(signSomething, encryptSomething);
-    QCOMPARE(kpgpResult, Kleo::Ok);
+    QCOMPARE(kpgpResult, ResolverResult::Ok);
     QVERIFY(!signSomething);
     QVERIFY(encryptSomething);
     const auto items = keyResolver.encryptionItems(Kleo::OpenPGPMIMEFormat);

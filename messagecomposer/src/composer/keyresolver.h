@@ -24,16 +24,16 @@
 #include <QSharedPointer>
 #include <QStringList>
 
-namespace MessageComposer
-{
-class ContactPreference;
-}
-
 namespace Kleo
 {
 class ExpiryChecker;
+}
 
-enum Result {
+namespace MessageComposer
+{
+class ContactPreference;
+
+enum ResolverResult {
     Failure = 0,
     Ok = 1,
     Canceled = 2,
@@ -118,33 +118,33 @@ public:
 
     ~KeyResolver();
 
-    struct Item : public KeyApprovalDialog::Item {
+    struct Item : public Kleo::KeyApprovalDialog::Item {
         Item()
-            : KeyApprovalDialog::Item()
-            , signPref(UnknownSigningPreference)
-            , format(AutoFormat)
+            : Kleo::KeyApprovalDialog::Item()
+            , signPref(Kleo::UnknownSigningPreference)
+            , format(Kleo::AutoFormat)
             , needKeys(true)
         {
         }
 
-        Item(const QString &a, EncryptionPreference e, SigningPreference s, CryptoMessageFormat f)
-            : KeyApprovalDialog::Item(a, std::vector<GpgME::Key>(), e)
+        Item(const QString &a, Kleo::EncryptionPreference e, Kleo::SigningPreference s, Kleo::CryptoMessageFormat f)
+            : Kleo::KeyApprovalDialog::Item(a, std::vector<GpgME::Key>(), e)
             , signPref(s)
             , format(f)
             , needKeys(true)
         {
         }
 
-        Item(const QString &a, const std::vector<GpgME::Key> &k, EncryptionPreference e, SigningPreference s, CryptoMessageFormat f)
-            : KeyApprovalDialog::Item(a, k, e)
+        Item(const QString &a, const std::vector<GpgME::Key> &k, Kleo::EncryptionPreference e, Kleo::SigningPreference s, Kleo::CryptoMessageFormat f)
+            : Kleo::KeyApprovalDialog::Item(a, k, e)
             , signPref(s)
             , format(f)
             , needKeys(false)
         {
         }
 
-        SigningPreference signPref;
-        CryptoMessageFormat format;
+        Kleo::SigningPreference signPref;
+        Kleo::CryptoMessageFormat format;
         bool needKeys;
     };
 
@@ -153,12 +153,12 @@ public:
        self. Also looks them up and complains if they're not usable or
        found.
     */
-    [[nodiscard]] Kleo::Result setEncryptToSelfKeys(const QStringList &fingerprints);
+    [[nodiscard]] ResolverResult setEncryptToSelfKeys(const QStringList &fingerprints);
     /**
         Set the fingerprints of keys to be used for signing. Also
         looks them up and complains if they're not usable or found.
     */
-    [[nodiscard]] Kleo::Result setSigningKeys(const QStringList &fingerprints);
+    [[nodiscard]] ResolverResult setSigningKeys(const QStringList &fingerprints);
     /**
        Set the list of primary (To/CC) recipient addresses. Also looks
        up possible keys, but doesn't interact with the user.
@@ -175,25 +175,25 @@ public:
        per-recipient signing preferences, as well as the availability
        of usable signing keys.
     */
-    [[nodiscard]] Action checkSigningPreferences(bool signingRequested) const;
+    [[nodiscard]] Kleo::Action checkSigningPreferences(bool signingRequested) const;
     /**
        Determine whether to encrypt or not, depending on the
        per-recipient encryption preferences, as well as the availability
        of usable encryption keys.
     */
-    [[nodiscard]] Action checkEncryptionPreferences(bool encryptionRequested) const;
+    [[nodiscard]] Kleo::Action checkEncryptionPreferences(bool encryptionRequested) const;
 
     /**
        Queries the user for missing keys and displays a key approval
        dialog if needed.
     */
-    [[nodiscard]] Kleo::Result resolveAllKeys(bool &signingRequested, bool &encryptionRequested);
+    [[nodiscard]] ResolverResult resolveAllKeys(bool &signingRequested, bool &encryptionRequested);
 
     /**
        @return the signing keys to use (if any) for the given message
        format.
     */
-    [[nodiscard]] std::vector<GpgME::Key> signingKeys(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<GpgME::Key> signingKeys(Kleo::CryptoMessageFormat f) const;
 
     struct SplitInfo {
         SplitInfo() = default;
@@ -216,9 +216,9 @@ public:
         returned vector will contain more than one item only if
         secondary recipients have been specified.
     */
-    [[nodiscard]] std::vector<SplitInfo> encryptionItems(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<SplitInfo> encryptionItems(Kleo::CryptoMessageFormat f) const;
 
-    [[nodiscard]] std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<GpgME::Key> encryptToSelfKeysFor(Kleo::CryptoMessageFormat f) const;
 
     /** If Autocrypt keys are used to find valid PGP Keys
      */
@@ -237,26 +237,26 @@ public:
      * lookup is disabled - useful mostly for testing cases when it's not possible to
      * index contacts on demand.
      */
-    void setContactPreferences(const QString &address, const MessageComposer::ContactPreference &preference);
+    void setContactPreferences(const QString &address, const ContactPreference &preference);
 
 private:
     void dump() const;
     [[nodiscard]] std::vector<Item> getEncryptionItems(const QStringList &recipients);
     [[nodiscard]] std::vector<GpgME::Key> getEncryptionKeys(const QString &recipient, bool quiet) const;
 
-    [[nodiscard]] Kleo::Result showKeyApprovalDialog(bool &finalySendUnencrypted);
+    [[nodiscard]] ResolverResult showKeyApprovalDialog(bool &finalySendUnencrypted);
 
     [[nodiscard]] bool encryptionPossible() const;
     [[nodiscard]] bool signingPossible() const;
-    [[nodiscard]] Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
-    [[nodiscard]] Kleo::Result resolveSigningKeysForEncryption();
-    [[nodiscard]] Kleo::Result resolveSigningKeysForSigningOnly();
+    [[nodiscard]] ResolverResult resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
+    [[nodiscard]] ResolverResult resolveSigningKeysForEncryption();
+    [[nodiscard]] ResolverResult resolveSigningKeysForSigningOnly();
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
-    void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);
+    void addKeys(const std::vector<Item> &items, Kleo::CryptoMessageFormat f);
     void addKeys(const std::vector<Item> &items);
     [[nodiscard]] QStringList allRecipients() const;
-    [[nodiscard]] std::vector<GpgME::Key> signingKeysFor(CryptoMessageFormat f) const;
+    [[nodiscard]] std::vector<GpgME::Key> signingKeysFor(Kleo::CryptoMessageFormat f) const;
 
     [[nodiscard]] std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 
@@ -269,14 +269,14 @@ private:
     [[nodiscard]] bool encryptToSelf() const;
     [[nodiscard]] bool showApprovalDialog() const;
 
-    [[nodiscard]] MessageComposer::ContactPreference lookupContactPreferences(const QString &address) const;
-    void saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const;
+    [[nodiscard]] ContactPreference lookupContactPreferences(const QString &address) const;
+    void saveContactPreference(const QString &email, const ContactPreference &pref) const;
 
 private:
     class EncryptionPreferenceCounter;
-    friend class ::Kleo::KeyResolver::EncryptionPreferenceCounter;
+    friend class ::MessageComposer::KeyResolver::EncryptionPreferenceCounter;
     class SigningPreferenceCounter;
-    friend class ::Kleo::KeyResolver::SigningPreferenceCounter;
+    friend class ::MessageComposer::KeyResolver::SigningPreferenceCounter;
 
     struct KeyResolverPrivate;
     std::unique_ptr<KeyResolverPrivate> const d;

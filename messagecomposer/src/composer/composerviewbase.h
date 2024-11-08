@@ -52,7 +52,6 @@ class IdentityManager;
 namespace Kleo
 {
 class ExpiryChecker;
-class KeyResolver;
 }
 
 namespace MessageComposer
@@ -66,6 +65,7 @@ class AttachmentControllerBase;
 class AttachmentModel;
 class SignatureController;
 class SendLaterInfo;
+class KeyResolver;
 /**
  * @brief The ComposerViewBase class
  */
@@ -309,13 +309,8 @@ private:
 
     void markAllAttachmentsForSigning(bool sign);
     void markAllAttachmentsForEncryption(bool encrypt);
-    bool determineWhetherToSign(bool doSignCompletely, Kleo::KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled);
-    bool determineWhetherToEncrypt(bool doEncryptCompletely,
-                                   Kleo::KeyResolver *keyResolver,
-                                   bool encryptSomething,
-                                   bool signSomething,
-                                   bool &result,
-                                   bool &canceled);
+    bool determineWhetherToSign(bool doSignCompletely, KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled);
+    bool determineWhetherToEncrypt(bool doEncryptCompletely, KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled);
 
     /**
      * Writes out autosave data to the disk from the KMime::Message message.
