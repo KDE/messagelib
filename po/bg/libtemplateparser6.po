@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-11-06 23:19+0100\n"
+"PO-Revision-Date: 2024-11-07 21:40+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -879,7 +879,7 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "В тази област създавате шаблона за ново писмо. За повече информация как да "
-"създадете шаблона, натиснете връзката \" Как работи това? \" в този диалогов "
+"създадете шаблона, натиснете връзката \"Как работи това?\" в този диалогов "
 "прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
@@ -906,8 +906,8 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "В тази област създавате шаблона за отговори на съобщения. За повече "
-"информация как да създадете шаблона, натиснете връзката \" Как работи това? "
-"\" в този диалогов прозорец."
+"информация как да създадете шаблона, натиснете връзката \"Как работи това?\" "
+"в този диалогов прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
@@ -935,7 +935,7 @@ msgid ""
 msgstr ""
 "В тази област създавате шаблона за отговор към всички или отговор на "
 "пощенски списък на. За повече информация как да създадете шаблона, натиснете "
-"връзката \" Как работи това? \" в този диалогов прозорец."
+"връзката \"Как работи това?\" в този диалогов прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
