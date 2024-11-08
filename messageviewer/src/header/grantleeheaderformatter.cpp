@@ -215,7 +215,7 @@ public:
     }
 };
 
-class DateFormatter : public HeaderFormatter
+class GrantleeHeaderDateFormatter : public HeaderFormatter
 {
 public:
     QString i18nName() override
@@ -322,7 +322,7 @@ public:
         }
 
         registerHeaderFormatter("subject", QSharedPointer<HeaderFormatter>(new SubjectFormatter()));
-        registerHeaderFormatter("date", QSharedPointer<HeaderFormatter>(new DateFormatter()));
+        registerHeaderFormatter("date", QSharedPointer<HeaderFormatter>(new GrantleeHeaderDateFormatter()));
         registerHeaderFormatter("Message-Id", QSharedPointer<HeaderFormatter>(new MessageIdFormatter()));
     }
 
