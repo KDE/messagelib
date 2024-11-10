@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 00:40+0000\n"
-"PO-Revision-Date: 2024-08-07 11:15+0200\n"
+"PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -724,7 +724,7 @@ msgstr "препращане до:"
 #: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr "Темата на Grantlee \"%1\"не е валидна."
+msgstr "Темата на Grantlee „%1“не е валидна."
 
 #: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
 #: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
@@ -1112,9 +1112,8 @@ msgid ""
 "points to '%2'. This is often the case in scam emails to mislead the "
 "recipient"
 msgstr ""
-"Този ​​имейл съдържа връзка, която се чете като\"%1\" в текста, но всъщност "
-"сочи към\"%2\".  Това често се случва в измамни имейли, за да заблуди "
-"получателя"
+"Този ​​имейл съдържа връзка, която се чете като„%1“ в текста, но всъщност сочи "
+"към„%2“.  Това често се случва в измамни имейли, за да заблуди получателя"
 
 #: scamdetection/scamdetectionwebengine.cpp:128
 #, kde-format
@@ -1182,7 +1181,7 @@ msgstr "Невъзможно разгъване на '%1'."
 #: scamdetection/scamexpandurljob.cpp:81
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr "Съкратен URL адрес \"%1\" пренасочва към \"%2\"."
+msgstr "Съкратен URL адрес „%1“ пренасочва към „%2“."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg.in:11
@@ -1658,7 +1657,7 @@ msgstr "&Минимален размер на шрифта:"
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-msgstr "Вече има файл с име \"%1\". Искате ли да бъде презаписан?"
+msgstr "Вече има файл с име „%1“. Искате ли да бъде презаписан?"
 
 #: utils/messageviewerutil.cpp:126
 #, kde-format
@@ -2396,7 +2395,7 @@ msgstr "Да се отвори ли прикачения файл?"
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
 msgid "&Open With '%1'"
-msgstr "&Отваряне с \"%1\""
+msgstr "&Отваряне с „%1“"
 
 #: widgets/attachmentdialog.cpp:46
 #, kde-format
