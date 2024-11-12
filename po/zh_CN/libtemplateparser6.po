@@ -187,9 +187,8 @@ msgstr ""
 "----------  转发的信件  ----------\n"
 "\n"
 "主题：%1\n"
-"日期：%2\n"
-"发件人：%3\n"
-"收件人：%4\n"
+"日期：%2 %3\n"
+"发件人：%4\n"
 "%OADDRESSEESADDR\n"
 "\n"
 "%5\n"
@@ -273,7 +272,7 @@ msgstr "无法从文件“%1”插入内容：%2"
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
-msgstr "至："
+msgstr "收件人："
 
 #: templateparserjob.cpp:494
 #, kde-format

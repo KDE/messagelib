@@ -2111,7 +2111,7 @@ msgstr "复制文本"
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr ""
+msgstr "选中所有文本"
 
 #: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
@@ -2132,12 +2132,12 @@ msgstr "显示信件结构"
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr ""
+msgstr "查看源代码(&V)"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
-msgstr ""
+msgstr "保存信件(&S)"
 
 #: viewer/viewer_p.cpp:1581
 #, kde-format
@@ -2382,7 +2382,7 @@ msgstr "朗读文本"
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr "源文件"
+msgstr "信件源代码"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2393,7 +2393,7 @@ msgstr "在文件系统或服务器上存储的未经修改的原始邮件"
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr "源文件"
+msgstr "HTML 源代码"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
