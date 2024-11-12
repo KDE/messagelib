@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1944,141 +1944,141 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Құжаттамасын жазушысы"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:407
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Бұл хатты HTML түрде көрсету керек."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Бұл хат үшін Интернеттен сыртқы сілтемелерді жүктеу керек."
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Work online."
 msgstr "Желіде істеу."
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Make account online."
 msgstr "Тіркелгіні онлайн қылу."
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Decrypt message."
 msgstr "Хаттың шифрын шешу."
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Show signature details."
 msgstr "Қолтаңба егжей-тегжейін көрсету."
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Hide signature details."
 msgstr "Қолтаңба егжей-тегжейлерін жасыру."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "Қолтаңба егжей-тегжейін көрсету."
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "Қолтаңба егжей-тегжейлерін жасыру."
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:428
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Құжаттамасын жазушысы"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Барлық тырнақшадағы мәтін тарқатылып көрсетілсін."
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Барлық тырнақшадағы мәтін жасырылсын."
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:491
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Куәліктер менеджері жегілмеді. Орнатылғанын тексеріңіз."
 
-#: viewer/urlhandlermanager.cpp:497
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail қатесі"
 
-#: viewer/urlhandlermanager.cpp:514
+#: viewer/urlhandlermanager.cpp:510
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 куәлігі көрсетілсін"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:569
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "Адрестік кітапшасында а&шу"
 
-#: viewer/urlhandlermanager.cpp:575
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Эл.пошта адресін &көшіріп алу"
 
-#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес алмасу буферіне көшірімеленді."
 
-#: viewer/urlhandlermanager.cpp:599
+#: viewer/urlhandlermanager.cpp:595
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Контактты KAddressbook-та іздеу"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:771
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Тіркеме: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:774
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Ендірілген хат (Тақырыбы: %1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Ендірілген хат"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:779
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Аталмаған тіркеме"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:814
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Бұл әрекет туралы GnuPG аудит журналын көрсету"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL адресін ашу..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Шынымен <filename>%1</filename> дегенді орындауды қалайсыз ба?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:866
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"

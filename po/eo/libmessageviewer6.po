@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1857,139 +1857,139 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Presi Dokumenton"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:407
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Aktivigi HTML-rigardon por tiu ĉi mesaĝo."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Ŝargi eksterajn referencojn el la Reto por tiu mesaĝo."
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Work online."
 msgstr "Labori interrete."
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Make account online."
 msgstr "Fari konton interrete."
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Decrypt message."
 msgstr "Malĉifri mesaĝon."
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Show signature details."
 msgstr "Montri subskribajn detalojn."
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Hide signature details."
 msgstr "Kaŝi subskribajn detalojn."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Show encryption details."
 msgstr "Montri ĉifradajn detalojn."
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:423
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Kaŝi ĉifradajn detalojn."
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:428
 #, kde-format
 msgid "Open Documentation"
 msgstr "Malfermi Dokumentadon"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Vastigi la tutan cititan tekston."
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Kolapsi cititan tekston."
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:491
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Ne eblis lanĉi la atestiladministrilon. Bonvolu kontroli vian instaladon."
 
-#: viewer/urlhandlermanager.cpp:497
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail eraro"
 
-#: viewer/urlhandlermanager.cpp:514
+#: viewer/urlhandlermanager.cpp:510
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Vidigi atestilon 0x%1"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:569
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Malfermi en Adreslibro"
 
-#: viewer/urlhandlermanager.cpp:575
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Kopii Retadreson"
 
-#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adreso kopiita al interdeponejo"
 
-#: viewer/urlhandlermanager.cpp:599
+#: viewer/urlhandlermanager.cpp:595
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Serĉi la kontakton en KAdreslibro"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:771
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Kunsendaĵo: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:774
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Enkapsuligita Mesaĝo (Temo: %1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Enkapsuligita Mesaĝo"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:779
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Nenomita aldono"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:814
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Montri GnuPG-Aŭdigan Protokolon por ĉi tiu operacio"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
 msgstr "Malfermante URLon..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ĉu vi vere volas plenumi <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:866
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"

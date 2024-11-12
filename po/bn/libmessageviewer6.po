@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1920,153 +1920,153 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "ডকুমেন্টেশন"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:407
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "এই বার্তার জন্য এইচ-টি-এম-এল প্রদর্শন সক্রিয় করো।"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Work online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Make account online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:415
 #, fuzzy, kde-format
 #| msgid "&Encrypt Message"
 msgid "Decrypt message."
 msgstr "বার্তা &এনক্রিপ্ট করো"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:417
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show signature details."
 msgstr "স্বাক্ষর ব্যবস্থা সক্রি&য় করো "
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide signature details."
 msgstr "স্বাক্ষর ব্যবস্থা সক্রি&য় করো "
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show encryption details."
 msgstr "স্বাক্ষর ব্যবস্থা সক্রি&য় করো "
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide encryption details."
 msgstr "স্বাক্ষর ব্যবস্থা সক্রি&য় করো "
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:428
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "ডকুমেন্টেশন"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Expand all quoted text."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Collapse Thread"
 msgid "Collapse quoted text."
 msgstr "সূত্র গুটিয়ে না&ও"
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:491
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:497
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "KMail Error"
 msgstr "কে-মেইল সমস্যা"
 
-#: viewer/urlhandlermanager.cpp:514
+#: viewer/urlhandlermanager.cpp:510
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "সার্টিফিকেট 0x%1 দেখাও"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:569
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "ঠিকানা তালিকায় খোলো"
 
-#: viewer/urlhandlermanager.cpp:575
+#: viewer/urlhandlermanager.cpp:571
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "ই-মেইল ঠিকানা"
 
-#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "ঠিকানাটি ক্লীপবোর্ড-এ কপি করা হয়েছে।"
 
-#: viewer/urlhandlermanager.cpp:599
+#: viewer/urlhandlermanager.cpp:595
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "ঠিকানা তালিকায় খোলো"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:771
 #, kde-format
 msgid "Attachment: %1"
 msgstr "অ্যাটাচমেন্ট: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:774
 #, fuzzy, kde-format
 #| msgid "End of encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "অভ্যন্তরীন বার্তার শেষ"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:776
 #, fuzzy, kde-format
 #| msgid "End of encapsulated message"
 msgid "Encapsulated Message"
 msgstr "অভ্যন্তরীন বার্তার শেষ"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:779
 #, fuzzy, kde-format
 #| msgid "Name of the attachment:"
 msgid "Unnamed attachment"
 msgstr "অ্যাটাচমেন্ট-এর নাম:"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:814
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
 msgstr "ইউ-আর-এল খোলা হচ্ছে..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:864
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>আপনি কি সত্যিই <b>%1</b> চালাতে চান?</qt>"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:866
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"

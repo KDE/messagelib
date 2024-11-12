@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-04 14:19+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1905,140 +1905,140 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Imprimer un document"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:407
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Activer le rendu HTML pour ce message."
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Charger les références externes depuis Internet pour ce message."
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Work online."
 msgstr "Travailler en ligne."
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Make account online."
 msgstr "Mettre le compte en ligne."
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Decrypt message."
 msgstr "Déchiffrer le message."
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Show signature details."
 msgstr "Afficher le détail de la signature."
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Hide signature details."
 msgstr "Masquer le détail de la signature."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Show encryption details."
 msgstr "Afficher les détails de chiffrement."
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:423
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Masquer les détails de chiffrement."
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:428
 #, kde-format
 msgid "Open Documentation"
 msgstr "Ouvrir la documentation"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Déplier toutes les citations."
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Réduire la citation."
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:491
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Impossible de lancer le gestionnaire de certificats. Veuillez vérifier votre "
 "installation."
 
-#: viewer/urlhandlermanager.cpp:497
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "KMail Error"
 msgstr "Erreur de KMail"
 
-#: viewer/urlhandlermanager.cpp:514
+#: viewer/urlhandlermanager.cpp:510
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Afficher le certificat 0x%1"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:569
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Ouvrir dans le carnet d'adresses"
 
-#: viewer/urlhandlermanager.cpp:575
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Copier l'adresse électronique"
 
-#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresse copiée dans le presse-papiers."
 
-#: viewer/urlhandlermanager.cpp:599
+#: viewer/urlhandlermanager.cpp:595
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Rechercher le contact dans KAddressBook"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:771
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Pièce jointe : %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:774
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Message encapsulé (sujet : %1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Message encapsulé"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:779
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Pièce jointe sans nom"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:814
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Afficher le journal détaillé de GnuPG pour cette opération"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
 msgstr "Ouverture de l'URL..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Voulez-vous vraiment exécuter la commande <filename>%1</filename> ?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:866
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"

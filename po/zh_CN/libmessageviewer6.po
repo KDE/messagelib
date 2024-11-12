@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1782,138 +1782,138 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "打印文档"
 
-#: viewer/urlhandlermanager.cpp:406
+#: viewer/urlhandlermanager.cpp:407
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "使用 HTML 排版此信件。"
 
-#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "允许在这封信中加载 Internet 的外部引用。"
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:411
 #, kde-format
 msgid "Work online."
 msgstr "在线工作。"
 
-#: viewer/urlhandlermanager.cpp:412
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Make account online."
 msgstr "将账户标记为在线。"
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Decrypt message."
 msgstr "解密信件。"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Show signature details."
 msgstr "显示签名细节。"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Hide signature details."
 msgstr "隐藏签名细节。"
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Show encryption details."
 msgstr "显示加密细节。"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:423
 #, kde-format
 msgid "Hide encryption details."
 msgstr "隐藏加密细节。"
 
-#: viewer/urlhandlermanager.cpp:427
+#: viewer/urlhandlermanager.cpp:428
 #, kde-format
 msgid "Open Documentation"
 msgstr "打开文档"
 
-#: viewer/urlhandlermanager.cpp:461
+#: viewer/urlhandlermanager.cpp:462
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "展开全部引用文本。"
 
-#: viewer/urlhandlermanager.cpp:463
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "折叠引用的文本。"
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:491
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "无法启动证书管理器。请检查您的安装。"
 
-#: viewer/urlhandlermanager.cpp:497
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 错误"
 
-#: viewer/urlhandlermanager.cpp:514
+#: viewer/urlhandlermanager.cpp:510
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "显示证书 0x%1"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:569
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "在地址簿中打开(&O)"
 
-#: viewer/urlhandlermanager.cpp:575
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "复制电子邮件地址(&C)"
 
-#: viewer/urlhandlermanager.cpp:588 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "地址已复制到剪贴板中。"
 
-#: viewer/urlhandlermanager.cpp:599
+#: viewer/urlhandlermanager.cpp:595
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "在 KAddressbook 中查找联系人"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:771
 #, kde-format
 msgid "Attachment: %1"
 msgstr "附件：%1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:774
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "封装的信件(主题：%1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "封装的信件"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:779
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "未命名附件"
 
-#: viewer/urlhandlermanager.cpp:818
+#: viewer/urlhandlermanager.cpp:814
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "显示此操作的 GnuPG 审核日志"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
 msgstr "正在打开 URL..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "您真的要执行 <filename>%1</filename> 吗？"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:866
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2111,7 +2111,7 @@ msgstr "复制文本"
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr ""
+msgstr "选中所有文本"
 
 #: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
@@ -2132,12 +2132,12 @@ msgstr "显示信件结构"
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr ""
+msgstr "查看源代码(&V)"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
-msgstr ""
+msgstr "保存信件(&S)"
 
 #: viewer/viewer_p.cpp:1581
 #, kde-format
@@ -2382,7 +2382,7 @@ msgstr "朗读文本"
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr "源文件"
+msgstr "信件源代码"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2393,7 +2393,7 @@ msgstr "在文件系统或服务器上存储的未经修改的原始邮件"
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr "源文件"
+msgstr "HTML 源代码"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format

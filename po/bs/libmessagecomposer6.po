@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2014-01-31 19:04+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bs <bs@kde.org>\n"
@@ -535,18 +535,18 @@ msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME certifikat ističe uskoro"
 
-#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
-#: composer/composerviewbase.cpp:845
+#: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
+#: composer/composerviewbase.cpp:844
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Neuspjelo razrješenje ključeva, molim prijavite grešku"
 
-#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1049 composer/composerviewbase.cpp:1320
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Korisnik je otkazao posao"
 
-#: composer/composerviewbase.cpp:1055
+#: composer/composerviewbase.cpp:1054
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -555,37 +555,37 @@ msgstr ""
 "Ne mogu sastaviti poruku: %1 \n"
 " Molim prijavite ovu grešku"
 
-#: composer/composerviewbase.cpp:1057
+#: composer/composerviewbase.cpp:1056
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Ne mogu sastaviti poruku: %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1159
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Došlo je do problema u pokušaju stavljanja poruke u red za slanje: %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Ne mogu automatski snimiti poruku: %1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Ne mogu pisati sve podatke u datoteku."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Ne mogu finalizirati datoteku"
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1349
 #, kde-format
 msgid "Could not open file."
 msgstr "Ne mogu da otvorim datoteku."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1356
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -596,19 +596,19 @@ msgstr ""
 "%2\n"
 "Razlog: %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1362
 #, fuzzy, kde-format
 #| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Automatsko snimanje poruke neuspjelo"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1475
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Neuspjelo snimanje poruke: %1"
 
-#: composer/composerviewbase.cpp:1897
+#: composer/composerviewbase.cpp:1896
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -619,28 +619,28 @@ msgstr ""
 "zaboravili zakačiti.\n"
 "Želite li sada priložiti neku datoteku vašoj poruci?"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1899
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Podsjetnik za prilog"
 
-#: composer/composerviewbase.cpp:1901
+#: composer/composerviewbase.cpp:1900
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Prikači datoteku..."
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1901
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Pošalji &kao što jeste"
 
-#: composer/composerviewbase.cpp:1954
+#: composer/composerviewbase.cpp:1953
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -651,27 +651,27 @@ msgstr ""
 "potpisati ovu poruku.\n"
 "Potpisati ovu poruku?"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Potpiši poruku?"
 
-#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Potpiši"
 
-#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Ne potpisuj"
 
-#: composer/composerviewbase.cpp:1983
+#: composer/composerviewbase.cpp:1982
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -680,7 +680,7 @@ msgstr ""
 "Postavke potpisivanja za ove primatelje su u konfliktu.\n"
 "Želite li potpisati poruku?"
 
-#: composer/composerviewbase.cpp:2010
+#: composer/composerviewbase.cpp:2009
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -689,21 +689,21 @@ msgstr ""
 "Tražili ste potpisivanje poruke, ali nijedan važeći ključ za potpisivanje "
 "nije podešen za ovaj identitet."
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2014
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Poslati nepotpisano?"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2015
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Pošalji &nepotpisano"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2030
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -714,7 +714,7 @@ msgstr ""
 "Slanje samo djelomično potpisane poruke može kršiti politiku sajta.\n"
 "Da li da umjesto toga potpišem sve dijelove?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -725,31 +725,31 @@ msgstr ""
 "Slanje nepotpisane poruke može kršiti politiku sajta.\n"
 "Da ipak potpišem poruku?"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Potpiši sve dijelove"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign"
 msgstr "&Potpiši"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2040
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Upozorenje o nepotpisanoj poruci"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2042
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Pošalji &kao što jeste"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -758,7 +758,7 @@ msgstr ""
 "Pronađeni su ispravni povjerljivi ključevi za šifrovanje za sve primatelje.\n"
 "Da šifrujem ovu poruku?"
 
-#: composer/composerviewbase.cpp:2093
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -769,32 +769,32 @@ msgstr ""
 "da li želite šifrovati ovu poruku ili ne.\n"
 "Želite li šifrovati poruku?"
 
-#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Šifrirati poruku?"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Potpiši i &Šifruj"
 
-#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Šifruj"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Samo potpiši"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Pošalji &kao što jeste"
 
-#: composer/composerviewbase.cpp:2122
+#: composer/composerviewbase.cpp:2121
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -803,22 +803,22 @@ msgstr ""
 "<qt> <p>Postavke enkripcije su u konfliktu!</p> <p>Da li poruka treba biti "
 "enkriptovana?</p></qt>"
 
-#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
-#: composer/keyresolver.cpp:1363
+#: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Šifruj"
 
-#: composer/composerviewbase.cpp:2131
+#: composer/composerviewbase.cpp:2130
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Ne &Šifruj"
 
-#: composer/composerviewbase.cpp:2151
+#: composer/composerviewbase.cpp:2150
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -829,21 +829,21 @@ msgstr ""
 "ali za ovaj identitet nije konfigurisan nijedan ispravan provjerljiv ključ "
 "enkripcije."
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2156
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Poslati &nešifrovano?"
 
-#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Pošalji &nešifrovano"
 
-#: composer/composerviewbase.cpp:2173
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -856,7 +856,7 @@ msgstr ""
 "ili procuriti osjetljive informacije.\n"
 "Da li da umjesto toga šifrujem sve dijelove?"
 
-#: composer/composerviewbase.cpp:2178
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -869,19 +869,19 @@ msgstr ""
 "osjetljive informacije.\n"
 "Da umjesto toga šifrujem poruke?"
 
-#: composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Šifruj sve dijelove"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2184
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Upozorenje za nešifrovane poruke"
 
-#: composer/keyresolver.cpp:311
+#: composer/keyresolver.cpp:314
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -890,7 +890,7 @@ msgstr ""
 "Jednom ili više podešenih OpenPGP ključeva za šifrovanje ili S/MIME "
 "sertifikata ne vjeruje se u potpunosti za šifrovanje."
 
-#: composer/keyresolver.cpp:315
+#: composer/keyresolver.cpp:318
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -899,7 +899,7 @@ msgstr ""
 "Jedan ili više OpenPGP šifriranih ključeva ili S/MIME potvrda za primaoce "
 "\"%1\" nije upotpunosti povjerljiv za šifriranje."
 
-#: composer/keyresolver.cpp:322
+#: composer/keyresolver.cpp:325
 #, kde-format
 msgid ""
 "\n"
@@ -908,7 +908,7 @@ msgstr ""
 "\n"
 "Sljedećim ključevima vjeruje se malo: \n"
 
-#: composer/keyresolver.cpp:326
+#: composer/keyresolver.cpp:329
 #, kde-format
 msgid ""
 "\n"
@@ -917,7 +917,7 @@ msgstr ""
 "\n"
 "Nivo povjerenja sljedećim ključevima ili sertifikatima nije poznat: \n"
 
-#: composer/keyresolver.cpp:330
+#: composer/keyresolver.cpp:333
 #, kde-format
 msgid ""
 "\n"
@@ -926,14 +926,14 @@ msgstr ""
 "\n"
 "Sljedeći ključevi ili potvrde su <b>opozvani</b>: \n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:339
 #, fuzzy, kde-format
 #| msgid "Not Fully Trusted Encryption Keys"
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Ključevi za šifrovanje ne u potpunosti od povjerenja"
 
-#: composer/keyresolver.cpp:650
+#: composer/keyresolver.cpp:647
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -950,15 +950,15 @@ msgstr ""
 "Ako odlučite da nastavite, a ključevi budu potrebni kasnije, bićete upitani "
 "da navedete ključeve za upotrebu."
 
-#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
+#: composer/keyresolver.cpp:1039
 #, fuzzy, kde-format
 #| msgid "Unusable Encryption Keys"
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Neupotrebljivi ključevi za šifrovanje"
 
-#: composer/keyresolver.cpp:692
+#: composer/keyresolver.cpp:689
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -974,15 +974,15 @@ msgstr ""
 "Ako odlučite da nastavite, a ključevi budu potrebni kasnije, bićete upitani "
 "da navedete ključeve za upotrebu."
 
-#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
-#: composer/keyresolver.cpp:1089
+#: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
+#: composer/keyresolver.cpp:1086
 #, fuzzy, kde-format
 #| msgid "Unusable Signing Keys"
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Neupotrebljivi ključevi za potpisivanje"
 
-#: composer/keyresolver.cpp:1003
+#: composer/keyresolver.cpp:1000
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -998,7 +998,7 @@ msgstr ""
 "Možete nastaviti bez šifrovanja samom sebi, ali imajte na umu da ako to "
 "uradite nećete moći čitati vlastite poruke."
 
-#: composer/keyresolver.cpp:1032
+#: composer/keyresolver.cpp:1029
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -1014,7 +1014,7 @@ msgstr ""
 "Možete nastaviti bez šifrovanja samom sebi, ali imajte na umu da ako to "
 "uradite nećete moći čitati vlastite poruke."
 
-#: composer/keyresolver.cpp:1064
+#: composer/keyresolver.cpp:1061
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -1026,14 +1026,14 @@ msgstr ""
 "šifrovana koristeći OpenPGP, barem za neke od primatelja.\n"
 "Ali vi niste podesili ispravne OpenPGP ključeve za ovaj identitet."
 
-#: composer/keyresolver.cpp:1072
+#: composer/keyresolver.cpp:1069
 #, fuzzy, kde-format
 #| msgid "Do Not OpenPGP-Sign"
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Ne potpisuj koristeći OpenPGP"
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1079
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -1045,14 +1045,14 @@ msgstr ""
 "šifrovana koristeći S/MIME, barem za neke od primatelja.\n"
 "Ali vi niste podesili ispravne S/MIME ključeve za ovaj identitet."
 
-#: composer/keyresolver.cpp:1090
+#: composer/keyresolver.cpp:1087
 #, fuzzy, kde-format
 #| msgid "Do Not S/MIME-Sign"
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Ne potpisuj koristeći S/MIME"
 
-#: composer/keyresolver.cpp:1152
+#: composer/keyresolver.cpp:1149
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -1063,14 +1063,14 @@ msgstr ""
 "potpisa koje se poklapaju sa vašim dostupnim ključevima potpisa.\n"
 "Da pošaljem poruku bez potpisivanja?"
 
-#: composer/keyresolver.cpp:1156
+#: composer/keyresolver.cpp:1153
 #, fuzzy, kde-format
 #| msgid "No signing possible"
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Nije moguće potpisivanje"
 
-#: composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1316
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -1079,15 +1079,15 @@ msgstr ""
 "Niste izabrali ključ kojim ćete šifrovati samim sebi (encrypt to self). "
 "Nećete moći dešifrovati vlastite poruke nakon što ih šifrujete."
 
-#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
-#: composer/keyresolver.cpp:1363
+#: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
+#: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "Missing Key Warning"
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Upozorenje o nedostajućem ključu"
 
-#: composer/keyresolver.cpp:1338
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1096,7 +1096,7 @@ msgstr ""
 "Niste izabrali kripto-ključ za primaoca ove poruke; poruka zato neće biti "
 "šifrovana."
 
-#: composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1105,7 +1105,7 @@ msgstr ""
 "Niste izabrali kripto-ključ ni za jednog od primalaca ove poruke; poruka "
 "zato neće biti šifrovana."
 
-#: composer/keyresolver.cpp:1355
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1114,7 +1114,7 @@ msgstr ""
 "Niste izabrali ključ za šifrovanje za jednog od primatelja ove poruke. Ova "
 "osoba neće moći dešifrovati poruku ako je šifrujete."
 
-#: composer/keyresolver.cpp:1359
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1123,12 +1123,12 @@ msgstr ""
 "Niste izabrali ključ za šifrovanje za neke od primatelja ove poruke. Ove "
 "osobe neće moći dešifrovati poruku ako je šifrujete."
 
-#: composer/keyresolver.cpp:1436
+#: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Izbor kriptografskog ključa"
 
-#: composer/keyresolver.cpp:1480
+#: composer/keyresolver.cpp:1477
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1142,7 +1142,7 @@ msgstr ""
 "\n"
 "Molim ponovo odaberite certifikat(e) za ovog primaoca."
 
-#: composer/keyresolver.cpp:1552
+#: composer/keyresolver.cpp:1549
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1159,7 +1159,7 @@ msgstr ""
 "certifikata na listi takođe možete tražiti spoljnje certifikate klikom na "
 "dugme: traži spoljnje certifikate.</qt>"
 
-#: composer/keyresolver.cpp:1562
+#: composer/keyresolver.cpp:1559
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "

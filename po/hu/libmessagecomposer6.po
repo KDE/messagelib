@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-01 22:53+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -508,18 +508,18 @@ msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Egy S/MIME tanúsítvány hamarosan lejár"
 
-#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
-#: composer/composerviewbase.cpp:845
+#: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
+#: composer/composerviewbase.cpp:844
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Nem sikerült feloldani a kulcsokat. Jelentse a hibát."
 
-#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1049 composer/composerviewbase.cpp:1320
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "A felhasználó megszakította a feladatot"
 
-#: composer/composerviewbase.cpp:1055
+#: composer/composerviewbase.cpp:1054
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -528,37 +528,37 @@ msgstr ""
 "Nem lehet szerkeszteni az üzenetet: %1 \n"
 " Jelentse ezt a hibát."
 
-#: composer/composerviewbase.cpp:1057
+#: composer/composerviewbase.cpp:1056
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Nem lehet szerkeszteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1159
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Hiba történt az üzenet sorba állításakor küldéshez: %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Nem lehet automatikusan menteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Nem lehet írni minden adatot a fájlba."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Nem lehet befejezni a fájlt."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1349
 #, kde-format
 msgid "Could not open file."
 msgstr "Nem lehet megnyitni a fájlt."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1356
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -569,18 +569,18 @@ msgstr ""
 "%2\n"
 "Ok: %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1362
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Az üzenet automatikus mentése nem sikerült"
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1475
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Nem sikerült menteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1897
+#: composer/composerviewbase.cpp:1896
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -591,25 +591,25 @@ msgstr ""
 "sincs csatolva.\n"
 "Szeretne csatolni egy fájlt az üzenethez?"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1899
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Emlékeztető a mellékletekre"
 
-#: composer/composerviewbase.cpp:1901
+#: composer/composerviewbase.cpp:1900
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Fájl cs&atolása…"
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Küldés így"
 
-#: composer/composerviewbase.cpp:1954
+#: composer/composerviewbase.cpp:1953
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -620,25 +620,25 @@ msgstr ""
 "program kérdezzen rá, alá szeretné-e írni az üzenetet.\n"
 "Alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Aláírja az üzenetet?"
 
-#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Aláírás"
 
-#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Ne írja alá"
 
-#: composer/composerviewbase.cpp:1983
+#: composer/composerviewbase.cpp:1982
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -647,7 +647,7 @@ msgstr ""
 "A címzett aláírási beállításai nem egyértelműek.\n"
 "Alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:2010
+#: composer/composerviewbase.cpp:2009
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -656,19 +656,19 @@ msgstr ""
 "Az üzenet aláírását kérte, de nincs beállítva érvényes aláírási kulcs ehhez "
 "az azonosítóhoz."
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2014
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Küldés aláírás nélkül?"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2015
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Kül&dés aláírás nélkül"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2030
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -679,7 +679,7 @@ msgstr ""
 "Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
 "Inkább minden üzenetrészt alá szeretne írni?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -690,29 +690,29 @@ msgstr ""
 "Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
 "Inkább alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Minden rész &aláírása"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign"
 msgstr "&Aláírás"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2040
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Figyelmeztetés - az üzenet nincs aláírva"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2042
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Kü&ldés így"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -721,7 +721,7 @@ msgstr ""
 "Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2093
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -732,32 +732,32 @@ msgstr ""
 "program kérdezzen rá, titkosítani szeretné-e az üzenetet.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Aláírás és titkosítás"
 
-#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Titkosítás"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Csak aláírás"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Elküldés í&gy"
 
-#: composer/composerviewbase.cpp:2122
+#: composer/composerviewbase.cpp:2121
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -766,20 +766,20 @@ msgstr ""
 "Ezeknél a címzetteknél nem egyértelműek a titkosítási beállítások.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
-#: composer/keyresolver.cpp:1363
+#: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Titkosítás"
 
-#: composer/composerviewbase.cpp:2131
+#: composer/composerviewbase.cpp:2130
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "T&itkosítás nélkül"
 
-#: composer/composerviewbase.cpp:2151
+#: composer/composerviewbase.cpp:2150
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -790,19 +790,19 @@ msgstr ""
 "nem található az azonosítóhoz beállított érvényes, megbízható titkosítási "
 "kulcs."
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2156
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Elküldés titkosítás nélkül?"
 
-#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Küldés titkosítatlan&ul"
 
-#: composer/composerviewbase.cpp:2173
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -815,7 +815,7 @@ msgstr ""
 "adatok kikerülését jelenti.\n"
 "Inkább minden üzenetrészt titkosítani szeretne?"
 
-#: composer/composerviewbase.cpp:2178
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -828,18 +828,18 @@ msgstr ""
 "biztonsági előírásokat.\n"
 "Inkább titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Az összes üzenetrész &titkosítása"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Figyelmeztetés nem titkosított üzenetre"
 
-#: composer/keyresolver.cpp:311
+#: composer/keyresolver.cpp:314
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -848,7 +848,7 @@ msgstr ""
 "Egy vagy több beállított OpenPGP kulcsa vagy S/MIME tanúsítványa nem "
 "teljesen megbízható titkosításra."
 
-#: composer/keyresolver.cpp:315
+#: composer/keyresolver.cpp:318
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -857,7 +857,7 @@ msgstr ""
 "Legalább egy a titkosítási OpenPGP kulcsok vagy S/MIME tanúsítványok közül "
 "nem teljesen megbízható titkosításra a következő címzett esetében: „%1”."
 
-#: composer/keyresolver.cpp:322
+#: composer/keyresolver.cpp:325
 #, kde-format
 msgid ""
 "\n"
@@ -866,7 +866,7 @@ msgstr ""
 "\n"
 "A következő kulcsok megbízhatósága igen alacsony: \n"
 
-#: composer/keyresolver.cpp:326
+#: composer/keyresolver.cpp:329
 #, kde-format
 msgid ""
 "\n"
@@ -875,7 +875,7 @@ msgstr ""
 "\n"
 "A következő kulcsok vagy tanúsítványok megbízhatósági foka ismeretlen: \n"
 
-#: composer/keyresolver.cpp:330
+#: composer/keyresolver.cpp:333
 #, kde-format
 msgid ""
 "\n"
@@ -884,13 +884,13 @@ msgstr ""
 "\n"
 "A következő kulcsokat és tanúsítványokat <b>visszavonták</b>: \n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:339
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Nem teljesen megbízható titkosítási kulcsok"
 
-#: composer/keyresolver.cpp:650
+#: composer/keyresolver.cpp:647
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -907,14 +907,14 @@ msgstr ""
 "használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
 "kiválasztani."
 
-#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
+#: composer/keyresolver.cpp:1039
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Nem használható titkosítási kulcsok"
 
-#: composer/keyresolver.cpp:692
+#: composer/keyresolver.cpp:689
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -930,14 +930,14 @@ msgstr ""
 "használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
 "kiválasztani."
 
-#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
-#: composer/keyresolver.cpp:1089
+#: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
+#: composer/keyresolver.cpp:1086
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Nem használható aláírási kulcsok"
 
-#: composer/keyresolver.cpp:1003
+#: composer/keyresolver.cpp:1000
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -954,7 +954,7 @@ msgstr ""
 "Nem kötelező saját kulccsal titkosított másolatot készíteni az üzenetből, de "
 "ebben az esetben Ön nem fogja tudni elolvasni a saját elküldött üzeneteit."
 
-#: composer/keyresolver.cpp:1032
+#: composer/keyresolver.cpp:1029
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -972,7 +972,7 @@ msgstr ""
 "üzenetből, de ebben az esetben Ön nem fogja tudni elolvasni a saját "
 "elküldött üzeneteit."
 
-#: composer/keyresolver.cpp:1064
+#: composer/keyresolver.cpp:1061
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -985,13 +985,13 @@ msgstr ""
 "azonban nincs beállítva megbízható OpenPGP aláírási tanúsítvány ehhez az "
 "azonosítóhoz."
 
-#: composer/keyresolver.cpp:1072
+#: composer/keyresolver.cpp:1069
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nem kell OpenPGP aláírás"
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1079
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -1004,13 +1004,13 @@ msgstr ""
 "azonban nincs beállítva érvényes S/MIME aláírási tanúsítvány ehhez az "
 "azonosítóhoz."
 
-#: composer/keyresolver.cpp:1090
+#: composer/keyresolver.cpp:1087
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nem kell S/MIME aláírás"
 
-#: composer/keyresolver.cpp:1152
+#: composer/keyresolver.cpp:1149
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -1021,13 +1021,13 @@ msgstr ""
 "megfelelne a rendelkezésre álló kulcsoknak.\n"
 "Elküldi az üzenetet aláírás nélkül?"
 
-#: composer/keyresolver.cpp:1156
+#: composer/keyresolver.cpp:1153
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Nem lehet aláírni"
 
-#: composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1316
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -1036,14 +1036,14 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot a saját célra való titkosításhoz. A "
 "saját titkosított üzeneteinek másolatát nem fogja tudni dekódolni."
 
-#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
-#: composer/keyresolver.cpp:1363
+#: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
+#: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Figyelmeztetés – hiányzik egy kulcs"
 
-#: composer/keyresolver.cpp:1338
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1052,7 +1052,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot a címzetthez, ezért az üzenet nem lesz "
 "titkosítva."
 
-#: composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1061,7 +1061,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért az üzenet "
 "nem lesz titkosítva."
 
-#: composer/keyresolver.cpp:1355
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1070,7 +1070,7 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért ha az "
 "üzenetet titkosítva küldi el, a címzett nem fogja tudni elolvasni."
 
-#: composer/keyresolver.cpp:1359
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1079,12 +1079,12 @@ msgstr ""
 "Nem választott ki titkosítási kulcsot néhány címzetthez: ezek a személyek "
 "nem fogják tudni elolvasni az üzenetet, ha azt titkosítva küldi el."
 
-#: composer/keyresolver.cpp:1436
+#: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Titkosítási kulcs kiválasztása"
 
-#: composer/keyresolver.cpp:1480
+#: composer/keyresolver.cpp:1477
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1098,7 +1098,7 @@ msgstr ""
 "\n"
 "Válassz ki újra a tanúsítványokat ehhez a címzetthez."
 
-#: composer/keyresolver.cpp:1552
+#: composer/keyresolver.cpp:1549
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1115,7 +1115,7 @@ msgstr ""
 "tanúsítvány a listában, a Külső tanúsítványok keresése gombra kattintva "
 "külső tanúsítványokat is kereshet.</qt>"
 
-#: composer/keyresolver.cpp:1562
+#: composer/keyresolver.cpp:1559
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "

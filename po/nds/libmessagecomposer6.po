@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -534,18 +534,18 @@ msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-Zertifikaat löppt neegst af"
 
-#: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
-#: composer/composerviewbase.cpp:845
+#: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
+#: composer/composerviewbase.cpp:844
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Slötels laat sik nich oplösen. Bitte en Fehlerbericht loosstüern."
 
-#: composer/composerviewbase.cpp:1050 composer/composerviewbase.cpp:1321
+#: composer/composerviewbase.cpp:1049 composer/composerviewbase.cpp:1320
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Bruker hett Opgaav afbraken"
 
-#: composer/composerviewbase.cpp:1055
+#: composer/composerviewbase.cpp:1054
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -554,37 +554,37 @@ msgstr ""
 "Naricht lett sik nich opstellen: %1 \n"
 " Bitte bericht dissen Fehler."
 
-#: composer/composerviewbase.cpp:1057
+#: composer/composerviewbase.cpp:1056
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Naricht lett sik nich opstellen: %1"
 
-#: composer/composerviewbase.cpp:1160
+#: composer/composerviewbase.cpp:1159
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "De Nettbreef lett sik nich ahn Problemen för't Loosstüern inregen: %1"
 
-#: composer/composerviewbase.cpp:1324
+#: composer/composerviewbase.cpp:1323
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Naricht \"%1\" lett sik nich automaatsch sekern."
 
-#: composer/composerviewbase.cpp:1343
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Nich all Daten laat sik na Datei schrieven."
 
-#: composer/composerviewbase.cpp:1346
+#: composer/composerviewbase.cpp:1345
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "De Datei lett sik nich to Enn afarbeiden."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1349
 #, kde-format
 msgid "Could not open file."
 msgstr "Datei lett sik nich opmaken."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1356
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -595,19 +595,19 @@ msgstr ""
 "%2\n"
 "Grund: %3"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1362
 #, fuzzy, kde-format
 #| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Naricht lett sik nich automaatsch sekern."
 
-#: composer/composerviewbase.cpp:1476
+#: composer/composerviewbase.cpp:1475
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Naricht lett sik nich sekern: %1"
 
-#: composer/composerviewbase.cpp:1897
+#: composer/composerviewbase.cpp:1896
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -618,28 +618,28 @@ msgstr ""
 "man bileggt is dor nix.\n"
 "Wullt Du de Naricht en Datei bileggen?"
 
-#: composer/composerviewbase.cpp:1900
+#: composer/composerviewbase.cpp:1899
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Bilagen-Anstoot"
 
-#: composer/composerviewbase.cpp:1901
+#: composer/composerviewbase.cpp:1900
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Datei bileggen..."
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1901
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Ahn Ännern &loosstüern"
 
-#: composer/composerviewbase.cpp:1954
+#: composer/composerviewbase.cpp:1953
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -650,27 +650,27 @@ msgstr ""
 "Naricht ünnerschrieven wullt.\n"
 "Wullt Du ehr ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Ünner&schrieven"
 
-#: composer/composerviewbase.cpp:1962 composer/composerviewbase.cpp:1990
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Nich ünnerschrieven"
 
-#: composer/composerviewbase.cpp:1983
+#: composer/composerviewbase.cpp:1982
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -679,7 +679,7 @@ msgstr ""
 "De Instellen för disse Adressaten för't Ünnerschrieven passt nich tosamen.\n"
 "Wullt Du de Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2010
+#: composer/composerviewbase.cpp:2009
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -688,21 +688,21 @@ msgstr ""
 "Du wullt disse Naricht ünnerschrieven, man för disse Identiteet is keen "
 "gellen Ünnerschriftslötel fastleggt."
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2014
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Ahn Ünnerschrift loosstüern?"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2015
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&Ahn Ünnerschrift loosstüern"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2030
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -714,7 +714,7 @@ msgstr ""
 "Huusregeln wesen.\n"
 "Wullt Du ansteed all Delen ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -725,31 +725,31 @@ msgstr ""
 "Loosstüern vun nich ünnerschreven Narichten mag gegen de Huusregeln wesen.\n"
 "Wullt Du ansteed de Naricht ünnerschrieven?"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "All Delen ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid "&Sign"
 msgstr "Ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2040
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Wohrschoen: Keen Ünnerschrift"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2042
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Ahn Ännern loosstüern"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -758,7 +758,7 @@ msgstr ""
 "Dat gifft för all Adressaten Verslötelslötels, de Du troost.\n"
 "Wullt Du disse Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2093
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -769,32 +769,32 @@ msgstr ""
 "Naricht verslöteln wullt.\n"
 "Wullt Du ehr verslöteln?"
 
-#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2129
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2128
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Ünnerschrieven && &verslöteln"
 
-#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Verslöteln"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Sign Only"
 msgstr "Bloots ünner&schrieven"
 
-#: composer/composerviewbase.cpp:2101 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Ahn Ännern &loosstüern"
 
-#: composer/composerviewbase.cpp:2122
+#: composer/composerviewbase.cpp:2121
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -803,22 +803,22 @@ msgstr ""
 "De Instellen för't Verslöteln passt för disse Adressaten nich tosamen.\n"
 "Wullt Du de Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2130 composer/keyresolver.cpp:1322
-#: composer/keyresolver.cpp:1363
+#: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Verslöteln"
 
-#: composer/composerviewbase.cpp:2131
+#: composer/composerviewbase.cpp:2130
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nich verslöteln"
 
-#: composer/composerviewbase.cpp:2151
+#: composer/composerviewbase.cpp:2150
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -828,21 +828,21 @@ msgstr ""
 "Du wullt disse Naricht verslöteln, un ok en Kopie för Di sülven maken, man "
 "för disse Identiteet is keen Verslötelslötel fastleggt, den Du troost."
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2156
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Ahn Verslöteln loosstüern?"
 
-#: composer/composerviewbase.cpp:2158 composer/keyresolver.cpp:1348
+#: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Ahn Verslöteln loosstüern"
 
-#: composer/composerviewbase.cpp:2173
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -855,7 +855,7 @@ msgstr ""
 "wesen un/oder schuulsam Daten apenmaken.\n"
 "Wullt Du ansteed all Delen verslöteln?"
 
-#: composer/composerviewbase.cpp:2178
+#: composer/composerviewbase.cpp:2177
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -868,19 +868,19 @@ msgstr ""
 "oder schuulsam Daten apenmaken.\n"
 "Wullt Du ansteed de Naricht verslöteln?"
 
-#: composer/composerviewbase.cpp:2182
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "All Delen &verslöteln"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2184
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Wohrschoen: Keen Verslöteln"
 
-#: composer/keyresolver.cpp:311
+#: composer/keyresolver.cpp:314
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -889,7 +889,7 @@ msgstr ""
 "Een oder mehr vun Dien instellten OpenPGP-Verslötelslötels oder S/MIME-"
 "Zertifikaten warrt för't verslöteln nich heel troot."
 
-#: composer/keyresolver.cpp:315
+#: composer/keyresolver.cpp:318
 #, kde-format
 msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
@@ -898,7 +898,7 @@ msgstr ""
 "Een oder mehr vun de OpenPGP-Verslötelslötels oder S/MIME-Zertifikaten för "
 "den Adressaat \"%1\" warrt för't Verslöteln nich heel troot."
 
-#: composer/keyresolver.cpp:322
+#: composer/keyresolver.cpp:325
 #, kde-format
 msgid ""
 "\n"
@@ -907,7 +907,7 @@ msgstr ""
 "\n"
 "Disse Slötels warrt bloots deelwies troot:\n"
 
-#: composer/keyresolver.cpp:326
+#: composer/keyresolver.cpp:329
 #, kde-format
 msgid ""
 "\n"
@@ -916,7 +916,7 @@ msgstr ""
 "\n"
 "Bi disse Slötels oder Zertifikaten is dat Totroon nich begäng:\n"
 
-#: composer/keyresolver.cpp:330
+#: composer/keyresolver.cpp:333
 #, kde-format
 msgid ""
 "\n"
@@ -925,14 +925,14 @@ msgstr ""
 "\n"
 "Disse Slötels oder Zertifikaten wöörn <b>torüchropen</b>:\n"
 
-#: composer/keyresolver.cpp:336
+#: composer/keyresolver.cpp:339
 #, fuzzy, kde-format
 #| msgid "Not Fully Trusted Encryption Keys"
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Verslötelslötels warrt bloots deelwies troot"
 
-#: composer/keyresolver.cpp:650
+#: composer/keyresolver.cpp:647
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
@@ -948,15 +948,15 @@ msgstr ""
 "Wenn Du liekers wiedermaakst, warrst Du na de Slötels fraagt, de bruukt "
 "warrn schöölt, wenn dat nödig deit."
 
-#: composer/keyresolver.cpp:660 composer/keyresolver.cpp:1013
-#: composer/keyresolver.cpp:1042
+#: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
+#: composer/keyresolver.cpp:1039
 #, fuzzy, kde-format
 #| msgid "Unusable Encryption Keys"
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Verslötelslötels nich to bruken"
 
-#: composer/keyresolver.cpp:692
+#: composer/keyresolver.cpp:689
 #, kde-format
 msgid ""
 "One or more of your configured OpenPGP signing keys or S/MIME signing "
@@ -971,15 +971,15 @@ msgstr ""
 "Wenn Du liekers wiedermaakst, warrst Du na de Slötels fraagt, de bruukt "
 "warrn schöölt, wenn dat nödig deit."
 
-#: composer/keyresolver.cpp:702 composer/keyresolver.cpp:1071
-#: composer/keyresolver.cpp:1089
+#: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
+#: composer/keyresolver.cpp:1086
 #, fuzzy, kde-format
 #| msgid "Unusable Signing Keys"
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Ünnerschriftslötels nich to bruken"
 
-#: composer/keyresolver.cpp:1003
+#: composer/keyresolver.cpp:1000
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -996,7 +996,7 @@ msgstr ""
 "Du kannst wiedermaken, ahn de Naricht för Di sülven to verslöteln, man denn "
 "kannst Du Dien egen Naricht nich lesen."
 
-#: composer/keyresolver.cpp:1032
+#: composer/keyresolver.cpp:1029
 #, kde-format
 msgid ""
 "Examination of recipient's encryption preferences yielded that the message "
@@ -1013,7 +1013,7 @@ msgstr ""
 "Du kannst wiedermaken, ahn de Naricht för Di sülven to verslöteln, man denn "
 "kannst Du Dien egen Naricht nich lesen."
 
-#: composer/keyresolver.cpp:1064
+#: composer/keyresolver.cpp:1061
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -1025,14 +1025,14 @@ msgstr ""
 "OpenPGP to ünnerschrieven, tominnst för en poor Adressaten.\n"
 "För disse Identiteet is aver keen gellen OpenPGP-Ünnerschriftslötel instellt."
 
-#: composer/keyresolver.cpp:1072
+#: composer/keyresolver.cpp:1069
 #, fuzzy, kde-format
 #| msgid "Do Not OpenPGP-Sign"
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nich mit OpenPGP ünnerschrieven"
 
-#: composer/keyresolver.cpp:1082
+#: composer/keyresolver.cpp:1079
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences yielded that the message "
@@ -1045,14 +1045,14 @@ msgstr ""
 "För disse Identiteet is aver keen gellen S/MIME-Ünnerschriftzertifikaat "
 "instellt."
 
-#: composer/keyresolver.cpp:1090
+#: composer/keyresolver.cpp:1087
 #, fuzzy, kde-format
 #| msgid "Do Not S/MIME-Sign"
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nich mit S/MIME ünnerschrieven"
 
-#: composer/keyresolver.cpp:1152
+#: composer/keyresolver.cpp:1149
 #, kde-format
 msgid ""
 "Examination of recipient's signing preferences showed no common type of "
@@ -1063,14 +1063,14 @@ msgstr ""
 "den Adressaat instellt is.\n"
 "Naricht ahn Ünnerschrift loosstüern?"
 
-#: composer/keyresolver.cpp:1156
+#: composer/keyresolver.cpp:1153
 #, fuzzy, kde-format
 #| msgid "No signing possible"
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Ünnerschrieven nich mööglich"
 
-#: composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1316
 #, kde-format
 msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
@@ -1079,15 +1079,15 @@ msgstr ""
 "Du hest keen Slötel för't Verslöteln för Di sülven utsöcht. Du kannst so "
 "Dien egen Naricht nich wedder opslöteln, wenn Du ehr verslötelst."
 
-#: composer/keyresolver.cpp:1322 composer/keyresolver.cpp:1347
-#: composer/keyresolver.cpp:1363
+#: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
+#: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "Missing Key Warning"
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Wohrschoen: Slötel fehlt"
 
-#: composer/keyresolver.cpp:1338
+#: composer/keyresolver.cpp:1335
 #, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
@@ -1096,7 +1096,7 @@ msgstr ""
 "Du hest för den Adressaat vun disse Naricht keen Verslötelslötel utsöcht, "
 "dorför warrt de Naricht nich verslötelt."
 
-#: composer/keyresolver.cpp:1342
+#: composer/keyresolver.cpp:1339
 #, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
@@ -1105,7 +1105,7 @@ msgstr ""
 "Du hest för keeneen vun de Adressaten vun disse Naricht en Verslötelslötel "
 "utsöcht, dorför warrt de Naricht nich verslötelt."
 
-#: composer/keyresolver.cpp:1355
+#: composer/keyresolver.cpp:1352
 #, kde-format
 msgid ""
 "You did not select an encryption key for one of the recipients: this person "
@@ -1115,7 +1115,7 @@ msgstr ""
 "utsöcht. Disse Adressaat kann de Naricht nich opslöteln, wenn Du ehr "
 "verslötelst."
 
-#: composer/keyresolver.cpp:1359
+#: composer/keyresolver.cpp:1356
 #, kde-format
 msgid ""
 "You did not select encryption keys for some of the recipients: these persons "
@@ -1125,12 +1125,12 @@ msgstr ""
 "utsöcht. Disse Adressaten köönt de Naricht nich opslöteln, wenn Du ehr "
 "verslötelst."
 
-#: composer/keyresolver.cpp:1436
+#: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
 msgstr "Slötel för't Verslöteln utsöken"
 
-#: composer/keyresolver.cpp:1480
+#: composer/keyresolver.cpp:1477
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1144,7 +1144,7 @@ msgstr ""
 "\n"
 "Söök bitte de Zertifikaten för dissen Adressaat nochmaal ut."
 
-#: composer/keyresolver.cpp:1552
+#: composer/keyresolver.cpp:1549
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1161,7 +1161,7 @@ msgstr ""
 "de List keen passen Zertifikaat, kannst Du ok na extern Zertifikaten söken.</"
 "qt>"
 
-#: composer/keyresolver.cpp:1562
+#: composer/keyresolver.cpp:1559
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
