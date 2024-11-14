@@ -9,6 +9,7 @@
 #pragma once
 
 #include "core/item.h"
+#include "core/md5hash.h"
 #include "core/modelinvariantindex.h"
 
 #include "messagelist_export.h"
@@ -119,25 +120,25 @@ public:
 
     void setEncryptionState(EncryptionState state);
 
-    [[nodiscard]] QByteArray messageIdMD5() const;
+    [[nodiscard]] MD5Hash messageIdMD5() const;
 
-    void setMessageIdMD5(const QByteArray &md5);
+    void setMessageIdMD5(MD5Hash md5);
 
-    [[nodiscard]] QByteArray inReplyToIdMD5() const;
+    [[nodiscard]] MD5Hash inReplyToIdMD5() const;
 
-    void setInReplyToIdMD5(const QByteArray &md5);
+    void setInReplyToIdMD5(MD5Hash md5);
 
-    [[nodiscard]] QByteArray referencesIdMD5() const;
+    [[nodiscard]] MD5Hash referencesIdMD5() const;
 
-    void setReferencesIdMD5(const QByteArray &md5);
+    void setReferencesIdMD5(MD5Hash md5);
 
     void setSubjectIsPrefixed(bool subjectIsPrefixed);
 
     [[nodiscard]] bool subjectIsPrefixed() const;
 
-    [[nodiscard]] QByteArray strippedSubjectMD5() const;
+    [[nodiscard]] MD5Hash strippedSubjectMD5() const;
 
-    void setStrippedSubjectMD5(const QByteArray &md5);
+    void setStrippedSubjectMD5(MD5Hash md5);
 
     [[nodiscard]] bool aboutToBeRemoved() const;
 

@@ -355,37 +355,37 @@ void MessageItem::setEncryptionState(EncryptionState state)
     d->mEncryptionState = state;
 }
 
-QByteArray MessageItem::messageIdMD5() const
+MD5Hash MessageItem::messageIdMD5() const
 {
     Q_D(const MessageItem);
     return d->mMessageIdMD5;
 }
 
-void MessageItem::setMessageIdMD5(const QByteArray &md5)
+void MessageItem::setMessageIdMD5(MD5Hash md5)
 {
     Q_D(MessageItem);
     d->mMessageIdMD5 = md5;
 }
 
-QByteArray MessageItem::inReplyToIdMD5() const
+MD5Hash MessageItem::inReplyToIdMD5() const
 {
     Q_D(const MessageItem);
     return d->mInReplyToIdMD5;
 }
 
-void MessageItem::setInReplyToIdMD5(const QByteArray &md5)
+void MessageItem::setInReplyToIdMD5(MD5Hash md5)
 {
     Q_D(MessageItem);
     d->mInReplyToIdMD5 = md5;
 }
 
-QByteArray MessageItem::referencesIdMD5() const
+MD5Hash MessageItem::referencesIdMD5() const
 {
     Q_D(const MessageItem);
     return d->mReferencesIdMD5;
 }
 
-void MessageItem::setReferencesIdMD5(const QByteArray &md5)
+void MessageItem::setReferencesIdMD5(MD5Hash md5)
 {
     Q_D(MessageItem);
     d->mReferencesIdMD5 = md5;
@@ -403,13 +403,13 @@ bool MessageItem::subjectIsPrefixed() const
     return d->mSubjectIsPrefixed;
 }
 
-QByteArray MessageItem::strippedSubjectMD5() const
+MD5Hash MessageItem::strippedSubjectMD5() const
 {
     Q_D(const MessageItem);
     return d->mStrippedSubjectMD5;
 }
 
-void MessageItem::setStrippedSubjectMD5(const QByteArray &md5)
+void MessageItem::setStrippedSubjectMD5(MD5Hash md5)
 {
     Q_D(MessageItem);
     d->mStrippedSubjectMD5 = md5;

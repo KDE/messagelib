@@ -25,7 +25,7 @@ private Q_SLOTS:
         qDebug() << sizeof(MessageItem);
         QVERIFY(sizeof(MessageItem) <= 32);
         qDebug() << sizeof(MessageItemPrivate);
-        QVERIFY(sizeof(MessageItemPrivate) <= 304);
+        QVERIFY(sizeof(MessageItemPrivate) <= 272);
     }
 };
 

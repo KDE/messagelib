@@ -17,6 +17,7 @@
 #include <Akonadi/MessageFolderAttribute>
 #include <Akonadi/SelectionProxyModel>
 
+#include "core/md5hash.h"
 #include "core/messageitem.h"
 #include "messagelist_debug.h"
 #include "messagelistsettings.h"
@@ -257,28 +258,30 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     return true;
 }
 
-static QByteArray md5Encode(const QByteArray &str)
+static Core::MD5Hash md5Encode(QByteArrayView str)
 {
     auto trimmed = str.trimmed();
     if (trimmed.isEmpty()) {
         return {};
     }
 
-    QCryptographicHash c(QCryptographicHash::Md5);
+    static thread_local QCryptographicHash c(QCryptographicHash::Md5);
+    c.reset();
     c.addData(trimmed);
-    return c.result();
+    return c.resultView();
 }
 
-static QByteArray md5Encode(const QString &str)
+static Core::MD5Hash md5Encode(QStringView str)
 {
     auto trimmed = str.trimmed();
     if (trimmed.isEmpty()) {
         return {};
     }
 
-    QCryptographicHash c(QCryptographicHash::Md5);
-    c.addData(QByteArrayView(reinterpret_cast<const char *>(trimmed.unicode()), sizeof(QChar) * trimmed.length()));
-    return c.result();
+    static thread_local QCryptographicHash c(QCryptographicHash::Md5);
+    c.reset();
+    c.addData(QByteArrayView(reinterpret_cast<const char *>(trimmed.utf16()), sizeof(QStringView::storage_type) * trimmed.length()));
+    return c.resultView();
 }
 
 void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const

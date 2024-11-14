@@ -203,6 +203,7 @@ ecm_generate_headers(MessageList_Camelcasecore_HEADERS
     HEADER_NAMES
     View
     Enums
+    MD5Hash
     StorageModelBase
     WidgetBase
     REQUIRED_HEADERS MessageList_core_HEADERS

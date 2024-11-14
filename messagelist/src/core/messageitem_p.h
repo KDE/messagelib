@@ -47,10 +47,10 @@ public:
     // This creates mTagList and fills it with useful data
     void fillTagList(const Akonadi::Tag::List &taglist);
 
-    QByteArray mMessageIdMD5; ///< always set
-    QByteArray mInReplyToIdMD5; ///< set only if we're doing threading
-    QByteArray mReferencesIdMD5; ///< set only if we're doing threading
-    QByteArray mStrippedSubjectMD5; ///< set only if we're doing threading
+    MD5Hash mMessageIdMD5; ///< always set
+    MD5Hash mInReplyToIdMD5; ///< set only if we're doing threading
+    MD5Hash mReferencesIdMD5; ///< set only if we're doing threading
+    MD5Hash mStrippedSubjectMD5; ///< set only if we're doing threading
     Akonadi::Item mAkonadiItem;
     MessageItem::ThreadingStatus mThreadingStatus : 4;
     MessageItem::EncryptionState mEncryptionState : 4;
