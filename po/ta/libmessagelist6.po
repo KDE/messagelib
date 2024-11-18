@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-07 00:40+0000\n"
-"PO-Revision-Date: 2024-10-27 12:03+0530\n"
+"PO-Revision-Date: 2024-11-17 21:52+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1153,10 +1153,9 @@ msgstr ""
 "முடக்கப்பட்டுள்ளது. கீழுள்ள முடிவுகள் அரைகுறையாக இருக்கலாம்."
 
 #: core/widgets/searchlinecommand.cpp:75
-#, fuzzy, kde-format
-#| msgid "&Filtering"
+#, kde-format
 msgid "Literal string"
-msgstr "&வடிகட்டுதல்"
+msgstr "சரம் அப்படியே"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
@@ -1199,16 +1198,14 @@ msgid "Subject contains"
 msgstr "தலைப்பு இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:93
-#, fuzzy, kde-format
-#| msgid "To contains"
+#, kde-format
 msgid "Body contains"
-msgstr "பெறுநர் இதைக் கொண்டது"
+msgstr "உடல் இதைக் கொண்டது"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "உடனிணைப்பைக் கொண்ட அஞ்சல்"
+msgstr "இக்குறிச்சொல்லை கொண்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1278,12 +1275,10 @@ msgid "Subject"
 msgstr "தலைப்பு"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
-msgstr "உடல்"
+msgstr "உடற்பகுதி"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
@@ -1407,11 +1402,10 @@ msgid "Newer"
 msgstr "புதியது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "is in category"
+#, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr "வகையில் உள்ளது"
+msgstr "பகுப்பு"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
