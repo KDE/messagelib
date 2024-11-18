@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016, 2023.
 # Burkhard Lück <lueck@hube-lueck.de>, 2021.
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2023-04-03 16:49+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-11-11 18:20+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
@@ -25,8 +26,7 @@ msgid "Developer Tool"
 msgstr "Entwicklerwerkzeug"
 
 #: findbar/findbarbase.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Schließen"
@@ -43,8 +43,7 @@ msgid "F&ind:"
 msgstr "&Suchen:"
 
 #: findbar/findbarbase.cpp:53
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Suchtext"
@@ -56,8 +55,7 @@ msgid "Next"
 msgstr "Weiter"
 
 #: findbar/findbarbase.cpp:59
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Zur nächsten Übereinstimmung springen"
@@ -69,8 +67,7 @@ msgid "Previous"
 msgstr "Zurück"
 
 #: findbar/findbarbase.cpp:65
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Zur vorherigen Übereinstimmung springen"
@@ -81,8 +78,7 @@ msgid "Options"
 msgstr "Einstellungen"
 
 #: findbar/findbarbase.cpp:72
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Suchverhalten ändern"
@@ -98,8 +94,7 @@ msgid "Phrase not found"
 msgstr "Ausdruck nicht gefunden"
 
 #: webenginepage.cpp:152
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML-Seite speichern"
@@ -123,6 +118,8 @@ msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 msgstr ""
+"Mail-Verfolger wurden gefunden und blockiert <a href=\"mailtrackingdetails"
+"\">(Details …)."
 
 #: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
@@ -133,8 +130,8 @@ msgstr "Details:"
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ein Verfolger der Firma %2 (%3)"
+msgstr[1] "%1 Verfolger der Firma %2 (%3)"
 
 #: widgets/zoomactionmenu.cpp:127
 #, kde-format

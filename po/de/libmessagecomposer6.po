@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2013, 2016, 2020, 2022, 2023.
 # Bjoern Ricks <bjoern.ricks@intevation.de>, 2010, 2011.
@@ -9,19 +10,18 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2023-05-18 20:02+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-11-11 19:06+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Der Anhang kann nicht komprimiert werden"
@@ -44,8 +44,7 @@ msgid "Keep"
 msgstr "Nicht komprimieren"
 
 #: attachment/attachmentcontrollerbase.cpp:181
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Komprimieren"
@@ -58,8 +57,7 @@ msgid "Failed to attach file"
 msgstr "Das Anhängen der Datei ist fehlgeschlagen"
 
 #: attachment/attachmentcontrollerbase.cpp:273
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Der Anhang kann nicht neu geladen werden"
@@ -84,36 +82,31 @@ msgid "&Open With..."
 msgstr "Öff&nen mit ..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Anhängen des öffentlichen Schlüssels fehlgeschlagen"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Das Anhängen der vCard-Datei ist fehlgeschlagen"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Das Anhängen von Text aus der Zwischenablage ist fehlgeschlagen"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "Öff&entlichen Schlüssel anhängen ..."
+msgstr "Öff&entlichen Schlüssel anhängen …"
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "&Eigenen öffentlichen Schlüssel anhängen"
@@ -142,8 +135,7 @@ msgid "&Attach Directory..."
 msgstr "Ordner &anhängen ..."
 
 #: attachment/attachmentcontrollerbase.cpp:471
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Eigene vCard anhängen"
@@ -197,11 +189,10 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: attachment/attachmentcontrollerbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Bearbeiten mit ..."
+msgstr "Bearbeiten mit …"
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -214,22 +205,19 @@ msgid "Save As..."
 msgstr "Speichern unter ..."
 
 #: attachment/attachmentcontrollerbase.cpp:531
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Ei&genschaften des Anhangs ..."
+msgstr "Ei&genschaften des Anhangs …"
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Eigenschaften"
 
 #: attachment/attachmentcontrollerbase.cpp:540
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Alles auswählen"
@@ -248,21 +236,18 @@ msgstr "KMail kann den Anhang nicht in eine temporäre Datei schreiben."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Anhang kann nicht geöffnet werden"
 
 #: attachment/attachmentcontrollerbase.cpp:713
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "KMail kann den Anhang nicht öffnen."
+msgstr "KMail kann den Anhang nicht öffnen"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Anhang kann nicht bearbeitet werden"
@@ -273,8 +258,7 @@ msgid "unnamed"
 msgstr "Unbenannt"
 
 #: attachment/attachmentcontrollerbase.cpp:798
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Anhang speichern unter"
@@ -289,15 +273,13 @@ msgstr ""
 "Möchten Sie die Datei ersetzen?"
 
 #: attachment/attachmentcontrollerbase.cpp:822
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "In Datei speichern"
 
 #: attachment/attachmentcontrollerbase.cpp:823
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Ersetzen"
@@ -462,8 +444,7 @@ msgstr ""
 "möglich.</p><p>Möchten Sie die Formatierungen entfernen?</p></qt>"
 
 #: composer/composerviewbase.cpp:330
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Nachricht signieren/verschlüsseln?"
@@ -479,8 +460,7 @@ msgid "Do you want to resize images?"
 msgstr "Möchten Sie die Größe der Bilder ändern?"
 
 #: composer/composerviewbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Bildgröße automatisch ändern"
@@ -498,29 +478,25 @@ msgid "Do Not Resize"
 msgstr "Größe nicht ändern"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-Schlüssel abgelaufen"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-Zertifikat abgelaufen"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-Schlüssel läuft bald ab"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-Zertifikat läuft bald ab"
@@ -590,11 +566,10 @@ msgstr ""
 "Grund: %3"
 
 #: composer/composerviewbase.cpp:1362
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
-msgstr "Automatisches Speichern der Nachricht schlug fehl"
+msgstr "Automatisches Speichern der Nachricht ist fehlgeschlagen"
 
 #: composer/composerviewbase.cpp:1475
 #, kde-format
@@ -613,22 +588,19 @@ msgstr ""
 "Möchten Sie eine Datei an Ihre Nachricht anhängen?"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Erinnerungsfunktion für Dateianhänge"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "&Datei anhängen ..."
+msgstr "&Datei anhängen …"
 
 #: composer/composerviewbase.cpp:1901
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Ohne Änderung &senden"
@@ -645,8 +617,7 @@ msgstr ""
 "Möchten Sie diese Nachricht signieren?"
 
 #: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Nachricht signieren?"
@@ -658,8 +629,7 @@ msgid "&Sign"
 msgstr "&Signieren"
 
 #: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Nicht signieren"
@@ -683,15 +653,13 @@ msgstr ""
 "wurde kein gültiger Signierungsschlüssel für diese Identität eingerichtet."
 
 #: composer/composerviewbase.cpp:2014
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Unsigniert senden?"
 
 #: composer/composerviewbase.cpp:2015
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&Unsigniert senden"
@@ -731,15 +699,13 @@ msgid "&Sign"
 msgstr "&Signieren"
 
 #: composer/composerviewbase.cpp:2040
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Warnung: Unsignierte Nachricht"
 
 #: composer/composerviewbase.cpp:2042
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Ohne Änderung &senden"
@@ -801,15 +767,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "V&erschlüsseln"
 
 #: composer/composerviewbase.cpp:2130
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nicht verschlüsseln"
@@ -827,15 +791,13 @@ msgstr ""
 "eingerichtet."
 
 #: composer/composerviewbase.cpp:2156
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Unverschlüsselt senden?"
 
 #: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Unverschlüsselt senden"
@@ -874,8 +836,7 @@ msgid "&Encrypt All Parts"
 msgstr "Alle Teile v&erschlüsseln"
 
 #: composer/composerviewbase.cpp:2184
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Warnung: Nicht verschlüsselte Nachricht"
@@ -927,8 +888,7 @@ msgstr ""
 "Die folgenden Schlüssel oder Zertifikate wurden <b>zurückgezogen</b>:\n"
 
 #: composer/keyresolver.cpp:339
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Nicht voll vertrauenswürdige Verschlüsselungsschlüssel"
@@ -951,11 +911,10 @@ msgstr ""
 
 #: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
 #: composer/keyresolver.cpp:1039
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
-msgstr "Unbrauchbare Verschlüsselungs-Schlüssel"
+msgstr "Unbrauchbare Verschlüsselungsschlüssel"
 
 #: composer/keyresolver.cpp:689
 #, kde-format
@@ -974,11 +933,10 @@ msgstr ""
 
 #: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
 #: composer/keyresolver.cpp:1086
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
-msgstr "Unbrauchbare Signierungs-Schlüssel"
+msgstr "Unbrauchbare Signierschlüssel"
 
 #: composer/keyresolver.cpp:1000
 #, kde-format
@@ -1030,8 +988,7 @@ msgstr ""
 "OpenPGP-Schlüssel eingerichtet."
 
 #: composer/keyresolver.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nicht mit OpenPGP signieren"
@@ -1050,8 +1007,7 @@ msgstr ""
 "MIME-Zertifikat eingerichtet."
 
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nicht mit S/MIME signieren"
@@ -1068,11 +1024,10 @@ msgstr ""
 "Soll die Nachricht gesendet werden, ohne sie zu signieren?"
 
 #: composer/keyresolver.cpp:1153
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr "Es ist keine Signierung möglich"
+msgstr "Signieren ist nicht möglich"
 
 #: composer/keyresolver.cpp:1316
 #, kde-format
@@ -1086,8 +1041,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Warnung: Fehlender Schlüssel"
@@ -1181,8 +1135,7 @@ msgstr ""
 "Wählen Sie das/die Zertifikat(e) für diesen Empfänger."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Auswahl des Namens"
@@ -1210,6 +1163,8 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"Die neue Erinnerung kann nicht gespeichert werden: Beim Erstellen einer "
+"neuen Aufgabe im Kalender ist ein Fehler aufgetreten: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
@@ -1238,8 +1193,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Das ausgewählte Datum muss nach dem aktuellen Datum liegen."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Ungültiges Datum"
@@ -1250,8 +1204,7 @@ msgid "The selected folder is not valid."
 msgstr "Der ausgewählte Ordner ist nicht gültig."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ungültiger Ordner"
@@ -1288,11 +1241,10 @@ msgid "Select Image Format"
 msgstr "Bildformat auswählen"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Format auswählen ..."
+msgstr "Format auswählen …"
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1323,11 +1275,10 @@ msgid "Please verify minimum and maximum values."
 msgstr "Bitte überprüfen Sie die minimalen und maximalen Werte."
 
 #: imagescaling/imagescalingwidget.cpp:315
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr "Fehler beim minimalen Maximumwert"
+msgstr "Fehler beim minimalen Maximalwert"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
@@ -1552,8 +1503,7 @@ msgid "No text found in Clipboard"
 msgstr "Kein Text in der Zwischenablage gefunden"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Name des Anhangs festlegen"
@@ -1746,12 +1696,10 @@ msgid "&Name:"
 msgstr "&Name:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "Neue Verteilerliste"
+msgstr "Name der Verteilerliste"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1850,8 +1798,7 @@ msgid "Select type of recipient"
 msgstr "Empfänger-Typ auswählen"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Legen Sie die Liste der Empfänger-Adressen für diese Nachricht fest."
@@ -1933,8 +1880,7 @@ msgid "Select Recipient"
 msgstr "Empfänger auswählen"
 
 #: recipient/recipientspicker.cpp:61
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Verzeichnisdienst durch&suchen"
@@ -1990,10 +1936,9 @@ msgid "You can not add more recipients."
 msgstr "Sie können keine weiteren Empfänger hinzufügen."
 
 #: sendlater/sendlatercreatejob.cpp:33
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr "Speichern der Nachricht schlug fehl: %1"
+msgstr "Das spätere Senden der Nachricht ist fehlgeschlagen: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
@@ -2007,8 +1952,7 @@ msgid "Send Later"
 msgstr "Später senden"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Verzögerung"
@@ -2041,7 +1985,7 @@ msgstr "Der Agent zum späteren Senden läuft nicht."
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "Das Entfernen der Nachricht aus „Später“-Senden ist fehlgeschlagen: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
 #, kde-format
@@ -2150,15 +2094,11 @@ msgstr "Wenn möglich, alle Nachrichten signieren"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"Für alle Empfänger wurden gültige vertrauenswürdige "
-"Verschlüsselungsschlüssel gefunden.\n"
-"Möchten Sie diese Nachricht verschlüsseln?"
+"Die Verschlüsselung aktivieren, wenn Schlüssel für alle Empfänger vorhanden "
+"sind"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
@@ -2368,10 +2308,9 @@ msgid "Long Date (%1)"
 msgstr "Datum (Langform) (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Datum (Langform) (%1)"
+msgstr "Benutzerdefiniertes Datum (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2404,10 +2343,9 @@ msgid "Month Number (%1)"
 msgstr "Nummer des Monats (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Kalenderwoche (%1)"
+msgstr "Tagnummer (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
@@ -2447,7 +2385,7 @@ msgstr "Vollständiger Wochentag (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "Jahr des letzten Monats (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:171
 #, kde-format
@@ -2477,18 +2415,16 @@ msgstr ""
 "keine E-Mails versendet werden. Möchten Sie den Agenten einrichten?"
 
 #: utils/util.cpp:270
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Kein Agent zur Nachrichten-Auslieferung."
 
 #: utils/util.cpp:272
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr "Kein Agent zur Nachrichten-Auslieferung."
+msgstr "Agent zur Nachrichten-Auslieferung erstellen"
 
 #: utils/util.cpp:287
 #, kde-format
@@ -2500,8 +2436,7 @@ msgstr ""
 "Mails versendet werden. Möchten Sie den Agenten online schalten?"
 
 #: utils/util.cpp:288
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Agent zur Nachrichten-Auslieferung ist offline."
@@ -2510,7 +2445,7 @@ msgstr "Agent zur Nachrichten-Auslieferung ist offline."
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Online festlegen"
 
 #~ msgid "Failed to attach file"
 #~ msgstr "Das Anhängen der Datei ist fehlgeschlagen"

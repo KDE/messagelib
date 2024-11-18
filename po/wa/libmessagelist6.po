@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-11-18 00:41+0000\n"
 "PO-Revision-Date: 2009-01-11 16:21+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@gmail.com>\n"
 "Language-Team: Walloon <linux@walon.org>\n"
@@ -1817,14 +1817,14 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "Dierin cweraedje"
 
-#: storagemodel.cpp:218
+#: storagemodel.cpp:219
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Nou sudjet"
 
-#: storagemodel.cpp:219
+#: storagemodel.cpp:220
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
