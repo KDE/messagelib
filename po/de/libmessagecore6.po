@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011, 2016, 2023.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2009.
 # Torbjörn Klatt <torbjoern@torbjoern-klatt.de>, 2011.
@@ -10,15 +11,15 @@ msgstr ""
 "Project-Id-Version: libmessagecore6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 00:40+0000\n"
-"PO-Revision-Date: 2023-03-21 19:52+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-11-11 18:53+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -299,7 +300,7 @@ msgstr "Dies ist die Farbe, die in der ersten Zitatstufe verwendet wird"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Eigene Identität anzeigen"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -324,9 +325,7 @@ msgstr ""
 "Begrenzung)."
 
 #: utils/dateformatter.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "unbekannt"
@@ -334,18 +333,18 @@ msgstr "unbekannt"
 #: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Heute %1"
 
 #: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Gestern %1"
 
 #: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:415
 #, kde-format
