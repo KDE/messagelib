@@ -3,22 +3,22 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Manuel Tortosa <manutortosa@gmail.com>, 2010, 2011.
 # SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# Manuel Tortosa <manutortosa@gmail.com>, 2010, 2011.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-10-27 13:55+0100\n"
+"PO-Revision-Date: 2024-11-17 20:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -808,7 +808,7 @@ msgid ""
 msgstr ""
 "Algunes parts d'este missatge no s'encriptaran.\n"
 "L'enviament de missatges només parcialment encriptats podria infringir la "
-"política del lloc.\n"
+"política del lloc o provocar fuites d'informació confidencial.\n"
 "Voleu encriptar totes les parts?"
 
 #: composer/composerviewbase.cpp:2178
@@ -821,8 +821,8 @@ msgid ""
 msgstr ""
 "Este missatge no s'encriptarà.\n"
 "L'enviament de missatges sense encriptar podria infringir la política del "
-"lloc i/o perdre informació confidencial.\n"
-"Voleu encriptar totes les parts?"
+"lloc o provocar fuites d'informació confidencial.\n"
+"Voleu encriptar el missatge?"
 
 #: composer/composerviewbase.cpp:2182
 #, kde-format
