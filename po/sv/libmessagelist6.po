@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-07 00:40+0000\n"
-"PO-Revision-Date: 2024-10-19 16:26+0200\n"
+"PO-Revision-Date: 2024-11-23 08:11+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1152,23 +1152,22 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Bokstavlig sträng"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Storleken är mindre än"
 
 #: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Storleken är större än"
 
 #: core/widgets/searchlinecommand.cpp:81
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Storlek"
+msgstr "Storlek är"
 
 #: core/widgets/searchlinecommand.cpp:83
 #, kde-format
@@ -1196,16 +1195,14 @@ msgid "Subject contains"
 msgstr "Rubrik innehåller"
 
 #: core/widgets/searchlinecommand.cpp:93
-#, fuzzy, kde-format
-#| msgid "To contains"
+#, kde-format
 msgid "Body contains"
-msgstr "Till innehåller"
+msgstr "Texten innehåller"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgid "Mail has attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "Brevet har bilaga"
+msgstr "Brevet har etikett"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, kde-format
@@ -1274,9 +1271,7 @@ msgid "Subject"
 msgstr "Rubrik"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Text"
@@ -1375,39 +1370,37 @@ msgstr "Vidarebefordrat"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Mindre"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Större"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Storlek"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Korg"
+msgstr "Äldre"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Nyare"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1426,6 +1419,7 @@ msgstr "Rensa snabbsökfältet vid byte av korg"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Använd knappen om den grafiska kommandoradskomponenten ska visas eller döljas"
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -1434,7 +1428,7 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
-"Ändra knappen om du vill behålla snabbsökningen låst när du flyttar till "
+"Använd knappen om snabbsökningen ska behållas låst vid förflyttning till "
 "andra korgar, eller när en sökning begränsas enligt brevstatus."
 
 #: core/widgets/searchlinestatus.cpp:114
@@ -1473,12 +1467,10 @@ msgid "BCC"
 msgstr "Dold kopia"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "Dold kopia"
+msgstr "Kopia"
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
