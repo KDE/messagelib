@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 00:41+0000\n"
-"PO-Revision-Date: 2024-11-11 16:08+0900\n"
+"PO-Revision-Date: 2024-11-25 23:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "dot tw>\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/aggregation.cpp:178
@@ -1144,7 +1144,7 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "明文字串"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
