@@ -25,11 +25,11 @@ class EditorWatcher : public QObject
 {
     Q_OBJECT
 public:
-    enum OpenWithOption {
+    enum OpenWithOption : uint8_t {
         OpenWithDialog,
         NoOpenWithDialog,
     };
-    enum ErrorEditorWatcher {
+    enum ErrorEditorWatcher : uint8_t {
         Unknown = 0,
         Canceled,
         NoServiceFound,
