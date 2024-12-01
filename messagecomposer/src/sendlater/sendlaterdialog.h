@@ -27,7 +27,7 @@ class MESSAGECOMPOSER_EXPORT SendLaterDialog : public QDialog
 {
     Q_OBJECT
 public:
-    enum SendLaterAction {
+    enum SendLaterAction : uint8_t {
         Unknown = 0,
         SendDeliveryAtTime = 1,
         Canceled = 2,

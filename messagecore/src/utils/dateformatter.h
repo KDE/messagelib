@@ -57,7 +57,7 @@ public:
     /**
       The different types of date formats.
     */
-    enum FormatType {
+    enum FormatType : uint8_t {
         CTime, /**< ctime "Sun Mar 31 02:08:35 2002" */
         Localized, /**< localized "2002-03-31 02:08" */
         Fancy, /**< fancy "Today 02:08:35" */

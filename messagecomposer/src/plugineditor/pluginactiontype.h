@@ -19,7 +19,7 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT PluginActionType
 {
 public:
-    enum Type {
+    enum Type : uint8_t {
         Tools = 0,
         Edit = 1,
         File = 2,

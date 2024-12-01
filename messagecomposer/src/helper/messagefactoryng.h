@@ -27,7 +27,7 @@ namespace MessageComposer
 /**
  * Enumeration that defines the available reply "modes"
  */
-enum ReplyStrategy {
+enum ReplyStrategy : uint8_t {
     ReplySmart = 0, //< Attempt to automatically guess the best recipient for the reply
     ReplyAuthor, //< Reply to the author of the message (possibly NOT the mailing list, if any)
     ReplyList, //< Reply to the mailing list (and not the author of the message)
@@ -35,7 +35,7 @@ enum ReplyStrategy {
     ReplyNone, //< Don't set reply addresses: they will be set manually
 };
 
-enum MDNAdvice {
+enum MDNAdvice : uint8_t {
     MDNIgnore,
     MDNSendDenied,
     MDNSend,

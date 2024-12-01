@@ -131,19 +131,19 @@ class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
     friend class TemplateParserJobTest;
 
 public:
-    enum Mode {
+    enum Mode : uint8_t {
         NewMessage,
         Reply,
         ReplyAll,
         Forward,
     };
 
-    enum AllowSelection {
+    enum AllowSelection : uint8_t {
         SelectionAllowed,
         NoSelectionAllowed,
     };
 
-    enum Quotes {
+    enum Quotes : uint8_t {
         ReplyAsOriginalMessage,
         ReplyAsPlain,
         ReplyAsHtml,

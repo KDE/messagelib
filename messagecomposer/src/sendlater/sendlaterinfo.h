@@ -19,7 +19,7 @@ class MESSAGECOMPOSER_EXPORT SendLaterInfo
 public:
     explicit SendLaterInfo() = default;
 
-    enum RecurrenceUnit {
+    enum RecurrenceUnit : uint8_t {
         Days = 0,
         Weeks,
         Months,

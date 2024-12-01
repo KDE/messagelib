@@ -15,7 +15,7 @@ class KWindowPositioner : public QObject
 {
     Q_OBJECT
 public:
-    enum Mode {
+    enum Mode : uint8_t {
         Right,
         Bottom,
     };

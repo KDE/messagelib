@@ -20,7 +20,7 @@ public:
     MessageViewerCheckBeforeDeletingParameters(const MessageViewerCheckBeforeDeletingParameters &other);
     ~MessageViewerCheckBeforeDeletingParameters();
 
-    enum DeleteType {
+    enum DeleteType : uint8_t {
         Unknown = 0,
         MoveToTrash = 1,
         Delete = 2,

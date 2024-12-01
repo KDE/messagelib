@@ -34,7 +34,7 @@ public:
     /**
      * Defines what entity should manage the mailing list.
      */
-    enum Handler {
+    enum Handler : uint8_t {
         KMail, ///< The list is handled by KMail
         Browser, ///< The list is handled by a browser.
     };

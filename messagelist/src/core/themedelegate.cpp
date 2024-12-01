@@ -72,7 +72,7 @@ void ThemeDelegate::setTheme(const Theme *theme)
     mItemView->reset();
 }
 
-enum FontType {
+enum FontType : uint8_t {
     Normal,
     Bold,
     Italic,

@@ -41,7 +41,7 @@ public:
     /**
      * The type of the Item.
      */
-    enum Type {
+    enum Type : uint8_t {
         GroupHeader, ///< This item is a GroupHeaderItem
         Message, ///< This item is a MessageItem
         InvisibleRoot ///< This item is just Item and it's the only InvisibleRoot per Model.
@@ -52,7 +52,7 @@ public:
      * when it's attached to the viewable tree. Needed as a workaround for
      * QTreeView limitations in handling item expansion.
      */
-    enum InitialExpandStatus {
+    enum InitialExpandStatus : uint8_t {
         ExpandNeeded, ///< Must expand when this item becomes viewable
         NoExpandNeeded, ///< No expand needed at all
         ExpandExecuted ///< Item already expanded

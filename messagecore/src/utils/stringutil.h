@@ -89,7 +89,7 @@ MESSAGECORE_EXPORT void removePrivateHeaderFields(const KMime::Message::Ptr &mes
  * Used to determine if the visible part of the anchor contains
  * only the name part and not the given emailAddr or the full address.
  */
-enum Display {
+enum Display : uint8_t {
     DisplayNameOnly,
     DisplayFullAddress,
 };
@@ -97,7 +97,7 @@ enum Display {
 /**
  * Used to determine if the address should be a link or not.
  */
-enum Link {
+enum Link : uint8_t {
     ShowLink,
     HideLink,
 };
@@ -105,7 +105,7 @@ enum Link {
 /**
  * Used to determine if the address field should be expandable/collapsible.
  */
-enum AddressMode {
+enum AddressMode : uint8_t {
     ExpandableAddresses,
     FullAddresses,
 };

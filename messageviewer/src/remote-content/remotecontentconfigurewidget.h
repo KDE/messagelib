@@ -23,7 +23,7 @@ class RemoteContentInfo;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
 {
 public:
-    enum ColumnType {
+    enum ColumnType : uint8_t {
         Domain = 0,
         RuleType = 1,
     };

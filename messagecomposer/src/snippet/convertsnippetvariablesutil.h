@@ -12,7 +12,7 @@ namespace MessageComposer
 {
 namespace ConvertSnippetVariablesUtil
 {
-enum VariableType {
+enum VariableType : uint8_t {
     CcAddr,
     CcLname,
     CcFname,

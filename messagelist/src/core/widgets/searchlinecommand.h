@@ -18,7 +18,7 @@ class MESSAGELIST_TESTS_EXPORT SearchLineCommand
 {
     Q_GADGET
 public:
-    enum SearchLineType {
+    enum SearchLineType : uint8_t {
         Unknown = 0,
         HasStateOrAttachment,
         Literal,

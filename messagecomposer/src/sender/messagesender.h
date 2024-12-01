@@ -23,7 +23,7 @@ public:
         SendImmediate = true,
         SendLater = false,
     };
-    enum SaveIn {
+    enum SaveIn : uint8_t {
         SaveInNone,
         SaveInDrafts,
         SaveInTemplates,

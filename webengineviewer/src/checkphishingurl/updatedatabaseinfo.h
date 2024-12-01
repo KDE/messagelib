@@ -17,13 +17,13 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     UpdateDataBaseInfo();
     [[nodiscard]] bool isValid() const;
 
-    enum ResponseType {
+    enum ResponseType : uint8_t {
         Unknown = 0,
         FullUpdate = 1,
         PartialUpdate = 2,
     };
 
-    enum CompressionType {
+    enum CompressionType : uint8_t {
         UnknownCompression = 0,
         RiceCompression = 1,
         RawCompression = 2,

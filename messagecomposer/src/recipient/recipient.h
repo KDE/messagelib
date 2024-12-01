@@ -30,7 +30,7 @@ public:
     using Ptr = QSharedPointer<Recipient>;
     using List = QList<Recipient::Ptr>;
 
-    enum Type {
+    enum Type : uint8_t {
         To,
         Cc,
         Bcc,

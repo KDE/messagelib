@@ -36,7 +36,7 @@ public:
     //
     // HeaderStrategy interface:
     //
-    enum DefaultPolicy {
+    enum DefaultPolicy : uint8_t {
         Display,
         Hide,
     };

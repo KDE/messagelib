@@ -13,7 +13,7 @@ namespace WebEngineViewer
 {
 namespace CheckPhishingUrlUtil
 {
-enum UrlStatus {
+enum UrlStatus : uint8_t {
     Ok = 0,
     MalWare = 1,
     BrokenNetwork = 2,

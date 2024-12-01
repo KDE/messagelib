@@ -33,7 +33,7 @@ namespace MessageComposer
 {
 class ContactPreference;
 
-enum ResolverResult {
+enum ResolverResult : uint8_t {
     Failure = 0,
     Ok = 1,
     Canceled = 2,

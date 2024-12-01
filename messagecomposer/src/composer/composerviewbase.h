@@ -76,18 +76,18 @@ public:
     explicit ComposerViewBase(QObject *parent = nullptr, QWidget *widget = nullptr);
     ~ComposerViewBase() override;
 
-    enum Confirmation {
+    enum Confirmation : uint8_t {
         LetUserConfirm,
         NoConfirmationNeeded,
     };
-    enum MissingAttachment {
+    enum MissingAttachment : uint8_t {
         NoMissingAttachmentFound,
         FoundMissingAttachmentAndSending,
         FoundMissingAttachmentAndAddedAttachment,
         FoundMissingAttachmentAndCancel,
     };
 
-    enum FailedType {
+    enum FailedType : uint8_t {
         Sending,
         AutoSave,
     };
@@ -293,7 +293,7 @@ private:
      */
     void readyForSending();
 
-    enum RecipientExpansion {
+    enum RecipientExpansion : uint8_t {
         UseExpandedRecipients,
         UseUnExpandedRecipients,
     };

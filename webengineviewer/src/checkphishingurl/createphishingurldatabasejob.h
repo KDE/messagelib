@@ -24,19 +24,19 @@ class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:
-    enum DataBaseDownloadType {
+    enum DataBaseDownloadType : uint8_t {
         FullDataBase = 0,
         UpdateDataBase = 1,
     };
 
-    enum DataBaseDownloadResult {
+    enum DataBaseDownloadResult : uint8_t {
         InvalidData = 0,
         ValidData = 1,
         UnknownError = 2,
         BrokenNetwork = 3,
     };
 
-    enum ContraintsCompressionType {
+    enum ContraintsCompressionType : uint8_t {
         RawCompression = 0,
         RiceCompression = 1,
     };
