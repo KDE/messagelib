@@ -18,18 +18,18 @@ struct UrlCacheInfo {
 
     [[nodiscard]] bool isMalWare() const;
     [[nodiscard]] bool isValid() const;
-    CheckPhishingUrlCache::UrlStatus status = CheckPhishingUrlCache::Unknown;
+    CheckPhishingUrlCache::UrlStatus status = CheckPhishingUrlCache::UrlStatus::Unknown;
     uint verifyCacheAfterThisTime = 0;
 };
 
 bool UrlCacheInfo::isMalWare() const
 {
-    return status == CheckPhishingUrlCache::MalWare;
+    return status == CheckPhishingUrlCache::UrlStatus::MalWare;
 }
 
 bool UrlCacheInfo::isValid() const
 {
-    return status != CheckPhishingUrlCache::Unknown;
+    return status != CheckPhishingUrlCache::UrlStatus::Unknown;
 }
 
 class WebEngineViewer::CheckPhishingUrlCachePrivate
@@ -69,7 +69,7 @@ void CheckPhishingUrlCachePrivate::load()
         UrlCacheInfo info;
         const int numberOfMalware = listMalware.count();
         for (int i = 0; i < numberOfMalware; ++i) {
-            info.status = WebEngineViewer::CheckPhishingUrlCache::MalWare;
+            info.status = WebEngineViewer::CheckPhishingUrlCache::UrlStatus::MalWare;
             info.verifyCacheAfterThisTime = listMalwareCachedTime.at(i);
             if (WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
                 mCacheCheckedUrl.insert(listMalware.at(i), info);
@@ -109,23 +109,23 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
             if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
                 return info.status;
             } else {
-                return CheckPhishingUrlCache::Unknown;
+                return CheckPhishingUrlCache::UrlStatus::Unknown;
             }
         } else {
             return info.status;
         }
     } else {
-        return CheckPhishingUrlCache::Unknown;
+        return CheckPhishingUrlCache::UrlStatus::Unknown;
     }
 }
 
 void CheckPhishingUrlCachePrivate::addCheckPhishingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
     UrlCacheInfo info;
-    info.status = correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare;
+    info.status = correctUrl ? CheckPhishingUrlCache::UrlStatus::UrlOk : CheckPhishingUrlCache::UrlStatus::MalWare;
     info.verifyCacheAfterThisTime = correctUrl ? 0 : verifyCacheAfterThisTime;
     mCacheCheckedUrl.insert(url, info);
-    if (info.status == CheckPhishingUrlCache::MalWare) {
+    if (info.status == CheckPhishingUrlCache::UrlStatus::MalWare) {
         save();
     }
 }

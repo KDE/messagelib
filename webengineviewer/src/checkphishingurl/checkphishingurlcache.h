@@ -25,7 +25,7 @@ public:
     explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     static CheckPhishingUrlCache *self();
 
-    enum UrlStatus : uint8_t {
+    enum class UrlStatus : uint8_t {
         UrlOk = 0,
         MalWare = 1,
         Unknown = 2,
