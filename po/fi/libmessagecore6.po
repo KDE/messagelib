@@ -1,6 +1,6 @@
 # Copyright © 2010, 2011, 2012 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kdepim package.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2011, 2012, 2013, 2018, 2020.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2018, 2020, 2024 Tommi Nieminen <translator@legisign.org>
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2015, 2016.
 #
 # KDE Finnish translation sprint participants:
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 00:40+0000\n"
-"PO-Revision-Date: 2020-01-01 13:33+0200\n"
+"PO-Revision-Date: 2024-10-17 12:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -17,8 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:25:12+0000\n"
-"X-Generator: Lokalize 18.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -286,7 +285,7 @@ msgstr "Tämä on ensimmäisen tason lainauksissa käytettävä väri"
 #: settings/messagecore.kcfg:48
 #, kde-format
 msgid "Display Own Identity"
-msgstr ""
+msgstr "Näytä oma henkilöytesi"
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
 #: settings/messagecore.kcfg:58
@@ -311,9 +310,7 @@ msgstr ""
 "rajoitusta)"
 
 #: utils/dateformatter.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "tuntematon"
@@ -321,18 +318,18 @@ msgstr "tuntematon"
 #: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Tänään %1"
 
 #: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Eilen %1"
 
 #: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:415
 #, kde-format

@@ -1,5 +1,6 @@
 # Translation of kmail.po to Finnish
 # KDE Finnish translation sprint participants:
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Eero Häkkinen <eero.hakkinen@iki.fi>, 2003.
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2003, 2005, 2006.
@@ -10,14 +11,13 @@
 # Santtu Pajukanta <santtu@pajukanta.fi>, 2006.
 # Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2007.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2023-11-22 18:51+0200\n"
+"PO-Revision-Date: 2024-11-10 11:08+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -25,8 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:25:13+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -286,8 +285,7 @@ msgid "Delete Keys"
 msgstr "Poista avaimia"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Etsi…"
@@ -308,8 +306,7 @@ msgid "Ignore if not signed"
 msgstr "Sivuuta, ellei ole allekirjoitettu"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Vie…"
@@ -321,15 +318,13 @@ msgid "Configure Rule"
 msgstr "Säännön asetukset"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Lisää sääntö…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Tuo…"
@@ -448,8 +443,7 @@ msgid "Modify Rule"
 msgstr "Muokkaa sääntöä"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Käytössä"
@@ -470,8 +464,7 @@ msgid "From:"
 msgstr "Lähettäjä:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "”*” tarkoittaa kaikkia viestejä verkkoalueelta"
@@ -584,7 +577,7 @@ msgstr "Allekirjoitusalgoritmi on virheellinen."
 #: dkim-verify/dkimwidgetinfo.cpp:158
 #, kde-format
 msgid "The public key was revoked."
-msgstr "Julkinen avain on kumottu."
+msgstr "Julkinen avain on mitätöity."
 
 #: dkim-verify/dkimwidgetinfo.cpp:161
 #, kde-format
@@ -996,7 +989,7 @@ msgstr "Tapahtui järjestelmävirhe."
 #: messagepartthemes/default/defaultrenderer.cpp:180
 #, kde-format
 msgid "One key has been revoked."
-msgstr "Yksi avaimista on kumottu."
+msgstr "Yksi avaimista on mitätöity."
 
 #: messagepartthemes/default/defaultrenderer.cpp:207
 #, kde-format
@@ -1073,8 +1066,7 @@ msgid "Blocked"
 msgstr "Estetty"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Verkkoalue:"
@@ -1092,32 +1084,28 @@ msgstr ""
 "Tämä viesti saattaa olla huijaus. <a href=\"scamdetails\">(Lisätietoa…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Vahvistan, ettei ole huijaus"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
-msgstr "Lisää sähköposti valkoiselle listalle"
+msgstr "Lisää sähköposti sallittujen luetteloon"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr "Poista huijausten tunnistus käytöstä kaikissa viesteissä"
+msgstr "Poista huijaustunnistus käytöstä kaikissa viesteissä"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:214
@@ -1496,24 +1484,21 @@ msgstr "K&äytä tasavälistä fonttia"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:235
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Todos."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
-msgstr "Viimeksi valittu kansio tehtäville."
+msgstr "Tehtäville viimeksi valittu kansio."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:241
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder used for Events."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr "Viimeksi valittu kansio tapahtumille."
+msgstr "Tapahtumille viimeksi valittu kansio."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:247
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr "Viimeksi valittu kansio muistiinpanoille."
+msgstr "Muistiinpanoille viimeksi valittu kansio."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
@@ -1686,8 +1671,7 @@ msgid "attachment.1"
 msgstr "liite.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Tallenna liite"
@@ -1712,18 +1696,16 @@ msgid "KMail Question"
 msgstr "KMail-kysymys"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Säilytä salaus"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr "Älä säilytä salausta"
+msgstr "Älä säilytä"
 
 #: utils/messageviewerutil.cpp:317
 #, kde-format
@@ -1735,8 +1717,7 @@ msgstr ""
 "tallennettaessa?"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Säilytä allekirjoitus"
@@ -2005,8 +1986,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Haluatko varmasti suorittaa tiedoston <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:866
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Suorita"
@@ -2204,11 +2184,10 @@ msgid "Copy Text"
 msgstr "Kopioi teksti"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr "Valitse kaikki tekstit"
+msgstr "Valitse kaikki teksti"
 
 #: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
@@ -2226,11 +2205,10 @@ msgid "Show Message Structure"
 msgstr "Näytä viestin rakenne"
 
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "&Näytä lähdekoodi"
+msgstr "Näytä lähdekoo&di"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
@@ -2238,46 +2216,40 @@ msgid "&Save Message..."
 msgstr "&Tallenna viesti…"
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Tallenna näkymän muoto"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
-msgstr "&Alusta näkymän muoto"
+msgstr "P&alauta näkymän muoto"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
-msgstr "Vieritä viestiä ylös"
+msgstr "Vieritä viestiä ylöspäin"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
-msgstr "Vieritä viestiä alas"
+msgstr "Vieritä viestiä alaspäin"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
-msgstr "Vieritä viestiä ylös (enemmän)"
+msgstr "Vieritä viestiä ylöspäin (enemmän)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
-msgstr "Vieritä viestiä alas (enemmän)"
+msgstr "Vieritä viestiä alaspäin (enemmän)"
 
 #: viewer/viewer_p.cpp:1617
 #, kde-format
@@ -2290,29 +2262,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Vaihda näyttötilaa HTML:n ja paljaan tekstin välillä"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Lataa ulkoiset viitteet"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Puhu teksti"
 
 #: viewer/viewer_p.cpp:1636
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Jaa tekstiä…"
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopioi kuvan sijainti"
@@ -2527,9 +2495,7 @@ msgid "HTML code for displaying the message to the user"
 msgstr "Viestin HTML-lähdekoodi"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Avaa kansio, johon liite tallennettiin"
@@ -2541,18 +2507,15 @@ msgid "Open File"
 msgstr "Avaa tiedosto"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Avaa kansio, johon liite tallennettiin"
-msgstr[1] "Avaa kansio, johon liite tallennettiin"
+msgstr[1] "Avaa kansio, johon liitteet tallennettiin"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Avaa kansio, johon PDF-tiedosto tallennettiin"
@@ -2563,15 +2526,13 @@ msgid "KMail was unable to open the attachment."
 msgstr "KMail ei kyennyt avaamaan liitettä."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Seuraava viesti"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Edellinen viesti"
