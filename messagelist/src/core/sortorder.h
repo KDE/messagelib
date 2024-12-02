@@ -32,7 +32,7 @@ public:
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
      */
-    enum GroupSorting {
+    enum GroupSorting : uint8_t {
         NoGroupSorting, ///< Don't sort the groups at all, add them as they come in
         SortGroupsByDateTime, ///< Sort groups by date/time of the group
         SortGroupsByDateTimeOfMostRecent, ///< Sort groups by date/time of the most recent message
@@ -47,7 +47,7 @@ public:
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
      */
-    enum SortDirection {
+    enum SortDirection : uint8_t {
         Ascending,
         Descending,
     };

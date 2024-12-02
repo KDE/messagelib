@@ -16,7 +16,7 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT ScamDetectionInfo
 {
 public:
-    enum ScamDetectionField {
+    enum ScamDetectionField : uint8_t {
         None = 0,
         DisableAll = 1,
         RedirectUrl = 2,

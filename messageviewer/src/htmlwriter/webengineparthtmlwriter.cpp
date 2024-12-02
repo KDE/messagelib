@@ -31,7 +31,7 @@ WebEnginePartHtmlWriter::~WebEnginePartHtmlWriter()
 
 void WebEnginePartHtmlWriter::begin()
 {
-    if (mState != Ended) {
+    if (mState != State::Ended) {
         qCWarning(MESSAGEVIEWER_LOG) << "begin() called on non-ended session!";
         reset();
     }
@@ -41,13 +41,13 @@ void WebEnginePartHtmlWriter::begin()
 
     BufferedHtmlWriter::begin();
     MessageViewer::WebEngineEmbedPart::self()->clear();
-    mState = Begun;
+    mState = State::Begun;
 }
 
 void WebEnginePartHtmlWriter::end()
 {
     BufferedHtmlWriter::end();
-    if (mState != Begun) {
+    if (mState != State::Begun) {
         qCWarning(MESSAGEVIEWER_LOG) << "Called on non-begun or queued session!";
     }
     if (!mExtraHead.isEmpty()) {
@@ -76,17 +76,17 @@ void WebEnginePartHtmlWriter::end()
 
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
-    mState = Ended;
+    mState = State::Ended;
     Q_EMIT finished();
 }
 
 void WebEnginePartHtmlWriter::reset()
 {
     BufferedHtmlWriter::reset();
-    if (mState != Ended) {
-        mState = Begun; // don't run into end()'s warning
+    if (mState != State::Ended) {
+        mState = State::Begun; // don't run into end()'s warning
         end();
-        mState = Ended;
+        mState = State::Ended;
     }
 }
 

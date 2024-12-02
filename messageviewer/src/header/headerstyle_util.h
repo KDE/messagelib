@@ -38,7 +38,7 @@ public:
         int photoWidth;
         int photoHeight;
     };
-    enum HeaderStyleUtilDateFormat {
+    enum HeaderStyleUtilDateFormat : uint8_t {
         ShortDate, /**< Locale Short date format, e.g. 08-04-2007 */
         LongDate, /**< Locale Long date format, e.g. Sunday 08 April 2007 */
         FancyShortDate, /**< Same as ShortDate for dates a week or more ago. For more

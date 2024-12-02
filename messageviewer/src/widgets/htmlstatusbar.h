@@ -41,7 +41,7 @@ class HtmlStatusBar : public QLabel
 {
     Q_OBJECT
 public:
-    enum UpdateMode {
+    enum UpdateMode : uint8_t {
         NoUpdate,
         Update,
     };

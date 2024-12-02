@@ -24,7 +24,7 @@ public:
     explicit TemplatesCommandMenu(QObject *parent = nullptr);
     ~TemplatesCommandMenu() override;
 
-    enum MenuType {
+    enum MenuType : uint8_t {
         ReplyForwardMessage = 1,
         CurrentMessage = 2,
         External = 4,
@@ -35,7 +35,7 @@ public:
     Q_FLAG(MenuType)
     Q_DECLARE_FLAGS(MenuTypes, MenuType)
     // TODO: apidox for all these enums
-    enum Command {
+    enum Command : uint8_t {
         CDnl = 1,
         CRem,
         CInsert,

@@ -43,11 +43,11 @@ private:
     MailWebEngineView *const mHtmlView;
     QString mExtraHead;
     QString mStyleBody;
-    enum State {
+    enum class State : uint8_t {
         Begun,
         Queued,
         Ended
-    } mState = Ended;
+    } mState = State::Ended;
     QTemporaryFile *mTempFile = nullptr;
 };
 }

@@ -18,7 +18,7 @@ class MESSAGEVIEWER_EXPORT DKIMRule
 {
     Q_GADGET
 public:
-    enum class RuleType {
+    enum class RuleType : uint8_t {
         Unknown = 0,
         MustBeSigned = 1,
         CanBeSigned = 2,
