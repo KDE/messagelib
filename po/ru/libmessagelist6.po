@@ -10,20 +10,20 @@
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # SPDX-FileCopyrightText: 2018, 2020, 2021, 2024 Alexander Yavorsky <kekcuha@gmail.com>
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 00:41+0000\n"
-"PO-Revision-Date: 2024-02-07 12:38+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2024-12-03 17:21+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -947,13 +947,13 @@ msgstr[3] "<b>%1</b> письмо в поддереве (непрочитанн�
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
-msgstr "Дискуссии начатые %1"
+msgstr "Дискуссии, начатые %1"
 
 #: core/view.cpp:2329
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
-msgstr "Дискуссии начатые в %1"
+msgstr "Дискуссии, начатые %1"
 
 #: core/view.cpp:2333
 #, kde-format
@@ -977,13 +977,13 @@ msgstr "Письма, полученные %1"
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
-msgstr "Письма, отправленные в %1"
+msgstr "Письма, отправленные %1"
 
 #: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
-msgstr "Письма, полученные в %1"
+msgstr "Письма, полученные %1"
 
 #: core/view.cpp:2361
 #, kde-format
@@ -1066,10 +1066,9 @@ msgstr[2] "<b>%1</b> писем (непрочитанных: <b>%2</b>)"
 msgstr[3] "<b>%1</b> письмо (непрочитанных: <b>%2</b>)"
 
 #: core/widgetbase.cpp:200
-#, fuzzy, kde-format
-#| msgid "Any filter defined."
+#, kde-format
 msgid "No filter defined."
-msgstr "Любой заданный фильтр."
+msgstr "Не задан ни один фильтр."
 
 #: core/widgetbase.cpp:200
 #, kde-format
@@ -1147,25 +1146,22 @@ msgid "Edit Filter"
 msgstr "Редактирование фильтра"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Название:"
 
 #: core/widgets/filtersavedmenu.cpp:16
-#, fuzzy, kde-format
-#| msgid "Save Filter..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Сохранить фильтр…"
 
 #: core/widgets/filtersavedmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
-msgstr "Настроить..."
+msgstr "Настроить…"
 
 #: core/widgets/quicksearchline.cpp:64
 #, kde-format
@@ -1179,8 +1175,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Слова короче трёх букв игнорируются."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Больше не показывать"
@@ -1197,164 +1192,138 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:75
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Литеральная строка"
 
 #: core/widgets/searchlinecommand.cpp:77
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Размер менее"
 
 #: core/widgets/searchlinecommand.cpp:79
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Размер более"
 
 #: core/widgets/searchlinecommand.cpp:81
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Размер"
+msgstr "Размер равен"
 
 #: core/widgets/searchlinecommand.cpp:83
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "Поле «Получатель» содержит"
 
 #: core/widgets/searchlinecommand.cpp:85
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "Поле «Скрытая копия» содержит"
 
 #: core/widgets/searchlinecommand.cpp:87
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "Поле «Копия» содержит"
 
 #: core/widgets/searchlinecommand.cpp:89
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "Поле «Отправитель» содержит"
 
 #: core/widgets/searchlinecommand.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Тема"
+msgstr "Поле «Тема» содержит"
 
 #: core/widgets/searchlinecommand.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Body contains"
-msgstr "Тема"
+msgstr "Тело письма содержит"
 
 #: core/widgets/searchlinecommand.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "С вложениями"
+msgstr "Письмо с меткой"
 
 #: core/widgets/searchlinecommand.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "С вложениями"
+msgstr "Письмо с вложениями"
 
 #: core/widgets/searchlinecommand.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "С приглашением"
+msgstr "Письмо с приглашением"
 
 #: core/widgets/searchlinecommand.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Важное"
+msgstr "Письмо является важным"
 
 #: core/widgets/searchlinecommand.cpp:103
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Письмо прочитано"
 
 #: core/widgets/searchlinecommand.cpp:105
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Не прочитано"
+msgstr "Письмо не прочитано"
 
 #: core/widgets/searchlinecommand.cpp:107
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "Не прочитано"
+msgstr "Письмо игнорируется"
 
 #: core/widgets/searchlinecommand.cpp:109
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Не прочитано"
+msgstr "Письмо не является спамом"
 
 #: core/widgets/searchlinecommand.cpp:111
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Не прочитано"
+msgstr "Письмо является спамом"
 
 #: core/widgets/searchlinecommand.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail is watched"
-msgstr "С вложениями"
+msgstr "Письмо отслеживается"
 
 #: core/widgets/searchlinecommand.cpp:115
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Не прочитано"
+msgstr "На письмо отправлен ответ"
 
 #: core/widgets/searchlinecommand.cpp:117
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Не прочитано"
+msgstr "Письмо переслано"
 
 #: core/widgets/searchlinecommand.cpp:127
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "И"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Тема"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Тело"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Отправитель"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Получатель"
@@ -1363,97 +1332,76 @@ msgstr "Получатель"
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
-msgstr ""
+msgstr "Копия"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Bcc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Скрытая копия"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "С вложениями"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "С приглашением"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
-msgstr "Прочитанное"
+msgstr "Прочитано"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Не прочитано"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Важное"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Игнорируемое"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ham"
-msgstr "не спам"
+msgstr "Не спам"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Спам"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Наблюдаемое"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Отвеченное"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Пересланное"
@@ -1462,39 +1410,37 @@ msgstr "Пересланное"
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Меньше"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Больше"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Размер"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Папка"
+msgstr "Старее"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Новее"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1512,7 +1458,7 @@ msgstr "Очищать поле быстрого поиска при перех�
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
-msgstr ""
+msgstr "Показать или скрыть виджет поиска командной строки."
 
 #: core/widgets/searchlinestatus.cpp:106
 #, kde-format
@@ -1525,8 +1471,7 @@ msgstr ""
 "сужения результатов поиска по статусу письма."
 
 #: core/widgets/searchlinestatus.cpp:114
-#, fuzzy, kde-format
-#| msgid "Saved Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Сохранённый фильтр"
@@ -1537,39 +1482,34 @@ msgid "Clear History"
 msgstr "Очистить журнал"
 
 #: core/widgets/searchmessagebybuttons.cpp:34
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Всё письмо"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Тело"
 
 #: core/widgets/searchmessagebybuttons.cpp:37
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Тема"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "Скрытая копия"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "Скрытая копия"
+msgstr "Копия"
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
@@ -1672,7 +1612,7 @@ msgstr "Новая вкладка"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
-msgstr "Закрыть вкладку"
+msgstr "Закрыть текущую вкладку"
 
 #: pane.cpp:138
 #, kde-format
@@ -1680,8 +1620,7 @@ msgid "Close tab"
 msgstr "Закрыть вкладку"
 
 #: pane.cpp:180
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Перейти на вкладку %1"
@@ -1697,43 +1636,37 @@ msgid "Message List"
 msgstr "Список писем"
 
 #: pane.cpp:227
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Создать новую вкладку"
 
 #: pane.cpp:258
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Перейти на следующую вкладку"
 
 #: pane.cpp:268
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Перейти на предыдущую вкладку"
 
 #: pane.cpp:280
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Переместить вкладку влево"
 
 #: pane.cpp:288
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Переместить вкладку вправо"
 
 #: pane.cpp:298
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
@@ -1781,11 +1714,10 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "Настроить..."
+msgstr "Настроить…"
 
 #: utils/aggregationeditor.cpp:31
 #, kde-format
@@ -1793,36 +1725,31 @@ msgid "Groups && Threading"
 msgstr "Группировка и сортировка"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Группировка:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Разворачивание групп:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Дискуссии:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Порядок в дискуссиях:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Разворачивание дискуссий:"
@@ -1834,8 +1761,7 @@ msgid "Advanced"
 msgstr "Дополнительно"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Стратегия заполнения списка:"
@@ -1847,36 +1773,31 @@ msgid "Customize Message Aggregation Modes"
 msgstr "Настройка режимов группировки сообщений"
 
 #: utils/configureaggregationsdialog.cpp:121
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Создать группировку"
 
 #: utils/configureaggregationsdialog.cpp:129
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
-msgstr "Скопировать группировку"
+msgstr "Дублировать группировку"
 
 #: utils/configureaggregationsdialog.cpp:142
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "Экспортировать группировку..."
+msgstr "Экспорт группировки…"
 
 #: utils/configureaggregationsdialog.cpp:149
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
-msgstr "Импортировать группировку..."
+msgstr "Импорт группировки…"
 
 #: utils/configureaggregationsdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Удалить группировку"
@@ -1892,18 +1813,16 @@ msgid "New Aggregation"
 msgstr "Создать группировку"
 
 #: utils/configureaggregationsdialog.cpp:413
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
-msgstr "Импортировать группировку"
+msgstr "Импорт группировки"
 
 #: utils/configureaggregationsdialog.cpp:446
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
-msgstr "Экспортировать группировку"
+msgstr "Экспорт группировки"
 
 #: utils/configureaggregationsdialog.cpp:446
 #: utils/configurethemesdialog.cpp:470
@@ -1918,36 +1837,31 @@ msgid "Customize Themes"
 msgstr "Настройка тем"
 
 #: utils/configurethemesdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Создать тему"
 
 #: utils/configurethemesdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Дублировать тему"
 
 #: utils/configurethemesdialog.cpp:138
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
-msgstr "Экспорт темы..."
+msgstr "Экспорт темы…"
 
 #: utils/configurethemesdialog.cpp:145
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
-msgstr "Импорт темы..."
+msgstr "Импорт темы…"
 
 #: utils/configurethemesdialog.cpp:156
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Удалить тему"
@@ -1984,15 +1898,13 @@ msgid "Delete Theme"
 msgstr "Удаление темы"
 
 #: utils/configurethemesdialog.cpp:436
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Импорт темы"
 
 #: utils/configurethemesdialog.cpp:470
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Экспорт темы"
@@ -2022,63 +1934,52 @@ msgid "Name:"
 msgstr "Название:"
 
 #: utils/themeeditor.cpp:74
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
-msgstr "Надпись, показываемая в заголовке столбца."
+msgstr "Надпись в заголовке столбца"
 
 #: utils/themeeditor.cpp:77
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Сортировка по щелчку:"
 
 #: utils/themeeditor.cpp:81
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
-"При щелчке по заголовку столбца список писем сортируется по заданному полю."
+"При щелчке по заголовку столбца список писем сортируется по заданному полю"
 
 #: utils/themeeditor.cpp:84
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Показывать по умолчанию"
 
 #: utils/themeeditor.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
-"Установите флажок, если хотите показывать этот столбец при выборе этой темы."
+"Установите флажок, если следует показывать этот столбец при выборе этой темы"
 
 #: utils/themeeditor.cpp:88
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Содержит отправителя или получателя"
 
 #: utils/themeeditor.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
 "Установите флажок, если заголовок столбца должен меняться в зависимости от "
-"типа папки с входящими или исходящими письмами."
+"типа папки с входящими или исходящими письмами"
 
 #: utils/themeeditor.cpp:110
 #, kde-format
@@ -2285,31 +2186,26 @@ msgid "Advanced"
 msgstr "Дополнительно"
 
 #: utils/themeeditor.cpp:1434
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Заголовок:"
 
 #: utils/themeeditor.cpp:1440
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Размер значка:"
 
 #: utils/themeeditor.cpp:1446
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " пиксел"
-msgstr[1] " пиксела"
-msgstr[2] " пикселов"
-msgstr[3] " пиксел"
+msgstr[0] "%v пиксел"
+msgstr[1] "%v пиксела"
+msgstr[2] "%v пикселов"
+msgstr[3] "%v пиксел"
 
 #: widget.cpp:220
 #, kde-format
@@ -2363,13 +2259,11 @@ msgid "C&ancel"
 msgstr "О&тменить"
 
 #, fuzzy
-#~| msgid "Filter Mails by Status"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Filter Mails by Status"
 #~ msgstr "Фильтровать письма по состоянию"
 
 #, fuzzy
-#~| msgid "Clear Filter"
 #~ msgctxt "@action:button"
 #~ msgid "Clear Filter"
 #~ msgstr "Очистить фильтр"

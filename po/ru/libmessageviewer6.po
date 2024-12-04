@@ -10,20 +10,20 @@
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024 Alexander Yavorsky <kekcuha@gmail.com>
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-01-27 13:55+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2024-12-03 15:13+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -301,11 +301,10 @@ msgid "Delete Keys"
 msgstr "Удаление ключей"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "Поиск..."
+msgstr "Поиск…"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -323,11 +322,10 @@ msgid "Ignore if not signed"
 msgstr "Игнорировать, если не подписано"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr "Экспортировать..."
+msgstr "Экспорт…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -336,18 +334,16 @@ msgid "Configure Rule"
 msgstr "Параметры правила"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr "Добавить правило..."
+msgstr "Добавить правило…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr "Импортировать..."
+msgstr "Импорт…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -463,8 +459,7 @@ msgid "Modify Rule"
 msgstr "Изменение правила"
 
 #: dkim-verify/dkimrulewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Включено"
@@ -485,11 +480,10 @@ msgid "From:"
 msgstr "От:"
 
 #: dkim-verify/dkimrulewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use '*' to specify all emails from domain"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr "Используйте «*» чтобы включить все адреса домена"
+msgstr "Используйте «*» для включения всех адресов из домена"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
@@ -1087,8 +1081,7 @@ msgid "Blocked"
 msgstr "Блокирован"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Домен:"
@@ -1107,29 +1100,25 @@ msgstr ""
 "\">(Подробнее...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Удалить в корзину"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Я считаю, что в нём нет вреда"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
-msgstr "Добавить адрес в белый список"
+msgstr "Добавить адрес в список разрешённых"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Отключить обнаружение вредоносных писем"
@@ -1393,7 +1382,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:147
 #, kde-format
 msgid "List of emails in scam white list"
-msgstr "Белый список адресов подозрительной почты"
+msgstr "Список разрешённых адресов подозрительной почты"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
 #: settings/messageviewer.kcfg.in:151
@@ -1513,22 +1502,19 @@ msgstr "&Фиксированный шрифт"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg.in:235
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "Последняя использовавшаяся папка для задач."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:241
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Event."
+#, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "Последняя использовавшаяся папка для событий."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:247
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "Последняя использовавшаяся папка для заметок."
 
@@ -1701,11 +1687,10 @@ msgid "attachment.1"
 msgstr "вложение.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr "Сохранить вложение"
+msgstr "Сохранение вложения"
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format
@@ -1726,15 +1711,13 @@ msgid "KMail Question"
 msgstr "Вопрос KMail"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Оставить зашифрованным"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Не оставлять"
@@ -1747,8 +1730,7 @@ msgid ""
 msgstr "Часть %1 письма подписана. Оставить письмо подписанным?"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Оставить подписанным"
@@ -2022,8 +2004,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Выполнить программу <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:866
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Выполнить"
@@ -2221,8 +2202,7 @@ msgid "Copy Text"
 msgstr "Копировать текст"
 
 #: viewer/viewer_p.cpp:1543
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Выделить весь текст"
@@ -2244,11 +2224,10 @@ msgstr "Показать структуру письма"
 
 # простой текст/исходный текст? --aspotashev
 #: viewer/viewer_p.cpp:1570
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr "Просмотр &исходного текста письма..."
+msgstr "Просмотр &исходного текста письма…"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
@@ -2256,43 +2235,37 @@ msgid "&Save Message..."
 msgstr "&Сохранить письмо…"
 
 #: viewer/viewer_p.cpp:1581
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "С&охранить формат отображения"
 
 #: viewer/viewer_p.cpp:1585
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "С&бросить формат отображения"
 
 #: viewer/viewer_p.cpp:1592
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Прокрутить письмо вверх"
 
 #: viewer/viewer_p.cpp:1597
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Прокрутить письмо вниз"
 
 #: viewer/viewer_p.cpp:1602
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Прокрутить письмо вверх (с переходом)"
 
 #: viewer/viewer_p.cpp:1607
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Прокрутить письмо вниз (с переходом)"
@@ -2308,32 +2281,28 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Переключить между HTML и текстовым режимами отображения"
 
 #: viewer/viewer_p.cpp:1624
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
-msgstr "Загрузка внешних ресурсов"
+msgstr "Загрузить внешние ресурсы"
 
 #: viewer/viewer_p.cpp:1630
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Зачитать текст"
 
 #: viewer/viewer_p.cpp:1636
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "Опубликовать текст..."
+msgstr "Опубликовать текст…"
 
 #: viewer/viewer_p.cpp:1654
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
-msgstr "Выбор местоположения картинки"
+msgstr "Копировать расположение изображения"
 
 #: viewer/viewer_p.cpp:1660
 #, kde-format
@@ -2427,7 +2396,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr "Открыть вложение?"
+msgstr "Открытие вложения"
 
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
@@ -2539,9 +2508,7 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML код для отображения письма пользователю"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Открыть папку с сохранёнными вложениями"
@@ -2553,20 +2520,17 @@ msgid "Open File"
 msgstr "Открыть файл"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open folder where attachment was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
 msgstr[0] "Открыть папку с сохранёнными вложениями"
 msgstr[1] "Открыть папку с сохранёнными вложениями"
 msgstr[2] "Открыть папку с сохранёнными вложениями"
-msgstr[3] "Открыть папку с сохранёнными вложениями"
+msgstr[3] "Открыть папку с сохранённым вложением"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Открыть папку с сохранённым файлом в формате PDF"
@@ -2577,15 +2541,13 @@ msgid "KMail was unable to open the attachment."
 msgstr "Не удалось открыть вложение."
 
 #: widgets/shownextmessagewidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Следующее письмо"
 
 #: widgets/shownextmessagewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предыдущее письмо"
