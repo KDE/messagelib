@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-08-19 15:19+0200\n"
+"PO-Revision-Date: 2024-12-08 12:57+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -1206,7 +1206,7 @@ msgstr "mensaxe reenviada"
 #: helper/messagefactoryng.cpp:574
 #, kde-format
 msgid "Receipt: "
-msgstr "Acuse de recibo: "
+msgstr "Xustificante de recepción: "
 
 #: helper/messagefactoryng.cpp:701
 #, kde-format
