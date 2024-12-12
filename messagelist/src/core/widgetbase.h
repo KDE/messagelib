@@ -13,6 +13,7 @@
 
 #include <MessageList/Enums>
 #include <MessageList/QuickSearchLine>
+#include <MessageList/SearchLineCommand>
 
 class QLineEdit;
 class QActionGroup;
@@ -86,6 +87,7 @@ public:
      */
     [[nodiscard]] QString currentFilterSearchString() const;
 
+    [[nodiscard]] QList<SearchLineCommand> searchLineCommands() const;
     /**
      * Returns the id of the MessageItem::Tag currently set in the quicksearch field.
      */

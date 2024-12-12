@@ -2524,6 +2524,11 @@ QString View::currentFilterSearchString() const
     return d->mWidget->currentFilterSearchString();
 }
 
+QList<SearchLineCommand> View::searchLineCommands() const
+{
+    return d->mWidget->searchLineCommands();
+}
+
 void View::setRowHidden(int row, const QModelIndex &parent, bool hide)
 {
     const QModelIndex rowModelIndex = model()->index(row, 0, parent);

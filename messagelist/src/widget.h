@@ -6,11 +6,11 @@
 
 #pragma once
 
+#include <Akonadi/Item>
 #include <MessageList/QuickSearchLine>
+#include <MessageList/SearchLineCommand>
 #include <MessageList/View>
 #include <MessageList/WidgetBase>
-
-#include <Akonadi/Item>
 
 #include <KMime/Message>
 
@@ -310,6 +310,8 @@ public:
 
     void setQuickSearchClickMessage(const QString &msg);
     [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
+
+    [[nodiscard]] QList<MessageList::Core::SearchLineCommand> searchLineCommands() const;
 
 protected:
     /**

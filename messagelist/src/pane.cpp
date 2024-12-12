@@ -1022,6 +1022,15 @@ QString Pane::currentFilterSearchString() const
     return {};
 }
 
+QList<MessageList::Core::SearchLineCommand> Pane::searchLineCommands() const
+{
+    auto w = static_cast<Widget *>(currentWidget());
+    if (w) {
+        return w->searchLineCommands();
+    }
+    return {};
+}
+
 bool Pane::isThreaded() const
 {
     auto w = static_cast<Widget *>(currentWidget());

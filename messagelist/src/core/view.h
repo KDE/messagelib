@@ -14,6 +14,7 @@
 
 #include "messagelist/enums.h"
 #include "messagelist/quicksearchline.h"
+#include "messagelist/searchlinecommand.h"
 
 class QMenu;
 
@@ -350,6 +351,8 @@ public:
     void setQuickSearchClickMessage(const QString &msg);
 
     [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
+
+    [[nodiscard]] QList<SearchLineCommand> searchLineCommands() const;
 
 protected:
     /**

@@ -151,6 +151,11 @@ void Filter::setCurrentFolder(const Akonadi::Collection &folder)
     mCurrentFolder = folder;
 }
 
+QList<SearchLineCommand> Filter::searchLineCommands() const
+{
+    return {};
+}
+
 const QString &Filter::searchString() const
 {
     return mSearchString;
