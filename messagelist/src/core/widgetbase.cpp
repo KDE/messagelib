@@ -1021,13 +1021,13 @@ void Widget::searchTimerFired()
     if (!text.isEmpty()) {
         d->quickSearchLine->addCompletionItem(text);
     }
+    d->mFilter->setCurrentFolder(d->mCurrentFolder);
 #if USE_SEARCH_COMMAND_LINE
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
     // qDebug() << " text " << text << " command " << command.searchLineInfo();
     d->mFilter->setSearchString(command);
 #else
-    d->mFilter->setCurrentFolder(d->mCurrentFolder);
     d->mFilter->setSearchString(text, d->quickSearchLine->searchOptions());
     d->quickSearchWarning->setSearchText(text);
 #endif
