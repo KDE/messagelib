@@ -87,7 +87,7 @@ public:
      */
     [[nodiscard]] QString currentFilterSearchString() const;
 
-    [[nodiscard]] QList<SearchLineCommand> searchLineCommands() const;
+    [[nodiscard]] QList<SearchLineCommand::SearchLineInfo> searchLineCommands() const;
     /**
      * Returns the id of the MessageItem::Tag currently set in the quicksearch field.
      */

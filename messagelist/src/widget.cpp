@@ -648,7 +648,7 @@ QString MessageList::Widget::currentFilterSearchString() const
     return view()->currentFilterSearchString();
 }
 
-QList<MessageList::Core::SearchLineCommand> MessageList::Widget::searchLineCommands() const
+QList<MessageList::Core::SearchLineCommand::SearchLineInfo> MessageList::Widget::searchLineCommands() const
 {
     return view()->searchLineCommands();
 }

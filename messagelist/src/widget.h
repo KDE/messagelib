@@ -311,7 +311,7 @@ public:
     void setQuickSearchClickMessage(const QString &msg);
     [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
-    [[nodiscard]] QList<MessageList::Core::SearchLineCommand> searchLineCommands() const;
+    [[nodiscard]] QList<MessageList::Core::SearchLineCommand::SearchLineInfo> searchLineCommands() const;
 
 protected:
     /**

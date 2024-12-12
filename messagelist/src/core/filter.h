@@ -108,7 +108,7 @@ public:
     void setIconName(const QString &newIconName);
 
     void setSearchString(const SearchLineCommand &command);
-    [[nodiscard]] QList<SearchLineCommand> searchLineCommands() const;
+    [[nodiscard]] QList<SearchLineCommand::SearchLineInfo> searchLineCommands() const;
 Q_SIGNALS:
     void finished();
 

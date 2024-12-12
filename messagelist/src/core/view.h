@@ -352,7 +352,7 @@ public:
 
     [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
-    [[nodiscard]] QList<SearchLineCommand> searchLineCommands() const;
+    [[nodiscard]] QList<SearchLineCommand::SearchLineInfo> searchLineCommands() const;
 
 protected:
     /**

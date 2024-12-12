@@ -1022,7 +1022,7 @@ QString Pane::currentFilterSearchString() const
     return {};
 }
 
-QList<MessageList::Core::SearchLineCommand> Pane::searchLineCommands() const
+QList<MessageList::Core::SearchLineCommand::SearchLineInfo> Pane::searchLineCommands() const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (w) {
