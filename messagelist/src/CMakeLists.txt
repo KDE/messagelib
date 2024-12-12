@@ -228,6 +228,7 @@ ecm_generate_headers(MessageList_Camelcasewidgets_HEADERS
     HEADER_NAMES
     QuickSearchLine
     SearchMessageByButtons
+    SearchLineCommand
     REQUIRED_HEADERS MessageList_widgets_HEADERS
     RELATIVE core/widgets
     PREFIX MessageList
