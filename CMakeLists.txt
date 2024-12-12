@@ -170,12 +170,6 @@ endif()
 
 find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 
-option(OPTION_USE_SEARCH_COMMAND_LINE "Enable search command line" ON)
-
-if(OPTION_USE_SEARCH_COMMAND_LINE)
-    set(USE_SEARCH_COMMAND_LINE 1)
-endif()
-
 ecm_set_disabled_deprecation_versions(QT 6.8.1 KF 6.9.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 # -fhardened increase compilation time and produce a lot of warning
