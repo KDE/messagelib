@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "messagelist_private_export.h"
+#include "messagelist_export.h"
 #include <QDebug>
 #include <QMap>
 #include <QObject>
@@ -14,7 +14,7 @@ namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_TESTS_EXPORT SearchLineCommand
+class MESSAGELIST_EXPORT SearchLineCommand
 {
     Q_GADGET
 public:
@@ -48,7 +48,7 @@ public:
         Category,
     };
     Q_ENUM(SearchLineType)
-    struct MESSAGELIST_TESTS_EXPORT SearchLineInfo {
+    struct MESSAGELIST_EXPORT SearchLineInfo {
         SearchLineType type = SearchLineType::Unknown;
         QString argument;
         void clear();
@@ -83,4 +83,4 @@ private:
 }
 }
 Q_DECLARE_TYPEINFO(MessageList::Core::SearchLineCommand::SearchLineInfo, Q_RELOCATABLE_TYPE);
-MESSAGELIST_TESTS_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand::SearchLineInfo &info);
+MESSAGELIST_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand::SearchLineInfo &info);
