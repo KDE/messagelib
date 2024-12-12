@@ -232,12 +232,11 @@ void Filter::setSearchString(const SearchLineCommand &command)
     for (const auto &info : infos) {
         switch (info.type) {
         case SearchLineCommand::Literal: {
-            QString newStr = info.argument;
+            QString newStr;
             const QStringList searchListTmp = info.argument.split(QLatin1Char(' '), Qt::SkipEmptyParts);
             bool needToSplitString = false;
             for (const QString &text : searchListTmp) {
                 if (text.size() >= 3) {
-                    mSearchList << text;
                     if (!newStr.isEmpty()) {
                         newStr += QLatin1Char(' ');
                     }
