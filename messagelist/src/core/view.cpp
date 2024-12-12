@@ -2524,7 +2524,7 @@ QString View::currentFilterSearchString() const
     return d->mWidget->currentFilterSearchString();
 }
 
-QList<SearchLineCommand> View::searchLineCommands() const
+QList<SearchLineCommand::SearchLineInfo> View::searchLineCommands() const
 {
     return d->mWidget->searchLineCommands();
 }
