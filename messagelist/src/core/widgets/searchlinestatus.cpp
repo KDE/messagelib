@@ -96,11 +96,9 @@ bool SearchLineStatus::locked() const
 
 void SearchLineStatus::initializeActions()
 {
-#if USE_SEARCH_COMMAND_LINE
     mSearchCommandAction = addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), QLineEdit::TrailingPosition);
     mSearchCommandAction->setWhatsThis(i18nc("@info:whatsthis", "Toggle this button if you want show or hide search command line widget."));
     connect(mSearchCommandAction, &QAction::triggered, this, &SearchLineStatus::searchCommandActionRequested);
-#endif
     mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
     mLockAction->setWhatsThis(i18nc("@info:whatsthis",
                                     "Toggle this button if you want to keep your quick search "

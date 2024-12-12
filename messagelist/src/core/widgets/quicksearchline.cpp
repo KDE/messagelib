@@ -14,23 +14,19 @@
 #include "searchstatusbuttons.h"
 #include <KLocalizedString>
 
+#include "core/widgets/searchlinecommandwidget.h"
 #include <QComboBox>
 #include <QEvent>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QStandardPaths>
-#if USE_SEARCH_COMMAND_LINE
-#include "core/widgets/searchlinecommandwidget.h"
-#endif
 using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
     , mSearchEdit(new SearchLineStatus(this))
     , mSearchStatusButtons(new SearchStatusButtons(this))
     , mSearchMessageByButtons(new SearchMessageByButtons(this))
-#if USE_SEARCH_COMMAND_LINE
     , mSearchLineCommandWidget(new SearchLineCommandWidget(this))
-#endif
     , mTagFilterCombo(new QComboBox(this))
 {
     auto vbox = new QVBoxLayout(this);
@@ -45,7 +41,6 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
 
     vbox->addWidget(mSearchMessageByButtons);
     mSearchMessageByButtons->setVisible(false);
-#if USE_SEARCH_COMMAND_LINE
     vbox->addWidget(mSearchLineCommandWidget);
     mSearchLineCommandWidget->setVisible(false);
     connect(mSearchEdit, &SearchLineStatus::searchCommandActionRequested, this, [this]() {
@@ -58,7 +53,6 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
         c.parseSearchLineCommand(str);
         mSearchLineCommandWidget->setLabel(c.generateCommadLineStr());
     });
-#endif
 
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));

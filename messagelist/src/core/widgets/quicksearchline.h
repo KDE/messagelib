@@ -74,9 +74,7 @@ private:
     SearchLineStatus *const mSearchEdit;
     SearchStatusButtons *const mSearchStatusButtons;
     SearchMessageByButtons *const mSearchMessageByButtons;
-#if USE_SEARCH_COMMAND_LINE
     SearchLineCommandWidget *const mSearchLineCommandWidget;
-#endif
     QComboBox *const mTagFilterCombo;
     QList<Akonadi::MessageStatus> mLstStatus;
 };
