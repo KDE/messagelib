@@ -268,6 +268,14 @@ QList<Akonadi::MessageStatus> Widget::currentFilterStatus() const
     return {};
 }
 
+QList<SearchLineCommand> Widget::searchLineCommands() const
+{
+    if (d->mFilter) {
+        return d->mFilter->searchLineCommands();
+    }
+    return {};
+}
+
 QString Widget::currentFilterSearchString() const
 {
     if (d->mFilter) {
