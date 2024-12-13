@@ -153,12 +153,55 @@ void Filter::setCurrentFolder(const Akonadi::Collection &folder)
 
 QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
 {
-    // TODO use currentOptions() and status()
     const QString text = mSearchString;
+    QList<SearchLineCommand::SearchLineInfo> infos;
+    if (mOptions & SearchMessageByButtons::SearchAgainstBody) {
+        SearchLineCommand::SearchLineInfo i;
+        i.type = SearchLineCommand::SearchLineType::Body;
+        i.argument = mSearchString;
+        if (i.isValid()) {
+            infos.append(std::move(i));
+        }
+    }
+    if (mOptions & SearchMessageByButtons::SearchAgainstSubject) {
+        SearchLineCommand::SearchLineInfo i;
+        i.type = SearchLineCommand::SearchLineType::Subject;
+        i.argument = mSearchString;
+        if (i.isValid()) {
+            infos.append(std::move(i));
+        }
+    }
+    if (mOptions & SearchMessageByButtons::SearchAgainstBcc) {
+        SearchLineCommand::SearchLineInfo i;
+        i.type = SearchLineCommand::SearchLineType::Bcc;
+        i.argument = mSearchString;
+        if (i.isValid()) {
+            infos.append(std::move(i));
+        }
+    }
+    if (mOptions & SearchMessageByButtons::SearchAgainstBcc) {
+        SearchLineCommand::SearchLineInfo i;
+        i.type = SearchLineCommand::SearchLineType::Cc;
+        i.argument = mSearchString;
+        if (i.isValid()) {
+            infos.append(std::move(i));
+        }
+    }
+
+    // TODO use status()
+
+#if 0
+
+    if (mContainsOutboundMessages) {
+        mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstTo);
+    } else {
+        mButtonGroup->button(SearchMessageByButtons::SearchAgainstTo)->setChecked(opts & SearchMessageByButtons::SearchAgainstFrom);
+    }
+#endif
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
-
-    return command.searchLineInfo();
+    infos += command.searchLineInfo();
+    return infos;
 }
 
 const QString &Filter::searchString() const
