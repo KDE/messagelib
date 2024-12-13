@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-12-13 02:31+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1045,55 +1045,55 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> μήνυμα (<b>%2</b> μη αναγνωσμένο)"
 msgstr[1] "<b>%1</b> μηνύματα (<b>%2</b> μη αναγνωσμένα)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "Any filter defined."
 msgid "No filter defined."
 msgstr "Όποιο φίλτρο έχει οριστεί."
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Δημιουργία φίλτρου"
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Θέμα"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Συγκέντρωση"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Σειρά ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης μηνύματος"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Σειρά ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Κατεύθυνση ταξινόμησης ομάδας"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Ο φάκελος χρησιμοποιεί πάντα αυτή τη σειρά ταξινόμησης"
@@ -1145,7 +1145,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Διαμόρφωση..."
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1470,13 +1470,13 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Καθαρίζει το πεδίο γρήγορης αναζήτησης όταν γίνεται αλλαγή φακέλων"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1487,13 +1487,13 @@ msgstr ""
 "κλειδωμένη κατά την μετάβαση σε άλλους φακέλους ή κατά την αναζήτηση με βάση "
 "την κατάσταση του μηνύματος."
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Αποθηκευμένο φίλτρο"
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, kde-format
 msgid "Clear History"
 msgstr "Καθαρισμός ιστορικού"

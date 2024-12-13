@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-07 00:40+0000\n"
+"POT-Creation-Date: 2024-12-13 02:31+0000\n"
 "PO-Revision-Date: 2023-01-11 09:27+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1063,56 +1063,56 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> mensagem (<b>%2</b> não-lidas)"
 msgstr[1] "<b>%1</b> mensagens (<b>%2</b> não-lidas)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "Any filter defined."
 msgid "No filter defined."
 msgstr "Qualquer filtro definido."
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Criar um Filtro"
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Tema"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Configurar..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregação"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Critério de Ordenação das Mensagens"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Direcção da Ordenação das Mensagens"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Ordenação dos Grupos"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Direcção da Ordenação dos Grupos"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "A Pasta Usa Sempre Esta Ordem"
@@ -1167,7 +1167,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Configurar..."
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1508,13 +1508,13 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Limpar o campo de pesquisa rápido ao mudar de pastas"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1525,14 +1525,14 @@ msgstr ""
 "bloqueada ao passar para outras pastas ou quando deseja refinar a pesquisa "
 "pelo estado da mensagem."
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, fuzzy, kde-format
 #| msgid "Saved Filter"
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtro Gravado"
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, kde-format
 msgid "Clear History"
 msgstr "Limpar o Histórico"
