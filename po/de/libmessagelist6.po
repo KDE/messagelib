@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:41+0000\n"
+"POT-Creation-Date: 2024-12-13 00:41+0000\n"
 "PO-Revision-Date: 2024-11-11 18:52+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1044,54 +1044,54 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> Nachricht (<b>%2</b> ungelesen)"
 msgstr[1] "<b>%1</b> Nachrichten (<b>%2</b> ungelesen)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgid "No filter defined."
 msgstr "Es ist kein Filter festgelegt."
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Filter erstellen"
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Design"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Einrichten ..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Zusammenstellung"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Sortierkriterium für Nachrichten"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Sortierung für Nachrichten"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Sortierkriterium für Gruppen"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Sortierung für Gruppen"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Sortierung für diesen Ordner merken"
@@ -1142,7 +1142,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Einrichten …"
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1433,13 +1433,13 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Löscht das Suchfeld beim Wechseln in andere Ordner"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "Ist diese Einstellung aktiviert, wird die Suchleiste angezeigt."
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1450,13 +1450,13 @@ msgstr ""
 "wenn Sie in einen anderen Ordner wechseln oder die Suche durch den "
 "Nachrichtenstatus einschränken möchten."
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Gespeicherter Filter"
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, kde-format
 msgid "Clear History"
 msgstr "Verlauf leeren"

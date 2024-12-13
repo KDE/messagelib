@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:41+0000\n"
+"POT-Creation-Date: 2024-12-13 00:41+0000\n"
 "PO-Revision-Date: 2024-11-12 20:48+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1037,54 +1037,54 @@ msgstr[0] "<b>%1</b> vēstule (<b>%2</b> nelasītas)"
 msgstr[1] "<b>%1</b> vēstules (<b>%2</b> nelasītas)"
 msgstr[2] "<b>%1</b> vēstuļu (<b>%2</b> nelasītas)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgid "No filter defined."
 msgstr "Nav definēts filtrs."
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Izveidot filtru"
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Motīvs"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Konfigurēt..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Apkopojums"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Vēstuļu kārtošanas kārtība"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Vēstuļu kārtošanas virziens"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Grupu kārtošanas kārtība"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Grupu kārtošanas virziens"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Mape vienmēr izmanto šo kārtošanu"
@@ -1135,7 +1135,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Konfigurēt..."
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1426,7 +1426,7 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Notīrīt ātrās meklēšanas lauku, mainot mapes"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1434,7 +1434,7 @@ msgstr ""
 "Pārslēdziet šo pogu, ja vēlaties parādīt vai paslēpt meklēšanas komandrindas "
 "logdaļu."
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1444,13 +1444,13 @@ msgstr ""
 "Ieslēdzot šo pogu, ja vēlaties, lai ātrās meklēšanas lauciņš nemainītos, kad "
 "pārvietojaties starp mapēm vai ierobežojat meklēšanu pēc vēstules statusa."
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Saglabāt filtru"
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, kde-format
 msgid "Clear History"
 msgstr "Notīrīt vēsturi"

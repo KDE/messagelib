@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:41+0000\n"
+"POT-Creation-Date: 2024-12-13 00:41+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1021,55 +1021,55 @@ msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> សារ​​ (<b>%2</b> មិនទាន់​អាន​​)​"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "ស្បែក"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "ការ​រួមបញ្ចូល​គ្នា"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, kde-format
 msgid "Message Sort Order"
 msgstr "លំដាប់​តម្រៀប​សារ"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "ទិសដៅ​តម្រៀប​សារ"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, kde-format
 msgid "Group Sort Order"
 msgstr "លំដាប់​តម្រៀប​ក្រុម"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "ទិស​តម្រៀប​ក្រុម"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "ថត​ប្រើ​លំដាប់​តម្រៀប​នេះ​ជានិច្ច"
@@ -1126,7 +1126,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1462,13 +1462,13 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "សម្អាត​វាល​ស្វែងរក​រហ័ស នៅ​ពេល​ផ្លាស់ប្ដូរ​ថត"
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1478,14 +1478,14 @@ msgstr ""
 "បិទ/បើក​ប៊ូតុង​នេះ​ប្រសិនបើ​អ្នក​ចង់​រក្សា​ការ​ស្វែងរក​រហ័ស​របស់​អ្នក​ឲ្យ​នៅ​ចាក់សោ នៅ​ពេល​ផ្លាស់ទី​ទៅកាន់​ថត​"
 "ផ្សេងទៀត ឬ​នៅ​ពេល​ស្វែងរក​តូច​ដោយ​ស្ថានភាព​សារ ។"
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, kde-format
 msgid "Clear History"
 msgstr ""

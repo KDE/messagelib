@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:41+0000\n"
+"POT-Creation-Date: 2024-12-13 00:41+0000\n"
 "PO-Revision-Date: 2008-01-20 16:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -1151,63 +1151,63 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "Log filter actions"
 msgid "No filter defined."
 msgstr "फ़िल्टर क्रियाएँ लॉग करें"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:198
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "फ़िल्टर बनाएँ (&C)"
 
-#: core/widgetbase.cpp:422 messagelistutil.cpp:114
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "समय"
 
-#: core/widgetbase.cpp:443 core/widgetbase.cpp:533
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "के-मेल कॉन्फ़िगर करें..."
 
-#: core/widgetbase.cpp:512 messagelistutil.cpp:109
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "सुझाव"
 
-#: core/widgetbase.cpp:595
+#: core/widgetbase.cpp:601
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "संदेश भाग विशेषताएं"
 
-#: core/widgetbase.cpp:617
+#: core/widgetbase.cpp:623
 #, fuzzy, kde-format
 #| msgid "Message Tag &Icon"
 msgid "Message Sort Direction"
 msgstr "संदेश टैग प्रतीक (&I)"
 
-#: core/widgetbase.cpp:634
+#: core/widgetbase.cpp:640
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "फ़ोल्डर मिटाएँ"
 
-#: core/widgetbase.cpp:651
+#: core/widgetbase.cpp:657
 #, fuzzy, kde-format
 #| msgid "Message Tag &Icon"
 msgid "Group Sort Direction"
 msgstr "संदेश टैग प्रतीक (&I)"
 
-#: core/widgetbase.cpp:666
+#: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1265,7 +1265,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "के-मेल कॉन्फ़िगर करें..."
 
-#: core/widgets/quicksearchline.cpp:64
+#: core/widgets/quicksearchline.cpp:58
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "Search for messages."
@@ -1602,13 +1602,13 @@ msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:101
+#: core/widgets/searchlinestatus.cpp:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1616,14 +1616,14 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:112
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "सूची सहेजें..."
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:190
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
