@@ -188,7 +188,40 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
         }
     }
 
-    // TODO use status()
+    for (Akonadi::MessageStatus status : status()) {
+        if (status.hasAttachment()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::HasAttachment;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.hasInvitation()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::HasInvitation;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.isImportant()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsImportant;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.isReplied()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsReplied;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.isForwarded()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsForwarded;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        }
+        // TODO add more
+    }
 
 #if 0
 
